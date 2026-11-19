@@ -427,6 +427,10 @@ jobs:
       # the own page of at least 75% and accepts at most 30 sister programs' pages. Reads the committed records.
       - name: Reader page checks, rule A self-recall (own pages found, sister pages refused)
         run: python3 tests/reader_page_checks_recall_test.py
+      # S683: after a paid re-read, the filed record stays wherever the re-read is worse (a filed pass above all), put
+      # back byte for byte from the base, so step=reread leaves that row alone. Pure stdlib and a fixture git repo.
+      - name: Program re-read, keep the better record
+        run: python3 tests/program_reread_keep_better_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)

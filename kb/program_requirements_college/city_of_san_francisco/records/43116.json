@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Communication Studies 2.0",
  "award": "A.A- T Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=545",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=156",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8252,
+  "input_tokens": 10200,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8252,
-    "output_tokens": 1097,
+    "input_tokens": 10200,
+    "output_tokens": 2232,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,76 +30,112 @@
     "model": null
    }
   ],
-  "output_tokens": 1097,
+  "output_tokens": 2232,
   "output_tokens_details": {
-   "thinking_tokens": 248
+   "thinking_tokens": 501
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05495,
- "ms": 9489,
- "seconds": 10.0,
+ "cost_usd": 0.08544,
+ "ms": 17870,
+ "seconds": 18.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 15,
-   "share": 0.0,
-   "missing": [
-    "CMST12",
-    "CMST2",
-    "CMST20",
-    "CMST3",
-    "CMST4",
-    "CMST5",
-    "CMST7",
-    "CMST8",
-    "COMM38",
-    "COMMC1000",
-    "ENGL1B",
-    "ENGLC1001",
-    "JOUR21",
-    "PSYCC1000",
-    "SOC1"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM12",
+     "listed": "CMST12",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM2",
+     "listed": "CMST2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM20",
+     "listed": "CMST20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM3",
+     "listed": "CMST3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM4",
+     "listed": "CMST4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM5",
+     "listed": "CMST5",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM7",
+     "listed": "CMST7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM8",
+     "listed": "CMST8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1003",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ANTH3"
+   ],
+   "flagged": [
+    "ANTH3"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -114,22 +150,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No program section in the text (pages 545-546 print COMM course descriptions only)",
+   "section_heading": "Communication Studies 2.0 – AA-T Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -139,78 +175,232 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Articulate an understanding of the communication process and the ways communication practices shape perceptions of civic, social, and environmental issues",
+    "Communicate responsibly in interpersonal, intercultural, and group contexts",
+    "Deliver presentations with effective verbal and nonverbal communication",
+    "Apply advanced critical thinking skills to structure logical, credible, and well researched arguments that address complex social problems",
+    "Critique the communication practices of others and demonstrate critical listening skills that further the constructive exchange of ideas",
+    "Analyze the role of power in communication"
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose 3 courses from the following",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "COMM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 38",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANTH 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "CMST 12",
-    "why": "Only a course description (as COMM 12) appears; no program requirements in the text"
+    "why": "catalog prints it as COMM 12"
    },
    {
     "code": "CMST 2",
-    "why": "Only a course description (as COMM 2) appears; no program requirements in the text"
+    "why": "catalog prints it as COMM 2"
    },
    {
     "code": "CMST 20",
-    "why": "Only a course description (as COMM 20) appears; no program requirements in the text"
+    "why": "catalog prints it as COMM 20"
    },
    {
     "code": "CMST 3",
-    "why": "Only a course description (as COMM 3) appears; no program requirements in the text"
+    "why": "catalog prints it as COMM 3"
    },
    {
     "code": "CMST 4",
-    "why": "Only a course description (as COMM 4) appears; no program requirements in the text"
+    "why": "catalog prints it as COMM 4"
    },
    {
     "code": "CMST 5",
-    "why": "Only a course description (as COMM 5) appears; no program requirements in the text"
+    "why": "catalog prints it as COMM 5"
    },
    {
     "code": "CMST 7",
-    "why": "Only a course description (as COMM 7) appears; no program requirements in the text"
+    "why": "catalog prints it as COMM 7"
    },
    {
     "code": "CMST 8",
-    "why": "Only a course description (as COMM 8) appears; no program requirements in the text"
-   },
-   {
-    "code": "COMM 38",
-    "why": "Only a course description appears; no program requirements in the text"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "Not in the text"
+    "why": "catalog prints it as COMM 8"
    },
    {
     "code": "ENGL 1B",
-    "why": "Not in the text"
-   },
-   {
-    "code": "ENGL C1001",
-    "why": "Not in the text"
-   },
-   {
-    "code": "JOUR 21",
-    "why": "Not in the text"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "Not in the text"
-   },
-   {
-    "code": "SOC 1",
-    "why": "Not in the text"
+    "why": "not in the text; catalog lists ENGL C1003 instead"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 545-546) contains only course descriptions for COMM courses and the start of HLTH courses; it does not include the Communication Studies 2.0 A.A-T requirements section, so no blocks, totals, outcomes or careers could be recorded. The program page should be located elsewhere in the catalog.",
-   "The catalog now prints these courses as COMM (e.g., COMM 2, 'Formerly SPCH/CMST 2'), while the closed list uses CMST codes; a reviewer should map CMST n to COMM n when the requirements section is found.",
-   "No course-level outcomes are printed in the text."
+   "The catalog prints Communication Studies courses with the COMM prefix (COMM 2, 3, 4, 5, 7, 8, 12, 20) while the closed list uses CMST codes; recorded as printed with catalog_addition true. Reviewer should confirm these are the same courses renumbered.",
+   "The 'Choose one course' block also allows 'Any course not chosen from the list above' (i.e., any unused course from the Choose 3 list: COMM 3, 4, 5, 7, 38); those are not repeated in the block.",
+   "ENGL C1003 line was printed across a page break with units preceding the code ('4.0 ENGL C1003'); read as 4.0 units.",
+   "The page states students must complete 60 semester units including full Cal-GETC; read as the standard AA-T requirement, not a printed award total, so degree_total left null. No Cal-GETC unit figure is printed.",
+   "Total: 18.0-19.0 is the major total."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "a6cdea1da11e633b",
+ "source_codes": [
+  "CMST12",
+  "CMST2",
+  "CMST20",
+  "CMST3",
+  "CMST4",
+  "CMST5",
+  "CMST7",
+  "CMST8",
+  "COMM38",
+  "COMMC1000",
+  "ENGL1B",
+  "ENGLC1001",
+  "JOUR21",
+  "PSYCC1000",
+  "SOC1"
+ ],
+ "source_coverage": 1.0
 }

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7854,
+  "input_tokens": 7359,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7854,
-    "output_tokens": 1317,
+    "input_tokens": 7359,
+    "output_tokens": 1302,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1317,
+  "output_tokens": 1302,
   "output_tokens_details": {
-   "thinking_tokens": 432
+   "thinking_tokens": 431
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05776,
- "ms": 10709,
- "seconds": 11.0,
+ "cost_usd": 0.05548,
+ "ms": 11693,
+ "seconds": 11.8,
  "parts": null,
  "error": null,
  "score": {
@@ -211,11 +211,24 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Outcomes are printed under the heading 'Program Goals and Objectives' rather than 'Program Learning Outcomes'; recorded as program outcomes.",
-   "Course codes printed with PDF spacing artifacts ('BUS 1 1 1', 'BUS 1 14', 'BUS 1 19', 'CIS 1 13') were read as BUS 111, BUS 114, BUS 119, CIS 113.",
-   "BUS 129 Oral Business Communications is required by the catalog but not in the closed list; marked catalog_addition.",
-   "Description mentions 'current and future retail employees' and the management level in the retail industry but names no specific career titles; careers left empty."
+   "Outcomes are printed under the heading 'Program Goals and Objectives' (students will be able to...); recorded as program outcomes.",
+   "BUS 129 Oral Business Communications is required in the catalog but is not in the closed list; recorded as a catalog addition.",
+   "The description mentions preparing 'current and future retail employees' for management-level work in the retail industry; no explicit career titles were recorded — reviewer may check whether 'retail employees' should count as a career.",
+   "The text following the Total Units line belongs to the Chicana/o Studies, Latina/o Studies AA-T and was ignored, including its Program Learning Outcomes."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "e5fea99ce789d08c",
+ "source_codes": [
+  "BUS101",
+  "BUS111",
+  "BUS114",
+  "BUS119",
+  "BUS120",
+  "BUS121",
+  "BUS122",
+  "CIS113"
+ ],
+ "source_coverage": 1.0
 }

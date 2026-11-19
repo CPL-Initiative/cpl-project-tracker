@@ -1,0 +1,2171 @@
+{
+ "college": "City College of San Francisco",
+ "run": "44474797786",
+ "written": "2026-11-19T07:44:59Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/reread-wave-s683",
+   "inputs": {
+    "college": "City College of San Francisco",
+    "step": "reread",
+    "force": "44474797786"
+   },
+   "posts": 57,
+   "control_numbers": [
+    "05428",
+    "05441",
+    "05462",
+    "05474",
+    "05481",
+    "05482",
+    "09172",
+    "09174",
+    "09179",
+    "09183",
+    "12360",
+    "12361",
+    "15488",
+    "15490",
+    "16916",
+    "16990",
+    "16991",
+    "16993",
+    "17951",
+    "17953",
+    "19800",
+    "24254",
+    "30665",
+    "30897",
+    "32079",
+    "32129",
+    "32401",
+    "32868",
+    "32869",
+    "33208",
+    "33299",
+    "33652",
+    "35455",
+    "36409",
+    "36452",
+    "37479",
+    "37780",
+    "37900",
+    "38266",
+    "38443",
+    "38909",
+    "39072",
+    "39231",
+    "39335",
+    "40074",
+    "40075",
+    "40262",
+    "40432",
+    "40751",
+    "41049",
+    "41361",
+    "41638",
+    "43116",
+    "45543",
+    "46300",
+    "46320",
+    "46321"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 61,
+  "kept": 55,
+  "restored": 4,
+  "restored_filed_pass": 4,
+  "restored_not_own_program": 4,
+  "held_for_person": 0,
+  "new": 2,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 1,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 0,
+  "records_after": 309,
+  "dropped_by_filing": 42,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44474797786": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T07:44:59Z",
+   "counts": {
+    "reread": 61,
+    "kept": 55,
+    "restored": 4,
+    "restored_filed_pass": 4,
+    "restored_not_own_program": 4,
+    "held_for_person": 0,
+    "new": 2,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 1,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 309,
+    "dropped_by_filing": 42,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {
+    "44751": "passes_less"
+   },
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "05503",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "09175",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "09178",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "10974",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "11817",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "17842",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "17952",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19445",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24120",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24259",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24260",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24263",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24299",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24304",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24331",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24393",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24449",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "30539",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "30687",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31074",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31413",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31414",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31602",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "35709",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "36284",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "36386",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "36672",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "36964",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "36980",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "37160",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "37561",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "37601",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40168",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40171",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40177",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40407",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40435",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40590",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40705",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40706",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "41353",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "42318",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "05428",
+     "title": "Landscape Gardening and Contracting",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=418",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=418",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "05441",
+     "title": "Hospitality Management",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=145",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.941,
+      "placed": 16,
+      "listed": 17,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.941,
+      "placed": 16,
+      "listed": 17,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "05462",
+     "title": "Electronic Engineering Technology",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "05474",
+     "title": "Construction Management",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=134",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=135",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.909,
+      "placed": 20,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.909,
+      "placed": 20,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "05481",
+     "title": "Photography",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 34,
+      "listed": 34,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.5,
+      "placed": 17,
+      "listed": 34,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "05482",
+     "title": "Graphic Design",
+     "award": "A.A. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=102",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=103",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "05491",
+     "title": "Registered Nursing",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=290",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=290",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 19,
+      "listed": 19,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 19,
+      "listed": 19,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Required Courses' shares no word with the title 'Registered Nursing'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "09172",
+     "title": "Nursery and Garden-Center Operation",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=424",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=424",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "09174",
+     "title": "Commercial Cut-Flower and Greenhouse Production",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=404",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=405",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 13,
+      "listed": 13,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 13,
+      "listed": 13,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "09179",
+     "title": "Editorial Management and Design",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=90",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.5,
+      "placed": 5,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "09183",
+     "title": "Mechanical Engineering Technology",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=421",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=421",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 26,
+      "listed": 26,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 26,
+      "listed": 26,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "12360",
+     "title": "Food Service Management",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=142",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=142",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.947,
+      "placed": 18,
+      "listed": 19,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.947,
+      "placed": 18,
+      "listed": 19,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "12361",
+     "title": "Culinary Arts Management",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=410",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=410",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 23,
+      "listed": 23,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 23,
+      "listed": 23,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "15488",
+     "title": "Landscape Construction",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=416",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=416",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "15490",
+     "title": "Landscape Design",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=417",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=417",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "16916",
+     "title": "General Business",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "16990",
+     "title": "French",
+     "award": "A.A. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=173",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=174",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "16991",
+     "title": "Italian",
+     "award": "A.A. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=175",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=176",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "16993",
+     "title": "Spanish",
+     "award": "A.A. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=181",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
+     "filed_run": "39056434592",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 27,
+      "listed": 27,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.333,
+      "placed": 9,
+      "listed": 27,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "17951",
+     "title": "Biotechnology",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=303",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=303",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.963,
+      "placed": 26,
+      "listed": 27,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.963,
+      "placed": 26,
+      "listed": 27,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "17953",
+     "title": "Liberal Arts and Sciences Emphasis in Communication",
+     "award": "A.A. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=180",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.929,
+      "placed": 13,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.929,
+      "placed": 13,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "19800",
+     "title": "Construction Management: Advanced Skills",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=136",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=136",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.905,
+      "placed": 19,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.905,
+      "placed": 19,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "24254",
+     "title": "ESL Beginning Low",
+     "award": "Noncredit program",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=162",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read's arithmetic reads unequal, the filed record's incomplete"
+    },
+    {
+     "control_number": "30665",
+     "title": "Psychology",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "30897",
+     "title": "LGBTQ Studies",
+     "award": "A.A. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=374",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.906,
+      "placed": 29,
+      "listed": 32,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.906,
+      "placed": 29,
+      "listed": 32,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "31611",
+     "title": "English",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=158",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=158",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 27,
+      "listed": 27,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 27,
+      "listed": 27,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Program Requirements and Completion Time' shares no word with the title 'English'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "32079",
+     "title": "Mathematics",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.727,
+      "placed": 8,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 11,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds coverage.none_placed false and the filed record does not"
+    },
+    {
+     "control_number": "32129",
+     "title": "History",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=369",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=370",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 17,
+      "listed": 17,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 17,
+      "listed": 17,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "32401",
+     "title": "Studio Arts",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=125",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=126",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "32868",
+     "title": "Business Administration",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.818,
+      "placed": 9,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "32869",
+     "title": "Economics",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=138",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 21,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 21,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "33208",
+     "title": "Spanish",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=181",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
+     "filed_run": "39056434592",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.632,
+      "placed": 24,
+      "listed": 38,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.974,
+      "placed": 37,
+      "listed": 38,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
+    },
+    {
+     "control_number": "33299",
+     "title": "Journalism",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=105",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=105",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "33652",
+     "title": "Theatre Arts",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=128",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=821",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 19,
+      "listed": 19,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 19,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
+    },
+    {
+     "control_number": "35455",
+     "title": "Environmental Studies",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=324",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=324",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 41,
+      "listed": 41,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 41,
+      "listed": 41,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "36409",
+     "title": "ESL Beginning High",
+     "award": "Noncredit program",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=161",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 5,
+      "listed": 5,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 5,
+      "listed": 5,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "36452",
+     "title": "Child and Adolescent Development",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=188",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 12,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "37479",
+     "title": "Critical Middle East /South West Asia and North Africa Studies",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=363",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 5,
+      "listed": 5,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 5,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "37780",
+     "title": "Multimedia Content Creation for the Internet",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "37900",
+     "title": "Film Studies",
+     "award": "A.A. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=96",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=96",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 19,
+      "listed": 19,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 19,
+      "listed": 19,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "38266",
+     "title": "Film Studies",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=97",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=97",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.95,
+      "placed": 19,
+      "listed": 20,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.95,
+      "placed": 19,
+      "listed": 20,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "38443",
+     "title": "General Business",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "38909",
+     "title": "Music",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=115",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.886,
+      "placed": 31,
+      "listed": 35,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.886,
+      "placed": 31,
+      "listed": 35,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "39072",
+     "title": "Biological Sciences (Emphasis Health Science)",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=301",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=301",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "39231",
+     "title": "Company Officer",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=238",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=663",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "39335",
+     "title": "Kinesiology",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=260",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=260",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.762,
+      "placed": 96,
+      "listed": 126,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.762,
+      "placed": 96,
+      "listed": 126,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40074",
+     "title": "Nutrition and Dietetics",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40075",
+     "title": "Social Work and Human Services",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=393",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=393",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 28,
+      "listed": 28,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 28,
+      "listed": 28,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40205",
+     "title": "Pharmacy Technician",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=280",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=280",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Required Courses' shares no word with the title 'Pharmacy Technician'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "40262",
+     "title": "Cybersecurity",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=317",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 7,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "40432",
+     "title": "Microsoft Office Specialist",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=148",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "40751",
+     "title": "ESL and Math Milestone",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=159",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 13,
+      "listed": 13,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 13,
+      "listed": 13,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "41049",
+     "title": "Hospitality Management",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=146",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=146",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 20,
+      "listed": 20,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 20,
+      "listed": 20,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "41361",
+     "title": "Athletic Coaching",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=231",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=232",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.97,
+      "placed": 64,
+      "listed": 66,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.97,
+      "placed": 64,
+      "listed": 66,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "41638",
+     "title": "Business Administration 2.0",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "43116",
+     "title": "Communication Studies 2.0",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=156",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=545",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 15,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "45543",
+     "title": "Modern Policing",
+     "award": "A.S. Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=271",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=271",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 22,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 22,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "46300",
+     "title": "Mathematics 2.0",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
+     "filed_run": "39056434592",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 11,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
+    },
+    {
+     "control_number": "46320",
+     "title": "Social Work and Human Services",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=395",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=395",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "46321",
+     "title": "Physics 2.0",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=795",
+     "filed_run": "39047128472",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 13,
+      "listed": 13,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 13,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "46360",
+     "title": "Economics",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139",
+     "filed_run": 43693267535,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Required Courses' shares no word with the title 'Economics'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    }
+   ]
+  }
+ }
+}

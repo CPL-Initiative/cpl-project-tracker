@@ -1,0 +1,669 @@
+{
+ "college": "San Bernardino Valley College",
+ "run": "44481529632",
+ "written": "2026-11-19T08:38:35Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/reread-wave-s683",
+   "inputs": {
+    "college": "San Bernardino Valley College",
+    "step": "reread",
+    "force": "44481529632"
+   },
+   "posts": 15,
+   "control_numbers": [
+    "04880",
+    "04926",
+    "15503",
+    "17767",
+    "18530",
+    "18531",
+    "22833",
+    "31823",
+    "31886",
+    "32309",
+    "32595",
+    "40833",
+    "41756",
+    "43049",
+    "44225"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 19,
+  "kept": 12,
+  "restored": 3,
+  "restored_filed_pass": 2,
+  "restored_not_own_program": 3,
+  "held_for_person": 1,
+  "new": 3,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 1,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 15,
+  "records_after": 220,
+  "dropped_by_filing": 8,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44481529632": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T08:38:35Z",
+   "counts": {
+    "reread": 19,
+    "kept": 12,
+    "restored": 3,
+    "restored_filed_pass": 2,
+    "restored_not_own_program": 3,
+    "held_for_person": 1,
+    "new": 3,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 1,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 15,
+    "records_after": 220,
+    "dropped_by_filing": 8,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {
+    "43133": "passes_less"
+   },
+   "next_read_pays": [
+    "44567"
+   ],
+   "dropped_by_filing": [
+    {
+     "control_number": "04922",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "09378",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "16966",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "22803",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "22806",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "22809",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31858",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39236",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "04880",
+     "title": "Heating, Ventilation, Air Conditioning and Refrigeration",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "04926",
+     "title": "Administration of Justice",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aa-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/lpps-aat-degree/",
+     "filed_run": "38748858322",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 14,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "15503",
+     "title": "Case Management in the Public Sector",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/case-management-public-sector-certificate-achievement/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/case-management-public-sector-certificate-achievement/",
+     "filed_run": "38748858322",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.867,
+      "placed": 13,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.867)"
+    },
+    {
+     "control_number": "17767",
+     "title": "Administration of Justice - Corrections",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/adjus-corrections-certificate-achievement/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "18530",
+     "title": "Liberal Arts - Humanities & Fine Arts",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/humanities-fine-arts/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/humanities-fine-arts/",
+     "filed_run": "38748858322",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.994,
+      "placed": 162,
+      "listed": 163,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.988,
+      "placed": 161,
+      "listed": 163,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.994 against 0.988)"
+    },
+    {
+     "control_number": "18531",
+     "title": "Liberal Arts - Social & Behavioral Science",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/social-behavioral-sciences/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/liberal-arts/social-behavioral-sciences/",
+     "filed_run": "38748858322",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 102,
+      "listed": 102,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.99,
+      "placed": 101,
+      "listed": 102,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.99)"
+    },
+    {
+     "control_number": "22768",
+     "title": "Heating, Ventilation, Air Conditioning and Refrigeration",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "outcome": "held",
+     "why": "no filed record, and heading_award_check: the record's heading 'Heating, Ventilation, Air Conditioning and Refrigeration Associate of Science Degree' names a local degree; the program is a certificate"
+    },
+    {
+     "control_number": "22833",
+     "title": "Administration of Justice",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-jusitce-certificate-achievement/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/lpps-aat-degree/",
+     "filed_run": "38748858322",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 14,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "31823",
+     "title": "English",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/english/english-aat-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/english/english-aat-degree/",
+     "filed_run": 43609973859,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 25,
+      "listed": 25,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 25,
+      "listed": 25,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "31886",
+     "title": "Communication Studies",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
+     "filed_run": 43609973859,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "32309",
+     "title": "Political Science",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/",
+     "filed_run": 43609973859,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 30,
+      "listed": 30,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.967,
+      "placed": 29,
+      "listed": 30,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.967)"
+    },
+    {
+     "control_number": "32595",
+     "title": "Geography",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geography/geography-aat-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/geography/geography-aat-degree/",
+     "filed_run": 43609973859,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 22,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 22,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "39404",
+     "title": "Studio Arts",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/",
+     "filed_run": 43609973859,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 18,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 18,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'PROGRAM REQUIREMENTS' shares no word with the title 'Studio Arts'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "40833",
+     "title": "History",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/history/history-aa-t-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/history/history-aa-t-degree/",
+     "filed_run": 43609973859,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.81,
+      "placed": 17,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.762,
+      "placed": 16,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.81 against 0.762)"
+    },
+    {
+     "control_number": "41756",
+     "title": "Child and Adolescent Development",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-adolescent-development-aat-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-adolescent-development-aat-degree/",
+     "filed_run": 43609973859,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.696,
+      "placed": 16,
+      "listed": 23,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.696,
+      "placed": 16,
+      "listed": 23,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "41865",
+     "title": "Global Studies",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/global-studies/global-studies-aat-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/global-studies/global-studies-aat-degree/",
+     "filed_run": 43609973859,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 24,
+      "listed": 24,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'REQUIREMENTS' shares no word with the title 'Global Studies'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "43049",
+     "title": "Communication Studies 2.0",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
+     "filed_run": 43355003065,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 20,
+      "listed": 20,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.9,
+      "placed": 18,
+      "listed": 20,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.9)"
+    },
+    {
+     "control_number": "44225",
+     "title": "Administration of Justice - Corrections",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-corrections-as-degree/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "44567",
+     "title": "Elementary Teacher Education: Integrated Programs",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/education/ete-aat-degree/",
+     "filed_source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/education/ete-aat-degree/",
+     "filed_run": "38748858322",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 37,
+      "listed": 37,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.973,
+      "placed": 36,
+      "listed": 37,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'REQUIREMENTS' shares no word with the title 'Elementary Teacher Education: Integrated Programs'",
+     "not_own_program": true,
+     "next_read_held": null
+    }
+   ]
+  }
+ }
+}

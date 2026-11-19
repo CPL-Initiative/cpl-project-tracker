@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12011,
+  "input_tokens": 11929,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12011,
-    "output_tokens": 2073,
+    "input_tokens": 11929,
+    "output_tokens": 1918,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2073,
+  "output_tokens": 1918,
   "output_tokens_details": {
-   "thinking_tokens": 680
+   "thinking_tokens": 578
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0895,
- "ms": 16702,
- "seconds": 16.9,
+ "cost_usd": 0.08608,
+ "ms": 15780,
+ "seconds": 16.0,
  "parts": null,
  "error": null,
  "score": {
@@ -69,14 +69,15 @@
    "status": "equal",
    "computed": [
     20.0,
-    21.0
+    22.0
    ],
    "stated": [
     20.0,
     21.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -93,7 +94,7 @@
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -107,7 +108,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "PSYCHOLOGY",
+   "section_heading": "Psychology Associate of Arts for Transfer (AA-T) — Program Requirements for AA-T Degree",
    "measure": "units",
    "total_units": {
     "min": 20,
@@ -133,11 +134,7 @@
     "Fundamental Principles:  differentiate and compare fundamental principles of psychology.",
     "Everyday Application:  Apply fundamental principles of psychology in their efforts to evaluate everyday life experiences."
    ],
-   "careers": [
-    "teaching",
-    "research",
-    "clinical practice"
-   ]
+   "careers": []
   },
   "blocks": [
    {
@@ -287,13 +284,32 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "List A prints no selection rule, only '3-4 units' over two choices (BIOL 100/100H at 4 units or PSYC 107 at 3 units); recorded as choose 1 course. Reviewer should confirm.",
-   "List B also allows 'Any course from List A' (BIOL 100/100H or PSYC 107 not used for List A); these are not repeated in the List B block.",
-   "The PDF text prints codes with spaces inside the number (e.g., 'PSYC 1 10', 'PSYC 1 12', 'PSYC 1 15', 'PSYC 1 16'); recorded as PSYC 110, 112, 115, 116.",
-   "PE 275 Sport Psychology is not in the closed list; recorded as catalog addition.",
-   "The page states Cal-GETC and the generic AA-T rule of 60 semester units and minimum 18 units in the major, but prints no degree total or GE units for this award; degree_total and ge_units left null.",
-   "Text at the top of page 109 belongs to the preceding Political Science AA-T and was ignored."
+   "The excerpt begins mid-section on page 109; the program heading (likely 'PSYCHOLOGY') is not shown, so section_heading is taken from the program's descriptive sentence and requirements heading.",
+   "List A has no explicit 'select' wording; with a stated 3-4 units it is read as choose one course (BIOL 100/100H or PSYC 107).",
+   "List B also allows 'Any course from List A' (BIOL 100/100H, PSYC 107 not used in List A); those courses are recorded only in List A to avoid duplication.",
+   "The 60-unit and 18-unit statements are generic AA-T requirements, not recorded as degree_total or total_units; the major total printed is 20-21.",
+   "The Program Learning Outcomes are printed for 'the degree program' and recorded for this AA-T; double spaces after colons kept as printed."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "8471e1b1574986a1",
+ "source_codes": [
+  "BIOL100",
+  "BIOL100H",
+  "PSYC102",
+  "PSYC107",
+  "PSYC108",
+  "PSYC110",
+  "PSYC112",
+  "PSYC115",
+  "PSYC116",
+  "PSYC120",
+  "PSYC122",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0
 }

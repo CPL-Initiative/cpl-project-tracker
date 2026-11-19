@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9230,
-    "output_tokens": 2006,
+    "output_tokens": 1714,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2006,
+  "output_tokens": 1714,
   "output_tokens_details": {
-   "thinking_tokens": 822
+   "thinking_tokens": 594
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07704,
- "ms": 17140,
- "seconds": 17.7,
+ "cost_usd": 0.0712,
+ "ms": 15133,
+ "seconds": 15.4,
  "parts": null,
  "error": null,
  "score": {
@@ -251,19 +251,30 @@
   "missing_explained": [
    {
     "code": "CMST 12",
-    "why": "catalog prints this course as COMM 12 Fundamentals of Oral Communication; recorded under that code"
+    "why": "catalog prints COMM 12 Fundamentals of Oral Communication instead; likely the same course under a renamed subject"
    }
   ],
   "notes": [
-   "The 'Required courses: Units 34.0' heading covers the whole requirement list including the oral communication choice, so it was recorded as total_units rather than as the stated total of the first block (whose courses sum to 31).",
-   "The 'Total: 34.0' line for this certificate appears in the PDF text after the Landscape Design heading on page 417 because of layout extraction; it matches this certificate (Landscape Design totals 32.0).",
-   "Closed-list codes OH50, OH56, OH71A are printed in the catalog as O H 50, O H 56, O H 71A; treated as the same courses.",
-   "O H 75 Pest Management is not in the closed list.",
-   "The oral communication choice also allows satisfying the requirement by passing an accredited college level foreign language or oral presentation course (footnote option).",
-   "ESL 79's units (3.0) are printed displaced after the footnote line; read as 3.0.",
-   "Course units in the required list were printed in a column separated from the codes for O H 71A, 71B, 75, 76; matched in order."
+   "Closed-list codes OH50, OH56 and OH71A are printed in the catalog as O H 50, O H 56 and O H 71A; treated as the same courses (catalog_addition false).",
+   "The section's 'Total: 34.0' is printed on page 417 below the next program's heading due to page layout; it matches 'Required courses: Units 34.0' and the sum of the listed courses (31 + 3).",
+   "ESL 79's 3.0 units are printed after the foreign-language note on page 417; read as ESL 79's units.",
+   "The 'One of the following' requirement may also be satisfied by passing an accredited college-level foreign language or oral presentation course (not recorded as a course).",
+   "O H 71A and O H 71B rows with their titles/units are printed as stacked columns; units read as 4.0 each by position."
   ]
  },
- "extracted_run": 43693267535,
- "read_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "9f1ecacf8c426fea",
+ "source_codes": [
+  "CMST12",
+  "OH50",
+  "OH56",
+  "OH60",
+  "OH63",
+  "OH71A",
+  "OH71B",
+  "OH76",
+  "OH77"
+ ],
+ "source_coverage": 1.0
 }

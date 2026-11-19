@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Psychology",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=195",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9873,
+  "input_tokens": 8071,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9873,
-    "output_tokens": 3202,
+    "input_tokens": 8071,
+    "output_tokens": 3021,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 3202,
+  "output_tokens": 3021,
   "output_tokens_details": {
-   "thinking_tokens": 1057
+   "thinking_tokens": 937
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10353,
- "ms": 24842,
- "seconds": 25.2,
+ "cost_usd": 0.0927,
+ "ms": 24221,
+ "seconds": 24.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 21,
    "listed": 23,
-   "share": 0.826,
+   "share": 0.913,
    "missing": [
     "BIOLC1000",
-    "CDEVC1000",
-    "PSYCC1000",
-    "STATC1000"
+    "CDEVC1000"
    ],
-   "unexplained": [
-    "PSYCC1000",
-    "STATC1000"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "BIO16",
-    "CHLD10",
-    "PSYC1000(PSYCC1000)",
-    "STAT1000(STATC1000)"
+    "CHLD10"
    ],
    "flagged": [
     "BIO16",
     "CHLD10"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -100,8 +93,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -115,7 +108,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,7 +148,7 @@
     },
     "courses": [
      {
-      "code": "PSYC 1000 (PSYC C1000)",
+      "code": "PSYC C1000",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -188,7 +181,7 @@
       "catalog_addition": false
      },
      {
-      "code": "STAT 1000 (STAT C1000)",
+      "code": "STAT C1000",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -405,23 +398,48 @@
   "missing_explained": [
    {
     "code": "BIOLC1000",
-    "why": "not in the text; List A prints BIO 16 Introduction to Biology For Non-Majors instead"
+    "why": "not in the text; List A prints BIO 10 and BIO 16 instead"
    },
    {
     "code": "CDEVC1000",
-    "why": "not in the text; List C prints CHLD 10 Child Growth and Development, likely the local equivalent"
+    "why": "not in the text; List C prints CHLD 10 Child Growth and Development instead"
    }
   ],
   "notes": [
-   "Section read is Psychology (AA-T); the preceding Psychology (AA) section on pages 195-196 was ignored.",
-   "The Program Student Learning Outcomes printed at the top of page 196 belong to the Psychology (AA) section; the AA-T section as extracted prints no outcomes, so outcomes are empty. The text may be cut off after the AA-T requirements notes.",
-   "Codes PSYC 1000 (PSYC C1000) and STAT 1000 (STAT C1000) are recorded as printed; they correspond to closed-list PSYC C1000 and STAT C1000.",
-   "Units are printed only for PSYC 1000 and PSYC 1B; the elective list courses print no units beside them, so their units are null.",
-   "PSYC 10 & 10L are printed as a combined row in List A; recorded as separate entries.",
-   "In List C, CHLD 10 (footnote 1) and PSYC 4 appear on consecutive rows, probably an 'or' pair as in the AA section, but no 'or' is printed; recorded separately. Footnote advises UC-bound students to take only one of them.",
-   "The 60-unit requirement and 18-unit minimum major are generic ADT statements, not recorded as degree_total or total_units. No Cal-GETC units are printed.",
-   "Courses used in one category cannot be used in another category."
+   "The catalog prints 'PSYC 1000 (PSYC C1000)' and 'STAT 1000 (STAT C1000)'; recorded under the C-ID codes from the closed list.",
+   "Units are printed only for the two required courses; elective lists print only block totals, so course units are null.",
+   "PSYC 10 & 10L are printed as a single paired option in List A (Introduction to Biological Psychology and Biological Psychology Lab); recorded as two entries but they are taken together.",
+   "The '1' after CHLD 10 is a footnote marker, not units: UC-bound students should take either PSYC 4 or CHLD 10, not both.",
+   "Courses used in one category cannot be used to satisfy another (PSYC 4, 5, 7, 8, 30 appear in both List B and List C).",
+   "Outcomes 2-6 printed at the top of page 196 precede the 'Psychology (AA-T)' heading and appear to belong to the preceding program section (likely the local Psychology AA); not recorded. No outcomes are printed within the AA-T section in this excerpt; they may appear on a following page.",
+   "The 60-unit sentence is the generic ADT requirement, not recorded as a degree total; Cal-GETC is named but no GE units are printed."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "44477690021",
+ "catalog_year": "2026-2027",
+ "source_sha": "ac6f15c9936e318b",
+ "source_codes": [
+  "BIO10",
+  "PSYC10",
+  "PSYC10L",
+  "PSYC11",
+  "PSYC14",
+  "PSYC15",
+  "PSYC1B",
+  "PSYC3",
+  "PSYC30",
+  "PSYC34",
+  "PSYC35",
+  "PSYC4",
+  "PSYC40",
+  "PSYC46",
+  "PSYC5",
+  "PSYC7",
+  "PSYC8",
+  "PSYC9",
+  "PSYCC1000",
+  "SOC15",
+  "STATC1000"
+ ],
+ "source_coverage": 0.913
 }
