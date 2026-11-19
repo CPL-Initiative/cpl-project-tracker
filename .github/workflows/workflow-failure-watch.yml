@@ -27,6 +27,7 @@ on:
       - "College contacts harvest"
       - "Credential catalog sync (Sierra)"
       - "Daily CPL Dashboard"
+      - "Dependency map"
       - "Deploy Pages (lean)"
       - "Docket process"
       - "Fetch COCI Program-Course Files"

@@ -4,10 +4,10 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1070,
+  "file_datasets": 1073,
   "external_services": 195,
-  "consumers": 628,
-  "workflows": 74,
+  "consumers": 627,
+  "workflows": 75,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -545,7 +545,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 216
+     "line": 164
     },
     {
      "id": "edgefn:slide-script-draft",
@@ -1135,7 +1135,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 50
+     "line": 48
     },
     {
      "id": "edgefn:workplan-rebuild",
@@ -1253,20 +1253,6 @@
      "direction": "read",
      "how": "url",
      "line": 75
-    },
-    {
-     "id": "script:chatbox/supabase/functions/library-revise-draft/cobi_data.mjs",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 18
-    },
-    {
-     "id": "script:chatbox/supabase/functions/library-revise-draft/reference_data.mjs",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 15
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -3095,7 +3081,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2310,
+     "line": 2269,
      "tabs": [
       "library"
      ]
@@ -5849,10 +5835,16 @@
     {
      "by": "script:kb/_build_cobi_admin_surface.py",
      "how": "header"
+    },
+    {
+     "by": "workflow:dependency-map.yml",
+     "how": "commit-to-main"
     }
    ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:dependency-map.yml"
+   ]
   },
   "file:cobi_brand.js": {
    "consumers": [
@@ -6748,7 +6740,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3622,
+     "line": 3559,
      "tabs": [
       "library"
      ]
@@ -8190,6 +8182,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:docs/reference/dependency_map.md": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:dependency-map.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:dependency-map.yml"
+   ]
+  },
   "file:docs/reference/library_filer.md": {
    "consumers": [
     {
@@ -9516,7 +9521,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2914,
+     "line": 2872,
      "tabs": [
       "library"
      ]
@@ -9532,7 +9537,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2303,
+     "line": 2262,
      "tabs": [
       "library"
      ]
@@ -9836,6 +9841,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_build_cobi_admin_surface.py": {
+   "consumers": [
+    {
+     "id": "workflow:dependency-map.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_build_college_courses.py": {
    "consumers": [
     {
@@ -9963,6 +9981,13 @@
   },
   "file:kb/_build_dependency_map.py": {
    "consumers": [
+    {
+     "id": "workflow:dependency-map.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
     {
      "id": "workflow:js-tests.yml",
      "kind": "workflow",
@@ -15910,8 +15935,16 @@
      "line": 38
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:dependency-map.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:dependency-map.yml"
+   ]
   },
   "file:kb/discipline_aliases.json": {
    "consumers": [
@@ -22778,7 +22811,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2532,
+     "line": 2490,
      "tabs": [
       "library"
      ]
@@ -24874,7 +24907,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4262,
+     "line": 4194,
      "tabs": [
       "library"
      ]
@@ -26649,6 +26682,19 @@
    "main_committers": []
   },
   "file:tests/daily_scrape_fails_loudly_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/dependency_map_on_main_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -32400,7 +32446,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1504,
+     "line": 1463,
      "tabs": [
       "library"
      ]
@@ -32447,7 +32493,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1308,
+     "line": 1276,
      "tabs": [
       "library"
      ]
@@ -36146,6 +36192,26 @@
     "https://cpl-proxy.slee-548.workers.dev/scrape"
    ]
   },
+  "dependency-map.yml": {
+   "name": "Dependency map",
+   "crons": [],
+   "scripts": [
+    "kb/_build_dependency_map.py",
+    "kb/_build_cobi_admin_surface.py"
+   ],
+   "adds": [
+    "kb/dependency_map.json",
+    "docs/reference/dependency_map.md",
+    "cobi_admin_surface.js",
+    "kb/dependency_map.json",
+    "docs/reference/dependency_map.md",
+    "cobi_admin_surface.js"
+   ],
+   "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "discover-map-datasets.yml": {
    "name": "Discover MAP datasets (manual)",
    "crons": [],
@@ -36474,8 +36540,9 @@
     "tests/docs_index_build_test.py",
     "tests/american_spelling_test.py",
     "kb/_build_docs_index.py",
-    "tests/dependency_map_test.py",
     "kb/_build_dependency_map.py",
+    "tests/dependency_map_test.py",
+    "tests/dependency_map_on_main_test.py",
     "tests/js_suite_gate_test.py",
     "tests/merge_candidate_queue_test.py",
     "tests/alias_chain_single_source_test.py",

@@ -491,8 +491,8 @@ first day.** Do the remembering for them.
   impacts, don't guess:**
   [`docs/reference/dependency_map.md`](docs/reference/dependency_map.md) maps
   every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
-  scripts, workflows and public surfaces — derived from the code
-  (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
+  scripts, workflows and public surfaces — derived from the code. One job on
+  `main` rebuilds it after each merge; PRs no longer commit it (Sam, 2026-11-18).
 - **RUN the checkpoint; do not ask for it (Sam, 2026-09-09).** *"you don't need
   permission to checkpoint. Just run it when needed and we can refresh it if we
   stay in the session for more work."* Fire on Rule 9's commit count, never

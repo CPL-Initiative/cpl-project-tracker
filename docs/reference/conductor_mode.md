@@ -348,9 +348,10 @@ started.
 
 - A PR that conflicts with `main` starts no `pull_request` run: `get_check_runs` reads 0 and the state is `dirty`. Merge
   `main` into it first (`p-dirty-pr-starts-no-ci-s653b`).
-- Every PR that adds a test or a workflow rebuilds the dependency map, so each merge put the other open PRs in conflict:
-  five PRs cost four extra merges of `main`. Merge in sequence and bring only the next one up to `main`
-  (`p-dependency-map-conflicts-serial-merges-s653b`).
+- Every PR that adds a test or a workflow rebuilt the dependency map, so each merge put the other open PRs in conflict:
+  five PRs cost four extra merges of `main` (`p-dependency-map-conflicts-serial-merges-s653b`). Since Sam's rule of
+  2026-11-18 a PR no longer commits the map: `dependency-map.yml` rebuilds it on `main` after each merge
+  ([`sam_rulings`](sam_rulings.md)).
 - `list_events` on a busy session returned about 40,000 tokens of subagent events and thinking signatures. Ask for few
   events, or read the saved file by script (`p-list-events-floods-context-s653b`).
 - Worked: one `send_message` before any write settled the split with the older session in a minute
