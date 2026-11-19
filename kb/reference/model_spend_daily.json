@@ -818,19 +818,27 @@
    "not_available": 3
   },
   "2026-11-18": {
-   "usd": 0.0,
-   "sessions": 0,
-   "not_available": 4
-  },
-  "2026-11-19": {
-   "usd": 161.56,
-   "sessions": 1,
+   "usd": 270.0,
+   "sessions": 3,
    "not_available": 1,
    "tags": {
-    "curation": 124.0,
-    "infrastructure": 37.56
+    "collection": 77.0,
+    "curation": 17.0
    },
-   "untagged_usd": 0.0
+   "untagged_usd": 176.0,
+   "estimate_usd": 270.0
+  },
+  "2026-11-19": {
+   "usd": 350.56,
+   "sessions": 3,
+   "not_available": 0,
+   "tags": {
+    "curation": 124.0,
+    "infrastructure": 77.56,
+    "collection": 149.0
+   },
+   "untagged_usd": 0.0,
+   "estimate_usd": 189.0
   }
  },
  "measured_note": "runner and sessions are measured by kb/_build_spend_daily.py, not pasted: runner is the extraction runs' own cost_usd_run by the day each read started, a ledger from 2026-11-17 on (runs an earlier read overwrote before then are not in it); sessions is the handoffs' Spend: lines by the day each session ended. Neither is added to the billing totals in api and topups."
