@@ -1,0 +1,922 @@
+{
+ "college": "San Bernardino Valley College",
+ "reread_run": "44544185998",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44481529632",
+ "at": "2026-11-19T14:29:39Z",
+ "posted": 18,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "04881",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "09267",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19002",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22732",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22754",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22756",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22784",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22787",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22792",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22799",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22816",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22818",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22831",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32317",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41789",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 3,
+ "absent": 0,
+ "held": 0,
+ "kept": 15,
+ "carried": 0,
+ "replaced_keys": [
+  "39404",
+  "41865",
+  "44567"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "04880",
+  "04926",
+  "15503",
+  "17767",
+  "18530",
+  "18531",
+  "22833",
+  "31823",
+  "31886",
+  "32309",
+  "32595",
+  "40833",
+  "41756",
+  "43049",
+  "44225"
+ ],
+ "carried_keys": [],
+ "machine_pass": 11,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'San Bernardino Valley College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44481529632;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 18,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH C1200H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 124A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - One course:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 107",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 108",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B - Three courses:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ART 132A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ART 124B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 126A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 145",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 148",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 161",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ART 175A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 212A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 240A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 280",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Articulate ideas utilizing art terminology for critical discussion.",
+      "Demonstrate proficient technical and creative skills with a variety of art materials.",
+      "Effectively develop concepts into physical form.",
+      "Describe and discuss art in its aesthetic, cultural and historical context."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "PROGRAM REQUIREMENTS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 5,
+      "min": 5
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 43609973859,
+   "program_title": "Studio Arts",
+   "control_number": "39404"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 24,
+    "placed": 24,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "GLST 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GLST 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - Five courses from at least four areas below",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 15,
+       "min": 15
+      },
+      "courses": [
+       {
+        "code": "ANTH 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 102H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST 170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 171",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GIS 130",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS 141H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "RELIG 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 103",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SPAN 103H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 104",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 157",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 158",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 5,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "international business",
+      "international law",
+      "government",
+      "sustainability",
+      "public health",
+      "development for social justice",
+      "education",
+      "research"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Develop an understanding of key concepts in the field of Global Studies and of key processes of globalization related to culture, economics, geography, politics, and history.",
+      "Analyze the interconnectedness of issues facing humans around the world and evaluate global responses."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 22,
+      "min": 21
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Global Studies AA-T Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 14,
+      "min": 13
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 22,
+   "total_min": 21,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/global-studies/global-studies-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 43609973859,
+   "program_title": "Global Studies",
+   "control_number": "41865"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 37,
+    "placed": 36,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDEV C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CDEV C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "EDUC 200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST C1001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "POLS C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST 170",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - One from the following: CHEM 101 & PHYSIC 101",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "CHEM 101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYSIC 101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "List A"
+     },
+     {
+      "name": "List A - One from the following: GEOL 140 & GEOL 141",
+      "rule": "all",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "GEOL 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 141",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "List A"
+     },
+     {
+      "name": "List B - One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH C1200H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 103",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MUS 100H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "THART 100H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List C - Complete up to 12 additional units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 0
+      },
+      "courses": [
+       {
+        "code": "HIST 145",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 145H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GEOG 120",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PHIL 102",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PHIL 103",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "READ 104",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "READ 102",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 0,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "elementary school teaching careers",
+      "public service",
+      "teaching careers in elementary schools"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Defend an educational position, view, or theory.",
+      "Develop an educational philosophy.",
+      "Summarize practical knowledge of the teaching profession."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 47,
+      "min": 42
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "REQUIREMENTS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 9,
+      "min": 4
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 47,
+   "total_min": 42,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/education/ete-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Elementary Teacher Education: Integrated Programs",
+   "control_number": "44567"
+  }
+ ]
+}
