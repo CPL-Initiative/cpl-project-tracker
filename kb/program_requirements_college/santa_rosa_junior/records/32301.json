@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Art History",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=116",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11987,
+  "input_tokens": 11728,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11987,
-    "output_tokens": 4779,
+    "input_tokens": 11728,
+    "output_tokens": 7580,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,154 +30,76 @@
     "model": null
    }
   ],
-  "output_tokens": 4779,
+  "output_tokens": 7580,
   "output_tokens_details": {
-   "thinking_tokens": 750
+   "thinking_tokens": 1590
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14353,
- "ms": 33037,
- "seconds": 33.5,
+ "cost_usd": 0.19851,
+ "ms": 53332,
+ "seconds": 53.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 89,
    "listed": 106,
-   "share": 0.0,
+   "share": 0.84,
    "missing": [
     "ANTH21",
     "ANTH3",
     "ANTH30",
-    "ANTH31",
     "ANTH32",
     "ANTH34",
-    "ANTH43",
-    "ART12",
-    "ART14A",
-    "ART19",
-    "ART23",
-    "ART24",
-    "ART26",
-    "ART27A",
-    "ART28A",
-    "ART3",
-    "ART31A",
-    "ART33A",
-    "ART4",
-    "ART5",
-    "ART7A",
-    "ARTH11",
-    "ARTH12",
-    "ARTH13",
-    "ARTH14",
     "ARTH15",
     "ARTH16",
     "ARTH17",
-    "ARTH25",
     "ARTHC1100",
     "ARTHC1200",
-    "COMM2",
-    "DANC2",
-    "ENGL10",
-    "ENGL12",
-    "ENGL2",
-    "ENGL25",
-    "ENGL27",
-    "ENGL3",
-    "ENGL301",
-    "ENGL302",
-    "ENGL31",
-    "ENGL33",
-    "ENGL461",
-    "ENGL462",
-    "ENGL7",
     "ENGLC1002",
-    "FMA14",
-    "FMA15",
-    "FMA4",
-    "FREN1",
-    "FREN2",
-    "FREN3",
-    "FREN4",
-    "GD15",
-    "GERM1",
-    "GERM2",
-    "GERM3",
-    "GERM4",
-    "HIST11",
-    "HIST12",
     "HIST22",
     "HIST26",
     "HIST30",
     "HIST33",
-    "HIST41",
-    "HIST42",
     "HIST81",
-    "HIST82",
-    "HUM41",
-    "HUM5",
-    "HUM6",
-    "HUM7",
-    "HUM8",
-    "ITAL1",
-    "ITAL2",
-    "ITAL3",
-    "ITAL4",
-    "MUSC61",
-    "MUSC62",
-    "MUSC7",
-    "MUSC8",
-    "MUSC9",
-    "PHIL10",
-    "PHIL11",
-    "PHIL12",
-    "PHIL20",
-    "PHIL21",
-    "PHIL6",
-    "PHIL7",
-    "PHIL9",
-    "RELS1",
-    "RELS15",
-    "RELS2",
-    "RELS21",
-    "RELS22",
-    "RELS3",
-    "RELS32",
-    "RELS666",
-    "SPAN1",
-    "SPAN2",
-    "SPAN3",
-    "SPAN4",
-    "THAR1",
-    "THAR2",
-    "THAR6"
+    "HIST82"
    ],
-   "unexplained": [],
-   "none_placed": true,
+   "unexplained": [
+    "ARTHC1100",
+    "ARTHC1200",
+    "ENGLC1002"
+   ],
+   "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 0,
-   "codes": [],
+   "count": 3,
+   "codes": [
+    "ARTH1100(ANTHC1100)",
+    "ARTH1200(ARTHC1200)",
+    "ENGL1002(ENGLC1002)"
+   ],
    "flagged": [],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 18.0-18.0; the catalog states 31.0-31.0"
    ]
   },
   "repeated": {
@@ -185,12 +107,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 7,
    "courses": 0,
-   "count": 0,
+   "count": 7,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -209,18 +131,18 @@
  },
  "record": {
   "program": {
-   "section_heading": "General Education- 2026-27 Cal-GETC GE",
+   "section_heading": "Art History (AA-T)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 31,
+    "max": 31
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -230,110 +152,876 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Place a work of art in its historical and stylistic context;",
+    "Identify major monuments and movements in the history of art;",
+    "Develop a vocabulary to discuss art in aesthetic terms;",
+    "Demonstrate skills in visual analysis by identifying speciﬁc formal elements;",
+    "Reﬁne critical analysis skills in comparing works of art;",
+    "Identify cultural artistic characteristics and global traditions; and",
+    "Recognize basic methods and materials used in architecture, painting, sculpture, print-making, ceramics metalwork, and textiles."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Art History for Transfer Core Requirements",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ARTH 1.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1.4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1100 (ANTH C1100)",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH 1200 (ARTH C1200)",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 2.5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 7A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Art History for Transfer List A Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTH 1.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH 1.2",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Art History for Transfer List B Requirements",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 14A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 24",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 27A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 28A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 31A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 33A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Art History for Transfer List C Requirement",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH 1100 (ANTH C1100)",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1200 (ARTH C1200)",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 2.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1.3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 1.4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 2.5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 14A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 27A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 28A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 7A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 31A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 24",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 33A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 26",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 43",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GD 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMA 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 6.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 6.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THAR 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 1002 (ENGL C1002)",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 27",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 30.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 30.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 31",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 33",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 46.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 46.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 1.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 1.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 4.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 4.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 4.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 6.66",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 32",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "ANTH 21",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "ANTH 3",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "ANTH 30",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
-   },
-   {
-    "code": "ANTH 31",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "ANTH 32",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "ANTH 34",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
-   },
-   {
-    "code": "ANTH 43",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 12",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 14A",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 19",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 2.3",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 24",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 26",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 27A",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 28A",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 3",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 31A",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 33A",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 4",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 5",
-    "why": "not in the text"
-   },
-   {
-    "code": "ART 7A",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTH 1.1",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTH 1.2",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTH 1.3",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTH 1.4",
     "why": "not in the text"
    },
    {
@@ -349,323 +1037,136 @@
     "why": "not in the text"
    },
    {
-    "code": "ARTH 2.5",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTH C1100",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTH C1200",
-    "why": "only in Cal-GETC 3A GE list (as ARTH 1200), not an Art History section"
-   },
-   {
-    "code": "COMM 2",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "DANC 2",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 10",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 12",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 25",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 27",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 3",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 30.1",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 30.2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 31",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 33",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 46.1",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 46.2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL 7",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ENGL C1002",
-    "why": "only in Cal-GETC 3B GE list (as ENGL 1002), not an Art History section"
-   },
-   {
-    "code": "FMA 14",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "FMA 15",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "FMA 4",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "FREN 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "FREN 2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "FREN 3",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "FREN 4",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "GD 15",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "GERM 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "GERM 2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "GERM 3",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "GERM 4",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "HIST 1.1",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "HIST 1.2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
     "code": "HIST 22",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "HIST 26",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "HIST 30",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "HIST 33",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
-   },
-   {
-    "code": "HIST 4.1",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "HIST 4.2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "HIST 8.1",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
+    "why": "not in the text"
    },
    {
     "code": "HIST 8.2",
-    "why": "only in Cal-GETC Area 4 GE list, not an Art History section"
-   },
-   {
-    "code": "HUM 4.1",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "HUM 5",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "HUM 6",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "HUM 7",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "HUM 8",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ITAL 1",
     "why": "not in the text"
-   },
-   {
-    "code": "ITAL 2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ITAL 3",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "ITAL 4",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "MUSC 6.1",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "MUSC 6.2",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "MUSC 7",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "MUSC 8",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "MUSC 9",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "PHIL 10",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "PHIL 11",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "PHIL 12",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "PHIL 20",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "PHIL 21",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "PHIL 6",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "PHIL 7",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "PHIL 9",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "RELS 1",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "RELS 15",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "RELS 2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "RELS 21",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "RELS 22",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "RELS 3",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "RELS 32",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "RELS 6.66",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "SPAN 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 2",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "SPAN 3",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "SPAN 4",
-    "why": "only in Cal-GETC 3B GE list, not an Art History section"
-   },
-   {
-    "code": "THAR 1",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "THAR 2",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
-   },
-   {
-    "code": "THAR 6",
-    "why": "only in Cal-GETC 3A GE list, not an Art History section"
    }
   ],
   "notes": [
-   "The supplied text (pages 88-89) is the catalog's Cal-GETC General Education course list (Areas 3A, 3B, 4, 5A), not the Art History A.A.-T program section. No program requirements, totals, outcomes or careers for Art History are printed, so no blocks were recorded.",
-   "section_heading records the page's running heading 'General Education- 2026-27 Cal-GETC GE'; the source link likely points to the wrong page. A reviewer should locate the Art History A.A.-T section elsewhere in the 2026-2027 catalog.",
-   "GE courses never go in blocks; closed-list courses appearing in the GE lists are explained in missing_explained."
+   "Unit column is blank for every course except SPAN 1-4 (printed 4 each); units left null rather than taken from the state file.",
+   "Printed 'ARTH 1100 (ANTH C1100)' appears to be a typo for ARTH C1100 (closed list); treated as the closed-list course, catalog_addition false. 'ARTH 1200 (ARTH C1200)' and 'ENGL 1002 (ENGL C1002)' matched to ARTH C1200 and ENGL C1002.",
+   "In the Core block, 'ARTH 1100 ... or ARTH 1200' is printed as an or-pair and recorded as one entry with an alternative.",
+   "List A (ARTH 1.1 or ARTH 1.2) has no printed unit total and overlaps courses in the Core block; whether a course may double count is not stated.",
+   "Total Hours/Units 31 is printed as the major total; block minimums (9+3+3 plus List A) do not obviously sum to 31, reviewer should check.",
+   "The generic sentence that ADT students complete 60 CSU-transferable units including Cal-GETC is boilerplate (repeated for the next program) and not recorded as degree_total; no GE unit figure printed.",
+   "Text begins at the requirements on page 116; any program description for Art History (on a preceding page) is not included, so no careers could be read.",
+   "Program Student Learning Outcomes copied as printed, including ligature characters in 'speciﬁc' and 'Reﬁne'."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "44477690021",
+ "catalog_year": "2026-2027",
+ "source_sha": "4af9ac2f12ae0f94",
+ "source_codes": [
+  "ANTH31",
+  "ANTH43",
+  "ART12",
+  "ART14A",
+  "ART19",
+  "ART23",
+  "ART24",
+  "ART26",
+  "ART27A",
+  "ART28A",
+  "ART3",
+  "ART31A",
+  "ART33A",
+  "ART4",
+  "ART5",
+  "ART7A",
+  "ARTH11",
+  "ARTH12",
+  "ARTH13",
+  "ARTH14",
+  "ARTH25",
+  "ARTHC1200",
+  "COMM2",
+  "DANC2",
+  "ENGL10",
+  "ENGL12",
+  "ENGL2",
+  "ENGL25",
+  "ENGL27",
+  "ENGL3",
+  "ENGL301",
+  "ENGL302",
+  "ENGL31",
+  "ENGL33",
+  "ENGL461",
+  "ENGL462",
+  "ENGL7",
+  "ENGLC1002",
+  "FMA14",
+  "FMA15",
+  "FMA4",
+  "FREN1",
+  "FREN2",
+  "FREN3",
+  "FREN4",
+  "GD15",
+  "GERM1",
+  "GERM2",
+  "GERM3",
+  "GERM4",
+  "HIST11",
+  "HIST12",
+  "HIST41",
+  "HIST42",
+  "HUM41",
+  "HUM5",
+  "HUM6",
+  "HUM7",
+  "HUM8",
+  "ITAL1",
+  "ITAL2",
+  "ITAL3",
+  "ITAL4",
+  "MUSC61",
+  "MUSC62",
+  "MUSC7",
+  "MUSC8",
+  "MUSC9",
+  "PHIL10",
+  "PHIL11",
+  "PHIL12",
+  "PHIL20",
+  "PHIL21",
+  "PHIL6",
+  "PHIL7",
+  "PHIL9",
+  "RELS1",
+  "RELS15",
+  "RELS2",
+  "RELS21",
+  "RELS22",
+  "RELS3",
+  "RELS32",
+  "RELS666",
+  "SPAN1",
+  "SPAN2",
+  "SPAN3",
+  "SPAN4",
+  "THAR1",
+  "THAR2",
+  "THAR6"
+ ],
+ "source_coverage": 0.858
 }
