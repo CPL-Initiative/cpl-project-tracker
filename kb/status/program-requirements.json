@@ -347,7 +347,7 @@
     },
     {
       "at": "2026-11-19T20:08:00Z",
-      "text": "The gap count went from 5,203 to 5,145 programs; 15,044 of 20,282 active programs now have a complete record."
+      "text": "The harvest gap census counts 5,145 programs still to collect, down from 5,203. It counts a record collected with its gap named as collected, so its figure is below the 5,238 active programs that do not yet pass every check (15,044 of 20,282 pass)."
     },
     {
       "at": "2026-11-19T20:38:00Z",
