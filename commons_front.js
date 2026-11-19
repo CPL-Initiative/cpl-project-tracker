@@ -508,10 +508,18 @@
        is open grows on its own; a folded card and a phone's single column keep their own height. */
     /* Row by row: the nth card of each group shares a row, so each row takes its own tallest card and the next row
        still starts level across the three columns. */
+    var groupsEl = wrap.querySelector(".cmf-groups");
+    function tracks(n) {
+      var t = n && window.getComputedStyle ? window.getComputedStyle(n).gridTemplateColumns : "";
+      return t && t !== "none" ? t.trim().split(/\s+/).length : 0;
+    }
     var rows = [0, 1, 2].map(function (k) { return [C.collect[k], C.curate[k], C.connect[k]].filter(Boolean); });
     function equalize() {
       all.forEach(function (c) { c.style.minHeight = ""; });
-      if ((window.innerWidth || 0) <= 560) return;
+      /* Rows are real only while the groups sit three across, each one card wide; once they wrap (a tablet, a phone)
+         or a group goes two cards wide (a very wide screen), cards keep their own height (COBIx on #3554). */
+      if (tracks(groupsEl) !== 3 || !groupsEl.querySelectorAll(".cmf-group-cards").length
+        || Array.prototype.some.call(groupsEl.querySelectorAll(".cmf-group-cards"), function (g) { return tracks(g) !== 1; })) return;
       rows.forEach(function (row) {
         var open = row.filter(function (c) { return !c.classList.contains("cmf-folded"); });
         var basis = open.filter(function (c) { return !c.classList.contains("cmf-unclamped"); });
