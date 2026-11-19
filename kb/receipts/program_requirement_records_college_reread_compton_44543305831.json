@@ -1,0 +1,653 @@
+{
+ "college": "Compton College",
+ "reread_run": "44543305831",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44477684527",
+ "at": "2026-11-19T14:26:56Z",
+ "posted": 47,
+ "batches": 2,
+ "skipped": [],
+ "error": null,
+ "replaced": 4,
+ "absent": 2,
+ "held": 0,
+ "kept": 41,
+ "carried": 0,
+ "replaced_keys": [
+  "37335",
+  "38214",
+  "41599",
+  "46580"
+ ],
+ "absent_keys": [
+  "38422",
+  "43718"
+ ],
+ "held_keys": [],
+ "kept_keys": [
+  "37317",
+  "37322",
+  "37325",
+  "37333",
+  "37360",
+  "37361",
+  "37367",
+  "37369",
+  "37373",
+  "37374",
+  "37379",
+  "37381",
+  "37477",
+  "37559",
+  "37569",
+  "37570",
+  "37573",
+  "37574",
+  "37632",
+  "37633",
+  "37634",
+  "38069",
+  "38070",
+  "38089",
+  "38173",
+  "38174",
+  "38176",
+  "38215",
+  "38217",
+  "38218",
+  "38219",
+  "38220",
+  "38330",
+  "38387",
+  "38486",
+  "38547",
+  "38548",
+  "38567",
+  "42724",
+  "43216",
+  "45446"
+ ],
+ "carried_keys": [],
+ "machine_pass": 40,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Compton College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44477684527;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Program Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 33,
+       "min": 33
+      },
+      "courses": [
+       {
+        "code": "MTT 101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 103",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 105",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 112",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 118",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MTT 160",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "machining industry"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Apply principles from mathematics, physics, and chemistry to solve applied problems in engineering.",
+      "Identify different digital and analog sensor technologies.",
+      "Follow and build robotic devices and components in accordance with industry standard schematics and diagrams.",
+      "Solving Engineering Problems: students will apply principles from mathematics, physics, and chemistry to solve applied problems in engineering.",
+      "Digital and Analog Sensor Technologies: Upon completion of the courses in this discipline, the student will be able to identify different digital and analog sensor technology.",
+      "Industry Standards: Upon completion of the courses in this discipline, the student will be able to follow and build robotic devices and components in accordance with industry standard schematics and diagrams."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 33,
+      "min": 33
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Numerical Control Programmer – Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 33,
+   "total_min": 33,
+   "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006336111,
+   "program_title": "Numerical Control Programmer",
+   "control_number": "37335"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AJ 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 103",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AJ 107",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 126",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 131",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 132",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_units",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 101H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 120",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000H",
+          "units": 4,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "The Fourth Amendment: Recognize unlawful behavior and take appropriate enforcement action properly utilizing probable cause as required in the fourth amendment of the U.S. Constitution.",
+      "The Criminal Justice Reports: Properly document a criminal investigation, crime analysis report, intelligence report, or other criminal justice documentation. The report will include the correct elements of the incident involved, will include the relevant facts, be accurate and complete and will be grammatically correct.",
+      "Interpreting Criminal Profiles and Identifying Criminal Behaviors: After being provided a hypothetical crime scenario will be able to recognize and interpret as suspicious or criminal behavior based on facts presented in the scenario.",
+      "Certificates, Graduation, and Transfer Students: Successfully earn a certificate/graduate/transfer to four-year universities and will successfully compete for jobs in which they can apply legal, investigative, and communicative skills acquired in the administration of justice program.",
+      "The Criminal Justice System: Explain what the criminal justice system is, what role it performs in society and how its components interact with one another in achieving its goals."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Program Requirements for AS-T Degree (ADMINISTRATION OF JUSTICE)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=73",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006336111,
+   "program_title": "Administration of Justice",
+   "control_number": "38214"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unstated"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Program Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 11",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 12",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 13",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Write letters given visual or aural input.",
+      "Produce phonetic sounds orally for individual letters.",
+      "Write numerals and their corresponding English words.",
+      "Respond appropriately to directions and commands given in class.",
+      "Use phrases appropriately to convey and obtain basic information in the classroom.",
+      "Identify pictures of basic vocabulary with spoken words.",
+      "Arrange letters to form familiar vocabulary acquisition with regularity.",
+      "Write simple sentences using the verb “to be” about personal information or pictures.",
+      "Complete cloze activities with correct vocabulary.",
+      "Use correct word order to write simple sentences.",
+      "Place days of the week in the correct order.",
+      "Match vocabulary words to their corresponding pictures.",
+      "Write sentences with the verb “to be” using correct subject-verb agreement.",
+      "Respond to high-frequency commands and social expressions and attempt to reproduce what is heard.",
+      "Sustain a brief 3 to 5-minute conversation on a familiar topic using simple questions and respond accurately with yes or no answers, single words, and short phrases.",
+      "Ask and respond to simple questions and requests related to personal information and needs.",
+      "Identify basic information from charts and use prepositions of time to describe or organize temporal information.",
+      "Accurately produce statements using simple present, simple past, and present continuous verb tenses in conversation.",
+      "Accurately formulate yes or no questions, wh-questions, and affirmative and negative statements in speaking and writing.",
+      "Identify nouns in speaking and in writing using determiners and pronouns.",
+      "Write simple and compound sentences using coordinating conjunctions.",
+      "Match phonological sounds to letters and clusters of letters in verb tenses and produce proper question intonation.",
+      "Read and complete simple forms and personal information.",
+      "Make statements related to basic daily needs, preferences, and familiar activities with limited attention to stress and intonation.",
+      "Identify the main topic of conversation or short paragraph of a familiar topic.",
+      "Some basic texts for key information and define the sequence of a simple narrative passage.",
+      "Use predicting or decoding strategies to interpret new words in familiar contexts.",
+      "Accurately produce affirmative and negative statements in writing.",
+      "Compose a short paragraph of related sentences including compound sentences.",
+      "Accurately use future tense, verbs followed by gerunds and infinitives, modals, frequency adverbs, quantifiers, and comparatives and superlatives in speaking and writing.",
+      "Respond appropriately to oral instructions in academic and workplace settings."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ESL Level 1 - Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=89",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006336111,
+   "program_title": "ESL Level 1",
+   "control_number": "41599"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 20,
+       "min": 20
+      },
+      "courses": [
+       {
+        "code": "MATH 190",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 191",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 220",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 270",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "CSCI 101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 103",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 114",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 101",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Explain and demonstrate mathematical concepts relevant to the course content.",
+      "Solve problems, including application problems, relevant to the course concepts and content.",
+      "Create, interpret, and analyze graphs relevant to the course concepts and content.",
+      "Analyze and construct proofs relevant to the course concepts and content."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 25,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "MATHEMATICS 2.0",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 24,
+   "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=102",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006336111,
+   "program_title": "Mathematics 2.0",
+   "control_number": "46580"
+  }
+ ]
+}
