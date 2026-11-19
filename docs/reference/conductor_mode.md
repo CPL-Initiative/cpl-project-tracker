@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-18
+updated: 2026-11-19
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -73,6 +73,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
    prune`. Each checkout is 4.4 to 4.7 GB. **Three checkouts at once is the ceiling** (S653: four filled the disk twice
    in ten minutes); a read-only task (a review, a count) takes no worktree, and nobody writes a tar. Remove a checkout
    only when its worker is finished for good: a worker cannot be resumed once its checkout is gone.
+   **A clone is never a full clone (Sam, 2026-11-19):** the conductor and every worker clone `cpl-project-tracker`
+   with `git clone --filter=blob:none`, or `--depth=1` when history is not needed. `scripts/repo_size_guard.py` reads a
+   partial clone through one fetch (#3543).
 6. `python3 kb/_context_budget.py`. Then read the COBIx threads #3110 and #3111 to their last comment, and every issue
    or PR COBIx touched today (search `commenter:cobi-cto updated:>=<today>`), and read them again at every wake. Before
    merging any PR, read its own comments to the last page: a reviewer's note on the PR thread is a finding.
@@ -89,7 +92,8 @@ at the top of each piece of work so Sam can change the dial before it runs.
   PR subscription or empty commit; `git add`, then `CPL_VAULT_ROOT=/home/user/CPLBrain bash
   scripts/check_generated.sh`, read its last line, then commit; when `main` moves under an open PR, merge `main` (a
   merge commit) and regenerate generated files with their tools; a PR that changes a builder of a committed file runs
-  the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`).
+  the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`); a clone of
+  `cpl-project-tracker` is `git clone --filter=blob:none` (or `--depth=1` without history), never a full clone.
 - The agent definitions in `.claude/agents/` carry the limits above, the trailer and footer and a report cap, so a
   brief no longer repeats them: `worker` (Opus), `second-reader` (read-only, severity tags, a verdict),
   `checkpoint-docs` (Rule 9's documents) and `pr-gate` (Haiku; five lines on one PR). The `conductor-brief` skill
@@ -184,6 +188,34 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S683, and what worked
+
+The CPL Queue routine's 06:12Z firing of 2026-11-19 (SkyNuthatch, started 06:13Z), collection only under Sam's routine
+prompt of 2026-11-17, following the COBIx brief on #3358 as updated 2026-11-19T02:34Z. No `list_sessions`,
+`get_trigger`, `get_session` or `set_session_tags`. The conductor ran on Fable 5.2 on every call although the brief
+expected Opus 5.5 tonight (`d-conductor-model-as-configured-s683`): the routine's form sets it, and changing it is Sam's.
+
+- **The runner pool starved the database runs** (`p-runner-pool-starves-migrate-s683`). 17 dispatches and about a dozen
+  pull-request pushes inside 40 minutes left each `supabase-migrate` run waiting 30 to 40 minutes, and CI ran about 90.
+  Batch reread dispatches 10 at a time, batch pushes, and expect a database run to queue behind CI.
+- **A branch that only triggers a run carries no pull request** on a saturated pool (`d-trigger-branches-no-pr-s683`).
+  Each PR push adds CI; the handoff's ledger names the branch and its state instead.
+- **The script-run wave step worked.** Once `kb/_program_reread_keep_better.py` had passed its second reader, the lane
+  workers dispatched the reread and the load themselves, one college at a time under the $40 meter
+  (`d-lane-workers-dispatch-reread-load-s683`): 15 colleges with no conductor relay per college.
+- **Lane workers polling quietly** (one status line per batch, no running commentary) kept the conductor's context for
+  the plans and the reviews.
+- **The SQL stall** (`p-execute-sql-stalled-s683`): one `execute_sql` read sent at 08:15Z returned at 09:10Z. The
+  conductor could not act while it waited, and the declaration PR's half-hour refresh lapsed once, which a parallel
+  firing reads as "nobody is working". Keep the heartbeat on a path that never waits on the SQL tool, and leave the
+  headline and harvest reads to the next session when the tool stalls.
+- **A CI-cancel agent was refused** by the permission check (`p-ci-cancel-agent-denied-s683`); recorded, not routed
+  around.
+- **`main` went red on a fixture picked by rule** (`p-fixture-by-rule-vanishes-s683`): once Sam settled 28 of 31 held
+  cards, `tests/side_by_side_test.py` found no fixture. The fix (#3542) rides the wave with the harvest branches.
+- **One wave again** (`claude/wave-s683`): #3542, #3536, #3497, #3508, #3492, #3538 and the three lane branches, one
+  merge of `main`, one CI. Carried PRs were closed with their branches kept.
 
 ## What went wrong in S681, and what worked
 

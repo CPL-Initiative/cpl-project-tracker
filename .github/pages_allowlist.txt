@@ -339,6 +339,7 @@ publish kb/exhibits_reanalysis
 publish kb/exhibits_related.json
 publish kb/exhibits_review.json
 publish kb/exhibits_review_courses.json
+publish kb/exhibits_review_subjects.json
 publish kb/exhibits_sweep.json
 publish kb/fire_electrical_domain_map.json
 publish kb/foreign_language_subj4.json

@@ -1,7 +1,7 @@
 ---
 title: Sam's rulings — one place to look up what he has ruled, in his words
 date: 2026-11-14
-updated: 2026-11-18
+updated: 2026-11-19
 tags: [reference, rulings, governance-team-enablement, decide-and-record]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -37,6 +37,7 @@ Columns: **Date** · **Sam's words** · **Where** · **Governs** · **`cpl_memor
 
 | Date | Sam's words | Where | Governs | `cpl_memory` | Replaced by |
 |---|---|---|---|---|---|
+| 2026-11-19 | "every session and worker clones cpl-project-tracker with git clone --filter=blob:none (or --depth=1 when history isn't needed), never a full clone." | In session (the size-guard side session, #3543) | Every clone of the tracker by a session, worker or helper is partial or shallow ([`scheduled_sessions`](scheduled_sessions.md), *At the start*; [`conductor_mode`](conductor_mode.md), *Start* and *Workers*; `.claude/agents/worker.md`; the handoff's standing block in `.claude/commands/checkpoint.md`) | — | |
 | 2026-11-18 | "are there any other datasets the routine can't access? we should allow full access." | In session (S683 Library side job, with Ashley Mooney), then his rulings relayed by COBIx on #3527 (about 2:35 PM PT: no staff-data block; a student count under 10 shows as <10) | The Library drafter reads any COBI table or published file; the one student-data rule is the under-10 count ([`library` lane](lanes/library.md); `chatbox/supabase/functions/library-revise-draft/cobi_data.mjs`) | `d-library-start-drafts-and-reads-cobi-data` |  |
 | 2026-11-18 | "No dependency-map rebuild inside PRs. kb/dependency_map.json and docs/reference/dependency_map.md are rebuilt by one job on main after each merge. They cause most of today's conflicts." | Relayed by COBIx on #3358 (rule 2, about 1:10 PM PT) | One job on `main`, [`dependency-map.yml`](../../.github/workflows/dependency-map.yml), rebuilds the two map files and `cobi_admin_surface.js` after each merge; a PR leaves them as `main` has them, and `scripts/check_generated.sh` and `js-tests.yml` report a stale map as a notice, never a failure. Guarded by `tests/dependency_map_on_main_test.py`; doctrine in [`CLAUDE.md`](../../CLAUDE.md) "Flag cross-impact" and `.claude/agents/worker.md` | | |
 | 2026-11-18 | "I believe I replaced the / with and to avoid formatting issues and should be a general rule for other titles. UA Plumbers and Pipefitters" | In session (S679) | A slash joining words in a canonical credential title is written "and" (*UA Plumbers and Pipefitters*); a code slash (*SP/2*, *CAD/CAM*) and an official name's slash (*ASE A6 — Electrical/Electronic Systems*) stay, the line the S679 conductor drew for Sam to revise. The rule and its guard live in [`kb/slash_titles.py`](../../kb/slash_titles.py); the 80 renames ride the reviewed rename apply as plan `slash-to-and-2026-11-18` ([`kb/cred_rename_plans/2026-11-18_slash_to_and.json`](../../kb/cred_rename_plans/2026-11-18_slash_to_and.json)), not yet applied when recorded; [cer-procedures](lanes/cer-procedures.md) | `sam-slash-joining-words-is-and-2026-11-18` | |

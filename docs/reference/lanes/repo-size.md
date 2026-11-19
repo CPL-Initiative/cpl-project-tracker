@@ -1,7 +1,7 @@
 ---
 title: "Repo size — what lives in the tree, what lives in the bucket, and the limits — lane state"
 created: 2026-11-18
-updated: 2026-11-18
+updated: 2026-11-19
 tags: [reference, roadmap-lane, repo-size, receipts, infrastructure]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -86,16 +86,17 @@ that fails when `main` grew more than 50 MB compressed in 7 days. Tests: `tests/
    explicit go and every open session told to re-clone. Waits on him; not on the standing sheet as a card.
 2. The spreadsheet export and the videos out of the tree; the PR that moves them lowers `TOTAL_CAP_MB` (1,500 MB, then
    1,000 after Phase 3).
-3. Cap the timed workflows' commits.
+3. Cap the timed workflows' commits (once a day), in a plain session (`d-slimming-to-plain-session-s683`: Sam's routine
+   prompt of 2026-11-17 keeps conductor runs to collection; S683 left this, 4 and 5 untouched).
 4. The session trim (Part 3A), with COBIx in a plain session: as written it assumes a session rooted at the repo, while
    ours root at the parent with three repos (the repo's own settings do not load; the environment's setup script
    installs the guards at the root), and a trimmed tree breaks `check_generated.sh` and the tests until the data
    folders are added back.
 5. `START_HERE.md` and the `CLAUDE.md` cut, after COBIx's rulings digest (the guard already warns past 600 and 2,000
-   words).
+   words), in a plain session: the cut moves doctrine every session loads.
 6. Worker worktrees under `.claude/worktrees/` take about 2.3 GB each (six took the disk from 27 GB free to 13 GB):
    remove a finished worker's worktree once its head is pushed (S681).
-7. **#3526 (open, awaiting COBIx; `d-dependency-map-on-main-s683`):** one job on `main`
-   (`dependency-map.yml`) rebuilds `kb/dependency_map.json`, `docs/reference/dependency_map.md` and
-   `cobi_admin_surface.js` after each merge; a PR leaves them as `main` has them (Sam, 2026-11-18, relayed by COBIx on
-   #3358, rule 2). Until it lands, a PR does not run `kb/_build_dependency_map.py`, and CI may flag the map: leave it.
+7. **#3526 merged (`d-dependency-map-on-main-s683`):** one job on `main` (`dependency-map.yml`) rebuilds
+   `kb/dependency_map.json`, `docs/reference/dependency_map.md` and `cobi_admin_surface.js` after each merge; a PR does
+   not run `kb/_build_dependency_map.py` and leaves them as `main` has them. COBIx's two follow-ups: the suite shards
+   still read the committed map, and `check_generated.sh` should print its own line when the builder crashes (rc 2).
