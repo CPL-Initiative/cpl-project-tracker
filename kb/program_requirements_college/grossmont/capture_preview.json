@@ -1,0 +1,1191 @@
+{
+ "college": "Grossmont College",
+ "catalog_url": "https://catalog.gcccd.edu/grossmont/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 187,
+ "with_closed_list": 154,
+ "started": "2026-11-19T13:44:38Z",
+ "scope": "/grossmont/",
+ "sitemap": {
+  "url": "https://catalog.gcccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 576,
+  "nested": 0,
+  "program_pages": 0,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "index_fallback": 159,
+ "index_failed": [],
+ "listing_failed": 0,
+ "pages_read": 160,
+ "pages_listed": 162,
+ "pages_answered": 160,
+ "child_pages": 3,
+ "banner_h1": "Academic Catalog",
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 79,
+   "hits": 63,
+   "recall": 0.797,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 63,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 33,
+  "by_result": {
+   "not_searched": 31,
+   "not_matched": 2
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "04984",
+    "title": "Business, General",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04998",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "05000",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "05004",
+    "title": "German",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08757",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08772",
+    "title": "Drawing & Painting",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08774",
+    "title": "Ceramics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08776",
+    "title": "Technical Training Program",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08783",
+    "title": "Child Development Site Supervisor",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08786",
+    "title": "Creative Writing",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "12336",
+    "title": "University Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13726",
+    "title": "Musical Theatre",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14284",
+    "title": "Hospitality and Tourism Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14287",
+    "title": "Russian",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14600",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14778",
+    "title": "Art: Digital Media",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17478",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18776",
+    "title": "IGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "21358",
+    "title": "Business, General",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21360",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21377",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21378",
+    "title": "Technical Training Program",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21379",
+    "title": "Musical Theatre",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21382",
+    "title": "Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21384",
+    "title": "German",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21386",
+    "title": "Russian",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21389",
+    "title": "Cardiovascular Technology: Invasive",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21390",
+    "title": "Cardiovascular Technology: Noninvasive",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21391",
+    "title": "Vascular Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21396",
+    "title": "Child Development Site Supervisor",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21403",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21405",
+    "title": "Disability Services Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 63 of 79 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45052",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 164,
+ "seconds": 802.0,
+ "found": 144,
+ "by_method": {
+  "no_closed_list": 33,
+  "not_found": 1,
+  "page_claimed": 9,
+  "sitemap_page": 144
+ },
+ "shared_pages": {
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/biological-sciences-pre-allied-health-as/": [
+   "04983",
+   "45053"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/marketing-as-cert-achievement/": [
+   "04987",
+   "21363"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-office-technology-executive-assistant-as-cert-achievement/": [
+   "04989",
+   "41405"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-aa-cert-achievement/": [
+   "04999",
+   "21380"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-aa-cert-achievement/": [
+   "05001",
+   "32879"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/french-aa-cert-achievement/": [
+   "05003",
+   "21383"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/spanish-aa-cert-achievement/": [
+   "05006",
+   "21385"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/orthopedic-technology-as-cert-achievement/": [
+   "05012",
+   "21392"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/english-aa-cert-achievement/": [
+   "05016",
+   "21402"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/chemistry-as-cert-achievement/": [
+   "05024",
+   "21404",
+   "45066"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/law-enforcement-as-certificate-achievement/": [
+   "05029",
+   "21410"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/corrections-as-certificate-achievement/": [
+   "05030",
+   "21407"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/culinary-arts-as-cert-achievement/": [
+   "05041",
+   "42594"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-administration-as-cert-achievement/": [
+   "08756",
+   "21359"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/international-business-as-cert-achievement/": [
+   "08760",
+   "21362"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-office-technology-as-cert-achievement/": [
+   "08762",
+   "21364"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/computer-programming-as-cert-achievement/": [
+   "08770",
+   "21374"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-technical-training-program-aa-cert-achievement/": [
+   "08775",
+   "21381"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-master-teacher-as-cert-achievement/": [
+   "08782",
+   "21393"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/forensic-technology-as-certificate-achievement/": [
+   "08787",
+   "21409"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/security-management-as-certificate-achievement/": [
+   "12272",
+   "21408"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/retail-management-as-cert-achievement/": [
+   "12295",
+   "21361"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/web-design-development-as-cert-achievement/": [
+   "13195",
+   "21376"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/exercise-science-wellness-ase-cert-achievement/": [
+   "13257",
+   "43502"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/culinary-entrepreneurship-as-cert-achievement/": [
+   "14282",
+   "42531"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/pastry-arts-as-cert-achievement/": [
+   "14283",
+   "21397"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/arabic-aa-certificate-achievement/": [
+   "14288",
+   "21387"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/cybersecurity-networking-as-cert-achievement/": [
+   "38154",
+   "38155"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/information-technology-support-specialist-as-cert-achievement/": [
+   "38379",
+   "38380"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/nutrition-as-cert-achievement/": [
+   "43493",
+   "43494"
+  ],
+  "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/artificial-intelligence-as-cert-achievement/": [
+   "45554",
+   "45620"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "08767",
+   "title": "Media Communications: Video Production",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/media-communications-as-cert-achievement/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 10,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 8270,
+     "content": 34430,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "04992",
+   "title": "Media Communications: Cross-Media Journalism",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/media-communications-as-cert-achievement/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "04993",
+   "title": "Media Communications: Audio Production",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/media-communications-as-cert-achievement/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "05011",
+   "title": "Cardiovascular Technology: Invasive",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/cardiovascular-technology-as/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "19821",
+   "title": "University Studies: Communication and Language Arts",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/general-education-transfer/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "19823",
+   "title": "University Studies: Mathematics and Natural Sciences and Computer Sciences",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/general-education-transfer/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "21367",
+   "title": "Media Communications: Audio Production",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/media-communications-as-cert-achievement/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "21368",
+   "title": "Media Communications: Video Production",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/media-communications-as-cert-achievement/",
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/university-studies-communication-language-arts-aa/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "42576",
+   "title": "Prep Cook",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/pastry-cook-cert-achievement/",
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/culinary-arts-as-cert-achievement/",
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/pastry-arts-as-cert-achievement/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "43515",
+   "title": "Cardiovascular Technology: Adult Echocardiography",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/cardiovascular-technology-as/"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 6,
+  "0.8-1.0": 18,
+  "1.0": 120
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/grossmont",
+  "kept": 142,
+  "kept_moved": 0,
+  "programs": 2,
+  "list": [
+   {
+    "control_number": "18775",
+    "title": "CSU General Education Breadth",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu/grossmont/general-education-transfer/",
+    "coverage": 0.976,
+    "was_url": "https://catalog.gcccd.edu/grossmont/general-education-transfer/",
+    "was_coverage": 0.976,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32017",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/administration-justice-ast/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/administration-justice-ast/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "04983": {
+   "sha256": "ee2a15fa4dfa735f042ef00507079c4c1b41256768596e9dc37093d66408b55a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/biological-sciences-pre-allied-health-as/"
+  },
+  "04987": {
+   "sha256": "b41a13a8784539306e3f387d8a5fa6811b66e3e28d98a71ae4256094e1c4f60c",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/marketing-as-cert-achievement/"
+  },
+  "04989": {
+   "sha256": "c4b5a39cb7c8e4103ec0842094cbfa1af994a85b067040a4072ad82bc8f999ba",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-office-technology-executive-assistant-as-cert-achievement/"
+  },
+  "04999": {
+   "sha256": "ddc052ef4e6bbd7169028bdc90fec4e30f332eff18e830d336e20bde8d6bbc83",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-aa-cert-achievement/"
+  },
+  "05001": {
+   "sha256": "adad20062318143719ccaa20fd7ace3ee87ca3360a86ab976a52abf85dd76ab2",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-aa-cert-achievement/"
+  },
+  "05003": {
+   "sha256": "b8ec50f67ce71f878227dba1fe617ed41897149f32e208adeba74162a2cc6022",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/french-aa-cert-achievement/"
+  },
+  "05006": {
+   "sha256": "5fe8d3b9c8329cac0681536d87d91496d884bf8888da9647d936f33a333a0329",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/spanish-aa-cert-achievement/"
+  },
+  "05009": {
+   "sha256": "df5ed962e419a0c6517ed079346414121ae40ec3255d216c731d3340130d446a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/registered-nursing-program-as/"
+  },
+  "05010": {
+   "sha256": "e296ca8f37989b719231b704d6b27ce898d0d7fad822dd7fd5d4e9780ba6679f",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/respiratory-therapy-as/"
+  },
+  "05012": {
+   "sha256": "175e042bd5c03c7f33bfd61efb71acec61f916d7a447c52cbf7819a92be2a78d",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/orthopedic-technology-as-cert-achievement/"
+  },
+  "05016": {
+   "sha256": "7d73b8e1b68abc8505cdb15217c8558e233cbca38f33ce65e22142c9cbacb93a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/english-aa-cert-achievement/"
+  },
+  "05017": {
+   "sha256": "df5b74ed654fde6d68716933e88cbc30fe29fe15686ba3862b9b2160a9c652c9",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/communication-aa/"
+  },
+  "05018": {
+   "sha256": "74382dd7ff8b3b26b344113f7c39090f82c21ca16429a96798db713fa80177e2",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/philosophy-aa/"
+  },
+  "05021": {
+   "sha256": "b7085205ba158bef49eb0a3d0b4f955a079635154aaa82c011834fc1ffd1d2b5",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/mathematics-as/"
+  },
+  "05023": {
+   "sha256": "c0ec1eeef0587189e9a0653d8672335051806e7603cd10e7b29eafd1534ec140",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/physics-as/"
+  },
+  "05024": {
+   "sha256": "fdf9019afbf1b631e2df59c631580bf3f7f09347b7b5ad66d0dc945ef67039f1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/chemistry-as-cert-achievement/"
+  },
+  "05026": {
+   "sha256": "1b7d6af41f3b90eeab4c869061cec6aec1cc370e8fb08e822759d7f789daac6b",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/geology-as/"
+  },
+  "05029": {
+   "sha256": "d925322504e459893e5b4611908742fa198cecc51aa098abdb1bfce3640dae29",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/law-enforcement-as-certificate-achievement/"
+  },
+  "05030": {
+   "sha256": "44f18d29e918fd079c2d909e67d5de987da7ad7229ebceb7a9dd437c504e031a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/corrections-as-certificate-achievement/"
+  },
+  "05036": {
+   "sha256": "a2088042ac102be877f20e74b1c715fd0077c48e41b5b2fe0c75e7a622c4682a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/economics-aa/"
+  },
+  "05038": {
+   "sha256": "e53943a1be650db156da0bdc76b3e0ff2012450707e4b41bad68e64a34a68879",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/geography-as/"
+  },
+  "05039": {
+   "sha256": "090b8a2cd1449ba58dac3f6b71ac12dbd83d2221ef22dac8b873abd6ba397ba0",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/political-science-aa/"
+  },
+  "05041": {
+   "sha256": "3a05f34f51f7b13d78502f7582f3da449fdbb66d3eea54c83fa0fa9e5388ab94",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/culinary-arts-as-cert-achievement/"
+  },
+  "08756": {
+   "sha256": "00025609ed553944cc69237558df05e97d4011ec998bcee589ccbfdb673cfc85",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-administration-as-cert-achievement/"
+  },
+  "08760": {
+   "sha256": "30dfc0f830cb9cd2161f18c62d51766533256e55a2a8f017ddda4ba1da187ba9",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/international-business-as-cert-achievement/"
+  },
+  "08762": {
+   "sha256": "6322600fe38edbbbf5c4e2f196cec14e33a14869b4d81a3518de910e0e0e6dc4",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-office-technology-as-cert-achievement/"
+  },
+  "08770": {
+   "sha256": "ab65aadd62765eb79b79c9f13e24a08aed25488c76ca5dffd7c6be0ba7e18874",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/computer-programming-as-cert-achievement/"
+  },
+  "08773": {
+   "sha256": "b548d4833438c21f6dad2d640c0b60e4618ed7edbf2d0fdf98093bab9990c06e",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/art-aa/"
+  },
+  "08775": {
+   "sha256": "6e53efe2a0594498d5c96a7a1315752de4c33893ff9bbb65f323364b3b81356f",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-technical-training-program-aa-cert-achievement/"
+  },
+  "08780": {
+   "sha256": "91ee569bfe792467387d506e0da803952613f0ed4acbc08f00433adc15035cbe",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/telemetry-ecg-technician-cert-achievement/"
+  },
+  "08781": {
+   "sha256": "de49d0fc0e6c026535ef06885d903869b5a8d27c5a05d462859d1ea7b3f742a2",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/cardiovascular-technology-as/"
+  },
+  "08782": {
+   "sha256": "25be99e79bdb0f7f39db302adefdbedbee387f771ab4cee54d67017e2024b72a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-master-teacher-as-cert-achievement/"
+  },
+  "08787": {
+   "sha256": "f6b1fbb55e51d60ba92f869cc649b60ea77a59c8992201342311c263449a81d4",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/forensic-technology-as-certificate-achievement/"
+  },
+  "11831": {
+   "sha256": "4093e9852aeee6c6156961df77817c453a63ded02a045fb2ddcf4fd27cf4c80d",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/occupational-therapy-assistant-as/"
+  },
+  "12272": {
+   "sha256": "93e9ea3e3839f0a0bd31b0c9c81557ce02874f79daae729c679f0ad750f45204",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/security-management-as-certificate-achievement/"
+  },
+  "12295": {
+   "sha256": "9f1cce026100425e1d58ab67eaca42542e9e5f003c90dce87a5c94e1d25c8a26",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/retail-management-as-cert-achievement/"
+  },
+  "13195": {
+   "sha256": "a24b61a4186e15a244e883012f7f7deffefff02b582c6064cc6581bccd925c3e",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/web-design-development-as-cert-achievement/"
+  },
+  "13257": {
+   "sha256": "2d227ff0aadb96efc11f473ef251831f84da92c170bf26d3e5bc835a21754d51",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/exercise-science-wellness-ase-cert-achievement/"
+  },
+  "14282": {
+   "sha256": "7de74da2d81763ec554d2e6048c15168696322c76d60c339dafb13cb7a962237",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/culinary-entrepreneurship-as-cert-achievement/"
+  },
+  "14283": {
+   "sha256": "1a31171e24859df66f07e1a2a8251f6fff7830164686ba10272f99891e24c2a8",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/pastry-arts-as-cert-achievement/"
+  },
+  "14288": {
+   "sha256": "be680f56fecd33fca05d6c9c62c9d4cd59470cf479f5f45eef80c3cbe7c57db1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/arabic-aa-certificate-achievement/"
+  },
+  "15507": {
+   "sha256": "c45010a6fadf70192d1e07d060c07f530327552df29dedcd61a0634814fbe28c",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/oceanography-as/"
+  },
+  "18775": {
+   "sha256": "665950fcea901b8d9309016d9542f24377f8a46eae235d03fe50fdd99df48f62",
+   "url": "https://catalog.gcccd.edu/grossmont/general-education-transfer/"
+  },
+  "19607": {
+   "sha256": "0d9f3a3631411c513010ef5b73b72d41fcb455ec44c9ab118f278344ea89a0e8",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/general-studies-aa-humanities-fine-arts/"
+  },
+  "19608": {
+   "sha256": "1d35d9ebe8fd554203a684dd3e680fab38b544b3f19bdfa214c79130fc61104a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/university-studies-mathematics-natural-science-computer-science-as/"
+  },
+  "19609": {
+   "sha256": "61831a67eca04f28a79642ab8a21a35eb86ae8ac70a47c3d7b92bf1b6ae79741",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/general-studies-aa-social-behavioral-sciences/"
+  },
+  "19610": {
+   "sha256": "0144b99cb7f6c0ff876638e66f0ded9d24a95f6fbd33f66abb782bd9542ed211",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/general-studies-aa-wellness-self-development/"
+  },
+  "19820": {
+   "sha256": "4a47b26af8baae78399b36ddbdd0ebf5731f2bf71676402d403a26036fdab57a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/university-studies-business-economics-aa/"
+  },
+  "19822": {
+   "sha256": "3a805381084b2738ceef9cc254210d7e0d2d09c6841a1bde303538d1ba12d21a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/university-studies-humanities-fine-arts-aa/"
+  },
+  "19824": {
+   "sha256": "af3de556b8a6d4b1ca257e220ad517002f46c5e3f169c2a89f41932387cc4716",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/university-studies-social-behavioral-sciences-aa/"
+  },
+  "21359": {
+   "sha256": "00025609ed553944cc69237558df05e97d4011ec998bcee589ccbfdb673cfc85",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-administration-as-cert-achievement/"
+  },
+  "21361": {
+   "sha256": "9f1cce026100425e1d58ab67eaca42542e9e5f003c90dce87a5c94e1d25c8a26",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/retail-management-as-cert-achievement/"
+  },
+  "21362": {
+   "sha256": "30dfc0f830cb9cd2161f18c62d51766533256e55a2a8f017ddda4ba1da187ba9",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/international-business-as-cert-achievement/"
+  },
+  "21363": {
+   "sha256": "b41a13a8784539306e3f387d8a5fa6811b66e3e28d98a71ae4256094e1c4f60c",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/marketing-as-cert-achievement/"
+  },
+  "21364": {
+   "sha256": "6322600fe38edbbbf5c4e2f196cec14e33a14869b4d81a3518de910e0e0e6dc4",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-office-technology-as-cert-achievement/"
+  },
+  "21366": {
+   "sha256": "ee98d1ace8065814f8f51dd15822070b35dd6492045bcecc5a1a1c0f0d4c34a0",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/media-communications-as-cert-achievement/"
+  },
+  "21374": {
+   "sha256": "ab65aadd62765eb79b79c9f13e24a08aed25488c76ca5dffd7c6be0ba7e18874",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/computer-programming-as-cert-achievement/"
+  },
+  "21376": {
+   "sha256": "a24b61a4186e15a244e883012f7f7deffefff02b582c6064cc6581bccd925c3e",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/web-design-development-as-cert-achievement/"
+  },
+  "21380": {
+   "sha256": "ddc052ef4e6bbd7169028bdc90fec4e30f332eff18e830d336e20bde8d6bbc83",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-aa-cert-achievement/"
+  },
+  "21381": {
+   "sha256": "6e53efe2a0594498d5c96a7a1315752de4c33893ff9bbb65f323364b3b81356f",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-technical-training-program-aa-cert-achievement/"
+  },
+  "21383": {
+   "sha256": "b8ec50f67ce71f878227dba1fe617ed41897149f32e208adeba74162a2cc6022",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/french-aa-cert-achievement/"
+  },
+  "21385": {
+   "sha256": "5fe8d3b9c8329cac0681536d87d91496d884bf8888da9647d936f33a333a0329",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/spanish-aa-cert-achievement/"
+  },
+  "21387": {
+   "sha256": "be680f56fecd33fca05d6c9c62c9d4cd59470cf479f5f45eef80c3cbe7c57db1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/arabic-aa-certificate-achievement/"
+  },
+  "21392": {
+   "sha256": "175e042bd5c03c7f33bfd61efb71acec61f916d7a447c52cbf7819a92be2a78d",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/orthopedic-technology-as-cert-achievement/"
+  },
+  "21393": {
+   "sha256": "25be99e79bdb0f7f39db302adefdbedbee387f771ab4cee54d67017e2024b72a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-master-teacher-as-cert-achievement/"
+  },
+  "21397": {
+   "sha256": "1a31171e24859df66f07e1a2a8251f6fff7830164686ba10272f99891e24c2a8",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/pastry-arts-as-cert-achievement/"
+  },
+  "21399": {
+   "sha256": "b4adeae4a878944f0b4aa0ef11795b6fa3e7d4d048a4b75d8fc2ef26e740118d",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/pastry-cook-cert-achievement/"
+  },
+  "21400": {
+   "sha256": "a333db6c35169b34cfbf4d7a9356d8de9bc4050031432d2bd264f247acbbb236",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/hospitality-tourism-management-as-cert-achievement/"
+  },
+  "21402": {
+   "sha256": "7d73b8e1b68abc8505cdb15217c8558e233cbca38f33ce65e22142c9cbacb93a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/english-aa-cert-achievement/"
+  },
+  "21404": {
+   "sha256": "fdf9019afbf1b631e2df59c631580bf3f7f09347b7b5ad66d0dc945ef67039f1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/chemistry-as-cert-achievement/"
+  },
+  "21407": {
+   "sha256": "44f18d29e918fd079c2d909e67d5de987da7ad7229ebceb7a9dd437c504e031a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/corrections-as-certificate-achievement/"
+  },
+  "21408": {
+   "sha256": "93e9ea3e3839f0a0bd31b0c9c81557ce02874f79daae729c679f0ad750f45204",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/security-management-as-certificate-achievement/"
+  },
+  "21409": {
+   "sha256": "f6b1fbb55e51d60ba92f869cc649b60ea77a59c8992201342311c263449a81d4",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/forensic-technology-as-certificate-achievement/"
+  },
+  "21410": {
+   "sha256": "d925322504e459893e5b4611908742fa198cecc51aa098abdb1bfce3640dae29",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/law-enforcement-as-certificate-achievement/"
+  },
+  "30977": {
+   "sha256": "2f0cc42dbc2602a1a1241c10285aabc718f7180536d01aa82e0f11befbd8fd87",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/sociology-aat/"
+  },
+  "30978": {
+   "sha256": "e1df7f38be00b01bde8463d07955a03936973afe82876cf12840ec31d241bac9",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/psychology-aat/"
+  },
+  "31534": {
+   "sha256": "1f643715cd282241c703ba12b70c49f76e8a504dcd9378e33fb376aee452ca94",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/line-cook-cert-achievement/"
+  },
+  "31814": {
+   "sha256": "38f5204363593e558e99a4d04c776c1f48238ef53e05e42dc8c8171bf15e7937",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/history-aat/"
+  },
+  "31963": {
+   "sha256": "2bd5a32f80f1a063bd0ad2ef669304e8d85c42d7489d1642113838a59e552c91",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/mathematics-transfer-ast/"
+  },
+  "32005": {
+   "sha256": "b72cd6df6a58aaf4e6cbbe1c02c405b1e7e605cc193c868f1c4a0cca7cf3bb34",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/geology-ast/"
+  },
+  "32017": {
+   "sha256": "fc05667ca959f99b644654ae9f4e32ba7ccc7c901c6774eb056fa4aa3bbea585",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/administration-justice-ast/"
+  },
+  "32019": {
+   "sha256": "68132cbdcbe79340ea62a6e5ecc0b065cce0a9733b1d90f3ab7926e0c0dfffca",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/physics-ast/"
+  },
+  "32186": {
+   "sha256": "5406d50ce9349f93f1e7cae51caf9b5def8f1103af504ec96c344392047742d1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/geography-aat/"
+  },
+  "32208": {
+   "sha256": "dccdd2199bc85d6922bb0411ce24db626d9795438d4410fa8208c051e12c21be",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/political-science-aat/"
+  },
+  "32210": {
+   "sha256": "57aca08b50ea2afd56f5563d602c7f28c8bc83f3f15e4940dbea09ba6a748277",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/studio-art-aat/"
+  },
+  "32220": {
+   "sha256": "9139d7b6c896f6df1de2fd8b7be323a8143d60bb485aeb369a993d7389793d1f",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/art-history-aat/"
+  },
+  "32784": {
+   "sha256": "a1db21dfbd949583bd3677b194c986dc6bb2cd3389c24498745a05dc241e2b3c",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/music-aat/"
+  },
+  "32879": {
+   "sha256": "6d0e603031f8d3ac3a22b504854806c64893647ebd14f266c2333d97a23854ce",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-aa-cert-achievement/"
+  },
+  "33211": {
+   "sha256": "5faf80eaee6a63de76ff208b18cd7a1610bc8bd462731bfd97119604588970f0",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/english-aat/"
+  },
+  "33212": {
+   "sha256": "e3e5c9aef6ffe2ac924b301048bb4d9637cb4022385b5ee5a07f5a3b9385bdf6",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/spanish-aat/"
+  },
+  "33279": {
+   "sha256": "ef6641a9a4689f66a79e0a2c8c6fd87f2b196aee8e10bec6cf535c59cf75940f",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/economics-aat/"
+  },
+  "33384": {
+   "sha256": "6d0fb31331a2f96a92d1e2ef6e6f34d4f4a65291c6161e4f37b9b4947a303096",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/philosophy-aat/"
+  },
+  "33614": {
+   "sha256": "b39024b61090cef1f7d8d6e45b643da1f9dc6a0036519d8d3f5b2d3eea36c946",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/early-childhood-education-ast/"
+  },
+  "35225": {
+   "sha256": "34f2b64dfc604ab731e7cf724ab9a67b375f652538de7c6cf2065d6baed5d8ec",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-information-worker-cert-achievement/"
+  },
+  "35721": {
+   "sha256": "ee078f4a202151ea7950346a5376365aa5915b270a9d47063e94e987deffd2f6",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/journalism-aat/"
+  },
+  "35805": {
+   "sha256": "6432d10549db1ff175a9af46cf3a6b3263108754a742591e059c05fa09584429",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/anthropology-aat/"
+  },
+  "36759": {
+   "sha256": "29b5814ba91099461d966fee9619ebbbb0f2514aea83c34fe31b130b9b988348",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/biology-ast/"
+  },
+  "37453": {
+   "sha256": "51d5bed184dc75b4577413d1ff48a69cc0179cc73790600d2c91b51272a705d1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-aat/"
+  },
+  "37519": {
+   "sha256": "ef061a20cab3eff0eff01bbc2a694ae863690ecb71dd7f329356e17c017a60c6",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/computer-science-ast/"
+  },
+  "38154": {
+   "sha256": "3318ade984ad29a4889807e4f15ea072ed3093d405fb40c9ef5033f2bc98ff22",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/cybersecurity-networking-as-cert-achievement/"
+  },
+  "38155": {
+   "sha256": "3318ade984ad29a4889807e4f15ea072ed3093d405fb40c9ef5033f2bc98ff22",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/cybersecurity-networking-as-cert-achievement/"
+  },
+  "38191": {
+   "sha256": "56ec1e78be9024236bc7b671d7c539645007e0e8cd30487b2e3bd733840b5291",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/kinesiology-aat/"
+  },
+  "38378": {
+   "sha256": "e9108910a913ed8aa8ad52b3f98eeea54206ff5294d31c6ccf68101c3c205dd6",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/data-science-cert-achievement/"
+  },
+  "38379": {
+   "sha256": "adb6435adf3e28758343377dea6381abedaffac72b538379b991edb66d32f7d1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/information-technology-support-specialist-as-cert-achievement/"
+  },
+  "38380": {
+   "sha256": "adb6435adf3e28758343377dea6381abedaffac72b538379b991edb66d32f7d1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/information-technology-support-specialist-as-cert-achievement/"
+  },
+  "38532": {
+   "sha256": "76bc2d79d06a09fb6f032d834887b098904147ef2f7981281e5013716f0fc5b8",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/global-studies-aat/"
+  },
+  "39735": {
+   "sha256": "4bb9b44e463a09cd8d45cf481b631f5839324f4fb6e31b9ffd2cb003e73ffd6b",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/programmable-logic-controllers-cert-achievement/"
+  },
+  "41405": {
+   "sha256": "c4b5a39cb7c8e4103ec0842094cbfa1af994a85b067040a4072ad82bc8f999ba",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-office-technology-executive-assistant-as-cert-achievement/"
+  },
+  "41417": {
+   "sha256": "8a536e0ea7fa3bf6812e992c56390530467d6f99366cc9ddd6ed1d0494b42cea",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/business-administration-2-ast/"
+  },
+  "42495": {
+   "sha256": "05cc75ef36048298db57374b78c3da90d5b0d8802e8f633805e053a71d3bca75",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/latin-american-studies-aa/"
+  },
+  "42511": {
+   "sha256": "2c0a0adaa99041a5a885417961274faf5809ecb678bb9243294237910624108b",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/global-trade-operations-supply-chain-management-cert-achievement/"
+  },
+  "42531": {
+   "sha256": "7de74da2d81763ec554d2e6048c15168696322c76d60c339dafb13cb7a962237",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/culinary-entrepreneurship-as-cert-achievement/"
+  },
+  "42594": {
+   "sha256": "3a05f34f51f7b13d78502f7582f3da449fdbb66d3eea54c83fa0fa9e5388ab94",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/culinary-arts-as-cert-achievement/"
+  },
+  "42595": {
+   "sha256": "17a49b520c97f77b7e90d11a52a69aec66b0643c08d92fd130675c93fdc70de5",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/banquet-cook-cert-achievement/"
+  },
+  "42962": {
+   "sha256": "afa861b979ec98a48f456070e6e3c2421c96ff41fea6e3e090ed2571ccf7f9d3",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/interfaith-religious-literacy-aa-cert-achievement/"
+  },
+  "43080": {
+   "sha256": "43ce6e698ffbdaeceb69c41c148adc949233d7e54b90b29aa151e77bc3e9c46d",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/drone-cinematography-cert-proficiency/"
+  },
+  "43081": {
+   "sha256": "4186bf25edfd2fc0de8df89ba9b8e19af7c7c8a2107cea319b3b8d63dc9f9b04",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/drone-mapping-cert-proficiency/"
+  },
+  "43356": {
+   "sha256": "0b5f0625bdcfbd969376cde6d88276f86cc1057eb4206475e3085d0351e1ca1e",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/communication-studies-2-aat/"
+  },
+  "43467": {
+   "sha256": "c4e084eb3a1090e13ded0b4c4db16b7b475869d6cd13e74b4b236f6c8a14d77f",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/jewelry-design-cert-achievement/"
+  },
+  "43489": {
+   "sha256": "ad255b448fe0a932fe942f3a8ee7a998fd97d3fa2912da5e478c8a2eb0b01fbc",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/humanities-aa/"
+  },
+  "43493": {
+   "sha256": "ac1bc69b60c3235c020970fc06b5a5de92908cfd0990c1e7ff824614f84d3e4a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/nutrition-as-cert-achievement/"
+  },
+  "43494": {
+   "sha256": "ac1bc69b60c3235c020970fc06b5a5de92908cfd0990c1e7ff824614f84d3e4a",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/nutrition-as-cert-achievement/"
+  },
+  "43502": {
+   "sha256": "2d227ff0aadb96efc11f473ef251831f84da92c170bf26d3e5bc835a21754d51",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/exercise-science-wellness-ase-cert-achievement/"
+  },
+  "44098": {
+   "sha256": "07849ded6adb446a74c4a73011de38bd32d11d5c747f02572d8d9d027d8e78f3",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-trauma-informed-early-childhood-educator-cert-achievement/"
+  },
+  "45053": {
+   "sha256": "9930c2221cd67312de1089bfb8c67647d1c850fa2216aad8513e37170b8ede99",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/biological-sciences-pre-allied-health-as/"
+  },
+  "45058": {
+   "sha256": "3062c8562c551af37d117f06530fd274aa01fd4577fe6e1c14a87438ab3200c9",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/esl-milestone-language-communication-cert-achievement/"
+  },
+  "45059": {
+   "sha256": "bd0001b407daf25842c7763e0b1ab50c552897f2cd4c6f4588428b258a9d6390",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/esl-milestone-humanities-cert-achievement/"
+  },
+  "45060": {
+   "sha256": "864d241c53c1b17e9143b7b4187b106980157467c760043b9cbfddd2673630b2",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/esl-milestone-visual-perf-arts-cert-achievement/"
+  },
+  "45061": {
+   "sha256": "cfe34caf33496a3bd5ca50192ed2bd1e4187d88b3a446b3289187bac791a5b64",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/esl-milestone-health-sciences-cert-achievement/"
+  },
+  "45062": {
+   "sha256": "bf4bb30a097354088611b10ef72b66d231bc7165774b95e5f75a4e1192a06cf0",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/esl-milestone-business-success-cert-achievement/"
+  },
+  "45063": {
+   "sha256": "3c00dcdba43d907e0621fdf2345db744d60face9c388fcadd08debb9d28a7e9f",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/esl-milestone-social-behavioral-sciences-cert-achievement/"
+  },
+  "45064": {
+   "sha256": "d90faa2b2c70c4db8b880d6597ff55d25801a4f7767e3f664a5379633503193d",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/esl-milestone-sci-tech-eng-math-cert-achievement/"
+  },
+  "45065": {
+   "sha256": "f9b2618e919d7e224bf2dffe0545dccb58a0564fc8cd171eb3bac56b0753a923",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/war-on-drugs-cert-achievement/"
+  },
+  "45066": {
+   "sha256": "fdf9019afbf1b631e2df59c631580bf3f7f09347b7b5ad66d0dc945ef67039f1",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/chemistry-as-cert-achievement/"
+  },
+  "45093": {
+   "sha256": "f7c78d6c13693ef716cbe6aeedd95e11748b1b8be7e1a1272e2f8749c969e68b",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/humanities/killer-robots-drug-mirror-molecules-cert-achievement/"
+  },
+  "45434": {
+   "sha256": "eef64b75a88301e6a73d19c097f222c2518286ba254316feddc559e317edd9f5",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/business/medical-office-assistant-cert-achievement/"
+  },
+  "45554": {
+   "sha256": "bf20e2c12dc6748d944a04695c392ff3012308364c48ddb6c6612ef2db1c76e3",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/artificial-intelligence-as-cert-achievement/"
+  },
+  "45620": {
+   "sha256": "bf20e2c12dc6748d944a04695c392ff3012308364c48ddb6c6612ef2db1c76e3",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/artificial-intelligence-as-cert-achievement/"
+  },
+  "45806": {
+   "sha256": "14ee8687d552c0261a63df80db6f4d70cc7d3d956f85e0f8b40600634a768940",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/artificial-intelligence-developer-cert-completion/"
+  },
+  "45807": {
+   "sha256": "3433385b56e2d84b82bde4d4a7fd28467583afcc4dc7db8313c367a0b21fd45b",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/artificial-intelligence-fundamentals-cert-completion/"
+  },
+  "46071": {
+   "sha256": "4866c58273fa82a0ee39b8b4dbd2a1875f3458d3e6de985c0e66a234f53a6972",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/sculpture-cert-achievement/"
+  },
+  "46136": {
+   "sha256": "f18d375c3922bffb43a12b94b5eb4d127e61786b46be6ca1a6912b365ff080e7",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/mathematics-2-ast/"
+  },
+  "46141": {
+   "sha256": "35c1f807b27ee38c260b797440889c49c6bcddcbbcb82c1a23f70b547101b031",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/physics-2-ast/"
+  },
+  "46420": {
+   "sha256": "96acba9b532687474d09bab8d8106810b28610a30d387512fc2eae170baeaea5",
+   "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/queer-studies-cert-achievement/"
+  }
+ },
+ "run": "44535457228"
+}
