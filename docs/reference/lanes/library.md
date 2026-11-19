@@ -22,7 +22,7 @@ CPLLibrary folder on the MAP team's SharePoint site; the repos keep only the sou
 Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
 `token_refused` named). Guard `tests/library_publish_now.test.js`.
 
-**BUILT in #3572, both migrations applied (runs 44621258767, 44624282220): the publishing model, #3560 part 1 of 4
+**BUILT in #3572, its three migrations applied (runs 44621258767, 44624282220, 44628207752): the publishing model, #3560 part 1 of 4
 (S687; Sam's decisions of Nov 19 via COBIx).** A new piece's ready draft has two buttons, exactly *Publish to Internal Library* and *Publish to Public
 Library*; no approval from Sam. Internal approves the draft; one press starts the publish run at once only for a
 signed-in reviewer (Publish now's holds and one status line), and a team-phrase press waits for the scheduled run
@@ -53,7 +53,7 @@ the tab publishes to the Internal Library and Public says the check record is no
   piece stays listed while redrafted, showing the last published version" (Nov 19, item 9; his to reverse): a draft
   stays a draft and unlists nothing, and only a published new version or a new url does. Trigger
   `cpl_library_unlist_new_page_trg`: `kb/migrations/2026-11-19_library_relist_on_new_version.sql` (applied, run
-  44624282220), its url rule `kb/migrations/2026-11-19_library_unlist_on_url_change.sql` (not applied yet; it also
+  44624282220), its url rule `kb/migrations/2026-11-19_library_unlist_on_url_change.sql` (applied, run 44628207752; it also
   corrects the memory row's summary with a guarded UPDATE).
 - DECIDED (S687, `d-library-internal-one-press-s687`): Publish to Internal Library approves a new piece and starts the
   publish run in one press for a signed-in reviewer, through Publish now's holds; a team-phrase press waits for the

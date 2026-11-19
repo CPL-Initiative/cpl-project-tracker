@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_library_unlist_on_url_change.sql",
+ "name": "s687_library_unlist_on_url_change",
+ "version": "20261119222455",
+ "sha256": "350d04c4909f08e30c020800a35af736f8437156350c43841bafdcd58b020a82",
+ "run": "44628207752",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"memory_row\":{\"slug\":\"d-library-new-page-unlists-s687\",\"summary_chars\":364}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
