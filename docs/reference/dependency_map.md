@@ -97,6 +97,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_funding_participation` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · modules: `scripts/funding_sierra_note.js` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
 | `cpl_funding_reports` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
 | `cpl_library` | tabs: `letters`, `library` · scripts: `scripts/library_publish.py` | tabs: `library` |
+| `cpl_library_checks` | tabs: `library` | — |
+| `cpl_library_division_settings` | tabs: `library` | — |
 | `cpl_library_drafts` | tabs: `library` | — |
 | `cpl_library_pictures` | tabs: `library` | tabs: `library` |
 | `cpl_memory` | tabs: `memory` · scripts: `kb/_memory_audit.py` | tabs: `memory` |
@@ -1271,6 +1273,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_file_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_publish_test.py` | workflows: `js-tests.yml` | — |
+| `tests/library_publishing_sql_proof.py` | workflows: `js-tests.yml` | — |
 | `tests/map_ace_catalog_cr_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/map_key_sketch_one_pull_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
@@ -1628,5 +1631,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1083 file
+Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1084 file
 datasets · 195 external services · 634 consumers · 75 workflows · 41 tabs.
