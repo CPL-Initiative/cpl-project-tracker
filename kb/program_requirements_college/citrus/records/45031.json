@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 18019,
-    "output_tokens": 9338,
+    "output_tokens": 8087,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 9338,
+  "output_tokens": 8087,
   "output_tokens_details": {
-   "thinking_tokens": 944
+   "thinking_tokens": 866
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.25884,
- "ms": 64227,
- "seconds": 64.4,
+ "cost_usd": 0.23382,
+ "ms": 57139,
+ "seconds": 57.7,
  "parts": null,
  "error": null,
  "score": {
@@ -364,947 +364,951 @@
   "missing_explained": [
    {
     "code": "AJ 101",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "AJ 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 210",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 210H",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 212",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 212L",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 216",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 216H",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 220",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 222",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ANTH 224",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ARCH 250",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ARCH 251",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 100",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 101",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 103",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 104",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 105",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 106",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 106H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 108",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 109",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 110",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 199",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 199H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 200",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 201",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 206",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 206H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 207",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ART 207H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ARTHC1100",
-    "why": "Page is local GE Option I, not Cal-GETC (printed as ARTH C1100)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ARTHC1100H",
-    "why": "Page is local GE Option I, not Cal-GETC (printed as ARTH C1100H)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ARTHC1200",
-    "why": "Page is local GE Option I, not Cal-GETC (printed as ARTH C1200)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ARTHC1200H",
-    "why": "Page is local GE Option I, not Cal-GETC (printed as ARTH C1200H)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ASL 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ASTR 115",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ASTR 115H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ASTR 116",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ASTR 117",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 108",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 110",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 117",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 124",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 125",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 145",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 200",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 201",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL 220",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL C1000",
-    "why": "Not in the text (wrong page)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOL C1000H",
-    "why": "Not in the text (wrong page)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BIOT 108",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "BUS 132",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHEM 103",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHEM 104",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHEM 110",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHEM 111",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHEM 112",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHEM 210",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHEM 220",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHIN 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "CHIN 201",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "COMM 100",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "COMM 111",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "COMM 136",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "COMM 150",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "COMM C1000",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "COMM C1000H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "COUN 130",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "COUN 212",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "DANC 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ECON 101H",
-    "why": "Not in the text (wrong page)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ECON C2001",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ECON C2002",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 204",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 213",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 213H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 216",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 224",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 224H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 233",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 243",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 251",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 252",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 261",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 262",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 271",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 272",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 280",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 290",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 291",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 291H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 293",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 293H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 294",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 294H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 295",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL 298",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL C1000",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL C1000E",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL C1000H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL C1002",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL C1003",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGL C1003H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ENGLC1001H",
-    "why": "Page is local GE Option I, not Cal-GETC (printed as ENGL C1001H)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ESCI 110",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ESCI 119",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ESCI 120",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ESCI 121",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ESCI 122",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ESCI 124",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ESCI 130",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ETHN 101",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ETHN 116",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "FOR 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "FREN 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GEOG 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GEOG 103",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GEOG 104",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GEOG 105",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GEOG 118",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GEOG 130",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GER 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GER 201",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "GER 202",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 103",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 103H",
-    "why": "Page is local GE Option I, not Cal-GETC; text cut off at this row"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 104",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 104H",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 107H",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 109",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 111",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 112",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 130",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 131",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 132",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 139",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 140",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 145",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 155",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 160",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST 222",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST C1001",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST C1002",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HIST C1002H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 101",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 101H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 102H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 110",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 111",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 115",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 120",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 123",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 125",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 127",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 129",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 162",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "HUM 169",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "ITAL 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "JPN 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "KIN 166",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "KIN 167",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "KIN 178",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "KIN 179",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 160",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 170",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 175",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 180",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 189",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 190",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 191",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 210",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 211",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MATH 212",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MUSE 109",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MUSE 112",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MUSE 113",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "MUSE 114",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHIL 101",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHIL 106",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHIL 106H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHIL 108",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHIL 130",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHIL 131",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHIL 140",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHTO 108",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHYS 110",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHYS 110H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHYS 111",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHYS 112",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHYS 201",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHYS 201H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHYS 202",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PHYS 203",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "POLI 105",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "POLI 108",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "POLI 116",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "POLS C1000",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "POLS C1000H",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 103",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 203",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 205",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 206",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 212",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 220",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 225",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSY 226",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSYC C1000",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "PSYC C1000H",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SOC 114",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SOC 118",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SOC 130",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SOC 201",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SOC 201H",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SOC 202",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SOC 220",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPAN 102",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPAN 127",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPAN 130",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPAN 201",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPAN 202",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPAN 210",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPAN 211",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPCH 106",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "SPCH 150",
-    "why": "Not in the text (wrong page, cut off in Area D)"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "STAT C1000",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "STAT C1000H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "THEA 101",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "THEA 101H",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    },
    {
     "code": "THEA 200",
-    "why": "Page is local GE Option I, not Cal-GETC"
+    "why": "Cal-GETC section not in the text"
    }
   ],
-  "notes": []
+  "notes": [
+   "The source page is 'General Education Requirements: Option I' (Citrus College's local associate-degree GE pattern), not the Cal-GETC pattern. The Cal-GETC pattern is a separate page linked in the navigation as 'General Education Requirements for Transfer to CSU or UC (Cal-GETC): Option II', and its text is not supplied. No blocks are recorded because the section for this award is not in the text.",
+   "Option I prints areas A1/A2 (total minimum 6 semester units), A3, B, C and D (each a minimum of 3 semester units), with Areas E and F listed under 'On This Page'. Many of its courses overlap the closed list, but its unit rules differ from Cal-GETC, so they were not used.",
+   "The supplied text is cut off partway through Area D1 (at 'HIST 103H History of W'). Areas E and F are not included.",
+   "No program learning outcomes, total units or careers appear in the supplied text. A reviewer should fetch the Option II (Cal-GETC) page to record this certificate."
+  ]
  },
- "extracted_run": "44481520157",
- "catalog_year": "2026-2027"
+ "extracted_run": "39726639865"
 }

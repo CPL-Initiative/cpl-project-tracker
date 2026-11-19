@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8374,
-    "output_tokens": 2006,
+    "output_tokens": 1878,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,40 @@
     "model": null
    }
   ],
-  "output_tokens": 2006,
+  "output_tokens": 1878,
   "output_tokens_details": {
-   "thinking_tokens": 879
+   "thinking_tokens": 685
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07362,
- "ms": 18128,
- "seconds": 18.3,
+ "cost_usd": 0.07106,
+ "ms": 16256,
+ "seconds": 16.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 12,
    "listed": 13,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.923,
+   "missing": [
+    "ECON101H"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ECONC2002H",
-     "listed": "ECON101H",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ECONC2002H"
+   ],
+   "flagged": [
+    "ECONC2002H"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -146,8 +145,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 28,
+     "max": 29
     },
     "courses": [
      {
@@ -243,19 +242,19 @@
   "missing_explained": [
    {
     "code": "ECON 101H",
-    "why": "not in the text; the catalog prints ECON C2002H as the honors alternative to ECON C2002"
+    "why": "not in the text; catalog lists ECON C2002H as the honors macroeconomics alternative"
    }
   ],
   "notes": [
-   "The 4-5 range is printed on the MATH 180 / MATH 190 row; it likely reflects MATH 180 (4) or MATH 190 (5, per closed list). MATH 190 is printed with title 'Calculus I: Late Transcendentals'.",
-   "Total Units 28-29 is the course list's total and recorded as total_units; the block's stated is left null.",
-   "The 60-unit requirement is the generic ADT statement and the 64-71 total belongs to the sample curriculum map, so degree_total is null.",
-   "The curriculum map lists BUS 130 (as an alternative to BUS 152) and BUS 160H (as an alternative to BUS 160), but the Requirements course list does not; they were not added to the block.",
-   "The outcomes are printed as A.S.-Transfer Degree level outcomes for this award.",
-   "The description names areas of concentration at four-year universities (business management, business law, marketing, etc.), not careers; the Career Information tab content is not in the text, so careers is empty.",
-   "ECON C2002H is not in the closed list (the closed list has ECON 101H instead); recorded as a catalog addition."
+   "Total Units 28-29 printed under the course list is recorded as total_units and as the block's stated total.",
+   "The 60-unit figure is the generic ADT requirement sentence, not a printed degree total; degree_total left null. The curriculum map total of 64-71 is an example pathway, not the degree total.",
+   "The 4-5 range is printed beside the MATH 180 / MATH 190 row; MATH 190 (closed list 5 units) has no units printed beside it in the requirements table. Catalog titles MATH 190 'Calculus I: Late Transcendentals'.",
+   "Alternatives' units are not printed beside them in the table, so recorded as null.",
+   "ECON C2002H is not in the closed list (closed list has ECON 101H), recorded as catalog addition.",
+   "Footnotes: MATH 180/190 degree applicable with or without MATH 080/090; STAT C1000 with or without STAT 1000S, only the main course's units count.",
+   "The description names areas of concentration at four-year universities (business management, business law, marketing, finance, business ethics, business communications); these were read as fields of study, not careers. The Career Information tab content was not in the text.",
+   "Curriculum map lists BUS 130 or BUS 152 and BUS 160H as options, but these are not in the requirements list; not recorded as requirements."
   ]
  },
- "extracted_run": "44481520157",
- "catalog_year": "2026-2027"
+ "extracted_run": "39726639865"
 }
