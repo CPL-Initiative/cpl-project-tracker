@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Administration of Justice",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-science-transfer/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9169,
+  "input_tokens": 7526,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9169,
-    "output_tokens": 1038,
+    "input_tokens": 7526,
+    "output_tokens": 2365,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1038,
+  "output_tokens": 2365,
   "output_tokens_details": {
-   "thinking_tokens": 189
+   "thinking_tokens": 783
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05744,
- "ms": 9146,
- "seconds": 9.5,
+ "cost_usd": 0.0774,
+ "ms": 20877,
+ "seconds": 21.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 14,
-   "share": 0.0,
-   "missing": [
-    "AJ10",
-    "AJ11",
-    "AJ111",
-    "AJ112",
-    "AJ115",
-    "AJ116",
-    "AJ13",
-    "AJ14",
-    "AJ15",
-    "AJ19",
-    "BUS60",
-    "PSYCC1000",
-    "SOC10",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -75,136 +61,250 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "IDENTIFICATION NUMBERING SYSTEM (C-ID)",
+   "section_heading": "Major Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate effective written and oral communication necessary in the criminal justice field.",
+    "Interpret and analyze information, concepts, and theories of the criminal justice system from multiple perspectives.",
+    "Apply and integrate terminology, concepts, and practices of law enforcement, the courts, and corrections.",
+    "Evaluate the role of social responsibility within the criminal justice system, recognizing its impact on addressing systemic inequalities and promoting fairness, equity, and accountability within multicultural societies.",
+    "Analyze values, beliefs, and experiences to cultivate a commitment to ongoing ethical development, self-awareness, personal growth, and moral integrity necessary of practitioners within the criminal justice field."
+   ],
+   "careers": [
+    "law enforcement",
+    "corrections",
+    "courts",
+    "social and judicial services",
+    "private sector"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AJ 10",
-    "why": "appears only in the C-ID table (as AJ 010); no program requirements in the text"
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AJ 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AJ 11",
-    "why": "appears only in the C-ID table (as AJ 011); no program requirements in the text"
+    "name": "List A: Select two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AJ 013",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 015",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 019",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AJ 111",
-    "why": "appears only in the C-ID table; no program requirements in the text"
-   },
-   {
-    "code": "AJ 112",
-    "why": "appears only in the C-ID table; no program requirements in the text"
-   },
-   {
-    "code": "AJ 115",
-    "why": "appears only in the C-ID table; no program requirements in the text"
-   },
-   {
-    "code": "AJ 116",
-    "why": "appears only in the C-ID table; no program requirements in the text"
-   },
-   {
-    "code": "AJ 13",
-    "why": "appears only in the C-ID table (as AJ 013); no program requirements in the text"
-   },
-   {
-    "code": "AJ 14",
-    "why": "not in the text"
-   },
-   {
-    "code": "AJ 15",
-    "why": "appears only in the C-ID table (as AJ 015); no program requirements in the text"
-   },
-   {
-    "code": "AJ 19",
-    "why": "appears only in the C-ID table (as AJ 019); no program requirements in the text"
-   },
-   {
-    "code": "BUS 60",
-    "why": "appears only in the C-ID table (as BUS 060); no program requirements in the text"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "appears only in the C-ID table; no program requirements in the text"
-   },
-   {
-    "code": "SOC 10",
-    "why": "appears only in the C-ID table (as SOC 010); no program requirements in the text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "appears only in the C-ID table; no program requirements in the text"
+    "name": "List B: Select two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AJ 014",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 060",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source page is the catalog's general C-ID numbering system list, not the Administration of Justice A.S.-T program page. It prints no requirements, totals, outcomes or careers for this award, so no blocks were recorded.",
-   "The correct program page (Degrees and Certificates > Administration of Justice, AS-T) should be fetched to record the requirements.",
-   "The C-ID table also lists AJ 113 and AJ 120, which are not in the closed list; they were not recorded because the table is not a requirements list."
+   "The page's main heading is cut off in the text; section_heading uses the requirements tab heading 'Major Requirements' for the Administration of Justice Associate in Science for Transfer degree.",
+   "Catalog prints codes with leading zeros (AJ 010, AJ 011, AJ 013, AJ 014, AJ 015, AJ 019, SOC 010, BUS 060); these were matched to closed-list AJ 10, AJ 11, AJ 13, AJ 14, AJ 15, AJ 19, SOC 10, BUS 60 and not flagged as catalog additions.",
+   "List B also allows 'Any List A course not already taken'; those courses are recorded only in List A.",
+   "Units are not printed beside individual List A and List B courses; only the 6-unit list totals are printed, so course units are null there.",
+   "Total Requirements table: Major Requirements 18, Cal-GETC 34, Transferable Electives as needed to complete 60 units, Total Units 60. A footnote says some GE courses may double-count within the major.",
+   "The careers come from the program description ('careers in law enforcement, corrections, courts, social and judicial services, and the private sector'). The last item is printed as 'the private sector'. The transfer study areas listed after it were not recorded as careers.",
+   "Program learning outcomes come from the page's outcomes tab and apply to this award's page."
   ]
  },
- "extracted_run": "38748875071"
+ "extracted_run": "44519542333",
+ "catalog_year": "2026-2027"
 }

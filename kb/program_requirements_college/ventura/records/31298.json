@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Administration of Justice",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/administration-justice-ast/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10693,
+  "input_tokens": 8799,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10693,
-    "output_tokens": 1540,
+    "input_tokens": 8799,
+    "output_tokens": 2877,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,50 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1540,
+  "output_tokens": 2877,
   "output_tokens_details": {
-   "thinking_tokens": 181
+   "thinking_tokens": 1055
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07357,
- "ms": 12170,
- "seconds": 12.7,
+ "cost_usd": 0.09274,
+ "ms": 23722,
+ "seconds": 24.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 21,
    "listed": 21,
-   "share": 0.0,
-   "missing": [
-    "ANTHV35",
-    "ANTHV35L",
-    "ANTHV36",
-    "CJV1",
-    "CJV14",
-    "CJV2",
-    "CJV25",
-    "CJV3",
-    "CJV30",
-    "CJV35",
-    "CJV35L",
-    "CJV36",
-    "CJV37",
-    "CJV4",
-    "CJV49",
-    "CJV5",
-    "CJV8",
-    "PSYCC1000",
-    "PSYV4",
-    "SOCIC1000",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -83,25 +62,47 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    16.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 16.0-19.0; the catalog states 18.0-20.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     70.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -114,132 +115,236 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Course Identification Numbering System (C-ID)",
+   "section_heading": "REQUIREMENTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 9,
+    "max": 17
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate an understanding of the American Criminal Justice System, its obligations to the community and the scope of responsibilities of the various local, state, and federal law enforcement agencies beginning with arrest, through corrections.",
+    "Articulate the major criminological theories regarding criminal behavior, the social implications of crime and how these concepts relate to crime, criminal behavior, and victimology.",
+    "Analyze concepts of law and utilize legal investigative proficiencies applied to preparing and presenting case work. Demonstrate the ability to translate this information to written, verbal, and electronic formats.",
+    "Collaborate to describe the importance of standards relating to ethics, communication, and cooperation within a variety of cultures and situations in the Criminal Justice System."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ANTH V35",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 150)"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CJ V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ANTH V35L",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 150)"
+    "name": "List A: Select two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CJ V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V08",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH V35",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V35L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH V35L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ANTH V36",
-    "why": "not in the text"
-   },
-   {
-    "code": "CJ V01",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 110)"
-   },
-   {
-    "code": "CJ V02",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 120)"
-   },
-   {
-    "code": "CJ V03",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 160)"
-   },
-   {
-    "code": "CJ V04",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 124)"
-   },
-   {
-    "code": "CJ V05",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 122)"
-   },
-   {
-    "code": "CJ V08",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 140)"
-   },
-   {
-    "code": "CJ V14",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 220)"
-   },
-   {
-    "code": "CJ V25",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 200)"
-   },
-   {
-    "code": "CJ V30",
-    "why": "not in the text"
-   },
-   {
-    "code": "CJ V35",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 150)"
-   },
-   {
-    "code": "CJ V35L",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (AJ 150)"
-   },
-   {
-    "code": "CJ V36",
-    "why": "not in the text"
-   },
-   {
-    "code": "CJ V37",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (ITIS 165)"
-   },
-   {
-    "code": "CJ V49",
-    "why": "not in the text"
-   },
-   {
-    "code": "PSY V04",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (SOCI 125)"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (PSY 110)"
-   },
-   {
-    "code": "SOCIC1000",
-    "why": "not in the text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "page is the C-ID table, not the program's requirements; appears only as a C-ID equivalence (MATH 110)"
+    "name": "List B: Select two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CJ V36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH V36",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY V04",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source page is Ventura College's general C-ID designation table (Transfer Information), not the Administration of Justice A.S.-T program page. It prints no requirements, blocks, units, totals, GE pattern, outcomes or careers for this award, so no blocks were recorded.",
-   "Several closed-list courses (CJ V01, V02, V03, V04, V05, V08, V14, V25, V35/V35L, ANTH V35/V35L, CJ V37, PSY V04, PSYC C1000, STAT C1000) appear only as C-ID equivalences; the C-ID table prints no unit values for them.",
-   "A reviewer should locate the actual Administration of Justice A.S.-T program page in the 2026-2027 Ventura College catalog to record the requirements."
+   "The page text does not print the program heading; section_heading names the REQUIREMENTS tab of the Administration of Justice A.S.-T page.",
+   "List A prints 'CJ V35 & V35L' (or 'ANTH V35 & V35L') as a single selection with 4 units printed for the pair; recorded as two entries (CJ V35 3, CJ V35L 1, per the pair's 4 units) with ANTH alternatives. The lecture and lab together count as one of the two List A courses.",
+   "List B also allows 'Any course unused from List A'; those courses are not repeated in the List B block.",
+   "ANTH/CJ V36 is cross-listed; recorded as CJ V36 with ANTH V36 as alternative.",
+   "STAT C1000 is printed as an 'or' option to PSY V04 with no units beside it.",
+   "The catalog prints 'Additional Required Units 12-14' for Lists A and B combined; no per-list total is printed, so stated is null on both lists.",
+   "Closed list entry 'SOCIC1000' matched to catalog 'SOCI C1000'.",
+   "Degree table: Required Major Units 18-20, CalGETC 34, Double-Counted Units (3-9), Elective Units 9-17, Total 60. Elective units recorded in degree_elective_units.",
+   "The outcomes are printed on the page's outcomes tab for the program; recorded for this award."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "44514835321",
+ "catalog_year": "2026-2027"
 }

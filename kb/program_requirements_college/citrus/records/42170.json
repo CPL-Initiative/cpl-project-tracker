@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9147,
-    "output_tokens": 2509,
+    "output_tokens": 2364,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2509,
+  "output_tokens": 2364,
   "output_tokens_details": {
-   "thinking_tokens": 647
+   "thinking_tokens": 517
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08677,
- "ms": 19564,
- "seconds": 19.9,
+ "cost_usd": 0.08387,
+ "ms": 18767,
+ "seconds": 18.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 27,
    "listed": 27,
-   "share": 0.963,
-   "missing": [
-    "ECON101H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002H",
+     "listed": "ECON101H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ECONC2002H"
-   ],
-   "flagged": [
-    "ECONC2002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -78,8 +80,7 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
-   "rescored": "Sam's ruling of 2026-11-17, short high end"
+   "short_high": true
   },
   "repeated": {
    "codes": [],
@@ -110,7 +111,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Business - Accounting Emphasis A.S. Degree",
+   "section_heading": "Requirements",
    "measure": "units",
    "total_units": {
     "min": 37,
@@ -369,14 +370,15 @@
    }
   ],
   "notes": [
-   "Honors alternatives are printed on 'or' rows without their own units; they were given the units printed for the paired course.",
-   "ECON C2002H (Principles of Macroeconomics - Honors) is not on the closed list; the closed list has ECON 101H with the same title, possibly the old code for the same course.",
-   "MATH 190 is titled 'Calculus I: Late Transcendentals' in the catalog but 'Calculus with Analytic Geometry l' in the state file.",
-   "Footnotes mention STAT 1000S, MATH 080 and MATH 090 as optional support courses whose units do not count toward the degree; they were not recorded as requirements.",
-   "The 'Total Units 61-64' figure comes from the sample 2-year curriculum map, not a printed degree total, so degree_total is left null.",
-   "The description names areas of concentration at four-year universities (accounting, business management, finance, etc.); these are fields of study, not careers, so careers is left empty. The Career Information tab's content is not in the text.",
+   "Honors alternatives print no units of their own; the units of the paired course were used.",
+   "ECON C2002H is not in the closed list (closed list has ECON 101H for honors macroeconomics); recorded as catalog addition.",
+   "MATH 190 is printed as 'Calculus I: Late Transcendentals' while the closed list titles it 'Calculus with Analytic Geometry l'.",
+   "The curriculum map prints 'Total Units 61-64' for one example pathway including GE; it is not printed as the award's degree total, so degree_total is left null.",
+   "Footnotes: STAT C1000, MATH 180, MATH 190 may be taken with support courses STAT 1000S, MATH 080, MATH 090; only the transfer-level units count.",
+   "The overview names areas of concentration at four-year universities (accounting, business management, finance, human resource management, international business, marketing); these are fields of study rather than careers, so careers left empty. Reviewer may check the Career Information tab, which was not in the text.",
    "Outcomes are the A.S. Degree Level Student Learning Outcomes printed for this award."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "44481520157",
+ "catalog_year": "2026-2027"
 }
