@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358); paired alternatives corrected (S681 second reader, A)"
   },
   "repeated": {
    "codes": [],
@@ -150,15 +150,17 @@
       "alternatives": [
        {
         "code": "CHEM 0003A",
-        "units": 5,
+        "units": 3,
         "catalog_addition": false,
-        "units_max": 6
+        "units_max": null,
+        "together": "CHEM 0003A + CHEM 0003B"
        },
        {
         "code": "CHEM 0003B",
-        "units": 5,
+        "units": 3,
         "catalog_addition": false,
-        "units_max": 6
+        "units_max": null,
+        "together": "CHEM 0003A + CHEM 0003B"
        }
       ],
       "catalog_addition": false
@@ -245,14 +247,9 @@
  "reconciled": [
   {
    "rule": "A4",
-   "code": "CHEM 0003A",
-   "words": "CHEM 0003A, printed as an alternative to CHEM 0001A with no units, takes its row's 5-6 units",
-   "statewide": "units_rules_A4"
-  },
-  {
-   "rule": "A4",
-   "code": "CHEM 0003B",
-   "words": "CHEM 0003B, printed as an alternative to CHEM 0001A with no units, takes its row's 5-6 units",
+   "code": "CHEM 0003A + CHEM 0003B",
+   "together": "state",
+   "words": "CHEM 0003A and CHEM 0003B together replace CHEM 0001A: each carries its own units from the state's course file (3, 3; 6 in all)",
    "statewide": "units_rules_A4"
   }
  ]

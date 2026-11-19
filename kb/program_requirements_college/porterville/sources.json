@@ -33,7 +33,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "334e55c0d44c0515"
   },
   "listed": 9,
   "text_chars": 11150
@@ -74,10 +75,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "0103cfb8e31e1122"
   },
   "listed": 12,
-  "text_chars": 4221
+  "text_chars": 4220
  },
  {
   "control_number": "06780",
@@ -107,24 +109,26 @@
    "PSYTP3"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=116",
-   "title": "PROGRAMS OF STUDY",
-   "h1": "PROGRAMS OF STUDY",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=115",
+   "title": "The Porterville College Psychiatric Technology Certificate of",
+   "h1": "The Porterville College Psychiatric Technology Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    115,
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "65e57a382afc07f4"
   },
   "listed": 6,
-  "text_chars": 5412
+  "text_chars": 7735
  },
  {
   "control_number": "06809",
@@ -156,7 +160,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "6538c30b875b1512"
   },
   "listed": 6,
   "text_chars": 6022
@@ -198,7 +203,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "6d5034850c406e5c"
   },
   "listed": 13,
   "text_chars": 5244
@@ -229,7 +235,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "f06caf2f0507a3c6"
   },
   "listed": 4,
   "text_chars": 5551
@@ -330,7 +337,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "e8eaa61d1b13d33a"
   },
   "listed": 70,
   "text_chars": 16000
@@ -365,8 +373,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.952,
+  "coverage": 1.0,
   "codes_found": [
+   "ASTRC1000",
    "BIOLC1000",
    "BIOLP115",
    "BIOLP119",
@@ -389,24 +398,31 @@
    "PHYSP104B"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=70",
-   "title": "GRADUATION & GENERAL EDUCATION",
-   "h1": "GRADUATION & GENERAL EDUCATION",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80",
+   "title": "PROGRAMS OF STUDY",
+   "h1": "PROGRAMS OF STUDY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    70
+    80,
+    81
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 80,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "71ea220393028e51"
   },
   "listed": 21,
-  "text_chars": 2503
+  "text_chars": 11532
  },
  {
   "control_number": "30357",
@@ -442,10 +458,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "bcaaab9cb5b29c59"
   },
   "listed": 10,
-  "text_chars": 5105
+  "text_chars": 5104
  },
  {
   "control_number": "31070",
@@ -475,10 +492,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "09a580850d63cae5"
   },
   "listed": 4,
-  "text_chars": 5047
+  "text_chars": 5044
  },
  {
   "control_number": "31088",
@@ -515,7 +533,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "6a89a1d7dc0650db"
   },
   "listed": 11,
   "text_chars": 3445
@@ -544,12 +563,13 @@
    "HISTP123"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=91",
-   "title": "earn the Associate in Arts in History for Transfer:",
-   "h1": "earn the Associate in Arts in History for Transfer:",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=90",
+   "title": "The Associate in Arts in History for Transfer degree is designed",
+   "h1": "The Associate in Arts in History for Transfer degree is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    90,
     91
    ],
    "extractor": "pypdf",
@@ -558,10 +578,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "d6042aff39aeac0a"
   },
   "listed": 15,
-  "text_chars": 5139
+  "text_chars": 6138
  },
  {
   "control_number": "31240",
@@ -590,7 +611,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "6f21ca4f918c4a75"
   },
   "listed": 3,
   "text_chars": 5981
@@ -613,12 +635,13 @@
    "COMMP170"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108",
-   "title": "Communication Studies Certificate of Achievement include,",
-   "h1": "Communication Studies Certificate of Achievement include,",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=107",
+   "title": "The Communication Studies certificate program is designed",
+   "h1": "The Communication Studies certificate program is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    107,
     108,
     109,
     110
@@ -629,7 +652,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "6c1891f55d297cad"
   },
   "listed": 8,
   "text_chars": 16000
@@ -660,10 +684,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "894f11bbb4b4b9b0"
   },
   "listed": 2,
-  "text_chars": 4535
+  "text_chars": 4534
  },
  {
   "control_number": "31585",
@@ -690,7 +715,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "9f060ab05c37265a"
   },
   "listed": 1,
   "text_chars": 4069
@@ -731,7 +757,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "ed202dbbfb58d9d1"
   },
   "listed": 11,
   "text_chars": 16000
@@ -787,7 +814,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "03ba91c0166cbff9"
   },
   "listed": 17,
   "text_chars": 5203
@@ -826,7 +854,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "fdc7ad0a45510a08"
   },
   "listed": 9,
   "text_chars": 8909
@@ -867,10 +896,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "132c75309d6c3d3d"
   },
   "listed": 12,
-  "text_chars": 4729
+  "text_chars": 4728
  },
  {
   "control_number": "33933",
@@ -908,7 +938,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "ac66f3fc3328780e"
   },
   "listed": 11,
   "text_chars": 9678
@@ -956,7 +987,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "f06caf2f0507a3c6"
   },
   "listed": 7,
   "text_chars": 5551
@@ -966,34 +998,12 @@
   "title": "Business Management-Human Resources",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.75,
-  "codes_found": [
-   "ACCTP110",
-   "BSADP155",
-   "BSADP160"
-  ],
-  "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=82",
-   "title": "PROGRAMS OF STUDY",
-   "h1": "PROGRAMS OF STUDY",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    82,
-    83,
-    84
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "35229",
@@ -1031,7 +1041,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "06eff4eef09dbe3c"
   },
   "listed": 11,
   "text_chars": 11575
@@ -1067,10 +1078,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "da165d67197bdb52"
   },
   "listed": 7,
-  "text_chars": 11162
+  "text_chars": 11161
  },
  {
   "control_number": "35250",
@@ -1103,10 +1115,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "561897bbaceee186"
   },
   "listed": 6,
-  "text_chars": 9821
+  "text_chars": 9820
  },
  {
   "control_number": "35256",
@@ -1138,10 +1151,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "5e9d207c53e493aa"
   },
   "listed": 6,
-  "text_chars": 6154
+  "text_chars": 6153
  },
  {
   "control_number": "35388",
@@ -1170,12 +1184,13 @@
    "FIREP50"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=100",
-   "title": "The Associate of Science in Public Safety may be earned",
-   "h1": "The Associate of Science in Public Safety may be earned",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=99",
+   "title": "The Associate of Science in Public Safety is a two-year",
+   "h1": "The Associate of Science in Public Safety is a two-year",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    99,
     100
    ],
    "extractor": "pypdf",
@@ -1184,10 +1199,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "14eda27da965b931"
   },
   "listed": 17,
-  "text_chars": 5366
+  "text_chars": 6577
  },
  {
   "control_number": "35431",
@@ -1221,7 +1237,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "012ee6729e0073b0"
   },
   "listed": 7,
   "text_chars": 8838
@@ -1259,7 +1276,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "7bea5b9247d00c95"
   },
   "listed": 9,
   "text_chars": 4984
@@ -1299,7 +1317,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "ed202dbbfb58d9d1"
   },
   "listed": 9,
   "text_chars": 16000
@@ -1335,7 +1354,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "77e643e47006d929"
   },
   "listed": 6,
   "text_chars": 12029
@@ -1378,7 +1398,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "feadab17423a35e9"
   },
   "listed": 11,
   "text_chars": 16000
@@ -1450,7 +1471,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "ed4ce9032ff0f124"
   },
   "listed": 6,
   "text_chars": 11912
@@ -1461,34 +1483,46 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.545,
+  "coverage": 1.0,
   "codes_found": [
    "CDEVC1000",
    "CHDVP117",
    "CHDVP119",
    "CHDVP122",
+   "CHDVP142",
    "CHDVP143",
-   "CHDVP144"
+   "CHDVP144",
+   "CHDVP239",
+   "CHDVP244",
+   "CHDVP245",
+   "CHDVP246"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
-   "title": "PROGRAMS OF STUDY",
-   "h1": "PROGRAMS OF STUDY",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=109",
+   "title": "The Early Child Care Administration Specialization",
+   "h1": "The Early Child Care Administration Specialization",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    84
+    109,
+    110
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 109,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "579c127999fcdf72"
   },
   "listed": 11,
-  "text_chars": 6022
+  "text_chars": 10529
  },
  {
   "control_number": "37175",
@@ -1527,7 +1561,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "d16daf5023fdb712"
   },
   "listed": 10,
   "text_chars": 16000
@@ -1537,83 +1572,12 @@
   "title": "Social Science",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.963,
-  "codes_found": [
-   "ANTHC1001",
-   "ANTHP102",
-   "ANTHP103",
-   "ANTHP104",
-   "ANTHP105",
-   "ANTHP107",
-   "ECONC2001",
-   "ECONC2002",
-   "ERSCP114",
-   "ETHNP105",
-   "ETHNP119",
-   "ETHNP150",
-   "GEOGP113",
-   "GEOGP114",
-   "GEOGP125",
-   "HISTC1001",
-   "HISTC1002",
-   "HISTP101",
-   "HISTP102",
-   "HISTP104",
-   "HISTP105",
-   "HISTP107",
-   "HISTP108",
-   "HISTP109",
-   "HISTP114",
-   "HISTP119",
-   "HISTP120",
-   "HISTP121",
-   "HISTP123",
-   "PHILP106",
-   "PHILP108",
-   "PHILP109",
-   "PHILP110",
-   "PHILP112",
-   "PHILP113",
-   "PHILP114",
-   "POLSC1000",
-   "POLSP102",
-   "POLSP103",
-   "PSYCC1000",
-   "PSYCP110",
-   "PSYCP126",
-   "PSYCP133",
-   "PSYCP223",
-   "SOCIC1000",
-   "SOCIP102",
-   "SOCIP130",
-   "SOCIP140",
-   "SOCIP150",
-   "SOCIP160",
-   "SOCIP170",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=70",
-   "title": "GRADUATION & GENERAL EDUCATION",
-   "h1": "GRADUATION & GENERAL EDUCATION",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    70,
-    71,
-    72
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 54,
-  "text_chars": 8129
+  "text_chars": 0
  },
  {
   "control_number": "37377",
@@ -1655,7 +1619,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "e2541b4520e5f2df"
   },
   "listed": 18,
   "text_chars": 3738
@@ -1701,7 +1666,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "0b1f0f49c07348df"
   },
   "listed": 16,
   "text_chars": 16000
@@ -1725,12 +1691,13 @@
    "PHYSP104B"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80",
-   "title": "earn the Associate in Science in Biology for Transfer Degree:",
-   "h1": "earn the Associate in Science in Biology for Transfer Degree:",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=79",
+   "title": "The Associate in Science in Biology for Transfer Degree",
+   "h1": "The Associate in Science in Biology for Transfer Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    79,
     80,
     81
    ],
@@ -1740,10 +1707,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "53cbda5bfc8ddf28"
   },
   "listed": 9,
-  "text_chars": 10338
+  "text_chars": 12284
  },
  {
   "control_number": "39770",
@@ -1784,7 +1752,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "c943dbf7a104c27b"
   },
   "listed": 13,
   "text_chars": 16000
@@ -1825,7 +1794,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "7f46a8a892370faa"
   },
   "listed": 11,
   "text_chars": 6739
@@ -1860,7 +1830,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "5f70da924359acb0"
   },
   "listed": 6,
   "text_chars": 4870
@@ -1901,7 +1872,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "d2b0027a387825d8"
   },
   "listed": 12,
   "text_chars": 4499
@@ -1943,7 +1915,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "596c88e5dd4e231a"
   },
   "listed": 11,
   "text_chars": 16000
@@ -1982,10 +1955,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "a18028636f0c6a10"
   },
   "listed": 8,
-  "text_chars": 13041
+  "text_chars": 13035
  },
  {
   "control_number": "41893",
@@ -2026,7 +2000,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "117cdba54403b7e5"
   },
   "listed": 14,
   "text_chars": 10707
@@ -2064,7 +2039,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "aa9a7fbda9cadfe0"
   },
   "listed": 9,
   "text_chars": 2780
@@ -2099,7 +2075,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "f9922833e1e89f32"
   },
   "listed": 5,
   "text_chars": 8426
@@ -2143,10 +2120,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "cd41af862754877b"
   },
   "listed": 15,
-  "text_chars": 3398
+  "text_chars": 3397
  },
  {
   "control_number": "42417",
@@ -2165,24 +2143,31 @@
    "PSYCP223"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
-   "title": "PROGRAMS OF STUDY",
-   "h1": "PROGRAMS OF STUDY",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106",
+   "title": "Child Development Associate Teacher",
+   "h1": "Child Development Associate Teacher",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    84
+    106,
+    107
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 106,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "9727035917cfa56a"
   },
   "listed": 7,
-  "text_chars": 6022
+  "text_chars": 6138
  },
  {
   "control_number": "43117",
@@ -2210,10 +2195,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "d57f3989cdec9ddd"
   },
   "listed": 2,
-  "text_chars": 4384
+  "text_chars": 4382
  },
  {
   "control_number": "43139",
@@ -2246,7 +2232,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "e8b65dcd07a1ccb4"
   },
   "listed": 8,
   "text_chars": 5779
@@ -2287,7 +2274,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "7f46a8a892370faa"
   },
   "listed": 11,
   "text_chars": 6739
@@ -2330,10 +2318,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "8a166fdc2fa9f1a1"
   },
   "listed": 15,
-  "text_chars": 5146
+  "text_chars": 5145
  },
  {
   "control_number": "43784",
@@ -2371,44 +2360,23 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "95c86d2f495d91d0"
   },
   "listed": 11,
-  "text_chars": 11065
+  "text_chars": 11064
  },
  {
   "control_number": "44014",
   "title": "Entrepreneurship",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ACCTP110",
-   "BSADP160",
-   "BSADP163",
-   "COMMC1004",
-   "INFSP100"
-  ],
-  "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83",
-   "title": "PROGRAMS OF STUDY",
-   "h1": "PROGRAMS OF STUDY",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    83
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 5551
+  "text_chars": 0
  },
  {
   "control_number": "44039",
@@ -2437,10 +2405,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "5a25f969571efebc"
   },
   "listed": 3,
-  "text_chars": 5934
+  "text_chars": 5933
  },
  {
   "control_number": "44089",
@@ -2470,10 +2439,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "5a25f969571efebc"
   },
   "listed": 4,
-  "text_chars": 5934
+  "text_chars": 5933
  },
  {
   "control_number": "44090",
@@ -2502,7 +2472,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "d8a9409aef51a899"
   },
   "listed": 3,
   "text_chars": 6183
@@ -2533,7 +2504,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "d8a9409aef51a899"
   },
   "listed": 2,
   "text_chars": 6183
@@ -2567,10 +2539,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "ee094371fae866bc"
   },
   "listed": 5,
-  "text_chars": 5572
+  "text_chars": 5570
  },
  {
   "control_number": "44409",
@@ -2600,10 +2573,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "b9f34e0515581585"
   },
   "listed": 4,
-  "text_chars": 3256
+  "text_chars": 3257
  },
  {
   "control_number": "44512",
@@ -2646,10 +2620,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "edb49f3514c9a4c4"
   },
   "listed": 20,
-  "text_chars": 5630
+  "text_chars": 5629
  },
  {
   "control_number": "44805",
@@ -2685,10 +2660,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "921f379aa8fea8ce"
   },
   "listed": 10,
-  "text_chars": 4537
+  "text_chars": 4535
  },
  {
   "control_number": "44924",
@@ -2723,7 +2699,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "d1e665d1b9b03b7b"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2755,7 +2732,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "907b275082b9822a"
   },
   "listed": 3,
   "text_chars": 6017
@@ -2799,7 +2777,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "6538c30b875b1512"
   },
   "listed": 17,
   "text_chars": 6022
@@ -2876,10 +2855,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "edb49f3514c9a4c4"
   },
   "listed": 40,
-  "text_chars": 5630
+  "text_chars": 5629
  },
  {
   "control_number": "45513",
@@ -2917,10 +2897,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "132c75309d6c3d3d"
   },
   "listed": 12,
-  "text_chars": 4729
+  "text_chars": 4728
  },
  {
   "control_number": "45517",
@@ -2951,10 +2932,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "e32af5ce7a52c328"
   },
   "listed": 5,
-  "text_chars": 4451
+  "text_chars": 4442
  },
  {
   "control_number": "45519",
@@ -2993,7 +2975,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "d16daf5023fdb712"
   },
   "listed": 10,
   "text_chars": 16000
@@ -3037,7 +3020,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "03ba91c0166cbff9"
   },
   "listed": 15,
   "text_chars": 5203
@@ -3076,10 +3060,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "20a4c4900a7560be"
   },
   "listed": 10,
-  "text_chars": 5615
+  "text_chars": 5614
  },
  {
   "control_number": "45544",
@@ -3122,7 +3107,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "c943dbf7a104c27b"
   },
   "listed": 15,
   "text_chars": 16000
@@ -3178,10 +3164,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "6a4579f218a82b53"
   },
   "listed": 26,
-  "text_chars": 12092
+  "text_chars": 12089
  },
  {
   "control_number": "45626",
@@ -3200,24 +3187,26 @@
    "VNRSP73"
   ],
   "source": {
-   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=118",
-   "title": "PROGRAMS OF STUDY",
-   "h1": "PROGRAMS OF STUDY",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117",
+   "title": "The Vocational Nursing COA program is a three-semester",
+   "h1": "The Vocational Nursing COA program is a three-semester",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    117,
     118
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "6e0f6a0ed20c0be3"
   },
   "listed": 7,
-  "text_chars": 5741
+  "text_chars": 8070
  },
  {
   "control_number": "45634",
@@ -3258,7 +3247,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "ed202dbbfb58d9d1"
   },
   "listed": 13,
   "text_chars": 16000
@@ -3308,7 +3298,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "c6858c6cd045a584"
   },
   "listed": 18,
   "text_chars": 16000
@@ -3346,7 +3337,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "c5578e5a5a9fd1ea"
   },
   "listed": 9,
   "text_chars": 5395
@@ -3394,7 +3386,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "0b1f0f49c07348df"
   },
   "listed": 16,
   "text_chars": 16000
@@ -3430,7 +3423,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17"
-   }
+   },
+   "text_sha": "5f70da924359acb0"
   },
   "listed": 7,
   "text_chars": 4870

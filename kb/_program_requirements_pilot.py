@@ -652,11 +652,19 @@ CHALLENGE_TITLE_REFUSED = re.compile(
     r"just a moment|captcha|security check|bot verification|pardon our interruption", re.I)
 
 
+# A WAF's challenge header (got["waf"], S683) on a page that still renders under this many characters is the
+# challenge itself. When the ordinary browser read gets the page after it, the page renders in full, and reads.
+CHALLENGE_BODY_CHARS = 200
+
+
 def is_challenge(got: dict | None) -> bool:
-    """A load that served a bot check: its title or heading names one."""
+    """A load that served a bot check: its title or heading names one, or a WAF's header names one and the page
+    rendered nothing past it."""
     got = got or {}
     if got.get("access") == "robots_disallow":
         return False
+    if got.get("waf") and len((got.get("body") or "").strip()) < CHALLENGE_BODY_CHARS:
+        return True
     words = (got.get("title") or "") + "\n" + (got.get("h1") or "")
     return bool(CHALLENGE_TITLE.search(words)
                 or (got.get("status") != 200 and CHALLENGE_TITLE_REFUSED.search(words)))

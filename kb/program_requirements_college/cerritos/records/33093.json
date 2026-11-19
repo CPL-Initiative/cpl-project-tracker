@@ -70,7 +70,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358); paired alternatives corrected (S681 second reader, A)"
   },
   "repeated": {
    "codes": [],
@@ -125,15 +125,17 @@
       "alternatives": [
        {
         "code": "GEOL 102",
-        "units": 4,
+        "units": 3,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "GEOL 102 + GEOL 102L"
        },
        {
         "code": "GEOL 102L",
-        "units": 4,
+        "units": 1,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "GEOL 102 + GEOL 102L"
        }
       ],
       "catalog_addition": false
@@ -188,14 +190,9 @@
  "reconciled": [
   {
    "rule": "A4",
-   "code": "GEOL 102",
-   "words": "GEOL 102, printed as an alternative to GEOL 101 with no units, takes its row's 4 units",
-   "statewide": "units_rules_A4"
-  },
-  {
-   "rule": "A4",
-   "code": "GEOL 102L",
-   "words": "GEOL 102L, printed as an alternative to GEOL 101 with no units, takes its row's 4 units",
+   "code": "GEOL 102 + GEOL 102L",
+   "together": "state",
+   "words": "GEOL 102 and GEOL 102L together replace GEOL 101: each carries its own units from the state's course file (3, 1; 4 in all)",
    "statewide": "units_rules_A4"
   }
  ]

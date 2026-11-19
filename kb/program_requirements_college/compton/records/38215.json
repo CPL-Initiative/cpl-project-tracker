@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Political Science",
  "award": "A.A- T Degree",
- "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=109",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=108",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12099,
+  "input_tokens": 12038,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12099,
-    "output_tokens": 2090,
+    "input_tokens": 12038,
+    "output_tokens": 2311,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2090,
+  "output_tokens": 2311,
   "output_tokens_details": {
-   "thinking_tokens": 537
+   "thinking_tokens": 686
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0902,
- "ms": 16654,
- "seconds": 16.8,
+ "cost_usd": 0.09437,
+ "ms": 17651,
+ "seconds": 17.8,
  "parts": null,
  "error": null,
  "score": {
@@ -87,13 +87,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -111,7 +111,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements for AA-T Degree:",
+   "section_heading": "POLITICAL SCIENCE",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -122,7 +122,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -132,7 +132,11 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Contemporary Issues: identify and explain major economic, political, social, cultural, and historical themes underlying contemporary issues in the policymaking process",
+    "Primary and Secondary Sources: critically analyze different theories pertaining to the discipline using primary and/or secondary sources in support of their arguments.",
+    "Political Issues and Policy Making: identify and distinguish various academic and journalistic sources and explain what these reveal about contemporary political issues and policy making."
+   ],
    "careers": []
   },
   "blocks": [
@@ -352,11 +356,35 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins at page 109 mid-section with 'Program Requirements for AA-T Degree:'; the Political Science heading, description, AA-T requirements (GE pattern) and any program learning outcomes or careers are on the preceding page, not in the text, so outcomes, careers and ge_pattern are left empty/null.",
-   "The PDF prints 'POLI 1 10' (extraction spacing); recorded as POLI 110.",
-   "List B also allows 'Any course from List A not already completed'; this includes STAT C1000/STAT C1000H/PSYC 120 from List A, which are not repeated in the List B block.",
-   "The Psychology, Real Estate, LGBTQ Studies, Social Work and Sociology sections that follow belong to other programs and were not read."
+   "List B begins with 'Any course from List A not already completed'; the List A STAT C1000/STAT C1000H/PSYC 120 choice is therefore also usable in List B but is recorded only once, in List A.",
+   "The 60-unit figure appears only as a general AA-T requirement, not as this award's printed total, so degree_total is null.",
+   "The requirements list continues from page 108 onto page 109 under the Political Science section.",
+   "The description mentions continued studies in government, politics and law; these were read as fields of study, not careers, so careers is empty."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "a0ff74cc83b24459",
+ "source_codes": [
+  "ANTH102",
+  "ECONC2001",
+  "ECONC2002",
+  "ESTU101",
+  "HISTC1001",
+  "HISTC1002",
+  "POLI102",
+  "POLI103",
+  "POLI105",
+  "POLI106",
+  "POLI107",
+  "POLI110",
+  "POLSC1000",
+  "PSYC120",
+  "PSYCC1000",
+  "SOCI101",
+  "STATC1000",
+  "STATC1000H",
+  "WSTU101"
+ ],
+ "source_coverage": 1.0
 }

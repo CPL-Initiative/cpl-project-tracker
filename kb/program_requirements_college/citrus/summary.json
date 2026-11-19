@@ -2,102 +2,54 @@
  "college": "Citrus College",
  "programs": 193,
  "with_closed_list": 185,
- "found": 175,
- "extracted": 175,
+ "found": 177,
+ "extracted": 177,
  "errors": 0,
- "passed_machine_checks": 145,
+ "passed_machine_checks": 162,
  "failed": {
-  "coverage": 7,
+  "coverage": 3,
   "invented": 0,
-  "arithmetic": 29,
+  "arithmetic": 14,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 11.56,
+ "cost_usd_run": 1.85,
+ "cost_usd_filed": 11.69,
  "cost_per_program": 0.0661,
+ "extract_calls": 18,
+ "extract_failed": [],
  "not_found": [
   {
-   "control_number": "02356",
-   "title": "Criminal Justice",
-   "award": "A.S. Degree",
+   "control_number": "11240",
+   "title": "Child Develop. Master Teacher: Early Intervention Specialty",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-justice-studies-adt/",
+    "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-early-intervention-certificate-achievement/",
     "label": {
-     "award": 0,
-     "title": 0.5
+     "award": 1,
+     "title": 0.714
     },
     "field": "innerText+tabs",
-    "coverage": 0.0,
+    "coverage": 1.0,
     "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "content": 0.067,
+    "net": 15,
+    "listed": 15,
+    "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 5728,
-     "content": 26866,
-     "tabs": 5577
+     "body": 5228,
+     "content": 22360,
+     "tabs": 1720
     },
     "tab_panels": [
      [
       "Learning Outcomes",
-      353
+      753
      ],
      [
       "Requirements",
-      2910
-     ],
-     [
-      "Curriculum Map",
-      2623
-     ],
-     [
-      "Career Information",
-      600
-     ],
-     [
-      "Close this window",
-      147
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "30937",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5410,
-     "content": 24275,
-     "tabs": 3898
-    },
-    "tab_panels": [
-     [
-      "Learning Outcomes",
-      384
-     ],
-     [
-      "Requirements",
-      1723
-     ],
-     [
-      "Curriculum Map",
-      2131
+      1700
      ],
      [
       "Career Information",
@@ -108,7 +60,96 @@
       147
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31430",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/english/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.969,
+    "body": 0.0,
+    "content": 0.656,
+    "net": 31,
+    "listed": 32,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 6685,
+     "content": 46960,
+     "tabs": 25109
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      358
+     ],
+     [
+      "GE for Transfer",
+      2085
+     ],
+     [
+      "Courses",
+      22984
+     ],
+     [
+      "Programs",
+      117
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31431",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/physics/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 0.6,
+    "net": 5,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4989,
+     "content": 29969,
+     "tabs": 9045
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      1040
+     ],
+     [
+      "Courses",
+      9030
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "44410",
@@ -151,7 +192,8 @@
       147
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44462",
@@ -194,8 +236,9 @@
       147
      ]
     ]
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39726639865"
+ "run": "44481520157"
 }

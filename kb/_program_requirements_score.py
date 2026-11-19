@@ -327,9 +327,34 @@ def measure(record: dict) -> str:
 def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float, float] | None:
     """The units one choice carries: the record's own number (and the top of a
     printed range), else the closed list's; an alternatives group runs from its
-    smallest option to its largest. In hours, the closed list is never read."""
+    smallest option to its largest. In hours, the closed list is never read.
+
+    A paired alternative (S681 second reader, A): alternatives sharing one "together" label are one option, taken
+    together in place of the row (Coastline's SPAN C180A and C180B for SPAN C180). The option carries its members'
+    own units added up, or, where a member has none, the group's "together_units" (and "together_units_max")."""
     vals = []
-    for entry in [course] + alternatives(course):
+    groups: dict = {}
+    for entry in alternatives(course):
+        if entry.get("together"):
+            groups.setdefault(entry["together"], []).append(entry)
+    for members in groups.values():
+        g = [v for v in (_num(members[0].get("together_units")), _num(members[0].get("together_units_max")))
+             if v is not None]
+        lo = hi = 0.0
+        for m in members:
+            own = [v for v in (_num(m.get("units")), _num(m.get("units_max"))) if v is not None]
+            if not own and not hours and not g:
+                u = listed.get(listed_key(m.get("code"), listed))
+                own = [u] if u is not None else []
+            if not own:
+                lo = None
+                break
+            lo, hi = lo + min(own), hi + max(own)
+        if lo is not None:
+            vals += [lo, hi]
+        elif g:
+            vals += [min(g), max(g)]
+    for entry in [course] + [a for a in alternatives(course) if not a.get("together")]:
         # A course the page says is taken more than once ("If MUS 11 is chosen, it must be taken
         # for 2 semesters", Hartnell's Music 43887, S497) carries times: its units count that often.
         times = _num(entry.get("times")) or 1

@@ -1,0 +1,26 @@
+{
+ "college": "Foothill College",
+ "reread_run": "44484145727",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44477699881",
+ "at": "2026-11-19T08:32:47Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 0,
+ "absent": 1,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "39351"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": null,
+ "before": []
+}
