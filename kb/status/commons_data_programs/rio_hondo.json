@@ -1,4 +1,4 @@
-{"schema":1,"college":"Rio Hondo College","slug":"rio_hondo","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Rio Hondo College","slug":"rio_hondo","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
 {"cn":"46066","title":"Innovation, Invention, and Entrepreneurship","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25563"},
 {"cn":"37723","title":"American Sign Language","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"24090","title":"California Conditional Real Estate License Certificate of Completion","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

@@ -102,9 +102,9 @@ page as the flat map and clicks a suggestion row expecting a fly; since the
 red on a page that is right (the row's chips, the Sky's readout, `#prov`, the
 hidden Controls word, the staged words). Read its FAILs as stale until it is re-cut
 or retired in favor of the sweep.
-⚠️ **And `npm test` does not run the dependency-map check.** The map records LINE
-NUMBERS, so any edit to a mapped file makes it stale and turns CI red on a green
-local suite: `python3 kb/_build_dependency_map.py --check`.
+The dependency map records LINE NUMBERS, so any edit to a mapped file moves it.
+A PR leaves it as `main` has it: one job on `main` rebuilds it after each merge
+(Sam, 2026-11-18), and CI reports a map behind the PR as a notice.
 
 ### The window, the row and the canvas
 

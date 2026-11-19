@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s683_cpl_memory_rows.sql",
+ "name": "s683_cpl_memory_rows",
+ "version": "20261119001249",
+ "sha256": "1264d06465ac17c3cf52a08b3b73931d0fae4150538e5e792e754d14e6797c0d",
+ "run": "44426994479",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-cobix-watcher-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":365},{\"slug\":\"d-daytime-session-appends-handoff-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":379},{\"slug\":\"d-dependency-map-on-main-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":381},{\"slug\":\"d-nightly-prs-exception-to-cap-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":314},{\"slug\":\"d-rule-g-two-mapped-colleges-s683\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":360},{\"slug\":\"f-cr-exact-match-live-counts-s683\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":222},{\"slug\":\"f-inactive-cards-double-resolve-s683\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":360},{\"slug\":\"f-same-subject-list-s683\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":285},{\"slug\":\"p-cer-procedures-left-side-by-side-stale-s683\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":322},{\"slug\":\"p-workflow-workers-share-main-checkout-s683\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":362}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

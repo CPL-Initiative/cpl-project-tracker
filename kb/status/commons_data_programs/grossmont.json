@@ -1,4 +1,4 @@
-{"schema":1,"college":"Grossmont College","slug":"grossmont","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Grossmont College","slug":"grossmont","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
 {"cn":"19610","title":"General Studies: Wellness and Self-Development","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/health-sciences/general-studies-aa-wellness-self-development/"},
 {"cn":"37453","title":"Theatre Arts","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-aat/"},
 {"cn":"04999","title":"Theatre Arts: Acting","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/theatre-arts-aa-cert-achievement/"},

@@ -95,3 +95,7 @@ that fails when `main` grew more than 50 MB compressed in 7 days. Tests: `tests/
    words).
 6. Worker worktrees under `.claude/worktrees/` take about 2.3 GB each (six took the disk from 27 GB free to 13 GB):
    remove a finished worker's worktree once its head is pushed (S681).
+7. **#3526 (open, awaiting COBIx; `d-dependency-map-on-main-s683`):** one job on `main`
+   (`dependency-map.yml`) rebuilds `kb/dependency_map.json`, `docs/reference/dependency_map.md` and
+   `cobi_admin_surface.js` after each merge; a PR leaves them as `main` has them (Sam, 2026-11-18, relayed by COBIx on
+   #3358, rule 2). Until it lands, a PR does not run `kb/_build_dependency_map.py`, and CI may flag the map: leave it.

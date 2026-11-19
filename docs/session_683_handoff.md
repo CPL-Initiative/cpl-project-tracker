@@ -142,3 +142,82 @@ S682: cost not available (no get_session; token counts above, about $26 at list 
 
 Opening line: *Greetings, you are SkyNuthatch (Session 683), see SkyVireo's handoff, `docs/session_683_handoff.md`,
 let's keep rolling with our queue.*
+
+## Daytime session, SkyDipper (S683 daytime), 2026-11-18
+
+A code session Sam opened by day (started 14:45Z), after this file was written for tonight. It took this number with a
+*daytime* label and adds this section instead of a new handoff; tonight's run is still **SkyNuthatch (Session 683)**
+and the opening line above stands (`d-daytime-session-appends-handoff-s683`; [`scheduled_sessions`](reference/scheduled_sessions.md)).
+A full checkpoint (lanes moved), written by the checkpoint-docs worker on draft PR "Rule 9 checkpoint: S683 SkyDipper
+(daytime), handoff 683 daytime section".
+
+### Open with the standing block (COBIx on #3358, 21:20Z, corrected 21:36Z; Sam's rule for the next two or three sessions)
+
+1. **Restart the COBIx watcher:** `bash scripts/cobix_watch.sh [state dir]` in the background. Every 5 minutes it runs
+   two `gh api -X GET search/issues` searches for changed threads `cobi-cto` commented on, resuming from its saved
+   last-seen file; act on each new `<!-- cobix -->` comment.
+2. **Merge rules** (Sam, about 1:10 PM PT, relayed by COBIx): at most 3 open PRs (plus #3511 and dependabot's), oldest
+   finished first, one update from `main` right before its merge, no dependency-map rebuild inside a PR
+   (`kb/_build_dependency_map.py` is not run in a PR; CI may flag the map until #3526 lands: leave it), no full rerun
+   when the input fingerprints match.
+3. **Current order:** #3526, then #3528, then #3529. Nightly #3497, #3508, #3492 and #3500 stay open through tonight's
+   run as a stated exception to the cap (`d-nightly-prs-exception-to-cap-s683`), then the conductor parks what is left.
+
+### What shipped (merged to `main`)
+
+- **#3520**: `cer-procedures.yml` rebuilds the Side by side views (`main` had gone red after CER run 44350607385); a
+  failed rebuild holds the review queue back and ends red; tests pick fixtures by rule.
+- **#3519**: course flags merged, inactive (3,357; 1,119 in counted scope, 1,116 leave the counts, 3 a person reviewed
+  stay; Source 13's 1,067 came from double alias resolution), not applicable and retired; `kb/_flags.py`
+  `hidden_card_ids` and `load_flags` with `_ids_current_through` stamps; Sam's flag-and-hide rule in `sam_rulings`.
+- **#3513**: rules G and M last in `kb/_ccr_confidence_score.py`; `kb/_ccr_confidence_apply.py` with receipts and
+  `--undo --rule G|M`. G 166 accepts with `--fill-members` (105 without), two mapped colleges required; M 47 moves and 5
+  keeps, FPR 38 moves, all moves refused until a MUSI to MUSC re-mint; W and D stay held.
+- **#3515** at Sam's go: exhibits blocker rules 1 and 2 with #3472's pair list; rule 1 re-points 95 of 121 pairs to 76
+  twins, rule 2 keeps 75 of 95; Sam's pile 397 to 216 once applied; nothing applied. #3472 closed as carried.
+- **#3517**: Commons and College Data Collection date estimates in plain words, links land on their tab, count units
+  named, ruled cards leave in-doubt, the nightly Playwright click-through at 04:37 UTC.
+- **#3514**: the reader's page checks, rules A to C on, rule D behind the `rule_d` input; self-recall 10,046 of 13,243
+  own pages, 22 sister accepts; plan `kb/program_requirements_reread_plan_s683.json` (444 records, 73 colleges, about
+  $21.38, largest college $3.15).
+- **Open:** #3526 (dependency map on `main`, awaiting COBIx), #3528 (*Same subject* in Related titles), #3529 (flagged
+  cards leave the scorer; waiting pile 6,426 to 6,419). **Parked as issues** (PR closed, branch kept): #3516 as #3522,
+  #3518 as #3523 (CR exact match: inventory 29,995 = MAP only 3,334 + exact 202 + typographic or real difference
+  26,459; `map_ace_catalog_cr` 104,688 rows over 25,742 exhibits), #3482 as #3524, #3293 as #3525.
+
+### NEXT for tonight (from the lane NEXT lines)
+
+1. **Reader rules** ([program-requirements-harvest](reference/lanes/program-requirements-harvest.md) (0a)): preview
+   (`extract=0`) Mendocino and City College of San Francisco first; pay for nothing unless Mendocino's `capture.json`
+   `pdf.page_checks.own_page` is 9 or more and CCSF 40432 no longer reads page 564; then the plan's colleges in order
+   under $40 a college; rule D only via `rule_d` for CCSF, Santa Rosa and College of the Desert, then
+   `kb/_program_discontinued.py --capture`.
+2. **Rule G apply** ([commons](reference/lanes/commons.md)): `python3 kb/_ccr_confidence_apply.py --rule G --fill-members`,
+   then `--apply --expect <the dry run's count> --run <tonight's label>`; commit `kb/coci_minted_courses.json` with
+   `kb/ccr_confidence_out/<date>/receipt.json`. M (47) and FPR (38) wait on a re-mint (`--worklist`).
+3. **Exhibits pair apply** ([cer-procedures](reference/lanes/cer-procedures.md)): rebuild the list if inputs moved,
+   dry run `python3 kb/_cred_rename_apply.py --pairs kb/exhibit_blocker_rules_list.json` on the runner's MAP snapshot,
+   the reviewed apply, then 71 `left_map_keep` rows INSERT-only under `exhibits-rules-s683@bot` after a fresh live read.
+   Rule 2's 4 other keeps wait on `exhibit_repoint.Index.key_of` mapping every key to itself.
+4. **Hand-fetched catalogs** (#3510 comment 6992238657): West Los Angeles, Trade-Technical, Pierce, Mission, East Los
+   Angeles, El Camino with its Fall and Summer 2026 addenda; catalog text first; NOCE 2025-26 only as a fallback.
+5. **The unblocker step** (Sam, 10:43 AM PT; `scheduled_sessions` step 12): other public routes before Sam's
+   hand-fetch list, Southwestern and NOCE first; never around a WAF, never past robots.txt; the HTML read path (0c).
+6. **Commons** NEXT (a) to (e): `kb/status/cr_decisions_live.json` from a read-only job; the `ccr_procedure_request`
+   sync; the click-through figures after 04:37 UTC; the retired note on 11 courses; fetch plans import `hidden_card_ids()`.
+
+**Skip tonight:** the parked PRs; #3527 (another session's Library PR).
+
+### Decisions and safety
+
+Sam's four rows of 2026-11-18 are in `sam_rulings` (merge rules, the watcher, *Same subject*, *"go on all fronts"*).
+Memory rows drafted, not applied: `kb/migrations/2026-11-18_s683_cpl_memory_rows.sql`, its rollback beside it.
+**PITFALL** `p-workflow-workers-share-main-checkout-s683`: inside a Workflow `isolation: worktree` was not honored; name
+the worktree in every brief. Watches held by the conductor at this writing: the COBIx watcher's background poll; the
+conductor names any PR subscription, check-in or artifact watch at sign-off and drops it then.
+
+Spend: $161.56 (Opus 5.5 $161.56, this session's cost readout at 2026-11-19T00:55Z, workers included); curation $124.00, infrastructure $37.56; 2026-11-18T14:45Z to 2026-11-19T00:55Z.
+
+**Carry-over for the next session (merge rules: one update from main, then merge):** #3528 (Same subject list; lints red only on the stale map, now fixed on main) and #3529 (flags into the scorer) each need one update from main, COBIx's read, then merge. #3526 merged: confirm the first Dependency map run on main is green and committed the map. COBIx's two #3526 follow-ups (NEXT): the suite shards still read the committed map (skip map readers in shards or rebuild first, with a drift check in `tests/dependency_map_on_main_test.py`), and `check_generated.sh` should print a separate line when the builder crashes (rc 2). #3531 fixed main's `commons_clarity_units` test after the 23:45Z census passed Chaffey 20677.
+
+S683 daytime: substantive PRs merged 8 (#3520, #3519, #3513, #3515, #3517, #3514, #3531, #3526); collection none (code-only).

@@ -42,6 +42,10 @@ OUT = "kb/status/session_spend.json"
 # Spend:, **Spend:**, **Spend**: and lowercase spend: all read (COBIx on #3379); Spending: never does.
 LINE = re.compile(r"^\s*(?:[-*]\s*)?\**[Ss]pend(?::\**|\**:)\s*(.*)$")
 STAMP = r"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?Z)"
+# A daytime session adds a dated section to the newest handoff instead of a new one (S683,
+# d-daytime-session-appends-handoff-s683): "## Daytime session, <moniker> (S<N> daytime), <date>". Its own Spend: line,
+# under that heading, is session N daytime's figure; the file's first line outside such a section stays session N-1's.
+DAYTIME = re.compile(r"^##\s+Daytime session\b.*\(S(\d+) daytime\)")
 TIMES = re.compile(STAMP + r"\s*(?:to|–|-)\s*" + STAMP)
 USD = re.compile(r"\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)")
 MODEL = re.compile(r"([A-Za-z][A-Za-z0-9.-]*(?: [A-Za-z0-9.-]+)*?)\s+\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)")
@@ -98,17 +102,30 @@ def build(root):
         if not n:
             continue
         found = None
+        daytime = {}
+        day_n = None
         with open(path, encoding="utf-8") as f:
             for raw in f:
+                dh = DAYTIME.match(raw)
+                if dh:
+                    day_n = int(dh.group(1))
+                    continue
+                if raw.startswith("## "):
+                    day_n = None
                 mm = LINE.match(raw)
                 if mm and mm.group(1).strip().strip("`") not in EXAMPLES:
                     got = parse_line(mm.group(1))
-                    if got:
+                    if not got:
+                        continue
+                    if day_n is not None:
+                        daytime.setdefault(day_n, got)
+                    elif found is None:
                         found = got
-                        break
         if found:
             # The handoff N is written by session N-1: the spend belongs to the writer.
             sessions.append(dict(session=int(n.group(1)) - 1, handoff=os.path.relpath(path, root), **found))
+        for dn, got in sorted(daytime.items()):
+            sessions.append(dict(session=dn, daytime=True, handoff=os.path.relpath(path, root), **got))
     sessions.sort(key=lambda s: s["session"])
     by_day = {}
     for s in sessions:
