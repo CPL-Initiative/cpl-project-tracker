@@ -37,6 +37,10 @@ so the reread leaves that row alone. This test guards the failure mode: a filed 
     program's is held where the live row already holds this run (a wrong record live, the run in the why), and
     restored where the live run is a third one; a live run equal to this run is already posted: kept on the branch,
     named by no dispatch, a second pass after the post changes no file; a live run other than the filed one is held;
+  * S685's second pass: with live_runs, a run whose reread receipt is on the branch is named again when a kept
+    record is not live at it, and a run whose kept and new records are all live at it is not (a carried run too);
+    without live_runs the receipt retires the run as before; a held program whose re-read is back in records/ is
+    listed once;
   * with live_runs absent, the every-branch fixture's outcomes, files and dispatch equal main's script at 94a02499
     (tests/fixtures/program_reread_keep_better_main_snapshot.json).
 
@@ -565,6 +569,69 @@ def test_second_pass(tmp):
           "a second pass dispatched again: %r" % (again["dispatch"],))
 
 
+def receipt(tmp, run):
+    write(os.path.join(tmp, "kb", "receipts", "program_requirement_records_college_reread_fixture_%s.json" % run),
+          {"college": COLLEGE, "extracted_run": str(run), "error": None})
+
+
+def test_second_pass_after_receipt(tmp):
+    """S685's second pass: a run whose reread receipt is on the branch gains a kept record that is not live at it
+    (a re-read set aside before, restored to records/). With live_runs the live read names the run; a run whose kept
+    and new records are all live at it stays out; without live_runs the receipt retires the run as on main."""
+    folder, rdir = generic_folder(tmp, {"54001": (WORSE, PASS, OWN, CL_URL), "54002": (WORSE, PASS, OWN, CL_URL),
+                                        "54003": (PASS, WORSE, OWN, CL_URL)})
+    receipt(tmp, NEW)   # the first reread posted run NEW (54001); 54002 was set aside then and is back now
+    plain = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None)
+    check(isinstance(plain["dispatch"], str), "without live_runs a receipt no longer retires the run: %r"
+          % (plain["dispatch"],))
+    lr = {"54001": str(NEW), "54002": str(OLD), "54003": str(OLD)}
+    acct = K.keep_better(folder, base="base", checked=set(), live_runs=lr, out=lambda *_: None)
+    check(outcomes(acct) == {"54001": "posted", "54002": "kept", "54003": "restored"}, "outcomes %r" % outcomes(acct))
+    d = acct["dispatch"]
+    check(isinstance(d, list) and len(d) == 1 and d[0]["inputs"]["force"] == str(NEW)
+          and d[0]["control_numbers"] == ["54002"] and d[0].get("not_live_at_run") == ["54002"]
+          and d[0].get("receipt_on_branch") is True and d[0].get("already_live") == ["54001"],
+          "a kept record not live at a posted run is not named: %r" % (d,))
+    # Every kept record live at the run: nothing to post, whatever the receipts say.
+    every = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                          live_runs={"54001": str(NEW), "54002": str(NEW), "54003": str(OLD)})
+    check(isinstance(every["dispatch"], str), "a run live at every record is named: %r" % (every["dispatch"],))
+    # A later extraction carries run NEW's kept 54002: named again only while it is not live at NEW.
+    write(os.path.join(rdir, "54003.json"), rec("54003", PASS, LATER, url=CL_URL))
+    write(os.path.join(os.path.dirname(rdir), "capture.json"), {"run": str(LATER)})
+    runs_named = lambda live: sorted(x["inputs"]["force"] for x in K.keep_better(  # noqa: E731
+        folder, base="base", checked=set(), dry_run=True, out=lambda *_: None, live_runs=live)["dispatch"]
+        if not isinstance(x, str))
+    check(runs_named({"54001": str(NEW), "54002": str(NEW), "54003": str(OLD)}) == [str(LATER)],
+          "a carried run live at its kept records is named")
+    check(runs_named({"54001": str(NEW), "54002": str(OLD), "54003": str(OLD)}) == [str(NEW), str(LATER)],
+          "a carried run with a kept record not live at it is not named")
+
+
+def test_no_duplicate_row(tmp):
+    """A program held for a person (no filed record) whose re-read is back in records/ at the run is decided again
+    and listed once, never beside its earlier held entry."""
+    folder, rdir = generic_folder(tmp, {"55001": (None, PASS, "Accounting, A.S.", CL_URL),
+                                        "55002": (None, PASS, OWN, CL_URL)})
+    first = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    check(outcomes(first) == {"55001": "held", "55002": "new"}, "first pass %r" % outcomes(first))
+    os.remove(os.path.join(folder, K.HELD_DIR, "55001.json"))
+    write(os.path.join(rdir, "55001.json"), rec("55001", PASS, NEW, heading=OWN, url=CL_URL))
+    again = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    listed = [r["control_number"] for r in again["runs"][str(NEW)]["programs"]]
+    check(sorted(listed) == ["55001", "55002"], "the account lists %r" % listed)
+    check(outcomes(again) == {"55001": "new", "55002": "new"} and again["counts"]["held_for_person"] == 0,
+          "again %r %r" % (outcomes(again), again["counts"]["held_for_person"]))
+    check(dispatched(again) == {"55001", "55002"}, "dispatch %r" % (again["dispatch"],))
+    # A held program whose record stays in held_for_person/ is still listed as held.
+    write(os.path.join(rdir, "55003.json"), rec("55003", PASS, NEW, heading="Accounting, A.S.", url=CL_URL))
+    third = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    fourth = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    check(outcomes(third).get("55003") == "held" and outcomes(fourth).get("55003") == "held"
+          and [r["control_number"] for r in fourth["runs"][str(NEW)]["programs"]].count("55003") == 1,
+          "a held program kept in held_for_person/: %r" % outcomes(fourth))
+
+
 def every_branch_snapshot(tmp, module) -> dict:
     """The every-branch fixture of test_folder run through `module`: outcomes, each record file's bytes as sha256,
     and the dispatch (without its ref), so main's script and this one can be compared."""
@@ -701,7 +768,8 @@ def main():
     for fn in (test_checked_list, test_folder, test_all_restored, test_checked_unfiled, test_live_runs,
                test_live_runs_file, test_control_number_shape, test_ascii_runs, test_generic_heading_scorer,
                test_generic_heading, test_order, test_second_pass, test_matches_main, test_real_cases,
-               test_address_cases, test_capture_names_another_award):
+               test_address_cases, test_capture_names_another_award, test_second_pass_after_receipt,
+               test_no_duplicate_row):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)
