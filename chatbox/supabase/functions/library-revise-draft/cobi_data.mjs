@@ -71,7 +71,11 @@ const PROSE = new RegExp("(^|[^\\d.,$<A-Za-z-])(?<!\\b" + NOT_BEFORE + "\\s)([1-
 const small = (d) => (/^[1-9]$/.test(d) ? "<10" : d);
 // A labeled number and its span ("Course 2 of 5", "Grades 2-3", "Year 1 or 2") is held aside while counts are matched,
 // so neither of its numbers reads as a count (COBIx on #3527).
-const LABELED = new RegExp("\\b(?:(?:grade|step|course|version|level|year|page|part|phase|module|chapter|week|day|unit|semester|term|quarter|session|top|tier|section|room|lesson|cohort)s?)\\s+\\d+(?:(?:\\s*[-\u2013]\\s*|\\s+(?:of|out of|or|to|and)\\s+(?:the\\s+)?)\\d+)?", "gi");
+const LABEL_WORDS = "(?:grade|step|course|version|level|year|page|part|phase|module|chapter|week|day|unit|semester|term|quarter|session|top|tier|section|room|lesson|cohort)";
+// A singular label holds its number and a span joined by -, of, to (Course 2 of 5, Step 2 to 3); "and" and "or" join
+// a span only after a plural label (Grades 2 and 3), so "Grade 12 and 4 students" still hides the 4 (COBIx on #3527).
+const LABELED = new RegExp("\\b(?:" + LABEL_WORDS + "s\\s+\\d+(?:(?:\\s*[-\u2013]\\s*|\\s+(?:of|out of|or|to|and)\\s+(?:the\\s+)?)\\d+)?" +
+  "|" + LABEL_WORDS + "\\s+\\d+(?:(?:\\s*[-\u2013]\\s*|\\s+(?:of|out of|to)\\s+(?:the\\s+)?)\\d+)?)", "gi");
 export function suppressText(t) {
   const held = [];
   const out = String(t)
