@@ -216,6 +216,8 @@ Memory rows drafted, not applied: `kb/migrations/2026-11-18_s683_cpl_memory_rows
 the worktree in every brief. Watches held by the conductor at this writing: the COBIx watcher's background poll; the
 conductor names any PR subscription, check-in or artifact watch at sign-off and drops it then.
 
-Spend: $146.05 (Opus 5.5 $146.05, this session's cost readout at 23:35Z, workers included); curation $112.00, infrastructure $34.05; 2026-11-18T14:45Z to 2026-11-18T23:44Z.
+Spend: $161.56 (Opus 5.5 $161.56, this session's cost readout at 2026-11-19T00:55Z, workers included); curation $124.00, infrastructure $37.56; 2026-11-18T14:45Z to 2026-11-19T00:55Z.
 
-S683 daytime: substantive PRs merged 6 (#3520, #3519, #3513, #3515, #3517, #3514); collection none (code-only)
+**Carry-over for the next session (merge rules: one update from main, then merge):** #3528 (Same subject list; lints red only on the stale map, now fixed on main) and #3529 (flags into the scorer) each need one update from main, COBIx's read, then merge. #3526 merged: confirm the first Dependency map run on main is green and committed the map. COBIx's two #3526 follow-ups (NEXT): the suite shards still read the committed map (skip map readers in shards or rebuild first, with a drift check in `tests/dependency_map_on_main_test.py`), and `check_generated.sh` should print a separate line when the builder crashes (rc 2). #3531 fixed main's `commons_clarity_units` test after the 23:45Z census passed Chaffey 20677.
+
+S683 daytime: substantive PRs merged 8 (#3520, #3519, #3513, #3515, #3517, #3514, #3531, #3526); collection none (code-only).
