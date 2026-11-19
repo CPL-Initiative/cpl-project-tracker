@@ -591,7 +591,11 @@
      "listed": 8
     }
    },
-   "i": 1
+   "i": 1,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Citrus College",
@@ -815,7 +819,11 @@
      "listed": 5
     }
    },
-   "i": 2
+   "i": 2,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Citrus College",
@@ -1039,7 +1047,11 @@
      "listed": 5
     }
    },
-   "i": 3
+   "i": 3,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "College of the Desert",
@@ -1623,7 +1635,11 @@
      "listed": 29
     }
    },
-   "i": 4
+   "i": 4,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "College of the Desert",
@@ -1983,7 +1999,11 @@
      "listed": 13
     }
    },
-   "i": 5
+   "i": 5,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "College of the Desert",
@@ -2236,7 +2256,11 @@
      "listed": 7
     }
    },
-   "i": 6
+   "i": 6,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Fullerton College",
@@ -2586,7 +2610,11 @@
      "listed": 12
     }
    },
-   "i": 7
+   "i": 7,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Fullerton College",
@@ -2862,7 +2890,11 @@
      "listed": 10
     }
    },
-   "i": 8
+   "i": 8,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Long Beach City College",
@@ -3298,7 +3330,11 @@
      "listed": 14
     }
    },
-   "i": 9
+   "i": 9,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Long Beach City College",
@@ -3558,7 +3594,11 @@
      "listed": 10
     }
    },
-   "i": 10
+   "i": 10,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Long Beach City College",
@@ -4201,7 +4241,11 @@
      "listed": 36
     }
    },
-   "i": 11
+   "i": 11,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Sierra College",
@@ -4638,7 +4682,11 @@
      "listed": 10
     }
    },
-   "i": 12
+   "i": 12,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Sierra College",
@@ -4954,7 +5002,11 @@
      "listed": 12
     }
    },
-   "i": 13
+   "i": 13,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   },
   {
    "college": "Coastline Community College",
@@ -5196,7 +5248,11 @@
      "listed": 8
     }
    },
-   "i": 14
+   "i": 14,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json"
+   }
   }
  ],
  "plan": {
@@ -5308,5 +5364,27 @@
  "rollback_checks_only": null,
  "rollback": null,
  "rollback_how": "rollback_checks_only and rollback_full_row each take back the plan's rows, skip and list a row a person checked, and abort unless they match the plan less those rows. Where the apply returned fewer rows, edit the rollback's expect line to that count.",
- "applied": null
+ "applied": {
+  "full_row": {
+   "from": "kb/receipts/migration_s681_prreq_units_rules_apply_rows_44483137614.json",
+   "returned": 14,
+   "keys": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ],
+   "skipped_checked": []
+  }
+ }
 }

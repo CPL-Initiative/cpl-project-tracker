@@ -26,7 +26,9 @@ Pinned on fixtures:
   * the S681 plan, one plan in three parts: A the S680 apply's rows to the corrected values (guarded on the image
     S680 wrote), B #3502's catalog rows that meet their gap's sentence (the 16 no-units rows and the failing ones
     held out), C units rule A5's five with 56 and its note; each file names exactly the plan's rows, and a part B
-    or C row at a held college fails.
+    or C row at a held college fails;
+  * a row a later reread replaced from this plan's after-image (its reread receipt's before-image holds the checks
+    the plan wrote) is the reread's: the load checks skip it and part B keeps it as planned, at most a few rows.
 
 Run from repo root: python3 tests/program_named_gaps_test.py
 """
@@ -48,6 +50,27 @@ def check(cond, msg):
     checks[0] += 1
     if not cond:
         failures.append(msg)
+
+
+def reread_later(rows, image="after_image"):
+    """The plan rows a later reread replaced (kb/receipts/program_requirement_records_college_reread_*.json): the
+    reread names the row in replaced_keys and its before-image holds the checks this plan wrote, so the plan's write
+    landed first and the reread's record is the live one (S683: Santa Rosa Junior 44788 and City College of San
+    Francisco 16991 and 41049, reread at 08:24Z and 08:28Z after the S681 apply at 08:11Z). Those rows are judged by
+    the reread's own test (tests/program_reread_keep_better_test.py), never against this plan's after-image."""
+    import glob
+    import json as _json
+    want = {(r["college"], str(r["control_number"])): r[image]["checks"] for r in rows}
+    out = set()
+    for p in sorted(glob.glob(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_college_reread_*.json"))):
+        with open(p, encoding="utf-8") as fh:
+            rr = _json.load(fh)
+        replaced = {str(k) for k in rr.get("replaced_keys") or []}
+        for b in rr.get("before") or []:
+            k = (rr.get("college"), str(b.get("control_number")))
+            if k[1] in replaced and k in want and b.get("checks") == want[k]:
+                out.add(k)
+    return out
 
 
 def local_degree(major_computed, major_stated):
@@ -173,10 +196,15 @@ if os.path.isfile(RECEIPT):
     with open(R681, encoding="utf-8") as fh:
         rc681 = json.load(fh)
     a681 = {(r["college"], str(r["control_number"])): r for r in rc681["records"] if r["part"] == "A"}
-    same = sum(1 for r in rc["records"] if imgs.get((r["college"], str(r["control_number"])), {}).get("checks")
+    # A row a later reread replaced from S681's after-image is the reread's now (reread_later).
+    later680 = reread_later([a681.get((r["college"], str(r["control_number"]))) or r for r in rc["records"]])
+    same = sum(1 for r in rc["records"] if (r["college"], str(r["control_number"])) not in later680
+               and imgs.get((r["college"], str(r["control_number"])), {}).get("checks")
                == (a681.get((r["college"], str(r["control_number"]))) or r)["after_image"]["checks"]
                and imgs[(r["college"], str(r["control_number"]))]["record"] == r["before_image"]["record"])
-    check(same == len(rc["records"]), "the load posts the latest after-image for %d of %d rows" % (same, len(rc["records"])))
+    check(same == len(rc["records"]) - len(later680), "the load posts the latest after-image for %d of %d rows (%d reread later)"
+          % (same, len(rc["records"]) - len(later680), len(later680)))
+    print("S680 rows a later reread replaced: %d" % len(later680))
     check(all(r["after_image"]["checks"].get("gaps") and r["before_image"]["checks"].get("gaps") is None
               for r in rc["records"]), "every row gains its gap and had none")
     # Each plan is judged against the held list it ran under, frozen in its receipt: kb/collection_lane.py moves.
@@ -338,7 +366,11 @@ check(len(plan3502) == 54 and collections.Counter(g for g, _ in plan3502.values(
 # Part B: every one of the 38 catalog rows checked against its gap's sentence in code; the 16 no-units rows held out.
 filed_by_key = {(d.get("college"), str(d.get("control_number"))): d for d in every}
 catalog = {k for k, (g, _) in plan3502.items() if g == "catalog_figures_differ"}
-meets = {k for k in catalog if NG.figures_differ_fails(filed_by_key[k]) is None}
+later681 = reread_later(rows681)
+print("S681 rows a later reread replaced: %d" % len(later681))
+# A part B row a later reread replaced was read against the record the plan saw; the filed record is the reread's.
+meets = {k for k in catalog if (k in later681 and k in by_part["B"])
+         or (k not in later681 and NG.figures_differ_fails(filed_by_key[k]) is None)}
 want_b = {k for k in meets if k[0] not in HELD681}
 check(by_part["B"] == want_b and len(want_b) == 21 and len(catalog) == 38,
       "part B is the 38 catalog rows that meet the sentence: %d (%d fail)" % (len(want_b), len(catalog - meets)))
@@ -374,7 +406,10 @@ for college in sorted({r["college"] for r in rows681}):
     for r in C.load_rows(college)[0]:
         imgs681[(college, str(r["control_number"]))] = r
 check(all(imgs681[key(r)]["checks"] == r["after_image"]["checks"] and imgs681[key(r)]["record"]
-          == r["before_image"]["record"] for r in rows681), "the load posts each plan row's after-image, record unchanged")
+          == r["before_image"]["record"] for r in rows681 if key(r) not in later681),
+      "the load posts each plan row's after-image, record unchanged (less the %d a later reread replaced)" % len(later681))
+check(later681 <= {key(r) for r in rows681} and len(later681) < 10,
+      "a later reread replaced a few of the plan's rows, never a sweep: %d" % len(later681))
 MIG = os.path.join(ROOT, "kb", "migrations", "2026-11-18_s681_prreq_named_gaps_")
 texts = {}
 for part in ("preread", "apply", "rollback"):
