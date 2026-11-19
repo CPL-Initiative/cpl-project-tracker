@@ -35,7 +35,9 @@ with the same file at origin/main and keeps the better one.
       re-read moves to held_for_person/, the filed record (if any) is restored, and the why names both runs. A wave
       loads from its branch before it merges, so the live row can come from a run main lacks, and "better" judged
       against main would judge the wrong record. A control number live_runs omits has no live row to protect.
-      Without live_runs the script runs as before and the account says live_runs: "not supplied".
+      Without live_runs the script runs as before and the account says live_runs: "not supplied". A live row
+      that already holds the run being decided is posted: kept, its file left as it is. A control number in either
+      list is a string of five ASCII digits and a run is ASCII digits; anything else stops the run.
 
 THE SCORES COMPARED. compare() reads each file's stored score: the re-read's was written by this run's scorer, the
 filed record's at its own extraction, possibly under an older scorer (the units rules, the printed floor). A fresh
@@ -182,7 +184,21 @@ def base_bytes(root: str, base: str, rel: str) -> bytes | None:
     return got.stdout if got.returncode == 0 else None
 
 
-DIGITS = re.compile(r"^\d{3,6}$")
+# Every committed record's control number is five ASCII digits (18,980 on main, S684). A number, or a string that
+# lost its leading zero, would compare equal to nothing and skip the guard, so either stops the run.
+CONTROL_NUMBER = re.compile(r"[0-9]{5}")
+RUN = re.compile(r"[0-9]+")   # ASCII only: str.isdigit passes other scripts' digits
+
+
+def control_number(x, where: str) -> str:
+    if not (isinstance(x, str) and CONTROL_NUMBER.fullmatch(x)):
+        raise SystemExit("%s: %r is not a control number: a control number is a string of five digits and keeps its "
+                         "leading zeros (\"05839\", never 5839 or \"5839\")" % (where, x))
+    return x
+
+
+def is_run(v) -> bool:
+    return isinstance(v, (str, int)) and not isinstance(v, bool) and bool(RUN.fullmatch(str(v)))
 
 
 def read_checked(path: str | None, college: str | None) -> set[str]:
@@ -199,9 +215,9 @@ def read_checked(path: str | None, college: str | None) -> set[str]:
     if not college:
         raise SystemExit("the folder's records name no college, so its checked rows cannot be read")
     rows = by.get(college, [])
-    if not isinstance(rows, list) or not all(isinstance(x, (str, int)) and DIGITS.match(str(x)) for x in rows):
+    if not isinstance(rows, list):
         raise SystemExit("by_college[%r] is not a list of control numbers" % college)
-    return {str(x) for x in rows}
+    return {control_number(x, "by_college[%r]" % college) for x in rows}
 
 
 def read_live_runs(path: str | None, college: str | None) -> dict | None:
@@ -221,11 +237,13 @@ def read_live_runs(path: str | None, college: str | None) -> dict | None:
     if not college:
         raise SystemExit("the folder's records name no college, so its live runs cannot be read")
     rows = lr.get(college, {})
-    if not isinstance(rows, dict) or not all(DIGITS.match(str(k)) and isinstance(v, (str, int))
-                                             and not isinstance(v, bool) and str(v).isdigit()
-                                             for k, v in rows.items()):
+    if not isinstance(rows, dict):
         raise SystemExit("live_runs[%r] is not an object of control number to extraction run" % college)
-    return {str(k): str(v) for k, v in rows.items()}
+    for k, v in rows.items():
+        control_number(k, "live_runs[%r]" % college)
+        if not is_run(v):
+            raise SystemExit("live_runs[%r][%r]: %r is not an extraction run (ASCII digits)" % (college, k, v))
+    return {k: str(v) for k, v in rows.items()}
 
 
 def next_read_held(folder: str, cn: str) -> dict | None:
@@ -282,8 +300,9 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         with open(os.path.join(folder, "capture.json")) as fh:
             run = str(json.load(fh).get("run") or "")
     run = str(run)
-    if not run.isdigit():
-        raise SystemExit("no extraction run: capture.json names none and --run was not given")
+    if not RUN.fullmatch(run):
+        raise SystemExit("no extraction run: capture.json names none and --run was not given (%r is not ASCII digits)"
+                         % run)
     acct_path = os.path.join(folder, ACCOUNT)
     runs: dict = {}
     if os.path.isfile(acct_path):
@@ -323,6 +342,9 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
             else:
                 row.update(outcome="held", held_checked=True,
                            why="a person checked the live row, and %s files no record to restore" % base)
+        # The live row already holds this run: the reread posted it, so the file stays as it is (#3547, finding 2).
+        elif live is not None and live == run:
+            row.update(outcome="kept", why="the live row already holds this run (%s): it is posted" % run)
         # A live row from a run the base does not hold: "better" against the base judges the wrong record (finding 2).
         elif live is not None and (filed is None or live != str(row["filed_run"])):
             row.update(outcome="held", held_live_run=True,

@@ -347,9 +347,64 @@ def test_live_runs_file(tmp):
             pass
 
 
+def stops(fn, *args, **kw) -> bool:
+    try:
+        fn(*args, **kw)
+    except SystemExit:
+        return True
+    return False
+
+
+def test_control_number_shape(tmp):
+    """Second reader on #3547, finding 1: a control number keeps its leading zeros, or a guard compares nothing."""
+    path = os.path.join(tmp, "c.json")
+    for bad in ({"by_college": {COLLEGE: [5839]}}, {"by_college": {COLLEGE: ["5839"]}},
+                {"by_college": {COLLEGE: ["058390"]}}):
+        write(path, bad)
+        check(stops(K.read_checked, path, COLLEGE), "read_checked read %r" % (bad,))
+    for bad in ({"by_college": {}, "live_runs": {COLLEGE: {"5839": "999"}}},
+                {"by_college": {}, "live_runs": {COLLEGE: {"058390": "999"}}}):
+        write(path, bad)
+        check(stops(K.read_live_runs, path, COLLEGE), "read_live_runs read %r" % (bad,))
+    worse = score(False, False, 1, 10, "incomplete")
+    folder, rdir = fixture_folder(tmp, {"05839": worse, "05840": worse}, {"05839": PASS, "05840": PASS})
+    write(path, {"by_college": {COLLEGE: ["05839"]}, "live_runs": {COLLEGE: {"05840": "999"}}})
+    acct = K.keep_better(folder, base="base", checked=K.read_checked(path, COLLEGE),
+                         live_runs=K.read_live_runs(path, COLLEGE), out=lambda *_: None)
+    got = {r["control_number"]: r["outcome"] for r in acct["runs"][str(NEW)]["programs"]}
+    check(got == {"05839": "restored", "05840": "held"}, "leading-zero control numbers: %r" % got)
+    check(not dispatched(acct), "a dispatch names a guarded row: %r" % (acct["dispatch"],))
+
+
+def test_live_run_is_this_run(tmp):
+    """Second reader on #3547, finding 2: a live row already holding the run being decided is posted, not held."""
+    worse = score(False, False, 1, 10, "incomplete")
+    folder, rdir = fixture_folder(tmp, {"50001": worse}, {"50001": PASS, "50002": PASS})
+    acct = K.keep_better(folder, base="base", checked=set(), live_runs={"50001": str(NEW), "50002": str(NEW)},
+                         out=lambda *_: None)
+    got = {r["control_number"]: r for r in acct["runs"][str(NEW)]["programs"]}
+    for cn in ("50001", "50002"):
+        check(got.get(cn, {}).get("outcome") == "kept" and "already holds" in (got.get(cn, {}).get("why") or ""),
+              "%s: a live row on this run came out %r" % (cn, got.get(cn)))
+        p = os.path.join(rdir, cn + ".json")
+        check(os.path.isfile(p) and json.loads(read_bytes(p))["extracted_run"] == NEW
+              and not os.path.exists(os.path.join(folder, K.HELD_DIR, cn + ".json")),
+              "%s: the file a live row already holds was moved" % cn)
+
+
+def test_ascii_runs(tmp):
+    """Second reader on #3547, finding 3: a run is ASCII digits; another script's digits stop the run."""
+    path = os.path.join(tmp, "c.json")
+    write(path, {"by_college": {}, "live_runs": {COLLEGE: {"10001": "٣٨٩"}}})
+    check(stops(K.read_live_runs, path, COLLEGE), "read_live_runs read a run in Arabic-Indic digits")
+    folder, _ = fixture_folder(tmp, {}, {"60001": PASS})
+    check(stops(K.keep_better, folder, base="base", run="٢٢٢", checked=set(), dry_run=True,
+                out=lambda *_: None), "keep_better took a run in Arabic-Indic digits")
+
+
 def main():
     for fn in (test_checked_list, test_folder, test_all_restored, test_checked_unfiled, test_live_runs,
-               test_live_runs_file):
+               test_live_runs_file, test_control_number_shape, test_live_run_is_this_run, test_ascii_runs):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)
