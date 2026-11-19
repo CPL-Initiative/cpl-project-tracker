@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-19_library_relist_on_new_version.sql
-name=s687_library_relist_on_new_version
+file=kb/migrations/2026-11-19_s687_library_memory_rows.sql
+name=s687_library_memory_rows
