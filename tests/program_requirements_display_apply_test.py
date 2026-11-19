@@ -523,4 +523,11 @@ got = A.read_builds(t, odd[1], sleep=lambda s: None)
 check(got == {k: v for k, v in held.items() if k.startswith(odd[1] + "|")}, "one college's keyset pages read it whole")
 check(all("or=" not in c[1] for c in t.calls), "one college's pages key on the control number alone")
 
+_stuck = None
+try:
+    A.read_builds(lambda m, q, b=None: [{"college": "A", "control_number": "00001", "build": BUILD}], sleep=lambda s: None)
+except RuntimeError as e:
+    _stuck = str(e)
+check(_stuck is not None and "did not advance" in _stuck, "a server that ignores the keyset filter stops the read, never loops")
+
 print("ok: program requirements display apply pass (%d checks)" % passed)

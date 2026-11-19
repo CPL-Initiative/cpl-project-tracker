@@ -330,7 +330,11 @@ def read_builds(request, college: str | None = None, sleep=time.sleep) -> dict:
             return out
         for r in page:
             out[_key(r["college"], r["control_number"])] = r.get("build")
-        last = (page[-1]["college"], page[-1]["control_number"])
+        nxt = (page[-1]["college"], page[-1]["control_number"])
+        if last is not None and nxt <= last:
+            # A server that ignored the keyset filter would hand back the same page forever.
+            raise RuntimeError("the page read did not advance past %s|%s" % last)
+        last = nxt
 
 
 def _rollback(before: dict, keys: list) -> dict:
