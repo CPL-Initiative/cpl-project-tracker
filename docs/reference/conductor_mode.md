@@ -189,6 +189,36 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S684, and what worked
+
+The CPL Queue routine's 10:12Z firing of 2026-11-19 (SkyVerdin, started 10:13Z), collection only under Sam's routine
+prompt of 2026-11-17, following the COBIx brief on #3358 as updated 2026-11-19T02:34Z. The conductor ran on Fable 5.2
+again (the third Fable firing); workers on Opus 5.5, pr-gate on Haiku 5.5. No `list_sessions`, `get_trigger`,
+`get_session` or `set_session_tags`. It took the queue from S683's sign-off and declared with draft #3545 at 10:16Z.
+
+- **A red `main` hid its second failure** (`p-lints-stops-at-first-failure-s684`). `lints` stops at its first failing
+  step; once the issuer test was fixed, `tests/course_id_route_test.py` failed behind it. Running the remaining 164
+  steps locally (about 8 minutes) before the repair push found it in one pass instead of one CI round per failure.
+- **The runner pool, again** (`p-hung-size-jobs-starve-the-pool-s684`, `p-branch-update-starts-read-only-workflows-s684`).
+  Hung `Repo size guard / size` jobs held runners for hours, so every job waited ten minutes and more; updating two PRs
+  from `main` at once queued the census and capture workflows the wave had changed. Update one PR at a time, right
+  before its merge.
+- **The context went to CI logs** (`p-ci-log-tails-fill-the-context-s684`): 640,341 of 786,077 tokens used by 12:00Z.
+  Read a failed job's log with `tail_lines` 15, and gate through pr-gate rather than `get_check_runs`.
+- **The COBIx watcher missed a comment** (`p-cobix-watch-misses-on-search-lag-s684`): GitHub search lagged its index
+  past the watcher's two-minute overlap, and pr-gate's thread read caught COBIx's 11:06Z comment on #3547. Read the
+  thread before a merge whatever the watcher says.
+- **A live read that feeds a write goes through the migrate runner's receipt** (`d-live-read-through-the-migrate-runner-s684`),
+  generated and parsed by script so no model copies the values. The receipt keeps 4,000 characters
+  (`p-migrate-receipt-keeps-4000-chars-s684`): ask for counts and differences.
+- **Two review rounds, then ship the verified part** (`d-two-rounds-then-ship-the-verified-part-s684`): on #3547 the
+  round-two finding was closed by removing the unverified branch, and the open item went to COBIx in writing.
+- **Posting on a reviewed head before its merge** (`d-post-on-reviewed-head-before-merge-s684`) kept the reread batch
+  moving while #3547 waited on CI; previews were skipped where the plan's ceiling sat under $1.70 a college
+  (`d-skip-preview-under-ceiling-s684`).
+- **The display build was held** (`d-no-display-tonight-s684`): an hour-long two-step apply with a live count gate,
+  beside the 12:17Z daily slot, on a starved pool. One build next session carries every record of the night.
+
 ## What went wrong in S683, and what worked
 
 The CPL Queue routine's 06:12Z firing of 2026-11-19 (SkyNuthatch, started 06:13Z), collection only under Sam's routine
