@@ -221,3 +221,34 @@ Spend: $161.56 (Opus 5.5 $161.56, this session's cost readout at 2026-11-19T00:5
 **Carry-over for the next session (merge rules: one update from main, then merge):** #3528 (Same subject list; lints red only on the stale map, now fixed on main) and #3529 (flags into the scorer) each need one update from main, COBIx's read, then merge. #3526 merged: confirm the first Dependency map run on main is green and committed the map. COBIx's two #3526 follow-ups (NEXT): the suite shards still read the committed map (skip map readers in shards or rebuild first, with a drift check in `tests/dependency_map_on_main_test.py`), and `check_generated.sh` should print a separate line when the builder crashes (rc 2). #3531 fixed main's `commons_clarity_units` test after the 23:45Z census passed Chaffey 20677.
 
 S683 daytime: substantive PRs merged 8 (#3520, #3519, #3513, #3515, #3517, #3514, #3531, #3526); collection none (code-only).
+
+## Library side job, 2026-11-18 to 19 (session "Cobi library duplicate check warning")
+
+A side session Sam opened by day (21:50Z) with Ashley Mooney, after this file was written. It follows
+`d-daytime-session-appends-handoff-s683`: this section, no new handoff number; tonight's run is still **SkyNuthatch
+(Session 683)** and the opening line above stands. A **light checkpoint** (only the `library` lane moved; no Roadmap
+row, no re-mint, no Rule 10 data write). Skipped: 2 and 3 (no KB generator or listed surface changed), 5 (no KB note
+crossed the bar; the probe lesson went to the lessons doc), 7 (the pipeline did not move), 9 (its own queue item), and
+12 (the status files belong to tonight's routine; one writer per file).
+
+**Shipped and deployed:**
+- **#3527**: Library duplicate check warns with three choices (title and occasion both); Start drafts at once on the
+  piece's card; Change what you asked after a no-change draft; File it hidden on a card that drafts itself; the drafter
+  reads any COBI table or published file (`cobi_data.mjs`), names each college's MAP landing page
+  (`reference_data.mjs`), and shows a student count under 10 as `<10`. COBIx reviewed four rounds; every probe string is
+  a test (`tests/library_revise_draft.test.js` G1 to G7).
+- **#3532**: a singular label's `and`/`or` no longer hides a count that follows (COBIx's last finding).
+- `cpl-chat-deploy.yml` deployed `library-revise-draft` twice, runs 107 and 108, both success.
+
+**Decisions:** Sam's "we should allow full access" is a row in `sam_rulings`; his rulings relayed by COBIx on #3527
+(no staff-data block, the under-10 rule, the landing page as the button, no articulation check) are in the lane and in
+`cpl_memory` `d-library-duplicate-is-a-warning` and `d-library-start-drafts-and-reads-cobi-data`.
+
+**NEXT ([library](reference/lanes/library.md)):** Ashley's next pieces through Start; read the logged usage of a
+tool-reading draft (`library-revise-draft usage`) to see what one costs. **Waiting on MAP:** Sam asked Malone and Pedro
+for `?Exhibit=<MAP ID>` on the landing-page template; when it ships, `landingButton` in `reference_data.mjs` is the one
+line that changes.
+
+Let go: no PR subscription (#3527 and #3532 merged), no check-in, no artifact watch.
+
+Spend: $23.02 (Opus 5.5 $23.02, this session's cost readout at 2026-11-19T02:43Z); infrastructure $23.02; 2026-11-18T21:50Z to 2026-11-19T02:55Z.
