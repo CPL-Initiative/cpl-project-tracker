@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9538,
-    "output_tokens": 3615,
+    "output_tokens": 3695,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3615,
+  "output_tokens": 3695,
   "output_tokens_details": {
-   "thinking_tokens": 1298
+   "thinking_tokens": 912
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11045,
- "ms": 28302,
- "seconds": 28.7,
+ "cost_usd": 0.11205,
+ "ms": 29406,
+ "seconds": 29.6,
  "parts": null,
  "error": null,
  "score": {
@@ -110,7 +110,9 @@
    ],
    "against": "program",
    "why": [
-    "'Economics / Geography / Humanities (list continued from preceding page)' chooses units but names no minimum"
+    "'Economics' chooses courses but names no minimum",
+    "'Geography' chooses courses but names no minimum",
+    "'Humanities' chooses courses but names no minimum"
    ]
   },
   "repeated": {
@@ -142,7 +144,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts in Global Studies for Transfer (AA-T) (heading not in the provided text; section begins on the preceding page)",
+   "section_heading": "The Associate in Arts in Global Studies for Transfer (AA-T)",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -185,8 +187,8 @@
   },
   "blocks": [
    {
-    "name": "Economics / Geography / Humanities (list continued from preceding page)",
-    "rule": "choose_units",
+    "name": "Economics",
+    "rule": "choose_courses",
     "minimum": null,
     "option_group": null,
     "stated": {
@@ -207,7 +209,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     },
+     }
+    ]
+   },
+   {
+    "name": "Geography",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "GEOG 300",
       "units": 3,
@@ -228,7 +242,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Humanities",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "ARTH 308",
       "units": 3,
@@ -369,111 +395,153 @@
   "missing_explained": [
    {
     "code": "ANTH 310",
-    "why": "named only in the A.A. International Studies section; AA-T list start is on the preceding page, not in text"
-   },
-   {
-    "code": "ANTH 481",
-    "why": "named only in the A.A. International Studies section; AA-T list start not in text"
+    "why": "not in the AA-T text excerpt (requirements begin on prior page, cut off); named only in the A.A. International Studies section"
    },
    {
     "code": "ANTH 320",
-    "why": "not in text; likely on preceding page not provided"
+    "why": "not in the text; likely on the cut-off prior page"
    },
    {
     "code": "ANTH 341",
-    "why": "not in text; likely on preceding page not provided"
+    "why": "not in the text; likely on the cut-off prior page"
    },
    {
-    "code": "GLST301",
-    "why": "named only in the A.A. International Studies section and course descriptions; AA-T core likely on preceding page"
-   },
-   {
-    "code": "GLST302",
-    "why": "named only in the A.A. International Studies section and course descriptions; AA-T core likely on preceding page"
-   },
-   {
-    "code": "HIST 308",
-    "why": "named only in the A.A. International Studies section; AA-T list start not in text"
-   },
-   {
-    "code": "HIST 300",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 302",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 307",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 310",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 311",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 325",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 480",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 481",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 483",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "HIST 484",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "POLS 310",
-    "why": "named only in the A.A. International Studies section; AA-T list start not in text"
-   },
-   {
-    "code": "POLS 480",
-    "why": "named only in the A.A. International Studies section; AA-T list start not in text"
-   },
-   {
-    "code": "POLS 302",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "POLS 320",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "POLS 342",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "POLS C1000",
-    "why": "not in text; likely on preceding page not provided"
-   },
-   {
-    "code": "POLS C1000H",
-    "why": "not in text; likely on preceding page not provided"
+    "code": "ANTH 481",
+    "why": "not in the AA-T text excerpt; named only in the A.A. International Studies section"
    },
    {
     "code": "ECON 302",
-    "why": "not in text; catalog prints ECON C2002 Principles of Macroeconomics instead"
+    "why": "catalog prints ECON C2002 Principles of Macroeconomics instead (renumbered)"
    },
    {
     "code": "ECON 304",
-    "why": "not in text; catalog prints ECON C2001 Principles of Microeconomics instead"
+    "why": "catalog prints ECON C2001 Principles of Microeconomics instead (renumbered)"
+   },
+   {
+    "code": "GLST301",
+    "why": "not in the AA-T text excerpt (likely core on cut-off prior page); named only in the A.A. International Studies section and course descriptions"
+   },
+   {
+    "code": "GLST302",
+    "why": "not in the AA-T text excerpt (likely core on cut-off prior page); named only in the A.A. International Studies section and course descriptions"
+   },
+   {
+    "code": "HIST 300",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 302",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 307",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 308",
+    "why": "not in the AA-T text excerpt; named only in the A.A. International Studies section"
+   },
+   {
+    "code": "HIST 310",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 311",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 325",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 480",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 481",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 483",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "HIST 484",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "POLS 302",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "POLS 310",
+    "why": "not in the AA-T text excerpt; named only in the A.A. International Studies section"
+   },
+   {
+    "code": "POLS 320",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "POLS 342",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "POLS 480",
+    "why": "not in the AA-T text excerpt; named only in the A.A. International Studies section"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "not in the text; likely on the cut-off prior page"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "not in the text; likely on the cut-off prior page"
    }
   ],
-  "notes": []
+  "notes": [
+   "The excerpt begins on page 645 mid-table: the AA-T heading, core requirements and the rule governing the Economics/Geography/Humanities lists are on page 644, which is not in the text. Blocks are recorded as choose_courses with minimum null because the selection rule is not visible; a reviewer should check page 644.",
+   "The section heading is not printed in the excerpt; the program name is taken from the descriptive paragraph 'The Associate in Arts in Global Studies for Transfer (AA-T)'.",
+   "Total Units: 21 is printed at the end of the AA-T list and recorded as total_units.",
+   "The sentence that the AA-T may be obtained by completion of 60 transferable units with Cal-GETC is the standard degree statement, not a printed total line; degree_total left null.",
+   "ECON C2002 and ECON C2001 are not on the closed list (which has ECON 302/304); recorded as catalog additions.",
+   "The A.A. in International Studies section (29 units) that follows was not recorded; it is a different award."
+  ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "ad76d6031c4b5725",
+ "source_codes": [
+  "ANTH310",
+  "ANTH481",
+  "ARTH308",
+  "ARTH310",
+  "ARTH322",
+  "DEAF314",
+  "DEAF316",
+  "ECON302",
+  "ECON304",
+  "ENGLT340",
+  "ENGLT341",
+  "GEOG300",
+  "GEOG310",
+  "GEOG320",
+  "GERM401",
+  "GERM402",
+  "GERM411",
+  "GERM412",
+  "GLST301",
+  "GLST302",
+  "HIST308",
+  "ITAL411",
+  "ITAL412",
+  "POLS310",
+  "POLS480",
+  "RLST301",
+  "SPAN402",
+  "SPAN411",
+  "SPAN412",
+  "SPAN413",
+  "SPAN415"
+ ],
+ "source_coverage": 0.646
 }

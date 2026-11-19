@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11296,
-    "output_tokens": 6012,
+    "output_tokens": 6816,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 6012,
+  "output_tokens": 6816,
   "output_tokens_details": {
-   "thinking_tokens": 792
+   "thinking_tokens": 1453
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.16542,
- "ms": 41669,
- "seconds": 42.2,
+ "cost_usd": 0.1815,
+ "ms": 48385,
+ "seconds": 49.8,
  "parts": null,
  "error": null,
  "score": {
@@ -112,35 +112,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ],
-   "major": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     18.0,
-     18.0
-    ],
-    "stated": [
-     18.0,
-     18.0
-    ],
-    "against": "program",
-    "why": []
-   }
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -162,9 +145,12 @@
    "pass": true
   },
   "degree": {
-   "status": "read"
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -181,8 +167,8 @@
    },
    "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
-    "min": 60,
-    "max": 60
+    "min": null,
+    "max": null
    },
    "ge_units": {
     "min": null,
@@ -990,21 +976,131 @@
    },
    {
     "code": "HSER 341",
-    "why": "not in the text; catalog lists SWCD 341 instead"
+    "why": "not in the text; catalog lists SWCD 341 Physiology and Pharmacology instead"
    },
    {
     "code": "HSER 342",
-    "why": "not in the text; catalog lists SWCD 342 instead"
+    "why": "not in the text; catalog lists SWCD 342 Alcoholism: Intervention, Treatment & Recovery instead"
    }
   ],
   "notes": [
-   "degree_total recorded as 60 from the award-specific sentence 'plus sufficient electives for a total of at least 60 units'; reviewer may prefer null since it reads as the general A.A. minimum.",
-   "Electives to reach 60 units carry no printed unit count; electives_fill_degree set true.",
-   "GLST 301/302 and PSYC 401/402 match closed-list entries stored without a space (GLST301, GLST302, PSYC401, PSYC402); treated as on the closed list.",
-   "SWCD 330/340/341/342 appear to be renumbered HSER courses; COMM C1004 and HIST C1001/C1002 (and honors) appear to be Common Course Numbering replacements for COMM 321 and HIST 310/311/483/484.",
-   "Text names fields of study for transfer majors (Anthropology, Child Development, etc.) but no careers; careers left empty."
+   "GLST 301, GLST 302, PSYC 401 and PSYC 402 appear in the closed list without a space (GLST301, GLST302, PSYC401, PSYC402) and with no stored units; treated as the same courses, not catalog additions.",
+   "Catalog appears to have renumbered courses: COMM 321 -> COMM C1004, HIST 310/311 -> HIST C1001/C1002 (honors C1001H/C1002H replacing HIST 483/484), HSER 330/340/341/342 -> SWCD 330/340/341/342. Renumbered codes recorded as catalog additions.",
+   "The page says the degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; read as standard ARC degree language, so degree_total left null and electives_fill_degree set true. No GE units printed.",
+   "The description names majors (Anthropology, Child Development, Ethnic Studies, Psychology, Social Work, Sociology, Women's, Gender, and Sexuality Studies) for transfer, not careers; careers left empty.",
+   "Course title for SOC 321 printed as 'Race, Ethnicity and Inequality in the United States' (no serial comma) versus closed list."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "d64634ced9c6cb53",
+ "source_codes": [
+  "ADMJ302",
+  "ADMJ304",
+  "ANTH300",
+  "ANTH310",
+  "ANTH320",
+  "ANTH321",
+  "ANTH330",
+  "ANTH333",
+  "ANTH334",
+  "ANTH335",
+  "ANTH336",
+  "ANTH337",
+  "ANTH341",
+  "ANTH480",
+  "ANTH481",
+  "BUS330",
+  "COMM321",
+  "COMM325",
+  "DEAF351",
+  "DEAF352",
+  "ECE312",
+  "ECE314",
+  "ECE325",
+  "ECE330",
+  "ECE404",
+  "ECE415",
+  "ECE430",
+  "ETHNS300",
+  "ETHNS320",
+  "ETHNS330",
+  "ETHNS350",
+  "ETHNS360",
+  "GEOG310",
+  "GEOG322",
+  "GERON303",
+  "GERON305",
+  "GERON306",
+  "GLST301",
+  "GLST302",
+  "HCD390",
+  "HEED300",
+  "HEED308",
+  "HIST310",
+  "HIST311",
+  "HIST318",
+  "HIST320",
+  "HIST321",
+  "HIST323",
+  "HIST325",
+  "HIST327",
+  "HIST330",
+  "HIST332",
+  "HIST333",
+  "HIST340",
+  "HIST341",
+  "HIST483",
+  "HIST484",
+  "HSER330",
+  "HSER340",
+  "HSER341",
+  "HSER342",
+  "JOUR310",
+  "JOUR320",
+  "NUTRI310",
+  "NUTRI320",
+  "NUTRI481",
+  "POLS302",
+  "POLS304",
+  "POLS330",
+  "POLS342",
+  "POLSC1000",
+  "POLSC1000H",
+  "PSYC305",
+  "PSYC310",
+  "PSYC320",
+  "PSYC330",
+  "PSYC335",
+  "PSYC340",
+  "PSYC354",
+  "PSYC356",
+  "PSYC359",
+  "PSYC361",
+  "PSYC365",
+  "PSYC370",
+  "PSYC372",
+  "PSYC373",
+  "PSYC375",
+  "PSYC390",
+  "PSYC400",
+  "PSYC481",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "RLST301",
+  "SJS300",
+  "SJS310",
+  "SOC300",
+  "SOC301",
+  "SOC302",
+  "SOC309",
+  "SOC318",
+  "SOC321",
+  "SOC325",
+  "SOC335",
+  "SOC342",
+  "SOC350",
+  "SOC480"
+ ],
+ "source_coverage": 0.981
 }

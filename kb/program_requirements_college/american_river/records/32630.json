@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Music",
  "award": "A.A- T Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=769",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=765",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12413,
+  "input_tokens": 12427,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12413,
-    "output_tokens": 4074,
+    "input_tokens": 12427,
+    "output_tokens": 4138,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4074,
+  "output_tokens": 4138,
   "output_tokens_details": {
-   "thinking_tokens": 872
+   "thinking_tokens": 808
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.13113,
- "ms": 29180,
- "seconds": 29.6,
+ "cost_usd": 0.13247,
+ "ms": 30503,
+ "seconds": 30.7,
  "parts": null,
  "error": null,
  "score": {
@@ -313,7 +313,7 @@
     "name": "Guitarists/Pianists/Composers",
     "rule": "choose_units",
     "minimum": 8,
-    "option_group": "Specialization",
+    "option_group": "Area of specialization",
     "stated": {
      "min": 8,
      "max": 8
@@ -444,7 +444,7 @@
     "name": "Instrumentalists",
     "rule": "choose_units",
     "minimum": 8,
-    "option_group": "Specialization",
+    "option_group": "Area of specialization",
     "stated": {
      "min": 8,
      "max": 8
@@ -533,7 +533,7 @@
     "name": "Vocalists",
     "rule": "choose_units",
     "minimum": 8,
-    "option_group": "Specialization",
+    "option_group": "Area of specialization",
     "stated": {
      "min": 8,
      "max": 8
@@ -621,11 +621,51 @@
    }
   ],
   "notes": [
-   "The applied music block prints '41'; read as 4 units with footnote 1 (MUIVI 411 repeatable four times for a maximum of four units).",
-   "Subtotal of core blocks printed as 19 units; each of the three specialization tracks (Guitarists/Pianists/Composers, Instrumentalists, Vocalists) adds 8 units for a printed Total Units of 27. The tracks are recorded as alternative blocks in option_group 'Specialization'; the catalog does not explicitly say 'choose one', but each track prints its own total of 27.",
-   "The page states the AA-T may be obtained with 60 transferable semester units including the major and Cal-GETC; read as the generic ADT requirement, so degree_total left null. No units printed for Cal-GETC.",
-   "MUFHL 411 appears in List A but is not in the closed list; recorded as catalog addition."
+   "The catalog prints a 'Subtotal Units: 19' covering the Required Core, the 4-unit applied music block and List A, then three area tracks (Guitarists/Pianists/Composers, Instrumentalists, Vocalists) of 8 units each, each followed by 'Total Units: 27'. The tracks are recorded as alternative blocks in option_group 'Area of specialization'.",
+   "The applied music block's printed total appears as '41' because of footnote 1: 'MUIVI 411 is repeatable four times for credit for a maximum of four units.' Recorded stated as 4.",
+   "MUFHL 411 (Music Theory and Musicianship IV) appears in List A but is not in the closed list; recorded as a catalog addition.",
+   "Ranges such as '(1 - 2)' for MUP 311, 321, 324, 331, 341, 401, 420 recorded as units 1, units_max 2; closed list stores 1 unit for these.",
+   "The page states the standard ADT requirement of 60 transferable semester units including the major and Cal-GETC; not recorded as a printed degree total, and no units for Cal-GETC or electives are printed.",
+   "Catalog text page header says 2026-2027 Official Catalog, matching the requested year."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "62217f8b10718dd3",
+ "source_codes": [
+  "MUFHL310",
+  "MUFHL311",
+  "MUFHL400",
+  "MUFHL401",
+  "MUFHL410",
+  "MUIVI340",
+  "MUIVI341",
+  "MUIVI350",
+  "MUIVI411",
+  "MUIVI420",
+  "MUIVI421",
+  "MUIVI422",
+  "MUIVI423",
+  "MUIVI425",
+  "MUIVI426",
+  "MUP310",
+  "MUP311",
+  "MUP320",
+  "MUP321",
+  "MUP323",
+  "MUP324",
+  "MUP330",
+  "MUP331",
+  "MUP340",
+  "MUP341",
+  "MUP350",
+  "MUP352",
+  "MUP360",
+  "MUP361",
+  "MUP400",
+  "MUP401",
+  "MUP420",
+  "MUSM334"
+ ],
+ "source_coverage": 0.917
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12416,
-    "output_tokens": 7502,
+    "output_tokens": 7714,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 7502,
+  "output_tokens": 7714,
   "output_tokens_details": {
-   "thinking_tokens": 1744
+   "thinking_tokens": 1829
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1997,
- "ms": 52085,
- "seconds": 52.7,
+ "cost_usd": 0.20394,
+ "ms": 54090,
+ "seconds": 54.5,
  "parts": null,
  "error": null,
  "score": {
@@ -131,7 +131,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Local General Education Pattern or Cal-GETC",
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": null,
     "max": null
@@ -974,35 +974,44 @@
   "missing_explained": [
    {
     "code": "ASTR 300",
-    "why": "not in the text; catalog lists ASTR C1001, formerly ASTR 300"
+    "why": "not in the requirements list; catalog lists ASTR C1001, formerly known as ASTR 300"
    },
    {
     "code": "ASTR 400",
-    "why": "not in the text; catalog lists ASTR C1001L instead"
+    "why": "not in the text; catalog lists ASTR C1001L Introduction to Astronomy Lab, likely its renumbered replacement"
    },
    {
     "code": "BIOL 303",
-    "why": "not in the text; catalog lists BIOL C1000 instead"
+    "why": "not in the text; catalog lists BIOL C1000 Introduction to Biology with Lab in its place"
    },
    {
     "code": "CHEM499",
-    "why": "duplicate closed-list entry for a special-topic CHEM 499 offering; CHEM 499 placed once"
+    "why": "variant closed-list entry for an experimental offering; placed as CHEM 499"
    },
    {
     "code": "NATR499",
-    "why": "duplicate closed-list entry for a special-topic NATR 499 offering; NATR 499 placed once"
+    "why": "variant closed-list entry for an experimental offering; placed as NATR 499"
+   },
+   {
+    "code": "NATR306",
+    "why": "placed as NATR 306 (closed list prints code without space)"
+   },
+   {
+    "code": "NATR324",
+    "why": "placed as NATR 324 (closed list prints code without space)"
    }
   ],
   "notes": [
-   "The single 18-unit choice spans two printed subheadings, 'Physical Science Courses' (ASTR through PHYS 499) and 'Biological Science Courses' (ANTH through PSYC 311); recorded as one choose_units block.",
+   "The single 18-unit block spans two catalog subheadings, 'Physical Science Courses' (ASTR, CHEM, GEOG, GEOL, PHYS) and 'Biological Science Courses' (ANTH, BIOL, BIOT, NATR, PSYC); the 18 units are counted across both lists.",
    "Footnote 1: the 18 units must be transfer-level and must include one laboratory course in a physical science and one laboratory course in a biological science.",
-   "Closed-list codes NATR306 and NATR324 (no space) matched to catalog NATR 306 and NATR 324.",
-   "Degree text says the A.S. is obtained with the required program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; read as electives filling the degree, with no printed degree total for this award (degree_total left null). No GE unit total printed.",
-   "ASTR C1001, ASTR C1001L and BIOL C1000 are catalog additions (common course numbering replacements apparently for ASTR 300, ASTR 400 and BIOL 303).",
-   "Page footer reads 'Programs of Study – Astronomy' though the section is the General Science A.S.; text following the outcomes is the Astronomy course listing, not part of this program."
+   "Degree text: required program plus either the Local GE Pattern or Cal-GETC, 'plus sufficient electives for a total of at least 60 units'; recorded electives_fill_degree true. degree_total left null because 60 is stated only as a prose minimum ('at least 60 units'); reviewer may consider recording 60.",
+   "NATR 306 and NATR 324 are placed with catalog_addition false because the closed list holds them as NATR306 and NATR324 (no space).",
+   "ASTR C1001, ASTR C1001L and BIOL C1000 are common-course-numbered codes not in the closed list (catalog_addition true).",
+   "Page footers read 'Programs of Study – Astronomy' though the section is the General Science A.S.; text appears to be the 2026-2027 catalog."
   ]
  },
- "extracted_run": 43693265189,
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
  "source_sha": "5ac7a2c20964b31e",
  "source_codes": [
   "ANTH300",
@@ -1016,11 +1025,13 @@
   "ASTR310",
   "ASTR320",
   "ASTR330",
+  "ASTR400",
   "ASTR481",
   "ASTR495",
   "ASTR499",
   "BIOL300",
   "BIOL301",
+  "BIOL303",
   "BIOL304",
   "BIOL305",
   "BIOL310",
@@ -1119,6 +1130,5 @@
   "PSYC310",
   "PSYC311"
  ],
- "source_coverage": 0.983,
- "read_run": "43212067552"
+ "source_coverage": 1.0
 }

@@ -4,7 +4,7 @@
  "shape": "degree",
  "title": "Registered Nursing",
  "award": "A.S. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=812",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=808",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10583,
-    "output_tokens": 2452,
+    "output_tokens": 2834,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2452,
+  "output_tokens": 2834,
   "output_tokens_details": {
-   "thinking_tokens": 753
+   "thinking_tokens": 1009
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09137,
- "ms": 19712,
- "seconds": 20.3,
+ "cost_usd": 0.09901,
+ "ms": 22762,
+ "seconds": 23.2,
  "parts": null,
  "error": null,
  "score": {
@@ -134,7 +134,7 @@
     "adhere to standards of practice within legal, ethical, and regulatory frameworks of the professional nurse."
    ],
    "careers": [
-    "entry-level registered nurse"
+    "registered nurses"
    ]
   },
   "blocks": [
@@ -331,12 +331,37 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Unit figures '31', '52', '33' read as 3, 5, 3 with footnote markers 1, 2, 3 appended.",
-   "The 4 - 5 and 3 - 4 ranges are printed on the BIOL 440 and ENGL C1000 'or' rows and reflect the choice among alternatives.",
-   "Degree requires the program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; no degree total or GE units printed for this award, so degree_total and ge_units left null.",
-   "The LVN 30-unit option Certificate of Achievement section that follows was not read for this record.",
-   "Career Information section cites BLS employment outlook for registered nurses; career entry taken from program description."
+   "Footnote superscripts are fused to unit figures in the extracted text: 'ANTH 310 ... (3) 31', 'BIOL 430 ... 52', 'COMM C1000 ... (3) 33' were read as 3, 5 and 3 units with footnotes 1, 2 and 3.",
+   "The degree text says the A.S. requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree true with degree_total null, since no printed degree total specific to this award beyond the generic 60-unit minimum.",
+   "Student Learning Outcomes are printed once for the A.S. in Registered Nursing section; the LVN 30-unit option certificate that follows prints none and was not read.",
+   "The LVN 30-unit option Certificate section (BIOL 431, BIOL 440, NURSE 400, NURSE 410; 30 units) is a separate award and was excluded.",
+   "Career Information cites a BLS projection from 2014-2024 (retrieved 2015), which is dated relative to the 2026-2027 catalog."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "3719295d1c990ce0",
+ "source_codes": [
+  "ANTH310",
+  "ANTH481",
+  "BIOL430",
+  "BIOL431",
+  "BIOL440",
+  "BIOL442",
+  "COMM331",
+  "COMMC1000",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ESLW340",
+  "NURSE400",
+  "NURSE410",
+  "NURSE420",
+  "NURSE430",
+  "NUTRI300",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SOC300",
+  "SOC480"
+ ],
+ "source_coverage": 1.0
 }

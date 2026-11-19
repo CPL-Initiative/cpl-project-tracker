@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "ASL-English Interpreter Preparation Program",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=345",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12146,
+  "input_tokens": 11984,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12146,
-    "output_tokens": 2420,
+    "input_tokens": 11984,
+    "output_tokens": 2761,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2420,
+  "output_tokens": 2761,
   "output_tokens_details": {
-   "thinking_tokens": 469
+   "thinking_tokens": 723
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09698,
- "ms": 18722,
- "seconds": 19.1,
+ "cost_usd": 0.10316,
+ "ms": 20893,
+ "seconds": 21.4,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate Requirements",
+   "section_heading": "Certificate of Achievement ASL-English Interpreter Preparation Program Certificate",
    "measure": "units",
    "total_units": {
     "min": 48,
@@ -130,7 +130,8 @@
     "develop an on-going professional action plan integrating interactions with Deaf related organizations, connections with interpreter employers, and the implications of certification on the provision of interpreting."
    ],
    "careers": [
-    "American Sign Language-English interpreters"
+    "American Sign Language-English interpreters",
+    "American Sign Language/English interpreter"
    ]
   },
   "blocks": [
@@ -351,12 +352,44 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-description; the award's own title heading is not in the text, so section_heading uses the printed 'Certificate Requirements' heading.",
-   "INTRP 349 is printed as 'Introduction to Behavioral Health Interpreting' while the closed list titles it 'Signing for Dependency Situations'; same code, possible retitle — reviewer should check.",
-   "The Student Learning Outcomes list is printed for 'this program' and continues across the page 345/346 break; recorded for this certificate as the only award in the section.",
-   "Enrollment eligibility prerequisites (DEAF 316, DEAF 351) are entry criteria, not certificate requirements, and are not placed in blocks.",
-   "Total Units: 48 is printed; required core sums to 44 plus the 4-unit elective block."
+   "Read only the Certificate of Achievement section (pages 344-346); the A.A. degree section printed before it has the same course list and 48-unit total.",
+   "INTRP 349 is titled 'Introduction to Behavioral Health Interpreting' in the catalog but 'Signing for Dependency Situations' in the state closed list; same code, possibly a retitled course.",
+   "Outcomes are from the certificate's own Student Learning Outcomes list, which continues across the page 345-346 break; it differs from the degree list in one word (outcome 4 says 'Deaf and hearing participants' where the degree says 'Deaf and hearing consumers').",
+   "Careers taken from the certificate's Career Information paragraph; both phrasings of the interpreter job title are recorded as printed.",
+   "Enrollment eligibility requires DEAF 316 and DEAF 351 (prerequisites, not certificate courses) and a pre-enrollment application; these are not recorded as blocks."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "9745d0cf3fef6bd7",
+ "source_codes": [
+  "DEAF318",
+  "DEAF352",
+  "DEAF355",
+  "DEAF370",
+  "INTRP300",
+  "INTRP301",
+  "INTRP303",
+  "INTRP305",
+  "INTRP307",
+  "INTRP310",
+  "INTRP312",
+  "INTRP314",
+  "INTRP320",
+  "INTRP325",
+  "INTRP330",
+  "INTRP332",
+  "INTRP334",
+  "INTRP336",
+  "INTRP338",
+  "INTRP340",
+  "INTRP342",
+  "INTRP344",
+  "INTRP349",
+  "INTRP350",
+  "INTRP352",
+  "INTRP354",
+  "INTRP356"
+ ],
+ "source_coverage": 1.0
 }

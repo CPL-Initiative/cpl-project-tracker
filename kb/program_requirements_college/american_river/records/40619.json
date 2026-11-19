@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Ironworkers Apprenticeship Level III",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=159",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=190",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7533,
+  "input_tokens": 6968,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7533,
-    "output_tokens": 1501,
+    "input_tokens": 6968,
+    "output_tokens": 1578,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1501,
+  "output_tokens": 1578,
   "output_tokens_details": {
-   "thinking_tokens": 389
+   "thinking_tokens": 195
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06015,
- "ms": 20353,
- "seconds": 21.0,
+ "cost_usd": 0.05943,
+ "ms": 12772,
+ "seconds": 13.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 18,
    "listed": 18,
-   "share": 0.0,
-   "missing": [
-    "IW100",
-    "IW101",
-    "IW110",
-    "IW120",
-    "IW130",
-    "IW131",
-    "IW140",
-    "IW150",
-    "IW151",
-    "IW152",
-    "IW158",
-    "IW160",
-    "IW170",
-    "IW171",
-    "IW180",
-    "IW183",
-    "IW186",
-    "IW298"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -80,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    28.0,
+    28.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -114,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Ironworkers Apprenticeship Level III Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -139,92 +121,199 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "demonstrate safely working in a field construction environment.",
+    "analyze and interpret blueprints.",
+    "interpret and apply welding codes.",
+    "demonstrate proper selection, use, care, preparation, and handling of fiber lines, steel cables, wire ropes, chains, slings, cranes, ladders, scaffolds, and helicopter rigging.",
+    "define, identify, interpret, and analyze uniform building codes (UBC), classifications, plans, schedules, charts, and specifications commonly used in the ironworker trade."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "IW 100",
-    "why": "named only in the A.A. section; certificate section not in text"
+    "name": "A minimum of 16 units from the following",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "IW 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 110",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 120",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 130",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 131",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 140",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 150",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 151",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 152",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 158",
+      "units": 0.5,
+      "units_max": 16,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 170",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 171",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 180",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 183",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IW 186",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "IW 101",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 110",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 120",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 130",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 131",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 140",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 150",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 151",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 152",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 158",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 160",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 170",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 171",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 180",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 183",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW 186",
-    "why": "named only in the A.A. section; certificate section not in text"
-   },
-   {
-    "code": "IW298",
-    "why": "named only in the A.A. section (as IW 298); certificate section not in text"
+    "name": "A minimum of 12 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "IW 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (page 159) contains the end of the Hardwood Floor Layer Apprenticeship section and the 'A.A. in Ironworkers Apprenticeship' section, but no section for the Ironworkers Apprenticeship Level III Certificate of Achievement. The certificate section likely appears on a following page (page 160 or later); a reviewer should check it.",
-   "section_heading is left empty because the named award's heading is not printed in the text.",
-   "The A.A. section prints 'A minimum of 21 units' from IW 100-IW 186, 'A minimum of 16 units' from IW 298 (0.5-6), and 'Total Units: 37', with the Local GE Pattern or Cal-GETC plus electives to at least 60 units. These were not recorded because they belong to the A.A. degree, not the certificate.",
-   "The A.A. section's Student Learning Outcomes heading is cut off at the page break with no outcomes printed under it in the supplied text.",
-   "The catalog prints IW 131 as 'Reinforcing II/Post Tensioning' and IW 158 as 0.5-16 units in the A.A. section; the closed list stores 'Reinforcing II/Post Tension' and 0.5 units."
+   "IW 298 is printed with a space in the catalog; matched to closed-list entry 'IW298' (same course, Work Experience in Ironworkers Apprenticeship).",
+   "IW 158 is printed with a range of 0.5 - 16 units.",
+   "Second block contains only IW 298 (0.5 - 6 units, presumably repeatable) and requires a minimum of 12 units.",
+   "Catalog title for IW 131 reads 'Reinforcing II/Post Tensioning' vs closed list 'Reinforcing II/Post Tension'.",
+   "Enrollment requires being a registered Ironworker apprentice."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "2540beb8dd3a428f",
+ "source_codes": [
+  "IW100",
+  "IW101",
+  "IW110",
+  "IW120",
+  "IW130",
+  "IW131",
+  "IW140",
+  "IW150",
+  "IW151",
+  "IW152",
+  "IW158",
+  "IW160",
+  "IW170",
+  "IW171",
+  "IW180",
+  "IW183",
+  "IW186",
+  "IW298"
+ ],
+ "source_coverage": 1.0
 }

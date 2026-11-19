@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Sheet Metal Apprenticeship Level II",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=216",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=215",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11075,
+  "input_tokens": 11489,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11075,
-    "output_tokens": 1962,
+    "input_tokens": 11489,
+    "output_tokens": 1605,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,32 @@
     "model": null
    }
   ],
-  "output_tokens": 1962,
+  "output_tokens": 1605,
   "output_tokens_details": {
-   "thinking_tokens": 1114
+   "thinking_tokens": 662
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08354,
- "ms": 18966,
- "seconds": 19.5,
+ "cost_usd": 0.07806,
+ "ms": 14279,
+ "seconds": 14.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 5,
-   "share": 0.0,
+   "share": 0.6,
    "missing": [
     "SHME100",
-    "SHME101",
-    "SHME110",
-    "SHME111",
-    "SHME298"
+    "SHME101"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -67,49 +64,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    22.0,
+    22.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Sheet Metal Apprenticeship Level II Certificate (own section not in the text)",
+   "section_heading": "Sheet Metal Apprenticeship Level II Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -126,39 +124,103 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Apply mathematics to fabricate complex sheet metal fittings.",
+    "Draft and fabricate round duct fittings.",
+    "Identify hidden job costs and assemble a simple bid.",
+    "Demonstrate proper mitering of flashing and gutter products.",
+    "Identify and demonstrate proper installation procedures for fire and smoke dampers.",
+    "Identify safe rigging practices."
+   ],
+   "careers": [
+    "Sheet metal technicians"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SHME 110",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SHME 111",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 11 units from the following: Sheet Metal Apprenticeship Level I Certificate",
+    "rule": "choose_units",
+    "minimum": 11,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": []
+   },
+   {
+    "name": "A minimum of 4 units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SHME 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "SHME 100",
-    "why": "not in the Level II section; text lists it only under the Sheet Metal Service Technician Apprenticeship Certificate"
+    "why": "not printed in the Level II section; required only through the Sheet Metal Apprenticeship Level I Certificate (11 units) that this section names"
    },
    {
     "code": "SHME 101",
-    "why": "not in the Level II section; text lists it only under the Sheet Metal Service Technician Apprenticeship Certificate"
-   },
-   {
-    "code": "SHME 110",
-    "why": "not in the Level II section; text lists it only under the Sheet Metal Service Technician Apprenticeship Certificate"
-   },
-   {
-    "code": "SHME 111",
-    "why": "not in the Level II section; text lists it only under the Sheet Metal Service Technician Apprenticeship Certificate"
-   },
-   {
-    "code": "SHME298",
-    "why": "not in the Level II section; text lists SHME 298 only under other certificates (Level III, Level IV, Service Technician)"
+    "why": "not printed in the Level II section; required only through the Sheet Metal Apprenticeship Level I Certificate (11 units) that this section names"
    }
   ],
   "notes": [
-   "The excerpt begins at page 216 partway through a section. The line 'Sheet Metal Apprenticeship Level II Certificate' at the top is printed as a requirement item ('A minimum of N units from the following: Sheet Metal Apprenticeship Level II Certificate'), not as a heading. This matches the Level IV section, which nests the Level III Certificate.",
-   "The fragment that follows ('A minimum of 4 units...: SHME 298', 'Total Units: 31', its outcomes) appears to be the end of the Sheet Metal Apprenticeship Level III Certificate. The Level IV section nests Level III and totals 41 = 3.5 + 3.5 + 30 + 4, which means Level III totals 30-31. A total of 31 also falls outside this award's 16 to fewer than 30 unit range.",
-   "The Level II Certificate's own requirements, total, outcomes and career information most likely sit on page 215, which is not in the text. No blocks, total or outcomes were recorded; a reviewer should check page 215.",
-   "Expected structure, inferred from the parallel Service Technician levels and not stated in the text: SHME 110 and SHME 111, the Level I Certificate, and SHME 298 work experience. These are inferences only and were not recorded."
+   "The 11-unit requirement is the completed Sheet Metal Apprenticeship Level I Certificate (SHME 100, SHME 101 and 4 units of SHME 298 per the Level I section), not a course; recorded as a block with stated 11 and no courses.",
+   "SHME 298 appears both within the Level I Certificate and as a separate 4-unit requirement here; total printed is 22 units (7 + 11 + 4).",
+   "Career Information for this section is the paragraph at the top of page 216 following the Level II outcomes; it names only 'Sheet metal technicians'.",
+   "Enrollment requires being a registered sheet metal apprentice."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "1acceb9e683ac693",
+ "source_codes": [
+  "SHME100",
+  "SHME101",
+  "SHME110",
+  "SHME111",
+  "SHME298"
+ ],
+ "source_coverage": 1.0
 }

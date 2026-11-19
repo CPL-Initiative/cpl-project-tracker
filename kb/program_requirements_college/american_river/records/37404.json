@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Graphic Design: Production Artist",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=330",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=336",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7490,
+  "input_tokens": 11267,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7490,
-    "output_tokens": 844,
+    "input_tokens": 11267,
+    "output_tokens": 668,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,36 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 844,
+  "output_tokens": 668,
   "output_tokens_details": {
-   "thinking_tokens": 214
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04684,
- "ms": 7648,
- "seconds": 8.1,
+ "cost_usd": 0.05843,
+ "ms": 6287,
+ "seconds": 6.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 6,
-   "share": 0.0,
-   "missing": [
-    "ARTNM324",
-    "ARTNM328",
-    "ARTNM352",
-    "ARTNM354",
-    "ARTNM359",
-    "ARTNM401"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Graphic Design: Production Artist Certificate (section not present in the provided text)",
+   "section_heading": "Graphic Design: Production Artist Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,42 +121,90 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "investigate the basics of digital software for vector- and pixel- based media",
+    "analyze specific conditions which influence digital production decisions",
+    "categorize raster-based images and vector-based art as they relate to print and web",
+    "calculate resolution, color modes and file size as they relate to print and web production",
+    "construct a series of projects which build knowledge of simple and complex production issues"
+   ],
+   "careers": [
+    "entry-level print or web production artist positions"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ARTNM 324",
-    "why": "named only in the A.A. in Art New Media section; the certificate's section is not in the text"
-   },
-   {
-    "code": "ARTNM 328",
-    "why": "named only in the A.A. in Art New Media section; the certificate's section is not in the text"
-   },
-   {
-    "code": "ARTNM 352",
-    "why": "named only in the A.A. in Art New Media section; the certificate's section is not in the text"
-   },
-   {
-    "code": "ARTNM 354",
-    "why": "named only in the A.A. in Art New Media section; the certificate's section is not in the text"
-   },
-   {
-    "code": "ARTNM 359",
-    "why": "named only in the A.A. in Art New Media section; the certificate's section is not in the text"
-   },
-   {
-    "code": "ARTNM 401",
-    "why": "named only in the A.A. in Art New Media section; the certificate's section is not in the text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTNM 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTNM 328",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTNM 352",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTNM 354",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTNM 359",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTNM 401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided text (catalog page 330) contains only the A.A. in Art New Media requirements and the start of the 3D Modeling and Texturing Certificate. The Graphic Design: Production Artist Certificate of Achievement section does not appear, so no blocks, totals, outcomes or careers are recorded.",
-   "The A.A. section's Student Learning Outcomes and Career Information (Graphic Designer, Print Designer, etc.) belong to the A.A. degree and were not attributed to this certificate.",
-   "A reviewer should check the following catalog page(s) for the Graphic Design: Production Artist certificate section."
+   "The page is headed 'Graphic Design: Production Artist Certificate'. Only that section was read; the Technical Communications Certificate that follows it was ignored.",
+   "The career entry is the printed phrase 'entry-level print or web production artist positions', taken from the Career Information section."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "27a7dfeffb3ea633",
+ "source_codes": [
+  "ARTNM324",
+  "ARTNM328",
+  "ARTNM352",
+  "ARTNM354",
+  "ARTNM359",
+  "ARTNM401"
+ ],
+ "source_coverage": 1.0
 }

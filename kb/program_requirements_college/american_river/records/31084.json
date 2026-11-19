@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12042,
-    "output_tokens": 3353,
+    "output_tokens": 3705,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3353,
+  "output_tokens": 3705,
   "output_tokens_details": {
-   "thinking_tokens": 893
+   "thinking_tokens": 1107
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11523,
- "ms": 25053,
- "seconds": 25.5,
+ "cost_usd": 0.12227,
+ "ms": 26858,
+ "seconds": 27.2,
  "parts": null,
  "error": null,
  "score": {
@@ -96,7 +96,7 @@
    "pass": true
   },
   "careers": {
-   "count": 16,
+   "count": 15,
    "not_verbatim": [],
    "pass": true
   },
@@ -144,8 +144,7 @@
     "preparators",
     "curatorial staff",
     "fine artists",
-    "graphic artists",
-    "designers",
+    "graphic artists or designers",
     "illustrators",
     "computer artists",
     "freelance photographers",
@@ -464,18 +463,60 @@
   "missing_explained": [
    {
     "code": "ARTH 302",
-    "why": "not in the text; List A prints ARTH C1100 Survey of Art from Prehistory to the Medieval Era instead"
+    "why": "not in the text; List A prints ARTH C1100 (Survey of Art from Prehistory to the Medieval Era) instead"
    }
   ],
   "notes": [
-   "List B requires three courses, each from a different category (Drawing, Color Theory, Painting, Printmaking, Sculpture, Ceramics, Photography, Digital Art, Other Media, Second Semester); recorded as one choose_units block of 9 units with the category constraint noted here.",
-   "List B continues across the page break (pages 310-311); ART 391 and ARTPH 360 appear on page 311 under the 'Second Semester' category.",
-   "ARTNM 405 matched to closed-list entry 'ARTNM405' (no space). ARTNM 422 is printed as '3D Animation' versus closed-list title '3D Character Animation'.",
-   "ARTH C1100 is not in the closed list (catalog_addition true); it appears to replace ARTH 302.",
-   "The page states the AA-T may be obtained by completing 60 transferable semester units including the major and Cal-GETC; read as the general ADT requirement rather than a printed degree total, so degree_total is null. No Cal-GETC unit figure is printed.",
-   "Career Information mentions placement 'in museums and galleries' as workplaces; these were not recorded as careers."
+   "List B requires three courses (9 units), each from a different category: Drawing (ART 302, ART 304), Color Theory (ART 323), Painting (ART 327, ART 336), Printmaking (ART 361), Sculpture (ART 372), Ceramics (ART 390), Photography (ARTPH 300, ARTPH 305), Digital Art (ARTNM 322), Other Media (ART 306/ARTNM 320, ART 324, ART 330, ART 375, ARTNM 303, ARTNM 324, ARTNM 370, ARTNM 405, ARTNM 422), Second Semester (ART 305, ART 312, ART 328, ART 329, ART 337, ART 373, ART 391, ARTPH 360). Recorded as one choose_units block; the category constraint is not captured structurally.",
+   "List B continues across the page break from page 310 to page 311 (ART 391 and ARTPH 360 on page 311).",
+   "ARTNM 405 appears in the closed list as 'ARTNM405' (no space, units not stored); treated as the same course, not a catalog addition.",
+   "ARTNM 422 is printed as '3D Animation' in the catalog; the closed list title is '3D Character Animation'.",
+   "ARTH C1100 is not in the closed list and is recorded as a catalog addition; it likely replaces ARTH 302.",
+   "The 60-unit statement is the general ADT requirement, not printed as a degree total for this award; degree_total left null. GE pattern is Cal-GETC with no units printed."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "5256405f98c11f0a",
+ "source_codes": [
+  "ART300",
+  "ART302",
+  "ART304",
+  "ART305",
+  "ART306",
+  "ART312",
+  "ART320",
+  "ART323",
+  "ART324",
+  "ART327",
+  "ART328",
+  "ART329",
+  "ART330",
+  "ART336",
+  "ART337",
+  "ART361",
+  "ART370",
+  "ART372",
+  "ART373",
+  "ART375",
+  "ART390",
+  "ART391",
+  "ARTH302",
+  "ARTH308",
+  "ARTH310",
+  "ARTH322",
+  "ARTH333",
+  "ARTH334",
+  "ARTNM303",
+  "ARTNM320",
+  "ARTNM322",
+  "ARTNM324",
+  "ARTNM370",
+  "ARTNM405",
+  "ARTNM422",
+  "ARTPH300",
+  "ARTPH305",
+  "ARTPH360"
+ ],
+ "source_coverage": 1.0
 }

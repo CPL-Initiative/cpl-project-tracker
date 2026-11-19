@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Honors Transfer",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=604",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=603",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11356,
+  "input_tokens": 10560,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11356,
-    "output_tokens": 2013,
+    "input_tokens": 10560,
+    "output_tokens": 1881,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,51 @@
     "model": null
    }
   ],
-  "output_tokens": 2013,
+  "output_tokens": 1881,
   "output_tokens_details": {
-   "thinking_tokens": 391
+   "thinking_tokens": 336
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08568,
- "ms": 17156,
- "seconds": 17.5,
+ "cost_usd": 0.07986,
+ "ms": 14641,
+ "seconds": 17.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 19,
    "listed": 19,
-   "share": 0.842,
-   "missing": [
-    "ENGWR481",
-    "HIST483",
-    "HIST484"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL481",
+     "listed": "ENGWR481",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST483",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HIST484",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ENGL481",
-    "HISTC1001H",
-    "HISTC1002H"
-   ],
-   "flagged": [
-    "ENGL481",
-    "HISTC1001H",
-    "HISTC1002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -305,13 +310,36 @@
    }
   ],
   "notes": [
-   "The block heading 'A minimum of 15 units from the following: 15' carries footnote 1: up to six units of the Honors Certificate may be earned with non-Honors coursework for which there is an Honors Contract.",
+   "Block total printed as '151': read as 15 units with footnote 1.",
+   "Footnote 1: Up to six units of the Honors Certificate may be earned with non-Honors coursework for which there is an Honors Contract.",
    "Certificate also requires a cumulative GPA of 3.2 or better; a maximum of 6 units of Honors coursework may be transferred from other colleges.",
-   "ENGL 481 is printed by the catalog but the closed list names ENGWR 481 with the same title; recorded as catalog addition—reviewer may wish to treat as the same course.",
-   "HIST C1001H and HIST C1002H appear in the catalog but not in the closed list, which instead has HIST 483 and HIST 484 (History of the United States - Honors).",
-   "Award title says 8S/12Q to fewer than 16S/24Q units; catalog total of 15 units is consistent.",
-   "Text after page 604 belongs to the General Science A.S. and was not used."
+   "ENGL 481 appears to be the same course as closed-list ENGWR 481 (same title, Honors College Composition and Literature) under a different subject code; recorded as printed with catalog_addition true.",
+   "The Cal-GETC Certificate section on the same page (34 units) and General Science A.S. were ignored as other programs."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "32b0b62cbce23dcd",
+ "source_codes": [
+  "ANTH480",
+  "ANTH481",
+  "ASTR481",
+  "BIOL482",
+  "CISP480",
+  "ENGLC1000H",
+  "ENGLC1001H",
+  "ENGWR481",
+  "HIST480",
+  "HIST481",
+  "HIST483",
+  "HIST484",
+  "NUTRI481",
+  "POLS480",
+  "POLSC1000H",
+  "PSYC481",
+  "PSYCC1000H",
+  "SOC480",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0
 }

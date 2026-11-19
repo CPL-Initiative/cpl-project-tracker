@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10460,
-    "output_tokens": 2030,
+    "output_tokens": 1901,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2030,
+  "output_tokens": 1901,
   "output_tokens_details": {
-   "thinking_tokens": 541
+   "thinking_tokens": 484
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08244,
- "ms": 16026,
- "seconds": 16.6,
+ "cost_usd": 0.07986,
+ "ms": 16240,
+ "seconds": 16.5,
  "parts": null,
  "error": null,
  "score": {
@@ -153,8 +153,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 39,
-     "max": 40
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -280,17 +280,38 @@
   "missing_explained": [
    {
     "code": "ECON 302",
-    "why": "not in the text; catalog names ECON C2002 as the alternative to BUS 110 instead"
+    "why": "not in the text; catalog prints ECON C2002 as the alternative to BUS 110 (likely renumbered)"
    }
   ],
   "notes": [
-   "The excerpt begins at 'Degree Requirements' on page 432; the program heading (presumably 'A.S. in CIS: Database Management') and description fall on the previous page and are not in the text, so section_heading uses the printed 'Degree Requirements'.",
-   "The '3 - 4' printed on the ACCT 101 row reflects the ACCT 101 (3) or ACCT 301 (4) choice; recorded as ACCT 101 3 units with ACCT 301 4 units as alternative rather than a units range on ACCT 101.",
-   "ECON C2002 (Principles of Macroeconomics) is printed as the alternative to BUS 110 and is not on the closed list (which has ECON 302); marked catalog_addition.",
-   "'plus sufficient electives for a total of at least 60 units' is a generic A.S. statement, not a printed degree total; degree_total left null and electives_fill_degree set true.",
-   "No careers are named in the visible section; the career list on page 434 belongs to the Cybersecurity degree."
+   "The text begins at 'Degree Requirements' on page 432; the program heading (presumably 'A.S. in CIS: Database Management') and description are on the preceding page and not included, so the section is identified by the closing paragraph naming the CIS: Database Management A.S.",
+   "The ACCT 101 or ACCT 301 row prints '3 - 4' units, reflecting the 3-unit and 4-unit options; this accounts for the 39 - 40 total.",
+   "ECON C2002 is printed as an alternative to BUS 110 and is not in the closed list; marked as catalog addition.",
+   "Degree completed with Local GE or Cal-GETC plus sufficient electives for at least 60 units; this is the generic degree sentence, so no degree_total recorded.",
+   "No career titles are named in the provided text for this program."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "2d52d71319201060",
+ "source_codes": [
+  "ACCT101",
+  "ACCT301",
+  "BUS110",
+  "BUS300",
+  "BUS310",
+  "CISA315",
+  "CISA320",
+  "CISA322",
+  "CISC310",
+  "CISC320",
+  "CISP300",
+  "CISP350",
+  "CISP370",
+  "CISW300",
+  "CISW410",
+  "ECON302",
+  "ENGLC1000"
+ ],
+ "source_coverage": 1.0
 }

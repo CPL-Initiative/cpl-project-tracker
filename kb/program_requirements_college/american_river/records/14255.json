@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Commercial Music: Recording",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=764",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=770",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10884,
+  "input_tokens": 11088,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10884,
-    "output_tokens": 1498,
+    "input_tokens": 11088,
+    "output_tokens": 2011,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1498,
+  "output_tokens": 2011,
   "output_tokens_details": {
-   "thinking_tokens": 434
+   "thinking_tokens": 595
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0735,
- "ms": 13106,
- "seconds": 13.4,
+ "cost_usd": 0.08457,
+ "ms": 17655,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 16,
    "listed": 16,
-   "share": 0.0,
-   "missing": [
-    "ET302",
-    "MUFHL321",
-    "MUFHL330",
-    "MUIVI340",
-    "MUSM306",
-    "MUSM311",
-    "MUSM320",
-    "MUSM334",
-    "MUSM342",
-    "MUSM344",
-    "MUSM350",
-    "MUSM356",
-    "MUSM357",
-    "MUSM361",
-    "MUSM362",
-    "MUSM367"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -78,36 +61,43 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    38.0,
+    38.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 7,
    "courses": 0,
-   "count": 0,
-   "not_verbatim": [],
-   "why": [],
+   "count": 7,
+   "not_verbatim": [
+    "explain music fundamentals, cross-cultural influences from diverse geographical regions, and song composition/arranging techniques."
+   ],
+   "why": [
+    "not in the catalog text as printed: explain music fundamentals, cross-cultural influences from diverse geographical "
+   ],
    "heading_printed": true,
-   "heading_without_outcomes": true,
-   "pass": true
+   "heading_without_outcomes": false,
+   "pass": false
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 8,
+   "not_verbatim": [
+    "audio/music education"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -119,8 +109,8 @@
    "section_heading": "Commercial Music: Recording Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 38,
+    "max": 38
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -137,85 +127,175 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "analyze the signal flow and understand the operation of electrical components found in a typical recording studio.",
+    "set up and employ the use of mixing consoles, multi-track recorders, Digital Audio Workstations (DAWs), and sound reinforcement systems.",
+    "select and set up outboard signal processing hardware and software plug-ins for audio enhancement.",
+    "explain music fundamentals, cross-cultural influences from diverse geographical regions, and song composition/arranging techniques.",
+    "create Musical Instrument Digital Interface (MIDI) sequencing and notation projects utilizing music keyboard input devices and various software packages.",
+    "design and equip a fully-functioning and acoustically-sound recording studio.",
+    "formulate and implement effective musical and technical recording session techniques."
+   ],
+   "careers": [
+    "audio engineering",
+    "recording engineer",
+    "broadcast engineer",
+    "live sound reinforcement",
+    "post-production audio",
+    "sound effects editor",
+    "multi-media/internet audio",
+    "audio/music education"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ET 302",
-    "why": "named only in the A.A. section; certificate section not in the text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ET 302",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 334",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 342",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 344",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 356",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 357",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 362",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 367",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUFHL 321",
-    "why": "named only in the A.A. sections; certificate section not in the text"
-   },
-   {
-    "code": "MUFHL 330",
-    "why": "named only in the A.A. sections; certificate section not in the text"
-   },
-   {
-    "code": "MUIVI 340",
-    "why": "named only in the AA-T and A.A. sections; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 306",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 311",
-    "why": "named only in the A.A. sections; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 334",
-    "why": "named only in the AA-T and A.A. sections; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 342",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 344",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 350",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 356",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 357",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 361",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 362",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM 367",
-    "why": "named only in the A.A. section; certificate section not in the text"
-   },
-   {
-    "code": "MUSM320",
-    "why": "printed as MUSM 320 only in the A.A. sections; certificate section not in the text"
+    "name": "A minimum of 5 units from the following",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MUFHL 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUFHL 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUIVI 340",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSM 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided text does not contain the Commercial Music: Recording Certificate of Achievement section. 'Commercial Music: Recording Certificate' appears only as a list entry on page 764; the text ends on page 767 partway through the A.A. in Commercial Music: Recording section (its learning outcomes list may be cut off at the page break). The certificate's requirements likely appear on a later page (768 or after) not included here.",
-   "The A.A. in Commercial Music: Recording prints ET 302, MUSM 306, 311, 320, 334, 342, 344, 350, 356, 357, 362, 367 required plus a minimum of 5 units from MUFHL 321, MUFHL 330, MUIVI 340, MUSM 361, Total Units: 38. These were not recorded because they belong to the degree, not the certificate; a reviewer should fetch the certificate section.",
-   "No outcomes or careers were recorded because the certificate's own section is not in the text; the A.A. description mentions 'a career in audio engineering'."
+   "The closed list stores 'MUSM320' without a space and with no units; the catalog prints 'MUSM 320 Contemporary Songwriting 3'. Treated as the same course (catalog_addition false).",
+   "Outcomes broken across lines at a hyphen or slash ('composition/ arranging', 'acoustically- sound') were joined without a space as single printed words; reviewer may check.",
+   "Career Information for this certificate is printed at the top of page 771, before the Digital Audio Production Certificate heading; read as belonging to this program. 'audio engineering' taken from the program description."
   ]
  },
- "extracted_run": "43212067552",
- "source_sha": "0af1c76f8df9d40f",
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "da2883a77f465cf2",
  "source_codes": [
   "ET302",
   "MUFHL321",

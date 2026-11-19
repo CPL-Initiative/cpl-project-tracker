@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10405,
-    "output_tokens": 2795,
+    "output_tokens": 2557,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2795,
+  "output_tokens": 2557,
   "output_tokens_details": {
-   "thinking_tokens": 892
+   "thinking_tokens": 632
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09752,
- "ms": 21605,
- "seconds": 22.0,
+ "cost_usd": 0.09276,
+ "ms": 19953,
+ "seconds": 22.6,
  "parts": null,
  "error": null,
  "score": {
@@ -377,18 +377,48 @@
   "missing_explained": [
    {
     "code": "ECON 302",
-    "why": "catalog prints ECON C2002 Principles of Macroeconomics in its place (likely renumbered)"
+    "why": "not in the text; the A.A. section lists ECON C2002 Principles of Macroeconomics in its place (likely renumbered)"
    }
   ],
   "notes": [
-   "The page begins with the end of the AA-T in Global Studies section (Total Units: 21, its own outcomes and careers); those were not used.",
-   "ECON C2002 is recorded as a catalog addition; the closed list names ECON 302 for the same title, apparently renumbered under common course numbering.",
-   "Closed list stores GLST301/GLST302 without a space; catalog prints GLST 301/GLST 302, treated as the same courses.",
-   "Degree text says 'plus sufficient electives for a total of at least 60 units'; this is boilerplate for the degree type, so degree_total was left null and electives_fill_degree set true.",
-   "No units printed for the GE pattern; ge_units null.",
-   "Careers are read from the A.A. Career Information paragraph; it also mentions 'local, state, federal agencies, and in the private sector' as employers, not recorded as careers."
+   "The page also prints the AA-T in Global Studies section (ending Total Units: 21) with its own outcomes and careers; that section was not used.",
+   "ECON C2002 is recorded as a catalog addition; it appears to be the common-course-numbered replacement for closed-list ECON 302.",
+   "Closed list writes GLST301 and GLST302 without a space; catalog prints GLST 301 and GLST 302, treated as the same courses.",
+   "The degree statement says the required program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; read as electives filling the degree, with no degree total printed as this award's own total line, so degree_total left null. Reviewer may consider 60 as degree_total.",
+   "Career section also says the degree provides career opportunities 'with local, state, federal agencies, and in the private sector'; these were read as employers, not career fields, and not recorded."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "1021754fb8cc7f19",
+ "source_codes": [
+  "ANTH310",
+  "ANTH481",
+  "ECON302",
+  "GERM401",
+  "GERM402",
+  "GERM411",
+  "GERM412",
+  "GLST301",
+  "GLST302",
+  "HIST308",
+  "IS305",
+  "IS310",
+  "IS312",
+  "ITAL401",
+  "ITAL402",
+  "ITAL411",
+  "ITAL412",
+  "POLS310",
+  "POLS480",
+  "RUSS401",
+  "RUSS402",
+  "SOC300",
+  "SOC480",
+  "SPAN401",
+  "SPAN402",
+  "SPAN411",
+  "SPAN412"
+ ],
+ "source_coverage": 1.0
 }

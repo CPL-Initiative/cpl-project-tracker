@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Marketing Essentials",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=750",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=746",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9005,
-    "output_tokens": 1175,
+    "output_tokens": 974,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1175,
+  "output_tokens": 974,
   "output_tokens_details": {
-   "thinking_tokens": 302
+   "thinking_tokens": 236
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05952,
- "ms": 10593,
- "seconds": 11.0,
+ "cost_usd": 0.0555,
+ "ms": 9718,
+ "seconds": 10.1,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 8,
+   "count": 7,
    "not_verbatim": [],
    "pass": true
   },
@@ -134,10 +134,9 @@
     "selling",
     "advertising",
     "public relations",
-    "marketing management positions",
+    "marketing management",
     "entrepreneur",
-    "small business owner",
-    "entry-level marketing positions"
+    "small business owner"
    ]
   },
   "blocks": [
@@ -192,11 +191,20 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The 'Career Information' heading at the top of page 751 follows the Marketing Essentials outcomes across the page break and was read as belonging to this certificate, not to the Retail Management (WAFC) Certificate that follows.",
-   "Careers split from 'Marketing, selling, advertising, public relations, and marketing management positions'; 'positions' may apply to each item. 'entrepreneur' and 'small business owner' come from 'enhancing marketing skills for the entrepreneur and small business owner'; 'entry-level marketing positions' from the description. Reviewer may want to check this split.",
-   "The 'Total Units: 15' line printed under the course table was recorded both as total_units and as the block's stated total.",
-   "The Retail Management (WAFC) Certificate section was ignored."
+   "The sixth outcome continues onto page 747 after the page break; joined with the list for this certificate.",
+   "Careers read from the 'Career Information' paragraph: 'Marketing, selling, advertising, public relations, and marketing management positions... Also, enhancing marketing skills for the entrepreneur and small business owner.'",
+   "The following Retail Management (WAFC) Certificate section was ignored."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "167bf0cebc894c0d",
+ "source_codes": [
+  "MKT300",
+  "MKT310",
+  "MKT312",
+  "MKT314",
+  "MKT330"
+ ],
+ "source_coverage": 1.0
 }

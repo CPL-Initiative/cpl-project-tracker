@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Conflict Management",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=743",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7906,
+  "input_tokens": 10176,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7906,
-    "output_tokens": 620,
+    "input_tokens": 10176,
+    "output_tokens": 677,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 620,
+  "output_tokens": 677,
   "output_tokens_details": {
    "thinking_tokens": 0
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04402,
- "ms": 4967,
- "seconds": 5.3,
+ "cost_usd": 0.05424,
+ "ms": 6630,
+ "seconds": 7.0,
  "parts": null,
  "error": null,
  "score": {
@@ -139,8 +139,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 12,
+     "max": 12
     },
     "courses": [
      {
@@ -177,9 +177,19 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Conflict Management Certificate section under Certificates of Achievement on page 744; the A.A. in Management, Leadership Certificate and Management Certificate sections were ignored.",
-   "No careers are named in the certificate's own section."
+   "The 'Total Units: 12' line is recorded as both the certificate's total_units and the block's stated total.",
+   "The page also prints the A.A. in Management and the Leadership, Management and Project Management Certificates; only the Conflict Management Certificate section was read.",
+   "The Career Information text names Project Managers, but it appears under the Project Management Certificate, so no careers are recorded for this award."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "4c33b197988a985b",
+ "source_codes": [
+  "BUS317",
+  "BUS330",
+  "MGMT308",
+  "MGMT372"
+ ],
+ "source_coverage": 1.0
 }

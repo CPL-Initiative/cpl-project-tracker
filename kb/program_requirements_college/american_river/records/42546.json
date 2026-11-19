@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11226,
-    "output_tokens": 2047,
+    "output_tokens": 3088,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2047,
+  "output_tokens": 3088,
   "output_tokens_details": {
-   "thinking_tokens": 352
+   "thinking_tokens": 1349
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08584,
- "ms": 15438,
- "seconds": 15.8,
+ "cost_usd": 0.10666,
+ "ms": 23073,
+ "seconds": 23.3,
  "parts": null,
  "error": null,
  "score": {
@@ -239,7 +239,7 @@
     ]
    },
    {
-    "name": "A minimum of 16 units from the following",
+    "name": "A minimum of 16 units from the following:",
     "rule": "choose_units",
     "minimum": 16,
     "option_group": null,
@@ -262,16 +262,32 @@
   "missing_explained": [
    {
     "code": "ENGWR 95",
-    "why": "Catalog prints ENGL 95 with the same title (Beginning Writing Across the Curriculum (WAC)); recorded as ENGL 95, likely the same course under a different subject code."
+    "why": "catalog prints the same title as ENGL 95; recorded under the printed code ENGL 95 as a catalog addition"
    }
   ],
   "notes": [
-   "The catalog prints 'ENGL 95 Beginning Writing Across the Curriculum (WAC) 0.5' while the closed list names ENGWR 95 with the same title; recorded as printed with catalog_addition true. Reviewer should confirm this is the same course.",
-   "APPRT 498 printed with a space; matched to closed-list APPRT498.",
-   "ENGRD 315 printed as 0.5 -1 units; recorded as range 0.5-1, consistent with the 45 - 45.5 total.",
-   "The Student Learning Outcomes lead-in appears at the bottom of page 133 and the outcomes continue on page 134."
+   "The closed list stores APPRT498 without a space; the catalog prints APPRT 498 with the same title, so it is treated as the same course.",
+   "The catalog prints 'ENGL 95 Beginning Writing Across the Curriculum (WAC) 0.5' while the closed list has ENGWR 95 with the same title; likely a subject renaming or catalog typo — reviewer should confirm.",
+   "Printed total 45 - 45.5 matches the required courses (29-29.5 units, ENGRD 315 printed 0.5-1) plus 16 units of APPRT 498.",
+   "The Student Learning Outcomes list starts on page 133 and continues on page 134 after a page break.",
+   "Career entry 'Tax Examiners, Collectors, and Revenue Agents' is kept as one occupation as numbered (1) in the Career Information section."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "5a377c20cf57a205",
+ "source_codes": [
+  "ACCT103",
+  "ACCT104",
+  "ACCT107",
+  "ACCT111",
+  "ACCT301",
+  "ACCT311",
+  "APPRT498",
+  "BUS100",
+  "BUS340",
+  "ENGRD315",
+  "ENGWR95"
+ ],
+ "source_coverage": 1.0
 }

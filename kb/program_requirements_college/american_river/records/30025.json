@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Digital Home Technology Integration",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=523",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10942,
+  "input_tokens": 10982,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10942,
-    "output_tokens": 658,
+    "input_tokens": 10982,
+    "output_tokens": 892,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 658,
+  "output_tokens": 892,
   "output_tokens_details": {
-   "thinking_tokens": 139
+   "thinking_tokens": 229
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05693,
- "ms": 6514,
- "seconds": 6.9,
+ "cost_usd": 0.06177,
+ "ms": 8767,
+ "seconds": 9.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "ET115",
-    "ET253",
-    "ET302",
-    "ET385",
-    "ET388"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -67,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    20.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Digital Home Technology Integration Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -126,38 +121,87 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "design a home data network",
+    "construct a home telephone network",
+    "evaluate and troubleshoot a home network",
+    "assemble a home audio and video network",
+    "build a wireless home network",
+    "certify a home data and telephone network",
+    "set up a security and fire alarm system in a home",
+    "apply industry standards to system design for a home"
+   ],
+   "careers": [
+    "home technology industry"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ET 115",
-    "why": "Digital Home Technology Integration section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ET 253",
-    "why": "Digital Home Technology Integration section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ET 302",
-    "why": "Digital Home Technology Integration section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "ET 385",
-    "why": "not in the text"
-   },
-   {
-    "code": "ET 388",
-    "why": "not in the text"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "ET 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 253",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 302",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 385",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 388",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The excerpt (pages 519-522) names 'Digital Home Technology Integration Certificate' only in the department's list of programs at the top of page 519; the certificate's own requirements section is not in the text.",
-   "The Certificates of Achievement section begins on page 521 and proceeds alphabetically (Advanced Electronics and Telecommunications, Biomedical Equipment Technology); the text ends at page 522 before the Digital Home Technology Integration Certificate. It likely appears on page 523 or later, so a reviewer should check the following pages.",
-   "No total, courses, outcomes or careers were recorded because none are printed for this award in the provided text."
+   "The page prints several Electronics Technology certificates in a row; only the Digital Home Technology Integration Certificate section was read.",
+   "The section is headed simply 'Certificate'; the award is recorded as the Certificate of Achievement given in the request.",
+   "The career information names no job titles; 'home technology industry' is recorded from 'employment in the home technology industry'. A reviewer may judge whether this counts as a career field.",
+   "The block's stated total is taken from 'Total Units: 20', the certificate's only total."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "d2803979e317e140",
+ "source_codes": [
+  "ET115",
+  "ET253",
+  "ET302",
+  "ET385",
+  "ET388"
+ ],
+ "source_coverage": 1.0
 }

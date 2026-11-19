@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11451,
-    "output_tokens": 2244,
+    "output_tokens": 2007,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2244,
+  "output_tokens": 2007,
   "output_tokens_details": {
-   "thinking_tokens": 749
+   "thinking_tokens": 539
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09068,
- "ms": 18139,
- "seconds": 18.5,
+ "cost_usd": 0.08594,
+ "ms": 16614,
+ "seconds": 16.9,
  "parts": null,
  "error": null,
  "score": {
@@ -68,35 +68,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     36.0,
     36.0
    ],
    "stated": [
-    60.0,
-    60.0
+    36.0,
+    36.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ],
-   "major": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     36.0,
-     36.0
-    ],
-    "stated": [
-     36.0,
-     36.0
-    ],
-    "against": "program",
-    "why": []
-   }
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -118,9 +101,12 @@
    "pass": true
   },
   "degree": {
-   "status": "read"
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -137,8 +123,8 @@
    },
    "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
-    "min": 60,
-    "max": 60
+    "min": null,
+    "max": null
    },
    "ge_units": {
     "min": null,
@@ -325,17 +311,39 @@
   "missing_explained": [
    {
     "code": "ECON 302",
-    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics as the alternative to BUS 110 (likely common-course-numbering replacement)"
+    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics as the alternative to BUS 110 (likely renumbered)"
    }
   ],
   "notes": [
-   "degree_total 60 read from 'plus sufficient electives for a total of at least 60 units' printed for this A.A.; it may be the general ARC graduation requirement rather than a program-specific total.",
-   "GE units are not printed; ge_units null.",
-   "ECON C2002 is recorded as a catalog addition; the closed list has ECON 302 (Principles of Macroeconomics), probably the prior code.",
-   "The Accounting Certificate prints identical requirements and outcomes; only the A.A. section was read.",
-   "The A.A. outcomes list continues from page 131 onto page 132."
+   "ECON C2002 (alternative to BUS 110) is not in the closed list; it appears to replace ECON 302 under common course numbering.",
+   "Degree text says the A.A. requires the program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; no degree total or GE units are printed as a total line, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "Student Learning Outcomes list spans pages 131-132; the same outcomes are printed for the Accounting Certificate."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "a0fac06d4f882d59",
+ "source_codes": [
+  "ACCT101",
+  "ACCT103",
+  "ACCT104",
+  "ACCT107",
+  "ACCT111",
+  "ACCT121",
+  "ACCT123",
+  "ACCT125",
+  "ACCT128",
+  "ACCT153",
+  "ACCT301",
+  "ACCT311",
+  "ACCT341",
+  "ACCT343",
+  "ACCT361",
+  "BUS110",
+  "CISA316",
+  "ECON302",
+  "PROPTX310",
+  "PROPTX311"
+ ],
+ "source_coverage": 1.0
 }

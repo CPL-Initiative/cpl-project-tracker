@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Plumbers/Pipefitters Apprenticeship",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=200",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10874,
+  "input_tokens": 11011,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10874,
-    "output_tokens": 1967,
+    "input_tokens": 11011,
+    "output_tokens": 2720,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,65 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1967,
+  "output_tokens": 2720,
   "output_tokens_details": {
-   "thinking_tokens": 568
+   "thinking_tokens": 545
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08284,
- "ms": 15806,
- "seconds": 16.2,
+ "cost_usd": 0.09844,
+ "ms": 20636,
+ "seconds": 20.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 35,
    "listed": 35,
-   "share": 0.0,
-   "missing": [
-    "HVACR101",
-    "HVACR298",
-    "PLUMB100",
-    "PLUMB110",
-    "PLUMB111",
-    "PLUMB120",
-    "PLUMB121",
-    "PLUMB122",
-    "PLUMB130",
-    "PLUMB131",
-    "PLUMB140",
-    "PLUMB141",
-    "PLUMB150",
-    "PLUMB160",
-    "PLUMB163",
-    "PLUMB164",
-    "PLUMB166",
-    "PLUMB168",
-    "PLUMB169",
-    "PLUMB170",
-    "PLUMB171",
-    "PLUMB200",
-    "PLUMB201",
-    "PLUMB202",
-    "PLUMB210",
-    "PLUMB211",
-    "PLUMB212",
-    "PLUMB240",
-    "PLUMB241",
-    "PLUMB298",
-    "STMFT104",
-    "STMFT109",
-    "STMFT113",
-    "STMFT114",
-    "STMFT298"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -97,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    56.0,
+    56.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    56.0,
+    56.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 10,
    "courses": 0,
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Certificates of Achievement",
+   "section_heading": "Plumbers/Pipefitters Apprenticeship Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 56,
+    "max": 56
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -156,154 +121,342 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "apply hot pass and cover pass procedures.",
+    "perform pipe weld methods in the 2G, 5G, and 6G positions.",
+    "identify personality traits to work effectively with others.",
+    "negotiate difficult workplace situations.",
+    "practice conflict resolution.",
+    "evaluate and develop project schedules.",
+    "draft and properly complete construction documents.",
+    "demonstrate uphill pipe welding method.",
+    "list National Inspection Testing Certification (NITC) requirements for medical gas systems.",
+    "demonstrate ability to apply applicable plumbing codes."
+   ],
+   "careers": [
+    "Plumbers",
+    "pipefitters"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "HVACR 101",
-    "why": "named only in the A.S. section; certificate section not in the text"
+    "name": "A minimum of 40 units from the following",
+    "rule": "choose_units",
+    "minimum": 40,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "HVACR 101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 100",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 111",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 122",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 130",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 131",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 141",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 150",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 160",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 163",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 164",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 166",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 168",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 169",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 171",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 200",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 201",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 202",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 210",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 211",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 212",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 241",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 104",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 113",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 114",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "HVACR 298",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 100",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 110",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 111",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 120",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 121",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 122",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 130",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 131",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 140",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 141",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 150",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 160",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 163",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 164",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 166",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 168",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 169",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 170",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 171",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 200",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 201",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 202",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 210",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 211",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 212",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 240",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 241",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "PLUMB 298",
-    "why": "named only in the A.S. sections; certificate section not in the text"
-   },
-   {
-    "code": "STMFT 104",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "STMFT 109",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "STMFT 113",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "STMFT 114",
-    "why": "named only in the A.S. section; certificate section not in the text"
-   },
-   {
-    "code": "STMFT 298",
-    "why": "named only in the A.S. sections; certificate section not in the text"
+    "name": "A minimum of 16 units from the following",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "HVACR 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLUMB 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STMFT 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints three awards in a row: Plumbers/Pipefitters Apprenticeship Certificate (56 units), Level I Certificate (12 units) and Level II Certificate (24 units). Only the 56-unit certificate fits the 30 to fewer than 60 unit Certificate of Achievement, so that section alone is recorded.",
+   "Careers recorded from the Career Information paragraph, which names plumbers and pipefitters as in high demand; no other job titles are named.",
+   "Enrollment requires being a registered Plumbers and Pipefitters apprentice.",
+   "The Level II section's Student Learning Outcomes heading is cut off at the end of the text; this does not affect the recorded award."
+  ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "b230b1a836619fe2",
+ "source_codes": [
+  "HVACR101",
+  "HVACR298",
+  "PLUMB100",
+  "PLUMB110",
+  "PLUMB111",
+  "PLUMB120",
+  "PLUMB121",
+  "PLUMB122",
+  "PLUMB130",
+  "PLUMB131",
+  "PLUMB140",
+  "PLUMB141",
+  "PLUMB150",
+  "PLUMB160",
+  "PLUMB163",
+  "PLUMB164",
+  "PLUMB166",
+  "PLUMB168",
+  "PLUMB169",
+  "PLUMB170",
+  "PLUMB171",
+  "PLUMB200",
+  "PLUMB201",
+  "PLUMB202",
+  "PLUMB210",
+  "PLUMB211",
+  "PLUMB212",
+  "PLUMB240",
+  "PLUMB241",
+  "PLUMB298",
+  "STMFT104",
+  "STMFT109",
+  "STMFT113",
+  "STMFT114",
+  "STMFT298"
+ ],
+ "source_coverage": 1.0
 }

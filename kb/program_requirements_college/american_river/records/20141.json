@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Social Work",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=924",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11196,
-    "output_tokens": 2026,
+    "output_tokens": 2198,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,61 +30,76 @@
     "model": null
    }
   ],
-  "output_tokens": 2026,
+  "output_tokens": 2198,
   "output_tokens_details": {
-   "thinking_tokens": 378
+   "thinking_tokens": 496
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0853,
- "ms": 15095,
- "seconds": 15.3,
+ "cost_usd": 0.08874,
+ "ms": 16622,
+ "seconds": 16.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 18,
    "listed": 18,
-   "share": 0.556,
-   "missing": [
-    "HSER300",
-    "HSER310",
-    "HSER330",
-    "HSER340",
-    "HSER360",
-    "HSER362",
-    "HSER365",
-    "HSER498"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "SWCD300",
+     "listed": "HSER300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD310",
+     "listed": "HSER310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD340",
+     "listed": "HSER340",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD360",
+     "listed": "HSER360",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD362",
+     "listed": "HSER362",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD365",
+     "listed": "HSER365",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD498",
+     "listed": "HSER498",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
-   "codes": [
-    "SWCD300",
-    "SWCD310",
-    "SWCD330",
-    "SWCD340",
-    "SWCD360",
-    "SWCD362",
-    "SWCD365",
-    "SWCD498"
-   ],
-   "flagged": [
-    "SWCD300",
-    "SWCD310",
-    "SWCD330",
-    "SWCD340",
-    "SWCD360",
-    "SWCD362",
-    "SWCD365",
-    "SWCD498"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -309,43 +324,67 @@
   "missing_explained": [
    {
     "code": "HSER 300",
-    "why": "catalog prints renumbered SWCD 300 (formerly HSER 300)"
+    "why": "renumbered; catalog lists SWCD 300 (formerly HSER 300)"
    },
    {
     "code": "HSER 310",
-    "why": "catalog prints renumbered SWCD 310 (formerly HSER 310)"
+    "why": "renumbered; catalog lists SWCD 310 (formerly HSER 310)"
    },
    {
     "code": "HSER 330",
-    "why": "catalog prints renumbered SWCD 330 (formerly HSER 330)"
+    "why": "renumbered; catalog lists SWCD 330 (formerly HSER 330)"
    },
    {
     "code": "HSER 340",
-    "why": "catalog prints renumbered SWCD 340 (formerly HSER 340)"
+    "why": "renumbered; catalog lists SWCD 340 (formerly HSER 340)"
    },
    {
     "code": "HSER 360",
-    "why": "catalog prints renumbered SWCD 360 (formerly HSER 360)"
+    "why": "renumbered; catalog lists SWCD 360 (formerly HSER 360)"
    },
    {
     "code": "HSER 362",
-    "why": "catalog prints renumbered SWCD 362 (formerly HSER 362)"
+    "why": "renumbered; catalog lists SWCD 362 (formerly HSER 362)"
    },
    {
     "code": "HSER 365",
-    "why": "catalog prints renumbered SWCD 365 (formerly HSER 365)"
+    "why": "renumbered; catalog lists SWCD 365 (formerly HSER 365)"
    },
    {
     "code": "HSER 498",
-    "why": "catalog prints renumbered SWCD 498 (formerly HSER 498)"
+    "why": "renumbered; catalog lists SWCD 498 (formerly HSER per footnote)"
    }
   ],
   "notes": [
-   "The catalog uses SWCD course codes; the closed list still names the former HSER codes. SWCD courses are recorded as catalog additions and the HSER codes listed in missing_explained.",
-   "SWCD 365 is printed with units '31'; read as 3 units with footnote 1 (must be taken prior to or as corequisite with SWCD 362 and 498).",
-   "The Student Learning Outcomes follow the certificate on page 929 under 'Upon completion of this program'; recorded as this certificate's outcomes.",
-   "No careers are named in the certificate section; career roles mentioned only in the SWCD 300 course description were not recorded."
+   "SWCD 365 is printed with units '31'; read as 3 units with footnote 1 (must be taken as corequisite to SWCD 362 and 498 if not completed earlier).",
+   "All HSER courses in the closed list appear in the catalog under SWCD codes (course descriptions state 'previously known as HSER ...'); SWCD codes recorded as catalog additions.",
+   "SWCD 498 is printed with a 0.5-4 unit range; the block requires a minimum of 2 units, which need not be taken in one semester.",
+   "Student Learning Outcomes are printed directly after the Social Work Certificate requirements and recorded for this certificate.",
+   "No careers are named in the program section; associate-professional roles mentioned in the SWCD 300 course description were not recorded."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "cf335168abc2035e",
+ "source_codes": [
+  "HEED310",
+  "HSER300",
+  "HSER310",
+  "HSER330",
+  "HSER340",
+  "HSER360",
+  "HSER362",
+  "HSER365",
+  "HSER498",
+  "PSYC305",
+  "PSYC340",
+  "PSYC365",
+  "PSYC400",
+  "PSYC481",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SOC300",
+  "SOC480"
+ ],
+ "source_coverage": 1.0
 }
