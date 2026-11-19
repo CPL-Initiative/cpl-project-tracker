@@ -22,7 +22,7 @@ CPLLibrary folder on the MAP team's SharePoint site; the repos keep only the sou
 Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
 `token_refused` named). Guard `tests/library_publish_now.test.js`.
 
-**BUILT, waits on its migration: the publishing model, #3560 part 1 of 4 (S687; Sam's decisions of Nov 19 via
+**BUILT in #3572 (first migration applied, run 44621258767; the second waits): the publishing model, #3560 part 1 of 4 (S687; Sam's decisions of Nov 19 via
 COBIx).** A new piece's ready draft has two buttons, exactly *Publish to Internal Library* and *Publish to Public
 Library*; no approval from Sam. Internal approves the draft; one press starts the publish run at once only for a
 signed-in reviewer (Publish now's holds and one status line), and a team-phrase press waits for the scheduled run
@@ -45,13 +45,21 @@ the tab publishes to the Internal Library and Public says the check record is no
   (second read of #3572), in the tab and in `cpl_library_set_public()`; the draft's key speaks only to a new piece's
   Public confirmation. A draft's check never carries to the page, which is checked again once it is up.
 - DECIDED (S687): the rollback refuses while `cpl_library_checks` holds rows, since nothing else keeps them.
+- DECIDED (S687 conductor, on COBIx's #3572 comment 7022946691): a listed piece whose `version` or `url` changes leaves
+  the Public Library unless the latest check for its new page key passes, and keeps `publish_target = 'public'` so
+  part 2's run lists it again once the new page passes. Every writer, the service role included, since unlisting is
+  the safe direction. Until part 2 relists, this overrides Sam's "a Public Library piece stays listed while redrafted,
+  showing the last published version": a draft stays a draft and unlists nothing, and only a published new version
+  does. A url change that keeps its version key keeps that key's check. Trigger `cpl_library_unlist_new_page_trg`,
+  `kb/migrations/2026-11-19_library_relist_on_new_version.sql` (not applied yet; the first migration is applied, run
+  44621258767).
 - DECIDED (S687): a new piece pressed to Public is never listed at the press (it has no page yet); part 2's check run
   lists it once its page passes. Only the service role writes a check, so the tab never certifies a piece.
 - DECIDED (S687): Replace the public copy on a revision is unchanged until part 4 (redraft and republish).
 
 **NEXT (#3560):** part 2, the check run in `library-publish.yml` (writes `cpl_library_checks`, lists the pieces whose
 `publish_target` is public once they pass) and the footer from each piece's check record; part 3, the progress bar;
-part 4, Publish all, Add existing, redraft and republish. Waits: the conductor applies the migration.
+part 4, Publish all, Add existing, redraft and republish. Waits: the conductor applies the second migration.
 
 ✅ **The tab is built** (`library.js`, under *Sierra & Team Tools*; the side
 session beside S336, 2026-10-05). It reads `cpl_library` live behind the team

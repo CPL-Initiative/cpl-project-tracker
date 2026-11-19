@@ -15,6 +15,10 @@ against stubs of Supabase's auth.role(), auth.jwt(), team_pass_ok() and is_allow
   * the latest passing check for the page the record names now lists it ('page', then 'version:<n>');
   * unlisting needs no check, and resets publish_target from public to internal;
   * the service role is exempt; the function keeps EXECUTE for anon, authenticated and service_role, and not PUBLIC;
+  * kb/migrations/2026-11-19_library_relist_on_new_version.sql (COBIx on #3572): a listed piece whose version or url
+    changes stays listed only when the latest check for its NEW page key passes; otherwise it leaves the Public
+    Library with publish_target kept 'public', for every writer, the service role included; its rollback restores
+    the first migration's state;
   * the rollback refuses while a check exists (naming the count), and once they are gone restores the ungated
     function and drops the tables and columns.
 
@@ -36,6 +40,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUBLIC_SQL = os.path.join(ROOT, "kb/supabase_cpl_library_public.sql")
 FORWARD = os.path.join(ROOT, "kb/migrations/2026-11-19_library_publishing_model.sql")
 ROLLBACK = os.path.join(ROOT, "kb/migrations/2026-11-19_library_publishing_model_rollback.sql")
+# The second migration (COBIx on #3572): a listed piece whose page changes leaves the Public Library until it passes.
+RELIST = os.path.join(ROOT, "kb/migrations/2026-11-19_library_relist_on_new_version.sql")
+RELIST_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_library_relist_on_new_version_rollback.sql")
 
 # The Supabase pieces the files call, and cpl_library with the columns they read (kb/supabase_cpl_library.sql).
 STUBS = """
@@ -193,8 +200,63 @@ def main():
         check("EXECUTE stays with anon, authenticated and service_role, never PUBLIC",
               {"anon", "authenticated", "service_role"} <= granted and "PUBLIC" not in granted, out)
 
+        # ── A listed piece whose page changes (2026-11-19_library_relist_on_new_version.sql) ──
+        ok, _, err = c.psql(open(RELIST).read())
+        check("the relist migration loads", ok, err)
+        ok, _, err = c.psql(open(RELIST).read())
+        check("the relist migration is re-runnable", ok, err)
+
+        def piece(slug, version):
+            c.psql("insert into public.cpl_library (slug, title, url, version) values ('%s', '%s', 'https://example.org/%s/', %s);"
+                   % (slug, slug, slug, "'%s'" % version if version else "null"))
+            return c.psql("select id from public.cpl_library where slug = '%s';" % slug)[1]
+
+        def add_for(lid, key, result, at):
+            c.psql("insert into public.cpl_library_checks (library_id, version_key, standard, checked_at, tool_or_reviewer, result, created_by) "
+                   "values ('%s', '%s', 'WCAG 2.1 AA and Section 508', '%s', 'axe-core automated check', '%s', 'library-proof@bot');"
+                   % (lid, key, at, result))
+
+        def row(slug):
+            return c.psql("select public_listed || '|' || coalesce(publish_target, '-') from public.cpl_library where slug = '%s';" % slug)[1]
+
+        deck = piece("deck", "4")
+        add_for(deck, "version:4", "pass", "2026-11-19T14:00:00Z")
+        check("a Version 4 with its own pass lists", listing(c, "deck")[0] and row("deck").startswith("true"))
+        add_for(deck, "version:5", "pass", "2026-11-19T14:10:00Z")
+        c.psql("update public.cpl_library set version = '5' where slug = 'deck';")
+        check("a listed v4 that becomes v5 with a v5 pass stays listed", row("deck").startswith("true"), row("deck"))
+        c.psql("update public.cpl_library set version = '6' where slug = 'deck';", "set test.role = 'service_role';")
+        check("a listed v5 that becomes v6 with no v6 check leaves the Public Library and keeps publish_target public, "
+              "the service role included", row("deck") == "false|public", row("deck"))
+        add_for(deck, "version:6", "pass", "2026-11-19T14:20:00Z")
+        check("once v6 passes, it lists again", listing(c, "deck")[0] and row("deck").startswith("true"))
+        c.psql("update public.cpl_library set version = '5' where slug = 'deck';")
+        check("setting version back to a key that passed keeps it listed (that page passed)", row("deck").startswith("true"), row("deck"))
+        add_for(deck, "version:5", "fail", "2026-11-19T14:30:00Z")
+        c.psql("update public.cpl_library set version = '6' where slug = 'deck'; update public.cpl_library set version = '5' where slug = 'deck';")
+        check("a version whose latest check failed unlists it", row("deck") == "false|public", row("deck"))
+        sheet = piece("sheet", None)
+        c.psql("select public.cpl_library_set_public('sheet', true, 'A public summary');", PHRASE + " set test.role = 'service_role';")
+        c.psql("update public.cpl_library set url = 'https://example.org/sheet-moved/' where slug = 'sheet';")
+        check("a url change with no check for its key unlists it and keeps publish_target public", row("sheet") == "false|public", row("sheet"))
+        add_for(sheet, "page", "pass", "2026-11-19T15:00:00Z")
+        listing(c, "sheet")
+        c.psql("update public.cpl_library set url = 'https://example.org/sheet-again/' where slug = 'sheet';")
+        check("a url change whose key passed stays listed", row("sheet").startswith("true"), row("sheet"))
+        c.psql("update public.cpl_library set title = 'Sheet, retitled' where slug = 'sheet';")
+        check("a change that leaves the page alone keeps it listed", row("sheet").startswith("true"))
+
+        ok, _, err = c.psql(open(RELIST_RB).read())
+        check("the relist rollback runs", ok, err)
+        c.psql("update public.cpl_library set version = '9' where slug = 'sheet';")
+        check("after it, a page change leaves a listed piece listed, as before the migration", row("sheet").startswith("true"), row("sheet"))
+        check("and the functions are as the first migration left them: the gate stays in set_public and the reset trigger stays",
+              not listing(c, "deck")[0] and c.psql("select count(*) from pg_trigger where tgname = 'cpl_library_publish_target_trg';")[1] == "1"
+              and c.psql("select count(*) from pg_proc where proname = 'cpl_library_unlist_on_new_page';")[1] == "0")
+
+        n = c.psql("select count(*) from public.cpl_library_checks;")[1]
         ok, _, err = c.psql(open(ROLLBACK).read())
-        check("the rollback refuses while check records exist, and names the count", not ok and "holds 5 check record(s)" in err, err)
+        check("the rollback refuses while check records exist, and names the count", not ok and ("holds %s check record(s)" % n) in err, err)
         check("a refused rollback drops nothing", c.psql("select to_regclass('public.cpl_library_checks') is not null;")[1] == "t")
         c.psql("delete from public.cpl_library_checks;")
         ok, _, err = c.psql(open(ROLLBACK).read())
