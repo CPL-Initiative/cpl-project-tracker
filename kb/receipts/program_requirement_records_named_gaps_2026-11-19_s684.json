@@ -132,35 +132,45 @@
    "college": "City College of San Francisco",
    "control_number": "16991",
    "gap": "catalog_figures_differ",
-   "why": "the record does not meet the gap's own sentence: the list 'Choose a first-level option: ITAL 1' prints no figure"
+   "why": "the record does not meet the gap's own sentence: the list 'Choose a first-level option: ITAL 1' prints no figure",
+   "extracted_run": "44474797786",
+   "wave_reread": true
   },
   {
    "part": "B",
    "college": "Foothill College",
    "control_number": "32281",
    "gap": "no_units_printed",
-   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named"
+   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named",
+   "extracted_run": "38675242638",
+   "wave_reread": false
   },
   {
    "part": "B",
    "college": "Los Angeles Mission College",
    "control_number": "35913",
    "gap": "no_units_printed",
-   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named"
+   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named",
+   "extracted_run": "39054675770",
+   "wave_reread": false
   },
   {
    "part": "B",
    "college": "San Bernardino Valley College",
    "control_number": "39483",
    "gap": "no_units_printed",
-   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named"
+   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named",
+   "extracted_run": "38748858322",
+   "wave_reread": false
   },
   {
    "part": "B",
    "college": "Santa Rosa Junior College",
    "control_number": "45486",
    "gap": "no_units_printed",
-   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named"
+   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named",
+   "extracted_run": "44477690021",
+   "wave_reread": true
   }
  ],
  "left_out": [

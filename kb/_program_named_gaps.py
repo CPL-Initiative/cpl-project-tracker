@@ -846,6 +846,18 @@ def wave_runs(colleges, base: str = COLLEGE_DIR) -> dict:
     return out
 
 
+def held_run(x: dict, runs: dict, base: str = COLLEGE_DIR) -> dict:
+    """A held-out row at a wave college with its filed run and whether the wave re-read it (S684 second reader: the
+    held-out list is by college, and some of its rows were not re-read)."""
+    run_ = None
+    for path in glob.glob(os.path.join(base, "*", "records", "%s.json" % x["control_number"])):
+        with open(path, encoding="utf-8") as fh:
+            d = json.load(fh)
+        if d.get("college") == x["college"]:
+            run_ = d.get("extracted_run")
+    return dict(x, extracted_run=run_, wave_reread=str(run_) in runs.get(x["college"], set()))
+
+
 def plan_wave(write: bool, colleges: tuple, skip: tuple = (), checked: frozenset = frozenset()) -> dict:
     """The wave's rows in plan_s681's row shape (part A the record rules, part B #3502's plan), with the load's image
     before and after each record file is rewritten. checked: {(college, control number)} a person checked live."""
@@ -911,7 +923,7 @@ def plan_wave(write: bool, colleges: tuple, skip: tuple = (), checked: frozenset
     rows.sort(key=lambda r: (r["part"], r["college"], r["control_number"]))
     for i, r in enumerate(rows, 1):
         r["i"] = i
-    held_out = [x for x in three["held_out"] if x["college"] in runs]
+    held_out = [held_run(x, runs) for x in three["held_out"] if x["college"] in runs]
     return {"rows": rows, "left_out": left_out, "held_out": held_out, "runs": {c: sorted(v) for c, v in runs.items()},
             "by_part": dict(collections.Counter(r["part"] for r in rows)),
             "by_gap": dict(collections.Counter(r["gap"] for r in rows)),
@@ -1028,7 +1040,9 @@ def main(argv=None) -> int:
         for x in res["left_out"]:
             print("  left out: part %(part)s %(college)s %(control_number)s (%(why)s)" % x)
         for x in res["held_out"]:
-            print("  held out: %(college)s %(control_number)s %(gap)s (%(why)s)" % x)
+            print("  held out: %s %s %s, run %s, %s (%s)" % (
+                x["college"], x["control_number"], x["gap"], x["extracted_run"],
+                "a wave re-read" if x["wave_reread"] else "not a wave re-read", x["why"]))
         if a.dry_run or not res["rows"]:
             return 0
         day = time.strftime("%Y-%m-%d", time.gmtime())

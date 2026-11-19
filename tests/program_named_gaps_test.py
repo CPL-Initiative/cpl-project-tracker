@@ -456,6 +456,10 @@ check(all(filed_by_key[key(r)]["score"]["gaps"][0]["gap"] == r["gap"] for r in r
 check(all(set(r["after_image"]["checks"]) - set(r["before_image"]["checks"]) == {"gaps", "confidence"}
           and {k: v for k, v in r["after_image"]["checks"].items() if k not in ("gaps", "confidence")}
           == r["before_image"]["checks"] for r in rows684), "the S684 apply adds gaps and confidence, nothing else")
+check(all(x["wave_reread"] == (str(x["extracted_run"]) in wave684.get(x["college"], set())) for x in rc684["held_out"])
+      and {(x["college"], x["control_number"]) for x in rc684["held_out"] if x["wave_reread"]}
+      == {("City College of San Francisco", "16991"), ("Santa Rosa Junior College", "45486")},
+      "each held-out row says whether the wave re-read it (two did: CCSF 16991, Santa Rosa 45486)")
 MIG4 = os.path.join(ROOT, "kb", "migrations", "2026-11-19_s684_prreq_named_gaps_")
 t4 = {}
 for part in ("preread", "apply", "rollback"):
