@@ -1,0 +1,1467 @@
+{
+ "college": "Los Angeles Pierce College",
+ "control_number": "19181",
+ "shape": "degree",
+ "title": "General Studies: Arts and Humanities",
+ "award": "A.A. Degree",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 18646,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 18646,
+    "output_tokens": 8987,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8987,
+  "output_tokens_details": {
+   "thinking_tokens": 1221
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.25432,
+ "ms": 62771,
+ "seconds": 62.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 227,
+   "share": 0.0,
+   "missing": [
+    "ANTHRO102",
+    "ANTHRO105",
+    "ANTHRO109",
+    "ANTHRO121",
+    "ANTHRO161",
+    "ART103",
+    "ART105",
+    "ART107",
+    "ART109",
+    "ART111",
+    "ART116",
+    "ART119",
+    "ART121",
+    "ART201",
+    "ART202",
+    "ART203",
+    "ART204",
+    "ART205",
+    "ART206",
+    "ART207",
+    "ART209",
+    "ART301",
+    "ART302",
+    "ART307",
+    "ART308",
+    "ART309",
+    "ART400",
+    "ART501",
+    "ART502",
+    "ART603",
+    "ART604",
+    "ART605",
+    "ART606",
+    "ART620",
+    "ART621",
+    "ART622",
+    "ART700",
+    "ART701",
+    "ART702",
+    "ART703",
+    "ART708",
+    "ART709",
+    "ART710",
+    "ART711",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ASL1",
+    "ASL16",
+    "ASL2",
+    "ASL25",
+    "ASL3",
+    "ASL4",
+    "ASL40",
+    "CHDEV9",
+    "CHICANO37",
+    "CHICANO4",
+    "CHICANO47",
+    "CHICANO54",
+    "CHICANO57",
+    "CHICANO7",
+    "CHICANO8",
+    "CINEMA104",
+    "CINEMA107",
+    "CINEMA113",
+    "CINEMA3",
+    "CINEMA5",
+    "COMM190",
+    "COUNSEL20",
+    "COUNSEL40",
+    "DANCEST452",
+    "DANCEST801",
+    "DANCEST802",
+    "DANCEST805",
+    "DANCEST806",
+    "DANCEST807",
+    "DANCEST814",
+    "DANCEST815",
+    "DANCEST820",
+    "DANCEST821",
+    "DANCEST822",
+    "DANCEST826",
+    "DANCETQ101",
+    "DANCETQ535",
+    "DANCETQ536",
+    "DNCESPC331",
+    "DNCESPC441",
+    "ENGLISH102",
+    "ENGLISH124",
+    "ENGLISH127",
+    "ENGLISH203",
+    "ENGLISH204",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH210",
+    "ENGLISH211",
+    "ENGLISH214",
+    "ENGLISH215",
+    "ENGLISH216",
+    "ENGLISH218",
+    "ENGLISH219",
+    "ENGLISH234",
+    "ENGLISH239",
+    "ENGLISH240",
+    "ENGLISH245",
+    "ENGLISH250",
+    "ENGLISH252",
+    "ENGLISH270",
+    "ENGLISH271",
+    "FRENCH1",
+    "FRENCH10",
+    "FRENCH2",
+    "FRENCH3",
+    "FRENCH4",
+    "FRENCH5",
+    "FRENCH6",
+    "FRENCH8",
+    "HISTORY1",
+    "HISTORY19",
+    "HISTORY2",
+    "HISTORY29",
+    "HISTORY41",
+    "HISTORY42",
+    "HISTORY44",
+    "HISTORY5",
+    "HISTORY52",
+    "HISTORY6",
+    "HISTORY86",
+    "HISTORY87",
+    "HUMAN31",
+    "HUMAN6",
+    "ITALIAN1",
+    "ITALIAN10",
+    "ITALIAN2",
+    "ITALIAN3",
+    "ITALIAN4",
+    "ITALIAN5",
+    "ITALIAN8",
+    "JAPAN1",
+    "JAPAN2",
+    "JAPAN27",
+    "JAPAN3",
+    "JAPAN4",
+    "JAPAN9",
+    "MULTIMD110",
+    "MULTIMD210",
+    "MULTIMD340",
+    "MULTIMD650",
+    "MULTIMD651",
+    "MUSIC111",
+    "MUSIC121",
+    "MUSIC122",
+    "MUSIC2161",
+    "MUSIC2511",
+    "MUSIC2512",
+    "MUSIC2513",
+    "MUSIC299",
+    "MUSIC321",
+    "MUSIC322",
+    "MUSIC323",
+    "MUSIC324",
+    "MUSIC411",
+    "MUSIC412",
+    "MUSIC413",
+    "MUSIC414",
+    "MUSIC501",
+    "MUSIC601",
+    "MUSIC611",
+    "MUSIC612",
+    "MUSIC613",
+    "MUSIC614",
+    "MUSIC621",
+    "MUSIC622",
+    "MUSIC623",
+    "MUSIC624",
+    "MUSIC651",
+    "MUSIC705",
+    "MUSIC721",
+    "MUSIC755",
+    "NATIVAM175",
+    "PHILOS1",
+    "PHILOS12",
+    "PHILOS14",
+    "PHILOS15",
+    "PHILOS19",
+    "PHILOS2",
+    "PHILOS20",
+    "PHILOS28",
+    "PHILOS30",
+    "PHILOS37",
+    "PHILOS40",
+    "PHILOS41",
+    "PHILOS42",
+    "PHILOS46",
+    "PHOTO101",
+    "PHOTO102",
+    "PHOTO27A",
+    "PHOTO27B",
+    "PHOTO9",
+    "SPANISH1",
+    "SPANISH10",
+    "SPANISH11",
+    "SPANISH12",
+    "SPANISH15",
+    "SPANISH16",
+    "SPANISH2",
+    "SPANISH25",
+    "SPANISH26",
+    "SPANISH27",
+    "SPANISH3",
+    "SPANISH35",
+    "SPANISH36",
+    "SPANISH37",
+    "SPANISH4",
+    "SPANISH5",
+    "SPANISH6",
+    "SPANISH65",
+    "SPANISH9",
+    "THEATER100",
+    "THEATER110",
+    "THEATER114",
+    "THEATER125",
+    "THEATER270",
+    "THEATER271",
+    "THEATER273",
+    "THEATER401"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "LACCD General Education Pattern 2026-2027",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "A S L 1",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "A S L 16",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "A S L 2",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "A S L 25",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "A S L 3",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "A S L 4",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "A S L 40",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ANTHRO 105",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ANTHRO 109",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ANTHRO 161",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 103",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 105",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 107",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 109",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 111",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 116",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 119",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 121",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 201",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 202",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 203",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 204",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 205",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 206",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 207",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 209",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 301",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 302",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 307",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 308",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 309",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 400",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 501",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 502",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 603",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 604",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 605",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 606",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 620",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 621",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 622",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 700",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 701",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 702",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 703",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 708",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 709",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ART 710",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 711",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "award section not in text; listed only in Cal-GETC 3A as ARTH C1100"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "award section not in text; listed only in Cal-GETC 3A as ARTH C1200"
+   },
+   {
+    "code": "CH DEV 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHICANO 37",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CHICANO 4",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CHICANO 54",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CHICANO 57",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CINEMA 104",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CINEMA 107",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CINEMA 113",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CINEMA 3",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "CINEMA 5",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "COMM 190",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "COUNSEL 20",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "COUNSEL 40",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 452",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 801",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 802",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 805",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 806",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANCEST 807",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 814",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 815",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 820",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 821",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 822",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCEST 826",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "DANCETQ 101",
+    "why": "award section not in text; covered only by 'Any DANCETQ' in GE Area 7"
+   },
+   {
+    "code": "DANCETQ 535",
+    "why": "award section not in text; covered only by 'Any DANCETQ' in GE Area 7"
+   },
+   {
+    "code": "DANCETQ 536",
+    "why": "award section not in text; covered only by 'Any DANCETQ' in GE Area 7"
+   },
+   {
+    "code": "DNCESPC 331",
+    "why": "award section not in text; covered only by 'Any DNCESPC' in GE Area 7"
+   },
+   {
+    "code": "DNCESPC 441",
+    "why": "award section not in text; covered only by 'Any DNCESPC' in GE Area 7"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 124",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 127",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 204",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 210",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 211",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 214",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 216",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 218",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 219",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 234",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 239",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 240",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 245",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 250",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 252",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 270",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ENGLISH 271",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "FRENCH 1",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "FRENCH 10",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "FRENCH 2",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "FRENCH 3",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "FRENCH 4",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "FRENCH 5",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "FRENCH 6",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "FRENCH 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 1",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 19",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 2",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 29",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 41",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 42",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 44",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 5",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 52",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 6",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HUMAN 31",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "HUMAN 6",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ITALIAN 1",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ITALIAN 10",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ITALIAN 2",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ITALIAN 3",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ITALIAN 4",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ITALIAN 5",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "ITALIAN 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 1",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "JAPAN 2",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "JAPAN 27",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "JAPAN 3",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "JAPAN 4",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "JAPAN 9",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MULTIMD 110",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MULTIMD 210",
+    "why": "not in the text"
+   },
+   {
+    "code": "MULTIMD 340",
+    "why": "not in the text"
+   },
+   {
+    "code": "MULTIMD 650",
+    "why": "not in the text"
+   },
+   {
+    "code": "MULTIMD 651",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 111",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 121",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 122",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 216-1",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 251-1",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 251-2",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 251-3",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 299",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 321",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 322",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 323",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 324",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 411",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 412",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 413",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 414",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 501",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 601",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 611",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 612",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 613",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 614",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 621",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 622",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 623",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 624",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 651",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 705",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 721",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "MUSIC 755",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "NATIVAM 175",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 12",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 14",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 15",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 19",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 2",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 20",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 28",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 30",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 37",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 40",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 41",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 42",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHILOS 46",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHOTO 027A",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHOTO 027B",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHOTO 101",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHOTO 102",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "PHOTO 9",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 1",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 10",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 11",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 12",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 15",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 16",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 2",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 25",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 26",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 27",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 3",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 35",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 36",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 37",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 4",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 5",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 6",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 65",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "SPANISH 9",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "THEATER 110",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "THEATER 114",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "THEATER 125",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "THEATER 270",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "THEATER 271",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "THEATER 273",
+    "why": "award section not in text; listed only in GE area lists"
+   },
+   {
+    "code": "THEATER 401",
+    "why": "award section not in text; listed only in GE area lists"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 31-33) does not contain the General Studies: Arts and Humanities A.A. section. It prints only the LACCD General Education Pattern, the LAPC Cal-GETC certification pattern and the start of the C-ID table, so no blocks, totals, outcomes or careers could be recorded.",
+   "The section_heading names the closest relevant heading in the text (the LACCD GE pattern). That pattern's Area 3: Arts and Humanities list contains most closed-list courses, but it is a GE area and not this award's major requirements. Courses from GE lists were therefore not placed in blocks.",
+   "The LACCD GE pattern states 'Major Requirements: Minimum of 18 units in a single or related field' and 'General Education Requirements: Minimum of 27 semester units'. These are general rules for degrees, not this award's printed totals, so total_units, degree_total and ge_units stay null.",
+   "A reviewer should locate the program's own page (likely later in the catalog's program section) to record its requirements."
+  ]
+ },
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "c7772d9c71bc631c",
+ "source_codes": [
+  "ANTHRO102",
+  "ANTHRO105",
+  "ANTHRO109",
+  "ANTHRO121",
+  "ANTHRO161",
+  "ART103",
+  "ART105",
+  "ART107",
+  "ART109",
+  "ART111",
+  "ART116",
+  "ART119",
+  "ART121",
+  "ART201",
+  "ART202",
+  "ART203",
+  "ART204",
+  "ART205",
+  "ART206",
+  "ART207",
+  "ART209",
+  "ART301",
+  "ART302",
+  "ART307",
+  "ART308",
+  "ART309",
+  "ART501",
+  "ART502",
+  "ART603",
+  "ART604",
+  "ART605",
+  "ART606",
+  "ART700",
+  "ART701",
+  "ART708",
+  "ART709",
+  "ARTHC1100",
+  "ARTHC1200",
+  "ASL1",
+  "ASL16",
+  "ASL2",
+  "ASL25",
+  "ASL3",
+  "ASL4",
+  "ASL40",
+  "CHICANO37",
+  "CHICANO4",
+  "CHICANO47",
+  "CHICANO54",
+  "CHICANO57",
+  "CHICANO7",
+  "CHICANO8",
+  "CINEMA104",
+  "CINEMA107",
+  "CINEMA113",
+  "CINEMA3",
+  "CINEMA5",
+  "COMM190",
+  "COUNSEL20",
+  "COUNSEL40",
+  "DANCEST452",
+  "DANCEST801",
+  "DANCEST802",
+  "DANCEST805",
+  "DANCEST814",
+  "DANCEST815",
+  "DANCEST820",
+  "DANCEST821",
+  "DANCEST822",
+  "DANCEST826",
+  "ENGLISH102",
+  "ENGLISH124",
+  "ENGLISH127",
+  "ENGLISH203",
+  "ENGLISH204",
+  "ENGLISH205",
+  "ENGLISH206",
+  "ENGLISH207",
+  "ENGLISH208",
+  "ENGLISH210",
+  "ENGLISH211",
+  "ENGLISH214",
+  "ENGLISH215",
+  "ENGLISH216",
+  "ENGLISH218",
+  "ENGLISH219",
+  "ENGLISH234",
+  "ENGLISH239",
+  "ENGLISH240",
+  "ENGLISH245",
+  "ENGLISH250",
+  "ENGLISH252",
+  "ENGLISH270",
+  "ENGLISH271",
+  "FRENCH1",
+  "FRENCH10",
+  "FRENCH2",
+  "FRENCH3",
+  "FRENCH4",
+  "FRENCH5",
+  "FRENCH6",
+  "HISTORY1",
+  "HISTORY19",
+  "HISTORY2",
+  "HISTORY29",
+  "HISTORY41",
+  "HISTORY42",
+  "HISTORY44",
+  "HISTORY5",
+  "HISTORY52",
+  "HISTORY6",
+  "HISTORY86",
+  "HISTORY87",
+  "HUMAN31",
+  "HUMAN6",
+  "ITALIAN1",
+  "ITALIAN10",
+  "ITALIAN2",
+  "ITALIAN3",
+  "ITALIAN4",
+  "ITALIAN5",
+  "JAPAN1",
+  "JAPAN2",
+  "JAPAN27",
+  "JAPAN3",
+  "JAPAN4",
+  "JAPAN9",
+  "MULTIMD110",
+  "MUSIC111",
+  "MUSIC121",
+  "MUSIC122",
+  "MUSIC2161",
+  "MUSIC321",
+  "MUSIC322",
+  "MUSIC501",
+  "MUSIC705",
+  "MUSIC721",
+  "MUSIC755",
+  "NATIVAM175",
+  "PHILOS1",
+  "PHILOS12",
+  "PHILOS14",
+  "PHILOS15",
+  "PHILOS19",
+  "PHILOS2",
+  "PHILOS20",
+  "PHILOS28",
+  "PHILOS30",
+  "PHILOS37",
+  "PHILOS40",
+  "PHILOS41",
+  "PHILOS42",
+  "PHILOS46",
+  "PHOTO101",
+  "PHOTO102",
+  "PHOTO27A",
+  "PHOTO27B",
+  "PHOTO9",
+  "SPANISH1",
+  "SPANISH10",
+  "SPANISH11",
+  "SPANISH12",
+  "SPANISH15",
+  "SPANISH16",
+  "SPANISH2",
+  "SPANISH25",
+  "SPANISH26",
+  "SPANISH27",
+  "SPANISH3",
+  "SPANISH35",
+  "SPANISH36",
+  "SPANISH37",
+  "SPANISH4",
+  "SPANISH5",
+  "SPANISH6",
+  "SPANISH65",
+  "SPANISH9",
+  "THEATER100",
+  "THEATER110",
+  "THEATER114",
+  "THEATER125",
+  "THEATER270",
+  "THEATER271",
+  "THEATER273",
+  "THEATER401"
+ ],
+ "source_coverage": 0.815
+}
