@@ -5,11 +5,11 @@
  "title": "Exercise Science",
  "award": "A.A. Degree",
  "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/exercise-science-aa/",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7103,
+  "input_tokens": 7406,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7103,
-    "output_tokens": 1570,
+    "input_tokens": 7406,
+    "output_tokens": 1446,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1570,
+  "output_tokens": 1446,
   "output_tokens_details": {
-   "thinking_tokens": 527
+   "thinking_tokens": 448
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05981,
- "ms": 18045,
- "seconds": 19.1,
+ "cost_usd": 0.05854,
+ "ms": 12242,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
@@ -60,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    28.0,
-    28.0
+    30.0,
+    30.0
    ],
    "stated": [
     30.0,
     30.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 28.0-28.0; the catalog states 30.0-30.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -94,17 +93,27 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Exercise Science — Associate in Arts, Transfer Preparation* (Major Code: A1360)",
+   "section_heading": "Exercise Science",
    "measure": "units",
    "total_units": {
     "min": 30,
     "max": 30
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -131,7 +140,7 @@
   },
   "blocks": [
    {
-    "name": "Plan of Study Grid",
+    "name": "Plan of Study Grid (required courses)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -204,17 +213,29 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "Select 1 unit of ES/Activity",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": []
    }
   ],
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints only a Plan of Study Grid (by semester), not a separate requirements list; all named courses were read as required.",
-   "The grid also includes 'Select 1 unit of ES/Activity' in the third and fourth semesters (2 units total) with no courses named; not recorded as a block because no courses are listed.",
-   "Total Units 30 is the plan-of-study total (major courses plus 2 units of ES/Activity), recorded as total_units; no degree total or GE units are printed. Page says additional general education and graduation requirements must be completed for the associate degree.",
-   "Catalog titles BIOL 100 'INTRODUCTION TO BIOLOGY' and BIOL 101 'INTRODUCTION TO BIOLOGY LAB' differ from the closed list's 'PRINCIPLES OF BIOLOGY' titles; codes match.",
-   "Program Student Learning Outcomes appear to be printed for the Exercise Science program; recorded for this A.A."
+   "Requirements are read from a semester-by-semester Plan of Study Grid; the page prints no separate requirements list. Total Units 30 is the grid total.",
+   "'Select 1 unit of ES/Activity' appears twice (third and fourth semesters), recorded as one choose_units block of 2 units; the page lists no specific ES activity courses.",
+   "Catalog titles BIOL 100/101 read 'Introduction to Biology' / 'Introduction to Biology Lab' while the closed list says 'Principles of Biology'; codes match.",
+   "The page says additional general education and graduation requirements must be completed but names no GE pattern and prints no degree total.",
+   "Careers: the description mentions preparation for 'the teaching career' and the 'physical educator'; recorded alongside the listed fields."
   ]
  },
- "extracted_run": "38563578596"
+ "extracted_run": "44529722751",
+ "catalog_year": "2026-2027"
 }

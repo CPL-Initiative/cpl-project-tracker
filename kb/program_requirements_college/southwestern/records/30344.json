@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Recording Arts and Technology",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/recording-arts-technology/",
- "record_shape": 5,
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/recording-arts-technology/recording-arts-technology-certificate/",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9350,
+  "input_tokens": 6931,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9350,
-    "output_tokens": 1033,
+    "input_tokens": 6931,
+    "output_tokens": 1446,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,68 +30,67 @@
     "model": null
    }
   ],
-  "output_tokens": 1033,
+  "output_tokens": 1446,
   "output_tokens_details": {
-   "thinking_tokens": 478
+   "thinking_tokens": 540
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05806,
- "ms": 10493,
- "seconds": 11.0,
+ "cost_usd": 0.05664,
+ "ms": 12781,
+ "seconds": 13.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 7,
    "listed": 8,
-   "share": 0.0,
+   "share": 0.875,
    "missing": [
-    "FTMA111",
-    "MUS100",
-    "MUS150",
-    "MUS151",
-    "RA&T100",
-    "RA&T110",
-    "RA&T120",
     "RAT171"
    ],
-   "unexplained": [],
-   "none_placed": true,
+   "unexplained": [
+    "RAT171"
+   ],
+   "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 0,
-   "codes": [],
+   "count": 1,
+   "codes": [
+    "RA&T171"
+   ],
    "flagged": [],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    11.0,
+    11.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    11.0,
+    11.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,6 +99,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
@@ -107,10 +109,14 @@
    "section_heading": "Recording Arts and Technology",
    "measure": "units",
    "total_units": {
+    "min": 11,
+    "max": 11
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -121,52 +127,105 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Communicate abstract concepts to clients in order to meet their subjective creative needs.",
+    "Explore a repository of audio information and use their findings to make informed decisions.",
+    "Clearly present and demonstrate the creative process and concepts behind various mixing techniques."
+   ],
    "careers": [
     "studio recording",
     "television",
     "film sound production",
     "digital audio recording",
-    "sound mixing fields"
+    "sound mixing"
    ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "FTMA 111",
-    "why": "not in the text as a requirement; named only as a cross-listing (Same as) and prerequisite in course descriptions"
+    "name": "FIRST SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "RA&T 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 100",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "RA&T 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 150",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MUS 100",
-    "why": "not in the text as a requirement; named only as a cross-listing of RA&T 100 in the course description"
-   },
-   {
-    "code": "MUS 150",
-    "why": "not in the text as a requirement; named only as a cross-listing of RA&T 110 in the course description"
-   },
-   {
-    "code": "MUS 151",
-    "why": "not in the text as a requirement; named only as a cross-listing and prerequisite in course descriptions"
-   },
-   {
-    "code": "RA&T 100",
-    "why": "appears only in the Courses tab description; no certificate requirements in the text"
-   },
-   {
-    "code": "RA&T 110",
-    "why": "appears only in the Courses tab description; no certificate requirements in the text"
-   },
-   {
-    "code": "RA&T 120",
-    "why": "appears only in the Courses tab description; no certificate requirements in the text"
-   },
-   {
-    "code": "RAT171",
-    "why": "printed as RA&T 171 (Live Sound, 2 units) only in the Courses tab; no certificate requirements in the text"
+    "name": "SECOND SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "RA&T 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FTMA 111",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 151",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "RA&T 171",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Requirements are read from the Plan of Study Grid; the page prints no separate requirements list. Each semester is recorded as a block of required courses with its printed semester units.",
+   "Cross-listed codes printed together (RA&T/MUS 100; RA&T 110/MUS 150; RA&T 120/FTMA 111/MUS 151) are recorded as one course with the other codes as alternatives.",
+   "The catalog prints 'RA&T 171 LIVE SOUND 2'; the closed list stores it as 'RAT171' (LIVE SOUND, units not stored). Treated as the same course, so catalog_addition is false. Reviewer should confirm.",
+   "Careers are drawn from the description: 'employment in studio recording, television, and film sound production' and 'key roles within the digital audio recording and sound mixing fields'."
+  ]
  },
- "extracted_run": "38563578596"
+ "extracted_run": "44529722751",
+ "catalog_year": "2026-2027"
 }

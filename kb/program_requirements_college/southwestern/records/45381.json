@@ -5,11 +5,11 @@
  "title": "Kinesiology-Sports Medicine",
  "award": "A.S. Degree",
  "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/kinesiology-sports-med-as/",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7207,
+  "input_tokens": 7530,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7207,
-    "output_tokens": 1278,
+    "input_tokens": 7530,
+    "output_tokens": 1366,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1278,
+  "output_tokens": 1366,
   "output_tokens_details": {
-   "thinking_tokens": 303
+   "thinking_tokens": 316
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05439,
- "ms": 10364,
- "seconds": 11.0,
+ "cost_usd": 0.05744,
+ "ms": 10896,
+ "seconds": 11.3,
  "parts": null,
  "error": null,
  "score": {
@@ -88,21 +89,31 @@
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Kinesiology-Sports Medicine",
+   "section_heading": "Kinesiology-Sports Medicine — Associate in Science Degree",
    "measure": "units",
    "total_units": {
     "min": 27,
     "max": 29
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -120,7 +131,6 @@
     "sports medicine",
     "athletic training",
     "physical therapy",
-    "allied healthcare professions",
     "entry-level rehabilitation/allied health paraprofessional"
    ]
   },
@@ -237,11 +247,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
+   "The '1' after BIOL 260 and BIOL 261 titles is a footnote marker ('Check course prerequisites'), not part of the units.",
    "Recommended courses (PHYS 150, PHYS 151, PSYC 230) are printed without units; units left null.",
-   "BIOL 260 and BIOL 261 carry footnote 1: 'Check course prerequisites.'",
-   "Total Units 27-29 reflects the 2-4 unit range of ES/T 290.",
-   "Page states additional general education and graduation requirements must be completed but names no GE pattern and prints no degree total."
+   "Total Units 27-29 reflects ES/T 290 at 2-4 units; core sums to 27-29.",
+   "Page states additional general education and graduation requirements must be completed but names no GE pattern or degree total.",
+   "Careers taken from the program description ('career in sports medicine, athletic training or physical therapy'; 'entry-level rehabilitation/allied health paraprofessional'); 'allied healthcare professions' was not listed separately — reviewer may consider it."
   ]
  },
- "extracted_run": "38563578596"
+ "extracted_run": "44529722751",
+ "catalog_year": "2026-2027"
 }

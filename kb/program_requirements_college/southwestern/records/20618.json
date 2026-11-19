@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Accounting",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/as-accounting/",
- "record_shape": 5,
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/certificate-accounting/",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7279,
+  "input_tokens": 7485,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7279,
-    "output_tokens": 1592,
+    "input_tokens": 7485,
+    "output_tokens": 1354,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1592,
+  "output_tokens": 1354,
   "output_tokens_details": {
-   "thinking_tokens": 552
+   "thinking_tokens": 323
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06096,
- "ms": 15226,
- "seconds": 15.7,
+ "cost_usd": 0.05702,
+ "ms": 11381,
+ "seconds": 11.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 14,
-   "share": 0.0,
-   "missing": [
-    "ACCT101",
-    "ACCT102",
-    "ACCT105",
-    "ACCT109",
-    "ACCT12",
-    "BUS142",
-    "BUS211",
-    "BUS212",
-    "BUS290",
-    "BUS291",
-    "BUS292",
-    "BUS293",
-    "CIS101",
-    "CIS133"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -75,48 +61,56 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    28.0,
+    30.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Accounting (page prints only the Associate in Science Degree section; no Certificate of Achievement section found)",
+   "section_heading": "Accounting — Certificate of Achievement",
    "measure": "units",
    "total_units": {
+    "min": 28,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -127,74 +121,148 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Prepare payroll registers, financial statements, and other reports which are in compliance with Generally Accepted Accounting Principles.",
+    "Define, analyze and classify each business transaction within the framework of Generally Accepted Accounting Principles, business law, and taxation methods."
+   ],
+   "careers": [
+    "Accounting Clerks",
+    "Accounting Assistants",
+    "Budget Analysts",
+    "Tax Preparers"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ACCT 101",
-    "why": "certificate section not in the text; named only in the A.S. section"
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 142",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 212",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 133",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ACCT 102",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "ACCT 105",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "ACCT 109",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "ACCT 12",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "BUS 142",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "BUS 211",
-    "why": "certificate section not in the text; named only in the A.S. section (or BUS 212)"
-   },
-   {
-    "code": "BUS 212",
-    "why": "certificate section not in the text; named only in the A.S. section as alternative to BUS 211"
-   },
-   {
-    "code": "BUS 290",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "BUS 291",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "BUS 292",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "BUS 293",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CIS 101",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CIS 133",
-    "why": "certificate section not in the text; named only in the A.S. section"
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BUS 290",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 291",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 292",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 293",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source URL and text are for the Accounting Associate in Science Degree (Major Code 02011, Total Units 37), not the Certificate of Achievement (16 to fewer than 30 units). No certificate section appears in the text, so no blocks were recorded.",
-   "The A.S. section lists ACCT 12, ACCT 101, ACCT 102, ACCT 105, ACCT 109, BUS 123, BUS 140, BUS 142, BUS 150, BUS 211 or BUS 212, CIS 101, CIS 133, and one of BUS 290-293 (2 units). The closed list matches this minus BUS 123, BUS 140 and BUS 150, summing to 28 units, which suggests the certificate is a subset of the A.S. A reviewer should locate the certificate's own catalog page.",
-   "The A.S. section prints Program Student Learning Outcomes and a career statement (junior members of the accounting staff of a private business or industrial enterprise, a public accounting firm, or a governmental agency); these were not recorded because they are printed for the A.S. degree, not the certificate."
+   "BUS 212 is printed as 'or' alternative to BUS 211 with no units beside it; units left null.",
+   "Work experience courses BUS 290-293 print no individual units; the block prints 2-4 units total.",
+   "Total Units printed as 28-30, consistent with 26 required units plus 2-4 work experience units."
   ]
  },
- "extracted_run": "38563578596"
+ "extracted_run": "44529722751",
+ "catalog_year": "2026-2027"
 }

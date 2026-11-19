@@ -4,261 +4,242 @@
  "shape": "certificate",
  "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/general-education-courses-common-patterns/",
- "record_shape": 5,
+ "source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 18927,
+  "input_tokens": 63532,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
    "ephemeral_5m_input_tokens": 0,
    "ephemeral_1h_input_tokens": 0
   },
-  "iterations": [
-   {
-    "input_tokens": 18927,
-    "output_tokens": 8304,
-    "cache_read_input_tokens": 0,
-    "cache_creation_input_tokens": 0,
-    "cache_creation": {
-     "ephemeral_5m_input_tokens": 0,
-     "ephemeral_1h_input_tokens": 0
-    },
-    "type": "message",
-    "model": null
-   }
-  ],
-  "output_tokens": 8304,
+  "output_tokens": 38814,
   "output_tokens_details": {
-   "thinking_tokens": 1629
-  },
-  "service_tier": "standard",
-  "inference_geo": "global"
+   "thinking_tokens": 12560
+  }
  },
- "cost_usd": 0.24179,
- "ms": 58993,
- "seconds": 59.5,
- "parts": null,
+ "cost_usd": 1.03041,
+ "ms": 198159,
+ "seconds": 199.5,
+ "parts": 2,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 164,
    "listed": 188,
-   "share": 0.0,
+   "share": 0.872,
    "missing": [
-    "AFRO110",
-    "AFRO111",
-    "AFRO151",
-    "AJ111",
-    "ANTH101",
-    "ANTH102",
-    "ANTH103",
-    "ANTH112",
-    "ART104",
-    "ART112",
-    "ART113",
-    "ART129",
-    "ART130",
-    "ART156",
-    "ART157",
-    "ARTHC1100",
-    "ARTHC1200",
-    "ASIA112",
-    "ASIA113",
-    "ASIA114",
-    "ASIA115",
     "ASL101",
     "ASL102",
-    "ASTR100",
-    "ASTR109",
-    "ASTR120",
-    "ASTR150",
-    "ASTR170",
-    "ASTR180",
-    "BIOL100",
-    "BIOL101",
-    "BIOL130",
-    "BIOL140",
-    "BIOL143",
-    "BIOL145",
-    "BIOL160",
-    "BIOL161",
-    "BIOL180",
-    "BIOL185",
-    "BIOL190",
-    "BIOL211",
-    "BIOL212",
-    "BIOL260",
-    "BIOL261",
-    "BIOL265",
-    "CD170",
-    "CHEM100",
-    "CHEM110",
-    "CHEM170",
-    "CHEM200",
-    "CHEM210",
-    "CHEM240",
-    "CHEM250",
     "CHIN101",
-    "CHIN102",
     "COMM103",
-    "COMM176",
-    "COMMC1000",
-    "ECONC2001",
-    "ECONC2002",
-    "ENGL225",
-    "ENGL230",
-    "ENGL231",
-    "ENGL240",
-    "ENGL241",
-    "ENGL250",
-    "ENGL251",
-    "ENGL255",
-    "ENGL256",
-    "ENGL260",
-    "ENGL265",
-    "ENGL270",
-    "ENGL271",
-    "ENGL272",
-    "ENGL273",
-    "ENGL274",
-    "ENGL280",
-    "ENGL281",
-    "ENGLC1000",
-    "ENGLC1001",
-    "ENGLC1002",
     "FIL101",
-    "FIL102",
-    "FIL201",
     "FREN101",
     "FREN102",
-    "FREN201",
-    "FREN202",
-    "GEOG100",
     "GEOG101",
-    "GEOG120",
-    "GEOG130",
-    "GEOL100",
     "GEOL101",
-    "GEOL104",
-    "HIST104",
-    "HIST105",
-    "HIST106",
-    "HIST107",
-    "HIST110",
-    "HIST111",
-    "HIST112",
-    "HIST113",
-    "HIST114",
-    "HIST121",
-    "HIST122",
-    "HIST132",
-    "HIST141",
-    "HIST142",
-    "HISTC1001",
-    "HISTC1002",
-    "HUM101",
-    "HUM102",
-    "HUM104",
-    "HUM112",
-    "HUM140",
     "ITAL101",
     "ITAL102",
-    "ITAL201",
-    "ITAL202",
     "JPN101",
     "JPN101A",
     "JPN101B",
     "JPN102",
     "JPN201",
-    "JPN202",
-    "MAS141",
-    "MAS142",
-    "MAS150",
-    "MATH101",
-    "MATH118",
-    "MATH120",
-    "MATH121",
-    "MATH122",
-    "MATH244",
-    "MATH252",
-    "MATH253",
-    "MATH254",
-    "MATH260",
-    "MATHC2210",
-    "MATHC2220",
-    "MUS105",
-    "MUS106",
-    "MUS107",
-    "MUS195",
-    "MUS202",
-    "PHIL101",
-    "PHIL103",
-    "PHIL106",
-    "PHIL107",
-    "PHIL120",
-    "PHS110",
     "PHS111",
     "PHYS271",
     "PHYS273",
-    "POLSC1000",
     "PORT101",
-    "PORT102",
-    "PS101",
-    "PS103",
-    "PS104",
-    "PSYC106",
-    "PSYC109",
-    "PSYC116",
-    "PSYC211",
-    "PSYC230",
-    "PSYC250",
-    "PSYC260",
-    "PSYCC1000",
-    "SOC101",
-    "SOC110",
-    "SOC116",
-    "SOC135",
     "SOC151",
-    "SOC270",
     "SPAN101",
     "SPAN101A",
-    "SPAN101B",
-    "SPAN102",
-    "SPAN201",
-    "SPAN202",
-    "SPAN215",
-    "SPAN216",
-    "SPAN221",
-    "SPAN225",
-    "SPAN226",
-    "STATC1000",
-    "TA101"
+    "SPAN101B"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 78,
+   "codes": [
+    "AJ252",
+    "ANTH101L",
+    "ANTH115",
+    "ARCH208",
+    "ARCH210",
+    "ART149",
+    "ASIA117",
+    "ASIA118",
+    "ASL225",
+    "ASTR201",
+    "ASTR205",
+    "BIOL111",
+    "BIOL131",
+    "BIOL150",
+    "BIOL151",
+    "BIOL151L",
+    "BIOL210",
+    "BIOL215",
+    "CHEM102",
+    "CHEM104",
+    "CHEM151",
+    "CHEM151L",
+    "CHEM160",
+    "CHEM242",
+    "COMM174",
+    "COMM185",
+    "COMM200",
+    "DANC200",
+    "ECON100",
+    "ENGL115H",
+    "ENGR104",
+    "ESL115A",
+    "FTMA160",
+    "FTMA161",
+    "FTMA162",
+    "FTMA164",
+    "GEOG106",
+    "GEOG110",
+    "GEOG160",
+    "GEOL110",
+    "GEOL115",
+    "HIST152",
+    "HIST153",
+    "HIST160",
+    "HLTH121",
+    "HLTH122",
+    "HLTH212",
+    "HUM120",
+    "HUM121",
+    "HUM122",
+    "HUM123",
+    "JOUR101",
+    "MAS100",
+    "MAS110",
+    "MAS170",
+    "MAS180",
+    "MATH100",
+    "MATH265",
+    "NAIS152",
+    "NAIS153",
+    "NAIS154",
+    "PHS101",
+    "PHYS104",
+    "PHYS125",
+    "PHYS150",
+    "PHYS152",
+    "PHYS270",
+    "PHYS272",
+    "PHYS274",
+    "PS120",
+    "PSYC270",
+    "PSYC280",
+    "SOC106",
+    "SOC107",
+    "SOC140",
+    "SOC255",
+    "SOC280",
+    "TA102"
+   ],
+   "flagged": [
+    "AJ252",
+    "ANTH101L",
+    "ANTH115",
+    "ARCH208",
+    "ARCH210",
+    "ART149",
+    "ASIA117",
+    "ASIA118",
+    "ASL225",
+    "ASTR201",
+    "ASTR205",
+    "BIOL111",
+    "BIOL131",
+    "BIOL150",
+    "BIOL151",
+    "BIOL151L",
+    "BIOL210",
+    "BIOL215",
+    "CHEM102",
+    "CHEM104",
+    "CHEM151",
+    "CHEM151L",
+    "CHEM160",
+    "CHEM242",
+    "COMM174",
+    "COMM185",
+    "COMM200",
+    "DANC200",
+    "ECON100",
+    "ENGL115H",
+    "ENGR104",
+    "ESL115A",
+    "FTMA160",
+    "FTMA161",
+    "FTMA162",
+    "FTMA164",
+    "GEOG106",
+    "GEOG110",
+    "GEOG160",
+    "GEOL110",
+    "GEOL115",
+    "HIST152",
+    "HIST153",
+    "HIST160",
+    "HLTH121",
+    "HLTH122",
+    "HLTH212",
+    "HUM120",
+    "HUM121",
+    "HUM122",
+    "HUM123",
+    "JOUR101",
+    "MAS100",
+    "MAS110",
+    "MAS170",
+    "MAS180",
+    "MATH100",
+    "MATH265",
+    "NAIS152",
+    "NAIS153",
+    "NAIS154",
+    "PHS101",
+    "PHYS104",
+    "PHYS125",
+    "PHYS150",
+    "PHYS152",
+    "PHYS270",
+    "PHYS272",
+    "PHYS274",
+    "PS120",
+    "PSYC270",
+    "PSYC280",
+    "SOC106",
+    "SOC107",
+    "SOC140",
+    "SOC255",
+    "SOC280",
+    "TA102"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    31.0,
+    32.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 31.0-32.0; the catalog states 34.0-34.0"
    ]
   },
   "repeated": {
@@ -280,17 +261,24 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "2026-2027 General Education Courses Common to Associate Degree Requirements and Cal-GETC",
+   "section_heading": "California General Education Transfer Curriculum (Cal-GETC)",
    "measure": "units",
    "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -304,492 +292,1903 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "AREA 1A: ENGLISH COMPOSITION",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 115H",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 115A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AREA 1B: CRITICAL THINKING AND COMPOSITION",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 1C: ORAL COMMUNICATION",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 2: MATHEMATICAL CONCEPTS AND QUANTITATIVE REASONING",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BIOL 215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 244",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 252",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 253",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 254",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 265",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 270",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 280",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGR 104",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "PHYS 104",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AREA 3A: ARTS",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 129",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FTMA 161",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 149",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 157",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FTMA 160",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 195",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AREA 3B: HUMANITIES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARCH 208",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASIA 117",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASL 225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHIN 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 231",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 241",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 251",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 256",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 265",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 271",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 272",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 273",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 274",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 281",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIL 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIL 201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA 162",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 112",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JPN 202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAS 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PORT 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 216",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 221",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 226",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 4: SOCIAL AND BEHAVIORAL SCIENCES",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIST 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AFRO 110",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AFRO 111",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 252",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ASIA 112",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ASIA 113",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ASIA 114",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASIA 115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASIA 118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASL 225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 174",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOUR 101",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FTMA 164",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTH 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTH 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTH 212",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAS 141",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAS 142",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAS 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAS 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NAIS 152",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 153",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NAIS 153",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "NAIS 154",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PS 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PS 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PS 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 211",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 116",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AREA 5A: PHYSICAL SCIENCE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ASTR 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR 201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR 205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 143",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 242",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 272",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 274",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL 110",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "PHS 110",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AREA 5B: BIOLOGICAL SCIENCE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 211",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 212",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 261",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 265",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 151",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AREA 5C: LABORATORY ACTIVITY",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "ANTH 101L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 151L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 151L",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "AFRO 110",
-    "why": "on the page's common-courses list (AFRO/HIST 110); page states no IGETC certificate requirements"
-   },
-   {
-    "code": "AFRO 111",
-    "why": "on common-courses list (AFRO/HIST 111); no certificate requirements stated"
-   },
-   {
-    "code": "AFRO 151",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "AJ 111",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ANTH 101",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ANTH 102",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ANTH 103",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ANTH 112",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ART 104",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ART 112",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ART 113",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ART 129",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ART 130",
-    "why": "on common-courses list (ART 130/FTMA 161); no certificate requirements stated"
-   },
-   {
-    "code": "ART 156",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ART 157",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ARTHC1100",
-    "why": "on common-courses list as ARTH C1100; no certificate requirements stated"
-   },
-   {
-    "code": "ARTHC1200",
-    "why": "on common-courses list as ARTH C1200; no certificate requirements stated"
-   },
-   {
-    "code": "ASIA 112",
-    "why": "on common-courses list (ASIA/HIST 112); no certificate requirements stated"
-   },
-   {
-    "code": "ASIA 113",
-    "why": "on common-courses list (ASIA/HIST 113); no certificate requirements stated"
-   },
-   {
-    "code": "ASIA 114",
-    "why": "on common-courses list (ASIA/HIST 114); no certificate requirements stated"
-   },
-   {
-    "code": "ASIA 115",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
     "code": "ASL 101",
-    "why": "not in the text"
+    "why": "not in the text (text cut off after Area 5C)"
    },
    {
     "code": "ASL 102",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASTR 100",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ASTR 109",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASTR 120",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ASTR 150",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ASTR 170",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ASTR 180",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 100",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL 130",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 140",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 143",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 145",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 160",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 161",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL 180",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 185",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 190",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 211",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 212",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 260",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 261",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "BIOL 265",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "CD 170",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "CHEM 100",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "CHEM 110",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "CHEM 170",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "CHEM 200",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "CHEM 210",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "CHEM 240",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "CHEM 250",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text (text cut off after Area 5C)"
    },
    {
     "code": "CHIN 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHIN 102",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; only CHIN 102 listed (Area 3B)"
    },
    {
     "code": "COMM 103",
-    "why": "not in the text"
-   },
-   {
-    "code": "COMM 176",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ECON C2001",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ECON C2002",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 225",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 230",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 231",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 240",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 241",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 250",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 251",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 255",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 256",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 260",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 265",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 270",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 271",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 272",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 273",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 274",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 280",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL 281",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL C1000",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL C1001",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ENGL C1002",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; Area 1C lists only COMM C1000"
    },
    {
     "code": "FIL 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "FIL 102",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "FIL 201",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; only FIL 102 and FIL 201 listed"
    },
    {
     "code": "FREN 101",
-    "why": "not in the text"
+    "why": "not in the text; only FREN 201 and 202 listed"
    },
    {
     "code": "FREN 102",
-    "why": "not in the text"
-   },
-   {
-    "code": "FREN 201",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "FREN 202",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "GEOG 100",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; only FREN 201 and 202 listed"
    },
    {
     "code": "GEOG 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOG 120",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "GEOG 130",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "GEOL 100",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; may be in Area 5C list cut off by truncation"
    },
    {
     "code": "GEOL 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOL 104",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 104",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 105",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 106",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 107",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 110",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 111",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 112",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 113",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 114",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 121",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 122",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 132",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 141",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST 142",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST C1001",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HIST C1002",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HUM 101",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HUM 102",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HUM 104",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HUM 112",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "HUM 140",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; may be in Area 5C list cut off by truncation"
    },
    {
     "code": "ITAL 101",
-    "why": "not in the text"
+    "why": "not in the text; only ITAL 201 and 202 listed"
    },
    {
     "code": "ITAL 102",
-    "why": "not in the text"
-   },
-   {
-    "code": "ITAL 201",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "ITAL 202",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; only ITAL 201 and 202 listed"
    },
    {
     "code": "JPN 101",
-    "why": "not in the text"
+    "why": "not in the text; only JPN 202 listed"
    },
    {
     "code": "JPN 101A",
@@ -801,215 +2200,35 @@
    },
    {
     "code": "JPN 102",
-    "why": "not in the text"
+    "why": "not in the text; only JPN 202 listed"
    },
    {
     "code": "JPN 201",
-    "why": "not in the text"
-   },
-   {
-    "code": "JPN 202",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MAS 141",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MAS 142",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MAS 150",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 101",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 118",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 120",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 121",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 122",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 244",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 252",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 253",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 254",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH 260",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH C2210",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MATH C2220",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MUS 105",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MUS 106",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MUS 107",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MUS 195",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "MUS 202",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PHIL 101",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PHIL 103",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PHIL 106",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PHIL 107",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PHIL 120",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PHS 110",
-    "why": "on common-courses list (PHS/GEOG/GEOL 110); no certificate requirements stated"
+    "why": "not in the text; only JPN 202 listed"
    },
    {
     "code": "PHS 111",
-    "why": "not in the text"
+    "why": "not in the text; may be in Area 5C list cut off by truncation"
    },
    {
     "code": "PHYS 271",
-    "why": "not in the text"
+    "why": "not in the text; may be in Area 5C list cut off by truncation"
    },
    {
     "code": "PHYS 273",
-    "why": "not in the text"
-   },
-   {
-    "code": "POLS C1000",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; may be in Area 5C list cut off by truncation"
    },
    {
     "code": "PORT 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "PORT 102",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PS 101",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PS 103",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PS 104",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PSYC 106",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PSYC 109",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PSYC 116",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PSYC 211",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PSYC 230",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PSYC 250",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PSYC 260",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SOC 101",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SOC 110",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SOC 116",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SOC 135",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; only PORT 102 listed"
    },
    {
     "code": "SOC 151",
-    "why": "not in the text (only AFRO 151 is listed)"
-   },
-   {
-    "code": "SOC 270",
-    "why": "on common-courses list; no certificate requirements stated"
+    "why": "not in the text; Area 4 lists AFRO 151 without a SOC cross-listing"
    },
    {
     "code": "SPAN 101",
-    "why": "not in the text"
+    "why": "not in the text; Spanish listed starts at SPAN 102"
    },
    {
     "code": "SPAN 101A",
@@ -1018,57 +2237,32 @@
    {
     "code": "SPAN 101B",
     "why": "not in the text"
-   },
-   {
-    "code": "SPAN 102",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SPAN 201",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SPAN 202",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SPAN 215",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SPAN 216",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SPAN 221",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SPAN 225",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "SPAN 226",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "on common-courses list; no certificate requirements stated"
-   },
-   {
-    "code": "TA 101",
-    "why": "on common-courses list; no certificate requirements stated"
    }
   ],
   "notes": [
-   "The supplied page is not a requirements section for the IGETC Certificate of Achievement. It is '2026-2027 General Education Courses Common to Associate Degree Requirements and Cal-GETC': a flat list of courses that appear in both the local A.A./A.S. GE pattern and Cal-GETC.",
-   "The page prints no areas, no unit minimums, no rule for any group of courses, and no certificate total. No blocks were recorded, because any rule would have to be invented. Every closed-list course is explained in missing_explained instead.",
-   "The page names Cal-GETC, not IGETC. Cal-GETC replaced IGETC for students entering from Fall 2025. The reviewer should check whether the state's IGETC certificate record is stale, or whether a Cal-GETC certificate page (the 'California General Education Transfer Curriculum (Cal-GETC)' or 'Certificates' pages in the site menu) should be read instead.",
-   "ge_pattern is left null because this award is itself a GE-pattern certificate, not a degree that names a GE pattern.",
-   "The courses absent from the text are mostly first-semester world languages (e.g., SPAN 101, JPN 101, FREN 101) and science labs (BIOL 101, GEOG 101, GEOL 101, PHS 111, PHYS 271/273, ASTR 109). This is consistent with the page listing only courses common to both patterns, not the full Cal-GETC/IGETC area lists.",
-   "Many page courses are not on the closed list, for example ARCH 208, AJ 252, ASL 225, ANTH 115, ART 149, ASIA 117 and ENGL 115H. They were not recorded because no blocks were built.",
-   "The page prints no program learning outcomes and names no careers."
+   "The award is named IGETC, but the 2026-2027 catalog page reads as the California General Education Transfer Curriculum (Cal-GETC); this record reads that section. The page notes Cal-GETC-approved courses may be used for IGETC certification.",
+   "total_units 34 comes from the sentence 'Cal-GETC is the 34 unit singular general education pathway'; reviewer should confirm this is the intended award total.",
+   "The catalog prints no units beside individual courses; all course units are null. Block stated values are the semester units printed in each area/subarea heading (quarter-unit equivalents omitted).",
+   "Area 1 ('Select three courses', 9 units), Area 3 ('Select two courses', 6 units) and Area 5 ('Select two courses: one Physical Science and one Biological Science', 7 units, one with a lab) are recorded through their subarea blocks. Area 4 requires two courses from two academic disciplines.",
+   "Area 5C: the lab may be satisfied by a lec & lab course in 5A/5B; recorded as choose 1 course with stated 1 unit.",
+   "Text is cut off in Area 5C (at BIOL 161); Area 6 (Ethnic Studies) and any further courses and footnotes are not in the text.",
+   "Cross-listed courses printed more than once in a block (e.g., CHEM/ENGR/PHYS 104, PSYC/SOC 270, ART 130/FTMA 161, HIST/AFRO 110, FTMA 162/HUM 112, GEOG/GEOL/PHS 110, BIOL/CHEM 151) are recorded once with the other codes as alternatives.",
+   "ARTH C1100 and ARTH C1200 are treated as the closed list's ARTHC1100 and ARTHC1200.",
+   "No program outcomes or careers are printed in the text.",
+   "Part 2: The award is titled IGETC, but the source page prints the Cal-GETC pattern (2026-2027); the page says IGETC certification may use Cal-GETC-approved courses. Reviewer should confirm this is the intended section.",
+   "Part 2: total_units 34 taken from 'the 34 unit singular general education pathway'; area statements (Area 1 9 units, Area 2 3, Area 3 6, Area 4 6, Area 5 7) are consistent with it.",
+   "Part 2: Catalog prints no units beside courses; all course units are null.",
+   "Part 2: Parent headings AREA 1 (select three courses, 9 units), AREA 3 (select two courses, 6 units) and AREA 5 (one Physical and one Biological Science, one with lab, 7 units) are recorded through their sub-area blocks; no separate blocks for the parent areas.",
+   "Part 2: Area 4 requires two courses from two academic disciplines.",
+   "Part 2: Cross-listed courses printed twice (AFRO/HIST 110 and HIST/AFRO 110, etc.) are recorded once with the other code as an alternative; HIST/MAS 141 and MAS/HIST 141 merged under HIST 141 (likewise 142), PSYC/SOC 116 and SOC/PSYC 116 under PSYC 116.",
+   "Part 2: Area 5A: GEOG/GEOL/PHS 110, GEOL/GEOG/PHS 110 and PHS/GEOG/GEOL 110 are one course; recorded under PHS 110 with GEOG 110 and GEOL 110 as catalog additions.",
+   "Part 2: Entries whose first code is not a closed-list course of this part (e.g., ASTR 201, CHEM 102, PS 120, SOC 106, BIOL 150, etc.) are not listed in this part.",
+   "Part 2: Text is truncated in Area 5C at 'BIOL 161 M'; remaining Area 5C courses and any later areas (e.g., UC language other than English) are cut off.",
+   "Part 2: Footnote markers (1, 2, 3, 4, ▸, ^, *, +) are referenced but the footnotes are not in the text.",
+   "Part 2: No program learning outcomes or careers are printed.",
+   "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": "38563578596"
+ "extracted_run": "44529722751",
+ "catalog_year": "2026-2027"
 }

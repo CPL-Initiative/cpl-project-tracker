@@ -23,7 +23,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -61,7 +64,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -77,7 +83,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05375",
@@ -105,7 +115,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -121,7 +134,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05377",
@@ -133,7 +150,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05378",
@@ -159,7 +180,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -171,7 +195,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL100",
    "BIOL101",
@@ -179,6 +203,7 @@
    "BIOL261",
    "CHEM100",
    "COMM103",
+   "ES/T202",
    "PSYCC1000",
    "SOC101"
   ],
@@ -189,7 +214,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -226,7 +254,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -257,7 +288,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -293,7 +327,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -324,7 +361,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -375,7 +415,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 29,
@@ -391,7 +434,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05394",
@@ -440,7 +487,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 34,
@@ -474,7 +524,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -500,7 +553,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -516,7 +572,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05399",
@@ -548,7 +608,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -582,7 +645,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -615,7 +681,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -649,7 +718,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -665,7 +737,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05404",
@@ -700,7 +776,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -730,7 +809,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -762,7 +844,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -796,7 +881,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -828,7 +916,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -861,7 +952,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -891,7 +985,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -923,23 +1020,49 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
-  "text_chars": 3737
+  "text_chars": 3913
  },
  {
   "control_number": "05415",
   "title": "Administration of Justice---Corrections Emphasis",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ110",
+   "AJ111",
+   "AJ115",
+   "AJ151",
+   "AJ156",
+   "AJ161",
+   "AJ167",
+   "AJ181",
+   "AJ188",
+   "AJ252"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/as/",
+   "title": "Administration of Justice---Corrections Emphasis | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3245
  },
  {
   "control_number": "05417",
@@ -970,7 +1093,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -996,7 +1122,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1064,7 +1193,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 51,
@@ -1080,7 +1212,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05421",
@@ -1106,7 +1242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -1122,7 +1261,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05424",
@@ -1148,7 +1291,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1164,7 +1310,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05426",
@@ -1176,7 +1326,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05427",
@@ -1227,11 +1381,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
-  "text_chars": 4657
+  "text_chars": 5058
  },
  {
   "control_number": "07365",
@@ -1271,11 +1428,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
-  "text_chars": 5194
+  "text_chars": 5557
  },
  {
   "control_number": "08148",
@@ -1308,7 +1468,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1319,35 +1482,12 @@
   "title": "Landscape Occupations",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.765,
-  "codes_found": [
-   "LNT100",
-   "LNT120",
-   "LNT122",
-   "LNT123",
-   "LNT124",
-   "LNT128",
-   "LNT132",
-   "LNT134",
-   "LNT136",
-   "LNT148",
-   "LNT72",
-   "LNT75",
-   "LNT94"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/",
-   "title": "Landscape Architecture/Landscape and Nursery Technology | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.5
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "08151",
@@ -1392,7 +1532,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1423,7 +1566,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1439,7 +1585,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08166",
@@ -1451,7 +1601,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08171",
@@ -1463,7 +1617,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08172",
@@ -1495,7 +1653,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1521,7 +1682,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -1537,7 +1701,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08186",
@@ -1564,7 +1732,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1580,7 +1751,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08195",
@@ -1607,7 +1782,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1641,7 +1819,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1657,19 +1838,47 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08202",
   "title": "Administration of Justice---Law Enforcement Emphasis",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ110",
+   "AJ111",
+   "AJ114",
+   "AJ151",
+   "AJ156",
+   "AJ161",
+   "AJ166",
+   "AJ167",
+   "AJ181",
+   "AJ188",
+   "AJ252"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/as-law-enforcement-emphasis/",
+   "title": "Administration of Justice---Law Enforcement Emphasis | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3902
  },
  {
   "control_number": "08203",
@@ -1683,17 +1892,20 @@
    "AJ42"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/law-enforcement-training-academy/",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/law-enforcement-training-academy/law-enforcement-training-academy-certificate/",
    "title": "Law Enforcement Training Academy | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
+   "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
-  "text_chars": 3923
+  "text_chars": 2591
  },
  {
   "control_number": "08207",
@@ -1734,7 +1946,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -1750,7 +1965,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08209",
@@ -1762,7 +1981,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "10548",
@@ -1791,7 +2014,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -1827,7 +2053,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1843,7 +2072,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "10553",
@@ -1870,7 +2103,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1886,7 +2122,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "10557",
@@ -1905,7 +2145,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -1917,15 +2160,17 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.881,
+  "coverage": 0.905,
   "codes_found": [
    "AFRO110",
    "AFRO111",
    "BIOL100",
+   "BIOL101",
    "CD170",
    "COMM103",
    "COMM160",
    "COMMC1000",
+   "ED200",
    "ENGL115H",
    "ENGL230",
    "ENGL231",
@@ -1933,14 +2178,11 @@
    "ENGLC1000",
    "ENGLC1001",
    "ENGLC1002",
+   "ES/T200",
    "ESL115A",
    "GEOG106",
    "GEOL104",
    "HIST106",
-   "HIST110",
-   "HIST111",
-   "HIST141",
-   "HIST142",
    "HISTC1001",
    "HISTC1002",
    "HLTH101",
@@ -1949,6 +2191,8 @@
    "MAS142",
    "MATH110",
    "MATH111",
+   "MATH112",
+   "MUS103",
    "PHIL101",
    "PHIL103",
    "PHIL106",
@@ -1958,17 +2202,20 @@
    "TA101"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/associate-degree-as-aa-general-education-requirements/",
-   "title": "Associate Degree (A.S./A.A.) General Education Requirements | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/liberal-studies-elem-edu/",
+   "title": "Liberal Studies: Elementary Education | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.25
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 42,
-  "text_chars": 16000
+  "text_chars": 6382
  },
  {
   "control_number": "11413",
@@ -2009,7 +2256,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -2025,7 +2275,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "12064",
@@ -2037,31 +2291,79 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "12166",
   "title": "Forensic Studies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ111",
+   "AJ151",
+   "AJ166",
+   "AJ167",
+   "AJ171",
+   "AJ222",
+   "BIOL100",
+   "BIOL101",
+   "CHEM100"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/crime-scene-investigator-as/",
+   "title": "Forensic Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3572
  },
  {
   "control_number": "14602",
   "title": "Fitness Specialist Certification---Advanced",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ES/T107",
+   "ES/T135",
+   "ES/T136",
+   "ES/T137",
+   "ES/T138",
+   "ES/T139",
+   "ES/T140",
+   "HLTH110",
+   "HLTH202"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/fitness-specialist-certification-advanced-certificate/",
+   "title": "Fitness Specialist Certification---Advanced | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2953
  },
  {
   "control_number": "15540",
@@ -2073,7 +2375,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16543",
@@ -2085,7 +2391,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16560",
@@ -2109,7 +2419,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2142,7 +2455,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -2170,7 +2486,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16896",
@@ -2182,7 +2502,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16897",
@@ -2213,7 +2537,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -2229,7 +2556,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16899",
@@ -2257,7 +2588,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -2273,7 +2607,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16901",
@@ -2300,7 +2638,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2333,7 +2674,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -2373,7 +2717,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -2399,7 +2746,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2427,7 +2777,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2461,7 +2814,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -2492,7 +2848,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2503,27 +2862,12 @@
   "title": "Hospitality: Culinary Arts-Food Services Management-Basic",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.714,
-  "codes_found": [
-   "ACCT101",
-   "BUS183",
-   "BUS210",
-   "CIS101",
-   "CIS92"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/",
-   "title": "Business Management | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.143
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "17890",
@@ -2547,7 +2891,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2573,7 +2920,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2599,7 +2949,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2624,7 +2977,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -2653,7 +3009,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2682,7 +3041,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2724,7 +3086,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical laboratory technology—associate in science in order to apply to the medical laboratory technician program, applicants must document completion of the following:",
+    "section_fit": 0.273
    }
   },
   "listed": 20,
@@ -2763,7 +3128,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -2794,7 +3162,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2825,7 +3196,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2864,7 +3238,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -2896,7 +3273,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -2939,7 +3319,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -2955,7 +3338,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19315",
@@ -2967,7 +3354,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19317",
@@ -2979,7 +3370,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19319",
@@ -2991,7 +3386,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20610",
@@ -3024,7 +3423,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -3040,7 +3442,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20612",
@@ -3066,7 +3472,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -3095,7 +3504,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3122,7 +3534,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -3138,7 +3553,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20616",
@@ -3176,17 +3595,20 @@
    "CIS133"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/as-accounting/",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/certificate-accounting/",
    "title": "Accounting | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
-  "text_chars": 3632
+  "text_chars": 3401
  },
  {
   "control_number": "20619",
@@ -3208,7 +3630,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -3239,7 +3664,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3271,7 +3699,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -3313,7 +3744,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -3349,7 +3783,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -3376,7 +3813,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -3404,7 +3844,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3420,7 +3863,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20704",
@@ -3462,7 +3909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -3474,10 +3924,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.889,
   "codes_found": [
    "CI10",
-   "CI105",
    "CI20",
    "CI40",
    "CI50",
@@ -3487,17 +3936,20 @@
    "SES105"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/construction-inspection/",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/construction-inspection/construction-inspection-certificate/",
    "title": "Construction Inspection | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
+   "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 6770
+  "text_chars": 2973
  },
  {
   "control_number": "20717",
@@ -3526,7 +3978,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3560,7 +4015,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -3592,7 +4050,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -3623,7 +4084,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3650,7 +4114,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -3678,7 +4145,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3721,11 +4191,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
-  "text_chars": 4752
+  "text_chars": 5144
  },
  {
   "control_number": "20744",
@@ -3751,7 +4224,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -3794,11 +4270,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
-  "text_chars": 4865
+  "text_chars": 5117
  },
  {
   "control_number": "24151",
@@ -3818,7 +4297,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -3844,7 +4326,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -3869,7 +4354,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» marine safety service - advanced",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
@@ -3893,7 +4381,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -3918,7 +4409,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» entry level esl",
+    "section_fit": 0.4
    }
   },
   "listed": 3,
@@ -3946,7 +4440,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3974,7 +4471,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» marine safety service - basic",
+    "section_fit": 0.571
    }
   },
   "listed": 6,
@@ -3998,7 +4498,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -4028,7 +4531,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -4040,28 +4546,30 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 0.75,
   "codes_found": [
    "FTMA111",
    "MUS100",
    "MUS150",
    "MUS151",
-   "RA&T100",
    "RA&T110",
    "RA&T120"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/recording-arts-technology/",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/recording-arts-technology/recording-arts-technology-certificate/",
    "title": "Recording Arts and Technology | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
+   "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 9610
+  "text_chars": 2698
  },
  {
   "control_number": "30345",
@@ -4094,7 +4602,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -4120,7 +4631,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4131,30 +4645,12 @@
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.889,
-  "codes_found": [
-   "MATH252",
-   "MATH253",
-   "MATH254",
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS270",
-   "PHYS271",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "31624",
@@ -4192,7 +4688,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -4203,27 +4702,12 @@
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MATH252",
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS271",
-   "PHYS273"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "31729",
@@ -4262,7 +4746,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -4293,7 +4780,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -4304,61 +4794,12 @@
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.848,
-  "codes_found": [
-   "ASL201",
-   "CHIN102",
-   "ENGL225",
-   "ENGL230",
-   "ENGL231",
-   "ENGL240",
-   "ENGL241",
-   "ENGL250",
-   "ENGL251",
-   "ENGL255",
-   "ENGL256",
-   "ENGL265",
-   "ENGL270",
-   "ENGL271",
-   "ENGL272",
-   "ENGL273",
-   "ENGL274",
-   "ENGL280",
-   "ENGL281",
-   "ENGLC1001",
-   "ENGLC1002",
-   "FIL102",
-   "FIL201",
-   "FREN201",
-   "FREN202",
-   "ITAL201",
-   "ITAL202",
-   "JPN201",
-   "JPN202",
-   "PORT102",
-   "SPAN102",
-   "SPAN201",
-   "SPAN202",
-   "SPAN215",
-   "SPAN216",
-   "SPAN221",
-   "SPAN225",
-   "SPAN226",
-   "TA101"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 46,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "31889",
@@ -4383,7 +4824,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -4394,66 +4838,12 @@
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MUS101",
-   "MUS102",
-   "MUS105",
-   "MUS109",
-   "MUS110",
-   "MUS111",
-   "MUS113",
-   "MUS114",
-   "MUS115",
-   "MUS124A",
-   "MUS124B",
-   "MUS124C",
-   "MUS124D",
-   "MUS125",
-   "MUS126",
-   "MUS127",
-   "MUS128",
-   "MUS132A",
-   "MUS132B",
-   "MUS132C",
-   "MUS158",
-   "MUS159",
-   "MUS160",
-   "MUS161",
-   "MUS163A",
-   "MUS163B",
-   "MUS163C",
-   "MUS163D",
-   "MUS165A",
-   "MUS165B",
-   "MUS165C",
-   "MUS165D",
-   "MUS170",
-   "MUS171",
-   "MUS172",
-   "MUS173",
-   "MUS175",
-   "MUS176",
-   "MUS177",
-   "MUS178",
-   "MUS185",
-   "MUS186",
-   "MUS187",
-   "MUS188"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/music/",
-   "title": "Music | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 44,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "32216",
@@ -4487,7 +4877,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -4517,7 +4910,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -4596,7 +4992,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 57,
@@ -4657,7 +5056,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 39,
@@ -4672,26 +5074,29 @@
   "coverage": 0.533,
   "codes_found": [
    "AJ111",
-   "POLSC1000",
-   "PSYC270",
-   "PSYCC1000",
-   "SOC101",
-   "SOC110",
-   "SOC270",
-   "STATC1000"
+   "AJ113",
+   "AJ151",
+   "AJ161",
+   "AJ166",
+   "AJ171",
+   "AJ181",
+   "AJ188"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/",
+   "title": "Criminal Justice | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 11365
  },
  {
   "control_number": "32733",
@@ -4723,7 +5128,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4772,7 +5180,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 27,
@@ -4783,78 +5194,96 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.983,
+  "codes_found": [
+   "BIOL261",
+   "CHEM100",
+   "CHEM170",
+   "DANC109",
+   "DANC113",
+   "DANC117",
+   "DANC137",
+   "DANC141",
+   "DANC145",
+   "DANC149",
+   "DANC150",
+   "DANC160",
+   "DANC170",
+   "DANC181",
+   "DANC190",
+   "DANC195",
+   "ES/A101",
+   "ES/A105",
+   "ES/A110A",
+   "ES/A121",
+   "ES/A125",
+   "ES/A131",
+   "ES/A135",
+   "ES/A143",
+   "ES/A147",
+   "ES/A151",
+   "ES/A155",
+   "ES/A162",
+   "ES/A167",
+   "ES/A170",
+   "ES/A178A",
+   "ES/A182",
+   "ES/A186",
+   "ES/A190",
+   "ES/A203",
+   "ES/A223",
+   "ES/A227",
+   "ES/A238",
+   "ES/A257",
+   "ES/A260",
+   "ES/A264",
+   "ES/I102",
+   "ES/I106",
+   "ES/I111",
+   "ES/I117",
+   "ES/I123",
+   "ES/I126",
+   "ES/I129",
+   "ES/I132",
+   "ES/S106",
+   "ES/S113",
+   "ES/T202",
+   "ESA280",
+   "ESI138",
+   "HLTH110",
+   "PHYS150",
+   "PHYS151",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/kinesiology-aat/",
+   "title": "Kinesiology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 60,
-  "text_chars": 0
+  "text_chars": 5675
  },
  {
   "control_number": "32754",
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.846,
-  "codes_found": [
-   "AFRO110",
-   "AFRO111",
-   "ANTH102",
-   "ART104",
-   "ART112",
-   "ART113",
-   "ART129",
-   "ART130",
-   "ART149",
-   "ART156",
-   "ART157",
-   "ARTHC1100",
-   "ARTHC1200",
-   "ASIA112",
-   "ASIA113",
-   "FIL201",
-   "FREN201",
-   "FREN202",
-   "FTMA161",
-   "HIST110",
-   "HIST111",
-   "HIST112",
-   "HIST113",
-   "HIST132",
-   "HIST141",
-   "HIST142",
-   "HISTC1001",
-   "HUM101",
-   "HUM120",
-   "HUM123",
-   "ITAL201",
-   "ITAL202",
-   "JPN201",
-   "JPN202",
-   "MAS141",
-   "MAS142",
-   "SOC140",
-   "SPAN201",
-   "SPAN202",
-   "SPAN215",
-   "SPAN216",
-   "SPAN221",
-   "SPAN225",
-   "SPAN226"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 52,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "32760",
@@ -4887,7 +5316,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -4911,7 +5343,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.851,
+  "coverage": 0.989,
   "codes_found": [
    "AFRO110",
    "AFRO111",
@@ -4934,17 +5366,22 @@
    "ASIA113",
    "ASIA114",
    "ASIA115",
+   "ASL101",
+   "ASL102",
    "ASTR100",
+   "ASTR109",
    "ASTR120",
    "ASTR150",
    "ASTR170",
    "ASTR180",
    "BIOL100",
+   "BIOL101",
    "BIOL130",
    "BIOL140",
    "BIOL143",
    "BIOL145",
    "BIOL160",
+   "BIOL161",
    "BIOL180",
    "BIOL185",
    "BIOL190",
@@ -4961,6 +5398,7 @@
    "CHEM210",
    "CHEM240",
    "CHEM250",
+   "CHIN101",
    "CHIN102",
    "COMM176",
    "COMMC1000",
@@ -4987,14 +5425,19 @@
    "ENGLC1000",
    "ENGLC1001",
    "ENGLC1002",
+   "FIL101",
    "FIL102",
    "FIL201",
+   "FREN101",
+   "FREN102",
    "FREN201",
    "FREN202",
    "GEOG100",
+   "GEOG101",
    "GEOG120",
    "GEOG130",
    "GEOL100",
+   "GEOL101",
    "GEOL104",
    "HIST104",
    "HIST105",
@@ -5017,8 +5460,15 @@
    "HUM104",
    "HUM112",
    "HUM140",
+   "ITAL101",
+   "ITAL102",
    "ITAL201",
    "ITAL202",
+   "JPN101",
+   "JPN101A",
+   "JPN101B",
+   "JPN102",
+   "JPN201",
    "JPN202",
    "MAS141",
    "MAS142",
@@ -5045,7 +5495,12 @@
    "PHIL106",
    "PHIL107",
    "PHIL120",
+   "PHS110",
+   "PHS111",
+   "PHYS271",
+   "PHYS273",
    "POLSC1000",
+   "PORT101",
    "PORT102",
    "PS101",
    "PS103",
@@ -5063,6 +5518,9 @@
    "SOC116",
    "SOC135",
    "SOC270",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B",
    "SPAN102",
    "SPAN201",
    "SPAN202",
@@ -5075,17 +5533,20 @@
    "TA101"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/general-education-courses-common-patterns/",
-   "title": "2026-2027 General Education Courses Common to Associate Degree Requirements and Cal-GETC | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.333
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 188,
-  "text_chars": 12878
+  "text_chars": 16000
  },
  {
   "control_number": "33132",
@@ -5112,7 +5573,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5124,7 +5588,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.957,
+  "coverage": 1.0,
   "codes_found": [
    "ART104",
    "BIOL100",
@@ -5135,6 +5599,7 @@
    "ED200",
    "ENGLC1000",
    "ENGLC1002",
+   "ES/T200",
    "GEOG106",
    "GEOL101",
    "GEOL104",
@@ -5156,7 +5621,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -5167,42 +5635,12 @@
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ANTH112",
-   "ENGL271",
-   "ENGL272",
-   "ENGL274",
-   "HIST141",
-   "HIST142",
-   "MAS110",
-   "MAS141",
-   "MAS142",
-   "MAS150",
-   "NAIS154",
-   "SPAN101",
-   "SPAN102",
-   "SPAN201",
-   "SPAN202",
-   "SPAN215",
-   "SPAN216",
-   "SPAN221",
-   "SPAN225",
-   "SPAN226"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 20,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "33642",
@@ -5222,48 +5660,32 @@
    "MATHC2220"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/geology/geology-for-transfer-as/",
+   "title": "Geology | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 3358
  },
  {
   "control_number": "33655",
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.562,
-  "codes_found": [
-   "ECONC2001",
-   "ECONC2002",
-   "ENGLC1001",
-   "PHIL103",
-   "POLSC1000",
-   "PS103",
-   "PSYC270",
-   "SOC270",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 16,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "33897",
@@ -5287,7 +5709,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5312,7 +5737,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5338,7 +5766,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -5365,7 +5796,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5381,7 +5815,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36327",
@@ -5414,7 +5852,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -5434,17 +5875,20 @@
    "EMT113L"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/emergency-medical-technology-paramedic/",
-   "title": "Emergency Medical Technology and Paramedic | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/emergency-medical-technology/emt-certificate/",
+   "title": "Emergency Medical Technology | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
+   "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
-  "text_chars": 7475
+  "text_chars": 2732
  },
  {
   "control_number": "36634",
@@ -5452,35 +5896,39 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.824,
+  "coverage": 0.882,
   "codes_found": [
-   "BIOL100",
-   "BIOL211",
    "PSYC106",
    "PSYC109",
    "PSYC116",
+   "PSYC201",
    "PSYC211",
    "PSYC230",
    "PSYC250",
    "PSYC260",
    "PSYC270",
+   "PSYC271",
    "PSYCC1000",
    "SOC116",
    "SOC270",
+   "SOC271",
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/psychology/",
+   "title": "Psychology | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 11828
  },
  {
   "control_number": "36636",
@@ -5514,7 +5962,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -5548,7 +5999,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -5578,7 +6032,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5608,7 +6065,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5619,42 +6079,12 @@
   "title": "Social Work and Human Services",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.87,
-  "codes_found": [
-   "AJ111",
-   "ANTH102",
-   "BIOL100",
-   "BIOL101",
-   "CD170",
-   "COMM176",
-   "ECONC2001",
-   "ECONC2002",
-   "ENGLC1001",
-   "HISTC1001",
-   "HISTC1002",
-   "PSYC230",
-   "PSYC250",
-   "PSYC270",
-   "PSYCC1000",
-   "SOC101",
-   "SOC106",
-   "SOC110",
-   "SOC270",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 23,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "38035",
@@ -5679,7 +6109,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5706,7 +6139,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -5737,7 +6173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5775,7 +6214,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -5806,7 +6248,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -5835,7 +6280,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5865,7 +6313,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5877,29 +6328,36 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "AJ111",
    "AJ151",
+   "AJ156",
    "AJ161",
+   "AJ188",
    "AJ252",
    "POLSC1000",
+   "PSYC270",
+   "SOC101",
    "SOC110",
    "SOC270",
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/political-science/law-public-policy-and-society-aa/",
-   "title": "Law, Public Policy, and Society | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/criminal-justice-aa/",
+   "title": "Criminal Justice | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
-  "text_chars": 5215
+  "text_chars": 3708
  },
  {
   "control_number": "38049",
@@ -5927,7 +6385,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -5965,7 +6426,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -5976,36 +6440,12 @@
   "title": "International Business",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.737,
-  "codes_found": [
-   "ACCT101",
-   "BUS122",
-   "BUS126",
-   "BUS134",
-   "BUS140",
-   "BUS142",
-   "BUS177",
-   "BUS212",
-   "BUS290",
-   "BUS291",
-   "BUS292",
-   "BUS293",
-   "CIS101",
-   "CL120"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/international-business/",
-   "title": "International Business | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "38052",
@@ -6043,7 +6483,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cis: computer programming with an emphasis on applications associate in science degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -6070,7 +6513,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -6114,7 +6560,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -6141,7 +6590,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -6152,37 +6604,12 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.833,
-  "codes_found": [
-   "BIOL100",
-   "BIOL260",
-   "BIOL261",
-   "BIOL265",
-   "CHEM100",
-   "CHEM110",
-   "CHEM160",
-   "CHEM170",
-   "CHEM200",
-   "CHEM240",
-   "HLTH121",
-   "PSYC270",
-   "PSYCC1000",
-   "SOC270",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 18,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "38110",
@@ -6190,29 +6617,38 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.533,
+  "coverage": 0.933,
   "codes_found": [
+   "AJ252",
    "COMM160",
    "ENGL115H",
    "ENGLC1000",
    "ENGLC1001",
+   "HIST110",
+   "HIST113",
+   "HIST141",
    "HISTC1001",
    "HISTC1002",
    "PHIL103",
-   "POLSC1000"
+   "POLSC1000",
+   "PSYC270",
+   "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/liberal-studies-elem-edu/",
-   "title": "Liberal Studies: Elementary Education | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/certificate-achievement-pathway-to-law-school/",
+   "title": "Pathway to Law School | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
-  "text_chars": 4914
+  "text_chars": 4019
  },
  {
   "control_number": "38297",
@@ -6254,7 +6690,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -6265,22 +6704,31 @@
   "title": "Yoga Teacher Training - 200 Hour",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 0.5,
+  "method": "sitemap_page",
+  "coverage": 1.0,
   "codes_found": [
+   "ES/A264",
+   "ES/A265",
+   "ES/A266",
    "ES/T210",
    "ES/T211",
    "ES/T212"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/office-intensive-training-bilingual-payroll-clerk/administrative-office-assistant-bilingual-english-spanish-intensive-training-certificate/",
-   "title": "Administrative Office Assistant-Bilingual (English/Spanish) Intensive Training | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/yoga-teacher-training-200hour-certificate/",
+   "title": "Yoga Teacher Training - 200 Hour | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
    "text_from": "innerText",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
   },
   "listed": 6,
-  "text_chars": 4000
+  "text_chars": 2749
  },
  {
   "control_number": "38359",
@@ -6309,7 +6757,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -6371,7 +6822,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 40,
@@ -6405,7 +6859,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -6417,8 +6874,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.7,
+  "coverage": 1.0,
   "codes_found": [
+   "AJ156",
+   "AJ166",
+   "AJ288",
    "CIS160",
    "CIS169",
    "CIS177",
@@ -6428,17 +6888,20 @@
    "CIS290"
   ],
   "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/",
-   "title": "Computer Information Systems | Southwestern College Catalog",
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/cyber-forensic-as/",
+   "title": "Cyber-Forensic | Southwestern College Catalog",
    "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
+   "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
-  "text_chars": 15678
+  "text_chars": 3109
  },
  {
   "control_number": "39677",
@@ -6460,7 +6923,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» infant, child, and adolescent development",
+    "section_fit": 0.571
    }
   },
   "listed": 4,
@@ -6500,7 +6966,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -6538,7 +7007,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -6565,7 +7037,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -6589,7 +7064,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» optical technician training program",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -6600,54 +7078,12 @@
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.744,
-  "codes_found": [
-   "AFRO110",
-   "AFRO151",
-   "AJ111",
-   "AJ252",
-   "ANTH102",
-   "ASIA113",
-   "ASIA115",
-   "COMM176",
-   "COMMC1000",
-   "ECONC2001",
-   "ECONC2002",
-   "ENGLC1000",
-   "ENGLC1001",
-   "GEOG120",
-   "HIST110",
-   "HIST113",
-   "HIST141",
-   "HISTC1001",
-   "HISTC1002",
-   "MAS141",
-   "MAS150",
-   "PHIL103",
-   "PHIL120",
-   "POLSC1000",
-   "PS101",
-   "PS103",
-   "PS104",
-   "PSYC270",
-   "SOC106",
-   "SOC110",
-   "SOC270",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 43,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "40251",
@@ -6681,7 +7117,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -6705,7 +7144,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» drone technology and applications",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -6736,7 +7178,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -6767,7 +7212,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -6791,7 +7239,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» esl college readiness",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -6816,7 +7267,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» college and career success: a 'novel' approach to enhanced literacy",
+    "section_fit": 0.7
    }
   },
   "listed": 3,
@@ -6841,7 +7295,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» pragmatic reading and thinking skills",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
@@ -6865,7 +7322,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» patient care coordinator language and academic support",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -6889,7 +7349,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» certified nursing assistant language and academic support",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -6913,7 +7376,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» medical office professional language and academic support",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -6940,7 +7406,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -6964,7 +7433,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -6991,7 +7463,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» manufacturing technology",
+    "section_fit": 0.4
    }
   },
   "listed": 5,
@@ -7018,7 +7493,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» manufacturing maintenance technology",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -7054,7 +7532,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -7078,7 +7559,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» automotive service consultant",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -7102,7 +7586,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» basics of automotive technology",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -7129,7 +7616,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -7154,7 +7644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» customer service: effective communication approaches",
+    "section_fit": 0.625
    }
   },
   "listed": 3,
@@ -7179,7 +7672,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» customer service: effective teams",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
@@ -7203,7 +7699,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» automotive parts specialist",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -7238,7 +7737,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -7263,7 +7765,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -7289,7 +7794,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -7325,7 +7833,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -7336,12 +7847,43 @@
   "title": "Yoga Teacher Training - 300 Hour",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS148",
+   "BUS149",
+   "ES/A264",
+   "ES/A265",
+   "ES/A266",
+   "ES/A271A",
+   "ES/A271B",
+   "ES/A271C",
+   "ES/A271D",
+   "ES/A279A",
+   "ES/A279B",
+   "ES/A279C",
+   "ES/A279D",
+   "ES/T216",
+   "ES/T220",
+   "ES/T221",
+   "ES/T222",
+   "HLTH220"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/yoga-teacher-training-300hour/",
+   "title": "Yoga Teacher Training - 300 Hour | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3445
  },
  {
   "control_number": "44012",
@@ -7375,7 +7917,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -7412,11 +7957,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
-  "text_chars": 3566
+  "text_chars": 3784
  },
  {
   "control_number": "44327",
@@ -7452,11 +8000,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
-  "text_chars": 3392
+  "text_chars": 3629
  },
  {
   "control_number": "44423",
@@ -7464,7 +8015,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.85,
+  "coverage": 0.875,
   "codes_found": [
    "AJ111",
    "AT101",
@@ -7479,6 +8030,7 @@
    "ED200",
    "ENGLC1000",
    "ENGR102",
+   "ES/T202",
    "ESL115A",
    "FS101",
    "HIST111",
@@ -7508,7 +8060,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 40,
@@ -7533,7 +8088,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» office support fundamentals: beginning",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
@@ -7558,7 +8116,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» office support fundamentals: intermediate",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
@@ -7586,7 +8147,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» office support fundamentals: advanced",
+    "section_fit": 0.571
    }
   },
   "listed": 6,
@@ -7602,7 +8166,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45155",
@@ -7622,7 +8190,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» esl specialized workplace communication skills",
+    "section_fit": 0.625
    }
   },
   "listed": 2,
@@ -7633,26 +8204,12 @@
   "title": "Japanese",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "JPN101",
-   "JPN102",
-   "JPN201",
-   "JPN202"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/japanese/",
-   "title": "Japanese | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 6172
+  "text_chars": 0
  },
  {
   "control_number": "45295",
@@ -7674,7 +8231,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -7685,20 +8245,12 @@
   "title": "Math Foundation for Allied Health",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 0.5,
-  "codes_found": [
-   "NC144"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/readiness-college-math/",
-   "title": "Readiness for College Math | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 2604
+  "text_chars": 0
  },
  {
   "control_number": "45381",
@@ -7706,10 +8258,15 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.583,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL260",
    "BIOL261",
+   "ES/T136",
+   "ES/T202",
+   "ES/T250",
+   "ES/T251",
+   "ES/T290",
    "HLTH110",
    "HLTH201",
    "PHYS150",
@@ -7723,11 +8280,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
-  "text_chars": 3654
+  "text_chars": 3693
  },
  {
   "control_number": "45457",
@@ -7739,7 +8299,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45458",
@@ -7751,7 +8315,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 160 of 201 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45464",
@@ -7771,7 +8339,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses algebra preparation for bstem",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -7795,7 +8366,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» preparation for calculus",
+    "section_fit": 0.4
    }
   },
   "listed": 2,
@@ -7819,7 +8393,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» readiness for college math",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -7844,7 +8421,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» esl conversation skills development",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
@@ -7869,7 +8449,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificates and courses» esl workplace literacy skills",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
@@ -7902,11 +8485,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
-  "text_chars": 3099
+  "text_chars": 3338
  },
  {
   "control_number": "46193",
@@ -7930,7 +8516,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -7959,7 +8548,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -7970,61 +8562,23 @@
   "title": "Mathematics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.875,
-  "codes_found": [
-   "MATH252",
-   "MATH253",
-   "MATH254",
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS270",
-   "PHYS271"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "46516",
   "title": "Physics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.917,
-  "codes_found": [
-   "MATH252",
-   "MATH253",
-   "MATH254",
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS270",
-   "PHYS271",
-   "PHYS272",
-   "PHYS273",
-   "PHYS274",
-   "PHYS275"
-  ],
-  "source": {
-   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
-   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 0
  }
 ]
