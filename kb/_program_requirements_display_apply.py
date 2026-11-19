@@ -299,21 +299,38 @@ def _retry(call, sleep, tries: int = TRIES):
             sleep(2 ** i)
 
 
+def _pg_quoted(v: str) -> str:
+    """A value inside a PostgREST logic tree (or=(...)), double-quoted so a comma, a period or a parenthesis in a
+    college's name is read as text; a double quote or backslash in it is escaped."""
+    return '"%s"' % v.replace("\\", "\\\\").replace('"', '\\"')
+
+
 def read_builds(request, college: str | None = None, sleep=time.sleep) -> dict:
     """{key: display->>build} for every row (one college's with `college`), in
     pages of PAGE_ROWS ordered by college and control number, read until an
-    empty page, so a server capping a page lower than PAGE_ROWS still reads whole."""
+    empty page, so a server capping a page lower than PAGE_ROWS still reads whole.
+
+    Each page starts after the last key of the one before (keyset), never at an offset: an offset page makes
+    Postgres read and discard every row before it, display included, so the last pages of the 18,323-row table
+    cost the most, and the whole build's confirming read answered HTTP 500 where one college's 85 rows read
+    fine (run 44535255196; COBIx on #3556, f-display-confirm-read-unpaged-s685)."""
     scope = "&college=eq.%s" % urllib.parse.quote(college, safe="") if college else ""
-    out, offset = {}, 0
+    out, last = {}, None
     while True:
-        qs = ("%s?select=college,control_number,build:display->>build%s"
-              "&order=college.asc,control_number.asc&limit=%d&offset=%d" % (TABLE, scope, PAGE_ROWS, offset))
+        after = ""
+        if last and college:
+            after = "&control_number=gt.%s" % urllib.parse.quote(last[1], safe="")
+        elif last:
+            after = "&or=%s" % urllib.parse.quote("(college.gt.%s,and(college.eq.%s,control_number.gt.%s))" % (
+                _pg_quoted(last[0]), _pg_quoted(last[0]), _pg_quoted(last[1])), safe="")
+        qs = ("%s?select=college,control_number,build:display->>build%s%s"
+              "&order=college.asc,control_number.asc&limit=%d" % (TABLE, scope, after, PAGE_ROWS))
         page = _retry(lambda: request("GET", qs), sleep)
         if not page:
             return out
         for r in page:
             out[_key(r["college"], r["control_number"])] = r.get("build")
-        offset += len(page)
+        last = (page[-1]["college"], page[-1]["control_number"])
 
 
 def _rollback(before: dict, keys: list) -> dict:
