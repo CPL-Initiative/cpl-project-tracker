@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-593 document(s).
+594 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -30,6 +30,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [ADR — The re-mint approval queue: a queue, never a fire button, and where its decision right sits](../kb-notes/adr-remint-approval-queue-decision-rights.md) | adr | published | 2026-09-05 | 2026-09-05 |
 | [COBI org layer — one platform, "site" as a view dimension (not a repo/site per org)](../kb-notes/adr-cobi-org-layer.md) | adr | published | 2026-07-14 | 2026-07-14 |
 | [Level-collapsing consolidation — over-merge beats under-merge for CPL](../kb-notes/adr-level-collapsing-consolidation.md) | adr | published | 2026-06-16 | 2026-06-16 |
+| [One credential list, with exhibits as its children](../kb-notes/adr-one-credential-list-exhibits-are-its-children.md) | adr | published | 2026-11-19 | 2026-11-19 |
 | [Pull from the source rather than accept a push](../kb-notes/adr-pull-from-the-source-rather-than-accept-a-push.md) | adr | published | 2026-08-19 | 2026-08-19 |
 | [Reference-data home — committed JSON by default, Supabase only for live curation](../kb-notes/adr-reference-data-committed-json-vs-supabase.md) | adr | published | 2026-06-18 | 2026-06-18 |
 | [Supersede, don't mutate, at the synthetic identity layer](../kb-notes/adr-supersede-dont-mutate-synthetic-layer.md) | adr | published | 2026-05-27 | 2026-05-27 |

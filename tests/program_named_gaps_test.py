@@ -474,6 +474,31 @@ with open(os.path.join(ROOT, "kb", "migrations", ".apply"), encoding="utf-8") as
     check("s684_prreq_named_gaps" not in fh.read(), "the S684 plan is committed, not applied")
 print("S684 pass: %d rows (%s)" % (len(rows684), ", ".join("%s %d" % kv for kv in sorted(rc684["by_gap"].items()))))
 
+# COBIx on #3548 (owed in handoff 685): held_run reads one file per college and control number; a college's folder
+# under a second slug would make the run depend on glob order, so two matches stop the run.
+import json  # noqa: E402
+import shutil  # noqa: E402
+import tempfile  # noqa: E402
+_tmp = tempfile.mkdtemp(prefix="held_run_")
+try:
+    def _file(slug, college, run_):
+        os.makedirs(os.path.join(_tmp, slug, "records"), exist_ok=True)
+        with open(os.path.join(_tmp, slug, "records", "12345.json"), "w", encoding="utf-8") as fh:
+            json.dump({"college": college, "control_number": "12345", "extracted_run": run_}, fh)
+    _row = {"college": "Fixture College", "control_number": "12345"}
+    _file("fixture", "Fixture College", 222)
+    _file("other", "Other College", 333)
+    got = NG.held_run(_row, {"Fixture College": {"222"}}, base=_tmp)
+    check(got["extracted_run"] == 222 and got["wave_reread"] is True, "held_run reads its college's file: %r" % got)
+    _file("fixture_copy", "Fixture College", 111)
+    try:
+        NG.held_run(_row, {"Fixture College": {"222"}}, base=_tmp)
+        check(False, "held_run took a run from a college filed under two slugs")
+    except SystemExit as e:
+        check("two slugs" in str(e) and "fixture_copy" in str(e), "held_run's stop names both files: %s" % e)
+finally:
+    shutil.rmtree(_tmp, ignore_errors=True)
+
 if failures:
     for m in failures:
         print("FAIL:", m)

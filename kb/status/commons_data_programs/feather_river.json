@@ -1,4 +1,4 @@
-{"schema":1,"college":"Feather River College","slug":"feather_river","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Feather River College","slug":"feather_river","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":false,"programs":[
 {"cn":"04321","title":"Biology","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"04332","title":"Early Childhood Education","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20881","title":"Early Childhood Education","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -17,6 +17,5 @@
 {"cn":"36176","title":"MATHEMATICS","award":"A.S. T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"45095","title":"CalGETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1771","units":{"sum":[30.0,37.0],"printed":[35.0,36.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"46487","title":"Elementary Teacher Education: Integrated Programs","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1909","units":{"sum":[35.0,35.0],"printed":[32.0,32.0],"status":"unequal","measure":"units","against":"program"}},
-{"cn":"04320","title":"Equine Studies","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1788","units":{"sum":[28.0,29.0],"printed":[29.0,29.0],"status":"unequal","measure":"units","against":"program"}},
-{"cn":"11771","title":"Vocational Nursing","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1905","units":{"sum":[62.5,62.5],"printed":[39.5,41.5],"status":"unequal","measure":"units","against":"program"}}
+{"cn":"04320","title":"Equine Studies","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1788","units":{"sum":[28.0,29.0],"printed":[29.0,29.0],"status":"unequal","measure":"units","against":"program"}}
 ]}

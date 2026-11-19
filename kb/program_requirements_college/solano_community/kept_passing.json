@@ -1,0 +1,174 @@
+{
+ "run": "44514080886",
+ "programs": [
+  {
+   "control_number": "38404",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=216",
+   "filed_source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=217",
+   "cost_usd": 0.06413,
+   "usage": {
+    "input_tokens": 7287,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7287,
+      "output_tokens": 1749,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1749,
+    "output_tokens_details": {
+     "thinking_tokens": 642
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 9,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      30.0,
+      30.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       30.0,
+       30.0
+      ],
+      "stated": [
+       30.0,
+       30.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 9,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      30.0,
+      30.0
+     ],
+     "stated": [
+      30.0,
+      30.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  }
+ ]
+}

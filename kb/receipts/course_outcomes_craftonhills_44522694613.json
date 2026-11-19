@@ -1,0 +1,6806 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "craftonhills",
+ "load_run": "44522694613",
+ "reads": [
+  "kb/course_outcomes/craftonhills/read_44509906805_p1of2.json",
+  "kb/course_outcomes/craftonhills/read_44509906805_p2of2.json"
+ ],
+ "kind": "all",
+ "held_back": 0,
+ "posted": 1123,
+ "inserted": 1123,
+ "kept": 0,
+ "skipped": 9,
+ "skipped_rows": [
+  {
+   "course_code": "BIOL 130",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CDEV 185",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FIRET 049",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MICRO 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BIOL 130H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOL 150",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MICRO 150",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUSIC 141X4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OCEAN 100",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 37023,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ACCT 105"
+  },
+  {
+   "id": 37024,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ACCT 105"
+  },
+  {
+   "id": 37025,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ACCT 209"
+  },
+  {
+   "id": 37026,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ACCT 209"
+  },
+  {
+   "id": 37027,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANAT 101"
+  },
+  {
+   "id": 37028,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANAT 101"
+  },
+  {
+   "id": 37029,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANAT 151"
+  },
+  {
+   "id": 37030,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANAT 151"
+  },
+  {
+   "id": 37031,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 102"
+  },
+  {
+   "id": 37032,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 102"
+  },
+  {
+   "id": 37033,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 107"
+  },
+  {
+   "id": 37034,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 107"
+  },
+  {
+   "id": 37035,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 125"
+  },
+  {
+   "id": 37036,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 125"
+  },
+  {
+   "id": 37037,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH C1001H"
+  },
+  {
+   "id": 37038,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH C1001H"
+  },
+  {
+   "id": 37039,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH C1001LH"
+  },
+  {
+   "id": 37040,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH C1001LH"
+  },
+  {
+   "id": 37041,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 105"
+  },
+  {
+   "id": 37042,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 105"
+  },
+  {
+   "id": 37043,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 120"
+  },
+  {
+   "id": 37044,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 120"
+  },
+  {
+   "id": 37045,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 124"
+  },
+  {
+   "id": 37046,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 124"
+  },
+  {
+   "id": 37047,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 126"
+  },
+  {
+   "id": 37048,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 126"
+  },
+  {
+   "id": 37049,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 175"
+  },
+  {
+   "id": 37050,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 175"
+  },
+  {
+   "id": 37051,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 232"
+  },
+  {
+   "id": 37052,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 232"
+  },
+  {
+   "id": 37053,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ARTH C1100H"
+  },
+  {
+   "id": 37054,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ARTH C1100H"
+  },
+  {
+   "id": 37055,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ARTH C1200H"
+  },
+  {
+   "id": 37056,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ARTH C1200H"
+  },
+  {
+   "id": 37057,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 101H"
+  },
+  {
+   "id": 37058,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 101H"
+  },
+  {
+   "id": 37059,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 102H"
+  },
+  {
+   "id": 37060,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 102H"
+  },
+  {
+   "id": 37061,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 103H"
+  },
+  {
+   "id": 37062,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 103H"
+  },
+  {
+   "id": 37063,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 105"
+  },
+  {
+   "id": 37064,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 105"
+  },
+  {
+   "id": 37065,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 200"
+  },
+  {
+   "id": 37066,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 200"
+  },
+  {
+   "id": 37067,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL/N 601"
+  },
+  {
+   "id": 37068,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL/N 601"
+  },
+  {
+   "id": 37069,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL/N 603"
+  },
+  {
+   "id": 37070,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL/N 603"
+  },
+  {
+   "id": 37071,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASTR C1001L"
+  },
+  {
+   "id": 37072,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASTR C1001L"
+  },
+  {
+   "id": 37073,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL 130"
+  },
+  {
+   "id": 37074,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL 131"
+  },
+  {
+   "id": 37075,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL 131"
+  },
+  {
+   "id": 37076,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL C1000"
+  },
+  {
+   "id": 37077,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL C1000"
+  },
+  {
+   "id": 37078,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 100"
+  },
+  {
+   "id": 37079,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 100"
+  },
+  {
+   "id": 37080,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 105"
+  },
+  {
+   "id": 37081,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 105"
+  },
+  {
+   "id": 37082,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 155"
+  },
+  {
+   "id": 37083,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 155"
+  },
+  {
+   "id": 37084,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 210"
+  },
+  {
+   "id": 37085,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 210"
+  },
+  {
+   "id": 37086,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 112"
+  },
+  {
+   "id": 37087,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 112"
+  },
+  {
+   "id": 37088,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 126"
+  },
+  {
+   "id": 37089,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 126"
+  },
+  {
+   "id": 37090,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 133"
+  },
+  {
+   "id": 37091,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 133"
+  },
+  {
+   "id": 37092,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 137"
+  },
+  {
+   "id": 37093,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 137"
+  },
+  {
+   "id": 37094,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 185"
+  },
+  {
+   "id": 37095,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 205"
+  },
+  {
+   "id": 37096,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 205"
+  },
+  {
+   "id": 37097,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 212"
+  },
+  {
+   "id": 37098,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 212"
+  },
+  {
+   "id": 37099,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 250"
+  },
+  {
+   "id": 37100,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 250"
+  },
+  {
+   "id": 37101,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 271"
+  },
+  {
+   "id": 37102,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 271"
+  },
+  {
+   "id": 37103,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 295"
+  },
+  {
+   "id": 37104,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 295"
+  },
+  {
+   "id": 37105,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV C1000H"
+  },
+  {
+   "id": 37106,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV C1000H"
+  },
+  {
+   "id": 37107,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 102"
+  },
+  {
+   "id": 37108,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 102"
+  },
+  {
+   "id": 37109,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 150"
+  },
+  {
+   "id": 37110,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 150"
+  },
+  {
+   "id": 37111,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 212"
+  },
+  {
+   "id": 37112,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 212"
+  },
+  {
+   "id": 37113,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 095"
+  },
+  {
+   "id": 37114,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 095"
+  },
+  {
+   "id": 37115,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 105"
+  },
+  {
+   "id": 37116,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 105"
+  },
+  {
+   "id": 37117,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 111"
+  },
+  {
+   "id": 37118,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 111"
+  },
+  {
+   "id": 37119,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 117"
+  },
+  {
+   "id": 37120,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 117"
+  },
+  {
+   "id": 37121,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 130"
+  },
+  {
+   "id": 37122,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 130"
+  },
+  {
+   "id": 37123,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 133"
+  },
+  {
+   "id": 37124,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 133"
+  },
+  {
+   "id": 37125,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 135"
+  },
+  {
+   "id": 37126,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 135"
+  },
+  {
+   "id": 37127,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 137"
+  },
+  {
+   "id": 37128,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 137"
+  },
+  {
+   "id": 37129,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 140"
+  },
+  {
+   "id": 37130,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 140"
+  },
+  {
+   "id": 37131,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 142"
+  },
+  {
+   "id": 37132,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 142"
+  },
+  {
+   "id": 37133,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 211"
+  },
+  {
+   "id": 37134,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 211"
+  },
+  {
+   "id": 37135,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 622"
+  },
+  {
+   "id": 37136,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 622"
+  },
+  {
+   "id": 37137,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 624"
+  },
+  {
+   "id": 37138,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 624"
+  },
+  {
+   "id": 37139,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 626"
+  },
+  {
+   "id": 37140,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 626"
+  },
+  {
+   "id": 37141,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 632"
+  },
+  {
+   "id": 37142,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 632"
+  },
+  {
+   "id": 37143,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 650"
+  },
+  {
+   "id": 37144,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 650"
+  },
+  {
+   "id": 37145,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 110"
+  },
+  {
+   "id": 37146,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 110"
+  },
+  {
+   "id": 37147,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 125"
+  },
+  {
+   "id": 37148,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 125"
+  },
+  {
+   "id": 37149,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 135"
+  },
+  {
+   "id": 37150,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 135"
+  },
+  {
+   "id": 37151,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 145"
+  },
+  {
+   "id": 37152,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 145"
+  },
+  {
+   "id": 37153,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 174"
+  },
+  {
+   "id": 37154,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 174"
+  },
+  {
+   "id": 37155,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM C1000H"
+  },
+  {
+   "id": 37156,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM C1000H"
+  },
+  {
+   "id": 37157,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM C1004H"
+  },
+  {
+   "id": 37158,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM C1004H"
+  },
+  {
+   "id": 37159,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 110"
+  },
+  {
+   "id": 37160,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 110"
+  },
+  {
+   "id": 37161,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 120"
+  },
+  {
+   "id": 37162,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 120"
+  },
+  {
+   "id": 37163,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 230"
+  },
+  {
+   "id": 37164,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 230"
+  },
+  {
+   "id": 37165,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 101"
+  },
+  {
+   "id": 37166,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 101"
+  },
+  {
+   "id": 37167,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 103"
+  },
+  {
+   "id": 37168,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 103"
+  },
+  {
+   "id": 37169,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 130A"
+  },
+  {
+   "id": 37170,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 130A"
+  },
+  {
+   "id": 37171,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 143A"
+  },
+  {
+   "id": 37172,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 143A"
+  },
+  {
+   "id": 37173,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 163A"
+  },
+  {
+   "id": 37174,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 163A"
+  },
+  {
+   "id": 37175,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 163C"
+  },
+  {
+   "id": 37176,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 163C"
+  },
+  {
+   "id": 37177,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 174X4"
+  },
+  {
+   "id": 37178,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 174X4"
+  },
+  {
+   "id": 37179,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 200H"
+  },
+  {
+   "id": 37180,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 200H"
+  },
+  {
+   "id": 37181,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 37182,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 37183,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 37184,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 37185,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "EDU 290"
+  },
+  {
+   "id": 37186,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "EDU 290"
+  },
+  {
+   "id": 37187,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 109"
+  },
+  {
+   "id": 37188,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 109"
+  },
+  {
+   "id": 37189,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 127"
+  },
+  {
+   "id": 37190,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 127"
+  },
+  {
+   "id": 37191,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 155"
+  },
+  {
+   "id": 37192,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 155"
+  },
+  {
+   "id": 37193,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 160"
+  },
+  {
+   "id": 37194,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 160"
+  },
+  {
+   "id": 37195,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 162"
+  },
+  {
+   "id": 37196,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 162"
+  },
+  {
+   "id": 37197,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 164"
+  },
+  {
+   "id": 37198,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 164"
+  },
+  {
+   "id": 37199,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 170"
+  },
+  {
+   "id": 37200,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 170"
+  },
+  {
+   "id": 37201,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 226"
+  },
+  {
+   "id": 37202,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 226"
+  },
+  {
+   "id": 37203,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 250"
+  },
+  {
+   "id": 37204,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 250"
+  },
+  {
+   "id": 37205,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 261"
+  },
+  {
+   "id": 37206,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 261"
+  },
+  {
+   "id": 37207,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 271"
+  },
+  {
+   "id": 37208,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 271"
+  },
+  {
+   "id": 37209,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 280"
+  },
+  {
+   "id": 37210,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 280"
+  },
+  {
+   "id": 37211,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 37212,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 37213,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 37214,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 37215,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1002"
+  },
+  {
+   "id": 37216,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1002"
+  },
+  {
+   "id": 37217,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 601"
+  },
+  {
+   "id": 37218,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 601"
+  },
+  {
+   "id": 37219,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 603"
+  },
+  {
+   "id": 37220,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 603"
+  },
+  {
+   "id": 37221,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 607"
+  },
+  {
+   "id": 37222,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 607"
+  },
+  {
+   "id": 37223,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 105"
+  },
+  {
+   "id": 37224,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 105"
+  },
+  {
+   "id": 37225,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 107"
+  },
+  {
+   "id": 37226,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 107"
+  },
+  {
+   "id": 37227,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 132"
+  },
+  {
+   "id": 37228,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 132"
+  },
+  {
+   "id": 37229,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 141"
+  },
+  {
+   "id": 37230,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 141"
+  },
+  {
+   "id": 37231,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 162"
+  },
+  {
+   "id": 37232,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 162"
+  },
+  {
+   "id": 37233,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 164"
+  },
+  {
+   "id": 37234,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 164"
+  },
+  {
+   "id": 37235,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "FIRET 049"
+  },
+  {
+   "id": 37236,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 102"
+  },
+  {
+   "id": 37237,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 102"
+  },
+  {
+   "id": 37238,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 110"
+  },
+  {
+   "id": 37239,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 110"
+  },
+  {
+   "id": 37240,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 111"
+  },
+  {
+   "id": 37241,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 111"
+  },
+  {
+   "id": 37242,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 114"
+  },
+  {
+   "id": 37243,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 114"
+  },
+  {
+   "id": 37244,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 120"
+  },
+  {
+   "id": 37245,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 120"
+  },
+  {
+   "id": 37246,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 175"
+  },
+  {
+   "id": 37247,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 175"
+  },
+  {
+   "id": 37248,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 100H"
+  },
+  {
+   "id": 37249,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 100H"
+  },
+  {
+   "id": 37250,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 101H"
+  },
+  {
+   "id": 37251,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 101H"
+  },
+  {
+   "id": 37252,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 113"
+  },
+  {
+   "id": 37253,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 113"
+  },
+  {
+   "id": 37254,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 141"
+  },
+  {
+   "id": 37255,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 141"
+  },
+  {
+   "id": 37256,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 150H"
+  },
+  {
+   "id": 37257,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 150H"
+  },
+  {
+   "id": 37258,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 170"
+  },
+  {
+   "id": 37259,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 170"
+  },
+  {
+   "id": 37260,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 177"
+  },
+  {
+   "id": 37261,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 177"
+  },
+  {
+   "id": 37262,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 181"
+  },
+  {
+   "id": 37263,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 181"
+  },
+  {
+   "id": 37264,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 250"
+  },
+  {
+   "id": 37265,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 250"
+  },
+  {
+   "id": 37266,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 102"
+  },
+  {
+   "id": 37267,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 102"
+  },
+  {
+   "id": 37268,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 108"
+  },
+  {
+   "id": 37269,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 108"
+  },
+  {
+   "id": 37270,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 263H"
+  },
+  {
+   "id": 37271,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 263H"
+  },
+  {
+   "id": 37272,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 135"
+  },
+  {
+   "id": 37273,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 135"
+  },
+  {
+   "id": 37274,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 150"
+  },
+  {
+   "id": 37275,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 150"
+  },
+  {
+   "id": 37276,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 170H"
+  },
+  {
+   "id": 37277,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 170H"
+  },
+  {
+   "id": 37278,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 171H"
+  },
+  {
+   "id": 37279,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 171H"
+  },
+  {
+   "id": 37280,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST C1001H"
+  },
+  {
+   "id": 37281,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST C1001H"
+  },
+  {
+   "id": 37282,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST C1002H"
+  },
+  {
+   "id": 37283,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST C1002H"
+  },
+  {
+   "id": 37284,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HSE/N 600"
+  },
+  {
+   "id": 37285,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HSE/N 600"
+  },
+  {
+   "id": 37286,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HUM 102"
+  },
+  {
+   "id": 37287,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HUM 102"
+  },
+  {
+   "id": 37288,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "JOUR 120"
+  },
+  {
+   "id": 37289,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "JOUR 120"
+  },
+  {
+   "id": 37290,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN 200"
+  },
+  {
+   "id": 37291,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN 200"
+  },
+  {
+   "id": 37292,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 130A"
+  },
+  {
+   "id": 37293,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 130A"
+  },
+  {
+   "id": 37294,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 143A"
+  },
+  {
+   "id": 37295,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 143A"
+  },
+  {
+   "id": 37296,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 163A"
+  },
+  {
+   "id": 37297,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 163A"
+  },
+  {
+   "id": 37298,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 163C"
+  },
+  {
+   "id": 37299,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 163C"
+  },
+  {
+   "id": 37300,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 167A"
+  },
+  {
+   "id": 37301,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 167A"
+  },
+  {
+   "id": 37302,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 105A"
+  },
+  {
+   "id": 37303,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 105A"
+  },
+  {
+   "id": 37304,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 105C"
+  },
+  {
+   "id": 37305,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 105C"
+  },
+  {
+   "id": 37306,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 106A"
+  },
+  {
+   "id": 37307,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 106A"
+  },
+  {
+   "id": 37308,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 106C"
+  },
+  {
+   "id": 37309,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 106C"
+  },
+  {
+   "id": 37310,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 107A"
+  },
+  {
+   "id": 37311,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 107A"
+  },
+  {
+   "id": 37312,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 108A"
+  },
+  {
+   "id": 37313,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 108A"
+  },
+  {
+   "id": 37314,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 108C"
+  },
+  {
+   "id": 37315,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 108C"
+  },
+  {
+   "id": 37316,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 109A"
+  },
+  {
+   "id": 37317,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 109A"
+  },
+  {
+   "id": 37318,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 112A"
+  },
+  {
+   "id": 37319,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 112A"
+  },
+  {
+   "id": 37320,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 127A"
+  },
+  {
+   "id": 37321,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 127A"
+  },
+  {
+   "id": 37322,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 127C"
+  },
+  {
+   "id": 37323,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 127C"
+  },
+  {
+   "id": 37324,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 153A"
+  },
+  {
+   "id": 37325,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 153A"
+  },
+  {
+   "id": 37326,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 166B"
+  },
+  {
+   "id": 37327,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 166B"
+  },
+  {
+   "id": 37328,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 168B"
+  },
+  {
+   "id": 37329,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 168B"
+  },
+  {
+   "id": 37330,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 168D"
+  },
+  {
+   "id": 37331,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 168D"
+  },
+  {
+   "id": 37332,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 190B"
+  },
+  {
+   "id": 37333,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 190B"
+  },
+  {
+   "id": 37334,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 190D"
+  },
+  {
+   "id": 37335,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 190D"
+  },
+  {
+   "id": 37336,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 191B"
+  },
+  {
+   "id": 37337,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 191B"
+  },
+  {
+   "id": 37338,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/N 960"
+  },
+  {
+   "id": 37339,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/N 960"
+  },
+  {
+   "id": 37340,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 111B"
+  },
+  {
+   "id": 37341,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 111B"
+  },
+  {
+   "id": 37342,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 116B"
+  },
+  {
+   "id": 37343,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 116B"
+  },
+  {
+   "id": 37344,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 116D"
+  },
+  {
+   "id": 37345,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 116D"
+  },
+  {
+   "id": 37346,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 120B"
+  },
+  {
+   "id": 37347,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 120B"
+  },
+  {
+   "id": 37348,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 120D"
+  },
+  {
+   "id": 37349,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 120D"
+  },
+  {
+   "id": 37350,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 133B"
+  },
+  {
+   "id": 37351,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 133B"
+  },
+  {
+   "id": 37352,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 133D"
+  },
+  {
+   "id": 37353,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 133D"
+  },
+  {
+   "id": 37354,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 138B"
+  },
+  {
+   "id": 37355,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 138B"
+  },
+  {
+   "id": 37356,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 148B"
+  },
+  {
+   "id": 37357,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 148B"
+  },
+  {
+   "id": 37358,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 148D"
+  },
+  {
+   "id": 37359,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 148D"
+  },
+  {
+   "id": 37360,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 159B"
+  },
+  {
+   "id": 37361,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 159B"
+  },
+  {
+   "id": 37362,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 159D"
+  },
+  {
+   "id": 37363,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 159D"
+  },
+  {
+   "id": 37364,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 164A"
+  },
+  {
+   "id": 37365,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 164A"
+  },
+  {
+   "id": 37366,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 164C"
+  },
+  {
+   "id": 37367,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 164C"
+  },
+  {
+   "id": 37368,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 179A"
+  },
+  {
+   "id": 37369,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 179A"
+  },
+  {
+   "id": 37370,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 193A"
+  },
+  {
+   "id": 37371,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 193A"
+  },
+  {
+   "id": 37372,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 193C"
+  },
+  {
+   "id": 37373,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 193C"
+  },
+  {
+   "id": 37374,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 190AX3"
+  },
+  {
+   "id": 37375,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 190AX3"
+  },
+  {
+   "id": 37376,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 190CX3"
+  },
+  {
+   "id": 37377,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 190CX3"
+  },
+  {
+   "id": 37378,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 191BX3"
+  },
+  {
+   "id": 37379,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 191BX3"
+  },
+  {
+   "id": 37380,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 101"
+  },
+  {
+   "id": 37381,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 101"
+  },
+  {
+   "id": 37382,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 103"
+  },
+  {
+   "id": 37383,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 103"
+  },
+  {
+   "id": 37384,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 105"
+  },
+  {
+   "id": 37385,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 105"
+  },
+  {
+   "id": 37386,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 107"
+  },
+  {
+   "id": 37387,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 107"
+  },
+  {
+   "id": 37388,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MARKET 106"
+  },
+  {
+   "id": 37389,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MARKET 106"
+  },
+  {
+   "id": 37390,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 102"
+  },
+  {
+   "id": 37391,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 102"
+  },
+  {
+   "id": 37392,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 107"
+  },
+  {
+   "id": 37393,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 107"
+  },
+  {
+   "id": 37394,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 141"
+  },
+  {
+   "id": 37395,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 141"
+  },
+  {
+   "id": 37396,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 200"
+  },
+  {
+   "id": 37397,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 200"
+  },
+  {
+   "id": 37398,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 265"
+  },
+  {
+   "id": 37399,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 265"
+  },
+  {
+   "id": 37400,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH C2210"
+  },
+  {
+   "id": 37401,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH C2210"
+  },
+  {
+   "id": 37402,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH C2220"
+  },
+  {
+   "id": 37403,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH C2220"
+  },
+  {
+   "id": 37404,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 601"
+  },
+  {
+   "id": 37405,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 601"
+  },
+  {
+   "id": 37406,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 603"
+  },
+  {
+   "id": 37407,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 603"
+  },
+  {
+   "id": 37408,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 605"
+  },
+  {
+   "id": 37409,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 605"
+  },
+  {
+   "id": 37410,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 612"
+  },
+  {
+   "id": 37411,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 612"
+  },
+  {
+   "id": 37412,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MICRO 102"
+  },
+  {
+   "id": 37413,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 100"
+  },
+  {
+   "id": 37414,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 100"
+  },
+  {
+   "id": 37415,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 130"
+  },
+  {
+   "id": 37416,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 130"
+  },
+  {
+   "id": 37417,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 150"
+  },
+  {
+   "id": 37418,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 150"
+  },
+  {
+   "id": 37419,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 170"
+  },
+  {
+   "id": 37420,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 170"
+  },
+  {
+   "id": 37421,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 214"
+  },
+  {
+   "id": 37422,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 214"
+  },
+  {
+   "id": 37423,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 250"
+  },
+  {
+   "id": 37424,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 250"
+  },
+  {
+   "id": 37425,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 101"
+  },
+  {
+   "id": 37426,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 101"
+  },
+  {
+   "id": 37427,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 103"
+  },
+  {
+   "id": 37428,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 103"
+  },
+  {
+   "id": 37429,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 120"
+  },
+  {
+   "id": 37430,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 120"
+  },
+  {
+   "id": 37431,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 132"
+  },
+  {
+   "id": 37432,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 132"
+  },
+  {
+   "id": 37433,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 134"
+  },
+  {
+   "id": 37434,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 134"
+  },
+  {
+   "id": 37435,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 136"
+  },
+  {
+   "id": 37436,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 136"
+  },
+  {
+   "id": 37437,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 150X4"
+  },
+  {
+   "id": 37438,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 150X4"
+  },
+  {
+   "id": 37439,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 174X4"
+  },
+  {
+   "id": 37440,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 174X4"
+  },
+  {
+   "id": 37441,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 180X4"
+  },
+  {
+   "id": 37442,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 180X4"
+  },
+  {
+   "id": 37443,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 195"
+  },
+  {
+   "id": 37444,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 195"
+  },
+  {
+   "id": 37445,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 202"
+  },
+  {
+   "id": 37446,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 202"
+  },
+  {
+   "id": 37447,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 233"
+  },
+  {
+   "id": 37448,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 233"
+  },
+  {
+   "id": 37449,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 236"
+  },
+  {
+   "id": 37450,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 236"
+  },
+  {
+   "id": 37451,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "OCEAN 101"
+  },
+  {
+   "id": 37452,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "OCEAN 101"
+  },
+  {
+   "id": 37453,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 101"
+  },
+  {
+   "id": 37454,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 101"
+  },
+  {
+   "id": 37455,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 103"
+  },
+  {
+   "id": 37456,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 103"
+  },
+  {
+   "id": 37457,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 105"
+  },
+  {
+   "id": 37458,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 105"
+  },
+  {
+   "id": 37459,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 107"
+  },
+  {
+   "id": 37460,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 107"
+  },
+  {
+   "id": 37461,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 110"
+  },
+  {
+   "id": 37462,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 110"
+  },
+  {
+   "id": 37463,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 110"
+  },
+  {
+   "id": 37464,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 110"
+  },
+  {
+   "id": 37465,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 250"
+  },
+  {
+   "id": 37466,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 250"
+  },
+  {
+   "id": 37467,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 252"
+  },
+  {
+   "id": 37468,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 252"
+  },
+  {
+   "id": 37469,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "POLS 104"
+  },
+  {
+   "id": 37470,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "POLS 104"
+  },
+  {
+   "id": 37471,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "POLS 110"
+  },
+  {
+   "id": 37472,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "POLS 110"
+  },
+  {
+   "id": 37473,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "POLS C1000H"
+  },
+  {
+   "id": 37474,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "POLS C1000H"
+  },
+  {
+   "id": 37475,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 103"
+  },
+  {
+   "id": 37476,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 103"
+  },
+  {
+   "id": 37477,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 111"
+  },
+  {
+   "id": 37478,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 111"
+  },
+  {
+   "id": 37479,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 120"
+  },
+  {
+   "id": 37480,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 120"
+  },
+  {
+   "id": 37481,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 37482,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 37483,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 100"
+  },
+  {
+   "id": 37484,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 100"
+  },
+  {
+   "id": 37485,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 101"
+  },
+  {
+   "id": 37486,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 101"
+  },
+  {
+   "id": 37487,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 110"
+  },
+  {
+   "id": 37488,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 110"
+  },
+  {
+   "id": 37489,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 120"
+  },
+  {
+   "id": 37490,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 120"
+  },
+  {
+   "id": 37491,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 150"
+  },
+  {
+   "id": 37492,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 150"
+  },
+  {
+   "id": 37493,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 176"
+  },
+  {
+   "id": 37494,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 176"
+  },
+  {
+   "id": 37495,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 051"
+  },
+  {
+   "id": 37496,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 051"
+  },
+  {
+   "id": 37497,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 131"
+  },
+  {
+   "id": 37498,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 131"
+  },
+  {
+   "id": 37499,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 133"
+  },
+  {
+   "id": 37500,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 133"
+  },
+  {
+   "id": 37501,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 135"
+  },
+  {
+   "id": 37502,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 135"
+  },
+  {
+   "id": 37503,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 137"
+  },
+  {
+   "id": 37504,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 137"
+  },
+  {
+   "id": 37505,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 230"
+  },
+  {
+   "id": 37506,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 230"
+  },
+  {
+   "id": 37507,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 232"
+  },
+  {
+   "id": 37508,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 232"
+  },
+  {
+   "id": 37509,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 234"
+  },
+  {
+   "id": 37510,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 234"
+  },
+  {
+   "id": 37511,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 236"
+  },
+  {
+   "id": 37512,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 236"
+  },
+  {
+   "id": 37513,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 238"
+  },
+  {
+   "id": 37514,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 238"
+  },
+  {
+   "id": 37515,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 302"
+  },
+  {
+   "id": 37516,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 302"
+  },
+  {
+   "id": 37517,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 401"
+  },
+  {
+   "id": 37518,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 401"
+  },
+  {
+   "id": 37519,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 403"
+  },
+  {
+   "id": 37520,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 403"
+  },
+  {
+   "id": 37521,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 405"
+  },
+  {
+   "id": 37522,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 405"
+  },
+  {
+   "id": 37523,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 407"
+  },
+  {
+   "id": 37524,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 407"
+  },
+  {
+   "id": 37525,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 409"
+  },
+  {
+   "id": 37526,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 409"
+  },
+  {
+   "id": 37527,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 105"
+  },
+  {
+   "id": 37528,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 105"
+  },
+  {
+   "id": 37529,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 130"
+  },
+  {
+   "id": 37530,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 130"
+  },
+  {
+   "id": 37531,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 132H"
+  },
+  {
+   "id": 37532,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 132H"
+  },
+  {
+   "id": 37533,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 141H"
+  },
+  {
+   "id": 37534,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 141H"
+  },
+  {
+   "id": 37535,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 150"
+  },
+  {
+   "id": 37536,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 150"
+  },
+  {
+   "id": 37537,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI C1000H"
+  },
+  {
+   "id": 37538,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI C1000H"
+  },
+  {
+   "id": 37539,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 101H"
+  },
+  {
+   "id": 37540,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 101H"
+  },
+  {
+   "id": 37541,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 102H"
+  },
+  {
+   "id": 37542,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 102H"
+  },
+  {
+   "id": 37543,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 104"
+  },
+  {
+   "id": 37544,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 104"
+  },
+  {
+   "id": 37545,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "STAT C1000H"
+  },
+  {
+   "id": 37546,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "STAT C1000H"
+  },
+  {
+   "id": 37547,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 100H"
+  },
+  {
+   "id": 37548,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 100H"
+  },
+  {
+   "id": 37549,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 109"
+  },
+  {
+   "id": 37550,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 109"
+  },
+  {
+   "id": 37551,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 120"
+  },
+  {
+   "id": 37552,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 120"
+  },
+  {
+   "id": 37553,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 150A"
+  },
+  {
+   "id": 37554,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 150A"
+  },
+  {
+   "id": 37555,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 150C"
+  },
+  {
+   "id": 37556,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 150C"
+  },
+  {
+   "id": 37557,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 174X4"
+  },
+  {
+   "id": 37558,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 174X4"
+  },
+  {
+   "id": 37559,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 220"
+  },
+  {
+   "id": 37560,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 220"
+  },
+  {
+   "id": 37561,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 226"
+  },
+  {
+   "id": 37562,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 226"
+  },
+  {
+   "id": 37563,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 122"
+  },
+  {
+   "id": 37564,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 122"
+  },
+  {
+   "id": 37565,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 124X2"
+  },
+  {
+   "id": 37566,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 124X2"
+  },
+  {
+   "id": 37567,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 134X4"
+  },
+  {
+   "id": 37568,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 134X4"
+  },
+  {
+   "id": 37569,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 145"
+  },
+  {
+   "id": 37570,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 145"
+  },
+  {
+   "id": 37571,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 165"
+  },
+  {
+   "id": 37572,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 165"
+  },
+  {
+   "id": 37573,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 179"
+  },
+  {
+   "id": 37574,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 179"
+  },
+  {
+   "id": 37575,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 010"
+  },
+  {
+   "id": 37576,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 010"
+  },
+  {
+   "id": 37577,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 011L"
+  },
+  {
+   "id": 37578,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 011L"
+  },
+  {
+   "id": 37579,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 012L"
+  },
+  {
+   "id": 37580,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 012L"
+  },
+  {
+   "id": 37581,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "WFP/N 601"
+  },
+  {
+   "id": 37582,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "WFP/N 601"
+  },
+  {
+   "id": 37583,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "WFP/N 603"
+  },
+  {
+   "id": 37584,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "WFP/N 603"
+  },
+  {
+   "id": 37585,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ACCT 208"
+  },
+  {
+   "id": 37586,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ACCT 208"
+  },
+  {
+   "id": 37587,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "AH 102"
+  },
+  {
+   "id": 37588,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "AH 102"
+  },
+  {
+   "id": 37589,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANAT 150"
+  },
+  {
+   "id": 37590,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANAT 150"
+  },
+  {
+   "id": 37591,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 100"
+  },
+  {
+   "id": 37592,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 100"
+  },
+  {
+   "id": 37593,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 102H"
+  },
+  {
+   "id": 37594,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 102H"
+  },
+  {
+   "id": 37595,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 110"
+  },
+  {
+   "id": 37596,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH 110"
+  },
+  {
+   "id": 37597,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH C1001"
+  },
+  {
+   "id": 37598,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH C1001"
+  },
+  {
+   "id": 37599,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH C1001L"
+  },
+  {
+   "id": 37600,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ANTH C1001L"
+  },
+  {
+   "id": 37601,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 103"
+  },
+  {
+   "id": 37602,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 103"
+  },
+  {
+   "id": 37603,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 113"
+  },
+  {
+   "id": 37604,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 113"
+  },
+  {
+   "id": 37605,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 121"
+  },
+  {
+   "id": 37606,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 121"
+  },
+  {
+   "id": 37607,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 125"
+  },
+  {
+   "id": 37608,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 125"
+  },
+  {
+   "id": 37609,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 132"
+  },
+  {
+   "id": 37610,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 132"
+  },
+  {
+   "id": 37611,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ART 226"
+  },
+  {
+   "id": 37612,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ART 226"
+  },
+  {
+   "id": 37613,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 37614,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 37615,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 37616,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 37617,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 101"
+  },
+  {
+   "id": 37618,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 101"
+  },
+  {
+   "id": 37619,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 102"
+  },
+  {
+   "id": 37620,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 102"
+  },
+  {
+   "id": 37621,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 103"
+  },
+  {
+   "id": 37622,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 103"
+  },
+  {
+   "id": 37623,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 104"
+  },
+  {
+   "id": 37624,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 104"
+  },
+  {
+   "id": 37625,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 115"
+  },
+  {
+   "id": 37626,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 115"
+  },
+  {
+   "id": 37627,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 205"
+  },
+  {
+   "id": 37628,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL 205"
+  },
+  {
+   "id": 37629,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASL/N 602"
+  },
+  {
+   "id": 37630,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASL/N 602"
+  },
+  {
+   "id": 37631,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ASTR C1001"
+  },
+  {
+   "id": 37632,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ASTR C1001"
+  },
+  {
+   "id": 37633,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL 123"
+  },
+  {
+   "id": 37634,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL 123"
+  },
+  {
+   "id": 37635,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL 130H"
+  },
+  {
+   "id": 37636,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL 131H"
+  },
+  {
+   "id": 37637,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BIOL 131H"
+  },
+  {
+   "id": 37638,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 053"
+  },
+  {
+   "id": 37639,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 053"
+  },
+  {
+   "id": 37640,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 103"
+  },
+  {
+   "id": 37641,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 103"
+  },
+  {
+   "id": 37642,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 145"
+  },
+  {
+   "id": 37643,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 145"
+  },
+  {
+   "id": 37644,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 200"
+  },
+  {
+   "id": 37645,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "BUSAD 200"
+  },
+  {
+   "id": 37646,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 100"
+  },
+  {
+   "id": 37647,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 100"
+  },
+  {
+   "id": 37648,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 115"
+  },
+  {
+   "id": 37649,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 115"
+  },
+  {
+   "id": 37650,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 132"
+  },
+  {
+   "id": 37651,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 132"
+  },
+  {
+   "id": 37652,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 134"
+  },
+  {
+   "id": 37653,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 134"
+  },
+  {
+   "id": 37654,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 182"
+  },
+  {
+   "id": 37655,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 182"
+  },
+  {
+   "id": 37656,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 186"
+  },
+  {
+   "id": 37657,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 186"
+  },
+  {
+   "id": 37658,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 211"
+  },
+  {
+   "id": 37659,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 211"
+  },
+  {
+   "id": 37660,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 244"
+  },
+  {
+   "id": 37661,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 244"
+  },
+  {
+   "id": 37662,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 270"
+  },
+  {
+   "id": 37663,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 270"
+  },
+  {
+   "id": 37664,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 272"
+  },
+  {
+   "id": 37665,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV 272"
+  },
+  {
+   "id": 37666,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV C1000"
+  },
+  {
+   "id": 37667,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CDEV C1000"
+  },
+  {
+   "id": 37668,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 101"
+  },
+  {
+   "id": 37669,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 101"
+  },
+  {
+   "id": 37670,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 123"
+  },
+  {
+   "id": 37671,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 123"
+  },
+  {
+   "id": 37672,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 151"
+  },
+  {
+   "id": 37673,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 151"
+  },
+  {
+   "id": 37674,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 213"
+  },
+  {
+   "id": 37675,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CHEM 213"
+  },
+  {
+   "id": 37676,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 101"
+  },
+  {
+   "id": 37677,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 101"
+  },
+  {
+   "id": 37678,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 109"
+  },
+  {
+   "id": 37679,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 109"
+  },
+  {
+   "id": 37680,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 113"
+  },
+  {
+   "id": 37681,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 113"
+  },
+  {
+   "id": 37682,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 125"
+  },
+  {
+   "id": 37683,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 125"
+  },
+  {
+   "id": 37684,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 132"
+  },
+  {
+   "id": 37685,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 132"
+  },
+  {
+   "id": 37686,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 134"
+  },
+  {
+   "id": 37687,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 134"
+  },
+  {
+   "id": 37688,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 136"
+  },
+  {
+   "id": 37689,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 136"
+  },
+  {
+   "id": 37690,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 138"
+  },
+  {
+   "id": 37691,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 138"
+  },
+  {
+   "id": 37692,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 141"
+  },
+  {
+   "id": 37693,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 141"
+  },
+  {
+   "id": 37694,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 161"
+  },
+  {
+   "id": 37695,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CIS 161"
+  },
+  {
+   "id": 37696,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 621"
+  },
+  {
+   "id": 37697,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 621"
+  },
+  {
+   "id": 37698,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 623"
+  },
+  {
+   "id": 37699,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 623"
+  },
+  {
+   "id": 37700,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 625"
+  },
+  {
+   "id": 37701,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 625"
+  },
+  {
+   "id": 37702,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 631"
+  },
+  {
+   "id": 37703,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 631"
+  },
+  {
+   "id": 37704,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 633"
+  },
+  {
+   "id": 37705,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 633"
+  },
+  {
+   "id": 37706,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 651"
+  },
+  {
+   "id": 37707,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CNA/N 651"
+  },
+  {
+   "id": 37708,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 120"
+  },
+  {
+   "id": 37709,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 120"
+  },
+  {
+   "id": 37710,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 125H"
+  },
+  {
+   "id": 37711,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 125H"
+  },
+  {
+   "id": 37712,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 140"
+  },
+  {
+   "id": 37713,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 140"
+  },
+  {
+   "id": 37714,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 155"
+  },
+  {
+   "id": 37715,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM 155"
+  },
+  {
+   "id": 37716,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 37717,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 37718,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COMM C1004"
+  },
+  {
+   "id": 37719,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COMM C1004"
+  },
+  {
+   "id": 37720,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "COUN 100"
+  },
+  {
+   "id": 37721,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "COUN 100"
+  },
+  {
+   "id": 37722,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 112"
+  },
+  {
+   "id": 37723,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 112"
+  },
+  {
+   "id": 37724,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 200"
+  },
+  {
+   "id": 37725,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 200"
+  },
+  {
+   "id": 37726,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 240"
+  },
+  {
+   "id": 37727,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "CSCI 240"
+  },
+  {
+   "id": 37728,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 102"
+  },
+  {
+   "id": 37729,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 102"
+  },
+  {
+   "id": 37730,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 104"
+  },
+  {
+   "id": 37731,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 104"
+  },
+  {
+   "id": 37732,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 130B"
+  },
+  {
+   "id": 37733,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 130B"
+  },
+  {
+   "id": 37734,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 143B"
+  },
+  {
+   "id": 37735,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 143B"
+  },
+  {
+   "id": 37736,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 163B"
+  },
+  {
+   "id": 37737,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 163B"
+  },
+  {
+   "id": 37738,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 163D"
+  },
+  {
+   "id": 37739,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 163D"
+  },
+  {
+   "id": 37740,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 200"
+  },
+  {
+   "id": 37741,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "DANCE 200"
+  },
+  {
+   "id": 37742,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ECON 100"
+  },
+  {
+   "id": 37743,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ECON 100"
+  },
+  {
+   "id": 37744,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ECON C2001H"
+  },
+  {
+   "id": 37745,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ECON C2001H"
+  },
+  {
+   "id": 37746,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ECON C2002H"
+  },
+  {
+   "id": 37747,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ECON C2002H"
+  },
+  {
+   "id": 37748,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 108"
+  },
+  {
+   "id": 37749,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 108"
+  },
+  {
+   "id": 37750,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 120"
+  },
+  {
+   "id": 37751,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 120"
+  },
+  {
+   "id": 37752,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 150"
+  },
+  {
+   "id": 37753,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 150"
+  },
+  {
+   "id": 37754,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 155H"
+  },
+  {
+   "id": 37755,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 155H"
+  },
+  {
+   "id": 37756,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 160H"
+  },
+  {
+   "id": 37757,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 160H"
+  },
+  {
+   "id": 37758,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 163"
+  },
+  {
+   "id": 37759,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 163"
+  },
+  {
+   "id": 37760,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 165"
+  },
+  {
+   "id": 37761,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 165"
+  },
+  {
+   "id": 37762,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 175"
+  },
+  {
+   "id": 37763,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 175"
+  },
+  {
+   "id": 37764,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 232"
+  },
+  {
+   "id": 37765,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 232"
+  },
+  {
+   "id": 37766,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 260"
+  },
+  {
+   "id": 37767,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 260"
+  },
+  {
+   "id": 37768,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 270"
+  },
+  {
+   "id": 37769,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 270"
+  },
+  {
+   "id": 37770,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 275"
+  },
+  {
+   "id": 37771,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 275"
+  },
+  {
+   "id": 37772,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 281"
+  },
+  {
+   "id": 37773,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL 281"
+  },
+  {
+   "id": 37774,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1000H"
+  },
+  {
+   "id": 37775,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1000H"
+  },
+  {
+   "id": 37776,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1001H"
+  },
+  {
+   "id": 37777,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1001H"
+  },
+  {
+   "id": 37778,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1002H"
+  },
+  {
+   "id": 37779,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ENGL C1002H"
+  },
+  {
+   "id": 37780,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 602"
+  },
+  {
+   "id": 37781,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 602"
+  },
+  {
+   "id": 37782,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 604"
+  },
+  {
+   "id": 37783,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ESL/N 604"
+  },
+  {
+   "id": 37784,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 102"
+  },
+  {
+   "id": 37785,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 102"
+  },
+  {
+   "id": 37786,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 106"
+  },
+  {
+   "id": 37787,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 106"
+  },
+  {
+   "id": 37788,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 110"
+  },
+  {
+   "id": 37789,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 110"
+  },
+  {
+   "id": 37790,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 132H"
+  },
+  {
+   "id": 37791,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 132H"
+  },
+  {
+   "id": 37792,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 141H"
+  },
+  {
+   "id": 37793,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 141H"
+  },
+  {
+   "id": 37794,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 163"
+  },
+  {
+   "id": 37795,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 163"
+  },
+  {
+   "id": 37796,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 165"
+  },
+  {
+   "id": 37797,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "ETHS 165"
+  },
+  {
+   "id": 37798,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "FIRET 115"
+  },
+  {
+   "id": 37799,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "FIRET 115"
+  },
+  {
+   "id": 37800,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 102H"
+  },
+  {
+   "id": 37801,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 102H"
+  },
+  {
+   "id": 37802,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 110H"
+  },
+  {
+   "id": 37803,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 110H"
+  },
+  {
+   "id": 37804,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 111H"
+  },
+  {
+   "id": 37805,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 111H"
+  },
+  {
+   "id": 37806,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 115"
+  },
+  {
+   "id": 37807,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 115"
+  },
+  {
+   "id": 37808,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 126"
+  },
+  {
+   "id": 37809,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOG 126"
+  },
+  {
+   "id": 37810,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 100"
+  },
+  {
+   "id": 37811,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 100"
+  },
+  {
+   "id": 37812,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 101"
+  },
+  {
+   "id": 37813,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 101"
+  },
+  {
+   "id": 37814,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 112"
+  },
+  {
+   "id": 37815,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 112"
+  },
+  {
+   "id": 37816,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 140"
+  },
+  {
+   "id": 37817,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 140"
+  },
+  {
+   "id": 37818,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 150"
+  },
+  {
+   "id": 37819,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 160"
+  },
+  {
+   "id": 37820,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 160"
+  },
+  {
+   "id": 37821,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 175"
+  },
+  {
+   "id": 37822,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 175"
+  },
+  {
+   "id": 37823,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 180"
+  },
+  {
+   "id": 37824,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 180"
+  },
+  {
+   "id": 37825,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 190"
+  },
+  {
+   "id": 37826,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 190"
+  },
+  {
+   "id": 37827,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 270"
+  },
+  {
+   "id": 37828,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "GEOL 270"
+  },
+  {
+   "id": 37829,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 104"
+  },
+  {
+   "id": 37830,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 104"
+  },
+  {
+   "id": 37831,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 263"
+  },
+  {
+   "id": 37832,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HEALTH 263"
+  },
+  {
+   "id": 37833,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 107"
+  },
+  {
+   "id": 37834,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 107"
+  },
+  {
+   "id": 37835,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 145"
+  },
+  {
+   "id": 37836,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 145"
+  },
+  {
+   "id": 37837,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 170"
+  },
+  {
+   "id": 37838,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 170"
+  },
+  {
+   "id": 37839,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 171"
+  },
+  {
+   "id": 37840,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST 171"
+  },
+  {
+   "id": 37841,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 37842,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 37843,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 37844,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 37845,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HIT 101"
+  },
+  {
+   "id": 37846,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HIT 101"
+  },
+  {
+   "id": 37847,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HUM 101"
+  },
+  {
+   "id": 37848,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HUM 101"
+  },
+  {
+   "id": 37849,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "HUM 140"
+  },
+  {
+   "id": 37850,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "HUM 140"
+  },
+  {
+   "id": 37851,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "JOUR 135"
+  },
+  {
+   "id": 37852,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "JOUR 135"
+  },
+  {
+   "id": 37853,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN 231"
+  },
+  {
+   "id": 37854,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN 231"
+  },
+  {
+   "id": 37855,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 130B"
+  },
+  {
+   "id": 37856,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 130B"
+  },
+  {
+   "id": 37857,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 143B"
+  },
+  {
+   "id": 37858,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 143B"
+  },
+  {
+   "id": 37859,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 163B"
+  },
+  {
+   "id": 37860,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 163B"
+  },
+  {
+   "id": 37861,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 163D"
+  },
+  {
+   "id": 37862,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/D 163D"
+  },
+  {
+   "id": 37863,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 049"
+  },
+  {
+   "id": 37864,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 049"
+  },
+  {
+   "id": 37865,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 105B"
+  },
+  {
+   "id": 37866,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 105B"
+  },
+  {
+   "id": 37867,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 105D"
+  },
+  {
+   "id": 37868,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 105D"
+  },
+  {
+   "id": 37869,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 106B"
+  },
+  {
+   "id": 37870,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 106B"
+  },
+  {
+   "id": 37871,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 106D"
+  },
+  {
+   "id": 37872,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 106D"
+  },
+  {
+   "id": 37873,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 107B"
+  },
+  {
+   "id": 37874,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 107B"
+  },
+  {
+   "id": 37875,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 108B"
+  },
+  {
+   "id": 37876,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 108B"
+  },
+  {
+   "id": 37877,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 108D"
+  },
+  {
+   "id": 37878,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 108D"
+  },
+  {
+   "id": 37879,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 109B"
+  },
+  {
+   "id": 37880,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 109B"
+  },
+  {
+   "id": 37881,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 112B"
+  },
+  {
+   "id": 37882,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 112B"
+  },
+  {
+   "id": 37883,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 127B"
+  },
+  {
+   "id": 37884,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 127B"
+  },
+  {
+   "id": 37885,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 127D"
+  },
+  {
+   "id": 37886,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 127D"
+  },
+  {
+   "id": 37887,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 166A"
+  },
+  {
+   "id": 37888,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 166A"
+  },
+  {
+   "id": 37889,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 168A"
+  },
+  {
+   "id": 37890,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 168A"
+  },
+  {
+   "id": 37891,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 168C"
+  },
+  {
+   "id": 37892,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 168C"
+  },
+  {
+   "id": 37893,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 190A"
+  },
+  {
+   "id": 37894,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 190A"
+  },
+  {
+   "id": 37895,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 190C"
+  },
+  {
+   "id": 37896,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 190C"
+  },
+  {
+   "id": 37897,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 191A"
+  },
+  {
+   "id": 37898,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/F 191A"
+  },
+  {
+   "id": 37899,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/N 950"
+  },
+  {
+   "id": 37900,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/N 950"
+  },
+  {
+   "id": 37901,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 111A"
+  },
+  {
+   "id": 37902,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 111A"
+  },
+  {
+   "id": 37903,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 116A"
+  },
+  {
+   "id": 37904,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 116A"
+  },
+  {
+   "id": 37905,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 116C"
+  },
+  {
+   "id": 37906,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 116C"
+  },
+  {
+   "id": 37907,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 120A"
+  },
+  {
+   "id": 37908,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 120A"
+  },
+  {
+   "id": 37909,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 120C"
+  },
+  {
+   "id": 37910,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 120C"
+  },
+  {
+   "id": 37911,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 133A"
+  },
+  {
+   "id": 37912,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 133A"
+  },
+  {
+   "id": 37913,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 133C"
+  },
+  {
+   "id": 37914,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 133C"
+  },
+  {
+   "id": 37915,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 138A"
+  },
+  {
+   "id": 37916,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 138A"
+  },
+  {
+   "id": 37917,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 148A"
+  },
+  {
+   "id": 37918,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 148A"
+  },
+  {
+   "id": 37919,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 148C"
+  },
+  {
+   "id": 37920,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 148C"
+  },
+  {
+   "id": 37921,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 159A"
+  },
+  {
+   "id": 37922,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 159A"
+  },
+  {
+   "id": 37923,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 159C"
+  },
+  {
+   "id": 37924,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 159C"
+  },
+  {
+   "id": 37925,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 160A"
+  },
+  {
+   "id": 37926,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 160A"
+  },
+  {
+   "id": 37927,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 164B"
+  },
+  {
+   "id": 37928,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 164B"
+  },
+  {
+   "id": 37929,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 164D"
+  },
+  {
+   "id": 37930,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 164D"
+  },
+  {
+   "id": 37931,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 179B"
+  },
+  {
+   "id": 37932,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 179B"
+  },
+  {
+   "id": 37933,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 193B"
+  },
+  {
+   "id": 37934,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 193B"
+  },
+  {
+   "id": 37935,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 193D"
+  },
+  {
+   "id": 37936,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/S 193D"
+  },
+  {
+   "id": 37937,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 190BX3"
+  },
+  {
+   "id": 37938,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 190BX3"
+  },
+  {
+   "id": 37939,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 191AX3"
+  },
+  {
+   "id": 37940,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 191AX3"
+  },
+  {
+   "id": 37941,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 191CX3"
+  },
+  {
+   "id": 37942,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "KIN/X 191CX3"
+  },
+  {
+   "id": 37943,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 102"
+  },
+  {
+   "id": 37944,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 102"
+  },
+  {
+   "id": 37945,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 104"
+  },
+  {
+   "id": 37946,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 104"
+  },
+  {
+   "id": 37947,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 106"
+  },
+  {
+   "id": 37948,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "LIBR 106"
+  },
+  {
+   "id": 37949,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MARKET 100"
+  },
+  {
+   "id": 37950,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MARKET 100"
+  },
+  {
+   "id": 37951,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MARKET 110"
+  },
+  {
+   "id": 37952,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MARKET 110"
+  },
+  {
+   "id": 37953,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 106"
+  },
+  {
+   "id": 37954,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 106"
+  },
+  {
+   "id": 37955,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 115"
+  },
+  {
+   "id": 37956,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 115"
+  },
+  {
+   "id": 37957,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 160"
+  },
+  {
+   "id": 37958,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 160"
+  },
+  {
+   "id": 37959,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 252"
+  },
+  {
+   "id": 37960,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 252"
+  },
+  {
+   "id": 37961,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 266"
+  },
+  {
+   "id": 37962,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH 266"
+  },
+  {
+   "id": 37963,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH C2210E"
+  },
+  {
+   "id": 37964,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH C2210E"
+  },
+  {
+   "id": 37965,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 600"
+  },
+  {
+   "id": 37966,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 600"
+  },
+  {
+   "id": 37967,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 602"
+  },
+  {
+   "id": 37968,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 602"
+  },
+  {
+   "id": 37969,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 604"
+  },
+  {
+   "id": 37970,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 604"
+  },
+  {
+   "id": 37971,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 611"
+  },
+  {
+   "id": 37972,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 611"
+  },
+  {
+   "id": 37973,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 613"
+  },
+  {
+   "id": 37974,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MATH/N 613"
+  },
+  {
+   "id": 37975,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MICRO 150"
+  },
+  {
+   "id": 37976,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 111"
+  },
+  {
+   "id": 37977,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 111"
+  },
+  {
+   "id": 37978,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 131"
+  },
+  {
+   "id": 37979,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 131"
+  },
+  {
+   "id": 37980,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 155"
+  },
+  {
+   "id": 37981,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 155"
+  },
+  {
+   "id": 37982,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 173"
+  },
+  {
+   "id": 37983,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 173"
+  },
+  {
+   "id": 37984,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 230"
+  },
+  {
+   "id": 37985,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MULTI 230"
+  },
+  {
+   "id": 37986,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 100"
+  },
+  {
+   "id": 37987,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 100"
+  },
+  {
+   "id": 37988,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 102"
+  },
+  {
+   "id": 37989,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 102"
+  },
+  {
+   "id": 37990,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 103H"
+  },
+  {
+   "id": 37991,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 103H"
+  },
+  {
+   "id": 37992,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 120H"
+  },
+  {
+   "id": 37993,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 120H"
+  },
+  {
+   "id": 37994,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 133"
+  },
+  {
+   "id": 37995,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 133"
+  },
+  {
+   "id": 37996,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 135"
+  },
+  {
+   "id": 37997,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 135"
+  },
+  {
+   "id": 37998,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 141X4"
+  },
+  {
+   "id": 37999,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 164X4"
+  },
+  {
+   "id": 38000,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 164X4"
+  },
+  {
+   "id": 38001,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 179X4"
+  },
+  {
+   "id": 38002,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 179X4"
+  },
+  {
+   "id": 38003,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 190"
+  },
+  {
+   "id": 38004,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 190"
+  },
+  {
+   "id": 38005,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 201"
+  },
+  {
+   "id": 38006,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 201"
+  },
+  {
+   "id": 38007,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 232"
+  },
+  {
+   "id": 38008,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 232"
+  },
+  {
+   "id": 38009,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 235"
+  },
+  {
+   "id": 38010,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "MUSIC 235"
+  },
+  {
+   "id": 38011,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "OCEAN 100"
+  },
+  {
+   "id": 38012,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "OCEAN 101H"
+  },
+  {
+   "id": 38013,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "OCEAN 101H"
+  },
+  {
+   "id": 38014,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 101H"
+  },
+  {
+   "id": 38015,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 101H"
+  },
+  {
+   "id": 38016,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 103H"
+  },
+  {
+   "id": 38017,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 103H"
+  },
+  {
+   "id": 38018,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 105H"
+  },
+  {
+   "id": 38019,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 105H"
+  },
+  {
+   "id": 38020,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 109"
+  },
+  {
+   "id": 38021,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHIL 109"
+  },
+  {
+   "id": 38022,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 100"
+  },
+  {
+   "id": 38023,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 100"
+  },
+  {
+   "id": 38024,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 111"
+  },
+  {
+   "id": 38025,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 111"
+  },
+  {
+   "id": 38026,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 251"
+  },
+  {
+   "id": 38027,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PHYSIC 251"
+  },
+  {
+   "id": 38028,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "POLS 102"
+  },
+  {
+   "id": 38029,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "POLS 102"
+  },
+  {
+   "id": 38030,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "POLS 106"
+  },
+  {
+   "id": 38031,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "POLS 106"
+  },
+  {
+   "id": 38032,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 38033,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 38034,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 102"
+  },
+  {
+   "id": 38035,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 102"
+  },
+  {
+   "id": 38036,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 110"
+  },
+  {
+   "id": 38037,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 110"
+  },
+  {
+   "id": 38038,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 118"
+  },
+  {
+   "id": 38039,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 118"
+  },
+  {
+   "id": 38040,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 201"
+  },
+  {
+   "id": 38041,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC 201"
+  },
+  {
+   "id": 38042,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC C1000H"
+  },
+  {
+   "id": 38043,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "PSYC C1000H"
+  },
+  {
+   "id": 38044,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 100H"
+  },
+  {
+   "id": 38045,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 100H"
+  },
+  {
+   "id": 38046,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 101H"
+  },
+  {
+   "id": 38047,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 101H"
+  },
+  {
+   "id": 38048,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 113"
+  },
+  {
+   "id": 38049,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 113"
+  },
+  {
+   "id": 38050,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 135"
+  },
+  {
+   "id": 38051,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 135"
+  },
+  {
+   "id": 38052,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 175"
+  },
+  {
+   "id": 38053,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RELIG 175"
+  },
+  {
+   "id": 38054,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 050"
+  },
+  {
+   "id": 38055,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 050"
+  },
+  {
+   "id": 38056,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 130"
+  },
+  {
+   "id": 38057,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 130"
+  },
+  {
+   "id": 38058,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 132"
+  },
+  {
+   "id": 38059,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 132"
+  },
+  {
+   "id": 38060,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 134"
+  },
+  {
+   "id": 38061,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 134"
+  },
+  {
+   "id": 38062,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 136"
+  },
+  {
+   "id": 38063,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 136"
+  },
+  {
+   "id": 38064,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 139"
+  },
+  {
+   "id": 38065,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 139"
+  },
+  {
+   "id": 38066,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 231"
+  },
+  {
+   "id": 38067,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 231"
+  },
+  {
+   "id": 38068,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 233"
+  },
+  {
+   "id": 38069,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 233"
+  },
+  {
+   "id": 38070,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 235"
+  },
+  {
+   "id": 38071,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 235"
+  },
+  {
+   "id": 38072,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 237"
+  },
+  {
+   "id": 38073,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 237"
+  },
+  {
+   "id": 38074,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 301"
+  },
+  {
+   "id": 38075,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 301"
+  },
+  {
+   "id": 38076,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 303"
+  },
+  {
+   "id": 38077,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 303"
+  },
+  {
+   "id": 38078,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 402"
+  },
+  {
+   "id": 38079,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 402"
+  },
+  {
+   "id": 38080,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 404"
+  },
+  {
+   "id": 38081,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 404"
+  },
+  {
+   "id": 38082,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 406"
+  },
+  {
+   "id": 38083,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 406"
+  },
+  {
+   "id": 38084,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 408"
+  },
+  {
+   "id": 38085,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 408"
+  },
+  {
+   "id": 38086,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 410"
+  },
+  {
+   "id": 38087,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "RESP 410"
+  },
+  {
+   "id": 38088,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 106"
+  },
+  {
+   "id": 38089,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 106"
+  },
+  {
+   "id": 38090,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 132"
+  },
+  {
+   "id": 38091,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 132"
+  },
+  {
+   "id": 38092,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 141"
+  },
+  {
+   "id": 38093,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 141"
+  },
+  {
+   "id": 38094,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 145"
+  },
+  {
+   "id": 38095,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI 145"
+  },
+  {
+   "id": 38096,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI C1000"
+  },
+  {
+   "id": 38097,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SOCI C1000"
+  },
+  {
+   "id": 38098,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 101"
+  },
+  {
+   "id": 38099,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 101"
+  },
+  {
+   "id": 38100,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 102"
+  },
+  {
+   "id": 38101,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 102"
+  },
+  {
+   "id": 38102,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 103"
+  },
+  {
+   "id": 38103,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "SPAN 103"
+  },
+  {
+   "id": 38104,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 38105,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 38106,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 100"
+  },
+  {
+   "id": 38107,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 100"
+  },
+  {
+   "id": 38108,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 108"
+  },
+  {
+   "id": 38109,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 108"
+  },
+  {
+   "id": 38110,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 110"
+  },
+  {
+   "id": 38111,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 110"
+  },
+  {
+   "id": 38112,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 133"
+  },
+  {
+   "id": 38113,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 133"
+  },
+  {
+   "id": 38114,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 150B"
+  },
+  {
+   "id": 38115,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 150B"
+  },
+  {
+   "id": 38116,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 150D"
+  },
+  {
+   "id": 38117,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 150D"
+  },
+  {
+   "id": 38118,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 205"
+  },
+  {
+   "id": 38119,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 205"
+  },
+  {
+   "id": 38120,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 221"
+  },
+  {
+   "id": 38121,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 221"
+  },
+  {
+   "id": 38122,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART 250"
+  },
+  {
+   "id": 38123,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART 250"
+  },
+  {
+   "id": 38124,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 123"
+  },
+  {
+   "id": 38125,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 123"
+  },
+  {
+   "id": 38126,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 129"
+  },
+  {
+   "id": 38127,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 129"
+  },
+  {
+   "id": 38128,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 140X2"
+  },
+  {
+   "id": 38129,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 140X2"
+  },
+  {
+   "id": 38130,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 164"
+  },
+  {
+   "id": 38131,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 164"
+  },
+  {
+   "id": 38132,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 176"
+  },
+  {
+   "id": 38133,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 176"
+  },
+  {
+   "id": 38134,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 245"
+  },
+  {
+   "id": 38135,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "THART/S 245"
+  },
+  {
+   "id": 38136,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 011"
+  },
+  {
+   "id": 38137,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 011"
+  },
+  {
+   "id": 38138,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 012"
+  },
+  {
+   "id": 38139,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 012"
+  },
+  {
+   "id": 38140,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 013"
+  },
+  {
+   "id": 38141,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "VNUR 013"
+  },
+  {
+   "id": 38142,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "WFP/N 602"
+  },
+  {
+   "id": 38143,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "WFP/N 602"
+  },
+  {
+   "id": 38144,
+   "kind": "objective",
+   "college": "Crafton Hills College",
+   "course_code": "WFP/N 604"
+  },
+  {
+   "id": 38145,
+   "kind": "slo",
+   "college": "Crafton Hills College",
+   "course_code": "WFP/N 604"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (37023, 37024, 37025, 37026, 37027, 37028, 37029, 37030, 37031, 37032, 37033, 37034, 37035, 37036, 37037, 37038, 37039, 37040, 37041, 37042, 37043, 37044, 37045, 37046, 37047, 37048, 37049, 37050, 37051, 37052, 37053, 37054, 37055, 37056, 37057, 37058, 37059, 37060, 37061, 37062, 37063, 37064, 37065, 37066, 37067, 37068, 37069, 37070, 37071, 37072, 37073, 37074, 37075, 37076, 37077, 37078, 37079, 37080, 37081, 37082, 37083, 37084, 37085, 37086, 37087, 37088, 37089, 37090, 37091, 37092, 37093, 37094, 37095, 37096, 37097, 37098, 37099, 37100, 37101, 37102, 37103, 37104, 37105, 37106, 37107, 37108, 37109, 37110, 37111, 37112, 37113, 37114, 37115, 37116, 37117, 37118, 37119, 37120, 37121, 37122, 37123, 37124, 37125, 37126, 37127, 37128, 37129, 37130, 37131, 37132, 37133, 37134, 37135, 37136, 37137, 37138, 37139, 37140, 37141, 37142, 37143, 37144, 37145, 37146, 37147, 37148, 37149, 37150, 37151, 37152, 37153, 37154, 37155, 37156, 37157, 37158, 37159, 37160, 37161, 37162, 37163, 37164, 37165, 37166, 37167, 37168, 37169, 37170, 37171, 37172, 37173, 37174, 37175, 37176, 37177, 37178, 37179, 37180, 37181, 37182, 37183, 37184, 37185, 37186, 37187, 37188, 37189, 37190, 37191, 37192, 37193, 37194, 37195, 37196, 37197, 37198, 37199, 37200, 37201, 37202, 37203, 37204, 37205, 37206, 37207, 37208, 37209, 37210, 37211, 37212, 37213, 37214, 37215, 37216, 37217, 37218, 37219, 37220, 37221, 37222, 37223, 37224, 37225, 37226, 37227, 37228, 37229, 37230, 37231, 37232, 37233, 37234, 37235, 37236, 37237, 37238, 37239, 37240, 37241, 37242, 37243, 37244, 37245, 37246, 37247, 37248, 37249, 37250, 37251, 37252, 37253, 37254, 37255, 37256, 37257, 37258, 37259, 37260, 37261, 37262, 37263, 37264, 37265, 37266, 37267, 37268, 37269, 37270, 37271, 37272, 37273, 37274, 37275, 37276, 37277, 37278, 37279, 37280, 37281, 37282, 37283, 37284, 37285, 37286, 37287, 37288, 37289, 37290, 37291, 37292, 37293, 37294, 37295, 37296, 37297, 37298, 37299, 37300, 37301, 37302, 37303, 37304, 37305, 37306, 37307, 37308, 37309, 37310, 37311, 37312, 37313, 37314, 37315, 37316, 37317, 37318, 37319, 37320, 37321, 37322, 37323, 37324, 37325, 37326, 37327, 37328, 37329, 37330, 37331, 37332, 37333, 37334, 37335, 37336, 37337, 37338, 37339, 37340, 37341, 37342, 37343, 37344, 37345, 37346, 37347, 37348, 37349, 37350, 37351, 37352, 37353, 37354, 37355, 37356, 37357, 37358, 37359, 37360, 37361, 37362, 37363, 37364, 37365, 37366, 37367, 37368, 37369, 37370, 37371, 37372, 37373, 37374, 37375, 37376, 37377, 37378, 37379, 37380, 37381, 37382, 37383, 37384, 37385, 37386, 37387, 37388, 37389, 37390, 37391, 37392, 37393, 37394, 37395, 37396, 37397, 37398, 37399, 37400, 37401, 37402, 37403, 37404, 37405, 37406, 37407, 37408, 37409, 37410, 37411, 37412, 37413, 37414, 37415, 37416, 37417, 37418, 37419, 37420, 37421, 37422, 37423, 37424, 37425, 37426, 37427, 37428, 37429, 37430, 37431, 37432, 37433, 37434, 37435, 37436, 37437, 37438, 37439, 37440, 37441, 37442, 37443, 37444, 37445, 37446, 37447, 37448, 37449, 37450, 37451, 37452, 37453, 37454, 37455, 37456, 37457, 37458, 37459, 37460, 37461, 37462, 37463, 37464, 37465, 37466, 37467, 37468, 37469, 37470, 37471, 37472, 37473, 37474, 37475, 37476, 37477, 37478, 37479, 37480, 37481, 37482, 37483, 37484, 37485, 37486, 37487, 37488, 37489, 37490, 37491, 37492, 37493, 37494, 37495, 37496, 37497, 37498, 37499, 37500, 37501, 37502, 37503, 37504, 37505, 37506, 37507, 37508, 37509, 37510, 37511, 37512, 37513, 37514, 37515, 37516, 37517, 37518, 37519, 37520, 37521, 37522, 37523, 37524, 37525, 37526, 37527, 37528, 37529, 37530, 37531, 37532, 37533, 37534, 37535, 37536, 37537, 37538, 37539, 37540, 37541, 37542, 37543, 37544, 37545, 37546, 37547, 37548, 37549, 37550, 37551, 37552, 37553, 37554, 37555, 37556, 37557, 37558, 37559, 37560, 37561, 37562, 37563, 37564, 37565, 37566, 37567, 37568, 37569, 37570, 37571, 37572, 37573, 37574, 37575, 37576, 37577, 37578, 37579, 37580, 37581, 37582, 37583, 37584, 37585, 37586, 37587, 37588, 37589, 37590, 37591, 37592, 37593, 37594, 37595, 37596, 37597, 37598, 37599, 37600, 37601, 37602, 37603, 37604, 37605, 37606, 37607, 37608, 37609, 37610, 37611, 37612, 37613, 37614, 37615, 37616, 37617, 37618, 37619, 37620, 37621, 37622, 37623, 37624, 37625, 37626, 37627, 37628, 37629, 37630, 37631, 37632, 37633, 37634, 37635, 37636, 37637, 37638, 37639, 37640, 37641, 37642, 37643, 37644, 37645, 37646, 37647, 37648, 37649, 37650, 37651, 37652, 37653, 37654, 37655, 37656, 37657, 37658, 37659, 37660, 37661, 37662, 37663, 37664, 37665, 37666, 37667, 37668, 37669, 37670, 37671, 37672, 37673, 37674, 37675, 37676, 37677, 37678, 37679, 37680, 37681, 37682, 37683, 37684, 37685, 37686, 37687, 37688, 37689, 37690, 37691, 37692, 37693, 37694, 37695, 37696, 37697, 37698, 37699, 37700, 37701, 37702, 37703, 37704, 37705, 37706, 37707, 37708, 37709, 37710, 37711, 37712, 37713, 37714, 37715, 37716, 37717, 37718, 37719, 37720, 37721, 37722, 37723, 37724, 37725, 37726, 37727, 37728, 37729, 37730, 37731, 37732, 37733, 37734, 37735, 37736, 37737, 37738, 37739, 37740, 37741, 37742, 37743, 37744, 37745, 37746, 37747, 37748, 37749, 37750, 37751, 37752, 37753, 37754, 37755, 37756, 37757, 37758, 37759, 37760, 37761, 37762, 37763, 37764, 37765, 37766, 37767, 37768, 37769, 37770, 37771, 37772, 37773, 37774, 37775, 37776, 37777, 37778, 37779, 37780, 37781, 37782, 37783, 37784, 37785, 37786, 37787, 37788, 37789, 37790, 37791, 37792, 37793, 37794, 37795, 37796, 37797, 37798, 37799, 37800, 37801, 37802, 37803, 37804, 37805, 37806, 37807, 37808, 37809, 37810, 37811, 37812, 37813, 37814, 37815, 37816, 37817, 37818, 37819, 37820, 37821, 37822, 37823, 37824, 37825, 37826, 37827, 37828, 37829, 37830, 37831, 37832, 37833, 37834, 37835, 37836, 37837, 37838, 37839, 37840, 37841, 37842, 37843, 37844, 37845, 37846, 37847, 37848, 37849, 37850, 37851, 37852, 37853, 37854, 37855, 37856, 37857, 37858, 37859, 37860, 37861, 37862, 37863, 37864, 37865, 37866, 37867, 37868, 37869, 37870, 37871, 37872, 37873, 37874, 37875, 37876, 37877, 37878, 37879, 37880, 37881, 37882, 37883, 37884, 37885, 37886, 37887, 37888, 37889, 37890, 37891, 37892, 37893, 37894, 37895, 37896, 37897, 37898, 37899, 37900, 37901, 37902, 37903, 37904, 37905, 37906, 37907, 37908, 37909, 37910, 37911, 37912, 37913, 37914, 37915, 37916, 37917, 37918, 37919, 37920, 37921, 37922, 37923, 37924, 37925, 37926, 37927, 37928, 37929, 37930, 37931, 37932, 37933, 37934, 37935, 37936, 37937, 37938, 37939, 37940, 37941, 37942, 37943, 37944, 37945, 37946, 37947, 37948, 37949, 37950, 37951, 37952, 37953, 37954, 37955, 37956, 37957, 37958, 37959, 37960, 37961, 37962, 37963, 37964, 37965, 37966, 37967, 37968, 37969, 37970, 37971, 37972, 37973, 37974, 37975, 37976, 37977, 37978, 37979, 37980, 37981, 37982, 37983, 37984, 37985, 37986, 37987, 37988, 37989, 37990, 37991, 37992, 37993, 37994, 37995, 37996, 37997, 37998, 37999, 38000, 38001, 38002, 38003, 38004, 38005, 38006, 38007, 38008, 38009, 38010, 38011, 38012, 38013, 38014, 38015, 38016, 38017, 38018, 38019, 38020, 38021, 38022, 38023, 38024, 38025, 38026, 38027, 38028, 38029, 38030, 38031, 38032, 38033, 38034, 38035, 38036, 38037, 38038, 38039, 38040, 38041, 38042, 38043, 38044, 38045, 38046, 38047, 38048, 38049, 38050, 38051, 38052, 38053, 38054, 38055, 38056, 38057, 38058, 38059, 38060, 38061, 38062, 38063, 38064, 38065, 38066, 38067, 38068, 38069, 38070, 38071, 38072, 38073, 38074, 38075, 38076, 38077, 38078, 38079, 38080, 38081, 38082, 38083, 38084, 38085, 38086, 38087, 38088, 38089, 38090, 38091, 38092, 38093, 38094, 38095, 38096, 38097, 38098, 38099, 38100, 38101, 38102, 38103, 38104, 38105, 38106, 38107, 38108, 38109, 38110, 38111, 38112, 38113, 38114, 38115, 38116, 38117, 38118, 38119, 38120, 38121, 38122, 38123, 38124, 38125, 38126, 38127, 38128, 38129, 38130, 38131, 38132, 38133, 38134, 38135, 38136, 38137, 38138, 38139, 38140, 38141, 38142, 38143, 38144, 38145);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

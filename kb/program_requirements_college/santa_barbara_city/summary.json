@@ -2,19 +2,22 @@
  "college": "Santa Barbara City College",
  "programs": 319,
  "with_closed_list": 287,
- "found": 254,
- "extracted": 254,
+ "found": 251,
+ "extracted": 251,
  "errors": 0,
- "passed_machine_checks": 210,
+ "passed_machine_checks": 229,
  "failed": {
-  "coverage": 8,
+  "coverage": 1,
   "invented": 0,
-  "arithmetic": 43,
+  "arithmetic": 21,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 18.39,
- "cost_per_program": 0.0724,
+ "cost_usd_run": 0.2,
+ "cost_usd_filed": 18.21,
+ "cost_per_program": 0.0725,
+ "extract_calls": 4,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "12075",
@@ -22,7 +25,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "21689",
@@ -30,7 +34,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "24154",
@@ -61,7 +66,8 @@
       281
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24266",
@@ -69,7 +75,8 @@
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24270",
@@ -77,7 +84,8 @@
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24271",
@@ -85,7 +93,8 @@
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24272",
@@ -93,7 +102,8 @@
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24300",
@@ -101,7 +111,8 @@
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24392",
@@ -109,7 +120,8 @@
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "30368",
@@ -140,7 +152,8 @@
       375
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "30380",
@@ -171,7 +184,8 @@
       264
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "30381",
@@ -202,7 +216,40 @@
       322
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31417",
+   "title": "Basic Office Software Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1615,
+     "content": 17207,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      485
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "31493",
@@ -233,7 +280,40 @@
       347
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32513",
+   "title": "ESL 4 Intermediate High",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-intermediate-grammar-composition-certificate-competency/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1356,
+     "content": 12425,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      264
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "35508",
@@ -264,7 +344,8 @@
       490
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36839",
@@ -295,38 +376,35 @@
       314
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
-   "control_number": "39376",
-   "title": "Digital Photograph Management",
+   "control_number": "36970",
+   "title": "Secondary Education/Bi-lingual/Biliterate GED Preparation",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photograph-management-certificate-completion/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 3,
-    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1240,
-     "content": 16565,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Learning Outcomes",
-      226
-     ]
-    ]
-   }
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36971",
+   "title": "Secondary Education/GED Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38315",
+   "title": "ADHS: Adult High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "40083",
@@ -334,39 +412,9 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44675",
-   "title": "Digital Photography Level 1",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photography-essentials-nc-completion/",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1516,
-     "content": 16880,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Learning Outcomes",
-      276
-     ]
-    ]
-   }
+   },
+   "status": "Active - Teachout Only"
   }
  ],
- "run": "39782741424"
+ "run": "44519697720"
 }

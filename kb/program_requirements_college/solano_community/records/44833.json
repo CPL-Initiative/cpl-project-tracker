@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Journalism",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8147,
+  "input_tokens": 10993,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8147,
-    "output_tokens": 716,
+    "input_tokens": 10993,
+    "output_tokens": 2064,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 716,
+  "output_tokens": 2064,
   "output_tokens_details": {
-   "thinking_tokens": 147
+   "thinking_tokens": 925
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04691,
- "ms": 6458,
- "seconds": 7.0,
+ "cost_usd": 0.08525,
+ "ms": 17300,
+ "seconds": 17.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 4,
    "listed": 4,
-   "share": 0.0,
-   "missing": [
-    "JOUR1",
-    "JOUR11",
-    "JOUR60",
-    "JOUR61"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -66,36 +61,47 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    12.0,
+    12.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": false,
+   "count": 8,
+   "not_verbatim": [
+    "Demonstrate proficiency in writing for various media platforms, including print, online, and broadcast, with an emphasis on clarity, accuracy, and journalistic style.",
+    "Develop skills necessary for working in a newsroom environment including deadline management, collaboration, and effective communication with editors and colleagues, and using relevant technologies, software, and tools essential for modern journalism such as content management systems, digital editing software, and social media platforms.",
+    "Assemble a comprehensive portfolio showcasing a variety of journalistic work, demonstrating growth and competence over the duration of the certificate program."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate proficiency in writing for various media platforms, including print,",
+    "not in the catalog text as printed: Develop skills necessary for working in a newsroom environment including deadlin",
+    "not in the catalog text as printed: Assemble a comprehensive portfolio showcasing a variety of journalistic work, de"
+   ],
+   "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 6,
+   "not_verbatim": [
+    "sales representative"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -104,11 +110,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Course Identiﬁ cation Numbering System (C-ID)",
+   "section_heading": "Journalism Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 12,
+    "max": 12
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,34 +131,85 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Demonstrate proficiency in writing for various media platforms, including print, online, and broadcast, with an emphasis on clarity, accuracy, and journalistic style.",
+    "Develop effective interviewing techniques to gather information from diverse sources, ensuring thorough and reliable reporting.",
+    "Conduct research, critically evaluate sources, and analyze information to produce well-informed and contextually rich journalistic content.",
+    "Understand and apply ethical principles and legal considerations specific to journalism, including issues related to accuracy, fairness, privacy, and freedom of the press.",
+    "Develop skills necessary for working in a newsroom environment including deadline management, collaboration, and effective communication with editors and colleagues, and using relevant technologies, software, and tools essential for modern journalism such as content management systems, digital editing software, and social media platforms.",
+    "Demonstrate an understanding of the importance of diversity and inclusion in journalism, reflecting it in coverage and story selection to represent a broad range of perspectives.",
+    "Gain proficiency in the editing and production process, understanding how to present news stories effectively through layout, design, and multimedia elements.",
+    "Assemble a comprehensive portfolio showcasing a variety of journalistic work, demonstrating growth and competence over the duration of the certificate program."
+   ],
+   "careers": [
+    "freelance journalist",
+    "reporter",
+    "photographer",
+    "assistant editor",
+    "website assistant",
+    "sales representative"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "JOUR 1",
-    "why": "Appears only in the C-ID table (as JOUR 001); the text has no Journalism certificate requirements."
-   },
-   {
-    "code": "JOUR 11",
-    "why": "Appears only in the C-ID table (as JOUR 011); the text has no Journalism certificate requirements."
-   },
-   {
-    "code": "JOUR 60",
-    "why": "Appears only in the C-ID table (as JOUR 060); the text has no Journalism certificate requirements."
-   },
-   {
-    "code": "JOUR 61",
-    "why": "Appears only in the C-ID table (as JOUR 061); the text has no Journalism certificate requirements."
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "JOUR 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied page (catalog page 78, printed page 77) is the Course Identification Numbering System (C-ID) table, not the Journalism Certificate of Achievement section. It gives no requirements, totals, outcomes or careers for the award, so no blocks were recorded.",
-   "The C-ID table's JOURNALISM rows list JOUR 001, JOUR 011, JOUR 060, JOUR 061 and PHOT 056 with C-ID designators. This is not evidence of the certificate's requirements.",
-   "A reviewer should find the actual Journalism program page in the 2026-2027 Solano catalog to record the certificate's requirements."
+   "Read the Journalism Certificate of Achievement section (page 308) only; the AA-T and the Multimedia Journalism certificate are separate sections.",
+   "Total of 12 units taken from 'The Certificate of Achievement can be obtained upon completion of the 12-unit major.'",
+   "Catalog prints codes with leading zeros (JOUR 001, 011, 060, 061); treated as the closed list's JOUR 1, 11, 60, 61.",
+   "The outcomes lead-in under this certificate says 'Students who complete the Associate in Arts in Journalism for Transfer will be able to:', apparently a catalog copy error; the eight outcomes differ from the AA-T's and are recorded for this certificate.",
+   "Outcomes text repaired for PDF extraction artifacts (ligature glyphs such as 'Ɵ' for 'ti', 'ﬁ' for 'fi', and split words like 'includin g', 'showcasin g'); reviewer may verify against the PDF."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "124a7f161122527b",
+ "source_codes": [
+  "JOUR1",
+  "JOUR11",
+  "JOUR60",
+  "JOUR61"
+ ],
+ "source_coverage": 1.0
 }

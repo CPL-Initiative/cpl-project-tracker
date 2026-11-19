@@ -1,4 +1,4 @@
-{"schema":1,"college":"Cosumnes River College","slug":"cosumnes_river","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Cosumnes River College","slug":"cosumnes_river","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"11346","title":"American Studies","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425"},
 {"cn":"17868","title":"Liberal Arts - Arts and Humanities","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=465"},
 {"cn":"04596","title":"Marketing","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474"},

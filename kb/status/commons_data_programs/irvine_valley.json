@@ -1,4 +1,4 @@
-{"schema":1,"college":"Irvine Valley College","slug":"irvine_valley","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Irvine Valley College","slug":"irvine_valley","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"44922","title":"Digital Media Art","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://irvine.curriqunet.com/Catalog/iq/48959/49229/51441"},
 {"cn":"18364","title":"Emphasis in Natural Sciences","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://irvine.curriqunet.com/Catalog/iq/48959/49229/51427"},
 {"cn":"45901","title":"Kinesiology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://irvine.curriqunet.com/Catalog/iq/48959/49229/51382"},
@@ -28,7 +28,6 @@
 {"cn":"18480","title":"Teacher Education","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"32814","title":"ENGLISH","award":"A.A- T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"04177","title":"Sociology","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"35144","title":"ADULT ENGLISH AS A SECOND LANGUAGE-INTERMEDIATE","award":"Noncredit program","cause":"units_incomplete","lever":"reconcile_steps","url":"https://irvine.curriqunet.com/Catalog/iq/48959/49229/51493","units":{"sum":[0.0,0.0],"printed":[0.0,0.0],"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"04154","title":"Business Management","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://irvine.curriqunet.com/Catalog/iq/48959/49229/51475","units":{"sum":[22.0,22.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"20819","title":"Business Management","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"units_incomplete","lever":"reconcile_steps","url":"https://irvine.curriqunet.com/Catalog/iq/48959/49229/51474","units":{"sum":[22.0,22.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"39220","title":"Law, Public Policy, and Society","award":"A.A- T Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://irvine.curriqunet.com/Catalog/iq/48959/49229/51381","units":{"sum":[31.0,33.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},

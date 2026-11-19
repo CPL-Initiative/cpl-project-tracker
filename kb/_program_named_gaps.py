@@ -848,13 +848,20 @@ def wave_runs(colleges, base: str = COLLEGE_DIR) -> dict:
 
 def held_run(x: dict, runs: dict, base: str = COLLEGE_DIR) -> dict:
     """A held-out row at a wave college with its filed run and whether the wave re-read it (S684 second reader: the
-    held-out list is by college, and some of its rows were not re-read)."""
-    run_ = None
-    for path in glob.glob(os.path.join(base, "*", "records", "%s.json" % x["control_number"])):
+    held-out list is by college, and some of its rows were not re-read). A college holds one file a control number,
+    so two matches mean its folder is filed under a second slug, and the run would depend on glob order: that stops
+    the run (COBIx on #3548)."""
+    found = []
+    for path in sorted(glob.glob(os.path.join(base, "*", "records", "%s.json" % x["control_number"]))):
         with open(path, encoding="utf-8") as fh:
             d = json.load(fh)
         if d.get("college") == x["college"]:
-            run_ = d.get("extracted_run")
+            found.append((path, d.get("extracted_run")))
+    if len(found) > 1:
+        raise SystemExit("held_run: %s %s is filed %d times (%s): one college's folder sits under two slugs, so its "
+                         "run is not one" % (x["college"], x["control_number"], len(found),
+                                             ", ".join(os.path.relpath(p, base) for p, _ in found)))
+    run_ = found[0][1] if found else None
     return dict(x, extracted_run=run_, wave_reread=str(run_) in runs.get(x["college"], set()))
 
 

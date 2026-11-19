@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Life Science",
  "award": "A.S. Degree",
- "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=138",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=104",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11155,
+  "input_tokens": 9536,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11155,
-    "output_tokens": 1454,
+    "input_tokens": 9536,
+    "output_tokens": 3066,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,70 +30,83 @@
     "model": null
    }
   ],
-  "output_tokens": 1454,
+  "output_tokens": 3066,
   "output_tokens_details": {
-   "thinking_tokens": 238
+   "thinking_tokens": 1182
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0737,
- "ms": 11742,
- "seconds": 12.3,
+ "cost_usd": 0.09946,
+ "ms": 24829,
+ "seconds": 25.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 20,
    "listed": 22,
-   "share": 0.0,
+   "share": 0.909,
    "missing": [
-    "BIOL10",
     "BIOL10L",
-    "BIOL11A",
-    "BIOL11B",
-    "BIOL13",
-    "BIOL13L",
-    "BIOL2",
-    "BIOL20",
-    "BIOL22",
-    "BIOL25",
-    "BIOL3",
-    "BIOL31",
-    "BIOL5",
-    "CHEM1A",
-    "CHEM1B",
-    "CHEM3A",
-    "CHEM3B",
-    "PHYS2A",
-    "PHYS2B",
-    "PHYS4A",
-    "PHYS4B",
-    "PHYS4C"
+    "BIOL25"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOL3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1001",
+     "listed": "BIOL10",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 8,
+   "codes": [
+    "BIOLC1001L",
+    "CHEM28A",
+    "CHEM28B",
+    "CHEM29A",
+    "CHEM29B",
+    "CHEM8",
+    "MATH5A",
+    "MATH5B"
+   ],
+   "flagged": [
+    "BIOLC1001L",
+    "CHEM28A",
+    "CHEM28B",
+    "CHEM29A",
+    "CHEM29B",
+    "CHEM8",
+    "MATH5A",
+    "MATH5B"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    11.0,
+    11.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 11.0-11.0; the catalog states 18.0-18.0"
    ]
   },
   "repeated": {
@@ -101,13 +114,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -125,11 +138,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "LIFE SCIENCE (MAJOR #C.6102.AS) ASSOCIATE IN SCIENCE DEGREE",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -146,106 +159,285 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate basic knowledge of comparative anatomy and comparative physiology",
+    "Demonstrate basic microscopic techniques required for all Biology fields",
+    "Critically evaluate scientific research"
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core Courses: Select a minimum of 8 units",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 13",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 13L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL C1001",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "BIOL C1001L",
+        "units": 1,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 11A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 11B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 22",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 31",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Elective Courses: Select a minimum of 3 units",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Other recommended courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 28A",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 28B",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 29A",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 29B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 5A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 5B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "BIOL 10",
-    "why": "not in the text; Life Science section absent"
+    "why": "not in the text"
    },
    {
     "code": "BIOL 10L",
-    "why": "not in the text; Life Science section absent"
-   },
-   {
-    "code": "BIOL 11A",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "BIOL 11B",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "BIOL 13",
-    "why": "not in the text; Life Science section absent"
-   },
-   {
-    "code": "BIOL 13L",
-    "why": "not in the text; Life Science section absent"
-   },
-   {
-    "code": "BIOL 2",
-    "why": "not in the text; Life Science section absent"
-   },
-   {
-    "code": "BIOL 20",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "BIOL 22",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
+    "why": "not in the text"
    },
    {
     "code": "BIOL 25",
-    "why": "not in the text; Life Science section absent"
+    "why": "not in the text"
    },
    {
     "code": "BIOL 3",
-    "why": "not in the text; Life Science section absent"
-   },
-   {
-    "code": "BIOL 31",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "BIOL 5",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. and Medical Office Administration sections"
-   },
-   {
-    "code": "CHEM 1A",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "CHEM 1B",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "CHEM 3A",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "CHEM 3B",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "PHYS 2A",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. and Mathematics A.S. sections"
-   },
-   {
-    "code": "PHYS 2B",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "PHYS 4A",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. and Mathematics A.S. sections"
-   },
-   {
-    "code": "PHYS 4B",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
-   },
-   {
-    "code": "PHYS 4C",
-    "why": "Life Science section absent; appears only in Natural Sciences A.A. section"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 138-141) contains no Life Science A.S. Degree section; it covers the end of a Humanities-type major, Natural Sciences A.A., Liberal Studies A.A., Mathematics A.S., Medical Office Administration and Commercial Music Audio Production certificates. section_heading left empty.",
-   "No blocks, totals, outcomes or careers recorded because the named award's section is not in the text. A reviewer should locate the correct page for Life Science A.S. (likely elsewhere in the 2026-2027 catalog).",
-   "Many closed-list courses appear in the Natural Sciences A.A. section, which is a different award and was not used."
+   "BIOL 2 may be replaced by the pair BIOL 13 AND BIOL 13L (both together); likewise BIOL C1000 may be replaced by BIOL C1001 AND BIOL C1001L together. Each pair is recorded as alternatives of the single course.",
+   "CHEM 3B is printed with 3 units (and title 'Introductory and Biological Chemistry'); the state file stores 4 units.",
+   "Recommended courses are printed as 'Chemistry 8 or 28A, 28B, 29A, 29B; Mathematics 5A, 5B'; recorded as CHEM/MATH codes. CHEM 8 or the series CHEM 28A, 28B, 29A, 29B; no units printed.",
+   "Block minimums ('Select a minimum of 8 units', 'Select a minimum of 3 units') are recorded as minimums; no separate block total is printed, so stated is null.",
+   "Total Units: 18 is the major total; no degree total or GE pattern is printed in this section."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "0984b683c8a86c36",
+ "source_codes": [
+  "BIOL10",
+  "BIOL11A",
+  "BIOL11B",
+  "BIOL13",
+  "BIOL13L",
+  "BIOL2",
+  "BIOL20",
+  "BIOL22",
+  "BIOL3",
+  "BIOL31",
+  "BIOL5",
+  "CHEM1A",
+  "CHEM1B",
+  "CHEM3A",
+  "CHEM3B",
+  "PHYS2A",
+  "PHYS2B",
+  "PHYS4A",
+  "PHYS4B",
+  "PHYS4C"
+ ],
+ "source_coverage": 0.909
 }

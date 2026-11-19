@@ -155,7 +155,7 @@ unblocker colleges, the outline indexes, Chabot and Lassen. No run is in flight 
 
 Subscriptions: none held. Check-ins: none. No artifact watch.
 
-Spend: not available; 2026-11-19T06:13Z to 2026-11-19T09:47Z.
+Spend: $94 (estimate from token counts at list prices: Fable 5.2 $33, Opus 5.5 $61); collection $84, infrastructure $10; 2026-11-19T06:13Z to 2026-11-19T09:47Z.
 
 No cost readout (`get_session` was not among the tools). Token counts from the session's transcripts at 09:28Z: Fable
 5.2 (the conductor) 179 calls, 0.25 million output, 0.58 million one-hour cache-write, 69.7 million cache-read; Opus 5.5

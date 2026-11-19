@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11227,
+  "input_tokens": 10654,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11227,
-    "output_tokens": 3341,
+    "input_tokens": 10654,
+    "output_tokens": 3177,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,47 +30,50 @@
     "model": null
    }
   ],
-  "output_tokens": 3341,
+  "output_tokens": 3177,
   "output_tokens_details": {
-   "thinking_tokens": 1088
+   "thinking_tokens": 881
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11173,
- "ms": 25422,
- "seconds": 25.9,
+ "cost_usd": 0.10616,
+ "ms": 24868,
+ "seconds": 25.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 30,
+   "placed": 32,
    "listed": 33,
-   "share": 0.909,
+   "share": 0.97,
    "missing": [
-    "BIOL10",
-    "BIOL3",
     "SOCI1B"
    ],
-   "unexplained": [
-    "SOCI1B"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "course_id": [
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOL3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1001",
+     "listed": "BIOL10",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "BIOLC1000",
-    "BIOLC1001",
     "SOC1B"
    ],
-   "flagged": [
-    "BIOLC1000",
-    "BIOLC1001"
-   ],
+   "flagged": [],
    "pass": false
   },
   "arithmetic": {
@@ -116,7 +119,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "LIBERAL STUDIES (Major #C.5890.AA) ASSOCIATE IN ARTS DEGREE",
+   "section_heading": "Liberal Studies Associate in Arts Degree",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -146,7 +149,7 @@
   },
   "blocks": [
    {
-    "name": "List A: Select one course",
+    "name": "List A",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -213,7 +216,7 @@
     ]
    },
    {
-    "name": "List B: Select one course",
+    "name": "List B",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -253,7 +256,7 @@
     ]
    },
    {
-    "name": "List C: Select one course",
+    "name": "List C",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -299,7 +302,7 @@
     ]
    },
    {
-    "name": "List D: Select one course",
+    "name": "List D",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -364,7 +367,7 @@
     ]
    },
    {
-    "name": "List E: Select two courses",
+    "name": "List E",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -435,21 +438,63 @@
   "missing_explained": [
    {
     "code": "BIOL 10",
-    "why": "not in the text; List B names BIOL C1000 and BIOL C1001 instead"
+    "why": "not in the text; List B prints BIOL C1001 Introduction to Biology instead (likely renumbered)"
    },
    {
     "code": "BIOL 3",
-    "why": "not in the text; List B names BIOL C1000 and BIOL C1001 instead"
+    "why": "not in the text; List B prints BIOL C1000 Introduction to Biology with Lab instead (likely renumbered)"
+   },
+   {
+    "code": "SOCI1B",
+    "why": "placed as 'SOC 1B' (same title, Critical Thinking About Social Problems) in List A; code printed differently"
    }
   ],
   "notes": [
-   "The catalog prints 'SOC 1B Critical Thinking About Social Problems'; the closed list stores 'SOCI1B Critical Thinking about Social Problems' (same title). Treated as the same course (catalog_addition false); reviewer should confirm the code.",
-   "SCI 1A is printed with 4 units in List B but 3 units in the preceding (other program's) section on the same page.",
-   "ENGL C1001 is titled 'Critical Reading and Writing' in the catalog vs 'Critical Thinking and Writing' in the closed list; LING 11 titled 'Linguistics for Teachers' vs 'Introduction to Language for Teachers'.",
+   "The section heading itself is not in the extracted text (text starts mid-section on page 139); heading recorded from the description's wording 'Liberal Studies Associate in Arts Degree'.",
+   "Catalog prints 'SOC 1B' whereas the closed list stores 'SOCI1B' with the same title; treated as the same course (catalog_addition false). Reviewer should confirm.",
+   "BIOL C1000 and BIOL C1001 are not in the closed list and appear to replace BIOL 3 and BIOL 10.",
    "Honors twins (ENGL C1001H, ARTH C1200H, ENGL C1002H, HIST C1002H, POLS C1000H, PSYC C1000H) recorded as alternatives of their non-honors courses.",
-   "Total Units 18-19 is printed for the major; no degree total or GE pattern is printed in this section.",
-   "The program description says students obtain 'a strong foundation for other professions in fields of public services'; recorded 'public services' as a career field. The text also refers to elementary school teaching programs and a multiple subject teaching credential, not recorded as careers."
+   "ENGL C1001 is titled 'Critical Reading and Writing' in the catalog vs 'Critical Thinking and Writing' in the closed list; LING 11 is titled 'Linguistics for Teachers' vs 'Introduction to Language for Teachers'.",
+   "No general education pattern or whole-degree total is printed in this section; Total Units 18-19 is the major total.",
+   "Career field taken from 'other professions in fields of public services'; the description also mentions transfer into elementary school teaching programs and a multiple subject teaching credential."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "e46d106f9933c569",
+ "source_codes": [
+  "ART2",
+  "ARTHC1100",
+  "ARTHC1200",
+  "ARTHC1200H",
+  "BIOL10",
+  "BIOL3",
+  "COMM25",
+  "CSCI1",
+  "ECE2",
+  "EDUC10",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "ENGLC1002",
+  "ENGLC1002H",
+  "GEOG6",
+  "GEOL9",
+  "HIST20",
+  "HISTC1001",
+  "HISTC1002",
+  "HISTC1002H",
+  "HLTH1",
+  "IS15",
+  "LING11",
+  "MUS12",
+  "PHIL2",
+  "PHIL4",
+  "PHIL6",
+  "POLSC1000",
+  "POLSC1000H",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SCI1A"
+ ],
+ "source_coverage": 0.97
 }

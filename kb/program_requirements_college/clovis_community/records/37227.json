@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11602,
-    "output_tokens": 2571,
+    "output_tokens": 3113,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2571,
+  "output_tokens": 3113,
   "output_tokens_details": {
-   "thinking_tokens": 925
+   "thinking_tokens": 1355
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09783,
- "ms": 21549,
- "seconds": 21.9,
+ "cost_usd": 0.10867,
+ "ms": 25940,
+ "seconds": 26.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 14,
-   "share": 0.929,
-   "missing": [
-    "MATH5A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -340,16 +341,35 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; section lists MATH C2210 instead"
+    "why": "not in the text; catalog lists MATH C2210 Calculus I instead"
    }
   ],
   "notes": [
-   "The top of page 158 (Required Core Courses, List A, Total Units: 33) belongs to the preceding program, not this award, and was ignored.",
-   "The catalog numbers the outcomes 1-7, but items 4/5 and 6/7 are each one sentence broken by a misplaced list number; they were recorded as one outcome each (5 outcomes). Reviewer should check.",
-   "Printed total is 39-42; summing the blocks (15 + 16 + 3 + 8) gives 42, so the low end of 39 is not evident from the listed courses.",
-   "The 60-unit requirement is the generic ADT requirement, not recorded as a degree total.",
-   "MATH C2210 is not in the closed list (closed list has MATH 5A); recorded as a catalog addition."
+   "The top of page 158 (Required Core Courses with List A, Total Units: 33) is the tail of a preceding program, not this award; it was ignored.",
+   "The PDF numbers the outcomes 1-7, but items 4/5 and 6/7 are each a single sentence split across a misplaced list number; recorded as five outcomes with the split sentences joined. Words broken by PDF extraction (e.g., 'probl em', 'impa ct') were rejoined.",
+   "List A prints 'MATH C2210 ... AND STAT C1000 OR BA 23'; read as all courses required with BA 23 as an alternative to STAT C1000. Summing core (15) + List A (16) + List B (11) gives 42, while the catalog prints 39-42; the low end may imply MATH C2210 and the statistics course are alternatives. Reviewer should check.",
+   "Core Option 1 and Option 2 both include BIOL 11A and CHEM 1A.",
+   "Page states completion of 60 semester units and Cal-GETC as general ADT requirements; no degree total or GE units printed for this award."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "b27fa399ac3d05e0",
+ "source_codes": [
+  "BA23",
+  "BIOL11A",
+  "BIOL11B",
+  "BIOL13",
+  "CHEM1A",
+  "CHEM1B",
+  "ECONC2001",
+  "GEOL1",
+  "MATH5A",
+  "PHYS2A",
+  "PHYS2B",
+  "PHYS4A",
+  "PHYS4B",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

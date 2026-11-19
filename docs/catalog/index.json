@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 593,
+   "count": 594,
    "docs": [
     {
      "created": "2026-08-14",
@@ -302,6 +302,27 @@
      "title": "Level-collapsing consolidation \u2014 over-merge beats under-merge for CPL",
      "type": "adr",
      "updated": "2026-06-16"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [
+      "kb/credentials.json",
+      "kb/unified_titles.json",
+      "kb/exhibit_cert_links.json"
+     ],
+     "path": "docs/kb-notes/adr-one-credential-list-exhibits-are-its-children.md",
+     "status": "published",
+     "tags": [
+      "adr",
+      "credentials",
+      "exhibits",
+      "ctdl",
+      "commons",
+      "identity"
+     ],
+     "title": "One credential list, with exhibits as its children",
+     "type": "adr",
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-19",
@@ -17255,8 +17276,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 643,
+   "count": 644,
    "docs": [
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 685,
+     "path": "docs/session_685_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 685 handoff (from SkyVerdin, S684)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
     {
      "created": "2026-11-19",
      "governs": [],
@@ -28031,5 +28066,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1520
+ "total": 1522
 }

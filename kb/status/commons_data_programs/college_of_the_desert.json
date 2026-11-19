@@ -1,4 +1,4 @@
-{"schema":1,"college":"College of the Desert","slug":"college_of_the_desert","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
+{"schema":1,"college":"College of the Desert","slug":"college_of_the_desert","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":false,"programs":[
 {"cn":"45210","title":"Agriculture Plant Science","award":"A.S. T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=95"},
 {"cn":"45300","title":"Anthropology","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38982","title":"CSU GE-Breadth","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

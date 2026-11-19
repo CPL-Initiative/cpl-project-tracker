@@ -1,4 +1,4 @@
-{"schema":1,"college":"Yuba College","slug":"yuba","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Yuba College","slug":"yuba","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":false,"programs":[
 {"cn":"32873","title":"Psychology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158"},
 {"cn":"07053","title":"Psychology with a Focus on Social Services","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=159"},
 {"cn":"10998","title":"Arts and Humanities","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

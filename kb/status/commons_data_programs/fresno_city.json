@@ -1,4 +1,4 @@
-{"schema":1,"college":"Fresno City College","slug":"fresno_city","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Fresno City College","slug":"fresno_city","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":false,"programs":[
 {"cn":"32881","title":"Anthropology","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"30995","title":"Automotive Collision Repair","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"30993","title":"Automotive Mechanics","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

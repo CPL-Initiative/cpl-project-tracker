@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Economics",
  "award": "A.A- T Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=254",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=253",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8107,
+  "input_tokens": 8464,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8107,
-    "output_tokens": 1693,
+    "input_tokens": 8464,
+    "output_tokens": 2160,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1693,
+  "output_tokens": 2160,
   "output_tokens_details": {
-   "thinking_tokens": 388
+   "thinking_tokens": 800
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06629,
- "ms": 13299,
- "seconds": 13.8,
+ "cost_usd": 0.07706,
+ "ms": 18077,
+ "seconds": 18.2,
  "parts": null,
  "error": null,
  "score": {
@@ -263,11 +263,30 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The required-courses table prints 'One Course from List A 3-4' and 'Two Courses from List A 6-8'; the second line appears to be a typo for List B (the list headed 'select two courses'). Block stated totals were taken from these lines.",
-   "Catalog prints zero-padded codes (MATH 030, MATH 022, MATH 023, MATH 040, CIS 015, BUS 018, ACCT 001, ACCT 002); these were matched to closed-list codes MATH 30, MATH 22, MATH 23, MATH 40, CIS 15, BUS 18, ACCT 1, ACCT 2 and not flagged as catalog additions.",
-   "The 60-unit figure appears only in the generic ADT requirements sentence, so degree_total was left null; Cal-GETC is named without a unit total.",
-   "Page 255 contains course descriptions for ECON C2001/C2002 with no course-level outcomes."
+   "The required-course summary prints 'Two Courses from List A 6-8' but List A says 'select one course' and List B says 'select two courses'; read as a typo for List B, and the 6-8 units recorded as List B's stated total.",
+   "The catalog prints 'STAT C1 000' (extraction spacing); recorded as STAT C1000 matching the closed list.",
+   "Catalog prints codes with leading zeros (MATH 030, MATH 022, MATH 023, MATH 040, CIS 015, BUS 018, ACCT 001, ACCT 002); treated as the closed-list courses MATH 30, MATH 22, MATH 23, MATH 40, CIS 15, BUS 18, ACCT 1, ACCT 2, so not catalog additions.",
+   "The page states the generic ADT requirement to complete 60 transferable semester units including Cal-GETC and at least 18 major units; not recorded as degree_total since it is standard ADT language rather than a printed total for this award. No units printed for Cal-GETC.",
+   "Required Major Total Units 19-22 recorded as total_units."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "562fa9f8658298fd",
+ "source_codes": [
+  "ACCT1",
+  "ACCT2",
+  "BUS18",
+  "CIS15",
+  "ECONC2001",
+  "ECONC2002",
+  "MATH22",
+  "MATH23",
+  "MATH30",
+  "MATH40",
+  "MATHC2210",
+  "MATHC2220",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

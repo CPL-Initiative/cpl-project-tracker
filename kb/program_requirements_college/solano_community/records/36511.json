@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Biology",
  "award": "A.S. T Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=154",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=153",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12210,
+  "input_tokens": 11465,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12210,
-    "output_tokens": 1966,
+    "input_tokens": 11465,
+    "output_tokens": 1882,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1966,
+  "output_tokens": 1882,
   "output_tokens_details": {
-   "thinking_tokens": 757
+   "thinking_tokens": 737
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08816,
- "ms": 17292,
- "seconds": 17.9,
+ "cost_usd": 0.0835,
+ "ms": 16577,
+ "seconds": 16.8,
  "parts": null,
  "error": null,
  "score": {
@@ -197,10 +197,10 @@
     "name": "List A",
     "rule": "all",
     "minimum": null,
-    "option_group": "Select List A or List B",
+    "option_group": "List A or List B",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 10,
+     "max": 10
     },
     "courses": [
      {
@@ -223,10 +223,10 @@
     "name": "List B",
     "rule": "all",
     "minimum": null,
-    "option_group": "Select List A or List B",
+    "option_group": "List A or List B",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 10,
+     "max": 10
     },
     "courses": [
      {
@@ -249,14 +249,27 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The required courses list ends with 'Select List A or List B .... 10'; that 10 units is the printed total for whichever list is chosen, so it is noted here rather than placed in either list's stated.",
-   "degree_total 60 is taken from 'The Associate in Science in Biology for Transfer requires: 1. Complete 60 semester units that are eligible for transfer to the CSU, including ... Cal-GETC ... and a minimum of 18 semester units in a major'; this is standard ADT wording printed as this award's requirement. The 18-unit minimum is not recorded as a total; the printed major total is 34.",
-   "No units are printed for Cal-GETC, so ge_units is null.",
-   "Catalog codes use zero-padded numbers (BIOL 002, CHEM 001, PHYS 002, etc.); matched to closed-list entries BIOL002, BIOL003, CHEM 1, CHEM 2, PHYS 2, PHYS 4, PHYS 6, PHYS 7.",
-   "Outcome text was extracted from a PDF with ligature glyphs ('invesƟ gaƟ on'); the 'Ɵ ' glyph was read as 'ti'. Reviewer may verify exact wording.",
-   "The following A.S. Biology (UC transfer) section prints the same outcomes for that separate award; it and the Biomedical Sciences section were not used."
+   "Read only the AS-T section (page 154); the Biology A.S. and Biomedical Sciences sections that follow were ignored.",
+   "Catalog codes are printed with leading zeros (BIOL 002, CHEM 001, PHYS 002, etc.); treated as the closed-list courses BIOL002, CHEM 1, PHYS 2, etc.",
+   "The 10 units on the 'Select List A or List B' row are recorded as the stated total of each list; the lists themselves print no totals.",
+   "degree_total 60 taken from 'The Associate in Science in Biology for Transfer requires: 1. Complete 60 semester units ... including Cal-GETC'; this is the standard ADT statement printed as this award's requirement—reviewer may prefer null. No Cal-GETC unit figure is printed.",
+   "The '18 semester units in a major' sentence is the generic ADT minimum, not the major total; the printed major total is 34.",
+   "Outcomes text in the PDF extraction contains ligature artifacts (e.g. 'invesƟ gaƟ on'); recorded with the 'ti' ligature restored ('investigation')."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "1ed75b0f2dcf39a9",
+ "source_codes": [
+  "BIOL2",
+  "BIOL3",
+  "CHEM1",
+  "CHEM2",
+  "MATHC2210",
+  "PHYS2",
+  "PHYS4",
+  "PHYS6",
+  "PHYS7"
+ ],
+ "source_coverage": 1.0
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 219,
  "with_closed_list": 201,
- "started": "2026-11-12T12:11:04Z",
+ "started": "2026-11-19T11:34:59Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.vvc.edu/sitemap.xml",
@@ -14,19 +14,217 @@
   "nested": 0,
   "program_pages": 307,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null,
+  "challenged": null
  },
+ "listing_failed": 0,
  "pages_read": 307,
+ "pages_listed": 307,
+ "pages_answered": 307,
  "child_pages": 0,
  "banner_h1": null,
- "loads": 356,
- "seconds": 1670.7,
- "found": 176,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 163,
+   "hits": 153,
+   "recall": 0.939,
+   "false": 1,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 6,
+   "false_matches": [
+    {
+     "control_number": "04967",
+     "title": "Criminal Justice",
+     "page": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/criminal-justice-as/"
+    },
+    {
+     "control_number": "04967",
+     "title": "Criminal Justice",
+     "award": "A.S. Degree",
+     "page": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/criminal-justice-as/",
+     "h1": "Criminal Justice, AS"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "04967",
+     "title": "Criminal Justice",
+     "award": "A.S. Degree",
+     "page": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/criminal-justice-as/",
+     "h1": "Criminal Justice, AS"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 18,
+  "by_result": {
+   "not_searched": 18
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "04938",
+    "title": "Environmental  Horticulture",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04942",
+    "title": "Basic Business Real Estate",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04956",
+    "title": "Medical Assistant",
+    "award": "A.S. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07532",
+    "title": "Horticulture Specialist",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07547",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07549",
+    "title": "Programming II",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07550",
+    "title": "Productivity Software Specialist",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07557",
+    "title": "Electronics Engineering Technology: Electronics",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07558",
+    "title": "Electronics and Computer Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07594",
+    "title": "Fire Prevention Officer",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10787",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10788",
+    "title": "Business Real Estate and Escrow",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10798",
+    "title": "Electronics Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10800",
+    "title": "Drafting",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10809",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "20541",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38575",
+    "title": "Basic Firefighter",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38576",
+    "title": "Introduction to Firefighting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 153 of 163 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 367,
+ "seconds": 1714.7,
+ "found": 169,
  "by_method": {
   "no_closed_list": 18,
-  "not_found": 16,
+  "not_found": 23,
   "page_claimed": 9,
-  "sitemap_page": 176
+  "sitemap_page": 169
  },
  "shared_pages": {
   "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/": [
@@ -76,7 +274,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "07595",
@@ -111,7 +310,44 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "10799",
+   "title": "Building Construction",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.348,
+    "body": 0.0,
+    "content": 0.087,
+    "net": 8,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 8 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2914,
+     "content": 6474,
+     "tabs": 650
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      630
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "17586",
@@ -146,7 +382,40 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33025",
+   "title": "Geography",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/geography/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.857,
+    "body": 0.0,
+    "content": 0.286,
+    "net": 6,
+    "listed": 7,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 5976,
+     "content": 12134,
+     "tabs": 3345
+    },
+    "tab_panels": [
+     [
+      "COURSES",
+      3330
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "35957",
@@ -181,7 +450,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36999",
@@ -216,7 +486,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37007",
@@ -251,7 +522,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37008",
@@ -286,7 +558,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37067",
@@ -321,7 +594,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37434",
@@ -356,7 +630,44 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "37442",
+   "title": "Web Authoring",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/web-authoring-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2708,
+     "content": 5860,
+     "tabs": 225
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      205
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "38355",
@@ -391,7 +702,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "38356",
@@ -426,7 +738,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38848",
@@ -434,7 +747,17 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "40071",
+   "title": "Urban Search and Technical Rescue",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "40630",
@@ -469,7 +792,44 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40656",
+   "title": "Advanced Paralegal",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-barbering-ccn/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4143,
+     "content": 7302,
+     "tabs": 229
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      209
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "41279",
@@ -504,7 +864,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42106",
@@ -512,7 +873,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "42122",
@@ -547,7 +909,53 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42301",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43115",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/physics/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.714,
+    "body": 0.0,
+    "content": 0.571,
+    "net": 5,
+    "listed": 7,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3696,
+     "content": 13939,
+     "tabs": 6626
+    },
+    "tab_panels": [
+     [
+      "LEARNING OUTCOMES",
+      737
+     ],
+     [
+      "COURSES",
+      6611
+     ]
+    ]
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -556,20 +964,20 @@
    "title": "Level II: Teacher (pre-school)",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
-    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
     "https://catalog.vvc.edu//degrees-certificates/vvcge/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "20545",
    "title": "Nursing Licensure",
    "award": "Certificate of Achievement requiring 60+S/90+Q units",
    "pages": [
-    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
     "https://catalog.vvc.edu//degrees-certificates/nursing/nursing-as/",
     "https://catalog.vvc.edu//degrees-certificates/vvcge/",
     "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/bachelor-science-respiratory-therapy-bs/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "33082",
@@ -577,25 +985,26 @@
    "award": "A.A- T Degree",
    "pages": [
     "https://catalog.vvc.edu//degrees-certificates/vvcge/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "36902",
    "title": "California State University (CSU) General Education (GE) Requirements",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
-    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
     "https://catalog.vvc.edu//degrees-certificates/vvcge/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "37010",
    "title": "Pathway to Law",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
-    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
     "https://catalog.vvc.edu//degrees-certificates/vvcge/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "37514",
@@ -603,9 +1012,9 @@
    "award": "A.S. T Degree",
    "pages": [
     "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/agricultural-plant-sciences-ast/",
-    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
     "https://catalog.vvc.edu//degrees-certificates/vvcge/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "38852",
@@ -613,7 +1022,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/natural-resource-environmental-technology-ca/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "39102",
@@ -622,7 +1032,8 @@
    "pages": [
     "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/natural-resource-environmental-technology-ca/",
     "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "45047",
@@ -631,23 +1042,705 @@
    "pages": [
     "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
     "https://catalog.vvc.edu//degrees-certificates/vvcge/"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 25,
-  "0.8-1.0": 36,
-  "1.0": 115
+  "0.5-0.8": 22,
+  "0.8-1.0": 34,
+  "1.0": 113
  },
  "would_extract": {
   "against": "kb/program_requirements_college/victor_valley",
-  "kept": 176,
+  "kept": 169,
   "kept_moved": 0,
   "programs": 0,
   "list": [],
   "held_worse_window": [],
   "held_no_gain": [],
-  "held_opens_on_list": []
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "43215222441"
+ "fingerprints": {
+  "04941": {
+   "sha256": "794ac68c2be6890f145c979dc44dfca2a9241048552db5a30c7abc45d76a1330",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/management-ca/"
+  },
+  "04943": {
+   "sha256": "cf781450e63d1da78a9c8fb4ebde8bd487a772d14a09ccbed1965bc3dda24727",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/business-education-technology-as/"
+  },
+  "04947": {
+   "sha256": "16b3ec72e041b12cd441b89e0d866e4d783d0cde60ba0f416536c037af72835b",
+   "url": "https://catalog.vvc.edu//degrees-certificates/welding/welding-as/"
+  },
+  "04955": {
+   "sha256": "7b24d7cef7896ff149fed63ba91625c89ebd4c39ad48e213d4b7ede86a7b81b6",
+   "url": "https://catalog.vvc.edu//degrees-certificates/nursing/nursing-as/"
+  },
+  "04957": {
+   "sha256": "36ce8928246a9a9e756f50442c12e6f7de5b9ee60557fb97fefa28808d7ef4f8",
+   "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/respiratory-therapy-as/"
+  },
+  "04967": {
+   "sha256": "a1ae907d7c4aae9970bd9b5b5bc32b563fb257b033f99cc22b89d15bd0af1485",
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/"
+  },
+  "04968": {
+   "sha256": "b3e8cb1f743dd54054a1de5934451361713ea905e78f99bb4e8ebbad3f9183ff",
+   "url": "https://catalog.vvc.edu//degrees-certificates/child-development/associate-teacher-ca/"
+  },
+  "04969": {
+   "sha256": "edfac81fe647cacdff80b6433a06acff5d34e490d7ff38c2e48dd3a072080673",
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/fire-fighter-ca/"
+  },
+  "04974": {
+   "sha256": "813b19fd9f40ce36ecb6afc025b04c5ea8e19a3c470fc304641d2ae0d0cbb974",
+   "url": "https://catalog.vvc.edu//degrees-certificates/restaurant-management/restaurant-management-as/"
+  },
+  "04976": {
+   "sha256": "9d1e6920d2a3c1604029af9da60497ce0a6d833a5f88d5a4e03c763fb01e9763",
+   "url": "https://catalog.vvc.edu//degrees-certificates/math-science/math-science-as/"
+  },
+  "04980": {
+   "sha256": "ee3a8a588e4b47868de80822b5c20449f9b88de208c42f9f711a4dee5d2d5038",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/emergency-medical-services-as/"
+  },
+  "07546": {
+   "sha256": "cbacb9f6e558800ca0a1d3ea455468e73a5527769fc8ef91af593dbd18609ffe",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/medical-office-ca/"
+  },
+  "07564": {
+   "sha256": "cf1538a99dd585cc7101fd73cbcb3037c1e185ba989199a5e6e0d4e0b0c5a252",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/construction-technology-as/"
+  },
+  "07565": {
+   "sha256": "6c76fa50cc7e7426f2dae2e08e54bfa00c8b55b117f55a647e9d3e38491bd4e0",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/"
+  },
+  "07566": {
+   "sha256": "75dcda8a7bdcdcb1e21b85ba5b8e64abda20ce8b468cea312bd02844fe093c56",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/construction-management-ca/"
+  },
+  "07591": {
+   "sha256": "58e640851d1d2c6aafa09277fe57cacf59e18523cc908daf622a0218c92f4f6e",
+   "url": "https://catalog.vvc.edu//degrees-certificates/child-development/site-supervisor-pre-school-ca/"
+  },
+  "10789": {
+   "sha256": "2deec0dafb286d3da6e4c6fba4b28a94b2103f8892d8057f6c46fffe9ed66d87",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/administrative-assistant-ca/"
+  },
+  "10791": {
+   "sha256": "2263ad61d66b1f3a81f47c3474cd9ef9f270ca6a01a1d9e8bcef1eb3e621ab8c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/computer-systems-ca/"
+  },
+  "10796": {
+   "sha256": "429437e25aa39e001d6d8edf7527d1c4cd87957ecb8c3d5ed30cde86e93c9ff1",
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/programming-ca/"
+  },
+  "10802": {
+   "sha256": "3bedbc0785a37df9abf2bd8cba9adb00e2a9bd6be41dace59a568e5485a8370c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/child-development/child-development-as/"
+  },
+  "11836": {
+   "sha256": "0bb96e0a093981e7f5267fe9f59db8f541c8af766dd6e6412e3a11e0de226921",
+   "url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/paralegal-studies-ca/"
+  },
+  "17587": {
+   "sha256": "9d78e0eff2b9b5f209c41a73451bdbd05f93e79d7dd17d674f4d225d3eefc547",
+   "url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-powerplant-technician-ca/"
+  },
+  "18594": {
+   "sha256": "352670012ba039b00cf1426477ca5c9613853a211f7a708de65f9e4d2fb2f00a",
+   "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-mathematics-science-emphasis-aa/"
+  },
+  "18595": {
+   "sha256": "744176f3aa90468b8db5a8ae5b1cb9a9fbd6d718f3d13f0d763a86e108fd9a6b",
+   "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-arts-humanities-emphasis-aa/"
+  },
+  "18596": {
+   "sha256": "e637d63f7f7e56d2c3b4679f7496a4a7c8be9861e7590ca53afcaf34f534cb59",
+   "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-social-behavioral-science-emphasis-aa/"
+  },
+  "20542": {
+   "sha256": "18a9a82c4d2416458b6d972e081bcf70b27e357a963108738cf96777b9cbc295",
+   "url": "https://catalog.vvc.edu//degrees-certificates/welding/welding-ca/"
+  },
+  "20543": {
+   "sha256": "84dc59f26585e04b2c3b915e4ee49ad2224013e58f9b659ef8c38a8509cb5ed9",
+   "url": "https://catalog.vvc.edu//degrees-certificates/allied-health/medical-assistant-ca/"
+  },
+  "20544": {
+   "sha256": "a1b50a755ceda8f227a878727ab6a9a367c407d4db02118ce99bbb51771f87f2",
+   "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/respiratory-therapy-ca/"
+  },
+  "20546": {
+   "sha256": "56a6e3f570185f78f66476ac2d3608a4d001c385b36b47ce4f33160aa54332f5",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-ca/"
+  },
+  "20547": {
+   "sha256": "744879cdfebefae9a4430e3fbfc0c4ca432d36dcae550eb88b8d5eb03839a36c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/restaurant-management/restaurant-management-ca/"
+  },
+  "20548": {
+   "sha256": "ccaa70d9da2e65543c1f4b2d3c1e8b184ecb4d887c777db419099776013ba839",
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/criminal-justice-ca/"
+  },
+  "31025": {
+   "sha256": "ee463ef8ba3d5a4371fbaa74b9647c3a1660c572766a80a19bc40d46182fa201",
+   "url": "https://catalog.vvc.edu//degrees-certificates/mathematics/mathematics-ast/"
+  },
+  "31245": {
+   "sha256": "64cb8a7c60d6bcbdc8c1561fa641eb701031a6342556834865440c5f3bb8ea62",
+   "url": "https://catalog.vvc.edu//degrees-certificates/sociology/sociology-aat/"
+  },
+  "31612": {
+   "sha256": "ce2c55ac990e1af2a9fd6ec9c9423489c0667db21a0d99c8a284d49e847520b5",
+   "url": "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/"
+  },
+  "31788": {
+   "sha256": "56bc804a85174abd58e24368f0cecef78e4525f435b2ae79ce947ac1f5a6f9a2",
+   "url": "https://catalog.vvc.edu//degrees-certificates/history/history-aat/"
+  },
+  "31802": {
+   "sha256": "03b57bd523fd78d9870fbe809ee8f72fc3b03a62de33cfecdc7f8ec3a47da464",
+   "url": "https://catalog.vvc.edu//degrees-certificates/child-development/early-childhood-education-ast/"
+  },
+  "33022": {
+   "sha256": "fc0018cfdfeabd906506dbf006358c912dad8b231537661591abbbf787cb0429",
+   "url": "https://catalog.vvc.edu//degrees-certificates/political-science/political-science-aat/"
+  },
+  "33026": {
+   "sha256": "ae63669bb766bf1265eab48ab0e31cc1f00f07ce4a5da2f2c526e07f45e40a9c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/psychology/psychology-aat/"
+  },
+  "35439": {
+   "sha256": "5e287ce71024c1d13e6a7adf554760e99bf898dcaa5ff97a67bad8ab81c12c3c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-maintenance-technology-as/"
+  },
+  "35831": {
+   "sha256": "3ec3b795258e71d416030280b82a0862fde5b0e2fe91b9e5e81847ff1561dbf9",
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/kinesiology-aat/"
+  },
+  "36761": {
+   "sha256": "16b8b72da58f0ac84bfac746b9fe3cc30cd05752116c0ebcff6846c464ff6ba5",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/"
+  },
+  "36806": {
+   "sha256": "8f2366325de4f719ecab2a645587006edc0afc8f9ec3c3c013a91d0ff1b24694",
+   "url": "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/"
+  },
+  "37000": {
+   "sha256": "5426d32dadd36eb0247af93c3a97622f1f0e47ef2458055bc6b2f333227a3bd3",
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/light-duty-diesel-technician-ca/"
+  },
+  "37006": {
+   "sha256": "7979b5f3b00c5bcbac6ac1d7b66e7a7500027500929e01c458c3de10cead17ea",
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-alternative-propulsion-ca/"
+  },
+  "37051": {
+   "sha256": "df40520b4a6b815e7cb0341cabb303e458a3a5bced8579129ef0cfee86709439",
+   "url": "https://catalog.vvc.edu//degrees-certificates/aviation/composite-aerospace-manufacturing-ca/"
+  },
+  "37076": {
+   "sha256": "d71f2fc835f47e349586acdd01a717ef0dac9a6ffda7b1926e2859acad44677c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-detailer-porter-ca/"
+  },
+  "37136": {
+   "sha256": "58937f293c9fcceb382ca9a63b294ca5d0c3e33922a193f890698df7f5eceef0",
+   "url": "https://catalog.vvc.edu//degrees-certificates/engineering/drafting-technician-ca/"
+  },
+  "37137": {
+   "sha256": "abcea393812d1f71215318c97acbfc80214f1e3d62947f88a503a8315bd6a5fe",
+   "url": "https://catalog.vvc.edu//degrees-certificates/architecture/architectural-cadd-technician-ca/"
+  },
+  "37138": {
+   "sha256": "30d9ef8d6ebc633e078408acc69c7bdf0d39d181d98bf5bf4f943531f1eae774",
+   "url": "https://catalog.vvc.edu//degrees-certificates/engineering/engineering-drafting-design-as/"
+  },
+  "37151": {
+   "sha256": "f52f350f0ac66d5aedbd4432141522a95a5228c485950edbc8bf2457c305e287",
+   "url": "https://catalog.vvc.edu//degrees-certificates/engineering/cadd-computer-aided-design-drafting-technician-ca/"
+  },
+  "37152": {
+   "sha256": "9c99ae05341afc2dd16e3956f458b6ed5a44cfdac52bdddac4c95fb272a148b9",
+   "url": "https://catalog.vvc.edu//degrees-certificates/architecture/architectural-drafting-design-as/"
+  },
+  "37290": {
+   "sha256": "8f1fa11325e408d889fe63602ae2ab2cc179fc74f0d17655b3b4f596be6f029f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/emergency-medical-technician-ca/"
+  },
+  "37411": {
+   "sha256": "aaef321e739edde0781b45a16c367bcf49faca291002a11125af647cc9a2fa6f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/paralegal-studies-aa/"
+  },
+  "37515": {
+   "sha256": "6c3c27968cb353edecabbe1891a000c7531d7e0f31e7cfd52376b21d4c700d19",
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/agricultural-plant-sciences-ast/"
+  },
+  "37565": {
+   "sha256": "db0c3e382cef55f843cb385a00e779449ef8d59ccf7826e8fa26b4f7dde6ce18",
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/unix-administrator-ca/"
+  },
+  "37582": {
+   "sha256": "528c3dcb4c8b00c5353ef98837d8c66bcca5a3261ae8128a60a89eb0e650b1eb",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/"
+  },
+  "37849": {
+   "sha256": "08b3759c9675d76eacb676aff750d63589e3b306e0395965a5dbad3ef4c7bdb8",
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/mysql-database-developer-ca/"
+  },
+  "38120": {
+   "sha256": "9b4fb74e203cfec9ba487aa6c4ee1ebb9454caa4169896715399ad5798549241",
+   "url": "https://catalog.vvc.edu//degrees-certificates/philosophy/philosophy-aat/"
+  },
+  "38121": {
+   "sha256": "0bf0ac38607d66545600c7efafa9eccb3622db080bbea2ee42e65ceb70d526ba",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/fire-and-emergency-medical-services-foundation-ca/"
+  },
+  "38197": {
+   "sha256": "82dc53fca04ebfb5bc135e889e3ea03dc0d1bd63e4d6d72376f257f9fbe4bf4e",
+   "url": "https://catalog.vvc.edu//degrees-certificates/physics/physics-as/"
+  },
+  "38235": {
+   "sha256": "c65c1c5d6520fa5cb54f558eccf562746598bdc303e2f6071d2fb30db23270c7",
+   "url": "https://catalog.vvc.edu//degrees-certificates/photography/photography-ca/"
+  },
+  "38352": {
+   "sha256": "33efa7492f162f8012c7906f85955a5255cf43717eba4db6731b7664328d001c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-electrical-specialist-technician-ca/"
+  },
+  "38353": {
+   "sha256": "570a1fc6c659b3d6e77495fe1ccfda3bc71d9330d39481f5f9965532ef467e73",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/"
+  },
+  "38354": {
+   "sha256": "9f23e1242c2d374f82efeb6647550b169f2223327f415dbc808943b03793df6f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-engine-performance-specialist-ca/"
+  },
+  "38366": {
+   "sha256": "a6adc0104efa26e1759748a663951f294381b8a015bb966141542ce39d0204e3",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-3-ca/"
+  },
+  "38368": {
+   "sha256": "c26877059bf6a89ab5e030c410bed4da01b548fde3f2cb2c9e75b0f34cf1a283",
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-engine-specialist-ca/"
+  },
+  "38502": {
+   "sha256": "5dd0ba94a3da686569bbe6fad843d986e8a665158b0f57ec06ec91b72ce70651",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-internship-ca/"
+  },
+  "38503": {
+   "sha256": "1d4921c7834a4db2c406ade2c5c0fa27a85fc7b7a9bf0f18c78c3239c536c704",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-1-ca/"
+  },
+  "38516": {
+   "sha256": "fbe0a55767678410f5a3947b06e040984ef1f9548eaa5ef5aae4dea0906ac002",
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/plant-science-sustainable-agriculture-ca/"
+  },
+  "38569": {
+   "sha256": "b3d6175bd9f7bf21a6cc7899baeabb4a3d6439c97e849d3c3a7d8eabde0c1679",
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/intermediate-firefighter-ca/"
+  },
+  "38570": {
+   "sha256": "47d37892fd9f81946803b84b3e4511c34993fa157a91988b63176444a20ef5ca",
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/all-risk-firefighter-ca/"
+  },
+  "38574": {
+   "sha256": "77a4f9c640c456e89180d7d4f77c343dcaf2c8c891d8d0ce44b12ea1b39fba1e",
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/environmental-horticulture-landscaping-ca/"
+  },
+  "38577": {
+   "sha256": "81ab1d8ad786083ac3d7da574c33a73c78c3e14ff23bc77ab906d9c37ea3d10f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/wildland-firefighter-ca/"
+  },
+  "38779": {
+   "sha256": "1161cfaf91f621b3b8009c6db2b7da01225deb329a1eefb3262a6f641c54d165",
+   "url": "https://catalog.vvc.edu//degrees-certificates/psychology/applied-developmental-psychology-ca/"
+  },
+  "38843": {
+   "sha256": "292ec6f468a2bfae249fe5e54e25793cb1ff155ad0293b40a8139a45af3f3f30",
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-media-animation-motion-graphics-maya-ca/"
+  },
+  "38844": {
+   "sha256": "5ea7d2736f850e1a8bb6a007fe506089fb421f2b7b6368067aab267897634864",
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-media-animation-motion-graphics-3ds-max-ca/"
+  },
+  "38849": {
+   "sha256": "d25c1aab96d77aef32e9be898a714a7d23feca02d535edc0b3aed088711148e6",
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/animal-science-specialist-ca/"
+  },
+  "38850": {
+   "sha256": "df19600fbde45850b897c6a129b629b2b1f79c94cd7ba3a3eeb1a8c59392027d",
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/equine-science-specialist-ca/"
+  },
+  "39101": {
+   "sha256": "a1813cb77cd1179af9cef8387e5078a4b1d92a6386ed65e34a54b8d4763c6385",
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/ecological-restoration-ca/"
+  },
+  "39103": {
+   "sha256": "c3ec34747825496ff2a885d473c4c02a33a92e3adce1f42c8a7d4b4047ee9fe7",
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/natural-resource-environmental-technology-ca/"
+  },
+  "39450": {
+   "sha256": "1bbea590fdf3f8c69fff16fe49a3563c288242d1ce951d3d1da56be52ae9e4f1",
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/athletic-trainer-aide-i-ca/"
+  },
+  "39681": {
+   "sha256": "f026cbad70e99f7e0afa27d025d93cd4d00a89b1a3bd8a0b2757c3925ad801ef",
+   "url": "https://catalog.vvc.edu//degrees-certificates/global-studies/global-competency-ca/"
+  },
+  "39915": {
+   "sha256": "2bfb976c3b98a972baab44f6d09c514b8f84f26a2560165aabaec9554f122cb0",
+   "url": "https://catalog.vvc.edu//degrees-certificates/religious-studies/religious-studies-aa/"
+  },
+  "40052": {
+   "sha256": "3a6bf4c962dc70fed8b5f10c355c2911769c1caa93b56bdf6289bf324789d5c0",
+   "url": "https://catalog.vvc.edu//degrees-certificates/health/public-health-science-ast/"
+  },
+  "40093": {
+   "sha256": "3267c73055e1ac0b8aa0f2cd05f027ddf5c4f1c3d6fb0ab6e89356ef7f8c238b",
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology-dance/dance-teacher-i-ca/"
+  },
+  "40161": {
+   "sha256": "aeaae530b1d48c791a9fd7f92ecc6f85498e416e4ae660fe6ef1db1ae1012256",
+   "url": "https://catalog.vvc.edu//degrees-certificates/health/nutrition-dietetics-ast/"
+  },
+  "40891": {
+   "sha256": "fd2b87a83ea89f40bd8a03c4096cf7e1a0894e3b940dc7b6674d409b2d107ef6",
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology-dance/dance-aa/"
+  },
+  "40894": {
+   "sha256": "b331410c72d03b76c4c55757d917f54658c039094353d38e37c7a91625a72420",
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/athletic-trainer-aide-ii-ca/"
+  },
+  "40909": {
+   "sha256": "cc2a1ca7886a818af4e55ffd8a27aa3b87dd23391bb9b36a4b9a0ce6d1e18cbb",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/advanced-life-support-provider-ccn/"
+  },
+  "40910": {
+   "sha256": "18789c706be42bab97bb075578a5cfa812b52e3219cdf3cc7293c40e5e0c062f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/basic-life-support-provider-ccn/"
+  },
+  "40924": {
+   "sha256": "9e172b07bccb6dd054b759a69af7cad30597467d7f06da29d56abc8ec08739cb",
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/correctional-science-ca/"
+  },
+  "41089": {
+   "sha256": "449b8ecb27218fb48dec449e0ed8a0141800f1327194e45d316cfa39f55d407f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/biological-science/biology-ast/"
+  },
+  "41095": {
+   "sha256": "e002c62f55066626f6b6cf3d9d061a29e40e7de68ef00eeecbf6f82fbb2867ae",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-framing-carpentry-ca/"
+  },
+  "41320": {
+   "sha256": "b7e8bfb9056e755ee1af868ffe3213433fe6d5576ad60ca874c2ab06561a5e03",
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/introduction-automotive-drivability-theory-ca/"
+  },
+  "41322": {
+   "sha256": "1af0be1e0e66ccee5fe7490e02214defb3b2b35781dfbeac06f1445791b957fe",
+   "url": "https://catalog.vvc.edu//degrees-certificates/global-studies/global-studies-aat/"
+  },
+  "41476": {
+   "sha256": "0604a2966e2a620c260cc8f1bc5fd32c2e0f61221c1867979089c9dff1bc9a28",
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/computer-science-ast/"
+  },
+  "41554": {
+   "sha256": "7e49b5d0605facfc7b3b342947a92c5433bba50c0341e89a608973f2be678133",
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/coaching-ca/"
+  },
+  "41760": {
+   "sha256": "571ff8d5e69b3da705a0956c08d503bb57b9b14f981bd900b556a0c6c505bec1",
+   "url": "https://catalog.vvc.edu//degrees-certificates/entrepreneurship/entrepreneurship-ca/"
+  },
+  "41784": {
+   "sha256": "528c3dcb4c8b00c5353ef98837d8c66bcca5a3261ae8128a60a89eb0e650b1eb",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/"
+  },
+  "41786": {
+   "sha256": "98aea949de42b07737f7435346e9e555a68fb81ce2a02dd127b2b42808bb9a9d",
+   "url": "https://catalog.vvc.edu//degrees-certificates/art-design/art-history-aat/"
+  },
+  "41981": {
+   "sha256": "0f98705f08d26f2cf75c8248e591e6a3d7da8e236b5bc1a538df6eb41c4bc6a6",
+   "url": "https://catalog.vvc.edu//degrees-certificates/art-design/studio-arts-aat/"
+  },
+  "41994": {
+   "sha256": "fd36e5c51bff270f7712b4ddeb28e420885c2317f1d8f85a5afbb44b49791a0e",
+   "url": "https://catalog.vvc.edu//degrees-certificates/adult-home-economics/apparel-construction-ccn/"
+  },
+  "42092": {
+   "sha256": "3faeab5c568ec2630f652a016687b68eea0cc98536909911799cd481e1f7d468",
+   "url": "https://catalog.vvc.edu//degrees-certificates/american-sign-language/american-sign-language-ca/"
+  },
+  "42093": {
+   "sha256": "25b3e8f0e636761c786dd0f08925a806a21a1c4d629aa0dfab37c99e65a1c566",
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/law-enforcement-module-ii-basic-course-ca/"
+  },
+  "42099": {
+   "sha256": "db713830c185708854b691976700e6bfa279b52d4705bd0f877eb5718df71b83",
+   "url": "https://catalog.vvc.edu//degrees-certificates/adult-home-economics/textile-measurement-production-ccn/"
+  },
+  "42339": {
+   "sha256": "1f337ff6a1da8483033f61eb0cc3b7493dddea7142a333fe32d88a52932c6dc3",
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/police-technician-specialist-ccp/"
+  },
+  "42419": {
+   "sha256": "63e1e356393d930f764ae3730ce502a941eaa801637ed080e8732c7fa857dabe",
+   "url": "https://catalog.vvc.edu//degrees-certificates/commercial-drivers-license/commercial-driver-training-ccn/"
+  },
+  "42596": {
+   "sha256": "9f950eab6e955c465f0c89cc7a5352cf814a0571022602e13860b9207be6d315",
+   "url": "https://catalog.vvc.edu//degrees-certificates/health/community-mental-health-ccn/"
+  },
+  "42603": {
+   "sha256": "a566777e773a8a4b0614c2e2ec20891d676bb0277bceaec44e86452765d65b35",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/office-services-ca/"
+  },
+  "42656": {
+   "sha256": "d327c1ab40b1e8aea7b5396c522ee390f23e7f5623789fc79bd990f2635fca47",
+   "url": "https://catalog.vvc.edu//degrees-certificates/ethnic-studies/ethnic-studies-ca/"
+  },
+  "42712": {
+   "sha256": "1ba2b1cae1a60cf8113b4350480a3a0d6a93c98655fa022ae412f6814be04cb9",
+   "url": "https://catalog.vvc.edu//degrees-certificates/sociology/social-justice-studies-aat/"
+  },
+  "42728": {
+   "sha256": "ab482047df67a0e97297a0d3739e09ee2c847ad902168a503478226bd8a476da",
+   "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-success-ccn/"
+  },
+  "42739": {
+   "sha256": "bae690485812bf1e1dadc4c0e9c6443d06cb1a40492697c479f9538c5ce3f238",
+   "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-preparation-ccn/"
+  },
+  "42740": {
+   "sha256": "b9657e2edd7f7bdce491e1334d182206c33075238bb13fae179fa06f80a232a6",
+   "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-industry-exploration-ccn/"
+  },
+  "42750": {
+   "sha256": "92a596e19e1339bda03b1423075a9caf288dfaf233bd87c41abcb0010ae61ea4",
+   "url": "https://catalog.vvc.edu//degrees-certificates/athletics/athletics-ca/"
+  },
+  "42760": {
+   "sha256": "034ffcfe589a8e002fc3aabc95046bc846db58a426c895e41a64f0b1b96b6183",
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/law-enforcement-module-iii-basic-course-ca/"
+  },
+  "42802": {
+   "sha256": "788f40eedc72c7a59dbc215901f170a35f30ea004ed06a9e98f6890843fa5c59",
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/3d-animation-3ds-max-as/"
+  },
+  "42803": {
+   "sha256": "f85ce30a5f64d5fbb8107f7a2d7a6063befcce6d463aa7126b21a71e43fc5cc1",
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/3d-animation-maya-as/"
+  },
+  "42857": {
+   "sha256": "53a54e09fef1e856ed4fa4334e27c7f2c48ead39b34e80a9f183ad0d614d64ab",
+   "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-1-low-beginning-english-language-skills-ccy/"
+  },
+  "42907": {
+   "sha256": "5a827fb6fb918ba41a19d8860401b3a32680cc3f60dfebc73aeefacf48d3ec16",
+   "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-3-low-intermediate-english-language-skills-ccy/"
+  },
+  "43176": {
+   "sha256": "9c02f1d88dca3b038d08aa2994ac1aa0b6a5a03048c01cb8070eb340764b59cf",
+   "url": "https://catalog.vvc.edu//degrees-certificates/electronics-computer-technology/electronics-technician-ii-ca/"
+  },
+  "43177": {
+   "sha256": "1082a0f30f724adb7057929a8fd7bde761fd0d153e0eaa1af831454d790b634a",
+   "url": "https://catalog.vvc.edu//degrees-certificates/electronics-computer-technology/electronics-technician-I-ca/"
+  },
+  "43294": {
+   "sha256": "f24ed12433193afeda3481d13110ec910f2baecf4f82f15eef86d499e70582e0",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/manicuring-academy-ccn/"
+  },
+  "43295": {
+   "sha256": "b202aa38b8f9c3eb7ba893554c0f4690ae54ae324dcabd076ddc53d660b2bf0a",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/barber-crossover-ccn/"
+  },
+  "43296": {
+   "sha256": "c55cd5e95853ddc3c87dae8f88f091a8bff34023e1900ac6b143a446fa669eb7",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/esthetician-academy-ccn/"
+  },
+  "43297": {
+   "sha256": "81dff47e21308d91d7f0df7b050d8a6a871544d559e63a15540b947a0ed13d20",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/introductory-cosmetology-ccn/"
+  },
+  "43298": {
+   "sha256": "afcdad4d7ec2fd0c778de4f1d9f466973c59124e39e02f9003d2f8ac799b1c63",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-barbering-ccn/"
+  },
+  "43299": {
+   "sha256": "ecbfc47a7b7366565d1103105b15afbb8476eed733e6987977a3b8bbc3d7b877",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/introductory-barbering-ccn/"
+  },
+  "43306": {
+   "sha256": "404854c0262747b3c5d3b87ae8fd6b3aba7d6b1091d464e76baf9e4286151683",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-cosmetology-ccn/"
+  },
+  "43307": {
+   "sha256": "d7351fefc0bf83d94a0ede06348fe69ae2cd21d443f57c6a81be31ce9825dfbd",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/intermediate-cosmetology-ccn/"
+  },
+  "43329": {
+   "sha256": "04647041433907fe3a36b1094b7b897605b8ed86ac737ca21bd217193d36a7a8",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/intermediate-barbering-ccn/"
+  },
+  "43449": {
+   "sha256": "eaae5f8880113bf82c1680de2ddd4b5791eb121df884416488dabdd456a4c2ed",
+   "url": "https://catalog.vvc.edu//degrees-certificates/manufacturing-logistics/forklift-i-ii-iii-ccn/"
+  },
+  "43568": {
+   "sha256": "2d3a989e6e83ea334d4b9454f261e45d8dcbcc414bb0c6bd0be8155a0ef9ef2e",
+   "url": "https://catalog.vvc.edu//degrees-certificates/manufacturing-logistics/forklift-iv-v-ccn/"
+  },
+  "43569": {
+   "sha256": "d015f00176dd976465a0710d348714565cc14d1b0024ee6393769c217ff2c97f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/fitness-specialist-personal-trainer-ca/"
+  },
+  "43590": {
+   "sha256": "eb069df79c93b4cda3db99ea80f542a1873e74ba51a4f3d2f64689df32e60aa7",
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/hairstylist-academy-ccn/"
+  },
+  "43596": {
+   "sha256": "dad847eb246a4d7be1c0a94f7f115c9e73ba849e38bc31acc49dabb952cb495f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/health/community-health-worker-ccn/"
+  },
+  "43736": {
+   "sha256": "853c11f3c89c0a5dab0c4c28263b81ba69a25193e8475e02d588a5c51219b10a",
+   "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-5-advanced-english-skills-ccy/"
+  },
+  "44111": {
+   "sha256": "a3da3a11c5be794d59cfaae59727921e8b65e378739d8bc3630b6725bd1f072f",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-career-professional-ca/"
+  },
+  "44113": {
+   "sha256": "2533e85e2427d8ea17917440df8efb39bca2fb5cce0fbc8f7d54878ac7bb0ac4",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-management-professional-ca/"
+  },
+  "44114": {
+   "sha256": "2b112c58c8e80298ea920107c749f7c1d3761ba8bd8d69d21f2b59656dc37550",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-sales-professional-ca/"
+  },
+  "44115": {
+   "sha256": "0e2aa2c37d600f0ba4fb563c8705e28795fb55c9147cfce27e4b73f589a4de63",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-business-as/"
+  },
+  "44148": {
+   "sha256": "6037be19dd15fabdc2328436d5cca1fc5c36aa529f8db2cc9944e21769a4cffd",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/trauma-life-support-provider-ccn/"
+  },
+  "44149": {
+   "sha256": "721aa671cded432bbaa8dbe205053c4b4bfeee8d728bca6e28a04f7ceb074b63",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/pediatric-life-support-provider-ccn/"
+  },
+  "44151": {
+   "sha256": "1ccc364b8c6885f7a93a9366e9980465a7ca33c7676e0a5549146e206580eb17",
+   "url": "https://catalog.vvc.edu//degrees-certificates/guidance/new-student-onboarding-ccy/"
+  },
+  "44214": {
+   "sha256": "e60700062b0f61f5c80e16500f913d81141685b174c17c94c0034234cbb29e9c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-4-high-intermediate-english-skills-ccy/"
+  },
+  "44287": {
+   "sha256": "ce2c55ac990e1af2a9fd6ec9c9423489c0667db21a0d99c8a284d49e847520b5",
+   "url": "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/"
+  },
+  "44585": {
+   "sha256": "81849305c9c1c91855fe9d8cd8fc5c4a2775e074e0465d7388ec8a92d3ca1006",
+   "url": "https://catalog.vvc.edu//degrees-certificates/biological-science/forensic-science-biology-concentration-ca/"
+  },
+  "44842": {
+   "sha256": "cae14d2db4e8aa9f0623463435186680dbda8e781d229834875d254930767d89",
+   "url": "https://catalog.vvc.edu//degrees-certificates/art-design/two-dimensional-studio-arts-ca/"
+  },
+  "44878": {
+   "sha256": "bb94246c77cb6e43654ed60be38bae9bc370a1f8245966ec299cbc939930a84a",
+   "url": "https://catalog.vvc.edu//degrees-certificates/adapted-physical-education/adapted-fitness-certification-ccn/"
+  },
+  "45067": {
+   "sha256": "b8c8f87228677fcffaa5bce241a3e463b03a93e84f0ca66b4a8cb7b282e9c3d4",
+   "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/bachelor-science-respiratory-therapy-bs/"
+  },
+  "45081": {
+   "sha256": "e962f6d795b0233fdb30b891a4bd1c444641b6f8cda86972a793dcc50169facf",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/heartsaver-first-aid-cpr-aed-provider-ccn/"
+  },
+  "45082": {
+   "sha256": "a9632b1dc7988c547bc631e631fb55e8d24efb1cc399d9367167583630bd3733",
+   "url": "https://catalog.vvc.edu//degrees-certificates/physical-therapy-services/physical-therapy-aide-ccn/"
+  },
+  "45110": {
+   "sha256": "c21072a945d0cb540871148641ed0dcc2b1be4e67356e130874ee37d17376da4",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/basic-bleeding-control-provider-ccn/"
+  },
+  "45140": {
+   "sha256": "dbbaa8d04a44e6f5b25d8c19bb3b08133796b91968c0637854a91d99701d32f4",
+   "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/case-management-cardiopulmonary-focus-ca/"
+  },
+  "45628": {
+   "sha256": "c48bf16cad2c17e8fd2d0254f0abb80a23eec4565eb8be15a262f9dddf7d35ee",
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/expanded-animation-technician-3ds-max-ca/"
+  },
+  "45661": {
+   "sha256": "7c0dc7afa530d4519bf22ecbb9ad89934c5c63e63e4b6b272c079a90dbca0622",
+   "url": "https://catalog.vvc.edu//degrees-certificates/theater-arts/theatre-arts-aat/"
+  },
+  "45663": {
+   "sha256": "2f9655268f8df98ad6851b0e3dddeb5af254b68f7d2c56f096551d1e10b7a7f5",
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-animation-artist-maya-ca/"
+  },
+  "45677": {
+   "sha256": "925a72f30e5b77cca38292dc699bacab224ca4dfd0b64363557a50f39a5dc486",
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/expanded-animation-technician-maya-ca/"
+  },
+  "45678": {
+   "sha256": "9c8a3d0374096202a6bc637f5243dded783aedc1bba1581625741173babf52e6",
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-animation-artist-3ds-max-ca/"
+  },
+  "45844": {
+   "sha256": "015a4f1b1993596409d582ec841a480b623f4b9c708115798f67bf81b4eb8992",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-electrician-technician-ca/"
+  },
+  "45845": {
+   "sha256": "b5668e517742a43d52a18255ff14e459a5cde0f232126f2e962a9f8438accb1d",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-heating-ventilation-air-conditioning-refrigeration-hvacr-service-technician-ca/"
+  },
+  "45880": {
+   "sha256": "4546266df49886cd43085e29fda466d6ac0a69fbf220fe761746b1badbb85f38",
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/critical-care-paramedic-provider-ccn/"
+  },
+  "45906": {
+   "sha256": "fcc9b701039adc7331c4b00124a58f21a4214d5d1a46491aea3b62f4e7cd9711",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/plumbing-technician-ca/"
+  },
+  "45916": {
+   "sha256": "d2f5ffdb61b5c206c7889f7e50dde2bebd21199ad12ee391ba56b8cfceb6062c",
+   "url": "https://catalog.vvc.edu//degrees-certificates/human-services/social-work-and-human-services-assistant-ca/"
+  },
+  "45921": {
+   "sha256": "1d28c0515151348ec5ca011732088de6fa6598ca78b58eeca6b8dbcc8b3ba0ec",
+   "url": "https://catalog.vvc.edu//degrees-certificates/sociology/sociological-foundations-ca/"
+  },
+  "46064": {
+   "sha256": "ddbe159dc100653ad030588ff074ac2879668946296d54c9c4cc4d3bb8c19d15",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/photovoltaic-technician-ca/"
+  },
+  "46065": {
+   "sha256": "e0b0129fc486fd19a4a938c10c58ce7d6ba025781be2c70d5b1e602c5babff5a",
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-masonry-concrete-ca/"
+  },
+  "46076": {
+   "sha256": "23f22c0838a15f7d06e6b00c5ae0e89e6be52cadb83f4667c022cc69ddce35b6",
+   "url": "https://catalog.vvc.edu//degrees-certificates/pharmacy-technician/pharmacy-principles-ccn/"
+  },
+  "46577": {
+   "sha256": "2e8da7f0ae5453588fb16e668e47f876c976c27198c12ac6dbd9ba8d45e671c0",
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/management-as/"
+  }
+ },
+ "run": "44515659606"
 }

@@ -1,4 +1,4 @@
-{"schema":1,"college":"Norco College","slug":"norco","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Norco College","slug":"norco","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"30061","title":"Business Administration: Management Concentration","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"course_added","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5148"},
 {"cn":"40293","title":"Beginning American College English","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38743","title":"Computerized Numerical Control Operator","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

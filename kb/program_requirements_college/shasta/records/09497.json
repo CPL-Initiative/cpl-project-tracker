@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Administration of Justice",
  "award": "A.S. Degree",
- "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=47",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10789,
+  "input_tokens": 12171,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10789,
-    "output_tokens": 2075,
+    "input_tokens": 12171,
+    "output_tokens": 2122,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,30 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 2075,
+  "output_tokens": 2122,
   "output_tokens_details": {
-   "thinking_tokens": 725
+   "thinking_tokens": 579
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08466,
- "ms": 16599,
- "seconds": 17.0,
+ "cost_usd": 0.09112,
+ "ms": 17482,
+ "seconds": 20.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 18,
    "listed": 18,
-   "share": 0.833,
-   "missing": [
-    "ADJU10",
-    "ADJU15",
-    "ADJU16"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -65,26 +61,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    21.0,
-    21.0
+    30.0,
+    30.0
    ],
    "stated": [
     30.0,
     30.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-21.0; the catalog states 30.0-30.0"
-   ],
+   "why": [],
    "degree": {
-    "pass": false,
-    "status": "unequal",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     54.0,
-     54.0
+     63.0,
+     63.0
     ],
     "stated": [
      60.0,
@@ -95,9 +89,8 @@
      21.0,
      21.0
     ],
-    "why": [
-     "the blocks and general education sum to 54.0-54.0; the catalog prints 60.0-60.0 for the degree"
-    ]
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -105,13 +98,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -122,11 +115,11 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "ASSOCIATE IN SCIENCE DEGREE REQUIREMENTS",
+   "section_heading": "Administration of Justice — Associate in Science: SC Program: AS.1001",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -147,12 +140,20 @@
     "max": 21
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Explain the evolution of the criminal justice system, its objectives, role and trends.",
+    "Describe common California criminal law concepts, Constitutional Rights, and the core principles that peace officers must follow.",
+    "Display their knowledge of evidence collection, chain of evidence, submission of evidence, and legal requirements for the handling of evidence.",
+    "Demonstrate their knowledge of the California court criminal system, law enforcement report writing, and court testimony.",
+    "Illustrate the process of a fundamental criminal investigation and the follow up process that can lead to submission to the district attorney, court system, and corrections.",
+    "Identify issues and strategies that pertain to police relations with a diverse community."
+   ],
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
-    "name": "Required courses (heading cut off at page break)",
+    "name": "CORE COURSES",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -161,6 +162,27 @@
      "max": null
     },
     "courses": [
+     {
+      "code": "ADJU 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "ADJU 17",
       "units": 3,
@@ -282,27 +304,46 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ADJU 10",
-    "why": "not in the A.S. section shown; likely on preceding page (cut off); named only in the General Studies emphasis section"
-   },
-   {
-    "code": "ADJU 15",
-    "why": "not in the A.S. section shown; likely on preceding page (cut off); named only in the General Studies emphasis section"
-   },
-   {
-    "code": "ADJU 16",
-    "why": "not in the A.S. section shown; likely on preceding page (cut off); named only in the General Studies emphasis section"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The text begins mid-section on page 48: the program heading, description, outcomes, careers and the start of the required course list (likely including ADJU 10, 15, 16) are on page 47, which is not in the text. Visible required courses total 15 units plus 6 restricted elective units = 21, versus the printed Major 30; about 9 units of required courses are cut off.",
-   "Section heading recorded is the degree requirements summary heading; the actual program heading is not in the text.",
-   "Additional Electives 12 is marked '*Number will vary depending on GE units that double-count.'",
-   "ADJU 59 and SOC 2 are marked as usable for General Education requirements.",
-   "The 'Public Safety and Services General Studies – 18 Unit Emphasis' (AS.1503) section that follows is a different award and was not recorded."
+   "Read only the Associate in Science (AS.1001) section; the AS-T (AS-T.1003) and General Studies Public Safety emphasis (AS.1503) sections on the same page were ignored.",
+   "Summary table prints Major 30, General Education (SCGE) 21, Additional Electives 12* (*number will vary depending on GE units that double-count), Degree Total 60; the 12 elective units recorded as degree_elective_units.",
+   "ADJU 10, ADJU 59 and SOC 2 are starred as possibly fulfilling General Education requirements.",
+   "Catalog prints ADJU 46 as 'Narcotic and Drug Use' (closed list: 'Narcotic and Drug Abuse') and ADJU 26 as 'Courtroom Testimony/Report Writing'.",
+   "Core courses span a page break (pages 47-48); list appears complete."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": "44513230805",
+ "catalog_year": "2026-2027",
+ "source_sha": "2fe52a3128a7c8bd",
+ "source_codes": [
+  "ADJU10",
+  "ADJU106",
+  "ADJU15",
+  "ADJU16",
+  "ADJU17",
+  "ADJU18",
+  "ADJU20",
+  "ADJU21",
+  "ADJU22",
+  "ADJU23",
+  "ADJU26",
+  "ADJU30",
+  "ADJU40",
+  "ADJU45",
+  "ADJU46",
+  "ADJU59",
+  "CIS1",
+  "SOC2"
+ ],
+ "source_coverage": 1.0,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 30, the major total the catalog prints; the major and general education sum to 63 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

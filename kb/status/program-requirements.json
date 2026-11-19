@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-19T09:27:50Z",
-  "session": 683,
-  "moniker": "SkyNuthatch",
+  "written_at": "2026-11-19T12:43:31Z",
+  "session": 684,
+  "moniker": "SkyVerdin",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_684_handoff.md",
+  "handoff": "docs/session_685_handoff.md",
   "next_step": {
-    "title": "Land tonight's harvest work, then rebuild the display and label the re-read records again",
-    "text": "The next session applies tonight's memory rows, lands the one pull request that carries tonight's harvest work once its test passes, rebuilds what CPL Pathways and Sierra show, and labels again the re-read records whose gap labels the reread replaced. Then the reread plan's next ten colleges."
+    "title": "Land tonight's harvest work, then build the program pages once",
+    "text": "The next session applies tonight's memory rows, merges the named-gaps labels and the ten colleges' rereads in order, then rebuilds what CPL Pathways and Sierra show, once, with every record of the night, and runs the gap census. Then the two open items on the keep-the-better step with COBIx, and the reread plan's next ten colleges."
   },
   "calls": [
     {
@@ -338,6 +338,34 @@
   },
   "changes": [
     {
+      "at": "2026-11-19T12:38:00Z",
+      "text": "The second reread batch finished at ten colleges: 87 program rows replaced by a better read and 42 inserted, from 18,312 rows to 18,354, every load reporting no error; the filed run costs came to $16.08."
+    },
+    {
+      "at": "2026-11-19T12:22:00Z",
+      "text": "Crafton Hills' course outlines loaded: 1,123 rows, 557 learning outcomes and 566 course objectives, read from all 566 pages, with no error."
+    },
+    {
+      "at": "2026-11-19T12:02:00Z",
+      "text": "The rebuild of what CPL Pathways and Sierra show was held for the next session, so that one build carries every record collected tonight."
+    },
+    {
+      "at": "2026-11-19T11:58:00Z",
+      "text": "The step that keeps the better of a filed record and its re-read now reads the checked records first, holds a live record the repository lacks for a person, and takes only five-digit control numbers (PR 3547)."
+    },
+    {
+      "at": "2026-11-19T11:34:00Z",
+      "text": "Two re-read program records were labeled again with their named gap: Santa Rosa Junior 44788 prints no units, and City College of San Francisco 41049 prints figures that differ from the catalog (PR 3548)."
+    },
+    {
+      "at": "2026-11-19T11:08:00Z",
+      "text": "College of the Siskiyous' course outlines loaded: 366 rows, 247 learning outcomes and 119 course objectives, read from all 315 pages, with no error."
+    },
+    {
+      "at": "2026-11-19T10:48:00Z",
+      "text": "Last night's rereads at 15 colleges merged (PR 3544) once two tests on the main branch were repaired: five new issuers registered, and City College of San Francisco's COMM for CMST course alias kept."
+    },
+    {
       "at": "2026-11-19T09:05:04Z",
       "text": "Rereads and loads at 15 colleges: 133 program rows replaced by a better read and 72 inserted, from 18,240 rows to 18,312. Every load reported no error; the filed run costs came to $25.20."
     },
@@ -428,34 +456,6 @@
     {
       "at": "2026-11-17T14:30:00Z",
       "text": "Six colleges read again so that programs listed without their own requirements take back the catalog page another program had been read from: Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore. 22 more programs now have complete requirements."
-    },
-    {
-      "at": "2026-11-17T10:40:00Z",
-      "text": "Norco's Music Industry Studies: Performance degree and certificate now add up: each ensemble option counts its courses the number of times its own heading says, so every option comes to its printed 8 units."
-    },
-    {
-      "at": "2026-11-17T09:03:00Z",
-      "text": "Three Riverside City music certificates now add up: Piano Performance, Jazz Performance and Music Performance print a course once for each semester it is taken, and the reading now counts it that many times. Norco's Music Industry Studies: Performance counts its two repeated applied music courses twice."
-    },
-    {
-      "at": "2026-11-17T06:52:00Z",
-      "text": "The RCCD general education page read: Area 7, Lifelong Learning and Self-Development, is 2 units, and basic training counts 2 of its 5 units there."
-    },
-    {
-      "at": "2026-11-17T06:46:00Z",
-      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
-    },
-    {
-      "at": "2026-11-17T03:36:00Z",
-      "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
-    },
-    {
-      "at": "2026-11-17T03:28:00Z",
-      "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
-    },
-    {
-      "at": "2026-11-17T03:19:00Z",
-      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
     }
   ],
   "headline": [
@@ -710,6 +710,12 @@
       "active": 20282,
       "complete": 14887,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-19",
+      "active": 20282,
+      "complete": 14982,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -718,8 +724,8 @@
     "at": "2026-11-17T15:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-18",
-    "gaps": 3225,
+    "day": "2026-11-19",
+    "gaps": 3365,
     "parts": {
       "links": {
         "catalog": [
@@ -736,25 +742,25 @@
         ]
       },
       "roep": [
-        19978,
+        20118,
         20282
       ],
       "coci": [
-        16753,
+        16849,
         20282
       ],
       "outcomes": {
         "slo": [
-          15699,
+          17246,
           88736
         ],
         "plo": [
-          16753,
+          16849,
           20282
         ]
       },
       "careers": [
-        15743,
+        15839,
         20282
       ]
     }

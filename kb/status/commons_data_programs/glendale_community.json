@@ -1,4 +1,4 @@
-{"schema":1,"college":"Glendale Community College","slug":"glendale_community","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Glendale Community College","slug":"glendale_community","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"44488","title":"Advanced ESL: STEM Pathway","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"course_added","lever":"reconcile_steps","url":"https://catalog.glendale.edu/programs/AESTEM-C/completion-requirements-zaZdl"},
 {"cn":"45068","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.glendale.edu/programs/CALGETC/completion-requirements-zaZdl"},
 {"cn":"18640","title":"Liberal Arts: Social and Behavioral Sciences Emphasis","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.glendale.edu/programs/SBS-AA/completion-requirements-zaZdl"},
