@@ -692,9 +692,14 @@
    "not_available": 3
   },
   "2026-11-18": {
-   "usd": 0.0,
-   "sessions": 0,
-   "not_available": 4
+   "usd": 270.0,
+   "sessions": 3,
+   "not_available": 1,
+   "tags": {
+    "collection": 77.0,
+    "curation": 17.0
+   },
+   "untagged_usd": 176.0
   },
   "2026-11-19": {
    "usd": 161.56,
