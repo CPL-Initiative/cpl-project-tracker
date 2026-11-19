@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Music",
  "award": "A.A. Degree",
- "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=175",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12911,
+  "input_tokens": 13025,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12911,
-    "output_tokens": 8076,
+    "input_tokens": 13025,
+    "output_tokens": 7856,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 8076,
+  "output_tokens": 7856,
   "output_tokens_details": {
-   "thinking_tokens": 2164
+   "thinking_tokens": 1960
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.21316,
- "ms": 59654,
- "seconds": 60.1,
+ "cost_usd": 0.20922,
+ "ms": 57608,
+ "seconds": 58.0,
  "parts": null,
  "error": null,
  "score": {
@@ -94,7 +94,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
@@ -137,7 +137,12 @@
     "utilize the piano keyboard to demonstrate and apply musical concepts.",
     "demonstrate a broad-based understanding of the historical and aesthetic development of music."
    ],
-   "careers": []
+   "careers": [
+    "music performance",
+    "composition/arranging",
+    "publishing",
+    "education"
+   ]
   },
   "blocks": [
    {
@@ -470,8 +475,8 @@
     "minimum": 4,
     "option_group": "Concentration",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 4,
+     "max": 4
     },
     "courses": [
      {
@@ -968,15 +973,80 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Section read: 'music (AA) requirements - 35 units' on pages 176-177 (running head 'Music (AA)'); the AA program description likely sits on page 175, which is not in the text, so careers could not be read for the AA; the career list on page 177 belongs to the Music (AA-T) section and was not used.",
-   "'Music AA Requirement - complete 15 units' covers the first core block (8 units printed) plus Music Survey (3) and Piano Proficiency (4); the 15 is not recorded as a stated total of the first block.",
-   "'Music AA Concentrations - complete 20.00 units': the student completes one of three concentrations (Instrumental, Vocal, Jazz Studies), each printed as 20.00 units. All sub-blocks carry option_group 'Concentration'; the blocks sharing a concentration prefix together form one option, not alternatives to each other.",
-   "Units are not printed beside courses in the survey, piano and concentration lists, so course units are null there.",
-   "'4 semesters' Performance Ensemble and Applied Music blocks recorded as choose_courses 4; Applied Music courses may be repeatable (e.g., the Vocal Applied Music block lists only MUSP 40.2 for 4 semesters, recorded as 'all'; presumably taken four times). Jazz Improvisation '2 semesters' recorded as choose_courses 2.",
-   "Closed-list codes without spaces (MUSC3A, MUSC3C, MUSC181=MUSC 18.1, MUSC183=MUSC 18.3, MUSP402=MUSP 40.2, MUSP404=MUSP 40.4, MUSP406=MUSP 40.6, MUSP21A etc.) were matched to the catalog's spaced codes, so no catalog additions.",
-   "The AA section prints ADT-style boilerplate (60 CSU-transferable units, Cal-GETC, minimum 18 units in major); ge_pattern recorded as Cal-GETC from that text, but it may be copied from the AA-T section; reviewer should verify the AA's actual GE pattern. The 60-unit sentence is generic and not recorded as degree_total.",
-   "The AA page prints one Program Student Learning Outcomes list; the identical list is also printed for the AA-T."
+   "The heading 'Music AA Requirement - complete 15 units' covers MUSC 2A, 2B, 3A, 3B (8 units) plus the Music Survey (3) and Piano Proficiency (4) blocks; stated left null on the first block since 15 spans all three.",
+   "Concentrations: 'Music AA Concentrations - complete 20.00 units'; student completes one of Instrumental, Vocal or Jazz Studies (each printed as 20.00 units). All sub-blocks of the three concentrations share option_group 'Concentration'; the block name prefix identifies which concentration each belongs to.",
+   "'4 semesters' / '2 semesters' sub-blocks recorded as choose_courses with minimum 4 or 2; applied music and ensemble courses may be repeatable, so the exact rule should be checked. Vocal Applied Music lists only MUSP 40.2, presumably taken for 4 semesters.",
+   "Units printed only beside MUSC 2A, 2B, 3A, 3B; other courses have no units printed in this section.",
+   "Students in the Jazz Studies concentration are advised to take MUSC 9 for the Music Survey.",
+   "Catalog codes MUSC 3A/3C, MUSC 18.1/18.3, MUSP 21A etc., MUSP 40.2/40.4/40.6, MUSP 42B/42D match closed-list entries written without spaces/dots (e.g., MUSC3A, MUSC181, MUSP402); treated as closed-list courses.",
+   "Cal-GETC and the 60-unit statement appear in boilerplate that reads like ADT language (mentions ADTs, 18-unit minimum) printed in the AA section; no degree total recorded. GE pattern recorded as Cal-GETC from that text; reviewer should verify the AA's actual GE pattern.",
+   "Career list from the program description on page 175 ('careers in music performance, composition/arranging, publishing, education, and other specializations'); 'other specializations' not recorded as a career.",
+   "The AA-T section that follows prints an identical outcomes list; the outcomes recorded here are the ones printed under the AA section."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "44477690021",
+ "catalog_year": "2026-2027",
+ "source_sha": "d18b64589a1b337e",
+ "source_codes": [
+  "MUSC10",
+  "MUSC182",
+  "MUSC184",
+  "MUSC2A",
+  "MUSC2B",
+  "MUSC2C",
+  "MUSC2D",
+  "MUSC3B",
+  "MUSC3D",
+  "MUSC4A",
+  "MUSC4B",
+  "MUSC50",
+  "MUSC5A",
+  "MUSC5B",
+  "MUSC5C",
+  "MUSC5D",
+  "MUSC61",
+  "MUSC62",
+  "MUSC7",
+  "MUSC8",
+  "MUSC9",
+  "MUSP11A",
+  "MUSP11B",
+  "MUSP11C",
+  "MUSP11D",
+  "MUSP17A",
+  "MUSP17B",
+  "MUSP191A",
+  "MUSP191B",
+  "MUSP19A",
+  "MUSP19B",
+  "MUSP21A",
+  "MUSP21B",
+  "MUSP21C",
+  "MUSP21D",
+  "MUSP23A",
+  "MUSP23B",
+  "MUSP23C",
+  "MUSP23D",
+  "MUSP30A",
+  "MUSP30B",
+  "MUSP30C",
+  "MUSP30D",
+  "MUSP32A",
+  "MUSP32B",
+  "MUSP32C",
+  "MUSP32D",
+  "MUSP33A",
+  "MUSP33B",
+  "MUSP33C",
+  "MUSP33D",
+  "MUSP401",
+  "MUSP403",
+  "MUSP405",
+  "MUSP407",
+  "MUSP42A",
+  "MUSP42B",
+  "MUSP42C",
+  "MUSP42D"
+ ],
+ "source_coverage": 0.894
 }

@@ -1,15 +1,15 @@
 {
  "college": "Santa Rosa Junior College",
- "control_number": "19329",
- "shape": "degree",
- "title": "Geospatial Technology",
- "award": "A.S. Degree",
- "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208",
+ "control_number": "36760",
+ "shape": "adt",
+ "title": "Public Health Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=182",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11492,
+  "input_tokens": 11692,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11492,
-    "output_tokens": 847,
+    "input_tokens": 11692,
+    "output_tokens": 856,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,39 @@
     "model": null
    }
   ],
-  "output_tokens": 847,
+  "output_tokens": 856,
   "output_tokens_details": {
-   "thinking_tokens": 386
+   "thinking_tokens": 265
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06291,
- "ms": 8129,
- "seconds": 8.5,
+ "cost_usd": 0.06389,
+ "ms": 7741,
+ "seconds": 8.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
    "placed": 0,
-   "listed": 7,
+   "listed": 13,
    "share": 0.0,
    "missing": [
-    "APTE191",
-    "CEST192",
-    "CEST51",
-    "GIS40",
-    "GIS51",
-    "GIS54",
-    "LIR10"
+    "ANAT1",
+    "BIO10",
+    "ECONC2001",
+    "ECONC2002",
+    "FDNT10",
+    "HLC52",
+    "HLE5",
+    "PHYZ1",
+    "PSYC3",
+    "PSYC8",
+    "PSYCC1000",
+    "SOCIC1000",
+    "STATC1000"
    ],
    "unexplained": [],
    "none_placed": true,
@@ -110,7 +116,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not found: no Geospatial Technology (AS) section in the supplied text",
+   "section_heading": "Not found: no Public Health Science section in the supplied text",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -138,35 +144,71 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "APTE 191",
-    "why": "Geospatial Technology section not in the text; appears only in the Surveying Technology (AS) section"
+    "code": "ANAT 1",
+    "why": "Public Health Science section not in the text; named only in the Nursing ADN (AS) section"
    },
    {
-    "code": "CEST 192",
-    "why": "Geospatial Technology section not in the text; appears only in the Surveying Technology (AS) section"
+    "code": "BIO 10",
+    "why": "Public Health Science section not in the text; named only in the Nursing ADN notes"
    },
    {
-    "code": "CEST 51",
-    "why": "Geospatial Technology section not in the text; appears only in the Surveying Technology (AS) section"
-   },
-   {
-    "code": "GIS 40",
-    "why": "Geospatial Technology section not in the text; appears only in the Surveying Technology (AS) section"
-   },
-   {
-    "code": "GIS 51",
+    "code": "ECON C2001",
     "why": "not in the text"
    },
    {
-    "code": "GIS 54",
+    "code": "ECON C2002",
     "why": "not in the text"
    },
    {
-    "code": "LIR 10",
-    "why": "Geospatial Technology section not in the text; appears only in other programs' sections (Surveying Technology, Sustainable Agriculture, SWHS: Addiction Studies)"
+    "code": "FDNT 10",
+    "why": "Public Health Science section not in the text; named only in the Nursing and Nutrition sections"
+   },
+   {
+    "code": "HLC 52",
+    "why": "not in the text"
+   },
+   {
+    "code": "HLE 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYZ 1",
+    "why": "Public Health Science section not in the text; named only in the Nursing and Nutrition sections"
+   },
+   {
+    "code": "PSYC 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 8",
+    "why": "Public Health Science section not in the text; named only in the Nursing ADN section"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "Public Health Science section not in the text; named only in the Nursing and Nutrition sections"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Public Health Science section not in the text; named only in the Nutrition & Dietetics (AA) section"
    }
   ],
   "notes": []
  },
- "extracted_run": "39006464249"
+ "extracted_run": "44477690021",
+ "catalog_year": "2026-2027",
+ "source_sha": "e214f143e586554b",
+ "source_codes": [
+  "ANAT1",
+  "BIO10",
+  "FDNT10",
+  "PHYZ1",
+  "PSYC8",
+  "PSYCC1000",
+  "STATC1000"
+ ],
+ "source_coverage": 0.538
 }
