@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-19_library_publishing_model.sql
-name=s687_library_publishing_model
+file=kb/migrations/2026-11-19_library_relist_on_new_version.sql
+name=s687_library_relist_on_new_version
