@@ -2,20 +2,56 @@
  "college": "Solano Community College",
  "programs": 171,
  "with_closed_list": 163,
- "found": 162,
- "extracted": 162,
+ "found": 151,
+ "extracted": 151,
  "errors": 0,
- "passed_machine_checks": 98,
+ "passed_machine_checks": 103,
  "failed": {
-  "coverage": 25,
-  "invented": 6,
-  "arithmetic": 37,
+  "coverage": 8,
+  "invented": 7,
+  "arithmetic": 18,
   "repeated": 0,
-  "outcomes": 25
+  "outcomes": 27
  },
- "cost_usd": 13.17,
- "cost_per_program": 0.0813,
+ "cost_usd_run": 2.81,
+ "cost_usd_filed": 12.87,
+ "cost_per_program": 0.0852,
+ "extract_calls": 30,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "06536",
+   "title": "Graphic Design & Illustration",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "06552",
+   "title": "Early Childhood Education",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18535",
+   "title": "Interdisciplinary Studies: Science & Quantitative Reasoning",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
   {
    "control_number": "18616",
    "title": "Interdisciplinary Studies: Wellness & Self Development",
@@ -23,8 +59,97 @@
    "near_miss": {
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=230",
     "coverage": 0.434
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "20988",
+   "title": "Early Childhood Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31761",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33305",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "41377",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43166",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "46370",
+   "title": "Certified Nursing Assistant",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46517",
+   "title": "Home Health Aide",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "46518",
+   "title": "Home Health Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Approved"
   }
  ],
- "run": "43355021555"
+ "run": "44514080886"
 }

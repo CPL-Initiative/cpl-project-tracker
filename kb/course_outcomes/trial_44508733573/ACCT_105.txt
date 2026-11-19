@@ -1,0 +1,144 @@
+Course Outline Report
+ACCT 105 - Accounting with QuickBooks and Excel
+Discipline: Accounting
+Department: Business and Economics
+Term Effective: Fall 2012
+Requisites
+None
+Entrance Skill
+A. Requisite Skills:
+None
+B. Recommended Skills:
+None
+Units and Hours
+Semester Units: 4.000
+Lecture Units: 4
+Lecture Contact Hours: 64 - 72
+Lecture Out of Class Hours: 128 - 144
+Independent Study Units: 0
+Independent Study Contact Hours: 0
+Independent Study Out of Class Hours: 0
+Lab/Field Units: 0
+Lab/Field Contact Hours: 0
+Lab/Field Out of Class Hours: 0
+Activity Units: 0
+Activity Contact Hours: 0
+Activity Out of Class Hours: 0
+Total Units: 4
+Total Contact Hours: 64 - 72
+Total Out of Class Hours: 128 - 144
+Total Student Learning Hours: 192 - 216
+Recommended Course Enrollment: 35
+Need for the Course
+
+Occupational related; required for transfer to CSU campuses with Accounting major; required for certificates of achievement, completion, and specialization.
+
+Goals for the Course
+Complete an Accounting Cycle for a merchandising business operation using general ledger software.
+Complete an Accounting Cycle for a service business operation using general ledger software.
+Demonstrate spreadsheet program operations and applications by designing and creating Accounting spreadsheets and charts using a variety of formulas and formatting options.
+Catalog/Schedule Description
+Introductory course to accounting information systems that apply accounting principles through the use of general ledger and spreadsheet software. Designed to develop employable accounting analysis skills, evaluate and compare commercial software, and analyze financial reporting.
+Student Learning Outcomes:
+Upon satisfactory completion of the course, students will be able to:
+Describe the functions of pre-programmed general ledger accounting package.
+Save, retrieve, adjust, correct, and modify data files.
+Demonstrate the program's operation and application.
+Produce integrated accounting reports.
+Apply special functions of the program -depreciation, payroll, inventory.
+Read selected reports to determine net income, balances, and variances.
+Produce functional spreadsheets.
+Write practical mathematical formulas to maximize spreadsheet effectiveness.
+Display proper spreadsheet report format.
+Interpret special applications and capabilities of Excel spreadsheets.
+Course Objectives
+Upon satisfactory completion of the course, students will be able to:
+Identify and record changes in assets, liabilities, and owners' equity.
+Complete the steps in the accounting cycle for service and retail merchandising businesses including the following: a) prepare a balance sheet, income statement, and statement of owners' equity; b) determine and define balances of T-accounts having entries recorded on both sides of the account; c) present the fundamental accounting equation with T-account form; d) prepare a trial balance; e) record a group of transactions in a two-column general journal format and post entries; f) complete a worksheet; g) prepare an income statement, a statement of owners' equity, and a balance sheet directly from the worksheet; h) journalize and post adjusting entries and; i) journalize and post closing entries; j) prepare a post-closing trial balance and interim financial statements.
+Employ information technology to accomplish the preceding tasks.
+Course Content
+Lecture Outline
+Role of Accounting in Business
+T Accounts, Debits and Credits, Trial Balances and Financial Statements
+T Account Form
+Recording Transactions in T Account Form
+The Double Entry System
+Debits and Credits
+The Trial Balance
+Major Financial Statements
+Errors Exposed by the Trial Balance
+The General Journal and the General Ledger
+ The General Ledger
+Posting to the General Ledger
+Correcting of Errors
+ Adjusting Entries and the Work Sheet
+ Fiscal Period
+The Accounting Cycle
+The Work Sheet
+Adjustments
+Journalizing Adjusting Entries
+ Closing Entries and Post-Closing Trial Balance
+ Closing Entries
+The Post-Closing Trial Balance
+The Accrual Basis
+Cash Receipts and Disbursements Basis
+Modified Cash Basis
+Interim Statements
+Computerized General Ledger Packages (Quickbooks)
+Representative Texts and Instructional Materials
+These suggested materials serve as examples of required intensity and do not limit the selection of alternative high quality texts or OER resources.
+
+Textbooks: Integrated Accounting for Windows, Klooster, Dale and Warren Allen, Cengage, 2015
+
+Methods of Instruction
+Audio Visual Presentations
+Computer-aided Instruction
+Distributed Education
+Lecture
+Emergency Remote Instruction Yes
+In emergency circumstances that require campus closure, remote instruction may be incorporated. Courses offered remotely will achieve or adapt stated learning outcomes for the remote environment. Instruction will maintain regular effective contact through conferencing and LMS applications. Instructional materials will be adapted to meet ADA compliance. Instructors will be supported through available campus resources including Alternative Media and Assistive Technology Specialist, DSPS Office, PD Lead, DE Lead, and other available resources to help ensure that instructional materials are accessible to persons with disabilities.
+Methods of Evaluation
+The methods and percentages are examples for guidance and are not intended to be strictly followed.
+
+Objective testing (e.g., true-false, multiple choice, full-in, etc.) in the form of weekly quizzes, section tests and/or midterm and final examinations (20-30%)
+Essay testing in the form of section tests and/or midterm and final examinations (30-40%)
+Written essays and research papers requiring evaluation of primary and/or secondary sources (30-70%)
+Individual activities, projects and presentations (0-20%)
+Universal Design for Learning (UDL) and Diversity, Equity, Inclusion, Accessibility and Antiracism (DEIAA)
+UDL and UDL Curricular Design Framework
+Universal Design for Learning (UDL) and Diversity, Equity, Inclusion, Accessibility, and Anti-Racism (DEIAA) principles are intentionally embedded throughout the Course Outline of Record to support equitable learning and facilitate DEIAA review through the following elements:
+Course Title: Titles are written clearly to reflect content using inclusive language that supports understanding for all students and avoids "gatekeeping" terminology.
+Catalog Description: Descriptions use accessible, asset-based language that validates student experiences and engages diverse learners.
+Objectives and Course Learning Outcomes: Objectives and outcomes are stated clearly to advance equitable results and include the critical analysis of diversity and equity within the discipline.
+Content: Curriculum is intentionally designed to accommodate different learning needs and reflect inclusive, non-monocultural perspectives.
+Outside of Class Assignments: Assignments offer diverse ways to demonstrate mastery and reduce barriers to provide equitable, engaging practice aligned with course goals.
+Methods of Instruction: Instruction utilizes an inclusive design framework featuring multi-modal delivery and active participation responsive to a broad range of cultural perspectives.
+Methods of Evaluation: Evaluation utilizes transparent assessments—both formative and summative—prioritizing clear communication and iterative feedback to eliminate achievement gaps.
+Digital Accessibility (WCAG & Section 508): All digital components, including documents, media, and third-party tools, are designed to meet current WCAG (Level AA) and Section 508 standards. This ensures that technology serves as a bridge to content rather than a barrier to entry for students using assistive technologies.
+Distance Education: Course design ensures full digital accessibility and equivalent engagement across all modalities through Regular and Substantive Interaction (RSI).
+Regular and Substantive Interaction (RSI): Scheduled, instructor-led interactions support student persistence by initiating frequent, meaningful feedback and building a sense of belonging.
+Representative Textbooks & OER: Selection prioritizes zero-cost materials and Open Educational Resources (OER) to eliminate financial barriers that disproportionately affect minoritized students.
+Instructional Materials: Materials incorporate authors and scholars from diverse backgrounds to ensure representative perspectives and a globally relevant curriculum.
+Anti-Racist Curriculum Audit: Course content and disciplinary histories are critically examined to challenge systemic biases and integrate the contributions of historically excluded BIPOC scholars.
+Distance Education
+1. Distance Education Format
+Recommended Online Enrollment: 35
+Synchronous/Asynchronous Fully Online (FO): Instruction involving regular and substantive interaction (RSI) that takes place synchronously or asynchronously and is supported by online materials and activities delivered through the college's learning management system and using other required materials. All approved instructional contact hours, including online proctored assessments, are delivered through these online interactions, ensuring consistent instructor-led guidance, feedback, and proactive outreach. No in-person assessments are required. Estimated time a student would spend on course-related tasks per week for each course unit: the student should spend a minimum of 1 hour online and 2 hours of additional work offline. For example: a 3-unit class would have 3 hours online and 6 additional hours offline per week.
+2. The Department of Education stipulates that faculty teaching hybrid or fully online sections comply with regulations regarding Regular and Substantive Interaction (RSI) with students. Below is a summary of methods that can be used to reflect RSI in online courses. Use at least two of the methods below:
+Monitor and guide regularly scheduled class discussions (either using Zoom or in Canvas) and participate when concepts need clarification, providing ways to establish connections between concepts and student ideas using methods such as guided questions, Socratic dialog, and Q and A.
+Regular feedback given to students on their submitted work through Canvas Speedgrader in written, video, and/or audio format; document markup on student work; and/or rubrics in Canvas.
+Proactive instructor outreach by responding to student questions in a timely manner through office hours, email, Canvas Inbox, and/or other communication tools, but also when students have not logged in for a week, have missing assignments, or appear to need help without asking for it.
+Regular use of Canvas announcements with substantial support such as study tips, preview of key concepts, explanation of a vocabulary word, and other.
+Regularly scheduled office hours posted in areas such as the home page, syllabus, welcome page, and/or other.
+Regularly scheduled live instruction (e.g., Zoom lectures in real time) for synchronous classes
+Other No
+3. Accessibility: Accommodations regarding disabled student accessibility to online content must be made as prescribed in the Distance Education Guidelines regarding Section 508, as published by the California Community College Chancellor’s office. For example: The following are general principles that should be followed in ensuring that distance education courses are accessible to students with disabilities.
+A. All DE resources must be designed to afford students with disabilities maximum opportunity to access distance education resources “anytime, anywhere” without the need for outside assistance (i.e., sign language interpreters, aides, etc.).
+B. Distance education resources must generally be designed to provide “built-in” accommodation (i.e., closed captioning, descriptive narrative) and/or interface design/content layout, which is accessible to “industry standard” assistive computer technology in common use by persons with disabilities. Whenever possible, information should be provided in the alternative format preferred by the student.
+C. Adoption of access solutions which include assigning assistants (i.e., sign language interpreters, readers) to work with an individual student to provide access to distance education resources should only be considered as a last resort when all efforts to enhance the native accessibility of the course material have failed.
+D. Access to DE courses, resources and materials include the audio, video, and text components of courses. Access to resources and materials include the audio, video, multimedia and text components of Web sites, electronic chat rooms, e-mail, instructional software, CD-ROM, DVD, laser disc, video tape, audio tape, electronic text, and print materials. Where access to Web sites not controlled by the college is required or realistically necessary to completion of a course, the college must take steps to ensure that such sites are accessible or provide the same material by other accessible means.
+E. Distance education courses, resources and materials must be designed and delivered in such a way that the level of communication and course taking experience is the same for students with or without Disabilities.
+Last Revision
+2018-11-26
+Board Approval
+2018-12-13

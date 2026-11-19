@@ -519,3 +519,86 @@ and `NOTE_PAIR_ON = False`. Chabot was read again with the fixed reader and load
 - **For a person:** West Los Angeles 38677 (`held_for_person`); Los Angeles Mission 44849 has no live row (it places
   none of its courses). College of the Desert was skipped (72 programs, 63 passing, no aim rows); Long Beach City's
   preview 44474831635 looked stuck.
+
+## Moved from the lane (S684 checkpoint, 2026-11-19)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lane stood before the S684 checkpoint (relative links re-pointed to this folder); the lane keeps the current text.
+
+**Cheap piles (S680 to S683; Sam, relayed by COBIx on #3358: *"my priority is completion and will find the funding to make it happen"*).** Two lanes, never on one college; collect with gaps. Applied in S683 under Sam's go of 2026-11-18 (7:08 AM PT, relayed by COBIx): #3497's 99-row named-gaps plan (pre-read 44472420629, apply 44474531589 returned 99; `m-named-gaps-99-applied-s683`) and #3508's A4 write, 14 rows with Long Beach City 44747 (pre-read 44473918412, apply 44483137614 returned 14; `m-a4-14-applied-s683`), landing with the CPL Pathways reader for a `together` group (`d-a4-apply-with-pathways-reader-s683`). **DECIDED** `d-note-pair-off-s683`: `NOTE_PAIR_ON = False`, since its self-check took its answer from the rule's own pattern; six records start a hand-held list. Both branches ride the wave. Undo order: the 99-row plan's rollback first, then S680's named-gaps and units-rules rollbacks (each aborts out of order); #3508's rollback sits beside its plan. The lists (`kb/program_requirements_cheap_piles_s683.json`, `claude/cheap-piles-s683`, no table write): A5's 31 wrong answers are 20 misses of the self-check and 11 of A5's own, which three limits exclude while all 69 right answers still land; of the 33 held-out records, 9 fit `no_units_printed` in words its matcher misses and 24 fit no named gap. Earlier text: lessons archive 6 and lessons, *Moved from the lane (S683 checkpoint)*.
+
+**The unblocker step (Sam, 2026-11-18 about 10:43 AM PT, relayed by COBIx on #3510, comment 6988133754):** before a document goes on Sam's hand-fetch list, the session tries the college's other public routes: its HTML catalog index pages, and a plain browser-like page read when the curl reader is blocked (Southwestern and NOCE first). A college read that way is marked *Sky can read 2026-27 HTML*. Never script around a WAF or a bot check, and never ignore robots.txt. The procedure: [`scheduled_sessions`](reference/scheduled_sessions.md) step 12; a refused read still follows [`blocked_sources`](reference/blocked_sources.md). **S683:** none of the eight hand-fetched colleges is refused by the program reader; the blocks belong to the outline reader (`f-hand-fetched-colleges-read-fine-s683`). #3536 (in the wave; COBIx agreed) stops the reader at a WAF challenge and at a challenged robots.txt; its follow-up: JSON calls file as `refused` and should read `challenged`. **Pending check:** Southwestern and NOCE, *Sky can read 2026-27 HTML* (captures 38563578596, 43342034608); their previews wait on #3536.
+
+**The reader's page checks (#3514, `main` 326b95ce):** rules A to C check the pages a record placing no courses was read from (`CPL_READER_PAGE_CHECKS`, on); rule D is off unless the dispatch input `rule_d` sets it. Plan `kb/program_requirements_reread_plan_s683.json`: 444 records at 73 colleges. **The S683 wave:** the gate held (Mendocino `own_page` 17; CCSF 40432 on page 148). **DECIDED** `d-reread-keep-the-better-s683` (pay within $40, then `kb/_program_reread_keep_better.py` restores a re-read that is worse or does not name its own program), `d-reread-then-load-s683` (a reread never inserts), `d-lane-workers-dispatch-reread-load-s683`, `d-desert-skipped-s683` (72 programs, 63 passing, 0 aim rows). 15 colleges, every receipt `error` null (the colleges: `m-reread-wave-15-colleges-s683`; no run is in flight): cheap piles 114 replaced and 53 inserted, collection 19 and 19; `program_requirement_records` 18,240 to 18,312; filed run costs $25.20. **FINDING** `f-reread-replaces-labeled-rows-s683`: the rereads replaced labeled rows, live `catalog_figures_differ` 19 of 21. For a person: West Los Angeles 38677 (`held_for_person`); Los Angeles Mission 44849 has no live row (it places none of its courses). Long Beach City's preview run 44474831635 looked stuck. About 45 colleges remain.
+
+**NEXT, in order:** (0) The RCCD pilot (#3438, S671; `d-rccd-pilot-no-blind-force-s671`) stands: never force a re-extraction blind, read the failing pages for free first. (0a) **After the wave merges** (`claude/wave-s683`): a named-gaps pass over the S683 re-read records (`f-reread-replaces-labeled-rows-s683`), then the display build (1). (0b) **The reread plan's next batch:** about 45 colleges, 10 to a batch, never 17 dispatches at once (`p-runner-pool-starves-migrate-s683`); keep-the-better, then a load, at each. Rule D only through `rule_d`, for CCSF, Santa Rosa and College of the Desert, then `kb/_program_discontinued.py --capture` (not run in S683). (0c) **Southwestern and NOCE** previews on fresh branches off `main` once #3536 lands; #3536's `challenged` follow-up. (1) **The display build** (Lassen's five, #3497's and #3508's writes, the S683 wave): on a branch, `kb/_build_roep_display.py`, commit only `cpl_pathways_roep_data.js`, then `step=display`; then the harvest gap census, reporting the shrink against 5,395. (2) Cheap piles: the narrower A5 (three limits) with a self-check that compares the sum A5 changes; the `no_units_printed` matcher's missing wording (9 records); the six `NOTE_PAIR_ON` records to a person; #3508's finding 4 (25 single "or" alternatives that carry their row's units); Sierra's reader of `together` (`cpl-chat/index.ts`, finding 3, a plain session). (3) Step 11 ([`scheduled_sessions`](reference/scheduled_sessions.md)), outline readers, each on its `claude/slo-*` branch: Peralta (re-indexed, report 416): the reader fix (one code holds up to four colleges' records), then a 12-page trial; Crafton Hills (566 of 579 wanted, SLOs on report 343): a 12-page trial; Rio Hondo: a `discover=` run (the index made no search request); College of the Siskiyous (9 of 12 trial pages): the full read; Mt. San Antonio (#3537): the parser takes the course-list menu, the outcomes sit under *Outcomes:* after *Course Number:*; Saddleback and Irvine Valley: the index keeps only *Active*, this host uses other status words; CCSF's outline index (report 28), now released. The census recheck (#3538): none of its six joins the queue. A plain session adds the standing test to `course-outcomes-load.yml`. (4) Lassen: done but the structured-fields migration's step 1, Lassen first (untouched in S683); 31297, 35106 and 41912 held. (5) Cosumnes River (#3500): the paid read waits on a named-programs-only input. (6) #3293, parked as issue #3525: decide without COBIx in a plain session (drop the own-list part, rerun the dry run on `main`). (7) #3502's reader changes, cheapest first (A10 with a sibling, 38 records, $3.84; the wider page window, 94, $9.67; aimed lists, 260 at 74 colleges, $26.20), each priced before its run; the two changed-page records ($0.20: Berkeley City 31984, Los Angeles Pierce 32620) with them. (8) Ruling 3's self-recall run: the general education slot on captured pages with `CPL_GE_AREA_SLOT_FILL=1`, committed and reviewed, then a PR sets the default on. (9) The `NCL_EXTRACT` switch waits on the Commons sidecars holding `no_state_list` records back; then #3414's refusal probe covers both, with the minor (`errors` counts no-list records) and COBIx's #3408 nit. (10) The teach-out rule (#3491), after a runner capture. (11) Los Medanos's and Los Angeles Valley's program rules, with a person. (12) Confirm the harvest card shows #3465's `spent_usd`, then strike this item. Older lists: lessons, S653, S666 and *Moved from the lane (S683 checkpoint)*.
+
+**Sam's ruling (2026-10-04, 11:1xZ, in chat):** *"No need for governance at this
+point. Everything is public record and we can mark the tab and contents as beta
+draft."* The harvest's tab shows its records without a Governance pass, marked
+**Beta draft** (vault braindump
+`braindump-2026-10-04-1115-program-requirements-tab-public-record.md`). Then:
+*"Integrate Sierra in the tab design."*
+
+**The nightly SLO read (Sam, 2026-11-01):** step 11 of [`scheduled_sessions`](reference/scheduled_sessions.md), pages only, no cost; De Anza and College of Marin held. The paragraph as it stood: lessons, *Moved from the lane (S647, Sheet 191)*. **Next:** the day's full read and preparation run, as `--next` names them. **S683:** Chabot read again with the fixed reader (read 44472580748, 3 parts), standing test 26 of 26 on the branch, then load run 44484699264: 1,013 `slo` and 1,013 `objective` rows, ids 34631 to 36656 (receipt `kb/receipts/course_outcomes_chabot_44484699264.json` on `claude/slo-chabot`; `course_outcomes` 32,347; `m-chabot-loaded-both-kinds-s683`). **PITFALL** `p-outcome-load-without-standing-test-s681` stands (the standing test before `.load`). S681's Chabot rollback: lessons, *Moved from the lane (S683 checkpoint)*.
+
+**No display receipt is committed (S680, #3495):** a session runs `kb/_build_roep_display.py` on a branch and commits the page alone; `step=display` stores the receipt in the private bucket `cpl-receipts` ([repo-size](reference/lanes/repo-size.md)); build `545de21a6edc` (S681) is live. The paragraph as it stood: lessons, *Moved from the lane (S683 checkpoint)*.
+
+## S684 (SkyVerdin, the CPL Queue routine's 10:12Z conductor firing, 2026-11-19): main repaired, the guard, the second reread batch
+
+**What happened.** The firing found `main` red. Two failures, the second hidden behind the first: five issuers the
+daily run brought into `kb/credentials.json` from Sam's own saves of 2026-11-18 (registered with no tag and no acronym,
+`d-issuer-tags-registered-empty-s684`), and `tests/course_id_route_test.py`, where S683's re-read of CCSF 43116 printed
+COMM 38, so the COMM for CMST prefix alias reproduces 38 of its 39 matches and stays as the fallback under the S653 rule
+(`d-ccsf-comm-cmst-kept-again-s684`; plan rebuilt, 6 retire and 11 stay). The S683 wave merged as #3544 (10:48Z),
+S683's checkpoint as #3535 and #3528 after it. S683's 19 memory rows applied (migrate run 44506909495). COBIx's
+keep-the-better findings on #3544 became #3547 (two review rounds; merged 11:58Z as 94a02499). The named-gaps pass over
+the re-read records labeled 2 rows (#3548; apply 44515993146). The second reread batch ran at ten colleges on three
+branches, posting on #3547's reviewed head before its merge (`d-post-on-reviewed-head-before-merge-s684`). College of
+the Siskiyous' outlines loaded, 366 rows (load 44512255004). The display build was held for the next session, to run
+once (`d-no-display-tonight-s684`).
+
+**Lessons.**
+- **A red `main` hides its next failure.** The `lints` job stops at its first failing step, so the second failure
+  appeared only after the first was fixed. Run the remaining steps locally before a repair push
+  (`p-lints-stops-at-first-failure-s684`; a scratch script ran 164 steps in about 8 minutes).
+- **A control number is five ASCII digits, held as a string.** As a number, or without its leading zero, it skipped
+  both guards in keep-the-better (`p-control-number-leading-zero-s684`). All 18,980 committed records carry five
+  digits.
+- **Two review rounds, then ship the verified part** (`d-two-rounds-then-ship-the-verified-part-s684`). Round two
+  refuted the first fix for the second-pass finding; the unverified branch came out and the open item went to COBIx
+  in the docstring, the PR body and comment 7007297442. COBIx agreed it need not block, and named the order when it
+  lands: checked, own-program (both), live equal to the run already posted keeps the record, live different from the
+  filed run is held, and a live row holding this run that fails own-program goes to a person.
+- **A generic heading passes the own-program test** (`f-courseleaf-generic-heading-restores-good-rereads-s684`). A
+  CourseLeaf page heads its list *REQUIREMENTS*, *Course List*, *Major Requirements* or *Requirements*, so the test
+  restored 17 re-reads that had placed courses: Ventura 4 (31298, 35207, 44186, 45831) and Evergreen Valley 13 (all 13
+  re-reads pass; 6 of the filed records they gave way to fail); Santa Barbara City and Victor Valley 0. The second open
+  item on keep-the-better; the fix accepts a re-read whose page is the program's own, by URL or page title, when the
+  heading is generic, and then the 17 re-post. The first open item: a second pass after a post holds the row, so no
+  college takes a second pass until it is fixed.
+- **The batch's figures:** ten colleges, every receipt `error` null, $16.08 paid; kept 114, restored 24, new 22, held 2
+  (Ventura 45355, Shasta 18153); 87 rows replaced, 42 inserted; 67 record files dropped, none of which passed live;
+  each load's inserted keys equal its reread's absent keys. Ventura, Cañada and Victor Valley dispatched nothing.
+  `program_requirement_records` 18,312 to 18,354.
+- **A builder `check_generated.sh` does not run** (`p-commons-data-status-not-in-check-generated-s684`): #3548's two new
+  gap labels left `kb/status/commons_data.json` stale (collected with gaps 93 to 95), and `lints` failed on
+  `tests/commons_data_status_build_test.py` while `check_generated.sh` reported everything current. Run that test after
+  any record write.
+- **A reread at a single-PDF catalog drops record files and leaves live rows** (`f-reread-drops-files-live-rows-stay-s684`).
+  Rule A set 23 of 27 aim records `not_found`, and the filing dropped the failing record files (LA City 2, Cañada 1,
+  Solano 7, Shasta 13 of the aim at 11:31Z; none passed live). S683's wave took 160 such files off `main`. Under the new
+  `live_runs` hold a later re-read of one is held for a person; rule D and the discontinued capture are what label them.
+- **A read whose values feed a write goes through the runner's receipt, generated and parsed by script**
+  (`d-live-read-through-the-migrate-runner-s684`). The receipt keeps 4,000 characters of a response
+  (`p-migrate-receipt-keeps-4000-chars-s684`), so the second read returned counts and differences only (migrate run
+  44514885539): every live row's run at the ten colleges equals the filed record's except Los Angeles City 32832.
+- **The runner pool is the night's limit.** Each PR push starts a `Repo size guard / size` job that hung for hours,
+  holding runners (`p-hung-size-jobs-starve-the-pool-s684`; #3543 fixed it and merged later as f869acfe); updating two
+  PRs from `main` at once re-triggered the census and capture workflows the wave had changed
+  (`p-branch-update-starts-read-only-workflows-s684`).
+- **The outline readers:** Siskiyous read 315 of 315 pages (outcomes on 247, objectives on 119), standing test 26 of
+  26, then loaded 366 rows; Crafton Hills read 566 of 566 pages (outcomes on 557, objectives on 566), standing test 26
+  of 26, and loaded 1,123 (load 44522694613); `course_outcomes` 32,347 to 33,836. Rio Hondo's index needs a reader
+  change: `search_all` in `kb/_course_outline_index.py` should press Search when no NewSearch request arrives.
+- **Free previews before a paid read:** Southwestern (451 of 451 pages, none challenged) would extract 24 programs for
+  about $2.40; NOCE (135 of 138) would extract none.

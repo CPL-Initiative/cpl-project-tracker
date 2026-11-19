@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8585,
+  "input_tokens": 8569,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8585,
-    "output_tokens": 2528,
+    "input_tokens": 8569,
+    "output_tokens": 2441,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2528,
+  "output_tokens": 2441,
   "output_tokens_details": {
-   "thinking_tokens": 1001
+   "thinking_tokens": 896
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0849,
- "ms": 20101,
- "seconds": 20.3,
+ "cost_usd": 0.0831,
+ "ms": 20436,
+ "seconds": 20.6,
  "parts": null,
  "error": null,
  "score": {
@@ -52,19 +52,19 @@
    "missing": [
     "COMMC1000"
    ],
-   "unexplained": [
-    "COMMC1000"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
    "count": 1,
    "codes": [
     "COMMC10000"
    ],
-   "flagged": [],
-   "pass": false
+   "flagged": [
+    "COMMC10000"
+   ],
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -125,7 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -209,7 +209,7 @@
     ]
    },
    {
-    "name": "AREA 1: SELECT ONE COURSE",
+    "name": "ELECTIVE COURSES - AREA 1: SELECT ONE COURSE",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -235,7 +235,7 @@
     ]
    },
    {
-    "name": "AREA 2: SELECT THREE COURSES",
+    "name": "ELECTIVE COURSES - AREA 2: SELECT THREE COURSES",
     "rule": "choose_courses",
     "minimum": 3,
     "option_group": null,
@@ -249,7 +249,7 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "ENGL C1000",
@@ -311,19 +311,25 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1000",
+    "why": "A.S. section prints it as 'COMM C10000 (FORMERLY COMM 101)', apparently a typo for COMM C1000; recorded as printed with catalog_addition true"
+   }
+  ],
   "notes": [
-   "Catalog codes use leading zeros (ANATOMY 001, MICRO 020, etc.); treated as the closed-list codes ANATOMY 1, MICRO 20, etc., so catalog_addition is false.",
-   "AS section prints 'COMM C10000 (FORMERLY COMM 101) INTRODUCTION TO PUBLIC SPEAKING'; this appears to be a misprint of COMM C1000 (the certificate section prints COMM C1000). Recorded as printed with catalog_addition false; reviewer should confirm.",
-   "The heading 'ELECTIVE COURSES (14-15 UNITS)' covers Area 1 and Area 2 together; no separate unit total is printed for either area, so stated is null on both.",
-   "Degree total printed as 'Total Units: Minimum of 60'; recorded as degree_total 60. No general education pattern or GE units are named in this section.",
-   "The same program student learning outcomes are printed in both the AS and Certificate of Achievement sections; recorded from the AS section.",
-   "Careers recorded are the allied health programs/fields named in the description ('such as nursing, dental hygiene, ...'); the transfer majors Nursing, Kinesiology, Nutrition were not recorded as careers.",
-   "CHEM 101 carries a footnote: CHEM 060 or high school chemistry is a prerequisite."
+   "Read only the A.S. degree section on page 105; the Certificate of Achievement section on page 106 was ignored.",
+   "The A.S. section prints 'COMM C10000', likely a typo for COMM C1000 (the certificate section prints COMM C1000). Reviewer should confirm.",
+   "'ELECTIVE COURSES (14-15 UNITS)' is a combined total over Area 1 and Area 2; no per-area total is printed, so stated is null on both area blocks.",
+   "Area 1 prints CHEM 060 OR CHEM 101 under 'SELECT ONE COURSE'; recorded as a choose-one block. Footnote: CHEM 060 or high school chemistry is a prerequisite for CHEM 101.",
+   "degree_total recorded from 'Total Units: Minimum of 60' printed in this award's header; no GE pattern or GE units are named on the page.",
+   "Codes recorded as printed with leading zeros (e.g., ANATOMY 001 = ANATOMY 1).",
+   "Careers recorded from 'allied health programs such as ...' in the program description; these are health professions/program fields."
   ]
  },
- "extracted_run": "43212072618",
- "source_sha": "ad6cde3585ffc6f6",
+ "extracted_run": "44511401763",
+ "catalog_year": "2026-2027",
+ "source_sha": "3eafcff74fa56771",
  "source_codes": [
   "ANATOMY1",
   "CHEM101",

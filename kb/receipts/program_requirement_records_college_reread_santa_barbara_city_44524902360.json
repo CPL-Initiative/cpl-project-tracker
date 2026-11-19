@@ -1,0 +1,29 @@
+{
+ "college": "Santa Barbara City College",
+ "reread_run": "44524902360",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44519697720",
+ "at": "2026-11-19T12:33:54Z",
+ "posted": 4,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 0,
+ "absent": 4,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "32629",
+  "39376",
+  "41281",
+  "44675"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 4,
+ "rollback": null,
+ "before": []
+}

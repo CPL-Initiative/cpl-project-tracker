@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13364,
+  "input_tokens": 13369,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13364,
-    "output_tokens": 6446,
+    "input_tokens": 13369,
+    "output_tokens": 6644,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 6446,
+  "output_tokens": 6644,
   "output_tokens_details": {
-   "thinking_tokens": 1908
+   "thinking_tokens": 2014
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.18238,
- "ms": 47565,
- "seconds": 47.9,
+ "cost_usd": 0.18636,
+ "ms": 47954,
+ "seconds": 48.1,
  "parts": null,
  "error": null,
  "score": {
@@ -111,7 +111,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Geosciences Technician General Studies – 26-30 Unit Emphasis",
+   "section_heading": "Geosciences Technician — General Studies – 26-30 Unit Emphasis (SC Program: AS.1602)",
    "measure": "units",
    "total_units": {
     "min": 26,
@@ -167,7 +167,7 @@
     ]
    },
    {
-    "name": "Degree Core: Choose one of the following (mathematics/computer science)",
+    "name": "Degree Core: Choose one of the following (math/computing)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -268,7 +268,7 @@
     ]
    },
    {
-    "name": "Emphasis in Geologic Technician",
+    "name": "Emphasis in Geologic Technician: Required",
     "rule": "all",
     "minimum": null,
     "option_group": "Degree Emphasis",
@@ -504,7 +504,7 @@
     ]
    },
    {
-    "name": "Emphasis in Weather Technician",
+    "name": "Emphasis in Weather Technician: Required",
     "rule": "all",
     "minimum": null,
     "option_group": "Degree Emphasis",
@@ -611,7 +611,7 @@
     ]
    },
    {
-    "name": "Emphasis in Coastal Science Technician",
+    "name": "Emphasis in Coastal Science Technician: Required",
     "rule": "all",
     "minimum": null,
     "option_group": "Degree Emphasis",
@@ -757,17 +757,67 @@
    }
   ],
   "notes": [
-   "total_units 26-30 taken from the heading 'General Studies – 26-30 Unit Emphasis'; no degree total or GE pattern/units printed in this section.",
-   "The student completes one of three emphases (Geologic, Weather, Coastal Science Technician). All emphasis blocks share option_group 'Degree Emphasis'; each emphasis consists of the blocks whose names begin with that emphasis name, and all blocks of the chosen emphasis are required together.",
-   "Geologic 'Select 3 units' lists 'ESCI 32, 32L, 33/33L 34, 35/35L, 36, 37/37L, 38/38L' with no units printed; recorded individually with units null. The slash pairs (33/33L etc.) likely mean lecture and lab taken together.",
-   "GEOG 1A AND GEOG 1AL, and ESCI 37 AND 37L / ESCI 38 AND 38L, are printed as paired lecture/lab combinations in the 'Select 3 units' lists; recorded as separate entries.",
-   "ESCI 7 is printed with 4 units in this section; the closed list stores 3.",
-   "ESCI 16 is printed as 'ESCI 16'; closed list stores it as 'ESCI16' (treated as the same course).",
-   "AGNR 12 (Environmental Policy and Law) is not in the closed list; marked catalog_addition.",
-   "Text says at least one physics course is recommended for the degree but names no specific course; no recommended block recorded.",
-   "Careers recorded are the technician roles named in the description (also the emphasis names); reviewer may wish to confirm they count as job titles.",
-   "Notes under each emphasis mention unspecified Social Science, Ethnic Studies and Humanities GE courses that support the emphasis; not recorded as blocks."
+   "The student chooses one of three emphases (Geologic Technician, Weather Technician, Coastal Science Technician). Each emphasis spans two or three blocks; all emphasis blocks share option_group 'Degree Emphasis' and the blocks with the same emphasis-name prefix are completed together.",
+   "total_units 26-30 taken from the heading 'General Studies – 26-30 Unit Emphasis'. No degree total or GE pattern/units are printed for this award.",
+   "In the Geologic Technician 'Select 3 units' list, ESCI courses are printed as 'ESCI 32, 32L, 33/33L 34, 35/35L, 36, 37/37L, 38/38L' with no units; recorded individually with units null. No ESCI 34L or 36L is printed. Pairs marked AND (GEOG 1A AND GEOG 1AL; ESCI 37 AND 37L; ESCI 38 AND 38L) are recorded as separate courses; the catalog may intend them to be taken together.",
+   "ESCI 7 printed with 4 units in the catalog; closed list stores 3.",
+   "ESCI 16 printed as 'ESCI 16'; matched to closed-list entry 'ESCI16'.",
+   "AGNR 12 (Environmental Policy and Law) is not in the closed list; recorded as catalog addition.",
+   "The description says at least one physics course is recommended for the degree, but no specific physics course is named; no recommended block recorded.",
+   "Careers listed are the technician roles named in the description (Geologic Technician, Weather Technician, Coastal Marine Science Technician, 'CMS Tech'); they are also emphasis names — reviewer may judge whether they count as careers.",
+   "Each emphasis notes that specific GE (Social Science, Ethnic Studies, Humanities) courses can further support it; these are not requirements and are not recorded.",
+   "Page begins with the end of the A.S.-T Geology section (outcomes 3-4, requirements) which belongs to another award and was ignored."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": "44513230805",
+ "catalog_year": "2026-2027",
+ "source_sha": "ac19f7aa015a76c2",
+ "source_codes": [
+  "AGNR1",
+  "AGNR50",
+  "AGNR64",
+  "AGNR66",
+  "AGPS24",
+  "AGPS25",
+  "CHEM1A",
+  "CHEM1B",
+  "CHEM2A",
+  "CHEM2B",
+  "CIS2",
+  "ESCI1",
+  "ESCI10",
+  "ESCI14",
+  "ESCI14L",
+  "ESCI15",
+  "ESCI16",
+  "ESCI16L",
+  "ESCI18",
+  "ESCI2",
+  "ESCI32",
+  "ESCI32L",
+  "ESCI33",
+  "ESCI37",
+  "ESCI37L",
+  "ESCI38",
+  "ESCI38L",
+  "ESCI7",
+  "ESCI9",
+  "GEOG10",
+  "GEOG15",
+  "GEOG1A",
+  "GEOG1AL",
+  "GEOG25",
+  "GEOG2A",
+  "GEOG8",
+  "GEOG9",
+  "MATH2",
+  "MATH6",
+  "MATH73",
+  "MATHC2210",
+  "NHIS15",
+  "NHIS65",
+  "STATC1000",
+  "STATC1000E"
+ ],
+ "source_coverage": 0.882
 }

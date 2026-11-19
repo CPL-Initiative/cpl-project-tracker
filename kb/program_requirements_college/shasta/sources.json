@@ -32,8 +32,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=49",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science for Transfer:",
+   "h1": "Associate in Science for Transfer:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -42,7 +42,9 @@
     51,
     52
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "92b0acf567fd6800"
   },
   "listed": 22,
   "text_chars": 16000
@@ -75,8 +77,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "title": "In addition to the 34- unit general education pattern for Cal-GETC,",
+   "h1": "In addition to the 34- unit general education pattern for Cal-GETC,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -85,7 +87,9 @@
     62,
     63
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "554ca24830ba644f"
   },
   "listed": 17,
   "text_chars": 16000
@@ -115,8 +119,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "*May be used to fulfill General Education requirements. See a counselor.",
+   "h1": "*May be used to fulfill General Education requirements. See a counselor.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -124,7 +128,9 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "06a10974c96d16b7"
   },
   "listed": 14,
   "text_chars": 16000
@@ -154,8 +160,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "The Humanities emphasis permits students to explore the arts, ideas,",
+   "h1": "The Humanities emphasis permits students to explore the arts, ideas,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -164,7 +170,9 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b7573161a9396bd1"
   },
   "listed": 14,
   "text_chars": 16000
@@ -209,17 +217,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "• Associate in Science Degree in Welding Technology",
+   "h1": "• Associate in Science Degree in Welding Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0f7a2a7a093471a8"
   },
   "listed": 17,
-  "text_chars": 6356
+  "text_chars": 5798
  },
  {
   "control_number": "06433",
@@ -266,18 +276,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "title": "AA degree in Art. Students interested in transferring should check",
+   "h1": "AA degree in Art. Students interested in transferring should check",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c188b79e6f7939af"
   },
   "listed": 34,
-  "text_chars": 12711
+  "text_chars": 10358
  },
  {
   "control_number": "06434",
@@ -303,18 +315,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAM DESCRIPTION: The Associate in Arts in Music for Transfer",
+   "h1": "PROGRAM DESCRIPTION: The Associate in Arts in Music for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d569df0cbe5cc98b"
   },
   "listed": 17,
-  "text_chars": 12346
+  "text_chars": 11427
  },
  {
   "control_number": "06435",
@@ -358,8 +372,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "mental, and social well-being of clients, families and the community.",
+   "h1": "mental, and social well-being of clients, families and the community.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -368,7 +382,9 @@
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "00be675e9f366238"
   },
   "listed": 19,
   "text_chars": 16000
@@ -378,26 +394,12 @@
   "title": "Vocational Nursing",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "VOCN160",
-   "VOCN161",
-   "VOCN162"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=209",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    209
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 8044
+  "text_chars": 0
  },
  {
   "control_number": "06444",
@@ -439,18 +441,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "title": "support services. Students with an A.S. Degree in Human Services will",
+   "h1": "support services. Students with an A.S. Degree in Human Services will",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8fba9026c78eb603"
   },
   "listed": 29,
-  "text_chars": 11983
+  "text_chars": 9788
  },
  {
   "control_number": "06453",
@@ -483,8 +487,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE IN SCIENCE IN EARLY CHILDHOOD EDUCATION",
+   "h1": "ASSOCIATE IN SCIENCE IN EARLY CHILDHOOD EDUCATION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -492,7 +496,9 @@
     72,
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "218fb63029fc025e"
   },
   "listed": 20,
   "text_chars": 16000
@@ -502,12 +508,92 @@
   "title": "Fire Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FAID130",
+   "FAID132",
+   "FAID133",
+   "FAID75",
+   "FIRS104",
+   "FIRS105",
+   "FIRS106",
+   "FIRS108",
+   "FIRS109",
+   "FIRS116",
+   "FIRS120",
+   "FIRS135",
+   "FIRS136",
+   "FIRS137",
+   "FIRS138",
+   "FIRS145",
+   "FIRS147",
+   "FIRS148",
+   "FIRS149",
+   "FIRS151",
+   "FIRS152",
+   "FIRS153",
+   "FIRS154",
+   "FIRS165",
+   "FIRS166",
+   "FIRS182",
+   "FIRS183",
+   "FIRS186",
+   "FIRS187",
+   "FIRS189",
+   "FIRS191",
+   "FIRS192",
+   "FIRS193",
+   "FIRS194",
+   "FIRS70",
+   "FIRS71",
+   "FIRS72",
+   "FIRS74",
+   "FIRS79",
+   "FIRS86",
+   "FTWO111",
+   "FTWO112",
+   "FTWO113",
+   "FTWO114",
+   "FTWO115",
+   "FTWO116",
+   "FTWO117",
+   "FTWO118",
+   "FTWO121",
+   "FTWO122",
+   "FTWO125",
+   "FTWO128",
+   "FTWO130",
+   "FTWO132",
+   "FTWO133",
+   "FTWO137",
+   "FTWO144",
+   "FTWO153",
+   "FTWO156",
+   "FTWO158",
+   "FTWP108",
+   "FTWP109",
+   "FTWP110",
+   "FTWP111",
+   "FTWP114",
+   "FTWP115"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
+   "title": "1. Demonstrate the basic knowledge, skills and abilities to safely",
+   "h1": "1. Demonstrate the basic knowledge, skills and abilities to safely",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "8358246a30776b77"
+  },
   "listed": 66,
-  "text_chars": 0
+  "text_chars": 11503
  },
  {
   "control_number": "06457",
@@ -539,18 +625,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "title": "requirements are also required for the degree. Hands-on work",
+   "h1": "requirements are also required for the degree. Hands-on work",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     69,
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "2eb1fb7d73a87762"
   },
   "listed": 19,
-  "text_chars": 11955
+  "text_chars": 11953
  },
  {
   "control_number": "09113",
@@ -579,17 +667,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "BSOT 80 Outlook  1",
+   "h1": "BSOT 80 Outlook  1",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     65
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "94f2ac6f0b48c72d"
   },
   "listed": 16,
-  "text_chars": 5740
+  "text_chars": 5738
  },
  {
   "control_number": "09115",
@@ -616,17 +706,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "BSOT 80 Outlook  1",
+   "h1": "BSOT 80 Outlook  1",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     65
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "94f2ac6f0b48c72d"
   },
   "listed": 14,
-  "text_chars": 5740
+  "text_chars": 5738
  },
  {
   "control_number": "09477",
@@ -655,15 +747,17 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=67",
-   "title": null,
-   "h1": null,
+   "title": "TRANSFER DEGREE REQUIREMENTS:",
+   "h1": "TRANSFER DEGREE REQUIREMENTS:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     67,
     68
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e456e4bc49e8e8be"
   },
   "listed": 16,
   "text_chars": 12387
@@ -690,8 +784,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "title": "Business Administration –",
+   "h1": "Business Administration –",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -700,7 +794,9 @@
     63,
     64
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ff783f45d6f5d5be"
   },
   "listed": 11,
   "text_chars": 16000
@@ -747,8 +843,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
-   "title": null,
-   "h1": null,
+   "title": "2. Recognize conflict styles and manage conflict situations utilizing",
+   "h1": "2. Recognize conflict styles and manage conflict situations utilizing",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -756,7 +852,9 @@
     64,
     65
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "358d7ef3d23966c6"
   },
   "listed": 19,
   "text_chars": 16000
@@ -767,11 +865,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "ADJU10",
    "ADJU106",
    "ADJU15",
+   "ADJU16",
    "ADJU17",
    "ADJU18",
    "ADJU20",
@@ -788,19 +887,22 @@
    "SOC2"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=47",
+   "title": "Degrees and Certificates",
+   "h1": "Degrees and Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    47,
     48,
     49
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2fe52a3128a7c8bd"
   },
   "listed": 18,
-  "text_chars": 11747
+  "text_chars": 16000
  },
  {
   "control_number": "09498",
@@ -854,8 +956,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=50",
-   "title": null,
-   "h1": null,
+   "title": "SC Program: AS.1494",
+   "h1": "SC Program: AS.1494",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -864,7 +966,9 @@
     52,
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "edc2091cc7194c52"
   },
   "listed": 17,
   "text_chars": 16000
@@ -894,8 +998,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "title": "5. Be able to evaluate basic theory, concepts, and ecological principles",
+   "h1": "5. Be able to evaluate basic theory, concepts, and ecological principles",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -903,7 +1007,9 @@
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "7df9c5a0bc3a2878"
   },
   "listed": 14,
   "text_chars": 16000
@@ -923,18 +1029,20 @@
    "WTT105"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=104",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    104
+    93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "65445d6aaf0c54ea"
   },
   "listed": 5,
-  "text_chars": 1961
+  "text_chars": 5638
  },
  {
   "control_number": "09513",
@@ -970,17 +1078,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=82",
-   "title": null,
-   "h1": null,
+   "title": "All courses in the program will employ an integrated teaching strategy",
+   "h1": "All courses in the program will employ an integrated teaching strategy",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "8ef305b9ad9f707e"
   },
   "listed": 23,
-  "text_chars": 6755
+  "text_chars": 6753
  },
  {
   "control_number": "10718",
@@ -1009,18 +1119,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "title": "requirements are also required for the degree. Hands-on work",
+   "h1": "requirements are also required for the degree. Hands-on work",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     69,
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "2eb1fb7d73a87762"
   },
   "listed": 16,
-  "text_chars": 11955
+  "text_chars": 11953
  },
  {
   "control_number": "11074",
@@ -1034,14 +1146,16 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "1. Demonstrate the basic knowledge, skills and abilities to safely",
+   "h1": "1. Demonstrate the basic knowledge, skills and abilities to safely",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "606ddcc02d924246"
   },
   "listed": 1,
   "text_chars": 5607
@@ -1075,18 +1189,20 @@
    "BUAD91"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=62",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
+   "title": "Business Administration –",
+   "h1": "Business Administration –",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    61,
     62,
     63,
-    64,
-    65
+    64
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ff783f45d6f5d5be"
   },
   "listed": 7,
   "text_chars": 16000
@@ -1096,28 +1212,12 @@
   "title": "CIS - Network Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "CIS2",
-   "CIS31",
-   "CIS72",
-   "CIS90",
-   "CIS92"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=139",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    139
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 8694
+  "text_chars": 0
  },
  {
   "control_number": "17479",
@@ -1143,8 +1243,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=50",
-   "title": null,
-   "h1": null,
+   "title": "SC Program: AS.1494",
+   "h1": "SC Program: AS.1494",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1153,7 +1253,9 @@
     52,
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "edc2091cc7194c52"
   },
   "listed": 13,
   "text_chars": 16000
@@ -1359,8 +1461,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=43",
-   "title": null,
-   "h1": null,
+   "title": "Shasta College 2026-2027",
+   "h1": "Shasta College 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1369,7 +1471,9 @@
     45,
     46
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f3d70d022c417346"
   },
   "listed": 206,
   "text_chars": 16000
@@ -1552,8 +1656,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=41",
-   "title": null,
-   "h1": null,
+   "title": "Shasta College 2026-2027",
+   "h1": "Shasta College 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1562,7 +1666,9 @@
     43,
     44
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "7f797fa66b417a8c"
   },
   "listed": 168,
   "text_chars": 16000
@@ -1584,8 +1690,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "title": "5. Be able to evaluate basic theory, concepts, and ecological principles",
+   "h1": "5. Be able to evaluate basic theory, concepts, and ecological principles",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1593,7 +1699,9 @@
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "7df9c5a0bc3a2878"
   },
   "listed": 6,
   "text_chars": 16000
@@ -1621,8 +1729,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "The Humanities emphasis permits students to explore the arts, ideas,",
+   "h1": "The Humanities emphasis permits students to explore the arts, ideas,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1631,7 +1739,9 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b7573161a9396bd1"
   },
   "listed": 12,
   "text_chars": 16000
@@ -1659,17 +1769,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "• Certificate from Shasta College in Welding Technology",
+   "h1": "• Certificate from Shasta College in Welding Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1dcc6ad944ce7532"
   },
   "listed": 12,
-  "text_chars": 6356
+  "text_chars": 5744
  },
  {
   "control_number": "18080",
@@ -1677,9 +1789,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.807,
+  "coverage": 0.982,
   "codes_found": [
    "AG1",
+   "AG6",
    "AG71",
    "AG72",
    "AG94",
@@ -1697,6 +1810,7 @@
    "AGEH26",
    "AGEH31",
    "AGEH33",
+   "AGEH35",
    "AGEH38",
    "AGEH50",
    "AGEH52",
@@ -1710,13 +1824,21 @@
    "AGMA42",
    "AGMA44",
    "AGNR1",
+   "AGNR11",
+   "AGNR12",
+   "AGNR50",
+   "AGNR51",
    "AGNR52",
    "AGNR53",
    "AGNR55",
    "AGNR6",
    "AGNR60",
+   "AGNR61",
+   "AGNR64",
    "AGNR65",
+   "AGNR66",
    "AGNR70",
+   "AGNR94",
    "AGPS20",
    "AGPS24",
    "AGPS25",
@@ -1728,8 +1850,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
-   "title": null,
-   "h1": null,
+   "title": "#May be used to fulfill Cal-GETC requirements. See a counselor.",
+   "h1": "#May be used to fulfill Cal-GETC requirements. See a counselor.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1737,7 +1859,9 @@
     54,
     55
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "bd82f4f9cef0cdcc"
   },
   "listed": 57,
   "text_chars": 16000
@@ -1766,8 +1890,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "FTWO 128",
+   "h1": "FTWO 128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1775,7 +1899,9 @@
     82,
     83
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4f62ec6b5548d157"
   },
   "listed": 13,
   "text_chars": 16000
@@ -1785,64 +1911,24 @@
   "title": "University Studies: Behavioral Science",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ANTH2",
-   "BIOL1",
-   "BIOL10",
-   "BIOL5",
-   "ECE1",
-   "PHY1",
-   "PSYCC1000",
-   "SOC3",
-   "SOCIC1000",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    100,
-    101,
-    102,
-    103
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18083",
   "title": "University Studies - Biological Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BIOL1",
-   "BOT1",
-   "CHEM1A",
-   "CHEM1B",
-   "ZOOL1"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=42",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    42
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 3144
+  "text_chars": 0
  },
  {
   "control_number": "18084",
@@ -1867,8 +1953,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=59",
-   "title": null,
-   "h1": null,
+   "title": "This certificate is approved through the California Community College",
+   "h1": "This certificate is approved through the California Community College",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1877,7 +1963,9 @@
     61,
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5fa7676a09e13db7"
   },
   "listed": 12,
   "text_chars": 16000
@@ -1905,157 +1993,43 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Engineering. See a counselor for the complete list of courses required",
+   "h1": "Engineering. See a counselor for the complete list of courses required",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4e0d06def56cf372"
   },
   "listed": 12,
-  "text_chars": 6759
+  "text_chars": 6757
  },
  {
   "control_number": "18088",
   "title": "University Studies - Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.619,
-  "codes_found": [
-   "ART1",
-   "ART4",
-   "ART6",
-   "ARTHC1200",
-   "ASL1",
-   "ASL2",
-   "ASL3",
-   "ASL4",
-   "COMM30",
-   "ENGL10A",
-   "ENGL10B",
-   "ENGL11A",
-   "ENGL11B",
-   "ENGL13A",
-   "ENGL13B",
-   "ENGL15",
-   "ENGL16",
-   "ENGL17",
-   "ENGL18",
-   "ENGL19",
-   "ENGL20",
-   "ENGL25",
-   "ENGL31",
-   "ENGL36",
-   "ENGLC1002",
-   "FREN1",
-   "FREN2",
-   "GERM1",
-   "GERM2",
-   "HIST2",
-   "HIST3",
-   "HUM2",
-   "HUM4",
-   "HUM70",
-   "JAPN1",
-   "JAPN2",
-   "JAPN3",
-   "JAPN4",
-   "MUS10",
-   "MUS11",
-   "MUS14",
-   "MUS15",
-   "PHIL14",
-   "PHIL6",
-   "PHIL7",
-   "PHIL8",
-   "SPAN1",
-   "SPAN2",
-   "SPAN3",
-   "SPAN4",
-   "THTR1",
-   "THTR8"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    45
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 84,
-  "text_chars": 4802
+  "text_chars": 0
  },
  {
   "control_number": "18089",
   "title": "University Studies - Language Arts",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.854,
-  "codes_found": [
-   "ASL1",
-   "ASL2",
-   "ASL3",
-   "ASL4",
-   "CHIN1",
-   "COMM20",
-   "COMM30",
-   "COMM40",
-   "COMM54",
-   "COMMC1000",
-   "COMMC1004",
-   "ENGL10A",
-   "ENGL10B",
-   "ENGL11A",
-   "ENGL11B",
-   "ENGL13A",
-   "ENGL13B",
-   "ENGL15",
-   "ENGL16",
-   "ENGL17",
-   "ENGL18",
-   "ENGL19",
-   "ENGL20",
-   "ENGL25",
-   "ENGL31",
-   "ENGL36",
-   "ENGLC1001",
-   "ENGLC1002",
-   "FREN1",
-   "FREN2",
-   "GERM1",
-   "GERM2",
-   "JAPN1",
-   "JAPN2",
-   "JAPN3",
-   "JAPN4",
-   "JOUR21",
-   "SPAN1",
-   "SPAN2",
-   "SPAN3",
-   "SPAN4"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    45,
-    46
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 48,
-  "text_chars": 8517
+  "text_chars": 0
  },
  {
   "control_number": "18090",
@@ -2084,18 +2058,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "JAPN 2 Japanese 2 (5)",
+   "h1": "JAPN 2 Japanese 2 (5)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ca49ddb4d6f33209"
   },
   "listed": 16,
-  "text_chars": 10390
+  "text_chars": 10387
  },
  {
   "control_number": "18092",
@@ -2114,12 +2090,82 @@
   "title": "University Studies - Natural Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAS19",
+   "AGEH33",
+   "AGNR60",
+   "AGNR61",
+   "AGPS20",
+   "AGPS24",
+   "ANAT1",
+   "ANTHC1001",
+   "ASTR2",
+   "ASTR3",
+   "BIOL1",
+   "BIOL10",
+   "BIOL10L",
+   "BIOL11",
+   "BIOL12",
+   "BIOL5",
+   "BIOL6",
+   "BOT1",
+   "CHEM10",
+   "CHEM11",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM2A",
+   "CHEM2B",
+   "CHEM70",
+   "CHEM70A",
+   "CHEM71",
+   "CHEM71A",
+   "ESCI1",
+   "ESCI10",
+   "ESCI12",
+   "ESCI14",
+   "ESCI14L",
+   "ESCI15",
+   "ESCI17",
+   "ESCI18",
+   "ESCI2",
+   "ESCI3",
+   "ESCI6",
+   "ESCI7",
+   "ESCI8",
+   "ESCI9",
+   "GEOG10",
+   "GEOG1A",
+   "GEOG1AL",
+   "GEOG9",
+   "MICR1",
+   "NHIS15",
+   "NUTR25",
+   "PHSC1",
+   "PHY1",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "ZOOL1"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=97",
+   "title": "PROGRAM LEARNING OUTCOMES:",
+   "h1": "PROGRAM LEARNING OUTCOMES:",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "2553c47fcdad0abb"
+  },
   "listed": 57,
-  "text_chars": 0
+  "text_chars": 5050
  },
  {
   "control_number": "18094",
@@ -2127,15 +2173,23 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.623,
+  "coverage": 1.0,
   "codes_found": [
    "ANAT1",
    "BIOL5",
+   "BIOL6",
    "CHEM1A",
    "CHEM1B",
    "CHEM2A",
+   "CHEM2B",
    "ETHS11",
    "HLTH1",
+   "HLTH2",
+   "HLTH20",
+   "HLTH3",
+   "HLTH4",
+   "HLTH6",
+   "HLTH7",
    "KINES1",
    "KINES2",
    "MATH2",
@@ -2143,25 +2197,40 @@
    "PE11",
    "PE12A",
    "PE12B",
+   "PE12C",
    "PE17A",
    "PE17B",
    "PE30A",
    "PE30B",
+   "PE30C",
    "PE31",
+   "PE35",
    "PE37",
    "PE4",
    "PE51A",
    "PE51B",
+   "PE51C",
    "PE60",
    "PE69",
    "PE7",
    "PE70A",
    "PE70B",
+   "PE70C",
    "PE71",
    "PE72",
    "PE75",
    "PE8",
+   "PEAT11",
+   "PEAT13",
+   "PEAT15",
+   "PEAT17",
+   "PEAT19",
+   "PEAT23",
+   "PEAT25",
+   "PEAT29",
    "PEAT5",
+   "PEAT7",
+   "PEAT9",
    "PHY1",
    "PHYS2A",
    "PHYS2B",
@@ -2170,8 +2239,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "4. Identify and apply the scientific principles of movement, exercise,",
+   "h1": "4. Identify and apply the scientific principles of movement, exercise,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2180,7 +2249,9 @@
     102,
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "6d6adae655c5e56b"
   },
   "listed": 61,
   "text_chars": 16000
@@ -2202,119 +2273,47 @@
    "PHYS4B"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=97",
+   "title": "PROGRAM LEARNING OUTCOMES:",
+   "h1": "PROGRAM LEARNING OUTCOMES:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    100,
-    101
+    97,
+    98,
+    99,
+    100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "01d0acbce61b7368"
   },
   "listed": 7,
-  "text_chars": 11524
+  "text_chars": 16000
  },
  {
   "control_number": "18096",
   "title": "University Studies - Quantitative Reasoning",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "MATH13",
-   "MATH2",
-   "MATH4A",
-   "MATH4B",
-   "MATH6",
-   "MATH8",
-   "MATH9",
-   "MATHC2210",
-   "MATHC2220",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    45
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 4802
+  "text_chars": 0
  },
  {
   "control_number": "18097",
   "title": "University Studies - Social Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.854,
-  "codes_found": [
-   "ANTH14",
-   "ANTH2",
-   "ANTH25",
-   "ARCH3",
-   "ECE1",
-   "ECE9",
-   "ECONC2001",
-   "ECONC2002",
-   "GEOG1A",
-   "GEOG1AL",
-   "GEOG1B",
-   "GEOG7",
-   "GEOG8",
-   "HIST1A",
-   "HIST1B",
-   "HIST2",
-   "HIST25",
-   "HIST3",
-   "HIST35",
-   "HIST38",
-   "HIST40",
-   "HISTC1001",
-   "HISTC1002",
-   "HUSV70",
-   "POLS1",
-   "POLS25",
-   "POLSC1000",
-   "PSYC14",
-   "PSYC15",
-   "PSYC17",
-   "PSYC20",
-   "PSYC41",
-   "PSYC46",
-   "PSYC5",
-   "PSYCC1000",
-   "SOC15",
-   "SOC2",
-   "SOC25",
-   "SOC30",
-   "SOCIC1000",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=45",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    45,
-    46,
-    47,
-    48
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 48,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18098",
@@ -2352,85 +2351,32 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "requirements and filing an application for graduation with Admissions",
+   "h1": "requirements and filing an application for graduation with Admissions",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f2ca71bfa3cd7c50"
   },
   "listed": 25,
-  "text_chars": 10676
+  "text_chars": 10669
  },
  {
   "control_number": "18142",
   "title": "General Studies - Agriculture Trades",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.792,
-  "codes_found": [
-   "AG1",
-   "AG71",
-   "AG72",
-   "AG9A",
-   "AGAB51",
-   "AGAB53",
-   "AGAB54",
-   "AGAS11",
-   "AGAS15",
-   "AGAS19",
-   "AGAS30",
-   "AGEH10",
-   "AGEH22",
-   "AGEH23",
-   "AGEH26",
-   "AGEH31",
-   "AGEH33",
-   "AGEH38",
-   "AGEH50",
-   "AGEH52",
-   "AGEH60",
-   "AGEH61",
-   "AGEH71",
-   "AGEQ12",
-   "AGEQ13",
-   "AGEQ21",
-   "AGMA42",
-   "AGMA44",
-   "AGNR1",
-   "AGNR52",
-   "AGNR53",
-   "AGNR55",
-   "AGNR6",
-   "AGNR60",
-   "AGNR65",
-   "AGNR70",
-   "AGPS20",
-   "AGPS24",
-   "AGPS25",
-   "AGSA56",
-   "AGVIT80",
-   "AGVIT81"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    53,
-    54,
-    55
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 53,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18143",
@@ -2438,10 +2384,13 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.659,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
+   "ACCT102",
    "ACCT103",
+   "ACCT104",
+   "ACCT194",
    "ACCT2",
    "ACCT4",
    "BUAD10",
@@ -2451,6 +2400,7 @@
    "BUAD15",
    "BUAD17",
    "BUAD176",
+   "BUAD30",
    "BUAD39",
    "BUAD40",
    "BUAD41",
@@ -2461,17 +2411,27 @@
    "BUAD56",
    "BUAD6",
    "BUAD66",
+   "BUAD71",
+   "BUAD72",
    "BUAD77",
    "BUAD80",
    "BUAD91",
    "CIS1",
    "ECONC2001",
-   "HOSP10"
+   "ECONC2002",
+   "HOSP10",
+   "HOSP20",
+   "HOSP35",
+   "HOSP40",
+   "HOSP45",
+   "HOSP50",
+   "HOSP60",
+   "HOSP65"
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "title": "Business Administration –",
+   "h1": "Business Administration –",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2480,7 +2440,9 @@
     63,
     64
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ff783f45d6f5d5be"
   },
   "listed": 41,
   "text_chars": 16000
@@ -2490,12 +2452,73 @@
   "title": "General Studies - Office and Computer Technologies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.797,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "ACCT103",
+   "ACCT104",
+   "BSOT10",
+   "BSOT11",
+   "BSOT51",
+   "BSOT52",
+   "BSOT64",
+   "BSOT80",
+   "BSOT84",
+   "BSOT91",
+   "BSOT92",
+   "BSOT94",
+   "BUAD10",
+   "BUAD45",
+   "BUAD66",
+   "BUAD71",
+   "BUAD72",
+   "CIS1",
+   "CIS13",
+   "CIS14",
+   "CIS15",
+   "CIS16",
+   "CIS17",
+   "CIS2",
+   "CIS20",
+   "CIS21",
+   "CIS23",
+   "CIS31",
+   "CIS32",
+   "CIS33",
+   "CIS34",
+   "CIS60",
+   "CIS61",
+   "CIS62",
+   "CIS64",
+   "CIS66",
+   "CIS67",
+   "CIS72",
+   "CIS73",
+   "CIS76",
+   "CIS83",
+   "CIS86",
+   "CIS90",
+   "CIS92",
+   "HEOC11"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68",
+   "title": "Option 2: CISCO Networking Option (9 units)",
+   "h1": "Option 2: CISCO Networking Option (9 units)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68,
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e2320ef4a07c3ae2"
+  },
   "listed": 59,
-  "text_chars": 0
+  "text_chars": 12040
  },
  {
   "control_number": "18145",
@@ -2518,8 +2541,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Engineering. See a counselor for the complete list of courses required",
+   "h1": "Engineering. See a counselor for the complete list of courses required",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2528,7 +2551,9 @@
     81,
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ace2b9ee1b849984"
   },
   "listed": 10,
   "text_chars": 16000
@@ -2538,82 +2563,212 @@
   "title": "General Studies - Fire - Fire Investigation",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHEM2A",
+   "FIRS189",
+   "FIRS191",
+   "FIRS71",
+   "FIRS74",
+   "FIRS86",
+   "FTWO112",
+   "FTWO132",
+   "FTWO144",
+   "FTWP114"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
+   "title": "1. Demonstrate the basic knowledge, skills and abilities to safely",
+   "h1": "1. Demonstrate the basic knowledge, skills and abilities to safely",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81,
+    82,
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "aa9ea241882d4746"
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "18147",
   "title": "General Studies - Fire - Fire Service Command, Company Officer",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRS108",
+   "FIRS135",
+   "FIRS136",
+   "FIRS186",
+   "FIRS187",
+   "FTWO114",
+   "FTWO116",
+   "FTWO121",
+   "FTWO125"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
+   "title": "1. Demonstrate the basic knowledge, skills and abilities to safely",
+   "h1": "1. Demonstrate the basic knowledge, skills and abilities to safely",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "606ddcc02d924246"
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 5607
  },
  {
   "control_number": "18150",
   "title": "General Studies - Fire - Wildland Fire Behavior",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.524,
-  "codes_found": [
-   "CHEM10",
-   "CHEM11",
-   "CHEM1A",
-   "CHEM1B",
-   "CHEM2A",
-   "CHEM2B",
-   "CHEM70",
-   "CHEM70A",
-   "CHEM71",
-   "CHEM71A",
-   "ESCI14"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=44",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    44
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 21,
-  "text_chars": 3785
+  "text_chars": 0
  },
  {
   "control_number": "18152",
   "title": "General Studies - Health",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.522,
+  "codes_found": [
+   "ETHS11",
+   "HLTH1",
+   "HLTH2",
+   "HLTH3",
+   "HLTH4",
+   "HLTH6",
+   "HLTH7",
+   "KINES1",
+   "KINES2",
+   "NUTR25",
+   "PE11",
+   "PE12A",
+   "PE12B",
+   "PE12C",
+   "PE17A",
+   "PE17B",
+   "PE30A",
+   "PE30B",
+   "PE30C",
+   "PE31",
+   "PE35",
+   "PE37",
+   "PE4",
+   "PE51A",
+   "PE51B",
+   "PE51C",
+   "PE60",
+   "PE69",
+   "PE7",
+   "PE70A",
+   "PE70B",
+   "PE70C",
+   "PE71",
+   "PE72",
+   "PE75",
+   "PE8",
+   "PEAT11",
+   "PEAT13",
+   "PEAT15",
+   "PEAT17",
+   "PEAT19",
+   "PEAT23",
+   "PEAT25",
+   "PEAT29",
+   "PEAT5",
+   "PEAT7",
+   "PEAT9"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f9a876a1a829c8d7"
+  },
   "listed": 90,
-  "text_chars": 0
+  "text_chars": 11463
  },
  {
   "control_number": "18153",
   "title": "General Studies: Food & Beverage & Lodging Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "ACCT103",
+   "ACCT104",
+   "ACCT194",
+   "ACCT4",
+   "BSOT10",
+   "BSOT11",
+   "BUAD10",
+   "BUAD120",
+   "BUAD40",
+   "BUAD42",
+   "BUAD6",
+   "BUAD66",
+   "BUAD71",
+   "BUAD72",
+   "BUAD91",
+   "CIS1",
+   "CIS83",
+   "HOSP10",
+   "HOSP20",
+   "HOSP35",
+   "HOSP40",
+   "HOSP45",
+   "HOSP50",
+   "HOSP60",
+   "HOSP65"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
+   "title": "Business Administration –",
+   "h1": "Business Administration –",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61,
+    62,
+    63,
+    64
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ff783f45d6f5d5be"
+  },
   "listed": 54,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "18154",
@@ -2621,80 +2776,95 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.56,
+  "coverage": 1.0,
   "codes_found": [
    "ECE1",
+   "ECE12",
+   "ECE15",
+   "ECE16",
    "ECE17",
    "ECE2",
    "ECE20",
    "ECE22",
+   "ECE26",
+   "ECE27",
    "ECE28",
+   "ECE3",
+   "ECE51",
    "ECE52",
    "ECE6",
+   "ECE60",
    "ECE7",
    "ECE8",
    "ECE9",
    "EDUC1",
    "HUSV12",
+   "HUSV16",
+   "HUSV18",
+   "HUSV60",
    "NUTR25"
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "ECE 7 Early Childhood Observation and Assessment 3",
+   "h1": "ECE 7 Early Childhood Observation and Assessment 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "9bde5f55d16ff8b5"
   },
   "listed": 25,
-  "text_chars": 5818
+  "text_chars": 5814
  },
  {
   "control_number": "18155",
   "title": "General Studies - Humanities",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
-  "listed": 130,
-  "text_chars": 0
- },
- {
-  "control_number": "18156",
-  "title": "General Studies - Industrial Technologies",
-  "award": "A.S. Degree",
-  "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
-  "listed": 69,
-  "text_chars": 0
- },
- {
-  "control_number": "18157",
-  "title": "General Studies - Language Arts",
-  "award": "A.S. Degree",
-  "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.896,
+  "coverage": 0.885,
   "codes_found": [
+   "ART1",
+   "ART12",
+   "ART13",
+   "ART15",
+   "ART21A",
+   "ART21B",
+   "ART26A",
+   "ART26B",
+   "ART29A",
+   "ART29B",
+   "ART31A",
+   "ART31B",
+   "ART35A",
+   "ART35B",
+   "ART4",
+   "ART45",
+   "ART46",
+   "ART47",
+   "ART50A",
+   "ART55A",
+   "ART55B",
+   "ART6",
+   "ART80A",
+   "ART80B",
+   "ARTHC1100",
+   "ARTHC1200",
    "ASL1",
+   "ASL1L",
    "ASL2",
+   "ASL2L",
    "ASL3",
    "ASL4",
-   "CHIN1",
    "COMM20",
    "COMM30",
    "COMM40",
    "COMM54",
    "COMMC1000",
-   "COMMC1004",
    "ENGL10A",
    "ENGL10B",
    "ENGL11A",
@@ -2716,112 +2886,198 @@
    "FREN2",
    "GERM1",
    "GERM2",
+   "HUM2",
+   "HUM4",
+   "HUM70",
    "JAPN1",
    "JAPN19",
    "JAPN2",
+   "JAPN20",
    "JAPN3",
    "JAPN4",
    "JOUR21",
+   "JOUR27",
+   "JOUR29",
+   "MUS1",
+   "MUS10",
+   "MUS11",
+   "MUS14",
+   "MUS15",
+   "MUS2",
+   "MUS21A",
+   "MUS22A",
+   "MUS22B",
+   "MUS25A",
+   "MUS29",
+   "MUS3",
+   "MUS30",
+   "MUS31",
+   "MUS33",
+   "MUS35",
+   "MUS4",
+   "MUS40",
+   "MUS42",
+   "MUS43",
+   "MUS46",
+   "MUS47",
+   "MUS5",
+   "PHIL6",
+   "PHIL7",
+   "PHIL8",
    "SPAN1",
    "SPAN19",
    "SPAN2",
    "SPAN3",
-   "SPAN4"
+   "SPAN4",
+   "THTR1",
+   "THTR12",
+   "THTR13",
+   "THTR23",
+   "THTR26",
+   "THTR30",
+   "THTR34",
+   "THTR41",
+   "THTR42",
+   "THTR50",
+   "THTR70",
+   "THTR74",
+   "THTR8",
+   "THTR81"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=41",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
+   "title": "The Humanities emphasis permits students to explore the arts, ideas,",
+   "h1": "The Humanities emphasis permits students to explore the arts, ideas,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    41,
-    42,
-    43,
-    44
+    91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "724377d6c2955cd8"
   },
+  "listed": 130,
+  "text_chars": 6003
+ },
+ {
+  "control_number": "18156",
+  "title": "General Studies - Industrial Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMA42",
+   "AGMA44",
+   "AGNR101",
+   "AGNR102",
+   "AGNR103",
+   "AGNR104",
+   "AGNR105",
+   "AUTO1",
+   "AUTO11",
+   "AUTO132",
+   "AUTO147",
+   "AUTO150",
+   "AUTO161",
+   "AUTO163",
+   "AUTO20",
+   "AUTO21",
+   "CONS140A",
+   "CONS148",
+   "CONS45",
+   "CONS46",
+   "CONS47",
+   "CONS48",
+   "CONS55A",
+   "DIES160",
+   "DIES161",
+   "DIES162",
+   "DIES164",
+   "DIES166",
+   "DIES170",
+   "DIES48",
+   "DIES49",
+   "ENGR1A",
+   "ENGR1B",
+   "ENGR2",
+   "ENGR22",
+   "ENGR24",
+   "ENGR29",
+   "ENGR33",
+   "INDE1",
+   "INDE101",
+   "INDE102",
+   "INDE38",
+   "INDE40",
+   "INDE41",
+   "INDE42",
+   "INDE43",
+   "INDE44",
+   "INDE45",
+   "INDE46",
+   "INDE47",
+   "INDE49",
+   "INDE51",
+   "WELD118",
+   "WELD170",
+   "WELD171",
+   "WELD174",
+   "WELD175",
+   "WELD178",
+   "WELD182",
+   "WELD184",
+   "WELD186",
+   "WELD188",
+   "WELD70",
+   "WELD73",
+   "WTT101",
+   "WTT102",
+   "WTT103",
+   "WTT104",
+   "WTT105"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93,
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "c326548a63741b16"
+  },
+  "listed": 69,
+  "text_chars": 11996
+ },
+ {
+  "control_number": "18157",
+  "title": "General Studies - Language Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 48,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18158",
   "title": "General Studies - Natural Sciences",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.786,
-  "codes_found": [
-   "AGAS19",
-   "AGEH33",
-   "AGNR60",
-   "AGNR61",
-   "AGPS20",
-   "AGPS24",
-   "ANAT1",
-   "ASTR2",
-   "ASTR3",
-   "BIOL1",
-   "BIOL10",
-   "BIOL10L",
-   "BIOL11",
-   "BIOL12",
-   "BIOL5",
-   "BIOL6",
-   "BOT1",
-   "CHEM10",
-   "CHEM11",
-   "CHEM1A",
-   "CHEM1B",
-   "CHEM2A",
-   "CHEM2B",
-   "CHEM70",
-   "CHEM70A",
-   "CHEM71",
-   "CHEM71A",
-   "ESCI1",
-   "ESCI10",
-   "ESCI12",
-   "ESCI14",
-   "ESCI14L",
-   "ESCI15",
-   "ESCI16",
-   "ESCI17",
-   "ESCI18",
-   "ESCI2",
-   "ESCI3",
-   "ESCI6",
-   "ESCI7",
-   "ESCI8",
-   "ESCI9",
-   "GEOG1A",
-   "GEOG1AL",
-   "MICR1",
-   "NHIS15",
-   "NUTR25",
-   "PHSC1",
-   "PHY1",
-   "PHYS2A",
-   "PHYS2B",
-   "PHYS4A",
-   "PHYS4B",
-   "PHYS4C",
-   "ZOOL1"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=46",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    46
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 70,
-  "text_chars": 3713
+  "text_chars": 0
  },
  {
   "control_number": "18159",
@@ -2829,11 +3085,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
    "ADJU10",
    "ADJU106",
    "ADJU15",
+   "ADJU16",
    "ADJU17",
    "ADJU18",
    "ADJU20",
@@ -2848,127 +3105,43 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
-   "title": null,
-   "h1": null,
+   "title": "ADJU 17 Principles and Procedures of the Justice System 3",
+   "h1": "ADJU 17 Principles and Procedures of the Justice System 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     48
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "d27e5654114660bc"
   },
   "listed": 15,
-  "text_chars": 5840
+  "text_chars": 5835
  },
  {
   "control_number": "18160",
   "title": "General Studies - Social Sciences",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.94,
-  "codes_found": [
-   "ANTH14",
-   "ANTH2",
-   "ANTH25",
-   "ANTHC1001",
-   "ARCH3",
-   "ARCH4A",
-   "ECE1",
-   "ECE2",
-   "ECE9",
-   "ECONC2001",
-   "ECONC2002",
-   "GEOG1A",
-   "GEOG1AL",
-   "GEOG1B",
-   "GEOG2A",
-   "GEOG5",
-   "GEOG7",
-   "GEOG8",
-   "HIST1A",
-   "HIST1B",
-   "HIST2",
-   "HIST25",
-   "HIST3",
-   "HIST35",
-   "HIST38",
-   "HIST40",
-   "HISTC1001",
-   "HISTC1002",
-   "HUSV16",
-   "HUSV18",
-   "HUSV70",
-   "POLS1",
-   "POLS25",
-   "POLSC1000",
-   "PSYC14",
-   "PSYC15",
-   "PSYC17",
-   "PSYC20",
-   "PSYC41",
-   "PSYC46",
-   "PSYC5",
-   "PSYCC1000",
-   "SOC15",
-   "SOC2",
-   "SOC25",
-   "SOC3",
-   "SOCIC1000"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=41",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    41,
-    42,
-    43,
-    44
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 50,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18624",
   "title": "General Studies: Climatological & Meteorological Studies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.786,
-  "codes_found": [
-   "AGNR60",
-   "AGNR61",
-   "ASTR3",
-   "ESCI10",
-   "ESCI14",
-   "ESCI14L",
-   "ESCI15",
-   "ESCI17",
-   "ESCI18",
-   "PHYS2B",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=44",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    44,
-    45,
-    46,
-    47
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18625",
@@ -2976,7 +3149,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.625,
+  "coverage": 0.75,
   "codes_found": [
    "AGNR1",
    "AGNR60",
@@ -2984,24 +3157,28 @@
    "BIOL1",
    "BIOL12",
    "ESCI1",
+   "ESCI10",
    "ESCI15",
    "ESCI16",
    "GEOG10",
-   "NHIS15"
+   "NHIS15",
+   "PHYS2B"
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "Select 3 units from the following:",
+   "h1": "Select 3 units from the following:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "0c7f51898ca139ab"
   },
   "listed": 16,
-  "text_chars": 6203
+  "text_chars": 6189
  },
  {
   "control_number": "18626",
@@ -3009,7 +3186,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.843,
+  "coverage": 0.882,
   "codes_found": [
    "AGNR1",
    "AGNR50",
@@ -3032,6 +3209,8 @@
    "ESCI18",
    "ESCI2",
    "ESCI32",
+   "ESCI32L",
+   "ESCI33",
    "ESCI37",
    "ESCI37L",
    "ESCI38",
@@ -3057,8 +3236,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "title": "3. Practice critical thinking to evaluate internal and surface Earth",
+   "h1": "3. Practice critical thinking to evaluate internal and surface Earth",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3066,7 +3245,9 @@
     78,
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ac19f7aa015a76c2"
   },
   "listed": 51,
   "text_chars": 16000
@@ -3076,52 +3257,89 @@
   "title": "University Studies - Earth Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
-  "listed": 50,
-  "text_chars": 0
- },
- {
-  "control_number": "18657",
-  "title": "University Studies: Meteorology/Climatology",
-  "award": "A.A. Degree",
-  "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.824,
+  "coverage": 0.98,
   "codes_found": [
+   "AGNR11",
    "AGNR60",
    "AGNR61",
-   "ASTR3",
-   "CHEM1B",
+   "AGPS24",
+   "AGPS25",
+   "ANTH2",
+   "ANTH25",
+   "ANTHC1001",
+   "ARCH3",
+   "BIOL1",
+   "BOT1",
+   "ESCI1",
    "ESCI10",
    "ESCI14",
    "ESCI14L",
    "ESCI15",
    "ESCI17",
    "ESCI18",
-   "MATHC2220",
+   "ESCI2",
+   "ESCI32",
+   "ESCI32L",
+   "ESCI33",
+   "ESCI33L",
+   "ESCI34",
+   "ESCI34L",
+   "ESCI35",
+   "ESCI35L",
+   "ESCI36",
+   "ESCI36L",
+   "ESCI37",
+   "ESCI37L",
+   "ESCI38",
+   "ESCI38L",
+   "ESCI6",
+   "ESCI7",
+   "GEOG1A",
+   "GEOG1AL",
+   "GEOG1B",
+   "GEOG5",
+   "GEOG7",
+   "GEOG8",
+   "HIST3",
    "NHIS15",
-   "PHYS2B",
-   "STATC1000"
+   "NHIS5",
+   "NHIS5L",
+   "NHIS65",
+   "POLS25",
+   "SOC25",
+   "ZOOL1"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=44",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
+   "title": "Middle/High School teachers and Elementary School teachers,",
+   "h1": "Middle/High School teachers and Elementary School teachers,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    44,
-    45,
-    46,
-    47
+    74,
+    75,
+    76,
+    77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4fed824a6ddc4d56"
   },
-  "listed": 17,
+  "listed": 50,
   "text_chars": 16000
+ },
+ {
+  "control_number": "18657",
+  "title": "University Studies: Meteorology/Climatology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
  },
  {
   "control_number": "18658",
@@ -3129,19 +3347,25 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.789,
+  "coverage": 1.0,
   "codes_found": [
    "AGNR1",
    "AGNR60",
    "AGNR61",
    "AGPS25",
    "ARCH4A",
+   "ARCH5A",
    "BIOL1",
    "BIOL12",
    "BIOL12L",
    "BOT1",
    "CHEM1A",
+   "CHEM1B",
+   "CHEM2A",
    "ESCI1",
+   "ESCI10",
+   "ESCI14",
+   "ESCI14L",
    "ESCI15",
    "ESCI16",
    "ESCI16L",
@@ -3152,6 +3376,7 @@
    "ESCI38",
    "ESCI38L",
    "ESCI6",
+   "ESCI7",
    "GEOG10",
    "GEOG15",
    "GEOG9",
@@ -3160,22 +3385,25 @@
    "NHIS5L",
    "NHIS65",
    "PHYS2A",
+   "PHYS2B",
    "ZOOL1"
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "Select 3 units from the following:",
+   "h1": "Select 3 units from the following:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78,
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "26bb19c96acf97bf"
   },
   "listed": 38,
-  "text_chars": 12964
+  "text_chars": 12948
  },
  {
   "control_number": "18659",
@@ -3183,10 +3411,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.915,
+  "coverage": 0.979,
   "codes_found": [
    "AGNR1",
    "AGNR60",
+   "AGNR61",
    "AGPS25",
    "BIOL1",
    "BIOL12",
@@ -3224,15 +3453,17 @@
    "GEOG9",
    "NHIS15",
    "NHIS5",
+   "NHIS5L",
    "NHIS65",
    "PHSC1",
    "PHYS2A",
+   "PHYS2B",
    "ZOOL1"
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "Middle/High School teachers and Elementary School teachers,",
+   "h1": "Middle/High School teachers and Elementary School teachers,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3241,7 +3472,9 @@
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4fed824a6ddc4d56"
   },
   "listed": 47,
   "text_chars": 16000
@@ -3269,18 +3502,25 @@
    "BUAD17"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=58",
+   "title": "THTR 13 Acting II (3)",
+   "h1": "THTR 13 Acting II (3)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    58,
+    59,
     60,
-    61,
-    62,
-    63
+    61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 58,
+    "share": 1.0
+   },
+   "text_sha": "62b8ce2a5c7e40b9"
   },
   "listed": 13,
   "text_chars": 16000
@@ -3312,8 +3552,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
-   "title": null,
-   "h1": null,
+   "title": "2. Recognize conflict styles and manage conflict situations utilizing",
+   "h1": "2. Recognize conflict styles and manage conflict situations utilizing",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3321,7 +3561,9 @@
     64,
     65
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "358d7ef3d23966c6"
   },
   "listed": 16,
   "text_chars": 16000
@@ -3381,18 +3623,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "title": "requirements are also required for the degree. Hands-on work",
+   "h1": "requirements are also required for the degree. Hands-on work",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     69,
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "2eb1fb7d73a87762"
   },
   "listed": 8,
-  "text_chars": 11955
+  "text_chars": 11953
  },
  {
   "control_number": "19650",
@@ -3415,8 +3659,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "TOTAL UNITS FOR CERTIFICATE: 17",
+   "h1": "TOTAL UNITS FOR CERTIFICATE: 17",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3424,10 +3668,12 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "84595aeb6fb02eaf"
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 14613
  },
  {
   "control_number": "19651",
@@ -3458,33 +3704,12 @@
   "title": "Agriculture Business",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.692,
-  "codes_found": [
-   "AG1",
-   "AG94",
-   "AG9A",
-   "AGAB54",
-   "AGAS19",
-   "AGMA44",
-   "AGNR52",
-   "AGPS20",
-   "AGPS24"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    53,
-    54
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 12158
+  "text_chars": 0
  },
  {
   "control_number": "30491",
@@ -3520,18 +3745,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=53",
-   "title": null,
-   "h1": null,
+   "title": "#May be used to fulfill Cal-GETC requirements. See a counselor.",
+   "h1": "#May be used to fulfill Cal-GETC requirements. See a counselor.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ffa02ee2b709bbf1"
   },
   "listed": 23,
-  "text_chars": 12158
+  "text_chars": 12150
  },
  {
   "control_number": "30579",
@@ -3558,17 +3785,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "in Arts in Sociology for Transfer Degree. Students must also obtain a",
+   "h1": "in Arts in Sociology for Transfer Degree. Students must also obtain a",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7e4006aa47db4337"
   },
   "listed": 14,
-  "text_chars": 6182
+  "text_chars": 1405
  },
  {
   "control_number": "30580",
@@ -3591,17 +3820,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "title": "Communication Studies 2.0 for Transfer degree aligns with the CSU",
+   "h1": "Communication Studies 2.0 for Transfer degree aligns with the CSU",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     66
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "81a93865192b1ae3"
   },
   "listed": 10,
-  "text_chars": 6547
+  "text_chars": 2734
  },
  {
   "control_number": "31086",
@@ -3629,17 +3860,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "FTWO 128",
+   "h1": "FTWO 128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b2242ecaf43b3374"
   },
   "listed": 3,
-  "text_chars": 5901
+  "text_chars": 5894
  },
  {
   "control_number": "31267",
@@ -3660,8 +3893,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "title": "in Science in Early Childhood Education for Transfer degree. Students",
+   "h1": "in Science in Early Childhood Education for Transfer degree. Students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3669,7 +3902,9 @@
     72,
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "4741e101d91636d2"
   },
   "listed": 8,
   "text_chars": 16000
@@ -3693,8 +3928,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "title": "and",
+   "h1": "and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3703,7 +3938,9 @@
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "25ec7f519375a1c4"
   },
   "listed": 8,
   "text_chars": 16000
@@ -3737,8 +3974,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "title": "and",
+   "h1": "and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3747,7 +3984,9 @@
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "25ec7f519375a1c4"
   },
   "listed": 18,
   "text_chars": 16000
@@ -3770,20 +4009,21 @@
    "ECE9"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=72",
+   "title": "PROGRAM DESCRIPTION: The Early Childhood Education Certificate",
+   "h1": "PROGRAM DESCRIPTION: The Early Childhood Education Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    71,
     72,
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9043e5f03feab306"
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 10898
  },
  {
   "control_number": "31988",
@@ -3791,10 +4031,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL1",
    "BIOL10",
+   "BIOL10L",
    "BIOL5",
    "ECE1",
    "ENGLC1001",
@@ -3814,18 +4055,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "social issues. The Associate in Arts in Psychology for Transfer degree",
+   "h1": "social issues. The Associate in Arts in Psychology for Transfer degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     102,
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1e57ab2e82b958fd"
   },
   "listed": 19,
-  "text_chars": 12892
+  "text_chars": 8864
  },
  {
   "control_number": "32039",
@@ -3855,8 +4098,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=47",
-   "title": null,
-   "h1": null,
+   "title": "in Science in Administration of Justice for Transfer Degree. Students",
+   "h1": "in Science in Administration of Justice for Transfer Degree. Students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3864,10 +4107,12 @@
     48,
     49
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1b82734d737e18b9"
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 15446
  },
  {
   "control_number": "32051",
@@ -3895,18 +4140,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=57",
-   "title": null,
-   "h1": null,
+   "title": "8. Transfer to a California State University with a major in Theatre Arts.",
+   "h1": "8. Transfer to a California State University with a major in Theatre Arts.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     57,
     58
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b394e20b44896296"
   },
   "listed": 15,
-  "text_chars": 13276
+  "text_chars": 7564
  },
  {
   "control_number": "32162",
@@ -3951,8 +4198,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "in Arts in Kinesiology for Transfer Degree. Students must also obtain a",
+   "h1": "in Arts in Kinesiology for Transfer Degree. Students must also obtain a",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3961,7 +4208,9 @@
     102,
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7cae2b99b449f053"
   },
   "listed": 32,
   "text_chars": 16000
@@ -3995,14 +4244,16 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=57",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAM DESCRIPTION: The AA-T in Studio Arts program provides",
+   "h1": "PROGRAM DESCRIPTION: The AA-T in Studio Arts program provides",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "12b5976ee897f93e"
   },
   "listed": 18,
   "text_chars": 7081
@@ -4053,47 +4304,32 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=54",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed",
+   "h1": "PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     54,
     55
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "49e3d90047bff44e"
   },
   "listed": 35,
-  "text_chars": 12885
+  "text_chars": 12881
  },
  {
   "control_number": "32486",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "MATH4A",
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS4A",
-   "PHYS4B",
-   "PHYS4C"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    79
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 6759
+  "text_chars": 0
  },
  {
   "control_number": "32493",
@@ -4136,19 +4372,22 @@
    "THTR1"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=94",
+   "title": "Transfer degree  introduces students to English or English Education",
+   "h1": "Transfer degree  introduces students to English or English Education",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    94,
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "99ba9422acc897ca"
   },
   "listed": 31,
-  "text_chars": 10676
+  "text_chars": 11534
  },
  {
   "control_number": "32573",
@@ -4175,18 +4414,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAM DESCRIPTION: The Associate in Arts in Music for Transfer",
+   "h1": "PROGRAM DESCRIPTION: The Associate in Arts in Music for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d569df0cbe5cc98b"
   },
   "listed": 14,
-  "text_chars": 12346
+  "text_chars": 11427
  },
  {
   "control_number": "32755",
@@ -4208,17 +4449,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "nature of the universe. The Associate in Arts in Philosophy for Transfer",
+   "h1": "nature of the universe. The Associate in Arts in Philosophy for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5602ec93f912fb78"
   },
   "listed": 9,
-  "text_chars": 6005
+  "text_chars": 4435
  },
  {
   "control_number": "33268",
@@ -4236,17 +4479,20 @@
    "MATHC2220"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=76",
+   "title": "in Science in Geology for Transfer Degree. Students must also obtain a",
+   "h1": "in Science in Geology for Transfer Degree. Students must also obtain a",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    76,
     77,
     78,
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "052c7b05c96d361b"
   },
   "listed": 6,
   "text_chars": 16000
@@ -4277,19 +4523,22 @@
    "HIT7"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=84",
+   "title": "graduated with an Associate in Science degree in Health Information",
+   "h1": "graduated with an Associate in Science degree in Health Information",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    84,
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "68826e29acbd4f17"
   },
   "listed": 16,
-  "text_chars": 13909
+  "text_chars": 16000
  },
  {
   "control_number": "34005",
@@ -4318,17 +4567,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "Students can enter the health information management bachelor degree",
+   "h1": "Students can enter the health information management bachelor degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     84
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7d6110a6433f1632"
   },
   "listed": 16,
-  "text_chars": 7259
+  "text_chars": 5422
  },
  {
   "control_number": "35160",
@@ -4353,18 +4604,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "Arts in Political Science for Transfer degree provides the student with",
+   "h1": "Arts in Political Science for Transfer degree provides the student with",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     102,
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6c42d0fee98f0606"
   },
   "listed": 12,
-  "text_chars": 12892
+  "text_chars": 12530
  },
  {
   "control_number": "35244",
@@ -4388,18 +4641,19 @@
    "GEOG9"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=76",
+   "title": "Arts in Geography for Transfer degree is designed to prepare students",
+   "h1": "Arts in Geography for Transfer degree is designed to prepare students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    75,
     76,
     77,
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6174adda68b42577"
   },
   "listed": 12,
   "text_chars": 16000
@@ -4423,17 +4677,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "CERTIFICATE REQUIREMENTS:",
+   "h1": "CERTIFICATE REQUIREMENTS:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "060e30c20e960036"
   },
   "listed": 8,
-  "text_chars": 6960
+  "text_chars": 3928
  },
  {
   "control_number": "35606",
@@ -4459,8 +4715,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAM DESCRIPTION: The AS-T in Agriculture-Plant Science is",
+   "h1": "PROGRAM DESCRIPTION: The AS-T in Agriculture-Plant Science is",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4469,7 +4725,9 @@
     54,
     55
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "82a123b28d2920c4"
   },
   "listed": 13,
   "text_chars": 16000
@@ -4498,8 +4756,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=49",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science for Transfer:",
+   "h1": "Associate in Science for Transfer:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4508,7 +4766,9 @@
     51,
     52
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "92b0acf567fd6800"
   },
   "listed": 13,
   "text_chars": 16000
@@ -4541,18 +4801,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "in Arts in Elementary Teacher Education for Transfer degree. Students",
+   "h1": "in Arts in Elementary Teacher Education for Transfer degree. Students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b4d597c382cb1ec9"
   },
   "listed": 20,
-  "text_chars": 10390
+  "text_chars": 8264
  },
  {
   "control_number": "35896",
@@ -4578,8 +4840,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=48",
-   "title": null,
-   "h1": null,
+   "title": "ADJU 17 Principles and Procedures of the Justice System 3",
+   "h1": "ADJU 17 Principles and Procedures of the Justice System 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4588,7 +4850,9 @@
     50,
     51
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "489b5030ddbd7a7f"
   },
   "listed": 13,
   "text_chars": 16000
@@ -4598,32 +4862,12 @@
   "title": "Maintenance Mechanic",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.615,
-  "codes_found": [
-   "DIES48",
-   "DIES49",
-   "INDE101",
-   "MATH73",
-   "WELD118",
-   "WELD174",
-   "WELD70",
-   "WELD73"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    93,
-    94
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 11997
+  "text_chars": 0
  },
  {
   "control_number": "35929",
@@ -4653,8 +4897,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "History for Transfer Degree is designed to provide students with a",
+   "h1": "History for Transfer Degree is designed to provide students with a",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4662,10 +4906,12 @@
     102,
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a1de8f273fa375d2"
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 15870
  },
  {
   "control_number": "36060",
@@ -4673,8 +4919,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.885,
+  "coverage": 1.0,
   "codes_found": [
+   "ANAT1",
+   "HEOC1",
+   "HEOC11",
    "PHY1",
    "PTA1",
    "PTA10",
@@ -4700,20 +4949,26 @@
    "PTA9L"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=88",
+   "title": "Physical Therapist Assistant",
+   "h1": "Physical Therapist Assistant",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    197,
-    198,
-    199
+    88,
+    89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 88,
+    "share": 1.0
+   },
+   "text_sha": "d33bbf90752b18ef"
   },
   "listed": 26,
-  "text_chars": 16000
+  "text_chars": 11425
  },
  {
   "control_number": "37749",
@@ -4735,17 +4990,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68",
-   "title": null,
-   "h1": null,
+   "title": "Science for Transfer Degree (AS -T in Computer Science) provides",
+   "h1": "Science for Transfer Degree (AS -T in Computer Science) provides",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     68
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e3990f106f6a6b02"
   },
   "listed": 9,
-  "text_chars": 6135
+  "text_chars": 4599
  },
  {
   "control_number": "37774",
@@ -4772,17 +5029,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=70",
-   "title": null,
-   "h1": null,
+   "title": "Management for Transfer Degree (AS -T Hospitality Management)",
+   "h1": "Management for Transfer Degree (AS -T Hospitality Management)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ea6569ffccb9266b"
   },
   "listed": 14,
-  "text_chars": 6049
+  "text_chars": 5293
  },
  {
   "control_number": "38138",
@@ -4805,18 +5064,20 @@
    "BUAD91"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=62",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
+   "title": "Business Administration –",
+   "h1": "Business Administration –",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    61,
     62,
     63,
-    64,
-    65
+    64
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ff783f45d6f5d5be"
   },
   "listed": 11,
   "text_chars": 16000
@@ -4826,40 +5087,45 @@
   "title": "Web Master",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.615,
+  "codes_found": [
+   "BUAD71",
+   "BUAD72",
+   "CIS2",
+   "CIS23",
+   "CIS64",
+   "CIS73",
+   "CIS76",
+   "CIS83"
+  ],
+  "source": {
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68",
+   "title": "Option 2: CISCO Networking Option (9 units)",
+   "h1": "Option 2: CISCO Networking Option (9 units)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "c97af1bf496f14bc"
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 6135
  },
  {
   "control_number": "39409",
   "title": "Smog Inspection and Repair Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.833,
-  "codes_found": [
-   "AUTO11",
-   "AUTO176",
-   "AUTO20",
-   "AUTO21",
-   "AUTO94"
-  ],
-  "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=125",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    125
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 8283
+  "text_chars": 0
  },
  {
   "control_number": "39682",
@@ -4879,17 +5145,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "65445d6aaf0c54ea"
   },
   "listed": 7,
-  "text_chars": 5639
+  "text_chars": 5638
  },
  {
   "control_number": "39683",
@@ -4909,18 +5177,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "title": "Business Administration –",
+   "h1": "Business Administration –",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     61,
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "c6e873cfb6e1d62e"
   },
   "listed": 7,
-  "text_chars": 11806
+  "text_chars": 11802
  },
  {
   "control_number": "39957",
@@ -4941,18 +5211,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=54",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed",
+   "h1": "PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     54,
     55
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "49e3d90047bff44e"
   },
   "listed": 8,
-  "text_chars": 12885
+  "text_chars": 12881
  },
  {
   "control_number": "41382",
@@ -4967,17 +5239,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=70",
-   "title": null,
-   "h1": null,
+   "title": "HOSP 40 Human Res. Mgmt. in the Hospitality Industry 3",
+   "h1": "HOSP 40 Human Res. Mgmt. in the Hospitality Industry 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     70
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "715a02a1572b6234"
   },
   "listed": 2,
-  "text_chars": 6049
+  "text_chars": 6048
  },
  {
   "control_number": "41514",
@@ -4992,17 +5266,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Engineering. See a counselor for the complete list of courses required",
+   "h1": "Engineering. See a counselor for the complete list of courses required",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4e0d06def56cf372"
   },
   "listed": 2,
-  "text_chars": 6759
+  "text_chars": 6757
  },
  {
   "control_number": "41515",
@@ -5017,17 +5293,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
-   "title": null,
-   "h1": null,
+   "title": "2. Recognize conflict styles and manage conflict situations utilizing",
+   "h1": "2. Recognize conflict styles and manage conflict situations utilizing",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     63
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "bded9ba5e5c5cbc7"
   },
   "listed": 2,
-  "text_chars": 5829
+  "text_chars": 5827
  },
  {
   "control_number": "41811",
@@ -5035,30 +5313,30 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.875,
   "codes_found": [
    "ENGLC1000",
    "HUSV12",
    "HUSV14",
    "HUSV70",
-   "HUSV95A",
    "PSYCC1000",
    "SOC25",
    "SOCIC1000"
   ],
   "source": {
-   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=90",
+   "title": "certificate also serves as a pathway to the Level 2 Case Management",
+   "h1": "certificate also serves as a pathway to the Level 2 Case Management",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89,
     90,
     91,
     92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7cc0422faf4a20a1"
   },
   "listed": 8,
   "text_chars": 16000
@@ -5096,8 +5374,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "title": "Dietetics for Transfer degree (AS -T in Nutrition and Dietetics) prepares",
+   "h1": "Dietetics for Transfer degree (AS -T in Nutrition and Dietetics) prepares",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5106,7 +5384,9 @@
     101,
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a3d7eb253c5ac207"
   },
   "listed": 10,
   "text_chars": 16000
@@ -5127,17 +5407,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=63",
-   "title": null,
-   "h1": null,
+   "title": "2. Recognize conflict styles and manage conflict situations utilizing",
+   "h1": "2. Recognize conflict styles and manage conflict situations utilizing",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     63
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "bded9ba5e5c5cbc7"
   },
   "listed": 5,
-  "text_chars": 5829
+  "text_chars": 5827
  },
  {
   "control_number": "42367",
@@ -5161,8 +5443,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "title": "in Science in Business Administration 2.0 for Transfer degree. Students",
+   "h1": "in Science in Business Administration 2.0 for Transfer degree. Students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5170,7 +5452,9 @@
     61,
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1f90a66f993c8944"
   },
   "listed": 11,
   "text_chars": 16000
@@ -5200,17 +5484,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "title": "Communication Studies 2.0 for Transfer degree aligns with the CSU",
+   "h1": "Communication Studies 2.0 for Transfer degree aligns with the CSU",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     66
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "81a93865192b1ae3"
   },
   "listed": 14,
-  "text_chars": 6547
+  "text_chars": 2734
  },
  {
   "control_number": "43879",
@@ -5241,14 +5527,16 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "title": "evidenced by written supervisor review in both Supervised",
+   "h1": "evidenced by written supervisor review in both Supervised",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     56
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "db3b0a5af2460bfc"
   },
   "listed": 18,
   "text_chars": 5628
@@ -5280,18 +5568,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=55",
-   "title": null,
-   "h1": null,
+   "title": "Upon successful completion of the certificate, the student should be able",
+   "h1": "Upon successful completion of the certificate, the student should be able",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     55,
     56
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5f8c5a0afe136618"
   },
   "listed": 16,
-  "text_chars": 11814
+  "text_chars": 11813
  },
  {
   "control_number": "43972",
@@ -5315,18 +5605,20 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "BSOT 80 Outlook  1",
+   "h1": "BSOT 80 Outlook  1",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     65,
     66
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ce76f0567f35ee47"
   },
   "listed": 11,
-  "text_chars": 12289
+  "text_chars": 12284
  },
  {
   "control_number": "44358",
@@ -5352,8 +5644,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "title": "businesses. The Integrative Health and Wellness Coaching Certificate",
+   "h1": "businesses. The Integrative Health and Wellness Coaching Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5362,7 +5654,9 @@
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2f7d9d07efc4b65b"
   },
   "listed": 13,
   "text_chars": 16000
@@ -5381,17 +5675,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=83",
-   "title": null,
-   "h1": null,
+   "title": "ALH 94, 101, 101L 102, 103, 103L, 104, 104L, 110",
+   "h1": "ALH 94, 101, 101L 102, 103, 103L, 104, 104L, 110",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     83
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4b068450802e7dd5"
   },
   "listed": 3,
-  "text_chars": 6234
+  "text_chars": 6230
  },
  {
   "control_number": "44718",
@@ -5415,8 +5711,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "FTWO 128",
+   "h1": "FTWO 128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5424,7 +5720,9 @@
     82,
     83
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4f62ec6b5548d157"
   },
   "listed": 11,
   "text_chars": 16000
@@ -5455,17 +5753,19 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=54",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed",
+   "h1": "PROGRAM DESCRIPTION: Pest Control Advisors (PCAs) are licensed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "1ae9d7e6b37ab852"
   },
   "listed": 3,
-  "text_chars": 6699
+  "text_chars": 6696
  },
  {
   "control_number": "45360",
@@ -5646,8 +5946,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=43",
-   "title": null,
-   "h1": null,
+   "title": "Shasta College 2026-2027",
+   "h1": "Shasta College 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5656,7 +5956,9 @@
     45,
     46
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f3d70d022c417346"
   },
   "listed": 168,
   "text_chars": 16000
@@ -5691,8 +5993,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "JAPN 2 Japanese 2 (5)",
+   "h1": "JAPN 2 Japanese 2 (5)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5701,7 +6003,9 @@
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "29541f1791b803d3"
   },
   "listed": 19,
   "text_chars": 16000
@@ -5721,8 +6025,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "Accounting Foundations Certificate, providing additional depth in",
+   "h1": "Accounting Foundations Certificate, providing additional depth in",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5731,7 +6035,9 @@
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c66c1c36d03fa175"
   },
   "listed": 4,
   "text_chars": 16000
@@ -5757,8 +6063,8 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "being the Accounting Specialist Certificate. It addresses the evolving",
+   "h1": "being the Accounting Specialist Certificate. It addresses the evolving",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5767,7 +6073,9 @@
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6eb3a76ee728fa86"
   },
   "listed": 10,
   "text_chars": 16000
@@ -5802,16 +6110,18 @@
   ],
   "source": {
    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "71dd85bd29c37f5a"
   },
   "listed": 19,
-  "text_chars": 6250
+  "text_chars": 6248
  }
 ]

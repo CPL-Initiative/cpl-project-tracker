@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Administration of Justice",
  "award": "A.A. Degree",
- "source_url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-arts/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12598,
+  "input_tokens": 8463,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12598,
-    "output_tokens": 2465,
+    "input_tokens": 8463,
+    "output_tokens": 3379,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,85 +30,60 @@
     "model": null
    }
   ],
-  "output_tokens": 2465,
+  "output_tokens": 3379,
   "output_tokens_details": {
-   "thinking_tokens": 624
+   "thinking_tokens": 796
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09969,
- "ms": 24023,
- "seconds": 25.2,
+ "cost_usd": 0.10143,
+ "ms": 25953,
+ "seconds": 26.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 38,
    "listed": 38,
-   "share": 0.0,
-   "missing": [
-    "AJ10",
-    "AJ11",
-    "AJ110",
-    "AJ111",
-    "AJ112",
-    "AJ113",
-    "AJ115",
-    "AJ116",
-    "AJ120",
-    "AJ123",
-    "AJ125",
-    "AJ13",
-    "AJ139",
-    "AJ14",
-    "AJ15",
-    "AJ19",
-    "ANTH63",
-    "BUS60",
-    "COMS35",
-    "ETH20",
-    "ETH35",
-    "HIST14",
-    "HIST21",
-    "HIST22",
-    "HIST23",
-    "LA50",
-    "PHIL60",
-    "PHIL65",
-    "POLSC1000",
-    "PSYCH18",
-    "PSYCH20",
-    "PSYCH27",
-    "PSYCH51",
-    "PSYCH60",
-    "SOC11",
-    "SOC18",
-    "SOC19",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "PSYCH26"
+   ],
+   "flagged": [
+    "PSYCH26"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    58.0,
+    58.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "fill": [
+    2.0,
+    2.0
    ]
   },
   "repeated": {
@@ -116,31 +91,28 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "GENERAL EDUCATION REQUIREMENTS FOR ASSOCIATE IN ARTS AND ASSOCIATE IN SCIENCE",
+   "section_heading": "Administration of Justice, Associate in Arts (AA)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -153,179 +125,353 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate effective written and oral communication necessary in the criminal justice field.",
+    "Interpret and analyze information, concepts, and theories of the criminal justice system from multiple perspectives",
+    "Apply and integrate terminology, concepts, and practices of law enforcement, the courts, and corrections.",
+    "Recognize the value of a multicultural society and the importance of social justice within the community both personally and within the criminal justice field",
+    "Analyze and consider personal decisions and ideas related to the criminal justice system that are based on civility, civic responsibility, and public perception."
+   ],
+   "careers": [
+    "law enforcement",
+    "corrections",
+    "courts",
+    "social and judicial services",
+    "the private sector",
+    "criminal justice fields"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AJ 10",
-    "why": "Appears only as AJ 010 in the GE Area 4 list; no Administration of Justice major section in the text."
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "AJ 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AJ 11",
-    "why": "Appears only as AJ 011 in the GE Area 4 list; no major section in the text."
+    "name": "Major Electives - Select one from the following AJ courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AJ 019",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 139",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AJ 110",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 111",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 112",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 113",
-    "why": "Appears only in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "AJ 115",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 116",
-    "why": "Appears only in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "AJ 120",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 123",
-    "why": "Appears only in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "AJ 125",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 13",
-    "why": "Appears only as AJ 013 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "AJ 139",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 14",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 15",
-    "why": "Not in the text."
-   },
-   {
-    "code": "AJ 19",
-    "why": "Appears only as AJ 019 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "ANTH 63",
-    "why": "Appears only as ANTH 063 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "BUS 60",
-    "why": "Appears only as BUS 060 in the GE Area 2 list; no major section in the text."
-   },
-   {
-    "code": "COMS 35",
-    "why": "Appears only as COMS 035 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "ETH 20",
-    "why": "Appears only as ETH 020 in GE Areas 3B and 4; no major section in the text."
-   },
-   {
-    "code": "ETH 35",
-    "why": "Appears only as ETH 035 in GE Areas 4 and 6; no major section in the text."
-   },
-   {
-    "code": "HIST 14",
-    "why": "Appears only as HIST 014 in GE Area 4 and the US History Option 2 list; no major section in the text."
-   },
-   {
-    "code": "HIST 21",
-    "why": "Appears only as HIST 021 in GE Area 4 and the US History Option 2 list; no major section in the text."
-   },
-   {
-    "code": "HIST 22",
-    "why": "Appears only as HIST 022 in GE Area 4 and the US History Option 2 list; no major section in the text."
-   },
-   {
-    "code": "HIST 23",
-    "why": "Appears only as HIST 023 in GE Area 4 and the US History Option 2 list; no major section in the text."
-   },
-   {
-    "code": "LA 50",
-    "why": "Not in the text."
-   },
-   {
-    "code": "PHIL 60",
-    "why": "Not in the text."
-   },
-   {
-    "code": "PHIL 65",
-    "why": "Appears only as PHIL 065 in the GE Area 3B list; no major section in the text."
-   },
-   {
-    "code": "POLS C1000",
-    "why": "Appears only in GE Area 4 and the US History Option 2; no major section in the text."
-   },
-   {
-    "code": "PSYCH 18",
-    "why": "Appears only as PSYCH 018 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "PSYCH 20",
-    "why": "Not in the text."
-   },
-   {
-    "code": "PSYCH 27",
-    "why": "Appears only as PSYCH 027 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "PSYCH 51",
-    "why": "Appears only as PSYCH 051 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "PSYCH 60",
-    "why": "Not in the text."
-   },
-   {
-    "code": "SOC 11",
-    "why": "Appears only as SOC 011 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "SOC 18",
-    "why": "Appears only as SOC 018 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "SOC 19",
-    "why": "Appears only as SOC 019 in the GE Area 4 list; no major section in the text."
-   },
-   {
-    "code": "STAT C1000",
-    "why": "Appears only in the GE Area 2 list; no major section in the text."
+    "name": "Other Major Electives - Two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANTH 063",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMS 035",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH 020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH 035",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 014",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 022",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 023",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LA 050",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 060",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 065",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 018",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 026",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 027",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 051",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 060",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 011",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 018",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 019",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 060",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The source page is the college-wide General Education Requirements for AA/AS page, not the Administration of Justice A.A. program page. It prints no major requirements, total, outcomes or careers for this award, so no blocks were recorded.",
-   "Several closed-list courses appear on this page only as general education options (Areas 2, 3B, 4, 6 and the US History/Constitution options). GE courses are never placed in blocks.",
-   "The page says 'Major Coursework: See major sheet or visit your counselor'. A reviewer should fetch the actual Administration of Justice A.A. program page for the 2025-2026 catalog.",
-   "ge_pattern was left null because the page does not tie its local AA/AS GE pattern to this award by name, and it prints no GE unit total."
+   "The catalog prints codes zero-padded (AJ 010, ANTH 063, etc.); these were matched to the closed list's unpadded codes (AJ 10, ANTH 63) and not flagged as additions.",
+   "PSYCH 026 Violence Against Women: Cross-Cultural Perspective is listed under Other Major Electives but is not in the closed list (catalog_addition true).",
+   "'One of the following Statistics courses: BUS 060 or STAT C1000' is printed at the end of the Other Major Electives list with no units. Because the Total Requirements table gives Major Electives as 9 units (3 + 6), it was read as one option within the two-course Other Major Electives choice, not a separate required course; a reviewer should verify whether statistics is a separate requirement.",
+   "No units are printed beside individual elective courses; only block totals (3 and 6) are printed.",
+   "The Major Requirements block's stated 15 comes from the Total Requirements table.",
+   "No major total is printed; the page prints Total Units 60 (degree_total), General Education Requirements 34 (ge_units), and 'Electives (as needed to complete 60 AA Applicable units)' with no units (electives_fill_degree true).",
+   "The page does not name the general education pattern (only 'General Education Requirements'), so ge_pattern is null.",
+   "The Program Learning Outcomes come from the page's outcomes tab for this AA degree."
   ]
  },
- "extracted_run": "38748875071"
+ "extracted_run": "44519542333",
+ "catalog_year": "2026-2027"
 }

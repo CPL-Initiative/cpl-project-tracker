@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Physical Therapist Assistant",
  "award": "A.S. Degree",
- "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=197",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=88",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12660,
+  "input_tokens": 10580,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12660,
-    "output_tokens": 1240,
+    "input_tokens": 10580,
+    "output_tokens": 2917,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,56 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1240,
+  "output_tokens": 2917,
   "output_tokens_details": {
-   "thinking_tokens": 321
+   "thinking_tokens": 825
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07544,
- "ms": 10822,
- "seconds": 11.3,
+ "cost_usd": 0.10066,
+ "ms": 22577,
+ "seconds": 22.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 26,
    "listed": 26,
-   "share": 0.0,
-   "missing": [
-    "ANAT1",
-    "HEOC1",
-    "HEOC11",
-    "PHY1",
-    "PTA1",
-    "PTA10",
-    "PTA10L",
-    "PTA11",
-    "PTA2",
-    "PTA20",
-    "PTA21",
-    "PTA22",
-    "PTA3",
-    "PTA3L",
-    "PTA4",
-    "PTA4L",
-    "PTA5",
-    "PTA5L",
-    "PTA6",
-    "PTA6L",
-    "PTA7",
-    "PTA7L",
-    "PTA8",
-    "PTA8L",
-    "PTA9",
-    "PTA9L"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -88,180 +61,389 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    58.0,
+    58.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    58.0,
+    58.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     79.0,
+     79.0
+    ],
+    "stated": [
+     76.0,
+     76.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "PHYSICAL THERAPIST ASSISTANT (PTA)",
+   "section_heading": "Physical Therapist Assistant Associate in Science: SC Program: AS.1601",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 58,
+    "max": 58
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 0,
+    "max": 0
    },
-   "ge_pattern": null,
+   "ge_pattern": "General Education (SCGE)",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 76,
+    "max": 76
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Perform entry-level competencies as a physical therapist assistant as outlined by the Commission on Accreditation in Physical Therapy Education (CAPTE), the American Physical Therapy Association (APTA), and the Physical Therapy Board of California.",
+    "Practice interventions of therapeutic exercise, therapeutic techniques, physical agents, mechanical modalities, electrotherapeutic modalities, and functional training in a competent manner consistent with the plan of care established by the physical therapist.",
+    "Demonstrate expected clinical behaviors in a professional, culturally competent, and sensitive manner, consistent with established core professional values and established ethical and legal guidelines."
+   ],
+   "careers": [
+    "physical therapist assistants"
+   ],
+   "ge_overlap": true
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ANAT 1",
-    "why": "not in the text; program requirements not included"
+    "name": "PROGRAM PREREQUISITES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "ANAT 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEOC 1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEOC 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "HEOC 1",
-    "why": "not in the text; program requirements not included"
+    "name": "SEMESTER 1 COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PTA 1",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 3",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 3L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 4",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 4L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "HEOC 11",
-    "why": "not in the text; program requirements not included"
+    "name": "SEMESTER 2 COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PTA 5",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 5L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 6",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 6L",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 20",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "PHY 1",
-    "why": "not in the text; program requirements not included"
+    "name": "SEMESTER 3 COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PTA 7",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 7L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 8",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 8L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 21",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "PTA 1",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 2",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 3",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 3L",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 4",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 4L",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 5",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 5L",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 6",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 6L",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 7",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 7L",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 8",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 8L",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 9",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 9L",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 10",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 10L",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 11",
-    "why": "only a course description; no requirements list in text"
-   },
-   {
-    "code": "PTA 20",
-    "why": "only a course description (cut off); no requirements list in text"
-   },
-   {
-    "code": "PTA 21",
-    "why": "named only in other courses' prerequisites/corequisites; no requirements list in text"
-   },
-   {
-    "code": "PTA 22",
-    "why": "named only in other courses' corequisites; no requirements list in text"
+    "name": "SEMESTER 4 COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PTA 9",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 9L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 10",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 10L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 11",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PTA 22",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Degree requirements table prints Major 58, General Education (SCGE) 21, Additional Electives 0, Degree Total 76. Major 58 = prerequisites (14) + TOTAL UNITS FOR CORE (44); the core total of 44 covers the four semester blocks (11+7+12+14).",
+   "Additional Electives printed as 0 recorded in degree_elective_units.",
+   "Recommended GE courses listed under each semester (ENGL C1000, STAT C1000, ECE 1/PSYC C1000, PHIL 7/PHIL 8, COMM 54, HLTH 6/PSYC 20/PSYC 41) are marked 'not required' and are general education; they were not placed in blocks.",
+   "ANAT 1 and PHY 1 are marked * 'May be used to fulfill General Education requirements.'",
+   "Program description states the program is 76 units total with 44 units of core and 32 units of additional general education and prerequisite coursework.",
+   "Text following the PTA section belongs to the Human Services A.S. and was not read."
+  ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": "44513230805",
+ "catalog_year": "2026-2027",
+ "source_sha": "d33bbf90752b18ef",
+ "source_codes": [
+  "ANAT1",
+  "HEOC1",
+  "HEOC11",
+  "PHY1",
+  "PTA1",
+  "PTA10",
+  "PTA10L",
+  "PTA11",
+  "PTA2",
+  "PTA20",
+  "PTA21",
+  "PTA22",
+  "PTA3",
+  "PTA3L",
+  "PTA4",
+  "PTA4L",
+  "PTA5",
+  "PTA5L",
+  "PTA6",
+  "PTA6L",
+  "PTA7",
+  "PTA7L",
+  "PTA8",
+  "PTA8L",
+  "PTA9",
+  "PTA9L"
+ ],
+ "source_coverage": 1.0,
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 58, the major total the catalog prints; the major and general education sum to 79 against the degree's 76 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }
