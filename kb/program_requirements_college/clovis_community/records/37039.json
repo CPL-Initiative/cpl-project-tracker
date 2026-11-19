@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12014,
-    "output_tokens": 1691,
+    "output_tokens": 1825,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1691,
+  "output_tokens": 1825,
   "output_tokens_details": {
-   "thinking_tokens": 466
+   "thinking_tokens": 530
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08188,
- "ms": 13738,
- "seconds": 14.2,
+ "cost_usd": 0.08456,
+ "ms": 15769,
+ "seconds": 16.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 14,
    "listed": 14,
-   "share": 0.857,
-   "missing": [
-    "MATH5A",
-    "MATH5B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH5B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -259,20 +262,43 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; certificate lists MATH C2210 Calculus I instead"
+    "why": "not in the text; certificate section lists MATH C2210 Calculus I instead"
    },
    {
     "code": "MATH 5B",
-    "why": "not in the text; certificate lists MATH C2220 Calculus II instead"
+    "why": "not in the text; certificate section lists MATH C2220 Calculus II instead"
+   },
+   {
+    "code": "ENGR 40",
+    "why": "placed (printed as 'ENGR 402' with footnote 2 superscript)"
    }
   ],
   "notes": [
-   "The PDF prints footnote markers fused to codes: 'ENGR 402' and 'CSCI 402' read as ENGR 40 and CSCI 40 with footnote 2; 'CHEM 1A3'/'CHEM 3A3' read as CHEM 1A and CHEM 3A with footnote 3.",
-   "The choose-four block requires that one of the four be a programming course (ENGR 40 or CSCI 40); footnote 2 says credit is given for only one of these C++ courses.",
-   "Footnote 1: some transfer institutions may require more than four courses from the choose list.",
-   "MATH C2210 and MATH C2220 (Calculus I/II: Early Transcendentals) are not in the closed list; they appear to replace MATH 5A/5B under Cal-GETC common course numbering.",
-   "No program learning outcomes or careers are printed for this certificate; description mentions only preparation for engineering internship opportunities."
+   "The PDF text merges footnote superscripts into codes: 'ENGR 402' and 'CSCI 402' read as ENGR 40 and CSCI 40 with footnote 2; 'CHEM 1A3'/'CHEM 3A3' read as CHEM 1A and CHEM 3A with footnote 3.",
+   "The elective block also requires 'Must take one programming course' (ENGR 40 or CSCI 40); footnote 2 says both are C++ courses and credit is given for only one.",
+   "Footnote 1: some transfer institutions may require choosing more than 4 courses from the elective section.",
+   "MATH C2210 and MATH C2220 (Calculus I/II: Early Transcendentals) are not in the closed list; they appear to replace MATH 5A/5B.",
+   "ENGR 40 listed in missing_explained only to explain the printed code; it is placed in the elective block.",
+   "No program learning outcomes or careers printed in this section (only 'engineering internship opportunities' mentioned)."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "5fda7ba3c04051f4",
+ "source_codes": [
+  "CHEM1A",
+  "CSCI40",
+  "CSCI41",
+  "ENGR10",
+  "ENGR40",
+  "ENGR6",
+  "MATH17",
+  "MATH5A",
+  "MATH5B",
+  "MATH6",
+  "PHYS4A",
+  "PHYS4B",
+  "PHYS4C"
+ ],
+ "source_coverage": 0.929
 }

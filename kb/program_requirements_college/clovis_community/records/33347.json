@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7081,
-    "output_tokens": 1147,
+    "output_tokens": 1155,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 1147,
+  "output_tokens": 1155,
   "output_tokens_details": {
-   "thinking_tokens": 293
+   "thinking_tokens": 264
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05126,
- "ms": 9434,
- "seconds": 10.0,
+ "cost_usd": 0.05142,
+ "ms": 10438,
+ "seconds": 16.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "COMM2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "COMMC1004"
-   ],
-   "flagged": [
-    "COMMC1004"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -222,15 +223,29 @@
   "missing_explained": [
    {
     "code": "COMM 2",
-    "why": "not in the text; the catalog lists Interpersonal Communication as COMM C1004 instead"
+    "why": "not in the text; the catalog lists COMM C1004 Interpersonal Communication instead, likely a renumbering"
    }
   ],
   "notes": [
    "The page also prints the Communication A.A. degree (Major #C.5342.AA); only the Certificate of Achievement section was read.",
-   "COMM C1004 (Interpersonal Communication) is not in the closed list; it appears to replace COMM 2 Interpersonal Communication (likely a common course numbering change).",
-   "No program learning outcomes are printed for the certificate; the 'overarching program outcome' sentence appears only in the A.A. degree description.",
-   "No specific careers are named; the description says only that the certificate serves 'students of all majors and career paths'."
+   "COMM C1004 (Interpersonal Communication) is not in the closed list; it appears to replace COMM 2 Interpersonal Communication (Cal-GETC common course numbering).",
+   "No program learning outcomes are printed for the certificate; the 'overarching program outcome' sentence belongs to the A.A. degree description and was not recorded.",
+   "The catalog prints COMM 12 as 'Oral Interpretation of Literature'; the closed list titles it 'Oral Interpretation Appreciation'."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "6aa984d05abfbba4",
+ "source_codes": [
+  "COMM10",
+  "COMM12",
+  "COMM15",
+  "COMM2",
+  "COMM25",
+  "COMM4",
+  "COMM8",
+  "COMMC1000",
+  "COMMC1000H"
+ ],
+ "source_coverage": 1.0
 }
