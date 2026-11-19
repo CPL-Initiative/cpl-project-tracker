@@ -69,9 +69,12 @@ This file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-
 ## The second S687 session
 
 session_01Rvwe2VZ63LPZQQaXGnRoo6 (started 20:39Z) holds Sam's yes on the 36: his words, Nov 19 12:42 PM PT, relayed by
-COBIx on #3566 (comment 7021717277), *"Forward all your recommendations and yes on the 36."* It writes the college
-wording rule into `cr_reference_decisions`, the `sam_rulings.md` row and its own memory row, and holds #3560 (Library)
-and #3561 (First Light's receipt; on `main` as #3571, `0e4a70ff`). Agree one writer with it before touching those files.
+COBIx on #3566 (comment 7021717277), *"Forward all your recommendations and yes on the 36."* It wrote the college
+wording rule: 36 confirmed rows in `cr_reference_decisions` under `cr-wording-s687@bot` (migrate run 44618420355;
+receipts on `claude/s687-cr-wording`, its own PR), with memory row `r-cr-college-wording-rule-yes-sam-2026-11-19`.
+This checkpoint marks the call answered in `kb/status/cr.json`. The curation clock dates itself once the nightly CR
+status build counts the 36. It also holds #3560 (Library; part 1 is draft #3572, its migration not yet applied) and
+#3561 (First Light's receipt, merged as #3571, `0e4a70ff`). Agree one writer with it before touching those files.
 
 ## For Sam
 

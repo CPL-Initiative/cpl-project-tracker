@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-19T14:55:23Z",
-  "session": 685,
-  "moniker": "SkyTowhee",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-19T21:34:24Z",
+  "session": 687,
+  "moniker": "SkyPipit",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_686_handoff.md",
+  "handoff": "docs/session_688_handoff.md",
   "next_step": {
-    "title": "Land tonight's rereads, then rule D and the next ten colleges",
-    "text": "The next session merges the two keep-the-better fixes and tonight's rereads in order, then runs rule D at City College of San Francisco, Santa Rosa Junior and College of the Desert with the discontinued capture, then the reread plan's third ten colleges, and rebuilds what CPL Pathways and Sierra show once the night's posts are in."
+    "title": "A prior-year read for College of the Desert's eight, then the reread plan's third ten",
+    "text": "The next session reads the 2025-26 catalog for the eight College of the Desert programs the 2026-27 catalog no longer prints, so the discontinued check can flag or clear them, then rereads the plan's third ten colleges one dispatch at a time, and rebuilds what CPL Pathways and Sierra show after those posts."
   },
   "calls": [
     {
@@ -337,6 +337,22 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-19T18:07:00Z",
+      "text": "Rereads posted and loaded at nine colleges, American River to MiraCosta: 164 program records replaced by a better read and 45 added, after a live read of every row they touched."
+    },
+    {
+      "at": "2026-11-19T19:47:00Z",
+      "text": "What CPL Pathways and Sierra show was rebuilt once, 18,380 program statements under one build, and this time the run confirmed every write by its own read."
+    },
+    {
+      "at": "2026-11-19T20:08:00Z",
+      "text": "The gap count went from 5,203 to 5,145 programs; 15,044 of 20,282 active programs now have a complete record."
+    },
+    {
+      "at": "2026-11-19T20:38:00Z",
+      "text": "Eight College of the Desert programs are not printed in its 2026-27 catalog; they are listed for a prior-year check, not marked discontinued."
+    },
     {
       "at": "2026-11-19T14:31:00Z",
       "text": "The rebuild of what CPL Pathways and Sierra show ran once with every record of the last two nights: 18,323 program statements under one build, 830 of them changed; a closing count of the live table confirmed it."
@@ -734,18 +750,18 @@
     {
       "day": "2026-11-19",
       "active": 20282,
-      "complete": 14996,
+      "complete": 15044,
       "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-17T15:12:00Z"
+    "at": "2026-11-20T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-19",
-    "gaps": 3409,
+    "gaps": 3443,
     "parts": {
       "links": {
         "catalog": [
@@ -762,11 +778,11 @@
         ]
       },
       "roep": [
-        20261,
+        20282,
         20282
       ],
       "coci": [
-        16863,
+        16903,
         20282
       ],
       "outcomes": {
@@ -775,12 +791,12 @@
           88736
         ],
         "plo": [
-          16863,
+          16903,
           20282
         ]
       },
       "careers": [
-        15853,
+        15904,
         20282
       ]
     }

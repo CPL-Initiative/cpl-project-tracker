@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 683,
-  "moniker": "SkyDipper",
+  "session": 687,
+  "moniker": "SkyPipit",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_683_handoff.md",
+  "handoff": "docs/session_688_handoff.md",
   "calls": [
     {
       "title": "The college wording rule: keep the colleges' wording where an official number reaches a group whose title shares no word with it?",
@@ -14,18 +14,28 @@
         "href": "#cr-reference/names",
         "text": "Open the 36 groups"
       },
-      "todo_id": "cr-college-wording-rule"
+      "todo_id": "cr-college-wording-rule",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-19",
+        "words": "Forward all your recommendations and yes on the 36."
+      },
+      "recorded": "36 rows in cr_reference_decisions (migrate run 44618420355, receipt kb/receipts/cr_reference_decisions_2026-11-19_s687_wording_rule.json)"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-19T20:21:11Z",
+  "written_at": "2026-11-19T21:34:24Z",
   "project": "cr",
   "next_step": {
     "title": "Match MAP's credit recommendation wording to ACE's",
     "text": "Of the 29,995 credit recommendations in the list, 202 match ACE's wording exactly, 3,334 are in MAP only, and 26,459 differ in spelling or in substance. The exact match work is parked as issue 3523 for a later session."
   },
   "changes": [
+    {
+      "at": "2026-11-19T21:00:00Z",
+      "text": "Sam said yes to the college wording rule: the colleges' wording stays for the 36 groups whose official number shares no word with it, and each course-number link is flagged for a check. The 36 are recorded."
+    },
     {
       "at": "2026-11-18T23:44:00Z",
       "text": "Counted on Nov 18: 29,995 credit recommendations, 202 matching ACE's wording exactly, 3,334 in MAP only and 26,459 differing; ACE's own text now holds 104,688 rows over 25,742 exhibits. The exact match change is parked as issue 3523."
