@@ -1,20 +1,225 @@
 {
  "college": "Los Angeles Pierce College",
  "run": "44475498778",
- "written": "2026-11-19T07:29:50Z",
- "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "written": "2026-11-19T14:23:05Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
+ "live_runs": {
+  "02808": "39018421038",
+  "02809": "39006383070",
+  "02810": "39006383070",
+  "02811": "39018421038",
+  "02814": "39006383070",
+  "02816": "39018421038",
+  "02817": "39018421038",
+  "02818": "39006383070",
+  "02820": "39006383070",
+  "02821": "39018421038",
+  "02822": "39006383070",
+  "02824": "39018421038",
+  "02826": "39006383070",
+  "02827": "39006383070",
+  "02828": "39006383070",
+  "02831": "39018421038",
+  "02834": "39006383070",
+  "02835": "44475498778",
+  "02836": "39018421038",
+  "02837": "44475498778",
+  "02838": "39006383070",
+  "02839": "39006383070",
+  "02841": "39006383070",
+  "08308": "39018421038",
+  "08311": "39018421038",
+  "08315": "39018421038",
+  "08316": "39018421038",
+  "08318": "39018421038",
+  "08319": "44475498778",
+  "08320": "39006383070",
+  "08321": "39018421038",
+  "08322": "39006383070",
+  "08323": "39018421038",
+  "08325": "39018421038",
+  "08326": "39006383070",
+  "08327": "39018421038",
+  "08328": "39006383070",
+  "08330": "43355018296",
+  "08333": "39018421038",
+  "10349": "39006383070",
+  "10350": "39006383070",
+  "10726": "39006383070",
+  "10729": "44475498778",
+  "10730": "44475498778",
+  "10731": "44475498778",
+  "10733": "39018421038",
+  "10734": "39006383070",
+  "10735": "44475498778",
+  "10736": "39006383070",
+  "11814": "39006383070",
+  "12188": "43355018296",
+  "14233": "39006383070",
+  "15032": "39006383070",
+  "15057": "39006383070",
+  "15058": "44475498778",
+  "15074": "39006383070",
+  "15079": "39006383070",
+  "15084": "39006383070",
+  "15085": "39006383070",
+  "15092": "39006383070",
+  "15093": "39006383070",
+  "15094": "39018421038",
+  "15097": "39018421038",
+  "15101": "39006383070",
+  "16756": "44475498778",
+  "17794": "44475498778",
+  "17797": "39006383070",
+  "17800": "39018421038",
+  "18837": "44475498778",
+  "19006": "39006383070",
+  "19007": "39006383070",
+  "19008": "44475498778",
+  "19015": "39018421038",
+  "21781": "39018421038",
+  "21800": "39018421038",
+  "21801": "39006383070",
+  "21806": "39018421038",
+  "21807": "44475498778",
+  "21808": "39018421038",
+  "21810": "44475498778",
+  "21812": "39006383070",
+  "21814": "39006383070",
+  "21816": "39006383070",
+  "21817": "44475498778",
+  "22923": "39006383070",
+  "32244": "39006383070",
+  "32318": "39006383070",
+  "32336": "44475498778",
+  "32408": "39018421038",
+  "32523": "39018421038",
+  "32620": "44475498778",
+  "33036": "44475498778",
+  "33088": "43355018296",
+  "33110": "43355018296",
+  "33253": "39018421038",
+  "35018": "39018421038",
+  "35019": "44475498778",
+  "35196": "43355018296",
+  "35282": "39006383070",
+  "35307": "39018421038",
+  "35334": "44475498778",
+  "35460": "43355018296",
+  "35462": "43355018296",
+  "35464": "44475498778",
+  "35897": "39006383070",
+  "35898": "39018421038",
+  "35975": "44475498778",
+  "36039": "39018421038",
+  "36040": "39006383070",
+  "36044": "43355018296",
+  "36137": "39006383070",
+  "36294": "39018421038",
+  "36613": "39018421038",
+  "36785": "39018421038",
+  "36879": "39006383070",
+  "36910": "43355018296",
+  "36911": "39006383070",
+  "36946": "43355018296",
+  "36947": "39006383070",
+  "37084": "44475498778",
+  "37184": "39006383070",
+  "37217": "39018421038",
+  "37234": "39006383070",
+  "37835": "39006383070",
+  "37957": "39018421038",
+  "37976": "43355018296",
+  "38338": "39018421038",
+  "38339": "39006383070",
+  "38606": "39006383070",
+  "38673": "39018421038",
+  "39277": "39018421038",
+  "39501": "39006383070",
+  "39954": "39018421038",
+  "39969": "39018421038",
+  "40273": "39018421038",
+  "40634": "39018421038",
+  "41088": "39006383070",
+  "41890": "44475498778",
+  "41891": "39006383070",
+  "41946": "39006383070",
+  "42018": "39018421038",
+  "42274": "39006383070",
+  "42275": "43355018296",
+  "42276": "39018421038",
+  "42404": "39018421038",
+  "42426": "39006383070",
+  "42427": "39018421038",
+  "42428": "39006383070",
+  "42439": "39006383070",
+  "42512": "39018421038",
+  "42945": "39006383070",
+  "43098": "39006383070",
+  "43219": "39006383070",
+  "43458": "39018421038",
+  "43510": "39018421038",
+  "43713": "44475498778",
+  "43745": "39018421038",
+  "43746": "39018421038",
+  "43779": "39006383070",
+  "43780": "39018421038",
+  "44966": "39018421038",
+  "44998": "44475498778",
+  "45038": "39006383070",
+  "45475": "39018421038",
+  "45502": "43355018296",
+  "45546": "44475498778",
+  "45551": "39018421038",
+  "45552": "39006383070",
+  "45605": "39018421038",
+  "45608": "39018421038",
+  "45703": "39018421038",
+  "45705": "39018421038",
+  "45726": "39006383070",
+  "46078": "39018421038",
+  "46088": "39006383070",
+  "46089": "44475498778",
+  "46100": "39018421038",
+  "46329": "44475498778",
+  "46331": "43355018296",
+  "46335": "44475498778",
+  "46342": "39006383070",
+  "46407": "39018421038",
+  "46408": "39018421038",
+  "46459": "39006383070",
+  "46477": "39006383070",
+  "46549": "39006383070"
+ },
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/harvest-wave-s683",
+   "ref": "claude/second-pass-s685",
    "inputs": {
     "college": "Los Angeles Pierce College",
     "step": "reread",
     "force": "44475498778"
    },
-   "posts": 31,
+   "posts": 6,
    "control_numbers": [
+    "19181",
+    "21801",
+    "36910",
+    "36947",
+    "37234",
+    "43219"
+   ],
+   "not_live_at_run": [
+    "19181",
+    "21801",
+    "36910",
+    "36947",
+    "37234",
+    "43219"
+   ],
+   "receipt_on_branch": true,
+   "already_live": [
     "02835",
     "02837",
     "08319",
@@ -27,7 +232,6 @@
     "17794",
     "18837",
     "19008",
-    "19181",
     "21807",
     "21810",
     "21817",
@@ -52,39 +256,47 @@
  "carried_runs": {},
  "counts": {
   "reread": 36,
-  "kept": 30,
-  "restored": 5,
-  "restored_filed_pass": 5,
-  "restored_not_own_program": 5,
+  "kept": 6,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
   "held_for_person": 0,
-  "new": 1,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 0,
+  "already_live": 30,
+  "kept_on_own_page": 5,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 4,
   "run_places_none_after": 1,
   "folder_places_none_after": 1,
   "records_after": 188,
-  "dropped_by_filing": 7,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
   "44475498778": {
-   "base": "origin/main",
-   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
-   "decided": "2026-11-19T07:29:50Z",
+   "base": "471c74d6",
+   "base_sha": "471c74d6399e4f9aa957b7f2a560d3f57b6ba357",
+   "decided": "2026-11-19T14:23:05Z",
    "counts": {
     "reread": 36,
-    "kept": 30,
-    "restored": 5,
-    "restored_filed_pass": 5,
-    "restored_not_own_program": 5,
+    "kept": 6,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
     "held_for_person": 0,
-    "new": 1,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 30,
+    "kept_on_own_page": 5,
     "plain_reread_would_lose_pass": 0,
     "kept_by_extraction_guard": 4,
     "run_places_none_after": 1,
     "folder_places_none_after": 1,
     "records_after": 188,
-    "dropped_by_filing": 7,
+    "dropped_by_filing": 0,
     "dropped_filed_passes": 0
    },
    "kept_by_extraction_guard": {
@@ -93,51 +305,16 @@
     "21812": "passes_less",
     "42274": "passes_less"
    },
-   "next_read_pays": [
-    "21801",
-    "36910",
-    "36947",
-    "37234",
-    "43219"
-   ],
-   "dropped_by_filing": [
-    {
-     "control_number": "19183",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "30477",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "30908",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "35979",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "42270",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "42533",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "45479",
-     "filed_passes_live": false
-    }
-   ],
+   "next_read_pays": [],
+   "dropped_by_filing": [],
    "programs": [
     {
      "control_number": "02835",
      "title": "Music",
      "award": "A.A. Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-     "filed_run": 39018421038,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -148,27 +325,28 @@
       "listed": 23,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 23,
       "listed": 23,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "02837",
      "title": "Theater: Technical",
      "award": "A.A. Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=148",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
-     "filed_run": 39018421038,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=148",
+     "filed_run": "44475498778",
      "reread": {
       "pass": false,
       "passes_live": true,
@@ -179,6 +357,7 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": false,
       "passes_live": true,
@@ -190,16 +369,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "08319",
      "title": "Office Communications",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -210,27 +389,28 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
       "listed": 6,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "10729",
      "title": "Electronics: Digital",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -241,6 +421,7 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -252,16 +433,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "10730",
      "title": "Electronics: Communications",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-     "filed_run": 43355018296,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -272,6 +453,7 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -283,16 +465,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "10731",
      "title": "Electronics: Analog",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -303,6 +485,7 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -314,16 +497,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "10735",
      "title": "Sculpture",
      "award": "A.A. Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=87",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=87",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -334,27 +517,28 @@
       "listed": 12,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
       "listed": 12,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "15058",
      "title": "School Age Child Care Teacher",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -365,6 +549,7 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -376,16 +561,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "16756",
      "title": "Criminal Justice",
      "award": "A.A. Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=153",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=153",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -396,27 +581,28 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
       "listed": 6,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "17794",
      "title": "Computerized Accounting",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -427,6 +613,7 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -438,16 +625,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "18837",
      "title": "Legal Office Skills",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=200",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -458,27 +645,28 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
       "listed": 6,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "19008",
      "title": "Preschool",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -489,8 +677,9 @@
       "listed": 3,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
+      "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
@@ -500,16 +689,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "19181",
      "title": "General Studies: Arts and Humanities",
      "award": "A.A. Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
+     "filed_run": "44475498778",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -520,8 +709,20 @@
       "listed": 227,
       "arithmetic": "incomplete"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 227,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "21801",
@@ -540,6 +741,8 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39006383070",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -551,18 +754,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'CERTIFICATE - REQUIRED COURSES' shares no word with the title 'Architectural Technology'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "21807",
      "title": "CAOT: General Administrative",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -573,8 +774,9 @@
       "listed": 16,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
+      "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
@@ -584,16 +786,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "21810",
      "title": "Programming for Business",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -604,6 +806,7 @@
       "listed": 18,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -615,16 +818,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "21817",
      "title": "Addiction Studies",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -635,8 +838,9 @@
       "listed": 18,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
+      "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
@@ -646,16 +850,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "32336",
      "title": "Engineering Graphics and Design Technology",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=150",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -666,8 +870,9 @@
       "listed": 7,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
+      "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
@@ -677,16 +882,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "32620",
      "title": "Spanish",
      "award": "A.A- T Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=71",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=72",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=71",
+     "filed_run": "44475498778",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -697,6 +902,7 @@
       "listed": 26,
       "arithmetic": "unequal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -708,16 +914,16 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "33036",
      "title": "Theatre Arts",
      "award": "A.A- T Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=73",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=73",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -728,27 +934,28 @@
       "listed": 14,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.929,
+      "placed": 13,
       "listed": 14,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "35019",
      "title": "Geographic Information Systems",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=231",
-     "filed_run": 39018421038,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -759,27 +966,28 @@
       "listed": 11,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
       "listed": 11,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "35334",
      "title": "Physics",
      "award": "A.S. T Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -790,19 +998,20 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
       "listed": 6,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "35464",
@@ -810,7 +1019,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
      "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
-     "filed_run": "39006383070",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -821,27 +1030,28 @@
       "listed": 23,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.739,
-      "placed": 17,
+      "share": 0.783,
+      "placed": 18,
       "listed": 23,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 0.783 against 0.739)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "35975",
      "title": "Art History",
      "award": "A.A- T Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=45",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=46",
-     "filed_run": 43355018296,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=45",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -852,6 +1062,7 @@
       "listed": 19,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -863,8 +1074,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "36910",
@@ -883,6 +1094,8 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "43355018296",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -894,10 +1107,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading '(STATE CODE 36910)' shares no word with the title 'Gas and Electric Welding'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "36947",
@@ -916,6 +1127,8 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39006383070",
      "filed": {
       "pass": false,
       "passes_live": true,
@@ -927,18 +1140,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading '(STATE CODE 36947)' shares no word with the title 'Photography'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "37084",
      "title": "Medical Assistant: Front and Back Office",
      "award": "Noncredit program",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=165",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=285",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=165",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -949,19 +1160,20 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
       "listed": 8,
-      "arithmetic": "unstated_fail"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "37234",
@@ -980,6 +1192,8 @@
       "listed": 9,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39006383070",
      "filed": {
       "pass": false,
       "passes_live": true,
@@ -991,18 +1205,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'CERTIFICATE - REQUIRED COURSES' shares no word with the title 'American Sign Language/Interpreting'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "41890",
      "title": "Payroll Accounting",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1013,19 +1225,20 @@
       "listed": 3,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
       "listed": 3,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "43219",
@@ -1044,6 +1257,8 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39006383070",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1055,18 +1270,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'CERTIFICATE - REQUIRED COURSES' shares no word with the title 'Biotechnology Research Lab Assistant'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "43713",
      "title": "Crime and Intelligence Analysis",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1077,27 +1290,28 @@
       "listed": 5,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 5,
       "listed": 5,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "44998",
      "title": "Music Theory and Musicianship",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=63",
-     "filed_run": "39006383070",
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1108,27 +1322,28 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
       "listed": 8,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "45546",
      "title": "Recording Arts",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
-     "filed_run": 43355018296,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1139,6 +1354,7 @@
       "listed": 17,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1150,16 +1366,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "46089",
      "title": "Physics 2.0",
      "award": "A.S. T Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
-     "filed_run": 39018421038,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1170,27 +1386,28 @@
       "listed": 9,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
       "listed": 9,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "46329",
      "title": "Chemical Technology",
      "award": "A.S. Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=94",
-     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
-     "filed_run": 39018421038,
+     "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=94",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1201,6 +1418,7 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1212,8 +1430,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     },
     {
      "control_number": "46335",
@@ -1221,7 +1439,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
      "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=52",
-     "filed_run": "39006383070",
+     "filed_run": "44475498778",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1232,19 +1450,20 @@
       "listed": 20,
       "arithmetic": "equal"
      },
+     "live_run": "44475498778",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.85,
-      "placed": 17,
+      "share": 0.9,
+      "placed": 18,
       "listed": 20,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 0.9 against 0.85)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44475498778: a reread posted it"
     }
    ]
   }

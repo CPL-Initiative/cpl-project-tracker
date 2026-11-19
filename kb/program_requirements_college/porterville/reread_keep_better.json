@@ -1,20 +1,108 @@
 {
  "college": "Porterville College",
  "run": "44477695238",
- "written": "2026-11-19T08:16:14Z",
- "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "written": "2026-11-19T14:23:05Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
+ "live_runs": {
+  "06771": "39046786897",
+  "06773": "39046786897",
+  "06797": "39046786897",
+  "06809": "39046786897",
+  "09520": "39046786897",
+  "09528": "39046786897",
+  "18526": "39046786897",
+  "30235": "44477695238",
+  "30357": "39046786897",
+  "31070": "39046786897",
+  "31088": "39046786897",
+  "31127": "39046786897",
+  "31240": "39046786897",
+  "31324": "39046786897",
+  "31565": "39046786897",
+  "31585": "39046786897",
+  "31849": "39046786897",
+  "33085": "39046786897",
+  "33091": "39046786897",
+  "33714": "39046786897",
+  "33933": "39046786897",
+  "35227": "39046786897",
+  "35229": "39046786897",
+  "35239": "39046786897",
+  "35250": "39046786897",
+  "35256": "39046786897",
+  "35388": "39046786897",
+  "35431": "39046786897",
+  "35432": "39046786897",
+  "35449": "39046786897",
+  "35554": "39046786897",
+  "35682": "39046786897",
+  "36659": "39046786897",
+  "36704": "44477695238",
+  "37175": "39046786897",
+  "37377": "39046786897",
+  "37556": "39046786897",
+  "38309": "39046786897",
+  "39770": "39046786897",
+  "39837": "39046786897",
+  "39841": "39046786897",
+  "40122": "39046786897",
+  "40906": "39046786897",
+  "41689": "39046786897",
+  "41893": "39046786897",
+  "42376": "39046786897",
+  "42395": "39046786897",
+  "42412": "39046786897",
+  "42417": "44477695238",
+  "43117": "39046786897",
+  "43139": "39046786897",
+  "43487": "39046786897",
+  "43554": "39046786897",
+  "43784": "39046786897",
+  "44039": "39046786897",
+  "44089": "39046786897",
+  "44090": "39046786897",
+  "44091": "39046786897",
+  "44092": "39046786897",
+  "44409": "39046786897",
+  "44512": "39046786897",
+  "44805": "39046786897",
+  "44924": "39046786897",
+  "44926": "39046786897",
+  "45313": "39046786897",
+  "45511": "39046786897",
+  "45513": "39046786897",
+  "45517": "39046786897",
+  "45519": "39046786897",
+  "45536": "39046786897",
+  "45541": "39046786897",
+  "45544": "39046786897",
+  "45593": "39046786897",
+  "45626": "44477695238",
+  "45634": "39046786897",
+  "45637": "39046786897",
+  "45769": "39046786897",
+  "45797": "39046786897",
+  "46183": "39046786897"
+ },
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/reread-wave-s683",
+   "ref": "claude/second-pass-s685",
    "inputs": {
     "college": "Porterville College",
     "step": "reread",
     "force": "44477695238"
    },
-   "posts": 4,
+   "posts": 1,
    "control_numbers": [
+    "06797"
+   ],
+   "not_live_at_run": [
+    "06797"
+   ],
+   "receipt_on_branch": true,
+   "already_live": [
     "30235",
     "36704",
     "42417",
@@ -25,59 +113,52 @@
  "carried_runs": {},
  "counts": {
   "reread": 5,
-  "kept": 4,
-  "restored": 1,
+  "kept": 1,
+  "restored": 0,
   "restored_filed_pass": 0,
-  "restored_not_own_program": 1,
+  "restored_not_own_program": 0,
   "held_for_person": 0,
+  "held_checked": 0,
+  "held_live_run": 0,
   "new": 0,
+  "already_live": 4,
+  "kept_on_own_page": 1,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
   "run_places_none_after": 0,
   "folder_places_none_after": 0,
   "records_after": 79,
-  "dropped_by_filing": 3,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
   "44477695238": {
-   "base": "origin/main",
-   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
-   "decided": "2026-11-19T08:16:14Z",
+   "base": "471c74d6",
+   "base_sha": "471c74d6399e4f9aa957b7f2a560d3f57b6ba357",
+   "decided": "2026-11-19T14:23:05Z",
    "counts": {
     "reread": 5,
-    "kept": 4,
-    "restored": 1,
+    "kept": 1,
+    "restored": 0,
     "restored_filed_pass": 0,
-    "restored_not_own_program": 1,
+    "restored_not_own_program": 0,
     "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
     "new": 0,
+    "already_live": 4,
+    "kept_on_own_page": 1,
     "plain_reread_would_lose_pass": 0,
     "kept_by_extraction_guard": 0,
     "run_places_none_after": 0,
     "folder_places_none_after": 0,
     "records_after": 79,
-    "dropped_by_filing": 3,
+    "dropped_by_filing": 0,
     "dropped_filed_passes": 0
    },
    "kept_by_extraction_guard": {},
-   "next_read_pays": [
-    "06797"
-   ],
-   "dropped_by_filing": [
-    {
-     "control_number": "35228",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "37239",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "44014",
-     "filed_passes_live": false
-    }
-   ],
+   "next_read_pays": [],
+   "dropped_by_filing": [],
    "programs": [
     {
      "control_number": "06797",
@@ -96,6 +177,8 @@
       "listed": 6,
       "arithmetic": "incomplete"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39046786897",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -107,18 +190,16 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Certificates of Achievement' shares no word with the title 'Psychiatric Technology'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "30235",
      "title": "Biological and Physical Science",
      "award": "A.A. Degree",
      "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80",
-     "filed_source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=70",
-     "filed_run": "39046786897",
+     "filed_source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80",
+     "filed_run": "44477695238",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -129,27 +210,28 @@
       "listed": 21,
       "arithmetic": "unequal"
      },
+     "live_run": "44477695238",
      "filed": {
       "pass": false,
       "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 21,
       "listed": 21,
-      "arithmetic": "incomplete"
+      "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.coverage.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477695238: a reread posted it"
     },
     {
      "control_number": "36704",
      "title": "Early Child Care Administration Specialization",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=109",
-     "filed_source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
-     "filed_run": "39046786897",
+     "filed_source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=109",
+     "filed_run": "44477695238",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -160,27 +242,28 @@
       "listed": 11,
       "arithmetic": "incomplete"
      },
+     "live_run": "44477695238",
      "filed": {
       "pass": false,
       "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
       "listed": 11,
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.coverage.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477695238: a reread posted it"
     },
     {
      "control_number": "42417",
      "title": "Child Development Associate Teacher",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106",
-     "filed_source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
-     "filed_run": "39046786897",
+     "filed_source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106",
+     "filed_run": "44477695238",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -191,27 +274,28 @@
       "listed": 7,
       "arithmetic": "equal"
      },
+     "live_run": "44477695238",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
       "listed": 7,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477695238: a reread posted it"
     },
     {
      "control_number": "45626",
      "title": "Vocational Nursing",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117",
-     "filed_source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=118",
-     "filed_run": "39046786897",
+     "filed_source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117",
+     "filed_run": "44477695238",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -222,6 +306,7 @@
       "listed": 7,
       "arithmetic": "incomplete"
      },
+     "live_run": "44477695238",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -233,8 +318,8 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477695238: a reread posted it"
     }
    ]
   }

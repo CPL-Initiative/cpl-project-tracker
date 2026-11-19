@@ -1,20 +1,120 @@
 {
  "college": "Compton College",
  "run": "44477684527",
- "written": "2026-11-19T07:52:20Z",
- "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "written": "2026-11-19T14:23:05Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
+ "live_runs": {
+  "37317": "44477684527",
+  "37318": "39006336111",
+  "37320": "39006336111",
+  "37321": "39006336111",
+  "37322": "44477684527",
+  "37323": "39006336111",
+  "37325": "44477684527",
+  "37332": "39006336111",
+  "37333": "44477684527",
+  "37334": "39006336111",
+  "37335": "39006336111",
+  "37360": "44477684527",
+  "37361": "44477684527",
+  "37362": "39006336111",
+  "37363": "39006336111",
+  "37367": "44477684527",
+  "37369": "44477684527",
+  "37370": "39006336111",
+  "37373": "44477684527",
+  "37374": "44477684527",
+  "37375": "39006336111",
+  "37376": "39006336111",
+  "37378": "39006336111",
+  "37379": "44477684527",
+  "37381": "44477684527",
+  "37477": "44477684527",
+  "37559": "44477684527",
+  "37569": "44477684527",
+  "37570": "44477684527",
+  "37573": "44477684527",
+  "37574": "44477684527",
+  "37632": "44477684527",
+  "37633": "44477684527",
+  "37634": "44477684527",
+  "37920": "39006336111",
+  "38037": "39006336111",
+  "38069": "44477684527",
+  "38070": "44477684527",
+  "38089": "44477684527",
+  "38171": "39006336111",
+  "38173": "44477684527",
+  "38174": "44477684527",
+  "38176": "44477684527",
+  "38212": "39006336111",
+  "38213": "39006336111",
+  "38214": "39006336111",
+  "38215": "44477684527",
+  "38217": "44477684527",
+  "38218": "44477684527",
+  "38219": "44477684527",
+  "38220": "44477684527",
+  "38330": "44477684527",
+  "38387": "44477684527",
+  "38421": "39006336111",
+  "38424": "39006336111",
+  "38486": "44477684527",
+  "38547": "44477684527",
+  "38548": "44477684527",
+  "38567": "44477684527",
+  "40270": "39006336111",
+  "41007": "39006336111",
+  "41026": "39006336111",
+  "41100": "39006336111",
+  "41438": "39006336111",
+  "41599": "39006336111",
+  "41600": "39006336111",
+  "41603": "39006336111",
+  "41625": "39006336111",
+  "42312": "39006336111",
+  "42372": "39006336111",
+  "42423": "39006336111",
+  "42724": "44477684527",
+  "43216": "44477684527",
+  "43700": "39006336111",
+  "43856": "39006336111",
+  "43857": "39006336111",
+  "44275": "39006336111",
+  "45446": "44477684527",
+  "45460": "39006336111",
+  "45545": "39006336111",
+  "46580": "39006336111"
+ },
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/reread-wave-s683",
+   "ref": "claude/second-pass-s685",
    "inputs": {
     "college": "Compton College",
     "step": "reread",
     "force": "44477684527"
    },
-   "posts": 41,
+   "posts": 6,
    "control_numbers": [
+    "37335",
+    "38214",
+    "38422",
+    "41599",
+    "43718",
+    "46580"
+   ],
+   "not_live_at_run": [
+    "37335",
+    "38214",
+    "38422",
+    "41599",
+    "43718",
+    "46580"
+   ],
+   "receipt_on_branch": true,
+   "already_live": [
     "37317",
     "37322",
     "37325",
@@ -62,65 +162,55 @@
  "carried_runs": {},
  "counts": {
   "reread": 48,
-  "kept": 36,
-  "restored": 7,
-  "restored_filed_pass": 4,
-  "restored_not_own_program": 7,
+  "kept": 6,
+  "restored": 1,
+  "restored_filed_pass": 1,
+  "restored_not_own_program": 1,
   "held_for_person": 0,
-  "new": 5,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 0,
+  "already_live": 41,
+  "kept_on_own_page": 6,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 2,
-  "run_places_none_after": 2,
-  "folder_places_none_after": 2,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 0,
   "records_after": 83,
-  "dropped_by_filing": 3,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
   "44477684527": {
-   "base": "origin/main",
-   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
-   "decided": "2026-11-19T07:52:20Z",
+   "base": "471c74d6",
+   "base_sha": "471c74d6399e4f9aa957b7f2a560d3f57b6ba357",
+   "decided": "2026-11-19T14:23:05Z",
    "counts": {
     "reread": 48,
-    "kept": 36,
-    "restored": 7,
-    "restored_filed_pass": 4,
-    "restored_not_own_program": 7,
+    "kept": 6,
+    "restored": 1,
+    "restored_filed_pass": 1,
+    "restored_not_own_program": 1,
     "held_for_person": 0,
-    "new": 5,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 41,
+    "kept_on_own_page": 6,
     "plain_reread_would_lose_pass": 0,
     "kept_by_extraction_guard": 2,
-    "run_places_none_after": 2,
-    "folder_places_none_after": 2,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
     "records_after": 83,
-    "dropped_by_filing": 3,
+    "dropped_by_filing": 0,
     "dropped_filed_passes": 0
    },
    "kept_by_extraction_guard": {
     "37334": "passes_less",
     "38424": "passes_less"
    },
-   "next_read_pays": [
-    "37335",
-    "38422",
-    "41599",
-    "43718"
-   ],
-   "dropped_by_filing": [
-    {
-     "control_number": "37970",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "38172",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "38175",
-     "filed_passes_live": false
-    }
-   ],
+   "next_read_pays": [],
+   "dropped_by_filing": [],
    "programs": [
     {
      "control_number": "37317",
@@ -128,7 +218,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -139,6 +229,7 @@
       "listed": 4,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -150,16 +241,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37322",
      "title": "Special Education Assistant",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=83",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=83",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -170,16 +261,28 @@
       "listed": 17,
       "arithmetic": "equal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44477684527",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 17,
+      "listed": 17,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37325",
      "title": "Early Childhood Education",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=86",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=86",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -190,8 +293,20 @@
       "listed": 10,
       "arithmetic": "equal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44477684527",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37333",
@@ -199,7 +314,7 @@
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -210,6 +325,7 @@
       "listed": 15,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -221,8 +337,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37335",
@@ -241,6 +357,8 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39006336111",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -252,10 +370,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Program Requirements:' shares no word with the title 'Numerical Control Programmer'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "37360",
@@ -263,7 +379,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=73",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=73",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -274,6 +390,7 @@
       "listed": 7,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -285,8 +402,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37361",
@@ -294,7 +411,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=114",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=114",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -305,6 +422,7 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -316,16 +434,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37367",
      "title": "Automotive Technician I",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
-     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=76",
-     "filed_run": "39006336111",
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -336,6 +454,7 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -347,8 +466,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37369",
@@ -356,7 +475,7 @@
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -367,6 +486,7 @@
       "listed": 12,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -378,8 +498,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37373",
@@ -387,7 +507,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -398,6 +518,7 @@
       "listed": 9,
       "arithmetic": "unequal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -409,16 +530,16 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37374",
      "title": "Cosmetology Level II",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=85",
-     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=162",
-     "filed_run": "39006336111",
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=85",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -429,27 +550,28 @@
       "listed": 4,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
       "listed": 4,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37379",
      "title": "Machinist",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
-     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-     "filed_run": "39006336111",
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -460,6 +582,7 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -471,8 +594,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37381",
@@ -480,7 +603,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=81",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=81",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -491,6 +614,7 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -502,16 +626,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37477",
      "title": "Early Childhood Education",
      "award": "A.S. T Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=86",
-     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-     "filed_run": "39006336111",
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=86",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -522,19 +646,20 @@
       "listed": 9,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
       "listed": 9,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37559",
@@ -542,7 +667,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -553,6 +678,7 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -564,8 +690,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37569",
@@ -573,7 +699,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=75",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -584,6 +710,7 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -595,8 +722,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37570",
@@ -604,7 +731,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -615,6 +742,7 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -626,8 +754,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37573",
@@ -635,7 +763,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -646,6 +774,7 @@
       "listed": 19,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -657,8 +786,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37574",
@@ -666,7 +795,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=91",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -677,6 +806,7 @@
       "listed": 11,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -688,8 +818,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37632",
@@ -697,7 +827,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=98",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=98",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -708,6 +838,7 @@
       "listed": 33,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -719,8 +850,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37633",
@@ -728,7 +859,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -739,6 +870,7 @@
       "listed": 62,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -750,8 +882,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37634",
@@ -759,7 +891,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -770,6 +902,7 @@
       "listed": 24,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -781,8 +914,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "37920",
@@ -823,7 +956,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=80",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -834,8 +967,9 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
-      "pass": false,
+      "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
@@ -845,8 +979,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38070",
@@ -854,7 +988,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -865,6 +999,7 @@
       "listed": 14,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -876,8 +1011,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38089",
@@ -885,7 +1020,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -896,6 +1031,7 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -907,8 +1043,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38173",
@@ -916,7 +1052,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -927,6 +1063,7 @@
       "listed": 26,
       "arithmetic": "unequal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -938,8 +1075,8 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38174",
@@ -947,7 +1084,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -958,6 +1095,7 @@
       "listed": 12,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -969,8 +1107,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38176",
@@ -978,7 +1116,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -989,6 +1127,7 @@
       "listed": 25,
       "arithmetic": "incomplete"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1000,8 +1139,8 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38214",
@@ -1020,6 +1159,8 @@
       "listed": 12,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39006336111",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1031,18 +1172,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Program Requirements for AS-T Degree' shares no word with the title 'Administration of Justice'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "38215",
      "title": "Political Science",
      "award": "A.A- T Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=108",
-     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=109",
-     "filed_run": "39006336111",
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=108",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1053,6 +1192,7 @@
       "listed": 19,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1064,8 +1204,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38217",
@@ -1073,7 +1213,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1084,6 +1224,7 @@
       "listed": 68,
       "arithmetic": "unequal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1095,8 +1236,8 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38218",
@@ -1104,7 +1245,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1115,6 +1256,7 @@
       "listed": 47,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1126,8 +1268,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38219",
@@ -1135,7 +1277,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1146,6 +1288,7 @@
       "listed": 35,
       "arithmetic": "unequal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1157,8 +1300,8 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38220",
@@ -1166,7 +1309,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1177,6 +1320,7 @@
       "listed": 40,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1188,8 +1332,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38330",
@@ -1197,7 +1341,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=97",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1208,6 +1352,7 @@
       "listed": 17,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1219,16 +1364,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38387",
      "title": "Kinesiology",
      "award": "A.A- T Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=106",
-     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=107",
-     "filed_run": "39006336111",
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=106",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1239,19 +1384,20 @@
       "listed": 64,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
       "none_placed": false,
-      "share": 0.688,
-      "placed": 44,
+      "share": 1.0,
+      "placed": 64,
       "listed": 64,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38422",
@@ -1270,6 +1416,8 @@
       "listed": 15,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": null,
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1281,10 +1429,8 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Program Requirements for AA-T Degree' shares no word with the title 'Studio Arts'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "38486",
@@ -1292,7 +1438,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=109",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=109",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1303,6 +1449,7 @@
       "listed": 15,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1314,8 +1461,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38547",
@@ -1323,7 +1470,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=106",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=106",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1334,6 +1481,7 @@
       "listed": 19,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1345,8 +1493,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38548",
@@ -1354,7 +1502,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=105",
      "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=105",
-     "filed_run": "39006336111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1365,6 +1513,7 @@
       "listed": 22,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1376,16 +1525,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "38567",
      "title": "Engineering Technician",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=87",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=87",
+     "filed_run": "44477684527",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1396,8 +1545,20 @@
       "listed": 21,
       "arithmetic": "unequal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44477684527",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 21,
+      "listed": 21,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "41599",
@@ -1416,6 +1577,8 @@
       "listed": 3,
       "arithmetic": "unstated_pass"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39006336111",
      "filed": {
       "pass": true,
       "passes_live": false,
@@ -1427,18 +1590,16 @@
       "arithmetic": "unstated_pass"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Program Requirements:' shares no word with the title 'ESL Level 1'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "42724",
      "title": "Real Estate Salesperson",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=110",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=110",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1449,16 +1610,28 @@
       "listed": 3,
       "arithmetic": "equal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44477684527",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
+      "listed": 3,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "43216",
      "title": "Sociology",
      "award": "A.A- T Degree",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=111",
-     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96",
-     "filed_run": "39006336111",
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=111",
+     "filed_run": "44477684527",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1469,19 +1642,20 @@
       "listed": 19,
       "arithmetic": "equal"
      },
+     "live_run": "44477684527",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 19,
       "listed": 19,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "43718",
@@ -1500,6 +1674,8 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": null,
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1511,18 +1687,16 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Program Requirements for AA-T Degree' shares no word with the title 'Communication Studies 2.0'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "45446",
      "title": "California General Education Transfer Curriculum (Cal-GETC)",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=64",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=64",
+     "filed_run": "44477684527",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1533,8 +1707,20 @@
       "listed": 173,
       "arithmetic": "unequal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44477684527",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.988,
+      "placed": 171,
+      "listed": 173,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44477684527: a reread posted it"
     },
     {
      "control_number": "46580",
@@ -1553,6 +1739,8 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "39006336111",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1564,10 +1752,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Program Requirements for AS-T Degree' shares no word with the title 'Mathematics 2.0'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     }
    ]
   }

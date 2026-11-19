@@ -1,20 +1,340 @@
 {
  "college": "City College of San Francisco",
  "run": "44474797786",
- "written": "2026-11-19T07:44:59Z",
- "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "written": "2026-11-19T14:23:04Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
+ "live_runs": {
+  "05428": "44474797786",
+  "05429": "39056434592",
+  "05430": "39047128472",
+  "05441": "44474797786",
+  "05443": "39047128472",
+  "05445": "39047128472",
+  "05449": "39047128472",
+  "05450": "43693267535",
+  "05453": "39047128472",
+  "05454": "39047128472",
+  "05455": "39047128472",
+  "05459": "39056434592",
+  "05462": "44474797786",
+  "05474": "44474797786",
+  "05481": "44474797786",
+  "05482": "44474797786",
+  "05491": "43693267535",
+  "05492": "39047128472",
+  "05493": "39047128472",
+  "05495": "39047128472",
+  "05496": "39047128472",
+  "05499": "39056434592",
+  "05511": "39047128472",
+  "05520": "39047128472",
+  "05521": "39047128472",
+  "05523": "39047128472",
+  "09172": "44474797786",
+  "09174": "44474797786",
+  "09179": "44474797786",
+  "09183": "44474797786",
+  "09189": "39047128472",
+  "09191": "39047128472",
+  "09193": "39047128472",
+  "09194": "39047128472",
+  "09195": "39047128472",
+  "09197": "39047128472",
+  "09203": "39047128472",
+  "11355": "39047128472",
+  "11384": "39047128472",
+  "11515": "39047128472",
+  "11818": "39047128472",
+  "12355": "39047128472",
+  "12356": "39047128472",
+  "12357": "39047128472",
+  "12360": "44474797786",
+  "12361": "44474797786",
+  "12363": "39047128472",
+  "12364": "39056434592",
+  "12777": "39047128472",
+  "14245": "39047128472",
+  "15488": "44474797786",
+  "15489": "39047128472",
+  "15490": "44474797786",
+  "16818": "39056434592",
+  "16916": "44474797786",
+  "16990": "44474797786",
+  "16991": "44474797786",
+  "16992": "39056434592",
+  "16993": "44474797786",
+  "17043": "39047128472",
+  "17614": "39047128472",
+  "17615": "39047128472",
+  "17616": "39047128472",
+  "17617": "39047128472",
+  "17618": "39047128472",
+  "17619": "39047128472",
+  "17951": "44474797786",
+  "17953": "44474797786",
+  "19037": "39047128472",
+  "19038": "39047128472",
+  "19040": "39047128472",
+  "19583": "39047128472",
+  "19585": "39047128472",
+  "19621": "39056434592",
+  "19622": "39047128472",
+  "19664": "39056434592",
+  "19800": "44474797786",
+  "19806": "39047128472",
+  "19855": "39047128472",
+  "21324": "39047128472",
+  "21325": "39047128472",
+  "21413": "39047128472",
+  "21414": "39047128472",
+  "22719": "39047128472",
+  "22720": "39047128472",
+  "22722": "39047128472",
+  "22723": "39047128472",
+  "22724": "39047128472",
+  "22727": "39047128472",
+  "22729": "39047128472",
+  "22730": "39047128472",
+  "24084": "39047128472",
+  "24202": "39047128472",
+  "24203": "39047128472",
+  "24254": "44474797786",
+  "24289": "39047128472",
+  "24291": "39047128472",
+  "24318": "39047128472",
+  "24323": "39047128472",
+  "30298": "39056434592",
+  "30419": "39047128472",
+  "30513": "39056434592",
+  "30517": "39047128472",
+  "30665": "44474797786",
+  "30870": "39056434592",
+  "30871": "39047128472",
+  "30897": "44474797786",
+  "31395": "39056434592",
+  "31611": "43693267535",
+  "31625": "39047128472",
+  "31726": "39056434592",
+  "31727": "39047128472",
+  "32079": "44474797786",
+  "32080": "39047128472",
+  "32129": "44474797786",
+  "32286": "39047128472",
+  "32401": "44474797786",
+  "32615": "43693267535",
+  "32682": "39047128472",
+  "32793": "39047128472",
+  "32837": "39056434592",
+  "32838": "39047128472",
+  "32840": "39047128472",
+  "32868": "44474797786",
+  "32869": "44474797786",
+  "33208": "44474797786",
+  "33298": "39056434592",
+  "33299": "44474797786",
+  "33623": "39047128472",
+  "33652": "44474797786",
+  "35115": "39047128472",
+  "35205": "39056434592",
+  "35455": "44474797786",
+  "35545": "39047128472",
+  "35690": "39056434592",
+  "35708": "39047128472",
+  "35711": "39047128472",
+  "35712": "39056434592",
+  "35713": "39047128472",
+  "35714": "39047128472",
+  "35978": "39047128472",
+  "36081": "39047128472",
+  "36297": "39056434592",
+  "36368": "39047128472",
+  "36398": "39047128472",
+  "36402": "39047128472",
+  "36404": "39047128472",
+  "36405": "39047128472",
+  "36407": "39047128472",
+  "36409": "44474797786",
+  "36451": "39047128472",
+  "36452": "44474797786",
+  "36464": "39047128472",
+  "36558": "39047128472",
+  "36715": "39047128472",
+  "36730": "39047128472",
+  "36742": "39047128472",
+  "36827": "39047128472",
+  "36849": "39047128472",
+  "36958": "39047128472",
+  "36959": "39047128472",
+  "36963": "39047128472",
+  "37037": "43693267535",
+  "37038": "39047128472",
+  "37060": "39047128472",
+  "37116": "39047128472",
+  "37167": "39047128472",
+  "37231": "39047128472",
+  "37479": "44474797786",
+  "37480": "39047128472",
+  "37499": "39047128472",
+  "37513": "39056434592",
+  "37597": "39047128472",
+  "37600": "43693267535",
+  "37602": "39056434592",
+  "37607": "39047128472",
+  "37731": "39047128472",
+  "37732": "39047128472",
+  "37733": "39047128472",
+  "37734": "39047128472",
+  "37735": "39047128472",
+  "37737": "39047128472",
+  "37738": "39047128472",
+  "37739": "39047128472",
+  "37777": "39047128472",
+  "37778": "39047128472",
+  "37779": "39047128472",
+  "37780": "44474797786",
+  "37781": "39047128472",
+  "37782": "39047128472",
+  "37845": "39047128472",
+  "37900": "44474797786",
+  "38072": "39047128472",
+  "38223": "39056434592",
+  "38225": "39047128472",
+  "38227": "39047128472",
+  "38238": "39047128472",
+  "38266": "44474797786",
+  "38267": "39047128472",
+  "38443": "44474797786",
+  "38444": "39047128472",
+  "38445": "39047128472",
+  "38446": "39047128472",
+  "38447": "39047128472",
+  "38448": "39047128472",
+  "38449": "39047128472",
+  "38450": "39047128472",
+  "38451": "39047128472",
+  "38905": "39047128472",
+  "38907": "39047128472",
+  "38908": "39047128472",
+  "38909": "44474797786",
+  "38940": "39047128472",
+  "39072": "44474797786",
+  "39099": "39047128472",
+  "39100": "39047128472",
+  "39153": "39047128472",
+  "39154": "39047128472",
+  "39219": "39047128472",
+  "39221": "39047128472",
+  "39223": "39047128472",
+  "39231": "44474797786",
+  "39335": "44474797786",
+  "39647": "39047128472",
+  "39685": "39047128472",
+  "39727": "39047128472",
+  "39728": "39056434592",
+  "39913": "39047128472",
+  "39959": "39047128472",
+  "39960": "39047128472",
+  "40025": "39047128472",
+  "40074": "44474797786",
+  "40075": "44474797786",
+  "40151": "39047128472",
+  "40157": "39047128472",
+  "40167": "39056434592",
+  "40169": "39047128472",
+  "40170": "39047128472",
+  "40174": "39047128472",
+  "40175": "39047128472",
+  "40205": "43693267535",
+  "40206": "39047128472",
+  "40207": "39047128472",
+  "40262": "44474797786",
+  "40305": "39047128472",
+  "40408": "39047128472",
+  "40432": "44474797786",
+  "40433": "39047128472",
+  "40434": "39047128472",
+  "40460": "39047128472",
+  "40695": "39047128472",
+  "40704": "39047128472",
+  "40750": "39047128472",
+  "40751": "44474797786",
+  "40774": "39047128472",
+  "40778": "39047128472",
+  "40800": "39047128472",
+  "40801": "39047128472",
+  "40802": "39047128472",
+  "40804": "39047128472",
+  "40817": "39056434592",
+  "40876": "39047128472",
+  "40913": "39047128472",
+  "41047": "39047128472",
+  "41048": "39056434592",
+  "41049": "44474797786",
+  "41249": "39047128472",
+  "41310": "39047128472",
+  "41314": "39047128472",
+  "41315": "39047128472",
+  "41354": "39047128472",
+  "41361": "44474797786",
+  "41439": "39056434592",
+  "41637": "39047128472",
+  "41638": "44474797786",
+  "42024": "39047128472",
+  "42025": "39047128472",
+  "42228": "39056434592",
+  "42499": "39047128472",
+  "42693": "39047128472",
+  "42742": "39056434592",
+  "42908": "39047128472",
+  "43116": "44474797786",
+  "43525": "39047128472",
+  "43536": "39047128472",
+  "43576": "39047128472",
+  "43577": "39047128472",
+  "43578": "39047128472",
+  "43860": "39047128472",
+  "44108": "39047128472",
+  "44501": "39047128472",
+  "44502": "39047128472",
+  "44633": "39047128472",
+  "44751": "43693267535",
+  "44944": "39047128472",
+  "45270": "39047128472",
+  "45543": "44474797786",
+  "45920": "39047128472",
+  "45925": "39056434592",
+  "45951": "39047128472",
+  "46300": "44474797786",
+  "46308": "39047128472",
+  "46320": "44474797786",
+  "46321": "44474797786",
+  "46322": "39047128472",
+  "46323": "43693267535",
+  "46324": "39056434592",
+  "46326": "39047128472",
+  "46360": "43693267535"
+ },
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/reread-wave-s683",
+   "ref": "claude/second-pass-s685",
    "inputs": {
     "college": "City College of San Francisco",
     "step": "reread",
     "force": "44474797786"
    },
-   "posts": 57,
+   "posts": 2,
    "control_numbers": [
+    "31611",
+    "40205"
+   ],
+   "not_live_at_run": [
+    "31611",
+    "40205"
+   ],
+   "receipt_on_branch": true,
+   "already_live": [
     "05428",
     "05441",
     "05462",
@@ -78,215 +398,54 @@
  "carried_runs": {},
  "counts": {
   "reread": 61,
-  "kept": 55,
-  "restored": 4,
-  "restored_filed_pass": 4,
-  "restored_not_own_program": 4,
+  "kept": 2,
+  "restored": 2,
+  "restored_filed_pass": 2,
+  "restored_not_own_program": 2,
   "held_for_person": 0,
-  "new": 2,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 0,
+  "already_live": 57,
+  "kept_on_own_page": 2,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 1,
   "run_places_none_after": 0,
   "folder_places_none_after": 0,
   "records_after": 309,
-  "dropped_by_filing": 42,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
   "44474797786": {
-   "base": "origin/main",
-   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
-   "decided": "2026-11-19T07:44:59Z",
+   "base": "471c74d6",
+   "base_sha": "471c74d6399e4f9aa957b7f2a560d3f57b6ba357",
+   "decided": "2026-11-19T14:23:04Z",
    "counts": {
     "reread": 61,
-    "kept": 55,
-    "restored": 4,
-    "restored_filed_pass": 4,
-    "restored_not_own_program": 4,
+    "kept": 2,
+    "restored": 2,
+    "restored_filed_pass": 2,
+    "restored_not_own_program": 2,
     "held_for_person": 0,
-    "new": 2,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 0,
+    "already_live": 57,
+    "kept_on_own_page": 2,
     "plain_reread_would_lose_pass": 0,
     "kept_by_extraction_guard": 1,
     "run_places_none_after": 0,
     "folder_places_none_after": 0,
     "records_after": 309,
-    "dropped_by_filing": 42,
+    "dropped_by_filing": 0,
     "dropped_filed_passes": 0
    },
    "kept_by_extraction_guard": {
     "44751": "passes_less"
    },
    "next_read_pays": [],
-   "dropped_by_filing": [
-    {
-     "control_number": "05503",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "09175",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "09178",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "10974",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "11817",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "17842",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "17952",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "19445",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24120",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24259",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24260",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24263",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24299",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24304",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24331",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24393",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "24449",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "30539",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "30687",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "31074",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "31413",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "31414",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "31602",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "35709",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "36284",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "36386",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "36672",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "36964",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "36980",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "37160",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "37561",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "37601",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "40168",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "40171",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "40177",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "40407",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "40435",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "40590",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "40705",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "40706",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "41353",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "42318",
-     "filed_passes_live": false
-    }
-   ],
+   "dropped_by_filing": [],
    "programs": [
     {
      "control_number": "05428",
@@ -294,7 +453,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=418",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=418",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -305,6 +464,7 @@
       "listed": 14,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -316,16 +476,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "05441",
      "title": "Hospitality Management",
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=145",
-     "filed_run": 43693267535,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -336,6 +496,7 @@
       "listed": 17,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -347,8 +508,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "05462",
@@ -356,7 +517,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -367,6 +528,7 @@
       "listed": 16,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -378,16 +540,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "05474",
      "title": "Construction Management",
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=134",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=135",
-     "filed_run": 43693267535,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=134",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -398,6 +560,7 @@
       "listed": 22,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -409,16 +572,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "05481",
      "title": "Photography",
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -429,27 +592,28 @@
       "listed": 34,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
+      "pass": true,
+      "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.5,
-      "placed": 17,
+      "share": 1.0,
+      "placed": 34,
       "listed": 34,
-      "arithmetic": "unequal"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "05482",
      "title": "Graphic Design",
      "award": "A.A. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=102",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=103",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=102",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -460,6 +624,7 @@
       "listed": 15,
       "arithmetic": "incomplete"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -471,8 +636,8 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "05491",
@@ -513,7 +678,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=424",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=424",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -524,6 +689,7 @@
       "listed": 11,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -535,16 +701,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "09174",
      "title": "Commercial Cut-Flower and Greenhouse Production",
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=404",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=405",
-     "filed_run": 43693267535,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=404",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -555,6 +721,7 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -566,16 +733,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "09179",
      "title": "Editorial Management and Design",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=90",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=90",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -586,19 +753,20 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.5,
+      "placed": 5,
       "listed": 10,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "09183",
@@ -606,7 +774,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=421",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=421",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -617,6 +785,7 @@
       "listed": 26,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -628,8 +797,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "12360",
@@ -637,7 +806,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=142",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=142",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -648,6 +817,7 @@
       "listed": 19,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -659,8 +829,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "12361",
@@ -668,7 +838,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=410",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=410",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -679,6 +849,7 @@
       "listed": 23,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -690,8 +861,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "15488",
@@ -699,7 +870,7 @@
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=416",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=416",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -710,6 +881,7 @@
       "listed": 9,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -721,8 +893,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "15490",
@@ -730,7 +902,7 @@
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=417",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=417",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -741,6 +913,7 @@
       "listed": 9,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -752,8 +925,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "16916",
@@ -761,7 +934,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -772,6 +945,7 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -783,16 +957,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "16990",
      "title": "French",
      "award": "A.A. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=173",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=174",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=173",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -803,6 +977,7 @@
       "listed": 14,
       "arithmetic": "incomplete"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -814,16 +989,16 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "16991",
      "title": "Italian",
      "award": "A.A. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=175",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=176",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=175",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -834,6 +1009,7 @@
       "listed": 11,
       "arithmetic": "unequal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -845,16 +1021,16 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "16993",
      "title": "Spanish",
      "award": "A.A. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=181",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
-     "filed_run": "39056434592",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=181",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -865,19 +1041,20 @@
       "listed": 27,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
+      "pass": true,
+      "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.333,
-      "placed": 9,
+      "share": 1.0,
+      "placed": 27,
       "listed": 27,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "17951",
@@ -885,7 +1062,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=303",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=303",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -896,6 +1073,7 @@
       "listed": 27,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -907,16 +1085,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "17953",
      "title": "Liberal Arts and Sciences Emphasis in Communication",
      "award": "A.A. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=180",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206",
-     "filed_run": 43693267535,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=180",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -927,6 +1105,7 @@
       "listed": 14,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -938,8 +1117,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "19800",
@@ -947,7 +1126,7 @@
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=136",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=136",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -958,6 +1137,7 @@
       "listed": 21,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -969,16 +1149,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "24254",
      "title": "ESL Beginning Low",
      "award": "Noncredit program",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=162",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=162",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -989,6 +1169,7 @@
       "listed": 4,
       "arithmetic": "unequal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -997,11 +1178,11 @@
       "share": 1.0,
       "placed": 4,
       "listed": 4,
-      "arithmetic": "incomplete"
+      "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read's arithmetic reads unequal, the filed record's incomplete"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "30665",
@@ -1009,7 +1190,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1020,6 +1201,7 @@
       "listed": 24,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1031,16 +1213,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "30897",
      "title": "LGBTQ Studies",
      "award": "A.A. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=374",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=374",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1051,6 +1233,7 @@
       "listed": 32,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1062,8 +1245,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "31611",
@@ -1082,6 +1265,8 @@
       "listed": 27,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "43693267535",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1093,18 +1278,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Program Requirements and Completion Time' shares no word with the title 'English'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "32079",
      "title": "Mathematics",
      "award": "A.S. T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1115,27 +1298,28 @@
       "listed": 11,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
       "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "none_placed": false,
+      "share": 0.727,
+      "placed": 8,
       "listed": 11,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds coverage.none_placed false and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "32129",
      "title": "History",
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=369",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=370",
-     "filed_run": 43693267535,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=369",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1146,6 +1330,7 @@
       "listed": 17,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1157,16 +1342,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "32401",
      "title": "Studio Arts",
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=125",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=126",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=125",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1177,27 +1362,28 @@
       "listed": 24,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
+      "pass": true,
+      "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
       "share": 1.0,
       "placed": 24,
       "listed": 24,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "32868",
      "title": "Business Administration",
      "award": "A.S. T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1208,16 +1394,28 @@
       "listed": 11,
       "arithmetic": "equal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44474797786",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.818,
+      "placed": 9,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "32869",
      "title": "Economics",
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=138",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139",
-     "filed_run": 43693267535,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=138",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1228,6 +1426,7 @@
       "listed": 21,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1239,16 +1438,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "33208",
      "title": "Spanish",
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=181",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
-     "filed_run": "39056434592",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=181",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1259,19 +1458,20 @@
       "listed": 38,
       "arithmetic": "unequal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
-      "coverage_pass": false,
+      "coverage_pass": true,
       "none_placed": false,
-      "share": 0.974,
-      "placed": 37,
+      "share": 0.632,
+      "placed": 24,
       "listed": 38,
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.coverage.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "33299",
@@ -1279,7 +1479,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=105",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=105",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1290,6 +1490,7 @@
       "listed": 24,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1301,16 +1502,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "33652",
      "title": "Theatre Arts",
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=128",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=821",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=128",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1321,19 +1522,20 @@
       "listed": 19,
       "arithmetic": "incomplete"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 19,
       "listed": 19,
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.coverage.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "35455",
@@ -1341,7 +1543,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=324",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=324",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1352,6 +1554,7 @@
       "listed": 41,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1363,16 +1566,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "36409",
      "title": "ESL Beginning High",
      "award": "Noncredit program",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=161",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1383,27 +1586,28 @@
       "listed": 5,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
+      "pass": true,
+      "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
       "share": 1.0,
       "placed": 5,
       "listed": 5,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "36452",
      "title": "Child and Adolescent Development",
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=188",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=188",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1414,27 +1618,28 @@
       "listed": 12,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
       "listed": 12,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "37479",
      "title": "Critical Middle East /South West Asia and North Africa Studies",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=363",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=363",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1445,19 +1650,20 @@
       "listed": 5,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 5,
       "listed": 5,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "37780",
@@ -1465,7 +1671,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1476,6 +1682,7 @@
       "listed": 15,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1487,8 +1694,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "37900",
@@ -1496,7 +1703,7 @@
      "award": "A.A. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=96",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=96",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1507,6 +1714,7 @@
       "listed": 19,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1518,8 +1726,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "38266",
@@ -1527,7 +1735,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=97",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=97",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1538,6 +1746,7 @@
       "listed": 20,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1549,8 +1758,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "38443",
@@ -1558,7 +1767,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1569,6 +1778,7 @@
       "listed": 4,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1580,16 +1790,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "38909",
      "title": "Music",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=115",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1600,6 +1810,7 @@
       "listed": 35,
       "arithmetic": "unequal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1611,8 +1822,8 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "39072",
@@ -1620,7 +1831,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=301",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=301",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1631,6 +1842,7 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1642,16 +1854,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "39231",
      "title": "Company Officer",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=238",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=663",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=238",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1662,19 +1874,20 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
       "listed": 6,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "39335",
@@ -1682,7 +1895,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=260",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=260",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1693,6 +1906,7 @@
       "listed": 126,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1704,8 +1918,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "40074",
@@ -1713,7 +1927,7 @@
      "award": "A.S. T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1724,6 +1938,7 @@
       "listed": 16,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1735,8 +1950,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "40075",
@@ -1744,7 +1959,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=393",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=393",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1755,6 +1970,7 @@
       "listed": 28,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1766,8 +1982,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "40205",
@@ -1786,6 +2002,8 @@
       "listed": 10,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's window heading names the program (sources.json heading_named)",
+     "live_run": "43693267535",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1797,18 +2015,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Required Courses' shares no word with the title 'Pharmacy Technician'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
     },
     {
      "control_number": "40262",
      "title": "Cybersecurity",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=317",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=317",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1819,27 +2035,28 @@
       "listed": 7,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
       "listed": 7,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "40432",
      "title": "Microsoft Office Specialist",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=148",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=148",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1850,27 +2067,28 @@
       "listed": 6,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
       "listed": 6,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "40751",
      "title": "ESL and Math Milestone",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=159",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160",
-     "filed_run": 43693267535,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=159",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1881,6 +2099,7 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -1892,8 +2111,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "41049",
@@ -1901,7 +2120,7 @@
      "award": "A.S. T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=146",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=146",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1912,6 +2131,7 @@
       "listed": 20,
       "arithmetic": "unequal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1923,16 +2143,16 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "41361",
      "title": "Athletic Coaching",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=231",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=232",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=231",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -1943,6 +2163,7 @@
       "listed": 66,
       "arithmetic": "unequal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1954,16 +2175,16 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "41638",
      "title": "Business Administration 2.0",
      "award": "A.S. T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1974,16 +2195,28 @@
       "listed": 10,
       "arithmetic": "equal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44474797786",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "43116",
      "title": "Communication Studies 2.0",
      "award": "A.A- T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=156",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=545",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=156",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1994,19 +2227,20 @@
       "listed": 15,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
       "listed": 15,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "45543",
@@ -2014,7 +2248,7 @@
      "award": "A.S. Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=271",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=271",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -2025,6 +2259,7 @@
       "listed": 22,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -2036,16 +2271,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "46300",
      "title": "Mathematics 2.0",
      "award": "A.S. T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
-     "filed_run": "39056434592",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341",
+     "filed_run": "44474797786",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -2056,19 +2291,20 @@
       "listed": 11,
       "arithmetic": "incomplete"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": false,
       "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
       "listed": 11,
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.coverage.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "46320",
@@ -2076,7 +2312,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=395",
      "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=395",
-     "filed_run": 43693267535,
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -2087,6 +2323,7 @@
       "listed": 15,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -2098,16 +2335,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "46321",
      "title": "Physics 2.0",
      "award": "A.S. T Degree",
      "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347",
-     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=795",
-     "filed_run": "39047128472",
+     "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347",
+     "filed_run": "44474797786",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -2118,19 +2355,20 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "live_run": "44474797786",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 13,
       "listed": 13,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44474797786: a reread posted it"
     },
     {
      "control_number": "46360",
