@@ -1,0 +1,820 @@
+{
+ "college": "Los Angeles Pierce College",
+ "reread_run": "44543312824",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44475498778",
+ "at": "2026-11-19T14:27:04Z",
+ "posted": 35,
+ "batches": 2,
+ "skipped": [
+  {
+   "control_number": "19181",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45035",
+   "why": "extraction error: part 1 of 2: the record ran past max_tokens"
+  }
+ ],
+ "error": null,
+ "replaced": 5,
+ "absent": 0,
+ "held": 0,
+ "kept": 30,
+ "carried": 0,
+ "replaced_keys": [
+  "21801",
+  "36910",
+  "36947",
+  "37234",
+  "43219"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "02835",
+  "02837",
+  "08319",
+  "10729",
+  "10730",
+  "10731",
+  "10735",
+  "15058",
+  "16756",
+  "17794",
+  "18837",
+  "19008",
+  "21807",
+  "21810",
+  "21817",
+  "32336",
+  "32620",
+  "33036",
+  "35019",
+  "35334",
+  "35464",
+  "35975",
+  "37084",
+  "41890",
+  "43713",
+  "44998",
+  "45546",
+  "46089",
+  "46329",
+  "46335"
+ ],
+ "carried_keys": [],
+ "machine_pass": 34,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Los Angeles Pierce College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44475498778;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "CERTIFICATE - REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": 34,
+       "min": 34
+      },
+      "courses": [
+       {
+        "code": "ARC 110",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 111",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 121",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 151",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 152",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 162",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 172",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 173",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 201",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 202",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 221",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARC 271",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENV 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Recognize and critically analyze the elements and principles of architectural design and construction.",
+      "Display competency with graphic communication of ideas.",
+      "Create architectural projects utilizing research, planning, analysis, and concept.",
+      "Develop critical understanding of the practice of architecture and its components.",
+      "Recognize and express structural, material and building system components as well as the code, safety, and site factors that go into construction and design.",
+      "Recognize and execute cognitive, cultural, physical, social and sustainable factors in planning construction and the execution of architectural designs."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 34,
+      "min": 34
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ARCHITECTURAL TECHNOLOGY Certificate of Achievement (STATE CODE 21801)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 34,
+   "total_min": 34,
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006383070,
+   "program_title": "Architectural Technology",
+   "control_number": "21801"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "MAJOR - REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": 24,
+       "min": 24
+      },
+      "courses": [
+       {
+        "code": "WELDING 161",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELDING 162",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELDING 261",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELDING 262",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELDING 361",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELDING 362",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELDING 461",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELDING 462",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 21
+     },
+     "outcomes": [
+      "Work independently and interdependently to safely accomplish shared professional outcomes.",
+      "Students will be knowledgeable, and demonstrate welding using Shielded Metal Arc Welding (SMAW) techniques to weld in flat, horizontal, vertical, and overhead position using E7018 electrode.",
+      "Students will have the necessary skill for welding all positions related to plate.",
+      "Students will have the knowledge, aptitude, and skills necessary for employment in welding.",
+      "Students will be able to set-up and operate Shielded Metal Arc Welding equipment, and demonstrate welding techniques.",
+      "Use hand and power tools to perform welding construction and maintenance work, such as grinders, sanders, drill press, and band saw."
+     ],
+     "ge_pattern": "Cal-GETC or LACCD GE",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "MAJOR - REQUIRED COURSES",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
+   "catalog_year": "2026-2027",
+   "extracted_run": 43355018296,
+   "program_title": "Gas and Electric Welding",
+   "control_number": "36910"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "CERTIFICATE - REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHOTO 009",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHOTO 101",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 016",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 020",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 027A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHOTO 027B",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 049A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 102",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "CERTIFICATE - ELECTIVE COURSES",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PHOTO 021",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 027A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 027B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 035",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 036",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 037",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHOTO 049B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "commercial and advertising photography",
+      "photojournalism",
+      "other photography businesses",
+      "journalism fields",
+      "film",
+      "television",
+      "electronic media",
+      "Photographer",
+      "Portrait Photographer",
+      "Sports Photographer",
+      "Photo Studio Owner",
+      "Advertising Photographer",
+      "Commercial Photographer",
+      "Press Photographer",
+      "Photo Editor",
+      "Television Camera Operator",
+      "Magazine Features Editor",
+      "Graphic Designer",
+      "Medical Illustrator",
+      "Advertising Art Director",
+      "Film/Video Editor",
+      "Stylist",
+      "Visual Merchandiser",
+      "Web Content Manager",
+      "Web Designer",
+      "Digital Marketer"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Using various photographic tools students will be able to produce photographs using various digital camera types and apply a variety of lighting techniques to the production of photographs. Students will also be able to produce photographs using various photographic papers and digital output.",
+      "Students will develop a personal visual style which will help them to create a portfolio and related materials for job preparation.",
+      "Students will be able to define business goals and self-promotion strategies to help them in job preparation. Additionally, they will be able to describe successful working relationships with clients and subjects, to further this preparation.",
+      "Students will have sufficient mastery of one or more media to complete the technical and formal challenges pertinent to a body of original work and will be able to clearly communicate the content and context of their work visually, orally and in writing."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 24,
+      "min": 23
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "PHOTOGRAPHY Certificate of Achievement (STATE CODE 36947)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 23,
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006383070,
+   "program_title": "Photography",
+   "control_number": "36947"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 9,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "CERTIFICATE - REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "A S L 004",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "A S L 005",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "A S L 006",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "A S L 010",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "A S L 016",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "A S L 025",
+          "units": 2,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "A S L 022",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "A S L 023",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "A S L 030",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "A S L 031",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "A S L 040",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "A S L 055",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "A S L 065",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "ASL/English interpreter"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Develop receptive and expressive skills in American Sign Language and Fingerspelling.",
+      "Develop knowledge and awareness of the similarities and differences between the Deaf Culture/Deaf community and the hearing community.",
+      "Accurately interpret and transliterate between ASL and English in educational settings and community settings.",
+      "Apply professional standards, practices, and ethics, not limited to the tenets of the Code of Professional Conduct, to interpreting."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 32,
+      "min": 32
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "AMERICAN SIGN LANGUAGE/INTERPRETING Certificate of Achievement (STATE CODE 37234)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 32,
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006383070,
+   "program_title": "American Sign Language/Interpreting",
+   "control_number": "37234"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "CERTIFICATE - REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": 20,
+       "min": 20
+      },
+      "courses": [
+       {
+        "code": "BIOTECH 002",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOTECH 003",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOTECH 385",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 051",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM 060",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MICRO 020",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Research Associate",
+      "Manufacturing Technician",
+      "Quality Associates"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Employ the appropriate laboratory techniques effectively and safely with proper documentation, including the appropriate use of equipment and tools to produce an acceptable outcome when performing a technical laboratory task.",
+      "Apply the knowledge of biological science to distinguish between observations, inferences, relationships, and testimonials under investigation.",
+      "Demonstrate the ability to use sound ethical reasoning when discussing biological science and the use of biotechnological techniques."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 20,
+      "min": 20
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "BIOTECHNOLOGY RESEARCH LAB ASSISTANT Certificate of Achievement (STATE CODE 43219)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 20,
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006383070,
+   "program_title": "Biotechnology Research Lab Assistant",
+   "control_number": "43219"
+  }
+ ]
+}
