@@ -1,4 +1,4 @@
-{"schema":1,"college":"Allan Hancock College","slug":"allan_hancock","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Allan Hancock College","slug":"allan_hancock","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
 {"cn":"05869","title":"","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"09515","title":"Applied Design/Media: Animation: Traditional Drawing","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"07177","title":"Apprenticeship: Operating","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -86,6 +86,5 @@
 {"cn":"12129","title":"Mathematics: Physics","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30986","units":{"sum":[25.0,25.0],"printed":[26.0,26.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"40002","title":"Media Arts: Graphic Design","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30982","units":{"sum":[35.0,61.0],"printed":[36.0,36.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"42487","title":"Music","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30970","units":{"sum":[20.5,20.5],"printed":[22.0,22.0],"status":"unequal","measure":"units","against":"program"}},
-{"cn":"30363","title":"Recreation Management","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30947","units":{"sum":[19.0,19.0],"printed":[21.0,21.0],"status":"unequal","measure":"units","against":"program"}},
-{"cn":"33693","title":"Sports Medicine","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30935","units":{"sum":[34.0,34.0],"printed":[34.0,38.0],"status":"equal","measure":"units","against":"program"}}
+{"cn":"30363","title":"Recreation Management","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30947","units":{"sum":[19.0,19.0],"printed":[21.0,21.0],"status":"unequal","measure":"units","against":"program"}}
 ]}

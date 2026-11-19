@@ -1,4 +1,4 @@
-{"schema":1,"college":"Hartnell College","slug":"hartnell","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Hartnell College","slug":"hartnell","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
 {"cn":"41819","title":"Technical Support","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://hartnell.catalog.prod.coursedog.com/programs/CT.TS/requirements-ipyf8"},
 {"cn":"08880","title":"Advanced Automotive Technology","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"21435","title":"Automotive Technology--Auto Shop Management","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
