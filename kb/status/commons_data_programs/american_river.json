@@ -1,4 +1,4 @@
-{"schema":1,"college":"American River College","slug":"american_river","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"American River College","slug":"american_river","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"44845","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"04543","title":"Music","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"44412","title":"Business Information Professional II","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399"},

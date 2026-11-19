@@ -1,4 +1,4 @@
-{"schema":1,"college":"Butte College","slug":"butte","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Butte College","slug":"butte","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"11137","title":"Agriculture and Natural Resources","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"01301","title":"Agriculture Business","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19042","title":"Communication Studies","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -39,7 +39,6 @@
 {"cn":"01362","title":"Fire Technology","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28126/28301","units":{"sum":[61.0,61.0],"printed":[60.0,66.0],"status":"unequal","measure":"units","against":"degree"}},
 {"cn":"31000","title":"History","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28138/28306","units":{"sum":[27.0,27.0],"printed":[18.0,18.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"33199","title":"Journalism","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28140/28307","units":{"sum":[64.0,65.0],"printed":[60.0,70.0],"status":"unequal","measure":"units","against":"degree"}},
-{"cn":"44349","title":"Mathematics and Science","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/27607/27517","units":{"sum":[143.0,143.0],"printed":[18.0,18.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"01305","title":"Mechanized Agriculture","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28074/28198","units":{"sum":[63.0,63.0],"printed":[60.0,64.0],"status":"unequal","measure":"units","against":"degree"}},
 {"cn":"32469","title":"Music","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28152/28315","units":{"sum":[61.0,63.5],"printed":[60.0,71.0],"status":"unequal","measure":"units","against":"degree"}},
 {"cn":"40923","title":"Philosophy","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://butte.curriqunet.com/catalog/iq/25398/28402/27536","units":{"sum":[64.0,64.0],"printed":[60.0,67.0],"status":"unequal","measure":"units","against":"degree"}},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"De Anza College","slug":"de_anza","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"De Anza College","slug":"de_anza","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"41327","title":"Film/TV: Animation","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"found_not_extracted","lever":"paid_read","url":"https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2024"},
 {"cn":"31504","title":"Film/TV: Production","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"found_not_extracted","lever":"paid_read","url":"https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026"},
 {"cn":"30957","title":"Advanced Engine Performance Technology","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

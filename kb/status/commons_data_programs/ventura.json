@@ -1,11 +1,11 @@
-{"schema":1,"college":"Ventura College","slug":"ventura","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Ventura College","slug":"ventura","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":false,"programs":[
+{"cn":"45355","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.vcccd.edu/ventura/transfer-information/c-id/"},
 {"cn":"45741","title":"Chicana/o Studies","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"41990","title":"English as a Second Language - Level 1: Beginning","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"41927","title":"English as a Second Language - Level 2: Intermediate","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"37831","title":"Innovative Cognitive Achievement Network/Journey Overcoming Barriers (ICAN-JOB)","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"44557","title":"Law, Public Policy, and Society","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"44818","title":"Precision Machining Essentials","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
-{"cn":"45355","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":"https://catalog.vcccd.edu/ventura/transfer-information/c-id/"},
 {"cn":"06947","title":"Accounting","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.vcccd.edu/ventura/programs-courses/business/accounting-as/"},
 {"cn":"44186","title":"Administration in Early Education","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.vcccd.edu/ventura/programs-courses/child-development/"},
 {"cn":"31298","title":"Administration of Justice","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.vcccd.edu/ventura/transfer-information/c-id/"},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"Cañada College","slug":"ca_ada","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Cañada College","slug":"ca_ada","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"05701","title":"Accounting","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20424","title":"Accounting","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"07253","title":"Administrative Assistant","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -51,11 +51,11 @@
 {"cn":"05715","title":"Spanish","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"15051","title":"Theater Costuming","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20439","title":"Theater Costuming","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"05700","title":"Business Administration","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"38442","title":"Cloud Computing","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"32861","title":"Elementary Teacher Education","award":"A.A- T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"05700","title":"Business Administration","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":null},
-{"cn":"32833","title":"Political Science","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":null},
-{"cn":"05711","title":"Theater Arts","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":null},
+{"cn":"32833","title":"Political Science","award":"A.A- T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"05711","title":"Theater Arts","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"20438","title":"Custom Dressmaking/Small Business Oriented","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187","units":{"sum":[31.0,31.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"30910","title":"Kinesiology","award":"A.A- T Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=209","units":{"sum":[15.0,15.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},
 {"cn":"33828","title":"Spanish","award":"A.A- T Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=236","units":{"sum":[17.0,21.0],"printed":[19.0,21.0],"status":"incomplete","measure":"units","against":"program"}},

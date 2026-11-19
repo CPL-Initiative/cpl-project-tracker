@@ -1,4 +1,4 @@
-{"schema":1,"college":"Coalinga College","slug":"coalinga","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Coalinga College","slug":"coalinga","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"07957","title":"Health Science: General","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19021","title":"Liberal Arts: Arts & Humanities","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20332","title":"Business: Bookkeeping","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},

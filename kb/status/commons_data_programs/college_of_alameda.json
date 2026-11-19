@@ -1,4 +1,4 @@
-{"schema":1,"college":"College of Alameda","slug":"college_of_alameda","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"College of Alameda","slug":"college_of_alameda","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"31166","title":"Liberal Arts Emphasis in Arts and Humanities","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://coa.curriqunet.com/catalog/iq/47221/47539/47541"},
 {"cn":"31164","title":"Liberal Arts Emphasis in Social and Behavioral Sciences","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://coa.curriqunet.com/catalog/iq/47221/47539/47543"},
 {"cn":"01136","title":"African-American Studies","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -44,7 +44,6 @@
 {"cn":"01124","title":"Dental Assisting","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://coa.curriqunet.com/catalog/iq/47221/47305/47430","units":{"sum":[42.0,42.0],"printed":[41.0,41.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"45995","title":"Digital Literacy and Critical Inquiry","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://coa.curriqunet.com/catalog/iq/47221/47361/47394","units":{"sum":[17.0,19.0],"printed":[16.0,18.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"37047","title":"Economics","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://coa.curriqunet.com/catalog/iq/47221/47313/47432","units":{"sum":[23.0,25.0],"printed":[24.0,25.0],"status":"unequal","measure":"units","against":"program"}},
-{"cn":"32714","title":"English","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://coa.curriqunet.com/catalog/iq/47221/47317/47439","units":{"sum":[38.0,42.0],"printed":[19.0,21.0],"status":"unequal","measure":"units","against":"program"}},
 {"cn":"40312","title":"ESOL Advanced","award":"Noncredit program","cause":"units_unequal","lever":"scorer_noncredit_hours","url":"https://coa.curriqunet.com/catalog/iq/47221/47321/47447","units":{"sum":[0.0,0.0],"printed":[172.0,172.0],"status":"unequal","measure":"hours","against":"program"}},
 {"cn":"31145","title":"Mathematics","award":"A.S. T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://coa.curriqunet.com/catalog/iq/47221/47373/47461","units":{"sum":[22.0,23.0],"printed":[21.0,23.0],"status":"unequal","measure":"units","against":"program"}}
 ]}
