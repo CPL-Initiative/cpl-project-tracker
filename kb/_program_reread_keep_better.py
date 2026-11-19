@@ -65,7 +65,8 @@ A worse re-read is replaced by main's file byte for byte, so its extracted_run i
 extraction run's records; with no run named it takes the highest run in the folder, which is main's once every
 record of the new run is restored. So the account names the dispatch with the run pinned (input `force`, which the
 workflow passes as EXTRACTED_RUN), one per run whose kept or new records no reread receipt has posted, or "no
-dispatch". A second extraction on the same branch is carried: the account keeps every earlier run's decisions,
+dispatch". With live_runs supplied the live read decides in place of the receipts: a run is named whenever one of its
+kept or new records is not live at that run (a second pass, after a receipt), and stays out when all are (S685). A second extraction on the same branch is carried: the account keeps every earlier run's decisions,
 and that run's kept records still in the folder keep their own dispatch.
 
 THE HOLD. No hold stops a paid read on the ground that a re-read came back worse: the reconcile file's `hold` keys
@@ -453,6 +454,9 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
             if cn in earlier:   # restored by an earlier pass over this run: it stays listed as it was decided
                 rows.append(earlier.pop(cn))
             continue
+        # Decided again now: an earlier entry (a program held for a person whose record is back in records/, S685's
+        # second pass) is not listed beside the new decision.
+        earlier.pop(cn, None)
         rel = os.path.relpath(path, root)
         filed_raw = base_bytes(root, base, rel)
         filed = json.loads(filed_raw) if filed_raw is not None else None
@@ -569,8 +573,11 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
                  "counts": counts, "kept_by_extraction_guard": kept_passing,
                  "next_read_pays": sorted(r["control_number"] for r in restored if not r.get("next_read_held")),
                  "dropped_by_filing": dropped, "programs": rows}
-    # The dispatches: each run whose kept or new records are still in the folder at that run, and that no reread
-    # receipt on this branch has posted, pinned by the run so reread never falls back to main's run.
+    # The dispatches: each run whose kept or new records are still in the folder at that run, pinned by the run so
+    # reread never falls back to main's run. Without live_runs, a run a reread receipt on this branch has posted is
+    # never named again. With live_runs, the live read decides instead (S685's second pass, after a receipt): a run
+    # is named whenever one of its kept or new records is not live at that run, and a run whose kept and new records
+    # are all live at it stays out (COBIx: never post a run twice for nothing).
     posted = posted_runs(root, college or "", os.path.basename(folder))
     at_run: dict[str, int] = {}
     for rec in after:
@@ -588,10 +595,17 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         live_at = sorted(rec["control_number"] for rec in after if str(rec.get("extracted_run")) == r_id
                          and rec.get("control_number") in {e["control_number"] for e in runs[r_id].get("programs")
                                                            or [] if e.get("outcome") == "posted"})
-        if still and r_id not in posted:
+        if live_runs is None:
+            not_live, name = None, bool(still) and r_id not in posted
+        else:
+            not_live = [cn for cn in still if live_runs.get(str(cn)) != r_id]
+            name = bool(not_live)
+        if name:
             dispatch.append({"workflow": WORKFLOW, "ref": branch,
                              "inputs": {"college": college, "step": "reread", RUN_INPUT: r_id},
                              "posts": len(still), "control_numbers": still,
+                             **({"not_live_at_run": not_live} if not_live is not None else {}),
+                             **({"receipt_on_branch": True} if r_id in posted else {}),
                              **({"already_live": live_at} if live_at else {})})
     acct = {
         "college": college, "run": run, "written": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
