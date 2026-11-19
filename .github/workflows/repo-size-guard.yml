@@ -43,8 +43,14 @@ jobs:
           sparse-checkout: scripts
       - name: Size check
         env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          EVENT_BASE: ${{ github.event.pull_request.base.sha }}
         run: |
+          # The base is the merge commit's first parent: the exact main the PR was merged onto. The event's
+          # base.sha can sit a day or more behind on an older PR (#3511: afc29292 under a merge onto 5a7a6f24),
+          # which counts every main commit since as the PR's own growth. The event value stays as the fallback.
+          BASE_SHA=$(git cat-file -p HEAD | awk '/^parent /{print $2; exit}')
+          [ -n "$BASE_SHA" ] || BASE_SHA="$EVENT_BASE"
+          echo "comparing with $BASE_SHA (event base: $EVENT_BASE)"
           git fetch --no-tags --depth=1 origin "$BASE_SHA"
           python3 scripts/repo_size_guard.py --base "$BASE_SHA"
 
