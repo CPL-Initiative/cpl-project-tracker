@@ -550,12 +550,13 @@ def row_cr(root):
                  # The CR's curator decisions are a person's verdicts read from a decision sheet (the receipts' _doc).
                  confirmed_pair(len(by_curator), len(rows_of), len(by_curator & settled), "settled", tab + "/list")],
         "tests": ["rule-settled", "curator-decided", "confirmed by a person"],
-        "issues": [
+        # An issue leaves at zero, as the other rows' do: Sam's college wording rule (2026-11-19) settled the 36 names.
+        "issues": [i for i in [
             {"n": len(unsettled), "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
              "owner": "a curator", "carry": "no_procedure", "open": tab + "/open"},
             {"n": len(names), "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
              "owner": "a curator", "carry": "unsure", "open": tab + "/names"},
-        ],
+        ] if i["n"] != 0],
         "procedures": [
             {"n": st["auto_groups"], "words": "groups a rung 1 to 4 rule folds: five rungs, groups form on a shared key, the course count gates a cartesian line",
              "open": tab + "/auto"},

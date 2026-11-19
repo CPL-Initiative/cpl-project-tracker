@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s687_cr_wording_rule.sql",
+ "name": "s687_cr_wording_rule_2",
+ "version": "20261119212542",
+ "sha256": "d810f8f4e84a25884461e05c24ffa9558cee1f19ce91bbaabfb69e215782bcf0",
+ "run": "44618420355",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"wording_rows\":36,\"table_rows\":66,\"memory_row\":1}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
