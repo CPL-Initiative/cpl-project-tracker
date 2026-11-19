@@ -68,18 +68,30 @@ This file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-
 
 ## The second S687 session
 
-session_01Rvwe2VZ63LPZQQaXGnRoo6 (started 20:39Z) holds Sam's yes on the 36: his words, Nov 19 12:42 PM PT, relayed by
-COBIx on #3566 (comment 7021717277), *"Forward all your recommendations and yes on the 36."* It wrote the college
-wording rule: 36 confirmed rows in `cr_reference_decisions` under `cr-wording-s687@bot` (migrate run 44618420355;
-receipts on `claude/s687-cr-wording`, its own PR), with memory row `r-cr-college-wording-rule-yes-sam-2026-11-19`.
-This checkpoint marks the call answered in `kb/status/cr.json`. The curation clock dates itself once the nightly CR
-status build counts the 36. It also holds #3560 (Library) and #3561 (First Light's receipt, merged as #3571,
-`0e4a70ff`). Its open PRs at 21:41Z, each merging on its own green `test`: #3574 (the wording rule's record, with the
-`row_cr` filter that keeps a zero off the CR row; head `0654248e`) and #3572 (#3560 part 1: the two publish buttons,
-Template, the check and division-settings tables, the gate; its migration applying through
-`claude/s687-library-model-apply`). #3560 parts 2 to 4 remain: the publish workflow's accessibility check and footer,
-the progress bar, then Publish all, Add existing, redraft and republish. Trigger branches that never merge:
-`claude/s687-cr-wording-apply`, `claude/s687-library-model-apply`. Agree one writer with it before touching those files.
+session_01Rvwe2VZ63LPZQQaXGnRoo6 (started 20:39Z, signed off about 22:50Z), final state. It holds Sam's yes on the 36:
+his words, Nov 19 12:42 PM PT, relayed by COBIx on #3566 (comment 7021717277), *"Forward all your recommendations and
+yes on the 36."*
+
+- **Merged:** #3571 `0e4a70ff` (First Light's Apply commits a receipt of its marks; #3561). #3574 `cf6c3c65` (the
+  college wording rule's record, and the `row_cr` filter that keeps a zero issue off the CR row). #3572 `1e50afb3`
+  (#3560 part 1: Publish to Internal Library and Publish to Public Library, Template, the check and division-settings
+  tables, the gate in the tab and in `cpl_library_set_public()`, and a listed piece leaving the Public Library when its
+  url changes, or its version changes without a pass).
+- **Applied live (supabase-migrate):** 44618420355, 36 confirmed rows in `cr_reference_decisions` under
+  `cr-wording-s687@bot` (66 in the table; the first run, 44617202998, wrote nothing). 44621258767, the Library
+  publishing model. 44624282220, unlist on a new version. 44628207752, unlist on any url change, with a guarded update of
+  one memory row's summary.
+- **Memory rows (proposed):** `r-cr-college-wording-rule-yes-sam-2026-11-19` (Sam's ruling); `d-library-check-per-version-key-s687`,
+  `d-library-new-page-unlists-s687`, `d-library-internal-one-press-s687`, `d-library-3560-in-four-prs-s687` (run
+  44624406317). `d-library-new-page-unlists-s687` sets aside Sam's Nov 19 item 9 (a Public piece stays listed while
+  redrafted) until Part 2's run relists a checked page; his to reverse.
+- **Next Library work (#3560):** part 2, the publish workflow's accessibility check, a check record per page, the footer
+  from that record, and listing a `publish_target = 'public'` piece on a pass (this also closes the one known limit: a
+  version key relabeled to one that already passed); part 3, the progress bar from real step events in
+  `library-revise-draft`; part 4, Publish all, Add existing, redraft and republish.
+- **Trigger branches that never merge:** `claude/s687-cr-wording-apply`, `claude/s687-library-model-apply`,
+  `claude/s687-library-memory-apply`.
+- **Let go:** no PR subscription, check-in or artifact watch is held.
 
 ## For Sam
 
