@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Liberal Studies: Elementary Education",
  "award": "A.A. Degree",
- "source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/associate-degree-as-aa-general-education-requirements/",
- "record_shape": 5,
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/liberal-studies-elem-edu/",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 17162,
+  "input_tokens": 9540,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 17162,
-    "output_tokens": 2216,
+    "input_tokens": 9540,
+    "output_tokens": 5032,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,71 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2216,
+  "output_tokens": 5032,
   "output_tokens_details": {
-   "thinking_tokens": 659
+   "thinking_tokens": 1489
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.11297,
- "ms": 18009,
- "seconds": 18.5,
+ "cost_usd": 0.1388,
+ "ms": 37405,
+ "seconds": 38.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 42,
    "listed": 42,
-   "share": 0.0,
-   "missing": [
-    "AFRO110",
-    "AFRO111",
-    "BIOL100",
-    "BIOL101",
-    "CD170",
-    "COMM103",
-    "COMM160",
-    "COMMC1000",
-    "ED200",
-    "ENGL115H",
-    "ENGL230",
-    "ENGL231",
-    "ENGL270",
-    "ENGLC1000",
-    "ENGLC1001",
-    "ENGLC1002",
-    "ES/T200",
-    "ESL115A",
-    "GEOG106",
-    "GEOL104",
-    "HIST106",
-    "HIST110",
-    "HIST111",
-    "HIST141",
-    "HIST142",
-    "HISTC1001",
-    "HISTC1002",
-    "HLTH101",
-    "HLTH280",
-    "MAS141",
-    "MAS142",
-    "MATH110",
-    "MATH111",
-    "MATH112",
-    "MUS103",
-    "PHIL101",
-    "PHIL103",
-    "PHIL106",
-    "PHIL120",
-    "PHS101",
-    "POLSC1000",
-    "TA101"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -103,29 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    62.0,
+    64.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    62.0,
+    64.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -134,17 +93,27 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate Degree (A.S./A.A.) General Education Requirements",
+   "section_heading": "Liberal Studies: Elementary Education",
    "measure": "units",
    "total_units": {
+    "min": 62,
+    "max": 64
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -155,182 +124,518 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Assess the personality traits necessary to become a successful teacher and evaluate whether teaching is an appropriate career."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AFRO 110",
-    "why": "listed only as AFRO/HIST 110 in GE Area 4; program section not in text"
+    "name": "LANGUAGE AND LITERATURE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ED 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AFRO 111",
-    "why": "listed only as AFRO/HIST 111 in GE Area 4; program section not in text"
+    "name": "LANGUAGE AND LITERATURE: Three units selected from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL 100",
-    "why": "listed only in GE Area 5; program section not in text"
+    "name": "LANGUAGE AND LITERATURE: Complete the following course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 115H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 115A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL 101",
-    "why": "not in the text (GE list cut off)"
+    "name": "LANGUAGE AND LITERATURE: Three units selected from the following (critical thinking)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CD 170",
-    "why": "listed only in GE Area 4; program section not in text"
+    "name": "LANGUAGE AND LITERATURE: Three units selected from the following (literature)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 231",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "COMM 103",
-    "why": "listed only in GE Area 1B; program section not in text"
+    "name": "HISTORY AND SOCIAL SCIENCE: Three units selected from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AFRO 110",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAS 141",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "COMM 160",
-    "why": "listed only in GE Area 1B; program section not in text"
+    "name": "HISTORY AND SOCIAL SCIENCE: Three units selected from the following (second list)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AFRO 111",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAS 142",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "COMM C1000",
-    "why": "listed only in GE Area 1B; program section not in text"
+    "name": "HISTORY AND SOCIAL SCIENCE: Complete the following course (HIST 106)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ED 200",
-    "why": "not in the text"
+    "name": "HISTORY AND SOCIAL SCIENCE: Complete the following course (GEOG 106)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEOG 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL 115H",
-    "why": "listed only in GE Area 1A; program section not in text"
+    "name": "MATHEMATICS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MATH 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL 230",
-    "why": "listed only in GE Area 3; program section not in text"
+    "name": "LIFE SCIENCE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL 231",
-    "why": "listed only in GE Area 3; program section not in text"
+    "name": "PHYSICAL SCIENCES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "GEOL 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL 270",
-    "why": "listed only in GE Area 3; program section not in text"
+    "name": "VISUAL AND PERFORMING ARTS: Three units selected from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "TA 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL C1000",
-    "why": "listed only in GE Area 1A; program section not in text"
+    "name": "VISUAL AND PERFORMING ARTS: Complete the following course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUS 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL C1001",
-    "why": "listed only in GE Area 1B; program section not in text"
+    "name": "EXERCISE SCIENCE AND HEATLH",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ES/T 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HLTH 280",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL C1002",
-    "why": "listed only in GE Area 3; program section not in text"
+    "name": "VALUES, ETHICS AND INDIVIDUAL PERSPECTIVE: Three units selected from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHIL 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ES/T 200",
-    "why": "not in the text"
-   },
-   {
-    "code": "ESL 115A",
-    "why": "listed only in GE Area 1A; program section not in text"
-   },
-   {
-    "code": "GEOG 106",
-    "why": "listed only in GE Area 4; program section not in text"
-   },
-   {
-    "code": "GEOL 104",
-    "why": "not in the text (GE list cut off)"
-   },
-   {
-    "code": "HIST 106",
-    "why": "listed only in GE Areas 3 and 4; program section not in text"
-   },
-   {
-    "code": "HIST 110",
-    "why": "listed only as HIST/AFRO 110 in GE Area 4; program section not in text"
-   },
-   {
-    "code": "HIST 111",
-    "why": "listed only as HIST/AFRO 111 in GE Area 4; program section not in text"
-   },
-   {
-    "code": "HIST 141",
-    "why": "listed only as HIST/MAS 141 in GE Area 4; program section not in text"
-   },
-   {
-    "code": "HIST 142",
-    "why": "listed only as HIST/MAS 142 in GE Area 4; program section not in text"
-   },
-   {
-    "code": "HIST C1001",
-    "why": "listed only in GE Area 4; program section not in text"
-   },
-   {
-    "code": "HIST C1002",
-    "why": "listed only in GE Area 4; program section not in text"
-   },
-   {
-    "code": "HLTH 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "HLTH 280",
-    "why": "not in the text"
-   },
-   {
-    "code": "MAS 141",
-    "why": "listed only as MAS/HIST 141 in GE Area 4; program section not in text"
-   },
-   {
-    "code": "MAS 142",
-    "why": "listed only as MAS/HIST 142 in GE Area 4; program section not in text"
-   },
-   {
-    "code": "MATH 110",
-    "why": "listed only in GE Area 2; program section not in text"
-   },
-   {
-    "code": "MATH 111",
-    "why": "listed only in GE Area 2; program section not in text"
-   },
-   {
-    "code": "MATH 112",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUS 103",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHIL 101",
-    "why": "listed only in GE Area 3; program section not in text"
-   },
-   {
-    "code": "PHIL 103",
-    "why": "listed only in GE Area 1B; program section not in text"
-   },
-   {
-    "code": "PHIL 106",
-    "why": "listed only in GE Area 3; program section not in text"
-   },
-   {
-    "code": "PHIL 120",
-    "why": "listed only in GE Area 3; program section not in text"
-   },
-   {
-    "code": "PHS 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "POLS C1000",
-    "why": "listed only in GE Area 4; program section not in text"
-   },
-   {
-    "code": "TA 101",
-    "why": "listed only in GE Area 3; program section not in text"
+    "name": "VALUES, ETHICS AND INDIVIDUAL PERSPECTIVE: Complete the following course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CD 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints units only at the group level for most lists; individual course units are null except ED 200 (3). Group totals are recorded in each block's stated.",
+   "Cross-listed courses printed as HIST/AFRO 110, HIST/MAS 141, HIST/AFRO 111, HIST/MAS 142 are recorded as the HIST code with the AFRO or MAS code as alternative.",
+   "'Total Units 62-64' is printed under the course list and matches the sum of the group totals; recorded as total_units. No general education pattern or degree total is printed in this section.",
+   "The VISUAL AND PERFORMING ARTS 'Three units selected from the following' list contains only TA 101.",
+   "EXERCISE SCIENCE AND HEATLH (heading misspelled as printed): ES/T 200 plus HLTH 101 or HLTH 280, stated 3-5.",
+   "COMM 160, ENGL 270 and MUS 103 are marked ++ (does not fulfill SDSU requirements); POLS C1000 is marked ** (highly recommended for students seeking Social Science degree authorization).",
+   "Catalog titles differ from the state file for BIOL 100/101 (Introduction to Biology / Lab) and CD 170 (Child Growth and Development).",
+   "The single Program Student Learning Outcome is printed for the program as a whole; this A.A. is the only award in the section.",
+   "No careers list is printed; the outcome refers to teaching as a career but no career is named in the description, so careers is left empty.",
+   "The catalog text is cut off at the end of the San Diego State University paragraph."
+  ]
  },
- "extracted_run": "38563578596"
+ "extracted_run": "44529722751",
+ "catalog_year": "2026-2027"
 }
