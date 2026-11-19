@@ -229,12 +229,63 @@ for cn, row in seven:
     new, notes = U.a4_blank_alternative(d["record"], U.units_at(CD, st_file))
     check(not any(n.get("together") for n in notes), "College of the Desert %s: A4 names no group" % cn)
 check(seen_groups == 7, "the seven College of the Desert groups are all read (%d)" % seen_groups)
-# The pair call scored against the record notes, over every committed record outside the lane: no call a note
-# contradicts (the old self-recall compared the rule with itself).
-pr = U.pair_recall([d for _, d in U.load_files()], st_file)
-print("pair call against the record notes: %s" % ", ".join("%s %d" % kv for kv in pr["tally"].items()))
-check(not pr["wrong"] and pr["tally"].get("pair right", 0) > 0 and pr["tally"].get("or right", 0) > 0,
-      "the pair call agrees with every record note that holds an answer: %s" % pr["wrong"][:5])
+# S683, #3508 round two's second reader: the note-pair call is off on every further record. A regex over the notes
+# made the call and held its answer, so it scored itself right and read mixed "and"/"or" choices as one group. The
+# six records the reader named plan no row and form no group; the three S681 rows whose group rests on a note stay
+# as planned; a fresh run at the released colleges plans nothing beyond the 14.
+check(U.NOTE_PAIR_ON is False and len(U.NOTE_PAIR_KEPT) == 3, "the note-pair call is off, three planned rows kept")
+files_all = [d for _, d in U.load_files()]
+by_key = {(d["college"], str(d["control_number"])): d for d in files_all}
+ge_all = U.college_ge_totals(files_all)
+for c, n, row, members in U.HAND_HELD_START:
+    d = by_key.get((c, n))
+    check(d is not None, "%s %s is a committed record outside the lane" % (c, n))
+    if d is None:
+        continue
+    check(U.judge(d, ge_all, st_file)["rule"] is None, "%s %s plans no row" % (c, n))
+    _, nn = U.a4_blank_alternative(d["record"], U.units_at(c, st_file), U.note_pairs_for(c, n))
+    check(not any(x.get("together") for x in nn), "%s %s: A4 reads no group at %s" % (c, n, row))
+    _, nn = U.a4_blank_alternative(d["record"], U.units_at(c, st_file), True)
+    check(any(x.get("together") and set(x["code"].split(" + ")) == set(members) for x in nn),
+          "%s %s: with the call on, the old rule would read %s as one group" % (c, n, " + ".join(members)))
+# The score is a hand-held list, never the notes: with the six held as "not one group" and the call switched on,
+# each reads wrong; switched off, each reads right. With the list empty nothing is scored wrong.
+held6 = {(c, n, row): (list(m), "not one group") for c, n, row, m in U.HAND_HELD_START}
+six_files = [by_key[(c, n)] for c, n, _, _ in U.HAND_HELD_START if (c, n) in by_key]
+U.NOTE_PAIR_ON = True
+on = U.pair_recall(six_files, st_file, held6)
+U.NOTE_PAIR_ON = False
+off = U.pair_recall(six_files, st_file, held6)
+check(len(on["wrong"]) == 6 and on["tally"].get("pair held wrong") == 6, "the list scores the note-pair call wrong: %s" % on["tally"])
+check(not off["wrong"] and off["tally"].get("or held right") == 6, "and the switched-off call right: %s" % off["tally"])
+pr = U.pair_recall(files_all, st_file)
+print("pair call against the hand-held list: %s" % ", ".join("%s %d" % kv for kv in pr["tally"].items()))
+check(not pr["wrong"] and not pr["tally"].get("note pair, unscored"),
+      "no pair call is scored wrong, and no note pair is still made: %s" % pr["tally"])
+fresh = U.run(write=False, only=tuple(CL.RELEASED))
+check(not fresh["moved"], "a fresh run at the released colleges plans nothing beyond the 14: %s"
+      % [(m["college"], m["control_number"]) for m in fresh["moved"]][:5])
+# A note-only pair at a record outside NOTE_PAIR_KEPT: no group; at a kept record, the group as planned.
+np_rec = {"program": {"measure": "units", "total_units": {"min": 4, "max": 4}}, "notes": [
+    "The ESTH 142 alternative is the pair ESTH 144 & ESTH 145 (part-time path), taken together."],
+    "blocks": [{"name": "Required", "rule": "all", "courses": [
+        course("ESTH 142", 4, alts=[{"code": "ESTH 144", "units": None}, {"code": "ESTH 145", "units": None}])]}]}
+_, nn = U.a4_blank_alternative(np_rec, U.units_at("Citrus College", {}), U.note_pairs_for("Citrus College", "99999"))
+check(not any(x.get("together") for x in nn), "a note-only pair at a further record reads as two options")
+_, nn = U.a4_blank_alternative(np_rec, U.units_at("Citrus College", {}), U.note_pairs_for("Citrus College", "11247"))
+check(any(x.get("together") == "row" for x in nn), "at Citrus 11247 the planned group stands")
+# The three kept rows come out of today's A4 exactly as the plan wrote them (their committed records).
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_units_rules_2026-11-18_s680.json"),
+          encoding="utf-8") as fh:
+    s680_rows ={(r["college"], str(r["control_number"])): r for r in __import__("json").load(fh)["records"]}
+for key in sorted(U.NOTE_PAIR_KEPT):
+    r = s680_rows[key]
+    with open(os.path.join(ROOT, r["path"]), encoding="utf-8") as fh:
+        rec_now = __import__("json").load(fh)["record"]
+    orig = dict(copy.deepcopy(rec_now), blocks=copy.deepcopy(r["before_image"]["record"]["blocks"]),
+                program=copy.deepcopy(r["before_image"]["record"]["program"]))
+    again, _ = U.a4_blank_alternative(orig, U.units_at(key[0], st_file), U.note_pairs_for(*key))
+    check(again["blocks"] == rec_now["blocks"], "%s %s: today's A4 writes the planned record again" % key)
 
 # S683, #3508 round two's item 2: the per-course self-check. Every unit A4 writes is compared with the state's file.
 # A single "or" alternative given its row's 3 units where the file holds 4 is left as filed, never planned.

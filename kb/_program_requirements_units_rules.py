@@ -19,8 +19,9 @@ records (kb/program_requirements_college/<slug>/records/<cn>.json) whose units c
       carries the row's units ("together_units"), and the record's note says so. A lecture alternative and its
       own blank lab right after it, which a note names as taken together, are such a group too, at the figure
       printed on the lecture (Long Beach City 44747: BIO 60 and BIO 60L, 4 and 1 in the state's file). The
-      program total and the pass state are the same either way. pair_recall scores every pair call against the
-      record notes, and a write stops on a call a note contradicts.
+      program total and the pass state are the same either way. A group only a note supports (the "row" call and
+      the lab pair) is OFF on every further record (NOTE_PAIR_ON, below). pair_recall scores every pair call
+      against a hand-held list (HAND_HELD_PAIRS), and a write stops on a call the list contradicts.
       THE PER-COURSE SELF-CHECK (S683; p-self-check-on-totals-misses-per-course-units-s681): every unit A4 writes
       on a course or an alternative is compared with the state's course file (state_differs). A new record whose
       A4 writes a figure outside what the file holds is left as filed; a correction that would write one stops
@@ -52,6 +53,12 @@ the filed sum and the correction adds no course without units. Every other recor
 
 A5 IS OFF ON EVERY FURTHER RECORD (A5_ON; d-a5-five-rows-stay-applied-s680): the five rows S680 applied stay
 applied, and A5 moves no other record until its 31 wrong answers on held records are listed by cause.
+
+THE NOTE-PAIR CALL IS OFF ON EVERY FURTHER RECORD (NOTE_PAIR_ON; S683, #3508 round two's second reader): a regex
+over the notes made the call and held its answer, so it scored itself right, and it read mixed "and"/"or" choices
+as one group (Southwestern 33132). The three S681 rows whose group rests on a note stay as planned (NOTE_PAIR_KEPT:
+Citrus 11247 and 36626, Long Beach City 44747); every other record plans no group a note alone supports until a
+hand-held list (HAND_HELD_PAIRS; the receipt's hand_held_pairs names the first six records) scores the call.
 
 THE COLLECTION LANE'S COLLEGES are left out tonight: kb/collection_lane.py's COLLECTION_LANE, plus --skip-college
 NAME. --college NAME (repeatable) limits the run to the colleges named: S681 runs the rules on the seven S680's
@@ -104,6 +111,24 @@ A6_ON = False
 # moves no other record until its 31 wrong answers on held records are listed by cause. Its code stays for the
 # self-check.
 A5_ON = False
+# The note-pair call is off on every further record (S683, #3508 round two's second reader, the third round of one
+# finding class, so the design is replaced): a group that only a record note supports (paired_group's "row" and
+# lab_pair) plans no new row until a hand-held list scores it. A regex over the notes both made those calls and
+# held their answers, so it scored itself right, and it called mixed "and"/"or" choices one group (Southwestern
+# 33132: PHYS 272 and PHYS 273, or CHEM 200). The three S681 rows whose group rests on a note stay as planned
+# (NOTE_PAIR_KEPT). The code stays for the self-check.
+NOTE_PAIR_ON = False
+NOTE_PAIR_KEPT = frozenset({("Citrus College", "11247"), ("Citrus College", "36626"),
+                            ("Long Beach City College", "44747")})
+# The hand-held list pair_recall scores against: {(college, control_number, row code): (member codes, answer)},
+# answer "pair" or "not one group", each entry a person's reading of the catalog. A plain session fills it; the
+# S681 receipt's hand_held_pairs names the first six records to read (mixed "and"/"or" choices).
+HAND_HELD_PAIRS: dict = {}
+
+
+def note_pairs_for(college, control_number) -> bool:
+    """Whether A4 may plan a group only a note supports at this record."""
+    return NOTE_PAIR_ON or (college, str(control_number)) in NOTE_PAIR_KEPT
 # The plan's two parts (second reader's F1): A1 changes no record, so its rows move checks.arithmetic alone; a
 # correction rewrites the record's blocks, so its rows take the full image the college load would post.
 CHECKS_ONLY = ("A1",)
@@ -254,7 +279,7 @@ def _code(a) -> str:
     return a["code"] if isinstance(a, dict) else a
 
 
-def paired_group(record: dict, c: dict, units_of=None) -> tuple[str | None, list]:
+def paired_group(record: dict, c: dict, units_of=None, note_pairs: bool = True) -> tuple[str | None, list]:
     """("state", units per member) or ("row", []) when the row's blank alternatives are one group taken together in
     its place, else (None, []). "state": the state's course file holds every member and their units add up to the
     row's units, or fall inside the row's printed range where no record note says "or" about a member and each
@@ -275,12 +300,12 @@ def paired_group(record: dict, c: dict, units_of=None) -> tuple[str | None, list
                     and all(u < lo - TOL for u in su))
         if abs(tot - lo) <= TOL or in_range:
             return "state", su
-    if _notes_pair(record, codes):
+    if note_pairs and _notes_pair(record, codes):
         return "row", []
     return None, []
 
 
-def lab_pair(record: dict, c: dict, units_of=None) -> tuple[str | None, int | None, list]:
+def lab_pair(record: dict, c: dict, units_of=None, note_pairs: bool = True) -> tuple[str | None, int | None, list]:
     """(kind, j, units) when the row's alternative j carries units and alternative j + 1 is its own lab printed with
     no units (BIO 60, then BIO 60L), and a record note names the two as taken together: the lecture's figure is the
     pair's (Long Beach City 44747: "BIO 60 & 60L is a combined option (both courses together, 5 units printed for the
@@ -288,6 +313,8 @@ def lab_pair(record: dict, c: dict, units_of=None) -> tuple[str | None, int | No
     figure, and each carries its own; "row": the file does not, and the pair carries the figure. Else (None, None,
     [])."""
     alts = c.get("alternatives") or []
+    if not note_pairs:
+        return None, None, []
     for j in range(len(alts) - 1):
         a, b = alts[j], alts[j + 1]
         if not (isinstance(a, dict) and a.get("code") and not _unitless(a) and not a.get("together")
@@ -327,7 +354,7 @@ def state_differs(before: dict, after: dict, units_of) -> list[dict]:
     return out
 
 
-def a4_blank_alternative(record: dict, units_of=None) -> tuple[dict, list[dict]]:
+def a4_blank_alternative(record: dict, units_of=None, note_pairs: bool = True) -> tuple[dict, list[dict]]:
     """units_of(code) is the state's units for a course at the record's college (units_at); without it no group
     can be confirmed by the file, and a group a note names carries its row's units."""
     out = copy.deepcopy(record)
@@ -336,7 +363,7 @@ def a4_blank_alternative(record: dict, units_of=None) -> tuple[dict, list[dict]]
         prev = None
         for c in b.get("courses") or []:
             own = S._num(c.get("units"))
-            kind, su = paired_group(out, c, units_of) if own is not None else (None, [])
+            kind, su = paired_group(out, c, units_of, note_pairs) if own is not None else (None, [])
             if kind:
                 blanks = [a for a in c.get("alternatives") or [] if _blank(a)]
                 label = " + ".join(_code(a) for a in blanks)
@@ -366,7 +393,7 @@ def a4_blank_alternative(record: dict, units_of=None) -> tuple[dict, list[dict]]
                 prev = c
                 continue
             if own is not None:
-                lkind, lj, lsu = lab_pair(out, c, units_of)
+                lkind, lj, lsu = lab_pair(out, c, units_of, note_pairs)
                 alts = []
                 for j, a in enumerate(c.get("alternatives") or []):
                     if lkind and j in (lj, lj + 1):
@@ -542,7 +569,8 @@ def judge(filed: dict, ge_totals: dict, state: dict | None = None) -> dict:
         return {"rule": "A1", "record": rec, "notes": [], "arith": now}
     tried = []
     units_of = units_at(filed.get("college"), state)
-    for rule, fn in (("A4", lambda r: a4_blank_alternative(r, units_of)), ("A5", a5_any_course_from),
+    np = note_pairs_for(filed.get("college"), filed.get("control_number"))
+    for rule, fn in (("A4", lambda r: a4_blank_alternative(r, units_of, np)), ("A5", a5_any_course_from),
                      ("A6", a6_sum_of_options),
                      ("A8", lambda r: a8_college_ge(r, award, ge_totals.get(filed["college"])))):
         if (rule == "A6" and not A6_ON) or (rule == "A5" and not A5_ON):
@@ -611,16 +639,21 @@ def self_check(files: list[dict], ge_totals: dict, state: dict | None = None) ->
     return out
 
 
-def pair_recall(files: list[dict], state: dict | None = None) -> dict:
-    """The pair call scored against the record notes (S683, #3508 round two's item 1; the old self-recall compared
-    the rule with itself). For every row with two or more blank alternatives, or a lecture and its blank lab among
-    them, on every filed record: the held answer is "pair" where a note names every member as taken together, "or"
-    where a note names a member and says "or" and none names the pair, else none. right = the call agrees with a held
-    answer; wrong = it does not; a call on a row with no held answer is "unheld". {"kind": Counter, "wrong": [...]}"""
+def pair_recall(files: list[dict], state: dict | None = None, hand_held: dict | None = None) -> dict:
+    """The pair call scored against a hand-held list (S683, #3508 round two's second reader). For every row with two
+    or more blank alternatives, or a lecture and its blank lab among them, on every filed record, the call is the one
+    the planner would make there (the note-pair call only where note_pairs_for allows it). No regex over the notes
+    holds an answer: the old held "pair" came from _notes_pair, the same regex behind the "row" call, so a note pair
+    always scored right. Answers come from hand_held (HAND_HELD_PAIRS by default): right or wrong against a person's
+    reading. Beside that, a pair the state's file made where a note names a member and says "or" is counted as
+    "pair against an or note", evidence to read and not an answer, and a note pair the planner may still make is
+    "note pair, unscored". {"tally": {...}, "wrong": [...]}; wrong lists only the hand-held disagreements."""
+    held = HAND_HELD_PAIRS if hand_held is None else hand_held
     tally, wrong = collections.Counter(), []
     for f in files:
         rec = f.get("record") or {}
         units_of = units_at(f.get("college"), state)
+        np = note_pairs_for(f.get("college"), f.get("control_number"))
         for b in rec.get("blocks") or []:
             for c in b.get("courses") or []:
                 if S._num(c.get("units")) is None:
@@ -628,18 +661,26 @@ def pair_recall(files: list[dict], state: dict | None = None) -> dict:
                 blanks = [_code(a) for a in c.get("alternatives") or [] if _blank(a)]
                 calls = []
                 if len(blanks) >= 2:
-                    calls.append((paired_group(rec, c, units_of)[0], blanks))
-                lk, lj, _ = lab_pair(rec, c, units_of)
+                    calls.append((paired_group(rec, c, units_of, np)[0], blanks))
+                lk, lj, _ = lab_pair(rec, c, units_of, np)
                 if lk:
-                    calls.append((lk, [c["alternatives"][lj]["code"], _code(c["alternatives"][lj + 1])]))
+                    calls.append(("lab", [c["alternatives"][lj]["code"], _code(c["alternatives"][lj + 1])]))
                 for kind, codes in calls:
-                    held_ans = ("pair" if _notes_pair(rec, codes) else "or" if _notes_or(rec, codes) else None)
                     call = "pair" if kind else "or"
-                    k = "unheld" if held_ans is None else ("right" if call == held_ans else "wrong")
-                    tally["%s %s" % (call, k)] += 1
-                    if k == "wrong":
-                        wrong.append("%s %s %s (%s, held %s)" % (f.get("college"), f.get("control_number"),
-                                                                 " + ".join(codes), call, held_ans))
+                    ans = held.get((f.get("college"), str(f.get("control_number")), c.get("code")))
+                    if ans is not None:
+                        want = "pair" if ans[1] == "pair" and set(ans[0]) == set(codes) else "or"
+                        k = "%s held %s" % (call, "right" if call == want else "wrong")
+                        if call != want:
+                            wrong.append("%s %s %s (%s, held %s)" % (f.get("college"), f.get("control_number"),
+                                                                     " + ".join(codes), call, ans[1]))
+                    elif kind in ("row", "lab"):
+                        k = "note pair, unscored"
+                    elif kind == "state" and _notes_or(rec, codes):
+                        k = "pair against an or note"
+                    else:
+                        k = "%s unheld" % call
+                    tally[k] += 1
     return {"tally": dict(sorted(tally.items())), "wrong": wrong}
 
 
@@ -677,7 +718,7 @@ def corrections(receipt_path: str, write: bool, skip: tuple = (), state: dict | 
         orig["blocks"] = copy.deepcopy(r["before_image"]["record"]["blocks"])
         orig["program"] = copy.deepcopy(r["before_image"]["record"]["program"])
         units_of = units_at(r["college"], state)
-        new, notes = a4_blank_alternative(orig, units_of)
+        new, notes = a4_blank_alternative(orig, units_of, note_pairs_for(r["college"], r["control_number"]))
         if new.get("blocks") == filed["record"].get("blocks"):
             continue
         # The per-course self-check on what this write writes: every unit that moves from the row the earlier plan
@@ -890,6 +931,50 @@ def pre_read(checks_rows: list[dict], full_rows: list[dict]) -> str:
 def _parts(moved: list[dict]) -> tuple[list[dict], list[dict]]:
     """(checks-only rows, full-row rows); the rescore's rollback builder reads "records" by place i."""
     return ([m for m in moved if m["rule"] in CHECKS_ONLY], [m for m in moved if m["rule"] not in CHECKS_ONLY])
+
+
+# What the trigger and a person's check do to the full-row part (S683, #3508 round two's minor 3: the receipt
+# carried the checks-only part's words alone, RS.FOLLOW_VERDICT and RS.PERSON_SETTLED).
+FULL_ROW_FOLLOW_VERDICT = (
+    "The follow_verdict trigger (program_requirement_records_follow_verdict, chatbox/supabase_program_record_verdicts.sql) "
+    "runs on the full-row UPDATE. A row is checked while a person's latest verdict is a confirm whose fingerprint "
+    "matches the record and the machine checks pass. These rows' blocks change, so a confirm given on the old record "
+    "no longer matches its fingerprint, and the row stays unchecked until a person confirms the new one. The UPDATE "
+    "returns any row the trigger marks checked as \"checked\". The rollback puts back each row's before-image record "
+    "and checks, and the trigger runs again on them.")
+FULL_ROW_PERSON_SETTLED = (
+    "Person-settled rows win. The full-row UPDATE writes the record and checks only where the row still holds the "
+    "filed run, the before-image's record and checks, and no person's check: a row a person checked is skipped and "
+    "listed as skipped_checked. It never writes checked, checked_by or checked_at. A person's reload or reread "
+    "changes the run or the record and drops the row out of the guard.")
+
+
+def verdict_words(moved: list[dict]) -> tuple[str, str]:
+    """(follow_verdict, person_settled) for the parts the plan holds."""
+    checks, full = _parts(moved)
+    fv = [w for w, rows in ((RS.FOLLOW_VERDICT, checks), (FULL_ROW_FOLLOW_VERDICT, full)) if rows]
+    ps = [w for w, rows in ((RS.PERSON_SETTLED, checks), (FULL_ROW_PERSON_SETTLED, full)) if rows]
+    return " ".join(fv) or RS.FOLLOW_VERDICT, " ".join(ps) or RS.PERSON_SETTLED
+
+
+# The first records for the hand-held pair list (HAND_HELD_PAIRS), from the second reader of #3508's round two: each
+# a mixed "and"/"or" choice the note-pair call read as one group. A person reads the catalog and files the answer.
+HAND_HELD_START = (
+    ("Southwestern College", "33132", "BIOL 211", ("PHYS 272", "PHYS 273", "CHEM 200")),
+    ("Southwestern College", "43076", "STAT C1000", ("PSYC 270", "PSYC 271", "SOC 270", "SOC 271")),
+    ("Foothill College", "46325", "ENGL C1002", ("ENGL C1002H", "ENGL 8", "HIST 3A", "HIST 3B")),
+    ("College of the Desert", "36122", "CH 003", ("CH 001A", "BI 013", "BI 014")),
+    ("College of the Desert", "45437", "CH 003", ("CH 001A", "BI 013", "BI 014")),
+    ("Monterey Peninsula College", "45483", "STAT C1000", ("PSYC 19", "SOCI 19")),
+)
+
+
+def hand_held_start() -> dict:
+    return {"how": ("The note-pair call is off on every further record (NOTE_PAIR_ON). These records start the "
+                    "hand-held list a plain session fills (HAND_HELD_PAIRS): read each row in the catalog and file "
+                    "'pair' with its members, or 'not one group'. None is in this plan."),
+            "records": [{"college": c, "control_number": n, "row": r, "read_as_one_group": list(m)}
+                        for c, n, r, m in HAND_HELD_START]}
 
 
 MIGRATIONS = os.path.join(HERE, "migrations")
@@ -1148,7 +1233,9 @@ def main(argv=None) -> int:
                "pre_read": pre_read(*_parts(r["moved"])),
                "apply_checks_only": checks_only_apply(_parts(r["moved"])[0], a.tag),
                "apply_full_row": full_row_apply(_parts(r["moved"])[1], a.tag),
-               "follow_verdict": RS.FOLLOW_VERDICT, "person_settled": RS.PERSON_SETTLED,
+               "follow_verdict": verdict_words(r["moved"])[0], "person_settled": verdict_words(r["moved"])[1],
+               "note_pair_on": NOTE_PAIR_ON, "note_pair_kept": sorted(list(k) for k in NOTE_PAIR_KEPT),
+               "hand_held_pairs": hand_held_start(),
                "rollback_full_row": full_row_rollback(_parts(r["moved"])[1], a.tag),
                "rollback_checks_only": checks_only_rollback(_parts(r["moved"])[0], a.tag),
                "rollback": None,
