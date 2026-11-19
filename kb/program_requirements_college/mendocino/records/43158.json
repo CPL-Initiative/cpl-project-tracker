@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Intermediate ESL Preparation",
  "award": "Noncredit program",
- "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=154",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=153",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6546,
+  "input_tokens": 6931,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6546,
-    "output_tokens": 1171,
+    "input_tokens": 6931,
+    "output_tokens": 1406,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1171,
+  "output_tokens": 1406,
   "output_tokens_details": {
-   "thinking_tokens": 266
+   "thinking_tokens": 472
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0496,
- "ms": 10280,
- "seconds": 10.4,
+ "cost_usd": 0.05584,
+ "ms": 13265,
+ "seconds": 13.5,
  "parts": null,
  "error": null,
  "score": {
@@ -64,8 +64,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    136.0,
-    136.0
+    204.0,
+    204.0
    ],
    "stated": [
     136.0,
@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 136.0-136.0; the catalog states 136.0-408.0"
+    "the blocks sum to 204.0-204.0; the catalog states 136.0-408.0"
    ]
   },
   "repeated": {
@@ -160,8 +160,8 @@
    },
    {
     "name": "Based on appropriate guided self-placement, students can complete a minimum of 68 hours from the following ESL noncredit courses",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 68,
     "option_group": null,
     "stated": {
      "min": null,
@@ -202,11 +202,23 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Program is noncredit and counted in hours; all units fields hold hours.",
-   "The second list says students 'can complete a minimum of 68 hours' based on guided self-placement. The printed total of 136-408 hours implies this list is optional: the minimum of 136 equals the two required courses alone, and the maximum of 408 adds all four optional courses. It is recorded as 'recommended'. A reviewer may prefer choose_units with a minimum of 68, but that would conflict with the printed 136-hour minimum.",
-   "The completion statement requires one semester each of ESL 509A and ESL 509B with a noncredit grade of P.",
-   "The 'Career Opportunities in ESL' section names no specific careers, only transition to advanced ESL coursework and work settings, so careers is empty."
+   "The award is a noncredit Certificate of Completion counted in hours; all units fields hold hours.",
+   "The second list says students 'can complete a minimum of 68 hours' based on guided self-placement. The printed total of 136-408 hours implies these courses are optional: 136 equals only ESL 509A + 509B, and 408 adds all four courses (272 hours). Recorded as choose_units with minimum 68; a reviewer should check whether this block is optional or recommended rather than required.",
+   "The certificate requires ESL 509A and ESL 509B each be completed for one semester with a noncredit grade of P.",
+   "Page 153 text above the section belongs to the Communication Skills ESL Preparation Certificate of Competency (ESL 503A/B/C) and was not used.",
+   "The Career Opportunities in ESL section names no specific career, job title or field; careers left empty."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": "44474793355",
+ "catalog_year": "2026-2027",
+ "source_sha": "161a457284ee3174",
+ "source_codes": [
+  "ESL500A",
+  "ESL500B",
+  "ESL507A",
+  "ESL507B",
+  "ESL509A",
+  "ESL509B"
+ ],
+ "source_coverage": 1.0
 }
