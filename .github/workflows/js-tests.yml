@@ -407,6 +407,10 @@ jobs:
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)
         run: python3 tests/harvest_gap_census_test.py
+      # Named gaps (S680; Sam, 2026-11-17: collect with gaps noted and confidence scores): the gap and its
+      # scores, the census counting the row collected, the guarded SQL. Pure stdlib.
+      - name: Named gaps (collected with the gap named, scored, counted collected)
+        run: python3 tests/program_named_gaps_test.py
       # The units rules (S680; Commons Clarity's Part A on #3480): a correction lands exactly or the record
       # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
       - name: Units rules A1, A4, A5, A6, A8 and A11 (self-check, exact sums, named gaps)

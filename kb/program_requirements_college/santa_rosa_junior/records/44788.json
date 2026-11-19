@@ -104,7 +104,21 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "no_units_read",
+    "label": "A required course carries no units as read, so the program's units cannot be added.",
+    "words": "the record carries no units for MUSC 2C, MUSC 2D, MUSC 3C, MUSC 3D and 11 more, so the program's units cannot be added"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 80
+  }
  },
  "record": {
   "program": {
