@@ -92,8 +92,9 @@ def parse_line(text):
             tags[k] = round(tags.get(k, 0.0) + money(tm.group(2)), 2)
     out = {"available": m is not None, "usd": money(m.group(1)) if m else None, "models": models,
            "start": t.group(1), "end": t.group(2), "day": t.group(2)[:10]}
-    # A figure priced from token counts, not read from a cost readout, says "estimate" on its line (S684).
-    if re.search(r"\bestimate\b", body, re.I):
+    # A figure priced from token counts, not read from a cost readout, says "estimate", "estimated" or "estimates" on
+    # its line (S684; COBIx on #3545).
+    if re.search(r"\bestimat(e|ed|es)\b", body, re.I):
         out["estimate"] = True
     if tags:
         if out["usd"] is not None and sum(tags.values()) > out["usd"] + 0.005:

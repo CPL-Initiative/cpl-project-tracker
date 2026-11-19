@@ -106,6 +106,11 @@ e = ss.parse_line("$167 (estimate from token counts at list prices, priced in ha
 check("an estimate priced from token counts says so, and reads its total", e and e["usd"] == 167.0
       and e.get("estimate") is True and e["models"] == {} and "tags" not in e, e)
 check("a line read from a cost readout carries no estimate key", "estimate" not in o and "estimate" not in g, o)
+# "estimated" and "estimates" mark an estimate too; a bare \bestimate\b missed both (COBIx on #3545).
+for word in ("estimated", "estimates"):
+    lm = ss.LINE.match("Spend: $40 (%s from token counts); 2026-11-19T01:00Z to 2026-11-19T02:00Z." % word)
+    ew = ss.parse_line(lm.group(1)) if lm else None
+    check("a line that says %r is an estimate" % word, ew and ew["usd"] == 40.0 and ew.get("estimate") is True, ew)
 with tempfile.TemporaryDirectory() as t:
     os.makedirs(os.path.join(t, "docs"))
     with open(os.path.join(t, "docs", "session_900_handoff.md"), "w") as f:
