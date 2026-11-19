@@ -14,6 +14,7 @@
 //   (c) a mark names a painting the gallery index does not know (a guessed id);
 //   (d) the selection changed but first_light.js was not rebuilt from it
 //       (node tools/build_first_light_manifest.mjs).
+// Once the First Light tab's Apply has landed, (a) and (b) read the Apply's own receipts instead (#3561).
 //
 // Later receipts win over earlier ones for the same painting.
 //
@@ -55,14 +56,39 @@ const sel = Array.isArray(selDoc) ? selDoc : selDoc.paintings;
 const inSel = new Set(sel.map((e) => key(e.file)));
 
 // From the First Light tab's first Apply on, the tab's marks are the later word on which paintings the rotation
-// holds. The Apply records the highest mark id it consumed in the selection, and no committed file lists the marks
-// themselves, so the receipts can no longer say what the selection should hold: the Apply of 2026-11-17 dropped 77
-// paintings, among them ones the October receipts added, and a later one may add a dropped painting back. (a) and
-// (b) are therefore checked only while no Apply has landed. The Apply has its own guards
-// (tests/first_light_needs_words.test.js, tests/first_light_marks.test.js).
+// holds, so the October receipts above are history (the Apply of 2026-11-17 dropped 77 paintings, among them ones
+// they added). Each Apply since #3561 commits its own receipt, tools/first_light_applies/apply_<p>_<h>.json: every
+// live mark it consumed, add or drop, and what it did. (a) and (b) then run against those receipts, the latest
+// mark per item winning across them, for the paintings and the hero photos alike. The Apply of 2026-11-17 predates
+// receipts, so until the next Apply there is none and (a) and (b) have nothing to check.
 const tabApplied = !Array.isArray(selDoc) && Number(selDoc.applied_through_mark_id) > 0;
 if (tabApplied) {
-  check("the tab's Apply has landed (marks through id " + selDoc.applied_through_mark_id + "): the receipts are history, the selection is the tab's", true);
+  const RDIR = "tools/first_light_applies";
+  const applies = (fs.existsSync(RDIR) ? fs.readdirSync(RDIR) : []).filter((f) => /^apply_\d+_\d+\.json$/.test(f))
+    .map((f) => Object.assign({ _file: f }, JSON.parse(fs.readFileSync(path.join(RDIR, f), "utf8"))))
+    .sort((x, y) => (x.applied_through.paintings - y.applied_through.paintings) || (x.applied_through.photos - y.applied_through.photos));
+  const hero = JSON.parse(fs.readFileSync("library/photos/hero_photos.json", "utf8"));
+  const lists = { paintings: new Set(sel.map((e) => e.file)), photos: new Set(hero.photos.map((p) => p.file)) };
+  const heldNow = { paintings: new Set((selDoc.held_mark_ids || []).map(Number)), photos: new Set((hero.held_mark_ids || []).map(Number)) };
+  const last = { paintings: {}, photos: {} };
+  for (const a of applies) for (const set of ["paintings", "photos"]) {
+    for (const m of (a[set] && a[set].marks) || []) if (m.mark !== "position" && m.item_key) {
+      const was = last[set][m.item_key];
+      if (!was || was.id < m.id) last[set][m.item_key] = Object.assign({ _file: a._file }, m);
+    }
+  }
+  const where = (set, k) => set + " " + JSON.stringify(last[set][k].name || k) + " (mark " + last[set][k].id + ", " + last[set][k]._file + ")";
+  const bad = (test) => ["paintings", "photos"].flatMap((set) => Object.keys(last[set]).filter((k) => test(set, k, last[set][k])).map((k) => where(set, k)));
+  const dropped = bad((set, k, m) => m.outcome === "dropped" && lists[set].has(k));
+  check("(a) nothing an Apply receipt dropped is still in the selection or the hero list (" + applies.length + " receipts)", dropped.length === 0, dropped.join("; "));
+  const missing = bad((set, k, m) => m.outcome === "added" && !lists[set].has(k));
+  check("(b) everything an Apply receipt added is in the selection or the hero list", missing.length === 0, missing.join("; "));
+  const newest = applies[applies.length - 1];
+  const heroT = Number(hero.applied_through_mark_id) || 0;
+  const lost = bad((set, k, m) => m.outcome === "held" && !heldNow[set].has(m.id) && !lists[set].has(k));
+  check("(b) the newest receipt reached the committed thresholds, and every held mark is still held",
+    (!newest || (newest.applied_through.paintings === Number(selDoc.applied_through_mark_id) && newest.applied_through.photos === heroT)) && lost.length === 0,
+    newest ? "newest " + newest._file + " vs selection " + selDoc.applied_through_mark_id + ", photos " + heroT + (lost.length ? "; held mark lost: " + lost.join("; ") : "") : lost.join("; "));
 } else {
   const dropped = Object.keys(marks).filter((id) => marks[id].v === "drop" && inSel.has(id));
   check("(a) no dropped painting is still in the selection", dropped.length === 0, dropped.join(", "));

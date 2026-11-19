@@ -337,7 +337,7 @@ try {
   const inst = step("Install a browser for MAP's story photos (only when one is added)");
   check("(f) the install step holds no secret and runs outside the checkout", inst && !holds(inst) && /working-directory: \$\{\{ runner\.temp \}\}\/main/.test(inst));
   const pushStep = step("Push the branch and open or update the one pull request");
-  check("(f) the commit names only data paths, never a script or tool", /git add -A tools\/first_light_selection\.json first_light\.js library\/photos cpl_pathways\.js library\/index\.html library\/adopt\/index\.html\n/.test(pushStep));
+  check("(f) the commit names only data paths, never a script or tool", /git add -A tools\/first_light_selection\.json tools\/first_light_applies first_light\.js library\/photos cpl_pathways\.js library\/index\.html library\/adopt\/index\.html\n/.test(pushStep));
   check("(f) it fetches story photos through the shared browser install", /bash scripts\/install_browser\.sh node/.test(apply));
   const sparse = (/sparse-checkout: \|\n([\s\S]*?)\n      - uses/.exec(apply) || [])[1] || "";
   const need = ["first_light_tab.js", "tools/first_light_apply.mjs", "tools/build_first_light_manifest.mjs", "fact-sheet/", "library/", "cpl_pathways.js", "scripts/install_browser.sh"];
