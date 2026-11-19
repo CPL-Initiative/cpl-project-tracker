@@ -16,7 +16,12 @@ so the reread leaves that row alone. This test guards the failure mode: a filed 
     a missing or malformed list stops the run;
   * the account names the dispatch with the run pinned (force=<run>), "no dispatch" when every record is restored,
     and carries an earlier run's kept records until a reread receipt posts them;
-  * a restored file is byte for byte the base's; a record of an earlier run is never touched.
+  * a restored file is byte for byte the base's; a record of an earlier run is never touched;
+  * COBIx on #3544 (S684): a checked live row whose program the base files no record for is held (moved to
+    held_for_person/, named by no dispatch), the check read before anything else; a supplied live_runs whose run
+    differs from the filed record's (or names any run where the base files none) holds the row for a person with
+    both runs in its why and main's file restored, while an absent live_runs, or one equal to main's runs, leaves
+    every outcome as before and the account says "not supplied".
 
 Run from repo root: python3 tests/program_reread_keep_better_test.py
 """
@@ -243,8 +248,108 @@ def test_all_restored(tmp):
     check(lines[-1] == "no dispatch", "the last line is %r" % lines[-1])
 
 
+def fixture_folder(tmp, filed: dict, reread: dict):
+    """A repo whose base files `filed` (cn: score) at run OLD and whose branch re-reads `reread` at run NEW."""
+    new_repo(tmp)
+    folder = os.path.join(tmp, "kb", "program_requirements_college", "fixture")
+    rdir = os.path.join(folder, "records")
+    for cn, sc in filed.items():
+        write(os.path.join(rdir, cn + ".json"), rec(cn, sc, OLD), indent=1)
+    write(os.path.join(folder, "capture.json"), {"run": str(OLD)})
+    git(tmp, "add", "-A")
+    git(tmp, "commit", "-qm", "base")
+    git(tmp, "tag", "base")
+    for cn, sc in reread.items():
+        write(os.path.join(rdir, cn + ".json"), rec(cn, sc, NEW, url="https://x.edu/cat.pdf#page=2"))
+    write(os.path.join(folder, "capture.json"), {"run": str(NEW)})
+    return folder, rdir
+
+
+def dispatched(acct) -> set:
+    d = acct["dispatch"]
+    return set() if isinstance(d, str) else {cn for x in d for cn in x["control_numbers"]}
+
+
+def test_checked_unfiled(tmp):
+    """COBIx finding 1 on #3544: a checked live row whose program main files no record is held, never posted."""
+    folder, rdir = fixture_folder(tmp, {}, {"40001": PASS, "40002": PASS})
+    acct = K.keep_better(folder, base="base", checked={"40001"}, out=lambda *_: None)
+    got = {r["control_number"]: r for r in acct["runs"][str(NEW)]["programs"]}
+    check(got.get("40001", {}).get("outcome") == "held",
+          "a checked row with no filed record came out %r" % got.get("40001", {}).get("outcome"))
+    check("checked" in (got.get("40001", {}).get("why") or ""), "the held row's why does not name the check")
+    check(not os.path.exists(os.path.join(rdir, "40001.json")), "the checked re-read is still in records/")
+    check(os.path.isfile(os.path.join(folder, K.HELD_DIR, "40001.json")), "the checked re-read is not held")
+    check("40001" not in dispatched(acct), "a dispatch names the checked row: %r" % (acct["dispatch"],))
+    check(got.get("40002", {}).get("outcome") == "new" and dispatched(acct) == {"40002"},
+          "the unchecked new record: %r, dispatch %r" % (got.get("40002"), acct["dispatch"]))
+    again = K.keep_better(folder, base="base", checked={"40001"}, out=lambda *_: None)
+    check(again["counts"]["held_for_person"] == 1 and "40001" not in dispatched(again), "a second pass %s" % again["counts"])
+
+
+def test_live_runs(tmp):
+    """COBIx finding 2 on #3544: a live row from a run main does not hold is held for a person."""
+    worse = score(False, False, 1, 10, "incomplete")
+    folder, rdir = fixture_folder(tmp, {"30001": worse, "30002": worse, "30005": PASS},
+                                  {"30001": PASS, "30002": PASS, "30003": PASS, "30004": PASS, "30005": worse})
+    # Absent live_runs: today's outcomes, and the account says so.
+    plain = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None)
+    want = {"30001": "kept", "30002": "kept", "30003": "new", "30004": "new", "30005": "restored"}
+    got = {r["control_number"]: r["outcome"] for r in plain["runs"][str(NEW)]["programs"]}
+    check(got == want, "without live_runs the outcomes moved: %r" % got)
+    check(plain.get("live_runs") == "not supplied", "the account's live_runs reads %r" % plain.get("live_runs"))
+    # A supplied map equal to main's runs changes nothing.
+    same = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                         live_runs={"30001": str(OLD), "30002": OLD, "30005": str(OLD)})
+    got = {r["control_number"]: r["outcome"] for r in same["runs"][str(NEW)]["programs"]}
+    check(got == want, "live runs equal to main's moved the outcomes: %r" % got)
+    base2 = read_bytes_base(tmp, "30002")
+    lr = {"30001": str(OLD), "30002": "999", "30003": "999", "30005": "999"}
+    acct = K.keep_better(folder, base="base", checked=set(), live_runs=lr, out=lambda *_: None)
+    got = {r["control_number"]: r for r in acct["runs"][str(NEW)]["programs"]}
+    want = {"30001": "kept", "30002": "held", "30003": "held", "30004": "new", "30005": "held"}
+    check({k: v["outcome"] for k, v in got.items()} == want,
+          "with live_runs: %r" % {k: v["outcome"] for k, v in got.items()})
+    for cn in ("30002", "30005"):
+        why = got.get(cn, {}).get("why") or ""
+        check("999" in why and str(OLD) in why, "%s: the why does not name both runs: %r" % (cn, why))
+    check("999" in (got.get("30003", {}).get("why") or ""), "30003: the why does not name the live run")
+    check(read_bytes(os.path.join(rdir, "30002.json")) == base2, "30002: records/ does not hold main's file")
+    check(json.loads(read_bytes(os.path.join(folder, K.HELD_DIR, "30002.json")))["extracted_run"] == NEW,
+          "30002: the re-read is not in held_for_person/")
+    check(not os.path.exists(os.path.join(rdir, "30003.json")), "30003: still in records/")
+    check(dispatched(acct) == {"30001", "30004"}, "dispatch %r" % (acct["dispatch"],))
+    check(acct.get("live_runs") == {k: str(v) for k, v in lr.items()}, "the account's live_runs %r" % acct.get("live_runs"))
+
+
+def read_bytes_base(tmp, cn):
+    return subprocess.run(["git", "show", "base:kb/program_requirements_college/fixture/records/%s.json" % cn],
+                          cwd=tmp, capture_output=True).stdout
+
+
+def test_live_runs_file(tmp):
+    """The conductor's file: live_runs beside by_college, optional; malformed stops the run."""
+    path = os.path.join(tmp, "c.json")
+    write(path, {"by_college": {COLLEGE: []}, "live_runs": {COLLEGE: {"10001": "38990001", "10002": 38990002},
+                                                            "Other College": {"1": "2"}}})
+    check(K.read_live_runs(path, COLLEGE) == {"10001": "38990001", "10002": "38990002"}, "live_runs not read")
+    check(K.read_live_runs(path, "Mendocino College") == {}, "a college absent from live_runs has live rows")
+    write(path, {"by_college": {}})
+    check(K.read_live_runs(path, COLLEGE) is None, "an absent live_runs is not None")
+    for bad in ({"by_college": {}, "live_runs": []}, {"by_college": {}, "live_runs": {COLLEGE: ["10001"]}},
+                {"by_college": {}, "live_runs": {COLLEGE: {"10001": "x"}}},
+                {"by_college": {}, "live_runs": {COLLEGE: {"abc": "1"}}}):
+        write(path, bad)
+        try:
+            K.read_live_runs(path, COLLEGE)
+            check(False, "a malformed live_runs was read: %r" % (bad,))
+        except SystemExit:
+            pass
+
+
 def main():
-    for fn in (test_checked_list, test_folder, test_all_restored):
+    for fn in (test_checked_list, test_folder, test_all_restored, test_checked_unfiled, test_live_runs,
+               test_live_runs_file):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)
