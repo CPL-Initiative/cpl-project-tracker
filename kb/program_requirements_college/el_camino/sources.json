@@ -30,7 +30,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -46,7 +49,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02485",
@@ -77,7 +84,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -93,7 +103,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02487",
@@ -122,7 +136,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -138,7 +155,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02489",
@@ -162,7 +183,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02491",
@@ -192,7 +217,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -252,7 +280,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 39,
@@ -286,7 +317,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -419,7 +453,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 113,
@@ -435,7 +472,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02500",
@@ -447,7 +488,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02501",
@@ -459,7 +504,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02503",
@@ -493,7 +542,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -509,7 +561,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02506",
@@ -547,7 +603,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -605,7 +664,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 49,
@@ -630,7 +692,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -668,7 +733,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -732,7 +800,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 45,
@@ -797,7 +868,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 46,
@@ -847,7 +921,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 29,
@@ -891,7 +968,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -930,7 +1010,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -967,7 +1050,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1004,7 +1090,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1061,7 +1150,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 36,
@@ -1095,7 +1187,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1151,7 +1246,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 34,
@@ -1167,7 +1265,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02530",
@@ -1179,7 +1281,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02532",
@@ -1191,7 +1297,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02533",
@@ -1203,7 +1313,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02535",
@@ -1232,7 +1346,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1266,7 +1383,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1282,7 +1402,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02538",
@@ -1315,7 +1439,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1331,7 +1458,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02540",
@@ -1343,7 +1474,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02541",
@@ -1355,7 +1490,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02544",
@@ -1376,7 +1515,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -1392,7 +1534,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08020",
@@ -1404,7 +1550,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08021",
@@ -1453,7 +1603,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -1505,7 +1658,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 30,
@@ -1534,7 +1690,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "jewelry design and fabrication certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1550,7 +1709,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08031",
@@ -1572,7 +1735,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire academy certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1588,7 +1754,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08033",
@@ -1600,7 +1770,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08636",
@@ -1628,7 +1802,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1644,7 +1821,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "13432",
@@ -1656,7 +1837,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "13433",
@@ -1668,7 +1853,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "13436",
@@ -1680,7 +1869,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "13438",
@@ -1692,7 +1885,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "15250",
@@ -1725,7 +1922,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital art & design foundation certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1773,11 +1973,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "visual communications certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
-  "text_chars": 2081
+  "text_chars": 2033
  },
  {
   "control_number": "15253",
@@ -1789,7 +1992,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "15255",
@@ -1801,7 +2008,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "15492",
@@ -1840,7 +2051,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fashion stylist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1873,7 +2087,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -1889,7 +2106,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "17488",
@@ -1901,7 +2122,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18807",
@@ -1913,7 +2138,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18808",
@@ -1925,7 +2154,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "18925",
@@ -1937,7 +2170,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18927",
@@ -1949,7 +2186,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18929",
@@ -1961,7 +2202,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18931",
@@ -1973,7 +2218,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18933",
@@ -1985,7 +2234,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19529",
@@ -1997,7 +2250,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19775",
@@ -2009,7 +2266,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19857",
@@ -2029,17 +2290,20 @@
    "ARCH199"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
-   "title": "Degree & Certificate: Architecture - Professional Practice, AS - El Camino College",
-   "h1": "Architecture - Professional Practice, AS",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print",
+   "title": "Degree & Certificate: Architecture Certificate of Achievement - El Camino College",
+   "h1": "Architecture Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architecture certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 2813
+  "text_chars": 2448
  },
  {
   "control_number": "19859",
@@ -2086,7 +2350,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2102,7 +2369,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19863",
@@ -2114,7 +2385,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19864",
@@ -2126,7 +2401,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19866",
@@ -2152,7 +2431,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2168,7 +2450,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19869",
@@ -2198,7 +2484,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -2229,7 +2518,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electronics engineering technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2262,7 +2554,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer hardware electronics technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2294,7 +2589,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "heating, ventilation, and air conditioning (hvac) and refrigeration certificate of achievement",
+    "section_fit": 0.833
    }
   },
   "listed": 11,
@@ -2310,7 +2608,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19877",
@@ -2345,7 +2647,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -2361,7 +2666,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19879",
@@ -2373,7 +2682,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19881",
@@ -2405,7 +2718,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -2438,7 +2754,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -2460,17 +2779,20 @@
    "RC297"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3658&print",
-   "title": "Degree & Certificate: Respiratory Care Certificate of Achievement - El Camino College",
-   "h1": "Respiratory Care Certificate of Achievement",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print",
+   "title": "Degree & Certificate: Respiratory Care, AS - El Camino College",
+   "h1": "Respiratory Care, AS",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
-  "text_chars": 4829
+  "text_chars": 4034
  },
  {
   "control_number": "19885",
@@ -2498,7 +2820,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -2530,7 +2855,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2567,7 +2895,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -2583,7 +2914,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19891",
@@ -2602,7 +2937,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire and emergency technology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -2627,7 +2965,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cosmetology level ii certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2646,17 +2987,20 @@
    "ACR6"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
-   "title": "Degree & Certificate: Air Conditioning and Refrigeration, AS - El Camino College",
-   "h1": "Air Conditioning and Refrigeration, AS",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3522&print",
+   "title": "Degree & Certificate: Refrigeration Certificate of Achievement - El Camino College",
+   "h1": "Refrigeration Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "refrigeration certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 2465
+  "text_chars": 886
  },
  {
   "control_number": "30302",
@@ -2672,17 +3016,20 @@
    "ACR5"
   ],
   "source": {
-   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
-   "title": "Degree & Certificate: Air Conditioning and Refrigeration, AS - El Camino College",
-   "h1": "Air Conditioning and Refrigeration, AS",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3519&print",
+   "title": "Degree & Certificate: Air Conditioning Certificate of Achievement - El Camino College",
+   "h1": "Air Conditioning Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "air conditioning certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 2465
+  "text_chars": 934
  },
  {
   "control_number": "30304",
@@ -2694,7 +3041,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30305",
@@ -2717,7 +3068,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engine and driveline technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2733,7 +3087,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30307",
@@ -2745,7 +3103,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "31023",
@@ -2777,7 +3139,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2806,7 +3171,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "commercial music certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2836,7 +3204,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2872,7 +3243,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2901,7 +3275,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2933,7 +3310,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2969,7 +3349,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3000,7 +3383,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3099,7 +3485,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 96,
@@ -3176,7 +3565,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 55,
@@ -3204,7 +3596,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "forensics certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3246,7 +3641,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -3262,7 +3660,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32333",
@@ -3288,7 +3690,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3304,7 +3709,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32378",
@@ -3335,7 +3744,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3351,7 +3763,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33577",
@@ -3381,7 +3797,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3412,7 +3831,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business programming certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3440,7 +3862,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "database management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3465,7 +3890,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl for math certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3489,7 +3917,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl for healthcare certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3505,7 +3936,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "37112",
@@ -3527,7 +3962,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer user support specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3554,7 +3992,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl for healthcare ii certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3578,7 +4019,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl for childhood educators certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3616,7 +4060,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cloud computing and programming with amazon web services certificate of achievement",
+    "section_fit": 0.833
    }
   },
   "listed": 5,
@@ -3645,7 +4092,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cisco networking administration certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3676,7 +4126,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3714,7 +4167,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -3747,7 +4203,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3783,7 +4242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -3820,7 +4282,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl reading and vocabulary certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3845,7 +4310,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl writing and grammar certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3877,7 +4345,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "communication studies certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3941,7 +4412,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "technical support and networking specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3966,7 +4440,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "introduction to college and career success certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3990,7 +4467,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -4100,7 +4580,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 88,
@@ -4133,7 +4616,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate broker certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4158,7 +4644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate escrow certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4183,7 +4672,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate property management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4208,7 +4700,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate salesperson certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4233,7 +4728,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate investments certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4259,7 +4757,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate finance certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4297,7 +4798,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -4327,7 +4831,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "recreation aquatics specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4352,7 +4859,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -4385,7 +4895,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "piano teaching certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -4409,7 +4922,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "personal care aide certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4444,7 +4960,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4472,7 +4991,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4498,7 +5020,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "high school equivalency test certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4522,11 +5047,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "basic computer office skills certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 1423
+  "text_chars": 1403
  },
  {
   "control_number": "44465",
@@ -4546,7 +5074,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -4571,7 +5102,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "parenting/caregiving certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4595,7 +5129,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "medical transcription certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4619,7 +5156,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "sterile processing technician certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4654,7 +5194,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4678,7 +5221,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "irs volunteer income tax assistance (vita) program certificate of completion",
+    "section_fit": 0.833
    }
   },
   "listed": 2,
@@ -4726,7 +5272,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dance teacher certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -4758,7 +5307,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data science certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4795,7 +5347,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital art and design: 2d animation certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4829,7 +5384,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital art and design: 3d modeling & animation certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4872,7 +5430,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital art and design: concept design certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -4905,7 +5466,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital art and design: game art and animation certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -4954,7 +5518,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 27,
@@ -4966,10 +5533,10 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 0.945,
   "codes_found": [
    "AHIS101",
-   "AHIS102C",
+   "AHIS102AH",
    "AHIS205A",
    "AHIS205B",
    "AHIS207",
@@ -5000,6 +5567,12 @@
    "ARCH104",
    "ARCH107",
    "ARCH108",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASL112",
+   "ASL113",
+   "ASL114",
+   "ASL130",
    "ASTR12",
    "ASTR15",
    "ASTR20",
@@ -5045,6 +5618,9 @@
    "DANC101",
    "DANC103",
    "ECON100",
+   "ECONC2001",
+   "ECONC2002",
+   "ECONC2002H",
    "ENGL12",
    "ENGL15A",
    "ENGL15B",
@@ -5120,6 +5696,10 @@
    "HIST141",
    "HIST152",
    "HIST154",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
    "HUMA1",
    "ITAL2",
    "ITAL24",
@@ -5236,7 +5816,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cal-getc ge requirements and certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 289,
@@ -5291,11 +5874,14 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 33,
-  "text_chars": 2866
+  "text_chars": 3272
  },
  {
   "control_number": "45647",
@@ -5332,7 +5918,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -5363,7 +5952,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biotechnology laboratory assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5396,7 +5988,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biotechnology technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5420,7 +6015,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "fashion entrepreneurship certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5461,7 +6059,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -5472,23 +6073,65 @@
   "title": "Academic Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PASS505",
+   "PASS507",
+   "PASS508",
+   "PASS509",
+   "PASS515",
+   "PASS530",
+   "PASS532"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4026&print",
+   "title": "Degree & Certificate: Academic Skills Certificate of Competency - El Camino College",
+   "h1": "Academic Skills Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "academic skills certificate of competency",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1157
  },
  {
   "control_number": "46404",
   "title": "Math Essentials",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH500",
+   "MATH501",
+   "MATH502",
+   "MATH503",
+   "MATH504",
+   "MATH505",
+   "MATH506",
+   "MATH507",
+   "MATH508"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4034&print",
+   "title": "Degree & Certificate: Math Essentials Certificate of Competency - El Camino College",
+   "h1": "Math Essentials Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "math essentials certificate of competency",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1777
  }
 ]
