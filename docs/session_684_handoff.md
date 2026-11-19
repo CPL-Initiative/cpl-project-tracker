@@ -23,22 +23,29 @@ no `next_run` refresh. **The headline pair and the harvest row were not read ton
    `<!-- cobix -->` comment. Tonight's ran 06:20Z to 08:20Z and stopped at the two-hour background limit.
 2. **Merge rules:** at most 3 open PRs (plus #3511 and dependabot's), oldest finished first, one update from `main` right
    before its merge, no dependency-map rebuild inside a PR, no full rerun when the input fingerprints match.
-3. **Merge order:** the wave (`claude/wave-s683`, #<wave: the conductor fills in>), then #3535 (this checkpoint), then
+3. **Merge order:** the wave (`claude/wave-s683`, #3544), then #3535 (this checkpoint), then
    #3528, then #3529.
 
 ## Your first steps, in order
 
 1. **Apply the memory rows:** point `kb/migrations/.apply` at `kb/migrations/2026-11-19_s683n_cpl_memory_rows.sql`
    (19 rows, rollback beside it) and let `supabase-migrate.yml` run it.
-2. **The wave:** read its thread first. Tonight a CI run took about 90 minutes, so its `test` result arrives after
-   sign-off. #3542's CI failed in shards 1 and 4 (`tests/exhibits_side_by_side.test.js`, `tests/issuer_tags.test.js`,
-   the same vanished-fixture cause as `tests/side_by_side_test.py`); the wave worker repaired both inside the wave. Merge
-   on a green `test`; a red one is yours to fix.
+2. **The wave (#3544, head `752b2780`) and the one test still red.** Read its thread first. Tonight a CI run took about
+   90 minutes, so its `test` result arrives after sign-off. It carries the repairs of `tests/side_by_side_test.py`
+   (#3542) and `tests/exhibits_side_by_side.test.js`. **`tests/issuer_tags.test.js` is still red on `main` and on the
+   wave:** the daily run gave `kb/credentials.json` five issuers that `kb/reference/issuer_tags.json` does not hold
+   (Dublin, Emerald and Amador Valley High Schools; AATA; Goodwill Industries). The permission check denied the wave
+   worker's edit of that file, and the conductor did not make the edit in its place. So the wave fails shard 4 until
+   the five are settled, and nothing merges to `main` before that. It is a curation call: Sam's rule of 2026-11-18 on
+   high school articulation (*"Don't add the high school as a second issuer"*, the brief's section 5, not yet in
+   `sam_rulings`) says the three high schools should leave the issuer list, which is a different fix from adding
+   their tags. Take it as your own first task with COBIx, or put it to Sam; then merge the wave on a green `test`.
 3. Update #3535 from `main` and merge it.
 4. **The display build:** `kb/_build_roep_display.py` on a branch, commit only `cpl_pathways_roep_data.js`, dispatch
    `step=display`; then the harvest gap census, reporting the shrink against 5,395.
-5. **#3528** (ready, `test` green on `3f27606`; COBIx asked for a read: merge with no finding by 09:30Z), then **#3529**
-   with its one update from `main`.
+5. **#3528** (ready; COBIx asked for a read). Its green `test` on `3f27606` predates the daily commit, and its own test
+   reads a Las Positas card from the same Review queue, so it takes one more update from `main` after the wave merges
+   and merges on that head's `test` (the conductor's note on its thread says so). Then **#3529** with its one update.
 6. Southwestern and NOCE previews on fresh branches off `main` (#3536 lands in the wave).
 7. A named-gaps pass over tonight's re-read records: the rereads replaced rows the apply had labeled (live
    `catalog_figures_differ` reads 19 of 21).
@@ -93,6 +100,9 @@ a plain session.
 [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current) holds one card; Part 5's go waits.
 **The conductor ran on Fable 5.2** (`claude-fable-5-2` on every call). The brief expected the routine's form to set
 Opus 5.5 tonight, so this was a second Fable 5.2 night and the comparison still needs the form changed: yours to do.
+**`main` cannot take a merge until five issuers are settled** (`tests/issuer_tags.test.js`; first step 2 above): three
+high schools, AATA and Goodwill Industries came into `kb/credentials.json` with the daily run and have no entry in
+`kb/reference/issuer_tags.json`.
 
 ## Decisions
 
@@ -134,7 +144,7 @@ unblocker colleges, the outline indexes, Chabot and Lassen. No run is in flight 
 
 | PR or branch | State | Next |
 |---|---|---|
-| the wave `claude/wave-s683` (#<wave>) | open, in CI at sign-off | read its thread; merge on green `test` |
+| the wave `claude/wave-s683` (#3544) | open, in CI at sign-off | read its thread; merge on green `test` |
 | #3535 this checkpoint | draft | update from `main`, merge after the wave |
 | #3528, #3529 | open | #3528 by 09:30Z with no finding; #3529 after one update |
 | #3497, #3508, #3492, #3539, #3540 | closed as carried, branches kept | none |
@@ -145,7 +155,7 @@ unblocker colleges, the outline indexes, Chabot and Lassen. No run is in flight 
 
 Subscriptions: none held. Check-ins: none. No artifact watch.
 
-Spend: not available; 2026-11-19T06:13Z to <end: the conductor fills in>.
+Spend: not available; 2026-11-19T06:13Z to 2026-11-19T09:47Z.
 
 No cost readout (`get_session` was not among the tools). Token counts from the session's transcripts at 09:28Z: Fable
 5.2 (the conductor) 179 calls, 0.25 million output, 0.58 million one-hour cache-write, 69.7 million cache-read; Opus 5.5
