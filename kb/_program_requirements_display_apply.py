@@ -328,13 +328,15 @@ def read_builds(request, college: str | None = None, sleep=time.sleep) -> dict:
         page = _retry(lambda: request("GET", qs), sleep)
         if not page:
             return out
-        for r in page:
-            out[_key(r["college"], r["control_number"])] = r.get("build")
-        nxt = (page[-1]["college"], page[-1]["control_number"])
-        if last is not None and nxt <= last:
-            # A server that ignored the keyset filter would hand back the same page forever.
+        keys = [_key(r["college"], r["control_number"]) for r in page]
+        if all(k in out for k in keys):
+            # A server that ignored the keyset filter would hand back the same page forever. The test is whether
+            # the page holds a key not yet read, never an order compared here: the server's collation decides
+            # "after", and Python's codepoint order need not agree (COBIx on #3564).
             raise RuntimeError("the page read did not advance past %s|%s" % last)
-        last = nxt
+        for k, r in zip(keys, page):
+            out[k] = r.get("build")
+        last = (page[-1]["college"], page[-1]["control_number"])
 
 
 def _rollback(before: dict, keys: list) -> dict:

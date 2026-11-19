@@ -530,4 +530,12 @@ except RuntimeError as e:
     _stuck = str(e)
 check(_stuck is not None and "did not advance" in _stuck, "a server that ignores the keyset filter stops the read, never loops")
 
+# COBIx on #3564: the server's collation orders the pages, so a later page may hold a key Python sorts lower
+# (a space or an accent). The read takes it; only a page with no new key stops it.
+_pages = iter([[{"college": "Zeta College", "control_number": "00001", "build": BUILD}],
+               [{"college": "Ñandu College", "control_number": "00001", "build": BUILD},
+                {"college": "Alpha College", "control_number": "00002", "build": BUILD}], []])
+_got = A.read_builds(lambda m, q, b=None: next(_pages), sleep=lambda s: None)
+check(len(_got) == 3, "a page the server orders by its own collation reads whole, whatever Python's order says")
+
 print("ok: program requirements display apply pass (%d checks)" % passed)
