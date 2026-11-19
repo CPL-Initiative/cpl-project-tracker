@@ -18738,7 +18738,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 594
+     "line": 597
     },
     {
      "id": "script:kb/_program_requirements_cheap_piles_s683.py",
@@ -21409,14 +21409,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 82
+     "line": 85
     },
     {
      "id": "script:kb/_program_named_gaps.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 82
+     "line": 85
     }
    ],
    "served": false,
@@ -23346,7 +23346,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 604
+     "line": 607
     }
    ],
    "served": false,
