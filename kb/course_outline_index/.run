@@ -2,4 +2,4 @@ run=2026-11-19
 discover=
 index=https://sdccd.curriqunet.com/
 slugs=san_diego_of_continuing_education
-report=
+report=^All Fields$
