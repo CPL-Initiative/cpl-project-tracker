@@ -73,6 +73,13 @@ try:
             json.dump(dict(prior, prior={"catalog_year": "x", "only": ["99999"]}), fh)
         with open(os.path.join(d, "31950.json"), "w") as fh:
             json.dump({"title": "Physics", "award": "A.S. T Degree"}, fh)
+    # S687: rule D's mark in a committed capture-only preview lists the program under not_printed, never as a flag.
+    with open(os.path.join(base, "butte", "capture_preview.json"), "w") as fh:
+        json.dump({"college": "Butte College", "catalog_year": "2026-2027", "run": "7", "not_found": [
+            {"control_number": "20001", "title": "Basic Peace Officer", "award": "Certificate",
+             "near_miss": {"rule": "D", "why": "rule D: no line of the catalog prints the program's title"}},
+            {"control_number": "20002", "title": "Finance", "award": "A.S. Degree",
+             "near_miss": {"url": "https://x/catalog.pdf#page=3", "coverage": 0.2}}]}, fh)
     cap = os.path.join(tmp, "out")
     os.makedirs(os.path.join(cap, "sources"))
     with open(os.path.join(cap, "capture.json"), "w") as fh:
@@ -90,6 +97,13 @@ try:
           "the capture's teach-out program is flagged catalog_mark")
     check(("Butte College", "10002") not in got and ("Butte College", "10003") not in got,
           "the capture's unflagged programs stay unflagged")
+    np = {(r["college"], r["control_number"]): r for r in out["not_printed"]}
+    check(("Butte College", "20001") in np and np[("Butte College", "20001")]["gap"] == "not printed in the 2026-2027 catalog"
+          and ("Butte College", "20001") not in got,
+          "a committed preview's rule D program is listed not printed, with the catalog year, and never flagged")
+    check(("Butte College", "20002") not in np, "a no-page program without rule D's mark is not listed")
+    check(any(r["control_number"] == "20001" for r in D.build([], base=base)["not_printed"]),
+          "the committed list reads without --capture")
     check(not any(k[0] == "Lassen College" for k in got) and out["left_out_held"] == 1,
           "the collection lane's college is left out, and counted as left out")
 
