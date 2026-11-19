@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s685_display_close_read.sql",
+ "name": "s685_display_close_read",
+ "version": "20261119134751",
+ "sha256": "7d7465fd55d81f5c8abf04d3ed254638a91534982adf757b2c65cd426ce5676d",
+ "run": "44536820147",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"display_close\":{\"read_at\":\"2026-11-19T13:47:52Z\",\"college\":{\"3e8088e082eb\":85},\"statewide\":{\"bef8ef819af7\":15,\"3e8088e082eb\":18323,\"0874a3a15f22\":16},\"no_build_key\":0,\"total_rows\":18354}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
