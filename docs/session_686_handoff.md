@@ -25,8 +25,9 @@ in flight there, and the move is recorded here (`d-lane-names-only-colleges-in-f
 **Lane 1, the cheap piles (one worker).** The work that belongs to no college comes first: the display build, once,
 and the harvest gap census. Then rule D through `rule_d` at City College of San Francisco, Santa Rosa Junior College
 and College of the Desert, and the discontinued capture, once keep-the-better's second-pass fix has landed (a rule D
-read is a second pass at a college the S683 wave posted). City College of San Francisco's outline index (report 28)
-belongs to this lane, since the college does.
+read is a second pass at a college the S683 wave posted).
+**Moved at 13:03Z:** City College of San Francisco's outline index (report 28) went to lane 2, since lane 1 had nothing
+in flight at that college. Rule D there waits until lane 2's outline worker reports and releases the college.
 
 **Lane 2, collection (workers on the worker model Sam's cost rules name).**
 - Keep-the-better's two open items, which belong to no college; then the second pass that re-posts the 17 re-reads
@@ -37,8 +38,9 @@ belongs to this lane, since the college does.
   posts wait for the generic-heading fix on a reviewed head. A third ten only after the second ten's loads have filed:
   Sierra, Barstow, Pasadena City, Rio Hondo, Los Angeles Harbor, College of San Mateo, College of the Sequoias, Fresno
   City, Contra Costa and Madera.
-- Outlines: the colleges `scripts/next_slo_colleges.py --next` names, one full read per host
-  (`d-one-read-per-host-funded-night-s680`), never City College of San Francisco tonight.
+- Outlines: the helper's queue is empty at 13:00Z (`scripts/next_slo_colleges.py --all`: done 26, held 4, none 6,
+  skip 84, of which 75 have no census row). The next step is Courses' ask (3) on #3533: City College of San
+  Francisco's outline index with report 28, then its trial, read and load as far as the night allows.
 
 **Not tonight:** Long Beach City (its S683 preview looked stuck); North Orange Continuing Education (its preview would
 extract none); the outline readers that need a code change (Rio Hondo, Peralta, Mt. San Antonio, Saddleback and Irvine
