@@ -293,7 +293,12 @@ function load(rows, onFetch) {
       ["2-3 students", "<10 students"], ["2 or 3 students", "<10 students"], ["12 of 40 students", "12 of 40 students"]];
     // COBIx's probe of e349f88a: a labeled number is never a count, and the fraction and range forms respect it.
     leaks.push(["Course 2 of 5 students", "Course 2 of 5 students"], ["Module 3 of 8 veterans", "Module 3 of 8 veterans"], ["Page 2 of 3 students", "Page 2 of 3 students"],
-      ["Course 2 of 40 students", "Course 2 of 40 students"], ["Grades 2-3 students", "Grades 2-3 students"], ["Year 1 or 2 students", "Year 1 or 2 students"],
+      ["Course 2 of 40 students", "Course 2 of 40 students"], ["Grades 2-3 students", "Grades 2-3 students"], ["Year 1 or 2 students", "Year 1 or <10 students"],
+      // COBIx on #3527 after 7b138cc1: "and"/"or" after a singular label must not swallow a count that follows.
+      ["Grade 12 and 4 students", "Grade 12 and <10 students"], ["Week 3 and 4 students attended", "Week 3 and <10 students attended"],
+      ["Unit 3 and 5 students", "Unit 3 and <10 students"], ["Students in Section 2 and 4 veterans", "Students in Section 2 and <10 veterans"],
+      ["Grade 9 and 3 students", "Grade 9 and <10 students"], ["In Year 1 and 5 veterans enrolled", "In Year 1 and <10 veterans enrolled"],
+      ["In Week 2 or 3 students dropped", "In Week 2 or <10 students dropped"], ["Grades 2 and 3 students", "Grades 2 and 3 students"],
       ["between 2 and 5 students", "between <10 students"], ["3 of the 5 students", "<10 of the <10 students"], ["In Year 2, 6 students enrolled", "In Year 2, <10 students enrolled"]);
     for (const [t, want] of leaks) check("G2: ⭐ " + t + " -> " + want, C.suppressText(t) === want, C.suppressText(t));
     const keys = { students_served: true, num_students_awarded: true, enrollment: true, n_awarded: true, award_count: true, veteranCount: true,
