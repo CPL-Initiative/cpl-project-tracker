@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 594 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 595 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 106 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 646 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1524** | |
+| Session handoffs | 647 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1526** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-19 (S687 SkyPipit, Sam's session, full checkpoint): #3565 (the S685 and S687 wave: nine colleges' reread posted, 164 replaced and 45 inserted), #3564 (the display's confirming read pages by key), #3567 (display build 3361e3aa5b7d confirmed on its own read; census 5,145 left), #3569 (rule D from committed previews), #3570 (Commons Needs you); new KB note `methodology-a-confirming-read-pages-by-key-never-by-offset`; harvest and Commons lessons compacted to their archives.
 - 2026-11-19 (S685 SkyTowhee, the CPL Queue routine's 12:12Z conductor firing, full checkpoint): S684's wave and checkpoint landed (#3550, #3545); #3552 (the outline helper reads each college's newest census row), #3553 (keep-the-better: a generic heading on the program's own page, 43 verified flips) and #3556 (display build 3e8088e082eb, confirmed by a closing live count); the census at 5,203 left; handoff 686, the S685 lessons and conductor sections.
 - 2026-11-19 (S684 SkyVerdin, the CPL Queue routine's 10:12Z conductor firing, full checkpoint): `main` repaired and the S683 wave merged (#3544), with #3535 and #3528; #3547 (keep-the-better's guard: the checked list first, the `live_runs` hold, five-digit control numbers); #3548 (named gaps over the re-read records, 2 rows); the second reread batch at ten colleges; College of the Siskiyous' 366 outline rows; the display build held for one run in S685; KB note `adr-one-credential-list-exhibits-are-its-children`; handoff 685 for SkyTowhee.
 - 2026-11-19 (S683 SkyNuthatch, the CPL Queue routine's 06:12Z conductor night, full checkpoint): the Chabot stop cleared (#3497's 99 and #3508's 14 rows applied, Chabot's 2,026 outline rows loaded); the reread wave at 15 colleges (133 replaced, 72 inserted); #3536, #3538, #3542 in one wave; the program-requirements lessons compacted to archive 7; the KB note `methodology-a-reread-keeps-the-better-record`. Handoff 684.
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-18 (S683 SkyDipper, Sam's daytime code session, full checkpoint): #3520 (the CER run rebuilds the Side by side views), #3519 (course flags, never deletes), #3513 (rules G and M and their apply), #3515 (exhibits blocker rules 1 and 2), #3517 (Commons plain words, the nightly click-through), #3514 (the reader's page checks); #3516, #3518, #3482 and #3293 parked as issues #3522 to #3525; `scripts/cobix_watch.sh`; the cer-procedures and commons lanes compacted under 20,000 bytes. A daytime section in handoff 683.
 - 2026-11-18 (S682 SkyVireo, the CPL Queue routine's 14:12Z firing, light checkpoint): S681's stand-down held; First Light's 77 painting drops in #3511 for Sam's merge, the 13 story photos held on the hero photo rule; the sierra-page-redesign lane compacted under 20,000 bytes. Handoff 683.
 - 2026-11-18 (S681 SkyGrebe, the CPL Queue routine's second conductor firing of the night, full checkpoint): the stop rule fired on Chabot's outline load (1,013 objectives filed as SLOs, rolled back); #3507 (the first display build through the bucket path, 18,209 rows), Allan Hancock and Santiago Canyon outlines (2,270 rows), Lassen's five records, all in the wave #3509; #3497's 99-row and #3508's 13-row plans reviewed, not applied; the KB note `methodology-a-self-check-must-see-what-the-rule-writes`. Handoff 682.
-- 2026-11-18 (S680 SkyPhoebe, the CPL Queue routine's conductor night for collection only, full checkpoint): #3495 and #3498 (display receipts and old row audit reports out of the tree into the private bucket `cpl-receipts`), #3490 (the repo size guard), #3491 (9 discontinued programs out of the gap census), #3496 (units rules A1, A4, A5, 56 records rescored live), #3497 (75 named gaps), #3502 (no blind paid rereads), #3503 (the Spend line's tags), #3504 (the outcomes wave, 2,452 rows at four colleges); the new repo-size lane; the KB note `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`. Handoff 681.

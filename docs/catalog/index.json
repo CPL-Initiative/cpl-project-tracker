@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 594,
+   "count": 595,
    "docs": [
     {
      "created": "2026-08-14",
@@ -983,6 +983,26 @@
      "title": "A conditional key breaks a bulk upsert, and it fails positionally",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [
+      "kb/_program_requirements_display_apply.py",
+      "tests/program_requirements_display_apply_test.py",
+      "tests/display_receipt_store_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-confirming-read-pages-by-key-never-by-offset.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "postgrest",
+      "display",
+      "program-requirements"
+     ],
+     "title": "A confirming read pages by key, never by offset",
+     "type": "methodology",
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -13894,7 +13914,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-17"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-11-14",
@@ -17276,8 +17296,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 646,
+   "count": 647,
    "docs": [
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 688,
+     "path": "docs/session_688_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 688 handoff (from SkyPipit, S687)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
     {
      "created": "2026-11-19",
      "governs": [],
@@ -28094,5 +28128,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1524
+ "total": 1526
 }
