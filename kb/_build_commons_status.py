@@ -1171,7 +1171,9 @@ def decision_batches(root):
             if (c.get("answer") or {}).get("words") or not c.get("title"):
                 continue
             out.append({"kind": "decision", "project": p, "n": 1, "title": c.get("title"), "teaches": c.get("text"),
-                        "open": c.get("link"), "todo_id": c.get("todo_id"),
+                        # Where it is answered: its sheet, else the view that holds its items (#3566: the college
+                        # wording rule has no sheet; it opens #cr-reference/names).
+                        "open": c.get("link") or (c.get("view") or {}).get("href"), "todo_id": c.get("todo_id"),
                         "chosen": c.get("if_no_reply"),
                         # An ask never blocks the queue (Sam, 2026-11-16, issue #3358): the default already stands.
                         "stop": "It stands unless you change it."})

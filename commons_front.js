@@ -37,8 +37,13 @@
   /* Figures with no single committed source on main yet, as COBIx's ask gives them (#3533 comment 7006930860, read
      against origin/main 09e5c0d1 and the program-requirements snapshot written 2026-11-19T09:27:50Z). Each names its
      source; when one lands on main, read it in model() and drop it here. */
+  /* The one program-records computation (#3566); commons.js loads it before this file. */
+  function PRG() {
+    if (!window.CPL_PROGRAM_RECORDS) throw new Error("commons_program_records.js is not loaded");
+    return window.CPL_PROGRAM_RECORDS;
+  }
   var ASKED = {
-    cociOnly: 713,              /* COCI-only Active programs (in the CO inventory, not the current catalog); open question 4 */
+    get cociOnly() { return PRG().COCI_ONLY; },   /* COCI-only Active programs: one constant, in commons_program_records.js */
     sloSnap: { at: "November 17, 2026, 1:59 PM PT", slo: 13293, obj: 9680 },   /* the snapshot the recent rates start from */
     outlinesBlocked: { cards: 140, current: 13 },   /* the Courses' count of course outlines blocked */
     missingMembership: 4036,    /* cards missing from the published membership list (the membership fix) */
@@ -123,13 +128,8 @@
     var lastN = dnum(H[H.length - 1].day);
     function at(n) { for (var i = 0; i < 8; i++) if (byDay[n - i] != null) return byDay[n - i]; return null; }
     var pr = facts("requirements"), live = (D && D.live && D.live.statewide) || {}, sw = (D && D.statewide) || {};
-    var complete = at(lastN), active = H[H.length - 1].active || pr.active;
-    var target = active - ASKED.cociOnly, left = target - complete;
-    var gain = complete - at(lastN - 7), pace = gain / 7;
-    var prevGain = at(lastN - 7) - at(lastN - 14), prevPace = prevGain / 7;
-    var exact = pace > 0 ? left / pace : null;
-    var doneN = exact == null ? null : lastN + Math.ceil(exact);
-    var prevN = prevPace > 0 ? lastN + Math.ceil(left / prevPace) : null;
+    /* The program-records figure, computed once for this page and #collect (commons_program_records.js, #3566). */
+    var R = PRG().compute(PR);
 
     /* The 30 daily bars: programs newly finished (the day's rise in complete) and issuer skills collected. */
     var skillsBy = {};
@@ -154,13 +154,16 @@
     });
     var course = facts("course"), ex = facts("exhibit"), cr = facts("cr"), subj = facts("subjects"), cred = facts("credentials"), out = facts("outcomes");
     var held = queue["exhibit|#exhibits/held"] || {};
-    var heldParts = String(held.owner || "").match(/unsure (\d+).*?issuers (\d+).*?left in (\d+)/);
+    /* The owner names the three reasons in any order ("a merge would join two issuers 19, the classifier is unsure 12, ..."). */
+    var ow = String(held.owner || ""), pick = function (re) { var m = ow.match(re); return m ? +m[1] : null; };
+    var heldParts = [null, pick(/unsure (\d+)/), pick(/issuers (\d+)/), pick(/left in (\d+)/)];
+    if (heldParts[1] == null || heldParts[2] == null || heldParts[3] == null) heldParts = null;
     var sloSnap = ASKED.sloSnap, sloGrow = (outcomes.slo_courses_on_active || 0) - sloSnap.slo, objGrow = (outcomes.objective_courses_on_active || 0) - sloSnap.obj;
     var sloLeft = (pc.active_courses || 0) - (outcomes.slo_courses_on_active || 0), objLeft = (pc.active_courses || 0) - (outcomes.objective_courses_on_active || 0);
     return {
-      lastN: lastN, written: PR.written_at || "",
-      programs: { complete: complete, active: active, target: target, cociOnly: ASKED.cociOnly, left: left, gain: gain, pace: pace,
-        fromN: lastN - 7, exact: exact, doneN: doneN, lowN: exact == null ? null : lastN + Math.floor(exact), prevN: prevN,
+      lastN: lastN, written: PR.written_at || "", commonsAt: (C && C.written_at) || "",
+      programs: { complete: R.complete, active: R.active || pr.active, target: R.target, cociOnly: R.cociOnly, left: R.left, gain: R.gain, pace: R.pace,
+        fromN: R.fromN, exact: R.exact, doneN: R.doneN, lowN: R.lowN, prevN: R.prevN,
         gap: pr.failing, unread: pr.unread, confirmed: pr.confirmed, confirmedComplete: pr.confirmed_complete,
         wider: sw.passing, widerOf: sw.programs, approved: progs.approved, teachout: progs.teachout },
       days: days,
@@ -173,7 +176,7 @@
         confirmed: course.confirmed, confirmedReady: course.confirmed_ready },
       exhibits: { stamped: ex.stamped, titles: (ex.titles || 0) + (ex.backlog || 0), person: ex.person, cohort: ex.cohort, backlog: ex.backlog,
         names: ex.credentials, noSubject: ex.no_subject, left: ex.left_map, renamed: ex.review_list },
-      held: { n: held.n, unsure: heldParts ? +heldParts[1] : null, issuers: heldParts ? +heldParts[2] : null, code: heldParts ? +heldParts[3] : null },
+      held: { n: held.n, unsure: heldParts ? heldParts[1] : null, issuers: heldParts ? heldParts[2] : null, code: heldParts ? heldParts[3] : null },
       cr: { settled: cr.settled, wordings: cr.wordings, rule: cr.rule_wordings, curator: cr.curator_only, groups: cr.names_to_check },
       subjects: { settled: subj.settled, of: subj.disciplines },
       building: { skillsCreds: (facts("skills").with_issuer_skills != null ? facts("skills").with_issuer_skills : cred.with_issuer_skills),
@@ -315,24 +318,109 @@
     ]);
   }
 
-  function needs(M) {
-    var H = M.held;
-    var heldWords = H.unsure != null ? " (the title-sorting routine is unsure on " + H.unsure + ", a merge would join two issuers on " + H.issuers + ", a course code is left in the title on " + H.code + ")" : "";
-    return el("section", { cls: "cmf-needs", "aria-labelledby": "cmf-needs-h" }, [
-      el("h3", { id: "cmf-needs-h", cls: "cmf-needs-h", text: "Needs you" }),
+  /* Needs you (#3566). Decisions waiting reads the decisions list commons.js hands in (decisions(): the same list the
+     decision record at #commons/details/decisions shows), so a decided call is never shown here as open and the college
+     wording rule leads while it waits. Rows waiting on a person counts the held exhibit titles live (heldLive below);
+     titles a person has saved read as saved and waiting for the nightly fold, work for no one. */
+  function needs(M, opts) {
+    opts = opts || {};
+    var open = (opts.decisions && opts.decisions.open) || [];
+    var dec = el("div", { cls: "cmf-need", id: "cmf-need-decisions" }, [el("h4", { text: "Decisions waiting" })]);
+    if (open.length) {
+      dec.appendChild(el("ul", { cls: "cmf-need-list" }, open.map(function (x) {
+        return el("li", { "data-todo": x.call.todo_id || null }, [
+          p([x.href ? a(x.href, x.title) : el("span", { text: x.title })], "cmf-need-t"),
+          x.call.text ? p([x.call.text]) : null,
+          x.call.if_no_reply ? p(["Until you answer: " + x.call.if_no_reply]) : null
+        ].filter(Boolean));
+      })));
+    } else dec.appendChild(p(["None waiting."]));
+    var note = typeof opts.marksNote === "function" ? opts.marksNote() : null;
+    if (note) dec.appendChild(note);
+    dec.appendChild(p([a("#commons/details/decisions", "Decision record")], "cmf-need-links"));
+    var rows = el("div", { cls: "cmf-need", id: "cmf-need-rows" }, [el("h4", { text: "Rows waiting on a person" }),
+      p(["Course outlines blocked: " + ASKED.outlinesBlocked.cards + " cards, " + ASKED.outlinesBlocked.current + " current. Send any outline or catalog PDF to COBIx, who prepares it and hands Sky one ask."]),
+      p([a("#collect/outlines-blocked", "Open the list of those colleges")], "cmf-need-links")]);
+    var heldBox = el("div", { cls: "cmf-held", id: "cmf-held", "aria-live": "polite" });
+    rows.appendChild(heldBox);
+    drawHeld(heldBox, M, opts.held || null);
+    return el("section", { cls: "cmf-needs", id: "cmf-needs", "aria-labelledby": "cmf-needs-h" }, [
+      el("h3", { id: "cmf-needs-h", cls: "cmf-needs-h", tabindex: "-1", text: "Needs you" }),
       el("div", { cls: "cmf-needs-grid" }, [
-        el("div", { cls: "cmf-need" }, [el("h4", { text: "Decisions waiting" }),
-          p(["None waiting. The November 18 ruling that eight titles joining two whole names with a slash stay as printed stands unless you change it."]),
-          p([a("#commons/details", "Decision record")], "cmf-need-links")]),
+        dec,
         el("div", { cls: "cmf-need" }, [el("h4", { text: "Fixes owed to you" }),
-          p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") are still in the discipline-in-doubt file on main, with no landed ruling in the November 19 curation snapshot. Nothing for you to decide."]),
-          p([a(REPO + "3447", "Backfill fix")], "cmf-need-links")]),
-        el("div", { cls: "cmf-need" }, [el("h4", { text: "Rows waiting on a person" }),
-          p(["Course outlines blocked: " + ASKED.outlinesBlocked.cards + " cards, " + ASKED.outlinesBlocked.current + " current. Send any outline or catalog PDF to COBIx, who prepares it and hands Sky one ask."]),
-          p([a("#collect/outlines-blocked", "Open the list of those colleges")], "cmf-need-links"),
-          p([a("#exhibits/held", fmt(H.n) + " titles"), " held for a person" + heldWords + ". ", el("span", { cls: "cmf-owner", text: "· a curator" })])])
+          p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. Sky owes that fix. Nothing for you to decide."])]),
+        rows
       ])
     ]);
+  }
+  /* The held titles' line. L is the live read (heldLive): { held, saved: [{ raw, value }], open, at }; null while it
+     reads or when it failed, and then the status file's count stands, named as of its time. */
+  function drawHeld(box, M, L) {
+    box.textContent = "";
+    if (L && L.held === 0) return;   /* the fold landed: the review file holds no held title, so the line goes */
+    if (L) {
+      if (L.open > 0) box.appendChild(p([a("#exhibits/held", fmt(L.open) + (L.open === 1 ? " exhibit title" : " exhibit titles")), " held for a person to name. ", el("span", { cls: "cmf-owner", text: "· a curator" })]));
+      if (L.saved.length) {
+        box.appendChild(p([fmt(L.saved.length) + (L.saved.length === 1 ? " exhibit title a person saved waits" : " exhibit titles a person saved wait") + " for the nightly fold, which adds " + (L.saved.length === 1 ? "it" : "them") + " to the reference. No one needs to act."]));
+        box.appendChild(el("details", { cls: "cmf-method cmf-saved" }, [el("summary", { text: "The saved titles" }),
+          el("ul", { cls: "cmf-saved-list" }, L.saved.map(function (x) { return el("li", { text: x.raw + " is saved as " + x.value }); }))]));
+      }
+      return;
+    }
+    var H = M.held;
+    if (!H || !H.n) return;
+    var heldWords = H.unsure != null ? " (the title-sorting routine is unsure on " + H.unsure + ", a merge would join two issuers on " + H.issuers + ", a course code is left in the title on " + H.code + ")" : "";
+    box.appendChild(p([a("#exhibits/held", fmt(H.n) + " titles"), " held for a person" + heldWords + ", as of " + stampWords(M.commonsAt) + ". ", el("span", { cls: "cmf-owner", text: "· a curator" })]));
+  }
+  /* A stamp in Pacific time, in words: "8:53 AM PT on November 19". */
+  function stampWords(v) {
+    var d = new Date(v || "");
+    if (isNaN(d.getTime())) return "the last build";
+    try {
+      return d.toLocaleTimeString("en-US", { timeZone: "America/Los_Angeles", hour: "numeric", minute: "2-digit" }) + " PT on "
+        + d.toLocaleDateString("en-US", { timeZone: "America/Los_Angeles", month: "long", day: "numeric" });
+    } catch (e) { return d.toISOString().slice(0, 16).replace("T", " ") + " UTC"; }
+  }
+
+  /* ── the held titles, read live (#3566, design decision 5): the person saves land at once ──
+     The review file (kb/exhibits_review.json, built nightly) lists the held titles; a held title is saved when
+     kb_curation holds a non-empty unified_title_assignment under _UNCLASSIFIED::<raw title>, the save the Exhibits tab
+     writes and reads back (exhibits.js reconcileReview). Read through the anon key the page already holds (CPL_SESSION),
+     Range-paged (Rule 10 b), in chunks of 40 titles. Read-only. Any page that fails fails the read, and the status
+     file's count stands with its time. A conflict card is a saved title by definition and is not counted here. */
+  var LIVE = { url: "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/kb_curation", review: "kb/exhibits_review.json",
+    field: "unified_title_assignment", prefix: "_UNCLASSIFIED::", conflict: "Conflict with the reference", page: 1000, chunk: 40 };
+  function anonKey() {
+    var S = window.CPL_SESSION, h = S && typeof S.authHeaders === "function" ? S.authHeaders() : null;
+    return (h && h.apikey) || "";
+  }
+  function heldLive() {
+    return readJson(LIVE.review).then(function (d) {
+      var held = ((d && d.held) || []).filter(function (h) { return h && h.raw && h.step !== LIVE.conflict; });
+      if (!held.length) return { held: 0, saved: [], open: 0, at: d && d.written_at };
+      var key = anonKey();
+      if (!key) throw new Error("COBI could not be reached from this page");
+      var raws = held.map(function (h) { return h.raw; }), chunks = [];
+      for (var i = 0; i < raws.length; i += LIVE.chunk) chunks.push(raws.slice(i, i + LIVE.chunk));
+      function page(url, from, acc) {
+        return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + LIVE.page - 1) } })
+          .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+          .then(function (rows) { rows = rows || []; acc = acc.concat(rows); return rows.length < LIVE.page ? acc : page(url, from + LIVE.page, acc); });
+      }
+      return Promise.all(chunks.map(function (c) {
+        var q = c.map(function (r) { var id = LIVE.prefix + r; return encodeURIComponent('"' + id.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
+        return page(LIVE.url + "?select=course_id,field,value&field=eq." + LIVE.field + "&course_id=in.(" + q.join(",") + ")&order=course_id.asc", 0, []);
+      })).then(function (parts) {
+        var by = {};
+        parts.forEach(function (rows) { rows.forEach(function (r) {
+          var v = String(r.value || "").trim();
+          if (r.field === LIVE.field && String(r.course_id || "").indexOf(LIVE.prefix) === 0 && v) by[r.course_id.slice(LIVE.prefix.length)] = v;
+        }); });
+        var saved = raws.filter(function (r) { return by[r]; }).map(function (r) { return { raw: r, value: by[r] }; });
+        return { held: held.length, saved: saved, open: held.length - saved.length, at: d.written_at };
+      });
+    });
   }
 
   /* One card: title, pill, headline (its number stays when folded), meter, body (clamped to six lines), the method
@@ -463,7 +551,8 @@
 
   /* ── the page ── */
   var onResize = null;
-  function render(root, M) {
+  function render(root, M, opts) {
+    opts = opts || {};
     ensureCss();
     migrate();
     root.removeAttribute("style");
@@ -496,7 +585,7 @@
     var wrap = el("div", { cls: "cmn-wrap cmf" }, [
       head,
       eta(M),
-      needs(M),
+      needs(M, opts),
       el("div", { cls: "cmf-groups" }, [group("collect", "Collect", C.collect), group("curate", "Curate", C.curate), group("connect", "Connect", C.connect)]),
       p([el("strong", { text: "Building. " }), "Skills — issuer-published skills on " + fmt(B.skillsCreds) + " credentials so far. Also underway: " + fmt(B.industry) + " industry credentials from " + fmt(B.issuers) + " issuers, and a deeper outcomes read (" + fmt(B.outcomes) + " outcomes from " + fmt(B.outcomeCourses) + " courses at " + fmt(B.outcomeColleges) + " colleges so far)."], "cmf-line"),
       p([el("strong", { text: "More collection detail. " }), "The ", a("#collect", fmt(M.colleges.total) + "-college list"), ", districts, the data dictionary, APIs, sharing, and integrations move here from the old College Data Collection page."], "cmf-line"),
@@ -545,12 +634,81 @@
     return wrap;
   }
 
-  function boot(root, C) {
+  function boot(root, C, opts) {
+    opts = opts || {};
     return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills)]).then(function (r) {
       var M = model(C, r[0], r[1], r[2]);
-      render(root, M);
-      return M;
+      render(root, M, opts);
+      if (opts.focus === "needs") focusNeeds();
+      /* The live read redraws only the held line; a failed read leaves the status file's line, named as of its time. */
+      var live = heldLive().then(function (L) {
+        var box = document.getElementById("cmf-held");
+        if (box) drawHeld(box, M, L);
+        M.heldLive = L;
+      }, function (e) { M.heldLiveError = String(e && e.message || e); });
+      M.ready = live;
+      return live.then(function () { return M; });
     });
+  }
+  /* #commons/needs-you (#3566): the front page scrolled to Needs you, its heading focused. */
+  function focusNeeds() {
+    var h = document.getElementById("cmf-needs-h");
+    if (!h) return false;
+    var sec = document.getElementById("cmf-needs");
+    if (sec && sec.scrollIntoView) sec.scrollIntoView({ block: "start" });
+    if (h.focus) h.focus();
+    return true;
+  }
+
+  /* ── Back to Needs you (#3566, design decision 4) ──
+     A Needs you link marks the tab it opens; that tab then carries one "Back to Needs you" link at its top, to
+     #commons/needs-you, until the person leaves that tab or returns to the front page. The mark lives in this page's
+     memory only: nothing is stored, so a new visit starts without it (tabs never remember, Sam 2026-10-21). The link
+     sits in the tab's pane, before its main container, so a view that redraws its own root keeps it. */
+  var BACK = { tab: null, id: "cpl-back-needs" };
+  function tabOf(h) {
+    var t = String(h || "").replace(/^#/, "").split("/")[0];
+    return t === "collect" ? "commons" : t;
+  }
+  function atFront(h) { return /^#?(commons\/?|commons\/needs-you(\/.*)?)?$/.test(String(h || "")); }
+  function placeBack() {
+    var old = document.getElementById(BACK.id), h = location.hash || "", t = tabOf(h);
+    if (BACK.tab && (t !== BACK.tab || atFront(h))) BACK.tab = null;
+    if (!BACK.tab) { if (old) old.parentNode.removeChild(old); return null; }
+    var pane = document.getElementById("tab-" + BACK.tab);
+    if (!pane) return null;
+    if (old && old.parentNode && pane.contains(old)) return old;
+    if (old && old.parentNode) old.parentNode.removeChild(old);
+    ensureBackCss();
+    var nav = el("nav", { id: BACK.id, cls: "cpl-back-needs", "aria-label": "Back to the Commons priorities" }, [a("#commons/needs-you", "Back to Needs you")]);
+    var main = pane.querySelector(":scope > .main-container");
+    pane.insertBefore(nav, main || pane.firstChild);
+    return nav;
+  }
+  function markBack(href) { BACK.tab = tabOf(href); }
+  document.addEventListener("click", function (e) {
+    var l = e.target && e.target.closest ? e.target.closest(".cmf-needs a[href^='#']") : null;
+    if (!l) return;
+    var href = l.getAttribute("href");
+    if (atFront(href)) return;
+    markBack(href);
+    /* the hash change that follows places it; a link to the address already open places it now */
+    if (location.hash === href) placeBack();
+  }, true);
+  window.addEventListener("hashchange", placeBack);
+  window.addEventListener("cpl-tab-activated", function () { placeBack(); });
+  var BACK_CSS = [
+    ".cpl-back-needs { max-width:1400px; margin:0 auto; padding:12px 2rem 0; box-sizing:border-box; font-size:.95rem; }",
+    ".cpl-back-needs a { display:inline-block; min-height:24px; line-height:24px; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; font-weight:600; }",
+    ".cpl-back-needs a:hover { text-decoration-thickness:2px; }",
+    ".cpl-back-needs a:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; border-radius:2px; }",
+    "#tab-commons .cpl-back-needs a { color:var(--cmn-link); }",
+    "#tab-commons .cpl-back-needs a:focus-visible { outline-color:var(--cmn-accent); }",
+    "@media (max-width: 560px) { .cpl-back-needs { padding:12px 16px 0; } }"
+  ].join("\n");
+  function ensureBackCss() {
+    if (document.getElementById("cpl-back-needs-css")) return;
+    document.head.appendChild(el("style", { id: "cpl-back-needs-css", text: BACK_CSS }));
   }
 
   var TOKENS = [
@@ -604,6 +762,12 @@
     ".cmf-need h4 { margin:0; font-size:.98rem; color:var(--cmn-heading); }",
     ".cmf-need p { margin:0; color:var(--cmn-ink-2); font-size:.92rem; }",
     ".cmf-owner { color:var(--cmn-muted); }",
+    ".cmf-need-list { list-style:none; margin:0; padding:0; display:grid; gap:6px; }",
+    ".cmf-need-list li { display:grid; gap:2px; min-width:0; overflow-wrap:anywhere; }",
+    ".cmf-need-t { font-weight:600; }",
+    ".cmf-held { display:grid; gap:4px; }",
+    ".cmf-saved-list { margin:4px 0 0; padding-left:18px; color:var(--cmn-ink-2); font-size:.88rem; overflow-wrap:anywhere; }",
+    "#cmf-needs-h:focus { outline:none; }",
     ".cmf a { color:var(--cmn-link); text-underline-offset:3px; }",
     ".cmf a:hover { color:var(--cmn-heading); }",
     ".cmf a:focus-visible, .cmf button.cmn-word:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
@@ -648,5 +812,6 @@
   }
 
   window.CPL_COMMONS_FRONT = { boot: boot, model: model, render: render, migrate: migrate, readFold: readFold, KEYS: KEYS,
+    focusNeeds: focusNeeds, heldLive: heldLive, drawHeld: drawHeld, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
     FOLD_KEY: FOLD_KEY, ORDER_KEY: ORDER_KEY, DETAILS_ORDER_KEY: DETAILS_ORDER_KEY, DETAILS_FOLD_KEY: DETAILS_FOLD_KEY, FILES: FILES, ASKED: ASKED };
 })();

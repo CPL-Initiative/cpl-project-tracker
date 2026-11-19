@@ -221,6 +221,7 @@ publish commons_front.js
 publish commons_list.js
 publish commons_look.js
 publish commons_page.js
+publish commons_program_records.js
 publish commons_progress.js
 publish comms.js
 publish contracts.js

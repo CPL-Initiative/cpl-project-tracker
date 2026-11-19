@@ -5,10 +5,21 @@
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_683_handoff.md",
-  "calls": [],
+  "calls": [
+    {
+      "title": "The college wording rule: keep the colleges' wording where an official number reaches a group whose title shares no word with it?",
+      "text": "36 groups of credit-recommendation wordings reach an official C-ID number whose title shares no word with what the colleges wrote. One example: the POST Basic Academy wording \"3 hours in Physical Training and Health Education (CSU GE Area E)\" is tied to C-ID AJ 110, \"Introduction to Criminal Justice.\" A yes keeps the colleges' wording for those groups and flags each course-number link for a check, and it puts a date back on the curation clock. These 36 are a different list from the 36 exhibit titles a person saved this morning; they share only the count.",
+      "if_no_reply": "The 36 groups wait for a check, and the rest of the credit-recommendation work goes on.",
+      "view": {
+        "href": "#cr-reference/names",
+        "text": "Open the 36 groups"
+      },
+      "todo_id": "cr-college-wording-rule"
+    }
+  ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-18T23:47:13Z",
+  "written_at": "2026-11-19T20:21:11Z",
   "project": "cr",
   "next_step": {
     "title": "Match MAP's credit recommendation wording to ACE's",

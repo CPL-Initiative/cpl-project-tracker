@@ -56,6 +56,16 @@ Figures with no source on main sit in `ASKED`, each named. **NEXT:** the open da
 on the ask (the 6-college status file against 0 blocked, the kinesiology rulings, the readable-course count, a COCI-only
 recount); the generators' `#commons/data` links to `#collect`. Guard `tests/commons_front.test.js`. **DECIDED** `d-commons-front-page-routes-3554`, `d-commons-front-card-layout-3554`.
 
+**Needs you: one path per item, a way back, live saves (#3566, S687).** One decisions list (`CPL_COMMONS.decisions`, the run logs'
+calls after the done marks) feeds Needs you, the details band and the decision record at `#commons/details/decisions`; a call
+with an answer is decided and shows only there, with Change it. The slash-titles call carries Sam's Nov 18 answer in
+`kb/status/exhibit.json`; the college wording rule is an open call in `kb/status/cr.json` and leads Decisions waiting until he
+rules (nothing is written to `cr_reference_decisions`). A Needs you link marks the tab it opens, which then carries one
+Back to Needs you link to `#commons/needs-you` (the front page scrolled to the section) until the person leaves; nothing is
+stored. The held exhibit titles read `kb_curation` live (Range-paged, read-only) and read as saved and waiting for the nightly
+fold. The program-records figure is computed once, in `commons_program_records.js`, for the front page, the ETA clock and
+`#collect`'s Active programs tile. Guard `tests/commons_needs_you.test.js`.
+
 
 
 **College Data Collection reaches the words (#3412, S669, #3422):** the paragraph as it stood, [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/commons.md (S683 daytime checkpoint)*. **NEXT:** on the deployed tab, check that a college's `course_outcomes` rows carry its college name.

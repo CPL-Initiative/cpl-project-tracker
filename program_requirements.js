@@ -202,7 +202,7 @@
     if (c.link && /^https:\/\//.test(c.link)) out.push(link(c.link, c.link_text || "Open the decision sheet"));
     var v = c.view;
     if (v && v.href && v.text) {
-      if (/^#[A-Za-z0-9_.~-]+$/.test(v.href)) out.push(el("a", { href: v.href, text: v.text }));
+      if (/^#[A-Za-z0-9_.~\/-]+$/.test(v.href)) out.push(el("a", { href: v.href, text: v.text }));
       else if (/^https:\/\//.test(v.href)) out.push(link(v.href, v.text));
     }
     return out.length ? el("p", { cls: "prh-pg-links" }, out) : null;

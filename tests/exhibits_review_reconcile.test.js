@@ -120,8 +120,8 @@ const P = "_UNCLASSIFIED::";
     check("the Names tile counts the two settled titles as named, and two fewer wait",
       /Names102 of 200/.test(tileText) && /98 wait for a title/.test(tileText));
     check("the Aligned course tile leaves the settled cards out", /Aligned course1 of 3/.test(tileText));
-    const notFolded = Array.from(rootOf(t).querySelectorAll(".exh-steps button")).find((b) => /Saved, not folded/.test(txt(b)));
-    check("Saved, not folded counts the two titles saved since the build", notFolded && /^2Saved, not folded$/.test(txt(notFolded)));
+    const notFolded = Array.from(rootOf(t).querySelectorAll(".exh-steps button")).find((b) => /Saved, waiting for the nightly fold/.test(txt(b)));
+    check("Saved, not folded counts the two titles saved since the build", notFolded && /^2Saved, waiting for the nightly fold$/.test(txt(notFolded)));
     check("Students waiting leaves the settled cards' exhibits out", (function () {
       const last = t.studentReads[t.studentReads.length - 1];
       if (!last) return false;

@@ -244,6 +244,88 @@
     // how many I have waiting on me." The cell lists the calls each decision sheet carried, answered or open.
     return cell("Decision Sheet Library", kids);
   }
+  /* ── the decisions: one list, read by the front page's Needs you and by the decision record (#3566) ──
+     Every call the run logs hold, open or decided, across the references, after the done marks are applied (load()).
+     A call is decided when it carries an answer; a decided call is never shown as open. FIRST names the asks that lead
+     Decisions waiting (the conductor's call on #3566, design decision 1: the college wording rule, the one open call that
+     can put a date back on the curation clock). The rest keep the references' order, then the run log's. */
+  var FIRST = ["cr-college-wording-rule"];
+  /* A call's address, only when it is a COBI address or https (the check program_requirements.js makes): a status file
+     that carried javascript: or any other scheme renders as words, never a live link (COBIx's review of #3570, item 1). */
+  function safeHref(h) { return typeof h === "string" && (/^#[A-Za-z0-9_.~\/-]+$/.test(h) || /^https:\/\//.test(h)) ? h : null; }
+  function callHref(c) {
+    return (c && c.view && safeHref(c.view.href)) || (c && safeHref(c.link) && /^https:\/\//.test(c.link) ? c.link : null);
+  }
+  /* marksRead: whether the done marks (queue_todo_done) were read. They are read behind a reviewer sign-in only, so a
+     call closed by Mark done still reads as waiting for anyone else, and the page says so (COBIx's review of #3570). */
+  function decisions(data, S, marksRead) {
+    var rows = (data && Array.isArray(data.rows) ? data.rows : []).concat(data && Array.isArray(data.building) ? data.building : []);
+    var open = [], decided = [];
+    rows.forEach(function (r) {
+      var spec = CARDS[r.key] || { name: r.title || r.key }, Q = S && S[r.key] ? S[r.key].Q : null;
+      (Q && Array.isArray(Q.calls) ? Q.calls : []).forEach(function (c, i) {
+        if (!c || !c.title) return;
+        var item = { key: r.key, name: spec.name, call: c, title: c.title, href: callHref(c), rank: ORDER.indexOf(r.key) * 1000 + i };
+        if (answered(c)) decided.push(item); else open.push(item);
+      });
+    });
+    function first(x) { var k = FIRST.indexOf(x.call.todo_id); return k < 0 ? FIRST.length : k; }
+    open.sort(function (a, b) { return first(a) - first(b) || a.rank - b.rank; });
+    decided.sort(function (a, b) { var x = String(b.call.answer.at || ""), y = String(a.call.answer.at || ""); return x < y ? -1 : x > y ? 1 : a.rank - b.rank; });
+    return { open: open, decided: decided, marksRead: !!marksRead,
+      marksUnread: !marksRead && open.some(function (x) { return !!x.call.todo_id; }) };
+  }
+  /* The line under Decisions waiting when the marks were not read, with the reviewer sign-in the tabs already use. */
+  function marksNote(D, cls) {
+    if (!D || !D.marksUnread) return null;
+    var box = el("div", { cls: cls || "cmn-marks", "data-marks": "unread" }, [
+      el("p", { cls: "cmn-quiet", text: "Signing in as a reviewer also hides the items already marked done." })]);
+    var host = el("div", { cls: "cmn-marks-signin" });
+    box.appendChild(host);
+    if (window.CPL_REVIEWER_SIGNIN && typeof CPL_REVIEWER_SIGNIN.mountInto === "function")
+      CPL_REVIEWER_SIGNIN.mountInto(host, { title: "Reviewer sign-in", blurb: "A personal one-time link, emailed to an address on the reviewer list.", returnTab: "commons" });
+    return box;
+  }
+  function longDay(v) {
+    if (!/^\d{4}-\d{2}-\d{2}/.test(String(v || ""))) return String(v || "");
+    return new Date(String(v).slice(0, 10) + "T12:00:00Z").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
+  }
+  /* The decision record at #commons/details/decisions: the decisions waiting, then every decision made, newest first,
+     each once, with Change it beside it. A decided call shows here and nowhere as open. */
+  function renderDecisions(root, data, S) {
+    root.removeAttribute("style");
+    root.textContent = "";
+    var D = decisions(data, S, S && S.__marksRead);
+    var wrap = el("div", { cls: "cmn-wrap cmn-rec" });
+    wrap.appendChild(el("header", { cls: "cmn-top" }, [
+      el("div", { cls: "cmn-top-row" }, [el("h2", { cls: "cmn-title", id: "cmn-rec-h", tabindex: "-1", text: "Decision record" })]),
+      el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
+      el("p", { cls: "cmn-lede", text: "Every decision the Commons has asked of you: the ones waiting first, then the ones made, newest first. A decision stands until you change it." })
+    ]));
+    var waitList = D.open.length ? el("ul", { cls: "cmn-rec-list", id: "cmn-rec-open" }, D.open.map(function (x) {
+      var c = x.call;
+      return el("li", { "data-todo": c.todo_id || null }, [
+        el("p", { cls: "cmn-rec-t" }, [x.name + ": ", openLink(x.href, c.title, null)]),
+        c.text ? el("p", { cls: "cmn-rec-why", text: c.text }) : null,
+        c.if_no_reply ? el("p", { cls: "cmn-rec-why", text: "Until you answer: " + c.if_no_reply }) : null
+      ].filter(Boolean));
+    })) : el("p", { cls: "cmn-quiet", id: "cmn-rec-open", text: "None waiting." });
+    wrap.appendChild(el("section", { cls: "cmn-rec-sec", "aria-labelledby": "cmn-rec-open-h" }, [el("h3", { id: "cmn-rec-open-h", text: "Decisions waiting" }), waitList, marksNote(D)].filter(Boolean)));
+    var doneList = D.decided.length ? el("ul", { cls: "cmn-rec-list", id: "cmn-rec-done" }, D.decided.map(function (x) {
+      var c = x.call, a = c.answer;
+      var change = x.href ? openLink(x.href, "Change it", "cmn-rec-change") : null;
+      if (change) change.setAttribute("aria-label", "Change it: " + c.title);
+      return el("li", { "data-todo": c.todo_id || null }, [
+        el("p", { cls: "cmn-rec-t" }, [x.name + ": " + c.title]),
+        el("p", { cls: "cmn-rec-why", text: "Decided" + (a.by ? " by " + a.by : "") + (a.at ? " on " + longDay(a.at) : "") + ": " + a.words }),
+        change ? el("p", { cls: "cmn-rec-acts" }, [change]) : null
+      ].filter(Boolean));
+    })) : el("p", { cls: "cmn-quiet", id: "cmn-rec-done", text: "No decision is on file yet." });
+    wrap.appendChild(el("section", { cls: "cmn-rec-sec", "aria-labelledby": "cmn-rec-done-h" }, [el("h3", { id: "cmn-rec-done-h", text: "Decided" }), doneList]));
+    wrap.appendChild(el("p", { cls: "cmn-sub" }, [openLink("#commons/details", "Every reference's details", null)]));
+    root.appendChild(el("div", { cls: "cmn-page" }, [wrap]));
+    return D;
+  }
   function runCell(row, Q, err, now) {
     var m = row.machine || {}, ms = machineState(m, now);
     var machine = el("p", { cls: "cmn-stamp" }, [
@@ -457,7 +539,7 @@
   function todoControl(card, call, after) {
     var box = el("div", { cls: "cmn-todo" });
     if (!reviewer()) {
-      box.appendChild(el("p", { cls: "cmn-todo-note", text: "A to-do: Mark done takes a reviewer sign-in, the emailed link; the team phrase does not carry it." }));
+      box.appendChild(el("p", { cls: "cmn-todo-note", text: "Mark done opens once you sign in as a reviewer, from the sign-in link emailed to you." }));
       return box;
     }
     var id = "cmn-todo-" + String(call.todo_id).replace(/[^a-z0-9-]/gi, "");
@@ -890,7 +972,8 @@
     if (ASE.on) return window.CPL_COMMONS_ASE ? CPL_COMMONS_ASE.address() : "commons/ase";
     /* The collection view's address is #collect/...; inside the tab it reads commons/collect/..., which arrive() opens. */
     if (DATA.on) return "commons/" + (window.CPL_COMMONS_DATA ? CPL_COMMONS_DATA.address() : "collect");
-    if (FRONT.on) return "commons";
+    if (FRONT.on) return FRONT.focus ? "commons/needs-you" : "commons";
+    if (RECORD.on) return "commons/details/decisions";
     if (BATCH.pin) return "commons/case/" + BATCH.pin;
     return show === "all" ? "commons/details" : "commons/" + show;
   });
@@ -930,20 +1013,28 @@
      already reads and three committed files of its own. The earlier first view (the docket, the batches, the decision
      record) stays one address away at #commons/details, and its filter words (#commons/needs, #commons/build) and
      cases (#commons/case/<id>) open it as before. */
-  var FRONT = { on: true };
+  /* #commons/needs-you (#3566) opens the front page scrolled to Needs you (FRONT.focus). The front page reads the same
+     run logs and done marks as the decision record (load()), so its Decisions waiting is decisions()'s open list. */
+  var FRONT = { on: true, focus: "" };
+  /* The decision record (#3566, design decision 2): #commons/details/decisions. */
+  var RECORD = { on: false };
+  function need(src, name) {
+    if (window[name] || !(window.CPL_TABS && CPL_TABS.loadScript)) return Promise.resolve();
+    return new Promise(function (res) { CPL_TABS.loadScript(src, name, function () { res(); }); });
+  }
   function showFront(root) {
     function go() {
-      if (!window.CPL_COMMONS_FRONT) { notice(root, "The CPL Commons page (commons_front.js) could not be loaded. Reload the tab to try again."); return null; }
-      return readJson(STATUS_URL).then(function (data) {
-        if (!data || !Array.isArray(data.rows) || !data.written_at) throw new Error(STATUS_URL + " is not the Commons' status file");
-        return CPL_COMMONS_FRONT.boot(root, data);
+      if (!window.CPL_COMMONS_FRONT || !window.CPL_PROGRAM_RECORDS) { notice(root, "The CPL Commons page (commons_front.js) could not be loaded. Reload the tab to try again."); return null; }
+      return load().then(function (r) {
+        var D = decisions(r.data, r.S, r.S.__marksRead);
+        return CPL_COMMONS_FRONT.boot(root, r.data, { decisions: D, marksNote: function () { return marksNote(D, "cmf-marks"); }, focus: FRONT.focus });
       }).then(null, function (e) {
         notice(root, "The Commons' figures could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
         return null;
       });
     }
-    if (window.CPL_COMMONS_FRONT || !(window.CPL_TABS && CPL_TABS.loadScript)) return Promise.resolve(go());
-    return new Promise(function (res) { CPL_TABS.loadScript("commons_front.js", "CPL_COMMONS_FRONT", function () { res(go()); }); });
+    /* The program-records figure first: the front page and #collect compute it in one place (#3566). */
+    return need("commons_program_records.js", "CPL_PROGRAM_RECORDS").then(function () { return need("commons_front.js", "CPL_COMMONS_FRONT"); }).then(go);
   }
   window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") away = true; });
   function arrive() {
@@ -958,9 +1049,12 @@
     var cm = h.replace(/^#/, "").match(/^(?:commons\/)?collect(?:\/(.*))?$/);
     ASE.on = !!(a && a[0] === "ase");
     DATA.on = !!cm || !!(a && a[0] === "data");
-    FRONT.on = !ASE.on && !DATA.on && !a;
+    FRONT.on = !ASE.on && !DATA.on && (!a || a[0] === "needs-you");
+    FRONT.focus = FRONT.on && a ? "needs" : "";
+    RECORD.on = !!(a && a[0] === "details" && a[1] === "decisions");
     if (ASE.on) { ASE.title = a.slice(1).join("/"); return true; }
     if (DATA.on) { DATA.filter = cm ? cm[1] || "" : a.slice(1).join("/"); return true; }   // a filter, a college (college/<slug>) or both
+    if (FRONT.on) return !!a;
     if (a && a[0] === "details") return true;
     if (a && a[0] === "case" && a[1]) { BATCH.pin = a.slice(1).join("/"); return true; }
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
@@ -971,19 +1065,21 @@
      surfaces"). Only once the tab has drawn. */
   var reboot = null;
   window.addEventListener("cpl-session-changed", function () {
-    if ((!redraw && !ASE.on && !DATA.on && !FRONT.on) || reboot || !document.getElementById(ROOT_ID)) return;
+    if ((!redraw && !ASE.on && !DATA.on && !FRONT.on && !RECORD.on) || reboot || !document.getElementById(ROOT_ID)) return;
     DATA.keep = DATA.on;
     reboot = Promise.resolve(boot()).then(function () { reboot = null; DATA.keep = false; }, function () { reboot = null; DATA.keep = false; });
   });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
     if (!(e && e.detail && e.detail.tab === "commons")) return;
-    var wasAse = ASE.on || DATA.on, wasFront = FRONT.on, root = document.getElementById(ROOT_ID);
+    var wasAse = ASE.on || DATA.on, wasFront = FRONT.on, wasRecord = RECORD.on, root = document.getElementById(ROOT_ID);
     var named = arrive();
     if (ASE.on) { if (named) showAse(root); return; }
     if (DATA.on) { if (named) showData(root); return; }
-    if (wasAse || FRONT.on !== wasFront) { boot(); return; }
-    if (FRONT.on) return;
+    if (wasAse || FRONT.on !== wasFront || RECORD.on !== wasRecord) { boot(); return; }
+    /* #commons/needs-you on the front page already drawn: scroll to Needs you, no redraw. */
+    if (FRONT.on) { if (named && FRONT.focus && window.CPL_COMMONS_FRONT) CPL_COMMONS_FRONT.focusNeeds(); return; }
+    if (RECORD.on) return;
     if (named && redraw) redraw();
     /* each visit counts the batch again, so one finished in Exhibits reads done on the way back (#2963 step 1) */
     if (batchRefresh) batchRefresh();
@@ -1025,7 +1121,10 @@
 
     /* the decisions waiting on Sam: the band below lists them, and a decision batch closes once its call is answered */
     var waiting = [], openTitles = {};
-    cards.forEach(function (c) { c.open.forEach(function (call) { waiting.push({ card: c, call: call }); if (call.title) openTitles[call.title] = true; }); });
+    /* In the decision record's order (decisions(): the college wording rule first, #3566), each beside its card. */
+    var byKey = {};
+    cards.forEach(function (c) { byKey[c.key] = c; c.open.forEach(function (call) { if (call.title) openTitles[call.title] = true; }); });
+    decisions(data, S).open.forEach(function (x) { if (byKey[x.key]) waiting.push({ card: byKey[x.key], call: x.call }); });
 
     /* the one small batch, then what people did with the procedures' work */
     lastOpenTitles = openTitles;
@@ -1209,7 +1308,12 @@
       })).then(function (st) {
         var S = {};
         rows.forEach(function (r, i) { S[r.key] = st[i]; });
-        return readTodoMarks().then(function (marks) { applyTodoMarks(S, marks); return { data: data, S: S }; });
+        return readTodoMarks().then(function (marks) {
+          applyTodoMarks(S, marks);
+          /* Not a row key: decisions() and the record read it to say whether Mark done's closings are counted. */
+          Object.defineProperty(S, "__marksRead", { value: Array.isArray(marks), enumerable: false });
+          return { data: data, S: S };
+        });
       });
     });
   }
@@ -1227,6 +1331,15 @@
     if (ASE.on) return showAse(root);
     if (DATA.on) return showData(root);
     if (FRONT.on) return showFront(root);
+    if (RECORD.on) return load().then(function (r) {
+      renderDecisions(root, r.data, r.S);
+      var h = document.getElementById("cmn-rec-h");
+      if (h && h.focus) h.focus();
+      return r;
+    }, function (e) {
+      notice(root, "The decision record could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
+      return null;
+    });
     return load().then(function (r) {
       render(root, r.data, r.S, new Date());
       return Promise.resolve(batchRefresh && batchRefresh()).then(function () { return r; }, function () { return r; });
@@ -1339,6 +1452,16 @@
     ".cmn-foot { border-top:1px solid var(--cmn-line); padding-top:16px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; color:var(--cmn-muted); font-size:.88rem; }",
     ".cmn-details { display:grid; gap:18px; border-top:1px solid var(--cmn-line); padding-top:24px; }",
     ".cmn-details[hidden] { display:none; }",
+    /* The decision record (issue 3566): the decisions waiting, then the ones made, each once. */
+    ".cmn-rec-sec { display:grid; gap:8px; }",
+    ".cmn-rec-sec h3 { margin:0; font-family:var(--cmn-serif); font-size:1.2rem; color:var(--cmn-heading); }",
+    ".cmn-rec-list { list-style:none; margin:0; padding:0; display:grid; gap:10px; }",
+    ".cmn-rec-list li { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:10px; padding:12px 16px; display:grid; gap:4px; min-width:0; overflow-wrap:anywhere; }",
+    ".cmn-rec-list p { margin:0; }",
+    ".cmn-rec-t { color:var(--cmn-heading); font-weight:600; }",
+    ".cmn-rec-why { color:var(--cmn-ink-2); font-size:.92rem; max-width:var(--cpl-measure,none); }",
+    ".cmn-rec a { display:inline-block; min-height:24px; line-height:24px; }",
+    ".cmn-rec-h:focus, #cmn-rec-h:focus { outline:none; }",
     ".cmn-empty { margin:0; }",
     ".cmn-waiting .cmn-state { font-weight:700; }",
     ".cmn-waiting .cmn-zero { color:var(--hunter); }",
@@ -1423,6 +1546,7 @@
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
     queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, caseSection: caseSection, saveRuling: saveRuling, runProcessor: runProcessor, PROCESS: PROCESS, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
-    ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, FRONT_FOLD_KEY: FRONT_FOLD_KEY, showFront: showFront, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
+    ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, FRONT_FOLD_KEY: FRONT_FOLD_KEY, showFront: showFront, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE,
+    decisions: decisions, renderDecisions: renderDecisions, FIRST: FIRST
   };
 })();
