@@ -1,4 +1,4 @@
-{"schema":1,"college":"Compton College","slug":"compton","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Compton College","slug":"compton","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
 {"cn":"38387","title":"Kinesiology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=107"},
 {"cn":"38312","title":"Mathematics","award":"A.S. T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"45446","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},

@@ -60,10 +60,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    21.0,
+    23.0,
     23.0
    ],
    "stated": [
@@ -71,9 +71,8 @@
     23.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-23.0; the catalog states 23.0-23.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -97,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -162,13 +161,15 @@
       "alternatives": [
        {
         "code": "ESTH 144",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "ESTH 145",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -186,5 +187,19 @@
    "The careers are read from the program description: 'licensed esthetician' and 'an entry-level career in the field of esthetics'."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "38675245799",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "ESTH 144",
+   "words": "ESTH 144, printed as an alternative to ESTH 142 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ESTH 145",
+   "words": "ESTH 145, printed as an alternative to ESTH 142 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

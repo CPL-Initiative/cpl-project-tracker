@@ -292,6 +292,17 @@ step "Build ESS 25-82 statewide-recommendation rollup" <<'STEP'
 python3 funding/_build_funding_ess.py || echo "funding-ess build failed (non-fatal; prior artifact kept)"
 STEP
 
+# ── Step 4a9: The course flags (Sam, 2026-11-17: "flag the record, never delete it; take flagged
+# records out of counts, waiting piles, to-dos and fetch plans") ──
+# Retired, inactive and not-applicable cards and courses, read by kb/_flags.py, which the auditor
+# below and every counter import. After the pipeline (they read unified_courses_members.js and
+# credential_reference_data.js) and before the auditor. Non-fatal: the prior files stand.
+step "Build the course flags" <<'STEP'
+python3 kb/_build_retired_cards.py || echo "::warning title=Course flags::kb/_build_retired_cards.py failed; the prior file stands."
+python3 kb/_build_inactive_cards.py || echo "::warning title=Course flags::kb/_build_inactive_cards.py failed; the prior file stands."
+python3 kb/_build_not_applicable.py || echo "::warning title=Course flags::kb/_build_not_applicable.py failed; the prior file stands."
+STEP
+
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
 # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
 # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.
@@ -299,6 +310,18 @@ STEP
 # bearing for the dashboard itself).
 step "Run row Trust-Card auditor" <<'STEP'
 python3 kb/_row_audit.py || echo "Auditor failed — UCL hinky chips will use prior latest.json"
+STEP
+
+# ── Step 4b1: Keep the newest 14 row audit reports (#3476 Part 4 step 5) ──
+# After the day's report is written: each dated report past the newest 14 goes to the
+# private bucket cpl-receipts (row_audit/) and leaves the tree only once its entry in
+# kb/receipts/index/ names its sha256. latest.json always stays. Never fails the run: a
+# failed upload or read-back leaves the files where they are and the log says so.
+step "Keep the newest 14 row audit reports" SUPABASE_SERVICE_KEY <<'STEP'
+# --budget-seconds bounds every bucket call (one try, timeout within what is left); `timeout 200`
+# stops the process outright if a call trickles past its socket timeout.
+timeout 200 python3 kb/_row_audit_prune.py --max-store 3 --budget-seconds 180 \
+  || echo "Row audit prune did not finish (non-fatal; the reports stay)"
 STEP
 
 # ── Step 4b2: Re-run the EXHIBIT auditor (credential layer) ───

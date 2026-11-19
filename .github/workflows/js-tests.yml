@@ -221,6 +221,24 @@ jobs:
       # every PR and every main run, whatever the gate decides (~3 s).
       - name: Pages allowlist (every tracked and staged path decided)
         run: node tests/pages_allowlist.test.js
+      # The repo size guard (#3476 Part 4 step 2; Sam, 2026-11-17: "make sure we don't allow to go beyond a limit").
+      # A file over 5 MB off the exceptions list, a list that grows, a latest version over the disk cap, or more than
+      # 25 MB compressed in one PR turns `test` red: this repo's merge gate is this check, so the guard runs here as
+      # well as under its own name in repo-size-guard.yml. Pull requests only; the cron's pushes to main never run it.
+      # The checkout is the PR's merge commit at depth 1, so the base is fetched at depth 1 and the script compares
+      # the two trees (scripts/repo_size_guard.py says why that is exactly the PR's change). About 2 s.
+      - name: Repo size guard (file, list, disk total, compressed growth)
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
+          python3 scripts/repo_size_guard.py --base "$BASE_SHA"
+      - name: Repo size guard tests (a temporary repo the test builds)
+        run: python3 tests/repo_size_guard_test.py
+      # The COBIx watcher calls only `gh api -X GET search/issues` (S683, Sam's ask relayed on #3358).
+      - name: COBIx watcher calls only GitHub search
+        run: python3 tests/cobix_watch_test.py
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
       # on worst-case backdrops. Pure-stdlib python; part of this same
@@ -266,6 +284,8 @@ jobs:
       # Issue 3454 (S678): the confidence scorer's membership fix, rule W, variant D and follow past rulings.
       - name: Confidence scorer rules (kb/_ccr_confidence_score.py)
         run: python3 tests/ccr_confidence_rules_test.py
+      - name: Confidence scorer rules G and M, and their apply and undo (kb/_ccr_confidence_apply.py)
+        run: python3 tests/ccr_rules_g_m_test.py
       # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
       - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
         run: python3 tests/ccr_seed_confirm_test.py
@@ -387,6 +407,22 @@ jobs:
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)
         run: python3 tests/harvest_gap_census_test.py
+      # The units rules (S680; Commons Clarity's Part A on #3480): a correction lands exactly or the record
+      # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
+      - name: Units rules A1, A4, A5, A6, A8 and A11 (self-check, exact sums, named gaps)
+        run: python3 tests/program_requirements_units_rules_test.py
+      # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
+      # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
+      - name: Discontinued programs (own-section mark, out of the gap, the file is current)
+        run: python3 tests/program_discontinued_test.py
+      # The reader's page checks (S683; #3480 Source 7, file set 1 on #3510): a program whose filed record places
+      # none reads only a page printing its own title with its award, never descriptions or a GE page. Pure stdlib.
+      - name: Reader page checks, rules A to D (own heading, page types, every tab, not printed)
+        run: python3 tests/reader_page_checks_test.py
+      # Rule A's self-recall (S683 second reader): over the committed site records that place courses, rule A finds
+      # the own page of at least 75% and accepts at most 30 sister programs' pages. Reads the committed records.
+      - name: Reader page checks, rule A self-recall (own pages found, sister pages refused)
+        run: python3 tests/reader_page_checks_recall_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
@@ -437,6 +473,22 @@ jobs:
       # each row's prior build as the rollback. Pure-stdlib python.
       - name: Program requirements display apply (receipt parse, rollback)
         run: python3 tests/program_requirements_display_apply_test.py
+      # The display receipt store (S680, #3476): no display receipt in a commit
+      # (the ignore rule), the runner stores it in cpl-receipts before it
+      # applies (the workflow's step order), and the apply reads only bytes
+      # whose sha256 kb/receipts/index/ names. Pure-stdlib python and git.
+      - name: Display receipt store (index, bucket first, ignore rule, step order)
+        run: python3 tests/display_receipt_store_test.py
+      # The row audit prune (S680, #3476 step 5): the newest 14 reports and latest.json stay, an older report
+      # leaves only once its index entry names its sha256, and a store failure never fails the daily run.
+      - name: Row audit prune (newest 14 kept, indexed before removed, daily run unharmed)
+        run: python3 tests/row_audit_prune_test.py
+      # The one-time move of the display receipts committed before S680 (#3476
+      # Part 4 step 4): every display receipt main tracks that this tree removed
+      # must have an index entry naming its blob. It fetches main's trees alone
+      # (--filter=blob:none), never a receipt. Pure-stdlib python and git.
+      - name: Receipt move gate (no display receipt leaves the tree unstored)
+        run: python3 tests/receipt_move_gate_test.py
       # The college page read (S329) reads a named list of one college's
       # pages from a runner for lines marked To confirm: it follows links only
       # on the college's own domain and prints the part that answers.
@@ -659,6 +711,14 @@ jobs:
       # keeps its issuer, otherwise additive; a lead and its confirmed siblings fold in one run; the undo puts it back.
       - name: Credential fold issuer precedence and undo
         run: python3 tests/cred_rename_fold_issuer_test.py
+      # The pair re-point (COBIx's item 6, #3464, S678): one (MAP exhibit id + local title) moves and nothing beside it,
+      # a tap-only row never applies, the undo restores, and the committed list's batch counts stay as measured.
+      - name: Exhibit pair re-point list and apply
+        run: python3 tests/exhibit_repoint_test.py
+      # The blocker round's rules 1 and 2 (COBIx, #3480, S683): the cert-based twin of a course title and the referenced
+      # leftover kept in place, as pair rows; the counts, the 3-college tests, the guard, and the undo.
+      - name: Exhibit blocker rules 1 and 2
+        run: python3 tests/exhibit_blocker_rules_test.py
       # The fold's issuer decision stored as one issuer_resolution row per target and enforced nightly (#3116): the
       # interleavings around decided_at, a failed insert, a nightly between a failed apply and its retry, a second fold,
       # apply-nightly-undo; and the resolver defined once in Python and once in JavaScript.
@@ -1274,16 +1334,40 @@ jobs:
           python3 kb/_build_docs_index.py --check
           test_group_end
       # Dependency map (Sam's ruling A, 2026-08-29) — the dataset→consumers
-      # artifact every session's cross-impact flag depends on. `--check` turns
-      # "somebody forgot to rebuild after adding a fetch()" into a red check
-      # (same shape as the docs index above); the test guards the content —
-      # each of its checks is a failure mode the build actually hit, verified
-      # by perturbation against the live artifact. Pure-stdlib python; same
-      # non-required check.
-      - name: Dependency map — content guards + drift check
+      # artifact every session's cross-impact flag depends on. Since Sam's rule of
+      # 2026-11-18 ("No dependency-map rebuild inside PRs. kb/dependency_map.json and
+      # docs/reference/dependency_map.md are rebuilt by one job on main after each
+      # merge."), dependency-map.yml rebuilds it on main and a PR leaves it as main
+      # has it, so a map behind this tree is a notice here, never a failure. The
+      # step rebuilds the map in the runner and runs every test that reads it
+      # against that build, so a PR that adds an edge is tested on its own edges
+      # (the Commons status step above has the same shape). A builder that fails
+      # (exit 2: a coverage floor or an inventory error) still fails the step. The
+      # committed files are restored at the end. Pure-stdlib python.
+      - name: Dependency map rebuilt from this tree, then every test that reads it
         run: |
+          source scripts/test_group.sh
+          pip install --quiet pyyaml
+          rc=0
+          python3 kb/_build_dependency_map.py --check > /dev/null 2>&1 || rc=$?
+          if [ "$rc" -eq 1 ]; then
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              echo "::notice title=Dependency map behind this PR::The committed map differs from this tree. Expected: dependency-map.yml rebuilds it on main after the merge (Sam, 2026-11-18). Do not commit it in the PR."
+            else
+              echo "::warning title=Dependency map behind main::The committed map differs from this tree. dependency-map.yml rebuilds it after each push to main; dispatch it if this stays."
+            fi
+          elif [ "$rc" -ne 0 ]; then
+            echo "::error::kb/_build_dependency_map.py --check exited $rc (not a stale map: the builder failed)"
+            exit 1
+          fi
+          python3 kb/_build_dependency_map.py || { echo "::error::kb/_build_dependency_map.py failed on this tree"; exit 1; }
+          readers=$(grep -l 'dependency_map\.json' tests/*.test.js | sort || true)
+          [ -n "$readers" ] || { echo "::error::no *.test.js reads kb/dependency_map.json; the reader search is wrong"; exit 1; }
           python3 tests/dependency_map_test.py
-          python3 kb/_build_dependency_map.py --check
+          python3 tests/dependency_map_on_main_test.py
+          for f in $readers; do node "$f" > "$RUNNER_TEMP/depmap_reader.log" 2>&1 || { tail -40 "$RUNNER_TEMP/depmap_reader.log"; echo "::error::$f fails on the map rebuilt from this tree"; false; }; done
+          git checkout -- kb/dependency_map.json docs/reference/dependency_map.md
+          test_group_end
       # E gate guards (Session 210) — pins the skip/run boundary from both
       # sides, re-derives which test files read inert (docs-shaped) paths and
       # requires each to run in the skip branch above, and keeps the
@@ -1478,6 +1562,9 @@ jobs:
           python3 tests/top_gate_test.py
           python3 tests/row_audit_subject_outlier_test.py
           python3 tests/row_audit_top_source_score_test.py
+          python3 tests/row_audit_zero_members_test.py
+          python3 tests/coci_flags_test.py
+          python3 kb/_not_applicable_rule.py
           test_group_end
       - name: Programs, pathways, veterans, MAP fetch, the custom report payload and repo hygiene
         run: |

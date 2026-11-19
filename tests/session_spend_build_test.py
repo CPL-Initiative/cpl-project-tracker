@@ -51,6 +51,17 @@ m = ss.parse_line("$9.00 (Claude Opus 5.5 $8.00, sonnet-4 $1.00); 2026-11-20T01:
 check("a two-word or hyphenated model name reads whole", m["models"] == {"Claude Opus 5.5": 8.0, "sonnet-4": 1.0}, m["models"])
 with tempfile.TemporaryDirectory() as tmp:
     os.makedirs(os.path.join(tmp, "docs"))
+    with open(os.path.join(tmp, "docs", "session_900_handoff.md"), "w", encoding="utf-8") as f:
+        f.write("# You are SkyNight (Session 900)\n\nSpend: not available; 2026-11-20T01:00Z to 2026-11-20T02:00Z.\n\n"
+                "## Daytime session, SkyDay (S900 daytime), 2026-11-20\n\n### What shipped\n\n"
+                "Spend: $40.00 (Opus 5.5 $40.00); curation $30.00, infrastructure $10.00; "
+                "2026-11-20T14:00Z to 2026-11-20T23:00Z.\n\n## Later heading\n\nSpend: $1.00; 2026-11-21T01:00Z to 2026-11-21T02:00Z.\n")
+    got = ss.build(tmp)["sessions"]
+    check("a daytime section's Spend line is session N daytime's; the file's first line stays session N-1's",
+          [(s["session"], s.get("daytime", False), s["usd"]) for s in got] == [(899, False, None), (900, True, 40.0)], got)
+    check("the daytime line keeps its tags", got[-1].get("tags") == {"curation": 30.0, "infrastructure": 10.0}, got[-1])
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "docs"))
     with open(os.path.join(tmp, "docs", "session_800_handoff.md"), "w", encoding="utf-8") as f:
         f.write("Spending notes: $5 ; 2026-11-20T01:00Z to 2026-11-20T02:00Z\n"
                 "Spend: `" + ss.EXAMPLE + "`\n"
@@ -78,6 +89,23 @@ with tempfile.TemporaryDirectory() as tmp:
     o = os.path.join(tmp, "_site", "kb", "status", "session_spend.json")
     r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_session_spend.py"), "--out", o], capture_output=True, text=True)
     check("--out writes the file where the deploy asks, making its folders", r.returncode == 0 and os.path.exists(o), r.stderr)
+
+# S680: what the dollars bought, as collection, curation and infrastructure pairs; an old line still reads.
+g = ss.parse_line("$123.45 (Opus 5.5 $123.45); collection $100.00, curation $20.00, infrastructure $3.45; "
+                  "2026-11-15T17:06Z to 2026-11-15T23:19Z.")
+check("a tagged line reads its total, models and tags", g and g["usd"] == 123.45 and g["models"] == {"Opus 5.5": 123.45}
+      and g["tags"] == {"collection": 100.0, "curation": 20.0, "infrastructure": 3.45}, g)
+o = ss.parse_line("$115.38 (Opus 5.5 $115.38, subagents included); 2026-11-17T21:41Z to 2026-11-17T23:59Z.")
+check("an untagged line reads as before, with no tags key", o and o["usd"] == 115.38 and "tags" not in o, o)
+n = ss.parse_line("not available; collection $5.00; 2026-11-18T00:10Z to 2026-11-18T03:20Z.")
+check("a line with no readout carries no tags", n and not n["available"] and "tags" not in n, n)
+p = ss.parse_line("$9.00 (Collection 2 $9.00); 2026-11-18T00:10Z to 2026-11-18T03:20Z.")
+check("a model named like a tag is a model, never a tag", p and "tags" not in p and p["models"] == {"Collection 2": 9.0}, p)
+with tempfile.TemporaryDirectory() as t:
+    os.makedirs(os.path.join(t, "docs"))
+    with open(os.path.join(t, "docs", "session_900_handoff.md"), "w") as f:
+        f.write("Spend: `" + ss.EXAMPLES[1] + "`\n")
+    check("the checkpoint's tagged example is never a session's spend", ss.build(t)["sessions"] == [])
 
 print("\n%d/%d checks passed" % (sum(results), len(results)))
 sys.exit(0 if all(results) else 1)

@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-18T03:58:00Z",
-  "count": 2887,
+  "_synced_at": "2026-11-19T06:18:44Z",
+  "count": 2962,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -4287,6 +4287,12 @@
       "reviewed_at": "2026-07-07T15:55:51.426635+00:00",
       "unified_title": "Photography Alternative Processes Beginning"
     },
+    "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson": {
+      "issuing_agency": "American Aerospace Technical Academy (AATA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:46:43.968105+00:00",
+      "unified_title": "Nondestructive Testing Technician Apprenticeship — Journeyperson"
+    },
     "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)": {
       "issuing_agency": "American College of Sports Medicine (ACSM)",
       "reviewed_by": "exhibits-s594@bot",
@@ -8159,6 +8165,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Computer Keyboarding"
     },
+    "Computer Networking & Info Tech 113-Portfolio Review": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:06:19.573078+00:00",
+      "unified_title": "Tech of Smartphones & Mobile"
+    },
     "Computer Networks": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -10816,6 +10828,12 @@
       "reviewed_at": "2026-10-31T16:34:32.63209+00:00",
       "unified_title": "Global Music Appreciation"
     },
+    "Goodwill Retail Operations Specialist Apprenticeship Journeyperson": {
+      "issuing_agency": "Goodwill Industries",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:47:12.414814+00:00",
+      "unified_title": "Retail Operations Specialist Apprenticeship — Journeyperson"
+    },
     "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -11024,6 +11042,90 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "High Performance Electric Water Heaters"
     },
+    "High School Articulation ( Emerald)- Criminal Justice/ Criminal Scene Investigation": {
+      "issuing_agency": "Emerald High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:07:09.713794+00:00",
+      "unified_title": "Introduction to Criminal Justice"
+    },
+    "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:07:13.911451+00:00",
+      "unified_title": "Introduction to Criminal Justice"
+    },
+    "High School Articulation (Amador Valley)- Developmental Psychology of Children 1": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:07:20.381028+00:00",
+      "unified_title": "Developmental Psychology of Children 1"
+    },
+    "High School Articulation (Amador Valley)- Developmental Psychology of Children II": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:09:35.339681+00:00",
+      "unified_title": "Early Childhood Principles and Practices"
+    },
+    "High School Articulation (Amador Valley)- Emergency Medical Response": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:09:45.778221+00:00",
+      "unified_title": "Emergency Medical Responder"
+    },
+    "High School Articulation (Amador Valley)- Introduction to Athletic Training": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "unified_title": "Introduction to Athletic Training and Sports Medicine"
+    },
+    "High School Articulation (Amador Valley)- Introduction to Health Careers": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "unified_title": "Orientation to Health Care"
+    },
+    "High School Articulation (Dublin)- Criminal Justice/ CSI": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:10:16.304584+00:00",
+      "unified_title": "Criminal Investigation"
+    },
+    "High School Articulation (Dublin)- Introduction to Athletic Training": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "unified_title": "Introduction to Athletic Training and Sports Medicine"
+    },
+    "High School Articulation (Dublin)- Introduction to Health Careers": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "unified_title": "Orientation to Health Care"
+    },
+    "High School Articulation (Dublin)- Medical Occuptations": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:10:18.256143+00:00",
+      "unified_title": "Medical Terminology"
+    },
+    "High School Articulation (Emerald)- Criminal Justice/ CSI": {
+      "issuing_agency": "Emerald High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:10:19.549569+00:00",
+      "unified_title": "Criminal Investigation"
+    },
+    "High School Articulation (Emerald)- Emergency Medical Response": {
+      "issuing_agency": "Emerald High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:21:09.548978+00:00",
+      "unified_title": "Emergency Medical Responder"
+    },
+    "High School Articulation (Emerald)- Introduction to Athletic Training": {
+      "issuing_agency": "Emerald High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "unified_title": "Introduction to Athletic Training and Sports Medicine"
+    },
     "High School Articulation- Criminal Justice/Crime Scene Investigation": {
       "issuing_agency": "Local High School",
       "reviewed_by": "cer-procedure-high-school-rop@bot",
@@ -11035,6 +11137,66 @@
       "reviewed_by": "cer-procedure-high-school-rop@bot",
       "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
       "unified_title": "Principles & Practices of Teaching Young Children"
+    },
+    "High School Articulations (Amador Valley)- Medical Occupations": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:21:29.22708+00:00",
+      "unified_title": "Medical Terminology"
+    },
+    "High School Articulations (Amador Valley)- Nursing Careers": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-19T00:06:07.404756+00:00",
+      "unified_title": "Basic Medical Terminology"
+    },
+    "High School Articulations (Amador Valley)- Principles of Engineering": {
+      "issuing_agency": "Amador Valley High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:22:36.79484+00:00",
+      "unified_title": "Introduction to Engineering"
+    },
+    "High School Articulations (Dublin)- Criminal Justice/ Crime Scene Investigation": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:22:40.095271+00:00",
+      "unified_title": "Introduction to Criminal Justice"
+    },
+    "High School Articulations (Dublin)- Developmental Psychology of Children I": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-19T00:06:27.186584+00:00",
+      "unified_title": "Developmental Psychology of Children 1"
+    },
+    "High School Articulations (Dublin)- Developmental Psychology of Children II": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-19T00:06:38.865745+00:00",
+      "unified_title": "Early Childhood Principles and Practices"
+    },
+    "High School Articulations (Dublin)- Emergency Medical Response": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:22:51.298645+00:00",
+      "unified_title": "Emergency Medical Responder"
+    },
+    "High School Articulations (Dublin)- Nursing Careers": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-19T00:06:53.153088+00:00",
+      "unified_title": "Basic Medical Terminology"
+    },
+    "High School Articulations (Dublin)- Principles of Engineering": {
+      "issuing_agency": "Dublin High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:23:13.721904+00:00",
+      "unified_title": "Introduction to Engineering"
+    },
+    "High School Articulations (Emerald) -Principles of Engineering": {
+      "issuing_agency": "Emerald High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:23:16.078899+00:00",
+      "unified_title": "Introduction to Engineering"
     },
     "History of Fashion - Credit by Exam (FASH 31 )": {
       "issuing_agency": "California Community Colleges",
@@ -11757,6 +11919,30 @@
       "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB World Religions SL"
     },
+    "IBEW Local 332 Inside Wireman Apprenticeship Journeyperson": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:47:25.78496+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Journeyperson"
+    },
+    "IBEW Local 332 Residential Wireman Apprenticeship Journeyperson": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:47:47.121451+00:00",
+      "unified_title": "IBEW Residential Wireman Apprenticeship — Journeyperson"
+    },
+    "IBEW Local 332 Residential and Inside Wireman Apprenticeship Journeyperson": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:47:40.31313+00:00",
+      "unified_title": "IBEW Residential and Inside Wireman Apprenticeship — Journeyperson"
+    },
+    "IBEW Local 6 Inside Wireman Apprenticeship Journeyperson": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:47:51.572687+00:00",
+      "unified_title": "IBEW Electrician Apprenticeship — Journeyperson"
+    },
     "IBEW- Inside Wireman, Apprenticeship Year 1": {
       "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -12182,16 +12368,34 @@
       "reviewed_at": "2026-11-13T12:45:24.324605+00:00",
       "unified_title": "Smog Inspector - Level 1 Training"
     },
+    "Industry Training Evidence for BUSN 55": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:24:52.300708+00:00",
+      "unified_title": "Business Mathematics"
+    },
     "Industry Training Evidence for BUSN 65": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-11-13T12:45:44.565728+00:00",
       "unified_title": "Federal Income Tax Accounting"
     },
+    "Industry Training Evidence for CIS 59C": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:25:52.256564+00:00",
+      "unified_title": "Introduction to Computer Information Systems"
+    },
     "Industry Training Evidence for CIS 66": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-11-13T12:47:22.144057+00:00",
+      "unified_title": "Introduction to Computer Networking"
+    },
+    "Industry Training Evidence for CNT 51": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:26:17.948104+00:00",
       "unified_title": "Introduction to Computer Networking"
     },
     "Industry Training Evidence for CNT 52": {
@@ -12200,17 +12404,47 @@
       "reviewed_at": "2026-11-13T12:47:52.212376+00:00",
       "unified_title": "Introduction to Computer Networking"
     },
+    "Industry Training Evidence for CNT 55": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:26:29.830843+00:00",
+      "unified_title": "Introduction to Computer Networking"
+    },
+    "Industry Training Evidence for CNT 56": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:26:36.175719+00:00",
+      "unified_title": "Introduction to Computer Networking"
+    },
     "Industry Training Evidence for CNT 68": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-11-13T12:48:50.386223+00:00",
       "unified_title": "Introduction to Digital Forensics"
     },
+    "Industry Training Evidence for CNT 69": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:27:00.892374+00:00",
+      "unified_title": "Introduction to Computer Networking"
+    },
     "Industry Training Evidence for CNT 7285": {
       "issuing_agency": "CompTIA",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-11-13T20:21:36.517944+00:00",
       "unified_title": "CompTIA Cloud+"
+    },
+    "Industry Training Evidence for CNT 7401": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:27:29.415066+00:00",
+      "unified_title": "Red Hat Linux Administration I"
+    },
+    "Industry Training Evidence for CS 41": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T23:42:08.719621+00:00",
+      "unified_title": "Red Hat Linux Administration I"
     },
     "Industry Training Evidence for EMS 10": {
       "issuing_agency": "California Community Colleges",
@@ -13234,9 +13468,10 @@
     },
     "JOURN 18C News Production III": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
-      "unified_title": "News Production III"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:44:11.961+00:00",
+      "unified_title": "News Production 3",
+      "supersedes": "News Production III"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS": {
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
@@ -15187,6 +15422,12 @@
       "reviewed_at": "2026-11-13T20:36:40.425887+00:00",
       "unified_title": "Sheet Metal Service Technician Apprenticeship — Journeyperson"
     },
+    "Northern California Sound and Communication JATC Installer Apprenticeship Journeyperson": {
+      "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:48:30.90216+00:00",
+      "unified_title": "IBEW Sound and Communication Systems Installer Apprenticeship"
+    },
     "Nursing Care of Children and Families": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -15536,6 +15777,108 @@
       "reviewed_at": "2026-07-07T20:44:41.942297+00:00",
       "unified_title": "Carpenters Apprenticeship — Pile Driver"
     },
+    "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:49:30.920715+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Service Technician Apprenticeship — Journeyperson"
+    },
+    "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 1": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:49:46.045472+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 1"
+    },
+    "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 2": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:49:49.671243+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 2"
+    },
+    "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 3": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:49:52.174731+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 3"
+    },
+    "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 4": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:49:53.390294+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 4"
+    },
+    "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 5": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:49:54.89628+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 5"
+    },
+    "Pipe Trades Training Center Plumbing Technology Apprenticeship Journeyperson": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:05.437931+00:00",
+      "unified_title": "UA Plumbing Technology Apprenticeship — Journeyperson"
+    },
+    "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 1": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:06.764576+00:00",
+      "unified_title": "UA Plumbing Technology Apprenticeship — Year 1"
+    },
+    "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 2": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:07.578137+00:00",
+      "unified_title": "UA Plumbing Technology Apprenticeship — Year 2"
+    },
+    "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 3": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:08.242898+00:00",
+      "unified_title": "UA Plumbing Technology Apprenticeship — Year 3"
+    },
+    "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 4": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:08.867913+00:00",
+      "unified_title": "UA Plumbing Technology Apprenticeship — Year 4"
+    },
+    "Pipe Trades Training Center Residential Plumbing Apprenticeship Journeyperson": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:14.925826+00:00",
+      "unified_title": "UA Residential Plumbing Apprenticeship — Journeyperson"
+    },
+    "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Journeyperson": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:28.426969+00:00",
+      "unified_title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Journeyperson"
+    },
+    "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 1": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:30.509538+00:00",
+      "unified_title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 1"
+    },
+    "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 2": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:31.191663+00:00",
+      "unified_title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 2"
+    },
+    "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 3": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:31.798538+00:00",
+      "unified_title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 3"
+    },
+    "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 4": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:50:32.419264+00:00",
+      "unified_title": "UA Steamfitter and Pipefitter Apprenticeship — Year 4"
+    },
     "Pipe Welding-Credit by Exam": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -15808,6 +16151,12 @@
       "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "Business Communication"
     },
+    "Portfolio Evidence for BUSN 55": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "unified_title": "Business Mathematics"
+    },
     "Portfolio Evidence for BUSN 56": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -15832,11 +16181,23 @@
       "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "Federal Income Tax Accounting"
     },
+    "Portfolio Evidence for BUSN 87": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "unified_title": "Organizational Management and Leadership"
+    },
     "Portfolio Evidence for BUSN 88": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "Human Resources Management"
+    },
+    "Portfolio Evidence for CIS 59C": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-18T16:47:32.11346+00:00",
+      "unified_title": "Web Programming - JavaScript"
     },
     "Portfolio Evidence for ENG 19A": {
       "issuing_agency": "California Community Colleges",
@@ -16793,6 +17154,12 @@
       "unified_title": "Semiconductor Circuits 2",
       "supersedes": "Semiconductor Circuits II"
     },
+    "Semiconductor Processing Apprenticeship Certificate": {
+      "issuing_agency": "California Division of Apprenticeship Standards (DAS)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:00.30758+00:00",
+      "unified_title": "Semiconductor Processing Apprenticeship Certificate"
+    },
     "ServeSafe Managerial Certification and resume for CUL 003": {
       "unified_title": "ServSafe Food Protection Manager Certification",
       "reviewed_by": "map@rccd.edu",
@@ -16845,6 +17212,36 @@
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T17:05:13.532849+00:00",
       "unified_title": "SMQ-10 Basics of Architectural Sheet Metal"
+    },
+    "Sheet Metal Local 104 Air Conditioning Mechanic Apprenticeship Journeyperson": {
+      "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:10.109564+00:00",
+      "unified_title": "Sheet Metal Air Conditioning Mechanic Apprenticeship — Journeyperson"
+    },
+    "Sheet Metal Local 104 Sheet Metal Air Conditioning Specialist Career Certificate": {
+      "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:13.897341+00:00",
+      "unified_title": "Sheet Metal Air Conditioning Specialist Career Certificate"
+    },
+    "Sheet Metal Local 104 Sheet Metal Building Trades Apprenticeship Journeyperson": {
+      "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:18.454855+00:00",
+      "unified_title": "Sheet Metal Apprenticeship — Journeyperson"
+    },
+    "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Certificate of Achievement": {
+      "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:21.305749+00:00",
+      "unified_title": "Test, Adjust and Balance (TAB) Technician Apprenticeship — Journeyperson"
+    },
+    "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Journeyperson": {
+      "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:22.313867+00:00",
+      "unified_title": "Test, Adjust and Balance (TAB) Technician Apprenticeship — Journeyperson"
     },
     "Shielded Metal Arc Welding (SMAW) Certification": {
       "issuing_agency": "American Welding Society (AWS)",
@@ -17157,11 +17554,65 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:23.177609+00:00",
+      "unified_title": "UA Refrigeration Service Technician Apprenticeship — Journeyperson"
+    },
+    "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 1": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:24.500738+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 1"
+    },
+    "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 2": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:25.44944+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 2"
+    },
+    "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 3": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:26.461386+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 3"
+    },
+    "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 4": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:29.024741+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 4"
+    },
+    "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 5": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:30.821902+00:00",
+      "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 5"
+    },
     "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson": {
       "issuing_agency": "United Association (UA)",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
       "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson"
+    },
+    "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:40.987304+00:00",
+      "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Year 1"
+    },
+    "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 2": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:48.70799+00:00",
+      "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Level 2"
+    },
+    "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 3": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-18T15:51:55.548896+00:00",
+      "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Level 3"
     },
     "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson": {
       "issuing_agency": "United Association (UA)",

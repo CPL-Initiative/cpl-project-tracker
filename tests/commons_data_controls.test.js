@@ -300,8 +300,8 @@ function audit(x, where, bad, seen) {
       const b4 = load("#commons/data/college/" + c5.D.slugOf(lc) + "/cause/" + lk);
       await b4.M.boot(); await settle();
       const bn = b4.d.querySelector('#cdd-panel [data-census-basis="live"]');
-      check("causes 4b ⭐ (review of #3261, finding 1): the cause box names its basis, the gap census's live read, and its list equals its count",
-        bn && /live read/.test(txt(bn)) && b4.d.querySelectorAll("#cdd-panel ul.cdd-progs > li").length === causesOf(lc)[lk], [lc.name, lk]);
+      check("causes 4b ⭐ (review of #3261, finding 1): the cause box names its basis, the gap census's database count, and its list equals its count",
+        bn && /database count/.test(txt(bn)) && b4.d.querySelectorAll("#cdd-panel ul.cdd-progs > li").length === causesOf(lc)[lk], [lc.name, lk]);
     }
     const f4 = load("#commons/data/college/ridge-college/cause/places_none", FIX);
     await f4.M.boot(); await settle();
@@ -380,7 +380,7 @@ function audit(x, where, bad, seen) {
     const sv = load("#commons/data/slos");
     await sv.M.boot(); await settle();
     const rows = Array.from(sv.d.querySelectorAll("#cdd-slos-table tbody tr")).map((r) => r.getAttribute("data-slos-row")).sort();
-    check("slos 1 ⭐: Colleges with collected SLOs lists exactly the colleges the live read holds SLOs or objectives for, and says how many are not read",
+    check("slos 1 ⭐: Colleges with collected SLOs lists exactly the colleges the database count holds SLOs or objectives for, and says how many are not read",
       DATA.live.state !== "read" || (rows.length === held.length && held.length > 0 && JSON.stringify(rows) === JSON.stringify(held.map((c) => c.name).sort())
         && new RegExp("The other " + (DATA.colleges.length - held.length) + " colleges have not been read yet").test(txt(sv.d.querySelector("#cdd-slos-sum")))),
       [rows.length, held.length]);
@@ -417,9 +417,9 @@ function audit(x, where, bad, seen) {
     const lt2 = load("#commons/data");
     await lt2.M.boot(); await settle();
     const headCols = Array.from(lt2.d.querySelectorAll("#cdd-colleges thead th")).map(txt);
-    const cuRow = cu ? lt2.d.querySelector('#cdd-colleges tr[data-college="Cuesta College"] td[data-label="SLOs and objectives"]') : null;
+    const cuRow = cu ? lt2.d.querySelector('#cdd-colleges tr[data-college="Cuesta College"] td[data-label="Student learning outcomes (SLOs) and objectives"]') : null;
     check("slos 5: the list carries an SLOs and objectives column, two bars in one cell",
-      headCols.some((h) => /^SLOs and objectives/.test(h)) && (!cuRow || (cuRow.querySelectorAll(".cdd-pr").length === 2 && /SLOs/.test(txt(cuRow)) && /Objectives/.test(txt(cuRow)))), headCols);
+      headCols.some((h) => /^Student learning outcomes \(SLOs\) and objectives/.test(h)) && (!cuRow || (cuRow.querySelectorAll(".cdd-pr").length === 2 && /SLOs/.test(txt(cuRow)) && /Objectives/.test(txt(cuRow)))), headCols);
     check("width: the view uses the window's full width", /\.cmn-wrap\.cdd \{ max-width:none; \}/.test(lt2.D.CSS));
     check("bars: an empty bar keeps a 3:1 edge (its track carries a --cmn-muted border); the outcome words wrap as a flex row",
       /\.cdd-meter \{[^}]*border:1px solid var\(--cmn-muted\)/.test(lt2.D.CSS) && /\.cdd-dsword \{[^}]*display:flex; flex-wrap:wrap/.test(lt2.D.CSS));
@@ -441,7 +441,7 @@ function audit(x, where, bad, seen) {
     await b1.M.boot(); await settle();
     const tileT = txt(b1.d.querySelector('.cdd-tiles [data-tile="Programs still to pass"]'));
     check("bases 2 ⭐: the statewide Programs still to pass card equals the census's gap, and names its base",
-      cen.basis !== "live" || (new RegExp("^" + Number(cen.gap).toLocaleString("en-US") + "(?![0-9,])").test(tileT) && /gap census's live read/.test(tileT)), tileT.slice(0, 160));
+      cen.basis !== "live" || (new RegExp("^" + Number(cen.gap).toLocaleString("en-US") + "(?![0-9,])").test(tileT) && /gap census's database count/.test(tileT)), tileT.slice(0, 160));
     const offRow = [];
     onLive.forEach((c) => {
       const td = b1.d.querySelector('#cdd-colleges tr[data-id="' + c.id + '"] td[data-label="Still to pass"]');
@@ -452,11 +452,11 @@ function audit(x, where, bad, seen) {
     b1.d.querySelector('[data-expand="' + sk.id + '"]').click(); await settle();
     const card = txt(b1.d.querySelector("#cdd-more-" + sk.id + ' [data-ds="pr"]'));
     check("bases 4 ⭐: the opened card's Still to pass names the live base and equals the causes' sum; the capture's own figures keep their label",
-      new RegExp("Still to pass \\(gap census live read\\)\\s*" + Number(sk.census_gap).toLocaleString("en-US")).test(card) && /Listed by the capture/.test(card), card.slice(0, 300));
+      new RegExp("Still to pass \\(gap census database count\\)\\s*" + Number(sk.census_gap).toLocaleString("en-US")).test(card) && /Listed by the capture/.test(card), card.slice(0, 300));
     const pk = load("#commons/data/college/" + b1.D.slugOf(sk) + "/program/00000");
     await pk.M.boot(); await settle();
-    check("bases 5: a program the live list does not hold says the live read does not list it as still to pass",
-      /live read does not list program 00000 as still to pass/.test(txt(pk.d.querySelector("#cdd-panel"))));
+    check("bases 5: a program the live list does not hold says the database count does not list it as still to pass",
+      /database count does not list program 00000 as still to pass/.test(txt(pk.d.querySelector("#cdd-panel"))));
     /* COBIx on #3261: inherited names are no view, pane or filter, and the address is repaired. */
     const pc = load("#commons/data/constructor");
     await pc.M.boot(); await settle();
@@ -485,7 +485,7 @@ function audit(x, where, bad, seen) {
       outcomes: { slo_courses: 50, slo_courses_on_active: 40, objective_courses: 9, objective_courses_on_active: 7 } } } };
     const oo = load("#commons/data", ob);
     await oo.M.boot(); await settle();
-    const cell = oo.d.querySelector('#cdd-colleges tr[data-id="9001"] td[data-label="SLOs and objectives"]');
+    const cell = oo.d.querySelector('#cdd-colleges tr[data-id="9001"] td[data-label="Student learning outcomes (SLOs) and objectives"]');
     check("guards 3: a college flagged as printing no objectives still shows its live objective meter when the live count is above 0",
       cell && cell.querySelectorAll(".cdd-pr").length === 2 && !cell.querySelector("[data-noobj]"), cell && txt(cell));
   }

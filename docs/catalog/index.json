@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 590,
+   "count": 592,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4068,6 +4068,28 @@
      "title": "A second PR stacked on a just-merged branch can squash to an empty commit \u2014 verify main",
      "type": "methodology",
      "updated": "2026-06-23"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [
+      "kb/_program_requirements_units_rules.py",
+      "unified_courses_members.js",
+      "tests/course_outcomes_objectives_standing_test.py",
+      ".github/workflows/course-outcomes-load.yml",
+      "docs/reference/scheduled_sessions.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-self-check-must-see-what-the-rule-writes.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "self-check",
+      "data-quality",
+      "rule-10",
+      "program-requirements-harvest"
+     ],
+     "title": "A self-check must see what the rule writes",
+     "type": "methodology",
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-06-02",
@@ -9824,6 +9846,26 @@
      "updated": "2026-08-13"
     },
     {
+     "created": "2026-11-18",
+     "governs": [
+      "kb/_build_dependency_map.py",
+      "scripts/check_generated.sh",
+      "kb/migrations/.apply"
+     ],
+     "path": "docs/kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "merging",
+      "generated-files",
+      "ci",
+      "conductor"
+     ],
+     "title": "When every merge conflicts a generated file, land the work as one wave pull request, not a chain",
+     "type": "methodology",
+     "updated": "2026-11-18"
+    },
+    {
      "created": "2026-08-28",
      "governs": [
       "cobi_identity.js",
@@ -13962,7 +14004,7 @@
      "governs": [
       "kb/_row_audit.py",
       "kb/row_audit/latest.json",
-      "kb/row_audit/2026-05-23.md",
+      "kb/row_audit/<date>.md",
       "unified_courses.js",
       "excel_to_dashboard.py",
       ".github/workflows/daily-dashboard.yml"
@@ -15256,7 +15298,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 6 (S648 onward)",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-11-12",
@@ -16060,7 +16102,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 76,
+   "count": 77,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16528,6 +16570,22 @@
      "updated": "2026-08-28"
     },
     {
+     "created": "2026-11-18",
+     "governs": [],
+     "path": "docs/reference/lanes/repo-size.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "repo-size",
+      "receipts",
+      "infrastructure"
+     ],
+     "title": "Repo size \u2014 what lives in the tree, what lives in the bucket, and the limits \u2014 lane state",
+     "type": null,
+     "updated": "2026-11-18"
+    },
+    {
      "created": "2026-08-28",
      "governs": [],
      "path": "docs/reference/lanes/reviewer-session-lifetime.md",
@@ -16593,7 +16651,7 @@
      ],
      "title": "Sierra's page redesign (after america.gov) \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-28",
@@ -16751,7 +16809,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-15"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-29",
@@ -17048,7 +17106,7 @@
      ],
      "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
      "type": null,
-     "updated": "2026-11-15"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-09-09",
@@ -17164,8 +17222,50 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 639,
+   "count": 642,
    "docs": [
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 683,
+     "path": "docs/session_683_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 683 handoff (from SkyVireo, S682)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 682,
+     "path": "docs/session_682_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 682 handoff (from SkyGrebe, S681)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 681,
+     "path": "docs/session_681_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 681 handoff (from SkyPhoebe, S680)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
     {
      "created": "2026-11-18",
      "governs": [],
@@ -27884,5 +27984,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1511
+ "total": 1517
 }

@@ -1472,7 +1472,16 @@ check("each pin's words are what the filed capture opened on, on the pinned page
 check("each pinned page is the page the filed record was extracted from",
       all(as_read(os.path.join(_CR_DIR, "records", cn + ".json"))["source_url"].endswith("#page=%d" % v["page"])
           for cn, v in _cr_pins.items()))
-check("no other college names pdf_pages", [k for k, v in R.load_steps().items() if v.get("pdf_pages")] == [_CR])
+# S680: Lassen pins the five transfer degrees its set step waits on, each to the page main files it from
+# (tests/program_requirements_lassen_calgetc.test.js checks the words on the pages).
+_LS_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "lassen")
+_ls_pins = (R.load_steps().get("Lassen College") or {}).get("pdf_pages") or {}
+check("no college but Cosumnes River and Lassen names pdf_pages",
+      sorted(k for k, v in R.load_steps().items() if v.get("pdf_pages")) == sorted([_CR, "Lassen College"]))
+check("each Lassen pin is the page its filed record was extracted from",
+      sorted(_ls_pins) == ["31132", "33263", "33729", "33730", "42300"]
+      and all(as_read(os.path.join(_LS_DIR, "records", cn + ".json"))["source_url"].endswith("#page=%d" % v["page"])
+              for cn, v in _ls_pins.items()))
 _fx = json.load(open(os.path.join(ROOT, "tests", "fixtures", "program_requirements_cosumnes_pinned_pages.json")))
 _fx_pages = [""] * _fx["pages_total"]
 for _k, _v in _fx["pages"].items():

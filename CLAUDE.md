@@ -491,8 +491,8 @@ first day.** Do the remembering for them.
   impacts, don't guess:**
   [`docs/reference/dependency_map.md`](docs/reference/dependency_map.md) maps
   every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
-  scripts, workflows and public surfaces — derived from the code
-  (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
+  scripts, workflows and public surfaces — derived from the code. One job on
+  `main` rebuilds it after each merge; PRs no longer commit it (Sam, 2026-11-18).
 - **RUN the checkpoint; do not ask for it (Sam, 2026-09-09).** *"you don't need
   permission to checkpoint. Just run it when needed and we can refresh it if we
   stay in the session for more work."* Fire on Rule 9's commit count, never
@@ -808,6 +808,7 @@ stays here.
 | **The CPL Commons** | Every common reference under one tracking system; the first view a card per reference. | ✅ live · open work — [lane state](docs/reference/lanes/commons.md) |
 | **Common Subjects Reference (CSR)** | One Common SUBJ per MQ discipline, the key every M-ID is minted under; the Commons' dash with a card per step, a procedure per card, a daily scan. | ✅ live · open work — [lane state](docs/reference/lanes/common-subjects-reference.md) |
 | **CTDL and the partner exchange** | Credential Engine and WestEd plug into COBI through one exchange; COBI's records carry their CTDL identity. | 🔨 seed drafted, waits on Malone · open work — [lane state](docs/reference/lanes/ctdl-partner-exchange.md) |
+| **Repo size** | Bulky generated data out of the tree into the private bucket, and a size limit on every PR. | 🔨 in progress · open work — [lane state](docs/reference/lanes/repo-size.md) |
 | Parked | Seven parked phases with no lane file (1b, PR-D, 2, 4, 5, 6, 7). | parked — [the rows](docs/reference/mid_lifecycle.md#parked-roadmap-rows) |
 
 

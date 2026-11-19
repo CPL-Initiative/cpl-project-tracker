@@ -70,6 +70,16 @@ Opportunity record pair in one step, and opens Start a piece for any other entit
 are in `docs/library_lessons.md`, *Moved from the lane (S467)*, verbatim; Sam's 2026-10-05 rulings, his calls 7 to 9
 and the Drive filing history moved there with them.
 
+✅ **New pieces and the drafter's data (Sam with Ashley Mooney, 2026-11-18; #3527, #3532; DECIDED
+`d-library-duplicate-is-a-warning`, `d-library-start-drafts-and-reads-cobi-data`).** A duplicate is a warning with three
+choices, and only on a matching working title and occasion. Start drafts at once on the piece's card. A no-change draft
+offers Change what you asked. The drafter reads any COBI table or published file (`cobi_data.mjs`); a student count
+under 10 reads `<10`; buttons open the college's MAP landing page (`reference_data.mjs`). Deployed (cpl-chat-deploy runs
+107, 108). The full record: [`library_lessons.md`](../../library_lessons.md), *Moved from the lane (S683 Library side
+job)*. **Waiting on MAP:** `?Exhibit=<MAP ID>` on the landing-page template (Sam asked Malone and Pedro); when it ships,
+`landingButton` is the one line that changes. **NEXT:** Ashley's first new pieces through Start; read the logged usage
+of a tool-reading draft (`library-revise-draft usage`) to see what one costs.
+
 ✅ **Version 22 and the List** (2026-11-05): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (tender-fermi, 2026-11-10)*.
 
 ## How a file reaches the SharePoint folder (Sam, Open Asks Sheet 49, 2026-10-08)
@@ -122,10 +132,6 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   not-yet-evaluated credentials carry a CPL-AI course match chip by folded title and issuer (Certiport's Swift row held
   out; never from CIP alone). **NEXT:** COBIx's next step, scoring the 185 unreviewed credentials with issuer skill
   areas against harvested outcomes in `kb/_build_adopt_align.py` (a chip only for a clear standout at 0.20).
-- **Sam's test of pictures passed (2026-11-11):** request `71931018` drafted with its five MAP screens under their
-  steps, he ruled *"the addresses are OK"* on slide 4's two screens, and it published as Version 1 with
-  `img/1.webp` to `img/5.webp` (library-publish run 42940831782; read back live). **NEXT 0:** his List publicly, and
-  the link from the public funding dashboard that his brief asks for.
 - **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: List publicly
   is Sam's press, linked from the funding dashboard's 75% JST condition.
 - **Publish now and one queue check (S642, S643, S648):** shipped and deployed; detail moved verbatim to
@@ -135,11 +141,6 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A
   picture once published stays in the repo's history. A PowerPoint is saved as PDF first. Tests: `library_pictures`
   (44). The full record: lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
-- **Changes after the first draft (Sam, 2026-11-11, S635):** *"there doesn't appear to be any way to add new instructions
-  when I click edit in the library side bar"*. A new piece's ready draft offered Open, Publish it and Draft it again, and
-  no box. Now **Ask for changes** opens the card's box; `library-revise-draft` edits that draft (`regen.based_on_draft`,
-  `new_piece` kept for the publisher), the piece's documents stay on the record, the card counts Draft 2, 3, and
-  *Start over from the brief* sits in the box (it replaces Draft it again). Test: `library_any_file` E2.
 - **Owed to COBIx on the next Library change:** the `style=` entity pattern in either quote or unquoted
   (`apply_edits.mjs` RISKS, `library_publish.py` _RISKS); `tests/pages_size_guard.test.js` walking `kb/` minus
   `kb/receipts`; Leave it out on a published picture opens a request that replaces the public copy (the file stays

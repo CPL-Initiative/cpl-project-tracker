@@ -160,7 +160,11 @@ jobs:
                     unified_courses_aligned.js \
                     credential_reference_data.js \
                     kb/row_audit/latest.json kb/row_audit/*.md \
+                    kb/coci_retired_cards.json kb/coci_inactive_cards.json kb/coci_not_applicable.json \
                     exports/unified_courses.xlsx
+            # The reports the prune moved to the bucket leave with their index entries (#3476 step 5).
+            # Quoted pathspecs, so git stages a tracked report's removal, which a shell glob cannot name.
+            git add -A -- 'kb/row_audit/*.md' 'kb/receipts/index/row_audit_*.json' 2>/dev/null || true
             # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
             # course join artifact the cards read; regenerated in Step 4a1b above.
             git add cpl_pathways_membership_data.js 2>/dev/null || true

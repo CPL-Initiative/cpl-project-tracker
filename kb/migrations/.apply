@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-18_s681_course_outcomes_chabot_rollback.sql
-name=s681_course_outcomes_chabot_rollback
+file=kb/migrations/2026-11-18_s683_cpl_memory_rows.sql
+name=s683_cpl_memory_rows

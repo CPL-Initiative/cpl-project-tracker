@@ -1,0 +1,121 @@
+Course Outline
+AB 117 - Print Reading and Interpretation
+Discipline Placement: Auto Body Technology or Automotive Technology or Engineering Technology (Masters Required) or Machine Tool Technology
+Department
+Industrial Technology
+Prefix AB
+Course Number 117
+Full (Catalog) Course Title Print Reading and Interpretation
+Banner Course Title Pring Reading & Interpretation
+Units and Hours
+	Hours per Week	Total Hours per Term
+(Based on 16-18 Weeks)	Total Units
+Lecture	3.0	48.0 - 54.0	 
+Lab	-		 
+Outside-of-Class Hours			 
+Total Student Learning Hours	3.0	48.0 - 54.0	3.0
+ 	 	 	 
+Total Contact Hours	3.0	48.0 - 54.0	 
+Number of Times Course may be Repeated
+Grading Method Letter Grade or Pass/No Pass
+
+Prerequisites, Corequisites, and Advisories
+
+Any course requiring another course as a requisite must demonstrate the need through one of several methods.
+Validation, when required, at a minimum must include cont ent review.
+For pre- and co requisites, the course outline must document entry skills without which student success is highly unlikely.
+For advisories, the course outline must document entry skills which are either necessary but are likely to be obtained by other means or, while not necessary, would broaden or enhance student learning but are not fundamental to student success.
+Be aware that requisites may have implications for articulated courses.
+
+New communication or computational requisites must complete content review with statistical analysis. Requisite may be approved while data is gathered.
+
+Enter one Requisite at a time. In order to submit this proposal you must attach your Content Review Form on the Attached Files.
+
+Requisites
+Prerequisite: None
+Corequisite: None
+Limitations on Enrollment: None
+Advisories: None
+If you have any issues with this page Consider the following:
+If the Requisite Course dropdown is not populated then make sure that requisites courses have been added to the Requisites tab.
+If there are no Current Course Objectives listed make sure that objectives have been entered on the Objectives tab.
+If there are no Requisite Course Objectives listed make sure that:
+A Requisite Course has been selected at the top of the page.
+The Requisite Course that has been selected has objectives entered on its Objectives tab.
+Entrance Skills
+Entrance Skills Other (Legacy)
+Catalog Description
+An introductory class where students will learn to read engineering drawings, evaluate print specifications, recognize orthographic views and visualize the actual objects or projects shown in the illustration. This course is not open to students who are enrolled in or have received credit for AB 330, AT 330, ET 330, MT 330, or AT/ET/MT 117.
+
+Indicate all major topics to be covered.
+
+Course Content
+Lecture Content
+Introduction to Print Reading, Terminology, CADD, Print features
+Communicating with a Sketch
+Scales and Precision Measurement
+Reading Letters & Lines on a Drawing
+Reading Multi-View & Auxiliary View Drawings
+Manufacturing Materials and Processes
+Reading Dimensions
+Reading Drawings with Fasteners and Springs
+Reading Welding Drawings & Weld Symbols
+Sections, Revolutions, & Breaks
+Reading Geometric Tolerancing
+Reading Cam, Gear, & Bearing Drawings
+Reading Working Drawings
+Lab Content
+Course Objectives should reflect Bloom's Taxonomy.
+
+Blooms Taxonomy
+
+
+Course Objectives
+read and interpret various engineering drawings by completing numerous assignments.
+identify surface finish marks, tolerance, basic architecture, and welding symbols and be able to explain their meanings.
+use an engineering drawing accompanying specifications and materials lists to solve industrial questions, to complete a project, or solve a related problem.
+use related handbooks, codes, and other references as they may be needed to solve a print reading question.
+Methods of Instruction
+Lecture
+Detail
+Methods of Instruction Description:
+Detail
+Lecture presentations and classroom discussions, drawing hand outs followed by lecture/group discussions.
+
+Assignment examples, if provided, should reflect coverage of all objectives and course content. Assignments can include supplemental reading materials beyond the required texts. The initiator should give the basis for grading, and relate assignments to skills and abilities listed in the objectives.
+
+Assignments
+Outside Assignments
+Assignment Text
+Maintain notebook on weekly class topics, weekly homework assignments on class topics.
+
+Student grades will be based on multiple measures of student performance. Instructors will develop appropriate classroom evaluation methods and procedures for calculating student grades, including the final semester grade. The following list displays typical evaluation methods appropriate for this course. The actual evaluation methods used in a particular classroom and section will be listed in the instructor's syllabus.
+
+Methods of Evaluation
+Weekly homework assignments, in-class topics, comprehensive final exam graded for accuracy and content.
+
+Main texts should be dated within five years. Textbooks and supplemental material should relate directly to the content of the course outline. All textbooks should be at the appropriate college reading level.
+
+Texts and Other Instructional Materials
+Representative Text(s)
+Text Type
+Author Madsen, David A
+Title Print Reading for Engineering and Manufacturing Technology
+Edition 3
+Year 2013
+Rationale
+Text Other
+Other Materials
+Student Learning Outcomes
+AB117 SLO1 - Read and interpret various engineering drawings by completing numerous assignments
+AB117 SLO2 - Identify surface finish marks, tolerance, basic architecture, and welding symbols and be able to explain their meanings.
+AB117 SLO3 - Use an engineering drawing accompanying specifications and materials lists to solve industrial questions, to complete a project, or solve a related problem.
+AB117 SLO4 - Use related handbooks, codes, and other references as they may be needed to solve a print reading question.
+Distance Education
+Review Dates
+Board of Trustees
+04/20/1999
+Last Outline Revision
+02/27/2014
+State Approval
+02/06/2015

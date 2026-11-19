@@ -15,13 +15,18 @@ run() {
   printf '%-46s ' "$1"
   if out=$(eval "$2" 2>&1); then echo "ok"; else echo "STALE"; echo "$out" | tail -4 | sed 's/^/    /'; fail=1; fi
 }
+# A report line that never fails the gate. The dependency map is its one user (Sam, 2026-11-18).
+report() {
+  printf '%-46s ' "$1"
+  if eval "$2" >/dev/null 2>&1; then echo "ok"; else echo "$3"; fi
+}
 run "docs index + catalogs"   "python3 kb/_build_docs_index.py --check"
-# ⚠️ `git add` YOUR NEW FILES BEFORE REBUILDING THE DEPENDENCY MAP.
-# _build_dependency_map.py enumerates the tree with `git ls-files`, so a file
-# that is still untracked is INVISIBLE to it: the rebuild looks clean, this
-# gate says ok, and CI fails one round later once the commit makes the file
-# tracked and its read edges appear. Cost two CI rounds on 2026-09-18.
-run "dependency map"          "python3 kb/_build_dependency_map.py --check"
+# The dependency map is a report line, never a failure (Sam, 2026-11-18: "No dependency-map rebuild inside PRs.
+# kb/dependency_map.json and docs/reference/dependency_map.md are rebuilt by one job on main after each merge.").
+# .github/workflows/dependency-map.yml rebuilds it, with cobi_admin_surface.js, after each push to main. A PR
+# leaves both map files as main has them; do not run the builder or commit its output.
+report "dependency map"       "python3 kb/_build_dependency_map.py --check" \
+  "behind this tree (notice only: the main job rebuilds it after the merge; do not commit it)"
 run "re-mint blast radius"    "python3 kb/_build_remint_blast_radius.py --check"
 run "docs corpus lint"        "python3 tests/docs_audit_test.py"
 run "docs index builder"      "python3 tests/docs_index_build_test.py"
@@ -57,6 +62,9 @@ run "CDC data dictionary"      "python3 kb/_build_cdc_sharing.py --check"
 # kb/credential_title_moves.json, which the one resolver writes, so a new rename snapshot stales it here.
 run "credential title moves"    "python3 kb/credential_aliases.py --check"
 run "slash-to-and title plan"    "python3 kb/slash_titles.py --check"
+# The daily spend file's sessions key is read from the handoffs' Spend: lines (S680): a checkpoint that adds one
+# stales it here, so the session's dollars land with its handoff instead of waiting a day for the census job.
+run "daily spend, sessions"       "python3 kb/_build_spend_daily.py --sessions-only --check"
 run "credential title resolver, one copy" "python3 tests/credential_title_resolver_single_source_test.py >/dev/null"
 # ⚠️ AND IT MISSED ONE MORE, WHICH SHIPPED (2026-09-18, #1618). prototype/skyview.html
 # is assembled by prototype/build_ccr_atlas.py, and step 4d2 of daily-dashboard.yml
@@ -88,10 +96,10 @@ fi
 echo
 if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"
-  echo "  python3 kb/_build_docs_index.py && python3 kb/_build_dependency_map.py \\"
+  echo "  python3 kb/_build_docs_index.py \\"
   echo "    && python3 kb/_build_cobi_admin_surface.py && python3 kb/_build_sierra_rule_defaults.py \\"
   echo "    && python3 fact-sheet/_build_statewide_catalog.py && python3 kb/credential_aliases.py \\"
-  echo "    && python3 kb/slash_titles.py"
+  echo "    && python3 kb/slash_titles.py && python3 kb/_build_spend_daily.py --sessions-only"
   exit 1
 fi
-echo "All generated files are current."
+echo "All generated files are current (the dependency map is the main job's to rebuild)."

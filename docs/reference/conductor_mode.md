@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-15
+updated: 2026-11-18
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -18,6 +18,14 @@ obsidian-folder: cpl-project-tracker/reference
 > page.** The queue runs as it did before 2026-11-11: one Opus 5.5 session working the queue itself and
 > collaborating with COBIx on its PRs ([`scheduled_sessions`](scheduled_sessions.md), [`cobix_pr_loop`](cobix_pr_loop.md)). The page stays as the record of what was tried; its merge-gate and
 > review lessons still hold wherever another doc cites them.
+
+> **Back for collection only (Sam, 2026-11-17, the CPL Queue routine's stored prompt).** *"Conductor mode is back for
+> collection only."* · *"Two lanes, never on the same college"* · *"Spend caps: about $750 a day for everything. $10k
+> and $30k are running totals for the whole job, not daily limits."* · *"No new UI, tooling or governance work in
+> conductor runs."* · *"Stop a review after two rounds and send what is left to Sam or COBIx."* The routine's form sets
+> the conductor; workers run on the worker model Sam's cost rules name. A session Sam starts by hand still works the queue itself. S680 (2026-11-18,
+> 06:12Z) was the first such night and the first of a two-night conductor comparison (`cpl_memory`
+> `sam-conductor-back-for-collection-only-2026-11-17`).
 
 Session 638 (SkyTamarind) ran this way first. A session Sam names the conductor runs from this page; it restates no
 doctrine, so each step names the doc that holds the rule.
@@ -177,6 +185,82 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S681, and what worked
+
+The CPL Queue routine's 10:12Z firing of 2026-11-18 (SkyGrebe), collection only, the second firing of S680's night: no
+`list_sessions`, `get_trigger`, `set_session_tags` or `get_session`. It found S680's checkpoint #3487 open, read handoff
+681 from the pull request's head, took the queue when #3487 merged at 10:14Z and declared with draft #3506 at about
+10:20Z, the college split in it before any worker started.
+
+- **The stop rule fired** (the brief on #3358: *"Stop if a rollback undoes over 1% of a day's rows"*). Chabot's load
+  posted 1,013 rows that were its objectives filed as SLOs (17.7% of the UTC day's 5,735 outline rows). At 11:06Z the
+  conductor started no new read, load or apply; reviews finished on their branches; the rollback went ahead
+  (`kb/migrations/2026-11-18_s681_course_outcomes_chabot_rollback.sql`, guarded to exactly 1,013 rows, migrate run
+  44292682081); Sam was told at about 11:20Z with the default (`d-stop-rule-fired-s681`).
+- **A load ran without the test that would have stopped it.** The objectives standing test's checks 8 and 9 were red on
+  the read's branch; a runner's commit gets no CI, and step 11 pushed `.load` when the slices filed complete. Run the
+  test on the branch before `.load` ([`scheduled_sessions`](scheduled_sessions.md) step 11); the workflow guard is a
+  plain session's.
+- **A self-check that scores a total cannot see what a rule writes per course.** A4 was 74 of 74 on totals while it
+  wrote wrong per-course units (KB note `methodology-a-self-check-must-see-what-the-rule-writes`).
+- **Second readers earned their cost three times:** A4's per-course units before the write; 33 of #3502's 54 records
+  whose label the records do not support; the independent confirmation of Chabot's mislabel and of the exact rollback.
+- **A lane split that names a college for a run not yet started** blocked a corrective write until amended at 10:51Z.
+  Name a college in the lane only while a run is in flight there (`d-lane-names-only-colleges-in-flight-s681`).
+- **Runner saturation again:** about a dozen pushes in 45 minutes queued the rollback's migrate run for 11 minutes
+  behind CI (`p-superseded-ci-holds-the-migrate-queue-s681`). Cancelling CI on branches the wave carries helped. Batch a
+  worker's pushes, and expect a migrate run to queue behind CI.
+- **One wave again** (#3509: five branches, one merge of `main`, one CI); a carried branch that turns out wrong leaves
+  by `git revert -m 1` of its merge (Chabot, `bf9703bb`), since the wave lands as a squash.
+- **Reading S680's handoff from its open checkpoint pull request** (`get_file_contents` at `refs/pull/3487/head`) let
+  the firing start the minute that checkpoint merged. The rule stays end in one line: a session Sam runs by hand may
+  checkpoint and keep working, and whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's to
+  rule (`q-wait-for-a-routine-firings-checkpoint-s681`).
+- **`cd` into a worktree moved the conductor's working directory again.** `git -C` only.
+- **Worker worktrees under `.claude/worktrees/` are about 2.3 GB each;** six took the disk from 27 GB free to 13 GB.
+  Remove a finished worker's worktree once its head is pushed.
+- **Workers reached 290,000 to 330,000 tokens on a two-round task;** resuming each with one fix list worked better than
+  handing over.
+
+## What went wrong in S680, and what worked
+
+The CPL Queue routine's 06:12Z firing of 2026-11-18 (SkyPhoebe), collection only: no `list_sessions`, `get_trigger`,
+`set_session_tags` or `get_session`; declared with draft #3487 at 06:22Z, the college split written before any worker
+started.
+
+- **Runner saturation.** Eight outcome runs plus CI on a dozen PRs saturated the runner pool; each CI took 25 to 40
+  minutes. A read is free in dollars and not in runner slots: cap concurrent reads when PRs must merge the same night
+  (`p-runner-pool-saturation-s680`).
+- **Every merge conflicted every other code PR** on the generated files. A chain (each branch holding the one before
+  it) landed one link, #3496 (`71548415`); #3498 then conflicted, since the squash on `main` and a branch holding the
+  same change plus more edit the same hunks, and each further link needed a merge of `main`, a new head and a new CI
+  run. What worked: ONE wave PR, #3504, carrying #3498 with #3501, #3490, #3503, #3502 and the outcome PRs #3387, #3493,
+  #3488, #3489 and #3421: one merge of `main`, one CI run, one squash, each carried PR closed with a pointer. KB note:
+  `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`.
+- **Chaining carried #3496's `.apply` line onto other branches,** and each push re-triggered its full-row apply (runs
+  44269433074 and 44272782139); the count guard refused both ("the UPDATE matched 0 rows, the plan names 39"). A branch
+  that merges another branch keeps `main`'s `.apply` text; every apply file stays guarded and idempotent
+  (`p-apply-line-carried-by-merge-s680`).
+- **Reviews past two rounds go to COBIx, not blocking:** on #3496 (08:41Z) A5's self-check (69 right, 31 wrong of 123)
+  does not support its five applied rows, so they stay applied with a lower confidence and A5 runs on nothing further
+  until the 31 are listed by cause (`d-a5-five-rows-stay-applied-s680`); on #3490 (08:49Z) the weekly run's failure
+  reached nobody, fixed in the wave.
+- **The Commons data rebuild.** A PR that changes what the Commons data reads must rebuild `commons_data.json`;
+  `scripts/check_generated.sh` does not run that check and CI's `lints` does, and three PRs went red.
+- **Second readers earned their cost:** an apply that wrote checks while the committed blocks had changed, a count guard
+  that was only a comment, an apply that would write rows a person checked, four mislabeled gap rows, two pins that
+  pulled a neighbor's list. The pre-read caught MiraCosta 21976.
+- **A `cd` into a worker's worktree moved the conductor's working directory.** Use `git -C`, and a tiny sparse worktree
+  for the `.apply` commits, pushed with `HEAD:<branch>` from a detached head.
+- **Sparse checkout before spawning:** `git sparse-checkout set --no-cone '/*'
+  '!/kb/receipts/program_requirement_records_display_*'` in the main checkout; worktrees inherit it, 2.5 GB instead of
+  4.85.
+- **`supabase-migrate` runs one at a time:** push one `.apply` change, read its receipt, then the next.
+- **A worker's context fills near 350,000 to 400,000 tokens;** hand its PRs to a fresh worker with the fix list.
+- **A brief that says "push, tell me, then wait" makes a worker poll in the background;** it can only report by ending
+  its turn. Brief it to report and end.
+- **Re-tasking a worker before a run finished wasted cycles;** read the run's status first.
+
 ## What went wrong in S655, and what worked
 
 - The 06:12Z firing of 2026-11-15 (SkyCurlew) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 04:20Z) and `main` at handoff 655's closing note (`e6e906ec`) were the one-writer check, the daily run was dispatched at 06:14Z, and this PR declared the queue at 06:16Z.
@@ -264,9 +348,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
 
 - A PR that conflicts with `main` starts no `pull_request` run: `get_check_runs` reads 0 and the state is `dirty`. Merge
   `main` into it first (`p-dirty-pr-starts-no-ci-s653b`).
-- Every PR that adds a test or a workflow rebuilds the dependency map, so each merge put the other open PRs in conflict:
-  five PRs cost four extra merges of `main`. Merge in sequence and bring only the next one up to `main`
-  (`p-dependency-map-conflicts-serial-merges-s653b`).
+- Every PR that adds a test or a workflow rebuilt the dependency map, so each merge put the other open PRs in conflict:
+  five PRs cost four extra merges of `main` (`p-dependency-map-conflicts-serial-merges-s653b`). Since Sam's rule of
+  2026-11-18 a PR no longer commits the map: `dependency-map.yml` rebuilds it on `main` after each merge
+  ([`sam_rulings`](sam_rulings.md)).
 - `list_events` on a busy session returned about 40,000 tokens of subagent events and thinking signatures. Ask for few
   events, or read the saved file by script (`p-list-events-floods-context-s653b`).
 - Worked: one `send_message` before any write settled the split with the older session in a minute
