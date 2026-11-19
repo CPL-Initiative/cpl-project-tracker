@@ -24,19 +24,20 @@ export const DEPENDENCY_MAP = SITE + "kb/dependency_map.json";
 const PEOPLE_WORD = /^(?:students?|learners?|veterans?|enrollees?|enrollment|enrolled|recipients?|completers?|participants?|people|persons?|apprentices?|graduates?|awardees?|headcount|unduplicated)$/i;
 const AWARD_WORD = /^(?:awards?|awarded)$/i;
 const TALLY_WORD = /^(?:n|num|number|count|total|served)$/i;
-const NOT_COUNT_WORD = /^(?:units?|credits?|hours?|hrs|grade|level|step|year|version|id|code|type|name|email|status|max|min|rate|pct|percent)$/i;
+const NOT_COUNT_WORD = /^(?:units?|credits?|hours?|hrs|grades?|levels?|steps?|years?|version|ids?|code|type|name|email|status|max|min|rate|pct|percent|date|on|at|is|has|flag)$/i;
 export function isCountKey(k) {
   if (!k) return false;
   const w = String(k).split(/[_\s-]+|(?<=[a-z])(?=[A-Z])/).filter(Boolean);
   if (w.some((x) => NOT_COUNT_WORD.test(x))) return false;
   if (w.some((x) => PEOPLE_WORD.test(x))) return true;
   // Awards are counted only as a tally: awards, award_count, n_awarded; never max_award or award_units.
-  return w.some((x) => AWARD_WORD.test(x)) && (w.length === 1 || w.some((x) => TALLY_WORD.test(x)));
+  // A plural "awards" is a tally by itself (cpl_awards); a singular "award" needs one (award_count, never max_award).
+  return w.some((x) => /^awards$/i.test(x)) || (w.some((x) => AWARD_WORD.test(x)) && (w.length === 1 || w.some((x) => TALLY_WORD.test(x))));
 }
 // The words a count of students sits next to in prose.
 const COUNT_NOUN = "(?:students?|learners?|veterans?|service ?members?|enrollees?|recipients?|completers?|participants?|people|persons?|individuals?|apprentices?|graduates?)";
 // A word before the digit that makes it a label or a rate ("Grade 9 students", "1 in 5"), never a count.
-const NOT_BEFORE = "(?:grade|step|course|version|level|year|page|part|phase|module|chapter|week|day|unit|semester|term|quarter|session|in|per|top|tier|section|room|lesson|cohort)";
+const NOT_BEFORE = "(?:(?:grade|step|course|version|level|year|page|part|phase|module|chapter|week|day|unit|semester|term|quarter|session|top|tier|section|room|lesson|cohort)s?|in|per)";
 // A word after the digit that makes it units, time or a rate, never a count of people.
 const NOT_AFTER = "(?:units?|credits?|hours?|courses?|steps?|grades?|semesters?|terms?|years?|weeks?|days?|months?|in|for|to|per|percent|%)";
 
@@ -60,18 +61,26 @@ export function suppressCounts(v, key) {
 // "3 units for veterans"), and never after a word that makes it a label or a rate ("Grade 9 students", "1 in 5").
 const ADJ = "(?:(?!" + NOT_AFTER + "\\b)[A-Za-z-]+\\s+)?";
 const NOUN_AHEAD = "(?=\\s+" + ADJ + COUNT_NOUN + "\\b)";
-// "3 of 5 students", "3 out of 7 veterans": both numbers count people, so each small one reads <10.
-const FRACTION = new RegExp("(^|[^\\d.,$<A-Za-z])(\\d+)(\\s+(?:of|out of)\\s+)(\\d+)" + NOUN_AHEAD, "gi");
-// "2-3 students", "2 or 3 students", "2 to 3 students": a range of small counts reads <10.
-const RANGE = new RegExp("(^|[^\\d.,$<A-Za-z])([1-9])(?:\\s*[-\u2013]\\s*|\\s+(?:or|to)\\s+)([1-9])" + NOUN_AHEAD, "gi");
+// "3 of 5 students", "3 of the 5 students": both numbers count people, so each small one reads <10; never after a
+// label ("Course 2 of 5 students").
+const LABEL_BEHIND = "(?<!\\b" + NOT_BEFORE + "\\s)";
+const FRACTION = new RegExp("(^|[^\\d.,$<A-Za-z])" + LABEL_BEHIND + "(\\d+)(\\s+(?:of|out of)\\s+(?:the\\s+)?)(\\d+)" + NOUN_AHEAD, "gi");
+// "2-3 students", "2 or 3 students", "between 2 and 5 students": a range of small counts reads <10; never after a label ("Grades 2-3").
+const RANGE = new RegExp("(^|[^\\d.,$<A-Za-z])" + LABEL_BEHIND + "([1-9])(?:\\s*[-\u2013]\\s*|\\s+(?:or|to|and)\\s+)([1-9])" + NOUN_AHEAD, "gi");
 const PROSE = new RegExp("(^|[^\\d.,$<A-Za-z-])(?<!\\b" + NOT_BEFORE + "\\s)([1-9])(\\s+" + ADJ + COUNT_NOUN + ")\\b", "gi");
 const small = (d) => (/^[1-9]$/.test(d) ? "<10" : d);
+// A labeled number and its span ("Course 2 of 5", "Grades 2-3", "Year 1 or 2") is held aside while counts are matched,
+// so neither of its numbers reads as a count (COBIx on #3527).
+const LABELED = new RegExp("\\b(?:(?:grade|step|course|version|level|year|page|part|phase|module|chapter|week|day|unit|semester|term|quarter|session|top|tier|section|room|lesson|cohort)s?)\\s+\\d+(?:(?:\\s*[-\u2013]\\s*|\\s+(?:of|out of|or|to|and)\\s+(?:the\\s+)?)\\d+)?", "gi");
 export function suppressText(t) {
-  return String(t)
+  const held = [];
+  const out = String(t)
     .replace(/("([^"\\]{0,60})"\s*:\s*)"?([1-9])"?(?![\d.])/g, (m, pre, key) => (isCountKey(key) ? pre + '"<10"' : m))
+    .replace(LABELED, (m) => "\u0000" + (held.push(m) - 1) + "\u0001")
     .replace(FRACTION, (m, a, x, mid, y) => a + small(x) + mid + small(y))
     .replace(RANGE, (m, a) => a + "<10")
     .replace(PROSE, (m, a, d, rest) => a + "<10" + rest);
+  return out.replace(/\u0000(\d+)\u0001/g, (m, i) => held[Number(i)]);
 }
 
 // On a page: the text between tags, and the attributes a reader hears or sees (aria-label, title, alt); never a
