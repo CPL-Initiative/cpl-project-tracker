@@ -395,7 +395,7 @@ function cellText(li, title) {
     const c = load({ fetch: withMarks([]) });
     await c.M.boot();
     check("todo 5: signed out, the to-do says Mark done takes a reviewer sign-in, not the team phrase, and offers no Mark done",
-      /Mark done takes a reviewer sign-in, the emailed link; the team phrase does not carry it/.test(txt(c.d.querySelector(".cmn-band"))) && !c.d.querySelector(".cmn-todo-det"));
+      /Mark done opens once you sign in as a reviewer, from the sign-in link emailed to you\./.test(txt(c.d.querySelector(".cmn-band"))) && !c.d.querySelector(".cmn-todo-det"));
     // Sam's recording, 2026-11-06: the header read Signed in, the card read a lapsed token as signed out. A reviewer
     // whose token lapsed and can renew keeps Mark done; the save renews the token first.
     const lapsed = load({ fetch: withMarks([]) });

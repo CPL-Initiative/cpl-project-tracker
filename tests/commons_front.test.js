@@ -26,6 +26,7 @@ function txt(el) { return (el && el.textContent || "").replace(/\s+/g, " ").trim
 const PROGRESS = fs.readFileSync("commons_progress.js", "utf8");
 const COMMONS = fs.readFileSync("commons.js", "utf8");
 const SRC = fs.readFileSync("commons_front.js", "utf8");
+const PRG = fs.readFileSync("commons_program_records.js", "utf8");
 const TABS = fs.readFileSync("tabs.js", "utf8");
 const FL = fs.readFileSync("first_light.js", "utf8");
 const FILES = {
@@ -49,7 +50,7 @@ function load(hash, opts) {
     if (!hit) return Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
     return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(hit))) });
   };
-  [PROGRESS, SRC, COMMONS].forEach((s) => { const t = w.document.createElement("script"); t.textContent = s; w.document.body.appendChild(t); });
+  [PROGRESS, PRG, SRC, COMMONS].forEach((s) => { const t = w.document.createElement("script"); t.textContent = s; w.document.body.appendChild(t); });
   return { w, d: w.document, M: w.CPL_COMMONS, F: w.CPL_COMMONS_FRONT, store: o };
 }
 const tick = () => new Promise((r) => setTimeout(r, 0));

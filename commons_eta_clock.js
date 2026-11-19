@@ -254,14 +254,12 @@
 
   /* Everything the clock draws that comes from a file; null where the headline series cannot date a pace. */
   function base(M, pr, sk) {
-    var H = headlineSeries(pr), days = Object.keys(H).sort(), last = days[days.length - 1];
-    if (!last) return null;
-    var asOf = dnum(last), h = H[last], at = function (n) { var x = H[dstr(n)]; return x ? x.complete : null; };
-    /* A missed build day must not blank a pace (COBIx on #3371): each window ends on the closest earlier day that has a
-       count, and its pace divides by the days it really spans. */
-    var back = function (n) { for (var k = n; k >= n - 7; k--) { if (at(k) != null) return k; } return null; };
-    var d7 = back(asOf - 7), d14 = d7 == null ? null : back(d7 - 7);
-    var c7 = d7 == null ? null : at(d7), c14 = d14 == null ? null : at(d14);
+    /* The program-records figure is the Commons front page's, computed once (commons_program_records.js, #3566): the
+       target leaves out the COCI-only programs, and a missed build day never blanks a pace (COBIx on #3371). */
+    var PRG = window.CPL_PROGRAM_RECORDS, R = PRG ? PRG.compute(pr) : null;
+    if (!R) return null;
+    var H = headlineSeries(pr), asOf = R.lastN, at = function (n) { var x = H[dstr(n)]; return x ? x.complete : null; };
+    var d7 = R.fromN, d14 = R.prevFromN;
     var live = (M && M.live) || {}, st = live.statewide || {}, oc = st.outcomes || {}, pc = st.program_courses || {};
     var universe = pc.active_courses || 0;
     var bySkill = skillsByDay(sk), bars = [];
@@ -270,9 +268,9 @@
       bars.push({ day: n, programs: t != null && y != null ? Math.max(0, t - y) : null, skills: s.skills, creds: s.creds });
     }
     return {
-      asOf: asOf, written: (pr && pr.written_at) || "", active: h.active, complete: h.complete, remaining: Math.max(0, h.active - h.complete),
-      pace: { soonest: c7 == null ? null : h.complete - c7, latest: c7 == null || c14 == null ? null : c7 - c14 },
-      span: { soonest: d7 == null ? null : asOf - d7, latest: d14 == null ? null : d7 - d14 },
+      asOf: asOf, written: (pr && pr.written_at) || "", active: R.active, complete: R.complete, remaining: R.left, target: R.target, cociOnly: R.cociOnly,
+      pace: { soonest: R.gain, latest: R.prevGain },
+      span: { soonest: R.span, latest: R.prevSpan },
       /* The days each window averages, so the page can say them (COBIx's S678 list, item 1c). */
       window: { soonest: d7 == null ? null : [d7, asOf], latest: d14 == null ? null : [d14, d7] },
       slo: { have: oc.slo_courses_on_active || 0, universe: universe }, obj: { have: oc.objective_courses_on_active || 0, universe: universe },
@@ -747,7 +745,7 @@
     sec.appendChild(sw);
     var pr = function (m) { return paceWords(B, m); };
     sec.appendChild(el("p", { cls: "eta-callout" }, [el("strong", { text: "Projections, not partner commitments. " }), S.phase === "1"
-      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the daily count of Active programs complete (" + fmt(B.complete) + " of " + fmt(B.active) + " complete): Soonest uses " + paceDays(B, "soonest") + " (" + pr("soonest") + "), Latest " + paceDays(B, "latest") + " (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their rates are fixed estimates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night), not measured, and their dates are estimates. Colleges and partners should not read a lever as a promise."
+      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the daily count of Active programs complete (" + fmt(B.complete) + " of " + fmt(B.active) + " complete), toward every Active program in its college's current catalog (about " + fmt(B.target) + ", leaving out the " + fmt(B.cociOnly) + " found only in the Chancellor's Office curriculum inventory, the same target the CPL Commons page uses): Soonest uses " + paceDays(B, "soonest") + " (" + pr("soonest") + "), Latest " + paceDays(B, "latest") + " (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their rates are fixed estimates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night), not measured, and their dates are estimates. Colleges and partners should not read a lever as a promise."
       : "Phase 2 and Phase 3 are dated only when a partner or college feed has a start date in the registry. None of those feeds is dated today, so this phase's completion is not dated."]));
     var grid = el("div", { cls: "eta-grid" });
     function cell(h, v, d, key) { grid.appendChild(el("div", { cls: "eta-cell", "data-cell": key }, [el("h4", { text: h }), el("p", { cls: "eta-v", text: v }), d ? el("p", { cls: "eta-note", text: d }) : null])); }

@@ -291,7 +291,17 @@
     return { v: fmt(S0.gap), l: "Programs still to pass", open: open,
       d: "Of the " + fmt(S0.programs) + " programs listed in the committed captures, those that do not yet pass the machine checks." };
   }
+  /* The program-records figure the CPL Commons front page shows (#3566: "#collect shows the same program-records date
+     and count as Commons"): the headline's count, computed once in commons_program_records.js from the file the ETA
+     clock reads. null when either is not loaded, and the tile then reads the live table as before. */
+  function programRecords() {
+    var PRG = window.CPL_PROGRAM_RECORDS, E = window.CPL_COMMONS_ETA, pr = E && E.ST ? E.ST.pr : null;
+    return PRG && pr ? PRG.compute(pr) : null;
+  }
   function activeTile(M, conf) {
+    var R = programRecords();
+    if (R) return { v: fmt(R.complete) + " of " + fmt(R.active), l: "Active programs complete", conf: conf,
+      d: "Of the " + fmt(R.active) + " Active programs in COCI, those with a complete program record on " + when(R.day) + ", the daily count the CPL Commons page and the ETA clock read." };
     var st = (M.live || {}).statewide || {}, pr = st.programs || {}, rc = st.records || {};
     if (!liveRead(M)) return { v: "TBA", l: "Active programs complete", d: liveReason(M), tba: true };
     if (pr.active == null || rc.active_passing == null) return { v: "TBA", l: "Active programs complete", d: "The database count holds no statewide count of Active programs.", tba: true };
@@ -383,7 +393,9 @@
      (a card on the list's page). A module that fails to load leaves the page as it was. */
   /* commons_eta_clock.js (#3360) adds the ETA clock at #collect/eta; while it is a preview it lists the view in
      "unlisted", so the address opens it and the menu does not show it. */
-  var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"], ["commons_data_integrations.js", "CPL_CDC_INTEGRATIONS"], ["commons_eta_clock.js", "CPL_COMMONS_ETA"]];
+  /* commons_program_records.js first: the ETA clock and the Active programs tile read the program-records figure it
+     computes, the same one the CPL Commons front page shows (#3566). It registers no view. */
+  var EXT_FILES = [["commons_program_records.js", "CPL_PROGRAM_RECORDS"], ["commons_data_sharing.js", "CPL_CDC_SHARING"], ["commons_data_integrations.js", "CPL_CDC_INTEGRATIONS"], ["commons_eta_clock.js", "CPL_COMMONS_ETA"]];
   function exts() { return Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT.filter(Boolean) : []; }
   /* What a module may call: go to a view, and open a pane of its own in the side panel (the ETA clock's card, #3360). */
   function extHost() { return { go: go, openPane: function (pane, fromEl) { openPane(null, pane, fromEl); } }; }

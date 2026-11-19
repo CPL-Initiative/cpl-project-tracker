@@ -40,7 +40,7 @@ const FILES = { "kb/status/commons_data.json": CD };
 ["kb/status/program-requirements.json", "kb/reference/industry_credential_skills.json", "kb/status/commons.json", "kb/status/cdc_integrations.json",
   "kb/reference/model_spend_daily.json", "kb/status/session_spend.json", "kb/reference/cre_weights.json", "kb/status/cdc_sharing.json"]
   .forEach((p) => { try { FILES[p] = J(p); } catch (e) { /* a file the page reads as TBA */ } });
-const MODS = ["commons_data_sharing.js", "commons_data_integrations.js", "commons_eta_clock.js", "commons_data.js"].map((f) => fs.readFileSync(f, "utf8"));
+const MODS = ["commons_program_records.js", "commons_data_sharing.js", "commons_data_integrations.js", "commons_eta_clock.js", "commons_data.js"].map((f) => fs.readFileSync(f, "utf8"));
 
 function dom(hash) {
   const d = new JSDOM('<!doctype html><html><head></head><body><div id="root"></div></body></html>', { url: "https://example.org/index.html" + hash, runScripts: "dangerously" });

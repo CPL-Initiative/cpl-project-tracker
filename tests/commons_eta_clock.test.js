@@ -3,7 +3,7 @@
 // WHAT THIS GUARDS:
 //   (1) ⭐ the pace math reproduces the approved mock's worked dates from the same inputs (a fixture headline:
 //       14,617 of 20,282 complete, 974 in 7 days, 101 in the 7 before; 13,293 SLOs and 2,880 objectives of 88,736):
-//       Soonest December 26, 2026 (programs set it), Latest December 13, 2027; SLOs December 15, 2026 and April 2,
+//       Soonest December 21, 2026 (programs set it), Latest October 25, 2027 (both on the Commons' target, #3566); SLOs December 15, 2026 and April 2,
 //       2027; objectives December 19, 2026. A rewrite of the model that moves a date fails here.
 //   (2) ⭐ the lever rules: a factor applies from its start day, several multiply, capped at 8 times; a connection
 //       that starts after the work is done changes nothing and the clock says so; the Unblock chips' factors come
@@ -28,6 +28,7 @@ const SRC = fs.readFileSync("commons_data.js", "utf8");
 const SHARE = fs.readFileSync("commons_data_sharing.js", "utf8");
 const INTEG = fs.readFileSync("commons_data_integrations.js", "utf8");
 const ETA = fs.readFileSync("commons_eta_clock.js", "utf8");
+const PRG = fs.readFileSync("commons_program_records.js", "utf8");
 const REAL = JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8"));
 
 /* A fixture headline with the mock's inputs: complete on Nov 1, Nov 8 and Nov 15, 2026, one day apart before them. */
@@ -60,7 +61,7 @@ function dom(hash, files) {
     return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(JSON.parse(JSON.stringify(hit))) });
   };
   w.scrollTo = function () {};
-  w.eval(SHARE); w.eval(INTEG); w.eval(ETA); w.eval(SRC);
+  w.eval(PRG); w.eval(SHARE); w.eval(INTEG); w.eval(ETA); w.eval(SRC);
   return { w, root: w.document.getElementById("root"), calls };
 }
 function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new Promise((r) => w.setTimeout(r, 0))); }
@@ -81,15 +82,17 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   const day = (n) => n == null ? null : new Date(n * 86400000).toISOString().slice(0, 10);
 
   // (1) the mock's worked dates.
-  check("(1) the base reads the headline: 14,617 of 20,282, 5,665 remaining, 974 in 7 days, 101 in the 7 before",
-    B.complete === 14617 && B.remaining === 5665 && B.pace.soonest === 974 && B.pace.latest === 101, JSON.stringify(B.pace));
+  /* #3566: the remaining work is the CPL Commons page's target, every Active program in a current catalog (20,282 less the
+     713 COCI-only programs), so #collect and the Commons read one date: 19,569 - 14,617 = 4,952. */
+  check("(1) the base reads the headline: 14,617 of 20,282, 4,952 left toward the Commons' target, 974 in 7 days, 101 in the 7 before",
+    B.complete === 14617 && B.remaining === 4952 && B.target === 19569 && B.pace.soonest === 974 && B.pace.latest === 101, JSON.stringify(B.pace));
   const S = E.freshState(), P = E.phase1(B, S, null);
   const part = (X, id) => day(X.parts.filter((p) => p.id === id)[0].now.day);
-  check("(1) ⭐ Soonest: programs December 26, 2026 set the Phase 1 date; SLOs December 15 and objectives December 19 (estimates)",
-    day(P.day) === "2026-12-26" && !P.est && part(P, "slo") === "2026-12-15" && part(P, "objectives") === "2026-12-19", day(P.day));
+  check("(1) ⭐ Soonest: programs December 21, 2026 set the Phase 1 date; SLOs December 15 and objectives December 19 (estimates)",
+    day(P.day) === "2026-12-21" && !P.est && part(P, "slo") === "2026-12-15" && part(P, "objectives") === "2026-12-19", day(P.day));
   const L = E.freshState(); L.mode = "latest";
   const Q = E.phase1(B, L, null);
-  check("(1) ⭐ Latest: December 13, 2027 (programs at 101 a week), SLOs April 2, 2027", day(Q.day) === "2027-12-13" && part(Q, "slo") === "2027-04-02", day(Q.day));
+  check("(1) ⭐ Latest: October 25, 2027 (programs at 101 a week), SLOs April 2, 2027", day(Q.day) === "2027-10-25" && part(Q, "slo") === "2027-04-02", day(Q.day));
   check("(1) the skills bars count each credential's skills on its harvest day", B.bars.filter((b) => day(b.day) === "2026-11-13")[0].skills === 4);
 
   // (2) the lever rules.
@@ -100,7 +103,7 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   check("(2) a connection that starts after the work is done changes nothing", !E.finish(100, 10, [{ start: asOf + 30, factor: 3 }], asOf).moved);
   const C = E.freshState(); C.on.coci = true;
   const Pc = E.phase1(B, C, null);
-  check("(2) ⭐ COCI from July 2027 leaves Soonest where it was and the clock says why", day(Pc.day) === "2026-12-26" && !Pc.moved && /start after this date/.test(Pc.late || ""));
+  check("(2) ⭐ COCI from July 2027 leaves Soonest where it was and the clock says why", day(Pc.day) === "2026-12-21" && !Pc.moved && /start after this date/.test(Pc.late || ""));
   C.mode = "latest";
   check("(2) the same COCI moves Latest, a projection", E.phase1(B, C, null).moved && E.phase1(B, C, null).day < Q.day);
   check("(2) ⭐ the Unblock catalogs factor is the gap over the gap less its stall: 5,751 / (5,751 - 705) = 1.14", E.stalledFactor(5751, 705) === 1.14 &&
@@ -124,7 +127,7 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   check("(3) ⭐ the College Collections ETA band tops College Data Collection's list (Sam, S661)", txt(V.root.querySelector("[data-eta-top] #eta-band-h")) === "College Collections ETA" &&
     V.root.querySelector("[data-eta-top]").compareDocumentPosition(V.root.querySelector("#cdd-stamp")) & 4);
   const tile = V.root.querySelector('[data-pane-tile="clock"]');
-  check("(3) ⭐ a card among the figures carries the Phase 1 date and opens the full clock in the side panel", tile && /December 26, 2026/.test(txt(tile)));
+  check("(3) ⭐ a card among the figures carries the Phase 1 date and opens the full clock in the side panel", tile && /December 21, 2026/.test(txt(tile)));
   tile.click();
   check("(3) the side panel draws the full clock at its own address, with a new-tab link to the clock's page", D.address() === "collect/clock" && !!V.root.querySelector("#cdd-panel [data-eta-pane] #eta-full") &&
     V.root.querySelector('#cdd-panel a[data-newtab]').getAttribute("href") === "#collect/eta");
@@ -132,7 +135,7 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   check("(3) ⭐ the band and the panel share one set of picks: COMIS on in the band is on in the panel's levers",
     V.root.querySelector('#cdd-panel [data-eta="lever-comis"]').getAttribute("aria-pressed") === "true");
   V.root.querySelector('[data-eta-top] [data-eta="eta-mode"]').click();
-  check("(3) the card's figure follows the picks (COBIx on #3373)", !/December 26, 2026/.test(txt(V.root.querySelector('[data-pane-tile="clock"]'))) && /latest pace, projected/.test(txt(V.root.querySelector('[data-pane-tile="clock"]'))));
+  check("(3) the card's figure follows the picks (COBIx on #3373)", !/December 21, 2026/.test(txt(V.root.querySelector('[data-pane-tile="clock"]'))) && /latest pace, projected/.test(txt(V.root.querySelector('[data-pane-tile="clock"]'))));
   V.root.querySelector('[data-eta-top] [data-eta="eta-mode"]').click();
   V.root.querySelector('[data-eta-top] [data-eta="comis"]').click();
   V.root.querySelector('#cdd-panel [data-eta="lever-comis"]').click();
@@ -184,7 +187,7 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   D.render(V.root, M, "eta", new Date());
   const root = () => V.root.querySelector("[data-eta-view]");
   check("(3) the clock's own page: its heading and the big date", txt(root().querySelector("#eta-band-h")) === "College Collections ETA" &&
-    txt(root().querySelector("[data-eta-date]")) === "December 26, 2026");
+    txt(root().querySelector("[data-eta-date]")) === "December 21, 2026");
 
   // (4) Sam, in session, S661: the controls that move the date are chips; the words that open or reset stay words.
   const pills = ["eta-mode", "tworeads", "costs", "college", "unblockcatalogs", "comis", "sis", "lever-coci"];
@@ -193,7 +196,7 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   // (4) the controls.
   const q = (s) => root().querySelector(s);
   q('[data-eta="eta-mode"]').click();
-  check("(4) Latest flips the big date and the word", txt(q("[data-eta-date]")) === "December 13, 2027" && txt(q('[data-eta="eta-mode"]')) === "Latest");
+  check("(4) Latest flips the big date and the word", txt(q("[data-eta-date]")) === "October 25, 2027" && txt(q('[data-eta="eta-mode"]')) === "Latest");
   q('[data-eta="coci"]').click();
   check("(4) ⭐ a connection on is pressed, opens its assumptions, and the moved date says it is a projection",
     q('[data-eta="coci"]').getAttribute("aria-pressed") === "true" && !!q('[data-eta-pop="coci"]') && /projection, not a partner commitment/.test(txt(q("[data-eta-projected]"))));
@@ -248,7 +251,7 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   check("(4) cost per CRE says TBA, never a number, before the database count carries its load counts", (function () {
     const M2 = D.model(Object.assign({}, M0, { live: Object.assign({}, M0.live, { by_day: undefined }) })); const s = E.strip(M2);
     return s && /Cost per CRE: TBA \(the daily load counts arrive with the next database count\)/.test(txt(s.querySelector("[data-eta-cre]"))); })());
-  check("(4) the strip for the Commons tab carries both dates and opens the clock", (function () { const s = E.strip(M); return s && /December 26, 2026/.test(txt(s)) && s.querySelector('a[href="#collect/eta"]'); })());
+  check("(4) the strip for the Commons tab carries both dates and opens the clock", (function () { const s = E.strip(M); return s && /December 21, 2026/.test(txt(s)) && s.querySelector('a[href="#collect/eta"]'); })());
 
   // (5) a missing file, and the static rules.
   const X = dom("#collect/eta", { "kb/status/commons_data.json": M0 });
