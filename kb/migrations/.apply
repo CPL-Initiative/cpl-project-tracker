@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-19_s687_display_gate_read.sql
-name=s687_display_gate_read
+file=kb/migrations/2026-11-19_s687_display_close_read.sql
+name=s687_display_close_read
