@@ -1,0 +1,2612 @@
+{
+ "run": "44535418752",
+ "programs": [
+  {
+   "control_number": "04542",
+   "title": "Art",
+   "award": "A.A. Degree",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=308",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=311",
+   "cost_usd": 0.09984,
+   "usage": {
+    "input_tokens": 11451,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 11451,
+      "output_tokens": 2702,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2702,
+    "output_tokens_details": {
+     "thinking_tokens": 467
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 41,
+     "listed": 44,
+     "share": 0.932,
+     "missing": [
+      "ARTPH360",
+      "ARTPH370",
+      "ARTPH376"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ARTHC1100",
+       "listed": "ARTH302",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      32.0,
+      33.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 43,
+     "listed": 44,
+     "share": 0.977,
+     "missing": [
+      "ARTH302"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "ARTHC1100"
+     ],
+     "flagged": [
+      "ARTHC1100"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      32.0,
+      33.0
+     ],
+     "stated": [
+      32.0,
+      33.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 8,
+     "courses": 0,
+     "count": 8,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 12,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "07200",
+   "title": "Marketing",
+   "award": "A.A. Degree",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745",
+   "cost_usd": 0.10696,
+   "usage": {
+    "input_tokens": 11756,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 11756,
+      "output_tokens": 2997,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2997,
+    "output_tokens_details": {
+     "thinking_tokens": 1035
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 26,
+     "listed": 26,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2002",
+       "listed": "ECON302",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      41.0,
+      42.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       41.0,
+       42.0
+      ],
+      "stated": [
+       41.0,
+       42.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 11,
+     "courses": 0,
+     "count": 11,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 26,
+     "listed": 26,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2002",
+       "listed": "ECON302",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      41.0,
+      42.0
+     ],
+     "stated": [
+      41.0,
+      42.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 11,
+     "courses": 0,
+     "count": 11,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "12181",
+   "title": "CIS: Microcomputer Applications",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=438",
+   "cost_usd": 0.05791,
+   "usage": {
+    "input_tokens": 8407,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 8407,
+      "output_tokens": 1214,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1214,
+    "output_tokens_details": {
+     "thinking_tokens": 303
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 14,
+     "share": 0.0,
+     "missing": [
+      "CISA305",
+      "CISA306",
+      "CISA315",
+      "CISA316",
+      "CISA320",
+      "CISA322",
+      "CISA330",
+      "CISA340",
+      "CISC305",
+      "CISC306",
+      "CISC310",
+      "CISC320",
+      "CISC323",
+      "CISC350"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 14,
+     "listed": 14,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      21.0,
+      21.0
+     ],
+     "stated": [
+      21.0,
+      21.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 7,
+     "courses": 0,
+     "count": 7,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "14520",
+   "title": "Telecommunication Specialist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=525",
+   "cost_usd": 0.06178,
+   "usage": {
+    "input_tokens": 10969,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 10969,
+      "output_tokens": 895,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 895,
+    "output_tokens_details": {
+     "thinking_tokens": 210
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 9,
+     "share": 0.0,
+     "missing": [
+      "ET115",
+      "ET253",
+      "ET302",
+      "ET308",
+      "ET312",
+      "ET322",
+      "ET380",
+      "ET381",
+      "ET388"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 9,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      32.0,
+      32.0
+     ],
+     "stated": [
+      32.0,
+      32.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 14,
+     "courses": 0,
+     "count": 14,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "19330",
+   "title": "Political Science",
+   "award": "A.A. Degree",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=852",
+   "cost_usd": 0.09246,
+   "usage": {
+    "input_tokens": 10376,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 10376,
+      "output_tokens": 2548,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2548,
+    "output_tokens_details": {
+     "thinking_tokens": 909
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 15,
+     "listed": 15,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HISTC1001",
+       "listed": "HIST310",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001H",
+       "listed": "HIST483",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1002",
+       "listed": "HIST311",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1002H",
+       "listed": "HIST484",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       18.0
+      ],
+      "stated": [
+       18.0,
+       18.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 11,
+     "courses": 0,
+     "count": 11,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 11,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 11,
+     "listed": 15,
+     "share": 0.733,
+     "missing": [
+      "HIST310",
+      "HIST311",
+      "HIST483",
+      "HIST484"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 4,
+     "codes": [
+      "HISTC1001",
+      "HISTC1001H",
+      "HISTC1002",
+      "HISTC1002H"
+     ],
+     "flagged": [
+      "HISTC1001",
+      "HISTC1001H",
+      "HISTC1002",
+      "HISTC1002H"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 11,
+     "courses": 0,
+     "count": 11,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 11,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "20099",
+   "title": "Environmental Conservation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=790",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=798",
+   "cost_usd": 0.06516,
+   "usage": {
+    "input_tokens": 8279,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 8279,
+      "output_tokens": 1602,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1602,
+    "output_tokens_details": {
+     "thinking_tokens": 407
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 19,
+     "share": 0.0,
+     "missing": [
+      "BIOL332",
+      "NATR300",
+      "NATR301",
+      "NATR302",
+      "NATR303",
+      "NATR304",
+      "NATR305",
+      "NATR306",
+      "NATR307",
+      "NATR310",
+      "NATR320",
+      "NATR322",
+      "NATR324",
+      "NATR330",
+      "NATR332",
+      "NATR346",
+      "NATR495",
+      "NATR498",
+      "NATR499"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 19,
+     "listed": 19,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      22.0,
+      22.0
+     ],
+     "stated": [
+      22.0,
+      22.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 8,
+     "courses": 0,
+     "count": 8,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 2,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "20104",
+   "title": "Entrepreneurship/Small Business Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=401",
+   "cost_usd": 0.07009,
+   "usage": {
+    "input_tokens": 10698,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 10698,
+      "output_tokens": 1365,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1365,
+    "output_tokens_details": {
+     "thinking_tokens": 277
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 19,
+     "share": 0.0,
+     "missing": [
+      "ACCT121",
+      "ACCT341",
+      "BUS210",
+      "BUS212",
+      "BUS214",
+      "BUS216",
+      "BUS218",
+      "BUS220",
+      "BUS224",
+      "BUS228",
+      "BUS300",
+      "BUS340",
+      "BUS350",
+      "CISA305",
+      "CISA315",
+      "CISC100",
+      "MKT300",
+      "MKT312",
+      "MKT314"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 19,
+     "listed": 19,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      17.0,
+      17.0
+     ],
+     "stated": [
+      17.0,
+      17.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "20119",
+   "title": "Automotive Component Service Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=361",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=362",
+   "cost_usd": 0.07198,
+   "usage": {
+    "input_tokens": 11266,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 11266,
+      "output_tokens": 1346,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1346,
+    "output_tokens_details": {
+     "thinking_tokens": 437
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 14,
+     "share": 0.0,
+     "missing": [
+      "AT100",
+      "AT103",
+      "AT105",
+      "AT110",
+      "AT130",
+      "AT140",
+      "AT180",
+      "AT181",
+      "AT298",
+      "AT310",
+      "AT311",
+      "AT313",
+      "AT314",
+      "AT330"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 14,
+     "listed": 14,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      37.0,
+      37.0
+     ],
+     "stated": [
+      37.0,
+      37.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "20139",
+   "title": "Gerontology: Advocacy and Social Policy",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=637",
+   "cost_usd": 0.08419,
+   "usage": {
+    "input_tokens": 11743,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 11743,
+      "output_tokens": 1861,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1861,
+    "output_tokens_details": {
+     "thinking_tokens": 605
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 21,
+     "share": 0.0,
+     "missing": [
+      "COMM302",
+      "COMM311",
+      "COMM321",
+      "COMM325",
+      "COMMC1000",
+      "GERON303",
+      "GERON305",
+      "GERON306",
+      "GERON490",
+      "GERON498",
+      "HSER300",
+      "HSER310",
+      "HSER330",
+      "POLS302",
+      "POLS330",
+      "POLSC1000",
+      "PSYC365",
+      "PSYC375",
+      "SJS300",
+      "SOC300",
+      "SOC480"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 21,
+     "share": 0.81,
+     "missing": [
+      "COMM321",
+      "HSER300",
+      "HSER310",
+      "HSER330"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 4,
+     "codes": [
+      "COMMC1004",
+      "SWCD300",
+      "SWCD310",
+      "SWCD330"
+     ],
+     "flagged": [
+      "COMMC1004",
+      "SWCD300",
+      "SWCD310",
+      "SWCD330"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      36.0,
+      36.0
+     ],
+     "stated": [
+      36.0,
+      36.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 15,
+     "courses": 0,
+     "count": 15,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "31434",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=653",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=652",
+   "cost_usd": 0.15773,
+   "usage": {
+    "input_tokens": 12897,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 12897,
+      "output_tokens": 5307,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 5307,
+    "output_tokens_details": {
+     "thinking_tokens": 1736
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "covers_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 57,
+     "listed": 58,
+     "share": 0.983,
+     "missing": [
+      "HIST310"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2001",
+       "listed": "ECON304",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ECONC2002",
+       "listed": "ECON302",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001H",
+       "listed": "HIST483",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1002",
+       "listed": "HIST311",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1002H",
+       "listed": "HIST484",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 7,
+     "courses": 0,
+     "count": 7,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 6,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 58,
+     "listed": 58,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2001",
+       "listed": "ECON304",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ECONC2002",
+       "listed": "ECON302",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001",
+       "listed": "HIST310",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001H",
+       "listed": "HIST483",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1002",
+       "listed": "HIST311",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1002H",
+       "listed": "HIST484",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 7,
+     "courses": 0,
+     "count": 7,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 6,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "35640",
+   "title": "Computer Applications for Small Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=400",
+   "cost_usd": 0.05958,
+   "usage": {
+    "input_tokens": 10545,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 10545,
+      "output_tokens": 870,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 870,
+    "output_tokens_details": {
+     "thinking_tokens": 227
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 8,
+     "share": 0.0,
+     "missing": [
+      "ACCT101",
+      "ACCT301",
+      "ACCT341",
+      "BUS350",
+      "CISA305",
+      "CISA315",
+      "CISA330",
+      "CISC306"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 8,
+     "listed": 8,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      16.0,
+      17.0
+     ],
+     "stated": [
+      16.0,
+      17.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 8,
+     "courses": 0,
+     "count": 8,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "37403",
+   "title": "ARTNM: Commercial Illustration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=334",
+   "cost_usd": 0.05852,
+   "usage": {
+    "input_tokens": 10496,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 10496,
+      "output_tokens": 827,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 827,
+    "output_tokens_details": {
+     "thinking_tokens": 144
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 6,
+     "share": 0.0,
+     "missing": [
+      "ART300",
+      "ART304",
+      "ARTNM324",
+      "ARTNM326",
+      "ARTNM328",
+      "ARTNM370"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 6,
+     "listed": 6,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 6,
+     "courses": 0,
+     "count": 6,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 7,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "37576",
+   "title": "Social Justice Studies: Race and Ethnicity",
+   "award": "A.A- T Degree",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=914",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=919",
+   "cost_usd": 0.10404,
+   "usage": {
+    "input_tokens": 12224,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 12224,
+      "output_tokens": 2757,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2757,
+    "output_tokens_details": {
+     "thinking_tokens": 818
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 20,
+     "listed": 20,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 6,
+     "codes": [
+      "ENGLT330",
+      "ENGLT334",
+      "ENGLT486",
+      "PSYC365",
+      "SOC321",
+      "SWCD330"
+     ],
+     "flagged": [
+      "ENGLT330",
+      "ENGLT334",
+      "ENGLT486",
+      "PSYC365",
+      "SOC321",
+      "SWCD330"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       18.0
+      ],
+      "stated": [
+       18.0,
+       18.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 17,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 20,
+     "listed": 20,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 6,
+     "codes": [
+      "ENGLT330",
+      "ENGLT334",
+      "ENGLT486",
+      "PSYC365",
+      "SOC321",
+      "SWCD330"
+     ],
+     "flagged": [
+      "ENGLT330",
+      "ENGLT334",
+      "ENGLT486",
+      "PSYC365",
+      "SOC321",
+      "SWCD330"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 17,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "38640",
+   "title": "Acoustical Installer Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=169",
+   "cost_usd": 0.08892,
+   "usage": {
+    "input_tokens": 10029,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 10029,
+      "output_tokens": 2440,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2440,
+    "output_tokens_details": {
+     "thinking_tokens": 717
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "covers_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 16,
+     "listed": 17,
+     "share": 0.941,
+     "missing": [
+      "CARPT145"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      37.0,
+      37.0
+     ],
+     "stated": [
+      37.0,
+      37.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 9,
+     "courses": 0,
+     "count": 9,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 17,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      37.0,
+      37.0
+     ],
+     "stated": [
+      37.0,
+      37.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 9,
+     "courses": 0,
+     "count": 9,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "40111",
+   "title": "Carpenter Apprenticeship Level III",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+   "filed_source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=174",
+   "cost_usd": 0.07105,
+   "usage": {
+    "input_tokens": 9917,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 9917,
+      "output_tokens": 1569,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1569,
+    "output_tokens_details": {
+     "thinking_tokens": 264
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 17,
+     "share": 0.0,
+     "missing": [
+      "CARPT101",
+      "CARPT106",
+      "CARPT107",
+      "CARPT110",
+      "CARPT112",
+      "CARPT114",
+      "CARPT120",
+      "CARPT122",
+      "CARPT130",
+      "CARPT140",
+      "CARPT142",
+      "CARPT150",
+      "CARPT155",
+      "CARPT160",
+      "CARPT162",
+      "CARPT180",
+      "CARPT298"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 17,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      24.0,
+      24.0
+     ],
+     "stated": [
+      24.0,
+      24.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 7,
+     "courses": 0,
+     "count": 7,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  }
+ ]
+}
