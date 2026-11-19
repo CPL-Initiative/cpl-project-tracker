@@ -432,6 +432,44 @@ with open(os.path.join(ROOT, "kb", "migrations", ".apply"), encoding="utf-8") as
     check("s681_prreq_named_gaps" not in fh.read(), "the S681 plan is committed, not applied")
 print("S681 plan: A %d, B %d, C %d" % tuple(len(by_part[p]) for p in "ABC"))
 
+# ── the S684 pass: the S683 wave's re-read records take their gap again ─────
+R684 = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-19_s684.json")
+with open(R684, encoding="utf-8") as fh:
+    rc684 = json.load(fh)
+rows684 = rc684["records"]
+wave684 = NG.wave_runs(set(rc684["colleges"]))
+check(len(rc684["colleges"]) == 15 and set(wave684) == set(rc684["colleges"]),
+      "the S684 pass names the wave's fifteen colleges, each with its account")
+check(rows684 and all(r["college"] in wave684 and str(r["extracted_run"]) in wave684[r["college"]] for r in rows684),
+      "every S684 row is a record the S683 wave re-read, at its run")
+check(not {key(r) for r in rows684} & {tuple(k) for k in rc684["checked_excluded"]}
+      and ["West Los Angeles College", "17111"] in rc684["checked_excluded"],
+      "no S684 row is a row a person checked (West Los Angeles's four are excluded)")
+check(not set(rc684["colleges"]) & set(rc684["held_colleges"]) and len(rc684["held_colleges"]) == 15,
+      "lane 2's fifteen colleges are held, none of them planned")
+check(all(r["part"] == "A" and r["gap"] == NG.answer(dict(filed_by_key[key(r)], score={
+          k: v for k, v in filed_by_key[key(r)]["score"].items() if k not in ("gaps", "confidence")}))[0]
+          or r["part"] == "B" and r["gap"] == plan3502[key(r)][0] and NG.figures_differ_fails(filed_by_key[key(r)]) is None
+          for r in rows684), "each S684 row's gap is its rule's (A) or #3502's plan's, meeting the sentence (B)")
+check(all(filed_by_key[key(r)]["score"]["gaps"][0]["gap"] == r["gap"] for r in rows684),
+      "each S684 record file carries its gap")
+check(all(set(r["after_image"]["checks"]) - set(r["before_image"]["checks"]) == {"gaps", "confidence"}
+          and {k: v for k, v in r["after_image"]["checks"].items() if k not in ("gaps", "confidence")}
+          == r["before_image"]["checks"] for r in rows684), "the S684 apply adds gaps and confidence, nothing else")
+MIG4 = os.path.join(ROOT, "kb", "migrations", "2026-11-19_s684_prreq_named_gaps_")
+t4 = {}
+for part in ("preread", "apply", "rollback"):
+    with open(MIG4 + part + ".sql", encoding="utf-8") as fh:
+        t4[part] = fh.read()
+check(NG.update3_sql(rows684, "s684 named-gaps") == rc684["apply"] and rc684["apply"] in t4["apply"]
+      and NG.rollback3_sql(rows684, "s684 named-gaps rollback") == rc684["rollback"]
+      and rc684["rollback"] in t4["rollback"] and rc684["pre_read"] in t4["preread"]
+      and "e(expect) as (values (%d))" % len(rows684) in t4["apply"],
+      "the S684 files are the receipt's SQL, rebuilt from its rows")
+with open(os.path.join(ROOT, "kb", "migrations", ".apply"), encoding="utf-8") as fh:
+    check("s684_prreq_named_gaps" not in fh.read(), "the S684 plan is committed, not applied")
+print("S684 pass: %d rows (%s)" % (len(rows684), ", ".join("%s %d" % kv for kv in sorted(rc684["by_gap"].items()))))
+
 if failures:
     for m in failures:
         print("FAIL:", m)

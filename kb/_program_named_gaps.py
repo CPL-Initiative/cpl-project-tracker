@@ -55,6 +55,9 @@ THE COLLECTION LANE'S COLLEGES are left out: COLLECTION_LANE_S680 in kb/collecti
                                                     # rows the migrate receipt M returned (no rescoring)
     python3 kb/_program_named_gaps.py --three-part --tag s681   # S681: one plan in three parts (A the S680 rows to
                                                     # the corrected values, B #3502's records, C units rule A5's five)
+    python3 kb/_program_named_gaps.py --wave --college NAME ... --checked LIVE.json --tag s684
+                                                    # S684: a re-read wave's records take their gap again (A the
+                                                    # record rules, B #3502's plan), only at the wave's runs
 
 Guard: tests/program_named_gaps_test.py.
 """
@@ -821,6 +824,139 @@ def write_s681(res: dict, receipt_path: str, day: str, tag: str) -> list[str]:
     return out
 
 
+# ── the S684 pass: a re-read wave's records take their gap again ───────────
+# f-reread-replaces-labeled-rows-s683: step=reread replaced live rows the S680 and S681 applies had labeled, and the
+# label went with the old record. The pass names each re-read record's gap again by the same two routes: the record
+# rules (run, part A here) and #3502's plan with its sentence check (plan_s681's part B). Only a record whose
+# extracted_run is one of the wave's runs (each college's reread_keep_better.json account) at a named college joins,
+# never one at a held or parked college, and never a control number the conductor's live read lists as checked.
+PARTS_WAVE = {"A": "a re-read record a record rule names a gap for (no_units_read, no_hours_read, major_total_differs)",
+              "B": "a re-read record #3502's plan names, meeting its gap's own sentence "
+                   "(kb/program_requirements_reread_plan_s680.json)"}
+
+
+def wave_runs(colleges, base: str = COLLEGE_DIR) -> dict:
+    """{college: {extracted runs}} from each named college's reread_keep_better.json account."""
+    out = {}
+    for path in sorted(glob.glob(os.path.join(base, "*", "reread_keep_better.json"))):
+        with open(path, encoding="utf-8") as fh:
+            acct = json.load(fh)
+        if acct.get("college") in colleges:
+            out.setdefault(acct["college"], set()).update(str(r) for r in (acct.get("runs") or {}))
+    return out
+
+
+def plan_wave(write: bool, colleges: tuple, skip: tuple = (), checked: frozenset = frozenset()) -> dict:
+    """The wave's rows in plan_s681's row shape (part A the record rules, part B #3502's plan), with the load's image
+    before and after each record file is rewritten. checked: {(college, control number)} a person checked live."""
+    runs = wave_runs(set(colleges))
+    missing = sorted(set(colleges) - set(runs))
+    if missing:
+        raise SystemExit("no reread_keep_better.json account names %s: the college name is not the records' own"
+                         % ", ".join(missing))
+    plain = run(write=False, skip=skip)
+    if plain["recall"]["wrong"]:
+        raise SystemExit("the recall is wrong on %d records: no plan is written" % plain["recall"]["wrong"])
+    three = plan_s681(write=False, skip=skip)
+    on_wave = lambda r: (r["college"] in runs and str(r["extracted_run"]) in runs[r["college"]])  # noqa: E731
+    rows, left_out = [], []
+    for m in plain["moved"]:
+        x = {"part": "A", "college": m["college"], "control_number": str(m["control_number"]), "award": m["award"],
+             "extracted_run": m["extracted_run"], "gap": m["gap"], "words": m["words"], "confidence": m["confidence"],
+             "path": m["path"]}
+        rows.append(x)
+    for r in three["rows"]:
+        if r["part"] == "B":
+            rows.append(dict(r, control_number=str(r["control_number"])))
+        elif r["college"] in runs:
+            left_out.append({"part": r["part"], "college": r["college"], "control_number": r["control_number"],
+                             "why": "plan_s681's part %s: not this pass" % r["part"]})
+    kept = []
+    for r in rows:
+        why = ("not a named college" if r["college"] not in runs else
+               "not a run of the wave" if not on_wave(r) else
+               "a person checked the live row" if (r["college"], r["control_number"]) in checked else None)
+        if why:
+            left_out.append({"part": r["part"], "college": r["college"], "control_number": r["control_number"],
+                             "why": why})
+        else:
+            kept.append(r)
+    rows = kept
+    if write:
+        before = _load_images({r["college"] for r in rows})
+        for r in rows:
+            k = (r["college"], r["control_number"])
+            if k not in before:
+                raise SystemExit("the load does not post %s %s" % k)
+            img = before[k]
+            r["before_image"] = {k2: img[k2] for k2 in ("program_title", "award", "catalog_year", "source_url",
+                                                        "measure", "total_min", "total_max", "record", "checks",
+                                                        "extracted_run")}
+            path = os.path.join(ROOT, r["path"])
+            with open(path, encoding="utf-8") as fh:
+                filed = json.load(fh)
+            if filed["score"].get("gaps"):
+                raise SystemExit("%s %s already files a gap" % k)
+            filed["score"]["gaps"] = [{"gap": r["gap"], "label": GAPS[r["gap"]], "words": r["words"]}]
+            filed["score"]["confidence"] = r["confidence"]
+            with open(path, "w", encoding="utf-8") as fh:
+                json.dump(filed, fh, ensure_ascii=False, indent=1)
+                fh.write("\n")
+        after = _load_images({r["college"] for r in rows})
+        for r in rows:
+            img = after[(r["college"], r["control_number"])]
+            if img["record"] != r["before_image"]["record"]:
+                raise SystemExit("the plan changed the record of %s %s" % (r["college"], r["control_number"]))
+            r["after_image"] = {"checks": img["checks"]}
+    rows.sort(key=lambda r: (r["part"], r["college"], r["control_number"]))
+    for i, r in enumerate(rows, 1):
+        r["i"] = i
+    held_out = [x for x in three["held_out"] if x["college"] in runs]
+    return {"rows": rows, "left_out": left_out, "held_out": held_out, "runs": {c: sorted(v) for c, v in runs.items()},
+            "by_part": dict(collections.Counter(r["part"] for r in rows)),
+            "by_gap": dict(collections.Counter(r["gap"] for r in rows)),
+            "by_college": dict(sorted(collections.Counter(r["college"] for r in rows).items())),
+            "recall": plain["recall"]}
+
+
+def write_wave(res: dict, receipt_path: str, day: str, tag: str) -> list[str]:
+    rows = res["rows"]
+    hdr = ("-- %s named gaps over the S683 re-read wave: %s.\n"
+           "-- A: %s. B: %s.\n"
+           "-- Receipt: %s (before_image and after_image per row). Only records whose extracted_run is a run of\n"
+           "-- the wave at the named colleges; never a held, parked or checked one.\n"
+           % (tag.upper(), ", ".join("%s %d" % kv for kv in sorted(res["by_gap"].items())), PARTS_WAVE["A"],
+              PARTS_WAVE["B"], receipt_path))
+    base = os.path.join(HERE, "migrations", "%s_%s_prreq_named_gaps_" % (day, tag))
+    parts = {
+        "preread.sql": "-- Pre-read, read-only: one SELECT, one JSON value, per part.\n" + pre_read3_sql(rows),
+        "apply.sql": ("-- Guarded UPDATE: only where the row holds the filed run, the before-image's record and checks,\n"
+                      "-- and no person's check. It aborts, writing nothing, unless it matches the plan's %d rows less\n"
+                      "-- those a person checked.\n" % len(rows) + update3_sql(rows, tag + " named-gaps")),
+        "rollback.sql": ("-- Rollback, NOT applied: each row's before-image checks back where the row still holds the\n"
+                         "-- after-image, skipping and listing a row a person checked. A rollback lasts only until the\n"
+                         "-- next load of that college: revert the record files too (git revert of this plan's commit).\n"
+                         + rollback3_sql(rows, tag + " named-gaps rollback")),
+    }
+    out = []
+    for name, text in parts.items():
+        with open(base + name, "w", encoding="utf-8") as fh:
+            fh.write(hdr + text + "\n")
+        out.append(base + name)
+    return out
+
+
+def read_checked_keys(path: str | None) -> frozenset:
+    """{(college, control number)} from the conductor's live read ({"by_college": {college: [control numbers]}})."""
+    if not path:
+        raise SystemExit("--wave needs --checked: the live read of checked rows (by_college)")
+    with open(path, encoding="utf-8") as fh:
+        by = json.load(fh).get("by_college")
+    if not isinstance(by, dict) or not all(isinstance(v, list) for v in by.values()):
+        raise SystemExit("%s has no by_college object of lists" % path)
+    return frozenset((c, str(n)) for c, v in by.items() for n in v)
+
+
 def replan_applied(body: dict, migrate: dict, applied_from: str, tag: str = "s680") -> dict:
     """The receipt after the apply, in place, without rescoring (Rule 10 a2; the shape of #3496's replan): the rows
     the migrate receipt returned are marked applied and the rollback is rebuilt from those rows alone. The apply's
@@ -875,7 +1011,46 @@ def main(argv=None) -> int:
     ap.add_argument("--receipt", help="replan this receipt after the apply (no rescoring); needs --applied")
     ap.add_argument("--applied", help="the apply's migrate receipt: mark its rows applied and rebuild the rollback "
                                       "from them")
+    ap.add_argument("--wave", action="store_true",
+                    help="S684: name the gaps again on the records a re-read wave filed, at the --college names")
+    ap.add_argument("--college", action="append", default=[], help="with --wave: a college of the wave (repeat)")
+    ap.add_argument("--checked", help="with --wave: the conductor's live read of checked rows (by_college)")
     a = ap.parse_args(argv)
+    if a.wave:
+        if not a.college:
+            ap.error("--wave needs --college")
+        checked = read_checked_keys(a.checked)
+        res = plan_wave(write=not a.dry_run, colleges=tuple(a.college), skip=tuple(a.skip_college), checked=checked)
+        print("wave plan: %d rows (%s); by gap %s; by college %s" % (
+            len(res["rows"]), ", ".join("part %s %d" % kv for kv in sorted(res["by_part"].items())),
+            ", ".join("%s %d" % kv for kv in sorted(res["by_gap"].items())),
+            ", ".join("%s %d" % kv for kv in res["by_college"].items())))
+        for x in res["left_out"]:
+            print("  left out: part %(part)s %(college)s %(control_number)s (%(why)s)" % x)
+        for x in res["held_out"]:
+            print("  held out: %(college)s %(control_number)s %(gap)s (%(why)s)" % x)
+        if a.dry_run or not res["rows"]:
+            return 0
+        day = time.strftime("%Y-%m-%d", time.gmtime())
+        path = os.path.join(RECEIPTS, "program_requirement_records_named_gaps_%s_%s.json" % (day, a.tag))
+        rows = res["rows"]
+        body = {"rule": RULING, "gaps": GAPS, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                "why": "f-reread-replaces-labeled-rows-s683: the wave's re-reads replaced labeled rows",
+                "parts": PARTS_WAVE, "colleges": list(a.college), "held_colleges": list(a.skip_college),
+                "wave_runs": res["runs"], "checked_excluded": sorted(list(k) for k in checked
+                                                                    if k[0] in set(a.college)),
+                "collected": len(rows), "by_part": res["by_part"], "by_gap": res["by_gap"],
+                "by_college": res["by_college"], "held_out": res["held_out"], "left_out": res["left_out"],
+                "recall": res["recall"], "records": rows,
+                "pre_read": pre_read3_sql(rows), "apply": update3_sql(rows, a.tag + " named-gaps"),
+                "rollback": rollback3_sql(rows, a.tag + " named-gaps rollback")}
+        with open(path, "w", encoding="utf-8") as fh:
+            json.dump(body, fh, ensure_ascii=False, indent=1)
+            fh.write("\n")
+        for f in write_wave(res, os.path.relpath(path, ROOT), day, a.tag):
+            print("wrote %s" % os.path.relpath(f, ROOT))
+        print("receipt %s" % os.path.relpath(path, ROOT))
+        return 0
     if a.three_part:
         res = plan_s681(write=not a.dry_run, skip=tuple(a.skip_college))
         print("plan: %s; held out %d; left out %d; unchanged %d; #3502 records not found %d; A5 rows not found %d" % (
