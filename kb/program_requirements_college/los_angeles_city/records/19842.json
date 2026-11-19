@@ -12,18 +12,11 @@
   "input_tokens": 35808,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
-  "cache_creation": {
-   "ephemeral_5m_input_tokens": 0,
-   "ephemeral_1h_input_tokens": 0
-  },
-  "output_tokens": 39822,
-  "output_tokens_details": {
-   "thinking_tokens": 13308
-  }
+  "output_tokens": 38500
  },
- "cost_usd": 0.93967,
- "ms": 221989,
- "seconds": 223.4,
+ "cost_usd": 0.91323,
+ "ms": 215691,
+ "seconds": 216.3,
  "parts": 2,
  "error": null,
  "score": {
@@ -286,13 +279,14 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    28.0,
-    30.0
+    50.0,
+    58.0
    ],
    "stated": null,
    "against": null,
    "why": [
-    "'Area 1 (heading cut off at page break; continues with COMM C1000)' chooses 1 courses but 0 carry units",
+    "'Area 1 (continued from preceding page; heading not in text)' chooses courses but names no minimum",
+    "'Area 1 (continued; heading not in text)' chooses 1 courses but 0 carry units",
     "the record names no total"
    ]
   },
@@ -322,7 +316,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "COMPLETING YOUR CAREER AND ACADEMIC PATHWAY: GRADUATION REQUIREMENTS (Cal-GETC general education areas)",
+   "section_heading": "COMPLETING YOUR CAREER AND ACADEMIC PATHWAY: GRADUATION REQUIREMENTS",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -348,8 +342,8 @@
   },
   "blocks": [
    {
-    "name": "Area 1 (heading not in text; continued from previous page)",
-    "rule": "all",
+    "name": "Area 1 (continued from preceding page; heading not in text)",
+    "rule": "choose_courses",
     "minimum": null,
     "option_group": null,
     "stated": {
@@ -367,18 +361,7 @@
     ]
    },
    {
-    "name": "Area 1 (heading cut off at page break; continues with COMM C1000)",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": []
-   },
-   {
-    "name": "Area 2: Mathematical Concepts and Quantitative Reasoning",
+    "name": "Area 2: Mathematical Concepts and Quantitative Reasoning (One course - 3 semester or 4 quarter units)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -523,7 +506,7 @@
     ]
    },
    {
-    "name": "3A. Arts",
+    "name": "3A. Arts - One course (3 semester or 4 quarter units)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -726,18 +709,11 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     },
-     {
-      "code": "ARTH C1200",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "3B. Humanities",
+    "name": "3B. Humanities - One course: (3 semester or 4 quarter units)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -1256,32 +1232,11 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     },
-     {
-      "code": "HISTORY C1001",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HISTORY C1002",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "RUSSIAN 004",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Area 4: Social & Behavioral Sciences",
+    "name": "Area 4: Social & Behavioral Sciences (Two courses from two academic disciplines - 6 semester or 8 quarter units)",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -1411,13 +1366,6 @@
      },
      {
       "code": "CHICANO 007",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HISTORY 081",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -1660,6 +1608,296 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "5A. Physical Science - one course: (3 semester or 4 quarter units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ASTRON 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS SC 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 071",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS SC 010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSICS 161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "5B. Biological Science - one course: (3 semester or 4 quarter units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": []
+   },
+   {
+    "name": "5C. Laboratory (1 semester or 1 quarter unit)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "PHYS SC 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 071",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOLOGY 007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Area 6: Ethnic Studies - complete one course (3 semester or 4 quarter units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ASIAN 001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 008",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 047",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "US History, Constitution, and American Ideals (Optional - CSU Graduation Requirement Only) - US1",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AFRO AM 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO AM 005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 008",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "US History, Constitution, and American Ideals (Optional - CSU Graduation Requirement Only) - US2/US3",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AFRO AM 007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area 1 (continued; heading not in text)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": []
+   },
+   {
+    "name": "Area 2: Mathematical Concepts and Quantitative Reasoning",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": []
+   },
+   {
+    "name": "3A. Arts",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH C1200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "3B. Humanities",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HISTORY C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUSSIAN 004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area 4: Social & Behavioral Sciences",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HISTORY 081",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      },
      {
       "code": "ECON C2002",
@@ -1730,13 +1968,6 @@
     },
     "courses": [
      {
-      "code": "ASTRON 001",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "CHEM 060",
       "units": null,
       "units_max": null,
@@ -1791,34 +2022,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "PHYS SC 004",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CHEM 071",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHYS SC 010",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHYSICS 161",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "ASTRON 011",
@@ -1924,14 +2127,21 @@
     },
     "courses": [
      {
-      "code": "ANATOMY 001",
+      "code": "ANTHRO 101",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ANTHRO 101",
+      "code": "PSYCH 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANATOMY 001",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -1946,13 +2156,6 @@
      },
      {
       "code": "MICRO 001",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYCH 002",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -2062,32 +2265,11 @@
       "catalog_addition": false
      },
      {
-      "code": "PHYS SC 004",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "PHYSIOL 001",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "CHEM 071",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "GEOLOGY 007",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "BIOLOGY 006",
@@ -2212,105 +2394,10 @@
      "min": 3,
      "max": 3
     },
-    "courses": [
-     {
-      "code": "ASIAN 001",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CHICANO 004",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CHICANO 008",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHICANO 047",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
+    "courses": []
    },
    {
     "name": "US1 (US History, Constitution, and American Ideals - Optional, CSU Graduation Requirement Only)",
-    "rule": "recommended",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "AFRO AM 004",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CHICANO 007",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AFRO AM 005",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CHICANO 008",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "US2/US3 (US History, Constitution, and American Ideals - Optional, CSU Graduation Requirement Only)",
-    "rule": "recommended",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "AFRO AM 007",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "POLS C1000",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "US History, Constitution, and American Ideals (Optional - CSU Graduation Requirement Only): US1",
     "rule": "recommended",
     "minimum": null,
     "option_group": null,
@@ -2350,7 +2437,7 @@
     ]
    },
    {
-    "name": "US History, Constitution, and American Ideals (Optional - CSU Graduation Requirement Only): US2/US3",
+    "name": "US2/US3 (US History, Constitution, and American Ideals - Optional, CSU Graduation Requirement Only)",
     "rule": "recommended",
     "minimum": null,
     "option_group": null,
@@ -2364,20 +2451,8 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ENGL C1000",
-    "why": "Area 1 (English composition) cut off before the page; not in the text"
-   },
-   {
-    "code": "ENGL C1001",
-    "why": "Area 1 (critical thinking) cut off before the page; not in the text"
-   },
-   {
-    "code": "PHILOS 5",
-    "why": "not in the text; Area 1 list cut off before the page"
-   },
-   {
     "code": "ARMEN 2",
-    "why": "not in the text (3B lists ARMEN 011, 012 only)"
+    "why": "not in the text; catalog lists ARMEN 011, 012 only"
    },
    {
     "code": "ARMEN 36",
@@ -2385,19 +2460,27 @@
    },
    {
     "code": "ASL002",
-    "why": "not in the text (3B lists A S L 003 only)"
+    "why": "not in the text; only A S L 003 listed"
    },
    {
     "code": "CHINESE 2",
-    "why": "not in the text (3B lists CHINESE 003, 004, 010)"
+    "why": "not in the text; catalog lists CHINESE 003, 004, 010"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text; Area 1 courses appear on the previous page"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text; Area 1 courses appear on the previous page"
    },
    {
     "code": "FRENCH 2",
-    "why": "not in the text (3B lists FRENCH 003, 004, 010)"
+    "why": "not in the text"
    },
    {
     "code": "JAPAN 2",
-    "why": "not in the text (3B lists JAPAN 003, 004, 009, 014)"
+    "why": "not in the text"
    },
    {
     "code": "KOREAN 2",
@@ -2408,8 +2491,12 @@
     "why": "not in the text"
    },
    {
+    "code": "PHILOS 5",
+    "why": "not in the text; likely in Area 1 on the previous page"
+   },
+   {
     "code": "RUSSIAN 2",
-    "why": "not in the text (3B lists RUSSIAN 003, 004, 010)"
+    "why": "not in the text"
    },
    {
     "code": "SPANISH 2",
@@ -2425,32 +2512,32 @@
    }
   ],
   "notes": [
-   "The award is named IGETC, but the text prints the Cal-GETC general education area list (Starting Fall 2025 Cal-GETC replaces IGETC); the areas are recorded as the certificate's blocks. ge_pattern left null because the pattern is the award itself.",
-   "The page header reads 'LA CC 2025-2026 COLLEGE CATALOG' while the requested catalog year is 2026-2027; check the year.",
-   "The text begins mid-section: Area 1 (English Communication) heading and its other courses are on the previous page and not in the text; only COMM C1000 (formerly COMM 101) is visible, recorded in an Area 1 block with rule 'all' as a guess.",
-   "Area 3 (two courses, 6 semester units: one in 3A and one in 3B) and Area 5 (two courses, 7 semester units: one in 5A and one in 5B, plus a lab in 5C) are recorded as their subareas; the parent totals are not separate blocks.",
-   "No units are printed beside individual courses; stated totals use the semester units printed for each area (quarter units also printed).",
-   "CINEMA 501 is printed 'Same as PHOTO 501' and PHOTO 501 'Same as CINEMA 501' in 3A; recorded once as CINEMA 501 with PHOTO 501 as alternative.",
-   "Catalog codes are recorded as printed with leading zeros (e.g., CINEMA 004 = CINEMA 4, A S L 003 = ASL003, ARTH C1100 = ARTHC1100).",
-   "Area 5 says underlined courses include a lab; underlining is lost in the text. 5C lab-only courses (marked *) require a matching lecture course.",
-   "The US History, Constitution and American Ideals groups are optional (CSU graduation requirement only, 'Complete 1 course from each group'); recorded as recommended blocks.",
-   "No total units, outcomes or careers are printed for this award.",
-   "Part 2: The text is the Cal-GETC area list in the general graduation-requirements chapter, not a program section titled IGETC; the page header reads '2025-2026 COLLEGE CATALOG' while the requested catalog year is 2026-2027.",
-   "Part 2: The text begins mid-Area 1 (only COMM C1000 is visible); the Area 1 heading and the 1A/1B lists are cut off at the page break, so that block's name, rule and courses are inferred and should be checked.",
-   "Part 2: No units are printed beside individual courses, so course units are null; area totals are recorded from the semester-unit figures in each area heading. Area 3 (6 units, one 3A and one 3B) and Area 5 (7 units, one 5A, one 5B, plus a 5C lab) are recorded as their sub-area blocks.",
-   "Part 2: 5C lab-only courses (marked *) count only with a corresponding 5A/5B lecture (e.g., ASTRON 001 or 011 with 005, GEOG 001 with 015, GEOLOGY 001 with 006, PHYSICS 012 with 014). Underlining that marks lecture courses with labs is lost in the text.",
-   "Part 2: Codes are recorded as printed with three-digit numbers (e.g., HISTORY 059 = HISTORY 59, ARTH C1200 = ARTHC1200, HISTORY C1001 = HISTC1001).",
-   "Part 2: Courses printed in the text but absent from the closed list (e.g., CHEM 071, PHYS SC 004/010, PHYSICS 161, GEOLOGY 007) are not listed in this part because their first code is not among this part's courses; a reviewer should confirm they appear in the combined record as catalog additions.",
-   "Part 2: The US History, Constitution, and American Ideals groups are labeled optional (CSU graduation requirement only), so they are recorded as recommended blocks.",
-   "Part 2: No program outcomes or careers are printed in the text; no total units for the pattern are stated.",
+   "The program is titled IGETC, but the text is the catalog's Cal-GETC general education pattern listing (Areas 2-6 plus the US History/Constitution note); it is read as the requirement list for this certificate. ge_pattern left null because the award is itself the GE pattern.",
+   "The page header reads 'LA CC 2025-2026 COLLEGE CATALOG' although the catalog year is 2026-2027 and the PDF is the 2026-27 catalog; reviewer should confirm the year.",
+   "The text begins mid-list with 'COMM C1000 (formerly COMM 101)'; the Area 1 heading, its rule and its other courses are on the preceding page and not in the text. COMM C1000 is placed in a block named for that gap with no minimum.",
+   "No total units for the certificate are printed in the text; total_units is null. Area 3 states 'Two courses: one in 3A Arts and one in 3B Humanities - 6 semester or 8 quarter units' and Area 5 states 'Two courses ... - 7 semester or 9 quarter units'; these parent headings are represented by their sub-area blocks (3A, 3B, 5A, 5B, 5C). Block stated values use semester units.",
+   "Area 4 requires two courses from two academic disciplines.",
+   "Area 5: underlined courses denote lecture courses with a lab component; underlining is not visible in the extracted text. Lab-only courses (asterisked) in 5C require a corresponding lecture course from 5A or 5B (e.g., ASTRON 001 or 011 with 005, GEOG 001 with 015, GEOLOGY 001 with 006, GEOLOGY 002 with 007, PHYSICS 012 with 014).",
+   "CINEMA 501 is printed '(Same as PHOTO 501)' and PHOTO 501 '(Same as CINEMA 501)'; recorded once in 3A as CINEMA 501 with PHOTO 501 as alternative.",
+   "STAT C1000E (formerly MATH 227S) is recorded as its own entry in Area 2 (catalog addition).",
+   "The catalog prints no units beside individual courses; all course units are null.",
+   "The US History, Constitution, and American Ideals groups (US1, US2/US3) are marked optional (CSU graduation requirement only) and are recorded as recommended blocks.",
+   "No program learning outcomes and no careers are printed in the text.",
+   "Part 2: The program is named IGETC, but the text describes the Cal-GETC pattern (the singular GE pathway starting Fall 2025); reviewer should confirm this is the right section.",
+   "Part 2: The page header reads 'LA CC 2025-2026 COLLEGE CATALOG' although the requested catalog year is 2026-2027.",
+   "Part 2: The text begins mid-Area 1 (only 'COMM C1000 (formerly COMM 101)' is visible); Area 1 heading and its other courses are on the previous page, so that block is recorded with an assumed one-course rule.",
+   "Part 2: No units are printed beside individual courses; units are null. No certificate total is printed; total_units is null.",
+   "Part 2: Area 3 requires two courses (6 semester units): one in 3A and one in 3B; Area 5 requires two courses (7 semester units): one in 5A and one in 5B, plus a lab in 5C. Lab-only courses (*) in 5C require a corresponding 5A/5B lecture course.",
+   "Part 2: Area 4 requires two courses from two academic disciplines.",
+   "Part 2: The US History, Constitution, and American Ideals groups are marked optional (CSU graduation requirement only) and are recorded as recommended blocks.",
+   "Part 2: Courses in the text that are not in the closed list (e.g., CHEM 071, PHYS SC 004, 010, PHYSICS 161, GEOLOGY 007, BUS 015) are not listed in this part, since this part lists only entries whose first code is among its assigned courses.",
+   "Part 2: HISTORY C1001 and C1002 appear in Area 3B, Area 4 and US1; each is recorded once per block.",
    "Read in 2 parts, because one reply could not hold the whole record.",
-   "Reviewer: part 2 names blocks part 1 does not: 'Area 1 (heading cut off at page break; continues with COMM C1000)' (kept beside 'Area 1 (heading not in text; continued from previous page)')",
-   "Reviewer: part 2 names blocks part 1 does not: 'US History, Constitution, and American Ideals (Optional - CSU Graduation Requirement Only): US1', 'US History, Constitution, and American Ideals (Optional - CSU Graduation Requirement Only): US2/US3' (kept beside 'US1 (US History, Constitution, and American Ideals - Optional, CSU Graduation Requirement Only)', 'US2/US3 (US History, Constitution, and American Ideals - Optional, CSU Graduation Requirement Only)')"
+   "Reviewer: part 2 names blocks part 1 does not: 'Area 1 (continued; heading not in text)', 'Area 2: Mathematical Concepts and Quantitative Reasoning', '3A. Arts', '3B. Humanities', 'Area 4: Social & Behavioral Sciences', '5A. Physical Science', '5B. Biological Science', '5C. Laboratory', 'Area 6: Ethnic Studies', 'US1 (US History, Constitution, and American Ideals - Optional, CSU Graduation Requirement Only)', 'US2/US3 (US History, Constitution, and American Ideals - Optional, CSU Graduation Requirement Only)' (kept beside 'Area 1 (continued from preceding page; heading not in text)', 'Area 2: Mathematical Concepts and Quantitative Reasoning (One course - 3 semester or 4 quarter units)', '3A. Arts - One course (3 semester or 4 quarter units)', '3B. Humanities - One course: (3 semester or 4 quarter units)', 'Area 4: Social & Behavioral Sciences (Two courses from two academic disciplines - 6 semester or 8 quarter units)', '5A. Physical Science - one course: (3 semester or 4 quarter units)', '5B. Biological Science - one course: (3 semester or 4 quarter units)', '5C. Laboratory (1 semester or 1 quarter unit)', 'Area 6: Ethnic Studies - complete one course (3 semester or 4 quarter units)', 'US History, Constitution, and American Ideals (Optional - CSU Graduation Requirement Only) - US1', 'US History, Constitution, and American Ideals (Optional - CSU Graduation Requirement Only) - US2/US3')"
   ]
  },
- "extracted_run": "44511401763",
- "catalog_year": "2026-2027",
- "source_sha": "55639614571ce38c",
+ "extracted_run": "43212072618",
+ "source_sha": "130456520d81dca2",
  "source_codes": [
   "AFROAM7",
   "ANATOMY1",
