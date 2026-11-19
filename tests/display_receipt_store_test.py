@@ -347,7 +347,8 @@ try:
         def table(method, path_qs, body=None):
             calls.append(method)
             if method == "GET":
-                return [] if "offset=1000" in path_qs or "offset=2" in path_qs else [
+                # The second page read starts after the last key (keyset, S687), so it is empty here.
+                return [] if "&or=" in path_qs or "control_number=gt." in path_qs else [
                     {"college": "Cerritos College", "control_number": "02201", "build": BUILD if rows else None},
                     {"college": "Mt. San Antonio College", "control_number": "03086",
                      "build": BUILD if rows else None}]
