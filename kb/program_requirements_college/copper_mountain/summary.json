@@ -2,19 +2,776 @@
  "college": "Copper Mountain College",
  "programs": 59,
  "with_closed_list": 48,
- "found": 48,
- "extracted": 48,
+ "found": 0,
+ "extracted": 37,
  "errors": 0,
- "passed_machine_checks": 32,
+ "passed_machine_checks": 37,
  "failed": {
-  "coverage": 6,
-  "invented": 4,
-  "arithmetic": 15,
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 0,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 3.84,
- "cost_per_program": 0.0801,
- "not_found": [],
- "run": "39035222722"
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 2.88,
+ "cost_per_program": 0.0779,
+ "extract_calls": 0,
+ "extract_failed": [],
+ "not_found": [
+  {
+   "control_number": "14710",
+   "title": "General Business",
+   "award": "A.S. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "14711",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "14715",
+   "title": "Computer Information Systems",
+   "award": "A.A. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "14716",
+   "title": "Computer Programming",
+   "award": "A.S. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "14719",
+   "title": "Automotive Technology",
+   "award": "A.S. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "14737",
+   "title": "Vocational Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "14751",
+   "title": "Fire Technology",
+   "award": "A.S. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "16657",
+   "title": "Registered Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "18518",
+   "title": "Liberal Arts: Arts and Humanities",
+   "award": "A.A. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "18519",
+   "title": "Liberal Arts Social and Behavioral Sciences",
+   "award": "A.A. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "18520",
+   "title": "Liberal Arts: Mathematics & Science",
+   "award": "A.A. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "19796",
+   "title": "Computer Information Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "20093",
+   "title": "Computer Programming",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "20094",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "30387",
+   "title": "Qualified Early Childhood Educator: Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "31670",
+   "title": "Culinary Arts",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "32285",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "32579",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "32617",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "33381",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "33793",
+   "title": "Fire Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "33932",
+   "title": "Automotive Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "35004",
+   "title": "Transmission Service, Repair, and Overhaul",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "35005",
+   "title": "Alternative Fuel Vehicles",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "35006",
+   "title": "Steering and Suspension Service",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "35007",
+   "title": "Engine Performance and Driveability",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "35055",
+   "title": "Heating and Air Conditioning Service and Repair",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36526",
+   "title": "Computer Network Supervisor",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36808",
+   "title": "Desert Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "38512",
+   "title": "Computer-Aided Design and Drafting",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "41085",
+   "title": "Hospitality Management",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41580",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "42113",
+   "title": "Chemistry",
+   "award": "A.S. T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "42177",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "42178",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "42932",
+   "title": "Wildland Fire Technology (Noncredit)",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "42946",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "43132",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43282",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "43302",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "43422",
+   "title": "Residential Construction and Maintenance",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "43428",
+   "title": "Wildland Fire Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "43430",
+   "title": "Residential Construction and Maintenance (Noncredit)",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "43854",
+   "title": "History",
+   "award": "A.A. Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "44066",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "44517",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "45594",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A- T Degree",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "46529",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": null,
+   "status": "Approved"
+  }
+ ],
+ "run": "44529729606",
+ "kept_no_read": [
+  {
+   "control_number": "14711",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "14715",
+   "title": "Computer Information Systems",
+   "award": "A.A. Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=81",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "14716",
+   "title": "Computer Programming",
+   "award": "A.S. Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=83",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "14719",
+   "title": "Automotive Technology",
+   "award": "A.S. Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=71",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "18518",
+   "title": "Liberal Arts: Arts and Humanities",
+   "award": "A.A. Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=108",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "18520",
+   "title": "Liberal Arts: Mathematics & Science",
+   "award": "A.A. Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "19796",
+   "title": "Computer Information Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=81",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "20093",
+   "title": "Computer Programming",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=83",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "30387",
+   "title": "Qualified Early Childhood Educator: Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=90",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "31670",
+   "title": "Culinary Arts",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=88",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "32285",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=70",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "32579",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=66",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "32617",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=69",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "33381",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=91",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "33793",
+   "title": "Fire Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "33932",
+   "title": "Automotive Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=71",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "35004",
+   "title": "Transmission Service, Repair, and Overhaul",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=74",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "35005",
+   "title": "Alternative Fuel Vehicles",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=72",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "35006",
+   "title": "Steering and Suspension Service",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=74",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "35007",
+   "title": "Engine Performance and Driveability",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=73",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "35055",
+   "title": "Heating and Air Conditioning Service and Repair",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=73",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "36526",
+   "title": "Computer Network Supervisor",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=85",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "36808",
+   "title": "Desert Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=97",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "38512",
+   "title": "Computer-Aided Design and Drafting",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=82",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "41580",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=76",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "42113",
+   "title": "Chemistry",
+   "award": "A.S. T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=79",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "42177",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=118",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "42932",
+   "title": "Wildland Fire Technology (Noncredit)",
+   "award": "Noncredit program",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=99",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "42946",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=84",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "43282",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=80",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "43302",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=96",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "43422",
+   "title": "Residential Construction and Maintenance",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=87",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "43428",
+   "title": "Wildland Fire Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=99",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "43430",
+   "title": "Residential Construction and Maintenance (Noncredit)",
+   "award": "Noncredit program",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=87",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "44066",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "44517",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "method": "not_found",
+   "status": "Active",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=89",
+   "filed_run": "39035222722"
+  },
+  {
+   "control_number": "46529",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "method": "not_found",
+   "status": "Approved",
+   "why": null,
+   "lost_pages": [],
+   "filed_source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=94",
+   "filed_run": "39035222722"
+  }
+ ]
 }
