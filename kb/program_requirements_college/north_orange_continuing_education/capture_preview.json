@@ -1,0 +1,983 @@
+{
+ "college": "North Orange Continuing Education",
+ "catalog_url": "https://catalog.nocccd.edu/noce/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 109,
+ "with_closed_list": 101,
+ "started": "2026-11-19T10:52:14Z",
+ "scope": "/noce/",
+ "sitemap": {
+  "url": "https://catalog.nocccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1347,
+  "nested": 0,
+  "program_pages": 110,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "listing_failed": 0,
+ "pages_read": 135,
+ "pages_listed": 138,
+ "pages_answered": 135,
+ "child_pages": 28,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 78,
+   "hits": 1,
+   "recall": 0.013,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 0,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 8,
+  "by_result": {
+   "not_searched": 8
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "24064",
+    "title": "Graphic, Design and Web Skills Program",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 1 of 78 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24305",
+    "title": "Literacy Program",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 1 of 78 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24404",
+    "title": "Early Childhood Education Program",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 1 of 78 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32943",
+    "title": "Graphic, Design and Web Skills Program",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 1 of 78 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "39363",
+    "title": "ESL Reading and Writing Skills, Intermediate to Advanced",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 1 of 78 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "39364",
+    "title": "ESL Reading and Writing Skills, Beginning",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 1 of 78 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "39461",
+    "title": "ESL Civics",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 1 of 78 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40945",
+    "title": "ESL Speaking Skills, Beginning",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 1 of 78 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 144,
+ "seconds": 676.1,
+ "found": 78,
+ "by_method": {
+  "no_closed_list": 8,
+  "not_found": 19,
+  "page_claimed": 4,
+  "sitemap_page": 78
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "24032",
+   "title": "Fundamentals for Financial Office Applications Program",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24033",
+   "title": "Construction Technology - Electrical Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/construction/electrical-technology/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1910,
+     "content": 10657,
+     "tabs": 6405
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      406
+     ],
+     [
+      "List of Courses",
+      5953
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24087",
+   "title": "Construction Technology - General Contracting Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/construction/electrical-technology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1910,
+     "content": 10657,
+     "tabs": 6405
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      406
+     ],
+     [
+      "List of Courses",
+      5953
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24176",
+   "title": "Advanced Office Applications Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/office-assistant-advanced/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4025,
+     "content": 13204,
+     "tabs": 6790
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      1157
+     ],
+     [
+      "List of Courses",
+      5587
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24208",
+   "title": "Secondary Education Certificate of Completion",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24258",
+   "title": "Secondary Education Certificate of Completion - GED Test Preparation",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/basic-skills/ged-test-preparation/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2364,
+     "content": 8181,
+     "tabs": 3459
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      212
+     ],
+     [
+      "List of Courses",
+      3201
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24346",
+   "title": "Office Applications Essentials Program",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24414",
+   "title": "Fundamental Computer Concepts & Skills Program",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31327",
+   "title": "Electrical Trainee Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/construction/electrical-technology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1910,
+     "content": 10657,
+     "tabs": 6405
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      406
+     ],
+     [
+      "List of Courses",
+      5953
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33138",
+   "title": "Braille Transcribing Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/braille-transcribing/braille-transcribing/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2047,
+     "content": 5145,
+     "tabs": 726
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      103
+     ],
+     [
+      "List of Courses",
+      577
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37585",
+   "title": "Self-Advocacy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-self-empowerment/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4507,
+     "content": 8090,
+     "tabs": 1029
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      107
+     ],
+     [
+      "List of Courses",
+      876
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37587",
+   "title": "Daily Living Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37673",
+   "title": "Improving Individual Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38320",
+   "title": "Business Information Worker I",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39325",
+   "title": "ESL Specialty Courses",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-specialty-courses-beginning/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.417,
+    "body": 0.417,
+    "content": 0.417,
+    "net": 5,
+    "listed": 12,
+    "why": "coverage 0.42 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4542,
+     "content": 10303,
+     "tabs": 3208
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      316
+     ],
+     [
+      "List of Courses",
+      2846
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39625",
+   "title": "GED/HiSET Test Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/basic-skills/ged-test-preparation/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 8,
+    "listed": 8,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 2364,
+     "content": 8181,
+     "tabs": 3459
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      212
+     ],
+     [
+      "List of Courses",
+      3201
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46110",
+   "title": "Career Exploration: Essential Employment Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-essential-employment-skills/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1961,
+     "content": 2969,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46253",
+   "title": "ESL for Personal Care Aides",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/personal-care-aide/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2054,
+     "content": 6477,
+     "tabs": 2029
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      125
+     ],
+     [
+      "List of Courses",
+      1858
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46260",
+   "title": "Workforce Foundations Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-essential-employment-skills/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1961,
+     "content": 2969,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "38319",
+   "title": "Administrative Professional",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/",
+    "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/customer-relations/",
+    "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/office-assistant-advanced/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "39323",
+   "title": "ESL for Workforce Preparation, Basic",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-workforce-preparation-intermediate/",
+    "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-workforce-preparation-intermediate/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "41620",
+   "title": "Business Information Worker II",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/",
+    "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/customer-relations/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "46026",
+   "title": "High School Diploma Program",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.nocccd.edu/noce/high-school-diploma-program/"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 2,
+  "0.8-1.0": 0,
+  "1.0": 76
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/north_orange_continuing_education",
+  "kept": 78,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "24063": {
+   "sha256": "50ce781eba5ef11f7d96803becd5c1833b7765f20e18790d683935a8af8b6355",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-work-readiness/"
+  },
+  "24114": {
+   "sha256": "119e44bacc100920fb7b412d1f97a705f0d1f6f8e64df4ade07605e13d9f705a",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/management-program/"
+  },
+  "24115": {
+   "sha256": "897021d07cf0d5359346419b61f9481873fcb34d3a77c6467d3f34e190b6cb88",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/workplace-vocational-english-second-language-administrative-assistant/"
+  },
+  "24128": {
+   "sha256": "3b32b548bce71618829cf935f4f2fa03ebf8e8d9cd1c92e0f208a29863e34560",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/quality-assurance-management-certificate-medical-devices/"
+  },
+  "24163": {
+   "sha256": "7561a4e33c3dd5c8bdd3bc8c743d338effc26c4ded2d46126ba8e6151027238c",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/workplace-vocational-english-second-language-pharmacy-technician/"
+  },
+  "24166": {
+   "sha256": "8f0da8cea16e5f7b8390125cf999daff8f764345101b0fe819f8cf3ead7606c9",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/workplace-vocational-english-second-language-electricity-construction/"
+  },
+  "24292": {
+   "sha256": "712b9286befaba7ccb82f8554eb56dc00133d32177dbeed6a15afac11d4135cd",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/workplace-vocational-english-second-language-early-childhood-education/"
+  },
+  "31595": {
+   "sha256": "7d832d7b0e1a443cfc1922e01dd3791b1e042b4d22fdf65fb8b77bb5899308fd",
+   "url": "https://catalog.nocccd.edu/noce/high-school-diploma-program/"
+  },
+  "33698": {
+   "sha256": "8c3540fe196bdfbdb0bf637217a35cff1c285c127f855122d999b7f88d6603bc",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/funeral-service/funeral-service-assistant-certificate-program/"
+  },
+  "37591": {
+   "sha256": "176c582ba5fabc64952f6824954b68f73fd2f2e52d05f6cec5880456d7d61fd0",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/construction/electrical-technology/"
+  },
+  "38527": {
+   "sha256": "26b9c583e26df20b1c289093fc5fad7fa215e2780e26f44c570efb233b115270",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/math-preparation/math-preparation-math-skills-1/"
+  },
+  "38528": {
+   "sha256": "8201dcaf037cd62a9fe41b029d70efbe2dfc5b4302a914e2457a60d7aaf2dfbc",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/math-preparation/math-preparation-math-skills-2/"
+  },
+  "38529": {
+   "sha256": "4cf62c0e4ae03b75453cfc867f683e4c2da84f59b813688acdf710353de291f2",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/math-preparation/math-preparation-math-skills-3/"
+  },
+  "38690": {
+   "sha256": "8b3954aa78fad429c10c7f912dd8ae0d37cdf3d5c389dc404e9c03d6760c7ad4",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-academic-success-i/"
+  },
+  "38691": {
+   "sha256": "41fa0a455500364865c718ca02e92a48a55c1034f394f1375260c964056270a0",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-academic-success-ii/"
+  },
+  "39322": {
+   "sha256": "4752e174f20807269112ce930086e1d831c6b341aeb26971332b44dab119bca5",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-vocabulary-review/"
+  },
+  "39324": {
+   "sha256": "323f1e49a8a8198a67a28c65a9826d7f8a1cb0cad8923a876d6ea836a60e55ec",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-workforce-preparation-advanced/"
+  },
+  "39626": {
+   "sha256": "a4038a944a132500259ab8173dabb9945bd74394ac9ef3e32f84f5a47e8152fa",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-grammar-review/"
+  },
+  "39629": {
+   "sha256": "60f8e4244be0f6642cf1db9aed5e075dda991b73bcf0c9df1dad83ca95cb0393",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-multiskills/"
+  },
+  "39944": {
+   "sha256": "0997991d5685f780a4152171a00119d8598ff8b3c590c81ae237d9e7de076b3d",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/medical-assistant/"
+  },
+  "39945": {
+   "sha256": "7e343806fc4ea1af3f6e8f475a2fffe50b4b47ea9644824edb266d79e72da39f",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/personal-care-aide/"
+  },
+  "39946": {
+   "sha256": "85507f3ecfb0b3a5dc07478f2955dea410fbd8007aff4fcb68d43be66e5c967b",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/pharmacy_technician_entry_level/"
+  },
+  "39947": {
+   "sha256": "8fe789b4026b23e3fdd826e2aead7681ad7968fbf49dfdf83eb5f985fea2fefb",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/pharmacy_technician_registration_level/"
+  },
+  "39948": {
+   "sha256": "427823ea2a0e09ed9a9aa1cf41cf805244d6fd571105a557a4f0d7eaf9e6c75d",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/pharmacy_technician_advanced_level/"
+  },
+  "39986": {
+   "sha256": "cc6536fb224b083eea325d56934f449636f3ff3a27f6c190c0afba8aa55477d8",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/braille-transcribing/braille-transcribing/"
+  },
+  "40939": {
+   "sha256": "7bc3b6b549edce540b1627618958665c4556ea1ac67bede826ca3940b3641a3a",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-beginning-literacy/"
+  },
+  "40940": {
+   "sha256": "a97640251acf0e41946481844637332ba8213e09ea8aa04ffaed85de1175dedd",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-beginning-low/"
+  },
+  "40941": {
+   "sha256": "b6d7ea4e89073eca1cbdb8f35403e80bc77eb74e05e1121589f4834b6abbd950",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-beginning-high/"
+  },
+  "40942": {
+   "sha256": "fcb694c3008aed49326beb8a196b069195461d669091e37c905ac9e8bfac08c6",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-intermediate-low/"
+  },
+  "40943": {
+   "sha256": "52455e3fc7f9d3cb66a7bb91f29c1cf091a5a59dcae5ad18b8511d51d7d62837",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-intermediate-high/"
+  },
+  "40944": {
+   "sha256": "bda9ead5ed8fcaa254fffc3a96bd823e6d9b61af42107ba62c3f9715b1a2cf48",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-advanced/"
+  },
+  "40946": {
+   "sha256": "a1bd5adbe7f550f5354fc997c11325050d0e93ce2fbbc494016cfbf08763cd47",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-speaking-skills-intermediate-to-advanced/"
+  },
+  "40948": {
+   "sha256": "0916e82b9d3e2f4a74449ee2765758e2a1891b0a2acb41810faef2112eb248ef",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-preschool-assistant-teacher/"
+  },
+  "40950": {
+   "sha256": "feacfee7ee0fa9e6d54f67fcba3113d3960484f6fa50a8bf06c2a96af1e694f8",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-infant-care-teacher/"
+  },
+  "40951": {
+   "sha256": "c4876d1bee2b4392099c78b14f5a32ca736dde6511111e5b3ce5724dff253852",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-preschool-teacher/"
+  },
+  "40952": {
+   "sha256": "5169e588ea0a6748a245501c8fe24046933027c748b25d0d456c666dd8b08409",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-preschool-director/"
+  },
+  "41123": {
+   "sha256": "17817dc0e6214ea27cf85545b6612c9395ec63b7671990e7815189f60347cd0f",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/bookkeeping/"
+  },
+  "41619": {
+   "sha256": "94bec30af2fbda7bf5e0fa81d46b61d3713e2448b10fa13ab1bcba41f9feb15a",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/classroom-essentials-for-program-success/"
+  },
+  "42314": {
+   "sha256": "19188e69d7a4201627ac4df4ecb67f9270736b092c69179b09ca2df5e0958a7b",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-community-involvement-beginning/"
+  },
+  "42315": {
+   "sha256": "057005d5468650f9bade486240993408f9f5553f9b2104096e2e35a3cebe3a68",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-community-involvement-intermediate-to-advanced/"
+  },
+  "42316": {
+   "sha256": "866967e01b6f519b41525d4d4f088b84d028d1bbca8988e3286f893ffd013da9",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-workforce-preparation-intermediate/"
+  },
+  "43316": {
+   "sha256": "a88e1a35bdece564226b80016b6c2112c72ece8880b1702e8265cf774e9065a4",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/entrepreneurship/"
+  },
+  "43317": {
+   "sha256": "52f6d11805df2993d2cf639f80436633373804df406704367fe59060e86da297",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-child-care-industry/"
+  },
+  "43318": {
+   "sha256": "52d49e4df7203101289e2062072906831a9b16ae2045eab9430989a86456fbd8",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/computers/google-it-support-professional-pre-apprenticeship/"
+  },
+  "43414": {
+   "sha256": "68b630f4e0de87c605770d50deeea5c38c2fecd008db254e1448cc37d71ee805",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-college-success-skills/"
+  },
+  "44018": {
+   "sha256": "855cc9fe968e6efa822b142bfa97125846f26d0d381ac8b5b435c70a24a8cceb",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-advanced/"
+  },
+  "44019": {
+   "sha256": "8b0998d3c865d62f439459f20ca59cb870f05df2ed48a07e2b7bddc5455e4be0",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-the-arts/"
+  },
+  "44025": {
+   "sha256": "f1cebf0561ec94754d672e3ba4708fd10592a310312e81a5ff281fde4bea31d3",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-beginning-high/"
+  },
+  "44026": {
+   "sha256": "635a1e4b2a56febf96aa2e11b44dd9f848b9aedafb04c1f486e72513d024bf1d",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-beginning-literacy/"
+  },
+  "44027": {
+   "sha256": "fa3bdcf10c70cea66ba4a9d780b38919ba92d574ea402d8f80111b28e60a7a33",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-beginning-low/"
+  },
+  "44056": {
+   "sha256": "d317424c170800acb4e8999a79e1b4d831a55be4bbedba056908a238f86fcf91",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-intermediate-low/"
+  },
+  "44079": {
+   "sha256": "43bfe4a0913fe597640039b1e61b9810a7c6a10d5fe9b29897fb1944a468a6d3",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-intermediate-high/"
+  },
+  "44168": {
+   "sha256": "7bdcaa5259bbbef436339a057cb3286a11292d48a25a0b9c1df04cde2b0720af",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-specialty-courses-beginning/"
+  },
+  "44169": {
+   "sha256": "758ec4a6c623aaff1db36e0b23b0bc46ad362513668ca582f96a533a290d4d6c",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-specialty-courses-intermediate-to-advanced/"
+  },
+  "44229": {
+   "sha256": "396a37cb07efe0760b6b3521f0f3edddfd715b9aad749af494dd3daba024ac8c",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/customer-relations/"
+  },
+  "44243": {
+   "sha256": "0d637f0b88f3c5bb65c9d611497e595dff09e4aadfafd24f0f187ff78962f111",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-digital-marketing/"
+  },
+  "44244": {
+   "sha256": "a21a2dbe9c297bb612b5f17d986bfacb8ff7a9b6e28af46cc471ab5d045c6793",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-healthcare-workers/"
+  },
+  "44245": {
+   "sha256": "49bf76f5b6783cebbc82d2e081b36c6e24d03c6e76c499bf2ca3e0f3025ca827",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-animal-care-industry/"
+  },
+  "44312": {
+   "sha256": "41eaa9c3a957278474be3dba97663020d35029f71f2b82e5cf551c1c6149140d",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-workplace-technology-essentials/"
+  },
+  "44472": {
+   "sha256": "256cb487b2a3dc563a38e2432563cbf7fe9d2cdadda00e077d9829e1de8884fd",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/office-assistant-introduction/"
+  },
+  "44476": {
+   "sha256": "f2b6a3a26d6e68d5012e40f2919d6db46061b3e4c7579d1ca6cf6d4cd5907ef4",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/office-assistant-advanced/"
+  },
+  "44839": {
+   "sha256": "f7bb82c069d02bac93539f8e5ef232744d37152fa4f079a6654e895bfe72ae52",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-precollege-reading-and-writing,-intermediate/"
+  },
+  "45040": {
+   "sha256": "fad5e72792d19c8f8b7139ed437b539d51da1e677f5d60999a68c5d45f64cf81",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-career-paths-in-the-restaurant-industry/"
+  },
+  "45041": {
+   "sha256": "b9847a65bf7c0789c0d43b9ab5a42d67d166b86699121fd7983a9e81210e29f5",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-retail-and-customer-services-skills/"
+  },
+  "45042": {
+   "sha256": "b816586d4282ea58b0b72d93542aef97d482f6062b5e3a30287aab21eb28367f",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-orientation-to-college-and-survey-of-career-fields/"
+  },
+  "45043": {
+   "sha256": "3eb88ba5c0da6b5d3afea6212da536cd8b6657e88f2b00b44d59f38934830a5e",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-guest-services/"
+  },
+  "45044": {
+   "sha256": "1a57a6a4de75a6bb9085b64a499d67c9a6cd4f3ab40d1c1bbf2932b6082797a6",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-food-service-industry/"
+  },
+  "45223": {
+   "sha256": "d3759315beaf09b1e53c5201ed6b071bff9eaf7407ee096627a729e3c8ccf267",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-employment-preparation-part-a/"
+  },
+  "45224": {
+   "sha256": "f074ba026330f953b9149792db8d2cf2a815e6b7177645b10a6d13a3bd65a9b6",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-employment-preparation-part-b/"
+  },
+  "45936": {
+   "sha256": "26af805d173c382e9467cde90a831b5c6f3dfa1fabcd771edac9b39d6a0dca25",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/basic-skills/ged-test-preparation/"
+  },
+  "46248": {
+   "sha256": "27a1bfa6254c24e2492c0ccd42189bbcf0fb2af5ccb139f38e4be0cddc68c88e",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-core-workplace-communication/"
+  },
+  "46249": {
+   "sha256": "da848dc29ec0447e6eb3f6f91fec779e9add138bbac16f47693c8735c5a602d5",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-computers-and-technology/"
+  },
+  "46251": {
+   "sha256": "8bba4ff960818a6e5886ea8afbe73d2e672f21b1278f8a73c923beb586bd163d",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-entrepreneurs/"
+  },
+  "46252": {
+   "sha256": "7925389d2dab4cc93a749235fd3311e6f1fb050af9dcecdf2b42117e42735f9f",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-office-assistants/"
+  },
+  "46254": {
+   "sha256": "d60f78208bb24e438628a9bc31b274cad4317e91a3ca54fad80bbafd2ccd8576",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-communication-for-career-advancement/"
+  },
+  "46255": {
+   "sha256": "ec7003b8a4526e311135bbef576749849c17e22eb81ab9d6f7fe2bc8e5745dbb",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-interpersonal-communication/"
+  },
+  "46256": {
+   "sha256": "d5b37f3ce05a3ed7b187d9721d3b7c80a72a374c4961e4936b59dcb0d1d7bf81",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-reading-and-writing-skills/"
+  },
+  "46257": {
+   "sha256": "5d1d0ad4b2679656d086c5605aaeb0c46d616fd9f370b3672a83ba8de5e4479c",
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-self-empowerment/"
+  }
+ },
+ "run": "44509371084"
+}
