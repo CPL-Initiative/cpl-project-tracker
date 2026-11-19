@@ -1,5 +1,5 @@
 {
- "note": "Real S684 keep-better cases (PR #3550, branch claude/wave-s684 at 9d8335eb; filed records at origin/main 5383372b). The re-read's score is rebuilt from the account's brief: the re-read file was restored over and is not committed. Built for S685 by a scratch script.",
+ "note": "Real S684 keep-better cases (PR #3550, merged to main at 0529ca75) and S683 cases (Santa Rosa Junior, Moorpark, Citrus), read at origin/main 0529ca75. The re-read's score is rebuilt from the account's brief: the re-read file was restored over and is not committed. Built for S685 by a scratch script.",
  "cases": [
   {
    "slug": "ventura",
@@ -711,6 +711,460 @@
      }
     }
    }
+  },
+  {
+   "slug": "santa_rosa_junior",
+   "college": "Santa Rosa Junior College",
+   "run": "44477690021",
+   "control_number": "16986",
+   "title": "Psychology",
+   "award": "A.A. Degree",
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
+   "heading": "Major Requirements",
+   "account_outcome_s684": "restored",
+   "account_why_s684": "the re-read's heading 'Major Requirements' shares no word with the title 'Psychology'",
+   "live_run": null,
+   "reread_score": {
+    "pass": true,
+    "coverage": {
+     "placed": 18,
+     "listed": 19,
+     "share": 0.947,
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "pass": true
+    },
+    "arithmetic": {
+     "status": "equal"
+    }
+   },
+   "filed": {
+    "extracted_run": "39006464249",
+    "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=195",
+    "score": {
+     "measure": "units",
+     "coverage": {
+      "placed": 18,
+      "listed": 19,
+      "share": 0.947,
+      "missing": [
+       "CDEVC1000"
+      ],
+      "unexplained": [],
+      "none_placed": false,
+      "pass": true
+     },
+     "invented": {
+      "count": 2,
+      "codes": [
+       "CHLD10",
+       "PSYC14"
+      ],
+      "flagged": [
+       "CHLD10",
+       "PSYC14"
+      ],
+      "pass": true
+     },
+     "arithmetic": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       21.0,
+       21.0
+      ],
+      "stated": [
+       21.0,
+       21.0
+      ],
+      "against": "program",
+      "why": []
+     },
+     "repeated": {
+      "codes": [],
+      "pass": true
+     },
+     "outcomes": {
+      "program": 6,
+      "courses": 0,
+      "count": 6,
+      "not_verbatim": [],
+      "why": [],
+      "heading_printed": true,
+      "heading_without_outcomes": false,
+      "pass": true
+     },
+     "careers": {
+      "count": 0,
+      "not_verbatim": [],
+      "pass": true
+     },
+     "degree": {
+      "status": "major only",
+      "why": [
+       "the record names no degree total and no general education units"
+      ]
+     },
+     "pass": true
+    }
+   },
+   "sources_entry": {
+    "control_number": "16986",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "source": {
+     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
+     "title": "Students completing the Associate in Arts for Transfer in Psychology at",
+     "h1": "Students completing the Associate in Arts for Transfer in Psychology at",
+     "label": null,
+     "heading_named": true
+    }
+   }
+  },
+  {
+   "slug": "moorpark",
+   "college": "Moorpark College",
+   "run": "44481524745",
+   "control_number": "31614",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
+   "heading": "REQUIREMENTS",
+   "account_outcome_s684": "restored",
+   "account_why_s684": "the re-read's heading 'REQUIREMENTS' shares no word with the title 'Communication Studies'",
+   "live_run": null,
+   "reread_score": {
+    "pass": true,
+    "coverage": {
+     "placed": 15,
+     "listed": 18,
+     "share": 0.833,
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "pass": true
+    },
+    "arithmetic": {
+     "status": "equal"
+    }
+   },
+   "filed": {
+    "extracted_run": "38748862351",
+    "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
+    "score": {
+     "measure": "units",
+     "coverage": {
+      "placed": 14,
+      "listed": 18,
+      "share": 0.778,
+      "missing": [
+       "COMMM1",
+       "COMMM1H",
+       "COMMM4",
+       "COMMM7"
+      ],
+      "unexplained": [],
+      "none_placed": false,
+      "pass": true
+     },
+     "invented": {
+      "count": 16,
+      "codes": [
+       "ANTHM2",
+       "COMMC1000",
+       "COMMC1000H",
+       "COMMC1004",
+       "COMMM107",
+       "ENGLC1001",
+       "ENGLC1001H",
+       "ENGLC1003",
+       "ENGLC1003H",
+       "FTMAM100",
+       "PSYCC1000",
+       "PSYCC1000H",
+       "SOCIC1000",
+       "SOCIC1000H",
+       "STATC1000",
+       "STATC1000H"
+      ],
+      "flagged": [
+       "ANTHM2",
+       "COMMC1000",
+       "COMMC1000H",
+       "COMMC1004",
+       "COMMM107",
+       "ENGLC1001",
+       "ENGLC1001H",
+       "ENGLC1003",
+       "ENGLC1003H",
+       "FTMAM100",
+       "PSYCC1000",
+       "PSYCC1000H",
+       "SOCIC1000",
+       "SOCIC1000H",
+       "STATC1000",
+       "STATC1000H"
+      ],
+      "pass": true
+     },
+     "arithmetic": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       20.0
+      ],
+      "stated": [
+       18.0,
+       20.0
+      ],
+      "against": "program",
+      "why": [],
+      "degree": {
+       "pass": true,
+       "status": "equal",
+       "computed": [
+        64.0,
+        77.0
+       ],
+       "stated": [
+        60.0,
+        60.0
+       ],
+       "against": "degree",
+       "ge": [
+        34.0,
+        34.0
+       ],
+       "why": [],
+       "overlap": true
+      }
+     },
+     "repeated": {
+      "codes": [],
+      "pass": true
+     },
+     "outcomes": {
+      "program": 3,
+      "courses": 0,
+      "count": 3,
+      "not_verbatim": [],
+      "why": [],
+      "heading_printed": false,
+      "heading_without_outcomes": false,
+      "pass": true
+     },
+     "careers": {
+      "count": 0,
+      "not_verbatim": [],
+      "pass": true
+     },
+     "degree": {
+      "status": "read"
+     },
+     "pass": true
+    }
+   },
+   "sources_entry": {
+    "control_number": "31614",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "source": {
+     "url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
+     "title": "Communication Studies 2.0, Associate in Arts for Transfer < Moorpark College",
+     "h1": "2026-2027\nAcademic Catalog",
+     "label": {
+      "award": 1,
+      "title": 1.0,
+      "section": "adt",
+      "section_line": "communication studies 2.0, associate in arts for transfer",
+      "section_fit": 1.0
+     }
+    }
+   }
+  },
+  {
+   "slug": "citrus",
+   "college": "Citrus College",
+   "run": "44481520157",
+   "control_number": "41679",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "source_url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+   "heading": "Requirements",
+   "account_outcome_s684": "restored",
+   "account_why_s684": "the re-read's heading 'Requirements' shares no word with the title 'Business Administration 2.0'",
+   "live_run": null,
+   "reread_score": {
+    "pass": true,
+    "coverage": {
+     "placed": 13,
+     "listed": 13,
+     "share": 1.0,
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "pass": true
+    },
+    "arithmetic": {
+     "status": "equal"
+    }
+   },
+   "filed": {
+    "extracted_run": "39726639865",
+    "source_url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+    "score": {
+     "measure": "units",
+     "coverage": {
+      "placed": 12,
+      "listed": 13,
+      "share": 0.923,
+      "missing": [
+       "ECON101H"
+      ],
+      "unexplained": [],
+      "none_placed": false,
+      "pass": true
+     },
+     "invented": {
+      "count": 1,
+      "codes": [
+       "ECONC2002H"
+      ],
+      "flagged": [
+       "ECONC2002H"
+      ],
+      "pass": true
+     },
+     "arithmetic": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       28.0,
+       29.0
+      ],
+      "stated": [
+       28.0,
+       29.0
+      ],
+      "against": "program",
+      "why": []
+     },
+     "repeated": {
+      "codes": [],
+      "pass": true
+     },
+     "outcomes": {
+      "program": 4,
+      "courses": 0,
+      "count": 4,
+      "not_verbatim": [],
+      "why": [],
+      "heading_printed": true,
+      "heading_without_outcomes": false,
+      "pass": true
+     },
+     "careers": {
+      "count": 0,
+      "not_verbatim": [],
+      "pass": true
+     },
+     "degree": {
+      "status": "major only",
+      "why": [
+       "the record names no degree total and no general education units"
+      ]
+     },
+     "pass": true
+    }
+   },
+   "sources_entry": {
+    "control_number": "41679",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "source": {
+     "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+     "title": "ADT in Business Administration 2.0 | Citrus College Academic Catalog",
+     "h1": "ADT in Business Administration 2.0",
+     "label": {
+      "award": 0,
+      "title": 1.0,
+      "section": null,
+      "section_line": null,
+      "section_fit": 0.0
+     }
+    }
+   }
+  }
+ ],
+ "address_cases": [
+  {
+   "slug": "ventura",
+   "control_number": "45732",
+   "title": "Public Health",
+   "award": "A.S. T Degree",
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/health-education/public-health-science-ast/",
+   "own_address": false
+  },
+  {
+   "slug": "ventura",
+   "control_number": "32052",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/mathematics-readiness-cocy/",
+   "own_address": false
+  },
+  {
+   "slug": "ventura",
+   "control_number": "20591",
+   "title": "Photography",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/analog-photography-coa/",
+   "own_address": false
+  },
+  {
+   "slug": "ventura",
+   "control_number": "06948",
+   "title": "Business Management",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/business/small-business-management-as/",
+   "own_address": false
+  },
+  {
+   "slug": "antelope_valley",
+   "control_number": "33020",
+   "title": "Music",
+   "award": "A.A- T Degree",
+   "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/music-aa-fall-2026",
+   "own_address": false
+  },
+  {
+   "slug": "antelope_valley",
+   "control_number": "33020",
+   "title": "Music",
+   "award": "A.A- T Degree",
+   "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/music-aa-t-fall-2026",
+   "own_address": true
+  },
+  {
+   "slug": "ventura",
+   "control_number": "06948",
+   "title": "Business Management",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-management-as/",
+   "own_address": true
+  },
+  {
+   "slug": "ventura",
+   "control_number": "20591",
+   "title": "Photography",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-coa/",
+   "own_address": true
   }
  ]
 }

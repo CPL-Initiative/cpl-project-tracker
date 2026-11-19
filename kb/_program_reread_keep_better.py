@@ -15,9 +15,10 @@ with the same file at origin/main and keeps the better one.
   program's title, and the scorer's heading_award_check passes. A blank heading names no program. A CourseLeaf
   program page heads its list REQUIREMENTS, Course List, Major Requirements or Requirements, words the scorer's
   heading_content_words reads as naming no program; such a generic heading passes the first test only where the
-  committed files show the page is the program's own (page_is_own): the last segment of the record's source_url, or
-  the capture's sources.json entry for that page (heading_named, the page title, the h1), names every title word and
-  no other award. S684 set aside Ventura's 4 and Evergreen Valley's 13 good re-reads on the word test alone. A
+  committed files show the page is the program's own (page_is_own): the last segment of the record's source_url,
+  less its term and award words, holds exactly the title's words, 2.0 counted; or the capture's sources.json entry
+  for that page (heading_named, the page title, the h1) names every title word, while its title and h1 name no
+  other award. S684 set aside Ventura's 4 and Evergreen Valley's 13 good re-reads on the word test alone. A
   heading carrying another program's words still fails, whatever the address. A re-read that fails is set aside
   whatever its score: the filed record is restored, or, with no filed record, the new record moves to
   <folder>/held_for_person/ (out of records/, so no load or reread posts it) and is listed there.
@@ -180,38 +181,75 @@ def page_is_own(rec: dict, source: dict | None = None) -> str | None:
         reader's heading_named (a PDF window whose heading names the program), its page title less the site's name,
         then its h1.
     A directory never counts: .../administration-justice/community-service-officer-certificate-achievement/ names
-    Administration of Justice in its directory and is another program's page."""
+    Administration of Justice in its directory and is another program's page.
+    The address must name the title and nothing else (S685 second reader, round 1): its last segment, less a term or
+    year suffix (-fall-2026, -2026fa, -2026v2) and the trailing run of award words (-ast, -aa-t-degree,
+    -associate-in-arts-for-transfer, -certificate-of-achievement, -coa), holds exactly the title's words, so Public
+    Health never passes on public-health-science-ast nor Photography on analog-photography-coa. "2.0" is a word of
+    its own: a TMC's 2.0 version is a COCI program apart from the first (Communication Studies against Communication
+    Studies 2.0), so a page and a title agree on it or nothing shows the page is the program's. A page title or h1
+    must name every title word and agree on 2.0. And the capture's title or h1 must not name another award: a PDF
+    window whose first line reads "Students completing the Associate in Arts for Transfer in Psychology" is the
+    AA-T's, whatever heading_named says (Santa Rosa Junior 16986, A.A.)."""
     import urllib.parse
     import _program_requirements_college as C
-    from _program_requirements_pilot import award_kind, title_tokens
+    from _program_requirements_pilot import award_kind
     from _program_requirements_score import heading_award_check
     title = rec.get("title") or ""
-    want = set(title_tokens(title))
+    want = page_words(title)
     if not want:
         return None
 
-    def names(text: str) -> bool:
-        if not want <= set(title_tokens(text)):
-            return False
+    def award_ok(text: str) -> bool:
         chk = heading_award_check({"program": {"section_heading": text}}, rec.get("award"),
                                   rec.get("control_number"), title)
         return bool(chk.get("pass"))
 
     url = rec.get("source_url") or ""
-    slug = urllib.parse.unquote(urllib.parse.urlsplit(url).path).rstrip("/").rsplit("/", 1)[-1]
-    awards = C.slug_awards(url)
-    if slug and names(re.sub(r"[-_]+", " ", slug)) and (not awards or award_kind(rec.get("award")) in awards):
+    parts = urllib.parse.urlsplit(url)
+    slug = urllib.parse.unquote(parts.path).rstrip("/").rsplit("/", 1)[-1].lower()
+    bare = TERM_TAIL.sub("", slug)
+    named = AWARD_TAIL.sub("", bare)
+    awards = C.slug_awards(urllib.parse.urlunsplit(parts._replace(path="/" + bare)))
+    if named and page_words(named) == want and award_ok(re.sub(r"[-_]+", " ", bare)) \
+            and (not awards or award_kind(rec.get("award")) in awards):
         return "the address's last segment %r names the program" % slug[:80]
     src = (source or {}).get("source") if isinstance((source or {}).get("source"), dict) else {}
     if not src or not url or _page(src.get("url")) != _page(url):
         return None
+    texts = [(key, C.TITLE_SPLIT.split((src.get(key) or "").strip())[0]) for key in ("title", "h1")]
+    if any(text and not award_ok(text) for _, text in texts):
+        return None
     if src.get("heading_named") is True:
         return "the capture's window heading names the program (sources.json heading_named)"
-    for key, label in (("title", "page title"), ("h1", "h1")):
-        text = C.TITLE_SPLIT.split((src.get(key) or "").strip())[0]
-        if text and names(text):
-            return "the capture's %s %r names the program" % (label, text[:80])
+    for key, text in texts:
+        words = page_words(text)
+        if text and want <= words and ("2.0" in want) == ("2.0" in words):
+            return "the capture's %s %r names the program" % ("page title" if key == "title" else key, text[:80])
     return None
+
+
+# A catalog term or year after the program's words: -2026, -fall-2026, -2026fa, -2026v2, -2026-27, -intersession.
+TERM_TAIL = re.compile(r"(?:-(?:fall|spring|summer|winter|intersession))?-(?:19|20)\d\d(?:fa|sp|su|wi|v\d+)?"
+                       r"(?:-(?:19|20)?\d\d)?$|-intersession$")
+# The trailing run of award words on a program address, as the committed addresses print them.
+AWARD_TAIL = re.compile(
+    r"(?:-(?:associates?(?:-(?:in|of))?-(?:arts|science)|(?:for-)?(?:uc-)?transfer|degrees?|a-?[as](?:-?t)?|adt|aas"
+    r"|b-?[as]|bachelors?(?:-of-(?:arts|science))?|certificates?|cert|of|in|achievement|achieve|accomplishment"
+    r"|completion|competency|proficiency|specialization|noncredit|non-credit|coa|coc|cocn|ca|nc))+$")
+
+
+def page_words(text: str | None) -> set[str]:
+    """A name's words for comparing a page with a title: the pilot's STOP words out, a single letter out, and a
+    version number kept, 2 and 2.0 alike ("communication-2-studies", "Communication Studies 2.0")."""
+    from _program_requirements_pilot import STOP
+    out = set()
+    for w in re.findall(r"[a-z0-9]+(?:\.[0-9]+)?", (text or "").lower()):
+        if w in ("2", "2.0"):
+            out.add("2.0")
+        elif w not in STOP and len(w) > 1:
+            out.add(w)
+    return out
 
 
 def own_program_why(rec: dict, source: dict | None = None) -> tuple[str | None, str | None]:

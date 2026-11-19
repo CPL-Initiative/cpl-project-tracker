@@ -29,6 +29,10 @@ so the reread leaves that row alone. This test guards the failure mode: a filed 
     another page; a heading naming another program is set aside even on the program's address; a blank heading
     still fails. Real cases: Ventura 31298, 45831, 35207 (its own page, lost on coverage), 45355 (the C-ID page) and
     Evergreen Valley 06154, 46262 (tests/fixtures/program_reread_keep_better_s685.json);
+  * S685 round 1: the address holds exactly the title's words (five committed addresses of a longer title's program
+    show nothing; a term suffix is stripped); 2.0 is a word of its own (Moorpark 31614 restored, Citrus 41679 kept
+    on its page title); a capture title or h1 naming another award shows nothing, heading_named beside it included
+    (Santa Rosa Junior 16986, the AA-T's window for the A.A.);
   * S685, the order (COBIx on #3547): the checked list wins over everything; a re-read that is not its own
     program's is held where the live row already holds this run (a wrong record live, the run in the why), and
     restored where the live run is a third one; a live run equal to this run is already posted: kept on the branch,
@@ -611,7 +615,13 @@ def test_real_cases(tmp):
         cases = json.load(fh)["cases"]
     want = {"31298": "kept", "45831": "kept", "06154": "kept", "46262": "kept",
             "35207": "restored",   # its own page, and the filed record holds coverage.pass: better decides
-            "45355": "held"}       # Cal-GETC read from the C-ID page: no filed record, and nothing shows the page
+            "45355": "held",       # Cal-GETC read from the C-ID page: no filed record, and nothing shows the page
+            # S685 round 1: heading_named on a PDF window whose first line names the AA-T, for the A.A.
+            "16986": "restored",
+            # Communication Studies on the Communication Studies 2.0 page: 2.0 is a word of its own
+            "31614": "restored",
+            # Business Administration 2.0 on business-administration-adt: the address lacks 2.0, the page title has it
+            "41679": "kept"}
     for case in cases:
         sub = os.path.join(tmp, case["control_number"])
         os.makedirs(sub, exist_ok=True)
@@ -639,12 +649,59 @@ def test_real_cases(tmp):
         if want[cn] == "kept":
             check(dispatched(acct) == {cn}, "%s: dispatch %r" % (cn, acct["dispatch"]))
             check(bool(row.get("own_page")), "%s: no page evidence named" % cn)
+        elif cn == "35207":
+            check(row.get("own_page") and "coverage.pass" in row["why"], "35207: %r" % row["why"][:120])
+        else:
+            check("generic" in row["why"], "%s: set aside for another reason: %r" % (cn, row["why"][:120]))
+    check({c["control_number"] for c in cases} == set(want), "the real cases are not the ones expected")
+    check("page title" in (K.page_is_own(dict(next(c for c in cases if c["control_number"] == "41679"),
+                                                record={}),
+                                           next(c for c in cases if c["control_number"] == "41679")["sources_entry"])
+                           or ""), "41679 passes on something other than its page title")
+
+
+def test_address_cases(tmp):
+    """S685 round 1, finding 2: the address names the title and nothing else. Five committed addresses of a longer
+    title's program (Ventura, Antelope Valley) show nothing for the shorter title; the programs' own addresses,
+    a term suffix (-fall-2026) included, still do."""
+    with open(REAL) as fh:
+        cases = json.load(fh)["address_cases"]
+    check(sum(not c["own_address"] for c in cases) == 5, "the five addresses are not all in the fixture")
+    for c in cases:
+        got = K.page_is_own({"control_number": c["control_number"], "title": c["title"], "award": c["award"],
+                             "source_url": c["source_url"]})
+        if c["own_address"]:
+            check(got is not None and "address" in got, "%s %s on its own address %s: %r"
+                  % (c["control_number"], c["title"], c["source_url"], got))
+        else:
+            check(got is None, "%s %s passes on %s: %r" % (c["control_number"], c["title"], c["source_url"], got))
+    words = K.page_words
+    check(words("communication-2-studies") == words("Communication Studies 2.0") != words("Communication Studies"),
+          "2 and 2.0 are not one version word")
+
+
+def test_capture_names_another_award(tmp):
+    """S685 round 1, findings 1 and 4: a page title, or the window line beside heading_named, naming another award
+    shows nothing, though it names every title word."""
+    url = "https://x.edu/p.php?id=9"
+    r = {"control_number": "53001", "title": TITLE, "award": AWARD, "source_url": url}
+    aat = "Business Administration - Associate in Arts for Transfer | Fixture College Catalog"
+    own = "Business Administration - Associate in Science | Fixture College Catalog"
+    check(K.page_is_own(r, source_entry("53001", url, title=own)) is not None, "the program's own page title fails")
+    check(K.page_is_own(r, source_entry("53001", url, title=aat)) is None, "a page title naming the AA-T passes")
+    check(K.page_is_own(r, source_entry("53001", url, title="", h1=aat)) is None, "an h1 naming the AA-T passes")
+    line = "Students completing the Associate in Arts for Transfer in Business Administration at"
+    check(K.page_is_own(r, source_entry("53001", url, title=line, h1=line, heading_named=True)) is None,
+          "heading_named passes beside a window line naming the AA-T")
+    check(K.page_is_own(r, source_entry("53001", url, title="Business Administration", heading_named=True))
+          is not None, "heading_named fails beside a line naming no award")
 
 
 def main():
     for fn in (test_checked_list, test_folder, test_all_restored, test_checked_unfiled, test_live_runs,
                test_live_runs_file, test_control_number_shape, test_ascii_runs, test_generic_heading_scorer,
-               test_generic_heading, test_order, test_second_pass, test_matches_main, test_real_cases):
+               test_generic_heading, test_order, test_second_pass, test_matches_main, test_real_cases,
+               test_address_cases, test_capture_names_another_award):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)
