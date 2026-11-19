@@ -68,6 +68,8 @@ def main(ref, slugs, out):
 --   records, rows whose live run equals the filed run, live rows with no run, and the sizes of the two lists below.
 --   diff: [college, control number, live run, filed run] where both exist and differ.
 --   extra: [college, control number, live run] for a live row the ref files no record for.
+--   gone: per college, the control numbers the ref files that have no live row (S687: without it live_runs is a
+--   guess wherever a college files more records than it has live rows). chk is limited to these colleges.
 """ % (len(colleges), ref, sha, len(rows))
     body = """with f(college, cn, run) as (values
 %s
@@ -82,7 +84,8 @@ select jsonb_build_object(
   'at', to_char(now() at time zone 'utc', 'YYYY-MM-DD"T"HH24:MI:SS"Z"'),
   'chk', coalesce((select jsonb_object_agg(college, cns) from (
             select college, jsonb_agg(control_number order by control_number) as cns
-              from public.program_requirement_records where checked = true group by college) c), '{}'::jsonb),
+              from public.program_requirement_records where checked = true and college in (%s)
+             group by college) c), '{}'::jsonb),
   'sum', (select jsonb_object_agg(college, x) from (
             select college, jsonb_build_array(
                      count(*) filter (where is_live), count(*) filter (where is_filed),
@@ -94,9 +97,12 @@ select jsonb_build_object(
   'diff', coalesce((select jsonb_agg(jsonb_build_array(college, cn, live_run, filed_run) order by college, cn)
                       from j where is_live and is_filed and live_run is distinct from filed_run), '[]'::jsonb),
   'extra', coalesce((select jsonb_agg(jsonb_build_array(college, cn, live_run) order by college, cn)
-                       from j where is_live and not is_filed), '[]'::jsonb)
+                       from j where is_live and not is_filed), '[]'::jsonb),
+  'gone', coalesce((select jsonb_object_agg(college, cns) from (
+            select college, jsonb_agg(cn order by cn) as cns from j where is_filed and not is_live group by college) g),
+            '{}'::jsonb)
 ) as live_compare;
-""" % (",\n".join(rows), ", ".join(q(c) for c in sorted(colleges)))
+""" % (",\n".join(rows), ", ".join(q(c) for c in sorted(colleges)), ", ".join(q(c) for c in sorted(colleges)))
     with open(out, "w", encoding="utf-8") as fh:
         fh.write(header + body)
     print("wrote %s: %d records at %d colleges from %s (%s)" % (out, len(rows), len(colleges), ref, sha))
