@@ -289,3 +289,8 @@ alter table public.cpl_library add column if not exists remediation text;
 alter table public.cpl_library drop constraint if exists cpl_library_remediation_ck;
 alter table public.cpl_library add constraint cpl_library_remediation_ck check (
   remediation is null or remediation in ('in_remediation', 'remediated'));
+
+-- ── The publishing model (#3560 part 1; Sam's decisions of Nov 19, 2026, via COBIx) ─────────────────
+-- publish_target ('internal' or 'public'), template (boolean) and division (whose settings a piece follows) live with
+-- the two tables they need, cpl_library_checks and cpl_library_division_settings, and the trigger that resets
+-- publish_target when a piece is unlisted: kb/migrations/2026-11-19_library_publishing_model.sql (rollback beside it).

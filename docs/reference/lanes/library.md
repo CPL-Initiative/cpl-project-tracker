@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-14
+updated: 2026-11-19
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -20,8 +20,57 @@ CPLLibrary folder on the MAP team's SharePoint site; the repos keep only the sou
 
 **LIVE: Publish now shows one status line (#3562, `0159aacb`; Sam's test of Nov 19, COBIx on #3560).** Publishing,
 Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
-`token_refused` named). Guard `tests/library_publish_now.test.js`. **NEXT (#3560, open):** the progress bar, the
-accessibility gate and footer, the two publish buttons, Publish all, Add existing, redraft and republish, Template.
+`token_refused` named). Guard `tests/library_publish_now.test.js`.
+
+**BUILT in #3572, its three migrations applied (runs 44621258767, 44624282220, 44628207752): the publishing model, #3560 part 1 of 4
+(S687; Sam's decisions of Nov 19 via COBIx).** A new piece's ready draft has two buttons, exactly *Publish to Internal Library* and *Publish to Public
+Library*; no approval from Sam. Internal approves the draft; one press starts the publish run at once only for a
+signed-in reviewer (Publish now's holds and one status line), and a team-phrase press waits for the scheduled run
+(every three hours). Public shows *"This lists it in the Public Library, where anyone can find
+it."*, does the same, and keeps `cpl_library.publish_target = 'public'`; a piece already on its page lists at once
+through `cpl_library_set_public()` only with a passing check record for its page, and otherwise waits; a waiting
+piece whose page check passes offers the listing form again. The function itself refuses a listing without that pass
+(the service role exempt, unlisting unchanged), so the tab is not the only gate.
+The card then carries *In the Public Library*. List publicly is retired. Removing a piece from the Public Library
+leaves it in the Internal Library (a trigger resets `publish_target` on any unlisting). Template: a checkbox in Edit
+the record, a chip, a Templates filter (cleared at the next visit), templates first in the finder and at the head of
+a new draft. Details shows the check record under Sam's labels. Schema
+`kb/migrations/2026-11-19_library_publishing_model.sql` (`cpl_library_checks`, `cpl_library_division_settings`
+seeded with `cobi` and *WCAG 2.1 AA and Section 508*; columns `publish_target`, `template`, `division`); without it
+the tab publishes to the Internal Library and Public says the check record is not available yet. Guard
+`tests/library_publishing_model.test.js`, `tests/public_library.test.js`, and `tests/library_publishing_sql_proof.py`
+(the migration and its rollback against a throwaway Postgres, in `js-tests.yml`).
+- DECIDED (S687, `d-library-check-per-version-key-s687`): a check covers one version key: `draft:<draft id>` for a card draft ready or approved and not yet
+  published, `version:<version>` for the page, `page` for a page with no number. Listing reads the page's key alone
+  (second read of #3572), in the tab and in `cpl_library_set_public()`; the draft's key speaks only to a new piece's
+  Public confirmation. A draft's check never carries to the page, which is checked again once it is up.
+- DECIDED (S687): the rollback refuses while `cpl_library_checks` holds rows, since nothing else keeps them.
+- DECIDED (S687 conductor, on COBIx's #3572 comments 7022946691, 7023361983 and 7023581179;
+  `d-library-new-page-unlists-s687`): a listed piece leaves the Public Library when its `url` changes, always, since no
+  check is keyed on a url; and when its `version` changes, unless the latest check for the new version key passes. It
+  keeps `publish_target = 'public'` so part 2's run checks the new page and lists it again. Every writer, the service
+  role included, since unlisting is the safe direction. Until part 2 relists, this overrides Sam's "a Public Library
+  piece stays listed while redrafted, showing the last published version" (Nov 19, item 9; his to reverse): a draft
+  stays a draft and unlists nothing, and only a published new version or a new url does. Trigger
+  `cpl_library_unlist_new_page_trg`: `kb/migrations/2026-11-19_library_relist_on_new_version.sql` (applied, run
+  44624282220), its url rule `kb/migrations/2026-11-19_library_unlist_on_url_change.sql` (applied, run 44628207752; it also
+  corrects the memory row's summary with a guarded UPDATE).
+- DECIDED (S687, `d-library-internal-one-press-s687`): Publish to Internal Library approves a new piece and starts the
+  publish run in one press for a signed-in reviewer, through Publish now's holds; a team-phrase press waits for the
+  scheduled run.
+- DECIDED (S687, `d-library-3560-in-four-prs-s687`): #3560 lands in four PRs, one after another, since its asks share
+  `library.js`: 1 the two publish buttons, Template and the check gate (#3572); 2 the check run and the footer; 3 the
+  progress bar; 4 Publish all, Add existing, redraft and republish. Memory rows: run 44624406317.
+- Known limit, part 2's to close: a check names a version, not its contents, so a version key set back to one that
+  passed keeps that key's check, and a page whose contents change at the same url and version keeps its listing. A
+  move to a new url is closed: it always unlists.
+- DECIDED (S687): a new piece pressed to Public is never listed at the press (it has no page yet); part 2's check run
+  lists it once its page passes. Only the service role writes a check, so the tab never certifies a piece.
+- DECIDED (S687): Replace the public copy on a revision is unchanged until part 4 (redraft and republish).
+
+**NEXT (#3560):** part 2, the check run in `library-publish.yml` (writes `cpl_library_checks`, lists the pieces whose
+`publish_target` is public once they pass) and the footer from each piece's check record; part 3, the progress bar;
+part 4, Publish all, Add existing, redraft and republish.
 
 ✅ **The tab is built** (`library.js`, under *Sierra & Team Tools*; the side
 session beside S336, 2026-10-05). It reads `cpl_library` live behind the team
@@ -41,7 +90,7 @@ Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
 ✅ **Start a piece is built** (2026-10-06): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S686 light checkpoint)*.
 
 ✅ **The public library is built** (2026-10-20, DSP side session). One record and a switch, never a copy
-(*"Copy or move...to save space"*): **List publicly** on a record in the Library tab sets `public_listed` through
+(*"Copy or move...to save space"*): **Publish to Public Library** (List publicly until #3560) on a record in the Library tab sets `public_listed` through
 `cpl_library_set_public()`; a trigger refuses the public columns any other way, and retiring a piece or narrowing its
 audience unlists it. `cpl_library_public()` (anon) returns the listed pieces' public fields only, to the page at
 `library/` and the Admin tab's **Public library** panel (Remove beside each). A Claude page also needs its claude.ai
@@ -126,8 +175,8 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   not-yet-evaluated credentials carry a CPL-AI course match chip by folded title and issuer (Certiport's Swift row held
   out; never from CIP alone). **NEXT:** COBIx's next step, scoring the 185 unreviewed credentials with issuer skill
   areas against harvested outcomes in `kb/_build_adopt_align.py` (a chip only for a clear standout at 0.20).
-- **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: List publicly
-  is Sam's press, linked from the funding dashboard's 75% JST condition.
+- **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: Publish to Public Library
+  is the team's press once its check passes, linked from the funding dashboard's 75% JST condition.
 - **Publish now and one queue check (S642, S643, S648):** shipped and deployed; detail moved verbatim to
   [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S669)*.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),

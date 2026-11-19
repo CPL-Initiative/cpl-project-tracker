@@ -198,18 +198,18 @@ const posts = (m) => m.writes.filter((x) => x.method === "POST" && /\/rest\/v1\/
     });
     await m.M.activate(); await tick();
     const form = m.root.querySelector('form[data-draftnowform="n1"]');
-    check("E ⭐ a Requested piece with a brief shows Draft it now", !!form && /Nothing is public until you press Publish it/.test(m.root.textContent));
+    check("E ⭐ a Requested piece with a brief shows Draft it now", !!form && /Nothing is published until you press Publish to Internal Library or Publish to Public Library/.test(m.root.textContent));
     if (form) {
       form.dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
       await until(() => drafted && m.root.querySelector('form[data-regenokform="n1"]'));
       check("E it sends the record's id and the name, with the team phrase", drafted && drafted.body.id === "n1" && drafted.body.by === "Sam" && drafted.headers["x-team-pass"] === "p");
       const pub = m.root.querySelector('form[data-regenokform="n1"]');
-      check("E ⭐ a ready Draft 1 offers Open the draft and Publish it", !!pub && /Publish it/.test(pub.textContent) && !!m.root.querySelector('[data-draftopen="11111111-1111-1111-1111-111111111111"]') && /Draft 1 is ready to review/.test(m.root.textContent));
+      check("E ⭐ a ready Draft 1 offers Open the draft and Publish to Internal Library", !!pub && /Publish to Internal Library/.test(pub.textContent) && !!m.root.querySelector('[data-draftopen="11111111-1111-1111-1111-111111111111"]') && /Draft 1 is ready to review/.test(m.root.textContent));
       if (pub) {
         pub.dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
         await until(() => m.writes.some((x) => x.method === "PATCH" && x.body.regen && x.body.regen.approved_at));
         const p = m.writes.filter((x) => x.method === "PATCH" && x.body.regen && x.body.regen.approved_at)[0];
-        check("E ⭐ Publish it approves the draft for library-publish, keeping new_piece", !!p && p.body.regen.new_piece === true && p.body.regen.approved_by === "Sam");
+        check("E ⭐ Publish to Internal Library approves the draft for library-publish, keeping new_piece", !!p && p.body.regen.new_piece === true && p.body.regen.approved_by === "Sam");
       }
     }
     // Sam's own request 71931018 was saved with no document: its card takes the PDF now, dropped on it or chosen.

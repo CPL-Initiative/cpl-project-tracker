@@ -841,10 +841,10 @@ block("(15)", function () {
     check("(15) the count is a small label beside the title, not a tile, and takes no focus",
       !proj.querySelector(".lib-thumb") && !!proj.querySelector(".lib-projhead h3 + .lib-projcount") &&
       proj.querySelector(".lib-projcount").tagName === "SPAN" && !proj.querySelector(".lib-projcount").hasAttribute("tabindex"));
-    check("(15) the card carries the public-library chip when a piece is listed", /In the public library/.test(proj.querySelector(".lib-body > .lib-chips").textContent));
+    check("(15) the card carries the In the Public Library badge when a piece is listed", /In the Public Library/.test(proj.querySelector(".lib-body > .lib-chips").textContent));
     const rows = proj.querySelectorAll("li.lib-piece");
     check("(15) a row per piece, its title the link", rows.length === 2 && rows[0].querySelector("a#lib-t-p1").getAttribute("href") === PROJ_ROWS[0].url);
-    check("(15) the unlisted piece offers List publicly, the listed one does not", !!rows[1].querySelector("[data-pubtop]") && !rows[0].querySelector("[data-pubtop]"));
+    check("(15) the unlisted piece offers Publish to Public Library, the listed one does not", !!rows[1].querySelector("[data-pubtop]") && !rows[0].querySelector("[data-pubtop]"));
     check("(15) the lone piece keeps the plain card with File it", !doc.getElementById("lib-t-p3").closest("article").classList.contains("lib-proj") && !!doc.getElementById("lib-t-p3").closest("article").querySelector("[data-file]"));
     click(m.w, rows[1].querySelector("[data-toggle]"));
     check("(15) Details opens under its own row", !doc.getElementById("lib-d-p2").hidden && doc.getElementById("lib-d-p2").closest("li.lib-piece") !== null);
