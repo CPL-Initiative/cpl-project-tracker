@@ -1331,16 +1331,40 @@ jobs:
           python3 kb/_build_docs_index.py --check
           test_group_end
       # Dependency map (Sam's ruling A, 2026-08-29) — the dataset→consumers
-      # artifact every session's cross-impact flag depends on. `--check` turns
-      # "somebody forgot to rebuild after adding a fetch()" into a red check
-      # (same shape as the docs index above); the test guards the content —
-      # each of its checks is a failure mode the build actually hit, verified
-      # by perturbation against the live artifact. Pure-stdlib python; same
-      # non-required check.
-      - name: Dependency map — content guards + drift check
+      # artifact every session's cross-impact flag depends on. Since Sam's rule of
+      # 2026-11-18 ("No dependency-map rebuild inside PRs. kb/dependency_map.json and
+      # docs/reference/dependency_map.md are rebuilt by one job on main after each
+      # merge."), dependency-map.yml rebuilds it on main and a PR leaves it as main
+      # has it, so a map behind this tree is a notice here, never a failure. The
+      # step rebuilds the map in the runner and runs every test that reads it
+      # against that build, so a PR that adds an edge is tested on its own edges
+      # (the Commons status step above has the same shape). A builder that fails
+      # (exit 2: a coverage floor or an inventory error) still fails the step. The
+      # committed files are restored at the end. Pure-stdlib python.
+      - name: Dependency map rebuilt from this tree, then every test that reads it
         run: |
+          source scripts/test_group.sh
+          pip install --quiet pyyaml
+          rc=0
+          python3 kb/_build_dependency_map.py --check > /dev/null 2>&1 || rc=$?
+          if [ "$rc" -eq 1 ]; then
+            if [ "${{ github.event_name }}" = "pull_request" ]; then
+              echo "::notice title=Dependency map behind this PR::The committed map differs from this tree. Expected: dependency-map.yml rebuilds it on main after the merge (Sam, 2026-11-18). Do not commit it in the PR."
+            else
+              echo "::warning title=Dependency map behind main::The committed map differs from this tree. dependency-map.yml rebuilds it after each push to main; dispatch it if this stays."
+            fi
+          elif [ "$rc" -ne 0 ]; then
+            echo "::error::kb/_build_dependency_map.py --check exited $rc (not a stale map: the builder failed)"
+            exit 1
+          fi
+          python3 kb/_build_dependency_map.py || { echo "::error::kb/_build_dependency_map.py failed on this tree"; exit 1; }
+          readers=$(grep -l 'dependency_map\.json' tests/*.test.js | sort || true)
+          [ -n "$readers" ] || { echo "::error::no *.test.js reads kb/dependency_map.json; the reader search is wrong"; exit 1; }
           python3 tests/dependency_map_test.py
-          python3 kb/_build_dependency_map.py --check
+          python3 tests/dependency_map_on_main_test.py
+          for f in $readers; do node "$f" > "$RUNNER_TEMP/depmap_reader.log" 2>&1 || { tail -40 "$RUNNER_TEMP/depmap_reader.log"; echo "::error::$f fails on the map rebuilt from this tree"; false; }; done
+          git checkout -- kb/dependency_map.json docs/reference/dependency_map.md
+          test_group_end
       # E gate guards (Session 210) — pins the skip/run boundary from both
       # sides, re-derives which test files read inert (docs-shaped) paths and
       # requires each to run in the skip branch above, and keeps the
