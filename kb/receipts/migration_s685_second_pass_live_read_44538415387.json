@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s685_second_pass_live_read.sql",
+ "name": "s685_second_pass_live_read",
+ "version": "20261119135917",
+ "sha256": "e0cf779fec782e65673447b3bff51e79e0a548daa7a855207bfb5d6fc5f97030",
+ "run": "44538415387",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-19T13:59:18Z\",\"chk\":{\"West Los Angeles College\":[\"17111\",\"37050\",\"37839\",\"39618\"]},\"sum\":{\"Citrus College\":[173,175,173,0,0,0],\"Compton College\":[81,83,81,0,0,0],\"Ventura College\":[170,173,170,0,0,0],\"Moorpark College\":[135,139,135,0,0,0],\"El Camino College\":[121,126,121,0,0,0],\"Porterville College\":[79,79,79,0,0,0],\"East Los Angeles College\":[133,134,133,0,0,0],\"Evergreen Valley College\":[85,89,85,0,0,0],\"West Los Angeles College\":[201,202,197,0,4,0],\"Los Angeles Pierce College\":[186,188,186,0,0,0],\"City College of San Francisco\":[309,309,309,0,0,0],\"San Bernardino Valley College\":[205,220,205,0,0,0]},\"diff\":[[\"West Los Angeles College\",\"17111\",\"37171952080\",\"39536207109\"],[\"West Los Angeles College\",\"37050\",\"37171952080\",\"39536207109\"],[\"West Los Angeles College\",\"37839\",\"37171952080\",\"39536207109\"],[\"West Los Angeles College\",\"39618\",\"37171952080\",\"39536207109\"]],\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
