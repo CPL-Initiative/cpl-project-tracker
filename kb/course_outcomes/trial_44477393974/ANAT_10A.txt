@@ -1,0 +1,94 @@
+Skip to main content
+This website uses cookies to ensure you get the best experience on our website. Learn more
+Got it!
+Listen
+Map
+ Campus Map
+Directory
+ Directory
+Search
+ Sign In 
+Student Learning Outcomes
+
+Warning: include(/srv/hosting/mtsac//_menu.inc): Failed to open stream: No such file or directory in /srv/hosting/mtsac/slo/index.html on line 241
+
+Warning: include(): Failed opening '/srv/hosting/mtsac//_menu.inc' for inclusion (include_path='.:/usr/share/php') in /srv/hosting/mtsac/slo/index.html on line 241
+
+Search Program/Discipline
+Search Course
+Search Courses
+Co-Occurring Disorders (AD 6)
+Abnormal Psychology (PSYC 19)
+Addiction: Prevention, Intervention, and Recovery (AD 3)
+Alcohol and Drug Dependency (AD 1)
+Case Management and Documentation (AD 10)
+Child Development (SOC 15)
+Child Growth and Lifespan Development (CHLD 10)
+Child Growth and Lifespan Development- Honors (CHLD 10H)
+Family Counseling (AD 9)
+Group Process and Leadership (AD 8)
+1
+2
+3
+...
+Student Learning Outcomes
+Course Name: Introductory to Human Anatomy
+Course Number: ANAT 10A
+Outcomes:
+Sequence functional pathways in organ systems such as circulatory, nervous, digestive, respiratory, musculoskeletal, and reproductive systems.
+Use anatomical regions and directional terms to describe positions and relative positions in the human body.
+Describe the structure of the major organs of the human body at the tissue level.
+Review the organs/structures in each organ system and describe the components of each.
+Describe the functional classes of tissues, and distinguish between tissue subtypes.
+Locate and describe the major organs of the human and cat.
+Identify and describe structures of the eukaryotic cell.
+Identify and locate major bone markings on all human bones and determine which side of the body a bone belongs to.
+Identify body cavities and their contents.
+ENROLL
+Admissions
+Assessment
+Counseling
+Financial Aid
+School of Continuing Education
+EXPLORE
+Academic Catalog
+Employment
+Finding Events
+Foundation
+Library
+Schedule of Classes
+Why Mt. SAC
+VISIT
+Athletics
+Box Office
+Campus Map
+Parking
+Planetarium
+Tours
+TRANSPARENCY
+Accreditation
+Accessibility
+Board of Trustees Agenda
+Construction
+Discrimination Complaints
+Doing Business with Mt. SAC
+Institutional Planning
+Privacy
+HELP
+A-to-Z Site Index
+Acronyms
+Contact Mt. SAC
+Directory
+Police & Campus Safety
+Web Feedback
+
+1100 N. Grand Ave., Walnut, CA 91789
+
+Phone
+(909) 274-7500
+
+Campus Police
+(909) 274-4555
+
+Text-A-Tip
+(909) 610-9139
