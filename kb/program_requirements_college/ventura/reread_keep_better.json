@@ -1,11 +1,10 @@
 {
  "college": "Ventura College",
  "run": "44514835321",
- "written": "2026-11-19T11:58:38Z",
- "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); first of all, a checked live row restores, or is held where the base files none, and a supplied live run other than the filed record's is held for a person (d-reread-keep-the-better-s683; COBIx on #3544)",
+ "written": "2026-11-19T14:23:05Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
-  "06947": "38756014587",
   "06948": "38756014587",
   "06957": "38756014587",
   "06968": "39622549965",
@@ -49,7 +48,6 @@
   "20599": "38756014587",
   "30587": "39622549965",
   "31286": "38756014587",
-  "31298": "38756014587",
   "31361": "38756014587",
   "31362": "38756014587",
   "31363": "39622549965",
@@ -125,7 +123,6 @@
   "43989": "38756014587",
   "43990": "38756014587",
   "44037": "39622549965",
-  "44186": "38756014587",
   "44187": "38756014587",
   "44188": "39622549965",
   "44189": "38756014587",
@@ -179,54 +176,77 @@
   "46563": "38756014587",
   "46564": "39622549965"
  },
- "dispatch": "no dispatch: no run holds a kept or new record that a reread has not posted",
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/second-pass-s685",
+   "inputs": {
+    "college": "Ventura College",
+    "step": "reread",
+    "force": "44514835321"
+   },
+   "posts": 3,
+   "control_numbers": [
+    "31298",
+    "44186",
+    "45831"
+   ],
+   "not_live_at_run": [
+    "31298",
+    "44186",
+    "45831"
+   ]
+  }
+ ],
  "carried_runs": {},
  "counts": {
   "reread": 5,
-  "kept": 0,
-  "restored": 4,
-  "restored_filed_pass": 1,
-  "restored_not_own_program": 4,
+  "kept": 3,
+  "restored": 1,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 1,
   "held_for_person": 1,
   "held_checked": 0,
   "held_live_run": 0,
   "new": 0,
+  "already_live": 0,
+  "kept_on_own_page": 3,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
-  "run_places_none_after": 2,
-  "folder_places_none_after": 3,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 1,
   "records_after": 173,
   "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
   "44514835321": {
-   "base": "origin/main",
-   "base_sha": "184934aff4c4637c86e8188d054787f7aed58990",
-   "decided": "2026-11-19T11:58:38Z",
+   "base": "471c74d6",
+   "base_sha": "471c74d6399e4f9aa957b7f2a560d3f57b6ba357",
+   "decided": "2026-11-19T14:23:05Z",
    "counts": {
     "reread": 5,
-    "kept": 0,
-    "restored": 4,
-    "restored_filed_pass": 1,
-    "restored_not_own_program": 4,
+    "kept": 3,
+    "restored": 1,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 1,
     "held_for_person": 1,
     "held_checked": 0,
     "held_live_run": 0,
     "new": 0,
+    "already_live": 0,
+    "kept_on_own_page": 3,
     "plain_reread_would_lose_pass": 0,
     "kept_by_extraction_guard": 0,
-    "run_places_none_after": 2,
-    "folder_places_none_after": 3,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 1,
     "records_after": 173,
     "dropped_by_filing": 0,
     "dropped_filed_passes": 0
    },
    "kept_by_extraction_guard": {},
    "next_read_pays": [
-    "31298",
-    "35207",
-    "44186"
+    "35207"
    ],
    "dropped_by_filing": [],
    "programs": [
@@ -247,7 +267,8 @@
       "listed": 21,
       "arithmetic": "unequal"
      },
-     "live_run": "38756014587",
+     "own_page": "the address's last segment 'administration-justice-ast' names the program",
+     "live_run": null,
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -259,10 +280,8 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'REQUIREMENTS' shares no word with the title 'Administration of Justice'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
     },
     {
      "control_number": "35207",
@@ -315,7 +334,8 @@
       "listed": 4,
       "arithmetic": "equal"
      },
-     "live_run": "38756014587",
+     "own_page": "the address's last segment 'administration-in-early-education-coa' names the program",
+     "live_run": null,
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -327,10 +347,41 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'REQUIREMENTS' shares no word with the title 'Administration in Early Education'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "45831",
+     "title": "Elementary Teacher Education: Integrated Programs",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
+     "filed_source_url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
+     "filed_run": "39622549965",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 34,
+      "listed": 34,
+      "arithmetic": "equal"
+     },
+     "own_page": "the capture's page title 'Elementary Teacher Education: Integrated Programs, Associate in Arts for Transfe' names the program",
+     "live_run": "39622549965",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.971,
+      "placed": 33,
+      "listed": 34,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.971)"
     },
     {
      "control_number": "45355",
@@ -352,40 +403,6 @@
      "live_run": null,
      "outcome": "held",
      "why": "no filed record, and the re-read's heading 'Course Identification Numbering System (C-ID)' shares no word with the title 'California General Education Transfer Curriculum (Cal-GETC)'"
-    },
-    {
-     "control_number": "45831",
-     "title": "Elementary Teacher Education: Integrated Programs",
-     "award": "A.A- T Degree",
-     "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-     "filed_source_url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-     "filed_run": "39622549965",
-     "reread": {
-      "pass": true,
-      "passes_live": true,
-      "coverage_pass": true,
-      "none_placed": false,
-      "share": 1.0,
-      "placed": 34,
-      "listed": 34,
-      "arithmetic": "equal"
-     },
-     "live_run": "39622549965",
-     "filed": {
-      "pass": true,
-      "passes_live": true,
-      "coverage_pass": true,
-      "none_placed": false,
-      "share": 0.971,
-      "placed": 33,
-      "listed": 34,
-      "arithmetic": "equal"
-     },
-     "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'REQUIREMENTS' shares no word with the title 'Elementary Teacher Education: Integrated Programs'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
     }
    ]
   }

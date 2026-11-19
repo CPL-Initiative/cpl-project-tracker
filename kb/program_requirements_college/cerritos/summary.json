@@ -2,19 +2,22 @@
  "college": "Cerritos College",
  "programs": 325,
  "with_closed_list": 321,
- "found": 304,
- "extracted": 305,
+ "found": 303,
+ "extracted": 303,
  "errors": 0,
- "passed_machine_checks": 265,
+ "passed_machine_checks": 281,
  "failed": {
-  "coverage": 5,
+  "coverage": 4,
   "invented": 0,
-  "arithmetic": 36,
+  "arithmetic": 18,
   "repeated": 2,
   "outcomes": 0
  },
- "cost_usd": 16.78,
- "cost_per_program": 0.055,
+ "cost_usd_run": 1.92,
+ "cost_usd_filed": 16.86,
+ "cost_per_program": 0.0556,
+ "extract_calls": 20,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "02243",
@@ -35,38 +38,13 @@
     "why": "coarse net: the page's code tokens name 0 of 26 listed courses",
     "error": null,
     "chars": {
-     "body": 34153,
-     "content": 36476,
+     "body": 34198,
+     "content": 36524,
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "14565",
-   "title": "Administration of Justice",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/business-administration-aa/",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 20,
-    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
-    "error": null,
-    "chars": {
-     "body": 15562,
-     "content": 17298,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "19162",
@@ -87,12 +65,40 @@
     "why": "coarse net: the page's code tokens name 1 of 20 listed courses",
     "error": null,
     "chars": {
-     "body": 26962,
-     "content": 27999,
+     "body": 27007,
+     "content": 28047,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19163",
+   "title": "Liberal Arts and Sciences: Communication",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
+    "label": {
+     "award": 0,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.5,
+    "body": 0.5,
+    "content": 0.0,
+    "net": 5,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 27007,
+     "content": 28047,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "19174",
@@ -113,12 +119,13 @@
     "why": "coarse net: the page's code tokens name 1 of 13 listed courses",
     "error": null,
     "chars": {
-     "body": 26962,
-     "content": 27999,
+     "body": 27007,
+     "content": 28047,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19180",
@@ -139,12 +146,13 @@
     "why": "coarse net: the page's code tokens name 0 of 27 listed courses",
     "error": null,
     "chars": {
-     "body": 26962,
-     "content": 27999,
+     "body": 27007,
+     "content": 28047,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "32485",
@@ -157,21 +165,31 @@
      "title": 1.0
     },
     "field": "innerText",
-    "coverage": 0.375,
-    "body": 0.375,
+    "coverage": 0.438,
+    "body": 0.438,
     "content": 0.312,
-    "net": 6,
+    "net": 7,
     "listed": 16,
-    "why": "coarse net: the page's code tokens name 6 of 16 listed courses",
+    "why": "coverage 0.44 in innerText, below 0.50",
     "error": null,
     "chars": {
-     "body": 16882,
-     "content": 18592,
+     "body": 16927,
+     "content": 18640,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41071",
+   "title": "Automotive Technology: Automotive Electrical & Engine Performance Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   }
  ],
- "run": "38656800189"
+ "run": "44540824017"
 }

@@ -1,20 +1,212 @@
 {
  "college": "Citrus College",
  "run": "44481520157",
- "written": "2026-11-19T08:22:31Z",
- "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "written": "2026-11-19T14:23:04Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
+ "live_runs": {
+  "02310": "38675245799",
+  "02312": "44481520157",
+  "02323": "38675245799",
+  "02327": "38675245799",
+  "02328": "38675245799",
+  "02331": "38675245799",
+  "02333": "38675245799",
+  "02337": "38675245799",
+  "02341": "38675245799",
+  "02343": "38675245799",
+  "02355": "38675245799",
+  "02362": "38675245799",
+  "02369": "38675245799",
+  "07092": "38675245799",
+  "07412": "38675245799",
+  "07413": "38675245799",
+  "11207": "38675245799",
+  "11219": "38675245799",
+  "11231": "38675245799",
+  "11235": "38675245799",
+  "11236": "38675245799",
+  "11237": "38675245799",
+  "11242": "38675245799",
+  "11247": "38675245799",
+  "12397": "38675245799",
+  "14643": "38675245799",
+  "14897": "38675245799",
+  "15315": "38675245799",
+  "15322": "38675245799",
+  "15941": "38675245799",
+  "17394": "38675245799",
+  "17502": "38675245799",
+  "18962": "38675245799",
+  "19636": "44481520157",
+  "20027": "38675245799",
+  "20031": "38675245799",
+  "20032": "38675245799",
+  "20033": "38675245799",
+  "20034": "38675245799",
+  "20036": "38675245799",
+  "20037": "44481520157",
+  "20038": "38675245799",
+  "30174": "38675245799",
+  "30175": "38675245799",
+  "30176": "38675245799",
+  "30365": "38675245799",
+  "30454": "38675245799",
+  "30507": "38675245799",
+  "30508": "38675245799",
+  "30560": "38675245799",
+  "30830": "39726639865",
+  "30877": "39726639865",
+  "30937": "44481520157",
+  "30940": "39726639865",
+  "31179": "39726639865",
+  "31205": "38675245799",
+  "31539": "39726639865",
+  "31572": "44481520157",
+  "31840": "39726639865",
+  "32305": "39726639865",
+  "32404": "38675245799",
+  "32405": "38675245799",
+  "32406": "38675245799",
+  "33165": "38675245799",
+  "33308": "39726639865",
+  "33327": "44481520157",
+  "33350": "38675245799",
+  "33602": "38675245799",
+  "33607": "39726639865",
+  "33609": "39726639865",
+  "33688": "38675245799",
+  "33909": "38675245799",
+  "33960": "38675245799",
+  "35078": "39726639865",
+  "35368": "44481520157",
+  "35453": "38675245799",
+  "35598": "38675245799",
+  "35599": "38675245799",
+  "35775": "38675245799",
+  "36306": "38675245799",
+  "36540": "38675245799",
+  "36541": "38675245799",
+  "36542": "38675245799",
+  "36626": "38675245799",
+  "36663": "38675245799",
+  "36924": "38675245799",
+  "37121": "39726639865",
+  "37131": "39726639865",
+  "37315": "39726639865",
+  "37384": "39726639865",
+  "37501": "38675245799",
+  "37502": "38675245799",
+  "37537": "39726639865",
+  "37571": "38675245799",
+  "37572": "38675245799",
+  "37629": "39726639865",
+  "37635": "38675245799",
+  "37814": "38675245799",
+  "37815": "38675245799",
+  "37816": "38675245799",
+  "37817": "38675245799",
+  "37962": "38675245799",
+  "38167": "38675245799",
+  "38207": "38675245799",
+  "38431": "38675245799",
+  "38754": "39726639865",
+  "40210": "39726639865",
+  "40284": "38675245799",
+  "40285": "38675245799",
+  "40436": "38675245799",
+  "40641": "38675245799",
+  "40680": "38675245799",
+  "40681": "38675245799",
+  "40716": "38675245799",
+  "40957": "39726639865",
+  "40975": "38675245799",
+  "40977": "38675245799",
+  "40990": "38675245799",
+  "41006": "38675245799",
+  "41080": "38675245799",
+  "41167": "38675245799",
+  "41356": "39726639865",
+  "41616": "38675245799",
+  "41679": "39726639865",
+  "41841": "38675245799",
+  "41842": "44481520157",
+  "41843": "44481520157",
+  "41913": "38675245799",
+  "41914": "38675245799",
+  "41931": "38675245799",
+  "41932": "38675245799",
+  "41966": "38675245799",
+  "41987": "38675245799",
+  "42009": "38675245799",
+  "42060": "38675245799",
+  "42170": "38675245799",
+  "42172": "38675245799",
+  "42353": "38675245799",
+  "42354": "38675245799",
+  "42355": "38675245799",
+  "42356": "38675245799",
+  "42357": "38675245799",
+  "42358": "38675245799",
+  "42396": "38675245799",
+  "42707": "38675245799",
+  "42713": "44481520157",
+  "42808": "38675245799",
+  "42822": "39726639865",
+  "42837": "39726639865",
+  "42975": "38675245799",
+  "43033": "38675245799",
+  "44264": "38675245799",
+  "44270": "38675245799",
+  "44427": "38675245799",
+  "44940": "38675245799",
+  "45010": "38675245799",
+  "45069": "39726639865",
+  "45304": "38675245799",
+  "45347": "38675245799",
+  "45514": "38675245799",
+  "45728": "38675245799",
+  "45759": "38675245799",
+  "45761": "38675245799",
+  "45762": "38675245799",
+  "45763": "38675245799",
+  "45764": "38675245799",
+  "45819": "38675245799",
+  "45836": "38675245799",
+  "45837": "38675245799",
+  "45946": "38675245799",
+  "46195": "38675245799",
+  "46376": "38675245799",
+  "46565": "44481520157"
+ },
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/reread-wave-s683",
+   "ref": "claude/second-pass-s685",
    "inputs": {
     "college": "Citrus College",
     "step": "reread",
     "force": "44481520157"
    },
-   "posts": 11,
+   "posts": 6,
    "control_numbers": [
+    "02356",
+    "33599",
+    "35453",
+    "41679",
+    "42170",
+    "42837"
+   ],
+   "not_live_at_run": [
+    "02356",
+    "33599",
+    "35453",
+    "41679",
+    "42170",
+    "42837"
+   ],
+   "receipt_on_branch": true,
+   "already_live": [
     "02312",
     "19636",
     "20037",
@@ -32,60 +224,54 @@
  "carried_runs": {},
  "counts": {
   "reread": 18,
-  "kept": 8,
-  "restored": 5,
-  "restored_filed_pass": 3,
-  "restored_not_own_program": 5,
-  "held_for_person": 2,
-  "new": 3,
+  "kept": 4,
+  "restored": 1,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 1,
+  "held_for_person": 0,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 2,
+  "already_live": 11,
+  "kept_on_own_page": 6,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
   "run_places_none_after": 1,
   "folder_places_none_after": 2,
-  "records_after": 175,
-  "dropped_by_filing": 3,
+  "records_after": 177,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
   "44481520157": {
-   "base": "origin/main",
-   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
-   "decided": "2026-11-19T08:22:31Z",
+   "base": "471c74d6",
+   "base_sha": "471c74d6399e4f9aa957b7f2a560d3f57b6ba357",
+   "decided": "2026-11-19T14:23:04Z",
    "counts": {
     "reread": 18,
-    "kept": 8,
-    "restored": 5,
-    "restored_filed_pass": 3,
-    "restored_not_own_program": 5,
-    "held_for_person": 2,
-    "new": 3,
+    "kept": 4,
+    "restored": 1,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 1,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 2,
+    "already_live": 11,
+    "kept_on_own_page": 6,
     "plain_reread_would_lose_pass": 0,
     "kept_by_extraction_guard": 0,
     "run_places_none_after": 1,
     "folder_places_none_after": 2,
-    "records_after": 175,
-    "dropped_by_filing": 3,
+    "records_after": 177,
+    "dropped_by_filing": 0,
     "dropped_filed_passes": 0
    },
    "kept_by_extraction_guard": {},
    "next_read_pays": [
-    "35453",
     "45031"
    ],
-   "dropped_by_filing": [
-    {
-     "control_number": "11240",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "31430",
-     "filed_passes_live": false
-    },
-    {
-     "control_number": "31431",
-     "filed_passes_live": false
-    }
-   ],
+   "dropped_by_filing": [],
    "programs": [
     {
      "control_number": "02312",
@@ -93,7 +279,7 @@
      "award": "A.S. Degree",
      "source_url": "https://catalog.citruscollege.edu/disciplines/business/business-as/",
      "filed_source_url": "https://catalog.citruscollege.edu/disciplines/business/business-as/",
-     "filed_run": "38675245799",
+     "filed_run": "44481520157",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -104,19 +290,20 @@
       "listed": 29,
       "arithmetic": "incomplete"
      },
+     "live_run": "44481520157",
      "filed": {
       "pass": false,
       "passes_live": false,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.966,
-      "placed": 28,
+      "share": 1.0,
+      "placed": 29,
       "listed": 29,
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.966)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "02356",
@@ -135,8 +322,10 @@
       "listed": 13,
       "arithmetic": "equal"
      },
-     "outcome": "held",
-     "why": "no filed record, and the re-read's heading 'Requirements' shares no word with the title 'Criminal Justice'"
+     "own_page": "the address's last segment 'criminal-justice-as' names the program",
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on 471c74d6"
     },
     {
      "control_number": "19636",
@@ -144,7 +333,7 @@
      "award": "A.A. Degree",
      "source_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
      "filed_source_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
-     "filed_run": "38675245799",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -155,27 +344,28 @@
       "listed": 91,
       "arithmetic": "equal"
      },
+     "live_run": "44481520157",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.989,
-      "placed": 90,
+      "share": 1.0,
+      "placed": 91,
       "listed": 91,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.989)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "20037",
      "title": "Criminal Justice",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-certificate-achievement/",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-certificate-achievement/",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -186,16 +376,28 @@
       "listed": 16,
       "arithmetic": "equal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44481520157",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "30937",
      "title": "Administration of Justice",
      "award": "A.S. T Degree",
      "source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/administration-justice-adt/",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/administration-justice-adt/",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -206,8 +408,20 @@
       "listed": 14,
       "arithmetic": "equal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44481520157",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "31572",
@@ -215,7 +429,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
      "filed_source_url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
-     "filed_run": "39726639865",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -226,27 +440,28 @@
       "listed": 34,
       "arithmetic": "equal"
      },
+     "live_run": "44481520157",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.971,
-      "placed": 33,
+      "share": 1.0,
+      "placed": 34,
       "listed": 34,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.971)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "33327",
      "title": "Correctional Science",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-certificate-achievement/",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-certificate-achievement/",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -257,8 +472,20 @@
       "listed": 12,
       "arithmetic": "equal"
      },
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44481520157",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "33599",
@@ -277,8 +504,10 @@
       "listed": 9,
       "arithmetic": "equal"
      },
-     "outcome": "held",
-     "why": "no filed record, and the re-read's heading 'Requirements' shares no word with the title 'Correctional Science'"
+     "own_page": "the address's last segment 'correctional-science-as' names the program",
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on 471c74d6"
     },
     {
      "control_number": "35368",
@@ -286,7 +515,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
      "filed_source_url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
-     "filed_run": "38675245799",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -297,19 +526,20 @@
       "listed": 8,
       "arithmetic": "equal"
      },
+     "live_run": "44481520157",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
       "listed": 8,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "35453",
@@ -328,6 +558,8 @@
       "listed": 55,
       "arithmetic": "unequal"
      },
+     "own_page": "the address's last segment 'social-sciences-aa' names the program",
+     "live_run": "38675245799",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -339,10 +571,8 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Requirements' shares no word with the title 'Social Sciences'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.982 against 0.945)"
     },
     {
      "control_number": "41679",
@@ -361,6 +591,8 @@
       "listed": 13,
       "arithmetic": "equal"
      },
+     "own_page": "the capture's page title 'ADT in Business Administration 2.0' names the program",
+     "live_run": "39726639865",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -372,10 +604,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Requirements' shares no word with the title 'Business Administration 2.0'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.923)"
     },
     {
      "control_number": "41842",
@@ -383,7 +613,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
      "filed_source_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
-     "filed_run": "38675245799",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -394,19 +624,20 @@
       "listed": 43,
       "arithmetic": "equal"
      },
+     "live_run": "44481520157",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.977,
-      "placed": 42,
+      "share": 1.0,
+      "placed": 43,
       "listed": 43,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.977)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "41843",
@@ -414,7 +645,7 @@
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
      "filed_source_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
-     "filed_run": "38675245799",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -425,19 +656,20 @@
       "listed": 77,
       "arithmetic": "equal"
      },
+     "live_run": "44481520157",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.987,
-      "placed": 76,
+      "share": 1.0,
+      "placed": 77,
       "listed": 77,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.987)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "42170",
@@ -456,6 +688,8 @@
       "listed": 27,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'business-accounting-emphasis-as' names the program",
+     "live_run": "38675245799",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -467,10 +701,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Requirements' shares no word with the title 'Business - Accounting Emphasis'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.963)"
     },
     {
      "control_number": "42713",
@@ -478,7 +710,7 @@
      "award": "A.A. Degree",
      "source_url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/",
      "filed_source_url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/",
-     "filed_run": "38675245799",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -489,19 +721,20 @@
       "listed": 18,
       "arithmetic": "equal"
      },
+     "live_run": "44481520157",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.833,
-      "placed": 15,
+      "share": 0.889,
+      "placed": 16,
       "listed": 18,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 0.889 against 0.833)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     },
     {
      "control_number": "42837",
@@ -520,6 +753,8 @@
       "listed": 33,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'law-public-policy-society-adt' names the program",
+     "live_run": "39726639865",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -531,10 +766,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Requirements' shares no word with the title 'Law, Public Policy, and Society'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.939)"
     },
     {
      "control_number": "45031",
@@ -575,7 +808,7 @@
      "award": "A.S. Degree",
      "source_url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
      "filed_source_url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
-     "filed_run": "38675245799",
+     "filed_run": "44481520157",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -586,19 +819,20 @@
       "listed": 18,
       "arithmetic": "equal"
      },
+     "live_run": "44481520157",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.944,
-      "placed": 17,
+      "share": 1.0,
+      "placed": 18,
       "listed": 18,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.944)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44481520157: a reread posted it"
     }
    ]
   }

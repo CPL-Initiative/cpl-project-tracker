@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s685_cpl_memory_rows.sql",
+ "name": "s685_cpl_memory_rows_kinds",
+ "version": "20261119150123",
+ "sha256": "9072442066019f0dd719de5bb80352275926f57ad3efc77d72196535d1b36cd0",
+ "run": "44549597341",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-display-confirmed-by-live-count-s685\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":372},{\"slug\":\"d-firing-waits-for-sign-off-then-takes-queue-s685\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":372},{\"slug\":\"d-keep-better-ship-verified-43-s685\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":399},{\"slug\":\"d-live-reads-through-migrate-runner-s685\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":322},{\"slug\":\"d-reads-stop-is-forty-dollars-s685\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":282},{\"slug\":\"d-rule-d-next-session-s685\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":341},{\"slug\":\"d-slo-helper-census-fix-in-conductor-run-s685\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":344},{\"slug\":\"f-display-confirm-read-unpaged-s685\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":313},{\"slug\":\"f-generic-heading-cost-43-rereads-s685\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":372},{\"slug\":\"f-outline-readers-need-header-fixes-s685\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":339},{\"slug\":\"m-display-build-live-s685\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":323},{\"slug\":\"m-gap-census-5203-s685\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":173},{\"slug\":\"m-keep-better-and-helper-merged-s685\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":318},{\"slug\":\"p-apply-before-thread-read-s685\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":368},{\"slug\":\"p-cobix-watch-missed-three-s685\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":291},{\"slug\":\"p-helper-reads-only-newest-file-s685\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":322},{\"slug\":\"p-second-pass-run-never-named-s685\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":350}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

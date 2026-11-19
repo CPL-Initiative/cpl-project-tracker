@@ -1,0 +1,39 @@
+{
+ "college": "Grossmont College",
+ "reread_run": "44583862275",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44539755045",
+ "at": "2026-11-19T18:05:01Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "18775",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21402",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32879",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 1,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "32017"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": null,
+ "before": []
+}

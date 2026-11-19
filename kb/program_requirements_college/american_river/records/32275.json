@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Geography",
  "award": "A.A- T Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=609",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=608",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10818,
+  "input_tokens": 10958,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10818,
-    "output_tokens": 3100,
+    "input_tokens": 10958,
+    "output_tokens": 3192,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 3100,
+  "output_tokens": 3192,
   "output_tokens_details": {
-   "thinking_tokens": 920
+   "thinking_tokens": 972
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10527,
- "ms": 23809,
+ "cost_usd": 0.10767,
+ "ms": 23965,
  "seconds": 24.3,
  "parts": null,
  "error": null,
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Degree Requirements",
+   "section_heading": "A.A.-T. in Geography",
    "measure": "units",
    "total_units": {
     "min": 19,
@@ -424,13 +424,55 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 609; the program's own heading (likely 'A.A.-T. in Geography') is not in the text, so section_heading records the 'Degree Requirements' table heading.",
-   "List A also allows 'Any course from the Required Core not already used' (e.g., GEOG 320 or GEOG 310 when not used in the core); these are not duplicated in the List A block.",
-   "List B also allows 'Any courses from List A not already used'; List A courses are not duplicated in the List B block.",
-   "The page says the AA-T is obtained by completion of 60 transferable semester units including the major and Cal-GETC; this is the standard ADT statement rather than a printed degree total, so degree_total is left null. No units are printed for Cal-GETC.",
-   "Field studies courses GEOG 391-394 are printed as 1-4 units, while the state file stores 1 unit.",
-   "The A.S. in General Science section that follows on pages 610-611 belongs to a different program and was not read."
+   "List A also allows 'Any course from the Required Core not already used' (e.g., whichever of GEOG 310/GEOG 320 was not used in the core); those courses are not repeated in the List A block.",
+   "List B also allows 'Any courses from List A not already used'; List A courses are not repeated in the List B block.",
+   "The page states the AA-T 'may be obtained by completion of 60 transferable, semester units ... including (a) the major ... and (b) Cal-GETC'; this reads as standard ADT boilerplate, so degree_total is left null. Reviewer may wish to check.",
+   "The page prints no units for the Cal-GETC pattern and no elective units; ge_units null.",
+   "Catalog prints GEOG 342 title as 'Introduction to Remote Sensing and Digital Image Processing', differing slightly from the state file title.",
+   "The career text also mentions that geographers rarely hold positions titled 'Geographer'; not recorded as a career.",
+   "The A.S. in General Science section that follows (pages 610-611) lists many of the same GEOG/GEOL courses but was not read for this award."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "39068f7889614550",
+ "source_codes": [
+  "ANTH310",
+  "ANTH481",
+  "ECON310",
+  "GEOG300",
+  "GEOG301",
+  "GEOG305",
+  "GEOG306",
+  "GEOG307",
+  "GEOG308",
+  "GEOG309",
+  "GEOG310",
+  "GEOG320",
+  "GEOG322",
+  "GEOG330",
+  "GEOG331",
+  "GEOG334",
+  "GEOG340",
+  "GEOG342",
+  "GEOG344",
+  "GEOG350",
+  "GEOG360",
+  "GEOG362",
+  "GEOG375",
+  "GEOG385",
+  "GEOG391",
+  "GEOG392",
+  "GEOG393",
+  "GEOG394",
+  "GEOL300",
+  "GEOL320",
+  "GEOL325",
+  "GEOL330",
+  "GEOL331",
+  "PSYC330",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0
 }

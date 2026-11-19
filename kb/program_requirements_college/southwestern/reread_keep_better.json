@@ -1,0 +1,812 @@
+{
+ "college": "Southwestern College",
+ "run": "44529722751",
+ "written": "2026-11-19T18:03:35Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/harvest-southwestern-s684",
+   "inputs": {
+    "college": "Southwestern College",
+    "step": "reread",
+    "force": "44529722751"
+   },
+   "posts": 21,
+   "control_numbers": [
+    "05382",
+    "05415",
+    "08202",
+    "08203",
+    "11039",
+    "12166",
+    "14602",
+    "20618",
+    "20707",
+    "30344",
+    "32747",
+    "32954",
+    "36429",
+    "36634",
+    "38048",
+    "38110",
+    "38298",
+    "39605",
+    "44011",
+    "44423",
+    "45381"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 23,
+  "kept": 15,
+  "restored": 2,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 2,
+  "held_for_person": 0,
+  "new": 6,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 1,
+  "run_places_none_after": 3,
+  "folder_places_none_after": 3,
+  "records_after": 209,
+  "dropped_by_filing": 17,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44529722751": {
+   "base": "origin/main",
+   "base_sha": "6aed4111168a7f9c814984007d17ef7a07eea4ea",
+   "decided": "2026-11-19T18:03:35Z",
+   "counts": {
+    "reread": 23,
+    "kept": 15,
+    "restored": 2,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 2,
+    "held_for_person": 0,
+    "new": 6,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 1,
+    "run_places_none_after": 3,
+    "folder_places_none_after": 3,
+    "records_after": 209,
+    "dropped_by_filing": 17,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {
+    "33611": "passes_less"
+   },
+   "next_read_pays": [
+    "32693",
+    "33642"
+   ],
+   "dropped_by_filing": [
+    {
+     "control_number": "08150",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "17889",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "30909",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31683",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31826",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "32184",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "32754",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "33630",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "33655",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "38018",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "38051",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "38092",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40246",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "45294",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "45309",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "46387",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "46516",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "05382",
+     "title": "Exercise Science",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/exercise-science-aa/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/exercise-science-aa/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "05415",
+     "title": "Administration of Justice---Corrections Emphasis",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/as/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "08202",
+     "title": "Administration of Justice---Law Enforcement Emphasis",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/as-law-enforcement-emphasis/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "08203",
+     "title": "Law Enforcement Training Academy",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/law-enforcement-training-academy/law-enforcement-training-academy-certificate/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/law-enforcement-training-academy/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 2,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "11039",
+     "title": "Liberal Studies: Elementary Education",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/liberal-studies-elem-edu/",
+     "filed_source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/associate-degree-as-aa-general-education-requirements/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 42,
+      "listed": 42,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 42,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "12166",
+     "title": "Forensic Studies",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/crime-scene-investigator-as/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "14602",
+     "title": "Fitness Specialist Certification---Advanced",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/fitness-specialist-certification-advanced-certificate/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "20618",
+     "title": "Accounting",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/certificate-accounting/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/as-accounting/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 14,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "20707",
+     "title": "Construction Inspection",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/construction-inspection/construction-inspection-certificate/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/construction-inspection/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 9,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "30344",
+     "title": "Recording Arts and Technology",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/recording-arts-technology/recording-arts-technology-certificate/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/recording-arts-technology/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.875,
+      "placed": 7,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds coverage.none_placed false and the filed record does not"
+    },
+    {
+     "control_number": "32693",
+     "title": "Administration of Justice",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/",
+     "filed_source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 15,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 15,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Course descriptions (AJ 42 through AJ 299); no A.S.-T requirements section in th' shares no word with the title 'Administration of Justice'",
+     "not_own_program": true,
+     "next_read_held": null
+    },
+    {
+     "control_number": "32747",
+     "title": "Kinesiology",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/kinesiology-aat/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 60,
+      "listed": 60,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "32954",
+     "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+     "filed_source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/general-education-courses-common-patterns/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.872,
+      "placed": 164,
+      "listed": 188,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 188,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
+    },
+    {
+     "control_number": "33642",
+     "title": "Geology",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/geology/geology-for-transfer-as/",
+     "filed_source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Associate in Science Transfer Preparation* (Major Code: 01785)' shares no word with the title 'Geology'",
+     "not_own_program": true,
+     "next_read_held": null
+    },
+    {
+     "control_number": "36429",
+     "title": "Emergency Medical Technology",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/emergency-medical-technology/emt-certificate/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/emergency-medical-technology-paramedic/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 4,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "36634",
+     "title": "Psychology",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/psychology/",
+     "filed_source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 17,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 17,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "38048",
+     "title": "Criminal Justice",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/criminal-justice-aa/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/political-science/law-public-policy-and-society-aa/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.75,
+      "placed": 9,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.75)"
+    },
+    {
+     "control_number": "38110",
+     "title": "Pathway to Law School",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/certificate-achievement-pathway-to-law-school/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/liberal-studies-elem-edu/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 15,
+      "listed": 15,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 15,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "38298",
+     "title": "Yoga Teacher Training - 200 Hour",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/yoga-teacher-training-200hour-certificate/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/office-intensive-training-bilingual-payroll-clerk/administrative-office-assistant-bilingual-english-spanish-intensive-training-certificate/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "39605",
+     "title": "Cyber-Forensic",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/cyber-forensic-as/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "44011",
+     "title": "Yoga Teacher Training - 300 Hour",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/yoga-teacher-training-300hour/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 18,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "44423",
+     "title": "Academic and Career Exploration",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/academicexploration/academicexploration-cert/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/academicexploration/academicexploration-cert/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 40,
+      "listed": 40,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 40,
+      "listed": 40,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "45381",
+     "title": "Kinesiology-Sports Medicine",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/kinesiology-sports-med-as/",
+     "filed_source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/kinesiology-sports-med-as/",
+     "filed_run": "38563578596",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    }
+   ]
+  }
+ }
+}

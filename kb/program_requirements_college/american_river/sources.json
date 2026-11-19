@@ -64,11 +64,12 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.92,
+  "coverage": 0.96,
   "codes_found": [
    "ART300",
    "ART320",
    "ART323",
+   "ARTH302",
    "ARTH308",
    "ARTH310",
    "ARTH322",
@@ -120,7 +121,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT301",
@@ -133,6 +134,7 @@
    "BUS340",
    "CISA305",
    "CISA315",
+   "ECON302",
    "ENGLC1000",
    "MKT300"
   ],
@@ -214,7 +216,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.952,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT301",
@@ -231,6 +233,7 @@
    "CISA331",
    "CISA340",
    "CISC300",
+   "ECON302",
    "GEOG330",
    "MKT300",
    "MKT310",
@@ -267,7 +270,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.929,
+  "coverage": 0.964,
   "codes_found": [
    "ACCT101",
    "ACCT301",
@@ -286,6 +289,7 @@
    "CISA315",
    "CISA320",
    "CISA330",
+   "ECON302",
    "MGMT304",
    "MGMT308",
    "MGMT360",
@@ -837,7 +841,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.932,
+  "coverage": 0.955,
   "codes_found": [
    "ART300",
    "ART302",
@@ -868,6 +872,7 @@
    "ART442",
    "ART444",
    "ARTH300",
+   "ARTH302",
    "ARTH308",
    "ARTH310",
    "ARTH322",
@@ -1310,18 +1315,22 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.765,
+  "coverage": 1.0,
   "codes_found": [
    "BUS100",
    "BUS105",
    "BUS300",
    "BUS350",
+   "COMM321",
    "COMM325",
    "GERON303",
    "GERON305",
    "GERON306",
    "GERON490",
    "GERON498",
+   "HSER300",
+   "HSER310",
+   "HSER330",
    "MATH300",
    "PSYC365",
    "PSYC375"
@@ -1395,8 +1404,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.962,
+  "coverage": 1.0,
   "codes_found": [
+   "COMM321",
    "COMM325",
    "COMM331",
    "EMT110",
@@ -1495,7 +1505,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.95,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT103",
@@ -1514,6 +1524,7 @@
    "ACCT361",
    "BUS110",
    "CISA316",
+   "ECON302",
    "PROPTX310",
    "PROPTX311"
   ],
@@ -1601,7 +1612,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.962,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT301",
@@ -1618,6 +1629,7 @@
    "CISA320",
    "CISA330",
    "CISA340",
+   "ECON302",
    "GEOG330",
    "MGMT142",
    "MGMT300",
@@ -2273,12 +2285,19 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.55,
+  "coverage": 0.9,
   "codes_found": [
    "HEED310",
    "HSER300",
    "HSER310",
    "HSER330",
+   "HSER340",
+   "HSER341",
+   "HSER342",
+   "HSER360",
+   "HSER362",
+   "HSER365",
+   "HSER498",
    "PSYC305",
    "PSYC340",
    "PSYC365",
@@ -2288,28 +2307,33 @@
    "PSYCC1000H"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
-   "title": "• utilize counseling strategies based on examination of",
-   "h1": "• utilize counseling strategies based on examination of",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=921",
+   "title": "A.A. in Chemical Dependency Studies",
+   "h1": "A.A. in Chemical Dependency Studies",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    921,
     922,
     923,
-    924,
-    925
+    924
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 921,
+    "share": 0.9
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "680e6c02776ac122"
+   "text_sha": "edb9eb467cb0928e"
   },
   "listed": 20,
-  "text_chars": 15702
+  "text_chars": 14887
  },
  {
   "control_number": "07232",
@@ -2317,12 +2341,17 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.722,
+  "coverage": 1.0,
   "codes_found": [
    "HEED310",
    "HSER300",
    "HSER310",
    "HSER330",
+   "HSER340",
+   "HSER360",
+   "HSER362",
+   "HSER365",
+   "HSER498",
    "PSYC305",
    "PSYC340",
    "PSYC365",
@@ -2363,7 +2392,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.983,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH300",
    "ANTH301",
@@ -2376,11 +2405,13 @@
    "ASTR310",
    "ASTR320",
    "ASTR330",
+   "ASTR400",
    "ASTR481",
    "ASTR495",
    "ASTR499",
    "BIOL300",
    "BIOL301",
+   "BIOL303",
    "BIOL304",
    "BIOL305",
    "BIOL310",
@@ -2599,11 +2630,12 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.96,
+  "coverage": 1.0,
   "codes_found": [
    "ART300",
    "ART320",
    "ART323",
+   "ARTH302",
    "ARTH308",
    "ARTH310",
    "ARTH322",
@@ -2785,17 +2817,21 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
    "AH311",
    "BIOL300",
    "BIOL304",
+   "COMM321",
    "COMM325",
    "GERON303",
    "GERON305",
    "GERON306",
    "GERON490",
    "GERON498",
+   "HSER300",
+   "HSER310",
+   "HSER330",
    "NURSE100",
    "NUTRI324",
    "PSYC365",
@@ -2832,14 +2868,21 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.588,
+  "coverage": 1.0,
   "codes_found": [
+   "COMM321",
    "COMM325",
    "GERON303",
    "GERON305",
    "GERON306",
    "GERON490",
    "GERON498",
+   "HSER300",
+   "HSER310",
+   "HSER330",
+   "HSER340",
+   "HSER360",
+   "HSER365",
    "PSYC365",
    "PSYC375",
    "PSYC390",
@@ -2875,8 +2918,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
+   "COMM321",
    "COMM325",
    "GERON303",
    "GERON305",
@@ -2884,6 +2928,9 @@
    "GERON490",
    "GERON498",
    "HEED300",
+   "HSER300",
+   "HSER310",
+   "HSER330",
    "KINES300",
    "NUTRI324",
    "PSYC365",
@@ -2922,10 +2969,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "COMM302",
    "COMM311",
+   "COMM321",
    "COMM325",
    "COMMC1000",
    "GERON303",
@@ -2933,6 +2981,9 @@
    "GERON306",
    "GERON490",
    "GERON498",
+   "HSER300",
+   "HSER310",
+   "HSER330",
    "POLS304",
    "POLS330",
    "POLSC1000",
@@ -2942,16 +2993,16 @@
    "SOC300"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=632",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
+   "title": "A.A. in Gerontology: Advocacy and Social Policy",
+   "h1": "A.A. in Gerontology: Advocacy and Social Policy",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    630,
+    631,
     632,
-    633,
-    634,
-    635
+    633
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -2960,10 +3011,10 @@
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "42f994e4bb8139ad"
+   "text_sha": "a959b1e83cbd5da6"
   },
   "listed": 20,
-  "text_chars": 16000
+  "text_chars": 15622
  },
  {
   "control_number": "11994",
@@ -3006,7 +3057,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL400",
    "BIOL440",
@@ -3024,6 +3075,7 @@
    "CHEM401",
    "ENGLC1000",
    "ENGLC1001",
+   "ENGWR301",
    "STATC1000"
   ],
   "source": {
@@ -3519,7 +3571,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT301",
@@ -3536,6 +3588,7 @@
    "CISP370",
    "CISW300",
    "CISW410",
+   "ECON302",
    "ENGLC1000"
   ],
   "source": {
@@ -4212,10 +4265,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.968,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL300",
    "BIOL301",
+   "BIOL303",
    "BIOL305",
    "BIOL310",
    "BIOL332",
@@ -4295,28 +4349,33 @@
    "MUSM367"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=764",
-   "title": "Commercial Music: Business Certificate",
-   "h1": "Commercial Music: Business Certificate",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=770",
+   "title": "Commercial Music: Recording",
+   "h1": "Commercial Music: Recording",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    764,
-    765,
-    766,
-    767
+    770,
+    771,
+    772,
+    773
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 770,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "0af1c76f8df9d40f"
+   "text_sha": "da2883a77f465cf2"
   },
   "listed": 16,
-  "text_chars": 11331
+  "text_chars": 12070
  },
  {
   "control_number": "14256",
@@ -4960,11 +5019,15 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.812,
+  "coverage": 0.938,
   "codes_found": [
    "ECE312",
    "ECON310",
    "GERON305",
+   "HSER330",
+   "HSER340",
+   "HSER341",
+   "HSER342",
    "PSYC305",
    "PSYC310",
    "PSYC320",
@@ -5200,161 +5263,12 @@
   "title": "Social Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ADMJ300",
-   "ADMJ302",
-   "ADMJ304",
-   "ADMJ320",
-   "ANTH310",
-   "ANTH320",
-   "ANTH321",
-   "ANTH330",
-   "ANTH333",
-   "ANTH334",
-   "ANTH335",
-   "ANTH336",
-   "ANTH337",
-   "ANTH341",
-   "ANTH370",
-   "ANTH481",
-   "BUS300",
-   "BUS320",
-   "BUS330",
-   "COMM321",
-   "COMM325",
-   "DEAF351",
-   "DEAF352",
-   "DEAF355",
-   "ECE312",
-   "ECE314",
-   "ECE325",
-   "ECE330",
-   "ECE430",
-   "ECON302",
-   "ECON304",
-   "ECON305",
-   "ECON320",
-   "ENGLT365",
-   "ETHNS300",
-   "ETHNS320",
-   "ETHNS330",
-   "ETHNS350",
-   "ETHNS360",
-   "GEOG310",
-   "GEOG320",
-   "GEOG322",
-   "GERON303",
-   "GERON305",
-   "GERON306",
-   "GLST301",
-   "GLST302",
-   "HCD390",
-   "HIST300",
-   "HIST302",
-   "HIST305",
-   "HIST307",
-   "HIST308",
-   "HIST310",
-   "HIST311",
-   "HIST318",
-   "HIST320",
-   "HIST321",
-   "HIST323",
-   "HIST325",
-   "HIST327",
-   "HIST330",
-   "HIST332",
-   "HIST333",
-   "HIST340",
-   "HIST341",
-   "HIST353",
-   "HIST364",
-   "HIST365",
-   "HIST367",
-   "HIST373",
-   "HIST374",
-   "HIST375",
-   "HIST480",
-   "HIST481",
-   "HIST483",
-   "HIST484",
-   "HSER300",
-   "HSER330",
-   "INDIS351",
-   "INDIS353",
-   "INDIS355",
-   "IS305",
-   "IS310",
-   "IS312",
-   "JOUR310",
-   "JOUR320",
-   "NATR307",
-   "NUTRI310",
-   "NUTRI481",
-   "PHIL360",
-   "POLS302",
-   "POLS304",
-   "POLS310",
-   "POLS320",
-   "POLS330",
-   "POLS342",
-   "POLS480",
-   "POLSC1000",
-   "POLSC1000H",
-   "PSYC305",
-   "PSYC320",
-   "PSYC335",
-   "PSYC340",
-   "PSYC354",
-   "PSYC356",
-   "PSYC361",
-   "PSYC365",
-   "PSYC370",
-   "PSYC372",
-   "PSYC373",
-   "PSYC375",
-   "PSYC390",
-   "PSYC415",
-   "PSYC481",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "SJS300",
-   "SJS310",
-   "SOC300",
-   "SOC301",
-   "SOC302",
-   "SOC309",
-   "SOC318",
-   "SOC321",
-   "SOC325",
-   "SOC335",
-   "SOC342",
-   "SOC350",
-   "SOC480"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=87",
-   "title": "L3: Arts and Humanities",
-   "h1": "L3: Arts and Humanities",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    87,
-    88
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "d568011c0f2cf815"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 130,
-  "text_chars": 9617
+  "text_chars": 0
  },
  {
   "control_number": "16734",
@@ -5543,7 +5457,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.652,
+  "coverage": 1.0,
   "codes_found": [
    "LA300",
    "LA310",
@@ -5557,21 +5471,29 @@
    "LA334",
    "LA336",
    "LA342",
+   "LA350",
+   "LA352",
+   "LA360",
+   "LA362",
+   "LA364",
+   "LA366",
+   "LA368",
+   "LA498",
    "PLGL324",
    "PLGL344",
    "PLGL361"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
-   "title": "coursework (ABA Breadth). Students are encouraged to",
-   "h1": "coursework (ABA Breadth). Students are encouraged to",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=822",
+   "title": "A.A. in Paralegal Studies",
+   "h1": "A.A. in Paralegal Studies",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    822,
     823,
     824,
-    825,
-    826
+    825
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -5580,10 +5502,10 @@
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "7ed90882c4c1e2b7"
+   "text_sha": "077f5f2135ee65c6"
   },
   "listed": 23,
-  "text_chars": 15375
+  "text_chars": 12358
  },
  {
   "control_number": "16945",
@@ -5620,6 +5542,11 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 428,
+    "share": 0.5
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
@@ -5726,7 +5653,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
    "BUS312",
    "BUSTEC1001",
@@ -5734,7 +5661,9 @@
    "BUSTEC3001",
    "BUSTEC3002",
    "BUSTEC305",
-   "BUSTEC310"
+   "BUSTEC310",
+   "LA300",
+   "LA350"
   ],
   "source": {
    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=412",
@@ -5766,10 +5695,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "COMM302",
    "COMM311",
+   "COMM321",
    "COMM331",
    "COMM361",
    "COMMC1000",
@@ -5795,7 +5725,10 @@
    "ENGLT380",
    "ENGLT382",
    "ENGLT392",
-   "ENGLT403"
+   "ENGLT403",
+   "ENGWR301",
+   "ENGWR303",
+   "ENGWR481"
   ],
   "source": {
    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=689",
@@ -5824,9 +5757,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.972,
+  "coverage": 1.0,
   "codes_found": [
    "ARTH300",
+   "ARTH302",
    "ARTH308",
    "ARTH310",
    "ARTH322",
@@ -5889,7 +5823,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "COMM331",
    "COMM361",
@@ -5904,6 +5838,9 @@
    "ENGLC1000H",
    "ENGLC1001",
    "ENGLC1001H",
+   "ENGWR301",
+   "ENGWR303",
+   "ENGWR481",
    "GERM401",
    "GERM402",
    "GERM411",
@@ -5953,7 +5890,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.898,
+  "coverage": 0.981,
   "codes_found": [
    "ADMJ302",
    "ADMJ304",
@@ -5971,6 +5908,7 @@
    "ANTH480",
    "ANTH481",
    "BUS330",
+   "COMM321",
    "COMM325",
    "DEAF351",
    "DEAF352",
@@ -5996,6 +5934,8 @@
    "HCD390",
    "HEED300",
    "HEED308",
+   "HIST310",
+   "HIST311",
    "HIST318",
    "HIST320",
    "HIST321",
@@ -6007,6 +5947,12 @@
    "HIST333",
    "HIST340",
    "HIST341",
+   "HIST483",
+   "HIST484",
+   "HSER330",
+   "HSER340",
+   "HSER341",
+   "HSER342",
    "JOUR310",
    "JOUR320",
    "NUTRI310",
@@ -6092,8 +6038,8 @@
   ],
   "source": {
    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=491",
-   "title": "Clean Diesel Hybrid Technology Certificate",
-   "h1": "Clean Diesel Hybrid Technology Certificate",
+   "title": "A.S. in Diesel Technology",
+   "h1": "A.S. in Diesel Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6101,15 +6047,20 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 491,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "13e94fba201bb563"
+   "text_sha": "3e0b12a68041bc6b"
   },
   "listed": 6,
-  "text_chars": 2698
+  "text_chars": 2725
  },
  {
   "control_number": "18845",
@@ -6165,10 +6116,14 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.733,
+  "coverage": 1.0,
   "codes_found": [
    "GLST301",
    "GLST302",
+   "HIST310",
+   "HIST311",
+   "HIST483",
+   "HIST484",
    "POLS302",
    "POLS304",
    "POLS310",
@@ -6209,7 +6164,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.842,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH480",
    "ANTH481",
@@ -6218,8 +6173,11 @@
    "CISP480",
    "ENGLC1000H",
    "ENGLC1001H",
+   "ENGWR481",
    "HIST480",
    "HIST481",
+   "HIST483",
+   "HIST484",
    "NUTRI481",
    "POLS480",
    "POLSC1000H",
@@ -6305,10 +6263,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.963,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH310",
    "ANTH481",
+   "ECON302",
    "GERM401",
    "GERM402",
    "GERM411",
@@ -6520,7 +6479,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.95,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT103",
@@ -6539,6 +6498,7 @@
    "ACCT361",
    "BUS110",
    "CISA316",
+   "ECON302",
    "PROPTX310",
    "PROPTX311"
   ],
@@ -6696,7 +6656,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT301",
@@ -6706,6 +6666,8 @@
    "BUS300",
    "BUS310",
    "BUS340",
+   "ECON302",
+   "ECON304",
    "MGMT360",
    "MKT300",
    "MKT310",
@@ -6846,6 +6808,11 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 428,
+    "share": 0.3
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
@@ -7895,26 +7862,30 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.765,
+  "coverage": 1.0,
   "codes_found": [
    "BUS100",
    "BUS105",
    "BUS300",
    "BUS350",
+   "COMM321",
    "COMM325",
    "GERON303",
    "GERON305",
    "GERON306",
    "GERON490",
    "GERON498",
+   "HSER300",
+   "HSER310",
+   "HSER330",
    "MATH300",
    "PSYC365",
    "PSYC375"
   ],
   "source": {
    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
-   "title": "Gerontology: Administrative Certificate",
-   "h1": "Gerontology: Administrative Certificate",
+   "title": "A.A. in Gerontology: Administrative",
+   "h1": "A.A. in Gerontology: Administrative",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7925,15 +7896,20 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 630,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "f03493c5031599c9"
+   "text_sha": "11f18c86c9fe624e"
   },
   "listed": 17,
-  "text_chars": 15438
+  "text_chars": 15659
  },
  {
   "control_number": "20135",
@@ -7941,14 +7917,21 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.588,
+  "coverage": 1.0,
   "codes_found": [
+   "COMM321",
    "COMM325",
    "GERON303",
    "GERON305",
    "GERON306",
    "GERON490",
    "GERON498",
+   "HSER300",
+   "HSER310",
+   "HSER330",
+   "HSER340",
+   "HSER360",
+   "HSER365",
    "PSYC365",
    "PSYC375",
    "PSYC390",
@@ -7984,17 +7967,21 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
    "AH311",
    "BIOL300",
    "BIOL304",
+   "COMM321",
    "COMM325",
    "GERON303",
    "GERON305",
    "GERON306",
    "GERON490",
    "GERON498",
+   "HSER300",
+   "HSER310",
+   "HSER330",
    "NURSE100",
    "NUTRI324",
    "PSYC365",
@@ -8002,25 +7989,30 @@
    "SLPA126"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=634",
-   "title": "A.A. in Gerontology: Geriatric Health",
-   "h1": "A.A. in Gerontology: Geriatric Health",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=639",
+   "title": "Course",
+   "h1": "Course",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    634,
-    635,
-    636,
-    637
+    639,
+    640,
+    641,
+    642
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 639,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "052a6996aaf3d25e"
+   "text_sha": "beb4380d09343e30"
   },
   "listed": 18,
   "text_chars": 16000
@@ -8031,34 +8023,32 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 0.667,
   "codes_found": [
+   "COMM321",
    "COMM325",
    "GERON303",
    "GERON305",
    "GERON306",
    "GERON490",
    "GERON498",
-   "HEED300",
-   "KINES300",
-   "NUTRI324",
+   "HSER300",
+   "HSER310",
+   "HSER330",
    "PSYC365",
-   "PSYC375",
-   "RECR300",
-   "RECR310",
-   "RECR320"
+   "PSYC375"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=640",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
+   "title": "Gerontology: Geriatric Health Care Certificate",
+   "h1": "Gerontology: Geriatric Health Care Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    640,
-    641,
-    642,
-    643
+    630,
+    631,
+    632,
+    633
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -8067,10 +8057,10 @@
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "499957dc7757391e"
+   "text_sha": "6ae0e1fdf5fdb2aa"
   },
   "listed": 18,
-  "text_chars": 16000
+  "text_chars": 15281
  },
  {
   "control_number": "20139",
@@ -8078,10 +8068,11 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.714,
+  "coverage": 0.905,
   "codes_found": [
    "COMM302",
    "COMM311",
+   "COMM321",
    "COMM325",
    "COMMC1000",
    "GERON303",
@@ -8089,6 +8080,9 @@
    "GERON306",
    "GERON490",
    "GERON498",
+   "HSER300",
+   "HSER310",
+   "HSER330",
    "POLS330",
    "POLSC1000",
    "PSYC365",
@@ -8126,7 +8120,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.652,
+  "coverage": 1.0,
   "codes_found": [
    "LA300",
    "LA310",
@@ -8140,21 +8134,29 @@
    "LA334",
    "LA336",
    "LA342",
+   "LA350",
+   "LA352",
+   "LA360",
+   "LA362",
+   "LA364",
+   "LA366",
+   "LA368",
+   "LA498",
    "PLGL324",
    "PLGL344",
    "PLGL361"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
-   "title": "coursework (ABA Breadth). Students are encouraged to",
-   "h1": "coursework (ABA Breadth). Students are encouraged to",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=822",
+   "title": "Paralegal Studies Certificate",
+   "h1": "Paralegal Studies Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    822,
     823,
     824,
-    825,
-    826
+    825
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -8163,10 +8165,10 @@
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "7ed90882c4c1e2b7"
+   "text_sha": "cea0ee164e464e36"
   },
   "listed": 23,
-  "text_chars": 15375
+  "text_chars": 12331
  },
  {
   "control_number": "20141",
@@ -8174,7 +8176,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "HEED310",
    "HSER300",
@@ -8184,6 +8186,7 @@
    "HSER360",
    "HSER362",
    "HSER365",
+   "HSER498",
    "PSYC305",
    "PSYC340",
    "PSYC365",
@@ -8224,12 +8227,19 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.55,
+  "coverage": 0.9,
   "codes_found": [
    "HEED310",
    "HSER300",
    "HSER310",
    "HSER330",
+   "HSER340",
+   "HSER341",
+   "HSER342",
+   "HSER360",
+   "HSER362",
+   "HSER365",
+   "HSER498",
    "PSYC305",
    "PSYC340",
    "PSYC365",
@@ -8239,16 +8249,16 @@
    "PSYCC1000H"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
-   "title": "• utilize counseling strategies based on examination of",
-   "h1": "• utilize counseling strategies based on examination of",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=921",
+   "title": "Chemical Dependency Studies Certificate",
+   "h1": "Chemical Dependency Studies Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    921,
     922,
     923,
-    924,
-    925
+    924
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -8257,10 +8267,10 @@
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "680e6c02776ac122"
+   "text_sha": "d8f57ea5ce5baa10"
   },
   "listed": 20,
-  "text_chars": 15702
+  "text_chars": 14829
  },
  {
   "control_number": "20143",
@@ -8268,8 +8278,9 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.962,
+  "coverage": 1.0,
   "codes_found": [
+   "COMM321",
    "COMM325",
    "COMM331",
    "EMT110",
@@ -8627,35 +8638,42 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
    "ET115",
    "ET253",
-   "ET302"
+   "ET302",
+   "ET385",
+   "ET388"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
-   "title": "Digital Home Technology Integration Certificate",
-   "h1": "Digital Home Technology Integration Certificate",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=523",
+   "title": "Digital Home Technology Integration",
+   "h1": "Digital Home Technology Integration",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    519,
-    520,
-    521,
-    522
+    523,
+    524,
+    525,
+    526
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 523,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "288ed3097bba9a49"
+   "text_sha": "d2803979e317e140"
   },
   "listed": 5,
-  "text_chars": 13729
+  "text_chars": 14668
  },
  {
   "control_number": "30268",
@@ -8744,33 +8762,12 @@
   "title": "POST Basic Law Enforcement Academy - Modular Format",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "PSTC1502",
-   "PSTC1503",
-   "PSTC1504"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=895",
-   "title": "This course satisfies the arrest, search, and seizure requirement",
-   "h1": "This course satisfies the arrest, search, and seizure requirement",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    895
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "acd48cf2c8472c5e"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 5200
+  "text_chars": 0
  },
  {
   "control_number": "30352",
@@ -8947,11 +8944,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.812,
+  "coverage": 0.938,
   "codes_found": [
    "ECE312",
    "ECON310",
    "GERON305",
+   "HSER330",
+   "HSER340",
+   "HSER341",
+   "HSER342",
    "PSYC305",
    "PSYC310",
    "PSYC320",
@@ -9287,39 +9288,12 @@
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "MATH400",
-   "MATH401",
-   "MATH402",
-   "PHYS410",
-   "PHYS421",
-   "PHYS431"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=540",
-   "title": "physics, and engineering necessary to transfer to a four-year",
-   "h1": "physics, and engineering necessary to transfer to a four-year",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    540,
-    541,
-    542,
-    543
-   ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "a0cf0dfbf09d00d7"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 11929
+  "text_chars": 0
  },
  {
   "control_number": "31052",
@@ -9370,7 +9344,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.974,
+  "coverage": 1.0,
   "codes_found": [
    "ART300",
    "ART302",
@@ -9394,6 +9368,7 @@
    "ART375",
    "ART390",
    "ART391",
+   "ARTH302",
    "ARTH308",
    "ARTH310",
    "ARTH322",
@@ -9564,12 +9539,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.966,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH310",
    "ANTH333",
    "ANTH334",
    "ANTH481",
+   "ECON302",
+   "ECON304",
    "ENGLT330",
    "ENGLT334",
    "ENGLT335",
@@ -9624,16 +9601,16 @@
    "TA303"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=652",
-   "title": "A.A.-T. in History",
-   "h1": "A.A.-T. in History",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=653",
+   "title": "Course Code Course Title Units",
+   "h1": "Course Code Course Title Units",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    652,
     653,
     654,
-    655
+    655,
+    656
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -9642,10 +9619,10 @@
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "6a1a5f5fc8729f5d"
+   "text_sha": "1c4ab76029af5e7c"
   },
   "listed": 58,
-  "text_chars": 13332
+  "text_chars": 15612
  },
  {
   "control_number": "31466",
@@ -10004,7 +9981,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.906,
+  "coverage": 1.0,
   "codes_found": [
    "ARTNM332",
    "ARTPH300",
@@ -10012,7 +9989,10 @@
    "CISA331",
    "COMM302",
    "COMM311",
+   "COMM321",
    "COMM361",
+   "ECON302",
+   "ECON304",
    "ECON310",
    "ENGLC1001",
    "ENGLC1001H",
@@ -10362,16 +10342,16 @@
    "ARTPH360"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=325",
-   "title": "students the foundation in art history necessary for transfer to",
-   "h1": "students the foundation in art history necessary for transfer to",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=308",
+   "title": "Associate Degrees for Transfer",
+   "h1": "Associate Degrees for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    325,
-    326,
-    327,
-    328
+    308,
+    309,
+    310,
+    311
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -10380,10 +10360,10 @@
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "3ed53467075ec7bc"
+   "text_sha": "03bbec09296149a1"
   },
   "listed": 40,
-  "text_chars": 13105
+  "text_chars": 11858
  },
  {
   "control_number": "33203",
@@ -10512,34 +10492,12 @@
   "title": "Pre-Apprenticeship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.75,
-  "codes_found": [
-   "FITNS101",
-   "PREAP111",
-   "PREAP141"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=294",
-   "title": "tools, applied construction math, and employability skills for",
-   "h1": "tools, applied construction math, and employability skills for",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    294,
-    295
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "c2617a32c692196a"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 7036
+  "text_chars": 0
  },
  {
   "control_number": "35040",
@@ -10982,26 +10940,30 @@
    "MUSM314"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766",
-   "title": "Course Code Course Title Units",
-   "h1": "Course Code Course Title Units",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
+   "title": "Music Management and Promotion",
+   "h1": "Music Management and Promotion",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    766,
-    767
+    771
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 771,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "cd4362d80a639ec2"
+   "text_sha": "2ab0519203f966dd"
   },
   "listed": 4,
-  "text_chars": 7379
+  "text_chars": 1729
  },
  {
   "control_number": "35348",
@@ -11686,25 +11648,33 @@
    "ARTNM401"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=330",
-   "title": "A.A. in Art New Media",
-   "h1": "A.A. in Art New Media",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=336",
+   "title": "Graphic Design: Production Artist",
+   "h1": "Graphic Design: Production Artist",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    330
+    336,
+    337,
+    338,
+    339
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 336,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "51f0410048f3ba0b"
+   "text_sha": "27a7dfeffb3ea633"
   },
   "listed": 6,
-  "text_chars": 3736
+  "text_chars": 14310
  },
  {
   "control_number": "37405",
@@ -11980,7 +11950,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.604,
+  "coverage": 0.646,
   "codes_found": [
    "ANTH310",
    "ANTH481",
@@ -11989,6 +11959,8 @@
    "ARTH322",
    "DEAF314",
    "DEAF316",
+   "ECON302",
+   "ECON304",
    "ENGLT340",
    "ENGLT341",
    "GEOG300",
@@ -12630,27 +12602,33 @@
    "STMFT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167",
-   "title": "Career Information",
-   "h1": "Career Information",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=200",
+   "title": "Plumbers/Pipefitters Apprenticeship",
+   "h1": "Plumbers/Pipefitters Apprenticeship",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    167,
-    168,
-    169
+    200,
+    201,
+    202,
+    203
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 200,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "614e1a3b9d03d205"
+   "text_sha": "b230b1a836619fe2"
   },
   "listed": 35,
-  "text_chars": 9554
+  "text_chars": 9066
  },
  {
   "control_number": "39448",
@@ -13091,27 +13069,33 @@
    "CARPT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=160",
-   "title": "• demonstrate safe working practices in a field construction",
-   "h1": "• demonstrate safe working practices in a field construction",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=191",
+   "title": "• describe and apply reinforcing techniques and principles to",
+   "h1": "• describe and apply reinforcing techniques and principles to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    160,
-    161,
-    162
+    191,
+    192,
+    193,
+    194
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 191,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "a2853532f30ee837"
+   "text_sha": "9c9ddde21d573479"
   },
   "listed": 17,
-  "text_chars": 10866
+  "text_chars": 14364
  },
  {
   "control_number": "39596",
@@ -13456,67 +13440,12 @@
   "title": "Plumbers/Pipefitters Apprenticeship Level I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "HVACR101",
-   "HVACR298",
-   "PLUMB100",
-   "PLUMB110",
-   "PLUMB111",
-   "PLUMB120",
-   "PLUMB121",
-   "PLUMB122",
-   "PLUMB130",
-   "PLUMB131",
-   "PLUMB140",
-   "PLUMB141",
-   "PLUMB150",
-   "PLUMB160",
-   "PLUMB163",
-   "PLUMB164",
-   "PLUMB166",
-   "PLUMB168",
-   "PLUMB169",
-   "PLUMB170",
-   "PLUMB171",
-   "PLUMB200",
-   "PLUMB201",
-   "PLUMB202",
-   "PLUMB210",
-   "PLUMB211",
-   "PLUMB212",
-   "PLUMB240",
-   "PLUMB241",
-   "PLUMB298",
-   "STMFT104",
-   "STMFT109",
-   "STMFT113",
-   "STMFT114",
-   "STMFT298"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167",
-   "title": "Career Information",
-   "h1": "Career Information",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    167,
-    168,
-    169
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "614e1a3b9d03d205"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 35,
-  "text_chars": 9554
+  "text_chars": 0
  },
  {
   "control_number": "39665",
@@ -13571,134 +13500,24 @@
   "title": "Plumbers/Pipefitters Apprenticeship Level II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "HVACR101",
-   "HVACR298",
-   "PLUMB100",
-   "PLUMB110",
-   "PLUMB111",
-   "PLUMB120",
-   "PLUMB121",
-   "PLUMB122",
-   "PLUMB130",
-   "PLUMB131",
-   "PLUMB140",
-   "PLUMB141",
-   "PLUMB150",
-   "PLUMB160",
-   "PLUMB163",
-   "PLUMB164",
-   "PLUMB166",
-   "PLUMB168",
-   "PLUMB169",
-   "PLUMB170",
-   "PLUMB171",
-   "PLUMB200",
-   "PLUMB201",
-   "PLUMB202",
-   "PLUMB210",
-   "PLUMB211",
-   "PLUMB212",
-   "PLUMB240",
-   "PLUMB241",
-   "PLUMB298",
-   "STMFT104",
-   "STMFT109",
-   "STMFT113",
-   "STMFT114",
-   "STMFT298"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167",
-   "title": "Career Information",
-   "h1": "Career Information",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    167,
-    168,
-    169
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "614e1a3b9d03d205"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 35,
-  "text_chars": 9554
+  "text_chars": 0
  },
  {
   "control_number": "39668",
   "title": "Plumbers/Pipefitters Apprenticeship Level III",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "HVACR101",
-   "HVACR298",
-   "PLUMB100",
-   "PLUMB110",
-   "PLUMB111",
-   "PLUMB120",
-   "PLUMB121",
-   "PLUMB122",
-   "PLUMB130",
-   "PLUMB131",
-   "PLUMB140",
-   "PLUMB141",
-   "PLUMB150",
-   "PLUMB160",
-   "PLUMB163",
-   "PLUMB164",
-   "PLUMB166",
-   "PLUMB168",
-   "PLUMB169",
-   "PLUMB170",
-   "PLUMB171",
-   "PLUMB200",
-   "PLUMB201",
-   "PLUMB202",
-   "PLUMB210",
-   "PLUMB211",
-   "PLUMB212",
-   "PLUMB240",
-   "PLUMB241",
-   "PLUMB298",
-   "STMFT104",
-   "STMFT109",
-   "STMFT113",
-   "STMFT114",
-   "STMFT298"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167",
-   "title": "Career Information",
-   "h1": "Career Information",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    167,
-    168,
-    169
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "614e1a3b9d03d205"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 35,
-  "text_chars": 9554
+  "text_chars": 0
  },
  {
   "control_number": "39669",
@@ -14324,27 +14143,31 @@
    "CARPT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
-   "title": "Carpenter Apprenticeship Level II Certificate",
-   "h1": "Carpenter Apprenticeship Level II Certificate",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=173",
+   "title": "Carpenter Apprenticeship Level II",
+   "h1": "Carpenter Apprenticeship Level II",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    153,
-    154,
-    155
+    173,
+    174
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 173,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "336610923b7ba922"
+   "text_sha": "eb6dadb40d33b0e1"
   },
   "listed": 17,
-  "text_chars": 8759
+  "text_chars": 4345
  },
  {
   "control_number": "40111",
@@ -14636,62 +14459,43 @@
    "ELECT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157",
-   "title": "• demonstrate proper selection, use, care, preparation, and",
-   "h1": "• demonstrate proper selection, use, care, preparation, and",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=178",
+   "title": "Enrollment Eligibility",
+   "h1": "Enrollment Eligibility",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    157
+    178,
+    179
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 178,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "03bbf49a5ba7bee9"
+   "text_sha": "13e5935e4ee99506"
   },
   "listed": 5,
-  "text_chars": 3879
+  "text_chars": 6779
  },
  {
   "control_number": "40545",
   "title": "Electrical Apprenticeship Level III",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ELECT110",
-   "ELECT111",
-   "ELECT120",
-   "ELECT121",
-   "ELECT130",
-   "ELECT131",
-   "ELECT298"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157",
-   "title": "• demonstrate proper selection, use, care, preparation, and",
-   "h1": "• demonstrate proper selection, use, care, preparation, and",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    157
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "03bbf49a5ba7bee9"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 3879
+  "text_chars": 0
  },
  {
   "control_number": "40579",
@@ -14699,12 +14503,8 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.556,
   "codes_found": [
-   "ELECT110",
-   "ELECT111",
-   "ELECT120",
-   "ELECT121",
    "ELECT130",
    "ELECT131",
    "ELECT140",
@@ -14712,25 +14512,30 @@
    "ELECT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157",
-   "title": "• demonstrate proper selection, use, care, preparation, and",
-   "h1": "• demonstrate proper selection, use, care, preparation, and",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=179",
+   "title": "Course",
+   "h1": "Course",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    157
+    179
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 179,
+    "share": 0.556
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "03bbf49a5ba7bee9"
+   "text_sha": "c86135ed4655f489"
   },
   "listed": 9,
-  "text_chars": 3879
+  "text_chars": 3334
  },
  {
   "control_number": "40617",
@@ -14810,25 +14615,31 @@
    "IW298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=159",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=189",
+   "title": "• describe and apply reinforcing techniques and principles to",
+   "h1": "• describe and apply reinforcing techniques and principles to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    159
+    189,
+    190
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 189,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "dcd20c41d76923dc"
+   "text_sha": "74af3a3c3805ad19"
   },
   "listed": 18,
-  "text_chars": 3479
+  "text_chars": 6677
  },
  {
   "control_number": "40619",
@@ -14858,25 +14669,30 @@
    "IW298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=159",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=190",
+   "title": "Ironworkers Apprenticeship Level III",
+   "h1": "Ironworkers Apprenticeship Level III",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    159
+    190
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 190,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "dcd20c41d76923dc"
+   "text_sha": "2540beb8dd3a428f"
   },
   "listed": 18,
-  "text_chars": 3479
+  "text_chars": 2091
  },
  {
   "control_number": "40860",
@@ -14891,26 +14707,33 @@
    "SHME298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162",
-   "title": "The Sheet Metal Apprenticeship certificate concentrates on",
-   "h1": "The Sheet Metal Apprenticeship certificate concentrates on",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=215",
+   "title": "Sheet Metal Apprenticeship Level I",
+   "h1": "Sheet Metal Apprenticeship Level I",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    162,
-    163
+    215,
+    216,
+    217,
+    218
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 215,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "d20ca2041d92bd66"
+   "text_sha": "8a579e4e064e5f10"
   },
   "listed": 3,
-  "text_chars": 5339
+  "text_chars": 14474
  },
  {
   "control_number": "40861",
@@ -14927,28 +14750,33 @@
    "SHME298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=216",
-   "title": "Sheet Metal Apprenticeship Level II Certificate",
-   "h1": "Sheet Metal Apprenticeship Level II Certificate",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=215",
+   "title": "Career Information",
+   "h1": "Career Information",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    215,
     216,
     217,
-    218,
-    219
+    218
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 215,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "993602b6efeb8056"
+   "text_sha": "1acceb9e683ac693"
   },
   "listed": 5,
-  "text_chars": 13851
+  "text_chars": 14723
  },
  {
   "control_number": "40864",
@@ -15009,26 +14837,33 @@
    "SHME298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162",
-   "title": "blueprint reading, commercial construction processes,",
-   "h1": "blueprint reading, commercial construction processes,",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=216",
+   "title": "Career Information",
+   "h1": "Career Information",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    162,
-    163
+    216,
+    217,
+    218,
+    219
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 216,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "3e4f16ed88fde440"
+   "text_sha": "fc1151c30fef6192"
   },
   "listed": 9,
-  "text_chars": 7775
+  "text_chars": 14776
  },
  {
   "control_number": "41038",
@@ -15036,13 +14871,15 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT301",
    "ACCT311",
    "BUS300",
    "BUS310",
    "BUS340",
+   "ECON302",
+   "ECON304",
    "ECON310",
    "MATH340",
    "MATH341",
@@ -15668,76 +15505,24 @@
   "title": "Sheet Metal Service Technician Apprenticeship Level III",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "SHME298",
-   "SMTEC100",
-   "SMTEC101",
-   "SMTEC110",
-   "SMTEC111",
-   "SMTEC120",
-   "SMTEC121"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=163",
-   "title": "The Sheet Metal Apprenticeship Associate in Arts (A.A.) degree",
-   "h1": "The Sheet Metal Apprenticeship Associate in Arts (A.A.) degree",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    163
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "ce1c248ea033d327"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 4149
+  "text_chars": 0
  },
  {
   "control_number": "42154",
   "title": "Sheet Metal Service Technician Apprenticeship Level IV",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "SHME298",
-   "SMTEC100",
-   "SMTEC101",
-   "SMTEC110",
-   "SMTEC111",
-   "SMTEC120",
-   "SMTEC121",
-   "SMTEC130",
-   "SMTEC131"
-  ],
-  "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=163",
-   "title": "The Sheet Metal Apprenticeship Associate in Arts (A.A.) degree",
-   "h1": "The Sheet Metal Apprenticeship Associate in Arts (A.A.) degree",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    163
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
-    "fetched_at": "2026-11-11",
-    "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
-   },
-   "text_sha": "ce1c248ea033d327"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 4149
+  "text_chars": 0
  },
  {
   "control_number": "42157",
@@ -15833,7 +15618,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT103",
    "ACCT104",
@@ -15844,7 +15629,8 @@
    "APPRT498",
    "BUS100",
    "BUS340",
-   "ENGRD315"
+   "ENGRD315",
+   "ENGWR95"
   ],
   "source": {
    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=131",
@@ -16046,7 +15832,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH310",
    "ANTH481",
@@ -16060,6 +15846,7 @@
    "COMMC1000",
    "ENGLC1001",
    "ENGLC1001H",
+   "ENGWR303",
    "JOUR300",
    "JOUR310",
    "PSYCC1000",
@@ -16423,8 +16210,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
+   "BIOL303",
    "COMM361",
    "COMMC1000",
    "ECE312",
@@ -16436,12 +16224,17 @@
    "ENGLC1000H",
    "ENGLC1001",
    "ENGLC1001H",
+   "ENGWR301",
+   "ENGWR303",
+   "ENGWR481",
    "ESL350",
    "ESLW340",
    "GEOL305",
    "GEOL306",
    "HIST307",
    "HIST308",
+   "HIST310",
+   "HIST483",
    "MATH310",
    "POLSC1000",
    "POLSC1000H",
@@ -16512,7 +16305,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT301",
    "ACCT341",
@@ -16521,32 +16314,36 @@
    "BUS310",
    "BUS312",
    "BUS330",
+   "BUS498",
    "BUSTEC332",
    "COMM325"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399",
-   "title": "certificate, Business Information Professional II certificate, and",
-   "h1": "certificate, Business Information Professional II certificate, and",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=408",
+   "title": "BUS 498 Work Experience in Business",
+   "h1": "BUS 498 Work Experience in Business",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    399,
-    400,
-    401,
-    402
+    408,
+    409
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 408,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "0a33c287578c86fa"
+   "text_sha": "08ec337a0df16fda"
   },
   "listed": 10,
-  "text_chars": 13648
+  "text_chars": 8039
  },
  {
   "control_number": "44413",
@@ -16645,7 +16442,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "APPRT498",
    "BUSTEC126",
@@ -16655,6 +16452,8 @@
    "HSER330",
    "HSER340",
    "HSER360",
+   "HSER365",
+   "HSER498",
    "PSYC340",
    "PSYC365",
    "PSYC400",
@@ -17226,26 +17025,33 @@
    "STMFT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=164",
-   "title": "• analyze, interpret, and apply national building codes",
-   "h1": "• analyze, interpret, and apply national building codes",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=222",
+   "title": "Steamfitter Apprenticeship Level II",
+   "h1": "Steamfitter Apprenticeship Level II",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    164,
-    165
+    222,
+    223,
+    224,
+    225
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 222,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "fd648a1621db7a4f"
+   "text_sha": "65dc4ef5624a489b"
   },
   "listed": 21,
-  "text_chars": 6634
+  "text_chars": 11625
  },
  {
   "control_number": "46000",
@@ -17595,25 +17401,32 @@
    "STMFT298"
   ],
   "source": {
-   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=165",
-   "title": "• interpret technical drawings and piping and plumbing",
-   "h1": "• interpret technical drawings and piping and plumbing",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=227",
+   "title": "Welder Apprenticeship Level II",
+   "h1": "Welder Apprenticeship Level II",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    165
+    227,
+    228,
+    229
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 227,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "COBIx (cobi-cto), by hand from its own machine; the runner fetches the same file from the college's address with the hand-filed-copy user agent",
     "fetched_at": "2026-11-11",
     "sha256": "a8b53fe3f121ab04c44a2b439f336725da5641ee8a667fa5c9c71d31f367d708"
    },
-   "text_sha": "197f1337f06fa01d"
+   "text_sha": "5f14878e7edb45c0"
   },
   "listed": 20,
-  "text_chars": 3239
+  "text_chars": 7616
  },
  {
   "control_number": "46016",
@@ -17722,7 +17535,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
    "ART300",
    "ART320",
@@ -17731,6 +17544,7 @@
    "ART328",
    "ART370",
    "ART372",
+   "ARTH302",
    "ARTH308",
    "ARTH310",
    "ARTH322",
@@ -17818,7 +17632,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.923,
+  "coverage": 0.962,
   "codes_found": [
    "ACCT301",
    "ACCT341",
@@ -17840,6 +17654,7 @@
    "BUSTEC332",
    "BUSTEC370",
    "COMM325",
+   "ECON302",
    "ECON320",
    "MGMT142",
    "MKT300",

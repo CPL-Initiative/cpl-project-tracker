@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12521,
-    "output_tokens": 3692,
+    "output_tokens": 3136,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3692,
+  "output_tokens": 3136,
   "output_tokens_details": {
-   "thinking_tokens": 1281
+   "thinking_tokens": 1128
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12392,
- "ms": 29725,
- "seconds": 30.0,
+ "cost_usd": 0.1128,
+ "ms": 25306,
+ "seconds": 26.0,
  "parts": null,
  "error": null,
  "score": {
@@ -132,7 +132,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts in Psychology for Transfer (AA-T) degree (heading not in the supplied text; section begins on an earlier page)",
+   "section_heading": "Associate in Arts in Psychology for Transfer (AA-T) degree (heading on the page before 852, not in the text)",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -175,7 +175,7 @@
   },
   "blocks": [
    {
-    "name": "Required Program (partial; start of table cut off before page 852)",
+    "name": "Required Program (continued from previous page)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -401,52 +401,50 @@
   "missing_explained": [
    {
     "code": "PSYC C1000",
-    "why": "AA-T table start cut off before page 852; printed only in the A.A. section of the supplied text"
+    "why": "AA-T table start cut off before page 852; named only in the A.A. section of the text"
    },
    {
     "code": "PSYC C1000H",
-    "why": "AA-T table start cut off before page 852; printed only in the A.A. section of the supplied text"
+    "why": "AA-T table start cut off before page 852; named only in the A.A. section of the text"
    },
    {
     "code": "PSYC 310",
-    "why": "AA-T table start cut off before page 852; printed only in the A.A. section of the supplied text"
+    "why": "AA-T table start cut off before page 852; named only in the A.A. section of the text"
    },
    {
     "code": "PSYC 330",
-    "why": "AA-T table start cut off; the statistics row's first course is not visible (A.A. section shows PSYC 330)"
+    "why": "AA-T table start cut off before page 852; likely the lead course of the statistics row, but not printed in the AA-T text"
    },
    {
     "code": "HSER 330",
-    "why": "catalog prints SWCD 330 as the cross-listed alternative instead"
+    "why": "not in the text; catalog prints SWCD 330 as the cross-list"
    },
    {
     "code": "HSER 340",
-    "why": "catalog prints SWCD 340 as the cross-listed alternative instead"
+    "why": "not in the text; catalog prints SWCD 340 as the cross-list"
    },
    {
     "code": "HSER 341",
-    "why": "catalog prints SWCD 341 as the cross-listed alternative instead"
+    "why": "not in the text; catalog prints SWCD 341 as the cross-list"
    },
    {
     "code": "HSER 342",
-    "why": "catalog prints SWCD 342 as the cross-listed alternative instead"
+    "why": "not in the text; catalog prints SWCD 342 as the cross-list"
    }
   ],
-  "notes": [
-   "The AA-T section begins on a page not included (before page 852); the requirements table is cut off. The first visible rows are 'or ECON 310', 'or STAT C1000', 'or STAT C1000H', alternatives to a course not shown (likely PSYC 330, as in the A.A. table). Earlier required rows (likely PSYC C1000/C1000H and PSYC 310) are not visible; reviewer should check page 851.",
-   "Because the first option of the statistics row is cut off, ECON 310 is recorded as the main entry with STAT C1000/C1000H as alternatives.",
-   "List B also allows 'Any course from List A not already used'; those courses are not repeated in List B.",
-   "PSYC 401 and PSYC 402 appear in the closed list as 'PSYC401' and 'PSYC402'; treated as the same courses.",
-   "The 60 transferable units sentence describes how the AA-T is obtained (major plus Cal-GETC); not recorded as a printed degree total. No Cal-GETC unit figure is printed.",
-   "The A.A. in Psychology section on pages 853-854 is a different award and was not used, except to note likely cut-off courses."
-  ]
+  "notes": []
  },
- "extracted_run": 43693265189,
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
  "source_sha": "d2aa3f43b10833cb",
  "source_codes": [
   "ECE312",
   "ECON310",
   "GERON305",
+  "HSER330",
+  "HSER340",
+  "HSER341",
+  "HSER342",
   "PSYC305",
   "PSYC310",
   "PSYC320",
@@ -471,6 +469,5 @@
   "STATC1000",
   "STATC1000H"
  ],
- "source_coverage": 0.812,
- "read_run": "43212067552"
+ "source_coverage": 0.938
 }
