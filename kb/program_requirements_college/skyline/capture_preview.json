@@ -1460,5 +1460,10 @@
    "url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php"
   }
  },
- "run": "44539760812"
+ "staged_from": {
+  "run": "44539760812",
+  "proof": "text sha256 of 45 programs",
+  "pages_loaded": 0
+ },
+ "run": "44586737073"
 }
