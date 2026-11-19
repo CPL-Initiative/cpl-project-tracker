@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Music",
  "award": "A.A. Degree",
- "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=54",
+ "source_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=55",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10936,
+  "input_tokens": 10745,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10936,
-    "output_tokens": 5043,
+    "input_tokens": 10745,
+    "output_tokens": 5027,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 5043,
+  "output_tokens": 5027,
   "output_tokens_details": {
    "thinking_tokens": 1538
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1446,
- "ms": 37960,
- "seconds": 38.9,
+ "cost_usd": 0.14352,
+ "ms": 36725,
+ "seconds": 37.0,
  "parts": null,
  "error": null,
  "score": {
@@ -61,11 +61,9 @@
     "MUS374",
     "MUS394"
    ],
-   "unexplained": [
-    "MUS160F"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
    "count": 7,
@@ -609,7 +607,7 @@
    },
    {
     "code": "MUS 356",
-    "why": "named only in the A.A.-T (ADT) section"
+    "why": "named only in the preceding program's section (Total Required Units 24.0), not in the A.A. section"
    },
    {
     "code": "MUS 370",
@@ -621,7 +619,11 @@
    },
    {
     "code": "MUS 394",
-    "why": "Show Choir not in the text"
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS160F",
+    "why": "not in the text"
    },
    {
     "code": "MUS371",
@@ -629,51 +631,20 @@
    },
    {
     "code": "MUS394",
-    "why": "Madrigals not in the text"
+    "why": "not in the text (Madrigals)"
    }
   ],
   "notes": [
-   "Read only the 'Associate in Arts in Music' section; the preceding Associate in Arts in Music for Transfer (ADT) section on the same pages was ignored.",
-   "Emphasis tracks: student completes one of four tracks. All blocks of a track share option_group 'Emphasis track'; Tracks 1-3 each consist of a required block plus a 'choose four units' ensemble block (block names prefixed with the track name). Track 4 has only one block.",
-   "Printed track totals (including the 26-unit Major Field): Vocal 38, Instrumental 34, Piano Performance 37, Commercial 35; overall 'Total Required Units for Music Major: 34.0-38.0'. Major Field total printed as 26.0.",
-   "Track 2 prints no subtotal for its required MUS-166A line.",
-   "MUS-166A is printed as 'Applied Music (taken four times)' with 4.0 units; recorded as one entry with 4 units.",
-   "MUS-102 is printed as 'Music Explorations' while the closed list titles MUS102 'Music Appreciation' (listed twice in the closed list); matched by code. MUS-101 'Music Appreciation: Western Classical Music' is not in the closed list.",
-   "MUS-380 printed as 'Musical Workshop – College Cabaret' (2.0 units), title differs from closed list 'Musical Theatre Workshop-Principals'.",
-   "The requirement 'Complete at least 60 degree-applicable units' is a general degree requirement, not recorded as degree_total.",
-   "Description mentions students may 'directly enter the industry workforce'; no specific career named, so careers left empty."
+   "The text at the top of page 55 (Required Core, Total Required Units 24.0) is the tail of a preceding program, not this A.A.; it was ignored.",
+   "Emphasis: 'Complete one of the following tracks.' Each track has two blocks (required courses and a four-unit ensemble choice, except Track 4 with one block); all track blocks share option_group 'Emphasis track' and the student completes the blocks of one track only. Block names identify the track.",
+   "Track 2's required block has no printed subtotal; MUS-166A shows 4.0 beside it.",
+   "MUS-166A Applied Music is 'taken four times' for 4.0 units in each track.",
+   "Track totals printed: Vocal 38.0, Instrumental 34.0, Piano Performance 37.0, Commercial 35.0; major total 34.0-38.0 including Major Field 26.0.",
+   "MUS-102 is printed as 'Music Explorations' while the closed list's MUS102 is 'Music Appreciation'; matched on code. MUS-101 'Music Appreciation: Western Classical Music' is not in the closed list.",
+   "MUS-380 is printed as 'Musical Workshop – College Cabaret' at 2.0 units; closed list has MUS 380 'Musical Theatre Workshop-Principals' at 1 unit.",
+   "The 60-unit sentence is a generic associate degree requirement, not recorded as degree_total. GE: Ohlone College or Cal-GETC; no GE units printed."
   ]
  },
- "extracted_run": "44515665022",
- "catalog_year": "2026-2027",
- "source_sha": "170352c4560125d3",
- "source_codes": [
-  "MUS102",
-  "MUS104",
-  "MUS110A",
-  "MUS110B",
-  "MUS110C",
-  "MUS110D",
-  "MUS111A",
-  "MUS111C",
-  "MUS112A",
-  "MUS112B",
-  "MUS113",
-  "MUS121",
-  "MUS125",
-  "MUS160A",
-  "MUS160C",
-  "MUS160D",
-  "MUS162A",
-  "MUS162B",
-  "MUS162C",
-  "MUS162D",
-  "MUS166A",
-  "MUS352",
-  "MUS355",
-  "MUS356",
-  "MUS380",
-  "MUS381"
- ],
- "source_coverage": 0.743
+ "extracted_run": 39063337090,
+ "read_run": "39061732843"
 }
