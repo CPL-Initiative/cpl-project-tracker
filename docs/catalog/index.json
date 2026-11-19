@@ -17276,8 +17276,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 644,
+   "count": 645,
    "docs": [
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 686,
+     "path": "docs/session_686_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 686 handoff (from SkyTowhee, S685)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
     {
      "created": "2026-11-19",
      "governs": [],
@@ -28066,5 +28080,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1522
+ "total": 1523
 }

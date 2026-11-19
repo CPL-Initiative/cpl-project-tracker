@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-19T12:43:31Z",
-  "session": 684,
-  "moniker": "SkyVerdin",
+  "written_at": "2026-11-19T14:55:23Z",
+  "session": 685,
+  "moniker": "SkyTowhee",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_685_handoff.md",
+  "handoff": "docs/session_686_handoff.md",
   "next_step": {
-    "title": "Land tonight's harvest work, then build the program pages once",
-    "text": "The next session applies tonight's memory rows, merges the named-gaps labels and the ten colleges' rereads in order, then rebuilds what CPL Pathways and Sierra show, once, with every record of the night, and runs the gap census. Then the two open items on the keep-the-better step with COBIx, and the reread plan's next ten colleges."
+    "title": "Land tonight's rereads, then rule D and the next ten colleges",
+    "text": "The next session merges the two keep-the-better fixes and tonight's rereads in order, then runs rule D at City College of San Francisco, Santa Rosa Junior and College of the Desert with the discontinued capture, then the reread plan's third ten colleges, and rebuilds what CPL Pathways and Sierra show once the night's posts are in."
   },
   "calls": [
     {
@@ -337,6 +337,26 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-19T14:31:00Z",
+      "text": "The rebuild of what CPL Pathways and Sierra show ran once with every record of the last two nights: 18,323 program statements under one build, 830 of them changed; a closing count of the live table confirmed it."
+    },
+    {
+      "at": "2026-11-19T13:57:00Z",
+      "text": "The keep-the-better step now accepts a re-read on a page headed only Requirements or Course List when the page is the program's own; 43 good re-reads at 12 colleges were set aside before and now return."
+    },
+    {
+      "at": "2026-11-19T13:57:00Z",
+      "text": "The course outline queue works again: it had read only the newest census file and showed no college to read; three colleges were indexed tonight, and none loaded, since each needs a reader change."
+    },
+    {
+      "at": "2026-11-19T13:38:00Z",
+      "text": "The gap census found 5,203 programs left to collect, 192 fewer than on Nov 18."
+    },
+    {
+      "at": "2026-11-19T13:38:00Z",
+      "text": "Southwestern's paid read collected 24 programs for $2.56, 6 of them new."
+    },
     {
       "at": "2026-11-19T12:38:00Z",
       "text": "The second reread batch finished at ten colleges: 87 program rows replaced by a better read and 42 inserted, from 18,312 rows to 18,354, every load reporting no error; the filed run costs came to $16.08."
@@ -714,7 +734,7 @@
     {
       "day": "2026-11-19",
       "active": 20282,
-      "complete": 14982,
+      "complete": 14996,
       "colleges": 118
     }
   ],
@@ -725,7 +745,7 @@
   },
   "harvest": {
     "day": "2026-11-19",
-    "gaps": 3365,
+    "gaps": 3409,
     "parts": {
       "links": {
         "catalog": [
@@ -742,11 +762,11 @@
         ]
       },
       "roep": [
-        20118,
+        20261,
         20282
       ],
       "coci": [
-        16849,
+        16863,
         20282
       ],
       "outcomes": {
@@ -755,12 +775,12 @@
           88736
         ],
         "plo": [
-          16849,
+          16863,
           20282
         ]
       },
       "careers": [
-        15839,
+        15853,
         20282
       ]
     }
