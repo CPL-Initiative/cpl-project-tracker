@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-18
+updated: 2026-11-19
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -73,6 +73,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
    prune`. Each checkout is 4.4 to 4.7 GB. **Three checkouts at once is the ceiling** (S653: four filled the disk twice
    in ten minutes); a read-only task (a review, a count) takes no worktree, and nobody writes a tar. Remove a checkout
    only when its worker is finished for good: a worker cannot be resumed once its checkout is gone.
+   **A clone is never a full clone (Sam, 2026-11-19):** the conductor and every worker clone `cpl-project-tracker`
+   with `git clone --filter=blob:none`, or `--depth=1` when history is not needed. `scripts/repo_size_guard.py` reads a
+   partial clone through one fetch (#3543).
 6. `python3 kb/_context_budget.py`. Then read the COBIx threads #3110 and #3111 to their last comment, and every issue
    or PR COBIx touched today (search `commenter:cobi-cto updated:>=<today>`), and read them again at every wake. Before
    merging any PR, read its own comments to the last page: a reviewer's note on the PR thread is a finding.
@@ -89,7 +92,8 @@ at the top of each piece of work so Sam can change the dial before it runs.
   PR subscription or empty commit; `git add`, then `CPL_VAULT_ROOT=/home/user/CPLBrain bash
   scripts/check_generated.sh`, read its last line, then commit; when `main` moves under an open PR, merge `main` (a
   merge commit) and regenerate generated files with their tools; a PR that changes a builder of a committed file runs
-  the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`).
+  the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`); a clone of
+  `cpl-project-tracker` is `git clone --filter=blob:none` (or `--depth=1` without history), never a full clone.
 - The agent definitions in `.claude/agents/` carry the limits above, the trailer and footer and a report cap, so a
   brief no longer repeats them: `worker` (Opus), `second-reader` (read-only, severity tags, a verdict),
   `checkpoint-docs` (Rule 9's documents) and `pr-gate` (Haiku; five lines on one PR). The `conductor-brief` skill

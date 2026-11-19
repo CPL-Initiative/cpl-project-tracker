@@ -69,7 +69,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
 | [COBIx on pull requests: the review loop without Sam in the middle](../reference/cobix_pr_loop.md) | — | `cobix_pr_loop.md` |  |  |
 | [College Data Collection: the data dictionary and data-sharing classes](../reference/cdc_data_dictionary.md) | — | `cdc_data_dictionary.md` | 2026-11-14 | 2026-11-15 |
-| [Conductor mode — how a session runs workers, COBIx and the merge gate](../reference/conductor_mode.md) | — | `conductor_mode.md` | 2026-11-11 | 2026-11-18 |
+| [Conductor mode — how a session runs workers, COBIx and the merge gate](../reference/conductor_mode.md) | — | `conductor_mode.md` | 2026-11-11 | 2026-11-19 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data dictionary: every Commons data dashboard dataset, its owner, procedure and planned improvement](../reference/data_dictionary.md) | — | `data_dictionary.md` | 2026-11-13 | 2026-11-13 |
 | [Data sources: the register of datasets that could fill a Commons gap](../reference/data_sources.md) | — | `data_sources.md` | 2026-11-04 | 2026-11-13 |
@@ -87,8 +87,8 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-11-05 |
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [ROEP display gaps from structured fields — design](../reference/roep_display_structured_fields_design.md) | — | `roep_display_structured_fields_design.md` | 2026-11-14 | 2026-11-14 |
-| [Sam's rulings — one place to look up what he has ruled, in his words](../reference/sam_rulings.md) | — | `sam_rulings.md` | 2026-11-14 | 2026-11-18 |
-| [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-18 |
+| [Sam's rulings — one place to look up what he has ruled, in his words](../reference/sam_rulings.md) | — | `sam_rulings.md` | 2026-11-14 | 2026-11-19 |
+| [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-19 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
 | [Stack scouting: one line per tool trial](../reference/stack_scouting.md) | — | `stack_scouting.md` | 2026-11-14 | 2026-11-14 |
 | [The canonical credential model: issuer on the title, assessor on the local exhibit](../reference/canonical_credential_model.md) | — | `canonical_credential_model.md` | 2026-11-11 | 2026-11-11 |
