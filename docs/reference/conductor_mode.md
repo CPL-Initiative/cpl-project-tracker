@@ -189,6 +189,39 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S685, and what worked
+
+The CPL Queue routine's 12:12Z firing of 2026-11-19 (SkyTowhee, started 12:13Z), collection only under Sam's routine
+prompt of 2026-11-17, following the COBIx brief on #3358 as updated 2026-11-19T02:34Z. The routine's form was unchanged,
+so the conductor ran on the model handoff 685 names under *For Sam* 1 (the fourth firing on it).
+
+- **The start waited for the older session's sign-off** (`d-firing-waits-for-sign-off-then-takes-queue-s685`). The
+  firing stood down at 12:17Z while S684 worked (its declaration #3545 had a 12:13Z commit), was told to keep going at
+  12:18Z by a message in the session, wrote nothing until S684's sign-off push at 12:47Z, and declared with draft #3551
+  at 12:52Z. This is `q-wait-for-a-routine-firings-checkpoint-s681` met in practice: the conductor's decision, not a
+  ruling of Sam's.
+- **A file applied before its thread was read** (`p-apply-before-thread-read-s685`). The conductor applied S684's 22
+  memory rows (run 44528020042) before reading #3545's thread, where COBIx had twice asked for a staff contact detail to
+  come out of one row first. It was live about three minutes; a guarded update removed it (run 44528997886), and the
+  file was fixed on #3545 before it merged. Read a PR's thread before applying any file it carries.
+- **The watcher missed three comments again** (`p-cobix-watch-missed-three-s685`): COBIx on #3556, #3557 (two) and
+  #3558. pr-gate's thread read before each merge caught them. The thread read is the gate.
+- **The SQL tool's per-call prompt had nobody to answer it** at 13:25Z (one read had passed through it at 12:22Z), so a
+  worker was stopped and every later live read went through the migrate runner with a committed receipt
+  (`d-live-reads-through-migrate-runner-s685`).
+- **A display build confirmed by a closing count** (`d-display-confirmed-by-live-count-s685`): one college first, the
+  live count gate, the whole build, and, when its confirming read answered HTTP 500, a closing live count. The runner's
+  record stays `unconfirmed`; the receipt of migrate run 44536820147 is the confirmation.
+- **A regression found by its symptom** (`p-helper-reads-only-newest-file-s685`, `d-slo-helper-census-fix-in-conductor-run-s685`):
+  the outline queue read empty because the helper read only the newest census file. A repair of collection tooling
+  stayed inside a collection run.
+- **Two review rounds, then ship the verified part, again** (`d-keep-better-ship-verified-43-s685`): #3553 merged on
+  43 verified flips, and COBIx's finding became #3557 the same hour. The second pass then stopped itself in its dry run
+  (`p-second-pass-run-never-named-s685`), and #3558 fixed the naming before anything posted twice or not at all.
+- **The stop is the $40 rule, not the plan's ceiling** (`d-reads-stop-is-forty-dollars-s685`): the plan prices only the
+  aim rows.
+- **Rule D waited a night** (`d-rule-d-next-session-s685`), behind #3558.
+
 ## What went wrong in S684, and what worked
 
 The CPL Queue routine's 10:12Z firing of 2026-11-19 (SkyVerdin, started 10:13Z), collection only under Sam's routine

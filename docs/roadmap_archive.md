@@ -553,3 +553,7 @@ Four S678 and S679 paragraphs as they stood, verbatim (the two drafts merged; th
 
 - 2026-11-17 (S678 SkyWaxwing, Sam's session, full checkpoint): #3465 (College Data Collection's cost and counts: measured runner and session spend, the Commons spent figure, a daily census at 17:47 UTC, ETA dates that name their days, cost per CRE), #3466 (Exhibits: act on titles that have left MAP from their row), #3469 (CPL Pathways: a course met by its Program Course File id is no catalog addition), #3470 (Commons Clarity units findings); drafts #3467, #3468, #3472, #3473, #3474. KB note `methodology-a-dispatch-only-feed-goes-stale-without-a-sound`. Handoff 679.
 - 2026-11-17 (S677 SkyTanager, full checkpoint): #3462 (Chaffey's yield read: reread 13 rows, load kept 191, display build cdd185495ce4; its suspect yield resolved as not found; slice B complete at seven colleges); the self-test miss named, Skyline 38299. Handoff 678.
+
+## INDEX update history, moved (S685 checkpoint)
+
+- 2026-11-18 (S679 SkyKinglet, Sam's session, full checkpoint): #3477 (the left-map apply nightly, Rename and Combine, the combine guard as one choke point), #3478 and #3481 (Sam's three Nov 17 harvest rulings, 243 records rescored live), #3479 (slash-to-and, 80 renames applied by run 44227947795), #3468 (ACE text kept), #3467, #3473, #3474, #3475; four lanes compacted under 20,000 bytes; KB note `methodology-a-guard-must-fail-closed-when-it-cannot-decide`; handoff 680.
