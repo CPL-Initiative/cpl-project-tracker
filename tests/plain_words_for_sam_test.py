@@ -47,9 +47,11 @@ def open_call_texts(root):
 
 
 def commons_texts(root):
-    src = open(os.path.join(root, "commons.js"), encoding="utf-8").read()
-    for m in re.finditer(r'\btext:\s*"((?:[^"\\]|\\.)*)"', src):
-        yield "commons.js:%d" % (src[:m.start()].count("\n") + 1), m.group(1)
+    # commons_front.js (#3533): the CPL Commons front page's copy, the same rule.
+    for name in ("commons.js", "commons_front.js"):
+        src = open(os.path.join(root, name), encoding="utf-8").read()
+        for m in re.finditer(r'\btext:\s*"((?:[^"\\]|\\.)*)"', src):
+            yield "%s:%d" % (name, src[:m.start()].count("\n") + 1), m.group(1)
 
 
 results = []

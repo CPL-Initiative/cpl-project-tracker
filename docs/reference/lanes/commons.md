@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-11-18
+updated: 2026-11-19
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -47,6 +47,16 @@ together and places them in some order of priority and completion and known issu
 
 ## Status
 
+**BUILT, draft PR (#3533; Sam's go Nov 19, 4:28 AM PT, via COBIx): the CPL Commons
+front page.** `commons_front.js` draws the bare `#commons`: the header and Sam's lede, the Projected Completion Date
+widget (Program records done from the 7-day pace; Curation done reads Not dated yet), 30 daily bars rebuilt from the live files, Needs you, eight cards in Collect / Curate / Connect (fold keys
+in `cplCommons.fold.v1`), the Building, More collection detail and scorecard lines. College Data Collection moved to
+`#collect` (`tabs.js` folds it into this tab and rewrites every old `#commons/data...` address); the earlier first view
+(docket, batches, decision record) stays at `#commons/details` under `cplCommons.detailsOrder.v1` / `detailsFold.v1`.
+Figures with no single source on main yet sit in `ASKED` in the module, each named. **NEXT:** the open data questions
+on the ask (the 6-college status file against 0 blocked, the kinesiology rulings, the readable-course count, a COCI-only
+recount); the generators' `#commons/data` links to `#collect`. Guard `tests/commons_front.test.js`.
+
 
 
 **College Data Collection reaches the words (#3412, S669, #3422):** the paragraph as it stood, [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/commons.md (S683 daytime checkpoint)*. **NEXT:** on the deployed tab, check that a college's `course_outcomes` rows carry its college name.
@@ -65,7 +75,6 @@ together and places them in some order of priority and completion and known issu
 
 **BUILT: the ASE slice (S641, #3152):** `commons_ase.js`, read-only, at `#commons/ase` and `#commons/ase/<title>`; the paragraph as it stood: `docs/commons_lessons.md`, *Moved from the lane (S649 checkpoint)*. Guard `tests/commons_ase.test.js`.
 
-**LIVE: College Data Collection at `#commons/data` (S647, #3215) and its live read (#3232, job `live-counts`):** the two paragraphs as they stood: lessons, *Moved from the lane (S662 checkpoint)*. Guard `tests/commons_data.test.js`.
 **DECIDED** `d-commons-data-coming-next-s647` (a feature with no source sits under Coming next; #3219 open, Sam approves the PR; #3217 parked until Sam lifts it, build and pull nothing from CVC): lessons, *Moved from the lane (S662 checkpoint)*.
 **DECIDED** `d-data-collection-two-bases-s648` (every card names its base: the captures count Active, Teachout and Approved, passing and completeness count Active) and `d-course-key-normalized-s648` (a course is one college and code key, uppercased, spaces and hyphens removed; an SLO matches on it). The paragraphs as they stood: lessons, *Moved from the lane (S650 checkpoint)*.
 **DECIDED** `d-data-collection-links-open-in-panel-s649`: on Sam's ask 2, every link opens in the side panel at an address of its own, with *Open in a new tab* the panel's one link out; this reverses #3257's new-tab links.
@@ -73,9 +82,7 @@ together and places them in some order of priority and completion and known issu
 **LIVE: three cards on a college's panel (#3316, S654) and the non-modal side panel (S653, #3310):** the two paragraphs: lessons, *Moved from the lane (S662 checkpoint)*.
 **The CDC's four PRs and its classes (S653, S654):** **DECIDED** `d-cdc-four-prs-and-classes-s653`, `d-cdc-held-means-not-shared-s654` and `d-cdc-restricted-class-s654` all stand (held means left out of an outside share; the restricted class the site never serves). The paragraph: lessons, *Moved from the lane (S661 checkpoint)*.
 **DECIDED** `d-data-collection-one-base-per-card-s649`, the wording and order, and catalog links: the paragraphs: lessons, *Moved from the lane (S662 checkpoint)*.
-**The strategic plan (S651):** **DECIDED** `d-strategic-plan-generated-in-commons-builder-s651`, not built. The paragraph: lessons, *Moved from the lane (S653 checkpoint)*.
 
-**LIVE (S661, #3375): the Commons Curation ETA tops the CPL Commons tab** (`commons_curation_eta.js`; pace is the net fall of remaining work; **DECIDED** `d-curation-eta-net-pace-s661`, `d-exhibit-universe-includes-map-backlog-s662`; guard `tests/commons_curation_eta.test.js`). **LIVE (S662): the ETA cost feed** reads `kb/reference/model_spend_daily.json` (Sam's billing paste, by hand) and `kb/status/session_spend.json`, built at deploy from each handoff's `Spend:` line (**DECIDED** `d-eta-cost-feed-two-files-s662`; COBIx's two leftovers done in #3381). The runner and session parts are measured since #3465 (below). Both paragraphs as they stood: lessons, *Moved from the lane (S666 checkpoint)*.
 
 **Plain words in a Commons decision (S666).** **#3398 (draft):** Sam's Sheet 195 card 4 CVMA answer is written to `kb/status/exhibit.json` (the fix was already carried out), and a Commons decision batch now reads *We went with this: <default>. It stands unless you change it.* with a *Change it* link, the ask test's shape (`d-person-saved-never-returns-s666` and the [governance lane](governance-team-enablement.md)). **#3400 (draft):** `tests/plain_words_for_sam_test.py` (lints job) refuses COBIx's insider terms in open calls and Commons strings unless the sentence defines them; the Commons *receipt* lines are reworded. **NEXT:** gate and merge both on a green `test`; one writer of `kb/status/exhibit.json` is #3398.
 

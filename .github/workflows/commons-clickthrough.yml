@@ -9,6 +9,7 @@ name: Commons click-through
 # On a failure it opens one tracking issue (label commons-clickthrough), or comments on the one already open.
 # 04:37 UTC is 8:37 PM Pacific in standard time and 9:37 PM in daylight time: after the evening, before Sam's overnight
 # queue routine starts at 10:12 PM Pacific all year, and before the daily dashboard's 06:17 UTC run rewrites the Commons' figures.
+# Since #3533 it walks two views: the CPL Commons front page (#commons) and the earlier first view (#commons/details).
 on:
   schedule:
     - cron: '37 4 * * *'

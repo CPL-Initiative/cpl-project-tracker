@@ -3,10 +3,10 @@
 // One view the Chancellor's Office research and data staff, MAP and Chancellor's Office institutional research can
 // all read: each integration CDC uses or would use, where it stands (live, in progress, proposed, not started), what
 // it would replace, its owner by role and the agreement it needs, which opens the agreements on Data elements and
-// sharing (#commons/data/sharing). People appear by role only; an agreement shows its status, never its text.
+// sharing (#collect/sharing). People appear by role only; an agreement shows its status, never its text.
 //
 // It reads kb/status/cdc_integrations.json, built by kb/_build_cdc_sharing.py from the hand-kept registry
-// kb/cdc_integrations.json (it WRITES NOTHING), and draws #commons/data/integrations through commons_data.js's module
+// kb/cdc_integrations.json (it WRITES NOTHING), and draws #collect/integrations through commons_data.js's module
 // hook (window.CPL_CDC_EXT). Each college's rows (SIS and curriculum system APIs) are exposed as
 // window.CPL_CDC_INTEGRATIONS.forCollege(slug), for the Data sources card's integration line to read; every college
 // reads "none known" until a row in the registry says otherwise. Tokens only, words for every control, no glyphs.

@@ -11,8 +11,8 @@
 //
 // LIVE (Sam, S661: "add the 'College Collections ETA' widget to the College Data Collections tab and add a card to
 // the cdc tab to open the full ETA in sidebar"): the band tops the college list (hook "top"), a card among the figures
-// (hook "tiles") opens the full clock in the side panel (pane "clock", #commons/data/clock), and the clock keeps its own
-// page at #commons/data/eta. The three share one set of picks for the visit.
+// (hook "tiles") opens the full clock in the side panel (pane "clock", #collect/clock), and the clock keeps its own
+// page at #collect/eta. The three share one set of picks for the visit.
 //
 // What it reads, committed files the site already serves (it WRITES NOTHING):
 //   kb/status/program-requirements.json   the headline series: Active programs complete each day. The remaining work,
@@ -862,7 +862,7 @@
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Latest date" }), el("p", { text: lbl(Q) }), el("p", { cls: "eta-note", "data-eta-days": "latest", text: "Latest: " + paceDays(B, "latest") })]),
       el("div", { cls: "eta-cell", "data-eta-cre": "" }, [el("h4", { text: "Cost per collected record equivalent (CRE)" }), el("p", { text: creWords(creWindow(M, B.asOf)) })]),
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Pace" }), el("p", { text: paceWords(B, "soonest") + " newly complete" }),
-        el("a", { href: "#commons/data/" + VIEW_KEY, text: "Open the ETA clock" })])]);
+        el("a", { href: "#collect/" + VIEW_KEY, text: "Open the ETA clock" })])]);
   }
 
   /* One set of picks for the visit, shared by every place the clock is drawn (the band on the list, the full clock in
@@ -934,7 +934,7 @@
     ensureCss();
     var root = el("div", { cls: "eta eta-inpanel", "data-eta-pane": "" }), B = tbaRoot(root, M);
     if (B) mount(root, function (r, redraw) { r.appendChild(full(B, shared(), M, redraw)); });
-    return { title: TITLE, tab: "#commons/data/" + VIEW_KEY, basis: "The full clock: the phases, the dates, how far we have come, the datasets, the levers and the plan. Every moved date is a projection, not a partner commitment.", kids: [root] };
+    return { title: TITLE, tab: "#collect/" + VIEW_KEY, basis: "The full clock: the phases, the dates, how far we have come, the datasets, the levers and the plan. Every moved date is a projection, not a partner commitment.", kids: [root] };
   }
 
   function ready(fetchFn) {

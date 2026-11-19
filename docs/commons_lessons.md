@@ -484,3 +484,13 @@ Verbatim from `docs/reference/lanes/commons.md`, compacted under the lane budget
 - **A test that pins a live-read date breaks the day the read runs.** Derive the date from the data.
 - **Second readers caught two blockers on matcher PRs** (#3467's Verified stamp on a synthetic target and its self-recall: rules that fire on 0 or 1 decided cards yet move hundreds live; #3468's view filter that is not leakproof). The self-recall test is the gate for any rule that moves cards.
 - **A `loaded_at` series counts the last load,** so a reload re-dates rows; the cost-per-CRE series says *loaded on*, never *first collected*.
+
+## Moved from the lane (#3533 front page, 2026-11-19)
+
+The CPL Commons front page (`commons_front.js`) now draws the bare `#commons`; College Data Collection moved to `#collect` and the earlier first view to `#commons/details`. These paragraphs, as they stood:
+
+**LIVE: College Data Collection at `#commons/data` (S647, #3215) and its live read (#3232, job `live-counts`):** the two paragraphs as they stood: lessons, *Moved from the lane (S662 checkpoint)*. Guard `tests/commons_data.test.js`.
+
+**The strategic plan (S651):** **DECIDED** `d-strategic-plan-generated-in-commons-builder-s651`, not built. The paragraph: lessons, *Moved from the lane (S653 checkpoint)*.
+
+**LIVE (S661, #3375): the Commons Curation ETA tops the CPL Commons tab** (`commons_curation_eta.js`; pace is the net fall of remaining work; **DECIDED** `d-curation-eta-net-pace-s661`, `d-exhibit-universe-includes-map-backlog-s662`; guard `tests/commons_curation_eta.test.js`). **LIVE (S662): the ETA cost feed** reads `kb/reference/model_spend_daily.json` (Sam's billing paste, by hand) and `kb/status/session_spend.json`, built at deploy from each handoff's `Spend:` line (**DECIDED** `d-eta-cost-feed-two-files-s662`; COBIx's two leftovers done in #3381). The runner and session parts are measured since #3465 (below). Both paragraphs as they stood: lessons, *Moved from the lane (S666 checkpoint)*.

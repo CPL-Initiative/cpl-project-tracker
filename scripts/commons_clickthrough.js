@@ -54,7 +54,11 @@ function chromiumPath() {
 }
 const num = (s) => { const m = /(\d[\d,]*)/.exec(String(s || "")); return m ? Number(m[1].replace(/,/g, "")) : null; };
 
-async function openCommons(ctx, base) {
+/* The two Commons views with List links (#3533): the CPL Commons front page at the bare #commons, and the earlier
+   first view, with its "Waiting on a person" fold, at #commons/details. Each view's links are walked from that view. */
+const VIEWS = [{ hash: "#commons", ready: "#cmf-needs-h" }, { hash: "#commons/details", ready: "#cmn-queue-h" }];
+async function openCommons(ctx, base, view) {
+  view = view || VIEWS[0];
   const page = await ctx.newPage();
   await page.route("**/*", (route) => {
     const u = route.request().url();
@@ -62,8 +66,8 @@ async function openCommons(ctx, base) {
     if (!u.startsWith(base) && !(LIVE && LIVE_HOST.test(u))) return route.abort();
     return route.continue();
   });
-  await page.goto(base + "/index.html#commons", { waitUntil: "domcontentloaded" });
-  await page.waitForSelector("#cmn-queue-h", { timeout: 60000 });
+  await page.goto(base + "/index.html" + view.hash, { waitUntil: "domcontentloaded" });
+  await page.waitForSelector(view.ready, { timeout: 60000 });
   // Every fold on the Commons' first view opens, so its links can be clicked.
   await page.evaluate(() => document.querySelectorAll("#tab-commons details").forEach((d) => { d.open = true; }));
   return page;
@@ -77,7 +81,7 @@ async function commonsLinks(page) {
       const href = a.getAttribute("href");
       if (!/^#[a-z0-9-]+\/list\/[a-z0-9-]+$/i.test(href) || seen[href]) return;
       seen[href] = true;
-      const line = (a.closest("li, p, .cmn-next, section") || a).textContent.replace(/\s+/g, " ").trim();
+      const line = (a.closest("li, p, .cmn-next, section, nav") || a).textContent.replace(/\s+/g, " ").trim();
       out.push({ href, text: a.textContent.replace(/\s+/g, " ").trim(), line: line.slice(0, 240) });
     });
     return out;
@@ -120,15 +124,19 @@ function listFigure(rule, L) {
   await ctx.addInitScript(() => { try { localStorage.setItem("cplFirstLight.optOut.v1", "1"); } catch (e) { /* blocked */ } });
   const results = [];
   try {
-    const first = await openCommons(ctx, base);
-    const links = await commonsLinks(first);
-    await first.close();
-    if (!links.length) results.push({ href: "(none)", ok: false, why: "the Commons drew no link that names a List filter" });
+    const links = [];
+    for (const view of VIEWS) {
+      const first = await openCommons(ctx, base, view);
+      const found = await commonsLinks(first);
+      await first.close();
+      if (!found.length) results.push({ href: "(none on " + view.hash + ")", ok: false, why: ["the Commons drew no link that names a List filter on " + view.hash] });
+      found.forEach((l) => { l.view = view; links.push(l); });
+    }
     for (const link of links) {
       const [, tab, filter] = /^#([a-z0-9-]+)\/list\/([a-z0-9-]+)$/i.exec(link.href);
       const rule0 = (EXPECT.links || {})[link.href];
       if (rule0 && rule0.live && !LIVE) { results.push({ href: link.href, text: link.text, ok: true, skipped: "needs the live tables (COMMONS_CLICKTHROUGH_LIVE=1)", why: [] }); continue; }
-      const page = await openCommons(ctx, base);
+      const page = await openCommons(ctx, base, link.view);
       const why = [];
       try {
         // A person's click where the link is clickable; a link the page draws under another layer is clicked in the page.
@@ -145,6 +153,9 @@ function listFigure(rule, L) {
         const n = num(link.text);
         let compared = null;
         if (!rule) why.push("no written rule in scripts/commons_clickthrough.json for this link");
+        // A link whose words carry no number makes no count claim (the front page's "No M-ID filter", "Open the
+        // discipline-in-doubt list", #3533): only its landing is checked.
+        else if (n == null) compared = { commons: null, note: "the link carries no count; its landing is checked" };
         else if (rule.differs) {
           // A written difference holds only for the figures it was written against: once recorded, a move on either
           // side fails, so the reason is re-read. Unrecorded figures (a first run) print so they can be written down.
@@ -170,7 +181,7 @@ function listFigure(rule, L) {
           }
         }
         if (rule && rule.unit && !(L.unit && new RegExp(rule.unit).test(L.unit))) why.push("the List does not say which unit its counts are in");
-        results.push({ href: link.href, text: link.text, ok: !why.length, why, landed: { shown: L.shown, selected: L.selected, inView: L.inView, current: L.current }, compared });
+        results.push({ href: link.href, view: link.view.hash, text: link.text, ok: !why.length, why, landed: { shown: L.shown, selected: L.selected, inView: L.inView, current: L.current }, compared });
       } catch (e) {
         results.push({ href: link.href, text: link.text, ok: false, why: ["the click failed: " + String(e && e.message || e).slice(0, 200)] });
       }
@@ -181,7 +192,7 @@ function listFigure(rule, L) {
     srv.close();
   }
   const bad = results.filter((r) => !r.ok);
-  results.forEach((r) => console.log((r.skipped ? "  skip " : r.ok ? "  ok   " : "  FAIL ") + r.href + "  " + (r.text || "") + (r.skipped ? "  (" + r.skipped + ")" : r.ok ? "" : "\n         " + r.why.join("; ")) +
+  results.forEach((r) => console.log((r.skipped ? "  skip " : r.ok ? "  ok   " : "  FAIL ") + (r.view ? r.view + " > " : "") + r.href + "  " + (r.text || "") + (r.skipped ? "  (" + r.skipped + ")" : r.ok ? "" : "\n         " + r.why.join("; ")) +
     (r.compared && r.compared.record ? "\n         record: " + r.compared.record : "")));
   console.log("\n" + (results.length - bad.length) + "/" + results.length + " links land on their filter, counts as written");
   if (OUT) { fs.mkdirSync(path.dirname(path.resolve(OUT)), { recursive: true }); } if (OUT) fs.writeFileSync(OUT, JSON.stringify({ checked_at: new Date().toISOString(), results }, null, 1) + "\n");

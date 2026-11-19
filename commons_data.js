@@ -1,8 +1,8 @@
 // commons_data.js — the Commons data dashboard (#3215): slice 1, the statewide tiles and the college list; slice 2, a
 // college's row that opens in place and the same college in a side panel; slice 3, the overall bar and the live counts
 // (the builder's "live" and "overall" keys, basis live, each figure with its date in words and TBA until the first live
-// read), the data dictionary (#commons/data/dictionary, the "dictionary" key), the API checklist (#commons/data/apis,
-// the "apis" key; an unverified status never counts as connected), the district roll-up (#commons/data/districts,
+// read), the data dictionary (#collect/dictionary, the "dictionary" key), the API checklist (#collect/apis,
+// the "apis" key; an unverified status never counts as connected), the district roll-up (#collect/districts,
 // S648), the catalog platform filter, and one "Coming next"
 // section naming what the mock shows beyond these, each with what it waits on.
 //
@@ -24,9 +24,9 @@
 //                                 or panel opens, so a cause opens its programs at .../college/<slug>/cause/<key>.
 // A figure the file marks TBA reads TBA, with its reason; nothing here is estimated or carried from the mock.
 //
-// Loaded by commons.js when the address names it (#commons/data, #commons/data/<filter>, the platform filter at
-// #commons/data[/<filter>]/platform/<key>, a college's panel at #commons/data[/<filter>][/platform/<key>]/college/<slug>,
-// and the two views at #commons/data/dictionary and #commons/data/apis). The view, the filter, the platform and the
+// Loaded by commons.js when the address names it (#collect, #collect/<filter>, the platform filter at
+// #collect[/<filter>]/platform/<key>, a college's panel at #collect[/<filter>][/platform/<key>]/college/<slug>,
+// and the two views at #collect/dictionary and #collect/apis). The view, the filter, the platform and the
 // panel's college last the visit and live only in the address; the sort, the search, the open row and the panel's width last the visit. Tokens only (the tab's --cmn roles), words
 // for every control, no glyphs.
 (function () {
@@ -146,7 +146,7 @@
   function level(c) { return c && c.confidence ? c.confidence.level : null; }
   var LEVEL_RANK = { strong: 3, partial: 2, limited: 1 };
   var FILTER_SORT = { gaps: { k: "gap", d: -1 }, unread: { k: "name", d: 1 }, overall: { k: "overall", d: 1 } };
-  /* An old address keeps working: #commons/data/harvested opens the Collected list. */
+  /* An old address keeps working: #collect/harvested opens the Collected list. */
   var FILTER_ALIAS = { harvested: "collected" };
   function ageOf(c, M) { return c && c.harvested && c.read_at ? age(c.read_at, (M || VIEW.M || {}).rule, VIEW.now) : null; }
   /* The newest catalog year any committed capture read ("2026-2027"), the year a re-read is measured against. */
@@ -374,11 +374,14 @@
   }
   function defaultSort(M) { return liveRead(M) ? { k: "overall", d: -1, auto: true } : { k: "pr", d: -1, auto: true }; }
   /* The three views beside the college list (slice 3; the districts S648), each at its own address. */
-  var VIEWS = { districts: "Colleges by district", slos: "Colleges with collected SLOs", dictionary: "The data dictionary", apis: "The API checklist" };
+  /* "outlines-blocked" (#3533): the colleges whose catalogs or course outlines sit behind a block, the list the CPL
+     Commons front page's Needs you and Courses data card open at #collect/outlines-blocked. */
+  var VIEWS = { districts: "Colleges by district", slos: "Colleges with collected SLOs", dictionary: "The data dictionary", apis: "The API checklist",
+    "outlines-blocked": "Course outlines blocked" };
   /* Modules beside this file (#3310): each registers on window.CPL_CDC_EXT with its views (added to VIEWS, so each has
      its own address), ledes, ready (it reads its own file), view, panel (sections on a college's panel) and statewide
      (a card on the list's page). A module that fails to load leaves the page as it was. */
-  /* commons_eta_clock.js (#3360) adds the ETA clock at #commons/data/eta; while it is a preview it lists the view in
+  /* commons_eta_clock.js (#3360) adds the ETA clock at #collect/eta; while it is a preview it lists the view in
      "unlisted", so the address opens it and the menu does not show it. */
   var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"], ["commons_data_integrations.js", "CPL_CDC_INTEGRATIONS"], ["commons_eta_clock.js", "CPL_COMMONS_ETA"]];
   function exts() { return Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT.filter(Boolean) : []; }
@@ -426,13 +429,13 @@
   }
   function address() {
     /* A college opened from a view keeps the view under it (review of #3261): .../<view>/college/<slug>/<pane>. */
-    if (S.view) return "commons/data/" + S.view + viewTail();
-    var a = "commons/data" + listRoute(S.filter, S.platform, S.district);
+    if (S.view) return "collect/" + S.view + viewTail();
+    var a = "collect" + listRoute(S.filter, S.platform, S.district);
     var c = VIEW.M ? byId(VIEW.M, S.panel) : null;
     if (!c) return a + (S.pane ? paneRoute(S.pane) : "");
     return a + "/college/" + slugOf(c) + (S.pane ? paneRoute(S.pane) : S.cause && causesOf(c)[S.cause] ? "/cause/" + S.cause : "");
   }
-  /* What the address after #commons/data names: a view (dictionary, apis), or the list's filter, then its catalog
+  /* What the address after #collect names: a view (dictionary, apis), or the list's filter, then its catalog
      platform (platform/<key>), then a college (college/<slug>), then one of its causes (cause/<key>, the panel opened
      at that cause's programs, S649), or what one of its links opens (a word of PANES, S649), each optional. A view
      (districts, slos, dictionary, apis) takes a pane that needs no college (source/<key>, entry/<slug>). */
@@ -805,7 +808,7 @@
   /* Still to pass, by cause: a small table, most programs first (S648; it was one long sentence). Each cause is the
      word that opens its programs (S649, Sam on #3229: "make sure any card that has what looks like a link opens up to
      something"): in the opened row it opens the side panel at that cause; in the panel it shows or hides the list
-     below the table. The panel's cause is in the address, #commons/data/college/<slug>/cause/<key>. */
+     below the table. The panel's cause is in the address, #collect/college/<slug>/cause/<key>. */
   function causeTable(d, c, inPanel) {
     var rows = d.causes.map(function (x) {
       var k = x[2], on = !!inPanel && S.cause === k;
@@ -1484,7 +1487,7 @@
   }
   /* Leaving the data view by any path (another tab, #commons, #commons/ase, browser Back from an open panel) releases
      the page: commons.js draws another view into the root without telling this module. */
-  function onData() { return /^#?commons\/data(\/|$)/.test(String(location.hash || "")); }
+  function onData() { return /^#?(?:commons\/(?:data|collect)|collect)(\/|$)/.test(String(location.hash || "")); }   /* the old #commons/data too: tabs.js rewrites it, a bare load may not */
   function leave() { if (!onData()) { S.panel = null; S.cause = null; S.pane = null; releasePage(); } }
   window.addEventListener("cpl-tab-activated", leave);
   window.addEventListener("hashchange", leave);
@@ -1630,7 +1633,7 @@
     root.textContent = "";
     var wrap = el("div", { cls: "cmn-wrap cdd" });
     wrap.appendChild(el("p", { cls: "cdd-trail" }, [el("a", { href: "#commons", text: "CPL Commons" }), " / ",
-      S.view ? el("a", { href: "#commons/data", text: TITLE }) : el("span", { text: TITLE }), S.view ? " / " : null, S.view ? el("span", { text: VIEWS[S.view] }) : null]));
+      S.view ? el("a", { href: "#collect", text: TITLE }) : el("span", { text: TITLE }), S.view ? " / " : null, S.view ? el("span", { text: VIEWS[S.view] }) : null]));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
       el("h2", { cls: "cmn-title", id: "cdd-h", text: S.view ? VIEWS[S.view] : TITLE }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
@@ -1638,12 +1641,14 @@
         : S.view === "slos" ? "The colleges whose course SLOs or objectives the database count holds: how many courses, how many sit on Active programs, and when each was loaded."
         : S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
         : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
+        : S.view === "outlines-blocked" ? "The colleges whose sites block automated reading of their catalog or course outlines. Send any outline or catalog PDF to COBIx, who prepares it and hands Sky one ask."
         : S.view ? exts().map(function (x) { return (x.ledes || {})[S.view]; }).filter(Boolean)[0] || ""
         : "Every college and continuing-education campus: what we have collected for it, how complete it is, how confident we are in it, and what is in the way." })
     ]));
     wrap.appendChild(viewNav());
     if (S.view) {
       wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "slos" ? slosView(M) : S.view === "dictionary" ? dictionaryView(M) : S.view === "apis" ? apisView(M)
+        : S.view === "outlines-blocked" ? blockedTodo(M) || tba("No college is on the blocked list in the committed file.")
         : extCall("view", [S.view, M, extHost()])[0] || tba("This view could not be drawn."));
       var vpage = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);
       root.appendChild(vpage);
@@ -1779,7 +1784,7 @@
       .concat(exts().reduce(function (a, x) { return a.concat(Object.keys(x.views || {}).filter(function (k) { return !(x.unlisted || {})[k] || S.view === k; }).map(function (k) { return [k, VIEWS[k] || x.views[k]]; })); }, []));
     return el("nav", { cls: "cdd-views", "aria-label": "College Data Collection views" }, items.map(function (it) {
       var on = (S.view || "") === it[0];
-      var a = el("a", { href: "#commons/data" + (it[0] ? "/" + it[0] : ""), cls: "cdd-viewword", "data-goto": it[0] || "list", "aria-current": on ? "page" : null, text: it[1] });
+      var a = el("a", { href: "#collect" + (it[0] ? "/" + it[0] : ""), cls: "cdd-viewword", "data-goto": it[0] || "list", "aria-current": on ? "page" : null, text: it[1] });
       a.addEventListener("click", function (e) {
         if (e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;   // a new window opens the address itself
         e.preventDefault(); go(it[0]);
@@ -1970,7 +1975,7 @@
     return sec;
   }
 
-  /* A district's colleges: the list at #commons/data/district/<slug>, the search cleared, the focus on its heading. */
+  /* A district's colleges: the list at #collect/district/<slug>, the search cleared, the focus on its heading. */
   function openDistrict(name) {
     if (!VIEW.root || !VIEW.M) return;
     S.q = "";
@@ -2099,6 +2104,8 @@
 
   var CSS = [
     ".cmn-wrap.cdd { grid-template-columns:minmax(0, 1fr); }",
+    /* The blocked to-do names each catalog address as words; a long one breaks rather than widening a phone's page (#3533). */
+    ".cdd-todo, .cdd-todo * { min-width:0; overflow-wrap:anywhere; }",
     ".cdd > * { min-width:0; }",
     ".cdd .cdd-trail { margin:0; color:var(--cmn-muted); font-size:.92rem; }",
     ".cdd .cdd-trail a { display:inline-block; min-height:24px; line-height:24px; }",

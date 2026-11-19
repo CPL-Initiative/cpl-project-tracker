@@ -1227,7 +1227,7 @@ async function seedCommonsAse(page, theme) {
 
 // The Commons data dashboard (#3215, slice 1): opened by its address, as the Commons' first view links to it.
 async function seedCommonsData(page, theme) {
-  await page.evaluate(() => { if (!/^commons\/data/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/data"; });
+  await page.evaluate(() => { if (!/^collect/.test(location.hash.replace(/^#/, ""))) location.hash = "collect"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForSelector("#commons-root .cdd-notes", { state: "attached", timeout: 60000 });
   await page.evaluate(() => {
@@ -1240,7 +1240,7 @@ async function seedCommonsData(page, theme) {
 
 // The Commons data dashboard, slice 3 (#3215): the data dictionary or the API checklist, opened by its address.
 async function seedCommonsDataView(page, theme, view) {
-  await page.evaluate((v) => { const h = "commons/data/" + (v === "pathways" ? "college/cerritos-college/pathways" : v); if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, view);
+  await page.evaluate((v) => { const h = "collect/" + (v === "pathways" ? "college/cerritos-college/pathways" : v); if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, view);
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForSelector(view === "dictionary" ? "#commons-root #cdd-dict" : view === "districts" ? "#commons-root #cdd-districts"
     : view === "slos" ? "#commons-root #cdd-slos" : view === "sharing" ? "#commons-root #cdc-sw-view" : view === "integrations" ? "#commons-root #cdc-in-view" : view === "eta" ? "#commons-root [data-eta-view]" : view === "clock" ? "#commons-root [data-eta-pane]"
@@ -1254,12 +1254,12 @@ async function seedCommonsDataView(page, theme, view) {
 }
 
 // The Commons data dashboard, slice 2 (#3215): one college's row opened in place, or its side panel opened by the
-// address (#commons/data/college/<slug>). The row is opened by its word, as a reader would.
+// address (#collect/college/<slug>). The row is opened by its word, as a reader would.
 async function seedCommonsDataOpen(page, theme, what) {
   // The reduced-motion and keyboard passes open the file bare, so the panel's address is set here too.
-  if (what === "panel") await page.evaluate(() => { const h = "commons/data/college/san-jose-city-college"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
+  if (what === "panel") await page.evaluate(() => { const h = "collect/college/san-jose-city-college"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
   // S650: Copper Mountain's catalog pane, the one college whose displayed link is split from its capture root.
-  if (what === "catalog") await page.evaluate(() => { const h = "commons/data/college/copper-mountain-college/catalog"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
+  if (what === "catalog") await page.evaluate(() => { const h = "collect/college/copper-mountain-college/catalog"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
   await seedCommonsData(page, theme);
   if (what === "row") {
     await page.evaluate(() => {
@@ -3712,11 +3712,11 @@ module.exports = {
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The Commons data dashboard, slice 1 (#3215): the statewide figures and the college list ──
-     commons_data.js, opened from #commons/data; measured on the whole list and on one figure's filtered list. */
+     commons_data.js, opened from #collect; measured on the whole list and on one figure's filtered list. */
   "commons-data": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, every college",
-    routes: [{ hash: "commons/data", name: "data-all" }, { hash: "commons/data/slo", name: "data-slo" }],
+    routes: [{ hash: "collect", name: "data-all" }, { hash: "collect/slo", name: "data-slo" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsData(page, "light"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3724,7 +3724,7 @@ module.exports = {
   "commons-data-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, dark",
-    routes: [{ hash: "commons/data", name: "data-all-dark" }],
+    routes: [{ hash: "collect", name: "data-all-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsData(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3733,7 +3733,7 @@ module.exports = {
   "commons-data-row": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, one college's row open",
-    routes: [{ hash: "commons/data", name: "data-row" }],
+    routes: [{ hash: "collect", name: "data-row" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataOpen(page, "light", "row"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3741,7 +3741,7 @@ module.exports = {
   "commons-data-row-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, one college's row open, dark",
-    routes: [{ hash: "commons/data", name: "data-row-dark" }],
+    routes: [{ hash: "collect", name: "data-row-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataOpen(page, "dark", "row"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3749,7 +3749,7 @@ module.exports = {
   "commons-data-panel": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, one college's side panel",
-    routes: [{ hash: "commons/data/college/san-jose-city-college", name: "data-panel" }],
+    routes: [{ hash: "collect/college/san-jose-city-college", name: "data-panel" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataOpen(page, "light", "panel"),
     /* The panel is a non-modal dialog (#3310): the page beside it stays live. A real click on the list behind it
@@ -3787,7 +3787,7 @@ module.exports = {
   "commons-data-panel-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, one college's side panel, dark",
-    routes: [{ hash: "commons/data/college/san-jose-city-college", name: "data-panel-dark" }],
+    routes: [{ hash: "collect/college/san-jose-city-college", name: "data-panel-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataOpen(page, "dark", "panel"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3796,7 +3796,7 @@ module.exports = {
   "commons-data-dictionary": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, the data dictionary",
-    routes: [{ hash: "commons/data/dictionary", name: "data-dictionary" }],
+    routes: [{ hash: "collect/dictionary", name: "data-dictionary" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "dictionary"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3804,7 +3804,7 @@ module.exports = {
   "commons-data-dictionary-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, the data dictionary, dark",
-    routes: [{ hash: "commons/data/dictionary", name: "data-dictionary-dark" }],
+    routes: [{ hash: "collect/dictionary", name: "data-dictionary-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "dictionary"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3812,7 +3812,7 @@ module.exports = {
   "commons-data-apis": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, the API checklist",
-    routes: [{ hash: "commons/data/apis", name: "data-apis" }],
+    routes: [{ hash: "collect/apis", name: "data-apis" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "apis"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3821,7 +3821,7 @@ module.exports = {
   "commons-data-sharing": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, data elements and sharing",
-    routes: [{ hash: "commons/data/sharing", name: "data-sharing" }],
+    routes: [{ hash: "collect/sharing", name: "data-sharing" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "sharing"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3829,7 +3829,7 @@ module.exports = {
   "commons-data-sharing-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, data elements and sharing, dark",
-    routes: [{ hash: "commons/data/sharing", name: "data-sharing-dark" }],
+    routes: [{ hash: "collect/sharing", name: "data-sharing-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "sharing"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3838,7 +3838,7 @@ module.exports = {
   "commons-data-integrations": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, integrations",
-    routes: [{ hash: "commons/data/integrations", name: "data-integrations" }],
+    routes: [{ hash: "collect/integrations", name: "data-integrations" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "integrations"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3846,7 +3846,7 @@ module.exports = {
   "commons-data-integrations-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, integrations, dark",
-    routes: [{ hash: "commons/data/integrations", name: "data-integrations-dark" }],
+    routes: [{ hash: "collect/integrations", name: "data-integrations-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "integrations"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3855,7 +3855,7 @@ module.exports = {
   "commons-data-eta": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, the ETA clock",
-    routes: [{ hash: "commons/data/eta", name: "data-eta" }],
+    routes: [{ hash: "collect/eta", name: "data-eta" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "eta"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3863,7 +3863,7 @@ module.exports = {
   "commons-data-eta-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, the ETA clock, dark",
-    routes: [{ hash: "commons/data/eta", name: "data-eta-dark" }],
+    routes: [{ hash: "collect/eta", name: "data-eta-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "eta"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3872,7 +3872,7 @@ module.exports = {
   "commons-data-clock": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, the full ETA in the side panel",
-    routes: [{ hash: "commons/data/clock", name: "data-clock" }],
+    routes: [{ hash: "collect/clock", name: "data-clock" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "clock"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3880,7 +3880,7 @@ module.exports = {
   "commons-data-pathways": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, a college's CPL Pathways in the side panel",
-    routes: [{ hash: "commons/data/college/cerritos-college/pathways", name: "data-pathways" }],
+    routes: [{ hash: "collect/college/cerritos-college/pathways", name: "data-pathways" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "pathways"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3889,7 +3889,7 @@ module.exports = {
   "commons-data-districts": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, colleges by district",
-    routes: [{ hash: "commons/data/districts", name: "data-districts" }],
+    routes: [{ hash: "collect/districts", name: "data-districts" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "districts"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3897,7 +3897,7 @@ module.exports = {
   "commons-data-districts-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, colleges by district, dark",
-    routes: [{ hash: "commons/data/districts", name: "data-districts-dark" }],
+    routes: [{ hash: "collect/districts", name: "data-districts-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "districts"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3907,7 +3907,7 @@ module.exports = {
   "commons-data-slos": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, colleges with collected SLOs",
-    routes: [{ hash: "commons/data/slos", name: "data-slos" }],
+    routes: [{ hash: "collect/slos", name: "data-slos" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataView(page, "light", "slos"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3915,7 +3915,7 @@ module.exports = {
   "commons-data-slos-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, colleges with collected SLOs, dark",
-    routes: [{ hash: "commons/data/slos", name: "data-slos-dark" }],
+    routes: [{ hash: "collect/slos", name: "data-slos-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "slos"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3923,7 +3923,7 @@ module.exports = {
   "commons-data-catalog": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, a catalog pane with its link split from the capture root",
-    routes: [{ hash: "commons/data/college/copper-mountain-college/catalog", name: "data-catalog" }],
+    routes: [{ hash: "collect/college/copper-mountain-college/catalog", name: "data-catalog" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataOpen(page, "light", "catalog"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3931,7 +3931,7 @@ module.exports = {
   "commons-data-apis-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, the API checklist, dark",
-    routes: [{ hash: "commons/data/apis", name: "data-apis-dark" }],
+    routes: [{ hash: "collect/apis", name: "data-apis-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "apis"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],

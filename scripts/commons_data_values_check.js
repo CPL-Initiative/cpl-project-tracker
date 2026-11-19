@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* College Data Collection (#commons/data): measure, in Chromium, that no figure in a college's opened row breaks across
+/* College Data Collection (#collect): measure, in Chromium, that no figure in a college's opened row breaks across
    lines, at 390, 768, 1016 and 1440 wide, for every college, and that the page never scrolls sideways.
 
    Why (S648, Sam's Skyline screenshot on #3229): the Program requirements card's label/value rows printed 144 as
@@ -67,7 +67,7 @@ function serve() {
     await page.route("**", (rt) => rt.request().url().startsWith(base) ? rt.continue() : rt.abort());
     page.on("pageerror", () => {});
     await page.addInitScript(() => { try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* blocked */ } });
-    await page.goto(base + "/index.html#commons/data", { waitUntil: "domcontentloaded" });
+    await page.goto(base + "/index.html#collect", { waitUntil: "domcontentloaded" });
     await page.waitForSelector("#commons-root .cdd-notes", { state: "attached", timeout: 60000 });
     await page.evaluate(() => { const x = document.querySelector(".cplfl-overlay.open #cplfl-close"); if (x) x.click(); });
     await page.waitForTimeout(400);
@@ -95,7 +95,7 @@ function serve() {
     /* The other views: no box scrolls sideways. */
     const views = {};
     for (const v of ["districts", "dictionary", "apis"]) {
-      await page.evaluate((h) => { location.hash = h; }, "commons/data/" + v);
+      await page.evaluate((h) => { location.hash = h; }, "collect/" + v);
       await page.waitForSelector("#commons-root #cdd-" + (v === "dictionary" ? "dict" : v), { state: "attached", timeout: 30000 });
       await page.waitForTimeout(200);
       views[v] = await page.evaluate(() => Array.from(document.querySelectorAll("#commons-root .cdd-wrap, #commons-root .cdd-view")).some((x) => x.scrollWidth > x.clientWidth + 1)

@@ -1,4 +1,4 @@
-// The Commons ETA clock (#3360): commons_eta_clock.js, a College Data Collection module at #commons/data/eta.
+// The Commons ETA clock (#3360): commons_eta_clock.js, a College Data Collection module at #collect/eta.
 //
 // WHAT THIS GUARDS:
 //   (1) ⭐ the pace math reproduces the approved mock's worked dates from the same inputs (a fixture headline:
@@ -74,7 +74,7 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
 M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026-11-01": 999 }, program_records: { "2026-11-13": 100 } };
 
 (async function () {
-  const V = dom("#commons/data/eta", FILES);
+  const V = dom("#collect/eta", FILES);
   const E = V.w.CPL_COMMONS_ETA, D = V.w.CPL_COMMONS_DATA;
   await E.ready(V.w.fetch);
   const M = D.model(M0), B = E.base(M, PR, SKILLS);
@@ -118,7 +118,7 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   // (3) the view, its address, the preview.
   await D.boot(V.root, "eta");
   await flush(V.w);
-  check("(3) ⭐ #commons/data/eta opens the clock from its arrival and reports its address", D.address() === "commons/data/eta" && !!V.root.querySelector("[data-eta-view]"));
+  check("(3) ⭐ #collect/eta opens the clock from its arrival and reports its address", D.address() === "collect/eta" && !!V.root.querySelector("[data-eta-view]"));
   check("(3) the menu carries the clock now that it is live (Sam, S661)", !!V.root.querySelector('nav.cdd-views a[data-goto="eta"]'));
   D.render(V.root, M, "", new Date());
   check("(3) ⭐ the College Collections ETA band tops College Data Collection's list (Sam, S661)", txt(V.root.querySelector("[data-eta-top] #eta-band-h")) === "College Collections ETA" &&
@@ -126,8 +126,8 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   const tile = V.root.querySelector('[data-pane-tile="clock"]');
   check("(3) ⭐ a card among the figures carries the Phase 1 date and opens the full clock in the side panel", tile && /December 26, 2026/.test(txt(tile)));
   tile.click();
-  check("(3) the side panel draws the full clock at its own address, with a new-tab link to the clock's page", D.address() === "commons/data/clock" && !!V.root.querySelector("#cdd-panel [data-eta-pane] #eta-full") &&
-    V.root.querySelector('#cdd-panel a[data-newtab]').getAttribute("href") === "#commons/data/eta");
+  check("(3) the side panel draws the full clock at its own address, with a new-tab link to the clock's page", D.address() === "collect/clock" && !!V.root.querySelector("#cdd-panel [data-eta-pane] #eta-full") &&
+    V.root.querySelector('#cdd-panel a[data-newtab]').getAttribute("href") === "#collect/eta");
   V.root.querySelector('[data-eta-top] [data-eta="comis"]').click();
   check("(3) ⭐ the band and the panel share one set of picks: COMIS on in the band is on in the panel's levers",
     V.root.querySelector('#cdd-panel [data-eta="lever-comis"]').getAttribute("aria-pressed") === "true");
@@ -152,22 +152,22 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
     !FR.window.document.documentElement.classList.contains("cobi-framed") && !FN.window.document.documentElement.classList.contains("cobi-framed"));
   // Inside a same-origin frame it hides them, routes a link to another tab to the page around it, and the session keeper only reads.
   const { requestInterceptor } = require("jsdom");
-  const FRAME_HTML = '<!doctype html><html><head></head><body><a id="l" href="#commons/data/eta">x</a><a id="i" href="#cpl-pathways/college/y">y</a><script>' +
+  const FRAME_HTML = '<!doctype html><html><head></head><body><a id="l" href="#collect/eta">x</a><a id="i" href="#cpl-pathways/college/y">y</a><script>' +
     fs.readFileSync("cobi_framed.js", "utf8") + "</script></body></html>";
   const PARENT = new JSDOM('<!doctype html><html><head></head><body><iframe id="f" src="https://example.org/index.html?framed=1#cpl-pathways/college/x"></iframe></body></html>',
-    { url: "https://example.org/index.html#commons/data", runScripts: "dangerously",
+    { url: "https://example.org/index.html#collect", runScripts: "dangerously",
       resources: { interceptors: [requestInterceptor(() => new Response(FRAME_HTML, { headers: { "Content-Type": "text/html" } }))] } });
   await new Promise((r) => PARENT.window.document.getElementById("f").addEventListener("load", r));
   const fw = PARENT.window.document.getElementById("f").contentWindow;
   fw.document.getElementById("l").dispatchEvent(new fw.MouseEvent("click", { bubbles: true, cancelable: true }));
   check("(3) ⭐ inside a same-origin frame ?framed=1 hides COBI's chrome, and a link to another tab opens in the page around the frame",
-    fw.document.documentElement.classList.contains("cobi-framed") && PARENT.window.location.hash === "#commons/data/eta");
+    fw.document.documentElement.classList.contains("cobi-framed") && PARENT.window.location.hash === "#collect/eta");
   fw.document.getElementById("i").dispatchEvent(new fw.MouseEvent("click", { bubbles: true, cancelable: true }));
-  check("(3) a link within the framed tab stays in the frame", PARENT.window.location.hash === "#commons/data/eta");
+  check("(3) a link within the framed tab stays in the frame", PARENT.window.location.hash === "#collect/eta");
   // COBIx's re-check on #3373: a tab in the frame calling ensureFresh() must hand the renewal to the outer page.
   const SESSION_SRC = fs.readFileSync("cpl_session.js", "utf8");
   const P2 = new JSDOM('<!doctype html><html><head></head><body><iframe id="f" src="https://example.org/index.html?framed=1#cpl-pathways"></iframe></body></html>',
-    { url: "https://example.org/index.html#commons/data", runScripts: "dangerously",
+    { url: "https://example.org/index.html#collect", runScripts: "dangerously",
       resources: { interceptors: [requestInterceptor(() => new Response("<!doctype html><html><head></head><body></body></html>", { headers: { "Content-Type": "text/html" } }))] } });
   let outerCalls = 0, frameFetches = 0;
   P2.window.CPL_SESSION = { ensureFresh: function () { outerCalls++; return Promise.resolve(null); } };
@@ -248,10 +248,10 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
   check("(4) cost per CRE says TBA, never a number, before the database count carries its load counts", (function () {
     const M2 = D.model(Object.assign({}, M0, { live: Object.assign({}, M0.live, { by_day: undefined }) })); const s = E.strip(M2);
     return s && /Cost per CRE: TBA \(the daily load counts arrive with the next database count\)/.test(txt(s.querySelector("[data-eta-cre]"))); })());
-  check("(4) the strip for the Commons tab carries both dates and opens the clock", (function () { const s = E.strip(M); return s && /December 26, 2026/.test(txt(s)) && s.querySelector('a[href="#commons/data/eta"]'); })());
+  check("(4) the strip for the Commons tab carries both dates and opens the clock", (function () { const s = E.strip(M); return s && /December 26, 2026/.test(txt(s)) && s.querySelector('a[href="#collect/eta"]'); })());
 
   // (5) a missing file, and the static rules.
-  const X = dom("#commons/data/eta", { "kb/status/commons_data.json": M0 });
+  const X = dom("#collect/eta", { "kb/status/commons_data.json": M0 });
   await X.w.CPL_COMMONS_DATA.boot(X.root, "eta");
   await flush(X.w);
   check("(5) without the headline series the view says TBA and why", /TBA\. The daily count of Active programs complete could not be read/.test(txt(X.root)));

@@ -232,7 +232,7 @@
       el("colgroup", null, [el("col", { style: "width:24%" }), el("col", { style: "width:28%" }), el("col", { style: "width:28%" }), el("col", { style: "width:20%" })]),
       el("thead", null, [el("tr", null, ["Reference", "Settled", "Pace (" + (S.mode === "soonest" ? "last 7 days" : "the 7 days before") + ")", "Finish"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), tb])]));
     box.appendChild(el("p", { cls: "cur-note" }, ["From the Commons status of " + (B.written ? B.written.slice(0, 10) : "a day the file does not give") + " and its daily series. Program requirements are dated on the ",
-      el("a", { href: "#commons/data", text: "College Collections ETA" }), ". Every moved date is a projection, not a commitment."]));
+      el("a", { href: "#collect", text: "College Collections ETA" }), ". Every moved date is a projection, not a commitment."]));
     root.appendChild(box);
   }
 
