@@ -1,0 +1,65 @@
+{
+ "college": "MiraCosta College",
+ "reread_run": "44583884341",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44529741837",
+ "at": "2026-11-19T18:05:03Z",
+ "posted": 3,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "05130",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "05143",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07862",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07863",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15183",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22006",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36144",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36171",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46055",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 3,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "31821",
+  "31936",
+  "39491"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 3,
+ "rollback": null,
+ "before": []
+}
