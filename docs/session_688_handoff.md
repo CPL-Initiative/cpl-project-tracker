@@ -73,8 +73,13 @@ COBIx on #3566 (comment 7021717277), *"Forward all your recommendations and yes 
 wording rule: 36 confirmed rows in `cr_reference_decisions` under `cr-wording-s687@bot` (migrate run 44618420355;
 receipts on `claude/s687-cr-wording`, its own PR), with memory row `r-cr-college-wording-rule-yes-sam-2026-11-19`.
 This checkpoint marks the call answered in `kb/status/cr.json`. The curation clock dates itself once the nightly CR
-status build counts the 36. It also holds #3560 (Library; part 1 is draft #3572, its migration not yet applied) and
-#3561 (First Light's receipt, merged as #3571, `0e4a70ff`). Agree one writer with it before touching those files.
+status build counts the 36. It also holds #3560 (Library) and #3561 (First Light's receipt, merged as #3571,
+`0e4a70ff`). Its open PRs at 21:41Z, each merging on its own green `test`: #3574 (the wording rule's record, with the
+`row_cr` filter that keeps a zero off the CR row; head `0654248e`) and #3572 (#3560 part 1: the two publish buttons,
+Template, the check and division-settings tables, the gate; its migration applying through
+`claude/s687-library-model-apply`). #3560 parts 2 to 4 remain: the publish workflow's accessibility check and footer,
+the progress bar, then Publish all, Add existing, redraft and republish. Trigger branches that never merge:
+`claude/s687-cr-wording-apply`, `claude/s687-library-model-apply`. Agree one writer with it before touching those files.
 
 ## For Sam
 
