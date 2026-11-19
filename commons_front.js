@@ -296,7 +296,7 @@
     var P = M.programs;
     return el("section", { cls: "cmf-eta", "aria-labelledby": "cmf-eta-h" }, [
       el("h3", { id: "cmf-eta-h", cls: "cmf-eta-h", text: "Projected Completion Date" }),
-      p([fmt(P.complete) + " of " + fmt(P.active) + " Active program records are complete, and credit-recommendation wordings have not moved since " + ASKED.cr.since + ", so only collections has a projected date."], "cmf-status"),
+      p([fmt(P.complete) + " of " + fmt(P.active) + " Active program records are complete, and credit-recommendation wordings have not moved since " + ASKED.cr.since + ", so only program records have a projected date."], "cmf-status"),
       el("div", { cls: "cmf-dates" }, [
         el("div", { cls: "cmf-date" }, [
           p(["Program records done"], "cmf-date-l"),
@@ -326,12 +326,11 @@
           p([a("#commons/details", "Decision record")], "cmf-need-links")]),
         el("div", { cls: "cmf-need" }, [el("h4", { text: "Fixes owed to you" }),
           p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") are still in the discipline-in-doubt file on main, with no landed ruling in the November 19 curation snapshot. Nothing for you to decide."]),
-          p([a("#coci-lookup/list/doubt", "Open the discipline-in-doubt list")], "cmf-need-links")]),
+          p([a(REPO + "3447", "Backfill fix")], "cmf-need-links")]),
         el("div", { cls: "cmf-need" }, [el("h4", { text: "Rows waiting on a person" }),
           p(["Course outlines blocked: " + ASKED.outlinesBlocked.cards + " cards, " + ASKED.outlinesBlocked.current + " current. Send any outline or catalog PDF to COBIx, who prepares it and hands Sky one ask."]),
           p([a("#collect/outlines-blocked", "Open the list of those colleges")], "cmf-need-links"),
-          p([a("#exhibits/held", fmt(H.n) + " titles"), " held for a person" + heldWords + "."]),
-          p(["· a curator"], "cmf-owner")])
+          p([a("#exhibits/held", fmt(H.n) + " titles"), " held for a person" + heldWords + ". ", el("span", { cls: "cmf-owner", text: "· a curator" })])])
       ])
     ]);
   }
@@ -362,7 +361,7 @@
         big: fmt(Cl.collected), rest: [" colleges with a collected catalog"],
         body: [p(["Catalogs read for every college, plus what’s still blocked."]),
           p([fmt(Cl.collected) + " means we have read each college’s catalog and have saved a read of its ", a("#program-requirements/list", "program requirements"),
-            ", at least once. It does not mean we already have everything we need from each college. Still missing: " + fmt(P.active - P.complete) + " Active programs left to finish (every college still has some); course outlines, student learning outcomes, and course objectives (a public outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges); and " + ASKED.evergreen + "’s saved catalog read is still from the 2025–2026 catalog and needs a re-read for the newest year."])],
+            ", at least once. It does not mean we already have everything we need from each college. Still missing: about " + fmt(P.left) + " Active programs in current catalogs left to finish (every college still has some); course outlines, student learning outcomes, and course objectives (a public outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges); and " + ASKED.evergreen + "’s saved catalog read is still from the 2025–2026 catalog and needs a re-read for the newest year."])],
         method: [p(["“Collected” means we have saved a program-requirements catalog read for the college — the catalog has been read at least once. “Not collected yet” would mean no such saved read exists; today that count is " + fmt(Cl.total - Cl.collected) + ", and catalog blocked is " + fmt(Cl.blocked) + ". Some adoption lists also include " + fmt(Cl.ce) + " continuing-education campuses, which is why ASE coverage uses " + fmt(Cl.total + Cl.ce) + " names. The statewide district count is " + fmt(Cl.districts) + ": " + fmt(Cl.districts - 1) + " districts plus Calbright. Open the ", a("#collect", fmt(Cl.total) + "-college list"), " for the college-by-college view."])],
         links: [[fmt(Cl.total) + "-college list", "#collect"]] }),
       card({ key: "programs", title: "Programs", pill: "In progress",
@@ -396,7 +395,7 @@
         big: fmt(E.stamped) + " of " + fmt(E.titles), rest: [" local titles reviewed"],
         after: [meter(exPct, fmt(E.stamped) + " of " + fmt(E.titles) + " reviewed, " + Math.round(exPct) + " percent")],
         body: [p(["The local titles colleges use in MAP, each filed under one credential name."]),
-          p([fmt(E.noSubject) + " credentials (464 exhibits) have no common subject code yet. That queue is growing: " + fmt(ASKED.noSubjectWas.n) + " on " + ASKED.noSubjectWas.day + ", now " + fmt(E.noSubject) + "."]),
+          p([fmt(E.noSubject) + " credentials have no common subject code yet. That queue is growing: " + fmt(ASKED.noSubjectWas.n) + " on " + ASKED.noSubjectWas.day + ", now " + fmt(E.noSubject) + "."]),
           p([fmt(E.left) + " old titles no college uses in MAP any more."])],
         method: [p(["The exhibit name list has " + fmt(E.names) + " names, " + fmt(E.names - K.of) + " more than the " + fmt(K.of) + " credentials on the Credentials card. Cleanup lists: ", a("#exhibits/held", fmt(M.held.n) + " titles held for a person"), "; ", a("#exhibits/list/nosubj", fmt(E.noSubject) + " with no common subject code"), "; ", a("#exhibits/list/left", fmt(E.left) + " old titles"),
           " (a local wording the Commons still files under a shared name, but no college’s current MAP exhibit uses it any more, usually because the college renamed or retyped it — for example, “Automotive Services Excellence (A5: Brakes) Certificate” sits under “ASE A5 — Brakes,” which current MAP titles already cover; nothing breaks while it stays); and ", a("#exhibits/renamed", fmt(E.renamed) + " renamed titles"),
@@ -418,11 +417,11 @@
         big: fmt(K.credit) + " of " + fmt(K.of), rest: [" credentials: at least one college gives credit. The list will show how many colleges, never only a yes-or-no badge, so a student does not assume their own college gives credit."],
         body: [p(["One list, counted once per credential — including a credential a college grants credit for, or a local course exam — under one name and issuer."]),
           p(["Proposed: exhibits are the evaluations under each credential (one evaluation can carry one or more credit recommendations)."]),
-          p(["The other two statuses aren’t counted yet."])],
-        method: [p([fmt(K.of) + " is the count of titles folded under one name. " + fmt(K.credit) + " of them have at least one college giving credit: " + fmt(K.one) + " at one college, " + fmt(K.two5) + " at 2–5, " + fmt(K.six10) + " at 6–10, and " + fmt(K.eleven) + " at 11 or more (max " + K.max + "), across " + fmt(K.lines) + " articulation lines. The other two statuses (“Has a credit recommendation” and “No credit recommendation yet”) are not yet counted once per credential; that split waits on a stable credential id and a link from each credential to its exhibits. ", a("#credentials", "Open the list"), "."])],
-        links: [["Open the credential list", "#credentials"]] }),
+          p(["The other two statuses, “Has a credit recommendation” and “No credit recommendation yet,” aren’t counted yet."])],
+        method: [p([fmt(K.of) + " is the count of titles folded under one name. " + fmt(K.credit) + " of them have at least one college giving credit: " + fmt(K.one) + " at one college, " + fmt(K.two5) + " at 2–5, " + fmt(K.six10) + " at 6–10, and " + fmt(K.eleven) + " at 11 or more (max " + K.max + "), across " + fmt(K.lines) + " articulation lines. The other two statuses (“Has a credit recommendation” and “No credit recommendation yet”) are not yet counted once per credential; that split waits on a stable credential id and a link from each credential to its exhibits. ", a("#exhibits/list", "Open the list"), "."])],
+        links: [["Open the credential list", "#exhibits/list"]] }),
       card({ key: "cr", title: "Credit Recommendations", pill: "In progress",
-        big: fmt(X.rows), rest: [" rows in the CR inventory ", el("span", { cls: "cmf-badge", text: "Not in tracker main yet" })],
+        big: fmt(X.rows), rest: [" rows in the CR inventory ", el("span", { cls: "cmf-badge", text: "Preliminary" })],
         after: [crBar, crLegend],
         body: [p(["One wording for each credit recommendation, so the same credit reads the same everywhere."]),
           p(["Colleges’ wording shown; a rule to keep it is proposed, pending Sam. In cases like POST Basic Academy the course-number link itself may be wrong; the rule would flag those links for a check."])],
@@ -463,6 +462,7 @@
   }
 
   /* ── the page ── */
+  var onResize = null;
   function render(root, M) {
     ensureCss();
     migrate();
@@ -503,7 +503,37 @@
       p(["Scorecard (coverage and student outcomes) fills in here once both are built."], "cmf-line cmf-muted")
     ]);
     root.appendChild(el("div", { cls: "cmn-page cmf-page" }, [wrap]));
+    /* Equal cards without empty space (COBIx's review of #3554): every expanded card takes the height of the tallest
+       one at its clamped length, measured, so the rows line up across Collect / Curate / Connect. A card whose method
+       is open grows on its own; a folded card and a phone's single column keep their own height. */
+    /* Row by row: the nth card of each group shares a row, so each row takes its own tallest card and the next row
+       still starts level across the three columns. */
+    var rows = [0, 1, 2].map(function (k) { return [C.collect[k], C.curate[k], C.connect[k]].filter(Boolean); });
+    function equalize() {
+      all.forEach(function (c) { c.style.minHeight = ""; });
+      if ((window.innerWidth || 0) <= 560) return;
+      rows.forEach(function (row) {
+        var open = row.filter(function (c) { return !c.classList.contains("cmf-folded"); });
+        var basis = open.filter(function (c) { return !c.classList.contains("cmf-unclamped"); });
+        var max = 0;
+        (basis.length ? basis : open).forEach(function (c) { max = Math.max(max, c.offsetHeight || 0); });
+        if (max) open.forEach(function (c) { c.style.minHeight = max + "px"; });
+      });
+    }
+    var queued = false;
+    function later() {
+      if (queued) return;
+      queued = true;
+      (window.requestAnimationFrame || setTimeout)(function () { queued = false; equalize(); });
+    }
+    wrap.addEventListener("click", function (e) { if (e.target && e.target.closest && e.target.closest(".cmf-fold, #cmf-all")) later(); });
+    wrap.addEventListener("toggle", later, true);   // a method toggle does not bubble; the capture phase still sees it
+    if (onResize) window.removeEventListener("resize", onResize);   // a redraw replaces the last page's listener
+    onResize = later;
+    window.addEventListener("resize", onResize);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(later, function () {});
     save();
+    later();
     return wrap;
   }
 
@@ -577,7 +607,7 @@
     ".cmf-group-h { margin:0; font-size:.82rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--cmn-muted); }",
     ".cmf-group-cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap:16px; }",
     ".cmf-dates p.cmf-date-v { margin:0; }",
-    ".cmf-card { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:10px; min-width:0; min-height:44rem; box-sizing:border-box; }",
+    ".cmf-card { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:18px 20px; display:flex; flex-direction:column; gap:10px; min-width:0; box-sizing:border-box; }",
     ".cmf-card-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; }",
     ".cmf-card-t { margin:0; flex:1 1 auto; font-family:var(--cmn-serif); font-size:1.25rem; line-height:1.2; color:var(--cmn-heading); }",
     ".cmf-headline { margin:0; color:var(--cmn-ink-2); font-size:.95rem; font-variant-numeric:tabular-nums; }",

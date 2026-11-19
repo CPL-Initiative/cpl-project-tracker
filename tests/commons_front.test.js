@@ -92,7 +92,13 @@ const fmt = (n) => Number(n).toLocaleString("en-US");
   const pair = fmt(last.complete) + " of " + fmt(last.active);
   check("⭐ S490: the widget's status line and the Programs card show the same pair", txt(d.querySelector(".cmf-status")).indexOf(pair) === 0
     && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-big')) === pair);
-  check("S490: the Colleges card's programs left to finish is active minus complete", txt(d.querySelector('.cmf-card[data-key="colleges"] .cmf-body')).indexOf(fmt(last.active - last.complete) + " Active programs left") >= 0);
+  /* COBIx's review of #3554: one "left to finish" on the page, the target's (active minus the COCI-only programs minus complete). */
+  check("S490: the Colleges card's programs left to finish is the same target-based figure the date uses", txt(d.querySelector('.cmf-card[data-key="colleges"] .cmf-body')).indexOf("about " + fmt(left) + " Active programs in current catalogs left") >= 0
+    && txt(d.querySelector('.cmf-card[data-key="programs"] .cmf-method')).indexOf("leaves about " + fmt(left)) >= 0);
+  check("no link opens #credentials, which is no route", !d.querySelector('a[href="#credentials"]') && d.querySelector('.cmf-card[data-key="credentials"] .cmf-links a[href="#exhibits/list"]'));
+  check("the status line says only program records have a projected date", /so only program records have a projected date\.$/.test(txt(d.querySelector(".cmf-status"))));
+  check("the curator owner trails the held titles' line, never a paragraph of its own", !Array.from(d.querySelectorAll(".cmf-need p")).some((p) => txt(p) === "· a curator") && /held for a person.*· a curator$/.test(txt(Array.from(d.querySelectorAll(".cmf-need p")).find((p) => /held for a person/.test(txt(p))))));
+  check("no card carries a fixed tall minimum in the CSS", !/\.cmf-card \{[^}]*min-height:\s*44rem/.test(SRC));
   check("Curation done reads Not dated yet with the paused reason on the first screen",
     /Not dated yet/.test(txt(d.querySelectorAll(".cmf-date")[1])) && /Human curation of credit-recommendation wordings is paused/.test(txt(d.querySelectorAll(".cmf-date")[1])));
   check("the older 2,344 wordings phrase appears once, in Curation's Calculation Method", (txt(d.querySelector(".cmf")).match(/older 2,344 wordings set/g) || []).length === 1
