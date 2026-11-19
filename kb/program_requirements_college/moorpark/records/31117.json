@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Administration of Justice",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/administration-justice-ast/",
+ "source_url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8630,
+  "input_tokens": 11667,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8630,
-    "output_tokens": 3134,
+    "input_tokens": 11667,
+    "output_tokens": 2073,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,31 +30,68 @@
     "model": null
    }
   ],
-  "output_tokens": 3134,
+  "output_tokens": 2073,
   "output_tokens_details": {
-   "thinking_tokens": 810
+   "thinking_tokens": 435
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0972,
- "ms": 25285,
- "seconds": 26.2,
+ "cost_usd": 0.08813,
+ "ms": 15977,
+ "seconds": 16.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 37,
+   "placed": 0,
    "listed": 38,
-   "share": 0.974,
+   "share": 0.0,
    "missing": [
-    "CJM43"
+    "BUSM140",
+    "CHEMM1A",
+    "CHEMM1AH",
+    "CJM1",
+    "CJM10",
+    "CJM11",
+    "CJM12",
+    "CJM14",
+    "CJM15",
+    "CJM17",
+    "CJM18",
+    "CJM1H",
+    "CJM2",
+    "CJM3",
+    "CJM4",
+    "CJM40",
+    "CJM41",
+    "CJM43",
+    "CJM5",
+    "CJM6",
+    "CJM7",
+    "CJM8",
+    "CJM9A",
+    "CJM9B",
+    "GISM1",
+    "POLSC1000",
+    "POLSC1000H",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "PSYM125",
+    "PSYM6",
+    "SOCIC1000",
+    "SOCIC1000H",
+    "SOCM120",
+    "SOCM125",
+    "SOCM160",
+    "STATC1000",
+    "STATC1000H"
    ],
    "unexplained": [],
-   "none_placed": false,
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -63,46 +100,26 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    18.0,
-    21.0
+    0.0,
+    0.0
    ],
-   "stated": [
-    18.0,
-    21.0
-   ],
-   "against": "program",
-   "why": [],
-   "degree": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     57.0,
-     70.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "within": true
-   }
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 0,
    "courses": 0,
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -115,343 +132,200 @@
    "pass": true
   },
   "degree": {
-   "status": "read"
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "REQUIREMENTS",
+   "section_heading": "Course Identification Numbering System (C-ID)",
    "measure": "units",
    "total_units": {
-    "min": 18,
-    "max": 21
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": 5,
-    "max": 15
+    "min": null,
+    "max": null
    },
-   "ge_pattern": "Cal-GETC",
+   "ge_pattern": null,
    "degree_total": {
-    "min": 60,
-    "max": 60
+    "min": null,
+    "max": null
    },
    "ge_units": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "apply and follow criminal justice system policies and procedures, including but not limited to arrest, search, seizure, investigation, and court and corrections processes.",
-    "demonstrate the academic skills necessary to transfer and complete a four year university degree in Criminal Justice and related fields."
-   ],
+   "outcomes": [],
    "careers": []
   },
-  "blocks": [
-   {
-    "name": "REQUIRED CORE COURSES: Select and complete two courses",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 6,
-     "max": 6
-    },
-    "courses": [
-     {
-      "code": "CJ M01",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "CJ M01H",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M02",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "LIST A: Select and complete two courses",
-    "rule": "choose_courses",
-    "minimum": 2,
-    "option_group": null,
-    "stated": {
-     "min": 6,
-     "max": 6
-    },
-    "courses": [
-     {
-      "code": "CJ M03",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M04",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M05",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M11",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M14",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M41",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "LIST B: Select two courses from the following",
-    "rule": "choose_courses",
-    "minimum": 2,
-    "option_group": null,
-    "stated": {
-     "min": 6,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "CJ M06",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M07",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M08",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M09A",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M09B",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M10",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M12",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M15",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M17",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M18",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CJ M40",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS M140",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM M01A",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "CHEM M01AH",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "GIS M01",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "POLS C1000",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "POLS C1000H",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYC C1000",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "PSYC C1000H",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSY M06",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "SOCI C1000",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "SOCI C1000H",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "SOC M120",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "SOC M160",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STAT C1000",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "STAT C1000H",
-        "units": null,
-        "catalog_addition": false
-       },
-       {
-        "code": "PSY M125",
-        "units": null,
-        "catalog_addition": false
-       },
-       {
-        "code": "SOC M125",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     }
-    ]
-   }
-  ],
+  "blocks": [],
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "BUS M140",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "CHEM M01A",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "CHEM M01AH",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "CJ M01",
+    "why": "only in the C-ID equivalency table (AJ 110); no program requirements in the text"
+   },
+   {
+    "code": "CJ M01H",
+    "why": "only in the C-ID equivalency table (AJ 110); no program requirements in the text"
+   },
+   {
+    "code": "CJ M02",
+    "why": "only in the C-ID equivalency table (AJ 120); no program requirements in the text"
+   },
+   {
+    "code": "CJ M03",
+    "why": "only in the C-ID equivalency table (AJ 160); no program requirements in the text"
+   },
+   {
+    "code": "CJ M04",
+    "why": "only in the C-ID equivalency table (AJ 124); no program requirements in the text"
+   },
+   {
+    "code": "CJ M05",
+    "why": "only in the C-ID equivalency table (AJ 122); no program requirements in the text"
+   },
+   {
+    "code": "CJ M06",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M07",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M08",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M09A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M09B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M10",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M11",
+    "why": "only in the C-ID equivalency table (AJ 140); no program requirements in the text"
+   },
+   {
+    "code": "CJ M12",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M14",
+    "why": "only in the C-ID equivalency table (AJ 220); no program requirements in the text"
+   },
+   {
+    "code": "CJ M15",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M17",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M18",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M40",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ M41",
+    "why": "only in the C-ID equivalency table (AJ 200); no program requirements in the text"
+   },
+   {
     "code": "CJ M43",
     "why": "not in the text"
+   },
+   {
+    "code": "GIS M01",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "PSY M06",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "PSY M125",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "SOC M120",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "SOC M160",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "only in the C-ID equivalency table (printed SOCI C1000); no program requirements in the text"
+   },
+   {
+    "code": "SOCIC1000H",
+    "why": "only in the C-ID equivalency table (printed SOCI C1000H); no program requirements in the text"
+   },
+   {
+    "code": "SOCM125",
+    "why": "only in the C-ID equivalency table (printed SOC M125); no program requirements in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "only in the C-ID equivalency table; no program requirements in the text"
    }
   ],
   "notes": [
-   "The page prints no section title in the extracted text; the requirements are read from the REQUIREMENTS tab of the Administration of Justice AS-T page.",
-   "The core block is headed 'Select and complete two courses' but lists exactly two course entries (CJ M01/CJ M01H and CJ M02), so it is recorded as 'all'.",
-   "LIST B also allows 'Any LIST A course not already used' and 'Any course outside of the Administration of Justice discipline articulated as lower division preparation in the Criminal Justice or Criminology major at any CSU (3)'; these open options are not recorded as courses.",
-   "Closed-list codes 'SOCIC1000', 'SOCIC1000H' and 'SOCM125' are taken to be the same courses the catalog prints as SOCI C1000, SOCI C1000H and SOC M125 (spacing difference only), so they are not marked as catalog additions.",
-   "Units are not printed beside the 'or' alternatives (honors twins, PSY M125, SOC M125); their units are left null.",
-   "Degree summary: Total Units for the Major 18-21; Cal-GETC 34; Double-Counted Units 0-7; Electives Units 5-15; Total Units Required for AS-T Degree 60. Electives 5-15 recorded in degree_elective_units.",
-   "Outcomes come from the page's program student learning outcomes tab for this program."
+   "The supplied text is Moorpark College's C-ID designation list (Transfer Information), not the Administration of Justice A.S.-T program page; it prints no requirements, totals, outcomes or careers for this award, so no blocks were recorded.",
+   "Several closed-list courses appear in the C-ID table (e.g., CJ M01/CJ M01H as AJ 110), but the table only shows course equivalencies, not degree requirements.",
+   "Reviewer should fetch the actual Administration of Justice AS-T program page for the 2026-2027 catalog."
   ]
  },
- "extracted_run": "44481524745",
- "catalog_year": "2026-2027"
+ "extracted_run": "39600815599"
 }
