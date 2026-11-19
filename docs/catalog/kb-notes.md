@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-592 document(s).
+593 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -205,6 +205,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A rendered artifact reads the model through a filed stamp](../kb-notes/methodology-a-rendered-artifact-reads-the-model-through-a-filed-stamp.md) | methodology | published | 2026-10-19 | 2026-10-19 |
 | [A repaint must keep what the reader opened](../kb-notes/methodology-a-repaint-must-keep-what-the-reader-opened.md) | methodology | published | 2026-11-10 | 2026-11-10 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [A reread keeps the better record](../kb-notes/methodology-a-reread-keeps-the-better-record.md) | methodology | published | 2026-11-19 | 2026-11-19 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A retrieval route costs what the synonym table decides, and the batch waits for the slowest route](../kb-notes/methodology-a-retrieval-route-costs-what-the-synonym-table-decides.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A reviewer's confirm is a probe for procedure gaps, and it retires as they close](../kb-notes/methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps.md) | methodology | published | 2026-10-14 | 2026-10-14 |

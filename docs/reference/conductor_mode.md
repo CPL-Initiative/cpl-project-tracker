@@ -185,6 +185,34 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S683, and what worked
+
+The CPL Queue routine's 06:12Z firing of 2026-11-19 (SkyNuthatch, started 06:13Z), collection only under Sam's routine
+prompt of 2026-11-17, following the COBIx brief on #3358 as updated 2026-11-19T02:34Z. No `list_sessions`,
+`get_trigger`, `get_session` or `set_session_tags`. The conductor ran on Fable 5.2 on every call although the brief
+expected Opus 5.5 tonight (`d-conductor-model-as-configured-s683`): the routine's form sets it, and changing it is Sam's.
+
+- **The runner pool starved the database runs** (`p-runner-pool-starves-migrate-s683`). 17 dispatches and about a dozen
+  pull-request pushes inside 40 minutes left each `supabase-migrate` run waiting 30 to 40 minutes, and CI ran about 90.
+  Batch reread dispatches 10 at a time, batch pushes, and expect a database run to queue behind CI.
+- **A branch that only triggers a run carries no pull request** on a saturated pool (`d-trigger-branches-no-pr-s683`).
+  Each PR push adds CI; the handoff's ledger names the branch and its state instead.
+- **The script-run wave step worked.** Once `kb/_program_reread_keep_better.py` had passed its second reader, the lane
+  workers dispatched the reread and the load themselves, one college at a time under the $40 meter
+  (`d-lane-workers-dispatch-reread-load-s683`): 15 colleges with no conductor relay per college.
+- **Lane workers polling quietly** (one status line per batch, no running commentary) kept the conductor's context for
+  the plans and the reviews.
+- **The SQL stall** (`p-execute-sql-stalled-s683`): one `execute_sql` read sent at 08:15Z returned at 09:10Z. The
+  conductor could not act while it waited, and the declaration PR's half-hour refresh lapsed once, which a parallel
+  firing reads as "nobody is working". Keep the heartbeat on a path that never waits on the SQL tool, and leave the
+  headline and harvest reads to the next session when the tool stalls.
+- **A CI-cancel agent was refused** by the permission check (`p-ci-cancel-agent-denied-s683`); recorded, not routed
+  around.
+- **`main` went red on a fixture picked by rule** (`p-fixture-by-rule-vanishes-s683`): once Sam settled 28 of 31 held
+  cards, `tests/side_by_side_test.py` found no fixture. The fix (#3542) rides the wave with the harvest branches.
+- **One wave again** (`claude/wave-s683`): #3542, #3536, #3497, #3508, #3492, #3538 and the three lane branches, one
+  merge of `main`, one CI. Carried PRs were closed with their branches kept.
+
 ## What went wrong in S681, and what worked
 
 The CPL Queue routine's 10:12Z firing of 2026-11-18 (SkyGrebe), collection only, the second firing of S680's night: no
