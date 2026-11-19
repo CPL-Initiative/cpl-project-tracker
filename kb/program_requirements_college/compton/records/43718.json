@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Communication Studies 2.0",
  "award": "A.A- T Degree",
- "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=83",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8635,
+  "input_tokens": 10463,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8635,
-    "output_tokens": 1818,
+    "input_tokens": 10463,
+    "output_tokens": 1064,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,69 +30,74 @@
     "model": null
    }
   ],
-  "output_tokens": 1818,
+  "output_tokens": 1064,
   "output_tokens_details": {
-   "thinking_tokens": 536
+   "thinking_tokens": 205
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0709,
- "ms": 14861,
- "seconds": 15.0,
+ "cost_usd": 0.06313,
+ "ms": 9366,
+ "seconds": 9.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 0,
    "listed": 13,
-   "share": 0.923,
+   "share": 0.0,
    "missing": [
-    "COMMC1004"
+    "ANTH102",
+    "COMMC1000",
+    "COMMC1004",
+    "COMS140",
+    "COMS250",
+    "COMS260",
+    "COMS270",
+    "ENGLC1002",
+    "ENGLC1002H",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOCI101",
+    "SOCI101H"
    ],
    "unexplained": [],
-   "none_placed": false,
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "COMS120",
-    "COMS130"
-   ],
-   "flagged": [
-    "COMS120",
-    "COMS130"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    18.0,
-    18.0
+    0.0,
+    0.0
    ],
-   "stated": [
-    18.0,
-    18.0
-   ],
-   "against": "program",
-   "why": []
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -107,22 +112,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements for AA-T Degree",
+   "section_heading": "(Communication Studies 2.0 A.A.-T section not in the provided text)",
    "measure": "units",
    "total_units": {
-    "min": 18,
-    "max": 18
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": "Cal-GETC",
+   "ge_pattern": null,
    "degree_total": {
     "min": null,
     "max": null
@@ -132,178 +137,70 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Conduct sound research and describe and demonstrate basic concepts of rhetorical theory related to ethos, pathos, and logos.",
-    "Explain the symbolic nature of communication and how culture influences communication in individual, group, and business interactions.",
-    "Demonstrate advanced proficiency in verbal and non-verbal communication skills in a variety of contexts.",
-    "Develop students’ sensitivity and ability to adapt to a variety of cultural audiences and cultural contexts."
-   ],
+   "outcomes": [],
    "careers": []
   },
-  "blocks": [
-   {
-    "name": "Required Core",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 6,
-     "max": 6
-    },
-    "courses": [
-     {
-      "code": "COMM C1000",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "COMS 130",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "List A",
-    "rule": "choose_units",
-    "minimum": 9,
-    "option_group": null,
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "COMS 120",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "COMS 140",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "COMS 250",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "COMS 260",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "COMS 270",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List B",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "ANTH 102",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ENGL C1002",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ENGL C1002H",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYC C1000",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "PSYC C1000H",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "SOCI 101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "SOCI 101H",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     }
-    ]
-   }
-  ],
+  "blocks": [],
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "ANTH 102",
+    "why": "Communication Studies A.A.-T section not in the text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "named only in General Studies A.A. sections; A.A.-T section not in the text"
+   },
+   {
     "code": "COMM C1004",
-    "why": "not in the text; catalog prints COMS 130 Interpersonal Communication in the core instead"
+    "why": "Communication Studies A.A.-T section not in the text"
+   },
+   {
+    "code": "COMS 140",
+    "why": "named only in General Studies A.A. sections; A.A.-T section not in the text"
+   },
+   {
+    "code": "COMS 250",
+    "why": "named only in General Studies: Arts and Humanities A.A.; A.A.-T section not in the text"
+   },
+   {
+    "code": "COMS 260",
+    "why": "named only in General Studies A.A. sections; A.A.-T section not in the text"
+   },
+   {
+    "code": "COMS 270",
+    "why": "named only in General Studies A.A. sections; A.A.-T section not in the text"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "named only in General Studies A.A. sections; A.A.-T section not in the text"
+   },
+   {
+    "code": "ENGL C1002H",
+    "why": "named only in General Studies A.A. sections; A.A.-T section not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "Communication Studies A.A.-T section not in the text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "Communication Studies A.A.-T section not in the text"
+   },
+   {
+    "code": "SOCI 101",
+    "why": "Communication Studies A.A.-T section not in the text"
+   },
+   {
+    "code": "SOCI 101H",
+    "why": "Communication Studies A.A.-T section not in the text"
    }
   ],
   "notes": [
-   "The program's own heading is not in the extracted text (page 83 begins mid-section); section_heading uses the requirements heading 'Program Requirements for AA-T Degree:'.",
-   "COMS 130 Interpersonal Communication is printed in the Required Core where the closed list has COMM C1004 Interpersonal Communication; reviewer should check whether the catalog is outdated or the course was renumbered.",
-   "List B also allows 'Any course from List A not already completed'; List A courses are not repeated in the List B block.",
-   "The 60-unit figure is the generic AA-T requirement, not printed as this award's total, so degree_total is null.",
-   "Text after 'Total Units: 18' belongs to Computer Information Systems and was ignored."
+   "The provided text (catalog pages 93-94) covers only General Studies A.A. emphases (Arts and Humanities; Biological and Physical Sciences; Culture and Communications), not the Communication Studies 2.0 A.A.-T. No requirements, totals, outcomes or careers for the named award could be recorded.",
+   "The careers named in the General Studies sections belong to those programs and were not recorded.",
+   "The Culture and Communications section is cut off at the page break with no total shown. A reviewer should retrieve the actual Communication Studies 2.0 A.A.-T page from the catalog."
   ]
  },
- "extracted_run": "44477684527",
- "catalog_year": "2026-2027",
- "source_sha": "1f82195f09acf41b",
- "source_codes": [
-  "ANTH102",
-  "COMMC1000",
-  "COMS140",
-  "COMS250",
-  "COMS260",
-  "COMS270",
-  "ENGLC1002",
-  "ENGLC1002H",
-  "PSYCC1000",
-  "PSYCC1000H",
-  "SOCI101",
-  "SOCI101H"
- ],
- "source_coverage": 0.923
+ "extracted_run": "39006336111"
 }

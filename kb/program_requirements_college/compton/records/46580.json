@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7797,
+  "input_tokens": 8003,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7797,
-    "output_tokens": 1049,
+    "input_tokens": 8003,
+    "output_tokens": 1152,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1049,
+  "output_tokens": 1152,
   "output_tokens_details": {
-   "thinking_tokens": 231
+   "thinking_tokens": 285
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05217,
- "ms": 8577,
- "seconds": 8.7,
+ "cost_usd": 0.05505,
+ "ms": 10279,
+ "seconds": 10.6,
  "parts": null,
  "error": null,
  "score": {
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements for AS-T Degree",
+   "section_heading": "MATHEMATICS 2.0",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -217,23 +217,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-description; the program's own title heading (likely 'Mathematics 2.0') is not shown, so the requirements heading 'Program Requirements for AS-T Degree' is used as section_heading.",
-   "The 60-unit requirement is the generic AS-T rule, not a printed total for this award, so degree_total is null.",
-   "The following Music section belongs to another program and was ignored."
+   "The PDF text prints 'CSCI 1 14'; recorded as CSCI 114, read as a text-extraction spacing artifact.",
+   "The generic AS-T requirement list ('Completion of 60 semester units...', 'A minimum of 18 semester units in a major') was not recorded as degree_total or total_units; it describes AS-T degrees in general rather than printing this award's total.",
+   "Cal-GETC is named as the GE pattern but no GE unit figure is printed.",
+   "Total Units: 24-25 is the major total printed after the requirement list."
   ]
  },
- "extracted_run": "44477684527",
- "catalog_year": "2026-2027",
- "source_sha": "0a5e24882f7768a6",
- "source_codes": [
-  "CSCI101",
-  "CSCI103",
-  "CSCI114",
-  "MATH190",
-  "MATH191",
-  "MATH220",
-  "MATH270",
-  "PHYS101"
- ],
- "source_coverage": 1.0
+ "extracted_run": "39006336111"
 }

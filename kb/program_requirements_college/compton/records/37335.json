@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Numerical Control Programmer",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=101",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=100",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7246,
+  "input_tokens": 9937,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7246,
-    "output_tokens": 1139,
+    "input_tokens": 9937,
+    "output_tokens": 1617,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1139,
+  "output_tokens": 1617,
   "output_tokens_details": {
-   "thinking_tokens": 328
+   "thinking_tokens": 399
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05176,
- "ms": 10979,
- "seconds": 15.2,
+ "cost_usd": 0.07209,
+ "ms": 13918,
+ "seconds": 14.2,
  "parts": null,
  "error": null,
  "score": {
@@ -79,13 +79,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements:",
+   "section_heading": "Numerical Control Programmer – Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 33,
@@ -121,7 +121,14 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Apply principles from mathematics, physics, and chemistry to solve applied problems in engineering.",
+    "Identify different digital and analog sensor technologies.",
+    "Follow and build robotic devices and components in accordance with industry standard schematics and diagrams.",
+    "Solving Engineering Problems: students will apply principles from mathematics, physics, and chemistry to solve applied problems in engineering.",
+    "Digital and Analog Sensor Technologies: Upon completion of the courses in this discipline, the student will be able to identify different digital and analog sensor technology.",
+    "Industry Standards: Upon completion of the courses in this discipline, the student will be able to follow and build robotic devices and components in accordance with industry standard schematics and diagrams."
+   ],
    "careers": [
     "machining industry"
    ]
@@ -133,8 +140,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 33,
+     "max": 33
     },
     "courses": [
      {
@@ -213,26 +220,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section; the Numerical Control Programmer heading itself is not printed in the text, so section_heading records the 'Program Requirements:' heading under the certificate's description.",
-   "No program learning outcomes are printed for this certificate in the excerpt; the outcomes shown belong to the Marketing program that follows and were not recorded. Outcomes may appear on the preceding page (page 100).",
-   "Career entry 'machining industry' taken from 'positioned for employment in the machining industry'; reviewer may check whether this counts as a named career field.",
-   "Total Units: 33 matches the sum of the ten required courses (4+4+4+3x7)."
+   "The PDF text prints several codes with a stray space ('MTT 1 10', 'MTT 1 12', 'MTT 1 15', 'MTT 1 18'); these are read as MTT 110, MTT 112, MTT 115, MTT 118, a text-extraction artifact.",
+   "The certificate section prints no outcomes of its own; the outcomes recorded are the Machine Tool Technology program-level list, introduced as applying to 'the degree or certificate program', which this certificate shares.",
+   "The shared outcomes list appears to repeat the same three outcomes twice in different wording and refers to sensors and robotics, which may not fit machine tool technology; copied as printed.",
+   "Career entry 'machining industry' is taken from the certificate's description ('strongly positioned for employment in the machining industry'); the program description also mentions employment in machine shops, tool rooms, and instrument and experimental laboratories (workplaces rather than careers), not recorded as careers.",
+   "The A.S. degree in Machine Tool Technology: Numerical Control Programmer prints the same ten courses and 33 units; only the certificate section was used."
   ]
  },
- "extracted_run": "44477684527",
- "catalog_year": "2026-2027",
- "source_sha": "956a3bfbc8c1d1a1",
- "source_codes": [
-  "MTT101",
-  "MTT103",
-  "MTT105",
-  "MTT110",
-  "MTT112",
-  "MTT115",
-  "MTT118",
-  "MTT120",
-  "MTT140",
-  "MTT160"
- ],
- "source_coverage": 1.0
+ "extracted_run": "39006336111"
 }

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Studio Arts",
  "award": "A.A- T Degree",
- "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=112",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7630,
+  "input_tokens": 8239,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7630,
-    "output_tokens": 1725,
+    "input_tokens": 8239,
+    "output_tokens": 1072,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,71 +30,76 @@
     "model": null
    }
   ],
-  "output_tokens": 1725,
+  "output_tokens": 1072,
   "output_tokens_details": {
-   "thinking_tokens": 299
+   "thinking_tokens": 257
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06502,
- "ms": 13531,
- "seconds": 13.7,
+ "cost_usd": 0.0544,
+ "ms": 9076,
+ "seconds": 9.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 0,
    "listed": 15,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.0,
+   "missing": [
+    "ART103",
+    "ART104",
+    "ART110",
+    "ART129",
+    "ART130",
+    "ART145",
+    "ART160",
+    "ART170",
+    "ART209",
+    "ART210",
+    "ART219",
+    "ART220",
+    "ART222",
+    "ART223",
+    "ARTHC1100"
+   ],
    "unexplained": [],
-   "none_placed": false,
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ART141",
-    "ART207",
-    "ART224",
-    "ART230"
-   ],
-   "flagged": [
-    "ART141",
-    "ART207",
-    "ART224",
-    "ART230"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    27.0,
-    27.0
+    0.0,
+    0.0
    ],
-   "stated": [
-    27.0,
-    27.0
-   ],
-   "against": "program",
-   "why": []
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -109,22 +114,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Program Requirements for AA-T Degree",
+   "section_heading": "Studio Arts A.A.-T section not found in the provided text",
    "measure": "units",
    "total_units": {
-    "min": 27,
-    "max": 27
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": "Cal-GETC",
+   "ge_pattern": null,
    "degree_total": {
     "min": null,
     "max": null
@@ -134,213 +139,74 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Create artworks that demonstrate competency in the use of form, media, and technique.",
-    "Demonstrate the ability to comprehend, identify, analyze, and critique art works in terms of form, medium, style, and content.",
-    "Demonstrate the ability to critically communicate ideas about art by oral, visual, and/or written methods.",
-    "Research and analyze the historical, geographical, and chronological context of art and visual culture."
-   ],
+   "outcomes": [],
    "careers": []
   },
-  "blocks": [
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
    {
-    "name": "Required Core",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 15,
-     "max": 15
-    },
-    "courses": [
-     {
-      "code": "ART 103",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 104",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 110",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 130",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 160",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
+    "code": "ART 103",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
    },
    {
-    "name": "List A",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "ART 207",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ART 209",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARTH C1100",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
+    "code": "ART 104",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
    },
    {
-    "name": "List B",
-    "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "ART 129",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 141",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ART 145",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 170",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 210",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 219",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 220",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 222",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 223",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ART 224",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ART 230",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
+    "code": "ART 110",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ART 129",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 130",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ART 145",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ART 160",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ART 170",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 209",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ART 210",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ART 219",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ART 220",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 222",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ART 223",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
+   },
+   {
+    "code": "ARTH C1100",
+    "why": "named only in the General Studies: Fine and Applied Arts A.A. section; Studio Arts section not in text"
    }
   ],
-  "course_outcomes": [],
-  "missing_explained": [],
-  "notes": [
-   "The excerpt begins mid-section without the program's own title heading (e.g. 'Studio Arts'); section_heading uses the requirements heading printed, 'Program Requirements for AA-T Degree'.",
-   "The 60-unit requirement is a generic AA-T statement, not recorded as degree_total; no degree total or Cal-GETC unit figure is printed for this award (the 34 units mentioned belong to the separate Cal-GETC Certificate of Achievement).",
-   "Total Units: 27 printed for the major (15 core + 3 List A + 9 List B).",
-   "The text following 'TRANSFER STUDIES' describes a different award (Cal-GETC Certificate of Achievement) and was not read for this record."
-  ]
+  "notes": []
  },
- "extracted_run": "44477684527",
- "catalog_year": "2026-2027",
- "source_sha": "207af2a1643f2f44",
- "source_codes": [
-  "ART103",
-  "ART104",
-  "ART110",
-  "ART129",
-  "ART130",
-  "ART145",
-  "ART160",
-  "ART170",
-  "ART209",
-  "ART210",
-  "ART219",
-  "ART220",
-  "ART222",
-  "ART223",
-  "ARTHC1100"
- ],
- "source_coverage": 1.0
+ "extracted_run": "39006336111"
 }
