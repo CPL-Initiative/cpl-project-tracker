@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-19T14:44:44Z",
+ "written_at": "2026-11-19T18:27:51Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,16 +168,16 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16382,
-  "gap": 5953,
+  "passing": 16434,
+  "gap": 5901,
   "with_gap": 118,
-  "cost_usd": 1335.3,
-  "passed_at_read": 15704,
+  "cost_usd": 1334.46,
+  "passed_at_read": 15813,
   "cost_receipts": 118,
   "spent_usd": 1174.8,
   "spent_runs": 143,
   "spent_since": "2026-11-17",
-  "slo_waiting": 10,
+  "slo_waiting": 13,
   "scouted": 11,
   "scout_barrier": 1,
   "spot_checked": 8,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16287,
-  "gap": 5953,
+  "passing": 16339,
+  "gap": 5901,
   "collected_with_gaps": 95,
   "discontinued": 0
  },
@@ -324,12 +324,13 @@
    "harvested": true,
    "slug": "american_river",
    "programs": 371,
-   "passing": 302,
-   "gap": 69,
+   "passing": 323,
+   "gap": 48,
    "causes": {
     "no_closed_list": 3,
-    "places_none": 33,
-    "unknown_without_live": 33
+    "page_not_found": 10,
+    "places_none": 5,
+    "unknown_without_live": 30
    },
    "census_causes": {
     "no_closed_list": 2,
@@ -351,10 +352,10 @@
    "outcomes_file": "kb/status/commons_data_programs/american_river.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-12T11:49:22Z",
+   "read_at": "2026-11-19T13:05:57Z",
    "read_kind": "capture",
-   "cost_usd": 29.98,
-   "passed_at_read": 291,
+   "cost_usd": 29.45,
+   "passed_at_read": 319,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -371,15 +372,15 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 368,
-   "found": 368,
-   "extracted": 368,
+   "found": 358,
+   "extracted": 358,
    "errors": 0,
    "failed_checks": {
-    "coverage": 33,
+    "coverage": 5,
     "invented": 0,
-    "arithmetic": 65,
+    "arithmetic": 35,
     "repeated": 0,
-    "outcomes": 14
+    "outcomes": 6
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -387,27 +388,28 @@
    "capture_root": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 514.7,
-   "run": "43693265189",
+   "read_seconds": 674.2,
+   "run": "44535418752",
    "levers": {
-    "reader_page_assignment": 33,
     "reconcile_steps": 20,
-    "ge_units_steps": 13,
+    "ge_units_steps": 10,
+    "reader_page_search": 10,
+    "reader_page_assignment": 5,
     "program_course_file_check": 3
    },
    "collection": {
     "program_reader": {
-     "records": 368,
+     "records": 358,
      "models": {
-      "claude-opus-5-5": 368
+      "claude-opus-5-5": 358
      },
-     "run": "43693265189",
-     "at": "2026-11-12T11:49:22Z",
-     "cost_usd": 29.98,
+     "run": "44535418752",
+     "at": "2026-11-19T13:05:57Z",
+     "cost_usd": 29.45,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 327,
+    "plo_programs": 344,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -1239,13 +1241,13 @@
    "harvested": true,
    "slug": "cerritos",
    "programs": 325,
-   "passing": 282,
-   "gap": 43,
+   "passing": 284,
+   "gap": 41,
    "causes": {
     "no_closed_list": 4,
-    "page_not_found": 16,
-    "places_none": 3,
-    "unknown_without_live": 20
+    "page_not_found": 18,
+    "places_none": 1,
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -1270,10 +1272,10 @@
    "outcomes_file": "kb/status/commons_data_programs/cerritos.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-14T23:54:27Z",
+   "read_at": "2026-11-19T13:39:12Z",
    "read_kind": "capture",
-   "cost_usd": 16.78,
-   "passed_at_read": 265,
+   "cost_usd": 16.86,
+   "passed_at_read": 281,
    "slo_queue": {
     "state": "none",
     "why": "its CourseLeaf course entries print no SLOs",
@@ -1286,13 +1288,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 321,
-   "found": 304,
-   "extracted": 305,
+   "found": 303,
+   "extracted": 303,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 4,
     "invented": 0,
-    "arithmetic": 36,
+    "arithmetic": 18,
     "repeated": 2,
     "outcomes": 0
    },
@@ -1302,23 +1304,23 @@
    "capture_root": "https://cerritos-public.courseleaf.com/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1767.0,
-   "run": "38656800189",
+   "read_seconds": 1784.6,
+   "run": "44540824017",
    "levers": {
-    "reconcile_steps": 20,
-    "reader_page_search": 16,
+    "reader_page_search": 18,
+    "reconcile_steps": 18,
     "program_course_file_check": 4,
-    "reader_page_assignment": 3
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 305,
+     "records": 303,
      "models": {
-      "claude-opus-5-5": 305
+      "claude-opus-5-5": 303
      },
-     "run": "38656800189",
-     "at": "2026-10-14T23:54:27Z",
-     "cost_usd": 16.78,
+     "run": "44540824017",
+     "at": "2026-11-19T13:39:12Z",
+     "cost_usd": 16.86,
      "platform": "courseleaf"
     },
     "slo_read": null,
@@ -4588,7 +4590,11 @@
    "read_kind": "capture",
    "cost_usd": 3.1,
    "passed_at_read": 37,
-   "slo_queue": null,
+   "slo_queue": {
+    "state": "parser",
+    "why": "the read filed 2,072 SLOs over 337 pages, and 336 of them are the \"Learning Outcomes\" table header; objectives came from one page only (167, under \"Course Objectives\"), so the standing test's checks 4 and 9 fail. No load until the reader drops that header and the objectives rule settles for report 485, then a reparse of the filed pages",
+    "on": "2026-11-19"
+   },
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -5398,13 +5404,12 @@
    "harvested": true,
    "slug": "grossmont",
    "programs": 187,
-   "passing": 126,
-   "gap": 61,
+   "passing": 127,
+   "gap": 60,
    "causes": {
-    "found_not_extracted": 1,
     "no_closed_list": 33,
-    "page_not_found": 9,
-    "places_none": 4,
+    "page_not_found": 10,
+    "places_none": 3,
     "unknown_without_live": 14
    },
    "census_causes": {
@@ -5430,10 +5435,10 @@
    "outcomes_file": "kb/status/commons_data_programs/grossmont.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-13T18:26:08Z",
+   "read_at": "2026-11-19T13:44:38Z",
    "read_kind": "capture",
-   "cost_usd": 10.61,
-   "passed_at_read": 124,
+   "cost_usd": 11.03,
+   "passed_at_read": 125,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -5454,13 +5459,13 @@
     "why": "1 agree, 0 differ, 0 unreachable (record 30977 agreed later against the captured text); fewer than 5 records checked at this college"
    },
    "listed_closed": 154,
-   "found": 145,
+   "found": 144,
    "extracted": 144,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
+    "coverage": 8,
     "invented": 5,
-    "arithmetic": 20,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
@@ -5470,15 +5475,14 @@
    "capture_root": "https://catalog.gcccd.edu/grossmont/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 788.3,
-   "run": "43482160320",
+   "read_seconds": 802.0,
+   "run": "44539755045",
    "levers": {
     "program_course_file_check": 33,
     "reconcile_steps": 13,
-    "reader_page_search": 9,
-    "reader_page_assignment": 4,
-    "ge_units_steps": 1,
-    "paid_read": 1
+    "reader_page_search": 10,
+    "reader_page_assignment": 3,
+    "ge_units_steps": 1
    },
    "collection": {
     "program_reader": {
@@ -5486,13 +5490,13 @@
      "models": {
       "claude-opus-5-5": 144
      },
-     "run": "43482160320",
-     "at": "2026-11-13T18:26:08Z",
-     "cost_usd": 10.61,
+     "run": "44539755045",
+     "at": "2026-11-19T13:44:38Z",
+     "cost_usd": 11.03,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 139,
+    "plo_programs": 140,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -5622,8 +5626,7 @@
    "gap": 32,
    "causes": {
     "no_closed_list": 7,
-    "page_not_found": 11,
-    "places_none": 6,
+    "page_not_found": 17,
     "unknown_without_live": 8
    },
    "census_causes": {
@@ -5648,10 +5651,10 @@
    "outcomes_file": "kb/status/commons_data_programs/imperial_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-21T23:10:18Z",
+   "read_at": "2026-11-19T14:12:35Z",
    "read_kind": "capture",
-   "cost_usd": 8.02,
-   "passed_at_read": 109,
+   "cost_usd": 7.67,
+   "passed_at_read": 116,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -5660,13 +5663,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 142,
-   "found": 131,
-   "extracted": 131,
+   "found": 125,
+   "extracted": 125,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 22,
+    "arithmetic": 9,
     "repeated": 0,
     "outcomes": 0
    },
@@ -5676,23 +5679,22 @@
    "capture_root": "https://imperial.curriqunet.com/catalog/iq/8512/8586",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 839.9,
-   "run": "39691376155",
+   "read_seconds": 820.5,
+   "run": "44545048735",
    "levers": {
-    "reader_page_search": 11,
+    "reader_page_search": 17,
     "reconcile_steps": 8,
-    "program_course_file_check": 7,
-    "reader_page_assignment": 6
+    "program_course_file_check": 7
    },
    "collection": {
     "program_reader": {
-     "records": 131,
+     "records": 125,
      "models": {
-      "claude-opus-5-5": 131
+      "claude-opus-5-5": 125
      },
-     "run": "39691376155",
-     "at": "2026-10-21T23:10:18Z",
-     "cost_usd": 8.02,
+     "run": "44545048735",
+     "at": "2026-11-19T14:12:35Z",
+     "cost_usd": 7.67,
      "platform": "curriqunet"
     },
     "slo_read": null,
@@ -7667,12 +7669,12 @@
    "harvested": true,
    "slug": "miracosta",
    "programs": 187,
-   "passing": 108,
-   "gap": 79,
+   "passing": 111,
+   "gap": 76,
    "causes": {
     "no_closed_list": 26,
-    "page_not_found": 19,
-    "places_none": 17,
+    "page_not_found": 24,
+    "places_none": 9,
     "unknown_without_live": 17
    },
    "census_causes": {
@@ -7696,10 +7698,10 @@
    "outcomes_file": "kb/status/commons_data_programs/miracosta.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-22T08:18:02Z",
+   "read_at": "2026-11-19T13:04:36Z",
    "read_kind": "capture",
-   "cost_usd": 11.96,
-   "passed_at_read": 98,
+   "cost_usd": 11.66,
+   "passed_at_read": 109,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7708,13 +7710,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 161,
-   "found": 142,
-   "extracted": 142,
+   "found": 137,
+   "extracted": 137,
    "errors": 0,
    "failed_checks": {
-    "coverage": 17,
+    "coverage": 9,
     "invented": 0,
-    "arithmetic": 41,
+    "arithmetic": 25,
     "repeated": 0,
     "outcomes": 2
    },
@@ -7724,27 +7726,27 @@
    "capture_root": "https://catalog.miracosta.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1735.1,
-   "run": "39746427354",
+   "read_seconds": 1751.7,
+   "run": "44529741837",
    "levers": {
     "program_course_file_check": 26,
-    "reader_page_search": 19,
-    "reader_page_assignment": 17,
-    "reconcile_steps": 17
+    "reader_page_search": 24,
+    "reconcile_steps": 17,
+    "reader_page_assignment": 9
    },
    "collection": {
     "program_reader": {
-     "records": 142,
+     "records": 137,
      "models": {
-      "claude-opus-5-5": 142
+      "claude-opus-5-5": 137
      },
-     "run": "39746427354",
-     "at": "2026-10-22T08:18:02Z",
-     "cost_usd": 11.96,
+     "run": "44529741837",
+     "at": "2026-11-19T13:04:36Z",
+     "cost_usd": 11.66,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 125,
+    "plo_programs": 128,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -7881,12 +7883,12 @@
    "harvested": true,
    "slug": "modesto_junior",
    "programs": 199,
-   "passing": 163,
-   "gap": 36,
+   "passing": 165,
+   "gap": 34,
    "causes": {
     "no_closed_list": 3,
-    "page_not_found": 7,
-    "places_none": 4,
+    "page_not_found": 8,
+    "places_none": 1,
     "unknown_without_live": 22
    },
    "census_causes": {
@@ -7912,10 +7914,10 @@
     "elumen"
    ],
    "objectives_printed": false,
-   "read_at": "2026-10-13T22:28:04Z",
+   "read_at": "2026-11-19T13:51:22Z",
    "read_kind": "capture",
-   "cost_usd": 12.03,
-   "passed_at_read": 159,
+   "cost_usd": 12.08,
+   "passed_at_read": 165,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7924,13 +7926,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 196,
-   "found": 189,
-   "extracted": 189,
+   "found": 188,
+   "extracted": 188,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 2,
     "invented": 1,
-    "arithmetic": 30,
+    "arithmetic": 22,
     "repeated": 0,
     "outcomes": 0
    },
@@ -7940,23 +7942,23 @@
    "capture_root": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 897.7,
-   "run": "38477845911",
+   "read_seconds": 899.9,
+   "run": "44540818388",
    "levers": {
     "reconcile_steps": 22,
-    "reader_page_search": 7,
-    "reader_page_assignment": 4,
-    "program_course_file_check": 3
+    "reader_page_search": 8,
+    "program_course_file_check": 3,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 189,
+     "records": 188,
      "models": {
-      "claude-opus-5-5": 189
+      "claude-opus-5-5": 188
      },
-     "run": "38477845911",
-     "at": "2026-10-13T22:28:04Z",
-     "cost_usd": 12.03,
+     "run": "44540818388",
+     "at": "2026-11-19T13:51:22Z",
+     "cost_usd": 12.08,
      "platform": "elumen"
     },
     "slo_read": {
@@ -7966,7 +7968,7 @@
      "source_kind": "catalog",
      "file": "kb/course_outcomes/mjc/read_38515689944_p3of3.json"
     },
-    "plo_programs": 185,
+    "plo_programs": 187,
     "ppm_member": {
      "host": "programmap.mjc.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -9256,7 +9258,11 @@
    "read_kind": "capture",
    "cost_usd": 18.75,
    "passed_at_read": 265,
-   "slo_queue": null,
+   "slo_queue": {
+    "state": "parser",
+    "why": "report 99 prints \"Specific Course Objectives\" right after \"Student Learning Outcomes\", and the reader filed the objectives and the \"Outcome\" and \"Objective\" table headers as SLOs on 12 of 12 pages (206 SLOs, 0 objectives; about 35 are SLOs); the reader needs that heading as an objectives heading before the full read (S681's Chabot failure)",
+    "on": "2026-11-19"
+   },
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -10313,7 +10319,11 @@
    "read_kind": "capture",
    "cost_usd": 4.95,
    "passed_at_read": 89,
-   "slo_queue": null,
+   "slo_queue": {
+    "state": "held",
+    "why": "the sdccd.curriqunet.com dashboard made no NewSearch request on either index run, so the index found none of its 242 course codes; the census found SLOs on report 4 there, so the host prints them and the index cannot reach its course list",
+    "on": "2026-11-19"
+   },
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -11819,13 +11829,13 @@
    "harvested": true,
    "slug": "southwestern",
    "programs": 272,
-   "passing": 177,
-   "gap": 95,
+   "passing": 192,
+   "gap": 80,
    "causes": {
     "no_closed_list": 39,
-    "page_not_found": 13,
-    "places_none": 30,
-    "unknown_without_live": 13
+    "page_not_found": 24,
+    "places_none": 3,
+    "unknown_without_live": 14
    },
    "census_causes": {
     "no_closed_list": 37,
@@ -11848,10 +11858,10 @@
    "outcomes_file": "kb/status/commons_data_programs/southwestern.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-14T12:26:30Z",
+   "read_at": "2026-11-19T10:53:34Z",
    "read_kind": "capture",
-   "cost_usd": 13.77,
-   "passed_at_read": 162,
+   "cost_usd": 13.36,
+   "passed_at_read": 190,
    "slo_queue": null,
    "scout": {
     "recommendation": "blocked",
@@ -11868,13 +11878,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 233,
-   "found": 220,
-   "extracted": 220,
+   "found": 209,
+   "extracted": 209,
    "errors": 0,
    "failed_checks": {
-    "coverage": 32,
-    "invented": 2,
-    "arithmetic": 55,
+    "coverage": 5,
+    "invented": 3,
+    "arithmetic": 16,
     "repeated": 0,
     "outcomes": 1
    },
@@ -11884,27 +11894,27 @@
    "capture_root": "https://catalog.swccd.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2152.6,
-   "run": "38563578596",
+   "read_seconds": 2210.5,
+   "run": "44529722751",
    "levers": {
     "program_course_file_check": 39,
-    "reader_page_assignment": 30,
-    "reader_page_search": 13,
-    "reconcile_steps": 13
+    "reader_page_search": 24,
+    "reconcile_steps": 14,
+    "reader_page_assignment": 3
    },
    "collection": {
     "program_reader": {
-     "records": 220,
+     "records": 209,
      "models": {
-      "claude-opus-5-5": 220
+      "claude-opus-5-5": 209
      },
-     "run": "38563578596",
-     "at": "2026-10-14T12:26:30Z",
-     "cost_usd": 13.77,
+     "run": "44529722751",
+     "at": "2026-11-19T10:53:34Z",
+     "cost_usd": 13.36,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 156,
+    "plo_programs": 169,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -12462,11 +12472,10 @@
    "harvested": true,
    "slug": "woodland_community",
    "programs": 69,
-   "passing": 62,
-   "gap": 7,
+   "passing": 63,
+   "gap": 6,
    "causes": {
     "no_closed_list": 4,
-    "places_none": 1,
     "unknown_without_live": 2
    },
    "census_causes": {
@@ -12487,10 +12496,10 @@
    "outcomes_file": "kb/status/commons_data_programs/woodland_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T05:28:57Z",
+   "read_at": "2026-11-19T13:04:46Z",
    "read_kind": "capture",
-   "cost_usd": 4.7,
-   "passed_at_read": 58,
+   "cost_usd": 4.72,
+   "passed_at_read": 60,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -12503,9 +12512,9 @@
    "extracted": 65,
    "errors": 0,
    "failed_checks": {
-    "coverage": 1,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 4,
+    "arithmetic": 2,
     "repeated": 0,
     "outcomes": 3
    },
@@ -12515,12 +12524,11 @@
    "capture_root": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 21.0,
-   "run": "39006340803",
+   "read_seconds": 29.2,
+   "run": "44529735880",
    "levers": {
     "program_course_file_check": 4,
-    "reconcile_steps": 2,
-    "reader_page_assignment": 1
+    "reconcile_steps": 2
    },
    "collection": {
     "program_reader": {
@@ -12528,13 +12536,13 @@
      "models": {
       "claude-opus-5-5": 65
      },
-     "run": "39006340803",
-     "at": "2026-10-17T05:28:57Z",
-     "cost_usd": 4.7,
+     "run": "44529735880",
+     "at": "2026-11-19T13:04:46Z",
+     "cost_usd": 4.72,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 62,
+    "plo_programs": 63,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -12557,13 +12565,12 @@
    "harvested": true,
    "slug": "yuba",
    "programs": 104,
-   "passing": 79,
-   "gap": 25,
+   "passing": 86,
+   "gap": 18,
    "causes": {
     "no_closed_list": 10,
-    "page_not_found": 1,
-    "places_none": 4,
-    "unknown_without_live": 10
+    "places_none": 1,
+    "unknown_without_live": 7
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -12586,10 +12593,10 @@
    "outcomes_file": "kb/status/commons_data_programs/yuba.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T05:31:43Z",
+   "read_at": "2026-11-19T13:39:06Z",
    "read_kind": "capture",
-   "cost_usd": 7.44,
-   "passed_at_read": 75,
+   "cost_usd": 7.62,
+   "passed_at_read": 85,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -12598,15 +12605,15 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 94,
-   "found": 93,
-   "extracted": 93,
+   "found": 94,
+   "extracted": 94,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
+    "coverage": 3,
     "invented": 2,
-    "arithmetic": 17,
+    "arithmetic": 7,
     "repeated": 0,
-    "outcomes": 0
+    "outcomes": 1
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -12614,27 +12621,26 @@
    "capture_root": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 177.9,
-   "run": "39006517642",
+   "read_seconds": 205.6,
+   "run": "44536397187",
    "levers": {
     "program_course_file_check": 10,
-    "reconcile_steps": 10,
-    "reader_page_assignment": 4,
-    "reader_page_search": 1
+    "reconcile_steps": 7,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 93,
+     "records": 94,
      "models": {
-      "claude-opus-5-5": 93
+      "claude-opus-5-5": 94
      },
-     "run": "39006517642",
-     "at": "2026-10-17T05:31:43Z",
-     "cost_usd": 7.44,
+     "run": "44536397187",
+     "at": "2026-11-19T13:39:06Z",
+     "cost_usd": 7.62,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 83,
+    "plo_programs": 89,
     "ppm_member": null,
     "maps": {
      "held": 0,
