@@ -1,0 +1,43 @@
+{
+ "college": "Moorpark College",
+ "reread_run": "44544208703",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44481524745",
+ "at": "2026-11-19T14:29:34Z",
+ "posted": 4,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "12383",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43405",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45352",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 1,
+ "held": 0,
+ "kept": 3,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "31117"
+ ],
+ "held_keys": [],
+ "kept_keys": [
+  "18398",
+  "32565",
+  "37575"
+ ],
+ "carried_keys": [],
+ "machine_pass": 4,
+ "rollback": null,
+ "before": []
+}
