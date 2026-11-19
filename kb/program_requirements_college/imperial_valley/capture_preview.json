@@ -1,0 +1,1018 @@
+{
+ "college": "Imperial Valley College",
+ "catalog_url": "https://imperial.curriqunet.com/catalog/iq/8512/8586",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 149,
+ "with_closed_list": 142,
+ "started": "2026-11-19T14:12:35Z",
+ "curriqunet": {
+  "catalog": 15,
+  "view_prefix": "https://imperial.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees, Certificates, and Transfer Planning",
+   "Student Equity and Achievement Program",
+   "Student Support Services and Special Programs",
+   "Academic Programs"
+  ],
+  "nodes_read": 9,
+  "calls": 20,
+  "entries": 133,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 133,
+  "twin_ids": {},
+  "failed_calls": 0
+ },
+ "pages_read": 133,
+ "pages_listed": 133,
+ "pages_answered": 133,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 123,
+   "hits": 57,
+   "recall": 0.463,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 2,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 7,
+  "by_result": {
+   "not_searched": 6,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "18538",
+    "title": "CSU General Education Breadth",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18539",
+    "title": "IGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "19060",
+    "title": "University Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19061",
+    "title": "University Studies: Behavioral and Social Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19062",
+    "title": "University Studies: Science and Mathematics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "31442",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45036",
+    "title": "California General Education Transfer Curriculum",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 154,
+ "seconds": 820.5,
+ "found": 125,
+ "by_method": {
+  "no_closed_list": 7,
+  "not_found": 9,
+  "page_claimed": 8,
+  "sitemap_page": 125
+ },
+ "shared_pages": {
+  "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313": [
+   "31457",
+   "43019"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "08983",
+   "title": "Agriculture Plant Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8297",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.833,
+    "body": 0.833,
+    "content": 0.833,
+    "net": 5,
+    "listed": 6,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 6721,
+     "content": 6721,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "24051",
+   "title": "ESL Civics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8598",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1326,
+     "content": 1326,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24098",
+   "title": "English as a Second Language- Advanced Fluency",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24435",
+   "title": "ESL Survival Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30336",
+   "title": "Electrical Trades",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8321",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.2,
+    "body": 0.2,
+    "content": 0.2,
+    "net": 1,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 1 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4619,
+     "content": 4619,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "30337",
+   "title": "Electrical Trades",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8633",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.2,
+    "body": 0.2,
+    "content": 0.2,
+    "net": 1,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 1 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3196,
+     "content": 3196,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "36695",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8651",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.111,
+    "body": 0.111,
+    "content": 0.111,
+    "net": 2,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 2 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3017,
+     "content": 3017,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39802",
+   "title": "Chicana/o Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.053,
+    "body": 0.053,
+    "content": 0.053,
+    "net": 1,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 1 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5738,
+     "content": 5738,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40055",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8651",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.071,
+    "body": 0.071,
+    "content": 0.071,
+    "net": 1,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 1 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3017,
+     "content": 3017,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "08995",
+   "title": "Child Development - Infant/Toddler Specialization",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8312"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "15727",
+   "title": "Child Development - Administration: Specialization",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8312"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "30263",
+   "title": "Building Construction Technology: Carpentry Specialization",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8616",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8305"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "30445",
+   "title": "Water Treatment Systems Technology: Wastewater Treatment Specialization",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8644",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8351"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "31878",
+   "title": "Diesel Farm Machinery and Heavy Equipment Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8638",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8334"
+   ],
+   "status": "Approved"
+  },
+  {
+   "control_number": "35191",
+   "title": "Child Development Children with Special Needs Specialization",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8312"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "36052",
+   "title": "Retail Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8618",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8617",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "38199",
+   "title": "Low Voltage Systems Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8633",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8655",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8606/8635",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8650",
+    "https://imperial.curriqunet.com/catalog/iq/8518/8580/8321"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 13,
+  "0.8-1.0": 34,
+  "1.0": 78
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/imperial_valley",
+  "kept": 118,
+  "kept_moved": 0,
+  "programs": 7,
+  "list": [
+   {
+    "control_number": "01864",
+    "title": "Accounting Technician",
+    "award": "A.S. Degree",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8265",
+    "coverage": 1.0,
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8265",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08984",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308",
+    "coverage": 0.905,
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08988",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307",
+    "coverage": 1.0,
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21456",
+    "title": "Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8618",
+    "coverage": 0.905,
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8618",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21459",
+    "title": "Accounting Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8608",
+    "coverage": 0.786,
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8608",
+    "was_coverage": 0.714,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21462",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8617",
+    "coverage": 1.0,
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8617",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45114",
+    "title": "ESL Milestone Pathway: Business and Computer Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653",
+    "coverage": 1.0,
+    "was_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "01864": {
+   "sha256": "7b9084ebb274e516ae6ca15473be924f861c459fc9bd00ebe89b7af632bf7b92",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8265"
+  },
+  "01868": {
+   "sha256": "e460d971fe64141a1c685154b63eb9753a2bd22b0e9cfac80df1e60ae1620c20",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8309"
+  },
+  "01873": {
+   "sha256": "cda6d8dbe3474518d73c4c6663c057b3805436ee24fcf7fdf04271eebd010c76",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8325"
+  },
+  "01877": {
+   "sha256": "5c937ae561c7481374cf8a67100e6aa0b1e69140ff7fa67bce16d2c322f52394",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8302"
+  },
+  "01880": {
+   "sha256": "9ae0e8e4140119c7465935b674fdc18e3863b318f4ad201f870e1edafde99370",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8352"
+  },
+  "01887": {
+   "sha256": "d25e62090a17ec807797f884c3a69af587cdee96e8b3334e50885fee20fa7fc0",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8327"
+  },
+  "01889": {
+   "sha256": "1921eab8e02af18ff68f5e0389b448cd5f9641a9678f3c65681fcfd57ec57eef",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8338"
+  },
+  "01890": {
+   "sha256": "220448520b00c1f4a51d4ac8711f265debcfcd2570732c7b81f434d97b4d9e3c",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8339"
+  },
+  "01893": {
+   "sha256": "3cb568fcb28a1444fc465509f9d8d363a4163260bb058ec91128d2346b3c2b06",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8640"
+  },
+  "01906": {
+   "sha256": "7e894fa3b5ec1e2b31004965d938427065154d7037e91167a34ffc6f8ba17e38",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8272"
+  },
+  "01908": {
+   "sha256": "b68233b3bdc00309c4b30101e690b33983e702c70203fcfb43853b1e9ca5fcd1",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8312"
+  },
+  "01911": {
+   "sha256": "86bc6ad8f574a79874bbfdd1c3697b0da6bf8c760a7c86d3dd3fa1af70e1072e",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8326"
+  },
+  "01912": {
+   "sha256": "caa72fb9c1a911ce85481022ea4ff387a3fbb754f6a4f55754bbd825325f1aea",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8346"
+  },
+  "01922": {
+   "sha256": "6d0fb43a407e201876473e367825ede1d976b68e0e2c3a9759d0b4a5a04346f2",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8271"
+  },
+  "08984": {
+   "sha256": "8f6906fa23a8edf94f233b9137b62482ce4668364cf884ad732e1a5ca4a94516",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308"
+  },
+  "08988": {
+   "sha256": "6508f65972ac30ced9d29496f5ef7b2a7d6883da11c6390804cf2b2c1252ab7e",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307"
+  },
+  "08997": {
+   "sha256": "7a4cf138070f21e0ea7da546a1c7ca8bd5e2ba92300e5d5ec6d1cb0066436a05",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8303"
+  },
+  "08998": {
+   "sha256": "ea4f639fd193692d1311d447b349dbb6ed6a4dd892fe5dbe60c851b335040deb",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8316"
+  },
+  "09001": {
+   "sha256": "f4eed06b06f6ffea9d9678572f60dbc46ec34529a15a660d690b04f2b5597183",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8328"
+  },
+  "09002": {
+   "sha256": "6c84d4a6120728a1037a97cc28ae1c536c6883661b80297923233390bff72295",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8333"
+  },
+  "10943": {
+   "sha256": "283cf8485d3226fff8411d849ed1c3c73094ca749890fa672f181fe1c9c60bd5",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8636"
+  },
+  "11793": {
+   "sha256": "c6c5120d2ab708aa452cda3d3e34d950ece9b5e2e5ae18f80019cb61ed1d5eb0",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8323"
+  },
+  "15735": {
+   "sha256": "735b713b355454734038668364e221afa6dfa0276afa53f8836cfcfb8a9b109a",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8612"
+  },
+  "15827": {
+   "sha256": "02e3793d8de3b42d974b347993fe90e72331f950a0fda85002cb1d5d9c208ecb",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8351"
+  },
+  "16782": {
+   "sha256": "015b85106de365742b3c6e6ec5ac9c7506ab6e47c5366f70643ddcc24f6351d4",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8649"
+  },
+  "16809": {
+   "sha256": "9f578ad98ca25e1d8854bfe2c22b3485f92d9a527b5dde2c9429af3e4a5097cd",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8277"
+  },
+  "16810": {
+   "sha256": "48ba1e5ebc1497e78bf1acf5efe1220e01ca111f0106806b929010bd8bbeb1b4",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278"
+  },
+  "16811": {
+   "sha256": "180eaddb15d42004a097d547874abe4d7fc1f48d6ee38c2097a33f8e6f135be6",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287"
+  },
+  "16812": {
+   "sha256": "d8f7ffe8a363432a20895643b8a595cd5602431cd4ab58445f524b655c0ab3e6",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289"
+  },
+  "16813": {
+   "sha256": "be8fc0bbc54ca10e72962111b133022e9c6130ca92237b4adf5ec942e92df741",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290"
+  },
+  "16814": {
+   "sha256": "84f77e30c5698333133d6c5a2f9debad689304a4ce333838befc04a85eee9f31",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291"
+  },
+  "16815": {
+   "sha256": "41d234d42ebabbf324aa3544df1a750f2a1d0dc339b183d4ee53b24394166339",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294"
+  },
+  "19340": {
+   "sha256": "1be384b385430a4526493aecd7ff80ec24c5d0057455219303885727f417cfd2",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8298"
+  },
+  "19711": {
+   "sha256": "29faf23ff005cbf653c808dbd02f4d0a85578afcadc848f21a247610cf2c6a75",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8318"
+  },
+  "19712": {
+   "sha256": "155d24d5f941d03c0a58fdefbbb39c341972b0be21c11fabf2b8eba8da156c82",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8632"
+  },
+  "21456": {
+   "sha256": "44231dbff44f42d3d630fcc0b7c0b1217aeee3bf5fcd86ecdbe04f506dd905e5",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8618"
+  },
+  "21459": {
+   "sha256": "cb9f5a612afa14e5f796f2138d21571bcb878c28159492b28948d45726bbaaea",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8608"
+  },
+  "21460": {
+   "sha256": "a5ea97b46a1cff8924b9e908533247c24e52588fafc01aeeef6bfdf7b868803b",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8619"
+  },
+  "21462": {
+   "sha256": "c40b06bfc728653470b1859994c79eedd319328d2d54a2737bd19c9a23f9a228",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8617"
+  },
+  "21466": {
+   "sha256": "70592e8732bd9b81db120674beea4a8d6ca6fdef8066b6d708954c47ead748fe",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8281"
+  },
+  "21467": {
+   "sha256": "eada3c4ab2be45b09fcb2d9193841fd4f9f834eca160f4d9f995efd039c4367e",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8282"
+  },
+  "21468": {
+   "sha256": "2ffae59a25acd918db48a8dae57b4daa363c129dfd577745d1e2df1b125c90e4",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8285"
+  },
+  "21469": {
+   "sha256": "dfa27da346227bd3e926aeb56e3c30a4b81167516afe21a9971dc32d88e1a43e",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8286"
+  },
+  "21470": {
+   "sha256": "9a025d4627d0077e5a582679e18a3e352cb40342aed5a6737bcd69994bff458b",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8288"
+  },
+  "21471": {
+   "sha256": "ccddf9f363261ea22913b0f68dc62beb34561eec0f9d15153a4271ed6dc80114",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8292"
+  },
+  "21472": {
+   "sha256": "4d487d521a452acea239577f51883ae84a231761f0ac52e4f18c42ed3af13b06",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8293"
+  },
+  "21473": {
+   "sha256": "c5c588e7cdc20bac712a337093e2d50a94606bb16fdeaaf800f21ba1bbc0a338",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8613"
+  },
+  "21475": {
+   "sha256": "31b004f0f7da87b17dd69838bbc459f51f6f1b531be255ff90c147f651bbb81a",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8646"
+  },
+  "21477": {
+   "sha256": "e085da4e2cc8a74d6806ef56f770621569ac068a57e49f60cfe44b8639b50ed5",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8642"
+  },
+  "21480": {
+   "sha256": "91b5b36c48e903382f935fdca2fb2465ca2163acbc148e9c2a0d1f86f828694c",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8609"
+  },
+  "21481": {
+   "sha256": "16c3e20c730f55de906daeeaed313cf4b251d3209bf526218ec4552353faa0d8",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8610"
+  },
+  "21482": {
+   "sha256": "0d507853f7b464644c42a4fa95288d7be733af594c119e8ac7207b36caa6fde6",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8628"
+  },
+  "21483": {
+   "sha256": "548fa5172a6b69a4c9443fe3bd41189dbde73f3d3ca0c581784ef47133a988cb",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8637"
+  },
+  "30183": {
+   "sha256": "010d8a544d8c788eb249075491fae8be08298b7255072f2f27031fbc7ac025f4",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8622"
+  },
+  "30262": {
+   "sha256": "ce3e1067f40de8251b9aeb288aef069885a75ef80e66a78a21f4b05bd863cff6",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8305"
+  },
+  "30275": {
+   "sha256": "db613c5e2a749f7d2a7e3e2727bcbba74c010bc1a01346d9b0cb3db0eac320f8",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8616"
+  },
+  "30322": {
+   "sha256": "d0669a7b1504f7fbc8aee5baa766b18c79bad56cdfebf8a3dde9f686911831d8",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8321"
+  },
+  "30362": {
+   "sha256": "660bbbd56a8a188f71b496946872eef7aad0f53613f4153e7e3715ef7938307f",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8644"
+  },
+  "30438": {
+   "sha256": "6418620f379a1a94299d0898d38dc3df1302fd0456ab614a7df5f654702a43c1",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8635"
+  },
+  "30807": {
+   "sha256": "f824a0ca9bf44f698e01d1147f50387beb191fe61a551b44e68eb447ae13cb1b",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8280"
+  },
+  "30808": {
+   "sha256": "d420890450295e7359bbbadfed021687ed4e3dbc857fdcea1605026a9e3cfca1",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8284"
+  },
+  "30809": {
+   "sha256": "0f2457e3b39deb0d55d5898ff9ca529856bd42c8e35eef35e0da0351ae9b473e",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8295"
+  },
+  "30810": {
+   "sha256": "5e612b03e4db297913d89b1c2f2cb54556fc24876914be27f41cf4db0b829345",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8283"
+  },
+  "30900": {
+   "sha256": "1a5a1592b5d02b73ed2d26aca447ae817c84449658b9a394eeca7cba949b7e46",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8347"
+  },
+  "30901": {
+   "sha256": "7b15bc18f5f400f57accafeafe50a6977eced667fccb7d59f87093195b8fafe1",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8319"
+  },
+  "31278": {
+   "sha256": "6a3c8f73d041455c2db03598eea2faad2e482a8c3c2800a751fe187ea6623784",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8627"
+  },
+  "31380": {
+   "sha256": "57dad2570e03323b94ce6552af5927aef77d6a25f382a86bea77c1b41607691d",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8273"
+  },
+  "31457": {
+   "sha256": "8815073489865e6f502462a250168ed9e7b69baacf3bc9962afbfa902dd21898",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313"
+  },
+  "31458": {
+   "sha256": "b78044203bbbaf493cbbfc17e4c8a2beb1726d0fb942f9d7fbf448a91adef6e0",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8324"
+  },
+  "31459": {
+   "sha256": "abf27e9c839caa0f8c143a6ebd75f13dbdc2ff39f6a1cc8859eb61538466c3ff",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8342"
+  },
+  "31688": {
+   "sha256": "468d3d69f634167210da0506111d451579248061bc81e72cda0c962ae547ce03",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8335"
+  },
+  "32350": {
+   "sha256": "90e28dbacae58c786345abfa2d2dddd2dedc0599b7a847843e3288a85ae201a5",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8300"
+  },
+  "32451": {
+   "sha256": "3f055a0a89cfb7fb24be02c28983f9eb0c9c2059fd104545828a9fe6cb5a7b93",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8332"
+  },
+  "32588": {
+   "sha256": "e250187dc1a3783faea5e86eb36312c8b932593b9d51b64cc48167db9df7fe77",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8349"
+  },
+  "32596": {
+   "sha256": "c8087e0a029356b6f3c6e1b15e1ad1ebd8a271c4dbb72fa015c866a3541b439a",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8344"
+  },
+  "32662": {
+   "sha256": "18e123b94e54cb2458c54f509834eccf3ec590a5fb24eb0f3d000e4e70b14386",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8337"
+  },
+  "33202": {
+   "sha256": "8af81e3ee53047668dd33b612aaaa5058781481b2116d6eae56b794b27ce1e08",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8348"
+  },
+  "33272": {
+   "sha256": "620674d18053c0828d68207d8bd29475947c7020f7be7dffde85064a6311bba0",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8690"
+  },
+  "33926": {
+   "sha256": "caa12cd2ca9cd9d04ddfdee0c2891b8a5b6bef447c65f39070b676a66bee9121",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8296"
+  },
+  "35417": {
+   "sha256": "54d1e10f95589f42c24acb599b5f9f59d33df3bab48b66efbf0fcbfdd3b019f0",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8304"
+  },
+  "35426": {
+   "sha256": "7d4bea9336d18a2e126116bbc7e66ffe32d297b855ff02f15dfba687e46ed664",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8315"
+  },
+  "35440": {
+   "sha256": "2b1462037be15c580816e58dcb3707e5cd83fa7e3a3c5b202b5050fe09fe90a0",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8297"
+  },
+  "35587": {
+   "sha256": "45b084e2f06194289be2f6cf9caa392be7a397c2e7c9bd2a274cd453027a49a4",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8329"
+  },
+  "36071": {
+   "sha256": "67f8ddf9af9ad06a5937d70faf8136e456b1c57c00aea9745f7b5b4960b96c02",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8583"
+  },
+  "36151": {
+   "sha256": "52c5e02164670fd13c76f9f1f7498e8e2cad966e892fbb3059dcef93e4b5779c",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8310"
+  },
+  "36755": {
+   "sha256": "db885de41bb2d7e4c5040822c7b4ac8be435c4f533d500eff5d393a22ba8f36a",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8274"
+  },
+  "36756": {
+   "sha256": "9493cd1b90e100c89ca369323dc88eb7f0f845a9e98f7a5bee656a1d113f5775",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8611"
+  },
+  "36786": {
+   "sha256": "fcafbe0a9d9bbfb6d747dd0989fad0840538a7a23ea430c0aaf93221e78ecacf",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8320"
+  },
+  "37392": {
+   "sha256": "dbc50c00ebd64de53f3900bc2ed91d0b30048d5718c828ef830e08e55bd1444f",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8341"
+  },
+  "37751": {
+   "sha256": "fd25f8c7cb6ce8aee1e846fbe0501e7730458f56c8d789e23e684c6ec2ec89bb",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8301"
+  },
+  "38183": {
+   "sha256": "36a923dbf215efd8962ae5839a2566f501e00f8e4a02ea811d62aab3312f3cbe",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8314"
+  },
+  "38184": {
+   "sha256": "b7a1a6b03b92f0bf3ae98730ce9768ce4179b58469013f7f7153baf7fd4a3ebf",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8626"
+  },
+  "38185": {
+   "sha256": "680f544e48e4b64201d38abfd0f520ebff9d6252a47998a86e4321ae0fa798b2",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8630"
+  },
+  "38186": {
+   "sha256": "4e9517ae52ea2d2f9cecbb0ff969492fd6418fb36e755452e9e753e049f2dde1",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8641"
+  },
+  "38210": {
+   "sha256": "7fdf5a645210b4030f4c3266469abf93533fa01a7aeb44389a7d18531fa23271",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8629"
+  },
+  "39569": {
+   "sha256": "c67cd1b04edfe9124f8e9b31fdd788ca0700c0cf6cc6a76c8994aa3db82c1787",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8299"
+  },
+  "40053": {
+   "sha256": "1b5657cb80cd4efb928112c5223229b46bb552cc436338d9aab7945cbcae42e8",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8331"
+  },
+  "41064": {
+   "sha256": "ab8a1f0782d77e45f812f73fe00c57604743648790e2d68151508d92b379820a",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8343"
+  },
+  "41181": {
+   "sha256": "c66560567f0fc9f8a3ff4fed0a24267916c323712158a52e2856d3bb695e49f0",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8660"
+  },
+  "41182": {
+   "sha256": "03653df76d29235bac71d7efc7b6ca7babee7869ebb9f8f628ce6913daff39f5",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8661"
+  },
+  "41191": {
+   "sha256": "47a350d3903664409d4f26fe9d6131c56797ff1d6e58e817942c34847c3f3083",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8614"
+  },
+  "41193": {
+   "sha256": "c88a27fd731001c0ae4a25b3f6b70e709bfbd8f956c14316d7b5bd818b2dfbb2",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8633"
+  },
+  "41270": {
+   "sha256": "fda0182c9b12f411fcacd4af1cc0ab48c46a6a344df66d81c477c6c4cef99e45",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615"
+  },
+  "41288": {
+   "sha256": "c2769cd61d67e5660954e0a01d3eb87fd5f10bc85406338fd56bc3d441fd150b",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8306"
+  },
+  "42238": {
+   "sha256": "83aec31e14a64e3fa8e9f07856d0f412cd7316903c417b7265fec1f6c31848a6",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8620"
+  },
+  "42241": {
+   "sha256": "0042effd058c1575feab71166fa5b8297c445f69aa9b264aaab906e78041c8c9",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8597"
+  },
+  "42286": {
+   "sha256": "f4fc416f94638fbc3f6820b9010b1ad1d9f20cec4cf5b261731771c6d0e8765d",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8334"
+  },
+  "42287": {
+   "sha256": "b79bda88636af310d791709b38498e8f3ddb59eed3ab8a7942e5fe9c2644872d",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8638"
+  },
+  "42288": {
+   "sha256": "7a35727cf8c40b71dcaf57c4e2d2eba68a42de91915eb4c44adb04b3a74d2deb",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8317"
+  },
+  "42408": {
+   "sha256": "4b98d39234533b6c48d59096b417c24ad0e76928af02142c14e1c4b29405c767",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8330"
+  },
+  "42535": {
+   "sha256": "5cc203b617c4346c5475403065222adf73ac5bf4e8d5a22f57333c129646ba87",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8581/8598"
+  },
+  "43019": {
+   "sha256": "8815073489865e6f502462a250168ed9e7b69baacf3bc9962afbfa902dd21898",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313"
+  },
+  "43102": {
+   "sha256": "67e8afb262c376c93b38d57446cb9efb1e1c96d56a52e8b53d455c705b7a6a1e",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8648"
+  },
+  "43146": {
+   "sha256": "7e2383eee2e87514b656dea089d8a339f40556d02044e98bd5e47a44bd124aad",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8602"
+  },
+  "43147": {
+   "sha256": "5023282c9665fa6d4e9d36168aab6dd349962082da26bcfde5f1bd0f5dc4d17b",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8603"
+  },
+  "43284": {
+   "sha256": "45edf821b0652bc6df369fd7953c632c7140d5f73965293f7bd9f9d9f496415b",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8643"
+  },
+  "43909": {
+   "sha256": "dfbf27e2152b14439dc74be10092609a2fd824fc5192a8accfd7b5d4bbaec88c",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8621"
+  },
+  "45007": {
+   "sha256": "53463cc27dfd0394621a683dc2a0bb2658137ca5121d49dd97b4cdfc470f049b",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8345"
+  },
+  "45112": {
+   "sha256": "45610957089ef92004901c1949fbf4fcd3f01e5a7ce2b178a1c97f3540ba9101",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8651"
+  },
+  "45113": {
+   "sha256": "f916888316ca901ed3fd2732b123411c5dfda834f7211320539e66ae01cb5ecc",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8652"
+  },
+  "45114": {
+   "sha256": "fd519e0ffee43de04102612dc3f56fac36bcf4efd045420894b5ff387d7507ed",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653"
+  },
+  "45115": {
+   "sha256": "42d0d703d48c296205e257ceda3dee96be110da4b254bca2f21a9211eae48230",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8659"
+  },
+  "45116": {
+   "sha256": "fa5d60c67dd1d126ec2a1b09a5d14545b3f19e79be6a159bc691e218cfc61bb5",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8654"
+  },
+  "45375": {
+   "sha256": "44f0f34aad2406a935df09c0ae1e089d9a5d64759958b5227c89cd68bcfc20a0",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8650"
+  },
+  "45382": {
+   "sha256": "9bc1efab2dc093f39a940cc96a9c03ef73c45bd8480d384f6fa4c9cf30d80bf6",
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8655"
+  }
+ },
+ "run": "44535463855"
+}
