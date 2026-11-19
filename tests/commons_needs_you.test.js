@@ -59,8 +59,8 @@ function runLog(key) {
   if (key === "cr") {
     q.calls = q.calls.filter((c) => c.todo_id !== WORDING);
     q.calls.unshift({ title: "The college wording rule: keep the colleges' wording where an official number reaches a group whose title shares no word with it?",
-      text: "36 groups. One example: the POST Basic Academy wording \"3 hours in Physical Training and Health Education (CSU GE Area E)\" is tied to C-ID AJ 110, \"Introduction to Criminal Justice.\" These 36 are a different list from the 36 held exhibit titles; they share only the count.",
-      if_no_reply: "The 36 groups stay held for a check.", view: { href: "#cr-reference/names", text: "Open the 36 groups" }, todo_id: WORDING });
+      text: "36 groups. One example: the POST Basic Academy wording \"3 hours in Physical Training and Health Education (CSU GE Area E)\" is tied to C-ID AJ 110, \"Introduction to Criminal Justice.\" These 36 are a different list from the 36 exhibit titles a person saved this morning; they share only the count.",
+      if_no_reply: "The 36 groups wait for a check.", view: { href: "#cr-reference/names", text: "Open the 36 groups" }, todo_id: WORDING });
   }
   return q;
 }
@@ -123,7 +123,7 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   check("(A) ⭐ the slash ruling is nowhere on Needs you, open or closed", needs && !/slash/i.test(txt(needs)));
   check("(A) ⭐ Decision record opens its own address, not the bare details", !!needs.querySelector('a[href="#commons/details/decisions"]') && !needs.querySelector('a[href="#commons/details"]'));
   check("the wording rule is not applied: nothing is written anywhere", !f.calls.some((c) => c[1] && c[1].method && c[1].method !== "GET"));
-  check("the two 36s stay apart: the wording rule names the held exhibit titles as a different list", /different list from the 36 held exhibit titles/.test(txt(decList[0])));
+  check("the two 36s stay apart: the wording rule names the held exhibit titles as a different list", /different list from the 36 exhibit titles a person saved/.test(txt(decList[0])));
 
   // ── (C) the held titles, live ──
   const held = f.d.getElementById("cmf-held");
