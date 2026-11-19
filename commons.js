@@ -250,11 +250,15 @@
      Decisions waiting (the conductor's call on #3566, design decision 1: the college wording rule, the one open call that
      can put a date back on the curation clock). The rest keep the references' order, then the run log's. */
   var FIRST = ["cr-college-wording-rule"];
+  /* A call's address, only when it is a COBI address or https (the check program_requirements.js makes): a status file
+     that carried javascript: or any other scheme renders as words, never a live link (COBIx's review of #3570, item 1). */
+  function safeHref(h) { return typeof h === "string" && (/^#[A-Za-z0-9_.~\/-]+$/.test(h) || /^https:\/\//.test(h)) ? h : null; }
   function callHref(c) {
-    if (c && c.view && c.view.href) return c.view.href;
-    return c && c.link && /^https:\/\//.test(c.link) ? c.link : null;
+    return (c && c.view && safeHref(c.view.href)) || (c && safeHref(c.link) && /^https:\/\//.test(c.link) ? c.link : null);
   }
-  function decisions(data, S) {
+  /* marksRead: whether the done marks (queue_todo_done) were read. They are read behind a reviewer sign-in only, so a
+     call closed by Mark done still reads as waiting for anyone else, and the page says so (COBIx's review of #3570). */
+  function decisions(data, S, marksRead) {
     var rows = (data && Array.isArray(data.rows) ? data.rows : []).concat(data && Array.isArray(data.building) ? data.building : []);
     var open = [], decided = [];
     rows.forEach(function (r) {
@@ -268,7 +272,19 @@
     function first(x) { var k = FIRST.indexOf(x.call.todo_id); return k < 0 ? FIRST.length : k; }
     open.sort(function (a, b) { return first(a) - first(b) || a.rank - b.rank; });
     decided.sort(function (a, b) { var x = String(b.call.answer.at || ""), y = String(a.call.answer.at || ""); return x < y ? -1 : x > y ? 1 : a.rank - b.rank; });
-    return { open: open, decided: decided };
+    return { open: open, decided: decided, marksRead: !!marksRead,
+      marksUnread: !marksRead && open.some(function (x) { return !!x.call.todo_id; }) };
+  }
+  /* The line under Decisions waiting when the marks were not read, with the reviewer sign-in the tabs already use. */
+  function marksNote(D, cls) {
+    if (!D || !D.marksUnread) return null;
+    var box = el("div", { cls: cls || "cmn-marks", "data-marks": "unread" }, [
+      el("p", { cls: "cmn-quiet", text: "Signing in as a reviewer also hides the items already marked done." })]);
+    var host = el("div", { cls: "cmn-marks-signin" });
+    box.appendChild(host);
+    if (window.CPL_REVIEWER_SIGNIN && typeof CPL_REVIEWER_SIGNIN.mountInto === "function")
+      CPL_REVIEWER_SIGNIN.mountInto(host, { title: "Reviewer sign-in", blurb: "A personal one-time link, emailed to an address on the reviewer list.", returnTab: "commons" });
+    return box;
   }
   function longDay(v) {
     if (!/^\d{4}-\d{2}-\d{2}/.test(String(v || ""))) return String(v || "");
@@ -279,7 +295,7 @@
   function renderDecisions(root, data, S) {
     root.removeAttribute("style");
     root.textContent = "";
-    var D = decisions(data, S);
+    var D = decisions(data, S, S && S.__marksRead);
     var wrap = el("div", { cls: "cmn-wrap cmn-rec" });
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
       el("div", { cls: "cmn-top-row" }, [el("h2", { cls: "cmn-title", id: "cmn-rec-h", tabindex: "-1", text: "Decision record" })]),
@@ -294,7 +310,7 @@
         c.if_no_reply ? el("p", { cls: "cmn-rec-why", text: "Until you answer: " + c.if_no_reply }) : null
       ].filter(Boolean));
     })) : el("p", { cls: "cmn-quiet", id: "cmn-rec-open", text: "None waiting." });
-    wrap.appendChild(el("section", { cls: "cmn-rec-sec", "aria-labelledby": "cmn-rec-open-h" }, [el("h3", { id: "cmn-rec-open-h", text: "Decisions waiting" }), waitList]));
+    wrap.appendChild(el("section", { cls: "cmn-rec-sec", "aria-labelledby": "cmn-rec-open-h" }, [el("h3", { id: "cmn-rec-open-h", text: "Decisions waiting" }), waitList, marksNote(D)].filter(Boolean)));
     var doneList = D.decided.length ? el("ul", { cls: "cmn-rec-list", id: "cmn-rec-done" }, D.decided.map(function (x) {
       var c = x.call, a = c.answer;
       var change = x.href ? openLink(x.href, "Change it", "cmn-rec-change") : null;
@@ -1010,7 +1026,8 @@
     function go() {
       if (!window.CPL_COMMONS_FRONT || !window.CPL_PROGRAM_RECORDS) { notice(root, "The CPL Commons page (commons_front.js) could not be loaded. Reload the tab to try again."); return null; }
       return load().then(function (r) {
-        return CPL_COMMONS_FRONT.boot(root, r.data, { decisions: decisions(r.data, r.S), focus: FRONT.focus });
+        var D = decisions(r.data, r.S, r.S.__marksRead);
+        return CPL_COMMONS_FRONT.boot(root, r.data, { decisions: D, marksNote: function () { return marksNote(D, "cmf-marks"); }, focus: FRONT.focus });
       }).then(null, function (e) {
         notice(root, "The Commons' figures could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
         return null;
@@ -1291,7 +1308,12 @@
       })).then(function (st) {
         var S = {};
         rows.forEach(function (r, i) { S[r.key] = st[i]; });
-        return readTodoMarks().then(function (marks) { applyTodoMarks(S, marks); return { data: data, S: S }; });
+        return readTodoMarks().then(function (marks) {
+          applyTodoMarks(S, marks);
+          /* Not a row key: decisions() and the record read it to say whether Mark done's closings are counted. */
+          Object.defineProperty(S, "__marksRead", { value: Array.isArray(marks), enumerable: false });
+          return { data: data, S: S };
+        });
       });
     });
   }

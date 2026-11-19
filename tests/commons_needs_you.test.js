@@ -90,10 +90,13 @@ function load(hash, opts) {
   Object.defineProperty(w, "localStorage", { value: { getItem: (k) => (k in store ? store[k] : null), setItem: (k, v) => { store[k] = String(v); }, removeItem: (k) => { delete store[k]; } }, configurable: true });
   w.scrolled = [];
   w.Element.prototype.scrollIntoView = function () { w.scrolled.push(this.id || this.tagName); };
-  if (opts.session !== false) w.CPL_SESSION = { authHeaders: () => ({ apikey: "anon-key" }) };
+  if (opts.session !== false) w.CPL_SESSION = { authHeaders: (x) => Object.assign({ apikey: "anon-key" }, x || {}) };
+  /* A reviewer signed in: the done marks are read (queue_todo_done), as cpl_session.js would hand them over. */
+  if (opts.reviewer) Object.assign(w.CPL_SESSION, { get: () => ({ email: "reviewer@example.org", refresh_token: "r" }), isFresh: () => true });
   const files = Object.assign(baseFiles(), opts.files || {});
   w.fetch = function (url, init) {
     url = String(url); calls.push([url, init]);
+    if (url.indexOf("/queue_todo_done?") >= 0) return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(opts.marks || []) });
     if (url.indexOf("/rest/v1/kb_curation") >= 0) {
       if (opts.liveFails) return Promise.resolve({ ok: false, status: 503, json: () => Promise.resolve([]) });
       const ids = decodeURIComponent((/course_id=in\.\((.*)\)&order/.exec(url) || [])[1] || "").split(/","/).map((s) => s.replace(/^"|"$/g, ""));
@@ -181,6 +184,36 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   const ruledRec = load("#commons/details/decisions", { files: { "kb/status/cr.json": crRuled } });
   await ruledRec.M.boot(); await settle();
   check("(A) and the record lists it as decided, newest first", (ruledRec.d.querySelector("#cmn-rec-done li") || { getAttribute: () => "" }).getAttribute("data-todo") === WORDING);
+
+  // ── COBIx's review of #3570, item 1: a call's address is checked before it becomes a link ──
+  const crBad = runLog("cr");
+  crBad.calls.push({ title: "A call whose address is a script", text: "x", view: { href: "javascript:alert(1)", text: "x" }, todo_id: "bad-href-fixture" });
+  const bad = load("#commons", { files: { "kb/status/cr.json": crBad } });
+  await bad.M.boot(); await settle();
+  const badLi = bad.d.querySelector('#cmf-need-decisions li[data-todo="bad-href-fixture"]');
+  check("⭐ a call whose view.href is javascript:alert(1) renders no link on Needs you", badLi && /A call whose address is a script/.test(txt(badLi)) && !badLi.querySelector("a")
+    && !bad.d.querySelector('a[href^="javascript"]'));
+  const badRec = load("#commons/details/decisions", { files: { "kb/status/cr.json": crBad } });
+  await badRec.M.boot(); await settle();
+  check("and none in the decision record", !badRec.d.querySelector('a[href^="javascript"]') && /A call whose address is a script/.test(txt(badRec.d.getElementById("cmn-rec-open"))));
+
+  // ── COBIx's review of #3570, item 2: Mark done's closings are read behind a reviewer sign-in only ──
+  check("⭐ signed out, Decisions waiting says signing in also hides the items already marked done",
+    /Signing in as a reviewer also hides the items already marked done\./.test(txt(f.d.getElementById("cmf-need-decisions")))
+    && /Signing in as a reviewer also hides the items already marked done\./.test(txt(rec.d.getElementById("cmn-rec-open").parentNode)));
+  const mark = [{ project: "cr", todo_id: WORDING, by_email: "reviewer@example.org", at: "2026-11-19T20:00:00Z", note: "keep the wording", reopen: false }];
+  const rv = load("#commons", { reviewer: true, marks: mark });
+  await rv.M.boot(); await settle();
+  check("⭐ signed in, a call closed by Mark done leaves Decisions waiting, and the line goes",
+    !rv.d.querySelector('#cmf-need-decisions li[data-todo="' + WORDING + '"]') && !/Signing in as a reviewer/.test(txt(rv.d.getElementById("cmf-need-decisions"))));
+  const rvRec = load("#commons/details/decisions", { reviewer: true, marks: mark });
+  await rvRec.M.boot(); await settle();
+  check("and the record lists it as decided by its mark", /Marked done: keep the wording/.test(txt(rvRec.d.getElementById("cmn-rec-done")))
+    && !rvRec.d.querySelector('#cmn-rec-open li[data-todo="' + WORDING + '"]'));
+  const rvNone = load("#commons", { reviewer: true, marks: [] });
+  await rvNone.M.boot(); await settle();
+  check("signed in with no marks, the rule still waits and the line is not shown", !!rvNone.d.querySelector('#cmf-need-decisions li[data-todo="' + WORDING + '"]')
+    && !/Signing in as a reviewer/.test(txt(rvNone.d.getElementById("cmf-need-decisions"))));
 
   // ── (B) every Needs you link: a view in the router, and the way back ──
   const tabs = new Set(Array.from(HTML.matchAll(/class="cpl-tab[^"]*" data-tab="([a-z0-9-]+)"/g)).map((m) => m[1]).concat(["collect"]));

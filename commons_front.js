@@ -335,6 +335,8 @@
         ].filter(Boolean));
       })));
     } else dec.appendChild(p(["None waiting."]));
+    var note = typeof opts.marksNote === "function" ? opts.marksNote() : null;
+    if (note) dec.appendChild(note);
     dec.appendChild(p([a("#commons/details/decisions", "Decision record")], "cmf-need-links"));
     var rows = el("div", { cls: "cmf-need", id: "cmf-need-rows" }, [el("h4", { text: "Rows waiting on a person" }),
       p(["Course outlines blocked: " + ASKED.outlinesBlocked.cards + " cards, " + ASKED.outlinesBlocked.current + " current. Send any outline or catalog PDF to COBIx, who prepares it and hands Sky one ask."]),
