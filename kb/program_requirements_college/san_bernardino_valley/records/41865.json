@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8559,
-    "output_tokens": 2788,
+    "output_tokens": 2307,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2788,
+  "output_tokens": 2307,
   "output_tokens_details": {
-   "thinking_tokens": 876
+   "thinking_tokens": 583
   },
   "service_tier": "standard",
-  "inference_geo": "global",
-  "speed": "standard"
+  "inference_geo": "global"
  },
- "cost_usd": 0.09,
- "ms": 23120,
- "seconds": 23.4,
+ "cost_usd": 0.08038,
+ "ms": 17818,
+ "seconds": 18.2,
  "parts": null,
  "error": null,
  "score": {
@@ -120,7 +119,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "REQUIREMENTS",
+   "section_heading": "Global Studies AA-T Degree",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -158,7 +157,7 @@
   },
   "blocks": [
    {
-    "name": "Required Courses:",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -184,7 +183,7 @@
     ]
    },
    {
-    "name": "List A - Five courses from at least four areas below: (15 units)",
+    "name": "List A - Five courses from at least four areas below",
     "rule": "choose_courses",
     "minimum": 5,
     "option_group": null,
@@ -348,23 +347,22 @@
   "missing_explained": [
    {
     "code": "ANTHRO 102",
-    "why": "catalog prints it as ANTH 102 (recorded under that code in List A)"
+    "why": "catalog prints it as ANTH 102 (recorded as printed, flagged as catalog addition)"
    },
    {
     "code": "ANTHRO 102H",
-    "why": "catalog prints it as ANTH 102H (recorded as alternative to ANTH 102)"
+    "why": "catalog prints it as ANTH 102H (recorded as printed, flagged as catalog addition)"
    }
   ],
   "notes": [
-   "No distinct section heading is printed for the award; 'REQUIREMENTS' tab heading used. The page covers only the Global Studies AA-T.",
-   "List A requires five courses drawn from at least four of five areas (Area 1 Culture and Society: ANTH 102/102H, HIST 170, HIST 171; Area 2 Geography: GEOG 102, 110, 120, 130/GIS 130; Area 3 Economics: ECON C2002/C2002H, ECON C2001/C2001H; Area 4 Politics: POLS 140, POLS 141/141H; Area 5 Humanities: RELIG 101, SPAN 103/103H, SPAN 104, SPAN 157, SPAN 158). Areas recorded in one block; the 'at least four areas' constraint is not captured structurally.",
-   "List A is printed as 15 units, but Spanish courses carry 4 units; the printed Major Total Units 21-22 reflects this.",
-   "ANTH 102 and ANTH 102H are printed with subject ANTH while the closed list stores ANTHRO 102/102H; marked as catalog additions literally, but they are likely the same courses under a different subject abbreviation. Reviewer should check.",
-   "Honors/alternative courses print no units beside them; units left null.",
-   "Page prints Major Total Units 21-22, Total Double-Counted Units 9, General Education (Cal-GETC) Units 34, Elective Units 13-14, Total Units 60. Elective units recorded as degree_elective_units.",
-   "The program learning outcomes are printed on the page's outcomes tab for this program."
+   "List A requires five courses drawn from at least four of the five areas (Area 1 Culture and Society, Area 2 Geography, Area 3 Economics, Area 4 Politics, Area 5 Humanities); recorded as a single choose_courses block of 5 with the area distribution rule described here.",
+   "List A prints '(15 units)' although Area 5 Spanish courses are 4 units; the major total is printed as 21-22.",
+   "The catalog prints ANTH 102/ANTH 102H while the closed list stores ANTHRO 102/ANTHRO 102H; likely the same courses under a different subject prefix — reviewer should confirm.",
+   "Honors/or alternatives print no units of their own; units left null on alternatives.",
+   "Page also prints 'Total Double-Counted Units 9' (major courses double-counted with Cal-GETC) and 'Elective Units 13-14', recorded as degree_elective_units.",
+   "Program learning outcomes are printed once for the program on the outcomes tab; recorded for this award."
   ]
  },
- "extracted_run": "44481529632",
- "catalog_year": "2026-2027"
+ "extracted_run": 43609973859,
+ "read_run": 43355003065
 }
