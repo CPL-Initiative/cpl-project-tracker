@@ -140,7 +140,7 @@ hand works the queue itself.
 The conductor drops every PR subscription, check-in and artifact watch it holds at sign-off and names each in its
 closing message. This firing had no `get_trigger`, so the routine's next run is not recorded here.
 
-Spend: not available; 2026-11-18T06:12Z to 2026-11-18T09:49Z.
+Spend: $167 (estimate from token counts at list prices, priced in handoff 682); 2026-11-18T06:12Z to 2026-11-18T09:49Z.
 
 This firing had no cost readout (`get_session` was not among its tools). Token counts from the session's transcripts at 09:13Z, for pricing: the conductor 177 API calls, 0.28 million output, 0.58 million cache-write and 70.5 million cache-read tokens; 23 worker and reader agents 1,466 calls, 1.02 million output, 6.84 million cache-write and 285.2 million cache-read tokens; the small gate checks 27 calls. The collection, curation and infrastructure split was not measured.
 

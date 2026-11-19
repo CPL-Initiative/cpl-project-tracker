@@ -119,7 +119,7 @@ conductor. A session Sam starts by hand works the queue itself.
 Subscriptions: none held (the conductor unsubscribed from #3506, #3507, #3508 and #3509 as each opened). Check-ins: a
 20-minute background timer in the session's own shell, gone when the session ends. No artifact watch.
 
-Spend: not available; 2026-11-18T10:13Z to 2026-11-18T11:49Z.
+Spend: $77 (estimate from token counts at list prices); collection $77; 2026-11-18T10:13Z to 2026-11-18T11:49Z.
 
 This firing had no cost readout (`get_session` was not among its tools). Token counts from the session's transcripts
 at 11:46Z: the conductor 136 API calls, 0.22 million output, 0.48 million cache-write and 43.2 million cache-read

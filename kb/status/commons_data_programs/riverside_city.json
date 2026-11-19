@@ -1,4 +1,4 @@
-{"schema":1,"college":"Riverside City College","slug":"riverside_city","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Riverside City College","slug":"riverside_city","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"33230","title":"History","award":"A.A- T Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993"},
 {"cn":"18013","title":"CSU General Education","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"40337","title":"Family Child Care Provider","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

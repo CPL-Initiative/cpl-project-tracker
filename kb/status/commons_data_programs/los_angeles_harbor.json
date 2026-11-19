@@ -1,4 +1,4 @@
-{"schema":1,"college":"Los Angeles Harbor College","slug":"los_angeles_harbor","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Los Angeles Harbor College","slug":"los_angeles_harbor","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":false,"programs":[
 {"cn":"17778","title":"Business Administration","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55"},
 {"cn":"38068","title":"Journalism","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=113"},
 {"cn":"18709","title":"Liberal Arts and Sciences: Social and Behavioral Sciences","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=127"},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"Merced College","slug":"merced","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":true,"programs":[
+{"schema":1,"college":"Merced College","slug":"merced","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":true,"programs":[
 {"cn":"40266","title":"Political Science","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/22070.AAT/requisites-ojrrt"},
 {"cn":"03471","title":"Accounting","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"45026","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
