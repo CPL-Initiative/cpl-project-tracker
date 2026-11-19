@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-18_s681_prreq_named_gaps_apply.sql
-name=s681_prreq_named_gaps_apply
+file=kb/migrations/2026-11-18_s683_cpl_memory_rows.sql
+name=s683_cpl_memory_rows
