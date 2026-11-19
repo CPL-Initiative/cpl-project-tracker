@@ -1,0 +1,125 @@
+Course Outline
+CHEM 102 - General Chemistry I
+Cover
+Subject CHEM
+Course Number 102
+Course level Lower Division
+Title General Chemistry I
+Proposed Semester Fall 2008
+Description based on C-ID course descriptors No
+Catalog Description
+
+This is the first semester of a one-year course in chemistry intended for majors in the natural sciences (chemistry, biochemistry, biology, physics, and pre-medicine), mathematics, and engineering.
+
+Justification for this course
+This course fulfills part of the Feather River College general education requirements as well as transfer requirements to CSU and UC institutions.
+Units/Hours
+Total Instructional Hours 126
+Variable No
+Minimum Unit Value 5.000
+Method of Instruction
+Minimum Lecture Contact Hours 72.000
+Minimum Lab Contact Hours 54.000
+Minimum Out of Class Hours 144.000
+Minimum Total Student Learning Hours 270.000
+Repeatability
+Is Repeatable No
+Repeat Justification
+Not applicable
+Requisites
+Requisites
+Requirement Type Pre-requisite
+Requisite Comment
+the equivalent or a higher-level course
+Requisite Type
+Standard requisite No
+Sequential within discipline No
+Communication/computation No
+Health and safety No
+Requirement Type Pre-requisite
+Subject MATH - Mathematics
+Requisite Course MATH 015 - Intermediate Algebra (Non-STEM majors) (Historical)
+Requisite Type
+Standard requisite No
+Sequential within discipline No
+Communication/computation No
+Health and safety No
+Requirement Type Pre-requisite
+Subject MATH - Mathematics
+Requisite Course MATH 020 - Intermediate Algebra for STEM Majors (Historical)
+Minimum Grade C
+Requisite Type
+Standard requisite No
+Sequential within discipline No
+Communication/computation No
+Health and safety No
+Grading Method
+Grade Method
+Letter
+Pass/No Pass
+Course Content/Topics
+Course Topic Outline
+Nomenclature
+Atomic Structure
+Chemical Reactions
+Stoichiometry
+Thermochemistry
+Electronic Structure of Atoms
+Periodic Properties of the Elements
+Chemical Bonding
+Molecular Structure and Bonding Theories
+Gas Laws
+Intermolecular Forces, Liquids, and Solids
+Properties of Solutions
+Lab Topic Outline
+Laboratory Techniques
+Identification of Substance by Physical Properties
+Separation of the Components of a Mixture
+Empirical Formula Determination
+Chemical Reactions-Precipitation Reactions
+Gravimetric Analysis of a Chloride Salt
+Conductivity of Electrolytic Solution
+Titration of an Acid
+Determination of the Molar Volume of a Gas
+Enthalpy Determination: Specific Heat and Heat of Reaction
+Atomic Spectra and Atomic Structure: Flame Test
+Paper Chromatography: Separation of Cations and Dyes
+Molecular Geometries of Covalent Molecules: Lewis Structures and VSEPR Model
+Student Learning Outcomes
+Learning Outcomes
+Apply chemical principles to specific chemical processes.
+Describe major chemical concepts, theoretical principles and experimental findings in chemistry as outlined in the course topics.
+Develop laboratory skills by correctly assembling, executing, and employing standard laboratory techniques such as titration.
+Interpret, calculate and reach logical conclusions of experimental results after reviewing experimental outcomes through direct observation and data collection.
+Master mathematical techniques by employing critical thinking skills to solve chemistry word problems.
+Read and communicate effectively various chemical concepts, theories, laws and experimental findings.
+Methods of Instruction
+Methods of Instruction
+Demonstration
+Discussion
+Lab
+Lecture
+Other Instruction Type
+Lectures, discussions, demonstrations, videos, problem solving sessions, laboratory experiments and analysis
+Methods of Evaluation
+Method of Assessing Student Learning
+Examinations, homework assignments, and laboratory reports.
+Textbooks
+Textbook
+Title Chemistry: Molecular Approach, 5th ed.
+Publisher Pearson
+Author Tro, Nivaldo
+ISBN 978013487437
+Year 2019
+Rationale
+It is a student-oriented and pedagogically driven textbook which will deepen a student's insight into chemistry. 
+Title Laboratory Experiments for Chemistry: The Central Science, 14th ed.
+Publisher Pearson
+Author Nelson, J. and LeMay, E.
+ISBN 9780134566207
+Year 2018
+Rationale
+This laboratory manual has a complete array of experiments specifically designed to introduce laboratory techniques and to illustrate core principles.
+Text Other
+Required No
+Other the equivalent texts.

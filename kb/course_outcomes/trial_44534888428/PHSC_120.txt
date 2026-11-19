@@ -1,0 +1,76 @@
+Course Outline
+PHSC 120 - Introduction To Astronomy
+Cover
+Subject PHSC
+Course Number 120
+Course level Lower Division
+Title Introduction To Astronomy
+Proposed Semester Fall 1996
+Description based on C-ID course descriptors No
+Catalog Description
+
+Survey of the science of astronomy. A comprehensive, non-technical introduction to astronomy, including discussion of the structure and evolution of the solar system, stars, galaxies, and universe.
+
+Units/Hours
+Total Instructional Hours 54
+Variable No
+Minimum Unit Value 3.000
+Method of Instruction
+Minimum Lecture Contact Hours 54.000
+Minimum Out of Class Hours 108.000
+Minimum Total Student Learning Hours 162.000
+Repeatability
+Is Repeatable No
+Repeat Justification
+NONE
+Requisites
+Requisites
+Requirement Type Pre-requisite
+Subject MATH - Mathematics
+Requisite Course MATH 016 - Elementary Algebra (Historical)
+Requisite Type
+Standard requisite No
+Sequential within discipline No
+Communication/computation No
+Health and safety No
+Grading Method
+Grade Method
+Letter
+Pass/No Pass
+Course Content/Topics
+Course Topic Outline
+History
+Star charts and constellation stories
+Gravitation, electromagnetic radiation
+Astronomical observation
+Solar system
+Comets asteroid meteors
+Starlight, properties of stars
+Birth and evolution of stars
+Pulsars, quasars, black holes
+Cosmology
+Student Learning Outcomes
+Learning Outcomes
+Students will be able to explain in general terms the evolution and life cycles of stars, galaxies and, more speculatively, our universe.
+Students will be able to trace how the history of astronomical observations and ideas have influenced the history of humankind and our cognition of our place in the world and universe.
+Students will demonstrate an understanding a number of different classes of objects visible in our cosmic landscape by explaining some of their properties, scales and how we have been able to use scientific models to explain what these objects are.
+Methods of Instruction
+Methods of Instruction
+Lecture
+Other Instruction Type
+Lecture. Demonstrations that show a concept covered in lecture transparently. Discussion of and solution by the instructor of sample problems. Discussion of major astronomical discoveries. Discussion of current issues in astronomy
+Methods of Evaluation
+Method of Assessing Student Learning
+Tests comprised of multiple choice, free response, and problem style questions, Project work to demonstrate deeper learning of a particular aspect of astronomy, Textbook reading, Answering of problems, free response, and multiple choice questions from the text, Class project, which could be applied, research paper, presentation, or other
+Textbooks
+Textbook
+Title Pathways to Astronomy
+Author Schneider and Arny
+Year 2009
+Text Other
+Required No
+Other note taking supplies
+Required No
+Other observatory
+Required No
+Other on site telescope
