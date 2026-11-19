@@ -43,51 +43,8 @@ The sections from S338 (2026-10-06) to S458 (2026-10-23) moved verbatim to [`lib
 The sections from S468 (2026-10-24) to S509 (2026-10-29) moved verbatim to
 [`library_lessons_archive_2.md`](library_lessons_archive_2.md) (SkyBeacon, 2026-11-06).
 
-## The build to Version 20, and remediation (S509 SkyElderberry, 2026-10-29)
-
-What shipped, in four merges: #2538 one card per project (`cpl_library.project`, receipt
-`kb/receipts/cpl_library_projects_2026-10-29_s509.sql`, 13 projects of 2 read back); #2540 the one *Create or
-Remediate a Document* panel; #2541 remediation of a .pptx or .docx in the browser, chart drafts from the chart's own
-numbers, and *Draft from the picture* through the new `alt-text-draft` Edge Function (v1, deployed through the MCP).
-
-What we learned:
-
-- **Real files find what fixtures miss.** Run on four team files from the vault, the first build left generator titles
-  (*PowerPoint Presentation*, *PptxGenJS Presentation*) in place, joined a title's lines across `a:br` with no space,
-  listed nineteen *no title* and nineteen *reading order* items for a deck built without placeholders, and counted
-  nested shapes as crowding. Each became a rule and a test. Try a remediation change on `CPLBrain/04-projects/` decks
-  before shipping it.
-- **A picture on two of three slides is not a logo.** The repeated-picture rule needs at least three slides and 80% of
-  them; at 60% a chart reused on two slides was marked decorative.
-- **A stacked chart's labels are its totals.** The IT and AI deck's slide 9 shows 374 where its two series hold 25 and
-  349; a draft from the first series alone read 25. The chart draft sums every series and names them.
-- **Write answers into a fresh read.** Remediate and download re-reads the original before writing, so a second press
-  never writes a slide title twice.
-- **Ask whether a picture may leave the browser before building it.** The first build promised that nothing leaves the
-  browser. Sam asked for screenshot reading (*"We do a lot of MAP screenshots and hoping you can decipher them and at
-  least take a shot at alt text"*), so one picture goes to Claude only when a person presses the button, and the panel
-  says so.
-- **A session's own live test can be impossible.** This sandbox cannot reach `*.supabase.co`, the database has no
-  `pg_net`, and no secret holds the team phrase, so the function's first real call is Sam's. Say so rather than claim
-  it works.
-- **A long-running test needs its window closed.** A 60-second revoke timer kept the jsdom test alive past its checks;
-  `m.w.close()` at the block's end ends it.
-
-## Moved from the lane (S510)
-
-Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money paying a service to remediate our decks before we can publish them to the field after a webinar or training. Can you look at the Library and see if you can make it easy for a user to drag and drop their decks (or other docs) into the library and run a remediation process? We have to do this for written reports as well."* And: one button in place of Make a visual, Start a piece and Add to the Library; one card for a whole project (the ELL IET visual and its document). Mockup, Version 10: https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR. His comments on it: *"can you add a Remediate option?"* (added: *Remediate a deck or document* beside *Make something new* and *File something already made*; the card's action reads Remediate), *"This looks good!"* on the project card, and *"Add a Chip if it is published to the public library"* (added under the card's title), and *"Do we need the Add to the Library link? Would it be simpler to put the link on the card title that matches?"* (each piece's title is its link; List publicly sits on the unlisted piece's row; asked whether he meant the top control).
-
-## A deck's contrast (S510 SkyWineberry, 2026-10-29)
-
-- **Measure against what the words sit on, never the slide's background alone.** The first build read each run against
-  its slide's background and reported 72 failures on five team decks, almost all white text "on white". Our generators
-  lay a text box over a separate filled rectangle, and the Taco Tuesday deck's section layout draws a full-slide navy
-  rectangle beneath its placeholders. Reading the topmost shape drawn before the text that covers its middle, the
-  layout's and master's own shapes included, brought it to 6, and each of those held on a LibreOffice render.
-- **Confirm every remaining finding on a render.** `soffice --headless --convert-to pdf` and `pdftoppm` in the sandbox
-  show the slide; a finding that does not hold on the picture is a bug in the reader, not in the deck.
-- **A fix keeps the hue.** The offered color steps the lightness away from the ground until it clears the bar by 0.1,
-  so a gold kicker stays gold (`E8A32C` to `9D6A11`), and it is ticked by default but shown both ways first.
+*S509 and S510 (2026-10-29: the build to Version 20, the lane's S510 move, a deck's contrast) moved verbatim to
+[`library_lessons_archive_2.md`](library_lessons_archive_2.md) at the S683 Library side job's checkpoint.*
 
 ## A Word document's contrast (S511 SkyBilberry, 2026-10-29)
 
@@ -1192,3 +1149,52 @@ Verbatim from `docs/reference/lanes/library.md` (links rewritten for this folder
   `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
   **DEPLOYED (S648, from `main`, `cpl-chat-deploy.yml` `confirm=DEPLOY`, each with its smoke, *as reported*):**
   `docket-process` run 43469609500, then `library-publish-now` run 43469887510, both success. The SHARED CODE comment in `cpl-chat-deploy.yml` already named both shared files (S653b): closed, no change.
+
+## Moved from the lane (S683 Library side job)
+
+Moved verbatim from `docs/reference/lanes/library.md` on 2026-11-19 to keep the lane under 20,000 bytes (links as they
+stood in the lane).
+
+✅ **A duplicate is a warning, never a refusal (COBIx relaying Sam, 2026-11-18; DECIDED
+`d-library-duplicate-is-a-warning`).** Ashley Mooney's *Foothill College Sheet Metal CPL Opportunities*
+(Apprenticeship Sprint) was refused at Start because Foothill's CPL Opportunity pair existed. A college visual now
+writes the pair only with no working title of its own or the pair's own title; one with its own title is a Requested
+piece under its own `slugFor` slug. A piece is a duplicate only when its working title and occasion both match a
+live record (the pair's fixed slugs always count), and then Start offers three choices: open it, add this as a new
+version of it, or start a separate piece anyway under its own slug. `library.js` `duplicateOf`/`askDuplicate`;
+`tests/library.test.js` (11e).
+
+✅ **Start drafts at once; the drafter reads COBI's college data (Sam with Ashley, 2026-11-18; DECIDED
+`d-library-start-drafts-and-reads-cobi-data`).** Start on a new piece that can draft opens its card beside the list
+and calls library-revise-draft with no Draft it now press (`draftOnStart`). A new piece whose draft came back with no
+change offers **Change what you asked** and opens the draft it builds on. A piece that drafts on its card offers no
+File it beside the card and no File a new version (the In development list keeps File it for a session-made piece).
+The drafter adds a reference block for each college a request names: its MAP landing page
+(`map_college_contacts.landing_page_url`), its CPL Opportunity page, and the exhibits MAP names it the owner of, with
+MAP IDs, as a head start for exact names, never a filter (`reference_data.mjs`). **Sam's rulings (COBIx on #3527, 2:42,
+2:44 and 3:03 PM PT):** a button opens the college's landing page, never the MAP dashboard; the landing page shows only
+articulated courses, so the drafter checks no articulation; a college with no landing page on file is said so, with no
+fallback link; the piece tells the student to choose the exhibit by MAP's exact name under Possible Qualifications.
+**Waiting on MAP:** Sam asked Malone and Pedro for `?Exhibit=<MAP ID>` on the landing-page template; when it ships,
+`landingButton` is the one line that changes, and no parameter is added before then. **Full read access (Sam's rulings, relayed by COBIx on #3527, 2026-11-18):** the model reads any COBI table
+(PostgREST GET with the caller's credential) and any published file through three tools (`cobi_data.mjs`); staff
+names, titles and work emails are not filtered; the one student-data rule is that a student count under 10 for a
+category shows as `<10`, applied to every read result and to the finished draft's text, with a prompt rule against a
+total that backs a hidden count out. The count rule touches count-shaped people fields only (never units, credits or
+hours), and on a revision it runs on each edit's new text, so every rewrite shows in What changed.
+
+- **Sam's test of pictures passed (2026-11-11):** request `71931018` drafted with its five MAP screens under their
+  steps, he ruled *"the addresses are OK"* on slide 4's two screens, and it published as Version 1 with
+  `img/1.webp` to `img/5.webp` (library-publish run 42940831782; read back live). **NEXT 0:** his List publicly, and
+  the link from the public funding dashboard that his brief asks for.
+- **Changes after the first draft (Sam, 2026-11-11, S635):** *"there doesn't appear to be any way to add new instructions
+  when I click edit in the library side bar"*. A new piece's ready draft offered Open, Publish it and Draft it again, and
+  no box. Now **Ask for changes** opens the card's box; `library-revise-draft` edits that draft (`regen.based_on_draft`,
+  `new_piece` kept for the publisher), the piece's documents stay on the record, the card counts Draft 2, 3, and
+  *Start over from the brief* sits in the box (it replaces Draft it again). Test: `library_any_file` E2.
+
+## 2026-11-19: new pieces from a college visual, and the drafter's data (S683 Library side job)
+
+COBIx's four probe rounds on the under-10 rule each found a pattern the last fix missed (unit fields, labels, whole-page
+rewrites, lists and ranges, a singular label's `and`); every probe string is a test in
+`tests/library_revise_draft.test.js` G1 to G7. Pattern rules over prose need a reviewer who probes adversarially.
