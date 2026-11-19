@@ -1,0 +1,2822 @@
+{
+ "college": "East Los Angeles College",
+ "catalog_url": "https://www.elac.edu/academic-resources/catalog",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 234,
+ "with_closed_list": 147,
+ "started": "2026-11-19T06:40:02Z",
+ "catalog_year_from": "the procedure record's catalog step",
+ "procedure_step": {
+  "start": "https://www.elac.edu/academic-resources/catalog",
+  "follow": "2026 - 2027",
+  "href": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf",
+  "status": 200,
+  "access": "ok"
+ },
+ "pdf": {
+  "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 11348307,
+  "pages_total": 521,
+  "error": null,
+  "chars_total": 2558827,
+  "pypdf_accepted": 143,
+  "sample": [
+   "p157: 'Child, Family, and Education Studies Department\\nEAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 153\\nEquity-Minded Education in \\nEarly Childhood Classroom\\n(Academic Plan E045413D)\\nThis certificate of achievement is designed for Early '",
+   "p313: 'Physics Department\\nEAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 309\\n021 General Physics I with Calculus (4) UC:CSU \\nCal-GETC Area 5A, 5C (C-ID PHYS 105) \\n(UC Credit Limit:  1 series maximum from: PHYSICS 006, 007 \\nor PHYSICS 021, '"
+  ],
+  "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "picks": [
+   {
+    "control_number": "02430",
+    "pages": [
+     102,
+     103
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 102] Architecture Department 98 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 portfolio. Completers of the program will have the skills to seek entry-level employment in an architectural office, environm"
+   },
+   {
+    "control_number": "02456",
+    "pages": [
+     84
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] (Academic Plan E002456C) A medical assistant interacts with doctors, nurses, tech- nicians and patients. These professionals require spe- cific technical knowledge and skills needed in the evolving healthcare "
+   },
+   {
+    "control_number": "08252",
+    "pages": [
+     103
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 103] (Academic Plan E008252C) This program is for students interested in the techni- cal aspects of architecture. Students will develop skills in building technology and construction documents, includ- ing drawing"
+   },
+   {
+    "control_number": "13340",
+    "pages": [
+     70,
+     71,
+     72
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] (Academic Plan E013340D) This certificate program is designed to prepare entry-level crime scene response and evidence processing personnel for employment positions such as Crime Scene Techni- cian, Evidence "
+   },
+   {
+    "control_number": "13341",
+    "pages": [
+     68
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 68] (Academic Plan E013341D) (with Psychology & Addiction Studies Department) This certificate program is designed for students seeking entry-level employment positions in settings that provide assessment and tre"
+   },
+   {
+    "control_number": "13343",
+    "pages": [
+     69,
+     70
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] (Academic Plan E013343D) This certificate program is designed for students that are currently in or anticipating entry into the police hiring and background process. This certificate emphasizes those courses"
+   },
+   {
+    "control_number": "14869",
+    "pages": [
+     373,
+     374,
+     375,
+     376
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 373] (Academic Plan E014869D) The Certificate of Achievement in Stage Management and Production is designed to teach students how to work as stage managers or production managers. These courses provide an aspiri"
+   },
+   {
+    "control_number": "21157",
+    "pages": [
+     102,
+     103
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 102] (Academic Plan E021157D) This program is for students interested in the technical aspects of architecture. Students develop skills in build- ing technology and construction documents, including drawing, draf"
+   },
+   {
+    "control_number": "21174",
+    "pages": [
+     197,
+     198,
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 197] Engineering and Technologies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 193 **This course has a corequisite . IT Technician Pathway: Stage 3 IT Technician (Academic Plan E039824D) The "
+   },
+   {
+    "control_number": "24040",
+    "pages": [
+     387
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 387] (Academic Plan E024040E) Clear written expression is a critical skill for academic suc- cess as well as professional success. This three course sequence in basic grammar and writing prepares stu- dents for cr"
+   },
+   {
+    "control_number": "24129",
+    "pages": [
+     31
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 31] Academic Resources/Programs EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 27 ARC 271* Architectural Drawing III ........................3 ARC 272* Architectural Drawing IV ........................3 ARC"
+   },
+   {
+    "control_number": "31017",
+    "pages": [
+     240,
+     241,
+     242
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.972,
+    "opens": "[page 240] (Academic Plan E031017G) Students completing the Associate in Arts in Kinesiology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as det"
+   },
+   {
+    "control_number": "32154",
+    "pages": [
+     167,
+     168
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] • Communication Studies 2.0 for Transfer Associate Degree Program Associate in Arts in Communication Studies 2.0 for Transfer (Academic Plan E042672G) Students completing the Associate in Arts in Communica- t"
+   },
+   {
+    "control_number": "32170",
+    "pages": [
+     359,
+     360
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 359] Social Sciences Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 355 1. Major/Area of Emphasis: A minimum of 18 semes- ter units (27 quarter units) of coursework, with a C or higher earned in"
+   },
+   {
+    "control_number": "32193",
+    "pages": [
+     177,
+     178
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] (Academic Plan E032193C) The Technology & Logistics Associate Degree is designed for students who intend to pursue the field of logistics as a career path and with the goal of transferring to a uni- versity."
+   },
+   {
+    "control_number": "32194",
+    "pages": [
+     175,
+     176,
+     177,
+     178
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] (Academic Plan E032194D) The Technology & Logistics Certificate of Achievement is designed for students who intend to pursue the field of logistics as a career path. Logistics is the management and control "
+   },
+   {
+    "control_number": "32902",
+    "pages": [
+     72,
+     73
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] (Academic Plan E032902H) Students completing the Associate in Science in Adminis- tration of Justice for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in simi"
+   },
+   {
+    "control_number": "32980",
+    "pages": [
+     231
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 231] (Academic Plan E032980G) Students completing the Associate in Arts in Journalism for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as dete"
+   },
+   {
+    "control_number": "33013",
+    "pages": [
+     91,
+     92,
+     93,
+     94
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] (Academic Plan E033013G) Students completing the Associate in Arts in Anthropology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as det"
+   },
+   {
+    "control_number": "33382",
+    "pages": [
+     291,
+     292,
+     293,
+     294
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 291] (Academic Plan E033382G) Students completing the Associate in Arts in Music for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determine"
+   },
+   {
+    "control_number": "33641",
+    "pages": [
+     375,
+     376
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 375] Theater Arts Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 371 TECTHTR 704* Shakespeare Festival Workshop IV ..........2 TECTHTR 921 Cooperative Education - Technical Stage Production ..."
+   },
+   {
+    "control_number": "33681",
+    "pages": [
+     263,
+     264,
+     265
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 263] • Mathematics 2.0 for Transfer [page 264] Mathematics Department 260 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Associate Degree Programs Mathematics, Associate in Arts Degree (Academic Plan E0127"
+   },
+   {
+    "control_number": "33915",
+    "pages": [
+     78,
+     79
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] Allied Health Department 74 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 *This course has a prerequisite . **This course has a corequisite . Clinical Medical Assistant (Academic Plan E040899D) A Clin"
+   },
+   {
+    "control_number": "35087",
+    "pages": [
+     353,
+     354,
+     355,
+     356
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 353] Social Sciences Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 349 • Asian-American Studies • Economics (CCN) • Economics • History (CCN) • History • Political Science (CCN) • Political Scie"
+   },
+   {
+    "control_number": "35088",
+    "pages": [
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 0.737,
+    "opens": "[page 93] (Academic Plan E035088C) Environmental Studies is a multidisciplinary course of study that focuses on the interrelationship between humans and nature by examining the impact of human activities on natural ph"
+   },
+   {
+    "control_number": "35309",
+    "pages": [
+     257,
+     258,
+     259,
+     260
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] Life Sciences Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 253 Educational Programs SUBJECTS • Anatomy • Biology • Biotechnology • Microbiology • Physiology CERTIFICATES OF ACHIEVEMENT • "
+   },
+   {
+    "control_number": "35397",
+    "pages": [
+     130
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 130] Business Administration Department 126 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 University system, although not to a particular campus or major. Students can use the website ADT Search by CSU C"
+   },
+   {
+    "control_number": "35720",
+    "pages": [
+     161
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 161] Child, Family, and Education Studies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 157 Upon successful completion of this program, students will be able to: • Analyze data to determine the"
+   },
+   {
+    "control_number": "35757",
+    "pages": [
+     391
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 391] (Academic Plan E035757E) This Certificate of Completion is designed to prepare stu- dents for entry-level courses in the Engineering and Tech- nologies Department at ELAC. These three courses help students de"
+   },
+   {
+    "control_number": "35758",
+    "pages": [
+     392
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 392] (Academic Plan E035758F) This English as a Second Language communication com- petency program is designed to strengthen students’ lis- tening comprehension and speaking skills. Listening skills to be addresse"
+   },
+   {
+    "control_number": "35759",
+    "pages": [
+     393
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 393] (Academic Plan E035759F) The certificate is designed to prepare students for the entry-level credit courses in the English department. These two courses help students to build a solid foundation of basic vo"
+   },
+   {
+    "control_number": "35771",
+    "pages": [
+     176,
+     177
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 176] (Academic Plan E035771D) The Technology for E-Commerce and Entrepreneurs Cer- tificate of Achievement is designed for students, aspir- ing entrepreneurs, and the general workforce who wish to become successfu"
+   },
+   {
+    "control_number": "35798",
+    "pages": [
+     172,
+     173
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 172] Computer Applications and Office Technologies Department 168 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Logistics Fundamentals This Skills Certificate is designed for students who want a fast-trac"
+   },
+   {
+    "control_number": "35888",
+    "pages": [
+     360
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 360] (Academic Plan E035888C) Women/Gender Studies at East Los Angeles College is an interdisciplinary academic program which aims to expand students’ understanding and appreciation of women’s lives and experien"
+   },
+   {
+    "control_number": "35902",
+    "pages": [
+     81,
+     82,
+     83,
+     84
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Allied Health Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 77 OR E.S.L. 110 College Composition For Non-Native Speakers .........................................4 HTHTEK 100 Introduction "
+   },
+   {
+    "control_number": "36177",
+    "pages": [
+     94,
+     95
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] Anthropology, Geography and Geology Department 90 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 ADT Search by CSU Campus to find CSU campuses that accept ADT degrees as being similar to their bachelo"
+   },
+   {
+    "control_number": "36345",
+    "pages": [
+     354,
+     355,
+     356,
+     357
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 354] Social Sciences Department 350 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 with the complex environmental problems that confront society by providing a broad, basic understanding of how physical, "
+   },
+   {
+    "control_number": "36377",
+    "pages": [
+     390
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 390] (Academic Plan E036377E) This certificate is designed to prepare students for entry- level courses in the Health & Kinesiology fields. These three courses help students develop knowledge and of nutri- tional "
+   },
+   {
+    "control_number": "36378",
+    "pages": [
+     392
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 392] (Academic Plan E036378E) The Workplace Skills Certificate of Completion is designed to prepare students for entry-level office and administra- tive support in a variety of job positions, including general of"
+   },
+   {
+    "control_number": "36534",
+    "pages": [
+     40
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 40] Academic Resources/Programs 36 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 First-Year Students: U.S. high school graduate with a 3.2 unweighted GPA (grades 9-12), and eligibility for ENGL C1000. N"
+   },
+   {
+    "control_number": "37391",
+    "pages": [
+     390,
+     391
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 390] (Academic Plan E037391E) This certificate is designed to prepare students for entry- level courses in the Health, Kinesiology, and Nursing fields. These two courses help students develop knowledge of CPR te"
+   },
+   {
+    "control_number": "37510",
+    "pages": [
+     386,
+     387
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 386] (Academic Plan E037510E) This certificate is designed to prepare students for entry- level positions in the Automotive industry and, upon suc- cessful completion, satisty the pre-requisite to enter into the A"
+   },
+   {
+    "control_number": "37923",
+    "pages": [
+     258,
+     259,
+     260,
+     261
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] (Academic Plan E037923H) Students completing the Associate in Science in Biology for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as dete"
+   },
+   {
+    "control_number": "37924",
+    "pages": [
+     259,
+     260,
+     261
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 259] Life Sciences Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 255 Students completing the Associate in Science in Pub- lic Health for Transfer Degree will have satisfied the lower division "
+   },
+   {
+    "control_number": "37956",
+    "pages": [
+     143,
+     144,
+     145
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 143] (Academic Plan E037956C) The Chemistry Technician program prepares individuals to become chemical technicians. The program is highly hands-on, promotes teamwork, and trains students with analytical, practic"
+   },
+   {
+    "control_number": "37965",
+    "pages": [
+     289,
+     290,
+     291,
+     292
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.947,
+    "opens": "[page 289] Music Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 285 FOLLOWING COURSES): 2-3 MUSIC 161 Introduction to Music Technology ...........3 MUSIC 165 Introduction to Recording Arts .........."
+   },
+   {
+    "control_number": "37969",
+    "pages": [
+     219
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 219] (Academic Plan E037969C) The American Sign Language Interpreter Education Pro- gram (IEP) degree prepares students for a career work- ing as an entry level sign language interpreter for people who are Deaf an"
+   },
+   {
+    "control_number": "38093",
+    "pages": [
+     311,
+     312,
+     313
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 311] • Physics 2.0 for Transfer Associate Degree Program Associate in Science in Physics 2.0 for Transfer (Academic Plan E046348H) Students completing the Associate in Science in Physics 2.0 for Transfer Degree w"
+   },
+   {
+    "control_number": "38159",
+    "pages": [
+     69,
+     70,
+     71,
+     72
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] (Academic Plan E038159D) This certificate program is designed for those students seeking to gain a broad law-based perspective in their Administration of Justice studies. Program Learning Outcomes: Upon succe"
+   },
+   {
+    "control_number": "38163",
+    "pages": [
+     315,
+     316,
+     317,
+     318
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 315] (Academic Plan E038163D) The Addiction Studies Program offers a Certificate of Achievement for a Substance Abuse Assessor Certificate. This certificate provides academic preparation and field- work experien"
+   },
+   {
+    "control_number": "38166",
+    "pages": [
+     374
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 374] (Academic Plan E038166D) This certificate provides the student with the skills to enter the educational, health, recreational, or social service industry as a Creative Theatre Specialist or to continue on t"
+   },
+   {
+    "control_number": "38168",
+    "pages": [
+     288,
+     289,
+     290,
+     291
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 0.949,
+    "opens": "[page 288] Music Department 284 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 • Music • Music for Transfer Certificates of Achievement Commercial Music: Jazz Studies (Academic Plan E038169D) The Certificate of A"
+   },
+   {
+    "control_number": "38169",
+    "pages": [
+     288,
+     289,
+     290,
+     291
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 288] (Academic Plan E038169D) The Certificate of Achievement in Jazz Studies provides the student with career preparation for entry-level positions in the growing fields of jazz studies. Students gain requisite "
+   },
+   {
+    "control_number": "38170",
+    "pages": [
+     372,
+     373,
+     374,
+     375
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 372] (Academic Plan E038170D) Students completing this certificate acquire the appli- cable design and technical skills to pursue entry-level positions in entertainment costuming, including: The- atre, dance, them"
+   },
+   {
+    "control_number": "38205",
+    "pages": [
+     289,
+     290,
+     291,
+     292
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 289] Music Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 285 FOLLOWING COURSES): 2-3 MUSIC 161 Introduction to Music Technology ...........3 MUSIC 165 Introduction to Recording Arts .........."
+   },
+   {
+    "control_number": "38206",
+    "pages": [
+     288,
+     289,
+     290,
+     291
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 288] Music Department 284 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 • Music • Music for Transfer Certificates of Achievement Commercial Music: Jazz Studies (Academic Plan E038169D) The Certificate of A"
+   },
+   {
+    "control_number": "38234",
+    "pages": [
+     173
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 173] (Academic Plan E038234D) The Business Information Worker II (BIW II) Certificate of Achievement is designed to prepare students for mid- level office and administrative support in a variety of job positions,"
+   },
+   {
+    "control_number": "38317",
+    "pages": [
+     390
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 390] Career and Continuing Education Department 386 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 SUBJECT & NO. COURSE UNITS VOC ED 429CE Technical Skills Training for Patient Transporters .............."
+   },
+   {
+    "control_number": "38333",
+    "pages": [
+     127,
+     128
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] (Academic Plan E038333D) This program is designed to give the student essential knowledge of the skills necessary to manage the business aspects of law office operations, together with a funda- mental unders"
+   },
+   {
+    "control_number": "38334",
+    "pages": [
+     128
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] (Academic Plan E038334D) The International Law and Public Policy Administration Certificate of Achievement provides the student essential knowledge of the skills necessary to manage the business aspects of "
+   },
+   {
+    "control_number": "38336",
+    "pages": [
+     143,
+     144,
+     145
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 143] (Academic Plan E038336D) The Chemistry Technician program prepares individuals to become chemistry technicians. The program is highly hands-on, promotes teamwork, and trains students with analytical, practi"
+   },
+   {
+    "control_number": "38337",
+    "pages": [
+     198,
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 198] Engineering and Technologies Department 194 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 ENG GEN 225* Digital Circuit Analysis ..........................3 ENG GEN 231* Dynamics ......................"
+   },
+   {
+    "control_number": "38373",
+    "pages": [
+     373,
+     374,
+     375,
+     376
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 373] Theater Arts Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 369 TECTHTR 345 Costume Practicum ..............................2 OR TECTHTR 346 Lighting Practicum ............................."
+   },
+   {
+    "control_number": "38374",
+    "pages": [
+     82
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] (Academic Plan E038374D) Certified Phlebotomy Technicians (CPT) and Limited Phle- botomy Technicians (LPT) are allied health profession- als who perform skin puncture and venipuncture blood collection in a la"
+   },
+   {
+    "control_number": "38427",
+    "pages": [
+     320,
+     321,
+     322,
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 320] Public Safety Affiliation Department 316 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Public Safety Affiliation Department CORPORATE CENTER 201 B • (323) 267-3757 The Public Safety Affiliation Depar"
+   },
+   {
+    "control_number": "38507",
+    "pages": [
+     196,
+     197,
+     198,
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 196] (Academic Plan E038507D) The IT Technician Pathway: Stage I Computer Retail Sales and Support Certificate of Achievement is the first stage of the statewide IT Technician pathway and prepares stu- dents to "
+   },
+   {
+    "control_number": "38704",
+    "pages": [
+     235,
+     236,
+     237,
+     238
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 235] Kinesiology Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 231 Kinesiology Athletics Coach The East Los Angeles College Kinesiology Athletics Coach Skills Certificate Program will provide "
+   },
+   {
+    "control_number": "38778",
+    "pages": [
+     174,
+     175
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 174] (Academic Plan E038778D) The Industry Safety Standards Certificate of Achievement is designed to provide students with the safety fundamen- tal skills that will directly impact their existing and future work"
+   },
+   {
+    "control_number": "39523",
+    "pages": [
+     128
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] (Academic Plan E039523D) This program is an interdisciplinary program designed to increase students’ understanding of the knowledge and skills needed in the legal industry and law-related fields. Upon compl"
+   },
+   {
+    "control_number": "39601",
+    "pages": [
+     322
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] (Academic Plan E039601D) This program meets the minimum training requirements established by California State Fire Marshal’s Office for individuals entering a career in law enforcement. Program Learning Outc"
+   },
+   {
+    "control_number": "39608",
+    "pages": [
+     322,
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] Public Safety Affiliation Department 318 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Fire Academy Training (Academic Plan E039601D) This program meets the minimum training requirements established "
+   },
+   {
+    "control_number": "39649",
+    "pages": [
+     322,
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] (Academic Plan E039649D) This program meets the minimum training requirements established by the California Standards and Training for Corrections. Program Learning Outcomes: Upon successful completion of th"
+   },
+   {
+    "control_number": "39711",
+    "pages": [
+     321,
+     322,
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 321] (Academic Plan E039711D) This program meets the minimum training requirements established by the California Standards and Training for Corrections. Program Learning Outcomes: Upon successful completion of th"
+   },
+   {
+    "control_number": "39795",
+    "pages": [
+     195,
+     196,
+     197,
+     198
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 195] (Academic Plan E039795D) The Advanced Manufacturing Engineering Technician pro- gram is designed to train the students and the workforce in high growth and high demand technologies such as; Additive Manufact"
+   },
+   {
+    "control_number": "39796",
+    "pages": [
+     77,
+     78
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] (Academic Plan E039796D) Administrative Medical Assistant is a front-office profes- sional who performs the clerical work in doctors’ and hos- pital offices. These professionals are responsible for mul- tiple t"
+   },
+   {
+    "control_number": "39801",
+    "pages": [
+     198,
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.545,
+    "opens": "[page 198] Engineering and Technologies Department 194 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 ENG GEN 225* Digital Circuit Analysis ..........................3 ENG GEN 231* Dynamics ......................"
+   },
+   {
+    "control_number": "39823",
+    "pages": [
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 199] (Academic Plan E039823C) The IT (Information Technology) Technician AS Degree is the final stage of the statewide IT Technician pathway and equips students with the advanced IT skills required of an IT Tech"
+   },
+   {
+    "control_number": "39824",
+    "pages": [
+     197,
+     198,
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 197] (Academic Plan E039824D) The IT (Information Technology) Technician Certificate of Achievement is the third stage of the statewide IT Techni- cian pathway and equips students with the advanced IT skills requ"
+   },
+   {
+    "control_number": "39881",
+    "pages": [
+     196,
+     197,
+     198,
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 196] (Academic Plan E039881D) The Help Desk User Support Certificate of Achievement is the second stage of the statewide IT Technician pathway and prepares students to further develop their IT Tech- nician Skills"
+   },
+   {
+    "control_number": "39970",
+    "pages": [
+     108,
+     109
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] (Academic Plan E039970D) The Museum Studies Program is aimed at educating, training, and exposing students to diverse careers within museums of all types, and to creating career pipelines through academic s"
+   },
+   {
+    "control_number": "40042",
+    "pages": [
+     198,
+     199
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.727,
+    "opens": "[page 198] (Academic Plan E040042C) The Engineering Technician: Advanced Manufacturing program is designed to train the students and the work- force in high-growth and high-demand technologies such as; Additive Manufac"
+   },
+   {
+    "control_number": "40598",
+    "pages": [
+     386,
+     387
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 386] (Academic Plan E040598E) This certificate is designed to prepare students for entry- level courses in the Allied Health and Health Occupation departments. These three courses help students develop knowledge "
+   },
+   {
+    "control_number": "40599",
+    "pages": [
+     387
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 387] (Academic Plan E040599E) This certificate is designed to prepare students for entry- level courses in the Fire Technology program. These five courses help students develop knowledge of lifesaving skills thro"
+   },
+   {
+    "control_number": "40601",
+    "pages": [
+     391
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 391] (Academic Plan E040601E) This certificate is designed to prepare students for entry- level courses in the Allied Health and Health Occupation departments. These four courses help students develop knowledge o"
+   },
+   {
+    "control_number": "40602",
+    "pages": [
+     391
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 391] (Academic Plan E040602E) This certificate is designed to prepare students for entry-level courses in the Kinesiology and Allied Health departments. These four courses help students develop knowledge of life"
+   },
+   {
+    "control_number": "40637",
+    "pages": [
+     38
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 38] Academic Resources/Programs 34 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 SOC 012 Marriage and Family Life .......................3 SOC 013 Society and Personality .........................3 SOC 014"
+   },
+   {
+    "control_number": "40898",
+    "pages": [
+     128
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 128] Business Administration Department 124 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Upon successful completion of this program, students will be able to: • Exhibit proficiency in core competencies, "
+   },
+   {
+    "control_number": "40899",
+    "pages": [
+     78
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] (Academic Plan E040899D) A Clinical Medical Assistant is a medical support profes- sional that performs a variety of tasks to assist physicians in providing patient care, while ensuring that clinics and hospi"
+   },
+   {
+    "control_number": "41097",
+    "pages": [
+     130,
+     131,
+     132,
+     133
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Business Administration Department 126 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 University system, although not to a particular campus or major. Students can use the website ADT Search by CSU C"
+   },
+   {
+    "control_number": "41132",
+    "pages": [
+     71,
+     72
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] (Academic Plan E041132C) The Associate of Science in Forensic Crime Scene Inves- tigation, offered by the Administration of Justice Depart- ment, is intended for students who are interested in pur- suing a care"
+   },
+   {
+    "control_number": "41139",
+    "pages": [
+     321,
+     322,
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 321] (Academic Plan E041139D) This program meets the minimum training requirements established by California Standards and Training for Corrections. Program Learning Outcomes: Upon successful completion of this "
+   },
+   {
+    "control_number": "41218",
+    "pages": [
+     257
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] (Academic Plan E041218D) The Health Sciences Certificate, offered by the Life Sci- ences Department, is intended for students planning to apply to accredited nursing schools and/or seeking employment as a nu"
+   },
+   {
+    "control_number": "41231",
+    "pages": [
+     92,
+     93,
+     94,
+     95
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 92] (Academic Plan E041231H) Students completing the Associate in Science in Environ- mental Science for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar "
+   },
+   {
+    "control_number": "42013",
+    "pages": [
+     392
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 392] (Academic Plan E042013F) The Certificate of Competency in English as a Second Lan- guage Academic Bridge prepares second language stu- dents to transition to college credit and degree applica- ble courses and "
+   },
+   {
+    "control_number": "42014",
+    "pages": [
+     392
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 392] (Academic Plan E042014F) This Certificate of Competency in English for Citizenship enhances the English language skills of limited-English speaking students while preparing them for the United States Natura"
+   },
+   {
+    "control_number": "42017",
+    "pages": [
+     393
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 393] (Academic Plan E042017F) The Certificate of Competency in High School Equivalency Test Preparation prepares students to pass subject tests in reading, writing, mathematics, sciences, and social stud- ies in "
+   },
+   {
+    "control_number": "42065",
+    "pages": [
+     389
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 389] (Academic Plan E042065E) The Healthcare Professions Preparations Certificate of Completion program provides students with an overview and job readiness skills for healthcare careers. Students explore health"
+   },
+   {
+    "control_number": "42174",
+    "pages": [
+     353,
+     354,
+     355,
+     356
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 353] (Academic Plan E042174D) The Pathway to Law School certificate of achievement enhances a student’s academic preparation for law school. A law school accredited by the American Bar Association will typically"
+   },
+   {
+    "control_number": "42672",
+    "pages": [
+     167,
+     168
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] (Academic Plan E042672G) Students completing the Associate in Arts in Communica- tion Studies for Transfer Degree 2.0 will have satisfied the lower division major preparation for bachelor’s degrees in simila"
+   },
+   {
+    "control_number": "43039",
+    "pages": [
+     146,
+     147,
+     148
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 146] (Academic Plan E043039C) Central American Studies at East Los Angeles College is an interdisciplinary academic program which aims to expand students’ understanding and appreciation of Central American lives"
+   },
+   {
+    "control_number": "43152",
+    "pages": [
+     390
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 390] (Academic Plan E043152E) This program examines makeup design and application for the fashion and entertainment industries. Students create a makeup portfolio with their makeup designs and brands. Learn abou"
+   },
+   {
+    "control_number": "43632",
+    "pages": [
+     358,
+     359,
+     360
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 358] Social Sciences Department 354 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 to find CSU campuses that accept ADT degrees as being similar to their bachelor’s degree majors: https://www. calstate.ed"
+   },
+   {
+    "control_number": "43634",
+    "pages": [
+     155,
+     156
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] Child, Family, and Education Studies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 151 SUBJECT & NO. COURSE UNITS CH DEV 001 Child Growth and Development .............3 CH DEV 002 Early Chi"
+   },
+   {
+    "control_number": "43649",
+    "pages": [
+     133
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] (Academic Plan E043649C) The Paralegal Program is designed to prepare the student to assist attorneys and legal professionals in all phases of legal work. The program also equips students with the knowledge"
+   },
+   {
+    "control_number": "43725",
+    "pages": [
+     238,
+     239,
+     240,
+     241
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 238] Kinesiology Department 234 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 COMPLETE FOUR UNITS FROM ANY ACTIVITY COURSES 4 KIN (any) KIN ATH 502 Intercollegiate Athletics - Badminton ......4 KIN ATH 50"
+   },
+   {
+    "control_number": "44329",
+    "pages": [
+     371,
+     372,
+     373,
+     374
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 371] Theater Arts Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 367 TECTHTR 351 Applied Makeup Design .......................2 TECTHTR 355 Makeup Practicum ...............................2 To"
+   },
+   {
+    "control_number": "44368",
+    "pages": [
+     155
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 155] (Academic Plan E044368D) This certificate of achievement is for students who aspire to specialize in the standardized assessment tools used in early childhood education programs. This certificate is designe"
+   },
+   {
+    "control_number": "44375",
+    "pages": [
+     127
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 127] (Academic Plan E044375D) The Data Analytics Certificate of Achievement at ELAC offers an immersive educational experience, equipping students with the necessary skills in data analytics to transform raw dat"
+   },
+   {
+    "control_number": "44539",
+    "pages": [
+     156,
+     157,
+     158
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] (Academic Plan E044539D) This certificate of achievement is designed for Early Child- hood Education students wanting to enhance their under- standing of equity, inclusion, access and diversity. It will prepa"
+   },
+   {
+    "control_number": "44540",
+    "pages": [
+     274
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 274] (Academic Plan E044540D) This is an apprenticeship certificate program that will focus on further preparing students entering careers in animation, visual effects (VFX) and other entertain- ment technologies"
+   },
+   {
+    "control_number": "44541",
+    "pages": [
+     372,
+     373,
+     374,
+     375
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 372] Theater Arts Department 368 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 on building competencies for employment including: camera acting techniques, audition preparation, social media branding, c"
+   },
+   {
+    "control_number": "44595",
+    "pages": [
+     241,
+     242
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 241] Kinesiology Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 237 KIN 336-2* Zumba Fitness II ....................................1 KIN 339-1 Spin & Sculpt I .................................."
+   },
+   {
+    "control_number": "44624",
+    "pages": [
+     275,
+     276,
+     277,
+     278
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 275] (Academic Plan E044624D) Students earning the Certificate of Achievement in Digital Film Production gain hands-on experience for entry-level positions across the spectrum of film, television, video, broadca"
+   },
+   {
+    "control_number": "44840",
+    "pages": [
+     128,
+     129,
+     130,
+     131
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] Business Administration Department 124 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Upon successful completion of this program, students will be able to: • Exhibit proficiency in core competencies, "
+   },
+   {
+    "control_number": "44913",
+    "pages": [
+     393
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 393] (Academic Plan E044913F) This Certificate of Competency in English through Cultural Competency is designed to enhance the English language skills of limited-English speaking students while introduc- ing them"
+   },
+   {
+    "control_number": "45028",
+    "pages": [
+     64,
+     65,
+     66,
+     67
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.565,
+    "opens": "[page 64] General Studies Degrees 60 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 PHOTO 122 Photography and Visual Media in Modern Culture ............................................3 PHOTO 123 Photo-Discover"
+   },
+   {
+    "control_number": "45051",
+    "pages": [
+     219,
+     220
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 219] (Academic Plan E045051C) This program is designed for students interested in con- tinuing their studies in Japanese at the university level, as well as those pursuing careers in education, interna- tional rel"
+   },
+   {
+    "control_number": "45406",
+    "pages": [
+     237,
+     238,
+     239
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 237] (Academic Plan E045406D) The Yoga Teacher Training Program (200-hour certifica- tion) at East Los Angeles College is designed to meet the standards set by Yoga Alliance, enabling graduates to register as cer"
+   },
+   {
+    "control_number": "45413",
+    "pages": [
+     157,
+     158,
+     159,
+     160
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 157] (Academic Plan E045413D) This certificate of achievement is designed for Early Child- hood Education students wanting to enhance their under- standing of equity, inclusion, access and diversity. It will prepa"
+   },
+   {
+    "control_number": "45414",
+    "pages": [
+     236,
+     237,
+     238,
+     239
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 236] (Academic Plan E045414D) The Recreation Specialist Certificate of Achievement pro- gram prepares students with essential knowledge and practical skills to embark on entry-level careers in the dynamic recreat"
+   },
+   {
+    "control_number": "45491",
+    "pages": [
+     274
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 274] (Academic Plan E045491D) This is a program certificate that serves as a continua- tion for Animation Level I, providing an emphasis in both 2D and 3D character animation. This program is recom- mended for stu"
+   },
+   {
+    "control_number": "45587",
+    "pages": [
+     275,
+     276,
+     277,
+     278
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 275] (Academic Plan E045587D) This is a certificate program that serves as a continuation for Animation Level I, providing an emphasis in Entertain- ment technology and Visual Effects. This program is rec- ommende"
+   },
+   {
+    "control_number": "45588",
+    "pages": [
+     277,
+     278,
+     279
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 277] (Academic Plan E045588D) This is a certificate program that serves as a continua- tion for Animation Level I, providing an emphasis in Visual Development. This program is recommended for students with a desi"
+   },
+   {
+    "control_number": "45589",
+    "pages": [
+     353,
+     354
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 353] (Academic Plan E045589D) The Certificate of Achievement in Social Work and Human Services is a certificate offered by the Social Science Department. The proposed Certificate of Achievement in Social Work an"
+   },
+   {
+    "control_number": "45591",
+    "pages": [
+     70,
+     71
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] (Academic Plan E045591D) (with Public Safety Affiliation Department) This certificate program meets the minimum training requirements extablished by the US Forest Service in the wildland firefighting sector a"
+   },
+   {
+    "control_number": "45602",
+    "pages": [
+     289,
+     290,
+     291
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 289] (Academic Plan E045602D) The Certificate of Achievement in Recording and Sound Design is designed to assist students who are pursuing careers in the field of Recording Arts and Sound Design. Designed and ma"
+   },
+   {
+    "control_number": "45715",
+    "pages": [
+     322
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] (Academic Plan E045715D) This program meets the minimum training requirements established by the California Emergency Medical Services Authority. This Certificate is designed to help prepare stu- dents to be"
+   },
+   {
+    "control_number": "45716",
+    "pages": [
+     321,
+     322,
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 321] (Academic Plan E045716D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers. This Certificate is designed to help prepare st"
+   },
+   {
+    "control_number": "45717",
+    "pages": [
+     320,
+     321,
+     322
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 320] (Academic Plan E045717D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers to help prepare students for the challenges face"
+   },
+   {
+    "control_number": "45718",
+    "pages": [
+     322,
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] (Academic Plan E045718D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers. This Certificate is designed to help prepare st"
+   },
+   {
+    "control_number": "45752",
+    "pages": [
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 323] (Academic Plan E045752D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers. This Certificate is designed to help prepare st"
+   },
+   {
+    "control_number": "45753",
+    "pages": [
+     323
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 323] (Academic Plan E045753D) This program meets the minimum training requirements established by the California Standards and Training for Public Safety Officers or those officers engaged in traffic investigati"
+   },
+   {
+    "control_number": "45935",
+    "pages": [
+     130,
+     131
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Business Administration Department 126 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 University system, although not to a particular campus or major. Students can use the website ADT Search by CSU C"
+   },
+   {
+    "control_number": "45986",
+    "pages": [
+     235,
+     236,
+     237,
+     238
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 235] The Sports Medicine Skills Certificate provides an intro- ductory education and training for individuals pursu- ing careers in the dynamic field of sports health and injury management. This Skills Certificate"
+   },
+   {
+    "control_number": "45987",
+    "pages": [
+     239,
+     240,
+     241,
+     242
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 239] Kinesiology Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 235 • Apply outdoor recreation techniques and principles to facilitate enjoyable and sustainable outdoor expe- riences, emphasizi"
+   },
+   {
+    "control_number": "46264",
+    "pages": [
+     386
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 386] (Academic Plan E046264E) The AI Essentials for College and Career Success noncredit certificate program is designed to introduce learners to the foundational concepts of artificial intelligence (AI) and its"
+   },
+   {
+    "control_number": "46328",
+    "pages": [
+     69,
+     70,
+     71
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] (Academic Plan E046328D) (with Public Safety Affiliation Department) This program meets the minimum training requirements established by the California Emergency Medical Services Authority. This Certificate "
+   },
+   {
+    "control_number": "46343",
+    "pages": [
+     265
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 265] (Academic Plan E046343H) Students completing the Associate in Science in Math- ematics 2.0 for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar major"
+   },
+   {
+    "control_number": "46348",
+    "pages": [
+     311,
+     312,
+     313
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 311] (Academic Plan E046348H) Students completing the Associate in Science in Physics 2.0 for Transfer Degree will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as "
+   },
+   {
+    "control_number": "46461",
+    "pages": [
+     277,
+     278,
+     279,
+     280
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 277] Media Arts and Technologies Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 273 PHOTO 015* Fundamentals of Portraiture ..................3 PHOTO 022* Creative Photo-Vision ..................."
+   }
+  ],
+  "page_checks": {
+   "read": 3,
+   "own_page": 2,
+   "no_own_page": 1,
+   "not_printed": 0
+  },
+  "unproven": [
+   "24129",
+   "36534",
+   "38317",
+   "39801",
+   "40637",
+   "40898"
+  ]
+ },
+ "loads": 2,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 202.6,
+ "found": 134,
+ "by_method": {
+  "no_closed_list": 87,
+  "not_found": 13,
+  "pdf_pages": 134
+ },
+ "shared_pages": {
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102": [
+   "02430",
+   "21157"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=70": [
+   "13340",
+   "45591"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69": [
+   "13343",
+   "38159",
+   "46328"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373": [
+   "14869",
+   "38373"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197": [
+   "21174",
+   "39824"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=387": [
+   "24040",
+   "40599"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=167": [
+   "32154",
+   "42672"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78": [
+   "33915",
+   "40899"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353": [
+   "35087",
+   "42174",
+   "45589"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257": [
+   "35309",
+   "41218"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130": [
+   "35397",
+   "41097",
+   "45935"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391": [
+   "35757",
+   "40601",
+   "40602"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392": [
+   "35758",
+   "36378",
+   "42013",
+   "42014"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393": [
+   "35759",
+   "42017",
+   "44913"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390": [
+   "36377",
+   "37391",
+   "43152"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386": [
+   "37510",
+   "40598",
+   "46264"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143": [
+   "37956",
+   "38336"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289": [
+   "37965",
+   "38205",
+   "45602"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219": [
+   "37969",
+   "45051"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311": [
+   "38093",
+   "46348"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288": [
+   "38168",
+   "38169",
+   "38206"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372": [
+   "38170",
+   "44541"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127": [
+   "38333",
+   "44375"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128": [
+   "38334",
+   "39523",
+   "44840"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198": [
+   "38337",
+   "40042"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320": [
+   "38427",
+   "45717"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196": [
+   "38507",
+   "39881"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235": [
+   "38704",
+   "45986"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322": [
+   "39601",
+   "39608",
+   "39649",
+   "45715",
+   "45718"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321": [
+   "39711",
+   "41139",
+   "45716"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155": [
+   "43634",
+   "44368"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=274": [
+   "44540",
+   "45491"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275": [
+   "44624",
+   "45587"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277": [
+   "45588",
+   "46461"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=323": [
+   "45752",
+   "45753"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "24129",
+   "title": "Basic Skills Mathematics Preparation Certificate of Completion",
+   "award": null,
+   "near_miss": {
+    "pages": [
+     31
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36534",
+   "title": "Biotechnology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     40
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38090",
+   "title": "Fitness Specialist Certification",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
+    "coverage": 0.222
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38165",
+   "title": "Cloud Computing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=124",
+    "coverage": 0.25
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38317",
+   "title": "Introduction to Patient Transporting",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     390
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38332",
+   "title": "Geo-Spatial Engineering and Technologies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=25",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38340",
+   "title": "Custodial Technician Training",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "39800",
+   "title": "Engineering Technology: Mechanical",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39801",
+   "title": "Engineering Technology: Industrial",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "pages": [
+     198,
+     199
+    ],
+    "coverage": 0.545,
+    "why": "the page prints neither the control number nor the title and award"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "40637",
+   "title": "Accounting Clerk/Bookkeeping",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     38
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40898",
+   "title": "Global Business Relations",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     128
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44374",
+   "title": "Data Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127",
+    "coverage": 0.333
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45540",
+   "title": "Respiratory Therapy",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=346",
+    "coverage": 0.375
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 9,
+  "0.8-1.0": 15,
+  "1.0": 110
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/east_los_angeles",
+  "kept": 132,
+  "kept_moved": 0,
+  "programs": 2,
+  "list": [
+   {
+    "control_number": "33681",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=263",
+    "coverage": 1.0,
+    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=263",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45051",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
+    "coverage": 1.0,
+    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "02430": {
+   "sha256": "576e1e232e0ff1a28970ae20def3471fd2c372e9b7153f0c6177881e1eac9eb2",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102"
+  },
+  "02456": {
+   "sha256": "5b488896aaeb6fc151db1b0c6f4512a41d6ffdac5fddd284a804746e15e1bacc",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=84"
+  },
+  "08252": {
+   "sha256": "337ad45ec84a8d95386bf4c147dfe04d37edd7463780d5f9c7c41700f1b3e3b3",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=103"
+  },
+  "13340": {
+   "sha256": "05d539991e512d3f01d816241f11fc4e50b4e0be238986d5fcc0628e701e0dc8",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=70"
+  },
+  "13341": {
+   "sha256": "203d85d08729151e2a77b723fc5d33ac30f927661f25229a353ea191e6237be0",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=68"
+  },
+  "13343": {
+   "sha256": "879a520a739180416765ba5971186daca731427f7568abb516000d2ad6e21a09",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69"
+  },
+  "14869": {
+   "sha256": "64f1cbf96aa2cfb41bba5d07745c906e24b7c4fd9fa6fc2405e38c508b9a55aa",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373"
+  },
+  "21157": {
+   "sha256": "f53165c3b3dd4216cf0eed5f34086327a4cd2e2ff9658f846867cb02d1fd2bbb",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102"
+  },
+  "21174": {
+   "sha256": "7c4ba0666df7adce061e3cac42f5e873585db0b68d4dd9a28673a940f5345d22",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197"
+  },
+  "24040": {
+   "sha256": "c609bd32d43fbf28cc09a7a9739056db5f968c38b4ae5d83d3dac93f1f511402",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=387"
+  },
+  "31017": {
+   "sha256": "24a7cce90199c3282cdac962821270e0effb0bba0d8fe96ce1cdd19687928350",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=240"
+  },
+  "32154": {
+   "sha256": "233a24a10acde286865af4095f3ac0f1dab84695eea90a0dd1fdb3bdf9a738e2",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=167"
+  },
+  "32170": {
+   "sha256": "f4b73f8bcc28706c6a7648f4c1cac71a8637119d023fa83b7486ea010cfc7a71",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=359"
+  },
+  "32193": {
+   "sha256": "e581bf166da77ed377390a89a5dd63e6280f5a75f1653385befc17ee3e78bc06",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=177"
+  },
+  "32194": {
+   "sha256": "b83b756fac6ebb904ce45b860d096338f472a9ccf4720f9b78d5d05584fa9bb8",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=175"
+  },
+  "32902": {
+   "sha256": "87d631a35ad4f4b4c0d13b8aab6e945205eb4da39fe71f3145eca7461f31ce0d",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=72"
+  },
+  "32980": {
+   "sha256": "d685d2c49f1d1dc619f40a57bdc421b3d104c2624f52a744a92c997d36b9f4c8",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=231"
+  },
+  "33013": {
+   "sha256": "f466ce16e0270cb607b1ab8ea5f37efcb29750f5052b224bd829b5af578427a1",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=91"
+  },
+  "33382": {
+   "sha256": "02ae2dd4f2bc5270430e401912167f45bd962f0f4bd43ef4168dcb9914d0a30a",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=291"
+  },
+  "33641": {
+   "sha256": "eefcdc5e5a2f7069d4f26528b578af187d7ea19c64f838d380d9e4dfb68fc3bb",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=375"
+  },
+  "33681": {
+   "sha256": "3879318db25cb45fa3ff85355161e5c60c94c4844f1d7ab27a27180625c19b88",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=263"
+  },
+  "33915": {
+   "sha256": "d679eeb11c5d82edcb00c11ff694cfbc3a604b9073c433a6591f3a0349e55c15",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78"
+  },
+  "35087": {
+   "sha256": "1ee6a9f27b300dba4069bbb46929ddeb712a2b911ad4434c99e190a796022219",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353"
+  },
+  "35088": {
+   "sha256": "5138b2eaf659c9492511b7d54a0c55813aa4586484ccdfbafa9abf37badcb22b",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=93"
+  },
+  "35309": {
+   "sha256": "ce3c43c33be42e8f44b56c9ee86c57b3967e542f95843866e1fbbfb0746fce47",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257"
+  },
+  "35397": {
+   "sha256": "91d1a1e0f955779841af8738eca2639e13c8af68448b5d99bd6f974c032cee4e",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130"
+  },
+  "35720": {
+   "sha256": "8ec876e0c9c6668cd59ba5218fa85b537a8aed084d798d9c683a36252baa4d2c",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=161"
+  },
+  "35757": {
+   "sha256": "f097f661613a2ead003425c1dff06c26359e25f42ba17085b815ebda694f1e4f",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391"
+  },
+  "35758": {
+   "sha256": "1472c0c77f41e5bf20a7ef0cea3d3ba2d4e12e6175aa66d25cac2c347199f0ab",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392"
+  },
+  "35759": {
+   "sha256": "0edca63a903f902c6eeca19ed997a128b6bc0670df6d41a1cc7af87b2c349ec5",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393"
+  },
+  "35771": {
+   "sha256": "7c4eb7a971be3a0fa7f8e9aba8cb1ea021579cbf62d5e6c2dfed9825ea503eb4",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=176"
+  },
+  "35798": {
+   "sha256": "8e82361189eac1aef5d02bf461db0f0c972edd61edc88b085cb50dc781ae3a6c",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=172"
+  },
+  "35888": {
+   "sha256": "d1f9083b1d0dc492e689491c69a90a96ef99dc2e2c783d99b8c9897a5a69ac4b",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=360"
+  },
+  "35902": {
+   "sha256": "4eeb7dcdf9dabdbf07221d809e82b54aeee15c84c1a077ce317f5285ede5e3ff",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=81"
+  },
+  "36177": {
+   "sha256": "70ad5c4061b5b077a3d46130cba58c4bc9cc5cfdef537a8637a7e40a8b56f3b4",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=94"
+  },
+  "36345": {
+   "sha256": "45ef8741fa252240405dcad0462a28b3b6600ced67f976cbeb614a5220da0869",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=354"
+  },
+  "36377": {
+   "sha256": "43deb6376919f9ba6bfb2688d735caa00803a755bebe354173b20c63df20a787",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390"
+  },
+  "36378": {
+   "sha256": "03510b9c17ff2cf30d6c0ddd0d201b074e1766dd96a14bdbbe89abf37686add0",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392"
+  },
+  "37391": {
+   "sha256": "cfb79f18a10a93c5f6e7c1990fc0a5d6c3d4770c390473cbb79c73d946eff3ed",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390"
+  },
+  "37510": {
+   "sha256": "10d31b9d9499795525e3701dac5a34565242d2f153ccc7717fffbb4bf7425833",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386"
+  },
+  "37923": {
+   "sha256": "63470c376d4a48a76f958df04bdae961180e5047dcc8beb4935613431e4b3d8b",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=258"
+  },
+  "37924": {
+   "sha256": "b1ccfcd944bca5981a19fb2f704b7e57ae0d037859282a1e5a9f0077278a49c7",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=259"
+  },
+  "37956": {
+   "sha256": "6f9578cafc5446570920d79abc2b59c74e5dffff3d3857e5689b2cd1aa263719",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143"
+  },
+  "37965": {
+   "sha256": "c674bfc27043c7577bce34507c3f40e47cded418c78faad3e570e2eb453316a2",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289"
+  },
+  "37969": {
+   "sha256": "46623c6f571ef87567d0cdf29d79d10bd37d351e2f1b001e5ade13910b9b055d",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219"
+  },
+  "38093": {
+   "sha256": "3fa77698eefb906db85766ac42ce2796d1b46789b4e2f614ab511ef854a5a672",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311"
+  },
+  "38159": {
+   "sha256": "5439a0b60744db98b58c90dacea19c689ce7b761c9aaf6dc5a58d82033e8a77c",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69"
+  },
+  "38163": {
+   "sha256": "9ce5c4a58351c4f1cb22d2f270ce346c7aa2a787a1f7a6339eeb5c19c672ad6e",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=315"
+  },
+  "38166": {
+   "sha256": "ae2d771cc7143f9ae947266f43013b9ef827571d3b8646f94411299098536143",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=374"
+  },
+  "38168": {
+   "sha256": "497bc885ef47526ff9d26cdf8ede5305ce6c206045953d7193a9353dc0e003bb",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288"
+  },
+  "38169": {
+   "sha256": "6d89c7514a96cb2fff6b8122bfdaefdd8d9d6c3515cc458cf5749d279ece7036",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288"
+  },
+  "38170": {
+   "sha256": "1276109250cb464274688c2b192b5032824064e22c26f71ea4201cb834e92130",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372"
+  },
+  "38205": {
+   "sha256": "c674bfc27043c7577bce34507c3f40e47cded418c78faad3e570e2eb453316a2",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289"
+  },
+  "38206": {
+   "sha256": "497bc885ef47526ff9d26cdf8ede5305ce6c206045953d7193a9353dc0e003bb",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288"
+  },
+  "38234": {
+   "sha256": "2eea9d4bcf89446b431b5d8f8b6aac3822f177e11f67fdf168a58968f14b79be",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=173"
+  },
+  "38333": {
+   "sha256": "f583260b57bc0b400ef0241dc23dd2f965eefa5337ccef9d1028b3069777277e",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127"
+  },
+  "38334": {
+   "sha256": "ae64ae2c9c1507f1b314b9b7ddcd07afbd27754b3402d3f4ecb2b528558cd3f0",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128"
+  },
+  "38336": {
+   "sha256": "27cfc3ed8117487564a3981f869e1d5c0f62552f2a373378509289565eb94895",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=143"
+  },
+  "38337": {
+   "sha256": "4f3fd54b144c2d72d207f38d75d5931a03df6e2b2834542ca8c248a44938ef98",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198"
+  },
+  "38373": {
+   "sha256": "d74281fd0bc91d42e7be7d311753825fd6bf6b0b55c7bed374d87781034f81f4",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373"
+  },
+  "38374": {
+   "sha256": "ad130b21eb3d2ab14b57d4f2f6173f19b7ab3fd6e2949c93dc6c0e9b1326f610",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=82"
+  },
+  "38427": {
+   "sha256": "6521730a78df456cda6e6c52cf7d3e3b6a1d7e944a15aae1d0c6c266c898adf8",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320"
+  },
+  "38507": {
+   "sha256": "86c1c4fc396de0be13a9be8a1adfac5db52edb2dd26abef0b1287f42cf73eb4b",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196"
+  },
+  "38704": {
+   "sha256": "673eebf61091da7ccdd30354a6817e50b011dd6729d4569a360471a79286660d",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235"
+  },
+  "38778": {
+   "sha256": "59efb02a6f2988926909c4001f11f7eb61d14c20b7bd90a9977b89634e9b55ae",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=174"
+  },
+  "39523": {
+   "sha256": "ea1072f22309ca0ba3ac2c5d2c3334eb3f216aa0b2ddddab0baab092584710d2",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128"
+  },
+  "39601": {
+   "sha256": "267e0220fcb017f3bbabfbcc672e112ff8f19622aae13078a75df731950de21f",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322"
+  },
+  "39608": {
+   "sha256": "8c5188161ccab5b8b23b0370aa3e0947d865328ee7ee0f48b8e8c11bca72f85a",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322"
+  },
+  "39649": {
+   "sha256": "aea3a1889050420874f8765be200947eae76c2fc99272fa24670a9c81c03a720",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322"
+  },
+  "39711": {
+   "sha256": "ae7e0ff70e9e20570504235993e3e2b1baedf14597c8ed91dd8418cd8d70ba49",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321"
+  },
+  "39795": {
+   "sha256": "a5a42252a3c31d2914714b6951019a6cc2131043348a31158436a1fa142cab1d",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195"
+  },
+  "39796": {
+   "sha256": "db51c692b9c5fe5c1a4c7114cbe9c8a524a2b5dd3b4dfa31deddcb2189af4f43",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=77"
+  },
+  "39823": {
+   "sha256": "80cabd33395c81bae3f6fde1fda6932b639c23741ab96298e44c40c7dd05af19",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=199"
+  },
+  "39824": {
+   "sha256": "8e41899e7e8ba30947d71b0acbe31d39cdc896d255e13ee91d6b3b73735bcbfa",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=197"
+  },
+  "39881": {
+   "sha256": "fc5bfccb9bdc5f2310ad7b185e463e09da727f22f94948d98b70012621a7686e",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=196"
+  },
+  "39970": {
+   "sha256": "fb8eb6ece6d95310ff6acf59135c60f5c07dc498d8d55e270d69d3266f835390",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=108"
+  },
+  "40042": {
+   "sha256": "95a840fd8b2d3be470a4aaeadfd8571f1c5e1cf00ec57648cf9da85e606d99b9",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198"
+  },
+  "40598": {
+   "sha256": "aaac1ebfc1999e12298e011f67c9c35d0e5a989b493c3f38f60a2714b279b0f1",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386"
+  },
+  "40599": {
+   "sha256": "4acfb13b453b3cb7acdb7699ba9b9febe38ecd638417c7685dde568a7148bc55",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=387"
+  },
+  "40601": {
+   "sha256": "032782e38b90f97266aaa319553f82fc6633ef97543388ee2730961fb69d4679",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391"
+  },
+  "40602": {
+   "sha256": "3a4dda3515264b7651369ae4652dbe75ad7093dfb45fcae00b05870900b45c9b",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=391"
+  },
+  "40899": {
+   "sha256": "a1ea41df25d3b792ff0c54e73c46ef7970cfae999321b2ae0dad97c61cc87f59",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78"
+  },
+  "41097": {
+   "sha256": "1b5140c66b41afa53e800f485faa7039555daa9d07bf20ba5daa27a14e4e2d2d",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130"
+  },
+  "41132": {
+   "sha256": "8b732b7c3d81c46b428e8b42c4900c8cde16d07817bcb72723ff24e9e830c365",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=71"
+  },
+  "41139": {
+   "sha256": "c4adab0d4b6e1513df3b0879972a29f8a4daa4fde569655c0c4102f11ba70b6d",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321"
+  },
+  "41218": {
+   "sha256": "e1d990f6cfce82da2f27e62dc2a05b9cdbc59b1488753d1cfabf02310eb3e62f",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=257"
+  },
+  "41231": {
+   "sha256": "71176c316f69de9954cd4591d689b624552b96b0f02c4a5947fb32fe89cc016c",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=92"
+  },
+  "42013": {
+   "sha256": "41f004200425ebe3324060b729de0bbcc29d4232f7dd2074b40d51131bf5b102",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392"
+  },
+  "42014": {
+   "sha256": "169638a70befaf0fe62d8e36aad3803b2f498d6d75ac1ad491b519ba6977baea",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=392"
+  },
+  "42017": {
+   "sha256": "fc4f40f79b11f042dfb2725635ec27838a280b6d709d9755cec32b9e4f056036",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393"
+  },
+  "42065": {
+   "sha256": "55849db8d698dd01629261422ef42455be559ac94dca220b329a5a0951cdb1ad",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=389"
+  },
+  "42174": {
+   "sha256": "9d74deacbb196748a4e31b1c8fa693235c93fd263f98ac9b1ef7145bc174094c",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353"
+  },
+  "42672": {
+   "sha256": "6bfeed27600603178fa5b8f323ef7d7206eaf59dca65aa585d07c147c4fa00f3",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=167"
+  },
+  "43039": {
+   "sha256": "af0157140dc1898c13a8410f3c8d9edfe3c9d5926aad131d54e71e03563384d6",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=146"
+  },
+  "43152": {
+   "sha256": "3c8aa3e9ee8b79f71190e8b466851e145e9defc726493a853569ef8a72e943c2",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=390"
+  },
+  "43632": {
+   "sha256": "908aeafcc1428364c47c7b26ac7a9aba441ca6327e49087b8a99f931aa844750",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=358"
+  },
+  "43634": {
+   "sha256": "c4f9cbbacc20ea91f4b190038a571342a422274fb08e23ae20cdd207b6290e9b",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155"
+  },
+  "43649": {
+   "sha256": "252cee00eaf32a2d19bf48f2ef66abeb4e976d8542c1b1a13e328df57b28e2e3",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=133"
+  },
+  "43725": {
+   "sha256": "49be9102fa4274a0e2f3ae8be32eaa62b0e04d32cb87770c0c1fad414df5ceb7",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=238"
+  },
+  "44329": {
+   "sha256": "c4522542eb9a0b897ec24fca13d2f4d221ec7c9c388dce8e6a02318e7ff24263",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=371"
+  },
+  "44368": {
+   "sha256": "39814ab195c6c93d19b53a8fdacab95ace74e58822e98fde0a28e04ba2a09c78",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=155"
+  },
+  "44375": {
+   "sha256": "3c9ce75fc6ac2034a0d89e6f1abe8de8e5443fc221c75ac31d480d6e5baef1da",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127"
+  },
+  "44539": {
+   "sha256": "378ee60aae28d76adeafb3573029eeb05b3f2089c8d85598432293ace7f52539",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=156"
+  },
+  "44540": {
+   "sha256": "4f171e2fee356afd03265843efa40e489c7513159d79b40509d1b87c1804fb36",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=274"
+  },
+  "44541": {
+   "sha256": "142e6fd12ae2bbeb901296bd0a294847204a7f2ae811ab981c12dfd34464aa6a",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=372"
+  },
+  "44595": {
+   "sha256": "2acfe62b432d75e04790c87e550798d81b32341ed592a46f94aea98e19e39fae",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=241"
+  },
+  "44624": {
+   "sha256": "0ab2a753f97a500fd8423713b17a016e388804dfa601841fbc283c60f0128700",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275"
+  },
+  "44840": {
+   "sha256": "4a76348dcb70eac122528f20152d6701aab69985521cb1a11aa36789025cd721",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=128"
+  },
+  "44913": {
+   "sha256": "458d9fdf07b23302790baa749730821240ac2fe85d5f7cc56d09a53ed1d1211e",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=393"
+  },
+  "45028": {
+   "sha256": "aca38aaff314a2276631a42238293aeced5a90a67c7c0591d55641529aa8cb3b",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=64"
+  },
+  "45051": {
+   "sha256": "645ce65ecad9e924197aee8ee5cdd2e7ff358a819c2226763e936780a2634195",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219"
+  },
+  "45406": {
+   "sha256": "b25d08f71050facf6b8d13c5ce610941f565db430a2464415e39229283d27ff3",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=237"
+  },
+  "45413": {
+   "sha256": "0e69145ea93302efe9a9a439c7d4ac9ea45b6d29ec4c18ea43ecf8d2ac8a5226",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=157"
+  },
+  "45414": {
+   "sha256": "6e9f17f690e0795cf2e077714a04fde2e9b591a0888be64ca7afd243c9947836",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=236"
+  },
+  "45491": {
+   "sha256": "cfc0a62f37f6078ff49de2f00d1e629a3e6945a0549e36b36a7b581164694e6e",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=274"
+  },
+  "45587": {
+   "sha256": "5667c793cc7570293c3b0344aec08a5b6c086f54565bafa5c0d0c7fa2d0e2908",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=275"
+  },
+  "45588": {
+   "sha256": "18673b0e5e6ac1ff6b8d83219b74bd4cfab1aef9da16a510265855f553997fe1",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277"
+  },
+  "45589": {
+   "sha256": "d04f0d7c8e016e56003c7b5a1014cf34c912ccc2c46615da69d0ed9f9e197e87",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353"
+  },
+  "45591": {
+   "sha256": "f9ced0f094195f36fe5826b6487ea998f66baa1e9c726ffefcc15fc50ac814ac",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=70"
+  },
+  "45602": {
+   "sha256": "0fa9dd8acd378dfc166eb6065f387b05e828f7dbdb2723d1f7371da4f114ca40",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=289"
+  },
+  "45715": {
+   "sha256": "923310db7ca8da9bbf6535030b9cc457d8c07273f8aedbc0d74acb7638ef9a84",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322"
+  },
+  "45716": {
+   "sha256": "1f3d3abf4504934eab86e741d71aaced96e40fe9c9f03a560a5d4dcbdd2779aa",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=321"
+  },
+  "45717": {
+   "sha256": "92a036c7d23a7a0cf4547b892df6082dcaf17719823f52d70dcd0b29a303b2ca",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320"
+  },
+  "45718": {
+   "sha256": "3b850270750e8ac43796415ff05308cee993a457cbfeaaa46828cbd3d89aeecd",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=322"
+  },
+  "45752": {
+   "sha256": "ba923e56bd53730f100efdc39a9db030b6471a01ff3dc7500ee1a0cb39f582ca",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=323"
+  },
+  "45753": {
+   "sha256": "aaef2666223a1d6962976665b3d317e3bfc3fef769a59f1cd5c28fb3081e1c86",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=323"
+  },
+  "45935": {
+   "sha256": "e6094cc750257eb74a1e5d7d1ca9b8c62c12f215a55fd07a37fc69ed001e0c41",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130"
+  },
+  "45986": {
+   "sha256": "829a2f0c658537eda636c0483ba950fb8876207fdd8bec6429cd29223276b59a",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235"
+  },
+  "45987": {
+   "sha256": "02ca3f06ff3e722c49bea9512e8c050a0c0c95a3c129cae9bff640d8a5339a35",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=239"
+  },
+  "46264": {
+   "sha256": "d0c190bc3ed2ddd9d58c1bc23fd3b1b794e4d7aa3d4d105344cb9ed015f781f0",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=386"
+  },
+  "46328": {
+   "sha256": "d492f68418499cb2b31b8279f1fc6f19b00bb6ac6503be4f560356beab33d47b",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=69"
+  },
+  "46343": {
+   "sha256": "9bdee7a055ff4c98ca2c1f13b817e101f6eca82102dd9b7098ea2eac9d459a70",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265"
+  },
+  "46348": {
+   "sha256": "f5dda1697e10031ac88803d579098b843635bfc9249a26783863a8eab4e0cd23",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311"
+  },
+  "46461": {
+   "sha256": "07defe6d2b0adeae1acd088f6c533ad75acd5bed5050e1ad0997d43c301a1a68",
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=277"
+  }
+ },
+ "run": "44473641016"
+}
