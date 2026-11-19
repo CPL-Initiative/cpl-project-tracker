@@ -1,0 +1,1153 @@
+{
+ "college": "Modesto Junior College",
+ "catalog_url": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 199,
+ "with_closed_list": 196,
+ "started": "2026-11-19T13:51:22Z",
+ "elumen": {
+  "catalog": "2026-2027",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "adt",
+   "programs",
+   "bytype"
+  ],
+  "hub_programs": 213,
+  "program_pages_listed": 213,
+  "listing_failed": 0,
+  "program_pages": 213
+ },
+ "pages_read": 213,
+ "pages_listed": 213,
+ "pages_answered": 213,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 186,
+   "hits": 150,
+   "recall": 0.806,
+   "false": 0,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 2,
+   "false_matches": [
+    {
+     "control_number": "06683",
+     "title": "Respiratory Care",
+     "award": "A.S. Degree",
+     "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/respiratory-care-mjc-fall-2026",
+     "h1": "Respiratory Care"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "06683",
+     "title": "Respiratory Care",
+     "award": "A.S. Degree",
+     "page": "https://mjc.elumenapp.com/catalog/2026-2027/program/respiratory-care-mjc-fall-2026",
+     "h1": "Respiratory Care"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 3,
+  "by_result": {
+   "not_searched": 3
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "06692",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 150 of 186 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18763",
+    "title": "Computer Network Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 150 of 186 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32773",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 150 of 186 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 217,
+ "seconds": 899.9,
+ "found": 188,
+ "by_method": {
+  "no_closed_list": 3,
+  "not_found": 5,
+  "page_claimed": 3,
+  "sitemap_page": 188
+ },
+ "shared_pages": {
+  "https://mjc.elumenapp.com/catalog/2026-2027/program/communication-studies-for-transfer-degree-2-0-mjc-spring-2026": [
+   "30643",
+   "43164"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "08017",
+   "title": "Animal Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-science-mjc-fall-2025",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.458,
+    "body": 0.458,
+    "content": 0.458,
+    "net": 22,
+    "listed": 48,
+    "why": "coverage 0.46 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3617,
+     "content": 3617,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18378",
+   "title": "CSU General Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "18379",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35011",
+   "title": "Veterinary Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/applied-electrical-technology-mjc-spring-2026",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2897,
+     "content": 2897,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "44877",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "16280",
+   "title": "Small Animal Veterinary Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "33946",
+   "title": "Large Animal Veterinary Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35830",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://mjc.elumenapp.com/catalog/2026-2027/program/public-health-for-transfer-degree-mjc-fall-2026",
+    "https://mjc.elumenapp.com/catalog/2026-2027/program/kinesiology-for-transfer-degree-mjc-spring-2026",
+    "https://mjc.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-degree-mjc-spring-2027",
+    "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-natural-sciences-mjc-spring-2027"
+   ],
+   "status": "Active - Teachout Only"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 3,
+  "0.8-1.0": 10,
+  "1.0": 175
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/modesto_junior",
+  "kept": 173,
+  "kept_moved": 0,
+  "programs": 15,
+  "list": [
+   {
+    "control_number": "06661",
+    "title": "Machine Tool Technology",
+    "award": "A.S. Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2",
+    "coverage": 0.917,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "06700",
+    "title": "Human Services",
+    "award": "A.A. Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027",
+    "was_coverage": 0.947,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08154",
+    "title": "Addiction Studies",
+    "award": "A.A. Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "13826",
+    "title": "Machine Tool Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18601",
+    "title": "General Studies: Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-social-behavioral-sciences-mjc-spring-2027",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-social-behavioral-sciences-mjc-spring-2027",
+    "was_coverage": 0.973,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18602",
+    "title": "General Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-arts-and-humanities-mjc-spring-2027",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-arts-and-humanities-mjc-spring-2027",
+    "was_coverage": 0.989,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18646",
+    "title": "Language Studies",
+    "award": "A.A. Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/language-studies-mjc-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/language-studies-mjc-fall-2026",
+    "was_coverage": 0.947,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "20329",
+    "title": "Human Services",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027v2",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027v2",
+    "was_coverage": 0.95,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32226",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/history-for-transfer-degree-mjc-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/history-for-transfer-degree-mjc-fall-2026",
+    "was_coverage": 0.905,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32241",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-degree-mjc-fall-2027",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-degree-mjc-fall-2027",
+    "was_coverage": 0.95,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32249",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-transfer-degree-mjc-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-transfer-degree-mjc-fall-2026",
+    "was_coverage": 0.963,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33809",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027v2",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027v2",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42664",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-degree-mjc-fall-2026",
+    "coverage": 0.981,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-degree-mjc-fall-2026",
+    "was_coverage": 0.942,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44748",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-degree-mjc-spring-2027",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-degree-mjc-spring-2027",
+    "was_coverage": 0.897,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45982",
+    "title": "Registered Veterinary Technician",
+    "award": "A.S. Degree",
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027",
+    "coverage": 1.0,
+    "was_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027",
+    "was_coverage": 0.931,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "06637": {
+   "sha256": "bf96ddbfa44f972ea554f174aba5fce7c3f0aadd80f90872a1fcd5a7a07005be",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-science-communications-mjc-fall-2025"
+  },
+  "06638": {
+   "sha256": "0ad39d4248ab1411b4a02ef4df59d3dcb98f11794ea2d335609e410caaf04ed2",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/landscape-and-park-maintenance-mjc-fall-2025"
+  },
+  "06639": {
+   "sha256": "a9b911577398bfb1907e28730f4044b249cdedc9e39f1288e5eba0f1f3e055b2",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-business-mjc-fall-2024"
+  },
+  "06640": {
+   "sha256": "e5682fda0ef1e610f5ba6d9dd9ff8d1e9c9e81e9777af42080e475ddab4493ff",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-artificial-insemination-technician-mjc-fall-2023"
+  },
+  "06642": {
+   "sha256": "28cbcc34006e17dd5c34a990c78557a919dce354dd4731f15620ef714f342039",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-mechanics-mjc-fall-2023"
+  },
+  "06644": {
+   "sha256": "7db7828d7fe043193b840cd83b0c1146f17529784a040c3e10284de14cee5b05",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-mjc-fall-2026"
+  },
+  "06645": {
+   "sha256": "9c8d595d1460cfeb2dfe3806a6b3b4ffe9a00068615eb613cb23602718b273dd",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/accounting-mjc-fall-2025"
+  },
+  "06647": {
+   "sha256": "b4ec29f53cf5b84c3c48bc63670a4c308c5844c03b4afe30bac8eb8586e1e4fe",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/management-mjc-fall-2025"
+  },
+  "06649": {
+   "sha256": "e0183dc23a66f84322a71af154b30d9ba34b0e36639063a9fc532ea9c2c45613",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/marketing-mjc-fall-2025"
+  },
+  "06650": {
+   "sha256": "f2dd285820a38ad5212ab165cb8d0ee2b164933a3ae5fbb4d6626b3bfc7aa5a3",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/real-estate-mjc-summer-2020"
+  },
+  "06655": {
+   "sha256": "0e0323c1b1d94aea175b50c29012038502d133e3e55c91c9fdcd5f3c945ec883",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-science-mjc-fall-2026"
+  },
+  "06656": {
+   "sha256": "732435d088eb71746a572f02c8dd429eaf58eec79c0a86c567954490f53584a0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/engineering-mjc-fall-2025"
+  },
+  "06661": {
+   "sha256": "a50ac053705f40d04fe541a9d684ebee16da38a8524fb7bb1fc203c21f5408a6",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2"
+  },
+  "06662": {
+   "sha256": "b06f24d28aba2c10b77333cc3459663aec1864f08e091f1db0ef3aaa4b5dd722",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-technician-mjc-summer-2020"
+  },
+  "06668": {
+   "sha256": "2eb9024db4202f586f118270f7f6683e67ce69c1da73da1076f65d5233886d39",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/welding-mjc-summer-2020"
+  },
+  "06670": {
+   "sha256": "fb6a23f5b300befa461523a85cf0f1fc0b25e0b13fbbd24b70b6d61cd248ea30",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/art-mjc-spring-2027"
+  },
+  "06671": {
+   "sha256": "a16003b75cb31c95bf96db44b196c6f05bbc5b74ad618f32ac16c7c9552f73b5",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/music-mjc-fall-2025"
+  },
+  "06672": {
+   "sha256": "a2346f0268c59b3969d86810a667d0a7d8dabc9798667767ca4c8f5e555469f5",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/theatre-mjc-summer-2020"
+  },
+  "06673": {
+   "sha256": "f34b35c115992db6a4afcb2d25d3121df240df902031986b8c99f1e7af7fb427",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/photography-mjc-spring-2027"
+  },
+  "06678": {
+   "sha256": "dee22d2c2306565a069efaf3358203cf95605b7ae7d6a09d0f413bd5606de110",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/nursing-adn-program-rn-mjc-spring-2026"
+  },
+  "06681": {
+   "sha256": "985dd2ebc0aa66d33e921a72932784c1d152e5edbc8c99391dbdb694a44a7dc3",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/medical-assisting-mjc-spring-2026"
+  },
+  "06683": {
+   "sha256": "c29df84cf999d1f8b598c51df1a7c8c3040bf4f702ad531be5cdf19246c718c8",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/respiratory-care-mjc-fall-2026v2"
+  },
+  "06688": {
+   "sha256": "d15401a9a055c258874d7c1ad97d5ebbbfb669e7885718b52662f4a51bd490e4",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/child-development-mjc-summer-2020"
+  },
+  "06700": {
+   "sha256": "f428ab22381bbfdfeeea54166e1e01208b6ec4a3f06923f3e4c0fe76896c11fd",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027"
+  },
+  "06701": {
+   "sha256": "ef25e8eabffe5d6efaf420e9f06694110bd20efc13dfe5b2ea1d380355a3d6b0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/administration-of-justice-mjc-fall-2023"
+  },
+  "06704": {
+   "sha256": "4a4f8eb01802393deb9dc1a1c634721e3a869a24a91e8f1a411ba73a47368148",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fire-science-mjc-fall-2025v2"
+  },
+  "08018": {
+   "sha256": "932482c2fc6913c99cf21a45f7155126e388dfc920c9c38d80f3be0f038cbbec",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/poultry-science-mjc-fall-2025"
+  },
+  "08103": {
+   "sha256": "6e7143e35267e8b7a898f490fbc170f1d40b047e9474d42077f4359f26985cf5",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/crop-science-mjc-summer-2020"
+  },
+  "08104": {
+   "sha256": "c280f4510dd08113f06ee902c8422bdc2133f1a113f03df23d2904a217f51ae3",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fruit-science-mjc-summer-2020"
+  },
+  "08105": {
+   "sha256": "60603830e9edbf00884a01a194a39de35d6e4615a6e5361b0464c738d4ac3b92",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/environmental-horticultural-science-mjc-summer-2020"
+  },
+  "08107": {
+   "sha256": "c728a536db89ead14efa33b653b05e64f291a7f54dd5ae1e0dfe37efb1dd4810",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/plant-nursery-production-mjc-fall-2025"
+  },
+  "08108": {
+   "sha256": "1937f119e996ff5eba0adb8225aa809b4bc2a0b3cab23b874deabdb14bc06ed3",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/commercial-floristry-technician-mjc-fall-2025"
+  },
+  "08109": {
+   "sha256": "dc3114e82b0c114e1465c8da598b7947662c25b792de583da47c51e5f79dc207",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-sales-service-mjc-fall-2025"
+  },
+  "08111": {
+   "sha256": "ddf24cc75e824ea5a5af63b9a1d1412ea4dd7d0b7ede49c512fbcfcf3b4324f0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/dairy-science-mjc-fall-2023"
+  },
+  "08124": {
+   "sha256": "245046b8eabe389594fe4dae49de668b75e6f1a8d8a5426dd5a12945f2bf7e15",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-information-systems-mjc-summer-2020"
+  },
+  "08125": {
+   "sha256": "d41f2ef2f44bf3db46085bd9d9fea5042b93f8c39ac93ad316f53fdfa0dc9f59",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/physical-education-mjc-fall-2026"
+  },
+  "08129": {
+   "sha256": "9aca0cac5ada8ea74eb66c6899c083dfefce1e3417f075b34f15879774292400",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/industrial-electronics-mjc-fall-2025"
+  },
+  "08131": {
+   "sha256": "3e1e67b0e4b2c51d8b67c5a5502541e01a7a971da7ae6a60a763708bda927edf",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/maintenance-machinist-mjc-fall-2026"
+  },
+  "08134": {
+   "sha256": "6f919d292f79def757dfcf9331900153572ee6833596daa946d56bee411facad",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/autobody-collision-repair-mjc-summer-2020"
+  },
+  "08136": {
+   "sha256": "34f39d1b05911ed1ff4b5e73d0e603355eed3c6430ca909c7f1712bf86ee2c1a",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-graphics-applications-mjc-fall-2025"
+  },
+  "08154": {
+   "sha256": "6dcfdd0cec4515875b33ac63b09e91eb9150c7d4595b16790cdfcb2632c3ad04",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027"
+  },
+  "10602": {
+   "sha256": "ada947cb1abd9126ff7ab27a74b6fef9ac14abbee18531b99e32415d51ce40af",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/soil-science-mjc-summer-2020"
+  },
+  "12228": {
+   "sha256": "a3b48c43f06268c4e852e7b445a34576f74caaa68a79a061a971a732d24a05f2",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/athletic-training-sports-medicine-mjc-fall-2025"
+  },
+  "13826": {
+   "sha256": "eaea8ff5b4e944b7f477a4dde66f1c92bbe2e77b755f0385ad1dbe926dd0c0ea",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026"
+  },
+  "14885": {
+   "sha256": "1fdd6071d0c39b56c2f85d78592ae421a3e114d1a2ed281c6566bbdd0ed64c18",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/associate-teacher-mjc-summer-2020"
+  },
+  "14886": {
+   "sha256": "a2e93f2b272d07123a44468ed89db3f91a41536d7aab03848b8f7a884cf15e6f",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/teacher-mjc-fall-2023"
+  },
+  "14887": {
+   "sha256": "be9917b80fe71a5d03889cd16a8f1fb0fb6138a2716f254e2ee17a60c751583c",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/master-teacher-mjc-fall-2023"
+  },
+  "14888": {
+   "sha256": "3b23ca433bc8068db754ae6e344073e7365e278492ce78ddbe7b993e3fc0def0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/site-supervisor-mjc-fall-2023"
+  },
+  "14890": {
+   "sha256": "82684f6121d9e16aa5b8d98c3bb848d9457ec15b0077f8eb5b4964e6bf6a0e9e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/early-interventionist-mjc-fall-2023"
+  },
+  "16278": {
+   "sha256": "2206806721b397c5b30e7b988c3f95c0133d058d20fd9529336be3cfc166894f",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-applications-specialist-mjc-summer-2020"
+  },
+  "16279": {
+   "sha256": "b650ed415543249b47df1e699ff363c88be2e176e951220c4f37d4b1ddb4987f",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-programming-specialist-mjc-fall-2026"
+  },
+  "18545": {
+   "sha256": "48ffe7d8a81db57d630be25723266a75c99c706eafd1d7b580db8f73e8043a0e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-mjc-fall-2026"
+  },
+  "18547": {
+   "sha256": "d70bab730b2f087e13e0e9c45e68c37198925119c0b46c1bb62dd954449f39a7",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/biological-sciences-mjc-spring-2026"
+  },
+  "18548": {
+   "sha256": "d2c78ed8c2c1fe4f1c062e93936237094f39281084f30d90cde19761b417a34e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/chemistry-mjc-fall-2025"
+  },
+  "18553": {
+   "sha256": "69befc33872d576509408d8c682d52b3f43a05ad566e4dfa23ee86b0d9c557c6",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/humanities-mjc-spring-2027"
+  },
+  "18599": {
+   "sha256": "a0932b46179d82c6d7a8a39e15541cfc4580e1bf33bea38346fba8cb10df7f37",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-natural-sciences-mjc-spring-2027"
+  },
+  "18600": {
+   "sha256": "db1dcce31f456a58983c03af1169eb1ca796fd5a360eb649fb72082c4a77ed45",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-language-and-rationality-mjc-spring-2027"
+  },
+  "18601": {
+   "sha256": "9e705d47728a2a650a2a7824eac45f2f318b320d979c0201b4db4cb9adee75d1",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-social-behavioral-sciences-mjc-spring-2027"
+  },
+  "18602": {
+   "sha256": "e6a3b1f7713be3307f8c7cccb7c3e902f72348d3be6d1ec7d237804c769b705e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-arts-and-humanities-mjc-spring-2027"
+  },
+  "18646": {
+   "sha256": "d9968675a9fb1d1bb18df97522834aed26ca1ab8f886e38222fe0247f09d7f70",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/language-studies-mjc-fall-2026"
+  },
+  "18762": {
+   "sha256": "114e8ba9072b69fab5e957630de92618da7aef9549259baf63a1a152772b243e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-network-administration-mjc-fall-2026"
+  },
+  "19348": {
+   "sha256": "2fb6ebb5dc5aff62bdfa27bb5aef5acc28b6a59a63e27dd926be6df772195feb",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/advanced-heavy-equipment-technician-mjc-fall-2025"
+  },
+  "19372": {
+   "sha256": "108e318f77f997a35024fe4757fdb3d356f9031dd4c798987ebd514e9ba6975f",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/heavy-machinery-management-mjc-summer-2020"
+  },
+  "20283": {
+   "sha256": "bc5c2c57d10df35d61b60613d59f04feab1f2ad1bad8b93290446da26f601def",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-sales-service-technician-mjc-fall-2025"
+  },
+  "20295": {
+   "sha256": "3b739bef4a5c7c264995adfbb1467c05f2575adb8b813088bdc8796f6ec2a8da",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/accounting-full-charge-bookkeeper-mjc-fall-2025"
+  },
+  "20298": {
+   "sha256": "ef6ca474d6fced1a13d1488af50f3e02ffbe7f4e1bfe189efa1850919cec63e8",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/accounting-entry-level-bookkeeper-mjc-fall-2025"
+  },
+  "20299": {
+   "sha256": "f1d7dcb215dc0727d9c9458e19e6ccd58cf60f5c4331e31e43b37af64b6399a5",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/management-mjc-fall-2025v2"
+  },
+  "20303": {
+   "sha256": "d96157d308200b8a28fdce8fead671a1e4e84798d0338c7e1dc5276f427363a5",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/real-estate-broker-mjc-summer-2020"
+  },
+  "20308": {
+   "sha256": "a83f9f0956faf037538137e40a91ac4bf58900b281bd7862b86473352defd186",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-graphics-advanced-mjc-fall-2025"
+  },
+  "20310": {
+   "sha256": "7d192069f837d94bef3ae6d586891022e1e507c3f52de722c65482b260a13667",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/industrial-electronics-mjc-fall-2025v2"
+  },
+  "20320": {
+   "sha256": "37c664d1acdd5303ec6f7bed6f4cf19ea993003c9c8bd7bd7d95683fd94e2109",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/autobody-collision-repair-technician-mjc-summer-2020"
+  },
+  "20325": {
+   "sha256": "3963aeea2180b3aa421184edb95142015dfb2339297e9d83c92c075df9e77668",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/medical-assisting-mjc-spring-2026v2"
+  },
+  "20329": {
+   "sha256": "59044152bdafd7db0c80dbb426286de25fd348e39f490b5e7230de5761ea2efb",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027v2"
+  },
+  "20330": {
+   "sha256": "e20a14098cacf779f824922e69709229536eadab2a3cea9baac42f436ca76536",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fire-science-mjc-fall-2025"
+  },
+  "30509": {
+   "sha256": "c0f35cf980f4476f5c9e7c28a7bfc969e33445df1f94a60e78f371377a3c5a61",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/mechanized-agriculture-technician-mjc-summer-2020"
+  },
+  "30643": {
+   "sha256": "d743091b90152eadbb3792ee7e806d320499de7c5e43ebda5eecee2f2ba54184",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/communication-studies-for-transfer-degree-2-0-mjc-spring-2026"
+  },
+  "30675": {
+   "sha256": "6923afc78cd686fe24a2a343db86f86a2e3d4108e9488ed17e10fad508383fd2",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/mathematics-for-transfer-degree-mjc-spring-2026"
+  },
+  "31722": {
+   "sha256": "4f7ed71019bb3754f140d95cd4c748c224ae2e30968aa963edd82d6d353481c8",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/music-for-transfer-degree-mjc-fall-2025"
+  },
+  "31756": {
+   "sha256": "812250c825bca8234f1cc61a6a07557fbaaa483c4273355c5ecfbde99591d43d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/administration-of-justice-for-transfer-degree-mjc-spring-2026"
+  },
+  "31763": {
+   "sha256": "8f623591ef41d66d05f56b514e2df7654ffe08395a93f0f42b3298aacebfe35a",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/art-history-for-transfer-degree-mjc-spring-2027"
+  },
+  "31774": {
+   "sha256": "f2e80ab0caf5ae8cd719ba5244087cd331c84d371ddd5b7b8e0a6d9414c3d528",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-degree-mjc-spring-2027"
+  },
+  "31800": {
+   "sha256": "59856433d12d6084e6517ba039320e4f09d2016fcab4ae1220414ec846df49f2",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/theatre-arts-for-transfer-degree-mjc-fall-2025"
+  },
+  "31852": {
+   "sha256": "d343bfde45df832522dbe864a01c2dec9f330f21aec12c63996afa2b2338734d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/geology-for-transfer-degree-mjc-fall-2025"
+  },
+  "31989": {
+   "sha256": "476daf8dacff56a0338ff6fba3be680f810e12aa02963f16ff279d4f71c0e78a",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/kinesiology-for-transfer-degree-mjc-spring-2026"
+  },
+  "32038": {
+   "sha256": "e09c1009d0ef19d7052302f140284de9f5ac77f21b1b8042e71edcbacc2e72da",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/sociology-for-transfer-degree-mjc-spring-2026"
+  },
+  "32226": {
+   "sha256": "af907e82ce803e087016f33fd32d019522f1330df4eb70c50e844bc312b74583",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/history-for-transfer-degree-mjc-fall-2026"
+  },
+  "32227": {
+   "sha256": "3d69678c5608dc9c6af6b644fae1c606a8d3deb175b3a6a9da5c6f833419e61b",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/physics-for-transfer-degree-mjc-fall-2025"
+  },
+  "32241": {
+   "sha256": "e5a7d35066f6bd222bdfc799975fa8e6a35b59df954a02c9f7def9d93b89f167",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-degree-mjc-fall-2027"
+  },
+  "32249": {
+   "sha256": "17e9bd142941c55804c4ce1ccf85889a64c085681fc8521743d8cceb5efd70fa",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-transfer-degree-mjc-fall-2026"
+  },
+  "32433": {
+   "sha256": "54d4bcae541774156deaec18e54e2bd0be57259ae15d6bedff4297f04c5a1737",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/psychology-for-transfer-degree-mjc-fall-2026"
+  },
+  "32590": {
+   "sha256": "79574641774acd6cc25612ccb0cfa0cef4cb337416d1b2dbfc32c2bc6ae29fbd",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-degree-mjc-fall-2026"
+  },
+  "32674": {
+   "sha256": "7f122fbc3fd9abe00397f5a86a2c9418a2a25d902884a149f3ab6ae517cdcfb7",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-degree-mjc-fall-2025"
+  },
+  "32679": {
+   "sha256": "44d616923629aee4798c25d31521d4ffa532d8835cf006116e69bf082db0c763",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-engines-and-transmissions-mjc-summer-2020"
+  },
+  "32705": {
+   "sha256": "056a3f560fe2e2abc1a400deca1593926dbaab52234cc3e1fddc89701fc668ed",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/philosophy-for-transfer-degree-mjc-fall-2025"
+  },
+  "32782": {
+   "sha256": "c074caeff8ef08f0b50841dd83222821af9cce0149100f76b658d5a1cbf41cc7",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/geography-for-transfer-degree-mjc-fall-2026"
+  },
+  "33149": {
+   "sha256": "b7c6c936ce7c37d873fed82ce66beddb3fb48c9e2b066afab11936a3e5712e1d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-diagnosis-mjc-summer-2020"
+  },
+  "33152": {
+   "sha256": "4ecc683820f89e0c996edc3a64e5b0dfb45acd57d09ca360e251e7cab09c1726",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-brakes-and-suspension-mjc-summer-2020"
+  },
+  "33158": {
+   "sha256": "f014d9385461594de8be03c1f9c8005525fc0f8eaae9d9cb827e6661e033cfd9",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-service-mjc-summer-2020"
+  },
+  "33171": {
+   "sha256": "fb90b62b542329c6b48cf244cbbef1a1b52cafc2c2ce36de88b32f014e7ced0a",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/equine-science-mjc-summer-2020v2"
+  },
+  "33221": {
+   "sha256": "7b600bd92daad5ae6fdf9f565c67b3ec6040e3fc5c39a7cc6cde6bdc50bdff8d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/manufacturing-technology-interdisciplinary-mjc-fall-2026"
+  },
+  "33672": {
+   "sha256": "f7631f0d3c5ff44c23256809df11e9cf05f39cc83add5681ad56f10c9627c37d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-science-for-transfer-degree-mjc-fall-2025"
+  },
+  "33803": {
+   "sha256": "3f43a8171e333ca763fa7d908c84e6f09f149bb2ce6afae73024d294a767479d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/dance-mjc-summer-2020"
+  },
+  "33809": {
+   "sha256": "f19978653d8f86f1ad34d6c7e222b80f6cc38e8449602f9fea3ddea6de5be463",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027v2"
+  },
+  "33844": {
+   "sha256": "3cd2a07eaa28da090371cf1bd1fdc3842627af1c445d682f05504a47cddfc99b",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-design-mjc-fall-2026"
+  },
+  "33845": {
+   "sha256": "dca397a00896bf24768e08e9e64b31646dfc8775c462bef335cbfa465bf70a68",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-construction-and-installation-mjc-fall-2026"
+  },
+  "33935": {
+   "sha256": "2d07fbe08426a3bcda4539e643e3148b0af8286f628a8044882917f5537bee12",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-management-mjc-summer-2020"
+  },
+  "33944": {
+   "sha256": "aac9070460ade4c2cbf24ec13b644b0162a61df67e51f8b6b2fcc36909bcd0ea",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-technology-mjc-summer-2020"
+  },
+  "33945": {
+   "sha256": "a8f9fed60b12ce2a3eb2c68aa67b4348ffb3d22852785b33f4260b5fbe61c8f4",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-technology-mjc-summer-2020v2"
+  },
+  "35012": {
+   "sha256": "bbf53cc792139f6bd7a9f5341a3aa322189a78e92ae40486f913a84bc99efd57",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/logistics-and-supply-chain-management-mjc-fall-2026"
+  },
+  "35013": {
+   "sha256": "cb36af487c5602bf8511c49a91e8bf8cee63920cf414b9393160d6362575798e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/logistics-and-supply-chain-management-mjc-fall-2025"
+  },
+  "35084": {
+   "sha256": "bdadba5a090685049474dda3b3a97470450d8ebd8593227492422fe299929b20",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrician-mjc-fall-2025"
+  },
+  "35127": {
+   "sha256": "0c327e9bf20a75b2cea760b74ce2163a17e19affb3a23b70f37698cb820117c5",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/spanish-for-transfer-degree-mjc-fall-2025"
+  },
+  "35237": {
+   "sha256": "537a137be578a3f03b1edf1e9822d3e42578e2fa31b92f5051bfcda96ca26fc7",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electro-mechanic-mjc-fall-2025"
+  },
+  "35276": {
+   "sha256": "184545b69932738b0af2add7e304a5bc315ad3dc125cc2ec3a8020f1a5ac6663",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agricultural-environmental-science-mjc-fall-2023v2"
+  },
+  "35277": {
+   "sha256": "ed86f7d9f4e37789957e9f7af848eb584d613f79a283e2ecd214615409403d47",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agricultural-environmental-science-mjc-fall-2023"
+  },
+  "35537": {
+   "sha256": "6ae7e648323807ac2366168fced6d81702f639f2f7b5adb125a85dad75012ae9",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-business-for-transfer-degree-mjc-fall-2026"
+  },
+  "35538": {
+   "sha256": "ec6b7000580d0321d7cb30cf9adc005b1499c7cae4c71afdd92e6b49a21d6c70",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-animal-sciences-for-transfer-degree-mjc-spring-2027"
+  },
+  "35541": {
+   "sha256": "b68975654b4f9cc057a2cd98aff8090bab058cf4e310cf05db2d34ec5c97b90a",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-plant-science-for-transfer-degree-mjc-spring-2027"
+  },
+  "35789": {
+   "sha256": "590d377a31e9a2a3afdf5c1488022bfd555891d152dddca3aa1af32857d18897",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-life-and-work-elementary-mjc-fall-2025"
+  },
+  "35790": {
+   "sha256": "3e853a6f932b3f9819b6ba9383da18fa01504cf61256e159dc97dc75c021b886",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-life-and-work-proficient-mjc-fall-2025"
+  },
+  "36013": {
+   "sha256": "debd8cb6668d8b92a1729caa00ac684b3cd99666d6d0034a8fc5e99633451657",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/basic-heavy-equipment-technician-mjc-summer-2020"
+  },
+  "36583": {
+   "sha256": "559d5901e988e8c5449070c174a88e32e3a957b30b67ca3439836c3c35a718f0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-academic-language-skills-for-success-mjc-summer-2020"
+  },
+  "37300": {
+   "sha256": "b5d35df2448841c21ce2f61fbad7ea6e26ec50437851c51d6c3c1e6d05f77503",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-science-mjc-summer-2020"
+  },
+  "37500": {
+   "sha256": "43135f9d8a0c415bd80c4b66525e0f1623af40d8fa9678e0d922e3692ecc5ec5",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/microsoft-computer-applications-mjc-fall-2023"
+  },
+  "37753": {
+   "sha256": "99782179d6bd411920aceaef640dcda7b410d5938cf2d639eab9264b81965e7b",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-welding-fabrication-mjc-summer-2020"
+  },
+  "37754": {
+   "sha256": "b3760503d75fa82301a63f8a14dff1e5c4ebac757058673cdb472db2525ffcf6",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-welding-repair-mjc-summer-2020"
+  },
+  "38065": {
+   "sha256": "f6abb37b7d48793f7b3e7b6cafd6331e75c44fe0784e3a8eb17d01e3104dc3af",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/autobody-collision-refinishing-technician-mjc-summer-2020"
+  },
+  "38067": {
+   "sha256": "5ff81569c8ceb255496c026e9c8d70263b32ad5b58609709bce94f0463c252c6",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/equine-science-mjc-summer-2020"
+  },
+  "38763": {
+   "sha256": "a2bec75ec601f55b6ba76459c3f0d7317821828aa7de56cf945ecdbba990f108",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/recording-arts-mjc-fall-2023"
+  },
+  "38764": {
+   "sha256": "5783ff8e4317859ae56fbe853c5e42874002fdd2543d46ad74b79f11cb1a4cd3",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/design-technical-theatre-mjc-summer-2020"
+  },
+  "38773": {
+   "sha256": "cdeba05e5c29b09fef024ec29df60c46e342d2a194fbec64d0416730ef206bf2",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/learning-strategies-academic-skills-mjc-fall-2024"
+  },
+  "38776": {
+   "sha256": "c6ea419094f365d5fe6194521d2cc265198e54e7c6fdbb6e6f8c0e7c6a707d94",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-citizenship-mjc-summer-2020"
+  },
+  "38869": {
+   "sha256": "ca213e9912c40ca1b477d4ada6ff842474f5424ccd6a88f8a9e991ac57769ccb",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/entrepreneurship-mjc-fall-2025"
+  },
+  "38989": {
+   "sha256": "ae59ec84c8b767603b3974a73e73b516d697472cc44202e27aebbe984fffe870",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-academic-reading-and-writing-skills-for-success-mjc-summer-2020"
+  },
+  "39094": {
+   "sha256": "fdd414238d00c64bc2fa9c4c253bd904104b19a087fc87459a2a1d21b5b9d84d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/emergency-medical-technician-mjc-fall-2026"
+  },
+  "39095": {
+   "sha256": "c0cba4b8b8872b322bbe4f7c6594ea17e4eb55fc3dbc68bf9ce61beaa5add967",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fire-academy-mjc-summer-2020"
+  },
+  "39471": {
+   "sha256": "f63bdc643f63f8546723cf8b514155a373dc64162ba890e3e3c8dd4f2bc913be",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/photography-mjc-fall-2023v2"
+  },
+  "41588": {
+   "sha256": "99207f358cc2539c77720a4df7bbe925eefe30af5d5d7d34087c6808bd82035b",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/accelerated-access-in-english-to-early-childhood-education-mjc-summer-2022"
+  },
+  "42278": {
+   "sha256": "fd7eec14db24007e18168d12d9c37877156419354b1cda8d4a892360a3bc163c",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/purchasing-customer-service-assistant-mjc-fall-2023"
+  },
+  "42279": {
+   "sha256": "90255840beae686912a96743520c4abec0e4859d8d17ec056806fd7f2381e36d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/warehousing-and-distribution-assistant-mjc-fall-2023"
+  },
+  "42280": {
+   "sha256": "4c71f9fe8b80911032bb17571f4619081b6d61f5171eb7101e81a248541c6162",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/production-scheduling-assistant-mjc-fall-2023"
+  },
+  "42281": {
+   "sha256": "7fa46caba46dade1391e8a78ff28bc06242d7c781baa2e39f44edcee56078a4d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/import-export-assistant-mjc-fall-2025"
+  },
+  "42302": {
+   "sha256": "851a278f223c8282717edfbf3aef61e38441cc83a3b68be448cca6713856e616",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-administration-for-transfer-degree-2-0-mjc-spring-2027"
+  },
+  "42579": {
+   "sha256": "b84ca71be85ff114e82bf1c6c4d462287e45e4c7c32404ea739cd34814756e99",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-level-1-mjc-fall-2023"
+  },
+  "42580": {
+   "sha256": "f7012bdb7872563e97d932a9417c4e7be2698795a3d88d38feefc5c8ccd448d0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-quick-start-mjc-fall-2023"
+  },
+  "42581": {
+   "sha256": "3a0cf40928e4c308bc0cc451be21b5288bd65e9207e64611848a3e691339fb15",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-level-2-mjc-fall-2023v2"
+  },
+  "42582": {
+   "sha256": "7381a40fc003f4447c8bb2bc0a90da499463b4127e8ad3fef5c7cc9b86abde49",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-level-2-mjc-fall-2023"
+  },
+  "42597": {
+   "sha256": "39ffaf057818225858dbf10bdba6ca575b7615c81b77f4ad215c0f873560b7d0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-mjc-fall-2023"
+  },
+  "42621": {
+   "sha256": "35e6e90b794e121c264abf88bfe69988c1a56593bb6190b322bfb012c842ed99",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/tutoring-mjc-spring-2024"
+  },
+  "42664": {
+   "sha256": "f2901c1f132fef8c6d3a246d6522010034c25ac6c5900d2fed46c6f6fe29b968",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-degree-mjc-fall-2026"
+  },
+  "42673": {
+   "sha256": "5e4c62d91f72f4d4a6f41d049304bb692d592eda5f4024ebfbe365d29214e75c",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/economics-for-transfer-degree-mjc-spring-2027"
+  },
+  "42686": {
+   "sha256": "c2905b534dfb54691c0316162225e1d86be1fbf2fa46af2ac99299d204efb16c",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/film-television-electronic-media-mjc-fall-2025"
+  },
+  "42918": {
+   "sha256": "1b5cc77cc9f0f7bb5e51f02a146f2486eb636d3a8d68f9488079dede1927e0ee",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/calibration-and-instrumentation-technician-apprentice-mjc-fall-2025"
+  },
+  "42919": {
+   "sha256": "cf9a045dee8ff900d67503d676e8674ba3fb8a69ff6d567e949405bd96ce9437",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electro-mechanical-technician-apprentice-mjc-fall-2026"
+  },
+  "42920": {
+   "sha256": "2e9ab872dc73e574673d2785eadfea6af6d92cd646344650194a3ac70bbdcf4e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machinist-apprentice-mjc-fall-2026"
+  },
+  "42921": {
+   "sha256": "a9c66c9cf3f3fef557c76f2fa65755954cebadc9a0a70a80bda2f27f55dde72d",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machinery-maintenance-apprentice-mjc-fall-2023"
+  },
+  "43164": {
+   "sha256": "d743091b90152eadbb3792ee7e806d320499de7c5e43ebda5eecee2f2ba54184",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/communication-studies-for-transfer-degree-2-0-mjc-spring-2026"
+  },
+  "43195": {
+   "sha256": "da06706b04d2bb38633de1c1300ccd34097c4c6534c4a31848cb9f381a1faac0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrician-maintenance-apprentice-mjc-fall-2025"
+  },
+  "43448": {
+   "sha256": "51a74ca683ae9b519c590dfa285bc8aa5f5cdfc7e9e3e0ce93669d09e69f99f0",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-integrated-skills-mjc-fall-2023"
+  },
+  "43472": {
+   "sha256": "9694f4489de92af1ab51269becbc422ad915e3b74b9a6b24a4cb83c5c23c1168",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/packaging-technician-apprentice-mjc-fall-2023"
+  },
+  "43651": {
+   "sha256": "22ccd71a0dd4dee2bfccab56fb10bfc02c84447e17315612a5aac714315dc84b",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/biology-for-transfer-degree-mjc-fall-2025"
+  },
+  "43664": {
+   "sha256": "89762cc2b371af0a7ff18d972cf23264395fe3e0a241f971209762824298691e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electric-vehicle-mjc-fall-2024"
+  },
+  "44503": {
+   "sha256": "36f7a2ae2fe7e9863b2d7313db7f04359de6d8f42568474109221937139d7947",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/public-health-for-transfer-degree-mjc-fall-2026"
+  },
+  "44588": {
+   "sha256": "3b044e71b29065373c0a4e714273be8ee06ca3b480627771c2b2a326d6b67ae6",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-life-and-work-intermediate-mjc-fall-2025"
+  },
+  "44748": {
+   "sha256": "202293144b313f38c58c931cb37e0a1239d10ad5eeb68c17609800c4a8d9e034",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-degree-mjc-spring-2027"
+  },
+  "44760": {
+   "sha256": "a27d6e2a11b07ae094a1fdfe2303be6df8e6e06f2fb273d1ab4832f807412ba5",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/basic-automation-training-mjc-fall-2025"
+  },
+  "44761": {
+   "sha256": "dd8649f126706314613f947c229e77e56e616abdade9eb0b059a5e29f03c228a",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/residential-electrical-installer-mjc-fall-2025"
+  },
+  "44799": {
+   "sha256": "ca14a27a9b88cbb5157c0520e0315dbc45928834898546012d7aaad03c3c6e60",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/applied-electrical-technology-mjc-spring-2026"
+  },
+  "44822": {
+   "sha256": "adce42e96d6ce3af4755ee6fed7e2ad15a314ac5c072da6b6de8b601ae04e3df",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/pharmacy-technician-mjc-fall-2025"
+  },
+  "44892": {
+   "sha256": "3c34ae78f567701aaa2b4f67cacda831e7e68174c25a345c2cd5ce799bb5004b",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/vocational-nurse-mjc-fall-2025"
+  },
+  "44916": {
+   "sha256": "c58718a35db55bbef912791bae6d8366d739d361b5e69c3a9eff334040275124",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/community-health-worker-mjc-spring-2026"
+  },
+  "44985": {
+   "sha256": "27ec2e7e0e05385f4f9e1dc9c3de3a74c34c9c55616b41c7b57cb117d963d901",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/american-sign-language-studies-mjc-fall-2026"
+  },
+  "45102": {
+   "sha256": "28c07f1ac976d559532f219f19324f9cc96caba955db84dc424fd0b1766991f7",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-graphics-foundations-mjc-fall-2025"
+  },
+  "45105": {
+   "sha256": "7146f445bf5b9ae0c2baf39a305df454a676a8cfe04d8657989e88206a1e1dd1",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fitness-specialist-mjc-fall-2026"
+  },
+  "45106": {
+   "sha256": "d54c2c8ee2a40f65fbd42d719fcaaa3cc167f398dc34236ba7feac6b08d14057",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automation-technician-mjc-fall-2025"
+  },
+  "45107": {
+   "sha256": "c3ec26dfcb4d130e7ea41e37993331896ba65446d74339aa3924ff3e45f537fd",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrical-business-entrepreneurship-mjc-fall-2025"
+  },
+  "45119": {
+   "sha256": "5817fdda3a0258c36b34617bb5e437131df4652faaca3ec6b7ad08c3bb16b427",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrical-installer-mjc-fall-2025"
+  },
+  "45120": {
+   "sha256": "43385e4766b29bb127dd7ee35a535eda0893be51fc77892f30cb6e35117e3b23",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrical-maintenance-assistant-mjc-fall-2025"
+  },
+  "45121": {
+   "sha256": "03cf118ac7c76527e9fc352d4973d66014250489c93ad536ce3448c73ebb046a",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electro-mechanical-technical-assistant-mjc-fall-2025"
+  },
+  "45122": {
+   "sha256": "79a836301ec28aab796d5bc9026a4ce8c43eee5c7f8a0fc42c9ccd384c7cd99f",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrotechnical-assistant-mjc-fall-2025"
+  },
+  "45134": {
+   "sha256": "b65752d4ba131d5058922ae5467f49d7d6fc3ac56105bbe5178c850a5dc9edb6",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/basic-electrical-training-mjc-fall-2025"
+  },
+  "45518": {
+   "sha256": "6eee73b6180594072044c9ff239d9501968ecbdfad585b454b204fd722419e2e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/analytical-chemistry-technician-mjc-fall-2026"
+  },
+  "45771": {
+   "sha256": "84e03aa4cd961b71e5f56eb5722e3f59b2716727f5bb86d9e0188057dee4c475",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/professional-practices-in-music-ii-mjc-fall-2026"
+  },
+  "45787": {
+   "sha256": "940896fb97a3b8c518b83ce416046f6a53d35492412d52414c47a69d97d5326e",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/professional-practices-in-music-i-mjc-fall-2026"
+  },
+  "45979": {
+   "sha256": "b5b80b409cee55ac674b9e537db899aa14eb9874397db7a1a45b40a5dfbd30fa",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/environmental-science-for-transfer-degree-mjc-fall-2026"
+  },
+  "45982": {
+   "sha256": "dd6ba57464381f7c29d4eb619cfbd09c88295c5d6436bf6a8aa05de6554de559",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027"
+  },
+  "45983": {
+   "sha256": "369e9c817920ba4e9cbc263352f5aba447fa7591af8a9948fbee4e50e58a5297",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-assistant-animal-care-mjc-fall-2026"
+  },
+  "46148": {
+   "sha256": "b820e86bc30f260617f52687c3a6bafe86aa6bc842c1226405feabf70fa93813",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/modern-policing-mjc-fall-2026"
+  }
+ },
+ "run": "44537316386"
+}
