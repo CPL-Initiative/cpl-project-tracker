@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Early Childhood Education",
  "award": "A.S. T Degree",
- "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
+ "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=89",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10966,
+  "input_tokens": 10938,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10966,
-    "output_tokens": 1283,
+    "input_tokens": 10938,
+    "output_tokens": 1612,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,31 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1283,
+  "output_tokens": 1612,
   "output_tokens_details": {
-   "thinking_tokens": 742
+   "thinking_tokens": 464
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06952,
- "ms": 12852,
- "seconds": 13.1,
+ "cost_usd": 0.07599,
+ "ms": 13177,
+ "seconds": 15.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 2,
+   "placed": 6,
    "listed": 6,
-   "share": 0.333,
-   "missing": [
-    "ECE10",
-    "ECE1A",
-    "ECE1B",
-    "ECE3"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -72,29 +67,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    12.0,
-    12.0
+    24.0,
+    24.0
    ],
    "stated": [
     24.0,
     24.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 12.0-12.0; the catalog states 24.0-24.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -112,11 +105,11 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(heading not in text: the AS-T section begins on page 89; page 90 shows only its continuation)",
+   "section_heading": "Associate in Science in Early Childhood Education for Transfer",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -137,20 +130,53 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Graduate from ECE with a clear understanding of developmentally and culturally appropriate practices and what it means to successfully work with children, families, and the community in an early care and education setting. Students seeking a baccalaureate in a similar discipline in Early Childhood Education or Child Development will successfully complete the transfer process to a four year institution.",
+    "Proficiently design developmentally appropriate curriculum, and demonstrate effective implementation using intentional teaching methods that scaffold children’s co-construction of knowledge through exploration, risk-taking, reflection, and the respectful inclusion and support of individual life experiences.",
+    "Build partnerships with local, national and international resource organizations in order to advocate effectively for the needs of children and families and to grow in professional skills.",
+    "Promote higher levels of child learning through the use of intentional teaching methods that support the unique development of every child."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required courses (continued from previous page)",
+    "name": "REQUIRED COURSES",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 24,
+     "max": 24
     },
     "courses": [
+     {
+      "code": "ECE 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "ECE 11",
       "units": 3,
@@ -183,25 +209,26 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ECE 10",
-    "why": "not in the text; likely on page 89, which is cut off"
-   },
-   {
-    "code": "ECE 1A",
-    "why": "not in the text; likely on page 89, which is cut off"
-   },
-   {
-    "code": "ECE 3",
-    "why": "not in this award's visible fragment (appears only in other sections); likely on page 89"
-   },
-   {
-    "code": "ECE1B",
-    "why": "not in this award's visible fragment (appears only in other sections); likely on page 89"
-   }
-  ],
-  "notes": []
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins on page 89 mid-section; the printed section heading for the A.S.-T is not in the text, so section_heading uses the degree name from the description sentence.",
+   "The required list continues across a page break (pages 89-90); 'TOTAL UNITS REQUIRED FOR DEGREE MAJOR 24' recorded as total_units and the block's stated total.",
+   "Closed list prints 'ECE1B'; catalog prints 'ECE 1B' — treated as the same course.",
+   "The 60 CSU transferable units is stated as a requirement for all AA-T/AS-T degrees, not as this award's printed total, so degree_total is null. Cal-GETC is named but no GE unit figure is printed.",
+   "ECE 11 and ECE 46 are in the catalog's required list but not in the closed list; recorded as catalog additions.",
+   "Only the A.S.-T section was read; the Elementary Teacher Education ADT, ECE A.S., and certificate sections that follow were ignored."
+  ]
  },
- "extracted_run": "39006517642"
+ "extracted_run": "44536397187",
+ "catalog_year": "2026-2027",
+ "source_sha": "efc8d190f31ad4dc",
+ "source_codes": [
+  "ECE10",
+  "ECE1A",
+  "ECE1B",
+  "ECE27",
+  "ECE3",
+  "ECE31"
+ ],
+ "source_coverage": 1.0
 }

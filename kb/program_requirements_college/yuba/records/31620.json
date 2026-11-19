@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Chemistry",
  "award": "A.S. Degree",
- "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=85",
+ "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=84",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10769,
+  "input_tokens": 11723,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10769,
-    "output_tokens": 1765,
+    "input_tokens": 11723,
+    "output_tokens": 2075,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1765,
+  "output_tokens": 2075,
   "output_tokens_details": {
-   "thinking_tokens": 911
+   "thinking_tokens": 684
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07838,
- "ms": 21736,
- "seconds": 22.2,
+ "cost_usd": 0.08839,
+ "ms": 17391,
+ "seconds": 19.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 12,
    "listed": 12,
-   "share": 0.5,
-   "missing": [
-    "CHEM18A",
-    "CHEM18B",
-    "CHEM1A",
-    "CHEM1B",
-    "MATH1A",
-    "MATH1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -68,29 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    8.0,
-    8.0
+    36.0,
+    36.0
    ],
    "stated": [
     36.0,
     36.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 8.0-8.0; the catalog states 36.0-36.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -105,11 +96,11 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Chemistry A.S. Degree (heading printed on page 84, not in the text; the section continues onto page 85)",
+   "section_heading": "CHEMISTRY ASSOCIATE IN SCIENCE",
    "measure": "units",
    "total_units": {
     "min": 36,
@@ -120,7 +111,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Yuba College General Education (local)",
+   "ge_pattern": "local GE",
    "degree_total": {
     "min": null,
     "max": null
@@ -130,18 +121,77 @@
     "max": 21
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Recognize and implement chemical symbolism, notation, nomenclature and vocabulary.",
+    "Apply chemistry concepts; demonstrate inductive reasoning.",
+    "Apply chemistry concepts; demonstrate inductive reasoning.",
+    "Conduct chemistry laboratory operations and demonstrate manual skills."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Complete eight units from one of the following groups: Group 1",
+    "name": "REQUIRED COURSES",
     "rule": "all",
     "minimum": null,
-    "option_group": "Physics groups",
+    "option_group": null,
     "stated": {
      "min": null,
      "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 18A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 18B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete eight units from one of the following groups: Group 1 (PHYS 2A/2B/3A/3B)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": 8,
+     "max": 8
     },
     "courses": [
      {
@@ -175,13 +225,13 @@
     ]
    },
    {
-    "name": "Complete eight units from one of the following groups: Group 2",
+    "name": "Complete eight units from one of the following groups: Group 2 (PHYS 4A/4B)",
     "rule": "all",
     "minimum": null,
-    "option_group": "Physics groups",
+    "option_group": "Physics",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 8,
+     "max": 8
     },
     "courses": [
      {
@@ -202,33 +252,31 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "CHEM 1A",
-    "why": "not in the text's section; appears only in course descriptions (requirements likely on page 84)"
-   },
-   {
-    "code": "CHEM 1B",
-    "why": "not in the text's section; appears only in course descriptions (requirements likely on page 84)"
-   },
-   {
-    "code": "CHEM 18A",
-    "why": "not in the text's section; appears only in course descriptions (requirements likely on page 84)"
-   },
-   {
-    "code": "CHEM 18B",
-    "why": "not in the text's section; appears only in course descriptions (requirements likely on page 84)"
-   },
-   {
-    "code": "MATH 1A",
-    "why": "not in the text's Chemistry section; named only in the Computer Science AS-T section (likely on page 84)"
-   },
-   {
-    "code": "MATH 1B",
-    "why": "not in the text's Chemistry section; named only in the Computer Science AS-T section (likely on page 84)"
-   }
-  ],
-  "notes": []
+  "missing_explained": [],
+  "notes": [
+   "Read only the local 'CHEMISTRY ASSOCIATE IN SCIENCE' section; the preceding AS-T section (which also lists PHYS 4A/4B as required) was not used.",
+   "Outcomes 2 and 3 are printed identically in the catalog ('Apply chemistry concepts; demonstrate inductive reasoning.'); recorded as printed. The AS-T section lists a different set of five outcomes.",
+   "The A.S. requirements continue across a page break (page 84 to 85); the physics group choice and 'TOTAL UNITS REQUIRED FOR DEGREE MAJOR 36' appear on page 85.",
+   "Physics requirement read as a choice of two whole groups: PHYS 2A+2B+3A+3B (8 units) or PHYS 4A+4B (8 units); the 'eight units' is recorded as stated on each option block.",
+   "ge_units 21 comes from the generic statement that AA/AS students must complete a minimum of 21 units of General Education; the GE pattern is not named, recorded as local GE. The 60-unit sentence is a generic statement for all AA/AS degrees, so degree_total is null. A health graduation requirement also applies."
+  ]
  },
- "extracted_run": "39006517642"
+ "extracted_run": "44536397187",
+ "catalog_year": "2026-2027",
+ "source_sha": "ad060aafb6eee458",
+ "source_codes": [
+  "CHEM18A",
+  "CHEM18B",
+  "CHEM1A",
+  "CHEM1B",
+  "MATH1A",
+  "MATH1B",
+  "PHYS2A",
+  "PHYS2B",
+  "PHYS3A",
+  "PHYS3B",
+  "PHYS4A",
+  "PHYS4B"
+ ],
+ "source_coverage": 1.0
 }
