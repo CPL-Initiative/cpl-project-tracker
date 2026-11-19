@@ -20,6 +20,8 @@
   "mt_san_antonio": {"state": "none", "on": "2026-10-14", "by": "S387", "source": "#2101",
                      "why": "its CourseLeaf course entries print no SLOs"},
   "palo_verde": {"state": "held", "on": "2026-10-23", "by": "S451", "source": "cpl_memory palo-verde-acalog-catalog-2026-2027-2026-10-22",
-                 "why": "its 2026-27 catalog moved to Acalog, where the read has no course page parser; its 2025-26 eLumen pages printed SLOs"}
+                 "why": "its 2026-27 catalog moved to Acalog, where the read has no course page parser; its 2025-26 eLumen pages printed SLOs"},
+  "palomar": {"state": "parser", "on": "2026-11-19", "by": "S685", "source": "trial 44536105509 on report 99, index 44531824831",
+              "why": "report 99 prints \"Specific Course Objectives\" right after \"Student Learning Outcomes\", and the reader filed the objectives and the \"Outcome\" and \"Objective\" table headers as SLOs on 12 of 12 pages (206 SLOs, 0 objectives; about 35 are SLOs); the reader needs that heading as an objectives heading before the full read (S681's Chabot failure)"}
  }
 }
