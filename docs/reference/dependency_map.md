@@ -349,7 +349,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `unified_courses_data.js` | `CPL_UNIFIED_COURSES` | not stated in header | tabs: `coci-lookup`, `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_build_discipline_blanks_worklist.py`, `kb/_build_orphan_parent_worklist.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_honors_followups_s652.py`, `kb/_honors_of_s653_dryrun.py`, `kb/_honors_two_row_delete_s652.py`, `kb/_identities_rebuild.py`, `kb/_merge_candidate_queue.py`, `kb/_morphological_variant_dryrun.py`, `kb/_seed_college_short_names.py`, `kb/_subjects_list_recode.py` |
 | `unified_courses_index.js` | `CPL_UC_INDEX` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_esl_fold_preview.py`, `kb/_build_roep_display.py`, `kb/_esl_package_actionable.py`, `kb/_esl_package_apply.py`, `kb/_honors_followups_s652.py`, `kb/_honors_of_s653_dryrun.py`, `kb/_honors_two_row_delete_s652.py`, `kb/_mid_outcomes_compare.py`, `kb/_reclustering_s649.py`, `kb/_subjects_list_recode.py` |
 | `unified_courses_member_desc.js` | `CPL_UC_MEMBER_DESC` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_ccr_universe.py`, `kb/_honors_of_s653_dryrun.py`, `kb/_honors_two_row_delete_s652.py`, `kb/_jev_adjudicate.py`, `kb/_mid_outcomes_compare.py`, `kb/_subjects_list_recode.py` |
-| `unified_courses_members.js` | `CPL_UC_MEMBERS` | not stated in header | tabs: `coci-lookup`, `college-briefing`, `cpl-pathways`, `exhibits`, `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_audit_cid_claims.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_universe.py`, `kb/_build_esl_fold_preview.py`, `kb/_build_exhibits_review.py`, `kb/_build_inactive_cards.py`, `kb/_build_not_applicable.py`, `kb/_build_roep_display.py`, `kb/_build_side_by_side.py`, `kb/_ccr_desc_signal.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_package_apply.py`, `kb/_honors_of_s653_dryrun.py`, `kb/_honors_two_row_delete_s652.py`, `kb/_mid_outcomes_compare.py`, `kb/_reclustering_s649.py`, `kb/_row_audit.py`, `kb/_subjects_list_recode.py`, `kb/_suggest_unclassified.py` |
+| `unified_courses_members.js` | `CPL_UC_MEMBERS` | not stated in header | tabs: `coci-lookup`, `college-briefing`, `cpl-pathways`, `exhibits`, `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_audit_cid_claims.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_build_ccr_universe.py`, `kb/_build_esl_fold_preview.py`, `kb/_build_exhibits_review.py`, `kb/_build_inactive_cards.py`, `kb/_build_not_applicable.py`, `kb/_build_roep_display.py`, `kb/_build_side_by_side.py`, `kb/_ccr_desc_signal.py`, `kb/_esl_ladder_relevel_dryrun.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_package_apply.py`, `kb/_honors_of_s653_dryrun.py`, `kb/_honors_two_row_delete_s652.py`, `kb/_mid_outcomes_compare.py`, `kb/_program_requirements_units_rules.py`, `kb/_reclustering_s649.py`, `kb/_row_audit.py`, `kb/_subjects_list_recode.py`, `kb/_suggest_unclassified.py` |
 | `unified_courses_standalone.js` | `CPL_UC_STANDALONE` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_build_ccr_universe.py`, `kb/_build_commons_status.py`, `kb/_build_esl_fold_preview.py`, `kb/_esl_package_actionable.py`, `kb/_esl_package_apply.py`, `kb/_honors_followups_s652.py`, `kb/_honors_of_s653_dryrun.py`, `kb/_honors_two_row_delete_s652.py`, `kb/_merge_candidate_queue.py`, `kb/_morphological_variant_dryrun.py`, `kb/_subjects_list_recode.py` |
 | `unified_courses_suggestions.js` | `CPL_UC_SUGGESTIONS` | not stated in header | tabs: `unified-courses` · scripts: `excel_to_dashboard.py`, `kb/_auto_merge_worklist.py`, `kb/_build_ccr_atlas_extract.py`, `kb/_doctrine_calibration_sample.py`, `kb/_honors_followups_s652.py`, `kb/_honors_two_row_delete_s652.py`, `kb/_subjects_list_recode.py` |
 
@@ -823,6 +823,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/prefix_fold_out/<date>/alias_map.json` | scripts: `kb/_esl_monthly_pass.py`, `kb/alias_chain.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
 | `kb/program_requirements_calgetc_34_plan.json` | scripts: `kb/_program_requirements_readings_measure.py` | scripts: `kb/_program_requirements_readings_measure.py` |
+| `kb/program_requirements_cheap_piles_s683.json` | scripts: `kb/_program_requirements_cheap_piles_s683.py` | scripts: `kb/_program_requirements_cheap_piles_s683.py` |
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
@@ -842,6 +843,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_reconcile.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_course_id_rescore_estimate.py`, `kb/_course_id_route_census.py`, `kb/_prefix_alias_census.py`, `kb/_program_requirements_reconcile.py` | — |
 | `kb/program_requirements_reconcile_out/course_id_rescore_2026-11-15/estimate.json` | scripts: `kb/_course_id_rescore_estimate.py` | scripts: `kb/_course_id_rescore_estimate.py` |
+| `kb/program_requirements_reread_plan_s680.json` | scripts: `kb/_program_named_gaps.py`, `kb/_program_requirements_cheap_piles_s683.py` | — |
 | `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
@@ -935,6 +937,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/program-requirements-checked.json` | scripts: `kb/_build_commons_status.py`, `kb/_sync_program_checked.py` | scripts: `kb/_sync_program_checked.py` · committed by: `daily-dashboard.yml` |
 | `kb/status/program-requirements.json` | tabs: `program-requirements` · scripts: `kb/_build_commons_status.py`, `scripts/queue_status.py` | — |
 | `kb/status/program_discontinued.json` | scripts: `kb/_program_discontinued.py` | — |
+| `kb/status/program_named_gaps.json` | scripts: `kb/_program_named_gaps.py` | scripts: `kb/_program_named_gaps.py` |
 | `kb/status/subjects.json` | tabs: `canonical-subj4` · scripts: `kb/_build_commons_status.py` | — |
 | `kb/subj4_apply` | none found | committed by: `phase-1e-apply.yml` |
 | `kb/subj4_apply/alias_map.json` | scripts: `kb/_rekey_promotions.py`, `kb/alias_chain.py` | — |
@@ -1020,6 +1023,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `pipeline.js` | pages: `CPL_Dashboard.html` | — |
 | `prior_*.json` | scripts: `kb/_program_discontinued.py` | — |
 | `privacy.html` | scripts: `scripts/ui_pass.py` | — |
+| `program_requirement_records_named_gaps_<date>_s680.json` | scripts: `kb/_program_named_gaps.py` | — |
 | `program_requirements.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/queue_status.py` | — |
 | `project_lifecycle.js` | pages: `CPL_Dashboard.html` | — |
 | `projects_editor.js` | pages: `CPL_Dashboard.html` | — |
@@ -1292,7 +1296,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_courses_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_discontinued_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_map_parse_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_named_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_record_verdicts_sql_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_cheap_piles_s683_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_college_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_dated_reads_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
@@ -1309,6 +1315,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_units_rules_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_wave_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_year_renumbers_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_reread_keep_better_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
@@ -1619,5 +1626,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1074 file
-datasets · 195 external services · 629 consumers · 75 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1081 file
+datasets · 195 external services · 632 consumers · 75 workflows · 41 tabs.

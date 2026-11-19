@@ -24,7 +24,32 @@ with the same file at origin/main and keeps the better one.
     5. the higher score.coverage.share (a share either record lacks is no evidence, and the step is skipped);
     6. the arithmetic: equal, unstated that passes, unequal, unstated that does not pass, incomplete, anything else.
   A record with no score (an extraction error) loses every step. A tie keeps the re-read: it is the current catalog
-  text. A program with no filed record keeps its new record. A program whose live row a person checked is restored.
+  text. A program with no filed record keeps its new record.
+
+  Before both, two holds keep a person's reading and a run main does not hold yet (COBIx on #3544, S684):
+    * a program whose live row a person checked is never replaced. With a filed record it is restored; with no
+      filed record at the base the new record moves to <folder>/held_for_person/ (outcome held), and no dispatch
+      names it. The check is read first, whatever the base files.
+    * when the conductor's live read supplies live_runs for the folder's college, a program whose live row holds a
+      run other than the filed record's (or any run at all where the base files none) is held for a person: the
+      re-read moves to held_for_person/, the filed record (if any) is restored, and the why names both runs. A wave
+      loads from its branch before it merges, so the live row can come from a run main lacks, and "better" judged
+      against main would judge the wrong record. A control number live_runs omits has no live row to protect.
+      Without live_runs the script runs as before and the account says live_runs: "not supplied". The live
+      read must be taken before this run's reread posts: a second pass after the post, with a refreshed live read,
+      holds the row and restores main's file, so the branch would disagree with the live row. OPEN (COBIx on #3544,
+      second reader on #3547): treat a live run equal to this run as already posted, placed below both own-program
+      tests. A control number in either
+      list is a string of five ASCII digits and a run is ASCII digits; anything else stops the run.
+
+THE SCORES COMPARED. compare() reads each file's stored score: the re-read's was written by this run's scorer, the
+filed record's at its own extraction, possibly under an older scorer (the units rules, the printed floor). A fresh
+score of the filed side needs the program's closed course list (coci_program_courses, read live at capture) and the
+page text the record was read from (sources.json keeps only text_chars). Neither is committed, so this script cannot
+re-score the filed record offline and compares the stored scores as filed (COBIx on #3544, finding 3, measured S684).
+The rescore passes (_program_requirements_rescore.py, _program_requirements_floor_rescore.py) bring a filed record's
+arithmetic up to a later rule where they can. A decision that turns on the arithmetic or the share between records
+scored under different rules is the one this limit can misjudge; the account's `why` names the step that decided.
 
 A worse re-read is replaced by main's file byte for byte, so its extracted_run is main's. step=reread posts one
 extraction run's records; with no run named it takes the highest run in the folder, which is main's once every
@@ -40,7 +65,8 @@ account marks each restored program with what held() says at the next read of th
 lists the rest as `next_read_pays`.
 
 --checked is required: the conductor's live read of checked rows, {"by_college": {"<college>": ["<control number>",
-...]}}; a college absent from by_college has none. It writes <folder>/reread_keep_better.json, prints one line a
+...]}, "live_runs": {"<college>": {"<control number>": "<extracted_run>"}}}; a college absent from by_college has
+no checked rows, and one absent from a supplied live_runs has no live rows. live_runs is optional. It writes <folder>/reread_keep_better.json, prints one line a
 program, writes nothing to Supabase and calls no model.
 
 Run from the repo root, after extract=1 filed the college on its branch:
@@ -161,7 +187,21 @@ def base_bytes(root: str, base: str, rel: str) -> bytes | None:
     return got.stdout if got.returncode == 0 else None
 
 
-DIGITS = re.compile(r"^\d{3,6}$")
+# Every committed record's control number is five ASCII digits (18,980 on main, S684). A number, or a string that
+# lost its leading zero, would compare equal to nothing and skip the guard, so either stops the run.
+CONTROL_NUMBER = re.compile(r"[0-9]{5}")
+RUN = re.compile(r"[0-9]+")   # ASCII only: str.isdigit passes other scripts' digits
+
+
+def control_number(x, where: str) -> str:
+    if not (isinstance(x, str) and CONTROL_NUMBER.fullmatch(x)):
+        raise SystemExit("%s: %r is not a control number: a control number is a string of five digits and keeps its "
+                         "leading zeros (\"05839\", never 5839 or \"5839\")" % (where, x))
+    return x
+
+
+def is_run(v) -> bool:
+    return isinstance(v, (str, int)) and not isinstance(v, bool) and bool(RUN.fullmatch(str(v)))
 
 
 def read_checked(path: str | None, college: str | None) -> set[str]:
@@ -178,9 +218,35 @@ def read_checked(path: str | None, college: str | None) -> set[str]:
     if not college:
         raise SystemExit("the folder's records name no college, so its checked rows cannot be read")
     rows = by.get(college, [])
-    if not isinstance(rows, list) or not all(isinstance(x, (str, int)) and DIGITS.match(str(x)) for x in rows):
+    if not isinstance(rows, list):
         raise SystemExit("by_college[%r] is not a list of control numbers" % college)
-    return {str(x) for x in rows}
+    return {control_number(x, "by_college[%r]" % college) for x in rows}
+
+
+def read_live_runs(path: str | None, college: str | None) -> dict | None:
+    """The live row's extracted_run for each control number of `college`, from the conductor's live read's optional
+    "live_runs" key: {"live_runs": {"<college>": {"<control number>": "<run>"}}}. None when the key is absent (the
+    script then compares as before); {} when it is supplied without the college (no live rows there). Malformed
+    stops the run."""
+    if not path:
+        return None
+    with open(path) as fh:
+        got = json.load(fh)
+    if not isinstance(got, dict) or "live_runs" not in got:
+        return None
+    lr = got["live_runs"]
+    if not isinstance(lr, dict):
+        raise SystemExit("%s: live_runs is not an object of colleges" % path)
+    if not college:
+        raise SystemExit("the folder's records name no college, so its live runs cannot be read")
+    rows = lr.get(college, {})
+    if not isinstance(rows, dict):
+        raise SystemExit("live_runs[%r] is not an object of control number to extraction run" % college)
+    for k, v in rows.items():
+        control_number(k, "live_runs[%r]" % college)
+        if not is_run(v):
+            raise SystemExit("live_runs[%r][%r]: %r is not an extraction run (ASCII digits)" % (college, k, v))
+    return {k: str(v) for k, v in rows.items()}
 
 
 def next_read_held(folder: str, cn: str) -> dict | None:
@@ -221,7 +287,8 @@ def folder_college(folder: str) -> str | None:
 
 
 def keep_better(folder: str, base: str = "origin/main", run: str | None = None, checked: set[str] | None = None,
-                dry_run: bool = False, out=print) -> dict:
+                dry_run: bool = False, out=print, live_runs: dict | None = None) -> dict:
+    """live_runs: the folder's college's {control number: live extracted_run} (read_live_runs), or None."""
     if checked is None:
         raise SystemExit("the checked rows are required (--checked): never run without them")
     folder = os.path.abspath(folder)
@@ -236,8 +303,9 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         with open(os.path.join(folder, "capture.json")) as fh:
             run = str(json.load(fh).get("run") or "")
     run = str(run)
-    if not run.isdigit():
-        raise SystemExit("no extraction run: capture.json names none and --run was not given")
+    if not RUN.fullmatch(run):
+        raise SystemExit("no extraction run: capture.json names none and --run was not given (%r is not ASCII digits)"
+                         % run)
     acct_path = os.path.join(folder, ACCOUNT)
     runs: dict = {}
     if os.path.isfile(acct_path):
@@ -263,29 +331,45 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
                "source_url": rec.get("source_url"), "filed_source_url": (filed or {}).get("source_url"),
                "filed_run": (filed or {}).get("extracted_run"), "reread": brief(new_score)}
         not_own = own_program(rec)
-        if filed is None:
-            if not_own:
-                row.update(outcome="held", why="no filed record, and " + not_own)
-                if not dry_run:
-                    os.makedirs(os.path.join(folder, HELD_DIR), exist_ok=True)
-                    with open(os.path.join(folder, HELD_DIR, cn + ".json"), "wb") as fh:
-                        fh.write(raw)
-                    os.remove(path)
-            else:
-                row.update(outcome="new", why="no filed record on %s" % base)
-        else:
+        live = None if live_runs is None else live_runs.get(str(cn))
+        live = None if live is None else str(live)
+        if live_runs is not None:
+            row["live_run"] = live
+        if filed is not None:
             row["filed"] = brief(filed_score)
             row["plain_reread_loses_pass"] = passes_live(filed_score) and not passes_live(new_score)
-            if cn in checked:
+        # A person's check first, whatever the base files (COBIx on #3544, finding 1).
+        if cn in checked:
+            if filed is not None:
                 row.update(outcome="restored", why="a person checked the live row: the filed record stands")
-            elif not_own:
-                row.update(outcome="restored", why=not_own, not_own_program=True)
             else:
-                side, why = compare(filed_score, new_score)
-                row.update(outcome="restored" if side == "filed" else "kept", why=why)
-            if row["outcome"] == "restored" and not dry_run:
-                with open(path, "wb") as fh:
-                    fh.write(filed_raw)
+                row.update(outcome="held", held_checked=True,
+                           why="a person checked the live row, and %s files no record to restore" % base)
+        # A live row from a run the base does not hold: "better" against the base judges the wrong record (finding 2).
+        elif live is not None and (filed is None or live != str(row["filed_run"])):
+            row.update(outcome="held", held_live_run=True,
+                       why=("the live row holds run %s and %s files run %s: a person compares them"
+                            % (live, base, row["filed_run"])) if filed is not None else
+                           ("the live row holds run %s and %s files no record: a person compares them" % (live, base)))
+        elif filed is None:
+            if not_own:
+                row.update(outcome="held", why="no filed record, and " + not_own)
+            else:
+                row.update(outcome="new", why="no filed record on %s" % base)
+        elif not_own:
+            row.update(outcome="restored", why=not_own, not_own_program=True)
+        else:
+            side, why = compare(filed_score, new_score)
+            row.update(outcome="restored" if side == "filed" else "kept", why=why)
+        if not dry_run and row["outcome"] == "held":
+            os.makedirs(os.path.join(folder, HELD_DIR), exist_ok=True)
+            with open(os.path.join(folder, HELD_DIR, cn + ".json"), "wb") as fh:
+                fh.write(raw)
+            if filed is None:
+                os.remove(path)
+        if not dry_run and row["outcome"] in ("restored", "held") and filed is not None:
+            with open(path, "wb") as fh:
+                fh.write(filed_raw)
         rows.append(row)
     # A program held for a person earlier in this run's account stays listed (its file is in held_for_person/).
     rows.extend(e for e in earlier.values() if e.get("outcome") == "held")
@@ -325,6 +409,8 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         "restored_filed_pass": sum(bool((r.get("filed") or {}).get("passes_live")) for r in restored),
         "restored_not_own_program": sum(bool(r.get("not_own_program")) for r in restored),
         "held_for_person": sum(r["outcome"] == "held" for r in rows),
+        "held_checked": sum(bool(r.get("held_checked")) for r in rows),
+        "held_live_run": sum(bool(r.get("held_live_run")) for r in rows),
         "new": sum(r["outcome"] == "new" for r in rows),
         "plain_reread_would_lose_pass": sum(bool(r.get("plain_reread_loses_pass")) for r in rows),
         "kept_by_extraction_guard": len(kept_passing),
@@ -362,9 +448,11 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference "
                 "decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic "
                 "equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed "
-                "record keeps the new one unless its heading names another program (held for a person); a checked "
-                "live row restores (d-reread-keep-the-better-s683)",
+                "record keeps the new one unless its heading names another program (held for a person); first of "
+                "all, a checked live row restores, or is held where the base files none, and a supplied live run "
+                "other than the filed record's is held for a person (d-reread-keep-the-better-s683; COBIx on #3544)",
         "checked": sorted(checked),
+        "live_runs": "not supplied" if live_runs is None else {str(k): str(v) for k, v in sorted(live_runs.items())},
         "dispatch": dispatch or "no dispatch: no run holds a kept or new record that a reread has not posted",
         "carried_runs": carried,
         "counts": counts,
@@ -393,12 +481,15 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("folder", help="kb/program_requirements_college/<slug>, after extract=1 filed it")
     ap.add_argument("--checked", required=True,
-                    help="the conductor's live read of checked rows: {\"by_college\": {college: [control numbers]}}")
+                    help="the conductor's live read: {\"by_college\": {college: [control numbers]}, optional "
+                         "\"live_runs\": {college: {control number: extracted_run}}}")
     ap.add_argument("--base", default="origin/main", help="the ref holding the filed records (default origin/main)")
     ap.add_argument("--run", default=None, help="the extraction run (default: capture.json's run)")
     ap.add_argument("--dry-run", action="store_true", help="print the decisions; write nothing")
     a = ap.parse_args(argv)
-    keep_better(a.folder, a.base, a.run, read_checked(a.checked, folder_college(os.path.abspath(a.folder))), a.dry_run)
+    college = folder_college(os.path.abspath(a.folder))
+    keep_better(a.folder, a.base, a.run, read_checked(a.checked, college), a.dry_run,
+                live_runs=read_live_runs(a.checked, college))
     return 0
 
 
