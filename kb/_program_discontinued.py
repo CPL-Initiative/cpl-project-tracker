@@ -190,24 +190,31 @@ def committed_not_printed(base: str = COLLEGE_DIR) -> list[dict]:
     session's reach. Candidates for the prior-year read, never flags."""
     out, seen = [], set()
     for folder in sorted(glob.glob(os.path.join(base, "*"))):
+        # Only the college's newest read counts (COBIx on #3569): a later capture that finds a page for a program an
+        # older preview marked clears the mark, and a newer preview's mark stands over an older capture's silence.
+        reads = []
         for name in ("capture.json", "capture_preview.json"):
             path = os.path.join(folder, name)
-            if not os.path.isfile(path):
+            if os.path.isfile(path):
+                with open(path, encoding="utf-8") as fh:
+                    d = json.load(fh) or {}
+                run = str(d.get("run") or "")
+                reads.append((int(run) if run.isdigit() else -1, name, d))
+        if not reads:
+            continue
+        _, name, d = max(reads, key=lambda x: x[0])
+        for r in d.get("not_found") or []:
+            if ((r.get("near_miss") or {}).get("rule")) != "D":
                 continue
-            with open(path, encoding="utf-8") as fh:
-                d = json.load(fh) or {}
-            for r in d.get("not_found") or []:
-                if ((r.get("near_miss") or {}).get("rule")) != "D":
-                    continue
-                key = (d.get("college"), str(r.get("control_number")))
-                if key in seen:
-                    continue
-                seen.add(key)
-                out.append({"college": key[0], "control_number": key[1], "title": r.get("title"),
-                            "award": r.get("award"),
-                            "gap": "not printed in the %s catalog" % (d.get("catalog_year") or "current"),
-                            "read": "%s run %s" % (name, d.get("run")),
-                            "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"})
+            key = (d.get("college"), str(r.get("control_number")))
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append({"college": key[0], "control_number": key[1], "title": r.get("title"),
+                        "award": r.get("award"),
+                        "gap": "not printed in the %s catalog" % (d.get("catalog_year") or "current"),
+                        "read": "%s run %s" % (name, d.get("run")),
+                        "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"})
     return out
 
 

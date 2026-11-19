@@ -80,6 +80,16 @@ try:
              "near_miss": {"rule": "D", "why": "rule D: no line of the catalog prints the program's title"}},
             {"control_number": "20002", "title": "Finance", "award": "A.S. Degree",
              "near_miss": {"url": "https://x/catalog.pdf#page=3", "coverage": 0.2}}]}, fh)
+    # COBIx on #3569: only the newest read counts. Lassen's later capture finds a page for the preview's mark (cleared);
+    # an older capture under a newer preview leaves the preview's mark standing (Butte above: capture.json has no run).
+    with open(os.path.join(base, "lassen", "capture_preview.json"), "w") as fh:
+        json.dump({"college": "Lassen College", "catalog_year": "2026-2027", "run": "5", "not_found": [
+            {"control_number": "20003", "title": "Welding", "award": "Certificate", "near_miss": {"rule": "D"}}]}, fh)
+    with open(os.path.join(base, "lassen", "capture.json"), "w") as fh:
+        json.dump({"college": "Lassen College", "catalog_year": "2026-2027", "run": "9", "not_found": []}, fh)
+    _np = [r["control_number"] for r in D.committed_not_printed(base)]
+    check("20003" not in _np, "a later full capture clears an older preview's rule D mark")
+    check("20001" in _np, "a newer preview's mark stands over an older capture")
     cap = os.path.join(tmp, "out")
     os.makedirs(os.path.join(cap, "sources"))
     with open(os.path.join(cap, "capture.json"), "w") as fh:
