@@ -4,7 +4,7 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1082,
+  "file_datasets": 1083,
   "external_services": 195,
   "consumers": 634,
   "workflows": 75,
@@ -29227,6 +29227,17 @@
    "served": true,
    "main_committers": []
   },
+  "file:tools/first_light_applies": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:first-light-apply.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tools/first_light_candidates.json": {
    "consumers": [
     {
@@ -36480,6 +36491,7 @@
    ],
    "adds": [
     "tools/first_light_selection.json",
+    "tools/first_light_applies",
     "first_light.js",
     "library/photos",
     "cpl_pathways.js",
