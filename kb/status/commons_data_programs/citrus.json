@@ -1,7 +1,5 @@
-{"schema":1,"college":"Citrus College","slug":"citrus","basis":"live","census_at":"2026-11-19 13:19Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Citrus College","slug":"citrus","basis":"live","census_at":"2026-11-19 20:08Z","correction_rules":false,"programs":[
 {"cn":"02333","title":"Visual Arts","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/"},
-{"cn":"33599","title":"Correctional Science","award":"A.S. Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-as/"},
-{"cn":"02356","title":"Criminal Justice","award":"A.S. Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-as/"},
 {"cn":"30269","title":"Child Development","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"40286","title":"Customer Service","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"40287","title":"Customer Service and Call Center","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
