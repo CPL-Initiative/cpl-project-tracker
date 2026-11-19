@@ -73,7 +73,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a1d492269091781b"
+   "text_sha": "19965b878158a6b9"
   },
   "listed": 53,
   "text_chars": 16000
@@ -144,7 +144,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8f0b36ea7efef5e9"
+   "text_sha": "e13ad585408fbc47"
   },
   "listed": 44,
   "text_chars": 16000
@@ -200,10 +200,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8f8e5ba8acfae705"
+   "text_sha": "55cc1a2aa89d0d06"
   },
   "listed": 37,
-  "text_chars": 5584
+  "text_chars": 5533
  },
  {
   "control_number": "02811",
@@ -246,10 +246,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ae1effd5acf0d808"
+   "text_sha": "8d208b85c1599d86"
   },
   "listed": 20,
-  "text_chars": 10937
+  "text_chars": 10885
  },
  {
   "control_number": "02814",
@@ -286,10 +286,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "1f116fac524f0b82"
+   "text_sha": "ffd272d17e7d23b8"
   },
   "listed": 14,
-  "text_chars": 10550
+  "text_chars": 10504
  },
  {
   "control_number": "02816",
@@ -332,7 +332,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a0f26a0277f79992"
+   "text_sha": "c9246c1cc82c8fdf"
   },
   "listed": 18,
   "text_chars": 16000
@@ -378,7 +378,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ad6a6a66869c195d"
+   "text_sha": "b5f938c19a6bab17"
   },
   "listed": 18,
   "text_chars": 16000
@@ -419,10 +419,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c527001e16da3bf7"
+   "text_sha": "9d539f2f3888650b"
   },
   "listed": 14,
-  "text_chars": 15299
+  "text_chars": 15219
  },
  {
   "control_number": "02820",
@@ -460,7 +460,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "64a15631c6a36627"
+   "text_sha": "72f24758a35c0a8b"
   },
   "listed": 13,
   "text_chars": 16000
@@ -500,7 +500,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "959c8cefc69de02d"
+   "text_sha": "4cd567e39db8200f"
   },
   "listed": 14,
   "text_chars": 16000
@@ -547,7 +547,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "54adbeb59f11d711"
+   "text_sha": "e8a50ce84d79b122"
   },
   "listed": 19,
   "text_chars": 16000
@@ -590,10 +590,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d0037423a12d3bd2"
+   "text_sha": "beaefa400f605717"
   },
   "listed": 16,
-  "text_chars": 12606
+  "text_chars": 12524
  },
  {
   "control_number": "02826",
@@ -648,10 +648,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ddd4ea652f37ae1d"
+   "text_sha": "dde7b520b061a8ec"
   },
   "listed": 31,
-  "text_chars": 15992
+  "text_chars": 15871
  },
  {
   "control_number": "02827",
@@ -693,10 +693,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5e10b56eeabfca3a"
+   "text_sha": "d4c89da54b5b97e8"
   },
   "listed": 19,
-  "text_chars": 9278
+  "text_chars": 9233
  },
  {
   "control_number": "02828",
@@ -738,10 +738,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8f7080af12cf2295"
+   "text_sha": "da5a19a6b11ae604"
   },
   "listed": 19,
-  "text_chars": 11419
+  "text_chars": 11358
  },
  {
   "control_number": "02831",
@@ -775,10 +775,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5cc81e666170b1db"
+   "text_sha": "a775aa895c1e6f68"
   },
   "listed": 12,
-  "text_chars": 3345
+  "text_chars": 3326
  },
  {
   "control_number": "02834",
@@ -811,7 +811,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fd344c74a3617f91"
+   "text_sha": "7cb5a637266104f5"
   },
   "listed": 10,
   "text_chars": 16000
@@ -822,11 +822,14 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.87,
+  "coverage": 1.0,
   "codes_found": [
    "MUSIC121",
    "MUSIC122",
    "MUSIC161",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
    "MUSIC2161",
    "MUSIC2162",
    "MUSIC2163",
@@ -846,21 +849,27 @@
    "MUSIC781"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
-   "title": "142",
-   "h1": "142",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
+   "title": "141",
+   "h1": "141",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    141,
     142,
     143
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "53488df888f40620"
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 141,
+    "share": 1.0
+   },
+   "text_sha": "75de1cee07bd7d23"
   },
   "listed": 23,
-  "text_chars": 11339
+  "text_chars": 16000
  },
  {
   "control_number": "02836",
@@ -893,7 +902,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8e087f4747e0b5c8"
+   "text_sha": "9e8dd02614e54232"
   },
   "listed": 9,
   "text_chars": 16000
@@ -927,10 +936,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "db3535d78e113d1e"
+   "text_sha": "adc14bf5336a282a"
   },
   "listed": 8,
-  "text_chars": 12466
+  "text_chars": 12362
  },
  {
   "control_number": "02838",
@@ -956,10 +965,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fdf7b1bf1b949fb3"
+   "text_sha": "de8b5f90bf98f055"
   },
   "listed": 4,
-  "text_chars": 5508
+  "text_chars": 5483
  },
  {
   "control_number": "02839",
@@ -988,10 +997,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "09f46b51a6e4116c"
+   "text_sha": "11c771106ec41645"
   },
   "listed": 7,
-  "text_chars": 4834
+  "text_chars": 4813
  },
  {
   "control_number": "02841",
@@ -1023,10 +1032,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "45c2373a15a042e2"
+   "text_sha": "b595fc8469e74321"
   },
   "listed": 10,
-  "text_chars": 5834
+  "text_chars": 5804
  },
  {
   "control_number": "08308",
@@ -1084,10 +1093,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6730730d4f427df6"
+   "text_sha": "cead0c6588358f79"
   },
   "listed": 36,
-  "text_chars": 11593
+  "text_chars": 11493
  },
  {
   "control_number": "08311",
@@ -1122,10 +1131,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d5505c8de0873e9e"
+   "text_sha": "47c796928da42525"
   },
   "listed": 13,
-  "text_chars": 6068
+  "text_chars": 6044
  },
  {
   "control_number": "08315",
@@ -1167,7 +1176,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "37c69613fad7f057"
+   "text_sha": "20e4f7cc9816116b"
   },
   "listed": 17,
   "text_chars": 16000
@@ -1202,7 +1211,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "27375dda30bc3547"
+   "text_sha": "097bc955111048cf"
   },
   "listed": 7,
   "text_chars": 16000
@@ -1246,7 +1255,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2075531966ca0186"
+   "text_sha": "8b5febca479b5a0a"
   },
   "listed": 16,
   "text_chars": 16000
@@ -1268,8 +1277,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
-   "title": "(STATE CODE 08319)",
-   "h1": "(STATE CODE 08319)",
+   "title": "OFFICE COMMUNICATIONS",
+   "h1": "OFFICE COMMUNICATIONS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1278,10 +1287,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "89cb8f0f56348619"
+   "page_check": {
+    "rule": "A",
+    "page": 108,
+    "share": 1.0
+   },
+   "text_sha": "e5f3919355475c47"
   },
   "listed": 6,
-  "text_chars": 6598
+  "text_chars": 6616
  },
  {
   "control_number": "08320",
@@ -1314,7 +1328,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ed6bfba3374a9c43"
+   "text_sha": "1094ed8ac7175924"
   },
   "listed": 8,
   "text_chars": 16000
@@ -1360,7 +1374,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "42f333bf447a9c0f"
+   "text_sha": "7fab2188a90f2de6"
   },
   "listed": 20,
   "text_chars": 16000
@@ -1432,7 +1446,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6b6a6054ef341f51"
+   "text_sha": "bb07b1100f487f3b"
   },
   "listed": 44,
   "text_chars": 16000
@@ -1462,10 +1476,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "1ddf99cceec89d78"
+   "text_sha": "0198ef6dc3fa375d"
   },
   "listed": 4,
-  "text_chars": 9567
+  "text_chars": 9486
  },
  {
   "control_number": "08325",
@@ -1497,10 +1511,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "11d722599d904cb9"
+   "text_sha": "e981506c5b641fb3"
   },
   "listed": 9,
-  "text_chars": 11081
+  "text_chars": 11048
  },
  {
   "control_number": "08326",
@@ -1544,7 +1558,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "85244d2d1518fed2"
+   "text_sha": "f38ba43d707154b1"
   },
   "listed": 19,
   "text_chars": 16000
@@ -1577,10 +1591,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0f546bae3dcda847"
+   "text_sha": "bc384076b42bcefc"
   },
   "listed": 6,
-  "text_chars": 15331
+  "text_chars": 15210
  },
  {
   "control_number": "08328",
@@ -1621,7 +1635,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fce1249ae245dacc"
+   "text_sha": "ae335582282d1acf"
   },
   "listed": 19,
   "text_chars": 16000
@@ -1668,7 +1682,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "188f7b600c06d214"
+   "text_sha": "dc9260b45d686ce2"
   },
   "listed": 19,
   "text_chars": 16000
@@ -1713,10 +1727,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "35ce9530da7fad28"
+   "text_sha": "e0ca8be067f204a9"
   },
   "listed": 20,
-  "text_chars": 5805
+  "text_chars": 5750
  },
  {
   "control_number": "10349",
@@ -1754,10 +1768,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5d110ee7c129dbbe"
+   "text_sha": "bdccccad6402d0a5"
   },
   "listed": 15,
-  "text_chars": 11164
+  "text_chars": 11099
  },
  {
   "control_number": "10350",
@@ -1795,7 +1809,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c3d40e089f8913b0"
+   "text_sha": "e82b4bf63cb90961"
   },
   "listed": 13,
   "text_chars": 16000
@@ -1837,10 +1851,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e690d7bc0dc8c35a"
+   "text_sha": "da365597e3a52c26"
   },
   "listed": 16,
-  "text_chars": 11858
+  "text_chars": 11797
  },
  {
   "control_number": "10729",
@@ -1872,10 +1886,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "73d1581adcf3abcb"
+   "text_sha": "d4d8814208c28a40"
   },
   "listed": 10,
-  "text_chars": 4967
+  "text_chars": 4943
  },
  {
   "control_number": "10730",
@@ -1907,10 +1921,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "73d1581adcf3abcb"
+   "text_sha": "d4d8814208c28a40"
   },
   "listed": 10,
-  "text_chars": 4967
+  "text_chars": 4943
  },
  {
   "control_number": "10731",
@@ -1942,10 +1956,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "73d1581adcf3abcb"
+   "text_sha": "d4d8814208c28a40"
   },
   "listed": 10,
-  "text_chars": 4967
+  "text_chars": 4943
  },
  {
   "control_number": "10733",
@@ -1983,7 +1997,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "00bf8fa7c8cf217a"
+   "text_sha": "94786f4d67cacc32"
   },
   "listed": 13,
   "text_chars": 16000
@@ -2023,10 +2037,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a54ba83694a43135"
+   "text_sha": "fc95377452fea61d"
   },
   "listed": 14,
-  "text_chars": 10184
+  "text_chars": 10124
  },
  {
   "control_number": "10735",
@@ -2060,11 +2074,16 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "cb0b21efe2f33e7e"
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 87,
+    "share": 1.0
+   },
+   "text_sha": "9dc5a06c8f8840b9"
   },
   "listed": 12,
-  "text_chars": 10654
+  "text_chars": 10589
  },
  {
   "control_number": "10736",
@@ -2101,7 +2120,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "3f2cbe9b4a6c9a63"
+   "text_sha": "72f014d7b460d089"
   },
   "listed": 12,
   "text_chars": 16000
@@ -2143,10 +2162,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e25658a5981f9884"
+   "text_sha": "0b2a0c5668260959"
   },
   "listed": 15,
-  "text_chars": 12473
+  "text_chars": 12403
  },
  {
   "control_number": "12188",
@@ -2197,10 +2216,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "25fa54ed50552bff"
+   "text_sha": "7ba22b41b68bd961"
   },
   "listed": 28,
-  "text_chars": 9847
+  "text_chars": 9772
  },
  {
   "control_number": "14233",
@@ -2231,10 +2250,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a3745dc65418dfaa"
+   "text_sha": "611c185762c69731"
   },
   "listed": 8,
-  "text_chars": 9997
+  "text_chars": 9957
  },
  {
   "control_number": "15032",
@@ -2265,10 +2284,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "58b20f1bd27ca065"
+   "text_sha": "4f7829c09b924d6e"
   },
   "listed": 7,
-  "text_chars": 13929
+  "text_chars": 13853
  },
  {
   "control_number": "15057",
@@ -2298,10 +2317,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0221935e04945c42"
+   "text_sha": "7431ab2f6d24ebe1"
   },
   "listed": 6,
-  "text_chars": 15778
+  "text_chars": 15694
  },
  {
   "control_number": "15058",
@@ -2330,10 +2349,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ad3695c6a81dda3c"
+   "text_sha": "430b7e76ad242cbe"
   },
   "listed": 6,
-  "text_chars": 8523
+  "text_chars": 8477
  },
  {
   "control_number": "15074",
@@ -2361,10 +2380,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "cdf58ad3c902c3ea"
+   "text_sha": "9bada8f622f8e36b"
   },
   "listed": 6,
-  "text_chars": 4535
+  "text_chars": 4517
  },
  {
   "control_number": "15079",
@@ -2395,7 +2414,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "efd5c5051add7b77"
+   "text_sha": "fca8b13eace2f64d"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2429,10 +2448,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3ab3e5ead9f26bfe"
+   "text_sha": "3646310d35115ffa"
   },
   "listed": 8,
-  "text_chars": 10724
+  "text_chars": 10655
  },
  {
   "control_number": "15085",
@@ -2469,10 +2488,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b1277c4c5305ef64"
+   "text_sha": "8931f9a44f4353f5"
   },
   "listed": 15,
-  "text_chars": 4775
+  "text_chars": 4731
  },
  {
   "control_number": "15092",
@@ -2501,7 +2520,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c08e01132050ba1c"
+   "text_sha": "a24cc3f687e496ee"
   },
   "listed": 4,
   "text_chars": 16000
@@ -2531,10 +2550,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "28417aa44967d1b1"
+   "text_sha": "d8fe4f28d1a2ba54"
   },
   "listed": 3,
-  "text_chars": 15457
+  "text_chars": 15375
  },
  {
   "control_number": "15094",
@@ -2561,10 +2580,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "448e0c47a3fdad6b"
+   "text_sha": "3f22786340534468"
   },
   "listed": 3,
-  "text_chars": 12700
+  "text_chars": 12631
  },
  {
   "control_number": "15097",
@@ -2592,10 +2611,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6eabde431fe082e3"
+   "text_sha": "6276ddac820fc36c"
   },
   "listed": 5,
-  "text_chars": 7869
+  "text_chars": 7823
  },
  {
   "control_number": "15101",
@@ -2621,10 +2640,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "920bc4957f719a7e"
+   "text_sha": "7e2e2ed62e7a9aee"
   },
   "listed": 4,
-  "text_chars": 5416
+  "text_chars": 5402
  },
  {
   "control_number": "16756",
@@ -2643,8 +2662,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=153",
-   "title": "(STATE CODE 16756)",
-   "h1": "(STATE CODE 16756)",
+   "title": "CRIMINAL JUSTICE",
+   "h1": "CRIMINAL JUSTICE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2653,10 +2672,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "cb62a6d10cb53597"
+   "page_check": {
+    "rule": "A",
+    "page": 153,
+    "share": 1.0
+   },
+   "text_sha": "a04c1af9985fb8ae"
   },
   "listed": 6,
-  "text_chars": 11541
+  "text_chars": 11513
  },
  {
   "control_number": "17794",
@@ -2687,7 +2711,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "cbf18d9fe0ee03be"
+   "text_sha": "342f79cfdd450c2e"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2724,10 +2748,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "dde1b0d70025dc9c"
+   "text_sha": "f122571d0f893df8"
   },
   "listed": 12,
-  "text_chars": 3312
+  "text_chars": 3290
  },
  {
   "control_number": "17800",
@@ -2754,10 +2778,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9dd09c3a5398029d"
+   "text_sha": "6ff960db26394c64"
   },
   "listed": 4,
-  "text_chars": 9097
+  "text_chars": 9054
  },
  {
   "control_number": "18837",
@@ -2774,8 +2798,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
-   "title": "(STATE CODE 18837)",
-   "h1": "(STATE CODE 18837)",
+   "title": "LEGAL OFFICE SKILLS",
+   "h1": "LEGAL OFFICE SKILLS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2785,10 +2809,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3f54320a011935ef"
+   "page_check": {
+    "rule": "A",
+    "page": 107,
+    "share": 0.667
+   },
+   "text_sha": "98d7204a4d657e38"
   },
   "listed": 6,
-  "text_chars": 14802
+  "text_chars": 14764
  },
  {
   "control_number": "19006",
@@ -2821,7 +2850,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3ad8210c571a572a"
+   "text_sha": "c422c1e795b62379"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2853,10 +2882,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "8d9b283a6214cd02"
+   "text_sha": "72b1a1792f11da14"
   },
   "listed": 5,
-  "text_chars": 14180
+  "text_chars": 14103
  },
  {
   "control_number": "19008",
@@ -2883,10 +2912,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "379a37236c733f21"
+   "text_sha": "2fcb3c3faba20bc0"
   },
   "listed": 3,
-  "text_chars": 15696
+  "text_chars": 15612
  },
  {
   "control_number": "19015",
@@ -2918,7 +2947,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "adfe12931f3076d2"
+   "text_sha": "fb7b0cc6f60c6082"
   },
   "listed": 7,
   "text_chars": 16000
@@ -3130,7 +3159,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "62fefa4fae11174d"
+   "text_sha": "c7772d9c71bc631c"
   },
   "listed": 227,
   "text_chars": 16000
@@ -3152,168 +3181,12 @@
   "title": "General Studies: Social and Behavioral Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.94,
-  "codes_found": [
-   "ADDICST10",
-   "ADDICST14",
-   "ADDICST15",
-   "ADMJUS1",
-   "ADMJUS2",
-   "ADMJUS4",
-   "ADMJUS67",
-   "AFROAM19",
-   "AFROAM4",
-   "AFROAM5",
-   "ANTHRO101",
-   "ANTHRO102",
-   "ANTHRO103",
-   "ANTHRO105",
-   "ANTHRO106",
-   "ANTHRO109",
-   "ANTHRO111",
-   "ANTHRO121",
-   "ANTHRO132",
-   "ANTHRO141",
-   "ANTHRO161",
-   "ART101",
-   "ART102",
-   "ART103",
-   "ART105",
-   "ART109",
-   "ART111",
-   "BUS5",
-   "CAOT32",
-   "CAOT82",
-   "CHDEV1",
-   "CHDEV11",
-   "CHICANO2",
-   "CHICANO20",
-   "CHICANO47",
-   "CHICANO7",
-   "CHICANO8",
-   "CHICANO80",
-   "COMM100",
-   "COMM104",
-   "COMM121",
-   "COMM122",
-   "COMM151",
-   "COMM189",
-   "COMMC1000",
-   "COUNSEL20",
-   "COUNSEL40",
-   "ECON1",
-   "ECON10",
-   "ECON2",
-   "EDUC203",
-   "ENGLC1000",
-   "ENGLC1001",
-   "ENGLISH102",
-   "ENVSCI1",
-   "FINANCE8",
-   "GEOG1",
-   "GEOG14",
-   "GEOG15",
-   "GEOG2",
-   "GEOG25",
-   "GEOG3",
-   "GEOG7",
-   "GIS25",
-   "HISTORY1",
-   "HISTORY11",
-   "HISTORY12",
-   "HISTORY13",
-   "HISTORY19",
-   "HISTORY2",
-   "HISTORY29",
-   "HISTORY41",
-   "HISTORY42",
-   "HISTORY44",
-   "HISTORY5",
-   "HISTORY52",
-   "HISTORY56",
-   "HISTORY6",
-   "HISTORY81",
-   "HISTORY82",
-   "HISTORY86",
-   "HISTORY87",
-   "JAPAN9",
-   "JOURNAL100",
-   "JOURNAL109",
-   "JOURNAL251",
-   "MATH215",
-   "MATH228B",
-   "MATH238",
-   "MATH240",
-   "MATH260",
-   "MATH261",
-   "MATH262",
-   "MATH263",
-   "MEDIART117",
-   "NATIVAM170",
-   "NATIVAM171",
-   "NATIVAM173",
-   "PHILOS5",
-   "PHILOS6",
-   "PHILOS9",
-   "POLSC1000",
-   "POLSCI19",
-   "POLSCI2",
-   "POLSCI30",
-   "POLSCI5",
-   "POLSCI50",
-   "POLSCI7",
-   "PSYCC1000",
-   "PSYCH13",
-   "PSYCH14",
-   "PSYCH16",
-   "PSYCH2",
-   "PSYCH32",
-   "PSYCH41",
-   "PSYCH52",
-   "PSYCH60",
-   "PSYCH66",
-   "PSYCH69",
-   "PSYCH74",
-   "SOC1",
-   "SOC11",
-   "SOC125",
-   "SOC13",
-   "SOC15",
-   "SOC2",
-   "SOC21",
-   "SOC28",
-   "SOC29",
-   "SOC3",
-   "SOC31",
-   "SOC35",
-   "SOC37",
-   "SOC4",
-   "SOC86",
-   "SOC87",
-   "SPANISH10",
-   "SPANISH16",
-   "SPANISH9",
-   "STAT101",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
-   "title": "Graduation Requirements for Degrees and Certificates",
-   "h1": "Graduation Requirements for Degrees and Certificates",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    31,
-    32,
-    33
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "62fefa4fae11174d"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 150,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "21781",
@@ -3381,7 +3254,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7cc896a985190a8a"
+   "text_sha": "f6986057d0292988"
   },
   "listed": 43,
   "text_chars": 16000
@@ -3419,7 +3292,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d64edd045dde2035"
+   "text_sha": "a48558de390d8572"
   },
   "listed": 11,
   "text_chars": 16000
@@ -3457,10 +3330,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2251e62b0952a907"
+   "text_sha": "be0c042fc58f1cbe"
   },
   "listed": 13,
-  "text_chars": 5449
+  "text_chars": 5420
  },
  {
   "control_number": "21806",
@@ -3498,7 +3371,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "79c3ea205ed05a03"
+   "text_sha": "e1d5a4afce469e87"
   },
   "listed": 13,
   "text_chars": 16000
@@ -3542,7 +3415,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "56a4c6c9ab59177a"
+   "text_sha": "e311eb34c68a15b4"
   },
   "listed": 16,
   "text_chars": 16000
@@ -3582,7 +3455,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "bd36f6c8410dbf4f"
+   "text_sha": "373d8ed3824154e6"
   },
   "listed": 14,
   "text_chars": 16000
@@ -3625,10 +3498,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9579069a1f2a1140"
+   "text_sha": "85393cbbdd219c24"
   },
   "listed": 18,
-  "text_chars": 5353
+  "text_chars": 5315
  },
  {
   "control_number": "21812",
@@ -3663,10 +3536,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c8d45f7d015ea9bc"
+   "text_sha": "a922772671af1d0a"
   },
   "listed": 17,
-  "text_chars": 5715
+  "text_chars": 5678
  },
  {
   "control_number": "21814",
@@ -3700,10 +3573,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "4b79fe2a0afc760e"
+   "text_sha": "aeaabe0ed67613e7"
   },
   "listed": 12,
-  "text_chars": 2983
+  "text_chars": 2964
  },
  {
   "control_number": "21816",
@@ -3732,10 +3605,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d79e46f64828011a"
+   "text_sha": "794adff927107c26"
   },
   "listed": 7,
-  "text_chars": 3565
+  "text_chars": 3546
  },
  {
   "control_number": "21817",
@@ -3775,10 +3648,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "adce9cb69cc640f9"
+   "text_sha": "6c3a12bb4b3d3e70"
   },
   "listed": 18,
-  "text_chars": 4233
+  "text_chars": 4201
  },
  {
   "control_number": "22923",
@@ -3806,75 +3679,34 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5d18d1bbb7d543b3"
+   "text_sha": "3985b8b0497ca81b"
   },
   "listed": 6,
-  "text_chars": 5211
+  "text_chars": 5185
  },
  {
   "control_number": "30477",
   "title": "General Studies: Gender Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.6,
-  "codes_found": [
-   "ANTHRO109",
-   "ART116",
-   "CHICANO47",
-   "ENGLISH239",
-   "HEALTH8",
-   "HISTORY52",
-   "POLSCI19",
-   "PSYCH16",
-   "SOC21"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=119",
-   "title": "(STATE CODE 30477)",
-   "h1": "(STATE CODE 30477)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    119
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "e251f049c846fe92"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 6238
+  "text_chars": 0
  },
  {
   "control_number": "30908",
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.545,
-  "codes_found": [
-   "MATH261",
-   "MATH262",
-   "MATH263",
-   "MATH270",
-   "MATH275",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=130",
-   "title": "130",
-   "h1": "130",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    130
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "e3966b9f3f33640a"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 5321
+  "text_chars": 0
  },
  {
   "control_number": "32244",
@@ -3916,10 +3748,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b0d81dc282c14d30"
+   "text_sha": "3bfe877d4860c2b1"
   },
   "listed": 22,
-  "text_chars": 10722
+  "text_chars": 10665
  },
  {
   "control_number": "32318",
@@ -3963,10 +3795,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2c4571994f7518bc"
+   "text_sha": "b1a897e10390689d"
   },
   "listed": 25,
-  "text_chars": 5262
+  "text_chars": 5222
  },
  {
   "control_number": "32336",
@@ -3994,10 +3826,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fe8eb0357a27d17d"
+   "text_sha": "761a9f7bc463beed"
   },
   "listed": 7,
-  "text_chars": 3504
+  "text_chars": 3489
  },
  {
   "control_number": "32408",
@@ -4026,10 +3858,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "adcbd7608a359bcc"
+   "text_sha": "e8be9fec9dc86a17"
   },
   "listed": 7,
-  "text_chars": 3454
+  "text_chars": 3440
  },
  {
   "control_number": "32484",
@@ -4102,7 +3934,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "7c9173809719bc2a"
+   "text_sha": "d76e67bf8ee5078f"
   },
   "listed": 24,
   "text_chars": 16000
@@ -4154,10 +3986,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "84b56589a38e2d58"
+   "text_sha": "15307340845c9161"
   },
   "listed": 26,
-  "text_chars": 8477
+  "text_chars": 8433
  },
  {
   "control_number": "32621",
@@ -4192,8 +4024,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=73",
-   "title": "(STATE CODE 33036)",
-   "h1": "(STATE CODE 33036)",
+   "title": "THEATRE ARTS",
+   "h1": "THEATRE ARTS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4202,10 +4034,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "db616a2f9d1b48a9"
+   "page_check": {
+    "rule": "A",
+    "page": 73,
+    "share": 0.714
+   },
+   "text_sha": "f582f754998fc92a"
   },
   "listed": 14,
-  "text_chars": 9431
+  "text_chars": 9467
  },
  {
   "control_number": "33055",
@@ -4266,7 +4103,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "276a0b3e362839f1"
+   "text_sha": "ea097f05515beeca"
   },
   "listed": 24,
   "text_chars": 16000
@@ -4326,10 +4163,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "3d5978dd8fdac8ff"
+   "text_sha": "8933c7544fa4c828"
   },
   "listed": 35,
-  "text_chars": 6217
+  "text_chars": 6164
  },
  {
   "control_number": "33253",
@@ -4361,10 +4198,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0b29108611c64789"
+   "text_sha": "be34a11cfb097d66"
   },
   "listed": 9,
-  "text_chars": 9527
+  "text_chars": 9481
  },
  {
   "control_number": "33721",
@@ -4417,10 +4254,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d56de01732da9fad"
+   "text_sha": "8cb0386082ec86e6"
   },
   "listed": 7,
-  "text_chars": 4059
+  "text_chars": 4044
  },
  {
   "control_number": "35019",
@@ -4439,8 +4276,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
-   "title": "(STATE CODE 35019)",
-   "h1": "(STATE CODE 35019)",
+   "title": "GEOGRAPHIC INFORMATION SYSTEMS",
+   "h1": "GEOGRAPHIC INFORMATION SYSTEMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4448,10 +4285,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "66992bca03b4849c"
+   "page_check": {
+    "rule": "A",
+    "page": 82,
+    "share": 0.545
+   },
+   "text_sha": "eced3eaff775f258"
   },
   "listed": 11,
-  "text_chars": 2027
+  "text_chars": 2074
  },
  {
   "control_number": "35196",
@@ -4490,10 +4332,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2ad90034aa61c53c"
+   "text_sha": "3f7ffc7f3faee7e7"
   },
   "listed": 17,
-  "text_chars": 6063
+  "text_chars": 6042
  },
  {
   "control_number": "35282",
@@ -4523,10 +4365,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "24574ad3a213eec0"
+   "text_sha": "4bfbc304966826a6"
   },
   "listed": 8,
-  "text_chars": 5491
+  "text_chars": 5465
  },
  {
   "control_number": "35307",
@@ -4563,7 +4405,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b62eab16483e75cb"
+   "text_sha": "6e0c3516530aa992"
   },
   "listed": 12,
   "text_chars": 16000
@@ -4584,20 +4426,26 @@
    "PHYSICS103"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
-   "title": "Graduation Requirements for Degrees and Certificates",
-   "h1": "Graduation Requirements for Degrees and Certificates",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
+   "title": "PHYSICS 2.0",
+   "h1": "PHYSICS 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    31
+    64,
+    65
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "d403b83384802875"
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 64,
+    "share": 1.0
+   },
+   "text_sha": "04ecf02e6df23d13"
   },
   "listed": 6,
-  "text_chars": 6610
+  "text_chars": 7947
  },
  {
   "control_number": "35460",
@@ -4673,10 +4521,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "068f287df0ff3df5"
+   "text_sha": "0cb8fa9dea979f63"
   },
   "listed": 54,
-  "text_chars": 12206
+  "text_chars": 12087
  },
  {
   "control_number": "35462",
@@ -4734,10 +4582,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "964ee1394c42a182"
+   "text_sha": "5e7c9e11af9e696f"
   },
   "listed": 35,
-  "text_chars": 10823
+  "text_chars": 10728
  },
  {
   "control_number": "35464",
@@ -4745,7 +4593,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.783,
+  "coverage": 0.826,
   "codes_found": [
    "ART103",
    "ART105",
@@ -4760,6 +4608,7 @@
    "ENGLC1001",
    "ENGLISH102",
    "GEOG7",
+   "HISTORY11",
    "HISTORY86",
    "MATH215",
    "MUSIC111",
@@ -4778,10 +4627,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0690a8d53584d45a"
+   "text_sha": "9d5fa7c72c6ec961"
   },
   "listed": 23,
-  "text_chars": 12631
+  "text_chars": 12546
  },
  {
   "control_number": "35897",
@@ -4822,10 +4671,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b1cb7531f1344de9"
+   "text_sha": "aae81928d669fe70"
   },
   "listed": 19,
-  "text_chars": 6102
+  "text_chars": 6071
  },
  {
   "control_number": "35898",
@@ -4880,10 +4729,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a1abcd672b9f0d02"
+   "text_sha": "ccbfe862807704b0"
   },
   "listed": 33,
-  "text_chars": 6466
+  "text_chars": 6421
  },
  {
   "control_number": "35975",
@@ -4925,48 +4774,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "41b658c6eee2332f"
+   "text_sha": "0a479cbb9c84a3ab"
   },
   "listed": 19,
-  "text_chars": 7682
+  "text_chars": 7636
  },
  {
   "control_number": "35979",
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BIOLOGY6",
-   "BIOLOGY7",
-   "CHEM101",
-   "CHEM102",
-   "MATH261",
-   "PHYSICS101",
-   "PHYSICS102",
-   "PHYSICS6",
-   "PHYSICS66",
-   "PHYSICS67",
-   "PHYSICS7"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
-   "title": "Graduation Requirements for Degrees and Certificates",
-   "h1": "Graduation Requirements for Degrees and Certificates",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    31,
-    32,
-    33
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "62fefa4fae11174d"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "36027",
@@ -5014,10 +4837,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f4e254ba75bbbfbc"
+   "text_sha": "9279e6d0b9c86733"
   },
   "listed": 2,
-  "text_chars": 4808
+  "text_chars": 4788
  },
  {
   "control_number": "36040",
@@ -5041,10 +4864,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5180c70f896eff5b"
+   "text_sha": "6268f50da2077625"
   },
   "listed": 2,
-  "text_chars": 890
+  "text_chars": 886
  },
  {
   "control_number": "36044",
@@ -5078,10 +4901,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b4b593b8963036a9"
+   "text_sha": "32ea242635c55183"
   },
   "listed": 12,
-  "text_chars": 5854
+  "text_chars": 5820
  },
  {
   "control_number": "36137",
@@ -5118,7 +4941,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "91cbea836513a5ec"
+   "text_sha": "d95b8ec85deae19e"
   },
   "listed": 12,
   "text_chars": 16000
@@ -5158,7 +4981,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a13fc844c8cb5832"
+   "text_sha": "c963d1dd4ba9f941"
   },
   "listed": 12,
   "text_chars": 16000
@@ -5197,10 +5020,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a992d1b0d34443f8"
+   "text_sha": "895de5f8917a47b8"
   },
   "listed": 2,
-  "text_chars": 2663
+  "text_chars": 2648
  },
  {
   "control_number": "36785",
@@ -5229,10 +5052,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "06df19ba50369404"
+   "text_sha": "be5f5eeea69d8d66"
   },
   "listed": 5,
-  "text_chars": 14432
+  "text_chars": 14386
  },
  {
   "control_number": "36879",
@@ -5257,10 +5080,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "225119c28dd22fd7"
+   "text_sha": "9f6bf5b4516b6475"
   },
   "listed": 3,
-  "text_chars": 4448
+  "text_chars": 4431
  },
  {
   "control_number": "36910",
@@ -5291,10 +5114,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "eee3fcaa59de4f8a"
+   "text_sha": "2f60593e9c63cded"
   },
   "listed": 8,
-  "text_chars": 6799
+  "text_chars": 6759
  },
  {
   "control_number": "36911",
@@ -5324,10 +5147,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ac999a6c4ab0ff60"
+   "text_sha": "c3c6deda2ab3e6e0"
   },
   "listed": 8,
-  "text_chars": 3597
+  "text_chars": 3575
  },
  {
   "control_number": "36946",
@@ -5365,7 +5188,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "35bbe8540109ba78"
+   "text_sha": "ee78853869d1bee4"
   },
   "listed": 13,
   "text_chars": 16000
@@ -5406,7 +5229,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c770356cc50981a0"
+   "text_sha": "0118fb24cb4d3ed3"
   },
   "listed": 13,
   "text_chars": 16000
@@ -5430,8 +5253,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=165",
-   "title": "(STATE CODE 37084)",
-   "h1": "(STATE CODE 37084)",
+   "title": "The Medical Assistant: Front and Back Office Certificate of Com-",
+   "h1": "The Medical Assistant: Front and Back Office Certificate of Com-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5439,11 +5262,16 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "933fbfd93da74aca"
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 165,
+    "share": 1.0
+   },
+   "text_sha": "d00a39aa6444cba3"
   },
   "listed": 8,
-  "text_chars": 7396
+  "text_chars": 7317
  },
  {
   "control_number": "37184",
@@ -5468,10 +5296,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3dd0fef67dc5c2fd"
+   "text_sha": "703bd30a4ba2846c"
   },
   "listed": 2,
-  "text_chars": 7391
+  "text_chars": 7359
  },
  {
   "control_number": "37217",
@@ -5511,7 +5339,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "284669aae1d5c43b"
+   "text_sha": "268656f3928c3490"
   },
   "listed": 15,
   "text_chars": 16000
@@ -5545,10 +5373,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "449ed124451ed926"
+   "text_sha": "ac3bd06bd6c3e087"
   },
   "listed": 9,
-  "text_chars": 5559
+  "text_chars": 5544
  },
  {
   "control_number": "37835",
@@ -5572,10 +5400,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "70dc36f1a1877ac0"
+   "text_sha": "27a55589bdd12cbc"
   },
   "listed": 2,
-  "text_chars": 1685
+  "text_chars": 1676
  },
  {
   "control_number": "37957",
@@ -5601,10 +5429,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d7cf1b40f2caca7d"
+   "text_sha": "b339bc61b7b033d2"
   },
   "listed": 4,
-  "text_chars": 5254
+  "text_chars": 5244
  },
  {
   "control_number": "37976",
@@ -5642,7 +5470,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "793b41cbd20d499f"
+   "text_sha": "ea4123c3a97490a2"
   },
   "listed": 13,
   "text_chars": 16000
@@ -5670,10 +5498,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c2e405c8e8e586d0"
+   "text_sha": "6feec04d341b6ff3"
   },
   "listed": 2,
-  "text_chars": 8131
+  "text_chars": 8090
  },
  {
   "control_number": "38339",
@@ -5697,10 +5525,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "423b13e9381d8b73"
+   "text_sha": "6b13e1f49e8a4585"
   },
   "listed": 2,
-  "text_chars": 3362
+  "text_chars": 3346
  },
  {
   "control_number": "38606",
@@ -5734,7 +5562,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b8da56198c08eaf1"
+   "text_sha": "5943998c71452ca0"
   },
   "listed": 9,
   "text_chars": 16000
@@ -5771,7 +5599,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7b3002cfd6a1faae"
+   "text_sha": "efe52d6a98fbe357"
   },
   "listed": 10,
   "text_chars": 16000
@@ -5817,10 +5645,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6ae6216c3dc2b053"
+   "text_sha": "cf63428d676980b3"
   },
   "listed": 20,
-  "text_chars": 12365
+  "text_chars": 12261
  },
  {
   "control_number": "39501",
@@ -5843,10 +5671,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a4204104d9502ecf"
+   "text_sha": "e366a61e62229b19"
   },
   "listed": 1,
-  "text_chars": 700
+  "text_chars": 693
  },
  {
   "control_number": "39954",
@@ -5872,10 +5700,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "4df49f6036c55943"
+   "text_sha": "045f871245d25ef4"
   },
   "listed": 4,
-  "text_chars": 5547
+  "text_chars": 5521
  },
  {
   "control_number": "39969",
@@ -5905,7 +5733,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "29242cb2036a4f99"
+   "text_sha": "34737a9850e896e9"
   },
   "listed": 5,
   "text_chars": 16000
@@ -5938,10 +5766,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a403ca7af52d27d2"
+   "text_sha": "64a09f19d58040f7"
   },
   "listed": 8,
-  "text_chars": 5071
+  "text_chars": 5046
  },
  {
   "control_number": "40634",
@@ -5967,10 +5795,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "edc1de957ff7b72f"
+   "text_sha": "47ab1c3452c6a58a"
   },
   "listed": 4,
-  "text_chars": 5781
+  "text_chars": 5747
  },
  {
   "control_number": "41088",
@@ -6006,10 +5834,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "604b6915cade8df5"
+   "text_sha": "924307fd907da16f"
   },
   "listed": 13,
-  "text_chars": 11582
+  "text_chars": 11516
  },
  {
   "control_number": "41780",
@@ -6037,8 +5865,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
-   "title": "(STATE CODE 41890)",
-   "h1": "(STATE CODE 41890)",
+   "title": "PAYROLL ACCOUNTING",
+   "h1": "PAYROLL ACCOUNTING",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6048,10 +5876,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "635ff42371f1f9ac"
+   "page_check": {
+    "rule": "A",
+    "page": 92,
+    "share": 1.0
+   },
+   "text_sha": "7fea228f1026aa3d"
   },
   "listed": 3,
-  "text_chars": 11689
+  "text_chars": 11685
  },
  {
   "control_number": "41891",
@@ -6077,10 +5910,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2d5807201c19a0a2"
+   "text_sha": "c7bd8cf1be806caf"
   },
   "listed": 3,
-  "text_chars": 8241
+  "text_chars": 8211
  },
  {
   "control_number": "41935",
@@ -6115,10 +5948,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f5543046c46ce0fd"
+   "text_sha": "0575d3353ad0272e"
   },
   "listed": 1,
-  "text_chars": 2856
+  "text_chars": 2845
  },
  {
   "control_number": "42018",
@@ -6143,36 +5976,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a2ff5ea625e2e01d"
+   "text_sha": "fa7348da776110c3"
   },
   "listed": 2,
-  "text_chars": 6380
+  "text_chars": 6354
  },
  {
   "control_number": "42270",
   "title": "Level 4 - English as a Second Language for Life Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "ESLNC15CE"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=228",
-   "title": "228",
-   "h1": "228",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    228
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "9d15aad638ee7386"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 6613
+  "text_chars": 0
  },
  {
   "control_number": "42274",
@@ -6198,7 +6017,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "607aa01c7d840550"
+   "text_sha": "42d19f642838e12f"
   },
   "listed": 2,
   "text_chars": 16000
@@ -6225,10 +6044,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "121a1669f1c55d6c"
+   "text_sha": "88d7b99ac2f2813d"
   },
   "listed": 2,
-  "text_chars": 4630
+  "text_chars": 4620
  },
  {
   "control_number": "42276",
@@ -6252,10 +6071,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "3187df3621d36e2e"
+   "text_sha": "f4af56eb0c2cef38"
   },
   "listed": 2,
-  "text_chars": 2777
+  "text_chars": 2767
  },
  {
   "control_number": "42404",
@@ -6279,10 +6098,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d70b12bcf0c3edc2"
+   "text_sha": "906a71bb5ba577d8"
   },
   "listed": 2,
-  "text_chars": 1738
+  "text_chars": 1732
  },
  {
   "control_number": "42426",
@@ -6306,10 +6125,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f8f3a8634b474d80"
+   "text_sha": "8f19f9c142189253"
   },
   "listed": 2,
-  "text_chars": 3241
+  "text_chars": 3229
  },
  {
   "control_number": "42427",
@@ -6332,10 +6151,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "1dfeb34c2df21b5f"
+   "text_sha": "8084e73b6b8eb24b"
   },
   "listed": 1,
-  "text_chars": 992
+  "text_chars": 983
  },
  {
   "control_number": "42428",
@@ -6366,10 +6185,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "765bd9b29a95e98b"
+   "text_sha": "f1f41e0ed9d28237"
   },
   "listed": 7,
-  "text_chars": 13579
+  "text_chars": 13502
  },
  {
   "control_number": "42439",
@@ -6393,10 +6212,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a0914ca9396b81cc"
+   "text_sha": "a36d7864946b692d"
   },
   "listed": 2,
-  "text_chars": 1131
+  "text_chars": 1124
  },
  {
   "control_number": "42512",
@@ -6429,10 +6248,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6cf0fa0bc53e5063"
+   "text_sha": "644d110f41cddb12"
   },
   "listed": 11,
-  "text_chars": 4043
+  "text_chars": 4024
  },
  {
   "control_number": "42533",
@@ -6471,10 +6290,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b8a97ff11e2e8500"
+   "text_sha": "b44787a769c9657c"
   },
   "listed": 4,
-  "text_chars": 10179
+  "text_chars": 10126
  },
  {
   "control_number": "43098",
@@ -6510,10 +6329,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "16dbd45372e3c9da"
+   "text_sha": "b5d047b3c06d3785"
   },
   "listed": 12,
-  "text_chars": 14600
+  "text_chars": 14530
  },
  {
   "control_number": "43219",
@@ -6541,10 +6360,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "64b3c2c5df6b1fb6"
+   "text_sha": "0a420d058524e545"
   },
   "listed": 6,
-  "text_chars": 2703
+  "text_chars": 2689
  },
  {
   "control_number": "43458",
@@ -6580,10 +6399,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "26eae79883d1e35d"
+   "text_sha": "fb87000622082c26"
   },
   "listed": 14,
-  "text_chars": 4815
+  "text_chars": 4788
  },
  {
   "control_number": "43510",
@@ -6624,7 +6443,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "cf3f395d65fb7008"
+   "text_sha": "32bf37498480e084"
   },
   "listed": 16,
   "text_chars": 16000
@@ -6645,8 +6464,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
-   "title": "(STATE CODE 43713)",
-   "h1": "(STATE CODE 43713)",
+   "title": "CRIME AND INTELLIGENCE ANALYSIS",
+   "h1": "CRIME AND INTELLIGENCE ANALYSIS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6656,10 +6475,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e4c2a63b2ae37018"
+   "page_check": {
+    "rule": "A",
+    "page": 152,
+    "share": 1.0
+   },
+   "text_sha": "5a50e5d562d613ed"
   },
   "listed": 5,
-  "text_chars": 15181
+  "text_chars": 15151
  },
  {
   "control_number": "43745",
@@ -6683,10 +6507,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5dbdc792d8f0ccd6"
+   "text_sha": "7d296a3222952bfe"
   },
   "listed": 2,
-  "text_chars": 4231
+  "text_chars": 4214
  },
  {
   "control_number": "43746",
@@ -6710,10 +6534,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5d5a029eb9904362"
+   "text_sha": "dfd32f427af4e087"
   },
   "listed": 2,
-  "text_chars": 1474
+  "text_chars": 1469
  },
  {
   "control_number": "43779",
@@ -6750,10 +6574,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5c8dc5916fe21de6"
+   "text_sha": "257df9b516068374"
   },
   "listed": 3,
-  "text_chars": 4015
+  "text_chars": 3997
  },
  {
   "control_number": "44232",
@@ -6803,7 +6627,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "8e879e7830cb20a5"
+   "text_sha": "4299eb2a804962a5"
   },
   "listed": 14,
   "text_chars": 16000
@@ -6827,8 +6651,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
-   "title": "(STATE CODE 44998)",
-   "h1": "(STATE CODE 44998)",
+   "title": "MUSIC THEORY AND MUSICIANSHIP",
+   "h1": "MUSIC THEORY AND MUSICIANSHIP",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6837,10 +6661,15 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "7728fb147bedc64b"
+   "page_check": {
+    "rule": "A",
+    "page": 142,
+    "share": 1.0
+   },
+   "text_sha": "b977c3fc16032f1f"
   },
   "listed": 8,
-  "text_chars": 10143
+  "text_chars": 10153
  },
  {
   "control_number": "45035",
@@ -7174,7 +7003,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "03aa0b3973d16024"
+   "text_sha": "20bf0e666172edc7"
   },
   "listed": 15,
   "text_chars": 16000
@@ -7202,10 +7031,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e2948741e7620651"
+   "text_sha": "b29c1633dea72dd2"
   },
   "listed": 2,
-  "text_chars": 8586
+  "text_chars": 8536
  },
  {
   "control_number": "45479",
@@ -7255,7 +7084,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5f99652c0aa89f2c"
+   "text_sha": "85ff12d9f7f25263"
   },
   "listed": 13,
   "text_chars": 16000
@@ -7298,10 +7127,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "53488df888f40620"
+   "text_sha": "2bdc781946f91be2"
   },
   "listed": 17,
-  "text_chars": 11339
+  "text_chars": 11278
  },
  {
   "control_number": "45551",
@@ -7333,7 +7162,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3968e811a29de178"
+   "text_sha": "baf50da13b66a3ff"
   },
   "listed": 7,
   "text_chars": 16000
@@ -7366,10 +7195,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b8a97ff11e2e8500"
+   "text_sha": "b44787a769c9657c"
   },
   "listed": 7,
-  "text_chars": 10179
+  "text_chars": 10126
  },
  {
   "control_number": "45605",
@@ -7393,10 +7222,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b84d510908e17c2e"
+   "text_sha": "1304dbd7e79c13fe"
   },
   "listed": 2,
-  "text_chars": 1580
+  "text_chars": 1574
  },
  {
   "control_number": "45608",
@@ -7420,10 +7249,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "df7625143c8ae33e"
+   "text_sha": "326f7401d4edfd0f"
   },
   "listed": 2,
-  "text_chars": 3463
+  "text_chars": 3444
  },
  {
   "control_number": "45703",
@@ -7447,10 +7276,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "212c6739edd4b28b"
+   "text_sha": "a7ff684e96947e84"
   },
   "listed": 2,
-  "text_chars": 4785
+  "text_chars": 4764
  },
  {
   "control_number": "45705",
@@ -7475,10 +7304,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7b7047000d7ee577"
+   "text_sha": "29d88d91b7670c40"
   },
   "listed": 3,
-  "text_chars": 2944
+  "text_chars": 2921
  },
  {
   "control_number": "45726",
@@ -7504,10 +7333,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0c08dd98c8149b03"
+   "text_sha": "57f9350c84268a76"
   },
   "listed": 4,
-  "text_chars": 3402
+  "text_chars": 3386
  },
  {
   "control_number": "46078",
@@ -7541,10 +7370,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8644033950674912"
+   "text_sha": "a7b9e5c02ffb5a33"
   },
   "listed": 11,
-  "text_chars": 11832
+  "text_chars": 11762
  },
  {
   "control_number": "46088",
@@ -7575,10 +7404,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "90f1f19203ab259b"
+   "text_sha": "b2b53328f27ac299"
   },
   "listed": 8,
-  "text_chars": 8887
+  "text_chars": 8837
  },
  {
   "control_number": "46089",
@@ -7599,20 +7428,26 @@
    "PHYSICS103"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=65",
-   "title": "65",
-   "h1": "65",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
+   "title": "PHYSICS 2.0",
+   "h1": "PHYSICS 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    64,
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "9edb16e934e21fc0"
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 64,
+    "share": 1.0
+   },
+   "text_sha": "04ecf02e6df23d13"
   },
   "listed": 9,
-  "text_chars": 6050
+  "text_chars": 7947
  },
  {
   "control_number": "46100",
@@ -7636,10 +7471,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fc9a008724f1411f"
+   "text_sha": "07aaf0a97310b759"
   },
   "listed": 2,
-  "text_chars": 3743
+  "text_chars": 3728
  },
  {
   "control_number": "46329",
@@ -7671,10 +7506,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "bbaf0ea22d426663"
+   "text_sha": "78c4ed29fd44fa7a"
   },
   "listed": 8,
-  "text_chars": 15999
+  "text_chars": 15939
  },
  {
   "control_number": "46331",
@@ -7702,10 +7537,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d15f8459b15392cb"
+   "text_sha": "bb0c9a2efe02e51d"
   },
   "listed": 5,
-  "text_chars": 12213
+  "text_chars": 12160
  },
  {
   "control_number": "46335",
@@ -7713,7 +7548,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.85,
+  "coverage": 0.9,
   "codes_found": [
    "ART103",
    "ART105",
@@ -7727,6 +7562,7 @@
    "ENGLC1000",
    "ENGLISH102",
    "GEOG7",
+   "HISTORY11",
    "HISTORY86",
    "MATH215",
    "MUSIC111",
@@ -7745,10 +7581,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0690a8d53584d45a"
+   "text_sha": "9d5fa7c72c6ec961"
   },
   "listed": 20,
-  "text_chars": 12631
+  "text_chars": 12546
  },
  {
   "control_number": "46342",
@@ -7789,7 +7625,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "317dafadd3ce7df5"
+   "text_sha": "eac048589949dc41"
   },
   "listed": 16,
   "text_chars": 16000
@@ -7816,10 +7652,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "95e33b52ef34e739"
+   "text_sha": "13ceabc5935da868"
   },
   "listed": 2,
-  "text_chars": 5083
+  "text_chars": 5055
  },
  {
   "control_number": "46408",
@@ -7844,10 +7680,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "69a4a42ee178932a"
+   "text_sha": "6ed16d407c1b0629"
   },
   "listed": 3,
-  "text_chars": 4427
+  "text_chars": 4406
  },
  {
   "control_number": "46459",
@@ -7897,7 +7733,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "74f07e3c2ac0ba97"
+   "text_sha": "5ac48728f0b3fc8a"
   },
   "listed": 30,
   "text_chars": 16000
@@ -7928,10 +7764,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "162dc25aac10901e"
+   "text_sha": "5f488b1d5caabfd1"
   },
   "listed": 6,
-  "text_chars": 6117
+  "text_chars": 6070
  },
  {
   "control_number": "46549",
@@ -7965,9 +7801,9 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2866a72d03f0bee7"
+   "text_sha": "33d2845cf52051e6"
   },
   "listed": 12,
-  "text_chars": 5927
+  "text_chars": 5893
  }
 ]

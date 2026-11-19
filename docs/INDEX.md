@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-18
+updated: 2026-11-19
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-19 (S683 Library side job with Ashley Mooney, light checkpoint): #3527 and #3532 (the Library duplicate check warns, Start drafts at once, the drafter reads COBI data with the under-10 rule; deployed twice); the library lane and lessons compacted under budget, S509 and S510 to `library_lessons_archive_2`. A section in handoff 683.
 - 2026-11-18 (S683 SkyDipper, Sam's daytime code session, full checkpoint): #3520 (the CER run rebuilds the Side by side views), #3519 (course flags, never deletes), #3513 (rules G and M and their apply), #3515 (exhibits blocker rules 1 and 2), #3517 (Commons plain words, the nightly click-through), #3514 (the reader's page checks); #3516, #3518, #3482 and #3293 parked as issues #3522 to #3525; `scripts/cobix_watch.sh`; the cer-procedures and commons lanes compacted under 20,000 bytes. A daytime section in handoff 683.
 - 2026-11-18 (S682 SkyVireo, the CPL Queue routine's 14:12Z firing, light checkpoint): S681's stand-down held; First Light's 77 painting drops in #3511 for Sam's merge, the 13 story photos held on the hero photo rule; the sierra-page-redesign lane compacted under 20,000 bytes. Handoff 683.
 - 2026-11-18 (S681 SkyGrebe, the CPL Queue routine's second conductor firing of the night, full checkpoint): the stop rule fired on Chabot's outline load (1,013 objectives filed as SLOs, rolled back); #3507 (the first display build through the bucket path, 18,209 rows), Allan Hancock and Santiago Canyon outlines (2,270 rows), Lassen's five records, all in the wave #3509; #3497's 99-row and #3508's 13-row plans reviewed, not applied; the KB note `methodology-a-self-check-must-see-what-the-rule-writes`. Handoff 682.
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-18 (S679 SkyKinglet, Sam's session, full checkpoint): #3477 (the left-map apply nightly, Rename and Combine, the combine guard as one choke point), #3478 and #3481 (Sam's three Nov 17 harvest rulings, 243 records rescored live), #3479 (slash-to-and, 80 renames applied by run 44227947795), #3468 (ACE text kept), #3467, #3473, #3474, #3475; four lanes compacted under 20,000 bytes; KB note `methodology-a-guard-must-fail-closed-when-it-cannot-decide`; handoff 680.
 - 2026-11-17 (S678 SkyWaxwing, Sam's session, full checkpoint): #3465 (College Data Collection's cost and counts: measured runner and session spend, the Commons spent figure, a daily census at 17:47 UTC, ETA dates that name their days, cost per CRE), #3466 (Exhibits: act on titles that have left MAP from their row), #3469 (CPL Pathways: a course met by its Program Course File id is no catalog addition), #3470 (Commons Clarity units findings); drafts #3467, #3468, #3472, #3473, #3474. KB note `methodology-a-dispatch-only-feed-goes-stale-without-a-sound`. Handoff 679.
 - 2026-11-17 (S677 SkyTanager, full checkpoint): #3462 (Chaffey's yield read: reread 13 rows, load kept 191, display build cdd185495ce4; its suspect yield resolved as not found; slice B complete at seven colleges); the self-test miss named, Skyline 38299. Handoff 678.
-- 2026-11-17 (S676 SkyPipit, the CPL Queue routine, full checkpoint): #3456 (slice B: six yield colleges read, reread and loaded, display build 71b67268c567, passing +22); the harvest lessons doc compacted to archive 6. Handoff 677.

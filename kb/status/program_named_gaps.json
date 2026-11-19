@@ -1,0 +1,253 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30)",
+ "gaps": {
+  "major_total_differs": "major total differs from catalog",
+  "no_units_printed": "The catalog prints no units for at least one required course.",
+  "no_units_read": "A required course carries no units as read, so the program's units cannot be added.",
+  "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list."
+ },
+ "held_colleges": [
+  "Golden West College",
+  "Coastline Community College",
+  "Orange Coast College",
+  "Cosumnes River College",
+  "Lassen College",
+  "Los Medanos College",
+  "Diablo Valley College",
+  "College of the Redwoods",
+  "Allan Hancock College",
+  "Chabot College",
+  "Antelope Valley College",
+  "Santiago Canyon College"
+ ],
+ "labeled": 28,
+ "by_gap": {
+  "noncredit_names_only": 28
+ },
+ "labels": [
+  {
+   "college": "Butte College",
+   "control_number": "30774",
+   "title": "Noncredit Certificate of Competency in ESL",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://butte.curriqunet.com/Catalog//iq/25398/28120/28293 names the program and prints none of its courses"
+  },
+  {
+   "college": "College of Alameda",
+   "control_number": "40310",
+   "title": "ESOL High Intermediate",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://coa.curriqunet.com/catalog/iq/47221/47321/47444 names the program and prints none of its courses"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "39004",
+   "title": "ESL Listening and Speaking",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3703&print names the program and prints none of its courses"
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "40635",
+   "title": "Fundamentals of Construction",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3706&print names the program and prints none of its courses"
+  },
+  {
+   "college": "Fresno City College",
+   "control_number": "30874",
+   "title": "Maintenance Mechanic",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Maintenance-Mechanic-CTC-Programs/6920 names the program and prints none of its courses"
+  },
+  {
+   "college": "Fresno City College",
+   "control_number": "41110",
+   "title": "Competencies for Today’s Evolving Workplace",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/6542 names the program and prints none of its courses"
+  },
+  {
+   "college": "Gavilan College",
+   "control_number": "36978",
+   "title": "ESL Intermediate II Level",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://gavilan.curriqunet.com/catalog/iq/4089/4132/4018 names the program and prints none of its courses"
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "38973",
+   "title": "Customer Service",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.glendale.edu/programs/NCCS/completion-requirements-zaZdl names the program and prints none of its courses"
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "40847",
+   "title": "Certified Nursing Aide",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.glendale.edu/programs/NCCNA/completion-requirements-zaZdl names the program and prints none of its courses"
+  },
+  {
+   "college": "Mt. San Antonio College",
+   "control_number": "24284",
+   "title": "Computer Systems Technology",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-computer-systems-technology/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Mt. San Jacinto College",
+   "control_number": "38819",
+   "title": "Culinary Arts",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.msjc.edu/instructional-programs/culinary-arts/culinary-arts--hospitality-certificate/ names the program and prints none of its courses"
+  },
+  {
+   "college": "North Orange Continuing Education",
+   "control_number": "46110",
+   "title": "Career Exploration: Essential Employment Skills",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-essential-employment-skills/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Oxnard College",
+   "control_number": "42311",
+   "title": "Emergency Medical Technician",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.vcccd.edu/oxnard/programs-courses/emergency-medical-technology/emergency-medical-technician-coa/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "42196",
+   "title": "ESLN Advanced Condensed (Levels 4-5)",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-advanced-condensed-levels-4-5-cert-competency/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "42197",
+   "title": "ESLN Beginning - Intermediate Condensed (Levels 1-3)",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-intermediate-condensed-levels-literacy-1-cert-competency/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "43050",
+   "title": "Health Care Interpreter",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3527/3329 names the program and prints none of its courses"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "control_number": "43462",
+   "title": "Digital Media Content Entrepreneurship",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3377&print names the program and prints none of its courses"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "control_number": "43463",
+   "title": "Social Media Strategy",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3378&print names the program and prints none of its courses"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "control_number": "43492",
+   "title": "Digital Imaging",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3376&print names the program and prints none of its courses"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "control_number": "45193",
+   "title": "Control Systems Technician",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3396&print names the program and prints none of its courses"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "control_number": "45194",
+   "title": "Basic Electronics Technician",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3395&print names the program and prints none of its courses"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "control_number": "45195",
+   "title": "Nurse Assistant and Home Health Aide",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3398&print names the program and prints none of its courses"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "control_number": "45583",
+   "title": "Public Safety Dispatcher",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402&print names the program and prints none of its courses"
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "35508",
+   "title": "Strategic Marketing",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.sbcc.edu/sel/career-skills/strategic-marketing-certificate-completion/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "36839",
+   "title": "Green Documents: Documents for the Environment",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.sbcc.edu/sel/career-skills/green-documents-documents-for-the-environment-nc-completion/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "39376",
+   "title": "Digital Photograph Management",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.sbcc.edu/sel/career-skills/digital-photograph-management-certificate-completion/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "44675",
+   "title": "Digital Photography Level 1",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.sbcc.edu/sel/career-skills/digital-photography-essentials-nc-completion/ names the program and prints none of its courses"
+  },
+  {
+   "college": "Victor Valley College",
+   "control_number": "42122",
+   "title": "ESL Level 2 High Beginning Language Skills",
+   "gap": "noncredit_names_only",
+   "words": "Noncredit certificate: the catalog names it but prints no course list.",
+   "source_line": "the catalog page https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-2-high-beginning-language-skills-ccy/ names the program and prints none of its courses"
+  }
+ ]
+}

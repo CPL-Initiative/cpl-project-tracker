@@ -9,14 +9,21 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 39972,
+  "input_tokens": 39968,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
-  "output_tokens": 12674
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "output_tokens": 12311,
+  "output_tokens_details": {
+   "thinking_tokens": 1632
+  }
  },
- "cost_usd": 0.41337,
- "ms": 54859,
- "seconds": 55.6,
+ "cost_usd": 0.40609,
+ "ms": 51456,
+ "seconds": 52.3,
  "parts": 2,
  "error": null,
  "score": {
@@ -341,7 +348,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text prints the Associate Degree General Studies Pattern I areas of emphasis, with no Cal-GETC Certificate of Achievement section",
+   "section_heading": "No section for this award in the text (the page prints the Associate Degree General Studies Pattern I areas of emphasis)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -370,1076 +377,1075 @@
   "missing_explained": [
    {
     "code": "ARTH M100",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ARTH M100H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ARTH C1100",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ARTH C1200",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ARTH M130",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ARTH M150",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "CHIN M110",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "COMM M26",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "DANC M01",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "DANC M01H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "DANC M03",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "DANC M31",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "DES M100",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "DES M100H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "DES M101",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "DES M101H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL C1003",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL C1003H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M13A",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M13B",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M14",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M15A",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M15B",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M16",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M17",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M20",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M29A",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M29B",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M30A",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M30B",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ENGL M40",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M101",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M102",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M103",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M104",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M105",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M106",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M107",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M108",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M109",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "FTMA M110",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "GERM M110",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HIST M150",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HIST M152",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HIST M160",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HIST M162",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HIST M164",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HIST M170",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HIST M180",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HUM M07",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HUM M10A",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HUM M10B",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HUM M11",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "HUM M14",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "JAPN M110",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MATH M11",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MATH M12",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M01",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M04",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M04H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M08",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M08H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M09A",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M09AH",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M09B",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "MUS M09BH",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M01",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M01H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M02",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M02H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M03",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M08",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M11",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M12",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M13",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M14",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M21",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHIL M22",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PHOT M40",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "SPAN M110",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "SPAN M200",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "SPAN M200S",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "SPAN M210",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "PSY M125",
-    "why": "only as an alternative to STAT C1000 in AA Creative Arts emphasis list; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; only as alternative to STAT C1000 in General Studies AA emphasis"
    },
    {
     "code": "SOCM125",
-    "why": "printed as SOC M125, only as an alternative to STAT C1000 in AA Creative Arts emphasis list; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; printed as SOC M125 alternative in General Studies AA emphasis"
    },
    {
     "code": "THA M01",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "THA M01H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "THA M04",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "THA M04H",
-    "why": "in AA Creative Arts emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA emphasis"
    },
    {
     "code": "ANAT M01",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "ANPH M01",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "ANTH M01",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "ANTH M01L",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "AST M01",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "AST M01L",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M01",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M02A",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M02AH",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M02B",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M02BH",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M02C",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M03",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M05",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M06",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M16",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M16L",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M17",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BIOL M18",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "BOT M01",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "CHEM M01A",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "CHEM M01AH",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "CHEM M01B",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "CHEM M07A",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "CHEM M07B",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "CHEM M11",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "CHEM M12",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "CHEM M13",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "ENSC M01",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "ENSC M01L",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "ENSC M02",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOG M01",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOG M01L",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOG M05",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M02",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M02H",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M02L",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M03",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M03L",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M05",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M05L",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M18",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M61",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "GEOL M121",
-    "why": "in AA STEM emphasis list only; no Cal-GETC certificate section in text"
+    "why": "no Cal-GETC certificate section in text; listed only in General Studies AA STEM emphasis"
    },
    {
     "code": "MATH M05",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "MATH M07",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "MATH C2210",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "MATH C2210H",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "MATH C2220",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "MATH C2220H",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "MICR M01",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHIL M07",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHIL M09",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHSC M01",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHSO M01",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHSO M01H",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHYS M01",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHYS M10A",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHYS M10B",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHYS M20A",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHYS M20B",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PHYS M20C",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PSY M02",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "PSY M02H",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "ZOO M01",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
-   },
-   {
-    "code": "PHSC M01L",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis (PHSC M01 & M01L)"
-   },
-   {
-    "code": "PHYS M01L",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis (PHYS M01 & M01L)"
-   },
-   {
-    "code": "PHYS M10AL",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
-   },
-   {
-    "code": "PHYS M10BL",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
-   },
-   {
-    "code": "PHYS M20AL",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
-   },
-   {
-    "code": "PHYS M20BL",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
-   },
-   {
-    "code": "PHYS M20CL",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA STEM emphasis"
+    "why": "only in General Studies AA STEM emphasis list; Cal-GETC certificate section not in text"
    },
    {
     "code": "ANTH M02",
-    "why": "Cal-GETC certificate section not in text; listed only under the General Studies AA Society emphasis"
+    "why": "only in General Studies AA Society emphasis list (cut off); Cal-GETC certificate section not in text"
    },
    {
     "code": "ANTH M03",
-    "why": "not in text (Society emphasis list cut off)"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M06",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M07",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M08",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M09",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M11",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M13",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M14",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M15",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M16",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M17",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ANTH M18",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "BUS M30",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "CD M02",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "CD M03",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "CD M03H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "CD M05",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "CJ M08",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "COMM C1000",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "COMM C1000H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "COMM M04",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "COMM M12",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "COMM M13",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "COMM M25",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "CS M155",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ECON C2001",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ECON C2002",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ECON C2002H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ECON M170",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ENGL C1000",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ENGL C1000H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ENGL C1001",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ENGL C1001H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ENSC M03",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ETHS M01",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ETHS M10",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "ETHS M40",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "FTMA M100",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "GEOG M02",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "GEOG M03",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "GEOG M03H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "GEOG M10",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HED M20",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HED M21",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST C1001",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST C1002",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M131",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M133",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M135",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M137",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M137H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M141",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M143",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M145",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M25",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "HIST M25H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "JOUR M01",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "JOUR M05",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "MATH M16A",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "MATH M16B",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "MATH M21",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "MATH M25C",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "MATH M31",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "MATH M35",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "MATH M37DS",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "MATH M42DS",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "NTS M07",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PHIL M05",
-    "why": "not in text"
+    "why": "not in the text"
+   },
+   {
+    "code": "PHSC M01L",
+    "why": "only in General Studies AA STEM emphasis list (PHSC M01 & M01L); Cal-GETC certificate section not in text"
+   },
+   {
+    "code": "PHYS M01L",
+    "why": "only in General Studies AA STEM emphasis list (PHYS M01 & M01L); Cal-GETC certificate section not in text"
+   },
+   {
+    "code": "PHYS M10AL",
+    "why": "only in General Studies AA STEM emphasis list (PHYS M10A & M10AL); Cal-GETC certificate section not in text"
+   },
+   {
+    "code": "PHYS M10BL",
+    "why": "only in General Studies AA STEM emphasis list (PHYS M10B & M10BL); Cal-GETC certificate section not in text"
+   },
+   {
+    "code": "PHYS M20AL",
+    "why": "only in General Studies AA STEM emphasis list (PHYS M20A & M20AL); Cal-GETC certificate section not in text"
+   },
+   {
+    "code": "PHYS M20BL",
+    "why": "only in General Studies AA STEM emphasis list (PHYS M20B & M20BL); Cal-GETC certificate section not in text"
+   },
+   {
+    "code": "PHYS M20CL",
+    "why": "only in General Studies AA STEM emphasis list (PHYS M20C & M20CL); Cal-GETC certificate section not in text"
    },
    {
     "code": "POLS C1000",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "POLS C1000H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "POLS M01",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "POLS M02",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "POLS M04",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "POLS M05",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "POLS M06",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "POLS M09",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M03",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M04",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M05",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M06",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M07",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M08",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M10",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M13",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M14",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSY M16",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSYC C1000",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "PSYC C1000H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SJS M110",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SJS M120",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SJS M130",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M115",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M120",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M130",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M140",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M150",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M160",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M212",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M216",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOC M218",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOCIC1000",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SOCIC1000H",
-    "why": "not in text"
+    "why": "not in the text"
    },
    {
     "code": "SWHS M110",
-    "why": "not in text"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The source page is the Associate Degree General Studies Pattern I page (AA degree areas of emphasis: Creative Arts and Humanities; STEM; Society, Human Behavior and Culture), not the Cal-GETC Certificate of Achievement. No section for the named award appears in the text, so no blocks are recorded.",
-   "The 'Total Units for the AA Degree 60', 'Units Required for the Area of Emphasis 18' and 'Cal-GETC Pattern 34' figures belong to the General Studies AA emphases, not to this certificate, so total_units, degree_total and ge_units stay null.",
-   "The text is cut off in the Society, Human Behavior and Culture emphasis list.",
-   "A reviewer should find the Moorpark College Cal-GETC certificate page, which likely lists the Cal-GETC areas and approved courses, to record this award.",
-   "Part 2: The source page is the Associate Degree General Studies Pattern I page (Creative Arts and Humanities, STEM, and Society/Human Behavior emphases for the AA), not the Cal-GETC Certificate of Achievement. No section for the Cal-GETC certificate appears in the text, so no blocks, totals, outcomes or careers are recorded.",
-   "Part 2: Cal-GETC appears on the page only as an alternative GE pattern for the General Studies AA ('Cal-GETC Pattern 34'); those figures belong to the AA emphases, not this certificate.",
-   "Part 2: The Society, Human Behavior and Culture emphasis list is cut off after ANTH M02; many closed-list courses may appear in the untruncated page, but that list would still belong to the AA, not the certificate.",
-   "Part 2: Reviewer should locate the Cal-GETC certificate page in the 2026-2027 Moorpark catalog (likely a Cal-GETC certification/certificate of achievement page) to record its requirements.",
+   "The source page is the Associate Degree General Studies Pattern I page (areas of emphasis: Creative Arts and Humanities; STEM; Society, Human Behavior and Culture). It prints no section for the Cal-GETC Certificate of Achievement, so no blocks, totals, outcomes or careers were recorded for this award.",
+   "The emphasis lists (each 18 units toward a 60-unit AA, with 'Cal-GETC Pattern 34' as one GE option) belong to a different award and were not used. A reviewer should locate the Cal-GETC certificate page (or the Cal-GETC pattern listing) for this catalog year.",
+   "The text is cut off partway into the Society, Human Behavior and Culture emphasis list.",
+   "Part 2: The source page is the Associate Degree General Studies Pattern I page (AA areas of emphasis: Creative Arts and Humanities, STEM, Society/Human Behavior and Culture), not the Cal-GETC Certificate of Achievement. No section for the named award appears in the text, so no blocks, totals, outcomes or careers are recorded.",
+   "Part 2: The Society, Human Behavioral and Cultural Emphasis list is cut off after 'ANTH M02 ... AN'.",
+   "Part 2: Reviewer should locate the Moorpark College Cal-GETC certificate page (Cal-GETC areas 1-6) to record this award.",
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": "39600815599"
+ "extracted_run": "44481524745",
+ "catalog_year": "2026-2027"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8290,
-    "output_tokens": 3181,
+    "output_tokens": 3334,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3181,
+  "output_tokens": 3334,
   "output_tokens_details": {
-   "thinking_tokens": 1135
+   "thinking_tokens": 1408
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09678,
- "ms": 24449,
- "seconds": 24.8,
+ "cost_usd": 0.09984,
+ "ms": 27633,
+ "seconds": 27.8,
  "parts": null,
  "error": null,
  "score": {
@@ -183,31 +183,18 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "One of the following:",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
+     },
      {
       "code": "JOUR 24A",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "JOUR 29A",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "JOUR 29A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
@@ -374,15 +361,15 @@
   "missing_explained": [
    {
     "code": "CMST 3",
-    "why": "catalog prints COMM 3 (Argumentation and Debate) instead"
+    "why": "catalog prints Argumentation and Debate as COMM 3"
    },
    {
     "code": "ECON 1",
-    "why": "catalog prints ECON C2002 (Principles of Macroeconomics) instead"
+    "why": "catalog prints Principles of Macroeconomics as ECON C2002"
    },
    {
     "code": "ECON 3",
-    "why": "catalog prints ECON C2001 (Principles of Microeconomics) instead"
+    "why": "catalog prints Principles of Microeconomics as ECON C2001"
    },
    {
     "code": "STAT 1000E",
@@ -390,15 +377,44 @@
    }
   ],
   "notes": [
-   "Closed-list code 'JOUR36' matched to catalog's 'JOUR 36' (spacing difference only); recorded with catalog_addition false.",
-   "The 'Choose two courses' list begins 'Any course not completed above', so courses from the earlier choice blocks (JOUR 24A/29A, 24B, 29B, 35, 36, 37) not already used may also count toward it.",
-   "Within the 'Choose two courses' list, the statistics choice ('One of the following statistics courses: 5.0-6.0': ECON 5, LALS 5, PSYC 5, STAT C1000, STAT C1000E) is recorded as one entry with alternatives, counting as one of the two courses.",
-   "JOUR 29A has no units printed beside it (presumably 3).",
-   "A stray '3.0' appears at the bottom of page 105 after the page footer; likely a layout artifact.",
-   "The text says students must complete 60 semester units of CSU transferable courses including Cal-GETC; recorded as boilerplate, not a printed degree total, so degree_total is null. No Cal-GETC unit figure is printed.",
-   "Text after 'Total: 18.0-22.0' belongs to the Liberal Arts and Sciences Emphasis in Arts and Humanities AA and was ignored."
+   "Closed-list code 'JOUR36' recorded as catalog's 'JOUR 36' (Investigative Reporting), treated as the same course, not a catalog addition.",
+   "'One of the following: 3.0 JOUR 24A OR JOUR 29A' is under 'Required Units 9.0'; recorded as one entry with JOUR 29A as alternative so the block matches 9 units. JOUR 29A has no units printed beside it.",
+   "The 'Choose two courses' list begins with 'Any course not completed above', so unused courses from the earlier JOUR lists may also count.",
+   "The statistics choice ('One of the following statistics courses: 5.0-6.0') is recorded as one entry within the choose-two list with alternatives.",
+   "A stray '3.0' appears at the bottom of page 105 near the page break; ignored.",
+   "The page states the AA-T requires 60 CSU transferable units including Cal-GETC; recorded as boilerplate, not as a printed degree total. Reviewer may wish to check.",
+   "Total: 18.0-22.0 recorded as the major total.",
+   "Outcomes are printed under 'Learning Outcomes:' in this AA-T section."
   ]
  },
- "extracted_run": 43693267535,
- "read_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "464ea7002724909e",
+ "source_codes": [
+  "CMST3",
+  "ECON1",
+  "ECON3",
+  "ECON5",
+  "ENGLC1001",
+  "HIST41A",
+  "HIST41B",
+  "JOUR19",
+  "JOUR21",
+  "JOUR22",
+  "JOUR24A",
+  "JOUR24B",
+  "JOUR29A",
+  "JOUR29B",
+  "JOUR35",
+  "JOUR36",
+  "JOUR37",
+  "LALS1",
+  "LALS5",
+  "POLS2",
+  "POLSC1000",
+  "PSYC5",
+  "STAT1000E",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

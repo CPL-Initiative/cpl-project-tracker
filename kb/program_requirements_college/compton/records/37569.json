@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12218,
+  "input_tokens": 12202,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12218,
-    "output_tokens": 2106,
+    "input_tokens": 12202,
+    "output_tokens": 2215,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2106,
+  "output_tokens": 2215,
   "output_tokens_details": {
-   "thinking_tokens": 657
+   "thinking_tokens": 789
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09099,
- "ms": 15806,
- "seconds": 16.1,
+ "cost_usd": 0.09311,
+ "ms": 18339,
+ "seconds": 18.5,
  "parts": null,
  "error": null,
  "score": {
@@ -167,7 +167,7 @@
   },
   "blocks": [
    {
-    "name": "Complete a minimum of 20 units from",
+    "name": "Complete a minimum of 20 units from:",
     "rule": "choose_units",
     "minimum": 20,
     "option_group": null,
@@ -302,11 +302,11 @@
   "missing_explained": [
    {
     "code": "ATEC 116",
-    "why": "named only in the Automotive Technology sections, not in this A.S. degree"
+    "why": "not in the A.S. section; named only under Automotive Technology programs"
    },
    {
     "code": "ATEC 125",
-    "why": "named only in the Automotive Technology sections, not in this A.S. degree"
+    "why": "not in the A.S. section; named only under Automotive Technology programs"
    },
    {
     "code": "MTT 160",
@@ -314,15 +314,29 @@
    },
    {
     "code": "WELD 105",
-    "why": "named only in the Automotive Technician II certificate, not in this A.S. degree"
+    "why": "not in the A.S. section; named only in Automotive Technician II certificate"
    }
   ],
   "notes": [
-   "The program learning outcomes are printed once for the Automotive Collision Repair/Painting program as a whole ('degree or certificate program'); the A.S. degree shares them.",
-   "The careers listed are from the program description, which attributes them to 'completing the certificate requirements'; reviewer may check whether they apply to the A.S. degree.",
-   "The only total printed is 'Total Units: 20' for the major; no degree total, general education pattern or GE units are printed for the A.S. degree.",
-   "The block's 20-unit figure is the rule's minimum and the program total; no separate block total is printed, so stated is null."
+   "Program learning outcomes are printed once for the Automotive Collision Repair/Painting program as a whole ('degree or certificate program'); the A.S. degree shares them.",
+   "Careers are taken from the program description, which ties them to 'completing the certificate requirements'; reviewer may check whether they apply to the A.S. degree.",
+   "The printed 'Total Units: 20' is recorded as the major total; the block's minimum of 20 units is the rule, so block stated left null.",
+   "No degree total or general education pattern is printed for this A.S. degree."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "48f017f4adb6cca1",
+ "source_codes": [
+  "ACRP103",
+  "ACRP104",
+  "ACRP132",
+  "ACRP134",
+  "ACRP136",
+  "ACRP138",
+  "ATEC116",
+  "ATEC125",
+  "WELD105"
+ ],
+ "source_coverage": 0.9
 }
