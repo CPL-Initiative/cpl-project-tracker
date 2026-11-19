@@ -25,11 +25,12 @@ disagree, the brief wins only where it says so in words ("post a comment on #N")
 - **No repository copies.** Scratch files go in a new subfolder of the scratchpad; run Python that reads them with
   `python3 -I`.
 - **Before every commit:** `git add`, then `CPL_VAULT_ROOT=/home/user/CPLBrain bash scripts/check_generated.sh`, and
-  read its last line. A builder it names (`python3 kb/_build_dependency_map.py`, `python3 kb/_build_docs_index.py`,
-  and others) runs, and its output joins the commit.
+  read its last line. A builder it names (`python3 kb/_build_docs_index.py` and others) runs, and its output joins
+  the commit. The dependency map is the exception: do NOT run `kb/_build_dependency_map.py` or commit its output;
+  one job on `main` rebuilds it after each merge (Sam, 2026-11-18).
 - **When `main` moves under an open PR:** merge `main` with a merge commit, never a rebase, and regenerate generated
   files with their tools; a generated-file conflict is never resolved by picking a side. A PR that changes a builder
-  of a committed file runs the builder.
+  of a committed file runs the builder (the dependency map's excepted, above).
 - **A new test file** must be one a workflow runs (`.github/workflows/js-tests.yml` for a Python test; `tests/run.js`
   finds `tests/*.test.js`). A new `*.test.js` needs its floor in `tests/check_floor.json` (`npm run test:floor`;
   never grep that file without `| cut -c1-200`).
