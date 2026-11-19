@@ -175,7 +175,7 @@ jobs:
           git add kb/cer_classified.json 2>/dev/null || true
           git add kb/cer_procedures_out/saved 2>/dev/null || true
           if [ "${{ steps.sbs.outcome }}" = "success" ]; then
-            git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
+            git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json kb/exhibits_review_subjects.json 2>/dev/null || true
             git add kb/exhibit_side_by_side.json kb/side_by_side.json 2>/dev/null || true
           else
             echo "::error title=Side by side not rebuilt::kb/_build_side_by_side.py failed, so this run keeps the Exhibits review queue out of its commit."
