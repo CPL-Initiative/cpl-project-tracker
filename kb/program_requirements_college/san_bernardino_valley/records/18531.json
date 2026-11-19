@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12188,
-    "output_tokens": 5389,
+    "output_tokens": 5394,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 5389,
+  "output_tokens": 5394,
   "output_tokens_details": {
-   "thinking_tokens": 851
+   "thinking_tokens": 841
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.15653,
- "ms": 38214,
- "seconds": 38.6,
+ "cost_usd": 0.15663,
+ "ms": 37836,
+ "seconds": 38.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 101,
+   "placed": 102,
    "listed": 102,
-   "share": 0.99,
-   "missing": [
-    "HIST100"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST100",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
-    "HISTC1001",
     "PSYCC1000",
     "PSYCC1000H"
    ],
    "flagged": [
-    "HISTC1001",
     "PSYCC1000",
     "PSYCC1000H"
    ],
@@ -140,13 +144,13 @@
   },
   "blocks": [
    {
-    "name": "Social and Behavioral Sciences",
+    "name": "Course List",
     "rule": "choose_units",
     "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
@@ -163,7 +167,7 @@
       "alternatives": [
        {
         "code": "ANTH 102H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -183,7 +187,7 @@
       "alternatives": [
        {
         "code": "ANTH 108H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -203,7 +207,7 @@
       "alternatives": [
        {
         "code": "ANTH 111H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -223,7 +227,7 @@
       "alternatives": [
        {
         "code": "ANTH C1001H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -236,7 +240,7 @@
       "alternatives": [
        {
         "code": "CDEV C1000H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -298,7 +302,7 @@
       "alternatives": [
        {
         "code": "ECON C2001H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -311,7 +315,7 @@
       "alternatives": [
        {
         "code": "ECON C2002H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -366,7 +370,7 @@
       "alternatives": [
        {
         "code": "ETHS 107H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -393,7 +397,7 @@
       "alternatives": [
        {
         "code": "ETHS 141H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -490,7 +494,7 @@
       "alternatives": [
        {
         "code": "HIST C1001H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -503,7 +507,7 @@
       "alternatives": [
        {
         "code": "HIST C1002H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -516,7 +520,7 @@
       "alternatives": [
        {
         "code": "HIST 107H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -550,7 +554,7 @@
       "alternatives": [
        {
         "code": "HIST 140H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -570,7 +574,7 @@
       "alternatives": [
        {
         "code": "HIST 145H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -639,7 +643,7 @@
       "alternatives": [
        {
         "code": "POLS C1000H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -659,7 +663,7 @@
       "alternatives": [
        {
         "code": "POLS 110H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -679,7 +683,7 @@
       "alternatives": [
        {
         "code": "POLS 141H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -706,7 +710,7 @@
       "alternatives": [
        {
         "code": "PSYC C1000H",
-        "units": null,
+        "units": 3,
         "catalog_addition": true
        }
       ],
@@ -789,7 +793,7 @@
       "alternatives": [
        {
         "code": "SOCI C1000H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -802,7 +806,7 @@
       "alternatives": [
        {
         "code": "SOCI 110H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -836,7 +840,7 @@
       "alternatives": [
        {
         "code": "SOCI 141H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -863,17 +867,18 @@
   "missing_explained": [
    {
     "code": "HIST 100",
-    "why": "not in the text; catalog lists HIST C1001 United States History to 1877 instead"
+    "why": "not in the text; the catalog lists HIST C1001 United States History to 1877 instead"
    }
   ],
   "notes": [
-   "Rule: students choose a minimum of 18 units from the list, with two courses from one discipline required; the discipline constraint is not captured in the block structure.",
-   "Honors alternatives are printed without units; their units are left null.",
-   "Closed-list codes without spaces (e.g., ANTH100, SOCIC1000) were matched to the catalog's spaced codes (ANTH 100, SOCI C1000).",
-   "HIST C1001, PSYC C1000 and PSYC C1000H appear in the catalog but not in the closed list; marked as catalog additions.",
-   "Students must complete one of two GE patterns: SBVC General Education and Graduation Requirements or Cal-GETC; no GE units or degree total printed.",
-   "The single program learning outcome is from the page's outcomes tab for this program."
+   "The catalog requires a minimum of 18 units with two courses from one discipline; the course list is grouped by discipline headings (Anthropology, Child Development, etc.), recorded here as one choose_units block.",
+   "The block's stated 18 is the 'Total Units 18' printed under the course list, which is also the program total.",
+   "Students must complete one of two GE patterns: SBVC General Education and Graduation Requirements or Cal-GETC; no GE units or degree total are printed.",
+   "HIST C1001, PSYC C1000 and PSYC C1000H appear in the catalog but not in the closed list (catalog additions).",
+   "The page prints a single Program Learning Outcomes list for the program, recorded for this A.A. degree.",
+   "Page notes the degree is also offered as a Zero Textbook Cost Degree (Z Degree)."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": "44481529632",
+ "catalog_year": "2026-2027"
 }

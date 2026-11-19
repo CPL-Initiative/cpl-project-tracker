@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 14555,
-    "output_tokens": 8925,
+    "output_tokens": 8467,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,37 +30,43 @@
     "model": null
    }
   ],
-  "output_tokens": 8925,
+  "output_tokens": 8467,
   "output_tokens_details": {
-   "thinking_tokens": 1547
+   "thinking_tokens": 1221
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.23672,
- "ms": 62109,
- "seconds": 62.5,
+ "cost_usd": 0.22756,
+ "ms": 60956,
+ "seconds": 61.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 161,
+   "placed": 162,
    "listed": 163,
-   "share": 0.988,
+   "share": 0.994,
    "missing": [
-    "ART263",
-    "HIST100"
+    "ART263"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST100",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 6,
    "codes": [
     "ART161",
-    "HISTC1001",
     "MUS108",
     "MUS117A",
     "MUS121",
@@ -69,7 +75,6 @@
    ],
    "flagged": [
     "ART161",
-    "HISTC1001",
     "MUS108",
     "MUS117A",
     "MUS121",
@@ -132,7 +137,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "SBVC General Education and Graduation Requirements or Cal-GETC",
+   "ge_pattern": "SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum",
    "degree_total": {
     "min": null,
     "max": null
@@ -154,8 +159,8 @@
     "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": 18,
-     "max": 18
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -1204,13 +1209,6 @@
       "code": "THART 100",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "THART 105",
-      "units": 3,
-      "units_max": null,
       "alternatives": [
        {
         "code": "THART 100H",
@@ -1218,6 +1216,13 @@
         "catalog_addition": false
        }
       ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THART 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -1322,18 +1327,19 @@
    },
    {
     "code": "HIST 100",
-    "why": "not in the text; catalog prints HIST C1001 (same title) instead"
+    "why": "not in the text; the catalog lists HIST C1001 (United States History to 1877) in its place"
    }
   ],
   "notes": [
-   "The catalog requires a minimum of 18 units with two courses from one discipline; the discipline constraint is not modeled in the single choose_units block (disciplines are the printed subheadings: American Sign Language, Anthropology, Arabic, Architecture, Art, Art History, Chinese, Dance, English, Film/Television/Media, French, History, Music, Philosophy, Religious Studies, Spanish, Theatre Arts).",
-   "Honors/'or' alternatives have no units printed beside them; their units are recorded as null.",
-   "The catalog prints 'or THART 100H Introduction to Theatre - Honors' beneath THART 105 Script Analysis rather than beneath THART 100; recorded as printed (alternative of THART 105), but it likely belongs as the honors twin of THART 100.",
-   "Closed-list codes without spaces (ANTH108, ANTH108H, ANTH109, ANTH111, ANTH111H, ART270A, ARTH103/105/107/108, ARTHC1100, ARTHC1200, ARTHC1200H, ENGL260) and lowercase x codes (MUS 160x4, 162x4, 180x4) were matched to the catalog's spaced/uppercase codes and not flagged as additions.",
-   "HIST C1001 is not in the closed list (closed list has HIST 100 with the same title and HIST C1001H); flagged as a catalog addition.",
-   "Degree requires one of two GE patterns: SBVC General Education and Graduation Requirements or Cal-GETC; no GE units or degree total printed.",
-   "The program learning outcome is printed on the page's outcomes tab for the program; recorded for this award."
+   "The section also requires that two of the courses come from one discipline ('Students must complete a minimum of 18 units, two courses from one discipline required'); this constraint is not expressible in the block structure.",
+   "The catalog prints 'or THART 100H Introduction to Theatre - Honors' after THART 105 rather than directly after THART 100; it is recorded as the honors alternative of THART 100. Reviewer should check.",
+   "Honors/'or' alternatives are printed without units beside them; their units are recorded as null.",
+   "Closed-list codes without spaces (e.g. ANTH108, ARTHC1200, ART270A, ENGL260) and lowercase x suffixes (MUS 160x4, 162x4, 180x4) were matched to the catalog's spaced/uppercase codes and not treated as catalog additions.",
+   "The 'Total Units 18' line is recorded as total_units; the block's own stated total is left null since the only printed figure is the award total.",
+   "The page names two GE patterns for the associate degree: SBVC General Education and Graduation Requirements, or Cal-GETC; no GE units or degree total are printed.",
+   "Program learning outcome is printed on the page's outcomes tab for this program as a whole and is recorded for this award."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": "44481529632",
+ "catalog_year": "2026-2027"
 }
