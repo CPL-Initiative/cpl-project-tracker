@@ -376,22 +376,6 @@ def test_control_number_shape(tmp):
     check(not dispatched(acct), "a dispatch names a guarded row: %r" % (acct["dispatch"],))
 
 
-def test_live_run_is_this_run(tmp):
-    """Second reader on #3547, finding 2: a live row already holding the run being decided is posted, not held."""
-    worse = score(False, False, 1, 10, "incomplete")
-    folder, rdir = fixture_folder(tmp, {"50001": worse}, {"50001": PASS, "50002": PASS})
-    acct = K.keep_better(folder, base="base", checked=set(), live_runs={"50001": str(NEW), "50002": str(NEW)},
-                         out=lambda *_: None)
-    got = {r["control_number"]: r for r in acct["runs"][str(NEW)]["programs"]}
-    for cn in ("50001", "50002"):
-        check(got.get(cn, {}).get("outcome") == "kept" and "already holds" in (got.get(cn, {}).get("why") or ""),
-              "%s: a live row on this run came out %r" % (cn, got.get(cn)))
-        p = os.path.join(rdir, cn + ".json")
-        check(os.path.isfile(p) and json.loads(read_bytes(p))["extracted_run"] == NEW
-              and not os.path.exists(os.path.join(folder, K.HELD_DIR, cn + ".json")),
-              "%s: the file a live row already holds was moved" % cn)
-
-
 def test_ascii_runs(tmp):
     """Second reader on #3547, finding 3: a run is ASCII digits; another script's digits stop the run."""
     path = os.path.join(tmp, "c.json")
@@ -404,7 +388,7 @@ def test_ascii_runs(tmp):
 
 def main():
     for fn in (test_checked_list, test_folder, test_all_restored, test_checked_unfiled, test_live_runs,
-               test_live_runs_file, test_control_number_shape, test_live_run_is_this_run, test_ascii_runs):
+               test_live_runs_file, test_control_number_shape, test_ascii_runs):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)

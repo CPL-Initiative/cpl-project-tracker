@@ -35,8 +35,11 @@ with the same file at origin/main and keeps the better one.
       re-read moves to held_for_person/, the filed record (if any) is restored, and the why names both runs. A wave
       loads from its branch before it merges, so the live row can come from a run main lacks, and "better" judged
       against main would judge the wrong record. A control number live_runs omits has no live row to protect.
-      Without live_runs the script runs as before and the account says live_runs: "not supplied". A live row
-      that already holds the run being decided is posted: kept, its file left as it is. A control number in either
+      Without live_runs the script runs as before and the account says live_runs: "not supplied". The live
+      read must be taken before this run's reread posts: a second pass after the post, with a refreshed live read,
+      holds the row and restores main's file, so the branch would disagree with the live row. OPEN (COBIx on #3544,
+      second reader on #3547): treat a live run equal to this run as already posted, placed below both own-program
+      tests. A control number in either
       list is a string of five ASCII digits and a run is ASCII digits; anything else stops the run.
 
 THE SCORES COMPARED. compare() reads each file's stored score: the re-read's was written by this run's scorer, the
@@ -342,9 +345,6 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
             else:
                 row.update(outcome="held", held_checked=True,
                            why="a person checked the live row, and %s files no record to restore" % base)
-        # The live row already holds this run: the reread posted it, so the file stays as it is (#3547, finding 2).
-        elif live is not None and live == run:
-            row.update(outcome="kept", why="the live row already holds this run (%s): it is posted" % run)
         # A live row from a run the base does not hold: "better" against the base judges the wrong record (finding 2).
         elif live is not None and (filed is None or live != str(row["filed_run"])):
             row.update(outcome="held", held_live_run=True,
