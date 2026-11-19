@@ -101,6 +101,11 @@ n = ss.parse_line("not available; collection $5.00; 2026-11-18T00:10Z to 2026-11
 check("a line with no readout carries no tags", n and not n["available"] and "tags" not in n, n)
 p = ss.parse_line("$9.00 (Collection 2 $9.00); 2026-11-18T00:10Z to 2026-11-18T03:20Z.")
 check("a model named like a tag is a model, never a tag", p and "tags" not in p and p["models"] == {"Collection 2": 9.0}, p)
+e = ss.parse_line("$167 (estimate from token counts at list prices, priced in handoff 682); "
+                  "2026-11-18T06:12Z to 2026-11-18T09:49Z.")
+check("an estimate priced from token counts says so, and reads its total", e and e["usd"] == 167.0
+      and e.get("estimate") is True and e["models"] == {} and "tags" not in e, e)
+check("a line read from a cost readout carries no estimate key", "estimate" not in o and "estimate" not in g, o)
 with tempfile.TemporaryDirectory() as t:
     os.makedirs(os.path.join(t, "docs"))
     with open(os.path.join(t, "docs", "session_900_handoff.md"), "w") as f:
