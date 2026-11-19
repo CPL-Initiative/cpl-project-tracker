@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-19_s685_second_pass_live_read.sql
-name=s685_second_pass_live_read
+file=kb/migrations/2026-11-19_s685_second_pass_live_read_b.sql
+name=s685_second_pass_live_read_b
