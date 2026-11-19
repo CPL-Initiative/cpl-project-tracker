@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "545de21a6edc",
+ "build": "3e8088e082eb",
  "built": "2026-11-13",
  "inputs": {
-  "records": 18209,
+  "records": 18323,
   "map_read_at": "2026-11-13",
   "registry_read_at": "2026-11-13",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-11-18 03:58",
-  "cer": "2026-11-18T03:59:11+00:00"
+  "memberships": "2026-11-19 06:19",
+  "cer": "2026-11-19T06:19:49+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -262,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -835,7 +835,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -1865,7 +1865,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -2758,7 +2758,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -3829,7 +3829,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -4731,7 +4731,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -5633,7 +5633,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -7177,7 +7177,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -7707,7 +7707,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -9134,7 +9134,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -10404,7 +10404,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -11125,7 +11125,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -11478,7 +11478,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -11801,7 +11801,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -12206,7 +12206,7 @@ window.CPL_PATHWAYS_ROEP = {
       "consider": [
        {
         "credential": "POST Basic Academy",
-        "credit": "3 hours in Community Relations",
+        "credit": "3 hours in Intro to Administration of Justice",
         "cid": "AJ 110",
         "colleges_n": 32
        }
@@ -12302,7 +12302,7 @@ window.CPL_PATHWAYS_ROEP = {
       "consider": [
        {
         "credential": "POST Basic Academy",
-        "credit": "3 hours in Community Relations",
+        "credit": "3 hours in Intro to Administration of Justice",
         "cid": "AJ 110",
         "colleges_n": 32
        }
@@ -13752,7 +13752,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -14103,7 +14103,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -14862,7 +14862,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -16505,7 +16505,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -17320,7 +17320,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -18364,7 +18364,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -19142,7 +19142,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   },
@@ -19310,7 +19310,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "545de21a6edc",
+    "build": "3e8088e082eb",
     "built": "2026-11-13"
    }
   }
