@@ -17,6 +17,9 @@ S196, and the INDEX history rotated out before 2026-09-17. [Part 7](roadmap_arch
 2026-11-03, S563) holds the rotation of 2026-08-16, the narratives of S62, S113, S146 and S147, and the INDEX
 history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-11-19)
+- 2026-11-17 (S676 SkyPipit, the CPL Queue routine, full checkpoint): #3456 (slice B: six yield colleges read, reread and loaded, display build 71b67268c567, passing +22); the harvest lessons doc compacted to archive 6. Handoff 677.
+
 ## INDEX update-history entries rotated out (2026-11-14)
 - 2026-11-13 (S647 SkyPipit, conductor, two halves of the CPL Queue routine; the first stopped without a handoff): nine merges (#3211, #3214, #3194, #3205, #3218, #3206, #3216, #3207, #3222); Santiago Canyon, Diablo Valley and San Jose City displayed, then the whole build; College of the Desert read in ranges; Glendale's keep rule; the Commons data dashboard live; Open Asks Sheet 190; handoff 648.
 - 2026-11-13 (S644 SkyWren, conductor, Sam's session): five merges (#3188, #3189, #3191, #3190, #3192); the harvest gap census and the wave runner for throughput; Los Angeles City's 22, Santiago Canyon and North Orange Continuing Education loaded; Open Asks Sheet 187 built; handoff 645.
