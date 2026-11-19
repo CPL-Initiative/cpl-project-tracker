@@ -1475,11 +1475,11 @@
       why = "Ask for changes says what to add, cut or reword, and Claude drafts it on top of this draft. Publish it puts the page at its own address on the CPL Initiative's site; List publicly then adds it to the public library.";
       if (g.based_on_draft) extra = changedHtml(r);
     } else if (rs === "approved") {
-      line = esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
+      if (!pubActive(r)) line = esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
         ". The next scheduled run puts it on its page (every three hours); then List publicly on its card.");
       next.push(openDraftWord(r, false), publishNowWord(r));
     }
-    var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
+    var msg = state.msgFor === r.id && state.message && !pubActive(r) ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands"' + (!rs || rs === "waiting" ? ' data-newdrop="' + esc(r.id) + '"' : "") + ">" +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
@@ -1529,6 +1529,9 @@
     return '<button type="button" class="lib-word" data-pubnow="' + esc(r.id) + '"' + (p.busy ? " disabled" : "") + ">" +
       (p.busy ? "Starting the publish run" : "Publish now") + '<span class="lib-vh"> ' + esc(r.title) + "</span></button>";
   }
+  /* One status line per card (#3560, Sam's test of Nov 19): once Publish now is pressed, its line replaces the approval
+     line and the approval message, and moves through Publishing, Deploying and Live, or Failed with its reason. */
+  function pubActive(r) { var p = r && state.pubNow[r.id]; return !!(p && p.said); }
   function publishNowSaid(r) {
     var p = state.pubNow[r.id];
     if (!p || !p.said) return "";
@@ -1537,15 +1540,19 @@
   }
   function publishNowRefusal(status, j) {
     if (status === 429 || (j && j.reason === "too_soon")) {
-      return "A publish run started less than two minutes ago, so no second one was started. If the page is not up in a few minutes, press Publish now again. " + NEXT_RUN;
+      return "Failed: a publish run started less than two minutes ago, so no second one was started. If the page is not up in a few minutes, press Publish now again. " + NEXT_RUN;
     }
     // The publish run shares a queue with the daily build and the apply runs; starting it while one of those waits would
     // cancel that one (COBIx on #3171), so the function starts nothing.
     if (status === 409 || (j && j.reason === "busy_behind")) {
-      return "Another run is waiting in the same queue as the publish run, and starting one now would cancel it, so nothing was started. Press Publish now again in a few minutes. " + NEXT_RUN;
+      return "Failed: another run is waiting in the same queue as the publish run, and starting one now would cancel it, so nothing was started. Press Publish now again in a few minutes. " + NEXT_RUN;
     }
-    if (status === 401) return "The publish run did not start: only a signed-in reviewer can start it. Sign in again from About in the header. " + NEXT_RUN;
-    return "The publish run did not start" + (status ? " (the service answered " + status + ")" : "") + ". " + NEXT_RUN;
+    if (status === 401) return "Failed: only a signed-in reviewer can start the publish run. Sign in again from About in the header. " + NEXT_RUN;
+    /* The function's own reason, named (#3560: a 503 hid that the dispatch token was missing or refused). */
+    var reason = j && j.reason ? String(j.reason) : "";
+    if (reason === "not_configured") return "Failed: the publish service has no GitHub token set (not_configured). Ask whoever keeps the Work Plan project's Edge Function secrets to set LIBRARY_DISPATCH_TOKEN. " + NEXT_RUN;
+    if (reason === "token_refused") return "Failed: GitHub refused the publish service's token (token_refused); it may have expired or lack Actions read and write. Ask whoever keeps the Work Plan project's Edge Function secrets to renew LIBRARY_DISPATCH_TOKEN. " + NEXT_RUN;
+    return "Failed: the publish run did not start" + (status ? " (the service answered " + status + (reason ? ", " + reason : "") + ")" : "") + ". " + NEXT_RUN;
   }
   function redrawPublishNow(id) {
     render();
@@ -1558,7 +1565,7 @@
     if (p && p.busy) return Promise.resolve();
     if (p && p.started) {
       p.err = false;
-      p.said = "The publish run has already started, so pressing again starts nothing. The page is up in about three minutes.";
+      p.said = "Publishing. The publish run has already started, so pressing again starts nothing.";
       redrawPublishNow(id);
       return Promise.resolve();
     }
@@ -1581,15 +1588,15 @@
       if (x.status === 200 && x.j.ok) {
         p.started = Date.now();
         p.said = x.j.already
-          ? "A publish run is already waiting, and it publishes this page too. The page is up in about three minutes."
-          : "The publish run has started. The page is up in about three minutes.";
+          ? "Publishing. A publish run is already waiting, and it publishes this page too."
+          : "Publishing. The publish run has started; the page is saved in a few minutes, then the site deploys it.";
         followPublish(id, 0);
       } else {
         p.err = true; p.said = publishNowRefusal(x.status, x.j);
       }
       redrawPublishNow(id);
     }, function () {
-      p.busy = false; p.err = true; p.said = "The publish run did not start: the network failed. " + NEXT_RUN;
+      p.busy = false; p.err = true; p.said = "Failed: the publish run did not start because the network failed. " + NEXT_RUN;
       redrawPublishNow(id);
     });
   }
@@ -1607,12 +1614,15 @@
         var fresh = Array.isArray(rows) && rows[0], r = byId(id);
         if (fresh && r) Object.assign(r, fresh);
         if (r && !awaitsPublishRun(r) && r.url) {
-          p.said = "The page is up:"; p.link = r.url; p.err = false;
+          /* Saved is not live: the site's deploy run still has to publish it (#3560: "The page is up" showed while the
+             address answered 404). Deploying until the address answers, then Live with its link. */
+          p.said = "Deploying. The page is saved; the site is publishing it."; p.link = ""; p.err = false;
+          followLive(id, r.url, 0);
         } else if (n + 1 < PUB_POLL.max) { followPublish(id, n + 1); return; }
         else {
           // Following stops, and a press may ask again: the function's own two-minute hold and queue check decide.
           p.started = null;
-          p.said = "The publish run has not moved the record yet; it may be waiting behind the daily build. The page goes up when it finishes, and the card shows it at your next visit. If it does not, press Publish now again.";
+          p.said = "Publishing. The publish run has not moved the record yet; it may be waiting behind the daily build. The page goes up when it finishes, and the card shows it at your next visit. If it does not, press Publish now again.";
         }
         if (!state.cardBox && !state.edit && !state.form) render();
       }).catch(function () {
@@ -1621,6 +1631,23 @@
         if (!state.cardBox && !state.edit && !state.form) render();
       });
     }, PUB_POLL.ms);
+  }
+  /* Deploying until the page's own address answers (same site, so the status is readable), then Live with the link. */
+  var LIVE_POLL = { first: 5000, ms: 20000, max: 18 };
+  function followLive(id, url, n) {
+    setTimeout(function () {
+      var p = state.pubNow[id];
+      if (!p || !document.getElementById(ROOT_ID)) return;
+      function redraw() { if (!state.cardBox && !state.edit && !state.form) render(); }
+      window.fetch(url, { method: "HEAD", cache: "no-store" }).then(function (res) {
+        if (res.ok) { p.said = "Live:"; p.link = url; redraw(); return; }
+        if (n + 1 < LIVE_POLL.max) { followLive(id, url, n + 1); return; }
+        p.said = "Deploying. The site's deploy run is taking longer than usual; the page goes live when it finishes:"; p.link = url; redraw();
+      }, function () {
+        if (n + 1 < LIVE_POLL.max) { followLive(id, url, n + 1); return; }
+        p.said = "Deploying. The page's address could not be checked from here; it goes live when the site's deploy run finishes:"; p.link = url; redraw();
+      });
+    }, n ? LIVE_POLL.ms : LIVE_POLL.first);
   }
   function stateBlock(r) {
     if (isNewPiece(r)) return newPieceBlock(r);
@@ -1653,10 +1680,10 @@
         word("data-revise", r.id, "Ask for more changes", false, r.title));
       extra = changedHtml(r);
     } else if (rs === "approved") {
-      line = regenWords(r);
+      if (!pubActive(r)) line = regenWords(r);
       next.push(openDraftWord(r, false), publishNowWord(r), word("data-keep", r.id, "Keep " + (publicVersion(r) ? "Version " + publicVersion(r) : "the public copy") + " instead"));
     }
-    var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
+    var msg = state.msgFor === r.id && state.message && !pubActive(r) ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands">' +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
@@ -4281,7 +4308,7 @@
     render: render,
     load: load,
     _state: state,
-    _publishPoll: PUB_POLL,
+    _publishPoll: PUB_POLL, _livePoll: LIVE_POLL,
     _pictureBoxes: pictureBoxes,
     _draftWithPictures: draftWithPictures,
     _flagsOf: flagsOf,
