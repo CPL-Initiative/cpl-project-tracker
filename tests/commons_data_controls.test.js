@@ -1,4 +1,4 @@
-// College Data Collection (commons_data.js, #commons/data): every control does something, and a figure never breaks.
+// College Data Collection (commons_data.js, #collect): every control does something, and a figure never breaks.
 //
 // WHAT THIS GUARDS (S648, Sam's Skyline screenshot on #3229: "make sure any card that has what looks like a link
 // opens up to something", and the Program requirements card broke 144 into 1 / 4 / 4):
@@ -10,10 +10,10 @@
 //       minmax(0, auto) beside it), the value never inherits overflow-wrap:anywhere, and every figure value carries
 //       the nowrap class (jsdom has no layout, so the computed rule is asserted; scripts/commons_data_values_check.js
 //       measures it in Chromium at 390, 768, 1016 and 1440);
-//   (4) the district roll-up: every district opens exactly its colleges at #commons/data/district/<slug> (an inline
+//   (4) the district roll-up: every district opens exactly its colleges at #collect/district/<slug> (an inline
 //       fixture pins Kern beside West Kern); a whole-card figure at zero draws plain; a new tab says so in words.
 //   (5) ⭐ each cause's programs (S649, COBIx's item 1 on #3229): every cause word in every college's row opens the
-//       side panel at that cause, at #commons/data/college/<slug>/cause/<key>, listing exactly the programs the cause
+//       side panel at that cause, at #collect/college/<slug>/cause/<key>, listing exactly the programs the cause
 //       counts; a program with a catalog page links to it in a new tab, one without is plain text; a college's
 //       program file is fetched only when its row or panel opens; a file that cannot be read says so in words.
 //   (6) ⭐ every link opens in the side panel (Sam, in session, S649, reversing #3257's new tabs): in every college's
@@ -21,7 +21,7 @@
 //       objective word opens the panel at its own address with a heading and content, and the panel's one link out,
 //       "Open in a new tab", has a destination; no other link on the page leaves it. The SLO and PLO panes show what
 //       the committed files hold (Cuesta: SLO and objective courses by subject, its PLOs); Colleges with collected
-//       SLOs (#commons/data/slos) lists exactly the colleges the live read holds SLOs or objectives for, says how
+//       SLOs (#collect/slos) lists exactly the colleges the live read holds SLOs or objectives for, says how
 //       many are not read, and each name opens its college's SLO pane; the list carries an SLOs and objectives
 //       column; the view uses the window's full width.
 //   (3) the opened row's cause sentence is a table with th scope; the Confidence card with no spot-check says what each
@@ -129,7 +129,7 @@ function audit(x, where, bad, seen) {
 (async function () {
   const bad = [], seen = { n: 0 };
   /* The list, then every college's row opened in turn. */
-  const x = load("#commons/data");
+  const x = load("#collect");
   await x.M.boot(); await settle();
   check("setup: the view drew its list", !!x.d.querySelector("#cdd-colleges tbody tr[data-college]"));
   audit(x, "list", bad, seen);
@@ -152,7 +152,7 @@ function audit(x, where, bad, seen) {
 
   /* One college's row, read for its shape, from the inline fixture. */
   {
-    const f = load("#commons/data", FIX);
+    const f = load("#collect", FIX);
     await f.M.boot(); await settle();
     f.d.querySelector('[data-expand="9001"]').click();
     const m = f.d.getElementById("cdd-more-9001");
@@ -174,9 +174,9 @@ function audit(x, where, bad, seen) {
       f.D.closePanel(); await settle();
     }
     check("row 3b ⭐: each source opens its pane at its address, with a new tab to the same place",
-      tabs.catalog[0] === "#commons/data/college/ridge-college/catalog" && tabs.catalog[1] === "https://catalog.ridge.example.edu/current/"
+      tabs.catalog[0] === "#collect/college/ridge-college/catalog" && tabs.catalog[1] === "https://catalog.ridge.example.edu/current/"
       && tabs.run[1] === "https://github.com/cpl-initiative/cpl-project-tracker/actions/runs/39035209486"
-      && tabs.pathways[1] === "#cpl-pathways/college/Ridge%20College" && tabs.capture[1] === "#commons/data/college/ridge-college/capture"
+      && tabs.pathways[1] === "#cpl-pathways/college/Ridge%20College" && tabs.capture[1] === "#collect/college/ridge-college/capture"
       && tabs.capture[2] === "What the capture holds", tabs);
     check("row 4: the failed checks name their base, the records extracted",
       /Records failing each machine check, of the 53 records extracted as the capture read them/.test(txt(m)) && /Units arithmetic\s*16/.test(txt(m)) && !/invented\s*0/i.test(txt(m)));
@@ -193,12 +193,12 @@ function audit(x, where, bad, seen) {
 
   /* The side panel, a district roll-up, the dictionary and the API checklist, each at its address. */
   const slug = x.D.slugOf(DATA.colleges.filter((c) => c.harvested)[0] || DATA.colleges[0]);
-  const views = ["#commons/data/college/" + slug, "#commons/data/districts", "#commons/data/dictionary", "#commons/data/apis"];
+  const views = ["#collect/college/" + slug, "#collect/districts", "#collect/dictionary", "#collect/apis"];
   for (const h of views) {
     const y = load(h);
     await y.M.boot(); await settle();
     audit(y, h, bad, seen);
-    if (h === "#commons/data/districts") {
+    if (h === "#collect/districts") {
       const rowsD = y.d.querySelectorAll("#cdd-dist-table tbody tr");
       const names = Array.from(new Set(DATA.colleges.map((c) => c.district).filter(Boolean)));
       check("districts 1: one row per district, each name a button word", rowsD.length === names.length + (DATA.colleges.some((c) => !c.district) ? 1 : 0)
@@ -213,7 +213,7 @@ function audit(x, where, bad, seen) {
   for (const data of [DATA, FIX]) {
     const names = Array.from(new Set(data.colleges.map((c) => c.district).filter(Boolean)));
     const off = [];
-    const z = load("#commons/data/districts", data);
+    const z = load("#collect/districts", data);
     await z.M.boot(); await settle();
     for (const n of names) {
       z.D.go("districts"); await settle();
@@ -222,32 +222,32 @@ function audit(x, where, bad, seen) {
       b.click(); await settle();
       const shown = Array.from(z.d.querySelectorAll("#cdd-colleges tbody tr[data-college]")).map((r) => r.getAttribute("data-college")).sort();
       const want = data.colleges.filter((c) => c.district === n).map((c) => c.name).sort();
-      if (JSON.stringify(shown) !== JSON.stringify(want) || !/^#commons\/data\/district\/[a-z0-9-]+$/.test(z.w.location.hash) || z.d.querySelector("#cdd-q").value !== "") off.push(n + ": " + shown.length + " of " + want.length + " " + z.w.location.hash);
+      if (JSON.stringify(shown) !== JSON.stringify(want) || !/^#collect\/district\/[a-z0-9-]+$/.test(z.w.location.hash) || z.d.querySelector("#cdd-q").value !== "") off.push(n + ": " + shown.length + " of " + want.length + " " + z.w.location.hash);
     }
-    check("districts 2 ⭐ (" + (data === FIX ? "fixture, Kern beside West Kern" : "committed file") + "): every district's name opens exactly its colleges, at #commons/data/district/<slug>",
+    check("districts 2 ⭐ (" + (data === FIX ? "fixture, Kern beside West Kern" : "committed file") + "): every district's name opens exactly its colleges, at #collect/district/<slug>",
       names.length > 0 && !off.length, off.slice(0, 5));
   }
   {
-    const k = load("#commons/data/district/kern-community-college-district", FIX);
+    const k = load("#collect/district/kern-community-college-district", FIX);
     await k.M.boot(); await settle();
     check("districts 3: the district's address opens its colleges and the count line names it",
       JSON.stringify(Array.from(k.d.querySelectorAll("#cdd-colleges tbody tr[data-college]")).map((r) => r.getAttribute("data-college")).sort()) === '["Ridge College","Valley College"]'
       && /Kern Community College District$/.test(txt(k.d.querySelector("#cdd-shown"))) && !!k.d.querySelector("#cdd-all"));
     const nd = JSON.parse(JSON.stringify(FIX)); nd.colleges[1].district = null;
-    const q = load("#commons/data/districts", nd);
+    const q = load("#collect/districts", nd);
     await q.M.boot(); await settle();
     const row = q.d.querySelector('#cdd-dist-table tr[data-district-row="No district on file"] th');
     check("districts 4: the colleges with no district on file are a plain row name, never a word that opens the whole list",
       row && !row.querySelector("button") && /No district on file/.test(txt(row)));
     const zf = JSON.parse(JSON.stringify(FIX)); zf.colleges.forEach((c) => { c.slo_queue = null; c.scout = null; });
-    const zz = load("#commons/data", zf);
+    const zz = load("#collect", zf);
     await zz.M.boot(); await settle();
     check("tiles: a whole-card figure at zero draws plain, never a button that opens an empty list",
       !zz.d.querySelector('.cdd-tiles button[data-filter="slo"]') && !zz.d.querySelector('.cdd-tiles button[data-filter="scouted"]') && !!zz.d.querySelector('.cdd-tiles [data-zero="slo"]'));
   }
   /* (5) each cause's programs. The committed file: every cause word in every row opens the panel at its cause. */
   {
-    const c5 = load("#commons/data");
+    const c5 = load("#collect");
     await c5.M.boot(); await settle();
     check("causes 1: the list alone fetches no program file", !c5.w.__fetched.some((u) => u.indexOf(SIDE) === 0), c5.w.__fetched);
     const off = [], links = [], plain = [];
@@ -265,7 +265,7 @@ function audit(x, where, bad, seen) {
           words++; pw0.click(); await settle();
           const s0 = c5.d.querySelector('#cdd-panel #cdd-cprogs[data-cause-programs="' + k + '"]');
           const n0 = s0 ? s0.querySelectorAll("ul.cdd-progs > li").length : -1;
-          if (n0 !== causesOf(c)[k] || c5.w.location.hash !== "#commons/data/college/" + c5.D.slugOf(c) + "/cause/" + k) off.push(c.name + " " + k + ": " + n0 + " of " + c.causes[k]);
+          if (n0 !== causesOf(c)[k] || c5.w.location.hash !== "#collect/college/" + c5.D.slugOf(c) + "/cause/" + k) off.push(c.name + " " + k + ": " + n0 + " of " + c.causes[k]);
           if (s0) s0.querySelectorAll("ul.cdd-progs > li").forEach((li) => { const a = li.querySelector("button"); (a ? links : plain).push(a || li); });
           continue;
         }
@@ -277,7 +277,7 @@ function audit(x, where, bad, seen) {
         const sec = c5.d.querySelector('#cdd-panel #cdd-cprogs[data-cause-programs="' + k + '"]');
         const n = sec ? sec.querySelectorAll("ul.cdd-progs > li").length : -1;
         const pw = c5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="' + k + '"]');
-        if (n !== causesOf(c)[k] || c5.w.location.hash !== "#commons/data/college/" + c5.D.slugOf(c) + "/cause/" + k || !pw || pw.getAttribute("aria-expanded") !== "true")
+        if (n !== causesOf(c)[k] || c5.w.location.hash !== "#collect/college/" + c5.D.slugOf(c) + "/cause/" + k || !pw || pw.getAttribute("aria-expanded") !== "true")
           off.push(c.name + " " + k + ": " + n + " of " + causesOf(c)[k] + " at " + c5.w.location.hash);
         if (sec) sec.querySelectorAll("ul.cdd-progs > li").forEach((li) => { const a = li.querySelector("button"); (a ? links : plain).push(a || li); });
         if (sec && c.id === DATA.colleges.filter((x) => x.harvested && Object.keys(causesOf(x)).length)[0].id) audit(c5, "panel at " + k, bad, seen);
@@ -287,7 +287,7 @@ function audit(x, where, bad, seen) {
       if (more) { c5.d.querySelector('[data-expand="' + c.id + '"]').click(); await settle(); }
     }
     const want = DATA.colleges.reduce((n, c) => n + (c.harvested ? Object.keys(causesOf(c)).length : 0), 0);
-    check("causes 2 ⭐ (committed file): every cause word in every college's row opens the panel at #commons/data/college/<slug>/cause/<key>, listing exactly the programs it counts",
+    check("causes 2 ⭐ (committed file): every cause word in every college's row opens the panel at #collect/college/<slug>/cause/<key>, listing exactly the programs it counts",
       words === want && want > 0 && !off.length, off.slice(0, 5).concat(["words " + words + " of " + want]));
     const badLinks = links.filter((a) => !/^program\/./.test(a.getAttribute("data-pane") || ""));
     check("causes 3 ⭐: a program with a catalog page is a word that opens it in the panel; one without is plain text, never a control",
@@ -297,20 +297,20 @@ function audit(x, where, bad, seen) {
     const lc = DATA.colleges.filter((c) => (c.census_basis || {}).basis === "live" && Object.keys(causesOf(c)).length)[0];
     if (lc) {
       const lk = Object.keys(causesOf(lc))[0];
-      const b4 = load("#commons/data/college/" + c5.D.slugOf(lc) + "/cause/" + lk);
+      const b4 = load("#collect/college/" + c5.D.slugOf(lc) + "/cause/" + lk);
       await b4.M.boot(); await settle();
       const bn = b4.d.querySelector('#cdd-panel [data-census-basis="live"]');
       check("causes 4b ⭐ (review of #3261, finding 1): the cause box names its basis, the gap census's database count, and its list equals its count",
         bn && /database count/.test(txt(bn)) && b4.d.querySelectorAll("#cdd-panel ul.cdd-progs > li").length === causesOf(lc)[lk], [lc.name, lk]);
     }
-    const f4 = load("#commons/data/college/ridge-college/cause/places_none", FIX);
+    const f4 = load("#collect/college/ridge-college/cause/places_none", FIX);
     await f4.M.boot(); await settle();
     check("causes 4c: without the census's counts the box says its causes come from the committed files only",
       /From the committed files only/.test(txt(f4.d.querySelector('#cdd-panel [data-census-basis="committed files only"]'))));
   }
   /* The fixture: the address opens the panel at a cause, the word folds it again, and a missing file says so. */
   {
-    const a5 = load("#commons/data/college/ridge-college/cause/places_none", FIX);
+    const a5 = load("#collect/college/ridge-college/cause/places_none", FIX);
     await a5.M.boot(); await settle();
     const sec = a5.d.querySelector('#cdd-panel #cdd-cprogs[data-cause-programs="places_none"]');
     check("causes 5: the cause's address opens the panel with its programs, the word pressed",
@@ -318,7 +318,7 @@ function audit(x, where, bad, seen) {
       && a5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="places_none"]').getAttribute("aria-expanded") === "true");
     a5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="places_none"]').click(); await settle();
     check("causes 6: the word folds it again, the address back to the college, the focus on the word",
-      !a5.d.querySelector("#cdd-panel #cdd-cprogs") && a5.w.location.hash === "#commons/data/college/ridge-college"
+      !a5.d.querySelector("#cdd-panel #cdd-cprogs") && a5.w.location.hash === "#collect/college/ridge-college"
       && a5.d.activeElement && a5.d.activeElement.getAttribute("data-cause") === "places_none", a5.w.location.hash);
     a5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="page_not_found"]').click(); await settle();
     const pn = a5.d.querySelector("#cdd-panel #cdd-cprogs");
@@ -328,30 +328,30 @@ function audit(x, where, bad, seen) {
     a5.d.querySelector('#cdd-panel button[data-pane="program/pla3"]').click(); await settle();
     const pp = a5.d.querySelector("#cdd-panel");
     check("causes 7b ⭐: a program opens what we hold about it in the panel, at its address, with its catalog page in a new tab",
-      a5.w.location.hash === "#commons/data/college/ridge-college/program/pla3" && txt(a5.d.querySelector("#cdd-panel-h")) === "Program places_none 3"
+      a5.w.location.hash === "#collect/college/ridge-college/program/pla3" && txt(a5.d.querySelector("#cdd-panel-h")) === "Program places_none 3"
       && pp.querySelector('a.cdd-newtab[href="https://catalog.ridge.example.edu/p/places_none/3"]') && /Control number\s*pla3/.test(txt(pp)) && /A\.S\. Degree/.test(txt(pp)), a5.w.location.hash);
     audit(a5, "fixture panel at a cause", bad, seen);
-    const e5 = load("#commons/data/college/ridge-college/cause/no_closed_list", FIX, { [SIDE + "ridge.json"]: undefined });
+    const e5 = load("#collect/college/ridge-college/cause/no_closed_list", FIX, { [SIDE + "ridge.json"]: undefined });
     await e5.M.boot(); await settle();
     check("causes 8: a program file that cannot be read says so in words; the count stands",
       /The program list could not be read/.test(txt(e5.d.querySelector("#cdd-panel #cdd-cprogs"))) && !e5.d.querySelector("#cdd-panel ul.cdd-progs"));
     /* Review of #3261, finding 2: a program whose list fails to load says the list could not be read, never that the
        program does not exist. */
-    const pe = load("#commons/data/college/ridge-college/program/pla3", FIX, { [SIDE + "ridge.json"]: undefined });
+    const pe = load("#collect/college/ridge-college/program/pla3", FIX, { [SIDE + "ridge.json"]: undefined });
     await pe.M.boot(); await settle();
     const peT = txt(pe.d.querySelector("#cdd-panel"));
     check("causes 8b ⭐: a program pane whose list cannot be read says so, never that the program is not there",
       /The program list could not be read/.test(peT) && !/holds no program/.test(peT) && pe.d.querySelector('[data-program-state="error"]'), peT.slice(0, 200));
-    const u5 = load("#commons/data/college/ridge-college/cause/not_a_cause", FIX);
+    const u5 = load("#collect/college/ridge-college/cause/not_a_cause", FIX);
     await u5.M.boot(); await settle();
     check("causes 9: an address naming a cause the college does not hold opens the college alone",
-      !!u5.d.querySelector("#cdd-panel:not([hidden])") && !u5.d.querySelector("#cdd-cprogs") && u5.w.location.hash === "#commons/data/college/ridge-college", u5.w.location.hash);
+      !!u5.d.querySelector("#cdd-panel:not([hidden])") && !u5.d.querySelector("#cdd-cprogs") && u5.w.location.hash === "#collect/college/ridge-college", u5.w.location.hash);
     check("causes 10: Coming next no longer lists each cause's programs, and the links line says what now opens",
       !x.d.querySelector('#cdd-next [data-next="Each cause\'s programs"]') && /each program still to pass opens its own catalog page/.test(txt(x.d.querySelector("#cdd-next"))));
   }
   /* (6) every pane word in every college's row opens the panel with a heading, content and a new-tab destination. */
   {
-    const p6 = load("#commons/data");
+    const p6 = load("#collect");
     await p6.M.boot(); await settle();
     const off = [];
     let opened = 0;
@@ -363,7 +363,7 @@ function audit(x, where, bad, seen) {
         b.click(); await tick(); await tick();
         opened++;
         const box = p6.d.querySelector("#cdd-panel:not([hidden])"), nt = box && box.querySelector("a.cdd-newtab");
-        const want = "#commons/data/college/" + p6.D.slugOf(c) + "/" + k;
+        const want = "#collect/college/" + p6.D.slugOf(c) + "/" + k;
         if (!box || !txt(p6.d.querySelector("#cdd-panel-h")) || !nt || !nt.getAttribute("href") || p6.w.location.hash !== want || txt(box).length < 80)
           off.push(c.name + " " + k + ": " + p6.w.location.hash + " tab " + (nt && nt.getAttribute("href")));
         if (c === DATA.colleges[0]) audit(p6, "pane " + k, bad, seen);
@@ -377,7 +377,7 @@ function audit(x, where, bad, seen) {
   {
     const LV = DATA.live && DATA.live.colleges || {};
     const held = DATA.colleges.filter((c) => { const o = (LV[String(c.id)] || {}).outcomes || {}; return o.slo_courses || o.objective_courses; });
-    const sv = load("#commons/data/slos");
+    const sv = load("#collect/slos");
     await sv.M.boot(); await settle();
     const rows = Array.from(sv.d.querySelectorAll("#cdd-slos-table tbody tr")).map((r) => r.getAttribute("data-slos-row")).sort();
     check("slos 1 ⭐: Colleges with collected SLOs lists exactly the colleges the database count holds SLOs or objectives for, and says how many are not read",
@@ -393,28 +393,28 @@ function audit(x, where, bad, seen) {
       sv.d.querySelector('#cdd-slos-table button[data-slos-college="cuesta-college"]').click(); await settle();
       const pane = sv.d.querySelector("#cdd-panel");
       check("slos 2 ⭐: a college's name opens its SLO pane over the view: the live counts, objectives beside SLOs, courses by subject and why that total can differ",
-        sv.w.location.hash === "#commons/data/slos/college/cuesta-college/slos" && !!sv.d.querySelector("#cdd-slos") && /Courses with objectives, in all/.test(txt(pane))
+        sv.w.location.hash === "#collect/slos/college/cuesta-college/slos" && !!sv.d.querySelector("#cdd-slos") && /Courses with objectives, in all/.test(txt(pane))
         && pane.querySelector("[data-subject-note]")
         && pane.querySelectorAll("table.cdd-subj tbody tr").length > 5 && pane.querySelector('table.cdd-subj th[scope="col"]'), sv.w.location.hash);
       sv.d.querySelector("#cdd-pane-back").click(); await settle();
       sv.d.querySelector('#cdd-panel button[data-pane="plos"]').click(); await settle();
       check("slos 3: the PLO pane lists each program's PLOs from the committed records, a program's name showing them",
-        sv.w.location.hash === "#commons/data/slos/college/cuesta-college/plos" && sv.d.querySelectorAll("#cdd-panel details.cdd-plo").length > 5
+        sv.w.location.hash === "#collect/slos/college/cuesta-college/plos" && sv.d.querySelectorAll("#cdd-panel details.cdd-plo").length > 5
         && sv.d.querySelector("#cdd-panel details.cdd-plo ol li"), sv.w.location.hash);
       sv.d.querySelector("#cdd-panel-close").click(); await settle();
       const fa = sv.d.activeElement;
       check("slos 3b ⭐ (review of #3261, finding 3): Close returns to Colleges with collected SLOs, the focus on the college's name that opened the pane",
-        sv.w.location.hash === "#commons/data/slos" && !!sv.d.querySelector("#cdd-slos") && fa && fa.getAttribute("data-slos-college") === "cuesta-college", [sv.w.location.hash, fa && fa.outerHTML.slice(0, 80)]);
-      const sa = load("#commons/data/slos/college/cuesta-college/slos");
+        sv.w.location.hash === "#collect/slos" && !!sv.d.querySelector("#cdd-slos") && fa && fa.getAttribute("data-slos-college") === "cuesta-college", [sv.w.location.hash, fa && fa.outerHTML.slice(0, 80)]);
+      const sa = load("#collect/slos/college/cuesta-college/slos");
       await sa.M.boot(); await settle();
       check("slos 3c: the address of a college's pane over the view opens both", !!sa.d.querySelector("#cdd-slos") && !!sa.d.querySelector("#cdd-panel:not([hidden]) table.cdd-subj"));
     }
-    const lt = load("#commons/data");
+    const lt = load("#collect");
     await lt.M.boot(); await settle();
     const tile = lt.d.querySelector('.cdd-tiles button[data-view="slos"]');
     if (tile) tile.click(); await settle();
-    check("slos 4: the Colleges with collected SLOs figure opens its view", DATA.live.state !== "read" || (tile && lt.w.location.hash === "#commons/data/slos"), lt.w.location.hash);
-    const lt2 = load("#commons/data");
+    check("slos 4: the Colleges with collected SLOs figure opens its view", DATA.live.state !== "read" || (tile && lt.w.location.hash === "#collect/slos"), lt.w.location.hash);
+    const lt2 = load("#collect");
     await lt2.M.boot(); await settle();
     const headCols = Array.from(lt2.d.querySelectorAll("#cdd-colleges thead th")).map(txt);
     const cuRow = cu ? lt2.d.querySelector('#cdd-colleges tr[data-college="Cuesta College"] td[data-label="Student learning outcomes (SLOs) and objectives"]') : null;
@@ -424,11 +424,11 @@ function audit(x, where, bad, seen) {
     check("bars: an empty bar keeps a 3:1 edge (its track carries a --cmn-muted border); the outcome words wrap as a flex row",
       /\.cdd-meter \{[^}]*border:1px solid var\(--cmn-muted\)/.test(lt2.D.CSS) && /\.cdd-dsword \{[^}]*display:flex; flex-wrap:wrap/.test(lt2.D.CSS));
     /* Source and dictionary panes never send a reader to a code, data or markdown file on GitHub. */
-    const dv = load("#commons/data/dictionary/source/dictionary");
+    const dv = load("#collect/dictionary/source/dictionary");
     await dv.M.boot(); await settle();
     const dvt = dv.d.querySelector("#cdd-panel a.cdd-newtab");
     check("sources: a source pane says what its file is, and its new tab opens the same pane, never a file on GitHub",
-      dvt && /^#commons\/data\/dictionary\/source\/dictionary$/.test(dvt.getAttribute("href")) && !dv.d.querySelector('#cdd-panel a[href*="github.com"]'), dvt && dvt.getAttribute("href"));
+      dvt && /^#collect\/dictionary\/source\/dictionary$/.test(dvt.getAttribute("href")) && !dv.d.querySelector('#cdd-panel a[href*="github.com"]'), dvt && dvt.getAttribute("href"));
   }
   /* Review of #3261, round 2: one base per card. Where the live census holds a college, Still to pass is the census's
      count and the causes sum to it, in the list and in the opened row; the statewide card equals the census's gap. */
@@ -437,7 +437,7 @@ function audit(x, where, bad, seen) {
     const offSum = onLive.filter((c) => Object.values(c.census_causes || {}).reduce((a, b) => a + b, 0) !== c.census_gap).map((c) => c.name);
     const cen = JSON.parse(fs.readFileSync("kb/status/harvest_gap_census.json", "utf8"));
     check("bases 1 ⭐: for every college on the live basis, its causes sum to its Still to pass", onLive.length > 0 && !offSum.length, offSum.slice(0, 5));
-    const b1 = load("#commons/data");
+    const b1 = load("#collect");
     await b1.M.boot(); await settle();
     const tileT = txt(b1.d.querySelector('.cdd-tiles [data-tile="Programs still to pass"]'));
     check("bases 2 ⭐: the statewide Programs still to pass card equals the census's gap, and names its base",
@@ -453,21 +453,21 @@ function audit(x, where, bad, seen) {
     const card = txt(b1.d.querySelector("#cdd-more-" + sk.id + ' [data-ds="pr"]'));
     check("bases 4 ⭐: the opened card's Still to pass names the live base and equals the causes' sum; the capture's own figures keep their label",
       new RegExp("Still to pass \\(gap census database count\\)\\s*" + Number(sk.census_gap).toLocaleString("en-US")).test(card) && /Listed by the capture/.test(card), card.slice(0, 300));
-    const pk = load("#commons/data/college/" + b1.D.slugOf(sk) + "/program/00000");
+    const pk = load("#collect/college/" + b1.D.slugOf(sk) + "/program/00000");
     await pk.M.boot(); await settle();
     check("bases 5: a program the live list does not hold says the database count does not list it as still to pass",
       /database count does not list program 00000 as still to pass/.test(txt(pk.d.querySelector("#cdd-panel"))));
     /* COBIx on #3261: inherited names are no view, pane or filter, and the address is repaired. */
-    const pc = load("#commons/data/constructor");
+    const pc = load("#collect/constructor");
     await pc.M.boot(); await settle();
-    const pc2 = load("#commons/data/college/" + b1.D.slugOf(sk) + "/toString");
+    const pc2 = load("#collect/college/" + b1.D.slugOf(sk) + "/toString");
     await pc2.M.boot(); await settle();
-    check("guards 1 ⭐: #commons/data/constructor opens the list and repairs the address; college/<slug>/toString opens the college alone",
-      pc.w.location.hash === "#commons/data" && !!pc.d.querySelector("#cdd-colleges") && pc2.w.location.hash === "#commons/data/college/" + b1.D.slugOf(sk)
+    check("guards 1 ⭐: #collect/constructor opens the list and repairs the address; college/<slug>/toString opens the college alone",
+      pc.w.location.hash === "#collect" && !!pc.d.querySelector("#cdd-colleges") && pc2.w.location.hash === "#collect/college/" + b1.D.slugOf(sk)
       && !/Not found/.test(txt(pc2.d.querySelector("#cdd-panel-h"))), [pc.w.location.hash, pc2.w.location.hash]);
     /* A failed program read retries when the college opens again. */
     let fails = 1;
-    const rt = load("#commons/data", FIX);
+    const rt = load("#collect", FIX);
     const realFetch = rt.w.fetch;
     rt.w.fetch = function (u) { if (String(u).indexOf(SIDE) === 0 && fails-- > 0) return Promise.resolve({ ok: false, status: 503, json: () => Promise.reject(new Error("503")) }); return realFetch(u); };
     await rt.M.boot(); await settle();
@@ -483,7 +483,7 @@ function audit(x, where, bad, seen) {
     ob.overall = { state: "read", basis: "live", read_at: "2026-11-13T17:58:51Z", colleges: {} };
     ob.live = { basis: "live", state: "read", read_at: "2026-11-13T17:58:51Z", colleges: { "9001": { programs: { active: 10 }, records: {}, program_courses: { active_courses: 100 },
       outcomes: { slo_courses: 50, slo_courses_on_active: 40, objective_courses: 9, objective_courses_on_active: 7 } } } };
-    const oo = load("#commons/data", ob);
+    const oo = load("#collect", ob);
     await oo.M.boot(); await settle();
     const cell = oo.d.querySelector('#cdd-colleges tr[data-id="9001"] td[data-label="Student learning outcomes (SLOs) and objectives"]');
     check("guards 3: a college flagged as printing no objectives still shows its live objective meter when the live count is above 0",
@@ -503,7 +503,7 @@ function audit(x, where, bad, seen) {
     ROWS.push({ course_code: "ACCT A101", course_title: "Financial Accounting", kind: "slo", outcomes: ["Prepare financial statements.", "Record journal entries."], fingerprint: "f1", read_run: 2, source_kind: "catalog", source_system: "courseleaf", loaded_at: "2026-11-09T00:00:00Z" });
     for (let i = 0; i < 520; i++) ROWS.push({ course_code: "ANTH A" + (100 + i), course_title: "Filler " + i, kind: "slo", outcomes: ["Filler outcome " + i], fingerprint: "a" + i, read_run: 2 });
     ROWS.push({ course_code: "ACCT A200", course_title: "Empty Course", kind: "slo", outcomes: [], fingerprint: "e", read_run: 2 });
-    const z = load("#commons/data/slos/college/orange_coast/slos", DATA, null, (u) => (/college=eq\.Orange%20Coast%20College/.test(u) ? ROWS : []));
+    const z = load("#collect/slos/college/orange_coast/slos", DATA, null, (u) => (/college=eq\.Orange%20Coast%20College/.test(u) ? ROWS : []));
     await z.M.boot(); await settle();
     const P = z.d.querySelector("#cdd-panel");
     const sb = P && P.querySelector('table.cdd-subj button[data-subj="ACCTA"]');
@@ -553,7 +553,7 @@ function audit(x, where, bad, seen) {
     const nf = JSON.parse(JSON.stringify(FIX));
     nf.colleges[0].outcomes_file = SIDE + "ridge.outcomes.json";
     const ridgeOut = { schema: 1, college: "Ridge College", slug: "ridge", courses: { slo_courses: 1, objective_courses: 0, by_subject: [{ subject: "BIO", slo_courses: 1, objective_courses: 0 }] }, programs: [] };
-    const y = load("#commons/data/college/ridge-college/slos", nf, { [SIDE + "ridge.outcomes.json"]: ridgeOut }, () => []);
+    const y = load("#collect/college/ridge-college/slos", nf, { [SIDE + "ridge.outcomes.json"]: ridgeOut }, () => []);
     await y.M.boot(); await settle();
     check("plo 2: an empty programs list says no committed record carries PLOs, in the SLO pane",
       /No committed record carries PLOs for this college\./.test(txt(y.d.querySelector("#cdd-panel"))) && !y.d.querySelector("#cdd-panel details.cdd-plo"), txt(y.d.querySelector("#cdd-panel")).slice(0, 300));
@@ -561,7 +561,7 @@ function audit(x, where, bad, seen) {
     if (yb) { yb.click(); await settle(); }
     check("drill 7: a subject the live table holds nothing for says so in a sentence",
       yb && /No BIO course has collected SLO or objective text in the live table yet\./.test(txt(y.d.getElementById(yb.getAttribute("aria-controls")))));
-    const v = load("#commons/data/college/ridge-college/slos", FIX, null, () => []);
+    const v = load("#collect/college/ridge-college/slos", FIX, null, () => []);
     await v.M.boot(); await settle();
     check("plo 3: no committed outcomes file says the committed files hold no program record with PLOs",
       /The committed files hold no program record with PLOs for this college\./.test(txt(v.d.querySelector("#cdd-panel"))), txt(v.d.querySelector("#cdd-panel")).slice(0, 300));

@@ -132,7 +132,9 @@ function responder(map) {
 function load(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="commons-root" style="padding:28px;">Loading</div></body></html>',
-    { url: "https://example.org/" + (opts.hash || ""), runScripts: "dangerously" });
+    /* #3533: the bare #commons is the CPL Commons front page (tests/commons_front.test.js); the first view these checks
+       cover is the earlier one, at #commons/details. */
+    { url: "https://example.org/" + (opts.hash == null ? "#commons/details" : opts.hash), runScripts: "dangerously" });
   const w = dom.window;
   w.fetch = opts.fetch || responder({ "kb/status/commons.json": STATUS, "kb/status/program-requirements.json": PR_LOG });
   // the keeper (cpl_session.js) first, as the page loads it, with storage stubs it reads at start
@@ -308,26 +310,26 @@ function cellText(li, title) {
   fold.click();
   check("Collapse hides the detail and keeps the count and meter", req.querySelector(".cmn-detail").hidden && req.querySelector(".cmn-n") && req.querySelector(".cmn-meter") && !req.querySelector(".cmn-n").hidden);
   check("the word flips to Expand with aria-expanded false and its row's name", txt(fold) === "Expand" && fold.getAttribute("aria-expanded") === "false" && fold.getAttribute("aria-label") === "Expand Program Requirements" && fold.getAttribute("aria-controls") === "cmn-detail-requirements");
-  check("the fold is kept in localStorage", t.w.localStorage.getItem("cplCommons.fold.v1") === JSON.stringify(["requirements"]));
+  check("the fold is kept in localStorage", t.w.localStorage.getItem("cplCommons.detailsFold.v1") === JSON.stringify(["requirements"]));
   const foldAll = t.d.getElementById("cmn-foldall");
   check("with one row folded the top word reads Collapse all", txt(foldAll) === "Collapse all");
   foldAll.click();
   check("Collapse all folds every row and reads Expand all", rows(t.d).every(function (li) { return li.querySelector(".cmn-detail").hidden; }) && txt(foldAll) === "Expand all");
   foldAll.click();
-  check("Expand all opens every row and reads Collapse all", rows(t.d).every(function (li) { return !li.querySelector(".cmn-detail").hidden; }) && txt(foldAll) === "Collapse all" && t.w.localStorage.getItem("cplCommons.fold.v1") === "[]");
+  check("Expand all opens every row and reads Collapse all", rows(t.d).every(function (li) { return !li.querySelector(".cmn-detail").hidden; }) && txt(foldAll) === "Collapse all" && t.w.localStorage.getItem("cplCommons.detailsFold.v1") === "[]");
 
   // the order
   check("Move up is disabled on the first row and Move down on the last", req.querySelector(".cmn-up").disabled && byKey(t.d, "subjects").querySelector(".cmn-down").disabled);
   byKey(t.d, "exhibit").querySelector(".cmn-up").click();
   check("Move up reorders and renumbers", rows(t.d).map(function (li) { return li.getAttribute("data-key"); }).join(",") === "exhibit,requirements,course,cr,subjects" && txt(byKey(t.d, "exhibit").querySelector(".cmn-pos")) === "1");
-  check("the order is kept in localStorage", t.w.localStorage.getItem("cplCommons.order.v1") === JSON.stringify(["exhibit", "requirements", "course", "cr", "subjects"]));
+  check("the order is kept in localStorage", t.w.localStorage.getItem("cplCommons.detailsOrder.v1") === JSON.stringify(["exhibit", "requirements", "course", "cr", "subjects"]));
   t.d.getElementById("cmn-reset").click();
   check("Back to the starting order restores the file's order", rows(t.d).map(function (li) { return li.getAttribute("data-key"); }).join(",") === "requirements,exhibit,course,cr,subjects");
 
   // a second visit reads the kept order and fold back
   const t2 = load();
-  t2.w.localStorage.setItem("cplCommons.order.v1", JSON.stringify(["cr", "subjects", "nope"]));
-  t2.w.localStorage.setItem("cplCommons.fold.v1", JSON.stringify(["cr", "course"]));
+  t2.w.localStorage.setItem("cplCommons.detailsOrder.v1", JSON.stringify(["cr", "subjects", "nope"]));
+  t2.w.localStorage.setItem("cplCommons.detailsFold.v1", JSON.stringify(["cr", "course"]));
   await t2.M.boot();
   check("a kept order applies, unknown keys ignored, the rest in the file's order", rows(t2.d).map(function (li) { return li.getAttribute("data-key"); }).join(",") === "cr,subjects,requirements,exhibit,course");
   check("a kept fold applies and the top word still reads Collapse all", byKey(t2.d, "cr").querySelector(".cmn-detail").hidden && byKey(t2.d, "course").querySelector(".cmn-detail").hidden && !byKey(t2.d, "exhibit").querySelector(".cmn-detail").hidden && txt(t2.d.getElementById("cmn-foldall")) === "Collapse all");
@@ -843,10 +845,10 @@ function cellText(li, title) {
     a.d.querySelector('.cmn-filter[data-show="build"]').click();
     check("address 3: switched to Building, the view reports commons/build", ask(a) === "commons/build");
     a.d.querySelector('.cmn-filter[data-show="all"]').click();
-    check("address 4: All reports the bare commons", ask(a) === "commons");
-    const b = load({ hash: "#commons", session: true });
+    check("address 4: All reports commons/details", ask(a) === "commons/details");
+    const b = load({ hash: "#commons/details", session: true });
     await b.M.boot();
-    check("address 5: the bare #commons opens on All, as before", pressed(b) === "all" && keysOf(b).length === 8 && ask(b) === "commons");
+    check("address 5: #commons/details opens on All, as the bare #commons did before #3533", pressed(b) === "all" && keysOf(b).length === 8 && ask(b) === "commons/details");
     const c = load({ hash: "#commons/nonsense", session: true });
     await c.M.boot();
     check("address 6: an unknown word leaves All", pressed(c) === "all");

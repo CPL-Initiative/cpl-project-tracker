@@ -37,8 +37,11 @@
 
   var ROOT_ID = "commons-root";
   var STATUS_URL = "kb/status/commons.json";
-  var ORDER_KEY = "cplCommons.order.v1";
-  var FOLD_KEY = "cplCommons.fold.v1";
+  /* The earlier first view, now at #commons/details, keeps its rows' order and fold under its own keys (moved once from
+     cplCommons.order.v1 / cplCommons.fold.v1 by commons_front.js, whose card fold keeps cplCommons.fold.v1, #3533). */
+  var ORDER_KEY = "cplCommons.detailsOrder.v1";
+  var FOLD_KEY = "cplCommons.detailsFold.v1";
+  var FRONT_FOLD_KEY = "cplCommons.fold.v1";
   var DECIDER = "Sam";
   var SESSION_STALE_HOURS = 7 * 24;   /* the run log is written at checkpoints; a week without one reads stale */
   var MACHINE_SLACK = 1.5;            /* a machine stamp older than 1.5 cadences reads stale */
@@ -885,9 +888,11 @@
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("commons", function () {
     if (ASE.on) return window.CPL_COMMONS_ASE ? CPL_COMMONS_ASE.address() : "commons/ase";
-    if (DATA.on) return window.CPL_COMMONS_DATA ? CPL_COMMONS_DATA.address() : "commons/data";
+    /* The collection view's address is #collect/...; inside the tab it reads commons/collect/..., which arrive() opens. */
+    if (DATA.on) return "commons/" + (window.CPL_COMMONS_DATA ? CPL_COMMONS_DATA.address() : "collect");
+    if (FRONT.on) return "commons";
     if (BATCH.pin) return "commons/case/" + BATCH.pin;
-    return show === "all" ? "commons" : "commons/" + show;
+    return show === "all" ? "commons/details" : "commons/" + show;
   });
   /* Opens the filter word the address names; anything unknown leaves the view as it is. */
   /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
@@ -905,7 +910,7 @@
     return new Promise(function (res) { CPL_TABS.loadScript("commons_ase.js", "CPL_COMMONS_ASE", function () { res(go()); }); });
   }
   /* The Commons data dashboard (#3215, slice 1): each college's datasets, how far each has come, what is in the way.
-     #commons/data, #commons/data/<filter> and #commons/data[/<filter>]/college/<slug> (slice 2: that college's side
+     #collect, #collect/<filter> and #collect[/<filter>]/college/<slug> (slice 2: that college's side
      panel) open it; commons_data.js draws it from kb/status/commons_data.json. */
   var DATA = { on: false, filter: "", keep: false };
   function showData(root) {
@@ -916,21 +921,47 @@
       /* A session renewal's redraw keeps the person's own sort and search for the visit (DATA.keep, set by the
          cpl-session-changed listener); any other draw is a new visit and starts fresh. */
       var keep = DATA.keep; DATA.keep = false;
-      return CPL_COMMONS_DATA.boot(root, DATA.filter, { keep: keep, noted: function (h) { seenHash = h; DATA.filter = String(h || "").replace(/^#?commons\/data\/?/, ""); } });
+      return CPL_COMMONS_DATA.boot(root, DATA.filter, { keep: keep, noted: function (h) { seenHash = h; DATA.filter = String(h || "").replace(/^#?(?:commons\/)?collect\/?/, ""); } });
     }
     if (window.CPL_COMMONS_DATA || !(window.CPL_TABS && CPL_TABS.loadScript)) return Promise.resolve(go());
     return new Promise(function (res) { CPL_TABS.loadScript("commons_data.js", "CPL_COMMONS_DATA", function () { res(go()); }); });
+  }
+  /* The CPL Commons front page (#3533): the bare #commons. commons_front.js draws it from the status file this tab
+     already reads and three committed files of its own. The earlier first view (the docket, the batches, the decision
+     record) stays one address away at #commons/details, and its filter words (#commons/needs, #commons/build) and
+     cases (#commons/case/<id>) open it as before. */
+  var FRONT = { on: true };
+  function showFront(root) {
+    function go() {
+      if (!window.CPL_COMMONS_FRONT) { notice(root, "The CPL Commons page (commons_front.js) could not be loaded. Reload the tab to try again."); return null; }
+      return readJson(STATUS_URL).then(function (data) {
+        if (!data || !Array.isArray(data.rows) || !data.written_at) throw new Error(STATUS_URL + " is not the Commons' status file");
+        return CPL_COMMONS_FRONT.boot(root, data);
+      }).then(null, function (e) {
+        notice(root, "The Commons' figures could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
+        return null;
+      });
+    }
+    if (window.CPL_COMMONS_FRONT || !(window.CPL_TABS && CPL_TABS.loadScript)) return Promise.resolve(go());
+    return new Promise(function (res) { CPL_TABS.loadScript("commons_front.js", "CPL_COMMONS_FRONT", function () { res(go()); }); });
   }
   window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") away = true; });
   function arrive() {
     var h = String(location.hash || ""), visit = away || h !== seenHash;
     away = false; seenHash = h;
     if (!visit) return false;
-    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("commons") : null;
+    /* Without the keeper (a bare load), the address is read here the way cpl_session.js arrival() reads it. */
+    var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("commons")
+      : /^#commons\//.test(h) ? h.slice(9).split("/").map(function (x) { try { return decodeURIComponent(x); } catch (e) { return x; } }) : null;
+    /* The collection view (#3533): #collect[/...] (the tab router folds it into this tab), and commons/collect[/...],
+       the form a sign-in link returns to. An old #commons/data[/...] link was already rewritten to #collect by tabs.js. */
+    var cm = h.replace(/^#/, "").match(/^(?:commons\/)?collect(?:\/(.*))?$/);
     ASE.on = !!(a && a[0] === "ase");
-    DATA.on = !!(a && a[0] === "data");
+    DATA.on = !!cm || !!(a && a[0] === "data");
+    FRONT.on = !ASE.on && !DATA.on && !a;
     if (ASE.on) { ASE.title = a.slice(1).join("/"); return true; }
-    if (DATA.on) { DATA.filter = a.slice(1).join("/"); return true; }   // a filter, a college (college/<slug>) or both
+    if (DATA.on) { DATA.filter = cm ? cm[1] || "" : a.slice(1).join("/"); return true; }   // a filter, a college (college/<slug>) or both
+    if (a && a[0] === "details") return true;
     if (a && a[0] === "case" && a[1]) { BATCH.pin = a.slice(1).join("/"); return true; }
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
     return false;
@@ -940,18 +971,19 @@
      surfaces"). Only once the tab has drawn. */
   var reboot = null;
   window.addEventListener("cpl-session-changed", function () {
-    if ((!redraw && !ASE.on && !DATA.on) || reboot || !document.getElementById(ROOT_ID)) return;
+    if ((!redraw && !ASE.on && !DATA.on && !FRONT.on) || reboot || !document.getElementById(ROOT_ID)) return;
     DATA.keep = DATA.on;
     reboot = Promise.resolve(boot()).then(function () { reboot = null; DATA.keep = false; }, function () { reboot = null; DATA.keep = false; });
   });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
     if (!(e && e.detail && e.detail.tab === "commons")) return;
-    var wasAse = ASE.on || DATA.on, root = document.getElementById(ROOT_ID);
+    var wasAse = ASE.on || DATA.on, wasFront = FRONT.on, root = document.getElementById(ROOT_ID);
     var named = arrive();
     if (ASE.on) { if (named) showAse(root); return; }
     if (DATA.on) { if (named) showData(root); return; }
-    if (wasAse) { boot(); return; }
+    if (wasAse || FRONT.on !== wasFront) { boot(); return; }
+    if (FRONT.on) return;
     if (named && redraw) redraw();
     /* each visit counts the batch again, so one finished in Exhibits reads done on the way back (#2963 step 1) */
     if (batchRefresh) batchRefresh();
@@ -978,7 +1010,7 @@
       el("p", { cls: "cmn-sub" }, ["Each college keeps its own catalog. The Commons gives every college one shared name to point to and shows how its own version lines up with it. ",
         el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })]),
       el("p", { cls: "cmn-sub", id: "cmn-ase-line" }, ["The first slice a student sees: ", el("a", { href: "#commons/ase", text: "where an ASE certification can count" }), ", at every college."]),
-      el("p", { cls: "cmn-sub", id: "cmn-data-line" }, ["What we have collected for each college, how complete it is, how confident we are in it and what is in the way: ", el("a", { href: "#commons/data", text: "College Data Collection" }), "."])
+      el("p", { cls: "cmn-sub", id: "cmn-data-line" }, ["What we have collected for each college, how complete it is, how confident we are in it and what is in the way: ", el("a", { href: "#collect", text: "College Data Collection" }), "."])
     ]));
 
     /* The Commons Curation ETA tops the tab (Sam, S661: "Add the new widget to the top of cpl commons"). It loads with
@@ -1194,6 +1226,7 @@
     arrive();
     if (ASE.on) return showAse(root);
     if (DATA.on) return showData(root);
+    if (FRONT.on) return showFront(root);
     return load().then(function (r) {
       render(root, r.data, r.S, new Date());
       return Promise.resolve(batchRefresh && batchRefresh()).then(function () { return r; }, function () { return r; });
@@ -1390,6 +1423,6 @@
     boot: boot, render: render, load: load, ensureCss: ensureCss, cardModel: cardModel, sortCards: sortCards,
     machineState: machineState, sessionState: sessionState, cadenceWords: cadenceWords, fmt: fmt,
     queueSection: queueSection, REASONS: REASONS, confidenceSection: confidenceSection, nextBatchSection: nextBatchSection, batchSection: batchSection, caseSection: caseSection, saveRuling: saveRuling, runProcessor: runProcessor, PROCESS: PROCESS, batchList: batchList, countDecided: countDecided, BATCH: BATCH, learningLine: learningLine,
-    ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
+    ROOT_ID: ROOT_ID, STATUS_URL: STATUS_URL, ORDER_KEY: ORDER_KEY, FOLD_KEY: FOLD_KEY, FRONT_FOLD_KEY: FRONT_FOLD_KEY, showFront: showFront, CSS: CSS, TOKENS: TOKENS, CARDS: CARDS, TITLE: TITLE
   };
 })();

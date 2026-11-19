@@ -82,7 +82,7 @@ function val(node, label) {
   const dt = Array.from(node.querySelectorAll("dt")).find((t) => txt(t) === label);
   return dt ? txt(dt.nextElementSibling) : null;
 }
-async function panel(slug) { const x = load("#commons/data/college/" + slug, DATA); await x.M.boot(); await settle(); return x; }
+async function panel(slug) { const x = load("#collect/college/" + slug, DATA); await x.M.boot(); await settle(); return x; }
 
 (async function () {
   // ── static ──
@@ -179,14 +179,14 @@ async function panel(slug) { const x = load("#commons/data/college/" + slug, DAT
   check("committed: Columbia holds no Program Pathways Mapper entry and no committed map", COL.collection.ppm_member === null && COL.collection.maps.held === 0);
 
   // ── the lazy path: the real tab loads the module the first time a panel draws, then draws the panel again ──
-  const l = load("#commons/data/college/columbia-college", DATA, { lazy: true });
+  const l = load("#collect/college/columbia-college", DATA, { lazy: true });
   await l.M.boot(); await settle();
   check("lazy ⭐: the panel asks CPL_TABS for commons_data_cards.js once and draws the cards when it arrives",
     l.lazy.filter((s) => s === "commons_data_cards.js").length === 1 && !!card(l, "how") && !!card(l, "maps") && !!card(l, "sources"), JSON.stringify(l.lazy));
 
   // ── the statewide maps line (COBIx's review of #3316): the committed count, then none found and not known, each the
   //    word that opens the colleges it counts ──
-  const s = load("#commons/data", DATA);
+  const s = load("#collect", DATA);
   await s.M.boot(); await settle();
   const ml = s.d.querySelector("[data-maps-line]");
   const heldMaps = (DATA.collection.maps || {}).held;
@@ -209,7 +209,7 @@ async function panel(slug) { const x = load("#commons/data/college/" + slug, DAT
   if (mw) mw.click();
   await settle();
   check("maps line ⭐: the committed count opens the colleges whose maps are committed, and the list holds exactly those",
-    !!mw && D.address() === "commons/data/maps" && s.d.querySelectorAll("#cdd-colleges tbody tr[data-id]").length === D.listFor(MM, "maps").length, D.address());
+    !!mw && D.address() === "collect/maps" && s.d.querySelectorAll("#cdd-colleges tbody tr[data-id]").length === D.listFor(MM, "maps").length, D.address());
   const mcard = await panel("mt-san-antonio-college");
   const st = mcard.d.querySelector('#cdd-panel [data-card="maps"] .cdd-state');
   check("maps line: the card's state and the line's filter agree (one rule, mapState)",
@@ -217,7 +217,7 @@ async function panel(slug) { const x = load("#commons/data/college/" + slug, DAT
       && !D.listFor(MM, "maps_none").concat(D.listFor(MM, "maps_unknown")).some((c) => c.name === "Mt. San Antonio College"));
 
   // ── a card module that throws (COBIx's review of #3316): a quiet line and a console warning, never silence ──
-  const b = load("#commons/data/college/columbia-college", DATA);
+  const b = load("#collect/college/columbia-college", DATA);
   const warned = [];
   b.w.console.warn = function () { warned.push([].slice.call(arguments).join(" ")); };
   b.w.CPL_COMMONS_DATA_CARDS.sections = function () { throw new Error("broken on purpose"); };

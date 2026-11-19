@@ -14,7 +14,7 @@
 //       restricted (the site never serves it): student-level rows and staff and user rosters, each naming where it lives;
 //   (5) the card on a college's panel: each class with its fields, what is held and not shown, the join keys, the
 //       agreements' status, and a word that opens the full view;
-//   (6) ⭐ the full view has its own address (#commons/data/sharing), opens from it, reports it, and sits in the views'
+//   (6) ⭐ the full view has its own address (#collect/sharing), opens from it, reports it, and sits in the views'
 //       menu; the statewide card sits on the list's page and opens the same view;
 //   (7) agreements: status only, from the allowed statuses; a placeholder reads "not recorded";
 //   (8) a missing file leaves the page whole and says so on the card;
@@ -174,14 +174,14 @@ const CONTAINERS = new Set(HAND.containers || []);
   check("(5) a word on the card opens the full view", !!open);
   if (open) open.click();
   await flush(T.w);
-  check("(6) ⭐ the card's word opens #commons/data/sharing, and the view reports its address", D.address() === "commons/data/sharing" && !!T.root.querySelector("#cdc-sw-view"));
+  check("(6) ⭐ the card's word opens #collect/sharing, and the view reports its address", D.address() === "collect/sharing" && !!T.root.querySelector("#cdc-sw-view"));
 
   // (6) the full view opens from its own address.
-  const V = dom("#commons/data/sharing", files);
+  const V = dom("#collect/sharing", files);
   await V.w.CPL_COMMONS_DATA.boot(V.root, "sharing");
   await flush(V.w);
-  check("(6) ⭐ #commons/data/sharing opens the view from its arrival, and the view names itself in its report",
-    V.w.CPL_COMMONS_DATA.address() === "commons/data/sharing" && txt(V.root.querySelector("#cdd-h")) === "Data elements and sharing");
+  check("(6) ⭐ #collect/sharing opens the view from its arrival, and the view names itself in its report",
+    V.w.CPL_COMMONS_DATA.address() === "collect/sharing" && txt(V.root.querySelector("#cdd-h")) === "Data elements and sharing");
   check("(6) the full view heads every join key The join keys", txt(V.root.querySelector("#cdc-sw-joins")) === "The join keys");
   check("(6) every field the file defines is a row of the view's table", V.root.querySelectorAll("#cdc-sw-fields-table tbody tr").length === BUILT.elements.length);
   check("(6) the held, join-key and agreements tables carry every row", V.root.querySelectorAll("#cdc-sw-held-table tbody tr").length === BUILT.held_not_shown.length &&
@@ -191,7 +191,7 @@ const CONTAINERS = new Set(HAND.containers || []);
   check("(6) every table is laid out fixed by its column group, so it fits without sideways scroll at desktop width",
     [...V.root.querySelectorAll(".cdc-sw-table")].every((t) => t.querySelector("colgroup") && t.querySelectorAll("col").length === t.querySelectorAll("thead th").length));
   const nav = V.root.querySelector('nav.cdd-views a[data-goto="sharing"]');
-  check("(6) the views' menu carries Data elements and sharing at its address", nav && nav.getAttribute("href") === "#commons/data/sharing" && txt(nav) === "Data elements and sharing");
+  check("(6) the views' menu carries Data elements and sharing at its address", nav && nav.getAttribute("href") === "#collect/sharing" && txt(nav) === "Data elements and sharing");
   check("(6) the view's lede says what it holds", /who may see it/.test(txt(V.root.querySelector(".cmn-lede"))));
 
   // (6) the statewide card on the list's page.
@@ -205,7 +205,7 @@ const CONTAINERS = new Set(HAND.containers || []);
   const sw = st && st.querySelector('button[data-view="sharing"]');
   if (sw) sw.click();
   await flush(T.w);
-  check("(6) the statewide card's word opens the full view", D.address() === "commons/data/sharing");
+  check("(6) the statewide card's word opens the full view", D.address() === "collect/sharing");
 
   // (7) agreements.
   check("(7) agreements carry a status from the allowed list and no agreement text", HAND.agreements.every((a) => BUILT.agreement_status.indexOf(a.status) >= 0 && !("text" in a) && !("body" in a)));
@@ -213,7 +213,7 @@ const CONTAINERS = new Set(HAND.containers || []);
   check("(7) agreements name parties by role or organization, never an email", HAND.agreements.every((a) => !/@/.test(a.parties + a.note)));
 
   // (8) a missing file.
-  const X = dom("#commons/data", { "kb/status/commons_data.json": FX });
+  const X = dom("#collect", { "kb/status/commons_data.json": FX });
   X.w.CPL_CDC_SHARING._reset();
   await X.w.CPL_COMMONS_DATA.boot(X.root, "");
   await flush(X.w);

@@ -3148,12 +3148,19 @@
     header.appendChild(chip);
   }
 
+  // The CPL Commons page opens without the greeting (Sam's go on #3533: "Cut ... the First Light pop-up"), so a
+  // Commons link shown on a screen opens straight to the page. It does not consume the day's greeting: the next
+  // tab opened greets as usual, and the header chip still opens today's painting.
+  function onCommons() {
+    try { return /^#(commons|collect)(\/|$)/.test(String(location.hash || "")); } catch (e) { return false; }
+  }
   function maybeGreet() {
     if (lsGet(KEY_OPTOUT) === "1") return;
     if (lsGet(KEY_SEEN) === todayKey()) return;
+    if (onCommons()) return;
     setTimeout(function () {
-      // re-check at fire time — another tab may have greeted meanwhile
-      if (lsGet(KEY_SEEN) !== todayKey()) open();
+      // re-check at fire time — another tab may have greeted meanwhile, or the reader moved to the Commons
+      if (lsGet(KEY_SEEN) !== todayKey() && !onCommons()) open();
     }, GREET_DELAY_MS);
   }
 

@@ -45,8 +45,20 @@
   }
   // A tab folded into another keeps its old links: #knowledge-base opens the
   // Library's Knowledge Base view (Sam, Open Asks Sheet 121 card 1, 2026-10-23).
-  var FOLDED = { 'knowledge-base': ['library', 'knowledge-base'] };
+  // The Commons' collection view lives at #collect inside the CPL Commons tab (#3533), and the old College Data
+  // Collection addresses, #commons/data[/...], are rewritten to it in place, so the ~34 files that link there keep
+  // working and the address bar shows the new one.
+  var FOLDED = { 'knowledge-base': ['library', 'knowledge-base'], 'collect': ['commons', 'collect'] };
+  function redirectOld() {
+    var h = (location.hash || '').replace(/^#/, '');
+    var m = /^commons\/data(\/.*)?$/.exec(h);
+    if (!m) return;
+    var to = '#collect' + (m[1] && m[1] !== '/' ? m[1] : '');
+    try { history.replaceState(history.state, '', location.pathname + location.search + to); }
+    catch (e) { location.replace(to); }
+  }
   function parseHash() {
+    redirectOld();
     var h = (location.hash || '').replace(/^#/, '');
     var parts = h.split('/');
     if (FOLDED[parts[0]]) parts = FOLDED[parts[0]].concat(parts.slice(1));

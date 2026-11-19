@@ -1,6 +1,6 @@
 // College Data Collection in plain words (COBIx on #3510, part A; Commons Clarity's walk of Nov 17, 2026, #3480 Source 4).
 //
-// WHAT THIS GUARDS: the College Data Collection list (#commons/data) and its date estimate (#commons/data/eta, with
+// WHAT THIS GUARDS: the College Data Collection list (#collect) and its date estimate (#collect/eta, with
 // Show costs, the Detailed View and the Assumptions open) read in plain words, drawn from the committed files with the
 // builder's own rule words (kb/_build_commons_data_status.py RULE and TBA, which the next census run writes):
 //   (1) ⭐ no word on kb/ui_plain_words.json's avoid_words list shows: "live read", "billing", "basis live", an issue
@@ -69,10 +69,10 @@ function seen(root) {
 }
 
 (async function () {
-  const L = dom("#commons/data");
+  const L = dom("#collect");
   await L.w.CPL_COMMONS_DATA.boot(L.root, "");
   await flush(L.w);
-  const E = dom("#commons/data/eta");
+  const E = dom("#collect/eta");
   await E.w.CPL_COMMONS_DATA.boot(E.root, "eta");
   await flush(E.w);
   ["costs", "full", "assumptions"].forEach((k) => { const b = E.root.querySelector('[data-eta="' + k + '"]'); if (b) b.click(); });
