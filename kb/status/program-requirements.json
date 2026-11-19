@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-19T14:48:33Z",
+  "written_at": "2026-11-19T14:55:23Z",
   "session": 685,
   "moniker": "SkyTowhee",
   "run": "the CPL Queue routine",
@@ -734,7 +734,7 @@
     {
       "day": "2026-11-19",
       "active": 20282,
-      "complete": 14982,
+      "complete": 14996,
       "colleges": 118
     }
   ],
@@ -745,7 +745,7 @@
   },
   "harvest": {
     "day": "2026-11-19",
-    "gaps": 3365,
+    "gaps": 3409,
     "parts": {
       "links": {
         "catalog": [
@@ -762,11 +762,11 @@
         ]
       },
       "roep": [
-        20118,
+        20261,
         20282
       ],
       "coci": [
-        16849,
+        16863,
         20282
       ],
       "outcomes": {
@@ -775,12 +775,12 @@
           88736
         ],
         "plo": [
-          16849,
+          16863,
           20282
         ]
       },
       "careers": [
-        15839,
+        15853,
         20282
       ]
     }
