@@ -52,10 +52,10 @@ front page.** `commons_front.js` draws the bare `#commons`: the header and Sam's
 widget (Program records done from the 7-day pace; Curation done reads Not dated yet), 30 daily bars rebuilt from the live files, Needs you, eight cards in Collect / Curate / Connect (fold keys
 in `cplCommons.fold.v1`), the Building, More collection detail and scorecard lines. College Data Collection moved to
 `#collect` (`tabs.js` folds it into this tab and rewrites every old `#commons/data...` address); the earlier first view
-(docket, batches, decision record) stays at `#commons/details` under `cplCommons.detailsOrder.v1` / `detailsFold.v1`.
-Figures with no single source on main yet sit in `ASKED` in the module, each named. **NEXT:** the open data questions
+stays at `#commons/details` under `cplCommons.detailsOrder.v1` / `detailsFold.v1`.
+Figures with no source on main sit in `ASKED`, each named. **NEXT:** the open data questions
 on the ask (the 6-college status file against 0 blocked, the kinesiology rulings, the readable-course count, a COCI-only
-recount); the generators' `#commons/data` links to `#collect`. Guard `tests/commons_front.test.js`.
+recount); the generators' `#commons/data` links to `#collect`. Guard `tests/commons_front.test.js`. **DECIDED** `d-commons-front-page-routes-3554`, `d-commons-front-card-layout-3554`.
 
 
 
