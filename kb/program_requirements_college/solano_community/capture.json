@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 171,
  "with_closed_list": 163,
- "started": "2026-11-13T02:52:52Z",
+ "started": "2026-11-19T11:24:41Z",
  "pdf": {
   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
   "access": "ok",
@@ -13,13 +13,20 @@
   "bytes": 9098769,
   "pages_total": 459,
   "error": null,
-  "chars_total": 1495585,
+  "chars_total": 1495600,
   "pypdf_accepted": 162,
   "sample": [
    "p138: '137\\nART - Art\\nC-ID DesignaƟ on may change periodically visit c-id.net/courses/search for current designaƟ on or consult with your counselor\\n**All Prerequisite courses must be completed with a minimum grade of C, or a P if taken on a Pass/No'",
-   "p276: '275\\nConsult with your counselor for guidance on custom course pathwayr\\n**All Prerequisite courses must be completed with a minimum grade of C, or a P if taken on a Pass/No Pass basis, unless otherwise noted\\nTo look up current secƟ on oﬀ eri'"
+   "p276: '275\\nConsult with your counselor for guidance on custom course pathwayr\\n**All Prerequisite courses must be completed with a minimum grade of C, or a P if taken on a Pass/No Pass basis, unless otherwise noted\\nTo look up current secƟ on o ﬀ er'"
   ],
   "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
   "picks": [
    {
     "control_number": "06506",
@@ -33,7 +40,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 297] 296 Horticulture HorƟ culture and Plant Science CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide theory and pracƟ cal experience needed to enter the h"
+    "opens": "[page 297] 296 Horticulture HorƟ culture and Plant Science CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to provide theory and pracƟ cal experience needed to enter the "
    },
    {
     "control_number": "06509",
@@ -60,7 +67,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 107] 106 AccounƟ ng CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on In recent years, accounƟ ng has been one of the fastest growing professions, and the monetary rewards for the individual "
+    "opens": "[page 107] 106 AccounƟ ng CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on In recent years, accounƟ ng has been one of the fastest growing professions, and the monetary rewards for the individual "
    },
    {
     "control_number": "06515",
@@ -88,7 +95,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 0.812,
-    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+    "opens": "[page 183] 182 Business - Oﬃ ce Technolog y AdministraƟ ve Assistant CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills requi"
    },
    {
     "control_number": "06517",
@@ -101,7 +108,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 309] Students who complete the Associate in Arts in Journalism for Transfer will be able to: 1. Understand and apply ethical principles and legal consideraƟ ons speciﬁ c to journalism to produce well-researched, c"
+    "opens": "[page 309] Students who complete the Associate in Arts in Journalism for Transfer will be able to: 1. Understand and apply ethical principles and legal consideraƟ ons speci ﬁ c to journalism to produce well-researched, "
    },
    {
     "control_number": "06518",
@@ -114,7 +121,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 280] Students who complete the Film and Television Associate in Arts will be able to: 1. Demonstrate knowledge of aestheƟ cs, theory, and history of ﬁ lm, television, and digital media. 2. Conceive, structure, or g"
+    "opens": "[page 280] Students who complete the Film and Television Associate in Arts will be able to: 1. Demonstrate knowledge of aestheƟ cs, theory, and history of ﬁ lm, television, and digital media. 2. Conceive, structure, orga"
    },
    {
     "control_number": "06519",
@@ -228,18 +235,6 @@
     "opens": "[page 433] Associate in Arts in Theatre Arts for Transfer (ADT: A.A.-T) Program DescripƟ on Theatre teaches pracƟ cal skills, performance techniques, and creaƟ vity. It is the goal of this department to provide student"
    },
    {
-    "control_number": "06536",
-    "pages": [
-     76
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 0.5,
-    "opens": "[page 76] 75 Course Identiﬁ cation Numbering System (C-ID) The Course IdenƟ ﬁ caƟ on Numbering System (C-ID) is a statewide numbering system that is diﬀerent from the course numbers assigned by individual California Comm"
-   },
-   {
     "control_number": "06538",
     "pages": [
      341,
@@ -271,17 +266,15 @@
    {
     "control_number": "06541",
     "pages": [
-     350,
-     351,
-     352,
-     353
+     340,
+     341
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.833,
-    "opens": "[page 350] Associate in Arts in Spanish for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts Degree in Spanish for Transfer is for students who intend to complete a bachelor’s degree in Spanish at a CSU."
+    "opens": "[page 340] Spanish (AA-T) CERTIFICATES OF ACHIEVEMENT ASL/English Interpreter Training Spanish/English CommunicaƟ on Specialist Spanish/English Healthcare Interpreter Training COURSES: ASL (American Sign Language) FR"
    },
    {
     "control_number": "06542",
@@ -365,7 +358,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, CorrecƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student wit"
+    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, Correc Ɵ ons CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student w"
    },
    {
     "control_number": "06551",
@@ -380,19 +373,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, CorrecƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student wit"
-   },
-   {
-    "control_number": "06552",
-    "pages": [
-     77
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.727,
-    "opens": "[page 77] 76 Course Identiﬁ cation Numbering System (C-ID) SCC Course SCC Course Title C-ID Desi gnator SCC Course SCC Course Title C-ID Desi gnator NOTE: This list will "
+    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, Correc Ɵ ons CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student w"
    },
    {
     "control_number": "06553",
@@ -421,7 +402,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.963,
-    "opens": "[page 275] Students who complete the Ethnic Studies A.A. are well prepared to transfer to four-year universiƟ es as ethnic studies majors or majors in related liberal-arts ﬁ elds. The Ethnic Studies A.A. prepares studen"
+    "opens": "[page 275] Ethnic Studies Ethnic Studies Associate in Arts Program DescripƟ on The Associate Degree in Ethnic Studies provides students with a criƟ cal understanding of the complex and diverse experiences and contribuƟ"
    },
    {
     "control_number": "06559",
@@ -446,7 +427,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 178] Students who complete the Small Business Management CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Demonstrate oral and wriƩ en skills unique in the business community. "
+    "opens": "[page 178] Students who complete the Small Business Management CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Demonstrate oral and wriƩ en s kills unique in the business community. "
    },
    {
     "control_number": "07793",
@@ -461,7 +442,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micro"
+    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micr"
    },
    {
     "control_number": "07795",
@@ -474,7 +455,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 331] 330 Kinesiology - Sports Medicine Sports Medicine/AthleƟ c Training Associate in Science Program DescripƟ on The Department of Kinesiology at Solano Community College oﬀ ers a Sports Medicine Program. We are"
+    "opens": "[page 331] 330 Kinesiology - Sports Medicine Sports Medicine/AthleƟ c Trainin g Associate in Science Program DescripƟ on The Department of Kinesiology at Solano Community College oﬀ ers a Sports Medicine Program. We ar"
    },
    {
     "control_number": "07800",
@@ -489,7 +470,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 390] 389 Photography Photography, Professional CerƟ ﬁ cate of Achievement and Associate in Arts Program DescripƟ on CreaƟ ve and technical coursework designed to prepare students for self-employment and employment "
+    "opens": "[page 390] 389 Photography Photography, Professional CerƟ ﬁ cate o f Achievement and Associate in Arts Program DescripƟ on CreaƟ ve and technical coursework designed to prepare students for self-employment and employment"
    },
    {
     "control_number": "07808",
@@ -546,7 +527,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micro"
+    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micr"
    },
    {
     "control_number": "16819",
@@ -560,18 +541,6 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 173] Students who complete the Business-Insurance: Property & Casualty CerƟ ﬁ cate of Achievement/Associate in Science will be able to: 1. Understand the insurance process, the segments of insurance, and the conse"
-   },
-   {
-    "control_number": "18535",
-    "pages": [
-     155
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 1.0,
-    "opens": "[page 155] 154 Biology Biology Associate in Science Program DescripƟ on This degree has been designed for students planning on transferring to a University of California (UC) campus as a Biology, Cell Biology, Molecul"
    },
    {
     "control_number": "19450",
@@ -600,7 +569,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 163] 162 Biotechnology Industrial Biotechnology CerƟ ﬁ cate of Achievement Program DescripƟ on This program prepares graduates to work in the biotechnology industry as producƟ on technicians. A producƟ on technici"
+    "opens": "[page 163] 162 Biotechnology Industrial Biotechnology CerƟ ﬁ cate o f Achievement Program DescripƟ on This program prepares graduates to work in the biotechnology industry as producƟ on technicians. A producƟ on technic"
    },
    {
     "control_number": "20947",
@@ -614,7 +583,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 297] 296 Horticulture HorƟ culture and Plant Science CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide theory and pracƟ cal experience needed to enter the h"
+    "opens": "[page 297] 296 Horticulture HorƟ culture and Plant Science CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to provide theory and pracƟ cal experience needed to enter the "
    },
    {
     "control_number": "20953",
@@ -627,7 +596,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 107] 106 AccounƟ ng CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on In recent years, accounƟ ng has been one of the fastest growing professions, and the monetary rewards for the individual "
+    "opens": "[page 107] 106 AccounƟ ng CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on In recent years, accounƟ ng has been one of the fastest growing professions, and the monetary rewards for the individual "
    },
    {
     "control_number": "20955",
@@ -641,7 +610,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 172] 171 Business Business, General CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed for business students planning to transfer to the University of California and/o"
+    "opens": "[page 172] 171 Business Business, General CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed for business students planning to transfer to the University of California and/"
    },
    {
     "control_number": "20956",
@@ -656,7 +625,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 176] 175 Business - Management Management CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to emphasize training to improve thought processes and to provide familiar"
+    "opens": "[page 176] 175 Business - Management Management CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to emphasize training to improve thought processes and to provide familia"
    },
    {
     "control_number": "20957",
@@ -669,7 +638,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 178] 177 Business - Management Management: Small Business Management CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed for those planning to start their own business,"
+    "opens": "[page 178] 177 Business - Management Management: Small Business Management CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed for those planning to start their own business"
    },
    {
     "control_number": "20958",
@@ -684,7 +653,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 177] 176 Business - Management Management: Retail Management CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on Designed to serve the needs of the employees and employers within the retail indu"
+    "opens": "[page 177] 176 Business - Management Management: Retail Management CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on Designed to serve the needs of the employees and employers within the retail ind"
    },
    {
     "control_number": "20959",
@@ -699,7 +668,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 181] 180 Business - Marketing MarkeƟ ng CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on MarkeƟ ng involves a variety of acƟ viƟ es including selecƟ on of target customer, product developmen"
+    "opens": "[page 181] 180 Business - Marketing MarkeƟ ng CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on MarkeƟ ng involves a variety of acƟ viƟ es including selecƟ on of target customer, product developme"
    },
    {
     "control_number": "20960",
@@ -712,7 +681,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 418] 417 Real Estate Real Estate CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers courses needed to qualify for the state of California salesperson license examinaƟ on as"
+    "opens": "[page 418] 417 Real Estate Real Estate CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program oﬀ ers courses needed to qualify for the state of California salesperson license examinaƟ on a"
    },
    {
     "control_number": "20961",
@@ -725,7 +694,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 173] 172 Business Business-Insurance: Property & Casualty CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program provides essenƟ al background informaƟ on needed by those wishing to w"
+    "opens": "[page 173] 172 Business Business-Insurance: Property & Casualty CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program provides essenƟ al background informaƟ on needed by those wishing to "
    },
    {
     "control_number": "20962",
@@ -737,7 +706,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 0.545,
-    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+    "opens": "[page 183] 182 Business - Oﬃ ce Technolog y AdministraƟ ve Assistant CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills requi"
    },
    {
     "control_number": "20966",
@@ -752,7 +721,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micro"
+    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micr"
    },
    {
     "control_number": "20967",
@@ -767,7 +736,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 209] 208 Computer Information Science Computer Programming CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a computer progr"
+    "opens": "[page 209] 208 Computer Information Science Computer Programming CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a computer prog"
    },
    {
     "control_number": "20968",
@@ -782,7 +751,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micro"
+    "opens": "[page 210] 209 Computer Information Science Microcomputer ApplicaƟ ons CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to prepare the student for employment as a micr"
    },
    {
     "control_number": "20971",
@@ -797,7 +766,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 149] 148 Automotive AutomoƟ ve Electrical and Body Systems CerƟ ﬁ cate of Achievement Program DescripƟ on This program is designed to prepare graduates for entry level employment in the automoƟ ve industry as an "
+    "opens": "[page 149] 148 Automotive AutomoƟ ve Electrical and Body Systems CerƟ ﬁ cate o f Achievement Program DescripƟ on This program is designed to prepare graduates for entry level employment in the automoƟ ve industry as an"
    },
    {
     "control_number": "20973",
@@ -853,7 +822,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 249] 248 Drafting DraŌ ing and Design Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry level skills in the ﬁ elds of mechan"
+    "opens": "[page 249] 248 Drafting DraŌ ing and Design Technician CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry level skills in the ﬁ elds of mecha"
    },
    {
     "control_number": "20978",
@@ -866,7 +835,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 447] 446 Welding Welding Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on Designed to prepare the graduate for employment as a welder or a welder helper in the metal trades. The m"
+    "opens": "[page 447] 446 Welding Welding Technician CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on Designed to prepare the graduate for employment as a welder or a welder helper in the metal trades. The "
    },
    {
     "control_number": "20981",
@@ -880,7 +849,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.929,
-    "opens": "[page 443] 442 Water and Wastewater Technology Water and Wastewater Technology CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on A study of the principles of water and wastewater disposal and puri"
+    "opens": "[page 443] 442 Water and Wastewater Technology Water and Wastewater Technology CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on A study of the principles of water and wastewater disposal and pur"
    },
    {
     "control_number": "20982",
@@ -895,19 +864,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 390] 389 Photography Photography, Professional CerƟ ﬁ cate of Achievement and Associate in Arts Program DescripƟ on CreaƟ ve and technical coursework designed to prepare students for self-employment and employment "
-   },
-   {
-    "control_number": "20988",
-    "pages": [
-     77
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.667,
-    "opens": "[page 77] 76 Course Identiﬁ cation Numbering System (C-ID) SCC Course SCC Course Title C-ID Desi gnator SCC Course SCC Course Title C-ID Desi gnator NOTE: This list will "
+    "opens": "[page 390] 389 Photography Photography, Professional CerƟ ﬁ cate o f Achievement and Associate in Arts Program DescripƟ on CreaƟ ve and technical coursework designed to prepare students for self-employment and employment"
    },
    {
     "control_number": "20989",
@@ -920,7 +877,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 304] 303 Human Services and Social Work Human Services and Social Work CerƟ ﬁ cate of Achievement and Associate in Arts Program DescripƟ on The Human Services and Social Work program provides comprehensive traini"
+    "opens": "[page 304] 303 Human Services and Social Work Human Services and Social Work CerƟ ﬁ cate o f Achievement and Associate in Arts Program DescripƟ on The Human Services and Social Work program provides comprehensive train"
    },
    {
     "control_number": "20990",
@@ -935,7 +892,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, CorrecƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student wit"
+    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, Correc Ɵ ons CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student w"
    },
    {
     "control_number": "20991",
@@ -950,7 +907,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, CorrecƟ ons CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student wit"
+    "opens": "[page 111] 110 Administration of Justice Criminal JusƟ ce, Correc Ɵ ons CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program oﬀ ers core and selecƟ ve courses which provide the student w"
    },
    {
     "control_number": "20992",
@@ -965,7 +922,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.889,
-    "opens": "[page 282] CERTIFICATE OF ACHIEVEMENT Fire Technology Fireﬁ ghter 1 & 2 COURSES: FIRE (FIRE) CONTACT INFORMATION: Division of Career Technical EducaƟ on and Business Building: 500 Room 509 Phone Number: (707) 864-7229"
+    "opens": "[page 282] Fire Technology (AS) CERTIFICATE OF ACHIEVEMENT Fire Technology Fireﬁ ghter 1 & 2 COURSES: FIRE (FIRE) CONTACT INFORMATION: Division of Career Technical EducaƟ on and Business Building: 500 Room 509 Phone N"
    },
    {
     "control_number": "30034",
@@ -979,7 +936,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 250] 249 Drafting Survey and Civil DraŌ ing Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry-level skills in the ﬁ elds of "
+    "opens": "[page 250] 249 Drafting Survey and Civil DraŌ ing Technician CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry-level skills in the ﬁ elds of"
    },
    {
     "control_number": "30184",
@@ -1009,7 +966,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 118] 117 Advanced Manufacturing Mechatronics CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on Mechatronics is the study of electronics, mechanics, electrical, and control systems to produce a"
+    "opens": "[page 118] 117 Advanced Manufacturing Mechatronics CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on Mechatronics is the study of electronics, mechanics, electrical, and control systems to produce "
    },
    {
     "control_number": "30417",
@@ -1021,19 +978,22 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+    "opens": "[page 183] 182 Business - Oﬃ ce Technolog y AdministraƟ ve Assistant CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills requi"
    },
    {
     "control_number": "30671",
     "pages": [
-     78
+     336,
+     337,
+     338,
+     339
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 78] 77 Course Identiﬁ cation Numbering System (C-ID) NOTE: This list will change periodically. Consult a counselor or visit hƩ p://www.c-id.net/courses/search for the most current list of Solano Community College c"
+    "opens": "[page 336] Mathematics Associate in Science in MathemaƟ cs 2.0 for Transfer (ADT: A.S.-T) Program DescripƟ on Successful compleƟ on of this major will assure competence in mathemaƟ cs through diﬀ erenƟ al and integral ca"
    },
    {
     "control_number": "30678",
@@ -1066,18 +1026,6 @@
     "opens": "[page 203] 202 Communication Studies Associate in Arts in fs.0 for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in CommunicaƟ on Studies 2.0 for Transfer Program is broad-based and concerned with the"
    },
    {
-    "control_number": "31761",
-    "pages": [
-     77
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 77] 76 Course Identiﬁ cation Numbering System (C-ID) SCC Course SCC Course Title C-ID Desi gnator SCC Course SCC Course Title C-ID Desi gnator NOTE: This list will "
-   },
-   {
     "control_number": "32121",
     "pages": [
      130,
@@ -1090,7 +1038,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.938,
-    "opens": "[page 130] Studio Art (AA-T) Studio Arts with Emphasis (AA) COURSES: ART (Art) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to express yourself "
+    "opens": "[page 130] Studio Art (AA-T) Studio Arts with Emphasis (AA) COURSES: ART (Art) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to express yourself c"
    },
    {
     "control_number": "32126",
@@ -1104,19 +1052,22 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.952,
-    "opens": "[page 141] Art History (AA-T) COURSES: ARTH (Art History) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to express yourself creaƟ vely and using "
+    "opens": "[page 141] Art History (AA-T) COURSES: ARTH (Art History) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to express yourself creaƟ vely and using i"
    },
    {
     "control_number": "32475",
     "pages": [
-     145
+     402,
+     403,
+     404,
+     405
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 145] major in astronomy/astrophysics or double major in astronomy and physics to the university. Transfer level astronomy curricula stress very strong preparaƟ on in physics and mathemaƟ cs. While most astronomy co"
+    "opens": "[page 402] Physics 2.0 (AS-T) Physics (AS) COURSES PHYS (Physics) GPS - SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to observe, learn, ana"
    },
    {
     "control_number": "32495",
@@ -1131,7 +1082,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 306] Journalism (AA-T) CERTIFICATES OF ACHIEVEMENT Journalism MulƟ media Journalism COURSES JOUR (Journalism) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON W"
+    "opens": "[page 306] Journalism (AA-T) CERTIFICATES OF ACHIEVEMENT Journalism MulƟ media Journalism COURSES JOUR (Journalism) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WH"
    },
    {
     "control_number": "32903",
@@ -1191,7 +1142,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 265] English (AA-T) English (AA) COURSES: ENGL (English) ESL (English as a Second Language) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires t"
+    "opens": "[page 265] English (AA-T) English (AA) COURSES: ENGL (English) ESL (English as a Second Language) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to"
    },
    {
     "control_number": "32927",
@@ -1253,20 +1204,6 @@
     "opens": "[page 350] Associate in Arts in Spanish for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts Degree in Spanish for Transfer is for students who intend to complete a bachelor’s degree in Spanish at a CSU."
    },
    {
-    "control_number": "33305",
-    "pages": [
-     76,
-     77,
-     78
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.778,
-    "opens": "[page 76] 75 Course Identiﬁ cation Numbering System (C-ID) The Course IdenƟ ﬁ caƟ on Numbering System (C-ID) is a statewide numbering system that is diﬀerent from the course numbers assigned by individual California Comm"
-   },
-   {
     "control_number": "33373",
     "pages": [
      126,
@@ -1279,7 +1216,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 126] Anthropology (AA-T) COURSES: ANTH (Anthropology) GPS - SOCIAL AND BEHAVIORAL SCIENCES AND EDUCATION GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to quesƟ on and explore physical"
+    "opens": "[page 126] Anthropology (AA-T) COURSES: ANTH (Anthropology) GPS - SOCIAL AND BEHAVIORAL SCIENCES AND EDUCATION GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to quesƟ on and explore physical,"
    },
    {
     "control_number": "33378",
@@ -1317,7 +1254,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 204] 203 Communication Studies Sports BroadcasƟ ng CerƟ ﬁ cate of Achievement Program DescripƟ on This program oﬀ ers students hands-on experience in the basics of television and internet sports broadcasƟ ng. Area"
+    "opens": "[page 204] 203 Communication Studies Sports BroadcasƟ ng CerƟ ﬁ cate o f Achievement Program DescripƟ on This program oﬀ ers students hands-on experience in the basics of television and internet sports broadcasƟ ng. Are"
    },
    {
     "control_number": "35517",
@@ -1358,7 +1295,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 164] 163 Biotechnology Biotechnology Laboratory Assistant CerƟ ﬁ cate of Achievement Program DescripƟ on This program serves as a Bridge to Biosciences, enabling graduates to enter the Solano College Industrial Bi"
+    "opens": "[page 164] 163 Biotechnology Biotechnology Laboratory Assistant CerƟ ﬁ cate o f Achievement Program DescripƟ on This program serves as a Bridge to Biosciences, enabling graduates to enter the Solano College Industrial B"
    },
    {
     "control_number": "35747",
@@ -1373,7 +1310,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 149] 148 Automotive AutomoƟ ve Electrical and Body Systems CerƟ ﬁ cate of Achievement Program DescripƟ on This program is designed to prepare graduates for entry level employment in the automoƟ ve industry as an "
+    "opens": "[page 149] 148 Automotive AutomoƟ ve Electrical and Body Systems CerƟ ﬁ cate o f Achievement Program DescripƟ on This program is designed to prepare graduates for entry level employment in the automoƟ ve industry as an"
    },
    {
     "control_number": "35748",
@@ -1486,7 +1423,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 249] 248 Drafting DraŌ ing and Design Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry level skills in the ﬁ elds of mechan"
+    "opens": "[page 249] 248 Drafting DraŌ ing and Design Technician CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry level skills in the ﬁ elds of mecha"
    },
    {
     "control_number": "36428",
@@ -1500,7 +1437,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 250] 249 Drafting Survey and Civil DraŌ ing Technician CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry-level skills in the ﬁ elds of "
+    "opens": "[page 250] 249 Drafting Survey and Civil DraŌ ing Technician CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to provide students with entry-level skills in the ﬁ elds of"
    },
    {
     "control_number": "36455",
@@ -1530,7 +1467,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 343] 342 Modern Languages - American Sign Language ASL/English Interpreter Training CerƟ ﬁ cate of Achievement and Associate in Arts Program DescripƟ on The ASL program provides a foundaƟ on of interpreƟ ng skills"
+    "opens": "[page 343] 342 Modern Languages - American Sign Language ASL/English Interpreter Training CerƟ ﬁ cate o f Achievement and Associate in Arts Program DescripƟ on The ASL program provides a foundaƟ on of interpreƟ ng skill"
    },
    {
     "control_number": "36511",
@@ -1545,7 +1482,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 153] Biology (AS-T) Biology (AS) Biomedical Sciences (AS) CERTIFICATES OF ACHIEVEMENT Biomedical Sciences COURSES: BIOL (Biology) GPS - SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS GUIDED PATHWA Y SOLANO COL"
+    "opens": "[page 153] Biology (AS-T) Biology (AS) Biomedical Sciences (AS) CERTIFICATES OF ACHIEVEMENT Biomedical Sciences COURSES: BIOL (Biology) GPS - SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS GUIDED PATHWAY SOLANO COLL"
    },
    {
     "control_number": "37103",
@@ -1559,7 +1496,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 253] Economics (AA-T) COURSES: ECON (Economics) GPS - CAREER TECHNICAL EDUCATION AND BUSINESS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ... desires to inﬂ uence, lead or manage to reach your "
+    "opens": "[page 253] Economics (AA-T) COURSES: ECON (Economics) GPS - CAREER TECHNICAL EDUCATION AND BUSINESS GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ... desires to inﬂ uence, lead or manage to reach your p"
    },
    {
     "control_number": "37158",
@@ -1600,7 +1537,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 251] 250 Drafting Maker Space Technology CerƟ ﬁ cate of Achievement Program DescripƟ on This program is an overview of basic design of manufacturing skills and concepts. Students will learn basic 2D and 3D CAD (Co"
+    "opens": "[page 251] 250 Drafting Maker Space Technology CerƟ ﬁ cate o f Achievement Program DescripƟ on This program is an overview of basic design of manufacturing skills and concepts. Students will learn basic 2D and 3D CAD (C"
    },
    {
     "control_number": "37919",
@@ -1673,7 +1610,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital e"
+    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital "
    },
    {
     "control_number": "38229",
@@ -1688,7 +1625,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital e"
+    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital "
    },
    {
     "control_number": "38230",
@@ -1703,7 +1640,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 165] 164 Biotechnology Cell and Gene Therapies CerƟ ﬁ cate of Achievement Program DescripƟ on This program trains students to enter the emerging ﬁ elds of gene therapy (with the producƟ on of viral vectors) and ce"
+    "opens": "[page 165] 164 Biotechnology Cell and Gene Therapies CerƟ ﬁ cate o f Achievement Program DescripƟ on This program trains students to enter the emerging ﬁ elds of gene therapy (with the producƟ on of viral vectors) and c"
    },
    {
     "control_number": "38231",
@@ -1718,7 +1655,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital e"
+    "opens": "[page 116] 115 Advanced Manufacturing AutomaƟ on CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on The AutomaƟ on degree program provides an introducƟ on to industrial automaƟ on including digital "
    },
    {
     "control_number": "38404",
@@ -1751,15 +1688,16 @@
    {
     "control_number": "38652",
     "pages": [
-     257,
-     258
+     77,
+     78,
+     79
     ],
     "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.895,
-    "opens": "[page 257] 256 Education Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs f"
+    "coverage": 0.789,
+    "opens": "[page 77] 76 Course Identiﬁ cation Numbering System (C-ID) SCC Course SCC Course Title C-ID Designator SCC Course SCC Course Title C-ID Designator NOTE: This list will ch"
    },
    {
     "control_number": "39445",
@@ -1774,7 +1712,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 391] 390 Photography Photo IllustraƟ on CerƟ ﬁ cate of Achievement Program DescripƟ on Students learn a range of photographic, design and graphic design skills, including camera operaƟ on, light control, principle"
+    "opens": "[page 391] 390 Photography Photo IllustraƟ on CerƟ ﬁ cate o f Achievement Program DescripƟ on Students learn a range of photographic, design and graphic design skills, including camera operaƟ on, light control, principl"
    },
    {
     "control_number": "40392",
@@ -1789,21 +1727,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 198] 197 Infant/Toddler Teacher CerƟ ﬁ cate of Achievement Program DescripƟ on This program provides foundaƟ onal skills in the care of infants and toddlers. Students gain knowledge of young children’s social an"
-   },
-   {
-    "control_number": "41377",
-    "pages": [
-     76,
-     77,
-     78
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 76] 75 Course Identiﬁ cation Numbering System (C-ID) The Course IdenƟ ﬁ caƟ on Numbering System (C-ID) is a statewide numbering system that is diﬀerent from the course numbers assigned by individual California Comm"
+    "opens": "[page 198] 197 Infant/Toddler Teacher CerƟ ﬁ cate o f Achievement Program DescripƟ on This program provides foundaƟ onal skills in the care of infants and toddlers. Students gain knowledge of young children’s social a"
    },
    {
     "control_number": "41524",
@@ -1816,7 +1740,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 284] 283 Fire Technology Fireﬁ ghter 1 & 2 CerƟ ﬁ cate of Achievement Program DescripƟ on Solano Community College’s Fireﬁ ghter 1 & 2 CerƟ ﬁ cate of Achievement will cover the principles, procedures, and tech"
+    "opens": "[page 284] 283 Fire Technology Fireﬁ ghter 1 & 2 CerƟ ﬁ cate o f Achievement Program DescripƟ on Solano Community College’s Fireﬁ ghter 1 & 2 CerƟ ﬁ cate of Achievement will cover the principles, procedures, and tec"
    },
    {
     "control_number": "42041",
@@ -1845,7 +1769,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 352] 351 Modern Languages - Spanish Spanish/English Healthcare Interpreter Training CerƟ ﬁ cate of Achievement Program DescripƟ on This program provides a foundaƟ on of interpreƟ ng skills for students seeking to "
+    "opens": "[page 352] 351 Modern Languages - Spanish Spanish/English Healthcare Interpreter Training CerƟ ﬁ cate o f Achievement Program DescripƟ on This program provides a foundaƟ on of interpreƟ ng skills for students seeking to"
    },
    {
     "control_number": "42204",
@@ -1860,7 +1784,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 351] 350 Modern Languages - Spanish Spanish/English CommunicaƟ on Specialist CerƟ ﬁ cate of Achievement Program DescripƟ on This program prepares students to communicate in the workforce with increased cultural re"
+    "opens": "[page 351] 350 Modern Languages - Spanish Spanish/English CommunicaƟ on Specialist CerƟ ﬁ cate o f Achievement Program DescripƟ on This program prepares students to communicate in the workforce with increased cultural r"
    },
    {
     "control_number": "42205",
@@ -1872,7 +1796,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 221] 220 Cosmetology Cosmetology CerƟ ﬁ cate of Achievement Program DescripƟ on The Cosmetology program is approved by the Board of Barbering and Cosmetology. It is designed to prepare the student to take the Ca"
+    "opens": "[page 221] 220 Cosmetology Cosmetology CerƟ ﬁ cate o f Achievement Program DescripƟ on The Cosmetology program is approved by the Board of Barbering and Cosmetology. It is designed to prepare the student to take the C"
    },
    {
     "control_number": "42206",
@@ -1884,7 +1808,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 223] 222 Cosmetology Nail Technology CerƟ ﬁ cate of Achievement Program DescripƟ on The Nail Technology Program is approved by the California Board of Barbering and Cosmetology. The program consists of Cosm 131,"
+    "opens": "[page 223] 222 Cosmetology Nail Technology CerƟ ﬁ cate o f Achievement Program DescripƟ on The Nail Technology Program is approved by the California Board of Barbering and Cosmetology. The program consists of Cosm 131"
    },
    {
     "control_number": "42207",
@@ -1896,7 +1820,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 222] 221 Cosmetology EstheƟ cs CerƟ ﬁ cate of Achievement Program DescripƟ on The EstheƟ cs program is approved by the California Board of Barbering and Cosmetology. It is designed to prepare the student to take "
+    "opens": "[page 222] 221 Cosmetology EstheƟ cs CerƟ ﬁ cate o f Achievement Program DescripƟ on The EstheƟ cs program is approved by the California Board of Barbering and Cosmetology. It is designed to prepare the student to take"
    },
    {
     "control_number": "42912",
@@ -1982,21 +1906,6 @@
     "opens": "[page 203] 202 Communication Studies Associate in Arts in fs.0 for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in CommunicaƟ on Studies 2.0 for Transfer Program is broad-based and concerned with the"
    },
    {
-    "control_number": "43166",
-    "pages": [
-     189,
-     190,
-     191,
-     192
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 0.9,
-    "opens": "[page 189] 188 Chemistry Chemistry (AS-T-UCTP) Associate in Science for Tranfer - UC Transfer Pathway Program DescripƟ on An Associate in Science in Chemistry for UC Transfer is designed for students who plan to complet"
-   },
-   {
     "control_number": "43948",
     "pages": [
      282,
@@ -2051,7 +1960,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 360] 359 Music Sound ProducƟ on Specialist CerƟ ﬁ cate of Achievement Program DescripƟ on The Sound ProducƟ on Specialist cerƟ ﬁ cate teaches the craŌ and techniques of sound recording. Students will learn the in"
+    "opens": "[page 360] 359 Music Sound ProducƟ on S pecialist CerƟ ﬁ cate o f Achievement Program DescripƟ on The Sound ProducƟ on Specialist cerƟ ﬁ cate teaches the craŌ and techniques of sound recording. Students will learn the "
    },
    {
     "control_number": "44365",
@@ -2064,7 +1973,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 360] 359 Music Sound ProducƟ on Specialist CerƟ ﬁ cate of Achievement Program DescripƟ on The Sound ProducƟ on Specialist cerƟ ﬁ cate teaches the craŌ and techniques of sound recording. Students will learn the in"
+    "opens": "[page 360] 359 Music Sound ProducƟ on S pecialist CerƟ ﬁ cate o f Achievement Program DescripƟ on The Sound ProducƟ on Specialist cerƟ ﬁ cate teaches the craŌ and techniques of sound recording. Students will learn the "
    },
    {
     "control_number": "44532",
@@ -2079,7 +1988,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+    "opens": "[page 183] 182 Business - Oﬃ ce Technolog y AdministraƟ ve Assistant CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills requi"
    },
    {
     "control_number": "44533",
@@ -2094,7 +2003,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 183] 182 Business - Oﬃ ce Technology AdministraƟ ve Assistant CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills require"
+    "opens": "[page 183] 182 Business - Oﬃ ce Technolog y AdministraƟ ve Assistant CerƟ ﬁ cate o f Achievement and Associate in Science Program DescripƟ on This program is designed to develop technical and communicaƟ on skills requi"
    },
    {
     "control_number": "44578",
@@ -2109,7 +2018,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 244] 243 Digital Media Arts REQUIRED C OURSES ........................................... Units DMA 009 IntroducƟ on to Digital Design......................... 3 DMA 010 Graphic Design - Beginning.................."
+    "opens": "[page 244] 243 Digital Media Arts REQUIRED COURSES ........................................... Units DMA 009 IntroducƟ on to Digital Design......................... 3 DMA 010 Graphic Design - Beginning..................."
    },
    {
     "control_number": "44579",
@@ -2124,7 +2033,7 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 244] 243 Digital Media Arts REQUIRED C OURSES ........................................... Units DMA 009 IntroducƟ on to Digital Design......................... 3 DMA 010 Graphic Design - Beginning.................."
+    "opens": "[page 244] 243 Digital Media Arts REQUIRED COURSES ........................................... Units DMA 009 IntroducƟ on to Digital Design......................... 3 DMA 010 Graphic Design - Beginning..................."
    },
    {
     "control_number": "44820",
@@ -2139,7 +2048,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 406] Law, Public Policy and Society (AA-T) PoliƟ cal Science (AA-T) COURSES POLS (PoliƟ cal Science) GPS - SOCIAL AND BEHAVIORAL SCIENCES AND EDUCATION GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO"
+    "opens": "[page 406] Law, Public Policy and Society (AA-T) PoliƟ cal Science (AA-T) COURSES POLS (PoliƟ cal Science) GPS - SOCIAL AND BEHAVIORAL SCIENCES AND EDUCATION GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO."
    },
    {
     "control_number": "44832",
@@ -2152,19 +2061,22 @@
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
-    "opens": "[page 309] 308 Journalism MulƟ media Journalism CerƟ ﬁ cate of Achievement Program DescripƟ on The CerƟ ﬁ cate of Achievement MulƟ media Journalism provides students with the knowledge and skills needed to work as a fre"
+    "opens": "[page 309] 308 Journalism MulƟ media Journalism CerƟ ﬁ cate o f Achievement Program DescripƟ on The CerƟ ﬁ cate of Achievement MulƟ media Journalism provides students with the knowledge and skills needed to work as a fr"
    },
    {
     "control_number": "44833",
     "pages": [
-     78
+     306,
+     307,
+     308,
+     309
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 78] 77 Course Identiﬁ cation Numbering System (C-ID) NOTE: This list will change periodically. Consult a counselor or visit hƩ p://www.c-id.net/courses/search for the most current list of Solano Community College c"
+    "opens": "[page 306] Journalism (AA-T) CERTIFICATES OF ACHIEVEMENT Journalism MulƟ media Journalism COURSES JOUR (Journalism) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WH"
    },
    {
     "control_number": "45686",
@@ -2204,19 +2116,19 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 362] 361 Music Music (Non-performance) CerƟ ﬁ cate of Achievement Program DescripƟ on The CerƟ ﬁ cate in Music (Non-Performance) provides students with a broad foundaƟ on in music theory, history, and cultural stu"
+    "opens": "[page 362] 361 Music Music (Non-performance) CerƟ ﬁ cate o f Achievement Program DescripƟ on The CerƟ ﬁ cate in Music (Non-Performance) provides students with a broad foundaƟ on in music theory, history, and cultural st"
    },
    {
     "control_number": "46127",
     "pages": [
-     78
+     336
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
-    "opens": "[page 78] 77 Course Identiﬁ cation Numbering System (C-ID) NOTE: This list will change periodically. Consult a counselor or visit hƩ p://www.c-id.net/courses/search for the most current list of Solano Community College c"
+    "opens": "[page 336] Mathematics Associate in Science in MathemaƟ cs 2.0 for Transfer (ADT: A.S.-T) Program DescripƟ on Successful compleƟ on of this major will assure competence in mathemaƟ cs through diﬀ erenƟ al and integral ca"
    },
    {
     "control_number": "46128",
@@ -2231,7 +2143,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 188] Chemistry (AS-T-UCTP) COURSES: CHEM (Chemistry) GPS - SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to observe, learn, analyze, "
+    "opens": "[page 188] Chemistry (AS-T-UCTP) COURSES: CHEM (Chemistry) GPS - SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS GUIDED PATHWAY SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to observe, learn, analyze, e"
    },
    {
     "control_number": "46201",
@@ -2244,56 +2156,26 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 257] 256 Education Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs f"
-   },
-   {
-    "control_number": "46370",
-    "pages": [
-     380
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 1.0,
-    "opens": "[page 380] 379 NURS - Nursingg NURS 104 Home Health Aide 2.0 Units Equivalent Course: NURS 504 Prerequisite**: Student must be currently licensed as a CNA Non-transferable to UC or CSU"
-   },
-   {
-    "control_number": "46517",
-    "pages": [
-     380
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 380] 379 NURS - Nursingg NURS 104 Home Health Aide 2.0 Units Equivalent Course: NURS 504 Prerequisite**: Student must be currently licensed as a CNA Non-transferable to UC or CSU"
-   },
-   {
-    "control_number": "46518",
-    "pages": [
-     380
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 380] 379 NURS - Nursingg NURS 104 Home Health Aide 2.0 Units Equivalent Course: NURS 504 Prerequisite**: Student must be currently licensed as a CNA Non-transferable to UC or CSU"
+    "opens": "[page 257] 256 Education Associate in Arts in Elementary Teacher EducaƟ on: Inte grated Programs for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Elementary Teacher EducaƟ on: Integrated Programs "
    }
   ],
+  "page_checks": {
+   "read": 18,
+   "own_page": 7,
+   "no_own_page": 11,
+   "not_printed": 0
+  },
   "unproven": []
  },
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 131.2,
- "found": 162,
+ "seconds": 103.3,
+ "found": 151,
  "by_method": {
   "no_closed_list": 8,
-  "not_found": 1,
-  "pdf_pages": 162
+  "not_found": 12,
+  "pdf_pages": 151
  },
  "shared_pages": {
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=297": [
@@ -2343,37 +2225,19 @@
    "06529",
    "20978"
   ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=76": [
-   "06536",
-   "33305",
-   "41377"
-  ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341": [
    "06538",
    "43134"
   ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350": [
-   "06541",
-   "33291"
-  ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=404": [
    "06547",
    "42947"
-  ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189": [
-   "06548",
-   "43166"
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111": [
    "06550",
    "06551",
    "20990",
    "20991"
-  ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77": [
-   "06552",
-   "20988",
-   "31761"
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283": [
    "06553",
@@ -2401,12 +2265,6 @@
    "16819",
    "20961"
   ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155": [
-   "18535",
-   "36302",
-   "38141",
-   "38142"
-  ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=149": [
    "20971",
    "35747"
@@ -2427,22 +2285,26 @@
    "30184",
    "30185"
   ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78": [
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336": [
    "30671",
-   "44833",
    "46127"
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=203": [
    "31659",
    "43145"
   ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145": [
-   "32475",
-   "36034"
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306": [
+   "32495",
+   "44833"
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432": [
    "32992",
    "36249"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155": [
+   "36302",
+   "38141",
+   "38142"
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221": [
    "36420",
@@ -2457,10 +2319,6 @@
    "38229",
    "38231"
   ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257": [
-   "38652",
-   "46201"
-  ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=241": [
    "42912",
    "42914"
@@ -2472,14 +2330,42 @@
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=244": [
    "44578",
    "44579"
-  ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=380": [
-   "46370",
-   "46517",
-   "46518"
   ]
  },
  "not_found": [
+  {
+   "control_number": "06536",
+   "title": "Graphic Design & Illustration",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "06552",
+   "title": "Early Childhood Education",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18535",
+   "title": "Interdisciplinary Studies: Science & Quantitative Reasoning",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
   {
    "control_number": "18616",
    "title": "Interdisciplinary Studies: Wellness & Self Development",
@@ -2487,29 +2373,149 @@
    "near_miss": {
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=230",
     "coverage": 0.434
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "20988",
+   "title": "Early Childhood Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31761",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33305",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "41377",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43166",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "46370",
+   "title": "Certified Nursing Assistant",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46517",
+   "title": "Home Health Aide",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "46518",
+   "title": "Home Health Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Approved"
   }
  ],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 10,
-  "0.8-1.0": 18,
-  "1.0": 134
+  "0.5-0.8": 7,
+  "0.8-1.0": 16,
+  "1.0": 128
  },
  "would_extract": {
   "against": "kb/program_requirements_college/solano_community",
-  "kept": 138,
+  "kept": 121,
   "kept_moved": 0,
-  "programs": 8,
+  "programs": 30,
   "list": [
+   {
+    "control_number": "06535",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=433",
+    "coverage": 0.966,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=433",
+    "was_coverage": 0.966,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "06541",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=340",
+    "coverage": 0.833,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350",
+    "was_coverage": 0.833,
+    "was_method": "pdf_pages"
+   },
    {
     "control_number": "06555",
     "title": "Ethnic Studies",
     "award": "A.A. Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=275",
     "coverage": 0.963,
-    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=85",
-    "was_coverage": 0.704,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=275",
+    "was_coverage": 0.963,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "07808",
+    "title": "Industrial Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=160",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=160",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -2518,8 +2524,18 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
     "coverage": 0.889,
-    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=285",
-    "was_coverage": 0.778,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
+    "was_coverage": 0.889,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "30671",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -2528,7 +2544,47 @@
     "award": "A.A- T Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=427",
     "coverage": 1.0,
-    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=428",
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=427",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32121",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=130",
+    "coverage": 0.938,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=130",
+    "was_coverage": 0.938,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32126",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=141",
+    "coverage": 0.952,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=141",
+    "was_coverage": 0.952,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32475",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=402",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32495",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -2538,7 +2594,7 @@
     "award": "A.A- T Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=412",
     "coverage": 1.0,
-    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413",
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=412",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -2548,8 +2604,48 @@
     "award": "A.A- T Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=323",
     "coverage": 1.0,
-    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=324",
-    "was_coverage": 0.808,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=323",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32919",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=265",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=265",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32927",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=286",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=286",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32937",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=291",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=291",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32992",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -2558,7 +2654,27 @@
     "award": "A.A- T Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=126",
     "coverage": 1.0,
-    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=127",
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=126",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35808",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=356",
+    "coverage": 0.762,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=356",
+    "was_coverage": 0.762,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36249",
+    "title": "Theatre Arts Technical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -2568,7 +2684,47 @@
     "award": "A.S. T Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=153",
     "coverage": 1.0,
-    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=154",
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=153",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37103",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=253",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=253",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38404",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=216",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=216",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38652",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77",
+    "coverage": 0.789,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257",
+    "was_coverage": 0.895,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43948",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -2578,124 +2734,9 @@
     "award": "A.S. T Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=295",
     "coverage": 1.0,
-    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=296",
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=295",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
-   }
-  ],
-  "held_worse_window": [],
-  "held_no_gain": [
-   {
-    "control_number": "06535",
-    "title": "Theatre Arts",
-    "award": "A.A. Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=433",
-    "coverage": 0.966,
-    "was_coverage": 0.966
-   },
-   {
-    "control_number": "07808",
-    "title": "Industrial Biotechnology",
-    "award": "A.S. Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=160",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32121",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=130",
-    "coverage": 0.938,
-    "was_coverage": 0.938
-   },
-   {
-    "control_number": "32126",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=141",
-    "coverage": 0.952,
-    "was_coverage": 0.952
-   },
-   {
-    "control_number": "32495",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32919",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=265",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32927",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=286",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32937",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=291",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32992",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "35808",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=356",
-    "coverage": 0.762,
-    "was_coverage": 0.762
-   },
-   {
-    "control_number": "36249",
-    "title": "Theatre Arts Technical",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "37103",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=253",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "38404",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=216",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "43948",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
-    "coverage": 1.0,
-    "was_coverage": 1.0
    },
    {
     "control_number": "44820",
@@ -2703,7 +2744,29 @@
     "award": "A.A- T Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=406",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=406",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44833",
+    "title": "Journalism",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "46127",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336",
+    "coverage": 0.857,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=78",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "46128",
@@ -2711,10 +2774,622 @@
     "award": "A.S. T Degree",
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=188",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=188",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    }
   ],
-  "held_opens_on_list": []
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "43355021555"
+ "fingerprints": {
+  "06506": {
+   "sha256": "cc5bbce56867b76fae8f0ff97e33bf43b2244d9ec9ea04941502977d695896ed",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=297"
+  },
+  "06509": {
+   "sha256": "f64cb75ee191706fe651223c96d94209ebde83483c49a1057d4160d321822b73",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=172"
+  },
+  "06510": {
+   "sha256": "62f077b939dd9d7be1b5a5268523b958ddf161ab3b23339c1ef30ea92c3be112",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=107"
+  },
+  "06515": {
+   "sha256": "daf06c7f3db09e727735ca5812cc6c25051ff0b8575f41aef915b1aba087b639",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=418"
+  },
+  "06516": {
+   "sha256": "c3a3776254d1129bff021602c9625c95bc96290c593e15015ae8428e30b30f6f",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183"
+  },
+  "06517": {
+   "sha256": "ceff616bd89b24ae7440ee3e40f48cdeacbb84ddfdfefde6ad00b0dade56adab",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309"
+  },
+  "06518": {
+   "sha256": "d35b32fbf4c0f0a644501204717b390877a27562069d1833000091ecc42d75ff",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=280"
+  },
+  "06519": {
+   "sha256": "7da8737142cd2d078e0060f093a37910bca75bf6eadb4395fd1047eb4405674b",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=209"
+  },
+  "06522": {
+   "sha256": "05707927e80762b80a653dd35e5164c7513a94ac22f05489ec5483c1b13b8260",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=148"
+  },
+  "06524": {
+   "sha256": "cccf7cd2f4cd9643fec5038f6d1cf742346da6272817a7aa3fd05d67a21fb936",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123"
+  },
+  "06525": {
+   "sha256": "63b84b0dc91831edb6a6e5d3bb65521d5c0af892b520fab04f9ce3d3231764ca",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123"
+  },
+  "06526": {
+   "sha256": "240dd9b71f3178608a9375caed0a84d89f07fc5957c8cd20f97634bf52eeabed",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123"
+  },
+  "06529": {
+   "sha256": "dc9405288fa378772e86e8b5dd17ded498768c35a54eec3cf9bf27a8ad367d0a",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=447"
+  },
+  "06534": {
+   "sha256": "a9ef94e2cfc3d94f6385d22c477a12cb302ae07bdf4d1e5b6b954a4b79fec2ff",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=359"
+  },
+  "06535": {
+   "sha256": "506528ce67a77d68bfe86fab07d4a2ef25e52184224fe9a13c6d89e34d2e4c1d",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=433"
+  },
+  "06538": {
+   "sha256": "ff74054cd564e8be9913e3e90d0e29c6b80a1b9ab6026e8773ce287cca560828",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341"
+  },
+  "06539": {
+   "sha256": "482ab3248be920118f99ed1594ec39424708fdb4438b62beed220c0500db24c3",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=347"
+  },
+  "06541": {
+   "sha256": "92be0ade490a9941f9f69bb23ec6af1125e607f85762850d3f66a30334584c4f",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=340"
+  },
+  "06542": {
+   "sha256": "f2e2e3a0d23dec89bd9d01aad1ea36e05de8d84c4ad6bff0bca5c7ce871b98c5",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=373"
+  },
+  "06545": {
+   "sha256": "8347a968a6d6457fdbf804fb70a5b1eeff6a21b7c6d673d9319c80400f250c78",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=267"
+  },
+  "06547": {
+   "sha256": "3a4b7f3d646eab8ec4fe9a8f82093c2bb05a3cb1a452e6785edcb20c6fb20275",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=404"
+  },
+  "06548": {
+   "sha256": "5e0946fd3efd030f2205b4f04f18c3920f597253a88233f3dea48d70d55c8910",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189"
+  },
+  "06549": {
+   "sha256": "67cbfae17d50ec4ddb4335bcc6eaea387c8143ade1f57695733676accbd7c103",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413"
+  },
+  "06550": {
+   "sha256": "c063b33b0ba3baefedf4c15c7dfb5fa2a5b584f3d7c289b2164ceaf5f84c16f7",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111"
+  },
+  "06551": {
+   "sha256": "c063b33b0ba3baefedf4c15c7dfb5fa2a5b584f3d7c289b2164ceaf5f84c16f7",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111"
+  },
+  "06553": {
+   "sha256": "3beab036828a91e1dffc1639141b8bac20355377276c942a390886a6e41c7eac",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283"
+  },
+  "06555": {
+   "sha256": "635aa643013010dfdfe35b5574a6e307aee2bd2f86ff5c0cb4e487f0a5d78af4",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=275"
+  },
+  "06559": {
+   "sha256": "3c006adb4e2e009b19c5be214da66f8726a8297912cf99d5b6df81a0cd2c1aa8",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=422"
+  },
+  "07790": {
+   "sha256": "b1d1fd81fe1da1c4b083b302ce5075d4bdacf5db6d305755df5fb635b0723877",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=178"
+  },
+  "07793": {
+   "sha256": "42400a3a78e36c097ce7865c0248e0d87248c322b5f29f89932c53fface3ea57",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210"
+  },
+  "07795": {
+   "sha256": "574eb708c4b60cf97928470bfa4c065a8af7e7ef011666effb685c4a9b76b55b",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=331"
+  },
+  "07800": {
+   "sha256": "ecf3654fe3ec49fcaa564cf06096514b4827e7f0336e5f408e27e4843c526a51",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=390"
+  },
+  "07808": {
+   "sha256": "bfc065821eaf89858198688eb59e917a53feb4e69aea61114be46ac8274c48f0",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=160"
+  },
+  "08337": {
+   "sha256": "b7a546b68f9930bfb5e2da1f8efb1045f91576c4ab6bea3e397eaf9b3f7d9470",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=303"
+  },
+  "10463": {
+   "sha256": "f1bfa50bba6f3469d0347e602784295a64370ed9aba2b2dd005aabc9fd5771f5",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=358"
+  },
+  "16541": {
+   "sha256": "42400a3a78e36c097ce7865c0248e0d87248c322b5f29f89932c53fface3ea57",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210"
+  },
+  "16819": {
+   "sha256": "5e9c5b64bd925a3d69bf3dd30da40cd52cdbdd22add782d975e71df2323499ce",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173"
+  },
+  "19450": {
+   "sha256": "e144b0e9195390bb1c5952325df141089193768b8f0603cda63724e772643862",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=429"
+  },
+  "19633": {
+   "sha256": "6516c34d03d176044604ad03f6361ebb1dc6a9e3fbd9200ff0ed9e1f2ab8080d",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=163"
+  },
+  "20947": {
+   "sha256": "cc5bbce56867b76fae8f0ff97e33bf43b2244d9ec9ea04941502977d695896ed",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=297"
+  },
+  "20953": {
+   "sha256": "62f077b939dd9d7be1b5a5268523b958ddf161ab3b23339c1ef30ea92c3be112",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=107"
+  },
+  "20955": {
+   "sha256": "79df035047f955271b02a240d4b254be95d6a5fc1cea67de54c355cd81737d72",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=172"
+  },
+  "20956": {
+   "sha256": "34ad902c830deb0383436f1e8ba1373e023cb1009f120e8883f8d260e9c22c22",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=176"
+  },
+  "20957": {
+   "sha256": "d66052697f3139cbf7612450941fa727c706f9c1ba6d39da5545405cd65ed878",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=178"
+  },
+  "20958": {
+   "sha256": "2d53230c4b53dba46925a5f9774f91b09c12d1219a799bbd6975e1f0c56ad5d1",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=177"
+  },
+  "20959": {
+   "sha256": "75c18c853bd092b99a92534e5a564e3ec21c7fca276f895b4e0a16cb800fb1d6",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=181"
+  },
+  "20960": {
+   "sha256": "90be911ad877dc41c85674bbb52c22e91dcfc76d81f5f6de4a56a4439a95cae7",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=418"
+  },
+  "20961": {
+   "sha256": "82ae7133d5fbbcd8de1669528d0ea8d937f079a04f0e590329a9bad316500f62",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=173"
+  },
+  "20962": {
+   "sha256": "6e878d7ff76f0b5455507b9606b1b0e47b71e2b1673f6d30efbd27eedcc05f4f",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183"
+  },
+  "20966": {
+   "sha256": "42400a3a78e36c097ce7865c0248e0d87248c322b5f29f89932c53fface3ea57",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210"
+  },
+  "20967": {
+   "sha256": "7b34490db766961c0524eaa07095269aedc12855f6a949d6ffd0dcde98235a2d",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=209"
+  },
+  "20968": {
+   "sha256": "42400a3a78e36c097ce7865c0248e0d87248c322b5f29f89932c53fface3ea57",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=210"
+  },
+  "20971": {
+   "sha256": "b5b80119f56d70c13d66faa002c17544b8bd7c653eafcf34304cfcbed859a9ed",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=149"
+  },
+  "20973": {
+   "sha256": "cccf7cd2f4cd9643fec5038f6d1cf742346da6272817a7aa3fd05d67a21fb936",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123"
+  },
+  "20974": {
+   "sha256": "63b84b0dc91831edb6a6e5d3bb65521d5c0af892b520fab04f9ce3d3231764ca",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123"
+  },
+  "20975": {
+   "sha256": "cccf7cd2f4cd9643fec5038f6d1cf742346da6272817a7aa3fd05d67a21fb936",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=123"
+  },
+  "20977": {
+   "sha256": "4ab5f0edeef26936349f544a33301a55b8c5b6fde856506a5506ea24c385dcbb",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=249"
+  },
+  "20978": {
+   "sha256": "240ab342fcba9d7efdcc1bd909ef414363bcfc533a17e78c510d2ae952dbfed7",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=447"
+  },
+  "20981": {
+   "sha256": "bffd9d4308d27c7c06f457069369c7c9c88028ad72eb283dc6dbf0c44adbcc23",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=443"
+  },
+  "20982": {
+   "sha256": "ecf3654fe3ec49fcaa564cf06096514b4827e7f0336e5f408e27e4843c526a51",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=390"
+  },
+  "20989": {
+   "sha256": "78470325275cc1c6d5a2328c0cef46ed252bcfbfc94b527b2654334cc13339f3",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=304"
+  },
+  "20990": {
+   "sha256": "c063b33b0ba3baefedf4c15c7dfb5fa2a5b584f3d7c289b2164ceaf5f84c16f7",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111"
+  },
+  "20991": {
+   "sha256": "c063b33b0ba3baefedf4c15c7dfb5fa2a5b584f3d7c289b2164ceaf5f84c16f7",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111"
+  },
+  "20992": {
+   "sha256": "f49d8214869e09ccbfcf2c0d8c6140890ef7ac89edfe83bcc8df0bda4d4dd16c",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282"
+  },
+  "30034": {
+   "sha256": "0bf414aae364df350ac7a4087110262aa56f600823c17796fc30eaaf53be98d2",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=250"
+  },
+  "30184": {
+   "sha256": "26a2cba31cd48b81281444b589299c0785a068a84328f3df88cabbff983a3485",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=118"
+  },
+  "30185": {
+   "sha256": "87a2437a2145a0c021a9edf0c4995e8a7dfd260b21ae3e9bd2e58dafe43b70df",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=118"
+  },
+  "30417": {
+   "sha256": "6e878d7ff76f0b5455507b9606b1b0e47b71e2b1673f6d30efbd27eedcc05f4f",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183"
+  },
+  "30671": {
+   "sha256": "f80a89f85e31874b4e0daf80d9b785c0e1d0eb6b0116d6748484d33abedf9cbd",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336"
+  },
+  "30678": {
+   "sha256": "ae722df658e3949d05cf307ffe98302b01e9b3d85cc86863209c3170fbd9eea6",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=427"
+  },
+  "31659": {
+   "sha256": "7fa16ebb3af5647b4b8dacc105ae2423b7890e5441b5a305e256bdb3568ff39b",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=203"
+  },
+  "32121": {
+   "sha256": "08964ec6dc871721839f29c767a49bba125efb33bfb41b47ac7beee95e2eeb6b",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=130"
+  },
+  "32126": {
+   "sha256": "483556ce043114a1cffe739ddf6548182e6ba12877715c06a1084ce394f813da",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=141"
+  },
+  "32475": {
+   "sha256": "2ce4a45a3612c4f8bf3561c7f4d9103d1b0f5693ca658594be3d0cba6b42500e",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=402"
+  },
+  "32495": {
+   "sha256": "9a05d7ff099d1e95267df62a5ec2d49b0619bb9dfa5fc6986a681860bc246d85",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306"
+  },
+  "32903": {
+   "sha256": "959c673a23f46a375168917a5b33182b879873475fcebaeb4c8e9a7bcc34dbc9",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=110"
+  },
+  "32917": {
+   "sha256": "3a1f68faca7d1326cf1a62f82d95f9f143c736b4612b9cf9eaed9ce27ba1042a",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=412"
+  },
+  "32918": {
+   "sha256": "0e9bcd079a128bd1d8ab84d9e0681d934775cbbb6cc15e943bebfdc82d77a17a",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=323"
+  },
+  "32919": {
+   "sha256": "081228b02ac4c9bcd93ee2286a8f390d4bca5629a92d9a13a67df6273bd2eab8",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=265"
+  },
+  "32927": {
+   "sha256": "946df1523db333d3f290d3c74bd1391849986c334a3b4673fdbcd4112d9d7d69",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=286"
+  },
+  "32937": {
+   "sha256": "ecc6f313327354a14ff4731f4835f4ae625c021776ef939dbd5859c4af88cf18",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=291"
+  },
+  "32992": {
+   "sha256": "652629960c4a292944f79695227db6b9a7d6b3819e5bab60e1a0f81f64176486",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432"
+  },
+  "33291": {
+   "sha256": "afe75a0859318d18dc62b1ea771b48c03cdcb8608191c5a969419b0c23eeb94c",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=350"
+  },
+  "33373": {
+   "sha256": "330d2110aef2c26d6d6f0389a6f38963ceaf1f9dcf8a2e55e81ed077c72f9991",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=126"
+  },
+  "33378": {
+   "sha256": "d8eb2eda0a1a1a3b637e9fc5c4d1ae621447c8e5468f1294446973f2139f9b72",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=409"
+  },
+  "35213": {
+   "sha256": "147a5618db473bd6d27302bdc43f8fc5ce2bc7167c084050214a7eb4ea7072f5",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=231"
+  },
+  "35259": {
+   "sha256": "690cda52e03c37f31226e99bd574d9e6fe1f3fa2aef07b1342bd4ac57751e902",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=204"
+  },
+  "35517": {
+   "sha256": "2bee261bf01fa8a1c88c98ff9811ca2a5b976b892a248ab595855c6ccd1bb361",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=195"
+  },
+  "35683": {
+   "sha256": "08b7b7f327433003208e6526ed7cf309243a71f738b246eb2f63a4f39af2f86e",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=262"
+  },
+  "35707": {
+   "sha256": "ae818bf0a2505cf0ff351fdb2041ae233d3824a0e9857a6841f505eeca342548",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=164"
+  },
+  "35747": {
+   "sha256": "b5b80119f56d70c13d66faa002c17544b8bd7c653eafcf34304cfcbed859a9ed",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=149"
+  },
+  "35748": {
+   "sha256": "05707927e80762b80a653dd35e5164c7513a94ac22f05489ec5483c1b13b8260",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=148"
+  },
+  "35808": {
+   "sha256": "d1dcd49d1951396b8783d6d6595dd17bd0cb5ac1ccd7d87a2a364412ad78882b",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=356"
+  },
+  "35982": {
+   "sha256": "4085fa92be9755084bd13b39ed909b049c66d0ba9f7a1e00696aed8b3f00f313",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=382"
+  },
+  "36034": {
+   "sha256": "c34b2325bdcc05a380bdafe5375ed9b6df3065538910e3c0337fb9311c076aff",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145"
+  },
+  "36249": {
+   "sha256": "8aa4547bfa979eb5309aada6663687b13b42bd8c710b186e6c6542e9715ecde8",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432"
+  },
+  "36302": {
+   "sha256": "64a128af2d5a391e3c83fb2c09db78e4d36a5e09e7f8d1a90b960fdcb86bc65c",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155"
+  },
+  "36420": {
+   "sha256": "7524d760ef1314b2dc08fdc5434c1eef012f35335308e8db2e82719a4f9c7b22",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221"
+  },
+  "36421": {
+   "sha256": "4ab5f0edeef26936349f544a33301a55b8c5b6fde856506a5506ea24c385dcbb",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=249"
+  },
+  "36428": {
+   "sha256": "0bf414aae364df350ac7a4087110262aa56f600823c17796fc30eaaf53be98d2",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=250"
+  },
+  "36455": {
+   "sha256": "94bbe31ae50234630b8a3de523889351ade56bc2026588f3a4738022e5322927",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=343"
+  },
+  "36457": {
+   "sha256": "7f64e8fb472d56e98aedf8e49e60c2ee7ef1306e5d0a5b1adf25efe1170c1188",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=343"
+  },
+  "36511": {
+   "sha256": "029a8d78d11cb22c58f9ea3741301323f10e6e44c4407d87fa6d83bf814de64c",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=153"
+  },
+  "37103": {
+   "sha256": "9e4f37b6fdb1a43e749720d16a2057f6ac177255702f1a27af17ead83a0a77d8",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=253"
+  },
+  "37158": {
+   "sha256": "3c4ee9c1d576ea8917588fd73e7bebcee6fa9d03d063590c935f684f39c79321",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=424"
+  },
+  "37187": {
+   "sha256": "16c984eb02a56c71ffefbb5bfed2110589766a1dbb11e930dc481d80e11f9737",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=132"
+  },
+  "37212": {
+   "sha256": "3acb57334a8b6586509441615f8480d619d8516207f89ae7d4ed77b4d2b80e82",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=251"
+  },
+  "37919": {
+   "sha256": "c93dbac10ed24e24d1cd215521120e3489274b8f2b94e43cd66daf6b55e4e22e",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=236"
+  },
+  "38141": {
+   "sha256": "64a128af2d5a391e3c83fb2c09db78e4d36a5e09e7f8d1a90b960fdcb86bc65c",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155"
+  },
+  "38142": {
+   "sha256": "8a8f7f9acb6b941d42a80426903d24639d50ec89e48f9b80761226d82fa5f654",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155"
+  },
+  "38146": {
+   "sha256": "130b075f3a08b9d713de246cd3d29a3108b500191d0b52818e44ac9476edc072",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=400"
+  },
+  "38221": {
+   "sha256": "5b16ec6eeb70da0ce575b005fa4ebfa645e5d7bc29727187a896eded814797a5",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116"
+  },
+  "38229": {
+   "sha256": "5b16ec6eeb70da0ce575b005fa4ebfa645e5d7bc29727187a896eded814797a5",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116"
+  },
+  "38230": {
+   "sha256": "e8753c2aec5095ec409bc29a11e5ce73d20cf90b8cec9f24937baeea6162f48a",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=165"
+  },
+  "38231": {
+   "sha256": "5b16ec6eeb70da0ce575b005fa4ebfa645e5d7bc29727187a896eded814797a5",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=116"
+  },
+  "38404": {
+   "sha256": "2d488277451e758e42e5c08b6364abaa4051c9a70ae4f828dd0aa1bc4f95d6e8",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=216"
+  },
+  "38591": {
+   "sha256": "e9578460d6a9c01f7b498840e40e9664ec6a1e52ca3ec94a7252d6c3802e68a5",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=342"
+  },
+  "38652": {
+   "sha256": "dcd9ba774fde53d26d136472a72a1d8195856b45aa47b8b13f8012c9bbf1cca2",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=77"
+  },
+  "39445": {
+   "sha256": "b176ddfb92f88d339b9583680b850c191e9e3b8881a240480444df7e516007f0",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=391"
+  },
+  "40392": {
+   "sha256": "d6fda22aca3fb9aa3cfc8d825c4bf06b819ce9fb77fa7fc32e413e1d75df1938",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=198"
+  },
+  "41524": {
+   "sha256": "c222d817208ca54fdc15863c847a76a3199ca78158a381c93b8880c5dba877ea",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=284"
+  },
+  "42041": {
+   "sha256": "b7a546b68f9930bfb5e2da1f8efb1045f91576c4ab6bea3e397eaf9b3f7d9470",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=303"
+  },
+  "42203": {
+   "sha256": "db48381d7823cb94b082f19fec6143f1731ae39d556eeaffa93997864476228a",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=352"
+  },
+  "42204": {
+   "sha256": "62e2fc4a97766477ae46c20083df843f4fe9fdac56eebe3c5ee91f4465f8d8d6",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=351"
+  },
+  "42205": {
+   "sha256": "289509ad63b7672f4587f4ec93344e6177ac7d069e49d07ec8e1554accba60a9",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221"
+  },
+  "42206": {
+   "sha256": "acfa65c24315ac2b720117af127c67b2df5f0995082a507f32e5deea182eb316",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=223"
+  },
+  "42207": {
+   "sha256": "1b0ab6ffe668408890e57b60c22a711459e054ac94953397b8456d470ef26854",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=222"
+  },
+  "42912": {
+   "sha256": "6dd52a1ca5ac72f7c759616585a8a4a643e1c10676fea516a5fbce339b9b648c",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=241"
+  },
+  "42914": {
+   "sha256": "db9daf2f6ce0a0cf22c7b8424731de114a3bd6648df0d6be83dc0b4dddd8619b",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=241"
+  },
+  "42947": {
+   "sha256": "3a4b7f3d646eab8ec4fe9a8f82093c2bb05a3cb1a452e6785edcb20c6fb20275",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=404"
+  },
+  "43134": {
+   "sha256": "ff74054cd564e8be9913e3e90d0e29c6b80a1b9ab6026e8773ce287cca560828",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=341"
+  },
+  "43144": {
+   "sha256": "f4070bda94469bbc92ec82819abafca0808d5799d53c7724bf37c873f13c291e",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=321"
+  },
+  "43145": {
+   "sha256": "7fa16ebb3af5647b4b8dacc105ae2423b7890e5441b5a305e256bdb3568ff39b",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=203"
+  },
+  "43948": {
+   "sha256": "e0e1b49628553bc4f47934469254f797852d7bc712c2d0daaf5f4f128bb3f92e",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282"
+  },
+  "43949": {
+   "sha256": "3beab036828a91e1dffc1639141b8bac20355377276c942a390886a6e41c7eac",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283"
+  },
+  "44069": {
+   "sha256": "77caad55c6c0f8fccdbf812f144e0038bfe26ee6a18c92b189dc560aecf4a478",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=295"
+  },
+  "44185": {
+   "sha256": "9f7339c2ca9643a7861d8cee3e07f03ab30483a56b21ac2ec5cba1c302ef1a09",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=360"
+  },
+  "44365": {
+   "sha256": "9f7339c2ca9643a7861d8cee3e07f03ab30483a56b21ac2ec5cba1c302ef1a09",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=360"
+  },
+  "44532": {
+   "sha256": "c3a3776254d1129bff021602c9625c95bc96290c593e15015ae8428e30b30f6f",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183"
+  },
+  "44533": {
+   "sha256": "c3a3776254d1129bff021602c9625c95bc96290c593e15015ae8428e30b30f6f",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=183"
+  },
+  "44578": {
+   "sha256": "a8f0d298587f9feee902460761f1ff51e5c05b9ada8ceecfc65616ec86c181b4",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=244"
+  },
+  "44579": {
+   "sha256": "a8f0d298587f9feee902460761f1ff51e5c05b9ada8ceecfc65616ec86c181b4",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=244"
+  },
+  "44820": {
+   "sha256": "8dea68575cb0286ba8b86d247b3aa0a10f6096efe4f963d83c327d2125ae7a46",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=406"
+  },
+  "44832": {
+   "sha256": "9027b600cdf784121d345d5ef4c72c6c61af289babcf0e8840275e665c219c5f",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=309"
+  },
+  "44833": {
+   "sha256": "9a05d7ff099d1e95267df62a5ec2d49b0619bb9dfa5fc6986a681860bc246d85",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306"
+  },
+  "45686": {
+   "sha256": "3d0f18011a23224f52afa06c0967a84a1da4b92c9aa0d26811300e1e9ada9aa7",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=112"
+  },
+  "45915": {
+   "sha256": "a2b6c92825d88f0d16644d0836234867e9070cd53a180dd58b428bebed1c0d93",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=374"
+  },
+  "45917": {
+   "sha256": "4d66c8af45b88db9bf1b2385a1b577eb656922fbbb63188d57b3375aaf6ce3e5",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=362"
+  },
+  "46127": {
+   "sha256": "a07d9fc77c4feaf5a8ba53c53a28ca5e45df5bdd16fb127d63f0fdc995c83fca",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=336"
+  },
+  "46128": {
+   "sha256": "1c22ac35d212440d296bb5db84dc4a7ed397a021bd8354664816d99964244f34",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=188"
+  },
+  "46201": {
+   "sha256": "c53f5c4717cb3585c5b05f3d0c2ba196e241e474e6705685c0d4b15544033796",
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=257"
+  }
+ },
+ "run": "44514080886"
 }

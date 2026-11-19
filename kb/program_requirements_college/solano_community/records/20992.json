@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Fire Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=285",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7849,
+  "input_tokens": 10717,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7849,
-    "output_tokens": 1020,
+    "input_tokens": 10717,
+    "output_tokens": 1991,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,30 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1020,
+  "output_tokens": 1991,
   "output_tokens_details": {
-   "thinking_tokens": 332
+   "thinking_tokens": 876
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0518,
- "ms": 8917,
- "seconds": 9.4,
+ "cost_usd": 0.08269,
+ "ms": 17586,
+ "seconds": 21.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 4,
    "listed": 9,
-   "share": 0.0,
+   "share": 0.444,
    "missing": [
-    "EMS110",
-    "EMS112",
-    "FIRE101",
-    "FIRE50",
     "FIRE51",
     "FIRE53",
     "FIRE54",
@@ -61,46 +57,57 @@
     "OCED90"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "FIRE140"
+   ],
+   "flagged": [
+    "FIRE140"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    40.0,
+    40.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": false,
+   "count": 3,
+   "not_verbatim": [
+    "Display the personal and professional attitude and discipline necessary for employment in the firefighting profession"
+   ],
+   "why": [
+    "not in the catalog text as printed: Display the personal and professional attitude and discipline necessary for empl"
+   ],
+   "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 1,
+   "not_verbatim": [
+    "professional firefighter"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -109,11 +116,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "FIRE - Fire Technology",
+   "section_heading": "Firefighter 1 & 2 Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 40,
+    "max": 40
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,43 +137,81 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Perform manipulate skills and pass written tests that meet the National Fire Protection Association Standard 1001 and the California State Fire Marshal standard for Firefighter 1 & 2",
+    "Demonstrate specific skills, knowledge and abilities in routine and emergency firefighting operations",
+    "Display the personal and professional attitude and discipline necessary for employment in the firefighting profession"
+   ],
+   "careers": [
+    "professional firefighter"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "EMS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS 112",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 140",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "FIRE 50",
-    "why": "printed only as course description FIRE 050; no certificate requirements in text"
-   },
-   {
     "code": "FIRE 51",
-    "why": "printed only as course description FIRE 051; no certificate requirements in text"
+    "why": "named only in the 18-unit Fire Technology Certificate/A.S. section"
    },
    {
     "code": "FIRE 53",
-    "why": "printed only as course description FIRE 053; no certificate requirements in text"
+    "why": "named only in the 18-unit Fire Technology Certificate/A.S. section"
    },
    {
     "code": "FIRE 54",
-    "why": "printed only as course description FIRE 054; no certificate requirements in text"
+    "why": "named only in the 18-unit Fire Technology Certificate/A.S. section"
    },
    {
     "code": "FIRE 56",
-    "why": "printed only as course description FIRE 056; no certificate requirements in text"
-   },
-   {
-    "code": "FIRE 101",
-    "why": "printed only as course description; no certificate requirements in text"
-   },
-   {
-    "code": "EMS 110",
-    "why": "named only as a prerequisite for FIRE 140; no certificate requirements in text"
-   },
-   {
-    "code": "EMS 112",
-    "why": "not in the text"
+    "why": "named only in the 18-unit Fire Technology Certificate/A.S. section"
    },
    {
     "code": "OCED 90",
@@ -174,11 +219,25 @@
    }
   ],
   "notes": [
-   "The supplied text (page 285) is the course-description section for FIRE courses, not the Fire Technology Certificate of Achievement requirements; no blocks, totals, outcomes or careers could be recorded. The program requirements page should be located and reviewed.",
-   "Heading prints as 'FIRE - Fire Technologygy' (apparent PDF extraction artifact); recorded as 'FIRE - Fire Technology'.",
-   "FIRE 140 Fire Technology Academy (24 units) is described on the page but is not in the closed list; it was not placed because no requirement list is shown.",
-   "FIRE 050 description mentions 'career opportunities in the fire service and related fields', but this is a course description, so no careers were recorded."
+   "The page prints two Certificates of Achievement under Fire Technology: the 18-unit Fire Technology certificate and the 40-unit Firefighter 1 & 2 certificate. The award level (30 to fewer than 60 units) matches only the 40-unit Firefighter 1 & 2 certificate, so that section was read; the closed list mixes courses from both sections (FIRE 51/53/54/56 belong to the 18-unit certificate), so a reviewer should confirm which certificate the state record describes.",
+   "FIRE 140 (Fire Technology Academy, 24 units) is required but not in the closed list.",
+   "Outcomes text was normalized from PDF ligature artifacts (e.g., 'wriƩ en' read as 'written', 'Fireﬁ ghter' as 'Firefighter'); words otherwise as printed, including 'manipulate skills'.",
+   "The outcomes lead-in refers to the 'Firefighter 1 Academy Certificate of Achievement' although the section is titled Firefighter 1 & 2.",
+   "Section requires a minimum grade of B in EMS courses and C/P in FIRE courses."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "c365922087e22f2e",
+ "source_codes": [
+  "EMS110",
+  "EMS112",
+  "FIRE101",
+  "FIRE50",
+  "FIRE51",
+  "FIRE53",
+  "FIRE54",
+  "FIRE56"
+ ],
+ "source_coverage": 0.889
 }
