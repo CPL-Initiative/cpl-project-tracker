@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8281,
-    "output_tokens": 2434,
+    "output_tokens": 2336,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2434,
+  "output_tokens": 2336,
   "output_tokens_details": {
-   "thinking_tokens": 857
+   "thinking_tokens": 832
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0818,
- "ms": 20109,
- "seconds": 20.4,
+ "cost_usd": 0.07984,
+ "ms": 18874,
+ "seconds": 19.2,
  "parts": null,
  "error": null,
  "score": {
@@ -142,7 +143,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "REQUIREMENTS",
+   "section_heading": "Associate in Arts for Transfer (AA-T) in Communication Studies 2.0",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -342,16 +343,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints no distinct heading for the award section; 'REQUIREMENTS' is the tab heading. The program is the Communication Studies 2.0 AA-T.",
-   "List A says 'Three courses from the following' but prints a block total of 6 units; three 3-unit courses would be 9 units. Recorded minimum 3 as printed; reviewer should check (the TMC typically requires two courses, 6 units).",
-   "List B says 'One course from the following (or any course not used from List A)' but prints 6-7 units; recorded minimum 1 as printed. Any unused List A course may also satisfy List B.",
-   "Catalog prints ANTH 102/102H; the closed list stores ANTHRO 102/102H. Treated as the same course (subject abbreviation difference), not a catalog addition.",
-   "Catalog prints SOCI C1000/C1000H; the closed list stores SOCIC1000/SOCIC1000H (no space). Treated as the same course.",
-   "Honors alternatives have no units printed beside them; their units are left null.",
-   "Course List summary: Major Total Units 18-19, Total Double-Counted Units 12, General Education (Cal-GETC) Units 34, Elective Units 19-20, Total Units 60.",
-   "The outcomes are printed in the page's program-wide outcomes tab and are recorded for this award."
+   "Section heading taken from the description sentence; the page prints no separate program heading in the extracted text.",
+   "List A heading says 'Three courses' but prints 6 units (3-4 unit courses); List B says 'One course' but prints 6-7 units. Heading counts and printed unit totals conflict (Major Total 18-19 is consistent with two List A courses and one List B course); reviewer should check.",
+   "List B also accepts any course not used from List A.",
+   "Catalog prints ANTH 102/102H; matched to closed-list ANTHRO 102/102H (same number and title), so not flagged as additions.",
+   "Catalog prints SOCI C1000/C1000H; matched to closed-list SOCIC1000/SOCIC1000H.",
+   "Honors alternatives print no units beside them; units left null.",
+   "Page prints Major Total Units 18-19, Total Double-Counted Units 12, Cal-GETC 34, Elective Units 19-20, Total Units 60.",
+   "Program learning outcomes are printed on the page's outcomes tab for this program."
   ]
  },
- "extracted_run": 43609973859,
- "read_run": 43355003065
+ "extracted_run": "44481529632",
+ "catalog_year": "2026-2027"
 }
