@@ -6,7 +6,7 @@
   "edge_functions": 15,
   "file_datasets": 1073,
   "external_services": 195,
-  "consumers": 627,
+  "consumers": 629,
   "workflows": 75,
   "data_js_files": 71,
   "tabs": 41
@@ -545,7 +545,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 164
+     "line": 216
     },
     {
      "id": "edgefn:slide-script-draft",
@@ -1135,7 +1135,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 48
+     "line": 50
     },
     {
      "id": "edgefn:workplan-rebuild",
@@ -1253,6 +1253,20 @@
      "direction": "read",
      "how": "url",
      "line": 75
+    },
+    {
+     "id": "script:chatbox/supabase/functions/library-revise-draft/cobi_data.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 18
+    },
+    {
+     "id": "script:chatbox/supabase/functions/library-revise-draft/reference_data.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 15
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -3081,7 +3095,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2269,
+     "line": 2310,
      "tabs": [
       "library"
      ]
@@ -6740,7 +6754,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3559,
+     "line": 3622,
      "tabs": [
       "library"
      ]
@@ -9521,7 +9535,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2872,
+     "line": 2914,
      "tabs": [
       "library"
      ]
@@ -9537,7 +9551,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2262,
+     "line": 2303,
      "tabs": [
       "library"
      ]
@@ -22811,7 +22825,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2490,
+     "line": 2532,
      "tabs": [
       "library"
      ]
@@ -24907,7 +24921,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4194,
+     "line": 4262,
      "tabs": [
       "library"
      ]
@@ -32446,7 +32460,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1463,
+     "line": 1504,
      "tabs": [
       "library"
      ]
@@ -32493,7 +32507,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1276,
+     "line": 1308,
      "tabs": [
       "library"
      ]
