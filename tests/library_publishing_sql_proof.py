@@ -19,6 +19,9 @@ against stubs of Supabase's auth.role(), auth.jwt(), team_pass_ok() and is_allow
     changes stays listed only when the latest check for its NEW page key passes; otherwise it leaves the Public
     Library with publish_target kept 'public', for every writer, the service role included; its rollback restores
     the first migration's state;
+  * kb/migrations/2026-11-19_library_unlist_on_url_change.sql (COBIx on #3572, 7023361983 and 7023581179): any url
+    change of a listed row unlists it whatever checks exist, and its guarded UPDATE corrects the S687 memory row; its
+    rollback restores the second migration's body and the row's summary exactly, and leaves a person's edit alone;
   * the rollback refuses while a check exists (naming the count), and once they are gone restores the ungated
     function and drops the tables and columns.
 
@@ -43,6 +46,11 @@ ROLLBACK = os.path.join(ROOT, "kb/migrations/2026-11-19_library_publishing_model
 # The second migration (COBIx on #3572): a listed piece whose page changes leaves the Public Library until it passes.
 RELIST = os.path.join(ROOT, "kb/migrations/2026-11-19_library_relist_on_new_version.sql")
 RELIST_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_library_relist_on_new_version_rollback.sql")
+# The third (COBIx on #3572, 7023361983 and 7023581179): any url change of a listed row unlists it, since no check is
+# keyed on a url; and the memory row that described the rule says so.
+URLMOVE = os.path.join(ROOT, "kb/migrations/2026-11-19_library_unlist_on_url_change.sql")
+URLMOVE_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_library_unlist_on_url_change_rollback.sql")
+MEMORY = os.path.join(ROOT, "kb/migrations/2026-11-19_s687_library_memory_rows.sql")
 
 # The Supabase pieces the files call, and cpl_library with the columns they read (kb/supabase_cpl_library.sql).
 STUBS = """
@@ -63,6 +71,9 @@ create table public.cpl_library (
   url text, retired_at timestamptz, seen_by text, version text, remediation text, updated_by text,
   kind text, occasion text, made_on date, versions jsonb not null default '[]'::jsonb,
   for_kind text, for_category text, for_name text);
+create table public.cpl_memory (
+  slug text primary key, kind text, title text, summary text, tags text[], status text, source text,
+  verified_by text, verified_at timestamptz, author text, event_date date);
 """
 
 
@@ -235,6 +246,18 @@ def main():
         add_for(deck, "version:5", "fail", "2026-11-19T14:30:00Z")
         c.psql("update public.cpl_library set version = '6' where slug = 'deck'; update public.cpl_library set version = '5' where slug = 'deck';")
         check("a version whose latest check failed unlists it", row("deck") == "false|public", row("deck"))
+        # ── Any url change unlists (2026-11-19_library_unlist_on_url_change.sql) ──
+        ok, _, err = c.psql(open(MEMORY).read())
+        check("the S687 memory rows load", ok, err)
+        mem = lambda: c.psql("select summary from public.cpl_memory where slug = 'd-library-new-page-unlists-s687';")[1]
+        before = mem()
+        ok, _, err = c.psql(open(URLMOVE).read())
+        check("the url-change migration loads", ok, err)
+        after = mem()
+        ok, _, err = c.psql(open(URLMOVE).read())
+        check("the url-change migration is re-runnable", ok, err)
+        check("its guarded UPDATE rewrites the memory row's summary to the url rule, in 400 characters or fewer",
+              after != before and "when its url changes" in after and len(after) <= 400 and mem() == after, after)
         sheet = piece("sheet", None)
         c.psql("select public.cpl_library_set_public('sheet', true, 'A public summary');", PHRASE + " set test.role = 'service_role';")
         c.psql("update public.cpl_library set url = 'https://example.org/sheet-moved/' where slug = 'sheet';")
@@ -242,9 +265,28 @@ def main():
         add_for(sheet, "page", "pass", "2026-11-19T15:00:00Z")
         listing(c, "sheet")
         c.psql("update public.cpl_library set url = 'https://example.org/sheet-again/' where slug = 'sheet';")
-        check("a url change whose key passed stays listed", row("sheet").startswith("true"), row("sheet"))
+        check("a url change whose key passed still unlists it: no earlier pass speaks for a new address", row("sheet") == "false|public", row("sheet"))
+        add_for(sheet, "version:1", "pass", "2026-11-19T15:10:00Z")
+        add_for(sheet, "page", "pass", "2026-11-19T15:20:00Z")
+        listing(c, "sheet")
+        c.psql("update public.cpl_library set url = 'https://example.org/sheet-third/', version = '1' where slug = 'sheet';",
+               "set test.role = 'service_role';")
+        check("a url change unlists whatever checks exist, with the version moving to a passed key and the service role writing",
+              row("sheet") == "false|public", row("sheet"))
+        c.psql("update public.cpl_library set version = null where slug = 'sheet';")
+        listing(c, "sheet")
         c.psql("update public.cpl_library set title = 'Sheet, retitled' where slug = 'sheet';")
         check("a change that leaves the page alone keeps it listed", row("sheet").startswith("true"))
+
+        ok, _, err = c.psql(open(URLMOVE_RB).read())
+        check("the url-change rollback runs", ok, err)
+        check("it restores the memory row's summary exactly", mem() == before, mem())
+        c.psql("update public.cpl_library set url = 'https://example.org/sheet-fourth/' where slug = 'sheet';")
+        check("it restores the second migration's body: a url change whose key passed stays listed", row("sheet").startswith("true"), row("sheet"))
+        c.psql(open(URLMOVE).read())
+        c.psql("update public.cpl_memory set summary = 'A person rewrote this.' where slug = 'd-library-new-page-unlists-s687';")
+        c.psql(open(URLMOVE_RB).read())
+        check("the rollback leaves a person's edit to the memory row alone", mem() == "A person rewrote this.", mem())
 
         ok, _, err = c.psql(open(RELIST_RB).read())
         check("the relist rollback runs", ok, err)

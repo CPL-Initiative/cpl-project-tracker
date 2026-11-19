@@ -129,13 +129,14 @@ end $$;
 revoke execute on function public.cpl_library_set_public(text, boolean, text, text[], text) from public;
 grant execute on function public.cpl_library_set_public(text, boolean, text, text[], text) to anon, authenticated, service_role;
 
--- A listed piece whose page changes leaves the Public Library until the new page passes (#3560; COBIx on #3572,
--- comment 7022946691; decided by the S687 conductor). cpl_library_set_public() gates the listing itself, but a
--- listed Version 4 that becomes Version 5, or a page that moves to a new url, would otherwise stay listed with no
--- check of what it now shows. Any writer may cause it, the service role included: unlisting is the safe direction.
--- The wish to list stays (publish_target 'public'), so the check run lists it again once the new page passes.
--- A draft never unlists anything: only a published new version or a new url does. A url change that keeps the same
--- version key keeps that key's check, since a check names a version, not a url.
+-- A listed piece whose page changes leaves the Public Library until the new page is checked (#3560; COBIx on #3572,
+-- comments 7022946691, 7023361983 and 7023581179; decided by the S687 conductor). cpl_library_set_public() gates the
+-- listing itself; this trigger covers a listed page that changes afterward. Any writer may cause it, the service role
+-- included: unlisting is the safe direction. The wish to list stays (publish_target 'public'), so the check run
+-- checks the new page and lists it again.
+--   A url change always unlists: no check is keyed on a url, so no earlier pass can speak for a page at a new address.
+--   A version change unlists unless the latest check for the new version key is a pass.
+-- A draft never unlists anything: only a published new version or a new url does.
 -- Fires after cpl_library_guard_public_trg and cpl_library_publish_target_trg (name order), so that trigger's reset
 -- of publish_target on an unlisting does not see this one.
 create or replace function public.cpl_library_unlist_on_new_page() returns trigger
@@ -143,8 +144,14 @@ create or replace function public.cpl_library_unlist_on_new_page() returns trigg
 declare
   v_result text;
 begin
-  if new.public_listed and old.public_listed
-     and (new.version is distinct from old.version or new.url is distinct from old.url) then
+  if new.public_listed and old.public_listed and new.url is distinct from old.url then
+    new.public_listed := false;
+    if to_regclass('public.cpl_library_checks') is not null then
+      new.publish_target := 'public';
+    end if;
+    return new;
+  end if;
+  if new.public_listed and old.public_listed and new.version is distinct from old.version then
     if to_regclass('public.cpl_library_checks') is null then
       new.public_listed := false;
       return new;
