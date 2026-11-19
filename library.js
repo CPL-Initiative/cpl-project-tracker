@@ -884,21 +884,24 @@
     return !!(state.checks && (state.rows || []).some(function (r) { return r && Object.prototype.hasOwnProperty.call(r, "publish_target"); }));
   }
   function settingsFor(r) { return state.settings[(r && r.division) || "cobi"] || state.settings.cobi || DEFAULT_SETTINGS; }
-  // The version a check covers: a card draft that is ready or approved and not yet published, else the page itself.
-  // The same rule the migration's header states for the check run.
-  function checkKey(r) {
+  // The versions a check covers, the rule the migration's header states for the check run. Listing reads the page's key
+  // alone: the page is what the Public Library links, so a pass for a draft never lists a page (second read of #3572).
+  // The draft's key speaks only to a new piece's draft, in its Public confirmation.
+  function pageKey(r) { return r && r.url ? (r.version ? "version:" + r.version : "page") : ""; }
+  function draftKey(r) {
     var g = r && r.regen, rs = regenState(r);
-    if (g && g.draft_id && g.ready_at && (rs === "ready" || rs === "approved")) return "draft:" + g.draft_id;
-    return r && r.url ? (r.version ? "version:" + r.version : "page") : "";
+    return g && g.draft_id && g.ready_at && (rs === "ready" || rs === "approved") ? "draft:" + g.draft_id : "";
   }
-  function latestCheck(r) {
-    var k = checkKey(r);
+  // What Details shows: the page's check when there is a page, else the draft's.
+  function checkKey(r) { return pageKey(r) || draftKey(r); }
+  function latestCheck(r, key) {
+    var k = key === undefined ? checkKey(r) : key;
     return k && state.checks ? state.checks[r.id + "|" + k] || null : null;
   }
-  function publicGate(r) {
+  function publicGate(r, key) {
     if (!publishingReady()) return { ok: false, absent: true, why: "The accessibility check record is not available yet, so the Public Library cannot list it." };
     if (r.remediation === "in_remediation") return { ok: false, why: "It is in remediation. The Public Library lists it once it is remediated and its accessibility check passes." };
-    var c = latestCheck(r);
+    var c = latestCheck(r, key === undefined ? pageKey(r) : key);
     if (!c) return { ok: false, why: "Not yet certified. The Public Library lists it once its accessibility check passes." };
     if (c.result !== "pass") return { ok: false, check: c, why: "Its accessibility check of " + fmtDate(String(c.checked_at).slice(0, 10)) + " did not pass. The Public Library lists it once a check passes." };
     return { ok: true, check: c };
@@ -906,7 +909,7 @@
   // A piece someone published to the Public Library that waits on its check.
   function waitsToList(r) { return !!(r && r.publish_target === "public" && !r.public_listed); }
   function waitLine(r) {
-    return waitsToList(r) && r.url ? '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' +
+    return waitsToList(r) && r.url && !publicGate(r).ok ? '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' +
       esc("In the Internal Library. The Public Library lists it once its accessibility check passes.") + "</p>" : "";
   }
   // Details: the check record for the version the record names now, under Sam's labels.
@@ -931,11 +934,12 @@
         '<p class="lib-hint">Removing it leaves it in the Internal Library.</p>';
     }
     if (!r.url) return esc(draftsOnCard(r) ? "Not listed. Publish to Public Library on its card lists it once its page is up and its accessibility check passes." : publicReach(r));
-    if (waitsToList(r)) return esc("In the Internal Library. The Public Library lists it once its accessibility check passes.");
-    if (state.pub !== r.id) {
-      return "In the Internal Library, not listed in the Public Library." + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
-    }
     var gate = publicGate(r);
+    // A piece waiting on its check offers the listing form once the check passes (second read of #3572).
+    if (waitsToList(r) && !gate.ok) return esc("In the Internal Library. The Public Library lists it once its accessibility check passes.");
+    if (state.pub !== r.id) {
+      return "In the Internal Library." + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
+    }
     var head = '<form class="lib-form" data-pubform="' + esc(r.id) + '"><p class="lib-confirm" data-pubconfirm="' + esc(r.id) + '">' + esc(PUBLIC_CONFIRM) + "</p>";
     var cancel = '<button type="button" class="lib-btn" data-pubcancel="1">Cancel</button>';
     if (gate.absent) return head + '<p class="lib-pubwarn">' + esc(gate.why) + '</p><div class="lib-actions-row">' + cancel + "</div></form>";
@@ -956,7 +960,7 @@
   }
   // The Public confirmation on a ready draft's card, inside its publish form (so the name and the pictures box stay).
   function draftPublicConfirm(r) {
-    var gate = publicGate(r);
+    var gate = publicGate(r, draftKey(r));
     var note = gate.absent ? gate.why + " Publish to Internal Library publishes it now."
       : (gate.check && gate.check.result !== "pass" ? "Its draft's accessibility check of " + fmtDate(String(gate.check.checked_at).slice(0, 10)) + " did not pass. " : "") +
         "It publishes to the Internal Library now, and the Public Library lists it once its page's accessibility check passes.";
@@ -1048,7 +1052,7 @@
       ? (withOpen ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" : "") +
         word("data-copy", r.id, "Copy link")
       : draftsOnCard(r) ? "" : word("data-file", r.id, "File it", r.remediation === "remediated");
-    if (r.url && !r.public_listed && !waitsToList(r) && !isNewPiece(r)) acts += word("data-pubtop", r.id, "Publish to Public Library");
+    if (r.url && !r.public_listed && (!waitsToList(r) || publicGate(r).ok) && !isNewPiece(r)) acts += word("data-pubtop", r.id, "Publish to Public Library");
     acts += '<button type="button" class="lib-word" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     return acts;
   }
@@ -3716,7 +3720,7 @@
     var words = r.url
       ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" + word("data-copy", r.id, "Copy link")
       : draftsOnCard(r) ? "" : word("data-file", r.id, "File it", r.remediation === "remediated");
-    if (r.url && !r.public_listed && !waitsToList(r) && !isNewPiece(r)) words += word("data-pubtop", r.id, "Publish to Public Library");
+    if (r.url && !r.public_listed && (!waitsToList(r) || publicGate(r).ok) && !isNewPiece(r)) words += word("data-pubtop", r.id, "Publish to Public Library");
     if (r.status === "requested") words += word("data-brief", r.id, state.briefShown[r.id] ? "Copied. Copy again" : "Copy the brief", true);
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) + (r.public_listed ? chip("In the public library") : "") +
       chip("Seen by: " + seenWord(r), !r.seen_by) + (r.home === "not_filed" ? "" : chip(homeOf(r).label));
@@ -4154,7 +4158,7 @@
     }).then(function (res) {
       state.busy = false;
       if (!res.ok) return res.text().then(function (t) {
-        throw new Error(/reviewer|team phrase/i.test(t) ? "The database wants the team phrase or a reviewer sign-in for this. Enter the phrase, or sign in from About, and try again." : "The listing was refused (" + res.status + "). " + String(t || "").slice(0, 200));
+        throw new Error(/accessibility check record/i.test(t) ? "The database refused the listing: the Public Library lists a piece only with a passing accessibility check record for the page it names now." : /reviewer|team phrase/i.test(t) ? "The database wants the team phrase or a reviewer sign-in for this. Enter the phrase, or sign in from About, and try again." : "The listing was refused (" + res.status + "). " + String(t || "").slice(0, 200));
       });
       say(listed ? "Published to the Public Library. Anyone can find it there now, and Sierra can link it."
         : "Removed from the Public Library. It stays in the Internal Library.");

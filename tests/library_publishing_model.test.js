@@ -221,6 +221,57 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
       !!m.root.querySelector('[data-pubnow="n1"]') && !form(m) && patches(m).length === 0 && /Approved by Sam/.test(m.root.textContent));
     check("F nothing in the tab writes an approval away", !/approved_at\s*=\s*null|approved_at:\s*null|delete regen\.approved_at/.test(SRC));
   }
+  // ── H. Listing reads the page's own check (second read of #3572) ──
+  const PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/agency-flyer/";
+  const D2 = "22222222-2222-2222-2222-222222222222";
+  const pageRow = (extra) => [Object.assign({ id: "v1", slug: "agency-flyer", title: "Agency Flyer", kind: "visual", status: "approved", seen_by: "team",
+    home: "web", url: PAGE, version: "2", made_on: "2026-11-01", versions: [], summary: "For agencies.", updated_at: "2026-11-02T10:00:00Z" }, MODEL, extra || {})];
+  const chk = (key, result) => ({ library_id: "v1", version_key: key, standard: "WCAG 2.1 AA and Section 508", checked_at: "2026-11-19T16:05:00Z",
+    tool_or_reviewer: "axe-core automated check", result: result || "pass" });
+  {
+    // A page on Version 2 with a ready revision draft whose own check passed: the draft's pass must not list the page.
+    const m = loadModule({ rows: pageRow({ regen: { requested_at: "2026-11-19T15:00:00Z", ready_at: "2026-11-19T16:00:00Z", draft_id: D2 } }),
+      checks: [chk("draft:" + D2)] });
+    await m.M.activate(); await tick();
+    m.M._state.open.v1 = true; m.M.render();
+    click(m.w, m.root.querySelector('[data-pub="v1"]'));
+    check("H ⭐ a pass for a revision draft does not open the listing form for the page", /Not yet certified/.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+    submit(m.w, m.root.querySelector('form[data-pubform="v1"]'));
+    await until(() => patches(m).length > 0);
+    check("H ⭐ and the press lists nothing: it keeps the choice only", rpcCalls(m).length === 0 && patches(m).length === 1 && patches(m)[0].body.publish_target === "public");
+  }
+  {
+    // The same page whose own check (version:2) passed lists through the function.
+    const m = loadModule({ rows: pageRow({ regen: { requested_at: "2026-11-19T15:00:00Z", ready_at: "2026-11-19T16:00:00Z", draft_id: D2 } }),
+      checks: [chk("version:2")] });
+    await m.M.activate(); await tick();
+    m.M._state.open.v1 = true; m.M.render();
+    click(m.w, m.root.querySelector('[data-pub="v1"]'));
+    check("H the page's own pass opens the listing form", !!m.root.querySelector("#lp-sum"));
+  }
+  {
+    // A piece waiting to be listed whose page check has since passed offers the listing form (should-fix 3).
+    const m = loadModule({ rows: pageRow({ publish_target: "public" }), checks: [chk("version:2")] });
+    await m.M.activate(); await tick();
+    const card = m.root.querySelector("#lib-t-v1").closest("article");
+    check("H ⭐ a waiting piece with a passing page check offers Publish to Public Library again, and no waiting line",
+      !!card.querySelector('[data-pubtop="v1"]') && !card.querySelector("[data-pubwait]"));
+    click(m.w, card.querySelector('[data-pubtop="v1"]'));
+    check("H its press opens the summary form", !!m.root.querySelector("#lp-sum") && (m.root.querySelector('[data-pubconfirm="v1"]') || {}).textContent === CONFIRM);
+    submit(m.w, m.root.querySelector('form[data-pubform="v1"]'));
+    await until(() => rpcCalls(m).length > 0);
+    const b = rpcCalls(m)[0] ? rpcCalls(m)[0].body : {};
+    check("H ⭐ and it lists through cpl_library_set_public(), with no second write of the choice",
+      rpcCalls(m).length === 1 && b.p_listed === true && b.p_summary === "For agencies." && patches(m).length === 0);
+  }
+  {
+    const m = loadModule({ rows: pageRow({ publish_target: "public" }), checks: [chk("version:2", "fail")] });
+    await m.M.activate(); await tick();
+    const card = m.root.querySelector("#lib-t-v1").closest("article");
+    check("H a waiting piece whose page check failed keeps its waiting line and offers no press", !!card.querySelector("[data-pubwait]") && !card.querySelector('[data-pubtop="v1"]'));
+    m.M._state.open.v1 = true; m.M.render();
+    check("H Details reads In the Internal Library, in a positive sentence", /In the Internal Library\. The Public Library lists it/.test(m.root.textContent) && !/not listed in the Public Library/.test(SRC));
+  }
   // ── G. The migration and the governance map ──
   {
     const SQL = fs.readFileSync("kb/migrations/2026-11-19_library_publishing_model.sql", "utf8");
@@ -236,9 +287,23 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
       /create trigger cpl_library_publish_target_trg before update on public\.cpl_library/.test(SQL));
     check("G the trigger fires after the public guard (name order), so it sees that guard's own unlisting", "cpl_library_guard_public_trg" < "cpl_library_publish_target_trg");
     check("G Sam's standard is the seeded default", /'cobi', 'CPL Initiative', 'WCAG 2\.1 AA and Section 508'/.test(SQL) && /standard: "WCAG 2\.1 AA and Section 508"/.test(SRC));
-    check("G the listing function itself is untouched", !/cpl_library_set_public/.test(SQL.replace(/^--.*$/gm, "")));
+    // The database refuses too (second read of #3572): the tab is not the only gate. tests/library_publishing_sql_proof.py
+    // runs these files against Postgres; this pins the text.
+    const fnBody = (/create or replace function public\.cpl_library_set_public\([\s\S]*?end \$\$;/.exec(SQL) || [""])[0];
+    check("G ⭐ cpl_library_set_public() refuses a listing unless the latest check of the page's key passes; unlisting and the service role are exempt",
+      /if p_listed and coalesce\(auth\.role\(\), ''\) <> 'service_role' then/.test(fnBody) &&
+      /c\.version_key = case when nullif\(l\.version, ''\) is not null then 'version:' \|\| l\.version else 'page' end/.test(fnBody) &&
+      /order by c\.checked_at desc/.test(fnBody) && /if v_result is distinct from 'pass' then\s*raise exception/.test(fnBody));
+    check("G it keeps its grants and its revoke from PUBLIC", /revoke execute on function public\.cpl_library_set_public\(text, boolean, text, text\[\], text\) from public;\s*grant execute on function public\.cpl_library_set_public\(text, boolean, text, text\[\], text\) to anon, authenticated, service_role;/.test(SQL));
+    const CANON = fs.readFileSync("kb/supabase_cpl_library_public.sql", "utf8");
+    check("G the canonical source carries the same body, so a re-run keeps the gate", CANON.indexOf(fnBody) >= 0);
+    const RBT = fs.readFileSync(RB, "utf8");
+    check("G the rollback refuses while check records exist, then restores the body without the gate",
+      /raise exception 'cpl_library_checks holds % check record\(s\)/.test(RBT) && /create or replace function public\.cpl_library_set_public\(/.test(RBT) &&
+      !/cpl_library_checks c on/.test(RBT) && RBT.indexOf("raise exception 'cpl_library_checks holds") < RBT.indexOf("drop table if exists public.cpl_library_checks"));
+    check("G the SQL proof runs in CI", /python3 tests\/library_publishing_sql_proof\.py/.test(fs.readFileSync(".github/workflows/js-tests.yml", "utf8")));
     check("G the version key the tab reads is the one the migration states", /'draft:<cpl_library_drafts\.id>'/.test(SQL) && /'version:<cpl_library\.version>'/.test(SQL) &&
-      /return "draft:" \+ g\.draft_id;/.test(SRC) && /"version:" \+ r\.version : "page"/.test(SRC));
+      /\? "draft:" \+ g\.draft_id : ""/.test(SRC) && /"version:" \+ r\.version : "page"/.test(SRC) && /function draftPublicConfirm\(r\) \{\s*var gate = publicGate\(r, draftKey\(r\)\);/.test(SRC));
     const GOV = JSON.parse(fs.readFileSync("kb/governance_surface_map.json", "utf8"));
     // Beside cpl_library_drafts and cpl_library_pictures: the same audience as cpl_library, the reason stated.
     const rule = (k) => (GOV.mapped || {})[k] || (GOV.dismissed || {})[k];

@@ -80,14 +80,33 @@ create trigger cpl_library_guard_public_trg before update on public.cpl_library
 
 -- List or unlist one piece. Listing also sets Seen by to Public, the audience the
 -- listing declares. Returns the row's public fields so the caller can show them.
+-- The one gate on the Public Library (#3560; Sam, Nov 19, 2026, via COBIx: "The only gate on the Public Library is
+-- the passing accessibility check record"): listing needs the latest check of the page the record names now
+-- (version_key 'version:<version>', or 'page' with no version number) to be a pass. A draft's check never lists a page.
+-- Unlisting takes no check, and the service role is exempt. The check table and this body ride
+-- kb/migrations/2026-11-19_library_publishing_model.sql; its rollback restores the body without the gate.
 create or replace function public.cpl_library_set_public(
   p_slug text, p_listed boolean, p_summary text default null,
   p_topics text[] default null, p_by text default null)
 returns table (slug text, public_listed boolean, public_summary text, public_topics text[], listed_at timestamptz)
   language plpgsql security definer set search_path = public as $$
+declare
+  v_result text;
 begin
   if not (public.is_allowed_reviewer() or public.team_pass_ok()) then
     raise exception 'Listing in the public library needs the team phrase or a reviewer sign-in';
+  end if;
+  if p_listed and coalesce(auth.role(), '') <> 'service_role' then
+    select c.result into v_result
+      from public.cpl_library l
+      join public.cpl_library_checks c on c.library_id = l.id
+       and c.version_key = case when nullif(l.version, '') is not null then 'version:' || l.version else 'page' end
+     where l.slug = p_slug and l.retired_at is null
+     order by c.checked_at desc, c.created_at desc
+     limit 1;
+    if v_result is distinct from 'pass' then
+      raise exception 'Listing in the Public Library needs a passing accessibility check record for the page it names now';
+    end if;
   end if;
   perform set_config('cpl.library_public', 'on', true);
   update public.cpl_library l set

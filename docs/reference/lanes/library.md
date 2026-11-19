@@ -24,10 +24,13 @@ Deploying, Live (only once the page's own address answers), or Failed with the f
 
 **BUILT, waits on its migration: the publishing model, #3560 part 1 of 4 (S687; Sam's decisions of Nov 19 via
 COBIx).** A new piece's ready draft has two buttons, exactly *Publish to Internal Library* and *Publish to Public
-Library*; no approval from Sam. Internal approves the draft and starts the publish run at once for a signed-in reviewer
-(Publish now's holds and one status line). Public shows *"This lists it in the Public Library, where anyone can find
+Library*; no approval from Sam. Internal approves the draft; one press starts the publish run at once only for a
+signed-in reviewer (Publish now's holds and one status line), and a team-phrase press waits for the scheduled run
+(every three hours). Public shows *"This lists it in the Public Library, where anyone can find
 it."*, does the same, and keeps `cpl_library.publish_target = 'public'`; a piece already on its page lists at once
-through `cpl_library_set_public()` only with a passing check record for the version it names now, and otherwise waits.
+through `cpl_library_set_public()` only with a passing check record for its page, and otherwise waits; a waiting
+piece whose page check passes offers the listing form again. The function itself refuses a listing without that pass
+(the service role exempt, unlisting unchanged), so the tab is not the only gate.
 The card then carries *In the Public Library*. List publicly is retired. Removing a piece from the Public Library
 leaves it in the Internal Library (a trigger resets `publish_target` on any unlisting). Template: a checkbox in Edit
 the record, a chip, a Templates filter (cleared at the next visit), templates first in the finder and at the head of
@@ -35,10 +38,13 @@ a new draft. Details shows the check record under Sam's labels. Schema
 `kb/migrations/2026-11-19_library_publishing_model.sql` (`cpl_library_checks`, `cpl_library_division_settings`
 seeded with `cobi` and *WCAG 2.1 AA and Section 508*; columns `publish_target`, `template`, `division`); without it
 the tab publishes to the Internal Library and Public says the check record is not available yet. Guard
-`tests/library_publishing_model.test.js`, `tests/public_library.test.js`.
+`tests/library_publishing_model.test.js`, `tests/public_library.test.js`, and `tests/library_publishing_sql_proof.py`
+(the migration and its rollback against a throwaway Postgres, in `js-tests.yml`).
 - DECIDED (S687): a check covers one version key: `draft:<draft id>` for a card draft ready or approved and not yet
-  published, `version:<version>` for the page, `page` for a page with no number. The latest check for the current key
-  decides; a draft's check does not carry to the page, which is checked again once it is up.
+  published, `version:<version>` for the page, `page` for a page with no number. Listing reads the page's key alone
+  (second read of #3572), in the tab and in `cpl_library_set_public()`; the draft's key speaks only to a new piece's
+  Public confirmation. A draft's check never carries to the page, which is checked again once it is up.
+- DECIDED (S687): the rollback refuses while `cpl_library_checks` holds rows, since nothing else keeps them.
 - DECIDED (S687): a new piece pressed to Public is never listed at the press (it has no page yet); part 2's check run
   lists it once its page passes. Only the service role writes a check, so the tab never certifies a piece.
 - DECIDED (S687): Replace the public copy on a revision is unchanged until part 4 (redraft and republish).

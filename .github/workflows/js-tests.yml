@@ -277,6 +277,10 @@ jobs:
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
         run: python3 tests/supabase_table_grants_test.py
+      # The Library's Public Library gate in the database (#3560, second read of #3572): the committed migration and
+      # its rollback run against a throwaway Postgres the test starts itself (SKIP when no binaries are present).
+      - name: Library publishing model against Postgres (set_public refuses with no passing check)
+        run: python3 tests/library_publishing_sql_proof.py
       # The runner-applied migration (Sam, Open Asks Sheet 74 card 2, 2026-10-13):
       # only a committed .sql under chatbox/, kb/ or supabase/, a migration name the
       # ledger accepts, and a receipt naming the file's sha256. Pure-stdlib python.
