@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics",
  "award": "A.S. T Degree",
- "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=175",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=174",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8628,
+  "input_tokens": 9943,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8628,
-    "output_tokens": 1376,
+    "input_tokens": 9943,
+    "output_tokens": 2348,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,40 @@
     "model": null
    }
   ],
-  "output_tokens": 1376,
+  "output_tokens": 2348,
   "output_tokens_details": {
-   "thinking_tokens": 665
+   "thinking_tokens": 974
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06203,
- "ms": 12075,
- "seconds": 12.4,
+ "cost_usd": 0.08673,
+ "ms": 19803,
+ "seconds": 20.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 8,
    "listed": 8,
-   "share": 0.625,
-   "missing": [
-    "MATH5A",
-    "MATH5B",
-    "MATH6"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH5B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -74,10 +82,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    6.0,
-    6.0
+    24.0,
+    24.0
    ],
    "stated": [
     23.0,
@@ -85,7 +93,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 23.0-23.0"
+    "'LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units.' chooses units but names no minimum"
    ]
   },
   "repeated": {
@@ -93,17 +101,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
@@ -117,7 +125,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Mathematics A.S.-T (heading not in text; excerpt begins mid-section at List A)",
+   "section_heading": "MATHEMATICS ASSOCIATE IN SCIENCE IN MATHEMATICS FOR TRANSFER DEGREE (Major #C.6200.AS-T)",
    "measure": "units",
    "total_units": {
     "min": 23,
@@ -128,7 +136,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -138,10 +146,65 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Communicate mathematics with understanding (read, write, listen, speak).",
+    "Use critical thinking and mathematical reasoning to solve a variety of problems.",
+    "Apply mathematical models to real world situations.",
+    "Use technology, when appropriate, to enhance their mathematical understanding, critical thinking, and problem-solving skills.",
+    "Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas."
+   ],
+   "careers": [
+    "mathematics",
+    "engineering",
+    "statistics",
+    "actuarial science",
+    "business and management",
+    "law enforcement",
+    "government",
+    "education"
+   ]
   },
   "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 17",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
    {
     "name": "List A: Select one course",
     "rule": "choose_courses",
@@ -162,9 +225,9 @@
     ]
    },
    {
-    "name": "LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units",
+    "name": "LIST B: Select additional courses/ units so that List A and List B courses total a minimum of 6 units.",
     "rule": "choose_units",
-    "minimum": 1,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -224,18 +287,32 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; likely in the required core on the preceding page (174) not included"
+    "why": "not in the text; catalog lists MATH C2210 (Calculus I: Early Transcendentals) instead"
    },
    {
     "code": "MATH 5B",
-    "why": "not in the text; likely in the required core on the preceding page (174) not included"
-   },
-   {
-    "code": "MATH 6",
-    "why": "not in the text; likely in the required core on the preceding page (174) not included"
+    "why": "not in the text; catalog lists MATH C2220 (Calculus II: Early Transcendentals) instead"
    }
   ],
-  "notes": []
+  "notes": [
+   "MATH 17 is printed both in Required Core Courses and as the only course in List A; likely a catalog layout error. Recorded as printed. Total Units 23 is consistent either way (core 14 or 19 units plus List A/B).",
+   "List B minimum is a combined rule: List A and List B courses must total a minimum of 6 units; since List A's only course is 5 units, List B needs at least one more course. List B minimum left null because no List B-only unit count is printed.",
+   "The 60 semester unit requirement is the standard transfer degree statement, not recorded as degree_total.",
+   "Text above the Mathematics section (List A with BIOL 5, CHEM 1A, STAT C1000/BA 23, PHYS 4A, Total Units 22-24) belongs to a preceding program and was not used."
+  ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "c219a76116edb396",
+ "source_codes": [
+  "BA23",
+  "CSCI26",
+  "CSCI40",
+  "MATH5A",
+  "MATH5B",
+  "MATH6",
+  "PHYS4A",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

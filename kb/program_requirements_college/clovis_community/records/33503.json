@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Physics",
  "award": "A.S. T Degree",
- "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=179",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11531,
+  "input_tokens": 8563,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11531,
-    "output_tokens": 809,
+    "input_tokens": 8563,
+    "output_tokens": 1758,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,36 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 809,
+  "output_tokens": 1758,
   "output_tokens_details": {
-   "thinking_tokens": 202
+   "thinking_tokens": 704
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0623,
- "ms": 7639,
- "seconds": 8.1,
+ "cost_usd": 0.06941,
+ "ms": 15809,
+ "seconds": 16.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 6,
-   "share": 0.0,
-   "missing": [
-    "MATH5A",
-    "MATH5B",
-    "MATH6",
-    "PHYS4A",
-    "PHYS4B",
-    "PHYS4C"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH5B",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,34 +73,35 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    26.0,
+    26.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
@@ -105,22 +111,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the provided text has no Physics A.S.-T section (it covers Engineering programs only)",
+   "section_heading": "ASSOCIATE IN SCIENCE IN PHYSICS FOR TRANSFER DEGREE (Major #C.3664.AS-T)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 26,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -130,41 +136,107 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Apply algebra, trigonometry, and first-year calculus to solve physical problems.",
+    "Apply dimensional analysis to determine the units for an unknown quantity or to check the validity of equations.",
+    "Distinguish between important physical observables when they are measured or calculated.",
+    "Correctly report the units of an observable when it is measured or calculated."
+   ],
+   "careers": [
+    "technical positions with government or industry",
+    "law",
+    "business",
+    "medicine",
+    "Teaching at the high school level",
+    "experimental or theoretical research",
+    "teaching at the university level",
+    "basic research in government or industry"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; the Physics A.S.-T section is not in the provided pages"
+    "why": "not in the text; catalog lists MATH C2210 Calculus I (likely common course numbering replacement)"
    },
    {
     "code": "MATH 5B",
-    "why": "not in the text; the Physics A.S.-T section is not in the provided pages"
-   },
-   {
-    "code": "MATH 6",
-    "why": "named only in the Engineering sections, not in a Physics A.S.-T section"
-   },
-   {
-    "code": "PHYS 4A",
-    "why": "named only in the Engineering sections, not in a Physics A.S.-T section"
-   },
-   {
-    "code": "PHYS 4B",
-    "why": "named only in the Engineering sections, not in a Physics A.S.-T section"
-   },
-   {
-    "code": "PHYS 4C",
-    "why": "named only in the Engineering sections, not in a Physics A.S.-T section"
+    "why": "not in the text; catalog lists MATH C2220 Calculus II (likely common course numbering replacement)"
    }
   ],
   "notes": [
-   "The catalog text provided (PDF pages 123-126) contains only the Engineering program learning outcomes and the Civil, Computer or Software, and Electrical Engineering A.S. degrees and certificates. No Physics A.S.-T section appears, so no blocks, totals, outcomes or careers were recorded. The source page reference likely points to the wrong page; a reviewer should locate the Physics A.S.-T section elsewhere in the 2026-2027 catalog.",
-   "The Engineering program learning outcomes on page 123 belong to the Engineering programs and were not recorded for Physics."
+   "Read only the AS-T section on page 179; the following section (Associate in Science in Physics for UC Transfer, Major #C.3665.UCTP, 41 units) is a different award and was ignored.",
+   "MATH C2210 and MATH C2220 are not in the closed list; they appear to replace MATH 5A and MATH 5B under common course numbering (same units 5 and 4).",
+   "The page states the general ADT requirement of 60 semester units of degree-applicable courses and completion of Cal-GETC; this was read as the statutory ADT requirement, not a printed total for this award, so degree_total is null and no GE units are printed.",
+   "Careers are taken from the program description, which names options for physics graduates at the bachelor's and Ph.D. level; law, business and medicine are named as professional programs physics majors enter. Also mentioned: teaching 'at a two-year college with a masters' degree'."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "c5f9d93280ec6e33",
+ "source_codes": [
+  "MATH5A",
+  "MATH5B",
+  "MATH6",
+  "PHYS4A",
+  "PHYS4B",
+  "PHYS4C"
+ ],
+ "source_coverage": 1.0
 }

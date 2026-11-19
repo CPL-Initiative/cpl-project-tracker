@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Journalism",
  "award": "A.A- T Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=307",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12379,
+  "input_tokens": 11129,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12379,
-    "output_tokens": 2083,
+    "input_tokens": 11129,
+    "output_tokens": 2214,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2083,
+  "output_tokens": 2214,
   "output_tokens_details": {
-   "thinking_tokens": 798
+   "thinking_tokens": 838
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09118,
- "ms": 16335,
- "seconds": 16.7,
+ "cost_usd": 0.0888,
+ "ms": 17829,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
@@ -261,13 +261,32 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with leading zeros (JOUR 001, CIS 085, etc.); treated as the closed-list codes (JOUR 1, CIS 85, etc.).",
-   "List B carries the restriction: only 1 ECON course (ECON C2001 or ECON C2002) may be used.",
-   "Degree total left null: the page states the standard ADT requirement to 'Complete 60 semester units ... including Cal-GETC and a minimum of 18 semester units in a major'; reviewer may check whether this should count as the award's degree total. No GE units are printed.",
-   "Outcomes transcribed with PDF ligature artifacts (e.g. 'criƟ cal', 'plaƞ orms') restored to normal spelling ('critical', 'platforms').",
-   "The page also prints a Journalism Certificate of Achievement and a Multimedia Journalism Certificate of Achievement; those sections were not used."
+   "Only the A.A.-T section (page 307 of the PDF) was read; the Journalism and Multimedia Journalism Certificates of Achievement on the following pages were ignored.",
+   "Total units 18-19 is the printed 'Required Major Total Units'.",
+   "The page states the generic ADT requirement of 60 transferable semester units including Cal-GETC; this was read as boilerplate for all ADTs, not a printed degree total, so degree_total is null. No GE units are printed.",
+   "List B carries the restriction '**Only 1 ECON course may be used'.",
+   "STAT C1000 is printed with a stray space as 'STAT C1 000'; recorded as STAT C1000.",
+   "Catalog prints codes with leading zeros (e.g. JOUR 001); these match closed-list codes (JOUR 1 etc.).",
+   "Outcome text was normalized from PDF ligature artifacts (e.g. 'criƟ cal' -> 'critical', 'plaƞ orms' -> 'platforms'); reviewer may verify against the original PDF.",
+   "No careers are named in the A.A.-T section (only bachelor's degree majors); the certificate sections name job titles but those belong to other awards."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "124a7f161122527b",
+ "source_codes": [
+  "CIS85",
+  "COMM6",
+  "ECONC2001",
+  "ECONC2002",
+  "JOUR1",
+  "JOUR11",
+  "JOUR60",
+  "JOUR61",
+  "PHOT56",
+  "POLS2",
+  "POLSC1000",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }
