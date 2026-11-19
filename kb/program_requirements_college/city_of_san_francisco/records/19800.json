@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8937,
-    "output_tokens": 2062,
+    "output_tokens": 2098,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2062,
+  "output_tokens": 2098,
   "output_tokens_details": {
-   "thinking_tokens": 467
+   "thinking_tokens": 516
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07699,
- "ms": 15634,
- "seconds": 15.9,
+ "cost_usd": 0.07771,
+ "ms": 17071,
+ "seconds": 17.4,
  "parts": null,
  "error": null,
  "score": {
@@ -148,7 +148,7 @@
   },
   "blocks": [
    {
-    "name": "Required Units",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -332,7 +332,7 @@
    },
    {
     "code": "CMST 4",
-    "why": "not in the text; catalog lists COMM 4 Group Communication instead (likely renumbered)"
+    "why": "not in the text; catalog lists COMM 4 Group Communication instead, likely the renumbered course"
    },
    {
     "code": "CMST 6",
@@ -340,13 +340,35 @@
    }
   ],
   "notes": [
-   "Closed list stores 'CM244' (no space, no units); catalog prints 'CM 244 Construction Scheduling 3.0'. Treated as the same course, catalog_addition false.",
-   "Catalog prints 'COMM 4 Group Communication', which is not in the closed list; closed list has CMST 4 Group Communication with the same title. Recorded COMM 4 as a catalog addition; reviewer should confirm renumbering.",
+   "CM 244 is printed as 'CM 244'; the closed list stores it as 'CM244' with no units. Treated as the same closed-list course (catalog_addition false).",
+   "COMM 4 Group Communication appears in the catalog while the closed list has CMST 4 Group Communication; recorded COMM 4 as a catalog addition. Reviewer may treat it as the renumbered CMST 4.",
    "MGT 234 is titled 'Communication for Business Management' in the catalog vs 'Business Communication' in the closed list.",
-   "Second choose-6-units list continues across the page break from page 136 to 137 (GNBS 119, MGT 231).",
-   "Block totals 18 + 6 + 6 match the printed Total: 30.0."
+   "The second elective list continues across the page break from page 136 to page 137 (GNBS 119, MGT 231); total 30.0 printed after it. Block sums 18+6+6 match the printed total."
   ]
  },
- "extracted_run": 43693267535,
- "read_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "ccd483d22a4397e0",
+ "source_codes": [
+  "ARCH120",
+  "ARCH127",
+  "ARCH160",
+  "ARCH240",
+  "BSL1",
+  "CM10",
+  "CM100",
+  "CM110",
+  "CM20",
+  "CM240",
+  "CM244",
+  "CM248",
+  "CM250",
+  "CMST4",
+  "COMMC1000",
+  "GNBS100",
+  "GNBS119",
+  "MGT231",
+  "MGT234"
+ ],
+ "source_coverage": 0.905
 }
