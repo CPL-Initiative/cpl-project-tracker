@@ -2,4 +2,4 @@ run=2026-11-19
 discover=
 index=https://lan.curriqunet.com/
 slugs=laney,merritt,college_of_alameda,berkeley_city
-report=
+report=^Outcome Outline$
