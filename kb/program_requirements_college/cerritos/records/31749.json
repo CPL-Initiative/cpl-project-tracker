@@ -5,11 +5,11 @@
  "title": "History",
  "award": "A.A- T Degree",
  "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/history-aa-t/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10295,
+  "input_tokens": 11929,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10295,
-    "output_tokens": 7535,
+    "input_tokens": 11929,
+    "output_tokens": 6973,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 7535,
+  "output_tokens": 6973,
   "output_tokens_details": {
-   "thinking_tokens": 1817
+   "thinking_tokens": 1446
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.19188,
- "ms": 54830,
- "seconds": 55.4,
+ "cost_usd": 0.18718,
+ "ms": 51531,
+ "seconds": 52.0,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 90,
+   "placed": 91,
    "listed": 106,
-   "share": 0.849,
+   "share": 0.858,
    "missing": [
     "AFRS226",
     "CS108",
     "ETHN210",
-    "HIST102",
     "HIST108",
     "HUM100",
     "PHIL105",
@@ -66,12 +67,19 @@
     "WGS202"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 6,
    "codes": [
-    "HISTC1001",
     "POLS110",
     "POLS201",
     "POLS210",
@@ -80,7 +88,6 @@
     "POLS260"
    ],
    "flagged": [
-    "HISTC1001",
     "POLS110",
     "POLS201",
     "POLS210",
@@ -101,6 +108,7 @@
     18.0,
     20.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -117,6 +125,17 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -128,13 +147,27 @@
     "max": 20
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Students will be able to explain the causes, consequences, and key persons involved in major events of U.S. history from 1877 to the present.",
     "Students will be able to explain the causes, consequences, and key persons involved in major events of U.S. history from the Pre-Colonial era to 1877.",
     "Students will be able to explain the causes, consequences, and key persons involved in the development of Western Civilization from the Pre-historic era to the present century.",
     "Students will be able to explain the commonalities and differences in the development and interactions between the civilizations of Africa, the Americas, Asia, and Europe from the Neolithic."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -202,7 +235,7 @@
     ]
    },
    {
-    "name": "Area 1: Diversity",
+    "name": "List B Area 1: Diversity",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -464,7 +497,7 @@
     ]
    },
    {
-    "name": "Area 2: Any History course (including List A courses not already used) or any non-history course from the humanities or social sciences related to history articulated as fulfilling Cal-GETC Area 3 or 4",
+    "name": "List B Area 2: Any History course (including List A courses not already used) or any non-history course from the humanities or social sciences related to history articulated as fulfilling Cal-GETC Area 3 or 4",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -925,27 +958,27 @@
    },
    {
     "code": "POL 110",
-    "why": "catalog prints POLS 110 instead; recorded as catalog addition"
+    "why": "catalog prints it as POLS 110 (recorded as catalog addition)"
    },
    {
     "code": "POL 201",
-    "why": "catalog prints POLS 201 instead; recorded as catalog addition"
+    "why": "catalog prints it as POLS 201 (recorded as catalog addition)"
    },
    {
     "code": "POL 210",
-    "why": "catalog prints POLS 210 instead; recorded as catalog addition"
+    "why": "catalog prints it as POLS 210 (recorded as catalog addition)"
    },
    {
     "code": "POL 220",
-    "why": "catalog prints POLS 220 instead; recorded as catalog addition"
+    "why": "catalog prints it as POLS 220 (recorded as catalog addition)"
    },
    {
     "code": "POL 230",
-    "why": "catalog prints POLS 230 instead; recorded as catalog addition"
+    "why": "catalog prints it as POLS 230 (recorded as catalog addition)"
    },
    {
     "code": "POL 260",
-    "why": "catalog prints POLS 260 instead; recorded as catalog addition"
+    "why": "catalog prints it as POLS 260 (recorded as catalog addition)"
    },
    {
     "code": "WGS 202",
@@ -953,19 +986,17 @@
    }
   ],
   "notes": [
-   "Outcomes recorded from the 'Program Student Learning Outcomes' list printed on this AA-T page.",
-   "HIST C1001 is not in the closed list (closed list has HIST C1002 only); recorded as catalog addition.",
-   "Catalog prints POLS 110/201/210/220/230/260 while closed list has POL 110/201/210/220/230/260; likely the same courses under a renamed subject, recorded as catalog additions.",
-   "SOCI C1000 matched to closed-list entry 'SOCIC1000' (same code without space); title differs (Introductory Sociology Principles vs Introduction to Sociology). Reviewer should confirm.",
-   "List B heading: 'Select one course from each area of the following: (6 units)'. Recorded as two blocks, Area 1 (stated 3.0-5.0) and Area 2 (stated 3.0), each choose 1 course.",
-   "Area 1 permits 'Any List A course not already used', any non-western history course articulated for Cal-GETC Area 3 or 4, any humanities/social science course addressing under-represented groups or non-western subjects articulated for Cal-GETC Area 3 or 4, or a language other than English articulated for Cal-GETC Area 3B; the listed courses appear as examples under those categories, so the list may not be exhaustive.",
-   "Area 2 permits any History course (including unused List A courses) or any related humanities/social science course articulated for Cal-GETC Area 3 or 4; listed courses may not be exhaustive.",
-   "In Area 2 the catalog prints HIST 210 and HIST 220 twice, and prints both 'ART 108 or HUM 108' and 'HUM 108 or ART 108' (likewise ART 109/HUM 109); each recorded once.",
-   "GERM 101 and JAPN 101 have no units printed beside them; units left null.",
-   "Units of 'or' alternatives are not printed beside them in the catalog; left null.",
-   "HIST 204 appears in Area 1 (with WGS 204 alternative) and as alternative to WGS 204 in Area 2.",
-   "Degree note says CSU GE or IGETC may be used in some cases; primary pattern stated is Cal-GETC."
+   "List B heading says 'Select one course from each area of the following: (6 units)'; recorded as two blocks (Area 1 stated 3.0-5.0, Area 2 stated 3.0).",
+   "Area 1 also allows 'Any List A course not already used'; Area 2 allows any History course including unused List A courses and any related humanities/social science course articulated for Cal-GETC Area 3 or 4. These open options are not listed as courses.",
+   "Area 1 option descriptions (non-western history course; course on under-represented group; language other than English for Cal-GETC 3B) are merged into one choose-one block.",
+   "In Area 2 the catalog prints HIST 210 and HIST 220 twice, and prints both 'ART 108 or HUM 108' and 'HUM 108 or ART 108' (same for ART 109/HUM 109); each recorded once.",
+   "GERM 101 and JAPN 101 printed without units; units left null. Alternatives printed without units left null.",
+   "Catalog prints SOCI C1000; closed list has 'SOCIC1000' (no space), treated as the same course.",
+   "HIST C1001 is not in the closed list; recorded as catalog addition.",
+   "Catalog prints POLS codes while the closed list uses POL; POLS C1000 matches the closed list.",
+   "The 60-unit requirement is the generic AA-T degree requirement, not recorded as degree_total. CSU GE or IGETC may be used in some cases per note."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "44540824017",
+ "catalog_year": "2026-2027"
 }

@@ -5,11 +5,11 @@
  "title": "Law, Public Policy, and Society",
  "award": "A.A- T Degree",
  "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/law-publicpolicy-society/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8205,
+  "input_tokens": 9818,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8205,
-    "output_tokens": 5026,
+    "input_tokens": 9818,
+    "output_tokens": 5455,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,72 +30,80 @@
     "model": null
    }
   ],
-  "output_tokens": 5026,
+  "output_tokens": 5455,
   "output_tokens_details": {
-   "thinking_tokens": 1374
+   "thinking_tokens": 1976
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.13334,
- "ms": 35619,
- "seconds": 36.1,
+ "cost_usd": 0.14837,
+ "ms": 41338,
+ "seconds": 41.7,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 55,
+   "placed": 57,
    "listed": 63,
-   "share": 0.873,
+   "share": 0.905,
    "missing": [
     "HED104",
-    "HIST102",
     "POL201",
     "POL210",
     "POL220",
     "POL240",
-    "POL280",
     "WGS202"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST102",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "POLS280",
+     "listed": "POL280",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 5,
    "codes": [
-    "HISTC1001",
     "POLS201",
     "POLS210",
     "POLS220",
     "POLS240",
-    "POLS280",
     "PSYC262"
    ],
    "flagged": [
-    "HISTC1001",
     "POLS201",
     "POLS210",
     "POLS220",
     "POLS240",
-    "POLS280",
     "PSYC262"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    29.0,
+    32.0,
     35.0
    ],
    "stated": [
     32.0,
     35.0
    ],
-   "why": [
-    "the blocks sum to 29.0-35.0; the catalog states 32.0-35.0"
-   ]
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -111,7 +119,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -122,12 +141,28 @@
     "max": 35
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Understand the American political and legal system and how it applies in society.",
     "Be able to apply critical thinking to social science concepts and theories.",
     "Understand the academic foundation necessary to successfully transfer and eventually enroll in law school.",
     "Understand career opportunities in the legal profession."
+   ],
+   "careers": [
+    "legal profession"
    ]
   },
   "blocks": [
@@ -602,32 +637,32 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "POL 201",
-    "why": "catalog prints POLS 201 instead (recorded as catalog addition)"
-   },
-   {
-    "code": "POL 210",
-    "why": "catalog prints POLS 210 instead (recorded as catalog addition)"
-   },
-   {
-    "code": "POL 220",
-    "why": "catalog prints POLS 220 instead (recorded as catalog addition)"
-   },
-   {
-    "code": "POL 240",
-    "why": "catalog prints POLS 240 instead (recorded as catalog addition)"
-   },
-   {
-    "code": "POL 280",
-    "why": "catalog prints POLS 280 instead (recorded as catalog addition)"
+    "code": "HED 104",
+    "why": "not in the text"
    },
    {
     "code": "HIST 102",
-    "why": "not in the text; catalog prints HIST C1001 in its place"
+    "why": "not in the text"
    },
    {
-    "code": "HED 104",
-    "why": "not in the text"
+    "code": "POL 201",
+    "why": "catalog prints it as POLS 201 (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 210",
+    "why": "catalog prints it as POLS 210 (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 220",
+    "why": "catalog prints it as POLS 220 (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 240",
+    "why": "catalog prints it as POLS 240 (recorded as catalog addition)"
+   },
+   {
+    "code": "POL 280",
+    "why": "catalog prints it as POLS 280 (recorded as catalog addition)"
    },
    {
     "code": "WGS 202",
@@ -635,14 +670,16 @@
    }
   ],
   "notes": [
-   "List A is one block of 2 courses, but the catalog requires the two courses to come from two different Areas: Area 1 Administration of Justice (AJ 101, 102, 103, 104, 105, 107, 222; 'Courses not already used'), Area 2 Business (BA 113/LAW 110), Area 3 Economics (ECON C2002/C2001), Area 4 Political Science (POLS 240/201/210/220), Area 5 Public Policy (CS 101, HO 103, JAMS 157/BA 157, PSYC 245/HO 245), Area 6 Diversity (AFRS 100, 101, 108, ANTH 100, GEOG 102, GEOG 135/ETHN 135, HIST C1002, HIST 108/CS 108, HIST 110, POLS 280/ETHN 280, PSYC 262/ETHN 262, SOC 202, SOC 210/ETHN 210, SOC 215, WGS 105/ETHN 105), Area 7 College Success (COUN 200, READ 101), Area 8 Internship (LAW 171-174).",
-   "Area 1 courses, BA 113, LAW 110 and HIST C1002 also appear as options in Required Courses; Area 1 says 'Courses not already used'.",
-   "Unit ranges in Required Courses (e.g. COMM 103 3.0-4.0, STAT C1000 4.0-4.5) are printed on the first row and cover the 'or' alternatives; alternatives' own units are not printed.",
-   "HIST C1001, POLS 240/201/210/220/280 and PSYC 262 are not in the closed list (closed list uses POL prefixes and ETHN 262).",
-   "Catalog heading for Area 1 reads 'Administrative of Justice/Criminal Justice/Criminology'.",
-   "Program Student Learning Outcomes are printed for the program page as a whole; this AA-T is the only award on the page.",
-   "GE: Cal-GETC required; CSU GE or IGETC may be used in some cases per counselor."
+   "List A requires two courses from two different Areas (Area 1 AJ; Area 2 Business; Area 3 Economics; Area 4 Political Science; Area 5 Public Policy; Area 6 Diversity; Area 7 College Success; Area 8 Internship/Fieldwork); recorded as one choose_courses block with the area constraint described here.",
+   "Area 1 says '(Courses not already used)': AJ courses used in the Required Courses block cannot count again in List A.",
+   "Alternatives in the Required Courses block print no units of their own; the row's units (e.g., 3.0-4.0) cover the alternatives, so alternative units are left null.",
+   "Most List A courses print no units; only ECON C2002, POLS 240, HIST C1002 and POLS 280 show (3).",
+   "Political science courses are printed as POLS 201/210/220/240/280 while the closed list has POL 201/210/220/240/280; likely the same courses renumbered. PSYC 262 is printed (closed list has only ETHN 262 twin).",
+   "HIST C1001 is not in the closed list (catalog addition).",
+   "Required subtotal 26-28 plus List A 6-7 matches printed Total Units 32-35.",
+   "The 60 CSU-transferable units sentence is the generic ADT requirement, not recorded as degree_total. GE pattern is Cal-GETC; CSU GE or IGETC may be used in some cases."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "44540824017",
+ "catalog_year": "2026-2027"
 }

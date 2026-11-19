@@ -5,11 +5,11 @@
  "title": "Film, Television and Electronic Media",
  "award": "A.S. T Degree",
  "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/film-television-electronic-media-as-t/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5870,
+  "input_tokens": 7535,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5870,
-    "output_tokens": 1674,
+    "input_tokens": 7535,
+    "output_tokens": 1727,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 1674,
+  "output_tokens": 1727,
   "output_tokens_details": {
-   "thinking_tokens": 528
+   "thinking_tokens": 493
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05696,
- "ms": 13264,
- "seconds": 13.7,
+ "cost_usd": 0.06468,
+ "ms": 14338,
+ "seconds": 14.7,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -48,9 +50,10 @@
    "listed": 11,
    "share": 0.909,
    "missing": [
-    "JAMS151"
+    "FILM102"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -70,6 +73,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -86,6 +90,17 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -97,27 +112,48 @@
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Create effective communication using written, oral and audio/visual methods in a media context.",
     "Integrate critical thinking into a media context.",
     "Integrate standards of professional conduct in a media context.",
     "Develop both technological and digital proficiency in a media context."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
-    "rule": "all",
-    "minimum": null,
+    "name": "Required Core (Select 2 courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 6
     },
     "courses": [
      {
       "code": "JAMS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAMS 151",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -139,9 +175,9 @@
     ]
    },
    {
-    "name": "List A, Area 1: Audio Production",
-    "rule": "all",
-    "minimum": null,
+    "name": "List A Area 1: Audio Production",
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": null,
@@ -164,9 +200,9 @@
     ]
    },
    {
-    "name": "List A, Area 2: Video or Film Production",
-    "rule": "all",
-    "minimum": null,
+    "name": "List A Area 2: Video or Film Production",
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": null,
@@ -177,13 +213,7 @@
       "code": "FILM 101",
       "units": 3,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "FILM 102",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      }
     ]
@@ -236,17 +266,19 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "JAMS 151",
-    "why": "not in the text"
+    "code": "FILM 102",
+    "why": "not in the text's course list; catalog addendum (effective Fall 2027) removes FILM 102 from Area 2"
    }
   ],
   "notes": [
-   "List A is printed as 'Select one Audio and one Video or Film Production course (6 units minimum)'; recorded as two blocks (Area 1 and Area 2), each one required choice with an 'or' alternative. The 6-unit minimum applies to List A as a whole and is not recorded on either area block.",
-   "Units for the 'or' alternatives (ENGL 241, JAMS 125, FILM 102, ART 198) are not printed beside them in the catalog; left null.",
-   "Catalog titles differ slightly from the closed list: JAMS 100 'Mass Communications and Society' vs 'Mass Communication And Society'; JAMS 125 'Broadcast News Production and Editing' vs 'Audio News Production and Editing'.",
-   "Program Student Learning Outcomes are printed once on the AS-T page and recorded for this award.",
-   "Degree requires Cal-GETC; CSU GE or IGETC may be used in some cases per counselor note."
+   "List A is printed as 'Select one Audio and one Video or Film Production course (6 units minimum)'; recorded as two blocks (Area 1 and Area 2), each choose 1 course, since the 6-unit minimum applies to List A as a whole.",
+   "Area 2 lists only FILM 101, so it is effectively required.",
+   "ENGL 241, JAMS 125 and ART 198 are printed as 'or' alternatives without units beside them.",
+   "Catalog addendum 'Effective Fall 2027: Removing FILM 102 from Area 2' printed at the bottom; FILM 102 does not appear in the printed list.",
+   "The 60 CSU-transferable units sentence is the general AS-T requirement, not recorded as a degree total. Cal-GETC is the named GE pattern; CSU GE or IGETC may be used in some cases.",
+   "The catalog prints 'Mass Communications and Society' and 'Broadcast News Production and Editing' titles that differ slightly from the closed list titles."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "44540824017",
+ "catalog_year": "2026-2027"
 }

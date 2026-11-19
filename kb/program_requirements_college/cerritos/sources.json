@@ -27,7 +27,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "architectural technology (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -39,7 +42,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.973,
+  "coverage": 0.987,
   "codes_found": [
    "A&P120",
    "A&P150",
@@ -81,6 +84,7 @@
    "GEOL100",
    "GEOL101",
    "GEOL102",
+   "GEOL102L",
    "GEOL103",
    "GEOL103L",
    "GEOL104",
@@ -122,7 +126,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "natural sciences -​ general (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 75,
@@ -151,7 +158,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "biology (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -181,7 +191,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "botany (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -211,7 +224,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "zoology (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -240,7 +256,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "business administration -​ plan a (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -280,7 +299,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "professional accounting professional accounting (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -315,7 +337,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "aa",
+    "section_line": "business administration: business management (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -350,7 +375,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "aa",
+    "section_line": "business administration: business marketing (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -382,7 +410,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "real estate (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -417,7 +448,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.429
+    "title": 0.429,
+    "section": "aa",
+    "section_line": "business communications office technology: secretary/​administrative assistant (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -455,7 +489,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "journalism (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -482,7 +519,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.6
+    "title": 0.6,
+    "section": "as",
+    "section_line": "computer and information sciences: computer science (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -523,7 +563,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.25
+    "title": 0.25,
+    "section": "as",
+    "section_line": "computer and information sciences: programmer (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -698,7 +741,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "physical education (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 153,
@@ -727,7 +773,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.6
+    "title": 0.6,
+    "section": "as",
+    "section_line": "engineering technology: industrial arts education (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -755,7 +804,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -787,7 +839,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "as",
+    "section_line": "automotive technology: general technician (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -815,7 +870,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive collision repair: general automotive collision repair (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -876,7 +934,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 40,
@@ -906,7 +967,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "composites manufacturing (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -935,7 +999,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.333
+    "title": 0.333,
+    "section": "as",
+    "section_line": "advanced manufacturing and automation (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1009,7 +1076,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
@@ -1050,7 +1120,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "photography (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -1078,7 +1151,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "french (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1104,7 +1180,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "german (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1136,7 +1215,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "as",
+    "section_line": "registered nursing (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1209,7 +1291,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "pharmacy technology (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1246,7 +1331,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "physical therapist assistant (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1301,7 +1389,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "paralegal (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 33,
@@ -1349,11 +1440,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
-  "text_chars": 4138
+  "text_chars": 4491
  },
  {
   "control_number": "02249",
@@ -1361,12 +1455,13 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.938,
+  "coverage": 1.0,
   "codes_found": [
    "COMM100",
    "COMM103",
    "COMM110",
    "COMM115",
+   "COMM120",
    "COMM125",
    "COMM132",
    "COMM140",
@@ -1386,7 +1481,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "communication studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1424,7 +1522,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "child development/​early childhood (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1455,7 +1556,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "anthropology (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1508,7 +1612,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chicano studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 32,
@@ -1537,7 +1644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "economics (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1565,7 +1675,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "as",
+    "section_line": "culinary arts: professional cooking (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1612,7 +1725,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -1646,7 +1762,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "architectural studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1684,7 +1803,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "vocational accounting (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1714,7 +1836,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -1751,7 +1876,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": "aa",
+    "section_line": "business communications office technology: legal secretary (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1803,11 +1931,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": "as",
+    "section_line": "computer and information sciences: it support specialist (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 32,
-  "text_chars": 4826
+  "text_chars": 4893
  },
  {
   "control_number": "09920",
@@ -1829,7 +1960,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.333
+    "title": 0.333,
+    "section": "as",
+    "section_line": "automotive technology: engine performance &​ electrical diagnosis (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1862,7 +1996,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "as",
+    "section_line": "automotive technology: manufacture specialty (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1903,7 +2040,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "woodworking manufacturing technologies (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1936,7 +2076,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering design technology (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1964,7 +2107,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "composite inspection (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2004,7 +2150,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as",
+    "section_line": "composite tool design (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -2044,7 +2193,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "plastics manufacturing (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -2103,7 +2255,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "as",
+    "section_line": "welding technology: pipe welding (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -2133,7 +2288,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": "aa",
+    "section_line": "art and design: ceramics (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2164,7 +2322,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "aa",
+    "section_line": "art and design: drawing and painting (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2199,7 +2360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "aa",
+    "section_line": "art and design: graphic design (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2231,7 +2395,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": "aa",
+    "section_line": "art and design: printmaking (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2265,7 +2432,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music: commercial music music: commercial music (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2306,11 +2476,14 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": "aa",
+    "section_line": "child development/​preschool director (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 4090
+  "text_chars": 4613
  },
  {
   "control_number": "09948",
@@ -2334,7 +2507,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": "as",
+    "section_line": "culinary arts: professional baking and pastry (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2367,7 +2543,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "aa",
+    "section_line": "business communications office technology: general office (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2403,7 +2582,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "german (a.a.) global studies (aa-​t)",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
@@ -2432,7 +2614,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "aa",
+    "section_line": "international studies: global resources (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2461,7 +2646,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.25
+    "title": 0.25,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2500,7 +2688,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -2527,7 +2718,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "microbiology (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2564,7 +2758,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "business administration (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2605,11 +2802,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.4
+    "title": 0.4,
+    "section": "aa",
+    "section_line": "theatre arts (aa-​t) theatre arts: acting or technical (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 3977
+  "text_chars": 4149
  },
  {
   "control_number": "11397",
@@ -2640,7 +2840,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "business administration: human resource management (a.a.)",
+    "section_fit": 0.6
    }
   },
   "listed": 13,
@@ -2677,7 +2880,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "aa",
+    "section_line": "business administration: entrepreneurship and innovation (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2718,7 +2924,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -2755,7 +2964,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -2807,11 +3019,14 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.333
+    "title": 0.333,
+    "section": "as",
+    "section_line": "computer and information sciences: network/​systems administration (a.s.)",
+    "section_fit": 0.5
    }
   },
   "listed": 32,
-  "text_chars": 4242
+  "text_chars": 4309
  },
  {
   "control_number": "12204",
@@ -2844,7 +3059,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "speech-​language pathology assistant (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2882,7 +3100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "aa",
+    "section_line": "business administration: retail management (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2931,7 +3152,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "aa",
+    "section_line": "women's and gender studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -2942,12 +3166,44 @@
   "title": "Administration of Justice",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ104",
+   "AJ105",
+   "AJ107",
+   "AJ110",
+   "AJ113",
+   "AJ202",
+   "AJ220",
+   "AJ221",
+   "AJ222",
+   "BCOT131",
+   "LAW100",
+   "LAW101",
+   "LAW103",
+   "PSYCC1000",
+   "SOCIC1000",
+   "SPAN223"
+  ],
+  "source": {
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/administration-justice-aa/",
+   "title": "Cerritos College Academic Catalog",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "administration of justice (a.a.)",
+    "section_fit": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3800
  },
  {
   "control_number": "14667",
@@ -2989,7 +3245,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": "aa",
+    "section_line": "exercise science: fitness (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -3035,7 +3294,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": "aa",
+    "section_line": "exercise science: athletic trainer aide (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -3070,7 +3332,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "digital arts: computer animation (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3106,7 +3371,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "aa",
+    "section_line": "business administration: international business (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3172,7 +3440,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.4
+    "title": 0.4,
+    "section": "as",
+    "section_line": "woodworking manufacturing technologies: furniture making (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 44,
@@ -3184,7 +3455,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.947,
+  "coverage": 0.579,
   "codes_found": [
    "WMT101",
    "WMT102",
@@ -3195,28 +3466,24 @@
    "WMT157",
    "WMT171A",
    "WMT171B",
-   "WMT171C",
-   "WMT181",
-   "WMT182",
-   "WMT184",
    "WMT187",
-   "WMT201",
-   "WMT282",
-   "WMT291",
-   "WMT292"
+   "WMT201"
   ],
   "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/cabinetmaking/",
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/woodworking-manufacturing-technologies/",
    "title": "Cerritos College Academic Catalog",
    "h1": "Academic Catalog",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.25
+    "title": 0.75,
+    "section": "as",
+    "section_line": "woodworking manufacturing technologies: cabinetmaking (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 3717
+  "text_chars": 3744
  },
  {
   "control_number": "16308",
@@ -3224,8 +3491,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
+   "COS102",
+   "COS103",
+   "COS106",
    "COS115A",
    "COS115B",
    "COS116A",
@@ -3243,7 +3513,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -3274,7 +3547,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3307,7 +3583,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -3338,7 +3617,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "machine tool technology: numerical control machine operator option (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3377,7 +3659,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.857
+    "title": 0.857,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -3414,7 +3699,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "mental health worker (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3459,7 +3747,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -3500,7 +3791,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "requirements for a professional accounting certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 19,
@@ -3532,7 +3826,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -3580,7 +3877,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 26,
@@ -3625,7 +3925,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -3641,7 +3944,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 142 of 263 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18997",
@@ -3653,7 +3960,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "19089",
@@ -3676,7 +3987,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.857
+    "title": 0.857,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3707,7 +4021,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.857
+    "title": 0.857,
+    "section": "as",
+    "section_line": "new product development: automotive aftermarket product development option (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3738,7 +4055,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3770,7 +4090,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "new product development and fabrication option (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3793,27 +4116,12 @@
   "title": "Liberal Arts and Sciences: Communication",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "COUN150",
-   "COUN200",
-   "LIBR100",
-   "PSYC220",
-   "SOC205"
-  ],
-  "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
-   "title": "Cerritos College Academic Catalog",
-   "h1": "Academic Catalog",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.75
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 11468
+  "text_chars": 0
  },
  {
   "control_number": "19166",
@@ -3934,7 +4242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3968,7 +4279,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -4013,7 +4327,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -4043,7 +4360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4080,7 +4400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -4106,7 +4429,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4140,7 +4466,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -4177,7 +4506,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "requirements for a business administration certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -4212,7 +4544,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "requirements for a business administration: business management certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 13,
@@ -4250,7 +4585,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -4288,7 +4626,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "requirements for a business administration: retail management certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 16,
@@ -4325,7 +4666,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "requirements for a business administration: international business certificate of achievement:",
+    "section_fit": 0.75
    }
   },
   "listed": 15,
@@ -4360,7 +4704,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4394,7 +4741,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -4430,7 +4780,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.429
+    "title": 0.429,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4467,7 +4820,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -4504,7 +4860,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -4536,7 +4895,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -4563,7 +4925,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -4604,7 +4969,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.25
+    "title": 0.25,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -4631,7 +4999,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -4664,7 +5035,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4690,7 +5064,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4722,7 +5099,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -4750,7 +5130,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4792,7 +5175,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -4831,7 +5217,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.25
+    "title": 0.25,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -4895,7 +5284,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.4
+    "title": 0.4,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 44,
@@ -4928,7 +5320,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -4966,7 +5361,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -5006,7 +5404,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -5034,7 +5435,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -5064,7 +5468,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5094,7 +5501,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5134,7 +5544,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -5165,7 +5578,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5195,7 +5611,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5227,7 +5646,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental assisting certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -5262,7 +5684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -5303,7 +5728,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -5331,7 +5759,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -5359,7 +5790,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -5414,7 +5848,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 33,
@@ -5451,7 +5888,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -5488,7 +5928,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -5519,7 +5962,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "international studies: global resources (cert) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 10,
@@ -5548,7 +5994,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.25
+    "title": 0.25,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -5595,7 +6044,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -5607,8 +6059,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
+   "COS102",
+   "COS103",
+   "COS106",
    "COS115A",
    "COS115B",
    "COS116A",
@@ -5626,7 +6081,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -5665,7 +6123,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› vocational english as a second language (non credit)",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -5689,7 +6150,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› courses in ged test preparation in spanish (non credit)",
+    "section_fit": 0.625
    }
   },
   "listed": 2,
@@ -5716,7 +6180,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› courses in english as a second language (non credit)",
+    "section_fit": 0.571
    }
   },
   "listed": 5,
@@ -5741,7 +6208,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› pre-apprenticeship (non credit)",
+    "section_fit": 0.333
    }
   },
   "listed": 4,
@@ -5772,7 +6242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "machine tool technology: machinist option (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5813,7 +6286,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.857
+    "title": 0.857,
+    "section": "as",
+    "section_line": "machine tool technology: computer numerical control programmer (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -5846,7 +6322,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "machine tool technology: tool and die maker option (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5883,7 +6362,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -5895,12 +6377,13 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 0.941,
   "codes_found": [
    "COMM100",
    "COMM103",
    "COMM110",
    "COMM115",
+   "COMM120",
    "COMM125",
    "COMM132",
    "COMM140",
@@ -5920,7 +6403,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -6021,7 +6507,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 81,
@@ -6070,7 +6559,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -6114,11 +6606,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "film production (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
-  "text_chars": 3880
+  "text_chars": 4055
  },
  {
   "control_number": "31740",
@@ -6157,7 +6652,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering technology (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -6259,7 +6757,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 88,
@@ -6271,7 +6772,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.849,
+  "coverage": 0.858,
   "codes_found": [
    "ANTH100",
    "ANTH120",
@@ -6312,6 +6813,7 @@
    "GERM201",
    "GERM202",
    "HIST101",
+   "HIST102",
    "HIST110",
    "HIST120",
    "HIST204",
@@ -6371,11 +6873,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 106,
-  "text_chars": 9050
+  "text_chars": 9095
  },
  {
   "control_number": "31750",
@@ -6399,7 +6904,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics 2.0 (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6437,7 +6945,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -6476,7 +6987,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -6519,7 +7033,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -6561,7 +7078,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -6604,7 +7124,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -6634,7 +7157,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "religious studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -6663,7 +7189,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -6679,7 +7208,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 142 of 263 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32355",
@@ -6712,7 +7245,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -6740,7 +7276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -6770,7 +7309,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6810,7 +7352,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0 (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6841,7 +7386,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -6872,7 +7420,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.714
+    "title": 0.714,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -6915,7 +7466,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -6950,7 +7504,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -6985,11 +7542,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 4003
+  "text_chars": 4189
  },
  {
   "control_number": "32689",
@@ -7015,7 +7575,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -7058,7 +7621,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "as",
+    "section_line": "welding technology: welding fabrication and layout (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -7070,7 +7636,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 0.708,
   "codes_found": [
    "ART100",
    "BIOL120",
@@ -7081,6 +7647,7 @@
    "ENGLC1000E",
    "ENGLC1002",
    "ESCI110",
+   "HIST102",
    "HIST245",
    "MATH110A",
    "MUS100",
@@ -7096,7 +7663,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs (aa-t)",
+    "section_fit": 0.75
    }
   },
   "listed": 24,
@@ -7108,12 +7678,13 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "CHEM111",
    "CHEM112",
    "GEOL101",
    "GEOL102",
+   "GEOL102L",
    "GEOL201",
    "MATH170",
    "MATH190"
@@ -7125,7 +7696,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -7137,11 +7711,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH100",
    "ESCI106",
    "GEOG101",
+   "GEOG101L",
    "GEOG102",
    "GEOG103",
    "GEOG105",
@@ -7157,7 +7732,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -7186,7 +7764,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.4
+    "title": 0.4,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -7226,7 +7807,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -7252,7 +7836,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "(formerly known as courses in ged test preparation  in english - certificate of completion)",
+    "section_fit": 0.571
    }
   },
   "listed": 4,
@@ -7286,7 +7873,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music: commercial music certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -7319,7 +7909,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "requirements for a business administration: human resource management certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -7353,7 +7946,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -7389,7 +7985,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -7449,7 +8048,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "visual and cultural studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
@@ -7480,7 +8082,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -7511,7 +8116,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "culinary arts management (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -7541,7 +8149,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -7574,7 +8185,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -7608,7 +8222,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer and information sciences: cybersecurity (a.s.)",
+    "section_fit": 0.25
    }
   },
   "listed": 13,
@@ -7635,7 +8252,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": "noncredit",
+    "section_line": "noncredit programs &​ courses advanced english as a second language (non credit)",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -7664,7 +8284,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -7692,7 +8315,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.857
+    "title": 0.857,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -7723,7 +8349,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.833
+    "title": 0.833,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -7753,7 +8382,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "chemistry (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -7783,7 +8415,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -7816,7 +8451,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "aa",
+    "section_line": "women in management (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -7849,7 +8487,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -7880,7 +8521,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chinese (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -7921,7 +8565,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "as",
+    "section_line": "engineering: aerospace and mechanical specialty (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -7948,7 +8595,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -7974,7 +8624,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -8012,7 +8665,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "apprenticeship: field ironworkers reinforcing (cert) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 16,
@@ -8050,7 +8706,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "apprenticeship: field ironworkers structural (cert) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 16,
@@ -8079,7 +8738,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -8106,7 +8768,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as",
+    "section_line": "automotive technology: alternative fuels service technician (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -8130,7 +8795,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› college readiness (non credit)",
+    "section_fit": 0.333
    }
   },
   "listed": 2,
@@ -8164,7 +8832,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": "as",
+    "section_line": "engineering: electrical specialty (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -8187,7 +8858,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› pre ged spanish (non credit)",
+    "section_fit": 0.429
    }
   },
   "listed": 2,
@@ -8210,7 +8884,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› pre ged (non credit)",
+    "section_fit": 0.333
    }
   },
   "listed": 1,
@@ -8238,7 +8915,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -8266,7 +8946,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› energy corps (non credit)",
+    "section_fit": 0.333
    }
   },
   "listed": 6,
@@ -8302,7 +8985,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "health education (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -8314,7 +9000,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.92,
+  "coverage": 0.96,
   "codes_found": [
    "ENGL223",
    "ENGL224",
@@ -8338,6 +9024,7 @@
    "ENGL257",
    "ENGLC1000",
    "ENGLC1000E",
+   "ESL180",
    "FILM241"
   ],
   "source": {
@@ -8347,7 +9034,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -8383,7 +9073,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -8408,7 +9101,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› workforce preparedness (non credit)",
+    "section_fit": 0.333
    }
   },
   "listed": 3,
@@ -8431,7 +9127,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "automotive tools and equipment (non credit) certificate of completion",
+    "section_fit": 0.6
    }
   },
   "listed": 1,
@@ -8487,7 +9186,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 36,
@@ -8516,7 +9218,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -8543,7 +9248,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -8570,7 +9278,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -8596,7 +9307,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -8630,7 +9344,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -8694,7 +9411,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 42,
@@ -8725,7 +9445,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.4
+    "title": 0.4,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -8737,7 +9460,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "ART198",
    "ENGL241",
@@ -8748,6 +9471,7 @@
    "FILM256",
    "JAMS100",
    "JAMS125",
+   "JAMS151",
    "JAMS152"
   ],
   "source": {
@@ -8757,11 +9481,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film, television and electronic media (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3901
+  "text_chars": 4000
  },
  {
   "control_number": "39218",
@@ -8793,7 +9520,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.333
+    "title": 0.333,
+    "section": "adt",
+    "section_line": "social justice studies: african american studies (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -8829,7 +9559,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -8859,7 +9592,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -8888,7 +9624,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -8914,7 +9653,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› entrepreneurship-small business growth (non credit)",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -8940,7 +9682,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› introduction to basic entrepreneurship (non credit)",
+    "section_fit": 0.429
    }
   },
   "listed": 4,
@@ -8979,7 +9724,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "black/​africana studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -9015,7 +9763,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -9040,7 +9791,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.25
+    "title": 0.25,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -9066,7 +9820,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.25
+    "title": 0.25,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9077,20 +9834,12 @@
   "title": "Automotive Technology: Automotive Electrical & Engine Performance Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "AUTO173"
-  ],
-  "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/general-technician-aa/",
-   "title": "Cerritos College Academic Catalog",
-   "h1": "Academic Catalog",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 3150
+  "text_chars": 0
  },
  {
   "control_number": "41073",
@@ -9112,7 +9861,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9138,7 +9890,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9165,7 +9920,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -9195,7 +9953,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -9231,7 +9992,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -9261,7 +10025,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -9304,7 +10071,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "formerly known as public health science (as-t)",
+    "section_fit": 0.6
    }
   },
   "listed": 21,
@@ -9334,7 +10104,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -9380,7 +10153,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": "as",
+    "section_line": "apprenticeship: field ironworkers (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -9422,7 +10198,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": "adt",
+    "section_line": "social justice studies: lgbtq studies (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -9447,7 +10226,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs & courses› renewable energy (non credit)",
+    "section_fit": 0.333
    }
   },
   "listed": 3,
@@ -9475,7 +10257,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -9504,7 +10289,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.222
+    "title": 0.222,
+    "section": "as",
+    "section_line": "automotive technology: general motors automotive service educational program (gm asep) (a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -9532,7 +10320,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -9563,7 +10354,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biotechnology (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -9589,7 +10383,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9615,7 +10412,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9645,7 +10445,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -9671,7 +10474,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9697,7 +10503,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -9726,7 +10535,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -9756,7 +10568,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -9785,7 +10600,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -9824,11 +10642,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
-  "text_chars": 3752
+  "text_chars": 4029
  },
  {
   "control_number": "43486",
@@ -9836,13 +10657,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.905,
+  "coverage": 0.952,
   "codes_found": [
    "ANTH100",
    "COMM100",
    "COMM103",
    "COMM110",
    "COMM115",
+   "COMM120",
    "COMM125",
    "COMM132",
    "COMM140",
@@ -9865,7 +10687,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -9877,7 +10702,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 0.886,
   "codes_found": [
    "ANTH202",
    "ART105A",
@@ -9887,6 +10712,7 @@
    "ENGL225",
    "ETHN105",
    "ETHN210",
+   "HIST102",
    "HIST204",
    "HIST230",
    "HISTC1002",
@@ -9917,7 +10743,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": "adt",
+    "section_line": "social justice studies: chicano studies (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
@@ -9965,7 +10794,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": "adt",
+    "section_line": "social justice studies: gender studies (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 37,
@@ -10005,7 +10837,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -10017,7 +10852,7 @@
   "award": "Baccalaureate of Science (B.S.) Degree.",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 0.92,
   "codes_found": [
    "A&P150",
    "A&P151",
@@ -10026,6 +10861,7 @@
    "CHEM100",
    "CHEM110",
    "COMM100",
+   "COMM120",
    "COMM132",
    "COMM320",
    "COMMC1000",
@@ -10072,7 +10908,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 50,
@@ -10099,7 +10938,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chemical technology - polymer (cert) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -10132,7 +10974,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -10162,7 +11007,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -10202,7 +11050,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "whole residential electrician (cert) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 18,
@@ -10237,11 +11088,14 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "entertainment technology (cert) certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
-  "text_chars": 3187
+  "text_chars": 3185
  },
  {
   "control_number": "44402",
@@ -10274,7 +11128,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music: commercial music performance (cert) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 15,
@@ -10308,7 +11165,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -10320,7 +11180,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.873,
+  "coverage": 0.905,
   "codes_found": [
    "AFRS100",
    "AFRS101",
@@ -10354,6 +11214,7 @@
    "ETHN280",
    "GEOG102",
    "GEOG135",
+   "HIST102",
    "HIST108",
    "HIST110",
    "HISTC1002",
@@ -10367,6 +11228,7 @@
    "LAW174",
    "PHIL102",
    "PHIL106",
+   "POL280",
    "POLSC1000",
    "PSYC210",
    "PSYC245",
@@ -10385,7 +11247,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "adt",
+    "section_line": "law, public policy, and society (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 63,
@@ -10420,7 +11285,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -10466,7 +11334,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "asian american and asian studies (cert) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 25,
@@ -10508,7 +11379,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "native american and indigenous studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -10520,7 +11394,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.955,
+  "coverage": 0.977,
   "codes_found": [
    "ART100",
    "BIOL120",
@@ -10548,6 +11422,7 @@
    "ESCI110",
    "GEOG105",
    "GEOL101",
+   "HIST102",
    "HIST245",
    "MATH110A",
    "MATH110B",
@@ -10572,11 +11447,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "education studies (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 44,
-  "text_chars": 5272
+  "text_chars": 5568
  },
  {
   "control_number": "44983",
@@ -10584,7 +11462,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 0.979,
   "codes_found": [
    "A&P120",
    "ART100",
@@ -10596,6 +11474,7 @@
    "COMM100",
    "COMM103",
    "COMM110",
+   "COMM120",
    "COMMC1000",
    "DANC101",
    "ECON210",
@@ -10610,9 +11489,11 @@
    "ENGL246B",
    "ENGL248A",
    "ENGLC1000",
+   "ENGLC1000E",
    "ENGLC1001",
    "ENGLC1003",
    "GEOG105",
+   "HIST102",
    "HIST245",
    "MATH110A",
    "MATH114",
@@ -10638,11 +11519,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "aa",
+    "section_line": "education studies (a.a.) education: special education (a.a.)",
+    "section_fit": 1.0
    }
   },
   "listed": 48,
-  "text_chars": 5876
+  "text_chars": 6034
  },
  {
   "control_number": "44984",
@@ -10650,13 +11534,14 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.706,
+  "coverage": 0.765,
   "codes_found": [
    "A&P120",
    "ASL110",
    "CDEVC1000",
    "CDSE150",
    "CDSE152",
+   "COMM120",
    "EDEL110",
    "EDEL210",
    "EDEL215",
@@ -10672,7 +11557,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -10702,7 +11590,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -10731,7 +11622,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.4
+    "title": 0.4,
+    "section": "as",
+    "section_line": "welding technology: process pipe welding (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -10761,7 +11655,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.6
+    "title": 0.6,
+    "section": "as",
+    "section_line": "welding technology: structural steel fabricator (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -10791,7 +11688,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "as",
+    "section_line": "welding technology: aerospace welding (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -10820,7 +11720,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "as",
+    "section_line": "welding technology: combination welder (a.s.)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -10849,7 +11752,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "welding technology: aerospace welding (cert) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -10878,7 +11784,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": "coa",
+    "section_line": "welding technology: structural steel fabricator (cert) certificate of achievement",
+    "section_fit": 0.833
    }
   },
   "listed": 7,
@@ -10907,7 +11816,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "welding technology: combination welder (cert) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 7,
@@ -10923,7 +11835,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "45549",
@@ -10962,7 +11878,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -10974,7 +11893,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "COMM100",
    "COMM103",
@@ -10982,6 +11901,7 @@
    "ENGLC1000",
    "ENGLC1000E",
    "ENGLC1001",
+   "HIST102",
    "HISTC1002",
    "LAW101",
    "PHIL103",
@@ -10997,11 +11917,14 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pathway to law school certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3817
+  "text_chars": 4099
  },
  {
   "control_number": "45910",
@@ -11035,11 +11958,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "black/africana studies: social change and social justice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 3583
+  "text_chars": 3859
  },
  {
   "control_number": "46199",
@@ -11069,7 +11995,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marine biology associate of science",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -11101,7 +12030,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certified wellness coach certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -11135,7 +12067,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer and information sciences: data science (a.s.)",
+    "section_fit": 0.4
    }
   },
   "listed": 12,
@@ -11169,7 +12104,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer and information sciences: data science (cert) certificate of achievement",
+    "section_fit": 0.333
    }
   },
   "listed": 12,
@@ -11204,7 +12142,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.4
+    "title": 0.4,
+    "section": "as",
+    "section_line": "woodworking manufacturing technologies: furniture design associate of science",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -11239,7 +12180,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.4
+    "title": 0.4,
+    "section": "coa",
+    "section_line": "woodworking manufacturing technologies: furniture design certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -11267,7 +12211,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": "coa",
+    "section_line": "computer and information sciences: applied artificial intelligence (cert) certificate of achievement",
+    "section_fit": 0.857
    }
   },
   "listed": 6,
@@ -11317,7 +12264,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletic coaching (cert) certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 29,
