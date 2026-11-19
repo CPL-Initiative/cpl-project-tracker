@@ -1,0 +1,431 @@
+{
+ "college": "Copper Mountain College",
+ "control_number": "16657",
+ "shape": "degree",
+ "title": "Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=111",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8466,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8466,
+    "output_tokens": 4878,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4878,
+  "output_tokens_details": {
+   "thinking_tokens": 2315
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13142,
+ "ms": 37564,
+ "seconds": 38.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 10,
+   "share": 0.8,
+   "missing": [
+    "PSY3",
+    "SP7"
+   ],
+   "unexplained": [
+    "PSY3",
+    "SP7"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "BIOL15",
+    "BIOL22",
+    "BIOL23",
+    "COMM15",
+    "COMM7",
+    "COMMC1000",
+    "COMMC1004",
+    "ENGLC1000",
+    "MATH40",
+    "N20",
+    "N25",
+    "N45",
+    "PSYC3",
+    "SOCIC1000"
+   ],
+   "flagged": [
+    "BIOL15",
+    "BIOL22",
+    "BIOL23",
+    "COMM15",
+    "COMMC1000",
+    "COMMC1004",
+    "ENGLC1000",
+    "MATH40",
+    "N20",
+    "N25",
+    "N45",
+    "SOCIC1000"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    69.0,
+    69.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 69.0-69.0; the catalog states 37.0-37.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     105.0,
+     105.0
+    ],
+    "stated": [
+     73.0,
+     73.0
+    ],
+    "against": "degree",
+    "ge": [
+     36.0,
+     36.0
+    ],
+    "why": [
+     "the blocks and general education sum to 105.0-105.0; the catalog prints 73.0-73.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "NURSING: REGISTERED",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CMC General Education Requirement",
+   "degree_total": {
+    "min": 73,
+    "max": 73
+   },
+   "ge_units": {
+    "min": 36,
+    "max": 36
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Coordination and Collaboration of Care : Perform within an interdisciplinary team utilizing effective communication skills, collaborative decision making, and mutual respect to promote quality patient care. (ILOs: Communication)",
+    "Safety and Quality Improvement : Devise plans of care that minimize risk of harm to improve safety and quality for diverse patients across the life span utilizing system processes. (ILOs: Critical Thinking)",
+    "Evidence Based Practice : Integrate current best evidence utilizing clinical reasoning, nursing judgment and patient preferences to achieve optimal health. (ILOs: Critical Thinking)",
+    "Nursing Judgment : Demonstrate judgment in practice, supported by evidence that integrates knowledge, skills, and attitudes of a beginning nurse generalist to provide safe quality of care. (ILOs: Critical Thinking)",
+    "Utilize the nursing process in providing nursing care. (ILOs: Critical Thinking)",
+    "Culture: Provide patient centered nursing care to meet the healthcare needs of patients with unique cultural attributes within diverse communities. (ILOs: Ethics)",
+    "Manage an environment that promotes patients’ self-esteem, dignity, safety and comfort. (ILOs: Ethics)",
+    "Professionalism and Leadership: Demonstrate integrity, ethical standards and principles of leadership and professional practice, personal growth, accountability for adherence to policies and procedures, and advocacy for patients and the profession of nursing. (ILOs: Personal Development)",
+    "Informatics and Technology : Manage information and technology to communicate with the interdisciplinary team, make informed clinical decisions, and minimize patient and personal harm. (ILOs: Information Competency)"
+   ],
+   "careers": [
+    "Beginning Nurse Generalist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "RN Program electives to be completed PRIOR to applying to RN program",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 015",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 022",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 023",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 040",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "The following must be completed before admission to RN program",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 002",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 007",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 015",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "First Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "N 010",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "N 015",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "N 020",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "N 025",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Third Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "N 030",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "N 035",
+      "units": 2.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "N 036",
+      "units": 2.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fourth Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "N 040",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "N 045",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes matched to closed-list codes by number and title: PSYC 003 = PSY 3 (Developmental Psychology), ANTH 002 = ANTH 2, COMM 007 (Decision-Making and Advocacy) = SP 7, N 010/015/030/035/036/040 = N 10/15/30/35/36/40. Reviewer should confirm the subject-code differences (PSYC vs PSY, COMM vs SP).",
+   "'Total Units for the Major 37' equals the sum of the nursing courses only (N 010 through N 045); the prerequisite blocks (BIOL, ENGL, MATH, PSYC, SOCI/ANTH, COMM) are required but appear to count outside the 37-unit major, presumably toward GE or the 73-unit minimum degree. Block sums therefore exceed total_units.",
+   "Units printed oddly in the or-groups: SOCI C1000 has no units beside it (the 3 is beside ANTH 002); COMM C1004 and COMM 007 have no units printed (3 beside COMM C1000 and COMM 015). Recorded as printed (null).",
+   "MATH 040 is no longer offered; footnote allows substitution of STAT C1000, MATH 010, any higher Math course in the College Algebra sequence, or MATH 016 (with one additional unit needed if MATH 016 used). Not recorded as alternatives.",
+   "Footnote: students with 4-unit transfer credit for BIOL 015 and/or BIOL 023 must complete additional units to reach the 73 minimum degree units.",
+   "Three units from the Humanities area satisfy the CMC GE requirement; PHIL 013 Perspectives on Death and Dying is 'highly recommended' — treated as GE guidance, not placed in a block.",
+   "Catalog units for N 035 and N 036 are 2.25 (state file stores 2.3).",
+   "Outcomes 4 and 5 each have an additional unnumbered sentence printed beneath them; these were recorded as separate entries. Reviewer may prefer to treat them as part of outcomes 4 and 5."
+  ]
+ },
+ "extracted_run": "39035222722"
+}

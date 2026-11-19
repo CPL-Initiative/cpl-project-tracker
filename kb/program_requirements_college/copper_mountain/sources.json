@@ -4,12 +4,53 @@
   "title": "General Business",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ACCT3",
+   "ACCT4",
+   "BUAA1",
+   "BUAC10",
+   "BUAC66",
+   "BUMA1",
+   "BUMA10",
+   "BUMA27",
+   "BUWE80",
+   "BUWE81",
+   "BUWE82",
+   "BUWE83",
+   "BUWE84",
+   "CIS30",
+   "CIS70A",
+   "CIS73C",
+   "CIS82C",
+   "CULN1A",
+   "HOSP1",
+   "HOSP2",
+   "REAL81",
+   "REAL82",
+   "REAL83A",
+   "REAL84",
+   "REAL85",
+   "REAL86"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 9508
  },
  {
   "control_number": "14711",
@@ -184,24 +225,66 @@
   "title": "Vocational Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "VN10",
+   "VN20"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+   "title": "Associate in Science in VOCATIONAL NURSING",
+   "h1": "Associate in Science in VOCATIONAL NURSING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 7403
  },
  {
   "control_number": "14751",
   "title": "Fire Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.824,
+  "codes_found": [
+   "CIS70A",
+   "FIRE1",
+   "FIRE10",
+   "FIRE2",
+   "FIRE3",
+   "FIRE4",
+   "FIRE5",
+   "FIRE58",
+   "FIRE6",
+   "FIRE61",
+   "FIRE7",
+   "FIRE8",
+   "FIWE80",
+   "PHIL13"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=98",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 10749
  },
  {
   "control_number": "14754",
@@ -220,12 +303,32 @@
   "title": "Registered Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "ANTH2",
+   "N10",
+   "N15",
+   "N30",
+   "N35",
+   "N36",
+   "N40",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=111",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 7963
  },
  {
   "control_number": "18517",
@@ -299,12 +402,33 @@
   "title": "Liberal Arts Social and Behavioral Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.692,
+  "codes_found": [
+   "ANTH2",
+   "ANTH3",
+   "GEOG2",
+   "HIST19",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=109",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4375
  },
  {
   "control_number": "18520",
@@ -442,12 +566,27 @@
   "title": "Vocational Nursing",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "VN10",
+   "VN20"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=112",
+   "title": "of the program a certificate in vocational nursing is awarded and the graduate is eligible to write the National Council",
+   "h1": "of the program a certificate in vocational nursing is awarded and the graduate is eligible to write the National Council",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 6756
  },
  {
   "control_number": "24229",
@@ -967,12 +1106,30 @@
   "title": "Hospitality Management",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "CULN1A",
+   "HOSP1",
+   "HOSP2"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=77",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 9508
  },
  {
   "control_number": "41580",
@@ -1076,12 +1233,26 @@
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PH2A",
+   "PH2B"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=75",
+   "title": "The Associate in Science in Biology for Transfer, also called the Biology AS-T Degree, is designed to prepare students f",
+   "h1": "The Associate in Science in Biology for Transfer, also called the Biology AS-T Degree, is designed to prepare students f",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3705
  },
  {
   "control_number": "42765",
@@ -1158,12 +1329,32 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "PE43",
+   "PE45",
+   "PE52",
+   "PE91",
+   "PE96",
+   "PE98"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=158",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 14980
  },
  {
   "control_number": "43192",
@@ -1331,12 +1522,29 @@
   "title": "History",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EGSJ20",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=103",
+   "title": "Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critica",
+   "h1": "Courses in the Associate in Arts in History for Transfer degree explore the past in a variety of ways. Through a critica",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 5447
  },
  {
   "control_number": "44066",
@@ -1406,12 +1614,41 @@
   "title": "Elementary Teacher Education: Integrated Programs",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "ART10",
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CH3",
+   "COMMC1000",
+   "EDUC10",
+   "ENGLC1000",
+   "G10",
+   "HIST19",
+   "HIST3",
+   "HISTC1001",
+   "HISTC1002",
+   "HS1",
+   "MATH16",
+   "MUS10",
+   "POLSC1000",
+   "TA1"
+  ],
+  "source": {
+   "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf#page=92",
+   "title": "2026-2027 Catalog",
+   "h1": "2026-2027 Catalog",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 5019
  },
  {
   "control_number": "46529",
