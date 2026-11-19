@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-19_s681_prreq_units_rules_preread.sql
-name=s681_prreq_units_rules_preread
+file=kb/migrations/2026-11-19_s681_prreq_units_rules_apply_rows.sql
+name=s681_prreq_units_rules_apply_rows
