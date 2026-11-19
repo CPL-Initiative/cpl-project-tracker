@@ -5,28 +5,35 @@
  "title": "Cal-GETC",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
  "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 39791,
+  "input_tokens": 40235,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
-  "output_tokens": 19533
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "output_tokens": 18770,
+  "output_tokens_details": {
+   "thinking_tokens": 4695
+  }
  },
- "cost_usd": 0.54982,
- "ms": 74988,
- "seconds": 75.6,
+ "cost_usd": 0.53634,
+ "ms": 78309,
+ "seconds": 79.3,
  "parts": 2,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 224,
+   "placed": 217,
    "listed": 289,
-   "share": 0.775,
+   "share": 0.751,
    "missing": [
-    "AHIS102AH",
+    "AHIS102C",
     "ANAT30",
     "ANAT32",
     "ANTH1",
@@ -37,12 +44,6 @@
     "APHY34B",
     "ART106",
     "ART109",
-    "ARTHC1100",
-    "ARTHC1200",
-    "ASL112",
-    "ASL113",
-    "ASL114",
-    "ASL130",
     "BIOL10",
     "BIOL10H",
     "BIOL11",
@@ -58,10 +59,27 @@
     "BIOL75",
     "BIOL76",
     "BIOL8",
-    "ECONC2001",
-    "ECONC2002",
-    "ECONC2002H",
+    "CHEM20",
+    "CHEM21A",
+    "CHEM21B",
+    "CHEM4",
+    "CHEM4H",
+    "CHEM7A",
+    "CHEM7B",
     "ESTU9",
+    "GEOG1",
+    "GEOG6",
+    "GEOG9",
+    "GEOL1",
+    "GEOL15",
+    "GEOL2",
+    "GEOL3",
+    "GEOL30",
+    "GEOL32",
+    "GEOL34",
+    "GEOL36",
+    "GEOL4",
+    "GEOL7",
     "HIST145",
     "HIST162",
     "HIST163",
@@ -71,10 +89,6 @@
     "HIST183",
     "HIST184",
     "HIST190",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H",
     "MATH160",
     "MATH161",
     "MICR33",
@@ -94,6 +108,13 @@
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100H",
+     "listed": "AHIS102AH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -110,7 +131,7 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    26.0,
+    28.0,
     36.0
    ],
    "stated": null,
@@ -138,6 +159,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
@@ -149,7 +173,11 @@
     "max": null
    },
    "open_elective_units": null,
-   "ge_pattern": "Cal-GETC",
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
    "degree_total": {
     "min": null,
     "max": null
@@ -412,35 +440,7 @@
     },
     "courses": [
      {
-      "code": "ARCH 104",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARCH 107",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARCH 108",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "AHIS 101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AHIS 102C",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -489,6 +489,47 @@
      },
      {
       "code": "AHIS 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1100H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -645,6 +686,34 @@
       "catalog_addition": false
      },
      {
+      "code": "ASL 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 113",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 114",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "CHIN 2",
       "units": 5,
       "units_max": null,
@@ -667,12 +736,12 @@
      },
      {
       "code": "ENGL C1002",
-      "units": null,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGL C1002H",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -872,6 +941,32 @@
       "units": 5,
       "units_max": null,
       "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
@@ -1309,6 +1404,26 @@
       "catalog_addition": false
      },
      {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
       "code": "ESTU 1",
       "units": 3,
       "units_max": null,
@@ -1354,6 +1469,32 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
@@ -1794,145 +1935,6 @@
      },
      {
       "code": "CHEM 1B",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM 4",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "CHEM 4H",
-        "units": 5,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM 7A",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM 7B",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM 20",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM 21A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM 21B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOG 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOG 6",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOG 9",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 2",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 3",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 4",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 7",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 15",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 30",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 32",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 34",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 36",
       "units": null,
       "units_max": null,
       "alternatives": [],
@@ -1948,16 +1950,20 @@
     "why": "not in the text"
    },
    {
+    "code": "AHIS 102C",
+    "why": "not in the text"
+   },
+   {
     "code": "ANAT 30",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "ANAT 32",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "ANTH 1",
-    "why": "named only as an example in the Area 5 rule; not listed in the text (likely 5B, cut off)"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "ANTH 12",
@@ -1965,19 +1971,19 @@
    },
    {
     "code": "ANTH 1H",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "ANTH 5",
-    "why": "named only as an example in the Area 5 rule; not listed in the text"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "APHY 34A",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "APHY 34B",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "ART 106",
@@ -1988,104 +1994,148 @@
     "why": "not in the text"
    },
    {
-    "code": "ARTHC1100",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTHC1200",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASL112",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASL113",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASL114",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASL130",
-    "why": "not in the text"
-   },
-   {
     "code": "BIOL 10",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 10H",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 11",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 110",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 110H",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 120",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 120H",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 130",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 15",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 16",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 17",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 18",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 75",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 76",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "BIOL 8",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
-    "code": "ECON C2001",
-    "why": "not in the printed Area 4 list"
+    "code": "CHEM 20",
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
-    "code": "ECON C2002",
-    "why": "not in the printed Area 4 list"
+    "code": "CHEM 21A",
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
-    "code": "ECON C2002H",
-    "why": "not in the printed Area 4 list"
+    "code": "CHEM 21B",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "CHEM 4",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "CHEM 4H",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "CHEM 7A",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "CHEM 7B",
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "ESTU 9",
-    "why": "not in the text; Area 6 cut off"
+    "why": "not in the text; likely in Area 6 after the cutoff"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOG 6",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOG 9",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 1",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 15",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 2",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 3",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 30",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 32",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 34",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 36",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 4",
+    "why": "not in the text; text cut off in Area 5A"
+   },
+   {
+    "code": "GEOL 7",
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "HIST 145",
@@ -2124,108 +2174,92 @@
     "why": "not in the text"
    },
    {
-    "code": "HIST C1001",
-    "why": "not in the text"
-   },
-   {
-    "code": "HIST C1001H",
-    "why": "not in the text"
-   },
-   {
-    "code": "HIST C1002",
-    "why": "not in the text"
-   },
-   {
-    "code": "HIST C1002H",
-    "why": "not in the text"
-   },
-   {
     "code": "MATH 160",
-    "why": "not in the printed Area 2 list"
+    "why": "not in the text"
    },
    {
     "code": "MATH 161",
-    "why": "not in the printed Area 2 list"
+    "why": "not in the text"
    },
    {
     "code": "MICR 33",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "OCEA 10",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "OCEA 10H",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 11",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 1A",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 1B",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 1C",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 1D",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 2A",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 2B",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 3A",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PHYS 3B",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PSCI 25",
-    "why": "not in the text; 5A list cut off"
+    "why": "not in the text; text cut off in Area 5A"
    },
    {
     "code": "PSYC 107",
-    "why": "not in the text; likely in Area 5B, cut off"
+    "why": "not in the text; text cut off in Area 5A"
    }
   ],
   "notes": [
-   "The catalog text is cut off mid-Area 5 (at 'GEOL 36 - Geolo'); Area 5B (Biological Science), the Area 5C laboratory requirement and Area 6 (Ethnic Studies), if printed, are not in the text and are not recorded as blocks.",
-   "No total units for the certificate are printed in the visible text; total_units left null.",
-   "Area 1 (9 semester units, one course each from 1A, 1B, 1C), Area 3 (6 semester units, one from 3A and one from 3B) and Area 5 (two courses, 7-9 semester units, one from 5A and one from 5B, one with a corresponding lab) are parent headings; recorded their sub-areas as blocks.",
-   "Area 4 requires two courses from two different academic disciplines; this constraint is not captured by the block rule.",
-   "A course may be listed in multiple areas (e.g., ANTH 4, ANTH 11, HIST courses, POLI 7 appear in both 3B and 4) but can be credited in only one area.",
-   "Honors versions printed as separate rows were folded into their base course as alternatives.",
-   "ENGL C1002/ENGL C1002H are printed as 'English 1B - Literature and Composition (now ENGL C1002)' and 'English 1BH ... (now ENGL C1002H)' with no units printed; units left null.",
-   "Closed-list codes without spaces (FILM110, CHIN2, FREN2, FREN4, GERM2, ITAL2, JAPA2, JAPA4) and 'Poli 7' are recorded as printed in the catalog (FILM 110, CHIN 2, etc., POLI 7) and treated as the same closed-list courses.",
-   "PSYC C1000 is printed in Area 4 but is not in the closed list (only PSYC C1000H is); marked as catalog addition.",
-   "Block stated values use the semester-unit figure printed in each area heading (quarter-unit equivalents also printed).",
-   "No program learning outcomes or careers are printed in the visible text.",
-   "Part 2: The text begins mid-sentence and prints no section heading; 'Cal-GETC' is used as the heading from the program title.",
-   "Part 2: The catalog text is cut off in the middle of the 5A list ('GEOL 36 - Geolo'); GEOL 36's units are not printed, and the rest of 5A, all of 5B, the Area 5 lab requirement listing and any Area 6 are missing.",
-   "Part 2: No total units for the certificate are printed in the text.",
-   "Part 2: Area headers (Area 1: three courses, 9 semester units; Area 3: two courses, 6 semester units; Area 5: two courses, minimum 7-9 semester units, one from 5A and one from 5B, one with a corresponding lab) are recorded through their sub-area blocks; the Area 5 lab rule is not modeled.",
-   "Part 2: Area 4 requires two courses from two academic disciplines/groups; the discipline constraint is not modeled.",
-   "Part 2: Honors twins are recorded as alternatives of the regular course. PSYC C1000 is printed in Area 4 but is not in the closed list (catalog_addition true); it is listed in this part because its honors twin PSYC C1000H is a part-2 course.",
-   "Part 2: POLI codes are printed as 'POLI'; the closed list stores them as 'Poli' and they are treated as the same courses.",
-   "Part 2: Stated block totals use the semester-unit figure printed in each heading (e.g., 'one course - 3 semester or 4 quarter units').",
+   "The catalog text begins mid-sentence and its heading is cut off; section_heading 'Cal-GETC' is taken from the program title.",
+   "This award is itself the Cal-GETC general education pattern certification; its GE areas are recorded as blocks, and ge_pattern is left null because the page names no separate GE pattern for the award.",
+   "No total units are printed for the certificate in the visible text; total_units left null. Area 1 states 9 semester units across 1A, 1B and 1C; Area 3 states 6 semester units across 3A and 3B; Area 5 states two courses and 7-9 semester units, one from 5A and one from 5B, with one lab course corresponding to a lecture course.",
+   "Block stated values use the semester units printed (e.g. '3 semester or 4-5 quarter units' recorded as 3).",
+   "Area 4 requires two courses from two academic disciplines/groups; the discipline constraint is not captured by the rule.",
+   "Courses appearing in both 3B and Area 4 (ANTH 4/4H, ANTH 11, HIST courses, POLI 7) are listed in both blocks; a course can count in only one GE area.",
+   "Honors versions printed on adjacent rows are recorded as alternatives of their base course.",
+   "Catalog codes differ in spacing from the closed list (ARTH C1100 vs ARTHC1100, FILM 110 vs FILM110, ASL 112 vs ASL112, CHIN 2 vs CHIN2, POLI 7 vs Poli 7, etc.); treated as the same courses. ARTH C1100H and PSYC C1000 are not in the closed list and are marked catalog additions.",
+   "The catalog text is cut off in Area 5A after 'CHEM 1B - Gen'; the remainder of 5A, 5B, lab, Area 6 and any outcomes are not visible.",
+   "Part 2: The catalog text is cut off mid-entry in 5A after 'CHEM 1B - Gen'; CHEM 1B units are not printed, and the rest of 5A, Area 5B, the lab requirement detail, and any Area 6 are missing. Many closed-list science courses likely appear after the cutoff.",
+   "Part 2: The award is the Cal-GETC pattern itself, so its area lists are recorded as blocks; ge_pattern is left null because no separate GE pattern applies on top of it.",
+   "Part 2: No total units for the certificate is printed in the text; total_units is null.",
+   "Part 2: Area 5 requires two courses totaling 7-9 semester units, one from 5A and one from 5B, with one including a laboratory matching a lecture course; 5A's stated 3 is the per-subarea minimum printed.",
+   "Part 2: Area 4 requires two courses from two different academic disciplines/groups.",
+   "Part 2: Course units printed are semester units; area totals also list quarter equivalents (e.g., 1A-1C '4-5 quarter units'), which are not recorded.",
+   "Part 2: PSYC C1000 is printed in Area 4 but is not in the closed list; recorded as catalog addition with its honors twin PSYC C1000H (closed-list) as alternative.",
+   "Part 2: Catalog prints POLI codes in capitals; closed list stores them as 'Poli'; treated as the same courses.",
+   "Part 2: No program learning outcomes or careers appear in the text.",
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": "38631686677"
+ "extracted_run": "44480396671",
+ "catalog_year": "2026-2027"
 }

@@ -5,12 +5,12 @@
  "catalog_year": "2026-2027",
  "programs": 189,
  "with_closed_list": 135,
- "started": "2026-10-14T20:24:46Z",
+ "started": "2026-11-19T08:02:49Z",
  "acalog": {
   "base": "http://catalog.elcamino.edu",
   "start_status": 200,
   "catoid": 13,
-  "start_links": 112,
+  "start_links": 113,
   "catalog_menu": [
    [
     "13",
@@ -173,8 +173,9 @@
    {
     "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
     "access": "ok",
+    "status": 202,
     "title": "Programs of Study - El Camino College",
-    "links": 375,
+    "links": 382,
     "sample": [
      [
       "Skip to Content",
@@ -281,8 +282,9 @@
    {
     "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895",
     "access": "ok",
+    "status": 200,
     "title": "Program Learning Outcomes - El Camino College",
-    "links": 119,
+    "links": 120,
     "sample": [
      [
       "Skip to Content",
@@ -389,8 +391,9 @@
    {
     "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885",
     "access": "ok",
+    "status": 200,
     "title": "Degrees and Certificates - El Camino College",
-    "links": 375,
+    "links": 382,
     "sample": [
      [
       "Skip to Content",
@@ -497,8 +500,9 @@
    {
     "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879",
     "access": "ok",
+    "status": 200,
     "title": "Degrees and Certificates by Division - El Camino College",
-    "links": 386,
+    "links": 393,
     "sample": [
      [
       "Skip to Content",
@@ -605,8 +609,9 @@
    {
     "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873",
     "access": "ok",
+    "status": 200,
     "title": "Honors Program - El Camino College",
-    "links": 202,
+    "links": 203,
     "sample": [
      [
       "Skip to Content",
@@ -713,8 +718,9 @@
    {
     "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874",
     "access": "ok",
+    "status": 200,
     "title": "Other College Programs - El Camino College",
-    "links": 122,
+    "links": 123,
     "sample": [
      [
       "Skip to Content",
@@ -819,23 +825,519 @@
     ]
    }
   ],
-  "program_pages": 257
+  "program_pages": 263,
+  "listing_failed": 0
  },
- "pages_read": 257,
+ "pages_read": 263,
+ "pages_listed": 263,
+ "pages_answered": 263,
+ "listing_failed": 0,
  "banner_h1": null,
- "loads": 265,
- "seconds": 1453.5,
- "found": 124,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 106,
+   "hits": 99,
+   "recall": 0.934,
+   "false": 1,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 20,
+   "false_matches": [
+    {
+     "control_number": "19866",
+     "title": "Journalism",
+     "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print"
+    },
+    {
+     "control_number": "15581",
+     "title": "Electronics and Computer Hardware Technology: Computer Technology Option",
+     "award": "A.S. Degree",
+     "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4013&print",
+     "h1": "Electronics and Computer Hardware Technology: Electronics Technology Option, AS"
+    },
+    {
+     "control_number": "19866",
+     "title": "Journalism",
+     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+     "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print",
+     "h1": "Journalism Certificate of Achievement"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "15581",
+     "title": "Electronics and Computer Hardware Technology: Computer Technology Option",
+     "award": "A.S. Degree",
+     "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4013&print",
+     "h1": "Electronics and Computer Hardware Technology: Electronics Technology Option, AS"
+    },
+    {
+     "control_number": "19866",
+     "title": "Journalism",
+     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+     "page": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3622&print",
+     "h1": "Journalism Certificate of Achievement"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 54,
+  "by_result": {
+   "not_searched": 53,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "02483",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02486",
+    "title": "Office Administration: Management",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02488",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02490",
+    "title": "Film/Video Production",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02497",
+    "title": "Pre-Engineering",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02500",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02501",
+    "title": "Automotive Collision Repair/Painting",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02505",
+    "title": "Machine Tool Technology: Machinist",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02529",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02530",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02532",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02533",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02537",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02539",
+    "title": "History",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02540",
+    "title": "Geography",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02541",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "02546",
+    "title": "Manufacturing Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08020",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08029",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08032",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "08033",
+    "title": "General Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09526",
+    "title": "Gallery Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13432",
+    "title": "Real Estate: Appraisal",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13433",
+    "title": "Real Estate: Mortgage Brokerage",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13436",
+    "title": "Infant/Toddler Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13438",
+    "title": "Program Administration",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15253",
+    "title": "Digital Arts: Illustration",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15255",
+    "title": "Digital Arts: Digital Photography",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15583",
+    "title": "Electronics & Comp. Hard. Tech/Industrial Comp Control Tech",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17488",
+    "title": "Liberal Studies (Teacher Preparation)",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18807",
+    "title": "CSU General Education - Breadth",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18808",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "18925",
+    "title": "General Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18927",
+    "title": "General Studies: Biological and Physical Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18929",
+    "title": "General Studies: Communication Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18931",
+    "title": "General Studies: Fine and Applied Arts",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18933",
+    "title": "General Studies: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19529",
+    "title": "Early Intervention Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19775",
+    "title": "General Studies: Kinesiology and Wellness",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19862",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19863",
+    "title": "Real Estate: Appraisal",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19864",
+    "title": "Real Estate: Mortgage Brokerage",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19867",
+    "title": "Film/Video Production",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19874",
+    "title": "Automotive Collision Repair/Painting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19878",
+    "title": "Manufacturing Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19879",
+    "title": "Machine Tool Technology: Machinist",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19890",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30304",
+    "title": "Automotive Technology: Tune-Up Technician",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30306",
+    "title": "Automotive Technology: Automotive Brakes/Suspension, Transmission/Drive Train Technician",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30307",
+    "title": "Machine Tool Technology:  CNC Machine Operator",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32332",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32354",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32939",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "37091",
+    "title": "English as a Second Language",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 99 of 106 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 271,
+ "seconds": 1414.3,
+ "found": 126,
  "by_method": {
   "no_closed_list": 54,
-  "not_found": 11,
-  "sitemap_page": 124
+  "not_found": 9,
+  "sitemap_page": 126
  },
  "shared_pages": {
-  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print": [
-   "02481",
-   "19857"
-  ],
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print": [
    "02487",
    "19861"
@@ -856,6 +1358,10 @@
    "02512",
    "19883"
   ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print": [
+   "02519",
+   "19884"
+  ],
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print": [
    "02523",
    "19889"
@@ -863,10 +1369,6 @@
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print": [
    "08636",
    "19885"
-  ],
-  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print": [
-   "30301",
-   "30302"
   ],
   "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print": [
    "38839",
@@ -898,11 +1400,12 @@
     "error": null,
     "chars": {
      "body": 1789,
-     "content": 13953,
+     "content": 13992,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "15492",
@@ -924,11 +1427,12 @@
     "error": null,
     "chars": {
      "body": 1366,
-     "content": 13538,
+     "content": 13577,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19859",
@@ -950,11 +1454,12 @@
     "error": null,
     "chars": {
      "body": 1371,
-     "content": 13551,
+     "content": 13590,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19860",
@@ -976,11 +1481,12 @@
     "error": null,
     "chars": {
      "body": 1786,
-     "content": 13953,
+     "content": 13992,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37191",
@@ -1002,11 +1508,12 @@
     "error": null,
     "chars": {
      "body": 1324,
-     "content": 13502,
+     "content": 13541,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39004",
@@ -1028,11 +1535,12 @@
     "error": null,
     "chars": {
      "body": 928,
-     "content": 13115,
+     "content": 13154,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40200",
@@ -1054,11 +1562,12 @@
     "error": null,
     "chars": {
      "body": 1267,
-     "content": 13454,
+     "content": 13493,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40201",
@@ -1080,11 +1589,12 @@
     "error": null,
     "chars": {
      "body": 907,
-     "content": 13094,
+     "content": 13133,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40635",
@@ -1106,1317 +1616,608 @@
     "error": null,
     "chars": {
      "body": 993,
-     "content": 13180,
+     "content": 13219,
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "46403",
-   "title": "Academic Skills",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3740&print",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1423,
-     "content": 13614,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "46404",
-   "title": "Math Essentials",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3691&print",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 858,
-     "content": 13045,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 4,
   "0.8-1.0": 26,
-  "1.0": 94
+  "1.0": 96
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 124,
+  "against": "kb/program_requirements_college/el_camino",
+  "kept": 119,
+  "kept_moved": 0,
+  "programs": 6,
   "list": [
-   {
-    "control_number": "02481",
-    "title": "Architecture - Professional Practice",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02485",
-    "title": "Business Management",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3548&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02487",
-    "title": "Marketing",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02491",
-    "title": "Journalism",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3621&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02493",
-    "title": "Liberal Studies (Elementary Teaching)",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3624&print",
-    "coverage": 0.974,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02494",
-    "title": "Sign Language Interpreter Training",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02495",
-    "title": "Physical Education",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3512&print",
-    "coverage": 0.982,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02503",
-    "title": "Computer Aided Design/Drafting",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02506",
-    "title": "Welding",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02508",
-    "title": "Art History",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3501&print",
-    "coverage": 0.735,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02511",
-    "title": "Theatre",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3664&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02512",
-    "title": "Photography",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print",
-    "coverage": 0.842,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02513",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3612&print",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02515",
-    "title": "Spanish",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3662&print",
-    "coverage": 0.935,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02517",
-    "title": "Japanese",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3620&print",
-    "coverage": 0.966,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02518",
-    "title": "Nursing",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3511&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02519",
-    "title": "Respiratory Care",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02520",
-    "title": "Radiologic Technology",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3651&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02523",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02524",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3595&print",
-    "coverage": 0.972,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02527",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3510&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02528",
-    "title": "Physical Science",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3643&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02535",
-    "title": "Recreation",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3656&print",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02536",
-    "title": "Fire and Emergency Technology",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3607&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02538",
-    "title": "Economics",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3581&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02544",
-    "title": "Cosmetology",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3577&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08021",
-    "title": "Computer Information Systems",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3505&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08023",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3580&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08024",
-    "title": "Jewelry Design and Fabrication",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3526&print",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08031",
-    "title": "Fire Academy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3609&print",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08636",
-    "title": "Paramedical Technician",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15250",
-    "title": "Digital Art & Design Foundation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3502&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15251",
-    "title": "Visual Communications",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3527&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15566",
-    "title": "Fashion Stylist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3604&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15581",
-    "title": "Electronics and Computer Hardware Technology: Computer Technology Option",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3583&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "19857",
     "title": "Architecture",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print",
     "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19861",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19866",
-    "title": "Journalism",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3623&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19869",
-    "title": "Sign Language Interpreter Training",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19870",
-    "title": "Electronics Engineering Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3585&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19871",
-    "title": "Computer Hardware Electronics Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3584&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19872",
-    "title": "Heating, Ventilation, and Air Conditioning (HVAC) and Refrigeration",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3521&print",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19877",
-    "title": "Computer Aided Design/Drafting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19881",
-    "title": "Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19883",
-    "title": "Photography",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19884",
-    "title": "Respiratory Care",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3658&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19885",
-    "title": "Paramedical Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19888",
-    "title": "Early Childhood Education",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3557&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19889",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19891",
-    "title": "Fire & Emergency Technology",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3608&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19892",
-    "title": "Cosmetology Level II",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3578&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "30301",
     "title": "Refrigeration",
     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3522&print",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "30302",
     "title": "Air Conditioning",
     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3519&print",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30305",
-    "title": "Engine and Driveline Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3537&print",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31023",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3661&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31319",
-    "title": "Commercial Music",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3634&print",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31358",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3617&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31445",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3650&print",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31684",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3645&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31728",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3632&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31942",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3517&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32141",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3616&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32165",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3619&print",
-    "coverage": 0.802,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32177",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3508&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32238",
-    "title": "Forensics",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3516&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32273",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3625&print",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32333",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3560&print",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32378",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3666&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33577",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3638&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35049",
-    "title": "Business Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3506&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36167",
-    "title": "Database Management",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3566&print",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36974",
-    "title": "ESL for Math",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3691&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37087",
-    "title": "ESL for Healthcare",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3689&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37112",
-    "title": "Computer User Support Specialist",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3687&print",
-    "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37185",
-    "title": "ESL for Healthcare II",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3690&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37186",
-    "title": "ESL for Childhood Educators",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3688&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37904",
-    "title": "Cloud Computing with Amazon Web Services",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3695&print",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38788",
-    "title": "Cisco Networking Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3700&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38791",
-    "title": "Cybersecurity",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3702&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38839",
-    "title": "Entrepreneurial Studies",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38948",
-    "title": "Entrepreneurial Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38949",
-    "title": "Women, Gender and Sexual Studies",
-    "award": "A.A. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3698&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39005",
-    "title": "ESL Reading and Vocabulary",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3721&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39006",
-    "title": "ESL Writing and Grammar",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3722&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39056",
-    "title": "Communication Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3701&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40650",
-    "title": "Technical Support and Networking Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3705&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40668",
-    "title": "Introduction to College and Career Success",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3709&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40715",
-    "title": "Transition to College Success",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3710&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41383",
-    "title": "Social Justice Studies",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3719&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41395",
-    "title": "Real Estate Broker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3711&print",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41396",
-    "title": "Real Estate Escrow",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3712&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41400",
-    "title": "Real Estate Property Management",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3715&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41401",
-    "title": "Real Estate Salesperson",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3716&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41531",
-    "title": "Real Estate Investments",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3714&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41532",
-    "title": "Real Estate Finance",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3713&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42541",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3555&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42780",
-    "title": "Recreation Aquatics Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3725&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43210",
-    "title": "Respiratory Care",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3723&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43815",
-    "title": "Piano Teaching",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3724&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43963",
-    "title": "Personal Care Aide",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3726&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43992",
-    "title": "Hybrid, Electric and Alternative Fuels",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43993",
-    "title": "Hybrid, Electric, and Alternative Fuels",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44035",
-    "title": "High School Equivalency Test",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3727&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44420",
-    "title": "Basic Office Computer Skills",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3740&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44465",
-    "title": "Introduction to Child Development and Early Childhood Education",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3732&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44466",
-    "title": "Parenting/Caregiving",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3733&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44467",
-    "title": "Medical Transcription",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3734&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44505",
-    "title": "Sterile Processing Technician",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3735&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44583",
-    "title": "Actuarial Science",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3736&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44584",
-    "title": "IRS Volunteer Income Tax Assistance (VITA) Program",
-    "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3739&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44744",
-    "title": "Dance Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3741&print",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44764",
-    "title": "Data Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3737&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45070",
-    "title": "Digital Art and Design: 2D Animation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3745&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45073",
-    "title": "Digital Art and Design: 3D Modeling & Animation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3746&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45129",
-    "title": "Digital Art and Design: Concept Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3747&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45130",
-    "title": "Digital Art and Design: Game Art and Animation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3748&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45144",
-    "title": "Digital Art and Design",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3744&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "45290",
     "title": "Cal-GETC",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.945,
+    "was_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "45307",
-    "title": "Adult High School Diploma",
+    "control_number": "46403",
+    "title": "Academic Skills",
     "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3750&print",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4026&print",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "45647",
-    "title": "Biotechnology",
-    "award": "A.S. Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3751&print",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45648",
-    "title": "Biotechnology Laboratory Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3752&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45649",
-    "title": "Biotechnology Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3753&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45744",
-    "title": "Fashion Entrepreneurship",
+    "control_number": "46404",
+    "title": "Math Essentials",
     "award": "Noncredit program",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3754&print",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4034&print",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45974",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3755&print",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "19884",
+    "title": "Respiratory Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38631686677"
+ "fingerprints": {
+  "02481": {
+   "sha256": "a4554be07d1105b75e01d5b72b2290711924f650e013cbc3d6bded23d1e67a74",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print"
+  },
+  "02485": {
+   "sha256": "bf8fb28db583ec5d194eb8ef9770cef00a56d97af0170abc43632492e2b2b48a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3548&print"
+  },
+  "02487": {
+   "sha256": "56f1a0badd39850a37184c85fdc6bbe8acea7ddebe1690daf0095f98120c826c",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print"
+  },
+  "02491": {
+   "sha256": "ea153503fda5858ea95e814e8c060fbd635d54d3d61b10a98e1cea3b4194fbf7",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3621&print"
+  },
+  "02493": {
+   "sha256": "bc7c0b2d452c4d1c3315ba4a379462f34593d0390c3106f4e002fddc13075876",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3624&print"
+  },
+  "02494": {
+   "sha256": "759e006ad886fc7666d3b21f31bf9ce2e5e01ba7145369598625db38b9e0d21a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print"
+  },
+  "02495": {
+   "sha256": "a420bc8429d78a2162d56ea508f2084349d6a35bf597e4e18344c461f5b04be2",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3512&print"
+  },
+  "02503": {
+   "sha256": "ce3d65af99065ce8cb5bc2e548f043fd72abafd8d38eed653b4bd8eceef6180e",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print"
+  },
+  "02506": {
+   "sha256": "7d0342e8360ce4d0554d46e0512130619bd06aa34ef705a40a3f7cf8a40e5352",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print"
+  },
+  "02508": {
+   "sha256": "34ab82016f538c462432945e13144d417cd97e5e791b4a69f8d36fb726f8acd1",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3501&print"
+  },
+  "02511": {
+   "sha256": "949cc9338af7035b0f6549a2380d3c1b4eb1dca87282117bcb5ba67644d47260",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3664&print"
+  },
+  "02512": {
+   "sha256": "c86a9922da29d3aef4af9de78d81f958c2bda86a4cd93021f8eb8bfdcaf145e8",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print"
+  },
+  "02513": {
+   "sha256": "d7482fa68fc7c3f64e3194643e79f506f2a0b8866ebee0bd7a2f064c1135add6",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3612&print"
+  },
+  "02515": {
+   "sha256": "b222687d2bfac6eb0127655d7158556bfbba332763c83517868ad9bd0d0ed26b",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3662&print"
+  },
+  "02517": {
+   "sha256": "29f44f4b035b875131d030e82439b853cc6e29a0d10cb34970c2bfae58e08b2a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3620&print"
+  },
+  "02518": {
+   "sha256": "468cbcf153bcc7c3f62c961dd049046b9861e2748cc8a2032f42c07d735ea9bd",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3511&print"
+  },
+  "02519": {
+   "sha256": "d091f015ac57da8406b3a510d576038a1d46175c9709244c5e01f776a32f934b",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print"
+  },
+  "02520": {
+   "sha256": "f170614be2e5d70750cf5a222918af8261f1924a7186af40679f7c380ed060ba",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3651&print"
+  },
+  "02523": {
+   "sha256": "17fc304e4e2b692ef49c3e634e9ee28a130d13f5293df32757f3dd227630a63c",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print"
+  },
+  "02524": {
+   "sha256": "0b9f8e31a6f0246224164ac24af815e7c7a4ce1a2d6fa23afc8b492a098c9889",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3595&print"
+  },
+  "02527": {
+   "sha256": "cfed6f1ef3cfdf6c4f8d14a42310f57ab820d8ae6beac02dd4164d997a9f64f7",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3510&print"
+  },
+  "02528": {
+   "sha256": "6acbfca24ac6d2b16c75f12326da802f7c3e34e43407679e232df691fa3a8497",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3643&print"
+  },
+  "02535": {
+   "sha256": "0466f4ad391e6534b2172b1f101fdf748584b411d7e8f55ee5a1e151118a04dc",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3656&print"
+  },
+  "02536": {
+   "sha256": "29fde2f733d27de020f80bdaea58345e9cd68aeac84f8987e25a108f96cfbe2a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3607&print"
+  },
+  "02538": {
+   "sha256": "df3376c0d475f16823dbd803a2af947905981dcfe3bd3c12cffdcda9c883a77e",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3581&print"
+  },
+  "02544": {
+   "sha256": "59e1a297dbd4df027c28623d87e853c008f23fac4b8dda83223981a940ae2321",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3577&print"
+  },
+  "08021": {
+   "sha256": "4b6198be7c4fbfcf52a4d5ce04434041cb900d58f75e05519ef73cc3d1074980",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3505&print"
+  },
+  "08023": {
+   "sha256": "b782173df7116ae9eac3b6207ceef812324b6129f2cc61ec54af5542e3e43de3",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3580&print"
+  },
+  "08024": {
+   "sha256": "cd071285b72554ac8387e50054d4e6c280ecafbf49de37c0c022a70304877aed",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3526&print"
+  },
+  "08031": {
+   "sha256": "c98c563f9fff1b5d97b6cd3962df671832ac33d99cf843997a91c740778f297d",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3609&print"
+  },
+  "08636": {
+   "sha256": "769c91ce95500aab74057f1300e1c2084bba7d4094cf6de3504e53168f220173",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print"
+  },
+  "15250": {
+   "sha256": "109437c04f9e1c65bca856016aaadeb2be9d5957dbdb68355bd2d2114b3d7e9d",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3502&print"
+  },
+  "15251": {
+   "sha256": "1d70da08b0bb666560b699b29cf698ade11200715470aa390c14a9eed1ad0631",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3527&print"
+  },
+  "15566": {
+   "sha256": "5be78cd275d66aeba3df589465e2a8af9fb1778230570a8cc29dec33fd08adf3",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3604&print"
+  },
+  "15581": {
+   "sha256": "59baf5161cab9d2dda0055c7f3e3e482a21052ad084e40671c77fecab6a18172",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3583&print"
+  },
+  "19857": {
+   "sha256": "13fb3b4cce479e74bc30dc1cb82f97e0fb34dcaa56e8eb54e930ad04e0b1a5b6",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print"
+  },
+  "19861": {
+   "sha256": "56f1a0badd39850a37184c85fdc6bbe8acea7ddebe1690daf0095f98120c826c",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print"
+  },
+  "19866": {
+   "sha256": "8eeeb7808c4a2dd28a39e8662017b8a8af4cf353f9e1c626d6d390f77d9707d5",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3623&print"
+  },
+  "19869": {
+   "sha256": "759e006ad886fc7666d3b21f31bf9ce2e5e01ba7145369598625db38b9e0d21a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print"
+  },
+  "19870": {
+   "sha256": "6229db25ea4f4721e3dab95b70a5dc57ce03a101e10c4d6b2d7122d004417932",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3585&print"
+  },
+  "19871": {
+   "sha256": "a35947bd2a990d280e772c1b758ce3bd29bedceff47280fef0e9b9c4f597310d",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3584&print"
+  },
+  "19872": {
+   "sha256": "2c059b31ebe6666a0a0e0a9a70b74b3fb5b5a00f5be36ef3e0e77ec298451f49",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3521&print"
+  },
+  "19877": {
+   "sha256": "ce3d65af99065ce8cb5bc2e548f043fd72abafd8d38eed653b4bd8eceef6180e",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print"
+  },
+  "19881": {
+   "sha256": "7d0342e8360ce4d0554d46e0512130619bd06aa34ef705a40a3f7cf8a40e5352",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print"
+  },
+  "19883": {
+   "sha256": "c86a9922da29d3aef4af9de78d81f958c2bda86a4cd93021f8eb8bfdcaf145e8",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print"
+  },
+  "19884": {
+   "sha256": "c7f67b4f90a1c85ccb90a5d6c8e8693e697010ec2a428fc8e9e0268901b8d277",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print"
+  },
+  "19885": {
+   "sha256": "769c91ce95500aab74057f1300e1c2084bba7d4094cf6de3504e53168f220173",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print"
+  },
+  "19888": {
+   "sha256": "8fd0c067557135b059869212d0724f50f9770d082f0b4f853ee9765c9ea2dc51",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3557&print"
+  },
+  "19889": {
+   "sha256": "17fc304e4e2b692ef49c3e634e9ee28a130d13f5293df32757f3dd227630a63c",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print"
+  },
+  "19891": {
+   "sha256": "cb1cf79831eb47663b6763c1877d25356ff0444ea30ba1f35ae664877c851aae",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3608&print"
+  },
+  "19892": {
+   "sha256": "85f18a661f2d9cc3823317f87b2d0a9c39b1a8063da0b31b783ef8a2f544d729",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3578&print"
+  },
+  "30301": {
+   "sha256": "597a1696566a3129aaa31256b333e363c3cd90ef287a3bb049d9637ff50b1283",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3522&print"
+  },
+  "30302": {
+   "sha256": "fd241706025e27056cf717349b759d0f2c6e569f5bf784de48bd665ae0a20fbd",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3519&print"
+  },
+  "30305": {
+   "sha256": "fd3e8312bac9cdb1e78f0c5688874df5ac8de3cd40763b8e325aa4b406e474f4",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3537&print"
+  },
+  "31023": {
+   "sha256": "b0c067ffb02905e40b89c285f378597035faf270ace00f0e75970fd3327806e8",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3661&print"
+  },
+  "31319": {
+   "sha256": "2238f9ddbcfaffcfd773b2bbdacb04c0541cbb610e829e98a47ac4e64271a7f5",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3634&print"
+  },
+  "31358": {
+   "sha256": "9a0bbcc250240825277cedf07bacfcbcf27f2d9e2129b39d64453ae95fc4c262",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3617&print"
+  },
+  "31445": {
+   "sha256": "7428d412a32c343af08fa60dab74459b3791cf6f645e8a09f04668cc295d2005",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3650&print"
+  },
+  "31684": {
+   "sha256": "8d4624629cfbf01904c2431f6b0ef76f836a03c5cddfbe9715c91755f5c4752c",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3645&print"
+  },
+  "31728": {
+   "sha256": "db6e68a8087a19d4f88f21f5963e124fea00fd2f2acffc2a2bb92e39b4e0d0f1",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3632&print"
+  },
+  "31942": {
+   "sha256": "f4159bafe0f7bab5caf96b173b3a7c29604a0c694566cdacee68c73e50d9cd4a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3517&print"
+  },
+  "32141": {
+   "sha256": "fda74e7769da8bbffea3c702b28369d8c35065d8185b2d10f0f825fb16ba952b",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3616&print"
+  },
+  "32165": {
+   "sha256": "3eab34ba73b20c758913e17f32852897e24f1c83e13ade245b444ff699eacc82",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3619&print"
+  },
+  "32177": {
+   "sha256": "57e5f39d8fc3f5478b760b5fe484496f1bd3aa818dcc8416d9b8c34672f4fba6",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3508&print"
+  },
+  "32238": {
+   "sha256": "a24aeb4870b5a0d67a8a40ff8751622996ed16d1d1b821c1aa1bbb467ecfdad0",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3516&print"
+  },
+  "32273": {
+   "sha256": "4d67cfe9d62ae8b1a8054401687c4330f55cf8444bbc7608ab2aa233f5020b1f",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3625&print"
+  },
+  "32333": {
+   "sha256": "75bde9c13a2e320c788838c807edadc5bb1ccc6d346fa30b1cd8d07078bceac5",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3560&print"
+  },
+  "32378": {
+   "sha256": "8cd311acb765424de761addc8ba05237e35db4b381340beb62db2cbc394d5d57",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3666&print"
+  },
+  "33577": {
+   "sha256": "c9553e7e261114bfe656955c702c9f85f92195464cb01022b06ffcf33d5a92f4",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3638&print"
+  },
+  "35049": {
+   "sha256": "c6f2df7c43146e9fcac150072e63a96b8ac2cc82dd21054192ddb917877106a0",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3506&print"
+  },
+  "36167": {
+   "sha256": "1ce7341e9bb2672222215eaef556aa7648ec469011952ddd09226695fe34ba5d",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3566&print"
+  },
+  "36974": {
+   "sha256": "f6c31b1b9bd1e20e9c59023468d92fa5818b0774e0ca6b9f8284d5b0e5e6f6a1",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3691&print"
+  },
+  "37087": {
+   "sha256": "8790f844a059faa8291bbe7dc7b48a08f86148f51128170679b0ba3f305c05ce",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3689&print"
+  },
+  "37112": {
+   "sha256": "14361c0cc6b5ab3bf8cc6fe6738116a2327ad8861fdcb23bc12a5a731d981d9e",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3687&print"
+  },
+  "37185": {
+   "sha256": "2a484444459699c78c3e8f60593815d2e3bcde9598604422b250b0d53042e0e5",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3690&print"
+  },
+  "37186": {
+   "sha256": "40a725b3b065716ed7f6b5771e1d89147ac7517bd67e63afa390a59e1d898f2b",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3688&print"
+  },
+  "37904": {
+   "sha256": "f6612f03a863a03c470f3cae1ef267c2140c78e55278fb09bea5c9dead73babb",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3695&print"
+  },
+  "38788": {
+   "sha256": "cd9e0bbd05b9ade95573d249f44a39417f55f6a9d4c2c78806a1b846bb68f5e0",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3700&print"
+  },
+  "38791": {
+   "sha256": "c71962100c9b808308914e7d796f4717dd0f17c287dfccee4999457331fec424",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3702&print"
+  },
+  "38839": {
+   "sha256": "12eaaccc48e9390300a8e260616be8c68093bfaf5f0fcf86095376b9566859ca",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print"
+  },
+  "38948": {
+   "sha256": "12eaaccc48e9390300a8e260616be8c68093bfaf5f0fcf86095376b9566859ca",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print"
+  },
+  "38949": {
+   "sha256": "099ded0038a5c163a665c0ca51175bdbcdcae75a1c0076e55b8857252a57c035",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3698&print"
+  },
+  "39005": {
+   "sha256": "483a21491f8ce8e43341ddc49cb81aee6e2397be46a7e254ca4b75fdc6de3bfb",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3721&print"
+  },
+  "39006": {
+   "sha256": "44bb51b077dd5e9e266bbf2ca4b5461d85ff90a8a5ecfd971f8f0bd7b2117b16",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3722&print"
+  },
+  "39056": {
+   "sha256": "7790849a773f2fb88903fb9db7ba37acebc9d90c883dc3c8d67bd237927b36d8",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3701&print"
+  },
+  "40650": {
+   "sha256": "4465a7f2d53959be9cf6feb320ecd988e2b123c4f536129b13542bb204aa15d3",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3705&print"
+  },
+  "40668": {
+   "sha256": "fd39e4d0ac4830fbd3d32c9a2afc40ce666784783254c37a67ef2fc8222ef16a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3709&print"
+  },
+  "40715": {
+   "sha256": "ea5d0110b28f226bcaed1b9926186532886b21b59a9b82ec23a5a03d3c48465a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3710&print"
+  },
+  "41383": {
+   "sha256": "c7c4987cd64158e1b21d9c5402db0d974409df5abaecc14e886e87cc12507050",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3719&print"
+  },
+  "41395": {
+   "sha256": "780570054854f7ffe069462dc6d81104517b0f2ef97ee6d7a9f1948e88899606",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3711&print"
+  },
+  "41396": {
+   "sha256": "708c43df66d6f07e99d84ec89d0105e125d3a081d3007b70e28acb62ef962c17",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3712&print"
+  },
+  "41400": {
+   "sha256": "e398db64c36c04d1147cec80d0bca91346b17d6b3ff50de57b1dcd99427ebcbd",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3715&print"
+  },
+  "41401": {
+   "sha256": "99f3b84fd017e951a416f9ace0d2b6a1ecd95d556ac2bd8e2bb9de6460cd214e",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3716&print"
+  },
+  "41531": {
+   "sha256": "e1d9e48f8685e3aaa857f990d57be3c4634d73af7412d0ec51ed66380cd7c444",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3714&print"
+  },
+  "41532": {
+   "sha256": "08d52e3e9e80b412efdad59b0ba00f06c667643a87311760d1c10b77fcd7ab9a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3713&print"
+  },
+  "42541": {
+   "sha256": "c02ca8b1ca5a53de632cbfc617cb69f94fbbd9e0f1d0b898e911b5a8426104b3",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3555&print"
+  },
+  "42780": {
+   "sha256": "7200c549bb691f71f7314c69695b920af4179693957567d13f8aedd89763b980",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3725&print"
+  },
+  "43210": {
+   "sha256": "43a8df50fdab11388e39826f586e0664914efeaa36dcaf2443c81c136400c504",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3723&print"
+  },
+  "43815": {
+   "sha256": "36f73b4e061d2735ed53ef93ca4df0d79ed8ac6c7e3c87d45862d693d82970c1",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3724&print"
+  },
+  "43963": {
+   "sha256": "fc676de84be0b99e5a25026876a135b3bc2f38fb058a23f6bd76861c04d0e23c",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3726&print"
+  },
+  "43992": {
+   "sha256": "96b99c5d67a8074e14a5bf2a809f5379988e2eb0c1385b219bfb7468461ae5b7",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print"
+  },
+  "43993": {
+   "sha256": "96b99c5d67a8074e14a5bf2a809f5379988e2eb0c1385b219bfb7468461ae5b7",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print"
+  },
+  "44035": {
+   "sha256": "320c283eb9e9209a392e96c09c160e93fcc63f02f6254088d16872e77dc45f28",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3727&print"
+  },
+  "44420": {
+   "sha256": "068cbb07d6724813d8967a4e7e9de0089025e7e40f6f520566faa2e6a9d6bb92",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3740&print"
+  },
+  "44465": {
+   "sha256": "b9bccc3d0c77402e4ae6d93514606c653c52c48fcc797fc586fc447a52f01a0c",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3732&print"
+  },
+  "44466": {
+   "sha256": "daa66dbee4b992fdaa1b27dace4ab7dfd9bda40e82a9424734a686f1f448a59c",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3733&print"
+  },
+  "44467": {
+   "sha256": "e3e4a20e0086e80d4934d59ab1b4dcc64b75d53d1f5ea6b9ec2048b4057eb8ac",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3734&print"
+  },
+  "44505": {
+   "sha256": "55b0845142a1f972792685b6eac09c4fcdb7f72309f1df338729e0efd1a5f51e",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3735&print"
+  },
+  "44583": {
+   "sha256": "5062ffe6a1cdb49e28dc4a7ad598730cec3e28c43dadaa788f00045aa9d7d8ec",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3736&print"
+  },
+  "44584": {
+   "sha256": "f81f904f78547b5cc77687c98e130b6b93b473ad9c3ae92e5f54d8967731caaa",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3739&print"
+  },
+  "44744": {
+   "sha256": "22b99abeac36f655a2c75f9629ce45ebc7b95b893adfc11bb66a0b61a2397872",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3741&print"
+  },
+  "44764": {
+   "sha256": "f1da49323ec901f6951fc4633efd26956f05dd67df462c7957597f93ff6099fe",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3737&print"
+  },
+  "45070": {
+   "sha256": "c26dfe44b84d80af66a1056e6b94349db11a14692ea238eace2d2454bc97cf19",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3745&print"
+  },
+  "45073": {
+   "sha256": "561e358526b8b7a1d56b0bd6e548e78416c759b6cae9c9b6d12f5e853c5e187d",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3746&print"
+  },
+  "45129": {
+   "sha256": "92325ca0adc3a180b173ea43ca1f8618449cd564139ce3c54c0523c926d32543",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3747&print"
+  },
+  "45130": {
+   "sha256": "18c9f7cea4d56f9f42fc91daabcbca697cc571488ad23099285285a9c5cb03d4",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3748&print"
+  },
+  "45144": {
+   "sha256": "c415443970c3ebf2348f1528103be0f8b8197155e659d3a295bb1f9ea213d8b0",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3744&print"
+  },
+  "45290": {
+   "sha256": "69858602868156931ad1fed197fbb3f85af9429b795c292d59e88d08407b5bf2",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print"
+  },
+  "45307": {
+   "sha256": "98dd9eafa76010a357a13912eb7f3127410a7cddf39c8aaf656212b7d15de91f",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3750&print"
+  },
+  "45647": {
+   "sha256": "e804bca812159e1a5909344e0ae877fcd94a77f9c1c448fb0574df1948189555",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3751&print"
+  },
+  "45648": {
+   "sha256": "705c3714a1414ff07346b551f1b2e74253d06c8a046836a01bc1d5a363e0227d",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3752&print"
+  },
+  "45649": {
+   "sha256": "7df6cae5647666e8328be40bc27aba9bc77fb7eb2be8551212891c478d41ed0f",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3753&print"
+  },
+  "45744": {
+   "sha256": "5f1487b4359885f001ce900242b1512ea9d9fe7f19bf54153f248d6fbbd4615a",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3754&print"
+  },
+  "45974": {
+   "sha256": "3e59a9a68b8cefc65f14c0ce12030f07aac9648638f8850409b9291d4b3384c9",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3755&print"
+  },
+  "46403": {
+   "sha256": "571d2be32b543763b521e697adfa318a66385672c386a5c4aa553fc8ba73fd75",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4026&print"
+  },
+  "46404": {
+   "sha256": "0480bcbbcbfc7729fdaf33c3d8207cd3cf9d3878a279ee0c5f75af9ccc76776d",
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4034&print"
+  }
+ },
+ "run": "44480396671"
 }
