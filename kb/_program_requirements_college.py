@@ -1956,7 +1956,7 @@ def read_sitemap(reader, start: str) -> dict:
     """The catalog's sitemap.xml, robots first and the census's delay before
     each request; a sitemap index is followed one level. A WAF's challenge in place of
     a sitemap (S683) is recorded as challenged, never parsed as a sitemap listing nothing."""
-    from _program_source_census import challenge_header, robots_allows, site_root
+    from _program_source_census import ROBOTS_CHALLENGED, challenge_header, robots_allows, site_root
     root = site_root(start)
     out = {"url": root + "sitemap.xml", "pages": [], "nested": [], "status": None}
     todo, done = [out["url"]], set()
@@ -1965,6 +1965,10 @@ def read_sitemap(reader, start: str) -> dict:
         if url in done:
             continue
         done.add(url)
+        if reader._robots_for(url) == ROBOTS_CHALLENGED:
+            # Its robots.txt answered a WAF challenge: the rules are unknown, and nothing more is asked (S683).
+            out.setdefault("challenged", []).append("%s: robots.txt answered a challenge" % url)
+            break
         if not robots_allows(reader._robots_for(url), url):
             out.setdefault("refused", []).append(url)
             continue
@@ -1977,7 +1981,7 @@ def read_sitemap(reader, start: str) -> dict:
             waf = challenge_header(getattr(resp, "headers", None))
             if waf:
                 out.setdefault("challenged", []).append("%s: HTTP %s, %s" % (url, resp.status, waf))
-                continue
+                break   # no nested sitemap is asked after the first challenge
             if not resp.ok:
                 # A missing sitemap (404, 410) is the host's answer; any other status lost its pages
                 # (pages_account()).
@@ -2017,9 +2021,13 @@ def index_links(reader, start: str, cache: dict, failed: list | None = None) -> 
             and P.same_site(ln.get("href") or "", start)][:6]
     urls = [ln.get("href") for ln in front.get("links") or []]
     for h in hubs:
+        if front.get("access") == "challenge":
+            break   # a bot check stops the listing at the first one (S683); the capture records where
         got = P.load(reader, h, cache, False)
         if failed is not None and load_failed(got):
             failed.append(h)
+        if got.get("access") == "challenge":
+            break
         urls.extend(ln.get("href") for ln in got.get("links") or [])
     return [u for u in urls if u]
 

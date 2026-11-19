@@ -5813,6 +5813,75 @@ code, rep, methods, partial, searched = run_sw_capture(rd)
 check(not rd.request.asked and not rd.loaded and rep["sitemap"]["refused"],
       "robots.txt is honored: no request and no load past it: %s %s" % (rd.request.asked, rd.loaded))
 
+# Ordinary CDN and WAF headers that name no challenge (second reader on #3536, finding 3).
+check(all(CEN.challenge_header(h) is None for h in ({"cf-ray": "8f1a2b3c4d5e6f70-LAX"}, {"server": "cloudflare"},
+                                                     {"x-amz-cf-id": "Zx9_abc=="}, {"waf-action": "allow"},
+                                                     {"cf-mitigated": "block"})),
+      "cf-ray, server: cloudflare, x-amz-cf-id, waf-action: allow and cf-mitigated: block name no challenge")
+
+# 5. The census Reader's own robots read (finding 1). catalog.swccd.edu challenged robots.txt itself (scout of
+# 2026-11-12: 202, empty, x-amzn-waf-action: challenge), and robots_allows reads such a page, '' or None as
+# allowing everything. A challenged robots.txt leaves the rules unknown: every load on the host is refused.
+check(CEN.robots_allows(WAF_PAGE, SW_PAGE["arch"]) and CEN.robots_allows(None, SW_PAGE["arch"])
+      and not CEN.robots_allows(CEN.ROBOTS_CHALLENGED, SW_PAGE["arch"])
+      and not CEN.robots_allows(CEN.ROBOTS_CHALLENGED, SW_ROOT + "sitemap.xml"),
+      "the rules held for a challenged robots.txt refuse every path, where the challenge page itself refused none")
+
+
+class _NoBrowser:
+    def __init__(self):
+        self.opened = []
+
+    def goto(self, url, **k):
+        self.opened.append(url)
+        raise AssertionError("no page loads on a host whose robots.txt is unknown")
+
+
+def _census_reader(robots_resp, sitemap=None):
+    answers = {SW_ROOT + "robots.txt": robots_resp}
+    if sitemap is not None:
+        answers[SW_ROOT + "sitemap.xml"] = sitemap
+    req = _SwRequest(answers)
+    return CEN.Reader(_NoBrowser(), req, 0), req
+
+
+rd, req = _census_reader(_SwResp(202, WAF_HDR, ""))
+got = rd.load(SW_PAGE["arch"])
+check(rd._robots_for(SW_PAGE["acct"]) == CEN.ROBOTS_CHALLENGED and got["access"] == "challenge"
+      and got.get("waf") == "robots.txt: challenge" and not rd.page.opened and rd.loads == 0
+      and req.asked == [SW_ROOT + "robots.txt"],
+      "a WAF's answer to robots.txt files the host's every load as a challenge, asks robots.txt once, opens nothing: %s %s"
+      % (got, req.asked))
+rd, req = _census_reader(_SwResp(202, WAF_HDR, ""), _sw_sitemap("arch", "acct", "biol"))
+code, rep, methods, partial, searched = run_sw_capture(rd)
+check(SW_ROOT + "sitemap.xml" not in req.asked and rep["sitemap"]["challenged"] and not rd.page.opened
+      and rep.get("site_challenge") and set(methods.values()) == {"page_challenged"} and partial and not searched,
+      "a capture on that host asks no sitemap, opens no page, and files every program refused: %s %s %s"
+      % (req.asked, rep.get("sitemap"), methods))
+for resp, rules in ((_SwResp(200, {"content-type": "text/plain"}, "User-agent: *\nDisallow: /private/\n"),
+                     "User-agent: *\nDisallow: /private/\n"),
+                    (_SwResp(404, {}, "Not found"), None)):
+    rd, req = _census_reader(resp)
+    held = rd._robots_for(SW_PAGE["arch"])
+    check(held == rules and CEN.robots_allows(held, SW_PAGE["arch"])
+          and CEN.robots_allows(held, SW_ROOT + "private/x") == (rules is None),
+          "an ordinary robots.txt answer (HTTP %s) reads exactly as before: %r" % (resp.status, held))
+
+# Finding 2: the listing stops at its first challenge, a nested sitemap or a hub page.
+IDX_SW = "<sitemapindex>%s</sitemapindex>" % "".join("<sitemap><loc>%s%s.xml</loc></sitemap>" % (SW_ROOT, n)
+                                                     for n in ("a", "b", "c"))
+rd = _SwReader({}, _SwResp(200, {}, IDX_SW))
+rd.request.answers[SW_ROOT + "a.xml"] = _SwResp(202, WAF_HDR, WAF_PAGE)
+sm = C.read_sitemap(rd, SW_ROOT)
+check(rd.request.asked == [SW_ROOT + "sitemap.xml", SW_ROOT + "a.xml"] and len(sm["challenged"]) == 1,
+      "no nested sitemap is asked after the first challenged one: %s" % rd.request.asked)
+HUBS = [("Degrees and Certificates", SW_ROOT + "degrees/"), ("Programs of Study", SW_ROOT + "programs/"),
+        ("Certificate Programs", SW_ROOT + "certificates/")]
+front = dict(SW_FRONT, links=[{"text": t, "href": h} for t, h in HUBS])
+rd = _SwReader({SW_ROOT: front, HUBS[0][1]: SW_CHALLENGE, HUBS[1][1]: SW_FRONT, HUBS[2][1]: SW_FRONT}, None)
+C.index_links(rd, SW_ROOT, {}, [])
+check(rd.loaded == [SW_ROOT, HUBS[0][1]], "no hub page loads after the first challenged one: %s" % rd.loaded)
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

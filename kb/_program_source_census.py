@@ -615,6 +615,12 @@ def classify_access(status: int | None, title: str, error: str | None = None) ->
 WAF_HEADERS = (("x-amzn-waf-action", ("challenge", "captcha")), ("cf-mitigated", ("challenge",)))
 
 
+# What the Reader holds for a host whose robots.txt a WAF challenged: rules that refuse every path, so each
+# caller of robots_allows (the sitemap read, the JSON and publish calls) refuses it without a change of its own.
+ROBOTS_CHALLENGED = ("User-agent: *\nDisallow: /\n"
+                     "# robots.txt answered a WAF challenge (S683): its rules are unknown, so nothing is read\n")
+
+
 def challenge_header(headers) -> str | None:
     """The header naming a WAF's challenge, as 'name: value', or None."""
     for name, values in WAF_HEADERS:
@@ -736,14 +742,24 @@ class Reader:
         if root not in self.robots:
             try:
                 r = self.request.get(root + "robots.txt", timeout=15000)
-                self.robots[root] = r.text() if r.ok else None
+                if challenge_header(getattr(r, "headers", None)):
+                    # A WAF answered in place of robots.txt (catalog.swccd.edu, scout of 2026-11-12): the rules are
+                    # unknown, so every load on the host is refused (S683; Sam: never ignore robots.txt).
+                    self.robots[root] = ROBOTS_CHALLENGED
+                else:
+                    self.robots[root] = r.text() if r.ok else None
             except Exception:
                 self.robots[root] = None
         return self.robots[root]
 
     def load(self, url: str) -> dict:
         out = {"url": url}
-        if not robots_allows(self._robots_for(url), url):
+        robots = self._robots_for(url)
+        if robots == ROBOTS_CHALLENGED:
+            # Filed as the challenge it is, so a capture stops and its programs read as refused, never absent.
+            out.update(access="challenge", status=None, waf="robots.txt: challenge", title="", body="")
+            return out
+        if not robots_allows(robots, url):
             out.update(access="robots_disallow", status=None)
             return out
         time.sleep(self.delay)
