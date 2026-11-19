@@ -1,0 +1,1677 @@
+{
+ "college": "Porterville College",
+ "catalog_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 91,
+ "with_closed_list": 85,
+ "started": "2026-11-19T06:59:58Z",
+ "pdf": {
+  "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+  "access": "hand_filed",
+  "status": null,
+  "bytes": 9163086,
+  "pages_total": 213,
+  "error": null,
+  "chars_total": 990827,
+  "pypdf_accepted": 82,
+  "sample": [
+   "p64: 'ACADEMIC INFORMATION & STANDARDS\\nACADEMIC STANDARDS & INFORMATION\\n63\\n  AP Required PC Equivalent PC PC CalGETC\\n  Exam Score Course Units GE Area Area__________________________________________________________________________________________ '",
+   "p128: 'PLACEMENT\\nPLACEMENT\\n127\\nRevised 08/07/2025\\nEffective summer 2025\\nPage 10 of 10'"
+  ],
+  "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "hand_filed": {
+   "college": "Porterville College",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+   "fetched_by": "Sam Lee",
+   "fetched_at": "2026-10-17",
+   "sha256": "c9621980d38bf1ef8d68c2a32d03d9a50411e3045d764a1ebaa63f26c33bcb17",
+   "file": null,
+   "copy_url": "https://github.com/user-attachments/files/33599443/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+   "note": "Sam downloaded it in a browser and posted it to the catalog-files release (2026-10-17); its robots.txt disallows the catalog PDF to readers. cpl_memory sam-hand-filed-catalog-pdf-links-2026-10-17.",
+   "addenda": [
+    {
+     "title": "Addendum 1 (2026-09-10)",
+     "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_Catalog_Addendum_1_FINAL_09102026.pdf",
+     "sha256": "fbac63cf90421fa239e81839789ad3fbce2fd5ccfa571d24a4f46f692e88aeab"
+    },
+    {
+     "title": "Addendum 2 (2026-09-22)",
+     "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_Catalog_Addendum_version2_formatted_09222026.pdf",
+     "sha256": "7612851d6cd8702acd93f99eefcb60cd3bd073fc91df8fd599dcfc47ddb1fa94"
+    }
+   ]
+  },
+  "picks": [
+   {
+    "control_number": "06771",
+    "pages": [
+     78,
+     79
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] PROGRAMS OF STUDY PROGRAMS OF STUDY 77 INFS P180 - Introduction to Database Management Systems ...................................................3 units INFS P210 - Systems Analysis and "
+   },
+   {
+    "control_number": "06773",
+    "pages": [
+     81
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] The Associate in Science degree in Biological and Physical Science is suggested for students who plan to continue their studies in the sciences at a four-year university with a goal of obtaining a bachelor’s"
+   },
+   {
+    "control_number": "06797",
+    "pages": [
+     115,
+     116
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 115] The Porterville College Psychiatric Technology Certificate of Achievement endorses the mission of Porterville College, which is: “With students as our focus, Porterville College provides our local and diver"
+   },
+   {
+    "control_number": "06809",
+    "pages": [
+     84
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] PROGRAMS OF STUDY PROGRAMS OF STUDY 83 Students must satisfy the following requirements in order to earn the Associate in Arts in Child and Adolescent Develop- ment for Transfer degree: 1. Completion of 60 sem"
+   },
+   {
+    "control_number": "09520",
+    "pages": [
+     85
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] The Commercial Art Associate in Arts Degree will prepare students to work in the fields of graphic design, illustration, and time-based media. Students will learn how to do design layouts in advertising, pri"
+   },
+   {
+    "control_number": "09528",
+    "pages": [
+     83
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 83] PROGRAMS OF STUDY PROGRAMS OF STUDY 82 Program Learning Outcomes: Analyze business, economic, or financial principles and explain their application to the real-world; apply written and verbal communication sk"
+   },
+   {
+    "control_number": "18526",
+    "pages": [
+     93,
+     94,
+     95,
+     96
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.986,
+    "opens": "[page 93] PROGRAMS OF STUDY PROGRAMS OF STUDY 92 Total Units for the Major...................................21 - 24 units Total Units That May Be Double Counted ............. 13 units General Education (Cal-GETC) Units "
+   },
+   {
+    "control_number": "30235",
+    "pages": [
+     80,
+     81
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 80] PROGRAMS OF STUDY PROGRAMS OF STUDY 79 paths, including roles in government agencies, industry positions, or high school teaching with an appropriate credential. Moreover, they are well-prepared to pursue fur"
+   },
+   {
+    "control_number": "30357",
+    "pages": [
+     102
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 102] PROGRAMS OF STUDY PROGRAMS OF STUDY 101 PROGRAM PROGRESSION A grade of “C” or better is required in each nursing course for progression toward the Registered Nursing (AS) Degree. PROGRAM APPROVAL The Californ"
+   },
+   {
+    "control_number": "31070",
+    "pages": [
+     95
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 95] PROGRAMS OF STUDY PROGRAMS OF STUDY 94 o BIOL P120 (Human Physiology) 5 units at Porterville College, or equivalent 4-5 semester unit physiology course at another accredited college. o BIOL P160 (Ge"
+   },
+   {
+    "control_number": "31088",
+    "pages": [
+     105
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] This Associate in Arts in Studio Art for Transfer degree is designed to prepare students for transfer to a four-year university to continue their studies toward earning a B.A. in Art or Studio Art. The stud"
+   },
+   {
+    "control_number": "31127",
+    "pages": [
+     90,
+     91
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 90] The Associate in Arts in History for Transfer degree is designed for students planning to transfer to the California State University or other institutions to continue studies toward a B.A. in History or for"
+   },
+   {
+    "control_number": "31240",
+    "pages": [
+     110
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 110] PROGRAMS OF STUDY PROGRAMS OF STUDY 109 Certificates of Achievement Required Core Courses:(18 units) CHDV P115 - Curriculum and Strategies for Children with Special Needs ............."
+   },
+   {
+    "control_number": "31324",
+    "pages": [
+     107,
+     108,
+     109,
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] The Communication Studies certificate program is designed to enhance a student’s ability to communicate in social, professional, and relational contexts. This certificate is intended to enhance the communic"
+   },
+   {
+    "control_number": "31565",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] The Industrial Maintenance Certificate Program will prepare students in electrical control systems, residential and commercial wiring, electrical motor control, hydraulics, pneumatics, piping systems, weldi"
+   },
+   {
+    "control_number": "31585",
+    "pages": [
+     124
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] The Entrepreneurship Job Skills Certificate program integrates core business concepts impacting the formation, start-up, and growth of an entrepreneurial firm. By completing a select group of entrepreneursh"
+   },
+   {
+    "control_number": "31849",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.909,
+    "opens": "[page 77] PROGRAMS OF STUDY PROGRAMS OF STUDY 76 ASSOCIATE DEGREES To be eligible for multiple Associate degrees a student must complete all graduation requirements for each degree. Summer 2016 Administration of Justi"
+   },
+   {
+    "control_number": "33085",
+    "pages": [
+     89
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 89] The Associate in Arts in English for Transfer is designed for students planning to transfer to the California State Univer- sity or University of California that require a foundation of close textual reading,"
+   },
+   {
+    "control_number": "33091",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] The Associate in Arts in Political Science for Transfer is de- signed for students planning to transfer to the California State University or other institutions to continue studies toward a Bachelor in Art in"
+   },
+   {
+    "control_number": "33714",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] in Anthropology for Transfer will be introduced to the study of human diversity through specific courses in the areas of Biological Anthropology, Cultural Anthropology, and Archae- ology. Students will additi"
+   },
+   {
+    "control_number": "33933",
+    "pages": [
+     114,
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] The Certificate of Achievement in Music is designed for stu- dents wishing to gain the necessary skills and expertise to work in the field of music. Completion of a Certificate in Music ex- pands career oppor"
+   },
+   {
+    "control_number": "35227",
+    "pages": [
+     83
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] PROGRAMS OF STUDY PROGRAMS OF STUDY 82 Program Learning Outcomes: Analyze business, economic, or financial principles and explain their application to the real-world; apply written and verbal communication sk"
+   },
+   {
+    "control_number": "35229",
+    "pages": [
+     83,
+     84
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 83] PROGRAMS OF STUDY PROGRAMS OF STUDY 82 Program Learning Outcomes: Analyze business, economic, or financial principles and explain their application to the real-world; apply written and verbal communication sk"
+   },
+   {
+    "control_number": "35239",
+    "pages": [
+     113,
+     114
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 113] PROGRAMS OF STUDY PROGRAMS OF STUDY 112 Certificates of Achievement CAREER OPPORTUNITIES Employment in the field for registered nurses is excellent locally and nationally. The registered nurse enjoys a well- "
+   },
+   {
+    "control_number": "35250",
+    "pages": [
+     106,
+     107
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] The Accounting Certificate Program is a competitive and rigorous course of study that develops skills in critical thinking, problem-solving, written and oral communication, and decision making, in addition "
+   },
+   {
+    "control_number": "35256",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] The Human Resource Management Certificate program provides practical, up-to-date information on handling an organization’s human resources. Students learn how to minimize potential liabilities in tough area"
+   },
+   {
+    "control_number": "35388",
+    "pages": [
+     99,
+     100
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] The Associate of Science in Public Safety is a two-year course of study designed to prepare students for entry-level employment upon graduation from Porterville College. The Associate of Science in Public Sa"
+   },
+   {
+    "control_number": "35431",
+    "pages": [
+     82,
+     83
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] The Business Information Systems Associate of Science will prepare students in a wide range of information systems skills such as office application software, systems analysis and design, programming, data c"
+   },
+   {
+    "control_number": "35432",
+    "pages": [
+     86
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] The Computer Information Systems Associate of Science will prepare students in a wide range of information systems skills such as web design, systems analysis and design, program- ming, data communication and"
+   },
+   {
+    "control_number": "35449",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] PROGRAMS OF STUDY PROGRAMS OF STUDY 76 ASSOCIATE DEGREES To be eligible for multiple Associate degrees a student must complete all graduation requirements for each degree. Summer 2016 Administration of Justi"
+   },
+   {
+    "control_number": "35554",
+    "pages": [
+     87,
+     88
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] PROGRAMS OF STUDY PROGRAMS OF STUDY 86 Early Childhood Education Associate in Science for Transfer The Associate in Science in Early Childhood Education for Transfer provides a clearly articulated curricular"
+   },
+   {
+    "control_number": "35682",
+    "pages": [
+     78,
+     79,
+     80,
+     81
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 78] The Associate of Science in Agribusiness for Transfer is de- signed to prepare students to continue studies toward a Bach- elor of Arts or Bachelor of Science degree in Agribusiness or for entry-level into a v"
+   },
+   {
+    "control_number": "36659",
+    "pages": [
+     109,
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] PROGRAMS OF STUDY PROGRAMS OF STUDY 108 Certificates of Achievement In postproduction, students will learn motion graphics and how to finalize video content for commercial and creative applications. Program "
+   },
+   {
+    "control_number": "36704",
+    "pages": [
+     109,
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] The Early Child Care Administration Specialization Certificate of Achievement is designed to prepare students to work with adults in an early care and education settings. All professionals working with adul"
+   },
+   {
+    "control_number": "37175",
+    "pages": [
+     104,
+     105,
+     106,
+     107
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] in Arts in Sociology for Transfer will have earned a degree that follows the Transfer Model Curriculum (TMC) and will be qualified for transfer into any California State University (CSU) or University of Ca"
+   },
+   {
+    "control_number": "37377",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 88] The Associate of Science in Engineering is designed to pre- pare students to continue studies toward a B.S. degree in any field of Engineering. The intent of the program is to assist students in transferring "
+   },
+   {
+    "control_number": "37556",
+    "pages": [
+     87,
+     88,
+     89,
+     90
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 87] PROGRAMS OF STUDY PROGRAMS OF STUDY 86 Early Childhood Education Associate in Science for Transfer The Associate in Science in Early Childhood Education for Transfer provides a clearly articulated curricular"
+   },
+   {
+    "control_number": "38309",
+    "pages": [
+     79,
+     80,
+     81
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] The Associate in Science in Biology for Transfer Degree provides a comprehensive foundation for students aiming to transition to a California State University. This program equips students with essential kno"
+   },
+   {
+    "control_number": "39770",
+    "pages": [
+     89,
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.923,
+    "opens": "[page 89] earn the Environmental Science for Transfer degree: 1. Completion of 60 semester units or 90 quarter units of degree-applicable courses, 2. Obtainment of a minimum grade point average of 2.0, 3. Minimum gr"
+   },
+   {
+    "control_number": "39837",
+    "pages": [
+     85,
+     86
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] order to earn the Communication Studies 2.0 AA-T degree: 1. Completion of 60 semester units or 90 quarter units of degree-applicable courses 2. Minimum overall grade point average of 2.0 3. Minimum gra"
+   },
+   {
+    "control_number": "39841",
+    "pages": [
+     96
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] The Associate in Science in Mathematics 2.0 for Transfer is designed to prepare students to continue studies toward a B.A. or B.S. degree in Mathematics or for entry-level into a variety of career options. T"
+   },
+   {
+    "control_number": "40122",
+    "pages": [
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] The Associate in Arts in Music for Transfer prepares stu- dents to transfer to California State University campuses that offer bachelor’s degrees in Music. The Music AA-T degree prepares students to demonstra"
+   },
+   {
+    "control_number": "40906",
+    "pages": [
+     82,
+     83,
+     84
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] PROGRAMS OF STUDY PROGRAMS OF STUDY 81 assignments effectively; recognize the unique value and challenges associated with local and global business environ- ments; evaluate all decisions to create an outcome t"
+   },
+   {
+    "control_number": "41689",
+    "pages": [
+     114,
+     115,
+     116
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] The Personal Training Certificate is designed to prepare students to be employed in the area of fitness training as personal trainers/instructors. The program is designed to provide theory-based training to"
+   },
+   {
+    "control_number": "41893",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] PROGRAMS OF STUDY PROGRAMS OF STUDY 103 in Arts in Sociology for Transfer will have earned a degree that follows the Transfer Model Curriculum (TMC) and will be qualified for transfer into any California Sta"
+   },
+   {
+    "control_number": "42376",
+    "pages": [
+     106
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] The Administration of Justice Certificate prepares students for careers in law enforcement, probation, parole, and corrections. Career opportunities are expected to continue to be strong in these areas. The"
+   },
+   {
+    "control_number": "42395",
+    "pages": [
+     108,
+     109
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] The Digital Video Production Certificate of Achievement prepares students to work in diverse motion picture industries. With a focus on historical through contemporary cinema and video art genres, students "
+   },
+   {
+    "control_number": "42412",
+    "pages": [
+     107
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] Child Development Permit at the Teacher level. This Certificate of Achievement requires completion of the major (24 units) with a “C” or better grade in each course and seventeen units in general education."
+   },
+   {
+    "control_number": "42417",
+    "pages": [
+     106,
+     107
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] Child Development Associate Teacher This certificate provides the educational coursework that serves as the core curriculum for the early childhood education field and allows the student to work as a teacher"
+   },
+   {
+    "control_number": "43117",
+    "pages": [
+     112
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] The Law Enforcement Officer Reserve Certificate is designed to serve students seeking either to enter or enhance their exist- ing careers in the law enforcement profession. The courses in the certificate pro"
+   },
+   {
+    "control_number": "43139",
+    "pages": [
+     100
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.875,
+    "opens": "[page 100] PROGRAMS OF STUDY PROGRAMS OF STUDY 99 Program Learning Outcomes: By the completion of the degree, the student will be able to: 1. Identify the procedures involved in the justice system from arrest to releas"
+   },
+   {
+    "control_number": "43487",
+    "pages": [
+     85,
+     86
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] order to earn the Communication Studies 2.0 AA-T degree: 1. Completion of 60 semester units or 90 quarter units of degree-applicable courses 2. Minimum overall grade point average of 2.0 3. Minimum gra"
+   },
+   {
+    "control_number": "43554",
+    "pages": [
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 115] The Popular Music Studies Certificate of Achievement is designed to prepare students for employment in a variety of popular music and music production settings such as music performance in rock/pop/jazz ban"
+   },
+   {
+    "control_number": "43784",
+    "pages": [
+     91,
+     92
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] PROGRAMS OF STUDY PROGRAMS OF STUDY 90 Program Learning Outcomes: 1. Critically analyze and evaluate primary sources 2 Evaluate competing interpretations and multiple narratives of the past 3. Conduct"
+   },
+   {
+    "control_number": "44039",
+    "pages": [
+     120
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] PROGRAMS OF STUDY PROGRAMS OF STUDY 119 Required Courses: EL2 P93AZ - Intermediate Reading and Writing .......90 hours EL2 P94AZ - Intermediate Listening and Speaking .. 90 hours EL2 P93BZ - High Interm Readin"
+   },
+   {
+    "control_number": "44089",
+    "pages": [
+     120
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] PROGRAMS OF STUDY PROGRAMS OF STUDY 119 Required Courses: EL2 P93AZ - Intermediate Reading and Writing .......90 hours EL2 P94AZ - Intermediate Listening and Speaking .. 90 hours EL2 P93BZ - High Interm Readin"
+   },
+   {
+    "control_number": "44090",
+    "pages": [
+     121
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] PROGRAMS OF STUDY PROGRAMS OF STUDY 120 Module 3: Electric Vehicle (EV) iagnostics Module 3: Electric Vehicle (EV) Software/Firmware Diagnostics will incorporate advanced Electrical & Chassis Control System"
+   },
+   {
+    "control_number": "44091",
+    "pages": [
+     121
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] PROGRAMS OF STUDY PROGRAMS OF STUDY 120 Module 3: Electric Vehicle (EV) iagnostics Module 3: Electric Vehicle (EV) Software/Firmware Diagnostics will incorporate advanced Electrical & Chassis Control System"
+   },
+   {
+    "control_number": "44092",
+    "pages": [
+     122
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 122] PROGRAMS OF STUDY PROGRAMS OF STUDY 121 safety checks to ensure the system’s proper operation; ef- fectively diagnose and troubleshoot anomalies introduced by the instructor, applying in-depth issue diagnosis"
+   },
+   {
+    "control_number": "44409",
+    "pages": [
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 119] The goal of the welding certificate program is to provide an opportunity for students to complete a short-term, intensive, hands-on program preparing them for employment and/or advancement within management"
+   },
+   {
+    "control_number": "44512",
+    "pages": [
+     92
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.85,
+    "opens": "[page 92] PROGRAMS OF STUDY PROGRAMS OF STUDY 91 Total Major Units ................................................18-19 units Total units that may be double counted ..................3 units General Education (Cal-GETC"
+   },
+   {
+    "control_number": "44805",
+    "pages": [
+     122
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 122] The Tutor Training Level 1 Certificate of Competency equips student tutors with essential skills for effective tutoring, in- cluding strategies for different learning styles, communication techniques, and cr"
+   },
+   {
+    "control_number": "44924",
+    "pages": [
+     108,
+     109,
+     110,
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] PROGRAMS OF STUDY PROGRAMS OF STUDY 107 Certificates of Achievement This program prepares students for careers in Communication Job and career opportunities for students completing a Communication Studies Ce"
+   },
+   {
+    "control_number": "44926",
+    "pages": [
+     108
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] PROGRAMS OF STUDY PROGRAMS OF STUDY 107 Certificates of Achievement This program prepares students for careers in Communication Job and career opportunities for students completing a Communication Studies Ce"
+   },
+   {
+    "control_number": "45313",
+    "pages": [
+     84
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 84] PROGRAMS OF STUDY PROGRAMS OF STUDY 83 Students must satisfy the following requirements in order to earn the Associate in Arts in Child and Adolescent Develop- ment for Transfer degree: 1. Completion of 60 sem"
+   },
+   {
+    "control_number": "45511",
+    "pages": [
+     92
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 92] PROGRAMS OF STUDY PROGRAMS OF STUDY 91 Total Major Units ................................................18-19 units Total units that may be double counted ..................3 units General Education (Cal-GETC"
+   },
+   {
+    "control_number": "45513",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] in Anthropology for Transfer will be introduced to the study of human diversity through specific courses in the areas of Biological Anthropology, Cultural Anthropology, and Archae- ology. Students will additi"
+   },
+   {
+    "control_number": "45517",
+    "pages": [
+     117
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] The certificate in User Experience (UX) Design prepares students for entry-level positions in the field and/or transfer to a bachelor’s degree program in a similar discipline. Students learn foundation skil"
+   },
+   {
+    "control_number": "45519",
+    "pages": [
+     104,
+     105,
+     106,
+     107
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 104] in Arts in Sociology for Transfer will have earned a degree that follows the Transfer Model Curriculum (TMC) and will be qualified for transfer into any California State University (CSU) or University of Ca"
+   },
+   {
+    "control_number": "45536",
+    "pages": [
+     89
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] The Associate in Arts in English for Transfer is designed for students planning to transfer to the California State Univer- sity or University of California that require a foundation of close textual reading,"
+   },
+   {
+    "control_number": "45541",
+    "pages": [
+     90
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] PROGRAMS OF STUDY PROGRAMS OF STUDY 89 CHEM P101A - General Chemistry .............................5 units GEOL P110 - Introduction to Geology .........................4 units ECON C2001 - Principles of Microec"
+   },
+   {
+    "control_number": "45544",
+    "pages": [
+     89,
+     90,
+     91,
+     92
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 89] earn the Environmental Science for Transfer degree: 1. Completion of 60 semester units or 90 quarter units of degree-applicable courses, 2. Obtainment of a minimum grade point average of 2.0, 3. Minimum gr"
+   },
+   {
+    "control_number": "45593",
+    "pages": [
+     111,
+     112
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] PROGRAMS OF STUDY PROGRAMS OF STUDY 110 Certificates of Achievement Human Resource Management The Human Resource Management Certificate program provides practical, up-to-date information on handling an organ"
+   },
+   {
+    "control_number": "45626",
+    "pages": [
+     117,
+     118
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] The Vocational Nursing COA program is a three-semester certificate program and includes the study of anatomy and physiology, pharmacology, basic nursing skills, medical- surgical nursing, and maternal-child "
+   },
+   {
+    "control_number": "45634",
+    "pages": [
+     77,
+     78,
+     79
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] PROGRAMS OF STUDY PROGRAMS OF STUDY 76 ASSOCIATE DEGREES To be eligible for multiple Associate degrees a student must complete all graduation requirements for each degree. Summer 2016 Administration of Justi"
+   },
+   {
+    "control_number": "45637",
+    "pages": [
+     96,
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] The Associate in Science in Modern Policing is a program that focuses on psychology, communications, history, ethnic studies, law and associated knowledge, understanding, and skills to develop critical think"
+   },
+   {
+    "control_number": "45769",
+    "pages": [
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] work. Students who complete the Psychology AA-T degree are guaranteed admission to the CSU system, but not to a particular campus or major. Students must maintain a mini- mum grade point average (GPA) of at l"
+   },
+   {
+    "control_number": "45797",
+    "pages": [
+     87,
+     88,
+     89,
+     90
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] PROGRAMS OF STUDY PROGRAMS OF STUDY 86 Early Childhood Education Associate in Science for Transfer The Associate in Science in Early Childhood Education for Transfer provides a clearly articulated curricular"
+   },
+   {
+    "control_number": "46183",
+    "pages": [
+     96
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] The Associate in Science in Mathematics 2.0 for Transfer is designed to prepare students to continue studies toward a B.A. or B.S. degree in Mathematics or for entry-level into a variety of career options. T"
+   }
+  ],
+  "page_checks": {
+   "read": 6,
+   "own_page": 5,
+   "no_own_page": 1,
+   "not_printed": 0
+  },
+  "unproven": []
+ },
+ "loads": 0,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 29.1,
+ "found": 79,
+ "by_method": {
+  "no_closed_list": 6,
+  "not_found": 6,
+  "pdf_pages": 79
+ },
+ "shared_pages": {
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=78": [
+   "06771",
+   "35682"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=115": [
+   "06797",
+   "43554"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84": [
+   "06809",
+   "45313"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=85": [
+   "09520",
+   "39837",
+   "43487"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83": [
+   "09528",
+   "35227",
+   "35229"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=90": [
+   "31127",
+   "45541"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=107": [
+   "31324",
+   "42412"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=111": [
+   "31565",
+   "35256",
+   "45593"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=77": [
+   "31849",
+   "35449",
+   "45634"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89": [
+   "33085",
+   "39770",
+   "45536",
+   "45544"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=79": [
+   "33714",
+   "38309",
+   "45513"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=114": [
+   "33933",
+   "41689"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106": [
+   "35250",
+   "42376",
+   "42417"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=99": [
+   "35388",
+   "45769"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=82": [
+   "35431",
+   "40906"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=87": [
+   "35554",
+   "37556",
+   "45797"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=109": [
+   "36659",
+   "36704"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=104": [
+   "37175",
+   "41893",
+   "45519"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=96": [
+   "39841",
+   "45637",
+   "46183"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108": [
+   "42395",
+   "44924",
+   "44926"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=120": [
+   "44039",
+   "44089"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=121": [
+   "44090",
+   "44091"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=122": [
+   "44092",
+   "44805"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=92": [
+   "44512",
+   "45511"
+  ],
+  "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117": [
+   "45517",
+   "45626"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "35228",
+   "title": "Business Management-Human Resources",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "36021",
+   "title": "High Beginning English as a Second Language (ESL)",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36022",
+   "title": "Advanced English as a Second Language",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36023",
+   "title": "High Intermediate English as a Second Language (ESL)",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "37239",
+   "title": "Social Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=75",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44014",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=124",
+    "coverage": 0.2
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 1,
+  "0.8-1.0": 14,
+  "1.0": 64
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/porterville",
+  "kept": 70,
+  "kept_moved": 0,
+  "programs": 5,
+  "list": [
+   {
+    "control_number": "06797",
+    "title": "Psychiatric Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=115",
+    "coverage": 1.0,
+    "was_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=116",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "30235",
+    "title": "Biological and Physical Science",
+    "award": "A.A. Degree",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=70",
+    "was_coverage": 0.952,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36704",
+    "title": "Early Child Care Administration Specialization",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+    "was_coverage": 0.545,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42417",
+    "title": "Child Development Associate Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106",
+    "coverage": 1.0,
+    "was_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45626",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117",
+    "coverage": 1.0,
+    "was_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=118",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "31127",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=90",
+    "coverage": 0.933,
+    "was_coverage": 0.933
+   },
+   {
+    "control_number": "31324",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=107",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35388",
+    "title": "Public Safety",
+    "award": "A.S. Degree",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=99",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "38309",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=79",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "06771": {
+   "sha256": "003287b629ef7c78a7fd4eacb6d3175f308205ea6400d12bd2169707f8e31fa4",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=78"
+  },
+  "06773": {
+   "sha256": "a59739089cbfe578572ae78c95bf179a081466b2b7eebf02efec6c77f35b063c",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=81"
+  },
+  "06797": {
+   "sha256": "e7dcafc3b0649c2960a5b24e67586be04178a4dc0a26890d3ab6c63c89c49088",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=115"
+  },
+  "06809": {
+   "sha256": "506f98d340830884cd174545f4d15c32e0cafc67b6a9d4541de5fd08f40606b2",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84"
+  },
+  "09520": {
+   "sha256": "4a51ed089e40b2c818683c654f011f150146752bc0a3287c57ef53d37bb05d22",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=85"
+  },
+  "09528": {
+   "sha256": "24afc91f29b76e16d03cd03b02cfd6629e1d769c01acfac16a01c6f64e0e1d05",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83"
+  },
+  "18526": {
+   "sha256": "8fafafb384287c62421338eacd64eb5c9e55086617ae951a0bfaf749b402004b",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=93"
+  },
+  "30235": {
+   "sha256": "acefd2e377225edc71a9a456d4a278612a1763a051ca97540b3b9e36d54cb146",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80"
+  },
+  "30357": {
+   "sha256": "71d551c2cb0e7a46724ae4ef5c666bf838d4942227342efe6c74977b1be9ca87",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=102"
+  },
+  "31070": {
+   "sha256": "c5b884fdac5ab29e605669776e4aa18740d2c97246b21f509f650e579da71d0f",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=95"
+  },
+  "31088": {
+   "sha256": "fa95beeb12631df7a14de57681796bb41acc04ecc16d1edcd33d56e2e868f865",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=105"
+  },
+  "31127": {
+   "sha256": "3453388d24225d3b0cdfdcdab8d3f69dea57811a295275ee0ad0065f9cde2b77",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=90"
+  },
+  "31240": {
+   "sha256": "a7d475984c830f360a7d6dfab34f5d6c290e242502f5e8ea94fccad603f407e8",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=110"
+  },
+  "31324": {
+   "sha256": "2a664f780074728a152b93a923b8e080703d28d88bf858479f2138f10018884e",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=107"
+  },
+  "31565": {
+   "sha256": "e84bff14384f778d75d22016aac49a5c0c84e3c2e656cafcdba4f3f55638d2d1",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=111"
+  },
+  "31585": {
+   "sha256": "f2e2e7acc7df8010ddb8ac1be48730853595cb82ab548c7d506ebf3664ae2ad1",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=124"
+  },
+  "31849": {
+   "sha256": "4b01bcb21a1d2bc8c7cdd7222a3efde7fe43604ec0803a88b57470a3bdc6af37",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=77"
+  },
+  "33085": {
+   "sha256": "d3e55e7a76ef58a8264862c38d125ba58a5d232ec368e1dc80fd476810cbe89e",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89"
+  },
+  "33091": {
+   "sha256": "7df1b920092cab72dabc0e0417d0b1cfc5b38f29be061b7b8d78c62ab411d254",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=98"
+  },
+  "33714": {
+   "sha256": "333faf2528ee24d1e4f4649682468d42afd0dd62af061d14f186607feb830870",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=79"
+  },
+  "33933": {
+   "sha256": "53a5f9b129df8511f8fad26b61afcc7421a37549fe37cd42ba12ea28105ab26d",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=114"
+  },
+  "35227": {
+   "sha256": "24afc91f29b76e16d03cd03b02cfd6629e1d769c01acfac16a01c6f64e0e1d05",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83"
+  },
+  "35229": {
+   "sha256": "43ebe1f5220ec60127d9b1cad7cddcebb88c3352089fede675756fe8883d04ee",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=83"
+  },
+  "35239": {
+   "sha256": "f8572b9b73198a6c459bbe1bc1c7f186e1e3123b774179c45dbcfe00134150b0",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=113"
+  },
+  "35250": {
+   "sha256": "6d9a314cf57d768a693d981d8dc8d2e9a7004823b42c5c56f84410d64e6d9c4d",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106"
+  },
+  "35256": {
+   "sha256": "8c6e3edf96c1ec11dc76d82944e35bfe24e6afbcc7ca5d39dff7a2846fa835f4",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=111"
+  },
+  "35388": {
+   "sha256": "0821dc60fe9c883284f24352b1c831543a1f433516d1ba051b518803e0d5c432",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=99"
+  },
+  "35431": {
+   "sha256": "5945cec62efeb81bcec1f9d09bffa916019f529ac007d59034735a12da6cba19",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=82"
+  },
+  "35432": {
+   "sha256": "58b0ecd962883e375e6e8980cb7230c603e5c27e5de1d1877759dba1b1d91647",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=86"
+  },
+  "35449": {
+   "sha256": "4b01bcb21a1d2bc8c7cdd7222a3efde7fe43604ec0803a88b57470a3bdc6af37",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=77"
+  },
+  "35554": {
+   "sha256": "8648fb10ac790a55c358bd299f7c2469c75b8d4b17813514f4a4922db1475b39",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=87"
+  },
+  "35682": {
+   "sha256": "5b09cc38f145392aec9d5bcf89009b4db219293e351f71682230c2e69b2ff166",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=78"
+  },
+  "36659": {
+   "sha256": "1ec679ac8c0055c270f73ade541e973bbee65fba93d42db6dfcf3748cd778b4e",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=109"
+  },
+  "36704": {
+   "sha256": "a3b9e921eebacf4104a4fb0659e8890003f2c9ba8abaab5c1bb6e4a2bb196160",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=109"
+  },
+  "37175": {
+   "sha256": "3e4ecb4c92909923927c84b0498f37a5c73d62efa820dba06f67ec6922e3a42b",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=104"
+  },
+  "37377": {
+   "sha256": "5f07e07d210a88880da39953002909ffa1b66e99cbf04f09cb01298d436c06f3",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=88"
+  },
+  "37556": {
+   "sha256": "81b52e10b8f88e8ab1bf69a9e5dfd6212ab155f9edffd30978fc3739e0c4df95",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=87"
+  },
+  "38309": {
+   "sha256": "1329374a956914a86a7aaf212229c2b764d6e8dfa8d1f380d1a8cb375704c66c",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=79"
+  },
+  "39770": {
+   "sha256": "dc394bf8ef6b2f04aace3eeb50dbbf04d0532d1bc3f74161ce37cb6b00e5ad96",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89"
+  },
+  "39837": {
+   "sha256": "4677f831180881217d0886ad30c6736f2ec318678c818635b6757db1880c4f8b",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=85"
+  },
+  "39841": {
+   "sha256": "812c14ec4ced668acc767b0d5d30d2d7499991e7ddc9917549f25cae16f20409",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=96"
+  },
+  "40122": {
+   "sha256": "6fe5fce9997cfba07bf68daec0ef1968fb76be82be44639ceab37dcee957af1e",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=97"
+  },
+  "40906": {
+   "sha256": "b6ee5f1607d634c309842ebc1e374fb2a787b60a857bddfb2301a103b374d2d1",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=82"
+  },
+  "41689": {
+   "sha256": "afd82afb14f4755b335aa1bfc273695a7fd7aee7f7e8ce6564c6b38a5760a109",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=114"
+  },
+  "41893": {
+   "sha256": "795113998ffc2f782f1101913cd6e556bab654ee3b849a3ae9a379194992fa63",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=104"
+  },
+  "42376": {
+   "sha256": "bd2f9722c656b3e5d13bbda8092db459a9e5f2c36a5815b8fccda063b716b750",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106"
+  },
+  "42395": {
+   "sha256": "19770aecea4cef7d53399959de255dfb955368af1c64086bbe1a597caf059cca",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108"
+  },
+  "42412": {
+   "sha256": "d92faba1cfdd2ec8a4e685c21f33d95263a5e35f78b447fa8555e3b19b8d2b94",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=107"
+  },
+  "42417": {
+   "sha256": "72804e175eb78c2100f9f45d4ac33a5dbc71b216a59445cbe955f936b870bcb8",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=106"
+  },
+  "43117": {
+   "sha256": "049253f435233411140a04db257ea318eb3f63523dd1108e6d7d7527dadb9509",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=112"
+  },
+  "43139": {
+   "sha256": "345f16c47adef94fad4401a721e781a635dfedb5389314ebe329a03650a93e5e",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=100"
+  },
+  "43487": {
+   "sha256": "4677f831180881217d0886ad30c6736f2ec318678c818635b6757db1880c4f8b",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=85"
+  },
+  "43554": {
+   "sha256": "f631567d0d3d0b8a0851872a5ca84d3cad176bbed1764936f13eff5054673d05",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=115"
+  },
+  "43784": {
+   "sha256": "01d6f0c2c671249a72c0fc686aefb6a96c76c4dba27e1274a2e7c37ded52c6fe",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=91"
+  },
+  "44039": {
+   "sha256": "41b3ec035c9336be857da136bca1efbe0b22154ed8719108ecaa92237962956a",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=120"
+  },
+  "44089": {
+   "sha256": "41b3ec035c9336be857da136bca1efbe0b22154ed8719108ecaa92237962956a",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=120"
+  },
+  "44090": {
+   "sha256": "6fa5d300a62ba0b99b883a200018d7777cee65627f2b3e8055a72ae3afd25b22",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=121"
+  },
+  "44091": {
+   "sha256": "6fa5d300a62ba0b99b883a200018d7777cee65627f2b3e8055a72ae3afd25b22",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=121"
+  },
+  "44092": {
+   "sha256": "1bb2fb4118a7ac83688702875ffb786315f37fdfb537a6bfb75fa8a1ceb4dc47",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=122"
+  },
+  "44409": {
+   "sha256": "ca6b9b982442a7107d217043f5aadbabca2d65411d691ee49a8ac5b568532bf0",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=119"
+  },
+  "44512": {
+   "sha256": "f977bc3129af721dbca4d379c366b88f2b69c3c0f4d37f76a16ee5ed6967aefb",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=92"
+  },
+  "44805": {
+   "sha256": "20d8f06bfb6466490b8a9ed0993e97ac42b6511f21603e61ec022a52caf8eb66",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=122"
+  },
+  "44924": {
+   "sha256": "b78bf2b818d796fb352b9a48ce84fd782c89a1575fbabfaf50380e63e8ec3a95",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108"
+  },
+  "44926": {
+   "sha256": "81bea242b7a2a7575ad90586980356d91c8d8e2215e59a70bfe321754bdde3ba",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=108"
+  },
+  "45313": {
+   "sha256": "506f98d340830884cd174545f4d15c32e0cafc67b6a9d4541de5fd08f40606b2",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=84"
+  },
+  "45511": {
+   "sha256": "f977bc3129af721dbca4d379c366b88f2b69c3c0f4d37f76a16ee5ed6967aefb",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=92"
+  },
+  "45513": {
+   "sha256": "333faf2528ee24d1e4f4649682468d42afd0dd62af061d14f186607feb830870",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=79"
+  },
+  "45517": {
+   "sha256": "55eff2b6b59a34b39224b6eb1e0eceb55e0f0e2939a9f3c76923277b3b9c72b1",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117"
+  },
+  "45519": {
+   "sha256": "3e4ecb4c92909923927c84b0498f37a5c73d62efa820dba06f67ec6922e3a42b",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=104"
+  },
+  "45536": {
+   "sha256": "d3e55e7a76ef58a8264862c38d125ba58a5d232ec368e1dc80fd476810cbe89e",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89"
+  },
+  "45541": {
+   "sha256": "1a4b0f48b0fd21c0eb2456c44dadef84c93962243a470a1ade93bf8162dfabe6",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=90"
+  },
+  "45544": {
+   "sha256": "dc394bf8ef6b2f04aace3eeb50dbbf04d0532d1bc3f74161ce37cb6b00e5ad96",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=89"
+  },
+  "45593": {
+   "sha256": "f6f83906abf521e2ed7172fd762316d41a65e5240b857805a8e3da53805594f9",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=111"
+  },
+  "45626": {
+   "sha256": "5440b494e2f2aff2b43c2ff5d8881b47cf3c796848a4058148a9be1f4fa92797",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=117"
+  },
+  "45634": {
+   "sha256": "4b01bcb21a1d2bc8c7cdd7222a3efde7fe43604ec0803a88b57470a3bdc6af37",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=77"
+  },
+  "45637": {
+   "sha256": "7f47960c2a6629b685592aef17738d4aa31a53721968ad763b54b2f54b3e169c",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=96"
+  },
+  "45769": {
+   "sha256": "18b2aea4da91bd110095a8890885f3cda54017305f1a6bbf345e029249743204",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=99"
+  },
+  "45797": {
+   "sha256": "81b52e10b8f88e8ab1bf69a9e5dfd6212ab155f9edffd30978fc3739e0c4df95",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=87"
+  },
+  "46183": {
+   "sha256": "812c14ec4ced668acc767b0d5d30d2d7499991e7ddc9917549f25cae16f20409",
+   "url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=96"
+  }
+ },
+ "run": "44474840613"
+}
