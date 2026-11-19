@@ -47,8 +47,7 @@ together and places them in some order of priority and completion and known issu
 
 ## Status
 
-**BUILT, draft PR (#3533; Sam's go Nov 19, 4:28 AM PT, via COBIx): the CPL Commons
-front page.** `commons_front.js` draws the bare `#commons`: the header and Sam's lede, the Projected Completion Date
+**LIVE (#3554, `5a7a6f24`; #3533, Sam's go Nov 19): the CPL Commons front page.** `commons_front.js` draws the bare `#commons`: the header and Sam's lede, the Projected Completion Date
 widget (Program records done from the 7-day pace; Curation done reads Not dated yet), 30 daily bars rebuilt from the live files, Needs you, eight cards in Collect / Curate / Connect (fold keys
 in `cplCommons.fold.v1`), the Building, More collection detail and scorecard lines. College Data Collection moved to
 `#collect` (`tabs.js` folds it into this tab and rewrites every old `#commons/data...` address); the earlier first view

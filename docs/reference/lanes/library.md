@@ -18,6 +18,11 @@ CPLLibrary folder on the MAP team's SharePoint site; the repos keep only the sou
 
 ## Status
 
+**LIVE: Publish now shows one status line (#3562, `0159aacb`; Sam's test of Nov 19, COBIx on #3560).** Publishing,
+Deploying, Live (only once the page's own address answers), or Failed with the function's reason (`not_configured`,
+`token_refused` named). Guard `tests/library_publish_now.test.js`. **NEXT (#3560, open):** the progress bar, the
+accessibility gate and footer, the two publish buttons, Publish all, Add existing, redraft and republish, Template.
+
 ✅ **The tab is built** (`library.js`, under *Sierra & Team Tools*; the side
 session beside S336, 2026-10-05). It reads `cpl_library` live behind the team
 phrase and seeds twelve real pieces across nine occasions
@@ -33,18 +38,7 @@ Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
 
 ✅ **Any file, and a new piece drafted on its card** (#3077): `docs/library_lessons.md`, *Moved from the lane (S667 checkpoint)*.
 
-✅ **Start a piece is built** (2026-10-06, as mockup version 2 shows it). The brief form
-(kind, now including spreadsheet; working title; occasion; needed by; for; what it must
-say; sources; length or template) saves a record with status `requested` and the brief in
-one `brief` jsonb column (migration `cpl_library_start_a_piece`). **In development** sits
-above the register and holds every Requested record, and every briefed record still at
-Draft, at its step of four (Requested, Draft, Approved, Presented). Approval moves a piece
-into the register. A Requested record never counts as Not filed, because it has nothing to
-file yet. *Copy the brief* gives the whole paste for a new session: the ask, the
-`scripts/library_file.py` command for that record, and what a good result looks like.
-**File it** sits on the In development card: filing a Requested piece moves it to Draft, and a record with no made-on date takes the day it is filed, or the day Edit moves it past Requested (2026-10-27, after the Workplan Update reached Approved through Edit and sorted last, undated). Sam's routine reads Requested records as queue items (step 6 of *At the start* in
-[`scheduled_sessions`](../scheduled_sessions.md)). The versions table shows the time
-each version was filed (`filed_at`, call 8).
+✅ **Start a piece is built** (2026-10-06): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S686 light checkpoint)*.
 
 ✅ **The public library is built** (2026-10-20, DSP side session). One record and a switch, never a copy
 (*"Copy or move...to save space"*): **List publicly** on a record in the Library tab sets `public_listed` through
