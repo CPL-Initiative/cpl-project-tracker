@@ -17276,8 +17276,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 645,
+   "count": 646,
    "docs": [
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 687,
+     "path": "docs/session_687_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 687 handoff (from SkyBushtit, S686)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
     {
      "created": "2026-11-19",
      "governs": [],
@@ -28080,5 +28094,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1523
+ "total": 1524
 }
