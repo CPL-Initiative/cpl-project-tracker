@@ -1,0 +1,121 @@
+{
+ "college": "Porterville College",
+ "reread_run": "44545037444",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44477695238",
+ "at": "2026-11-19T14:34:06Z",
+ "posted": 5,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 4,
+ "carried": 0,
+ "replaced_keys": [
+  "06797"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [
+  "30235",
+  "36704",
+  "42417",
+  "45626"
+ ],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Porterville College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44477695238;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 6,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses (First, Second and Third Semester)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PSYT P001",
+        "units": 14.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYT P002",
+        "units": 17.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYT P003",
+        "units": 16.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "licensed psychiatric technician"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Provide safe, therapeutic, client-centered nursing care to diverse clients across the lifespan utilizing evidence based practice in a variety of healthcare settings",
+      "exercise clinical judgment to make client-centered care decisions",
+      "participate in quality improvement processes to improve client care outcomes",
+      "participate in teamwork and collaboration with members of the interdisciplinary team, the client, and the client’s support persons",
+      "use information management systems and client care technology to communicate and support safe client care",
+      "incorporate professionalism, leadership, management, legal, and ethical principles to guide practice as a Psychiatric Technician."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Certificates of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=116",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39046786897,
+   "program_title": "Psychiatric Technology",
+   "control_number": "06797"
+  }
+ ]
+}
