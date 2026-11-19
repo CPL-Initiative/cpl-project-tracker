@@ -45,21 +45,25 @@ the tab publishes to the Internal Library and Public says the check record is no
   (second read of #3572), in the tab and in `cpl_library_set_public()`; the draft's key speaks only to a new piece's
   Public confirmation. A draft's check never carries to the page, which is checked again once it is up.
 - DECIDED (S687): the rollback refuses while `cpl_library_checks` holds rows, since nothing else keeps them.
-- DECIDED (S687 conductor, on COBIx's #3572 comment 7022946691; `d-library-new-page-unlists-s687`): a listed piece whose `version` or `url` changes leaves
-  the Public Library unless the latest check for its new page key passes, and keeps `publish_target = 'public'` so
-  part 2's run lists it again once the new page passes. Every writer, the service role included, since unlisting is
-  the safe direction. Until part 2 relists, this overrides Sam's "a Public Library piece stays listed while redrafted,
-  showing the last published version": a draft stays a draft and unlists nothing, and only a published new version
-  does. A url change that keeps its version key keeps that key's check. Trigger `cpl_library_unlist_new_page_trg`,
-  `kb/migrations/2026-11-19_library_relist_on_new_version.sql` (applied, run 44624282220).
+- DECIDED (S687 conductor, on COBIx's #3572 comments 7022946691, 7023361983 and 7023581179;
+  `d-library-new-page-unlists-s687`): a listed piece leaves the Public Library when its `url` changes, always, since no
+  check is keyed on a url; and when its `version` changes, unless the latest check for the new version key passes. It
+  keeps `publish_target = 'public'` so part 2's run checks the new page and lists it again. Every writer, the service
+  role included, since unlisting is the safe direction. Until part 2 relists, this overrides Sam's "a Public Library
+  piece stays listed while redrafted, showing the last published version" (Nov 19, item 9; his to reverse): a draft
+  stays a draft and unlists nothing, and only a published new version or a new url does. Trigger
+  `cpl_library_unlist_new_page_trg`: `kb/migrations/2026-11-19_library_relist_on_new_version.sql` (applied, run
+  44624282220), its url rule `kb/migrations/2026-11-19_library_unlist_on_url_change.sql` (not applied yet; it also
+  corrects the memory row's summary with a guarded UPDATE).
 - DECIDED (S687, `d-library-internal-one-press-s687`): Publish to Internal Library approves a new piece and starts the
   publish run in one press for a signed-in reviewer, through Publish now's holds; a team-phrase press waits for the
   scheduled run.
 - DECIDED (S687, `d-library-3560-in-four-prs-s687`): #3560 lands in four PRs, one after another, since its asks share
   `library.js`: 1 the two publish buttons, Template and the check gate (#3572); 2 the check run and the footer; 3 the
   progress bar; 4 Publish all, Add existing, redraft and republish. Memory rows: run 44624406317.
-- Known limits, part 2's to close: a check names a version, not its contents, so a relabeled version key (set back to a
-  key that passed) keeps that key's check, and a page that changes without a version bump keeps its listing.
+- Known limit, part 2's to close: a check names a version, not its contents, so a version key set back to one that
+  passed keeps that key's check, and a page whose contents change at the same url and version keeps its listing. A
+  move to a new url is closed: it always unlists.
 - DECIDED (S687): a new piece pressed to Public is never listed at the press (it has no page yet); part 2's check run
   lists it once its page passes. Only the service role writes a check, so the tab never certifies a piece.
 - DECIDED (S687): Replace the public copy on a revision is unchanged until part 4 (redraft and republish).
