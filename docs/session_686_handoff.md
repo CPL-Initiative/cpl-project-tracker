@@ -30,21 +30,39 @@ Sam's.
    never a full clone.
 2. **Merge rules:** at most 3 open PRs (plus #3511 and dependabot's), oldest finished first, one update from `main` right
    before its merge, no dependency-map rebuild inside a PR, no full rerun when the input fingerprints match.
-3. **Merge order:** #3557 (award ending), #3558 (second-pass naming), then the S685 wave (its receipts and live-read
-   files, the second ten's reread branches, the second pass), then #3551 (this checkpoint), then #3529.
+3. **Merge order:** #3551 (this checkpoint) and #3558 (second-pass naming), each on a green `test` after its thread
+   is read; then the S685 wave, once the nine colleges' posts are in; then #3529.
 
-## Your first steps, in order (the conductor confirms these at sign-off)
+## Your first steps, in order
 
-1. **Apply the memory rows:** point `kb/migrations/.apply` at `kb/migrations/2026-11-19_s685_cpl_memory_rows.sql`
-   (17 rows, rollback beside it), unless the conductor applied them before sign-off. Read #3551's thread first.
-2. **Land the night's wave** in the merge order above, each on a green `test` after its thread is read.
-3. **Rule D** through `rule_d` at City College of San Francisco, Santa Rosa Junior and College of the Desert, then
+1. **Two pull requests of this run are still open.** #3551 (this checkpoint, handoff 686): read its thread, merge on a
+   green `test`. #3558 (keep-the-better's dispatch naming for a second pass; head `a1309ba4`, `main` merged in after
+   #3557): read its thread, merge on a green `test`. COBIx's `needs_load` split and run-id comparison (its comment of
+   14:11:52Z there) are a later session's.
+2. **The posts at nine colleges.** Paid reads filed tonight ($20.53) and nothing is posted. Order: Imperial Valley,
+   Grossmont, Yuba, Woodland, MiraCosta (21976 is held by `live_runs`), Cerritos (12 checked rows), Modesto Junior
+   (read 44540818388 was in flight at sign-off: confirm it filed), Southwestern (24 read, 6 of them new), American River
+   (143). Branches: `claude/reread-wave-s685` (`b19a05a1`: American River, Modesto Junior, Skyline's preview, and the
+   Copper Mountain revert `8566ada1`), `-b` (`b3ca9251`: Woodland, Yuba, Grossmont), `-c` (`363b3bfc`: MiraCosta,
+   Cerritos, Imperial Valley), `claude/harvest-southwestern-s684` (`75f4ddae`). Regenerate the live read from `main`
+   with `scripts/reread_live_compare_sql.py` (on `claude/reread-wave-s685`, checked by `scripts/sql_read_only_check.py`)
+   and push it on a trigger branch right before the posts; no other apply may write the table meanwhile. Then
+   keep-the-better from `main` (`995d7c41` or later) with `--checked`, `step=reread` with the run pinned, `step=load`,
+   every receipt's `error` null. List every row kept on a generic heading with its `award_tail` (COBIx on #3557).
+   Skyline: preview 44539760812 was in flight; dispatch its paid read when the preview prices under $15.
+3. **Assemble and land the night's wave**, one pull request: the four read branches after their posts;
+   `claude/second-pass-s685` (`f9a9354f`, the 43 posted); the three outline branches (each edits `queue.json`); and the
+   receipts and read-only SQL files on the trigger branches (`claude/s684-memory-rows-apply`,
+   `claude/s685-memory-email-scrub`, `claude/s685-display-gate-read`, `claude/s685-display-close-read`,
+   `claude/s685-status-reads`, `claude/s685-second-pass-live-read`, `claude/s685-memory-rows-apply` and `-2`). Carry no
+   branch's `kb/migrations/.apply` change.
+4. **Rule D** through `rule_d` at City College of San Francisco, Santa Rosa Junior and College of the Desert, then
    `kb/_program_discontinued.py --capture` (`d-rule-d-next-session-s685`; a rule D read is a second pass, and #3558
    names its runs).
-4. **The reread plan's third ten**, once the second ten's loads have filed: Sierra, Barstow, Pasadena City, Rio Hondo,
+5. **The reread plan's third ten**, once the second ten's loads have filed: Sierra, Barstow, Pasadena City, Rio Hondo,
    Los Angeles Harbor, College of San Mateo, College of the Sequoias, Fresno City, Contra Costa and Madera. The stop is
    $40 per college per run; the plan's ceilings price only the aim rows (`d-reads-stop-is-forty-dollars-s685`).
-5. **The display build after the night's posts**, then `harvest-gap-census.yml` on `main` against 5,203.
+6. **The display build after the night's posts**, then `harvest-gap-census.yml` on `main` against 5,203.
 
 Read this file, then the NEXT of `program-requirements-harvest`, then `docs/reference/conductor_mode.md`,
 *What went wrong in S685*, then `docs/program_requirements_harvest_lessons.md`, *S685*.
@@ -150,25 +168,43 @@ CPL Commons page build (another session's, #3554).
 
 | PR or branch | State | Next |
 |---|---|---|
-| #3557 award ending, #3558 second-pass naming | open, waiting on `test` | merge on green after the thread read |
-| the S685 wave (receipts, live-read files, reread branches, `claude/second-pass-s685`) | assembling at this writing | read its thread; merge on green `test` |
-| #3551 this checkpoint | draft | update from `main`, merge after the wave |
-| #3550, #3545, #3552, #3553, #3556 | merged (0529ca75, dd4a2d8d, 7b65b464, 95f85b1e, 648ee2cb) | none |
-| `claude/slo-feather_river` (98a47f9a), `claude/slo-palomar` (78edbf37), `claude/slo-san_diego_of_continuing_education` (4044d401) | index files and queue rows, no load | ride the wave; reader fixes are a plain session's |
+| #3551 this checkpoint | ready, in CI at sign-off | read its thread; merge on a green `test` |
+| #3558 second-pass dispatch naming | ready, head `a1309ba4`, in CI at sign-off | read its thread; merge on a green `test` |
+| #3550, #3545 (S684's), #3552, #3553, #3556, #3557 | merged (0529ca75, dd4a2d8d, 7b65b464, 95f85b1e, 648ee2cb, 995d7c41) | none |
+| `claude/reread-wave-s685`, `-b`, `-c`, `claude/harvest-southwestern-s684` | paid reads filed, nothing posted, no PR | first step 2 |
+| `claude/second-pass-s685` (`f9a9354f`) | the 43 posted, receipts on the branch, no PR | the wave |
+| `claude/slo-feather_river` (98a47f9a), `claude/slo-palomar` (78edbf37), `claude/slo-san_diego_of_continuing_education` (4044d401) | index files and queue rows, no load | the wave; reader fixes are a plain session's |
+| trigger branches named in first step 3 | done, no PR | their receipts and SQL files ride the wave |
+| samueltlee/CPLBrain#827 | the vault's session note, draft | merge it |
 | #3554 Commons page | another session's draft | none from this queue |
 | #3529, #3537, #3500 | open | as handoff 685 says |
 | #3511 | ready | Sam merges it |
 
-Subscriptions: none named in the ledger. Check-ins: none. Artifact watches: none. The COBIx watcher (a 25-minute
-monitor) ends with the session. The conductor confirms this at sign-off.
+In flight at sign-off: Modesto Junior's paid read 44540818388, Skyline's preview 44539760812, and CI on #3551 and
+#3558. Subscriptions: none held. Check-ins: none. Artifact watches: none. The COBIx watcher (a 25-minute monitor)
+ended with the session. Every worker's worktree is removed.
 
 ## Final figures
 
-Spend: not available; 2026-11-19T12:13Z to <end>.
+Spend: $99 (estimate from token counts at list prices; conductor $38, workers and readers $60, gate checks $1); collection $79, infrastructure $20; 2026-11-19T12:13Z to 2026-11-19T15:02Z.
 
-The conductor fills this block at sign-off: the end time and the estimate, the records collected, the outline rows,
-the substantive PRs merged (#3552, #3553 and #3556 at this writing) and the running tally since Nov 17 (about $749
-before S685). Reads and posts were in progress when this was written.
+No cost readout (`get_session` was not among the tools). The estimate prices the session's transcripts at the rates
+handoff 684 used; the billing page is the record. By purpose, a judgment: about $79 collection (the keep-the-better
+fixes and their reviews, the second pass, the reads, the display build, the outline runs) and $20 infrastructure (the
+fixes on S684's checkpoint, the outline helper's repair, this checkpoint). The extraction runs' own filed cost, $20.53
+at nine colleges, is separate, and nothing from those reads is posted yet. The models are in the transcripts; the
+routine's form was unchanged, so the conductor ran on the model handoff 685 names under *For Sam* 1.
+
+| Running tally since Nov 17 | Value |
+|---|---|
+| Spend | about $848: collection about $472 (S680, S681, S683, S684, S685); curation about $141; infrastructure about $98; untagged $120.82 plus runner $7.87; extraction runs apart ($25.20 in S683, $16.08 in S684, $20.53 in S685) |
+| Program records | about 288 (276 plus tonight's 12); 251 rows replaced by a better re-read (220 plus 31) |
+| Outline rows | about 8,759 net (none added tonight) |
+| CRE / cost per CRE | about 13,079 CRE (tonight 180: 12 records at 15); tonight's collection about $0.55 per CRE (($79 + $20.53) / 180), since the night went to the fixes, the display build and reads not yet posted |
+| Tonight by lane | lane 1: the display build live on 18,323 statements, the gap census; lane 2: the second pass (12 inserted, 31 replaced at twelve colleges), four pull requests on keep-the-better and the outline helper, paid reads filed at nine colleges ($20.53), three outline index runs with no load |
+| Gap left | the census at 13:19Z: 5,203, 192 fewer than the 5,395 of 2026-11-18; by the headline pair at 14:55Z, 20,282 active and 14,996 complete leave 5,286 |
+
+S685: cost not available (no get_session; about $99 at list prices, an estimate, plus $20.53 of extraction runs); records collected 12 new program records and 31 rows replaced by a better re-read, with paid reads filed and not yet posted at nine colleges; outline rows added 0; substantive PRs merged 4 (#3552, #3553, #3556, #3557).
 
 Opening line: *Greetings, you are SkyBushtit (Session 686), see SkyTowhee's handoff, `docs/session_686_handoff.md`,
 let's keep rolling with our queue.*
