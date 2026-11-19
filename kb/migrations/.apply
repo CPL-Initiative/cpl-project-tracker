@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-19_s683n_cpl_memory_rows.sql
-name=s683n_cpl_memory_rows
+file=kb/migrations/2026-11-19_s685_second_pass_live_read.sql
+name=s685_second_pass_live_read
