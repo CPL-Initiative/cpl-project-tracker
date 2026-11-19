@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-19T09:31:01Z",
+ "written_at": "2026-11-19T12:21:29Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16323,
-  "gap": 6012,
+  "passing": 16325,
+  "gap": 6010,
   "with_gap": 118,
   "cost_usd": 1336.87,
   "passed_at_read": 15572,
@@ -190,8 +190,8 @@
  "census_check": {
   "universe": 22335,
   "passing": 16230,
-  "gap": 6012,
-  "collected_with_gaps": 93,
+  "gap": 6010,
+  "collected_with_gaps": 95,
   "discontinued": 0
  },
  "census_live": {
@@ -1781,12 +1781,12 @@
    "harvested": true,
    "slug": "city_of_san_francisco",
    "programs": 417,
-   "passing": 276,
-   "gap": 141,
+   "passing": 277,
+   "gap": 140,
    "causes": {
     "no_closed_list": 46,
     "page_not_found": 62,
-    "unknown_without_live": 33
+    "unknown_without_live": 32
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -1853,7 +1853,7 @@
    "levers": {
     "reader_page_search": 62,
     "program_course_file_check": 46,
-    "reconcile_steps": 29,
+    "reconcile_steps": 28,
     "ge_units_steps": 3,
     "scorer_noncredit_hours": 1
    },
@@ -11150,15 +11150,15 @@
    "harvested": true,
    "slug": "santa_rosa_junior",
    "programs": 283,
-   "passing": 205,
-   "gap": 78,
+   "passing": 206,
+   "gap": 77,
    "causes": {
     "extraction_error": 1,
     "found_not_extracted": 1,
     "no_closed_list": 4,
     "page_not_found": 41,
     "places_none": 2,
-    "unknown_without_live": 29
+    "unknown_without_live": 28
    },
    "census_causes": {
     "coverage_fails": 10,
@@ -11225,7 +11225,7 @@
    "run": "44477690021",
    "levers": {
     "reader_page_search": 41,
-    "reconcile_steps": 29,
+    "reconcile_steps": 28,
     "program_course_file_check": 4,
     "paid_read": 2,
     "reader_page_assignment": 2

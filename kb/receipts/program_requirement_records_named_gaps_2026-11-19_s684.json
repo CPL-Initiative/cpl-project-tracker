@@ -1,0 +1,1396 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30)",
+ "gaps": {
+  "major_total_differs": "major total differs from catalog",
+  "no_units_printed": "The catalog prints no units for at least one required course.",
+  "no_units_read": "A required course carries no units as read, so the program's units cannot be added.",
+  "no_hours_read": "A required course carries no hours as read, so the program's hours cannot be added.",
+  "catalog_figures_differ": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+  "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list."
+ },
+ "at": "2026-11-19T10:57:12Z",
+ "why": "f-reread-replaces-labeled-rows-s683: the wave's re-reads replaced labeled rows",
+ "parts": {
+  "A": "a re-read record a record rule names a gap for (no_units_read, no_hours_read, major_total_differs)",
+  "B": "a re-read record #3502's plan names, meeting its gap's own sentence (kb/program_requirements_reread_plan_s680.json)"
+ },
+ "colleges": [
+  "Mendocino College",
+  "City College of San Francisco",
+  "Santa Rosa Junior College",
+  "Compton College",
+  "Foothill College",
+  "Porterville College",
+  "Citrus College",
+  "San Bernardino Valley College",
+  "Moorpark College",
+  "West Los Angeles College",
+  "Los Angeles Trade Technical College",
+  "Los Angeles Pierce College",
+  "Los Angeles Mission College",
+  "East Los Angeles College",
+  "El Camino College"
+ ],
+ "held_colleges": [
+  "Ventura College",
+  "Cañada College",
+  "Los Angeles City College",
+  "Evergreen Valley College",
+  "Solano Community College",
+  "Shasta College",
+  "Santa Barbara City College",
+  "Victor Valley College",
+  "Ohlone College",
+  "Clovis Community College",
+  "College of the Siskiyous",
+  "Crafton Hills College",
+  "Rio Hondo College",
+  "Southwestern College",
+  "North Orange Continuing Education"
+ ],
+ "wave_runs": {
+  "Citrus College": [
+   "44481520157"
+  ],
+  "City College of San Francisco": [
+   "44474797786"
+  ],
+  "Compton College": [
+   "44477684527"
+  ],
+  "East Los Angeles College": [
+   "44475516022"
+  ],
+  "El Camino College": [
+   "44480396671"
+  ],
+  "Foothill College": [
+   "44477699881"
+  ],
+  "Los Angeles Mission College": [
+   "44475511939"
+  ],
+  "Los Angeles Pierce College": [
+   "44475498778"
+  ],
+  "Los Angeles Trade Technical College": [
+   "44475507447"
+  ],
+  "Mendocino College": [
+   "44474793355"
+  ],
+  "Moorpark College": [
+   "44481524745"
+  ],
+  "Porterville College": [
+   "44477695238"
+  ],
+  "San Bernardino Valley College": [
+   "44481529632"
+  ],
+  "Santa Rosa Junior College": [
+   "44477690021"
+  ],
+  "West Los Angeles College": [
+   "44475503054"
+  ]
+ },
+ "checked_excluded": [
+  [
+   "West Los Angeles College",
+   "17111"
+  ],
+  [
+   "West Los Angeles College",
+   "37050"
+  ],
+  [
+   "West Los Angeles College",
+   "37839"
+  ],
+  [
+   "West Los Angeles College",
+   "39618"
+  ]
+ ],
+ "collected": 2,
+ "by_part": {
+  "A": 1,
+  "B": 1
+ },
+ "by_gap": {
+  "no_units_read": 1,
+  "catalog_figures_differ": 1
+ },
+ "by_college": {
+  "City College of San Francisco": 1,
+  "Santa Rosa Junior College": 1
+ },
+ "held_out": [
+  {
+   "part": "B",
+   "college": "City College of San Francisco",
+   "control_number": "16991",
+   "gap": "catalog_figures_differ",
+   "why": "the record does not meet the gap's own sentence: the list 'Choose a first-level option: ITAL 1' prints no figure",
+   "extracted_run": "44474797786",
+   "wave_reread": true
+  },
+  {
+   "part": "B",
+   "college": "Foothill College",
+   "control_number": "32281",
+   "gap": "no_units_printed",
+   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named",
+   "extracted_run": "38675242638",
+   "wave_reread": false
+  },
+  {
+   "part": "B",
+   "college": "Los Angeles Mission College",
+   "control_number": "35913",
+   "gap": "no_units_printed",
+   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named",
+   "extracted_run": "39054675770",
+   "wave_reread": false
+  },
+  {
+   "part": "B",
+   "college": "San Bernardino Valley College",
+   "control_number": "39483",
+   "gap": "no_units_printed",
+   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named",
+   "extracted_run": "38748858322",
+   "wave_reread": false
+  },
+  {
+   "part": "B",
+   "college": "Santa Rosa Junior College",
+   "control_number": "45486",
+   "gap": "no_units_printed",
+   "why": "the record does not show that the catalog prints no units; the page is read free before a gap is named",
+   "extracted_run": "44477690021",
+   "wave_reread": true
+  }
+ ],
+ "left_out": [
+  {
+   "part": "A",
+   "college": "Coastline Community College",
+   "control_number": "38389",
+   "why": "not a named college"
+  },
+  {
+   "part": "A",
+   "college": "Orange Coast College",
+   "control_number": "32189",
+   "why": "not a named college"
+  }
+ ],
+ "recall": {
+  "held": 1884,
+  "right": 1884,
+  "wrong": 0,
+  "by_answer": {
+   "none": 1806,
+   "no_hours_read": 53,
+   "no_units_read": 25
+  },
+  "wrong_keys": []
+ },
+ "records": [
+  {
+   "part": "A",
+   "college": "Santa Rosa Junior College",
+   "control_number": "44788",
+   "award": "A.A. Degree",
+   "extracted_run": "44477690021",
+   "gap": "no_units_read",
+   "words": "the record carries no units for MUSC 2C, MUSC 2D, MUSC 3C, MUSC 3D and 11 more, so the program's units cannot be added",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": null,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "path": "kb/program_requirements_college/santa_rosa_junior/records/44788.json",
+   "before_image": {
+    "program_title": "Music",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=175",
+    "measure": "units",
+    "total_min": 35,
+    "total_max": 35,
+    "record": {
+     "program": {
+      "section_heading": "Music (AA)",
+      "measure": "units",
+      "total_units": {
+       "min": 35,
+       "max": 35
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": null,
+       "max": null
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "demonstrate an understanding of the fundamental melodic, harmonic, and rhythmic structure of music.",
+       "demonstrate fluency with the language of music in written and aural form.",
+       "perform on their instrument (or voice) at college sophomore level.",
+       "perform effectively in a musical ensemble.",
+       "utilize the piano keyboard to demonstrate and apply musical concepts.",
+       "demonstrate a broad-based understanding of the historical and aesthetic development of music."
+      ],
+      "careers": [
+       "music performance",
+       "composition/arranging",
+       "publishing",
+       "education"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Music AA Requirement",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSC 2A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 2B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 3A",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 3B",
+         "units": 1,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Music Survey (one course)",
+       "rule": "choose_units",
+       "minimum": 3,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 3
+       },
+       "courses": [
+        {
+         "code": "MUSC 6.1",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 6.2",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 7",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 8",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 9",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 10",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Piano Proficiency (two courses)",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": null,
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "MUSP 11A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 11B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 11C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 11D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Instrumental Concentration: Theory and Musicianship (4 courses)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSC 2C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 2D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 3C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 3D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Instrumental Concentration: Performance Ensemble (4 semesters)",
+       "rule": "choose_courses",
+       "minimum": 4,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSP 21A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 21B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 21C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 21D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 30A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 30B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 30C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 30D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 33A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 33B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 33C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 33D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Instrumental Concentration: Applied Music (4 semesters)",
+       "rule": "choose_courses",
+       "minimum": 4,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSP 40.1",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.3",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.4",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.5",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.6",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.7",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Instrumental Concentration: Instrumental Electives (4 unit minimum)",
+       "rule": "choose_units",
+       "minimum": 4,
+       "option_group": "Concentration",
+       "stated": {
+        "min": 4,
+        "max": 4
+       },
+       "courses": [
+        {
+         "code": "MUSC 4A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 4B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 5A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 5B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 50",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 17A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 17B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 19A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 19B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 19.1A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 19.1B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 32A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 32B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 32C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 32D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 42A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 42B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 42C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 42D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Vocal Concentration: Theory and Musicianship (4 courses)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSC 2C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 2D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 3C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 3D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Vocal Concentration: Performance Ensemble (4 semesters)",
+       "rule": "choose_courses",
+       "minimum": 4,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSP 21A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 21B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 21C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 21D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 23A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 23B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 23C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 23D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Vocal Concentration: Applied Music (4 semesters)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSP 40.2",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Vocal Concentration: Diction and Repertoire (take all 4 courses)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSC 18.1",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 18.2",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 18.3",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 18.4",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Jazz Studies Concentration: Jazz Theory (take both courses)",
+       "rule": "all",
+       "minimum": null,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSC 4A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 4B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Jazz Studies Concentration: Performance Ensemble (4 semesters)",
+       "rule": "choose_courses",
+       "minimum": 4,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSP 32A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 32B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 32C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 32D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 42A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 42B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 42C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 42D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Jazz Studies Concentration: Applied Music (4 semesters)",
+       "rule": "choose_courses",
+       "minimum": 4,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSP 40.1",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.3",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.4",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.5",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.6",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSP 40.7",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "Jazz Studies Concentration: Jazz Improvisation (2 semesters)",
+       "rule": "choose_courses",
+       "minimum": 2,
+       "option_group": "Concentration",
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "MUSC 5A",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 5B",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 5C",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "MUSC 5D",
+         "units": null,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 66,
+     "listed": 66
+    },
+    "extracted_run": "44477690021"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "incomplete",
+     "placed": 66,
+     "listed": 66,
+     "gaps": [
+      "no_units_read"
+     ],
+     "confidence": {
+      "unit_arithmetic": 20,
+      "course_list_match": 100,
+      "ge_pattern": null,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   },
+   "i": 1
+  },
+  {
+   "part": "B",
+   "college": "City College of San Francisco",
+   "control_number": "41049",
+   "award": "A.S. T Degree",
+   "extracted_run": "44474797786",
+   "gap": "catalog_figures_differ",
+   "words": "the printed list figures sum to 21-28.5, past the program's printed total 18-22.5",
+   "confidence": {
+    "unit_arithmetic": 50,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "measure": "units",
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/41049.json",
+   "i": 2,
+   "before_image": {
+    "program_title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=146",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 22.5,
+    "record": {
+     "program": {
+      "section_heading": "Hospitality Management – AS-T Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 22.5
+      },
+      "open_elective_units": null,
+      "degree_elective_units": {
+       "min": null,
+       "max": null
+      },
+      "ge_pattern": "Cal-GETC",
+      "degree_total": {
+       "min": 60,
+       "max": 60
+      },
+      "ge_units": {
+       "min": null,
+       "max": null
+      },
+      "electives_fill_degree": false,
+      "outcomes": [
+       "Demonstrate the ability to make informed decisions and implement practices in hospitality operations that optimize environmental sustainability, enhance social well-being, and ensure economic profitability",
+       "Demonstrate respectful and professional communication skills, both written and verbal, to interact effectively in the hospitality industry.",
+       "Apply financial management principles, including budgeting, cost control, and revenue management to operate hospitality establishments.",
+       "Apply the concepts and theories in hospitality management, including areas such as hotel and restaurant operations, meetings and event planning, customer service, and food and beverage management."
+      ],
+      "careers": [
+       "hotel operations",
+       "restaurant operations",
+       "corporate food service",
+       "travel and tourism",
+       "meetings, conventions, and special events"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Units",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": 12,
+        "max": 12
+       },
+       "courses": [
+        {
+         "code": "CAHS 100",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 34",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 43",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON C2001",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        }
+       ]
+      },
+      {
+       "name": "Choose at least 6 units from the following",
+       "rule": "choose_units",
+       "minimum": 6,
+       "option_group": null,
+       "stated": {
+        "min": 6,
+        "max": 10.5
+       },
+       "courses": [
+        {
+         "code": "CAHS 20A",
+         "units": 4.5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 30A",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BIO 121",
+         "units": 2,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 32",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 33",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 42",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 205",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 208",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "CAHS 222",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      },
+      {
+       "name": "One of the following",
+       "rule": "choose_courses",
+       "minimum": 1,
+       "option_group": null,
+       "stated": {
+        "min": 3,
+        "max": 6
+       },
+       "courses": [
+        {
+         "code": "ACCT 1",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "BSL 1",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "ECON 5",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "LALS 5",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "STAT C1000E",
+         "units": 6,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "PSYC 5",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 20,
+     "listed": 20
+    },
+    "extracted_run": "44474797786"
+   },
+   "after_image": {
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 20,
+     "listed": 20,
+     "gaps": [
+      "catalog_figures_differ"
+     ],
+     "confidence": {
+      "unit_arithmetic": 50,
+      "course_list_match": 100,
+      "ge_pattern": 50,
+      "catalog_year": 100,
+      "source": 80
+     }
+    }
+   }
+  }
+ ],
+ "pre_read": "with v(i, part, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'A', 'Santa Rosa Junior College', '44788', 44477690021, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3B\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Music AA Requirement\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 6.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 6.2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 7\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 8\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 9\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 10\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Music Survey (one course)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Piano Proficiency (two courses)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3D\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Instrumental Concentration: Theory and Musicianship (4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.5\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.6\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.7\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 50\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 17A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 17B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19.1A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19.1B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Instrumental Electives (4 unit minimum)\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3D\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Theory and Musicianship (4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Vocal Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.2\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.4\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Diction and Repertoire (take all 4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4B\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Jazz Studies Concentration: Jazz Theory (take both courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Jazz Studies Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.5\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.6\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.7\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Jazz Studies Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5D\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"Jazz Studies Concentration: Jazz Improvisation (2 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"music performance\",\"composition/arranging\",\"publishing\",\"education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate an understanding of the fundamental melodic, harmonic, and rhythmic structure of music.\",\"demonstrate fluency with the language of music in written and aural form.\",\"perform on their instrument (or voice) at college sophomore level.\",\"perform effectively in a musical ensemble.\",\"utilize the piano keyboard to demonstrate and apply musical concepts.\",\"demonstrate a broad-based understanding of the historical and aesthetic development of music.\"],\"section_heading\":\"Music (AA)\",\"total_units\":{\"max\":35,\"min\":35}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":66,\"placed\":66}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"no_units_read\"],\"invented\":true,\"listed\":66,\"placed\":66}'::jsonb),\n  (2, 'B', 'City College of San Francisco', '41049', 44474797786, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 43\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 20A\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 30A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO 121\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 222\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Choose at least 6 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":10.5,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCT 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BSL 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[\"hotel operations\",\"restaurant operations\",\"corporate food service\",\"travel and tourism\",\"meetings, conventions, and special events\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the ability to make informed decisions and implement practices in hospitality operations that optimize environmental sustainability, enhance social well-being, and ensure economic profitability\",\"Demonstrate respectful and professional communication skills, both written and verbal, to interact effectively in the hospitality industry.\",\"Apply financial management principles, including budgeting, cost control, and revenue management to operate hospitality establishments.\",\"Apply the concepts and theories in hospitality management, including areas such as hotel and restaurant operations, meetings and event planning, customer service, and food and beverage management.\"],\"section_heading\":\"Hospitality Management – AS-T Degree\",\"total_units\":{\"max\":22.5,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"catalog_figures_differ\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'matched', count(*),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'checked_now', count(*) filter (where r.checked),\n  'A', json_build_object('listed', count(*) filter (where v.part = 'A'), 'on_run', count(*) filter (where v.part = 'A' and r.extracted_run = v.extracted_run), 'both_before', count(*) filter (where v.part = 'A' and r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks), 'already_after', count(*) filter (where v.part = 'A' and r.checks = v.after_checks), 'checked_now', count(*) filter (where v.part = 'A' and r.checked)),\n  'B', json_build_object('listed', count(*) filter (where v.part = 'B'), 'on_run', count(*) filter (where v.part = 'B' and r.extracted_run = v.extracted_run), 'both_before', count(*) filter (where v.part = 'B' and r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks), 'already_after', count(*) filter (where v.part = 'B' and r.checks = v.after_checks), 'checked_now', count(*) filter (where v.part = 'B' and r.checked)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number;",
+ "apply": "with v(i, part, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'A', 'Santa Rosa Junior College', '44788', 44477690021, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3B\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Music AA Requirement\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 6.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 6.2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 7\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 8\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 9\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 10\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Music Survey (one course)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Piano Proficiency (two courses)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3D\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Instrumental Concentration: Theory and Musicianship (4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.5\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.6\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.7\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 50\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 17A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 17B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19.1A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19.1B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Instrumental Electives (4 unit minimum)\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3D\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Theory and Musicianship (4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Vocal Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.2\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.4\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Diction and Repertoire (take all 4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4B\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Jazz Studies Concentration: Jazz Theory (take both courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Jazz Studies Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.5\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.6\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.7\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Jazz Studies Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5D\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"Jazz Studies Concentration: Jazz Improvisation (2 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"music performance\",\"composition/arranging\",\"publishing\",\"education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate an understanding of the fundamental melodic, harmonic, and rhythmic structure of music.\",\"demonstrate fluency with the language of music in written and aural form.\",\"perform on their instrument (or voice) at college sophomore level.\",\"perform effectively in a musical ensemble.\",\"utilize the piano keyboard to demonstrate and apply musical concepts.\",\"demonstrate a broad-based understanding of the historical and aesthetic development of music.\"],\"section_heading\":\"Music (AA)\",\"total_units\":{\"max\":35,\"min\":35}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":66,\"placed\":66}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"no_units_read\"],\"invented\":true,\"listed\":66,\"placed\":66}'::jsonb),\n  (2, 'B', 'City College of San Francisco', '41049', 44474797786, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 43\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 20A\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 30A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO 121\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 222\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Choose at least 6 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":10.5,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCT 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BSL 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[\"hotel operations\",\"restaurant operations\",\"corporate food service\",\"travel and tourism\",\"meetings, conventions, and special events\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the ability to make informed decisions and implement practices in hospitality operations that optimize environmental sustainability, enhance social well-being, and ensure economic profitability\",\"Demonstrate respectful and professional communication skills, both written and verbal, to interact effectively in the hospitality industry.\",\"Apply financial management principles, including budgeting, cost control, and revenue management to operate hospitality establishments.\",\"Apply the concepts and theories in hospitality management, including areas such as hotel and restaurant operations, meetings and event planning, customer service, and food and beverage management.\"],\"section_heading\":\"Hospitality Management – AS-T Degree\",\"total_units\":{\"max\":22.5,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"catalog_figures_differ\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.before_checks and r.record = v.before_record\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s684 named-gaps guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "rollback": "with v(i, part, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  (1, 'A', 'Santa Rosa Junior College', '44788', 44477690021, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2A\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2B\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3A\",\"units\":1,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3B\",\"units\":1,\"units_max\":null}],\"minimum\":null,\"name\":\"Music AA Requirement\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 6.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 6.2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 7\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 8\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 9\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 10\",\"units\":null,\"units_max\":null}],\"minimum\":3,\"name\":\"Music Survey (one course)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":3,\"min\":3}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 11D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Piano Proficiency (two courses)\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3D\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Instrumental Concentration: Theory and Musicianship (4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 30D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 33D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.5\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.6\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.7\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 50\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 17A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 17B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19.1A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 19.1B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Instrumental Concentration: Instrumental Electives (4 unit minimum)\",\"option_group\":\"Concentration\",\"rule\":\"choose_units\",\"stated\":{\"max\":4,\"min\":4}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 2D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 3D\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Theory and Musicianship (4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 21D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 23D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Vocal Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.2\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.2\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 18.4\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Vocal Concentration: Diction and Repertoire (take all 4 courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 4B\",\"units\":null,\"units_max\":null}],\"minimum\":null,\"name\":\"Jazz Studies Concentration: Jazz Theory (take both courses)\",\"option_group\":\"Concentration\",\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 32D\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 42D\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Jazz Studies Concentration: Performance Ensemble (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.1\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.3\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.4\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.5\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.6\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSP 40.7\",\"units\":null,\"units_max\":null}],\"minimum\":4,\"name\":\"Jazz Studies Concentration: Applied Music (4 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5A\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5B\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5C\",\"units\":null,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"MUSC 5D\",\"units\":null,\"units_max\":null}],\"minimum\":2,\"name\":\"Jazz Studies Concentration: Jazz Improvisation (2 semesters)\",\"option_group\":\"Concentration\",\"rule\":\"choose_courses\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"music performance\",\"composition/arranging\",\"publishing\",\"education\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":null,\"min\":null},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"demonstrate an understanding of the fundamental melodic, harmonic, and rhythmic structure of music.\",\"demonstrate fluency with the language of music in written and aural form.\",\"perform on their instrument (or voice) at college sophomore level.\",\"perform effectively in a musical ensemble.\",\"utilize the piano keyboard to demonstrate and apply musical concepts.\",\"demonstrate a broad-based understanding of the historical and aesthetic development of music.\"],\"section_heading\":\"Music (AA)\",\"total_units\":{\"max\":35,\"min\":35}}}'::jsonb, '{\"arithmetic\":\"incomplete\",\"coverage\":true,\"invented\":true,\"listed\":66,\"placed\":66}'::jsonb, '{\"arithmetic\":\"incomplete\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":null,\"source\":80,\"unit_arithmetic\":20},\"coverage\":true,\"gaps\":[\"no_units_read\"],\"invented\":true,\"listed\":66,\"placed\":66}'::jsonb),\n  (2, 'B', 'City College of San Francisco', '41049', 44474797786, '{\"blocks\":[{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 100\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 34\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 43\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"ECON C2001\",\"units\":3,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Units\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":12,\"min\":12}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 20A\",\"units\":4.5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 30A\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BIO 121\",\"units\":2,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 32\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 33\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 42\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 205\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 208\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"CAHS 222\",\"units\":3,\"units_max\":null}],\"minimum\":6,\"name\":\"Choose at least 6 units from the following\",\"option_group\":null,\"rule\":\"choose_units\",\"stated\":{\"max\":10.5,\"min\":6}},{\"courses\":[{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ACCT 1\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"BSL 1\",\"units\":3,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"ECON 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"LALS 5\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"STAT C1000\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":true,\"code\":\"STAT C1000E\",\"units\":6,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"PSYC 5\",\"units\":5,\"units_max\":null}],\"minimum\":1,\"name\":\"One of the following\",\"option_group\":null,\"rule\":\"choose_courses\",\"stated\":{\"max\":6,\"min\":3}}],\"program\":{\"careers\":[\"hotel operations\",\"restaurant operations\",\"corporate food service\",\"travel and tourism\",\"meetings, conventions, and special events\"],\"degree_elective_units\":{\"max\":null,\"min\":null},\"degree_total\":{\"max\":60,\"min\":60},\"electives_fill_degree\":false,\"ge_pattern\":\"Cal-GETC\",\"ge_units\":{\"max\":null,\"min\":null},\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate the ability to make informed decisions and implement practices in hospitality operations that optimize environmental sustainability, enhance social well-being, and ensure economic profitability\",\"Demonstrate respectful and professional communication skills, both written and verbal, to interact effectively in the hospitality industry.\",\"Apply financial management principles, including budgeting, cost control, and revenue management to operate hospitality establishments.\",\"Apply the concepts and theories in hospitality management, including areas such as hotel and restaurant operations, meetings and event planning, customer service, and food and beverage management.\"],\"section_heading\":\"Hospitality Management – AS-T Degree\",\"total_units\":{\"max\":22.5,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb, '{\"arithmetic\":\"unequal\",\"confidence\":{\"catalog_year\":100,\"course_list_match\":100,\"ge_pattern\":50,\"source\":80,\"unit_arithmetic\":50},\"coverage\":true,\"gaps\":[\"catalog_figures_differ\"],\"invented\":true,\"listed\":20,\"placed\":20}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (2)),\nu as (\nupdate public.program_requirement_records r\n   set checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s684 named-gaps rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;"
+}
