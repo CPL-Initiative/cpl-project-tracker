@@ -2,19 +2,22 @@
  "college": "Modesto Junior College",
  "programs": 199,
  "with_closed_list": 196,
- "found": 189,
- "extracted": 189,
+ "found": 188,
+ "extracted": 188,
  "errors": 0,
- "passed_machine_checks": 159,
+ "passed_machine_checks": 165,
  "failed": {
-  "coverage": 5,
+  "coverage": 2,
   "invented": 1,
-  "arithmetic": 30,
+  "arithmetic": 22,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 12.03,
- "cost_per_program": 0.0637,
+ "cost_usd_run": 1.43,
+ "cost_usd_filed": 12.08,
+ "cost_per_program": 0.0643,
+ "extract_calls": 15,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "08017",
@@ -40,14 +43,33 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
-   "control_number": "16280",
-   "title": "Small Animal Veterinary Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "control_number": "18378",
+   "title": "CSU General Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-artificial-insemination-technician-mjc-fall-2023",
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "18379",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35011",
+   "title": "Veterinary Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/applied-electrical-technology-mjc-spring-2026",
     "label": {
      "award": 0,
      "title": 0.5
@@ -57,32 +79,17 @@
     "body": 0.0,
     "content": 0.0,
     "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
     "error": null,
     "chars": {
-     "body": 1840,
-     "content": 1840,
+     "body": 2897,
+     "content": 2897,
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "18378",
-   "title": "CSU General Education",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18379",
-   "title": "IGETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "44877",
@@ -90,8 +97,9 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38477845911"
+ "run": "44540818388"
 }
