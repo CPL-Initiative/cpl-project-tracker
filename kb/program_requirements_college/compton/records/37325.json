@@ -1,0 +1,258 @@
+{
+ "college": "Compton College",
+ "control_number": "37325",
+ "shape": "certificate",
+ "title": "Early Childhood Education",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=86",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10018,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10018,
+    "output_tokens": 1779,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1779,
+  "output_tokens_details": {
+   "thinking_tokens": 640
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07565,
+ "ms": 14865,
+ "seconds": 15.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education – Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Integrated Understanding of Children's Needs: Students integrate an understanding of the needs, characteristics and multiple influences on the development of children ranging from birth to adolescence as related to high quality care and education",
+    "Designing Environments for Children: Students design, implement and evaluate environments and activities that support positive developmental play and learning outcomes for all children.",
+    "Effective Guidance and Assessment: Students apply effective observation, assessment, guidance and interaction strategies that support all children’s social and emotional development"
+   ],
+   "careers": [
+    "child care with infants and toddlers",
+    "preschool teaching",
+    "assistant teaching",
+    "childhood education",
+    "caregivers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CDEV 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CDEV 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program learning outcomes are printed once in the Early Childhood Education program introduction (before the AS-T requirements), not under the Certificate of Achievement heading; recorded here as shared by the certificate.",
+   "Careers are taken from the shared Early Childhood Education program description ('careers in child care with infants and toddlers, preschool teaching, assistant teaching, and related careers in childhood education') and the certificate's description ('caregivers'). The setting phrase 'careers in private or public programs serving infants, toddlers, preschoolers...' was not split into separate careers.",
+   "The certificate description mentions the Associate Teacher level of the California State Child Development Permit; this is a permit level and is not recorded as a requirement.",
+   "The AS-T section (CDEV 110, CDEV 125/126 etc.) was not used for this record."
+  ]
+ },
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "3e86cf2547735a2e",
+ "source_codes": [
+  "CDEV103",
+  "CDEV104",
+  "CDEV108",
+  "CDEV112",
+  "CDEV114",
+  "CDEV115",
+  "CDEV116",
+  "CDEV117",
+  "CDEV118",
+  "CDEV119"
+ ],
+ "source_coverage": 1.0
+}
