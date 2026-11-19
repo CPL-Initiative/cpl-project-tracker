@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Environmental Conservation Technician (Vegetation)",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11114,
-    "output_tokens": 1251,
+    "output_tokens": 1217,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1251,
+  "output_tokens": 1217,
   "output_tokens_details": {
-   "thinking_tokens": 325
+   "thinking_tokens": 336
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06948,
- "ms": 9874,
- "seconds": 10.2,
+ "cost_usd": 0.0688,
+ "ms": 10867,
+ "seconds": 11.2,
  "parts": null,
  "error": null,
  "score": {
@@ -195,10 +195,20 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Environmental Conservation Technician (Vegetation) Certificate section on page 801; adjacent sections (Fisheries, Sustainability, Wildlife, and an unnamed certificate on page 799 with a 22-unit total) were ignored.",
-   "NATR 330 or NATR 332 recorded as one required choice with NATR 332 as the alternative.",
-   "Careers 'plant taxonomy', 'dendrology', 'research and management', and 'environmental restoration' are taken from 'positions related to ...' in the Career Information; reviewer may judge whether these are career fields."
+   "The page prints several Environmental Conservation Technician certificates in a row; only the (Vegetation) Certificate section on page 797 was read.",
+   "The catalog heading reads 'Certificate'; the program record names it a Certificate of Achievement.",
+   "Careers: 'plant taxonomy', 'dendrology', 'research and management' and 'environmental restoration' are printed as areas of 'positions related to'; reviewer may judge whether these count as career fields."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "c7c9657ea170b530",
+ "source_codes": [
+  "NATR300",
+  "NATR310",
+  "NATR320",
+  "NATR330",
+  "NATR332"
+ ],
+ "source_coverage": 1.0
 }

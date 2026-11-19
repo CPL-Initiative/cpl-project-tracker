@@ -1,0 +1,6153 @@
+{
+ "run": "44531705083",
+ "at": "2026-11-19T13:29:48Z",
+ "url": "https://frc.curriqunet.com/",
+ "search": {
+  "url": "https://frc.curriqunet.com/",
+  "status": 200,
+  "title": "Dashboard",
+  "outline_links": [
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1325?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1326?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1327?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1328?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1329?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1324?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1331?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1193?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1336?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1333?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1334?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1337?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1738?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/539?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1478?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1479?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1604?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1704?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1583?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1581?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1662?entityType=Course&reportId=485",
+   "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1584?entityType=Course&reportId=485"
+  ],
+  "total_rows": 595,
+  "rows_read": 595,
+  "search_pages": 3,
+  "page_size": 200
+ },
+ "loads": 1,
+ "report_form": "DynamicReports/AllFieldsReportByEntity/{course_id}?entityType=Course&reportId={report_id}",
+ "report_form_from": "the page's own outline links",
+ "report_title": "outline",
+ "report_titles": [
+  {
+   "id": 4,
+   "title": "All Fields",
+   "rows": 595,
+   "comparison": false,
+   "read": false
+  },
+  {
+   "id": 485,
+   "title": "Course Outline",
+   "rows": 595,
+   "comparison": false,
+   "read": true
+  },
+  {
+   "id": 491,
+   "title": "Impact",
+   "rows": 595,
+   "comparison": false,
+   "read": false
+  },
+  {
+   "id": 43,
+   "title": "Comparison",
+   "rows": 403,
+   "comparison": true,
+   "read": false
+  }
+ ],
+ "sample_row": {
+  "CourseId": 1325,
+  "SubjectCode": "ADMJ",
+  "CourseNumber": "102",
+  "StatusTitle": "Active",
+  "ProposalTypeTitle": "Course Revision",
+  "MetaReports": [
+   {
+    "Id": 43,
+    "Title": "Comparison",
+    "MetaReportTypeId": 2,
+    "ProcessActionTypeId": 2,
+    "MetaTemplateTypeId": 502,
+    "SortOrder": 2,
+    "ClientId": 57,
+    "OutputFormatId": 5,
+    "Url": "<a class=\"dropdown-item comparison-report-link\" data-entity-id=\"1325\" data-entity-type=\"Course\" data-output-format=\"HTML\" data-report-id=\"43\" data-target=\"#select-comparison-target-modal\" data-toggle=\"modal\" href=\"#\" style=\"display: inline-block; width: 100%;\">Comparison</a>",
+    "IsPublicReport": false,
+    "Heading": null,
+    "Subheading": null,
+    "ReportAttributes": "{\"isPublicReport\":false}",
+    "ParsedAttributes": [
+     [
+      []
+     ]
+    ]
+   },
+   {
+    "Id": 4,
+    "Title": "All Fields",
+    "MetaReportTypeId": 4,
+    "ProcessActionTypeId": 2,
+    "MetaTemplateTypeId": 502,
+    "SortOrder": 4,
+    "ClientId": 57,
+    "OutputFormatId": 5,
+    "Url": "<a class=\"dropdown-item\" data-output-format=\"HTML\" href=\"/DynamicReports/AllFieldsReportByEntity/1325?entityType=Course&amp;reportId=4\" target=\"_blank\">All Fields</a>",
+    "IsPublicReport": false,
+    "Heading": null,
+    "Subheading": null,
+    "ReportAttributes": "{\"isPublicReport\":false}",
+    "ParsedAttributes": [
+     [
+      []
+     ]
+    ]
+   },
+   {
+    "Id": 485,
+    "Title": "Course Outline",
+    "MetaReportTypeId": 4,
+    "ProcessActionTypeId": 2,
+    "MetaTemplateTypeId": 502,
+    "SortOrder": 4,
+    "ClientId": 57,
+    "OutputFormatId": 5,
+    "Url": "<a class=\"dropdown-item\" data-output-format=\"HTML\" href=\"/DynamicReports/AllFieldsReportByEntity/1325?entityType=Course&amp;reportId=485\" target=\"_blank\">Course Outline</a>",
+    "IsPublicReport": true,
+    "Heading": null,
+    "Subheading": null,
+    "ReportAttributes": "{\"reportTemplateId\":874,\"isPublicReport\":true,\"fieldRenderingStrategy\":\"HideEmptyFields\",\"sectionRenderingStrategy\":\"HideEmptySections\"}",
+    "ParsedAttributes": [
+     [
+      []
+     ],
+     [
+      []
+     ],
+     [
+      []
+     ],
+     [
+      []
+     ]
+    ]
+   },
+   {
+    "Id": 491,
+    "Title": "Impact",
+    "MetaReportTypeId": 4,
+    "ProcessActionTypeId": 2,
+    "MetaTemplateTypeId": 502,
+    "SortOrder": 4,
+    "ClientId": 57,
+    "OutputFormatId": 5,
+    "Url": "<a class=\"dropdown-item\" data-output-format=\"HTML\" href=\"/DynamicReports/AllFieldsReportByEntity/1325?entityType=Course&amp;reportId=491\" target=\"_blank\">Impact</a>",
+    "IsPublicReport": false,
+    "Heading": null,
+    "Subheading": null,
+    "ReportAttributes": "{\"isPublicReport\":false,\"reportTemplateId\":869}",
+    "ParsedAttributes": [
+     [
+      []
+     ],
+     [
+      []
+     ]
+    ]
+   }
+  ]
+ },
+ "active_codes": 594,
+ "active_with_report": 594,
+ "wanted_union": 360,
+ "wanted_with_outline": 337,
+ "coverage": {
+  "feather_river": {
+   "courses": 360,
+   "with_outline": 337
+  }
+ },
+ "missing": [
+  "ADMJ 118",
+  "ADMJ 128",
+  "ART 172",
+  "ART 174",
+  "ASL 130",
+  "ASL 132",
+  "BUS 106",
+  "BUS 121",
+  "BUS 122",
+  "BUS 123",
+  "BUS 124",
+  "BUS 132",
+  "ENGL 228",
+  "ENGL 277",
+  "FRN 101",
+  "FRN 102",
+  "FRN 201",
+  "HES 110",
+  "NURS 116",
+  "NURS 123",
+  "NURS 125",
+  "NURS 223",
+  "STAT C1000"
+ ],
+ "index": {
+  "ADMJ 102": [
+   {
+    "course_id": 1325,
+    "title": "Introduction to Administration of Justice",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1325?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 105": [
+   {
+    "course_id": 1326,
+    "title": "Community And Human Relations",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1326?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 106": [
+   {
+    "course_id": 1327,
+    "title": "Introduction To Evidence",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1327?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 108": [
+   {
+    "course_id": 1328,
+    "title": "Introduction to Investigations",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1328?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 112": [
+   {
+    "course_id": 1329,
+    "title": "Introduction to Criminology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1329?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 114": [
+   {
+    "course_id": 6,
+    "title": "Juvenile Justice",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/6?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 116": [
+   {
+    "course_id": 7,
+    "title": "Vice, Narcotics, And Organized Crime",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 120": [
+   {
+    "course_id": 9,
+    "title": "Introduction To Corrections",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 125": [
+   {
+    "course_id": 1324,
+    "title": "Wildlife Law And Issues",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1324?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 126": [
+   {
+    "course_id": 1331,
+    "title": "Crime Scene Investigation",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1331?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 152": [
+   {
+    "course_id": 1193,
+    "title": "Psycho Pathology Of Serial Killers And Mass Murderers",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1193?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 201": [
+   {
+    "course_id": 1336,
+    "title": "Introduction To Community Policing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1336?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 203": [
+   {
+    "course_id": 1333,
+    "title": "Introduction to Multiculturalism",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1333?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 204": [
+   {
+    "course_id": 1334,
+    "title": "Criminal Law and Procedure",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1334?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ADMJ 291": [
+   {
+    "course_id": 1337,
+    "title": "Directed Study",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1337?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AG 291": [
+   {
+    "course_id": 1738,
+    "title": "Directed Study",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1738?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AG 295": [
+   {
+    "course_id": 539,
+    "title": "Community Service Learning In Agriculture",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/539?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AG 296": [
+   {
+    "course_id": 1478,
+    "title": "Special Projects in Agriculture",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1478?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AG 299": [
+   {
+    "course_id": 1479,
+    "title": "Special Topics In Agriculture",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1479?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 110": [
+   {
+    "course_id": 1604,
+    "title": "Introduction to Agriculture Business",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1604?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 112": [
+   {
+    "course_id": 1704,
+    "title": "Agriculture Sales and Communication",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1704?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 124": [
+   {
+    "course_id": 1583,
+    "title": "Agriculture Economics",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1583?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 128": [
+   {
+    "course_id": 1581,
+    "title": "Agricultural Accounting",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1581?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 150": [
+   {
+    "course_id": 1662,
+    "title": "Agriculture Computer Applications",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1662?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 188": [
+   {
+    "course_id": 1584,
+    "title": "Farm Management",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1584?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 335": [
+   {
+    "course_id": 1656,
+    "title": "Equine and Ranch Management Entrepreneurship",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1656?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 364": [
+   {
+    "course_id": 1483,
+    "title": "Promotion and Marketing in the Equine and Beef Cattle Industry",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1483?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 410": [
+   {
+    "course_id": 1476,
+    "title": "Equine and Ranch Management Leadership Seminar",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1476?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAB 465": [
+   {
+    "course_id": 1661,
+    "title": "Equine and Ranch Enterprises",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1661?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 120": [
+   {
+    "course_id": 1211,
+    "title": "Introduction To Animal Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1211?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 125": [
+   {
+    "course_id": 1578,
+    "title": "Animal Feeds and Nutrition",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1578?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 130": [
+   {
+    "course_id": 1789,
+    "title": "Low Stress Cattle Handling Techniques - Fall",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1789?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 131": [
+   {
+    "course_id": 1790,
+    "title": "Low Stress Cattle Handling Techniques - Spring",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1790?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 170": [
+   {
+    "course_id": 1280,
+    "title": "Elements of Beef Cattle Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1280?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 171": [
+   {
+    "course_id": 1514,
+    "title": "Introduction to Showing Beef Cattle I",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1514?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 172": [
+   {
+    "course_id": 1579,
+    "title": "Introduction to Showing Beef Cattle II",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1579?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 266": [
+   {
+    "course_id": 1741,
+    "title": "Advanced Aquaculture",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1741?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 302": [
+   {
+    "course_id": 1619,
+    "title": "Advanced Techniques in Equine Training-Fall",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1619?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 303": [
+   {
+    "course_id": 1620,
+    "title": "Advanced Techniques in Equine Training Spring",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1620?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 307": [
+   {
+    "course_id": 1792,
+    "title": "Advanced Techniques in Equine Sale Preparation I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1792?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 308": [
+   {
+    "course_id": 1793,
+    "title": "Advanced Techniques in Equine Sale Preparation II ",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1793?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 313": [
+   {
+    "course_id": 1726,
+    "title": "Equine and Bovine Health and the Prevention and Control of Disease",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1726?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 350": [
+   {
+    "course_id": 1773,
+    "title": "Reproduction, Breeding Systems, and Genetics of Livestock",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1773?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 360": [
+   {
+    "course_id": 1488,
+    "title": "Technical Veterinary Skills",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1488?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 421": [
+   {
+    "course_id": 1711,
+    "title": "Equine Production and Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1711?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 423": [
+   {
+    "course_id": 1659,
+    "title": "Beef Cattle Production and Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1659?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 450": [
+   {
+    "course_id": 874,
+    "title": "Applied Beef Cattle Reproductive Management",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/874?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGAS 455": [
+   {
+    "course_id": 876,
+    "title": "Applied Equine Reproductive Management",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/876?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 015": [
+   {
+    "course_id": 1783,
+    "title": "Western Horseback Riding for Beginning Riders",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1783?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 102": [
+   {
+    "course_id": 1769,
+    "title": "Elements of Equine Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1769?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 103": [
+   {
+    "course_id": 1556,
+    "title": "Western Equitation I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1556?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 104": [
+   {
+    "course_id": 1770,
+    "title": "Horse Conformation and Judging",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1770?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 106": [
+   {
+    "course_id": 1784,
+    "title": "Western Equitation II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1784?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 115": [
+   {
+    "course_id": 1785,
+    "title": "Elements of Horse Training I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1785?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 116": [
+   {
+    "course_id": 1786,
+    "title": "Elements of Horse Training II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1786?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 117": [
+   {
+    "course_id": 1787,
+    "title": "Elements of Horse Training III",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1787?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 118": [
+   {
+    "course_id": 1788,
+    "title": "Elements of Horse Training IV",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1788?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 121": [
+   {
+    "course_id": 1841,
+    "title": "Introduction to Equine Hoof Care",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1841?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 123": [
+   {
+    "course_id": 1736,
+    "title": "Introduction to Farrier Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1736?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 124": [
+   {
+    "course_id": 1737,
+    "title": "Elements of Farrier Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1737?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 135": [
+   {
+    "course_id": 1489,
+    "title": "Conditioning the Horse and Rider I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1489?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 136": [
+   {
+    "course_id": 1490,
+    "title": "Conditioning the Horse and Rider II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1490?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 137": [
+   {
+    "course_id": 1491,
+    "title": "Conditioning the Horse and Rider III",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1491?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 138": [
+   {
+    "course_id": 1492,
+    "title": "Conditioning the Horse and Rider IV",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1492?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 140": [
+   {
+    "course_id": 1671,
+    "title": "Introduction to Equine Behavior and Training",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1671?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 141": [
+   {
+    "course_id": 1603,
+    "title": "Equine Behavior and Training",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1603?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 151": [
+   {
+    "course_id": 1719,
+    "title": "Introduction to Horse Event Competition and Showing Level I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1719?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 152": [
+   {
+    "course_id": 1771,
+    "title": "Fundamentals of Horse Competition and Showing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1771?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 165": [
+   {
+    "course_id": 1749,
+    "title": "Horse Training Accelerated Course",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1749?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 175": [
+   {
+    "course_id": 1679,
+    "title": "Ranch Skills Short Course",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1679?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 180": [
+   {
+    "course_id": 1301,
+    "title": "Rodeo Skills and Techniques \u2013 Men\u2019s Events",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1301?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 181": [
+   {
+    "course_id": 1302,
+    "title": "Rodeo Skills and Techniques \u2013 Women\u2019s Events",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1302?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 182": [
+   {
+    "course_id": 1303,
+    "title": "Intercollegiate Rodeo",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1303?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 184": [
+   {
+    "course_id": 1304,
+    "title": "Advanced Intercollegiate Rodeo",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1304?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 186": [
+   {
+    "course_id": 1305,
+    "title": "Rodeo Production",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1305?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 204": [
+   {
+    "course_id": 1575,
+    "title": "Training Young Horses - Yearling",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1575?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 205": [
+   {
+    "course_id": 1576,
+    "title": "Training Young Horses - Starting The Colt Under Saddle",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1576?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 206": [
+   {
+    "course_id": 1577,
+    "title": "Progressive Training of the Horse Under Saddle ",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1577?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 207": [
+   {
+    "course_id": 1580,
+    "title": "Preparing the Horse for Sale and Show",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1580?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 210": [
+   {
+    "course_id": 1837,
+    "title": "Introduction to Ranch Work with Horses",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1837?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 211": [
+   {
+    "course_id": 1839,
+    "title": "Applied Ranch Skills with Horses I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1839?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 212": [
+   {
+    "course_id": 1840,
+    "title": "Applied Ranch Skills with Horses II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1840?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 214": [
+   {
+    "course_id": 1657,
+    "title": "Introduction to Broodmare and Young Horse Management - Fall",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1657?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 215": [
+   {
+    "course_id": 1658,
+    "title": "Introduction to Breeding and Young Horse Management - Spring",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1658?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 216": [
+   {
+    "course_id": 1794,
+    "title": "Broodmare and Young Horse Management - Fall",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1794?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 217": [
+   {
+    "course_id": 1795,
+    "title": "Breeding and Young Horse Management - Spring",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1795?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 225": [
+   {
+    "course_id": 1791,
+    "title": "Ranch Horsemanship",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1791?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 226": [
+   {
+    "course_id": 1500,
+    "title": "Advanced Horsemanship",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1500?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 227": [
+   {
+    "course_id": 1501,
+    "title": "Advanced Ranch Horsemanship",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1501?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 235": [
+   {
+    "course_id": 1653,
+    "title": "Advanced Conditioning the Horse and Rider I",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1653?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 236": [
+   {
+    "course_id": 1654,
+    "title": "Advanced Conditioning the Horse and Rider II",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1654?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 251": [
+   {
+    "course_id": 1772,
+    "title": "Advanced Horse Competition and Show Level I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1772?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 252": [
+   {
+    "course_id": 1734,
+    "title": "Advanced Horse Competition and Show Level II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1734?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 280": [
+   {
+    "course_id": 1732,
+    "title": "Advanced Rodeo Skills and Techniques \u2013 Men\u2019s Events",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1732?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 281": [
+   {
+    "course_id": 1733,
+    "title": "Advanced Rodeo Skills and Techniques \u2013 Women\u2019s Events",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1733?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 296": [
+   {
+    "course_id": 1109,
+    "title": "Special Projects in Equine Studies - Behavior And Training",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1109?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 297": [
+   {
+    "course_id": 1129,
+    "title": "Special Projects in Equine Studies: Summer/Fall Operations",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1129?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 298": [
+   {
+    "course_id": 1286,
+    "title": "Special Projects in Equine Studies: Winter/Spring Operations",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1286?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGEQ 299": [
+   {
+    "course_id": 1287,
+    "title": "Special Topics in Equine Studies",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1287?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGMA 108": [
+   {
+    "course_id": 1481,
+    "title": "Tractor Operation",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1481?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGMA 116": [
+   {
+    "course_id": 1722,
+    "title": "Agriculture Welding",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1722?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGMA 132": [
+   {
+    "course_id": 1094,
+    "title": "Advanced Agriculture Welding",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1094?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGMA 140": [
+   {
+    "course_id": 1835,
+    "title": "Beginning Agriculture Metal Fabrication",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1835?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGMA 146": [
+   {
+    "course_id": 1834,
+    "title": "Introductory Agriculture Structural Technology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1834?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGMA 160": [
+   {
+    "course_id": 1724,
+    "title": "Introduction To Mechanized Agriculture",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1724?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGMA 184": [
+   {
+    "course_id": 1493,
+    "title": "Agriculture Irrigation and Fencing",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1493?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGMA 404": [
+   {
+    "course_id": 1721,
+    "title": "Ranch Facilities Maintenance and Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1721?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGPS 104": [
+   {
+    "course_id": 1836,
+    "title": "Introduction to Plant Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1836?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGPS 210": [
+   {
+    "course_id": 1611,
+    "title": "Introduction to Soil Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1611?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGPS 300": [
+   {
+    "course_id": 1660,
+    "title": "Pasture, Rangeland and Forage Management ",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1660?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "AGPS 370": [
+   {
+    "course_id": 1475,
+    "title": "Soil Fertility and Plant Nutrition",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1475?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ANTH 100": [
+   {
+    "course_id": 1213,
+    "title": "Introduction to Cultural Anthropology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1213?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ANTH 103": [
+   {
+    "course_id": 1183,
+    "title": "Magic, Witchcraft, and Religion",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1183?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ANTH 106": [
+   {
+    "course_id": 1185,
+    "title": "Introduction to Prehistory",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1185?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ANTH 120": [
+   {
+    "course_id": 1186,
+    "title": "Physical Anthropology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1186?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ANTH 120L": [
+   {
+    "course_id": 1187,
+    "title": "Physical Anthropology Lab",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1187?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ANTH 130": [
+   {
+    "course_id": 1180,
+    "title": "Introduction to Archaeology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1180?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ANTH 150": [
+   {
+    "course_id": 1188,
+    "title": "Native North Americans",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1188?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ANTH 200": [
+   {
+    "course_id": 1184,
+    "title": "Introduction To Forensic Anthropology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1184?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 100": [
+   {
+    "course_id": 1806,
+    "title": "Art Appreciation",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1806?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 107": [
+   {
+    "course_id": 1519,
+    "title": "Two Dimensional Design",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1519?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 109": [
+   {
+    "course_id": 1371,
+    "title": "Three-Dimensional Design (3d Design)",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1371?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 116": [
+   {
+    "course_id": 1368,
+    "title": "Drawing  I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1368?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 117": [
+   {
+    "course_id": 1367,
+    "title": "Drawing II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1367?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 122": [
+   {
+    "course_id": 1357,
+    "title": "Painting I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1357?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 124": [
+   {
+    "course_id": 1372,
+    "title": "Painting II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1372?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 126": [
+   {
+    "course_id": 1373,
+    "title": "Color Theory",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1373?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 128": [
+   {
+    "course_id": 1166,
+    "title": "Introduction to Printmaking",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1166?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 132": [
+   {
+    "course_id": 1520,
+    "title": "Life Drawing I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1520?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 134": [
+   {
+    "course_id": 1375,
+    "title": "Life Drawing II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1375?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 136": [
+   {
+    "course_id": 1365,
+    "title": "Life Painting I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1365?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 138": [
+   {
+    "course_id": 1366,
+    "title": "Life Painting II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1366?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 140": [
+   {
+    "course_id": 1363,
+    "title": "Sculpture I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1363?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 142": [
+   {
+    "course_id": 1364,
+    "title": "Sculpture II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1364?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 144": [
+   {
+    "course_id": 1452,
+    "title": "Introduction To Ceramics",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1452?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 146": [
+   {
+    "course_id": 618,
+    "title": "Ceramics II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/618?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 150": [
+   {
+    "course_id": 1361,
+    "title": "Introduction To Photography",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1361?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 151": [
+   {
+    "course_id": 1362,
+    "title": "Intermediate Photography",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1362?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 160": [
+   {
+    "course_id": 1453,
+    "title": "Digital Imagery",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1453?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 161": [
+   {
+    "course_id": 1454,
+    "title": "Typography & Layout",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1454?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 162": [
+   {
+    "course_id": 1455,
+    "title": "Web Design",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1455?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 163": [
+   {
+    "course_id": 1456,
+    "title": "3-D Printing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1456?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 166": [
+   {
+    "course_id": 1358,
+    "title": "Art of the Modern Period",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1358?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ART 291": [
+   {
+    "course_id": 1457,
+    "title": "Directed Study",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1457?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ARTH C1100": [
+   {
+    "course_id": 1847,
+    "title": "Survey of Art from Prehistory to the Medieval Era",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1847?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ARTH C1200": [
+   {
+    "course_id": 1851,
+    "title": "Survey of Art from the Renaissance to Contemporary",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1851?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 100": [
+   {
+    "course_id": 1505,
+    "title": "Concepts in Biology",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1505?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 102": [
+   {
+    "course_id": 1508,
+    "title": "Cell and Molecular Biology",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1508?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 104": [
+   {
+    "course_id": 1506,
+    "title": "Animal Biology, Evolution and Ecology",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1506?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 106": [
+   {
+    "course_id": 1507,
+    "title": "Plant Biology, Evolution and Ecology",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1507?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 110": [
+   {
+    "course_id": 1510,
+    "title": "Human Anatomy",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1510?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 112": [
+   {
+    "course_id": 1748,
+    "title": "Human Physiology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1748?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 120": [
+   {
+    "course_id": 1845,
+    "title": "Sierra Nevada Ecology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1845?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 210": [
+   {
+    "course_id": 1509,
+    "title": "General Microbiology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1509?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 264": [
+   {
+    "course_id": 2003,
+    "title": "Introduction to Fish Biology and Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2003?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 291": [
+   {
+    "course_id": 791,
+    "title": "Directed Study",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/791?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 299": [
+   {
+    "course_id": 1511,
+    "title": "Special Topics In STEM",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1511?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BIOL 320": [
+   {
+    "course_id": 1825,
+    "title": "Botany and Tree Taxonomy ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1825?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 100": [
+   {
+    "course_id": 61,
+    "title": "Introduction To Business",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/61?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 101": [
+   {
+    "course_id": 1729,
+    "title": "Computer Literacy",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1729?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 102": [
+   {
+    "course_id": 1440,
+    "title": "Financial Accounting",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1440?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 104": [
+   {
+    "course_id": 1441,
+    "title": "Managerial Accounting",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1441?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 111": [
+   {
+    "course_id": 520,
+    "title": "Introduction To Information Technology",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/520?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 115": [
+   {
+    "course_id": 1261,
+    "title": "Business Law",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1261?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 116": [
+   {
+    "course_id": 1739,
+    "title": "Human Resource Management",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1739?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 118": [
+   {
+    "course_id": 1162,
+    "title": "Personal Finance - Investments",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1162?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 130": [
+   {
+    "course_id": 71,
+    "title": "Small Business Management",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/71?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 131": [
+   {
+    "course_id": 525,
+    "title": "Computer Information Systems",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/525?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 140": [
+   {
+    "course_id": 73,
+    "title": "Marketing",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/73?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 170": [
+   {
+    "course_id": 873,
+    "title": "Spreadsheet",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/873?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 171": [
+   {
+    "course_id": 526,
+    "title": "Project-Based Learning",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/526?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "BUS 291": [
+   {
+    "course_id": 531,
+    "title": "Directed Study",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/531?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CHEM 102": [
+   {
+    "course_id": 1151,
+    "title": "General Chemistry I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1151?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CHEM 104": [
+   {
+    "course_id": 1152,
+    "title": "General Chemistry II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1152?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CHEM 106": [
+   {
+    "course_id": 1582,
+    "title": "Organic Chemistry for Science Majors",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1582?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "COLL 001": [
+   {
+    "course_id": 1674,
+    "title": "First Year Experience Seminar",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1674?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "COLL 003": [
+   {
+    "course_id": 1122,
+    "title": "Supervised Tutoring",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1122?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "COLL 100": [
+   {
+    "course_id": 822,
+    "title": "College Success and Personal Development",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/822?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "COMM C1000": [
+   {
+    "course_id": 1754,
+    "title": "Introduction to Public Speaking",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1754?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CPR 001": [
+   {
+    "course_id": 1494,
+    "title": "Basic Life Support for Healthcare Providers",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1494?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CPR 002": [
+   {
+    "course_id": 1495,
+    "title": "Basic Life Support for Healthcare Providers Recertification ",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1495?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CPR 080": [
+   {
+    "course_id": 1503,
+    "title": "Heartsaver First Aid, CPR, and AED ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1503?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CWEE 120": [
+   {
+    "course_id": 1668,
+    "title": "Work Experience Education \u2013 Early Childhood and Elementary Education",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1668?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CWEE 150": [
+   {
+    "course_id": 1701,
+    "title": "General Cooperative Work Experience",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1701?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CWEE 170": [
+   {
+    "course_id": 1751,
+    "title": "Cooperative Work Experience in Fire Application",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1751?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CWEE 180": [
+   {
+    "course_id": 1753,
+    "title": "Work Experience in Natural Resources Management ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1753?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CWEE 199": [
+   {
+    "course_id": 1618,
+    "title": "Cooperative Work Experience Agriculture ",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1618?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CWEE 370": [
+   {
+    "course_id": 1752,
+    "title": "Internship in Ecosystem Restoration and Applied Fire Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1752?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "CWEE 418": [
+   {
+    "course_id": 1617,
+    "title": "Equine and Ranch Management Internship",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1617?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 001": [
+   {
+    "course_id": 1750,
+    "title": "Early Childhood Education Teaching and Advancement",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1750?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 040": [
+   {
+    "course_id": 1221,
+    "title": "Administering The Environmental Rating Scales",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1221?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 051": [
+   {
+    "course_id": 1571,
+    "title": "Administration of Programs for Young Children",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1571?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 055": [
+   {
+    "course_id": 1572,
+    "title": "Supervision: Parent/Staff Relations",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1572?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 060": [
+   {
+    "course_id": 1565,
+    "title": "Infant Toddler Development",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1565?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 061": [
+   {
+    "course_id": 1566,
+    "title": "Infant Toddler Care and Learning",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1566?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 063": [
+   {
+    "course_id": 87,
+    "title": "Programs For School-Age Children",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/87?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 072": [
+   {
+    "course_id": 1234,
+    "title": "Science Curriculum For The Young Child",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1234?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 075": [
+   {
+    "course_id": 1544,
+    "title": "Math Curriculum for the Young Child",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1544?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 080": [
+   {
+    "course_id": 1504,
+    "title": "Adult and Pediatric Heartsavers CPR/Pediatric First Aid",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1504?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 082": [
+   {
+    "course_id": 1035,
+    "title": "Child Health And Safety",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1035?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 083": [
+   {
+    "course_id": 1259,
+    "title": "Children\u2019s Storytelling And Puppetry",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1259?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 085": [
+   {
+    "course_id": 1569,
+    "title": "Emerging Literacy",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1569?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 087": [
+   {
+    "course_id": 1258,
+    "title": "Dual Language Learners",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1258?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 098": [
+   {
+    "course_id": 1568,
+    "title": "Succeeding in an ECE Career",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1568?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 140": [
+   {
+    "course_id": 1573,
+    "title": "Teaching Young Children with Special Needs",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1573?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 150": [
+   {
+    "course_id": 1543,
+    "title": "Observation and Assessment",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1543?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 152": [
+   {
+    "course_id": 1545,
+    "title": "Introduction to Curriculum",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1545?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 153": [
+   {
+    "course_id": 1542,
+    "title": "Child, Family and Community",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1542?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 154": [
+   {
+    "course_id": 1574,
+    "title": "Creative Activities for Children",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1574?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 156": [
+   {
+    "course_id": 1550,
+    "title": "Mentoring/Supervising Adults in the Classroom",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1550?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 157": [
+   {
+    "course_id": 1522,
+    "title": "Principles and Practices of Teaching Young Children",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1522?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 158": [
+   {
+    "course_id": 1549,
+    "title": "Practicum in Early Childhood Education",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1549?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 159": [
+   {
+    "course_id": 1551,
+    "title": "Health, Safety and Nutrition",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1551?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 160": [
+   {
+    "course_id": 1553,
+    "title": "Teaching in a Diverse Society",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1553?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 162": [
+   {
+    "course_id": 1552,
+    "title": "Child Growth and Development",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1552?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 166": [
+   {
+    "course_id": 955,
+    "title": "Music With Children",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/955?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECE 299": [
+   {
+    "course_id": 1548,
+    "title": "Special Topics",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1548?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECON C2001": [
+   {
+    "course_id": 1852,
+    "title": "Principles of Microeconomics",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1852?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ECON C2002": [
+   {
+    "course_id": 1853,
+    "title": "Principles of Macroeconomics",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1853?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 101": [
+   {
+    "course_id": 1635,
+    "title": "Teacher Preparation I",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1635?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 102": [
+   {
+    "course_id": 1637,
+    "title": "Teacher Preparation II",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1637?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 103": [
+   {
+    "course_id": 1655,
+    "title": "Teacher Preparation III",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1655?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 104": [
+   {
+    "course_id": 1643,
+    "title": "Teacher Preparation IV",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1643?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 105": [
+   {
+    "course_id": 1629,
+    "title": "Teacher Preparation V",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1629?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 106": [
+   {
+    "course_id": 1630,
+    "title": "Teacher Preparation VI",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1630?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 107": [
+   {
+    "course_id": 1645,
+    "title": "Teacher Preparation VII",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1645?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 108": [
+   {
+    "course_id": 1642,
+    "title": "Teacher Preparation VIII",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1642?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 109": [
+   {
+    "course_id": 1632,
+    "title": "Teacher Preparation IX",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1632?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 110": [
+   {
+    "course_id": 1705,
+    "title": "Bilingual Education in the United States",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1705?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 200": [
+   {
+    "course_id": 1567,
+    "title": "Introduction To Education/Field Experience",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1567?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 201": [
+   {
+    "course_id": 1621,
+    "title": "Teacher Preparation I Practicum",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1621?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 202": [
+   {
+    "course_id": 1623,
+    "title": "Teacher Preparation II Practicum",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1623?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 203": [
+   {
+    "course_id": 1626,
+    "title": "Teacher Preparation III Practicum",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1626?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 204": [
+   {
+    "course_id": 1646,
+    "title": "Teacher Preparation IV Practicum",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1646?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 205": [
+   {
+    "course_id": 1636,
+    "title": "Teacher Preparation V Practicum",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1636?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 206": [
+   {
+    "course_id": 1638,
+    "title": "Teacher Preparation VI Practicum",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1638?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 207": [
+   {
+    "course_id": 1647,
+    "title": "Teacher Preparation VII Practicum",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1647?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 208": [
+   {
+    "course_id": 1648,
+    "title": "Teacher Preparation VIII Practicum",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1648?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 209": [
+   {
+    "course_id": 1633,
+    "title": "Teacher Preparation IX Practicum",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1633?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EDUC 210": [
+   {
+    "course_id": 1706,
+    "title": "Bilingual Education in the United States Practicum",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1706?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EMT 120": [
+   {
+    "course_id": 1708,
+    "title": "Emergency Medical Technician - Basic",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1708?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "EMT 121": [
+   {
+    "course_id": 1448,
+    "title": "Emergency Medical Technician Refresher",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1448?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 005": [
+   {
+    "course_id": 1672,
+    "title": "College Composition and Reading Workshop",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1672?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 100": [
+   {
+    "course_id": 1673,
+    "title": "College Composition and Reading Workshop",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1673?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 119": [
+   {
+    "course_id": 1275,
+    "title": "Interpersonal Communication",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1275?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 128": [
+   {
+    "course_id": 1687,
+    "title": "Film Appreciation",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1687?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 150": [
+   {
+    "course_id": 135,
+    "title": "Introduction To Journalism",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/135?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 170": [
+   {
+    "course_id": 1309,
+    "title": "Creative Writing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1309?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 172": [
+   {
+    "course_id": 137,
+    "title": "Creative Writing II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/137?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 180": [
+   {
+    "course_id": 1316,
+    "title": "Nature Literature In America",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1316?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 185": [
+   {
+    "course_id": 1743,
+    "title": "Ethnic Literatures of the U.S.",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1743?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 245": [
+   {
+    "course_id": 1293,
+    "title": "Contemporary Literature",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1293?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 246": [
+   {
+    "course_id": 1317,
+    "title": "Women\u2019s Literature",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1317?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 252": [
+   {
+    "course_id": 1315,
+    "title": "American Literature I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1315?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 254": [
+   {
+    "course_id": 1311,
+    "title": "American Literature II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1311?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 256": [
+   {
+    "course_id": 1310,
+    "title": "Survey of British Literature I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1310?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 257": [
+   {
+    "course_id": 1290,
+    "title": "Survey of British Literature II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1290?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 310": [
+   {
+    "course_id": 1613,
+    "title": "Applied Professional and Technical Communication and Composition",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1613?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL 416": [
+   {
+    "course_id": 1614,
+    "title": "Research Methods: Current Topics and Issues",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1614?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL C1000": [
+   {
+    "course_id": 1758,
+    "title": "Academic Reading and Writing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1758?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL C1001": [
+   {
+    "course_id": 1759,
+    "title": "Critical Thinking and Writing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1759?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL C1002": [
+   {
+    "course_id": 1856,
+    "title": "Introduction to Literature",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1856?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENGL C1003": [
+   {
+    "course_id": 1859,
+    "title": "Critical Thinking and Writing through Literature",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1859?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 039": [
+   {
+    "course_id": 1824,
+    "title": "L-280 Followership to Leadership",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1824?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 040": [
+   {
+    "course_id": 719,
+    "title": "Firefighter Type 2",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/719?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 041": [
+   {
+    "course_id": 1826,
+    "title": "S-131- Firefighter Type 1",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1826?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 042": [
+   {
+    "course_id": 1828,
+    "title": "S-211-Portable Pumps Water Use",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1828?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 043": [
+   {
+    "course_id": 1830,
+    "title": "S-212- Wildland Fire Chainsaws",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1830?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 044": [
+   {
+    "course_id": 1827,
+    "title": "S-219-Firing Operations",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1827?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 045": [
+   {
+    "course_id": 156,
+    "title": "Seasonal Firefighting Basic",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/156?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 046": [
+   {
+    "course_id": 723,
+    "title": "Introduction To Incident Command System",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/723?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 047": [
+   {
+    "course_id": 1829,
+    "title": "Incident Command System for Single Resources (I200)",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1829?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 048": [
+   {
+    "course_id": 1831,
+    "title": "Intermediate Incident Command System (I300)",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1831?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 049": [
+   {
+    "course_id": 1832,
+    "title": "S-290-Intermediate Wildland Fire Behavior",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1832?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 050": [
+   {
+    "course_id": 1861,
+    "title": "Commercial Driver's License Training",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1861?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 102": [
+   {
+    "course_id": 1528,
+    "title": "Introduction to Environmental Studies",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1528?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 103": [
+   {
+    "course_id": 1606,
+    "title": "Environmental Studies Seminar",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1606?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 105": [
+   {
+    "course_id": 1592,
+    "title": "Introduction to Forestry Field Experience",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1592?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 106": [
+   {
+    "course_id": 1768,
+    "title": "Intermediate Forestry Field Experience ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1768?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 120": [
+   {
+    "course_id": 2004,
+    "title": "Sierra Nevada Ecology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2004?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 125": [
+   {
+    "course_id": 1700,
+    "title": "Wildlife Law And Issues",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1700?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 130": [
+   {
+    "course_id": 1019,
+    "title": "Introduction to Sustainable Food Systems ",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1019?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 131": [
+   {
+    "course_id": 1038,
+    "title": "High Altitude Crop Production - Late Season",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1038?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 132": [
+   {
+    "course_id": 1037,
+    "title": "High Altitude Crop Production - Early Season",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1037?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 133": [
+   {
+    "course_id": 1110,
+    "title": "Ecological Pest Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1110?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 134": [
+   {
+    "course_id": 1127,
+    "title": "Season Extension Structures",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1127?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 135": [
+   {
+    "course_id": 1131,
+    "title": "Small Farm Tools and Infrastructure",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1131?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 136": [
+   {
+    "course_id": 1072,
+    "title": "Animal Husbandry on the Small Farm",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1072?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 137": [
+   {
+    "course_id": 1073,
+    "title": "Fruit Tree and Berry Production",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1073?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 142": [
+   {
+    "course_id": 1607,
+    "title": "Introduction to Environmental Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1607?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 142L": [
+   {
+    "course_id": 1609,
+    "title": "Introduction to Environmental Science Lab",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1609?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 160": [
+   {
+    "course_id": 1027,
+    "title": "Watershed Protection And Restoration",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1027?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 164": [
+   {
+    "course_id": 1132,
+    "title": "Native Plants Workshop",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1132?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 170": [
+   {
+    "course_id": 726,
+    "title": "Wildland Fire Behavior",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/726?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 180": [
+   {
+    "course_id": 1686,
+    "title": "Environmental Policy",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1686?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 185": [
+   {
+    "course_id": 1585,
+    "title": "Principles of Indigenous Management ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1585?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 189": [
+   {
+    "course_id": 1586,
+    "title": "Principles of Indigenous Management Field Experience",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1586?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 190": [
+   {
+    "course_id": 1141,
+    "title": "Environmental Studies Field Course",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1141?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 192": [
+   {
+    "course_id": 1142,
+    "title": "Winter Ecology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1142?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 194": [
+   {
+    "course_id": 1143,
+    "title": "Current Environmental Issues",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1143?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 199": [
+   {
+    "course_id": 1781,
+    "title": "Introduction to Special Topics in Environmental Studies",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1781?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 201": [
+   {
+    "course_id": 1689,
+    "title": "Introduction to Geographic Information Systems (GIS)",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1689?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 205": [
+   {
+    "course_id": 1467,
+    "title": "Geospatial Concepts",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1467?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 210": [
+   {
+    "course_id": 1692,
+    "title": "Introduction to Soil Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1692?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 220": [
+   {
+    "course_id": 1612,
+    "title": "Introduction to Forestry",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1612?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 230": [
+   {
+    "course_id": 1402,
+    "title": "Introduction to Fire Ecology and Management",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1402?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 231": [
+   {
+    "course_id": 1763,
+    "title": "Introduction to Prescribed Fire Field Experience ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1763?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 232": [
+   {
+    "course_id": 1764,
+    "title": "Intermediate Prescribed Fire Field Experience",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1764?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 233": [
+   {
+    "course_id": 1765,
+    "title": "Advanced Prescribed Fire Field Experience",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1765?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 234": [
+   {
+    "course_id": 1766,
+    "title": "Leadership in Prescribed Fire Field Experience",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1766?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 235": [
+   {
+    "course_id": 1587,
+    "title": "Introduction to Prescribed Fire Fundamentals ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1587?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 236": [
+   {
+    "course_id": 1588,
+    "title": "Intermediate Prescribed Fire Fundamentals",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1588?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 237": [
+   {
+    "course_id": 1589,
+    "title": "Advanced Prescribed Fire Fundamentals ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1589?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 238": [
+   {
+    "course_id": 1590,
+    "title": "Leadership in Prescribed Fire Fundamentals ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1590?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 239": [
+   {
+    "course_id": 1593,
+    "title": "Prescribed Fire Field Experience",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1593?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 240": [
+   {
+    "course_id": 1843,
+    "title": "Introduction to Wildlife Biology and Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1843?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 241": [
+   {
+    "course_id": 1146,
+    "title": "Wildlife Diversity And Field Techniques",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1146?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 250": [
+   {
+    "course_id": 1777,
+    "title": "Introduction to Aquaculture",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1777?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 251": [
+   {
+    "course_id": 1147,
+    "title": "Ecosystem Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1147?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 264": [
+   {
+    "course_id": 1844,
+    "title": "Introduction to Fish Biology and Management",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1844?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 266": [
+   {
+    "course_id": 1740,
+    "title": "Advanced Aquaculture",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1740?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 280": [
+   {
+    "course_id": 785,
+    "title": "Professional Development Seminar",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/785?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 291": [
+   {
+    "course_id": 419,
+    "title": "Directed Study",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/419?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 299": [
+   {
+    "course_id": 1615,
+    "title": "Special Topics In Environmental Studies",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1615?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 310": [
+   {
+    "course_id": 1597,
+    "title": "Environmental Monitoring and Analysis",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1597?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 380": [
+   {
+    "course_id": 1596,
+    "title": "Environmental Management and Planning",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1596?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 399": [
+   {
+    "course_id": 1594,
+    "title": "Advanced Special Topics in Environmental Studies",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1594?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 410": [
+   {
+    "course_id": 1599,
+    "title": "Restoration Ecology",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1599?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 420": [
+   {
+    "course_id": 1601,
+    "title": "Advanced Forest Ecology and Management ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1601?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 425": [
+   {
+    "course_id": 1598,
+    "title": "Forest Disturbance and Health",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1598?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 430": [
+   {
+    "course_id": 1600,
+    "title": "Advanced Fire Ecology and Management ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1600?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 460": [
+   {
+    "course_id": 1602,
+    "title": "Advanced Riparian Restoration and Management",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1602?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 480": [
+   {
+    "course_id": 746,
+    "title": "Human Dimensions of Natural Resources",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/746?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 490": [
+   {
+    "course_id": 1833,
+    "title": "Land Management Practicum ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1833?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ENVR 499": [
+   {
+    "course_id": 1782,
+    "title": "Leadership in Special Topics in Environmental Studies ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1782?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ETHN 131": [
+   {
+    "course_id": 1432,
+    "title": "Native American Studies",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1432?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ETHN 135": [
+   {
+    "course_id": 1684,
+    "title": "African American Studies",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1684?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ETHN 140": [
+   {
+    "course_id": 1691,
+    "title": "Introduction to Race and Ethnicity",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1691?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ETHN 150": [
+   {
+    "course_id": 1516,
+    "title": "Race and Ethnicity in American Music ",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1516?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ETHN 185": [
+   {
+    "course_id": 1744,
+    "title": "Ethnic Literatures of the U.S.",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1744?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOG 102": [
+   {
+    "course_id": 1117,
+    "title": "Physical Geography",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1117?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOG 104": [
+   {
+    "course_id": 1464,
+    "title": "Cultural Geography",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1464?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOG 125": [
+   {
+    "course_id": 1465,
+    "title": "World Regional Geography",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1465?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOG 201": [
+   {
+    "course_id": 1161,
+    "title": "Introduction to Geographic Information Systems (GIS)",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1161?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOG 291": [
+   {
+    "course_id": 1466,
+    "title": "Directed Study",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1466?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOL 102": [
+   {
+    "course_id": 1412,
+    "title": "Physical Geology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1412?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOL 104": [
+   {
+    "course_id": 1461,
+    "title": "Historical Geology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1461?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOL 120": [
+   {
+    "course_id": 727,
+    "title": "Introduction to Earth Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/727?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOL 191": [
+   {
+    "course_id": 1462,
+    "title": "Geologic Field Trips: Volcanic Landscapes",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1462?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "GEOL 291": [
+   {
+    "course_id": 1463,
+    "title": "Directed Study",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1463?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 001": [
+   {
+    "course_id": 1801,
+    "title": "Strength Training",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1801?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 002": [
+   {
+    "course_id": 1802,
+    "title": "Cardiovascular Fitness ",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1802?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 100": [
+   {
+    "course_id": 1695,
+    "title": "Principles of Healthful Living",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1695?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 101": [
+   {
+    "course_id": 183,
+    "title": "Wellness and Body Movement",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/183?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 104": [
+   {
+    "course_id": 184,
+    "title": "Sports Management",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/184?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 105": [
+   {
+    "course_id": 491,
+    "title": "First Aid And Safety",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/491?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 108": [
+   {
+    "course_id": 492,
+    "title": "Track & Field And Cross Country Skills",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/492?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 112": [
+   {
+    "course_id": 185,
+    "title": "Ultimate Disc",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/185?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 113": [
+   {
+    "course_id": 1148,
+    "title": "Circuit Training",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1148?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 114": [
+   {
+    "course_id": 187,
+    "title": "Physical Fitness: Stretch And Tone",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/187?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 115": [
+   {
+    "course_id": 188,
+    "title": "Physical Fitness: Aerobics",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/188?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 118": [
+   {
+    "course_id": 1170,
+    "title": "Physical Activity, Wellness & Behavior Change",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1170?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 119": [
+   {
+    "course_id": 1171,
+    "title": "Body Composition: Theory, Principles and Management",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1171?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 120": [
+   {
+    "course_id": 1172,
+    "title": "Weight Training",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1172?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 121": [
+   {
+    "course_id": 1173,
+    "title": "Movement Fundamentals & Multi Joint Training",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1173?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 122": [
+   {
+    "course_id": 1174,
+    "title": "Performance Related Fitness",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1174?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 123": [
+   {
+    "course_id": 190,
+    "title": "Asian Martial Arts",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/190?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 124": [
+   {
+    "course_id": 497,
+    "title": "Sports In American History",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/497?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 127": [
+   {
+    "course_id": 191,
+    "title": "Advanced Asian Martial Arts",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/191?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 129": [
+   {
+    "course_id": 498,
+    "title": "Basic Jujitsu",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/498?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 131": [
+   {
+    "course_id": 499,
+    "title": "Beginning Sports Conditioning",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/499?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 132": [
+   {
+    "course_id": 500,
+    "title": "Sports In Society",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/500?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 133": [
+   {
+    "course_id": 1149,
+    "title": "Introduction To Kinesiology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1149?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 135": [
+   {
+    "course_id": 1108,
+    "title": "Advanced Sports Conditioning",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1108?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 136": [
+   {
+    "course_id": 1118,
+    "title": "Speed, Agility And Conditioning",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1118?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 137": [
+   {
+    "course_id": 1119,
+    "title": "Land Based Strength And Stabilization",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1119?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 138": [
+   {
+    "course_id": 1120,
+    "title": "Fitness Activities And Theories",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1120?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 139": [
+   {
+    "course_id": 193,
+    "title": "Asian Martial Arts-Weapons",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/193?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 141": [
+   {
+    "course_id": 505,
+    "title": "Principles Of Fitness & Performance",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/505?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 143": [
+   {
+    "course_id": 506,
+    "title": "Principles of Performance Lab",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/506?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 150": [
+   {
+    "course_id": 194,
+    "title": "Intramurals",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/194?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 151": [
+   {
+    "course_id": 507,
+    "title": "Extramural Ultimate Disc",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/507?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 152": [
+   {
+    "course_id": 508,
+    "title": "Intro To Cheer Movement",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/508?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 153": [
+   {
+    "course_id": 509,
+    "title": "Intro To Dance Movement",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/509?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 154": [
+   {
+    "course_id": 510,
+    "title": "Cheer Production",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/510?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 155": [
+   {
+    "course_id": 511,
+    "title": "Dance Production",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/511?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 156": [
+   {
+    "course_id": 512,
+    "title": "Theory Of Intercollegiate Sand Volleyball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/512?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 157": [
+   {
+    "course_id": 513,
+    "title": "Sports Officiating",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/513?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 158": [
+   {
+    "course_id": 514,
+    "title": "Theory Of Intercollegiate Women\u2019s Track And Field",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/514?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 160": [
+   {
+    "course_id": 196,
+    "title": "Psychology Of Coaching",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/196?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 161": [
+   {
+    "course_id": 197,
+    "title": "Theory Of Intercollegiate Soccer",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/197?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 163": [
+   {
+    "course_id": 515,
+    "title": "Theory Of Intercollegiate Women\u2019s Cross Country",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/515?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 166": [
+   {
+    "course_id": 199,
+    "title": "Theory Of Intercollegiate Men\u2019s Basketball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/199?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 167": [
+   {
+    "course_id": 200,
+    "title": "Theory Of Intercollegiate Women\u2019s Volleyball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/200?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 168": [
+   {
+    "course_id": 201,
+    "title": "Theory Of Intercollegiate Softball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/201?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 169": [
+   {
+    "course_id": 202,
+    "title": "Theory Of Intercollegiate Baseball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/202?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 170": [
+   {
+    "course_id": 1863,
+    "title": "Introduction to Nutrition",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1863?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 171": [
+   {
+    "course_id": 388,
+    "title": "Beginning Golf",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/388?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 172": [
+   {
+    "course_id": 203,
+    "title": "Beginning Life Long Fitness",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/203?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 174": [
+   {
+    "course_id": 204,
+    "title": "Intermediate Life Long Fitness",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/204?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 175": [
+   {
+    "course_id": 205,
+    "title": "Beginning Golf Academy",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/205?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 176": [
+   {
+    "course_id": 206,
+    "title": "Advanced Life Long Fitness",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/206?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 178": [
+   {
+    "course_id": 207,
+    "title": "Theory Of Intercollegiate Men\u2019s Football",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/207?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 179": [
+   {
+    "course_id": 389,
+    "title": "Theory Of Sport: Nutrition For The Athlete",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/389?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 180": [
+   {
+    "course_id": 390,
+    "title": "Theory Of Sport: Applied Biomechanics",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/390?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 181": [
+   {
+    "course_id": 391,
+    "title": "Theory Of Sport:  Coaching Methods And Issues",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/391?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 182": [
+   {
+    "course_id": 392,
+    "title": "Ballroom Dance: Swing",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/392?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 183": [
+   {
+    "course_id": 393,
+    "title": "Intermediate Ballroom Dance: Swing",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/393?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 184": [
+   {
+    "course_id": 394,
+    "title": "Basic Ballroom Dance",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/394?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 192": [
+   {
+    "course_id": 208,
+    "title": "Physical Fitness: Beginning Yoga",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/208?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 194": [
+   {
+    "course_id": 209,
+    "title": "Principles Of Physical Education",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/209?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 200": [
+   {
+    "course_id": 210,
+    "title": "Intercollegiate Men\u2019s Football",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/210?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 201": [
+   {
+    "course_id": 211,
+    "title": "Intercollegiate Basketball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/211?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 204": [
+   {
+    "course_id": 214,
+    "title": "Intercollegiate Soccer",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/214?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 208": [
+   {
+    "course_id": 395,
+    "title": "Intercollegiate Cross Country",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/395?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 212": [
+   {
+    "course_id": 396,
+    "title": "Intercollegiate Track And Field",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/396?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 214": [
+   {
+    "course_id": 215,
+    "title": "Intercollegiate Volleyball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/215?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 216": [
+   {
+    "course_id": 397,
+    "title": "Intercollegiate Baseball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/397?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 218": [
+   {
+    "course_id": 398,
+    "title": "Intercollegiate Softball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/398?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 219": [
+   {
+    "course_id": 399,
+    "title": "Intercollegiate Sand Volleyball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/399?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 220": [
+   {
+    "course_id": 216,
+    "title": "Management & Care Of Athletic Injury I",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/216?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 222": [
+   {
+    "course_id": 1167,
+    "title": "Management And Care Of Athletic Injury II",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1167?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 223": [
+   {
+    "course_id": 1168,
+    "title": "Observation & Practicum Of Athletic Training",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1168?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 224": [
+   {
+    "course_id": 1666,
+    "title": "Introduction to Physical Therapy",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1666?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 225": [
+   {
+    "course_id": 1667,
+    "title": "Introduction to Physical Therapy Practice Across Diverse Settings",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1667?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 230": [
+   {
+    "course_id": 218,
+    "title": "Advanced Basketball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/218?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 234": [
+   {
+    "course_id": 402,
+    "title": "Advanced Women\u2019s Volleyball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/402?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 236": [
+   {
+    "course_id": 1103,
+    "title": "Advanced Men's Baseball",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1103?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 238": [
+   {
+    "course_id": 219,
+    "title": "Advanced Women\u2019s Softball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/219?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 240": [
+   {
+    "course_id": 404,
+    "title": "Advanced Men\u2019s Football",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/404?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 242": [
+   {
+    "course_id": 405,
+    "title": "Advanced Soccer",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/405?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 248": [
+   {
+    "course_id": 407,
+    "title": "Advanced Cross Country",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/407?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 252": [
+   {
+    "course_id": 408,
+    "title": "Advanced Track And Field",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/408?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 253": [
+   {
+    "course_id": 409,
+    "title": "Advanced Sand Volleyball",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/409?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HES 291": [
+   {
+    "course_id": 410,
+    "title": "Directed Study",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/410?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 111": [
+   {
+    "course_id": 1353,
+    "title": "World History to 1500",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1353?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 112": [
+   {
+    "course_id": 1354,
+    "title": "World History Since 1500",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1354?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 120": [
+   {
+    "course_id": 1177,
+    "title": "Women In American History",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1177?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 130": [
+   {
+    "course_id": 1387,
+    "title": "Native American History",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1387?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 135": [
+   {
+    "course_id": 1438,
+    "title": "African American Studies",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1438?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 140": [
+   {
+    "course_id": 1176,
+    "title": "California History",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1176?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 170": [
+   {
+    "course_id": 1564,
+    "title": "Democracy in Practice, Washington DC Week",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1564?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 172": [
+   {
+    "course_id": 1459,
+    "title": "Democracy in Practice Landmarks Of Civil Rights",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1459?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST 400": [
+   {
+    "course_id": 1356,
+    "title": "The American West",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1356?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST C1001": [
+   {
+    "course_id": 2002,
+    "title": "United States History to 1877",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2002?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HIST C1002": [
+   {
+    "course_id": 1854,
+    "title": "United States History since 1865",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1854?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HLTH 100": [
+   {
+    "course_id": 1178,
+    "title": "Principles of Healthful Living",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1178?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HUMN 100": [
+   {
+    "course_id": 1805,
+    "title": "Art Appreciation",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1805?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HUMN 101": [
+   {
+    "course_id": 1693,
+    "title": "Music Appreciation",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1693?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HUMN 110": [
+   {
+    "course_id": 243,
+    "title": "Introduction to Humanities I",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/243?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HUMN 112": [
+   {
+    "course_id": 244,
+    "title": "Introduction to Humanities II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/244?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HUMN 128": [
+   {
+    "course_id": 1313,
+    "title": "Film Appreciation",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1313?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HUMN 228": [
+   {
+    "course_id": 1694,
+    "title": "Novel And Film",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1694?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "HUMN 291": [
+   {
+    "course_id": 248,
+    "title": "Directed Study",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/248?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ICT 091": [
+   {
+    "course_id": 446,
+    "title": "Keyboarding I",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/446?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ICT 092": [
+   {
+    "course_id": 447,
+    "title": "Keyboarding II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/447?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ICT 101": [
+   {
+    "course_id": 448,
+    "title": "Computer Literacy",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/448?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ICT 111": [
+   {
+    "course_id": 444,
+    "title": "Introduction To Information Technology",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/444?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ICT 131": [
+   {
+    "course_id": 445,
+    "title": "Computer Information Systems",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/445?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 001": [
+   {
+    "course_id": 1525,
+    "title": "College Algebra Workshop (non-credit)",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1525?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 002": [
+   {
+    "course_id": 1524,
+    "title": "Statistics Workshop (non-credit)",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1524?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 101": [
+   {
+    "course_id": 1428,
+    "title": "College Algebra Workshop",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1428?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 102": [
+   {
+    "course_id": 1429,
+    "title": "Statistics Workshop",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1429?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 108": [
+   {
+    "course_id": 1238,
+    "title": "Introduction to Trigonometry",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1238?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 110": [
+   {
+    "course_id": 1663,
+    "title": "College Algebra",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1663?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 114": [
+   {
+    "course_id": 1241,
+    "title": "Finite Math",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1241?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 150": [
+   {
+    "course_id": 1669,
+    "title": "Concepts and Structures of Mathematics for Educators",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1669?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 222": [
+   {
+    "course_id": 1433,
+    "title": "Multivariable Calculus",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1433?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 224": [
+   {
+    "course_id": 1265,
+    "title": "Ordinary Differential Equations",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1265?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH 291": [
+   {
+    "course_id": 1240,
+    "title": "Directed Study",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1240?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH C2211": [
+   {
+    "course_id": 1857,
+    "title": "Calculus I: Late Transcendentals ",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1857?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MATH C2221": [
+   {
+    "course_id": 1858,
+    "title": "Calculus II: Late Transcendentals",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1858?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MUS 101": [
+   {
+    "course_id": 1231,
+    "title": "Music Appreciation",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1231?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MUS 140": [
+   {
+    "course_id": 1039,
+    "title": "Mixed Chorus",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1039?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MUS 144": [
+   {
+    "course_id": 1420,
+    "title": "Treble Voices Choir",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1420?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MUS 150": [
+   {
+    "course_id": 1697,
+    "title": "Race and Ethnicity in American Music ",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1697?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "MUS 291": [
+   {
+    "course_id": 1202,
+    "title": "Directed Study",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1202?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NCA 001": [
+   {
+    "course_id": 271,
+    "title": "Food Safety And Sanitation",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/271?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NCA 002": [
+   {
+    "course_id": 272,
+    "title": "Professional Chef Cooking I",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/272?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NCA 003": [
+   {
+    "course_id": 273,
+    "title": "Professional Chef Cooking II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/273?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NCA 004": [
+   {
+    "course_id": 274,
+    "title": "Food Service Cost Controls",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/274?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NCA 010": [
+   {
+    "course_id": 1471,
+    "title": "Restaurant Operations - Breakfast and Lunch",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1471?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NCA 012": [
+   {
+    "course_id": 277,
+    "title": "Catering for the Professional",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/277?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NCA 014": [
+   {
+    "course_id": 279,
+    "title": "Stocks and Sauces",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/279?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NCA 021": [
+   {
+    "course_id": 282,
+    "title": "Fundamentals of Baking",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/282?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 080": [
+   {
+    "course_id": 465,
+    "title": "Intravenous Therapy/Blood Withdrawal",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/465?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 100": [
+   {
+    "course_id": 1710,
+    "title": "Nurse's Aide",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1710?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 102": [
+   {
+    "course_id": 291,
+    "title": "Home Health Aide",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/291?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 111": [
+   {
+    "course_id": 466,
+    "title": "Drug Dosage Calculations For Health Providers",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/466?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 112": [
+   {
+    "course_id": 1798,
+    "title": "Nursing Foundations",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1798?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 114": [
+   {
+    "course_id": 1808,
+    "title": "Nursing Foundations Lab",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1808?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 118": [
+   {
+    "course_id": 467,
+    "title": "Medical Terminology",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/467?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 120": [
+   {
+    "course_id": 1809,
+    "title": "Introduction to Pharmacology",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1809?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 122": [
+   {
+    "course_id": 1812,
+    "title": "Basic Medical Surgical Nursing",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1812?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 124": [
+   {
+    "course_id": 1813,
+    "title": "Basic Medical Surgical Nursing Lab I",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1813?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 126": [
+   {
+    "course_id": 1816,
+    "title": "Basic Medical Surgical Nursing Lab II",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1816?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 200": [
+   {
+    "course_id": 697,
+    "title": "Phlebotomy",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/697?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 202": [
+   {
+    "course_id": 1814,
+    "title": "Maternal-Child Nursing",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1814?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 204": [
+   {
+    "course_id": 1815,
+    "title": "Maternal-Child Nursing Lab",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1815?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 212": [
+   {
+    "course_id": 1817,
+    "title": "Intermediate Medical Surgical Nursing",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1817?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 214": [
+   {
+    "course_id": 1819,
+    "title": "Intermediate Medical Surgical Nursing Lab",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1819?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 216": [
+   {
+    "course_id": 1818,
+    "title": "Mental Health Nursing",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1818?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 222": [
+   {
+    "course_id": 1820,
+    "title": "Advanced Medical Surgical Nursing",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1820?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 224": [
+   {
+    "course_id": 1821,
+    "title": "Advanced Medical Surgical Nursing Lab",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1821?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 225": [
+   {
+    "course_id": 303,
+    "title": "Advanced Medical Surgical Laboratory II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/303?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 230": [
+   {
+    "course_id": 1822,
+    "title": "Transition to Nursing Practice",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1822?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 232": [
+   {
+    "course_id": 304,
+    "title": "Obstetrical Nursing",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/304?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 234": [
+   {
+    "course_id": 305,
+    "title": "Obstetrical Nursing Laboratory I",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/305?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 235": [
+   {
+    "course_id": 306,
+    "title": "Obstetrical Nursing Laboratory II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/306?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 237": [
+   {
+    "course_id": 307,
+    "title": "Pediatric Nursing",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/307?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 239": [
+   {
+    "course_id": 308,
+    "title": "Pediatric Nursing Laboratory I",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/308?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 240": [
+   {
+    "course_id": 309,
+    "title": "Pediatric Nursing Laboratory II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/309?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "NURS 280": [
+   {
+    "course_id": 468,
+    "title": "Synthesis Of Nursing Concepts",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/468?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 045": [
+   {
+    "course_id": 1069,
+    "title": "Basic Trail Building Techniques",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1069?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 046": [
+   {
+    "course_id": 1066,
+    "title": "Advanced Trail Building Techniques",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1066?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 047": [
+   {
+    "course_id": 1063,
+    "title": "Trail Building Crew Leadership",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1063?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 110": [
+   {
+    "course_id": 814,
+    "title": "Introduction To Recreation And Leisure ",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/814?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 116": [
+   {
+    "course_id": 311,
+    "title": "Outdoor Recreation Principles",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/311?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 120": [
+   {
+    "course_id": 312,
+    "title": "Recreation Program Planning",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/312?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 130": [
+   {
+    "course_id": 313,
+    "title": "Adventure Based Outdoor Recreation",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/313?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 140": [
+   {
+    "course_id": 1059,
+    "title": "Beginning Sea Kayaking",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1059?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 142": [
+   {
+    "course_id": 1056,
+    "title": "Intermediate Sea Kayaking",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1056?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 144": [
+   {
+    "course_id": 1043,
+    "title": "Backcountry Ski And Snowboard",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1043?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 145": [
+   {
+    "course_id": 1045,
+    "title": "Intermediate Backcountry Ski And Snowboard",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1045?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 146": [
+   {
+    "course_id": 1181,
+    "title": "Beginning Alpine Skiing",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1181?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 148": [
+   {
+    "course_id": 1190,
+    "title": "Intermediate Alpine Skiing",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1190?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 150": [
+   {
+    "course_id": 1047,
+    "title": "Beginning Whitewater Rafting",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1047?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 152": [
+   {
+    "course_id": 1050,
+    "title": "Beginning Whitewater Raft Guide",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1050?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 153": [
+   {
+    "course_id": 1048,
+    "title": "Intermediate Whitewater Raft Guide",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1048?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 154": [
+   {
+    "course_id": 1052,
+    "title": "Canoe And Stand-Up Paddle Board",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1052?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 156": [
+   {
+    "course_id": 1044,
+    "title": "Beginning Rock Climbing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1044?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 158": [
+   {
+    "course_id": 1046,
+    "title": "Intermediate Rock Climbing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1046?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 159": [
+   {
+    "course_id": 1182,
+    "title": "Climbing Wall Instructor",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1182?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 160": [
+   {
+    "course_id": 1049,
+    "title": "Beginning Backpacking",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1049?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 161": [
+   {
+    "course_id": 1051,
+    "title": "Intermediate Backpacking",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1051?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 162": [
+   {
+    "course_id": 1053,
+    "title": "Mountaineering",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1053?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 166": [
+   {
+    "course_id": 1054,
+    "title": "Mountain Biking",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1054?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 167": [
+   {
+    "course_id": 1189,
+    "title": "Intermediate Mountain Biking",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1189?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 168": [
+   {
+    "course_id": 1055,
+    "title": "Cross-Country Skiing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1055?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 170": [
+   {
+    "course_id": 1057,
+    "title": "Telemark Skiing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1057?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 171": [
+   {
+    "course_id": 1058,
+    "title": "Intermediate Telemark Skiing",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1058?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 172": [
+   {
+    "course_id": 1060,
+    "title": "Beginning Whitewater Kayaking",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1060?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 174": [
+   {
+    "course_id": 1061,
+    "title": "Intermediate Whitewater Kayaking",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1061?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 180": [
+   {
+    "course_id": 1062,
+    "title": "Wilderness First Responder",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1062?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 182": [
+   {
+    "course_id": 1064,
+    "title": "Swiftwater Rescue Technician Level I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1064?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 188": [
+   {
+    "course_id": 1068,
+    "title": "Wilderness First Responder Recertification",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1068?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 190": [
+   {
+    "course_id": 1070,
+    "title": "Avalanche Technician Level I",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1070?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 192": [
+   {
+    "course_id": 1071,
+    "title": "Swiftwater Rescue Technician Advanced",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1071?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 200": [
+   {
+    "course_id": 333,
+    "title": "Outdoor Recreation Leadership",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/333?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 280": [
+   {
+    "course_id": 1745,
+    "title": "Professional Development Seminar",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1745?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 291": [
+   {
+    "course_id": 334,
+    "title": "Directed Study",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/334?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "ORL 299": [
+   {
+    "course_id": 480,
+    "title": "Special Topics In Outdoor Recreation Leadership",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/480?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHIL 100": [
+   {
+    "course_id": 924,
+    "title": "Introduction To Philosophy",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/924?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHIL 101": [
+   {
+    "course_id": 1018,
+    "title": "Logic",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1018?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHIL 102": [
+   {
+    "course_id": 925,
+    "title": "Introduction to Ethics",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/925?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHIL 103": [
+   {
+    "course_id": 1380,
+    "title": "Philosophy Of World Religions",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1380?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHSC 120": [
+   {
+    "course_id": 343,
+    "title": "Introduction To Astronomy",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/343?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHSC 120L": [
+   {
+    "course_id": 718,
+    "title": "Introduction to Astronomy Lab",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/718?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHYS 102": [
+   {
+    "course_id": 900,
+    "title": "General Physics I",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/900?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHYS 104": [
+   {
+    "course_id": 901,
+    "title": "General Physics II",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/901?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHYS 140": [
+   {
+    "course_id": 770,
+    "title": "Introduction to Chemistry and Physics",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/770?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHYS 202": [
+   {
+    "course_id": 914,
+    "title": "Physics Scientists/Engineers I",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/914?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHYS 204": [
+   {
+    "course_id": 915,
+    "title": "Physics for Scientists and Engineers II",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/915?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PHYS 206": [
+   {
+    "course_id": 917,
+    "title": "Physics for Scientists and Engineers III",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/917?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "POL 110": [
+   {
+    "course_id": 1541,
+    "title": "Introduction to Political Theory and Thought",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1541?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "POL 120": [
+   {
+    "course_id": 1513,
+    "title": "Comparative Politics",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1513?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "POL 130": [
+   {
+    "course_id": 1418,
+    "title": "Introduction to International Relations",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1418?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "POL 140": [
+   {
+    "course_id": 1690,
+    "title": "Introduction to Race and Ethnicity",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1690?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "POL 150": [
+   {
+    "course_id": 1321,
+    "title": "Introduction to Political Science",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1321?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "POL 160": [
+   {
+    "course_id": 1688,
+    "title": "Globalization",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1688?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "POL 180": [
+   {
+    "course_id": 1196,
+    "title": "Environmental Policy",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1196?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "POLS C1000": [
+   {
+    "course_id": 1760,
+    "title": "American Government and Politics",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1760?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PSY 152": [
+   {
+    "course_id": 1696,
+    "title": "Psycho Pathology Of Serial Killers And Mass Murderers",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1696?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "PSYC C1000": [
+   {
+    "course_id": 1761,
+    "title": "Introduction to Psychology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1761?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SOC 100": [
+   {
+    "course_id": 1393,
+    "title": "Sex, Gender, and Society",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1393?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SOC 125": [
+   {
+    "course_id": 1442,
+    "title": "Introduction to Statistics in Sociology",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1442?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SOC 140": [
+   {
+    "course_id": 1385,
+    "title": "Introduction to Race and Ethnicity",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1385?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SOC 150": [
+   {
+    "course_id": 1322,
+    "title": "Social Trends and Problems",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1322?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SOC 160": [
+   {
+    "course_id": 1419,
+    "title": "Globalization",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1419?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SOCI C1000": [
+   {
+    "course_id": 1855,
+    "title": "Introduction to Sociology",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1855?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SOJU 100": [
+   {
+    "course_id": 1698,
+    "title": "Sex, Gender, and Society",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1698?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SOJU 130": [
+   {
+    "course_id": 1394,
+    "title": "Introduction to Queer Studies ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1394?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SPAN 101": [
+   {
+    "course_id": 1323,
+    "title": "Beginning Spanish",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1323?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SPAN 102": [
+   {
+    "course_id": 373,
+    "title": "Beginning Spanish II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/373?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SPAN 201": [
+   {
+    "course_id": 374,
+    "title": "Intermediate Spanish I",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/374?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SPAN 204": [
+   {
+    "course_id": 487,
+    "title": "Intermediate Spanish II",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/487?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SPAN 291": [
+   {
+    "course_id": 375,
+    "title": "Directed Study",
+    "proposal_type": "New Non-Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/375?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SWHS 110": [
+   {
+    "course_id": 1378,
+    "title": "Introduction to Social Work and Human Services ",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1378?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "SWHS 120": [
+   {
+    "course_id": 1379,
+    "title": "Fieldwork/Practicum: Social Work and Human Services",
+    "proposal_type": "New Credit Course",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1379?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "THEA 105": [
+   {
+    "course_id": 1205,
+    "title": "Introduction to Acting",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1205?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "THEA 106": [
+   {
+    "course_id": 1206,
+    "title": "Advanced Acting",
+    "proposal_type": "Course Substantial Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1206?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "THEA 114": [
+   {
+    "course_id": 1197,
+    "title": "Drama Workshop (Technical Theatre)",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1197?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "THEA 140": [
+   {
+    "course_id": 1198,
+    "title": "Drama/Comedy Production",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1198?entityType=Course&reportId=485"
+    ]
+   }
+  ],
+  "THEA 142": [
+   {
+    "course_id": 1199,
+    "title": "Musical Production",
+    "proposal_type": "Course Revision",
+    "reports": [
+     "https://frc.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1199?entityType=Course&reportId=485"
+    ]
+   }
+  ]
+ }
+}

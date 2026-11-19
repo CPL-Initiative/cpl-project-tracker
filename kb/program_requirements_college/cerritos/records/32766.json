@@ -5,11 +5,11 @@
  "title": "Elementary Teacher Education",
  "award": "A.A- T Degree",
  "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/elementary-teacher-education-aa-t/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6560,
+  "input_tokens": 8173,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6560,
-    "output_tokens": 3156,
+    "input_tokens": 8173,
+    "output_tokens": 3368,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,59 +30,64 @@
     "model": null
    }
   ],
-  "output_tokens": 3156,
+  "output_tokens": 3368,
   "output_tokens_details": {
-   "thinking_tokens": 1046
+   "thinking_tokens": 1288
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08936,
- "ms": 26013,
- "seconds": 26.5,
+ "cost_usd": 0.10005,
+ "ms": 27654,
+ "seconds": 27.8,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 24,
-   "share": 0.667,
+   "share": 0.708,
    "missing": [
     "COMM103",
     "ENGLC1001",
     "ENGLC1003",
     "GEOG105",
-    "HIST102",
     "PHIL103",
     "PHIL106",
     "PSYC103"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 7,
    "codes": [
-    "CHEM100",
+    "CHEM100&PHYS100",
     "DANC100",
     "EDEL100",
     "EDEL110",
     "EDEL200",
     "EDT110",
-    "ENGL222",
-    "HISTC1001",
-    "PHYS100"
+    "ENGL222"
    ],
    "flagged": [
-    "CHEM100",
+    "CHEM100&PHYS100",
     "DANC100",
     "EDEL100",
     "EDEL110",
     "EDEL200",
     "EDT110",
-    "ENGL222",
-    "HISTC1001",
-    "PHYS100"
+    "ENGL222"
    ],
    "pass": true
   },
@@ -97,6 +102,7 @@
     33.0,
     36.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -113,6 +119,17 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -124,11 +141,27 @@
     "max": 36.5
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Students will demonstrate foundational subject-matter knowledge necessary for successful transfer into a CSU teacher preparation program and future K–8 teaching.",
     "Students will demonstrate clear communication and critical thinking skills expected of developing educators.",
     "Students will describe inclusive and culturally responsive approaches that support diverse K–8 learners, including multilingual students and those receiving special education services."
+   ],
+   "careers": [
+    "education"
    ]
   },
   "blocks": [
@@ -242,15 +275,8 @@
       "catalog_addition": false
      },
      {
-      "code": "CHEM 100",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHYS 100",
-      "units": null,
+      "code": "CHEM 100 & PHYS 100",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -371,7 +397,7 @@
    },
    {
     "code": "HIST 102",
-    "why": "not in the text; catalog lists HIST C1001 instead"
+    "why": "not in the text; catalog lists HIST C1001 for US History to 1877 instead"
    },
    {
     "code": "PHIL 103",
@@ -387,15 +413,15 @@
    }
   ],
   "notes": [
-   "List A prints 'CHEM 100 & PHYS 100' as one option (Introductory Chemistry and Elementary Physics, 4 units combined); both must be taken together to satisfy that single selection. Recorded as two entries with units null because the 4 units are printed for the pair.",
-   "CDEV C1000 in the catalog is matched to closed-list CDEVC1000 (spacing difference only); treated as not a catalog addition.",
-   "ENGL C1000 is printed with 4.0-4.5 units for the ENGL C1000 / ENGL C1000E pair; ENGL C1000E has no separate units printed (closed list stores 4.5).",
-   "HIST 245, ENGL C1002 and ENGL 222 are 'or' alternatives for one Required Core slot; only HIST 245 has printed units (3.0).",
-   "DANC 101 is an 'or' alternative to DANC 100 with no units printed beside it.",
-   "HIST C1001 appears in the catalog whereas the closed list names HIST 102 (similar US history to 1876/1877); reviewer may want to confirm whether these are the same course renumbered.",
-   "Page heading notes the program was formerly 'Elementary Teacher Education AA-T'; the award title now reads 'Elementary Teacher Education: Integrated Programs (AA-T)'.",
-   "Degree requires Cal-GETC; catalog notes CSU GE or IGETC may be used in some cases."
+   "Program was renamed 'Elementary Teacher Education: Integrated Programs (AA-T)' (formerly Elementary Teacher Education AA-T); closed list appears to reflect the older version of the program.",
+   "Closed-list code 'CDEVC1000' matched to catalog's 'CDEV C1000' (same course, spacing differs); marked catalog_addition false.",
+   "ENGL C1000 row prints the range 4.0-4.5 covering ENGL C1000 (4) or ENGL C1000E (4.5); no units printed beside the alternative.",
+   "List A option 'CHEM 100 & PHYS 100' is a paired option (both courses required together) worth 4 units combined; recorded as one entry. Neither CHEM 100 nor PHYS 100 is in the closed list.",
+   "Alternatives ENGL C1002, ENGL 222 (for HIST 245) and DANC 101 (for DANC 100) have no units printed beside them.",
+   "Degree requirement text states 60 CSU-transferable units generically for AA-T degrees; not recorded as this award's degree_total. Cal-GETC named as GE pattern; CSU GE or IGETC may be used in some cases.",
+   "Career 'education' taken from 'interested in the field of education' in the program description."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "44540824017",
+ "catalog_year": "2026-2027"
 }

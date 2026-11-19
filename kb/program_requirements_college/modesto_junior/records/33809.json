@@ -5,11 +5,11 @@
  "title": "Addiction Studies",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
  "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027v2",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6020,
+  "input_tokens": 7190,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6020,
-    "output_tokens": 2091,
+    "input_tokens": 7190,
+    "output_tokens": 2165,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 2091,
+  "output_tokens": 2165,
   "output_tokens_details": {
-   "thinking_tokens": 516
+   "thinking_tokens": 573
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0659,
- "ms": 15847,
- "seconds": 16.2,
+ "cost_usd": 0.07206,
+ "ms": 17614,
+ "seconds": 18.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 14,
-   "share": 0.929,
-   "missing": [
-    "HUMSR147"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "SWHS147",
+     "listed": "HUMSR147",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "SOCIO101",
-    "SWHS147"
+    "SOCIO101"
    ],
    "flagged": [
-    "SOCIO101",
-    "SWHS147"
+    "SOCIO101"
    ],
    "pass": true
   },
@@ -78,6 +82,7 @@
     39.0,
     39.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -99,6 +104,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": true
  },
  "record": {
@@ -110,7 +118,20 @@
     "max": 39
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Comprehend the wide range of chemical dependency counseling options, chronological standpoints, and the populations commonly served.",
     "Conduct a basic assessment, interview, intervention, referral, individual counseling, and group sessions with individuals that are chemically dependent.",
@@ -279,16 +300,17 @@
   "missing_explained": [
    {
     "code": "HUMSR 147",
-    "why": "not in the text; the catalog prints SWHS147 - Field Studies & Seminar I in its place"
+    "why": "not in the text; catalog prints SWHS147 Field Studies & Seminar I (same title), likely a renumbering"
    }
   ],
   "notes": [
-   "PSYCC1000 and SOCIO150 are printed without the space used in the closed list (PSYC C1000, SOCIO 150); treated as the same closed-list courses.",
-   "SWHS147 (Field Studies & Seminar I) is not in the closed list, which instead names HUMSR 147 with the same title; likely a renumbering/subject change. Recorded SWHS147 as a catalog addition.",
-   "SOCIO101 - Introduction to Sociology is not in the closed list; recorded as a catalog addition in the Behavioral Courses block.",
-   "A stray line 'CHEMICAL DEPENDENCY COUNSELING, CERTIFICATE *' appears after the first outcomes lead-in, before the Program Learning Outcomes heading; it appears to be a page artifact and was not recorded as an outcome.",
-   "No careers are named in the text."
+   "PSYCC1000 printed without a space matches closed-list PSYC C1000; SOCIO150 matches SOCIO 150.",
+   "SWHS147 (Field Studies & Seminar I) is not in the closed list but shares its title with closed-list HUMSR 147; recorded as a catalog addition, reviewer should confirm renumbering.",
+   "SOCIO101 Introduction to Sociology is not in the closed list; recorded as a catalog addition.",
+   "A stray line 'CHEMICAL DEPENDENCY COUNSELING, CERTIFICATE *' and a duplicated lead-in appear before the Program Learning Outcomes heading; read as page artifacts.",
+   "Text says CAADE certificate requires a 2.0 GPA or higher in each course."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": "44540818388",
+ "catalog_year": "2026-2027"
 }

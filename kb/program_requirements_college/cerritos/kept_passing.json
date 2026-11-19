@@ -1,0 +1,336 @@
+{
+ "run": "44540824017",
+ "programs": [
+  {
+   "control_number": "16308",
+   "title": "Esthetician",
+   "award": "A.S. Degree",
+   "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/esthetician-aa/",
+   "filed_source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/esthetician-aa/",
+   "cost_usd": 0.07075,
+   "usage": {
+    "input_tokens": 7358,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7358,
+      "output_tokens": 2066,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2066,
+    "output_tokens_details": {
+     "thinking_tokens": 662
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 12,
+     "listed": 12,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "COS102E",
+       "listed": "COS102",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "COS103E",
+       "listed": "COS103",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "COS106E",
+       "listed": "COS106",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cerritos College Associate of Arts Degree General Education pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       20.0,
+       20.0
+      ],
+      "stated": [
+       20.0,
+       20.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 12,
+     "share": 0.75,
+     "missing": [
+      "COS102",
+      "COS103",
+      "COS106"
+     ],
+     "unexplained": [],
+     "pass": true
+    },
+    "invented": {
+     "count": 3,
+     "codes": [
+      "COS102E",
+      "COS103E",
+      "COS106E"
+     ],
+     "flagged": [
+      "COS102E",
+      "COS103E",
+      "COS106E"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      20.0,
+      20.0
+     ],
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "33093",
+   "title": "Geology",
+   "award": "A.S. T Degree",
+   "source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/geology-as-t/",
+   "filed_source_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/geology-as-t/",
+   "cost_usd": 0.05399,
+   "usage": {
+    "input_tokens": 7272,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7272,
+      "output_tokens": 1245,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1245,
+    "output_tokens_details": {
+     "thinking_tokens": 367
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 8,
+     "listed": 8,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      23.0,
+      26.0
+     ],
+     "stated": [
+      26.0,
+      26.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 23.0-26.0; the catalog states 26.0-26.0"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 6,
+     "courses": 0,
+     "count": 6,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 8,
+     "listed": 8,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      26.0,
+      26.0
+     ],
+     "stated": [
+      26.0,
+      26.0
+     ],
+     "against": "program",
+     "why": [],
+     "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358); paired alternatives corrected (S681 second reader, A)"
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 6,
+     "courses": 0,
+     "count": 6,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "pass": true
+   }
+  }
+ ]
+}

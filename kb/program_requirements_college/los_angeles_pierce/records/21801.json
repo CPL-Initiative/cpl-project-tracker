@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Architectural Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9770,
+  "input_tokens": 7950,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9770,
-    "output_tokens": 1574,
+    "input_tokens": 7950,
+    "output_tokens": 1239,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1574,
+  "output_tokens": 1239,
   "output_tokens_details": {
-   "thinking_tokens": 375
+   "thinking_tokens": 261
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07056,
- "ms": 13182,
- "seconds": 13.6,
+ "cost_usd": 0.05658,
+ "ms": 10683,
+ "seconds": 10.8,
  "parts": null,
  "error": null,
  "score": {
@@ -79,13 +79,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 6,
+   "program": 0,
    "courses": 0,
-   "count": 6,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "ARCHITECTURAL TECHNOLOGY Certificate of Achievement (STATE CODE 21801)",
+   "section_heading": "CERTIFICATE - REQUIRED COURSES",
    "measure": "units",
    "total_units": {
     "min": 34,
@@ -121,14 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Recognize and critically analyze the elements and principles of architectural design and construction.",
-    "Display competency with graphic communication of ideas.",
-    "Create architectural projects utilizing research, planning, analysis, and concept.",
-    "Develop critical understanding of the practice of architecture and its components.",
-    "Recognize and express structural, material and building system components as well as the code, safety, and site factors that go into construction and design.",
-    "Recognize and execute cognitive, cultural, physical, social and sustainable factors in planning construction and the execution of architectural designs."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -138,8 +131,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 34,
-     "max": 34
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -239,12 +232,29 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Certificate of Achievement section (State Code 21801, pages 83-84); the A.A. degree section above it lists the same courses plus ARC 272 with a 37-unit major total, which is not recorded here.",
-   "The certificate prints its own Program Learning Outcomes list, identical to the A.A. degree's list.",
-   "Careers left empty: the certificate description names architects, contractors, construction managers and engineers only as professionals students work alongside, and refers to the Gainful Employment website for careers. The A.A. section names 'architectural technicians' but that is outside this award's section.",
-   "Block stated total taken from 'CERTIFICATE - TOTAL UNITS 34'; the printed course units sum to 34.",
-   "Asterisks on course codes mark prerequisites/corequisites and were dropped from the codes."
+   "The excerpt begins mid-section on page 84; the program's title heading, description, outcomes and any career information likely appear on the preceding page (83), which is not in the text. Outcomes and careers are left empty for that reason; a reviewer should check page 83.",
+   "Section heading recorded as the printed block heading 'CERTIFICATE - REQUIRED COURSES'; the award table below names 'Architectural Technology Certificate', major code P021801D, GE N/A.",
+   "Courses marked * (ARC 151, 173, 201, 202, 221, 271) have prerequisites and/or corequisites per the catalog footnote.",
+   "The catalog's spaced letters (e.g., 'I ntroduction') are PDF extraction artifacts."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "be0c042fc58f1cbe",
+ "source_codes": [
+  "ARC110",
+  "ARC111",
+  "ARC121",
+  "ARC151",
+  "ARC152",
+  "ARC162",
+  "ARC172",
+  "ARC173",
+  "ARC201",
+  "ARC202",
+  "ARC221",
+  "ARC271",
+  "ENV101"
+ ],
+ "source_coverage": 1.0
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7194,
-    "output_tokens": 2353,
+    "output_tokens": 2308,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 2353,
+  "output_tokens": 2308,
   "output_tokens_details": {
-   "thinking_tokens": 604
+   "thinking_tokens": 648
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07584,
- "ms": 18511,
- "seconds": 19.0,
+ "cost_usd": 0.07494,
+ "ms": 18500,
+ "seconds": 35.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 21,
-   "share": 0.857,
+   "share": 0.905,
    "missing": [
-    "ACCT99",
     "ECON101",
     "ECON102"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ACCT100",
+     "listed": "ACCT99",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
-    "ACCT100",
     "BUS105",
     "ECONC2001",
     "ECONC2002"
    ],
    "flagged": [
-    "ACCT100",
     "BUS105",
     "ECONC2001",
     "ECONC2002"
@@ -152,7 +156,7 @@
   },
   "blocks": [
    {
-    "name": "I. Required courses 19.0 units:",
+    "name": "I. Required courses 19.0 units",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -206,7 +210,7 @@
     ]
    },
    {
-    "name": "II. Select a minimum of 6.0 units from the following courses:",
+    "name": "II. Select a minimum of 6.0 units from the following courses",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -334,25 +338,25 @@
   "missing_explained": [
    {
     "code": "ACCT 99",
-    "why": "not in the text; catalog prints ACCT 100 Practical Accounting instead (likely renumbered)"
+    "why": "not in the text; catalog lists ACCT 100 Practical Accounting instead"
    },
    {
     "code": "ECON 101",
-    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics (likely common course numbering replacement)"
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
    },
    {
     "code": "ECON 102",
-    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics (likely common course numbering replacement)"
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
    }
   ],
   "notes": [
-   "BUS 058 and BUS 063 are printed with a leading zero; treated as the closed list's BUS 58 and BUS 63 (titles match), so catalog_addition false.",
-   "WE 220 is titled 'Internship' in the catalog but 'Work Experience' in the closed list; same code, treated as the same course.",
-   "ACCT 100, BUS 105, ECON C2001 and ECON C2002 are not in the closed list and are marked as catalog additions.",
-   "The 60-unit sentence under ASSOCIATE DEGREE PROGRAM is a generic statement for all AA/AS degrees, not recorded as this award's degree_total; no named GE pattern or GE units printed.",
-   "Catalog text is cut off at the end of the general associate degree paragraph.",
-   "Many courses are marked '( Historical )' on the page; reviewer may want to confirm they remain valid for the 2026-2027 catalog year."
+   "BUS 058 and BUS 063 as printed are treated as closed-list BUS 58 and BUS 63 (leading zero only); catalog_addition set false.",
+   "ACCT 100 (Practical Accounting) appears to be a renumbering of closed-list ACCT 99; ECON C2001/C2002 appear to be common-course-numbering replacements of ECON 101/102. Recorded as catalog additions.",
+   "WE 220 is titled 'Internship' in the catalog vs 'Work Experience' in the closed list.",
+   "The 60-unit sentence is the generic associate degree requirement, not recorded as degree_total. No specific GE pattern named.",
+   "Catalog text is cut off at the end of the associate degree paragraph."
   ]
  },
- "extracted_run": "38935136329"
+ "extracted_run": "44545048735",
+ "catalog_year": "2026-2027"
 }

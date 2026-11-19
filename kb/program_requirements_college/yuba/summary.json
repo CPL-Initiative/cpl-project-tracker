@@ -2,29 +2,22 @@
  "college": "Yuba College",
  "programs": 104,
  "with_closed_list": 94,
- "found": 93,
- "extracted": 93,
+ "found": 94,
+ "extracted": 94,
  "errors": 0,
- "passed_machine_checks": 75,
+ "passed_machine_checks": 85,
  "failed": {
-  "coverage": 6,
+  "coverage": 3,
   "invented": 2,
-  "arithmetic": 17,
+  "arithmetic": 7,
   "repeated": 0,
-  "outcomes": 0
+  "outcomes": 1
  },
- "cost_usd": 7.44,
- "cost_per_program": 0.08,
- "not_found": [
-  {
-   "control_number": "20211",
-   "title": "Film, Television, and Electronic Media",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=107",
-    "coverage": 0.429
-   }
-  }
- ],
- "run": "39006517642"
+ "cost_usd_run": 0.88,
+ "cost_usd_filed": 7.62,
+ "cost_per_program": 0.0811,
+ "extract_calls": 10,
+ "extract_failed": [],
+ "not_found": [],
+ "run": "44536397187"
 }
