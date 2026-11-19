@@ -5,6 +5,8 @@ updated: 2026-11-18
 tags: [handoff, session]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
+superseded: true
+superseded_by: session_684_handoff.md
 ---
 
 # You are SkyNuthatch (Session 683)
