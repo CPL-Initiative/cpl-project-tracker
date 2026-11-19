@@ -2,20 +2,34 @@
  "college": "West Los Angeles College",
  "programs": 245,
  "with_closed_list": 228,
- "found": 214,
- "extracted": 214,
+ "found": 203,
+ "extracted": 203,
  "errors": 0,
- "passed_machine_checks": 173,
+ "passed_machine_checks": 179,
  "failed": {
-  "coverage": 20,
+  "coverage": 6,
   "invented": 5,
-  "arithmetic": 36,
+  "arithmetic": 18,
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd": 14.97,
- "cost_per_program": 0.07,
+ "cost_usd_run": 0.18,
+ "cost_usd_filed": 14.39,
+ "cost_per_program": 0.0709,
+ "extract_calls": 3,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "03317",
+   "title": "French",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
   {
    "control_number": "15011",
    "title": "Computer Application Office Technology-Legal Secretary",
@@ -23,7 +37,63 @@
    "near_miss": {
     "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
     "coverage": 0.444
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19524",
+   "title": "Business Application & Database Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19526",
+   "title": "Web Support & Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19847",
+   "title": "Computer Web Support & Database Administration",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19848",
+   "title": "Computer Web Support & Database Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24160",
+   "title": "Healthcare Careers Preparation Certificate of Completion",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "35058",
@@ -35,7 +105,8 @@
     ],
     "coverage": 0.875,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "35064",
@@ -47,7 +118,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "35079",
@@ -59,7 +131,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36842",
@@ -71,31 +144,51 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37264",
    "title": "Workplace Success I: Creative Leadership",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "37276",
    "title": "Workplace Success II: Creativity and Innovation in the Workplace",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "37833",
    "title": "Workforce Preparation and Career Success",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
-   "control_number": "38677",
-   "title": "ESL Pathways",
+   "control_number": "37983",
+   "title": "Employment Readiness",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38647",
+   "title": "Mobile Application Development Essentials",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "39049",
@@ -107,7 +200,30 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39510",
+   "title": "21st Century Employability Skills: Empathy and Adaptability",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40106",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "41466",
@@ -116,7 +232,8 @@
    "near_miss": {
     "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
     "coverage": 0.25
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43074",
@@ -128,7 +245,19 @@
     ],
     "coverage": 0.667,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43507",
+   "title": "Data Analytics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "44669",
@@ -140,7 +269,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45276",
@@ -152,8 +282,19 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46261",
+   "title": "Spanish for the Workplace Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=47",
+    "coverage": 0.0
+   },
+   "status": "Active"
   }
  ],
- "run": "39536207109"
+ "run": "44475503054"
 }

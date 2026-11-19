@@ -2,19 +2,22 @@
  "college": "El Camino College",
  "programs": 189,
  "with_closed_list": 135,
- "found": 124,
- "extracted": 124,
+ "found": 126,
+ "extracted": 126,
  "errors": 0,
- "passed_machine_checks": 86,
+ "passed_machine_checks": 93,
  "failed": {
-  "coverage": 7,
+  "coverage": 4,
   "invented": 0,
-  "arithmetic": 38,
+  "arithmetic": 33,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 8.08,
- "cost_per_program": 0.0652,
+ "cost_usd_run": 0.76,
+ "cost_usd_filed": 8.13,
+ "cost_per_program": 0.0645,
+ "extract_calls": 6,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "02489",
@@ -36,11 +39,12 @@
     "error": null,
     "chars": {
      "body": 1789,
-     "content": 13953,
+     "content": 13992,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "15492",
@@ -62,11 +66,12 @@
     "error": null,
     "chars": {
      "body": 1366,
-     "content": 13538,
+     "content": 13577,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19859",
@@ -88,11 +93,12 @@
     "error": null,
     "chars": {
      "body": 1371,
-     "content": 13551,
+     "content": 13590,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19860",
@@ -114,11 +120,12 @@
     "error": null,
     "chars": {
      "body": 1786,
-     "content": 13953,
+     "content": 13992,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37191",
@@ -140,11 +147,12 @@
     "error": null,
     "chars": {
      "body": 1324,
-     "content": 13502,
+     "content": 13541,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39004",
@@ -166,11 +174,12 @@
     "error": null,
     "chars": {
      "body": 928,
-     "content": 13115,
+     "content": 13154,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40200",
@@ -192,11 +201,12 @@
     "error": null,
     "chars": {
      "body": 1267,
-     "content": 13454,
+     "content": 13493,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40201",
@@ -218,11 +228,12 @@
     "error": null,
     "chars": {
      "body": 907,
-     "content": 13094,
+     "content": 13133,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40635",
@@ -244,64 +255,13 @@
     "error": null,
     "chars": {
      "body": 993,
-     "content": 13180,
+     "content": 13219,
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "46403",
-   "title": "Academic Skills",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3740&print",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1423,
-     "content": 13614,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "46404",
-   "title": "Math Essentials",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3691&print",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 858,
-     "content": 13045,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38631686677"
+ "run": "44480396671"
 }
