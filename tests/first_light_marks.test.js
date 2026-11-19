@@ -62,7 +62,10 @@ function boot(opts) {
   w.localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
   w.sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: TOKEN, email: "r@example.org", exp: Date.now() + 3600e3 }));
   const db = { marks: (opts.marks || []).slice(), reqs: (opts.reqs || []).slice(), posts: [], absent: !!opts.absent, nextId: 100, reads: 0 };
-  const hero = opts.hero || HERO;
+  // The fixtures' marks carry small ids, so the lists they act on start as never applied. Each committed list
+  // records the highest mark id an Apply has consumed for it (the paintings: 90, since the Apply of 2026-11-17),
+  // and the tab reads a mark at or below that id as spent.
+  const hero = opts.hero || Object.assign({}, HERO, { applied_through_mark_id: 0, held_mark_ids: [] });
   const resp = (status, body, text) => Promise.resolve({ ok: status >= 200 && status < 300, status,
     json: () => Promise.resolve(JSON.parse(JSON.stringify(body))), text: () => Promise.resolve(text != null ? text : JSON.stringify(body)) });
   w.fetch = (url, init) => {
@@ -101,8 +104,8 @@ function boot(opts) {
   w.eval(SESSION);
   w.eval(FL);
   w.CPL_FIRST_LIGHT.init();
-  if (opts.paintingsApplied) w.CPL_FIRST_LIGHT.paintings.applied_through_mark_id = opts.paintingsApplied;
-  if (opts.paintingsHeld) w.CPL_FIRST_LIGHT.paintings.held_mark_ids = opts.paintingsHeld;
+  w.CPL_FIRST_LIGHT.paintings.applied_through_mark_id = opts.paintingsApplied || 0;
+  w.CPL_FIRST_LIGHT.paintings.held_mark_ids = opts.paintingsHeld || [];
   w.eval(TAB);
   w.go = (tab) => { current = tab; w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab } })); };
   w.db = db;
