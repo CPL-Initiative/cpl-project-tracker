@@ -702,13 +702,13 @@
    "untagged_usd": 176.0
   },
   "2026-11-19": {
-   "usd": 255.56,
-   "sessions": 2,
+   "usd": 350.56,
+   "sessions": 3,
    "not_available": 0,
    "tags": {
     "curation": 124.0,
-    "infrastructure": 47.56,
-    "collection": 84.0
+    "infrastructure": 77.56,
+    "collection": 149.0
    },
    "untagged_usd": 0.0
   }

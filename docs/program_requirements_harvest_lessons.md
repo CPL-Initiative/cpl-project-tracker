@@ -541,6 +541,8 @@ draft."* The harvest's tab shows its records without a Governance pass, marked
 
 **The nightly SLO read (Sam, 2026-11-01):** step 11 of [`scheduled_sessions`](reference/scheduled_sessions.md), pages only, no cost; De Anza and College of Marin held. The paragraph as it stood: lessons, *Moved from the lane (S647, Sheet 191)*. **Next:** the day's full read and preparation run, as `--next` names them. **S683:** Chabot read again with the fixed reader (read 44472580748, 3 parts), standing test 26 of 26 on the branch, then load run 44484699264: 1,013 `slo` and 1,013 `objective` rows, ids 34631 to 36656 (receipt `kb/receipts/course_outcomes_chabot_44484699264.json` on `claude/slo-chabot`; `course_outcomes` 32,347; `m-chabot-loaded-both-kinds-s683`). **PITFALL** `p-outcome-load-without-standing-test-s681` stands (the standing test before `.load`). S681's Chabot rollback: lessons, *Moved from the lane (S683 checkpoint)*.
 
+**No display receipt is committed (S680, #3495):** a session runs `kb/_build_roep_display.py` on a branch and commits the page alone; `step=display` stores the receipt in the private bucket `cpl-receipts` ([repo-size](reference/lanes/repo-size.md)); build `545de21a6edc` (S681) is live. The paragraph as it stood: lessons, *Moved from the lane (S683 checkpoint)*.
+
 ## S684 (SkyVerdin, the CPL Queue routine's 10:12Z conductor firing, 2026-11-19): main repaired, the guard, the second reread batch
 
 **What happened.** The firing found `main` red. Two failures, the second hidden behind the first: five issuers the
@@ -568,8 +570,20 @@ once (`d-no-display-tonight-s684`).
   lands: checked, own-program (both), live equal to the run already posted keeps the record, live different from the
   filed run is held, and a live row holding this run that fails own-program goes to a person.
 - **A generic heading passes the own-program test** (`f-courseleaf-generic-heading-restores-good-rereads-s684`). A
-  CourseLeaf page heads its list *REQUIREMENTS* or *Course List*, so the test restored two Ventura re-reads (31298,
-  44186) that had placed courses. The second open item on keep-the-better.
+  CourseLeaf page heads its list *REQUIREMENTS*, *Course List*, *Major Requirements* or *Requirements*, so the test
+  restored 17 re-reads that had placed courses: Ventura 4 (31298, 35207, 44186, 45831) and Evergreen Valley 13 (all 13
+  re-reads pass; 6 of the filed records they gave way to fail); Santa Barbara City and Victor Valley 0. The second open
+  item on keep-the-better; the fix accepts a re-read whose page is the program's own, by URL or page title, when the
+  heading is generic, and then the 17 re-post. The first open item: a second pass after a post holds the row, so no
+  college takes a second pass until it is fixed.
+- **The batch's figures:** ten colleges, every receipt `error` null, $16.08 paid; kept 114, restored 24, new 22, held 2
+  (Ventura 45355, Shasta 18153); 87 rows replaced, 42 inserted; 67 record files dropped, none of which passed live;
+  each load's inserted keys equal its reread's absent keys. Ventura, Cañada and Victor Valley dispatched nothing.
+  `program_requirement_records` 18,312 to 18,354.
+- **A builder `check_generated.sh` does not run** (`p-commons-data-status-not-in-check-generated-s684`): #3548's two new
+  gap labels left `kb/status/commons_data.json` stale (collected with gaps 93 to 95), and `lints` failed on
+  `tests/commons_data_status_build_test.py` while `check_generated.sh` reported everything current. Run that test after
+  any record write.
 - **A reread at a single-PDF catalog drops record files and leaves live rows** (`f-reread-drops-files-live-rows-stay-s684`).
   Rule A set 23 of 27 aim records `not_found`, and the filing dropped the failing record files (LA City 2, Cañada 1,
   Solano 7, Shasta 13 of the aim at 11:31Z; none passed live). S683's wave took 160 such files off `main`. Under the new
@@ -583,5 +597,8 @@ once (`d-no-display-tonight-s684`).
   PRs from `main` at once re-triggered the census and capture workflows the wave had changed
   (`p-branch-update-starts-read-only-workflows-s684`).
 - **The outline readers:** Siskiyous read 315 of 315 pages (outcomes on 247, objectives on 119), standing test 26 of
-  26, then loaded clean; Crafton Hills' trial parsed 12 of 12 and went to a full read; Rio Hondo's index needs a reader
-  change (no NewSearch request until Search is pressed).
+  26, then loaded 366 rows; Crafton Hills read 566 of 566 pages (outcomes on 557, objectives on 566), standing test 26
+  of 26, and loaded 1,123 (load 44522694613); `course_outcomes` 32,347 to 33,836. Rio Hondo's index needs a reader
+  change: `search_all` in `kb/_course_outline_index.py` should press Search when no NewSearch request arrives.
+- **Free previews before a paid read:** Southwestern (451 of 451 pages, none challenged) would extract 24 programs for
+  about $2.40; NOCE (135 of 138) would extract none.

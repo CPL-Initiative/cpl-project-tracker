@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1536,
-    "bytes": 16419305,
+    "bytes": 16428169,
     "over_budget": 3,
     "handoff_max": 685,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 163,
-        "bytes": 5410128,
+        "bytes": 5411381,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2843381,
+        "bytes": 2845302,
         "over": 1
       },
       "kb_note": {
@@ -46,25 +46,24 @@
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 538860,
+        "bytes": 539164,
         "over": 0
       },
       "handoff": {
         "files": 644,
-        "bytes": 4654261,
+        "bytes": 4659647,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 3,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 76,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 76
     },
     "vault": {
-      "files": 28537,
-      "bytes": 1718007107,
-      "heavy_bytes": 1191698865,
+      "files": 28543,
+      "bytes": 1718183936,
+      "heavy_bytes": 1191703083,
       "heavy_share": 0.694,
       "ignore_filters": [
         "agent-a6713afe3be493c94/kb/program_requirements_college",
@@ -202,10 +201,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 153471857,
+        "bytes": 153472734,
         "kind": "dir"
       },
-      "message": "directory totals 153,471,857 B inside the vault"
+      "message": "directory totals 153,472,734 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -222,10 +221,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84487427,
+        "bytes": 84487428,
         "kind": "dir"
       },
-      "message": "directory totals 84,487,427 B inside the vault"
+      "message": "directory totals 84,487,428 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -292,10 +291,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 14296754,
+        "bytes": 14300094,
         "kind": "dir"
       },
-      "message": "directory totals 14,296,754 B inside the vault"
+      "message": "directory totals 14,300,094 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -956,17 +955,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_685_handoff.md",
-      "detail": {
-        "commits_since": 10,
-        "budget": 6,
-        "handoff": "session_685_handoff.md"
-      },
-      "message": "10 commit(s) have landed since `docs/session_685_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

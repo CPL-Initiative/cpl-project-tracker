@@ -218,6 +218,16 @@ again (the third Fable firing); workers on Opus 5.5, pr-gate on Haiku 5.5. No `l
   (`d-skip-preview-under-ceiling-s684`).
 - **The display build was held** (`d-no-display-tonight-s684`): an hour-long two-step apply with a live count gate,
   beside the 12:17Z daily slot, on a starved pool. One build next session carries every record of the night.
+- **Two items stay open on the keep-the-better script, both COBIx's to settle with the next session:** a second pass
+  after a post holds the row (so no college takes a second pass yet), and a generic CourseLeaf heading passes the
+  own-program test (17 good re-reads restored at Ventura and Evergreen Valley). **The reader pattern:** at single-PDF
+  catalogs rule A set most aim records to not found, and the filing dropped those record files while their live rows
+  stay.
+- **A builder outside `check_generated.sh`** (`p-commons-data-status-not-in-check-generated-s684`): #3548 failed
+  `lints` on a stale `kb/status/commons_data.json` that the script called current.
+- **COBIx's "Build the CPL Commons page now" went to a plain session** (`d-commons-build-to-a-plain-session-s684`):
+  Sam's routine prompt keeps conductor runs to collection, and the run was at 88% of its context. Sam was told by phone
+  notice and COBIx on #3533. A firing never starts it on the routine's prompt alone.
 
 ## What went wrong in S683, and what worked
 

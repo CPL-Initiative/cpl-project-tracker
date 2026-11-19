@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-19T09:27:50Z",
+  "written_at": "2026-11-19T12:43:31Z",
   "session": 684,
   "moniker": "SkyVerdin",
   "run": "the CPL Queue routine",
@@ -338,12 +338,16 @@
   },
   "changes": [
     {
-      "at": "2026-11-19T12:02:00Z",
-      "text": "The rebuild of what CPL Pathways and Sierra show was held for the next session, so that one build carries every record collected tonight."
+      "at": "2026-11-19T12:38:00Z",
+      "text": "The second reread batch finished at ten colleges: 87 program rows replaced by a better read and 42 inserted, from 18,312 rows to 18,354, every load reporting no error; the filed run costs came to $16.08."
     },
     {
-      "at": "2026-11-19T12:00:00Z",
-      "text": "The second reread batch posted its first colleges: Los Angeles City, Shasta and Ohlone each kept or replaced records with a better read, every load reporting no error; at Ventura and Cañada nothing posted."
+      "at": "2026-11-19T12:22:00Z",
+      "text": "Crafton Hills' course outlines loaded: 1,123 rows, 557 learning outcomes and 566 course objectives, read from all 566 pages, with no error."
+    },
+    {
+      "at": "2026-11-19T12:02:00Z",
+      "text": "The rebuild of what CPL Pathways and Sierra show was held for the next session, so that one build carries every record collected tonight."
     },
     {
       "at": "2026-11-19T11:58:00Z",
@@ -452,10 +456,6 @@
     {
       "at": "2026-11-17T14:30:00Z",
       "text": "Six colleges read again so that programs listed without their own requirements take back the catalog page another program had been read from: Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore. 22 more programs now have complete requirements."
-    },
-    {
-      "at": "2026-11-17T10:40:00Z",
-      "text": "Norco's Music Industry Studies: Performance degree and certificate now add up: each ensemble option counts its courses the number of times its own heading says, so every option comes to its printed 8 units."
     }
   ],
   "headline": [
@@ -710,6 +710,12 @@
       "active": 20282,
       "complete": 14887,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-19",
+      "active": 20282,
+      "complete": 14982,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -718,8 +724,8 @@
     "at": "2026-11-17T15:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-18",
-    "gaps": 3225,
+    "day": "2026-11-19",
+    "gaps": 3365,
     "parts": {
       "links": {
         "catalog": [
@@ -736,25 +742,25 @@
         ]
       },
       "roep": [
-        19978,
+        20118,
         20282
       ],
       "coci": [
-        16753,
+        16849,
         20282
       ],
       "outcomes": {
         "slo": [
-          15699,
+          17246,
           88736
         ],
         "plo": [
-          16753,
+          16849,
           20282
         ]
       },
       "careers": [
-        15743,
+        15839,
         20282
       ]
     }
