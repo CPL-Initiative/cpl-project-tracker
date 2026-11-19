@@ -2,19 +2,50 @@
  "college": "Grossmont College",
  "programs": 187,
  "with_closed_list": 154,
- "found": 145,
+ "found": 144,
  "extracted": 144,
  "errors": 0,
- "passed_machine_checks": 124,
+ "passed_machine_checks": 125,
  "failed": {
-  "coverage": 9,
+  "coverage": 8,
   "invented": 5,
-  "arithmetic": 20,
+  "arithmetic": 18,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 10.61,
- "cost_per_program": 0.0737,
- "not_found": [],
- "run": "43482160320"
+ "cost_usd_run": 0.54,
+ "cost_usd_filed": 11.03,
+ "cost_per_program": 0.0766,
+ "extract_calls": 2,
+ "extract_failed": [],
+ "not_found": [
+  {
+   "control_number": "08767",
+   "title": "Media Communications: Video Production",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/media-communications-as-cert-achievement/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 10,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 8270,
+     "content": 34430,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  }
+ ],
+ "run": "44539755045"
 }

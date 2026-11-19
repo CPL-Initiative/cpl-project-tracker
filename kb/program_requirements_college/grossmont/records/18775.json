@@ -1,0 +1,1570 @@
+{
+ "college": "Grossmont College",
+ "control_number": "18775",
+ "shape": "certificate",
+ "title": "CSU General Education Breadth",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.gcccd.edu/grossmont/general-education-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 39499,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "output_tokens": 15488,
+  "output_tokens_details": {
+   "thinking_tokens": 2878
+  }
+ },
+ "cost_usd": 0.46776,
+ "ms": 55511,
+ "seconds": 56.6,
+ "parts": 2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 288,
+   "share": 0.0,
+   "missing": [
+    "ANTH120",
+    "ANTH122",
+    "ANTH127",
+    "ANTH140",
+    "ANTH215",
+    "ANTHC1001",
+    "ANTHC1001L",
+    "AOJ110",
+    "ARBC120",
+    "ARBC121",
+    "ARBC122",
+    "ARBC123",
+    "ARBC148",
+    "ARBC220",
+    "ARBC221",
+    "ARBC250",
+    "ARBC251",
+    "ART100",
+    "ART120",
+    "ART126",
+    "ART130",
+    "ART142",
+    "ART143",
+    "ART145",
+    "ART146",
+    "ART147",
+    "ARTHC1100",
+    "ASL120",
+    "ASL121",
+    "ASL140",
+    "ASL220",
+    "ASL221",
+    "ASTR120",
+    "ASTRC1001",
+    "ASTRC1001L",
+    "BIO105",
+    "BIO110",
+    "BIO112",
+    "BIO114",
+    "BIO118",
+    "BIO141",
+    "BIO141L",
+    "BIO144",
+    "BIO145",
+    "BIO152",
+    "BIO215",
+    "BIO230",
+    "BIO240",
+    "BIOLC1000",
+    "BUS195",
+    "CD115",
+    "CD131",
+    "CD145",
+    "CDEVC1000",
+    "CHEM102",
+    "CHEM110",
+    "CHEM113",
+    "CHEM115",
+    "CHEM116",
+    "CHEM120",
+    "CHEM141",
+    "CHEM142",
+    "CHEM231",
+    "CHEM232",
+    "COMM124",
+    "COMM130",
+    "COMM136",
+    "COMM137",
+    "COMM144",
+    "COMM145",
+    "COMMC1000",
+    "COMMC1004",
+    "COUN120",
+    "DANC110",
+    "DANC120",
+    "ECON110",
+    "ECON261",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGL201",
+    "ENGL215",
+    "ENGL217",
+    "ENGL218",
+    "ENGL219",
+    "ENGL221",
+    "ENGL222",
+    "ENGL231",
+    "ENGL232",
+    "ENGL236",
+    "ENGL237",
+    "ENGL238",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1002",
+    "ESL115",
+    "ESL122",
+    "ETHN114",
+    "ETHN115",
+    "ETHN118",
+    "ETHN119",
+    "ETHN125",
+    "ETHN126",
+    "ETHN127",
+    "ETHN128",
+    "ETHN130",
+    "ETHN131",
+    "ETHN134",
+    "ETHN135",
+    "ETHN137",
+    "ETHN138",
+    "ETHN143",
+    "ETHN144",
+    "ETHN180",
+    "ETHN181",
+    "ETHN236",
+    "ETHN237",
+    "ETHN238",
+    "FREN120",
+    "FREN121",
+    "FREN152",
+    "FREN220",
+    "FREN221",
+    "FREN250",
+    "FREN251",
+    "FS110",
+    "FS115",
+    "FS120",
+    "FS129",
+    "GEND116",
+    "GEND154",
+    "GEND155",
+    "GEOG100",
+    "GEOG101",
+    "GEOG106",
+    "GEOG120",
+    "GEOG121",
+    "GEOG130",
+    "GEOG140",
+    "GEOG170",
+    "GEOL104",
+    "GEOL110",
+    "GEOL111",
+    "GEOL121",
+    "GEOL210",
+    "GEOL220",
+    "GERM120",
+    "GERM121",
+    "GERM220",
+    "GERM221",
+    "GERM250",
+    "GERM251",
+    "HED120",
+    "HED201",
+    "HIST100",
+    "HIST101",
+    "HIST103",
+    "HIST105",
+    "HIST106",
+    "HIST113",
+    "HIST114",
+    "HIST115",
+    "HIST118",
+    "HIST119",
+    "HIST122",
+    "HIST123",
+    "HIST124",
+    "HIST126",
+    "HIST130",
+    "HIST131",
+    "HIST135",
+    "HIST136",
+    "HIST137",
+    "HIST148",
+    "HIST154",
+    "HIST155",
+    "HIST180",
+    "HIST181",
+    "HISTC1001",
+    "HISTC1002",
+    "HUM110",
+    "HUM120",
+    "HUM125",
+    "HUM130",
+    "HUM135",
+    "HUM140",
+    "HUM160",
+    "HUM170",
+    "JAPN120",
+    "JAPN121",
+    "JAPN149",
+    "JAPN220",
+    "JAPN221",
+    "JAPN250",
+    "JAPN251",
+    "MATH120",
+    "MATH125",
+    "MATH126",
+    "MATH170",
+    "MATH175",
+    "MATH176",
+    "MATH178",
+    "MATH245",
+    "MATH281",
+    "MATH284",
+    "MATH285",
+    "MATHC2210",
+    "MATHC2220",
+    "MCOM110",
+    "MCOM111",
+    "MUS110",
+    "MUS111",
+    "MUS115",
+    "MUS116",
+    "MUS117",
+    "MUS123",
+    "NUTR155",
+    "NUTR158",
+    "NUTR159",
+    "NUTR255",
+    "OCEA112",
+    "PHIL110",
+    "PHIL111",
+    "PHIL115",
+    "PHIL117",
+    "PHIL125",
+    "PHIL130",
+    "PHIL140",
+    "PHIL141",
+    "PHIL145",
+    "PHIL150",
+    "PHIL155",
+    "PHOT154",
+    "PHYC110",
+    "PHYC130",
+    "PHYC131",
+    "POLSC1000",
+    "POSC120",
+    "POSC124",
+    "POSC130",
+    "POSC140",
+    "POSC150",
+    "POSC155",
+    "POSC160",
+    "PSC100",
+    "PSC110",
+    "PSC111",
+    "PSC120",
+    "PSY125",
+    "PSY132",
+    "PSY134",
+    "PSY138",
+    "PSY140",
+    "PSY150",
+    "PSY170",
+    "PSY180",
+    "PSY211",
+    "PSY215",
+    "PSY220",
+    "PSYCC1000",
+    "RELG120",
+    "RELG130",
+    "RELG140",
+    "RELG150",
+    "RELG170",
+    "SCI110",
+    "SOC114",
+    "SOC125",
+    "SOC130",
+    "SOC138",
+    "SOC140",
+    "SOC215",
+    "SOCIC1000",
+    "SPAN120",
+    "SPAN121",
+    "SPAN122",
+    "SPAN123",
+    "SPAN141",
+    "SPAN145",
+    "SPAN220",
+    "SPAN221",
+    "SPAN250",
+    "SPAN251",
+    "STATC1000",
+    "THTR101",
+    "THTR110",
+    "THTR143",
+    "THTR144",
+    "THTR205"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "General Education",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGLC1000",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ESL 122",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "COMM 130",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "COMM 137",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "COMM 145",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 125",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "BIO 215",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 125",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 126",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 170",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 175",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 176",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 178",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 245",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 281",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 284",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH 285",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 130",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PSC 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PSY 215",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ASL 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ASL 121",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ASL 140",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ASL 220",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ASL 221",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 121",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 122",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 123",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 148",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 220",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 221",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 250",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARBC 251",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ART 100",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ART 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ART 126",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ART 142",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ART 143",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ART 145",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ART 146",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ART 147",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "COMM 144",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "DANC 110",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "DANC 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 201",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 215",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 217",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 218",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 219",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 221",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 222",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 231",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 232",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 236",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 237",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL 238",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ESL 115",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 126",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 127",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 134",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 143",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 144",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 236",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 237",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 238",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "FREN 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "FREN 121",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "FREN 152",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "FREN 220",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "FREN 221",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "FREN 250",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "FREN 251",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "GERM 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "GERM 121",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "GERM 220",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "GERM 221",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "GERM 250",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "GERM 251",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 100",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 101",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 103",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 105",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 106",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 113",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 126",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 135",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 136",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 137",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HIST 148",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HUM 110",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HUM 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HUM 125",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HUM 130",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HUM 135",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HUM 140",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HUM 160",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "HUM 170",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "JAPN 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "JAPN 121",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "JAPN 149",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "JAPN 220",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "JAPN 221",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "JAPN 250",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "JAPN 251",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MCOM111",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MUS 110",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MUS 111",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MUS 115",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MUS 116",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MUS 117",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "MUS 123",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 110",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 111",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 115",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 117",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 140",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 141",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 145",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 150",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHIL 155",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "PHOT 154",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "RELG 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "RELG 130",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "RELG 140",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "RELG 150",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "RELG 170",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 120",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 121",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 122",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 123",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 141",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 145",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 220",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 221",
+    "why": "only in Plan A local AA/AS GE list; certificate section not in text"
+   },
+   {
+    "code": "SPAN 250",
+    "why": "only in Plan A local GE (AA/AS) Area 3 list; CSU GE Breadth certificate section not in text"
+   },
+   {
+    "code": "SPAN 251",
+    "why": "only in Plan A local GE (AA/AS) Area 3 list; CSU GE Breadth certificate section not in text"
+   },
+   {
+    "code": "THTR 101",
+    "why": "only in Plan A local GE (AA/AS) Area 3 list; CSU GE Breadth certificate section not in text"
+   },
+   {
+    "code": "THTR 110",
+    "why": "only in Plan A local GE (AA/AS) Area 3 list; CSU GE Breadth certificate section not in text"
+   },
+   {
+    "code": "THTR 143",
+    "why": "only in Plan A local GE (AA/AS) Area 3 list; CSU GE Breadth certificate section not in text"
+   },
+   {
+    "code": "THTR 144",
+    "why": "only in Plan A local GE (AA/AS) Area 3 list; CSU GE Breadth certificate section not in text"
+   },
+   {
+    "code": "THTR 205",
+    "why": "only in Plan A local GE (AA/AS) Area 3 list; CSU GE Breadth certificate section not in text"
+   },
+   {
+    "code": "AOJ 110",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ANTH 120",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ANTH 122",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ANTH 127",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ANTH 140",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "CD 115",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "CD 131",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "CD 145",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "CDEVC1000",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list (as CDEV-C1000); certificate section not in text"
+   },
+   {
+    "code": "COMM 124",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ECON 110",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 114",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 115",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 118",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 119",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 125",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 128",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 130",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 131",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 135",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 137",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 138",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 180",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "ETHN 181",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "FS 115",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "FS 120",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "GEND 116",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "GEND 154",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "GEND 155",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "GEOG 100",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "GEOG 101",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "GEOG 106",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "GEOG 130",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "GEOG 170",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HED 120",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HED 201",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 114",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 115",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 118",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 119",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 122",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 123",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 124",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 130",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 131",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 154",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 155",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 180",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST 181",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "MCOM110",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list (as MCOM-110); certificate section not in text"
+   },
+   {
+    "code": "NUTR 155",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "NUTR 158",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "NUTR 159",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "POSC 120",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "POSC 124",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "POSC 130",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "POSC 140",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "POSC 150",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "POSC 160",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 125",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 132",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 134",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 138",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 140",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 150",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 170",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 211",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSY 220",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "SOC 125",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "SOC 130",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "SOC 140",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list; certificate section not in text"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "only in Plan A local GE (AA/AS) Area 4 list (as SOCI-C1000); certificate section not in text"
+   },
+   {
+    "code": "ANTH C1001",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "ANTH C1001L",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "ASTR 120",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "ASTR C1001",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "ASTR C1001L",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 105",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 110",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 112",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 114",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 118",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 141",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 141L",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 152",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 230",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIO 240",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "BIOLC1000",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list (as BIOL-C1000); certificate section not in text"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list; certificate section not in text"
+   },
+   {
+    "code": "CHEM 110",
+    "why": "only in Plan A local GE (AA/AS) Area 5 list, where text is cut off; certificate section not in text"
+   },
+   {
+    "code": "ANTH 215",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "ART 130",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "BIO 144",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "BIO 145",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "BUS 195",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "CHEM 113",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "CHEM 115",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "CHEM 116",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "CHEM 120",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "CHEM 141",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "CHEM 142",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "CHEM 231",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "CHEM 232",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "COMM 136",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "COUN 120",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "ECON 261",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FS 110",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FS 129",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOG 120",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOG 121",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOG 140",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOL 104",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOL 110",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOL 111",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOL 121",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOL 210",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "GEOL220",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "NUTR 255",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "OCEA 112",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "PHYC 110",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "PHYC 130",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "PHYC 131",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "POSC 155",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "PSC 100",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "PSC 110",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "PSC 111",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "PSY 180",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "SCI 110",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "SOC 114",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "SOC 138",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "SOC 215",
+    "why": "not in the text (text cut off)"
+   }
+  ],
+  "notes": [
+   "The catalog text holds no section for the CSU General Education Breadth Certificate of Achievement. It shows only graduation rules, the General Education Philosophy and 'Plan A: General Education Requirements (AA/AS)', which is Grossmont's local GE pattern for the associate degree. It is cut off mid Area 5 ('CHEM-110 Environmental Chemi').",
+   "The certificate's own section, likely CSU GE Breadth or its Cal-GETC successor, probably follows later on the page beyond the cut. Plan A areas were therefore not recorded as this award's blocks, because they include courses outside the CSU GE pattern (e.g., CSIS-240, ART-124, ENGL-126, THTR-130).",
+   "A reviewer should fetch the full page and record the certificate section if it exists.",
+   "The 'Recipients of an Associate Degree will be equipped to' list belongs to the associate degree GE philosophy, not this certificate, so it was not recorded as outcomes.",
+   "No total units, outcomes or careers for the certificate are printed in the supplied text.",
+   "section_heading names the page-level 'General Education' heading only because no heading for this award appears in the text.",
+   "Part 2: The catalog text contains no section for the CSU General Education Breadth Certificate of Achievement. It prints only the Grossmont College Plan A local General Education requirements for the AA/AS (Areas 1-5), which is a different pattern for the associate degree. So no blocks are recorded for this award.",
+   "Part 2: The text is cut off mid-entry in Area 5 at 'CHEM-110 Environmental Chemi'. The CSU GE Breadth certificate section may follow later on the page. A reviewer should fetch the full page, or the certificate's own page.",
+   "Part 2: The 'General Education Philosophy' list ('think critically', etc.) describes recipients of an Associate Degree, not this certificate, so it is not recorded as program outcomes.",
+   "Part 2: CSU GE Breadth was superseded by Cal-GETC as of Fall 2025. The 2026-2027 catalog may no longer print this certificate; check whether the award is still offered.",
+   "Read in 2 parts, because one reply could not hold the whole record."
+  ]
+ },
+ "extracted_run": "44539755045",
+ "catalog_year": "2026-2027"
+}
