@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 592 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 593 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 105 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 106 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 642 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1517** | |
+| Session handoffs | 643 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1520** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-19 (S683 SkyNuthatch, the CPL Queue routine's 06:12Z conductor night, full checkpoint): the Chabot stop cleared (#3497's 99 and #3508's 14 rows applied, Chabot's 2,026 outline rows loaded); the reread wave at 15 colleges (133 replaced, 72 inserted); #3536, #3538, #3542 in one wave; the program-requirements lessons compacted to archive 7; the KB note `methodology-a-reread-keeps-the-better-record`. Handoff 684.
 - 2026-11-19 (S683 Library side job with Ashley Mooney, light checkpoint): #3527 and #3532 (the Library duplicate check warns, Start drafts at once, the drafter reads COBI data with the under-10 rule; deployed twice); the library lane and lessons compacted under budget, S509 and S510 to `library_lessons_archive_2`. A section in handoff 683.
 - 2026-11-18 (S683 SkyDipper, Sam's daytime code session, full checkpoint): #3520 (the CER run rebuilds the Side by side views), #3519 (course flags, never deletes), #3513 (rules G and M and their apply), #3515 (exhibits blocker rules 1 and 2), #3517 (Commons plain words, the nightly click-through), #3514 (the reader's page checks); #3516, #3518, #3482 and #3293 parked as issues #3522 to #3525; `scripts/cobix_watch.sh`; the cer-procedures and commons lanes compacted under 20,000 bytes. A daytime section in handoff 683.
 - 2026-11-18 (S682 SkyVireo, the CPL Queue routine's 14:12Z firing, light checkpoint): S681's stand-down held; First Light's 77 painting drops in #3511 for Sam's merge, the 13 story photos held on the hero photo rule; the sierra-page-redesign lane compacted under 20,000 bytes. Handoff 683.

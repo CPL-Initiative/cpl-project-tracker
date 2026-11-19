@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "ESL Beginning Low",
  "award": "Noncredit program",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=162",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6508,
+  "input_tokens": 7086,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6508,
-    "output_tokens": 1416,
+    "input_tokens": 7086,
+    "output_tokens": 1326,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1416,
+  "output_tokens": 1326,
   "output_tokens_details": {
-   "thinking_tokens": 347
+   "thinking_tokens": 419
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05435,
- "ms": 11473,
- "seconds": 11.8,
+ "cost_usd": 0.05486,
+ "ms": 11750,
+ "seconds": 12.0,
  "parts": null,
  "error": null,
  "score": {
@@ -55,32 +55,29 @@
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 1,
    "codes": [
-    "ESLN3200",
-    "ESLN5150",
-    "ESLN5175",
-    "ESLN5220"
+    "ESLN3200"
    ],
    "flagged": [
-    "ESLN3200",
-    "ESLN5150",
-    "ESLN5175",
-    "ESLN5220"
+    "ESLN3200"
    ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    131.5,
-    262.5
+    175.0,
+    350.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    174.5,
+    350.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 175.0-350.0; the catalog states 174.5-350.0"
    ]
   },
   "repeated": {
@@ -109,11 +106,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "ESL Beginning Low Focus Skills – Certificate of Competency",
+   "section_heading": "ESL Beginning Low – Certificate of Competency",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 174.5,
+    "max": 350
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,10 +128,10 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Interpret general meaning and essential information in low-beginning English conversations in familiar contexts.",
-    "Use low-beginning English structures and vocabulary to engage in simple conversations on familiar topics.",
-    "Construct limited meaning from low-beginning written English texts on familiar topics.",
-    "Use low-beginning English structures and vocabulary to write a series of simple sentences on familiar topics."
+    "Interpret commonly used beginning-low statements and questions in familiar contexts.",
+    "Employ simple learned phrases and sentences to engage in basic social conversations.",
+    "Construct general meaning from simplified reading materials on familiar topics.",
+    "Write simple words and sentences."
    ],
    "careers": []
   },
@@ -145,7 +142,7 @@
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 87.5,
+     "min": 87,
      "max": 175
     },
     "courses": [
@@ -162,7 +159,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 87.5,
+     "max": 175
+    },
+    "courses": [
      {
       "code": "ESLN 3120",
       "units": 175,
@@ -185,50 +194,28 @@
       "catalog_addition": false
      }
     ]
-   },
-   {
-    "name": "Choose one course from the following",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 44,
-     "max": 87.5
-    },
-    "courses": [
-     {
-      "code": "ESLN 5220",
-      "units": 87.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ESLN 5175",
-      "units": 87.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ESLN 5150",
-      "units": 44,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
    }
   ],
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program is named 'ESL Beginning Low' but the only section in the text is 'ESL Beginning Low Focus Skills – Certificate of Competency'; recorded from that section. A reviewer should confirm it is the same award.",
-   "The award is counted in hours. The catalog prints no total hours for the certificate, only the ranges for each choice block (87.5-175.0 and 44.0-87.5), so total_units is null.",
-   "The closed list stores codes without a space (ESLN3100, ESLN3105, ESLN3205); these were matched to the catalog's ESLN 3100, ESLN 3105 and ESLN 3205.",
-   "The catalog titles ESLN 3120 'ESL Beginning 1-2 Multilevel'; the closed list titles it 'ESL Beginning Low 1-2 Multilevel'.",
-   "The summary says the certificate prepares students for 'limited community participation, further study, and entry-level work'. No specific career or occupation is named, so careers is empty."
+   "Award counted in hours (noncredit Certificate of Competency); all units fields hold hours.",
+   "Closed list writes ESLN3100, ESLN3105 and ESLN3205 without a space; matched to the catalog's ESLN 3100, ESLN 3105 and ESLN 3205.",
+   "ESLN 3200 (Beginning Low 2, 175.0 hours) is not in the closed list; recorded as a catalog addition.",
+   "First choice block prints 'HOURS 87.0-175.0' though its smallest course is 87.5 hours; recorded as printed, likely a typo.",
+   "The section continues across a page break (pages 162-163).",
+   "The following section 'ESL Beginning Low Focus Skills – Certificate of Competency' is a separate award and was not read; its ESLN 5220, 5175 and 5150 courses are not recorded.",
+   "The program summary mentions 'entry-level work' only as a general outcome; no specific career was recorded."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "20bae7a18d755b75",
+ "source_codes": [
+  "ESLN3100",
+  "ESLN3105",
+  "ESLN3120",
+  "ESLN3205"
+ ],
+ "source_coverage": 1.0
 }

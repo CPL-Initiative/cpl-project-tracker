@@ -146,7 +146,7 @@ with tempfile.TemporaryDirectory() as root:
     write(root, "statewide_data.js", STATEWIDE, js="CPL_STATEWIDE")
     write(root, "unified_courses_members.js", MEMBERS, js="CPL_UNIFIED_MEMBERS")
     write(root, "statewide_prescriptive.js", PRESCRIPTIVE, js="CPL_STATEWIDE_PRESCRIPTIVE")
-    data, courses, adoption = B.build(root)
+    data, courses, adoption, subjects = B.build(root)
     out = os.path.join(root, "kb", "exhibits_review.json")
     r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root, "--quiet"],
                        capture_output=True, text=True, timeout=120, env=ENV)
@@ -896,6 +896,34 @@ check("daily_build.sh's Review step reads live with no secret, and reads exit 3 
       and 'rc=0; python3 kb/_build_exhibits_review.py --live --overlay-fresh --quiet || rc=$?' in daily and '[ "$rc" != 3 ]' in daily)
 check("only the daily, whose step 3 synced the overlay, turns the stale guard off; cer-procedures.yml keeps it",
       "--overlay-fresh" not in step[0]["run"])
+
+# Same subject (Sam, 3:16 PM PT 2026-11-18): a card names the subject of its main local course, and the subjects file
+# lists every C-ID, CCN and M-ID title in it with how many colleges hold it. A C-ID whose discipline is another one
+# (CDEV 100, Psychology) joins by its SUBJ4; an ECE C-ID by the discipline; a TOP-inferred discipline never votes.
+CD = "Child Development/Early Childhood Education"
+S_DATA = {"rows": [
+    {"id": "CDEV 100", "title": "Child Growth and Development", "disc": "Psychology", "top": "1305.00", "units": 3, "id_system": "C-ID"},
+    {"id": "ECE 220", "title": "Health, Safety and Nutrition", "disc": CD, "top": "1305.00", "units": 3, "id_system": "C-ID"},
+    {"id": "CDEV M1103", "title": "Child Growth and Development", "disc": CD, "top": "1305.00", "units": 3, "id_system": "M-ID"},
+    {"id": "CDEV M1049", "title": "Creative Art Experiences for Children", "disc": CD, "top": "1305.00", "units": 3, "id_system": "M-ID"},
+    {"id": "PARN M9076", "title": "Positive Parenting", "disc": CD, "dsrc": "top_code", "top": "1305.60", "units": 0, "id_system": "M-ID"},
+    {"id": "WEXP M1001", "title": "Work Experience", "disc": "Work Experience", "top": "4932.00", "umin": 1, "umax": 4, "id_system": "M-ID"}]}
+S_MEM = {"members": {"CDEV 100": [{"c": 0}, {"c": 1}, {"c": 1}], "ECE 220": [{"c": 0}], "CDEV M1103": [{"c": 2}, {"c": 3}],
+                     "CDEV M1049": [{"c": 2}], "PARN M9076": [{"c": 4}], "CDEV M11JP": [{"c": 5}]}}
+sidx = B.subject_index(S_DATA, S_MEM)
+check("a SUBJ4's discipline is its identities' modal one", sidx["disc"].get("CDEV") == CD, sidx["disc"])
+got_s = B.subject_rows("CDEV", sidx)
+ids_s = [r[0] for r in got_s["rows"]]
+check("the subject holds the C-ID by its SUBJ4 and the ECE C-ID by its discipline, most colleges first",
+      ids_s[:2] == ["CDEV 100", "CDEV M1103"] and "ECE 220" in ids_s, ids_s)
+check("a TOP-inferred discipline does not bring a title in", "PARN M9076" not in ids_s, ids_s)
+check("the college count is distinct colleges in the identities map", got_s["rows"][0][2] == 2, got_s["rows"][0])
+check("a course on a single-college M-ID names its SUBJ4", B.subject_key({"ident": "CDEV M11JP", "top": "1305.00"}, sidx) == "CDEV")
+check("a SUBJ4 Unified Courses lacks falls back to the course's TOP code, a search aid",
+      B.subject_key({"ident": "ZZZZ M1000", "top": "1305.00"}, sidx) == "TOP 1305")
+check("the main course is the one with the most units, the first on a tie",
+      B.main_course([[0, "ECE 95", "Work Experience", 1], [0, "ECE 64", "Play", 3], [0, "ECE 65", "Art", 3]]) == 1)
+check("the build returns the subjects file", isinstance(subjects, dict) and "subjects" in subjects, subjects)
 
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))

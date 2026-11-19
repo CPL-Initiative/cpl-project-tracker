@@ -2,19 +2,22 @@
  "college": "Los Angeles Trade Technical College",
  "programs": 211,
  "with_closed_list": 188,
- "found": 178,
- "extracted": 178,
+ "found": 168,
+ "extracted": 168,
  "errors": 0,
- "passed_machine_checks": 135,
+ "passed_machine_checks": 147,
  "failed": {
-  "coverage": 19,
+  "coverage": 9,
   "invented": 8,
-  "arithmetic": 37,
+  "arithmetic": 14,
   "repeated": 1,
   "outcomes": 1
  },
- "cost_usd": 14.2,
- "cost_per_program": 0.0798,
+ "cost_usd_run": 0.22,
+ "cost_usd_filed": 13.67,
+ "cost_per_program": 0.0814,
+ "extract_calls": 2,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "02902",
@@ -23,7 +26,49 @@
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=78",
     "coverage": 0.4
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "02907",
+   "title": "Automotive Collision Repair",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=77",
+    "coverage": 0.455
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "02926",
+   "title": "Tailoring",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=188",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "08469",
+   "title": "Small Business Entrepreneurship",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=128",
+    "coverage": 0.222
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "08493",
+   "title": "Visual Communications",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "12068",
@@ -32,7 +77,30 @@
    "near_miss": {
     "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=284",
     "coverage": 0.353
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21863",
+   "title": "Visual Communications",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24136",
+   "title": "Bank Teller",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "24169",
@@ -45,7 +113,18 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24459",
+   "title": "English as a Second Language (ESL): Beginning",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=228",
+    "coverage": 0.0
+   },
+   "status": "Active"
   },
   {
    "control_number": "30002",
@@ -57,7 +136,8 @@
     ],
     "coverage": 0.875,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36134",
@@ -69,13 +149,48 @@
     ],
     "coverage": 0.695,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36965",
+   "title": "Custodial Technician Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "41013",
    "title": "Chassis Technician (ASE A4 & A5 Test Prep)",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "41014",
+   "title": "Master Auto Technician (ASE 1-8 Test Prep)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44055",
+   "title": "English as a Second Language (ESL): Intermediate",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "44291",
@@ -87,7 +202,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44561",
@@ -100,7 +216,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44562",
@@ -112,7 +229,8 @@
     ],
     "coverage": 0.5,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45459",
@@ -124,8 +242,9 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39115770293"
+ "run": "44475507447"
 }

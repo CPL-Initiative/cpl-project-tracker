@@ -22,6 +22,8 @@ disagree, the brief wins only where it says so in words ("post a comment on #N")
   force-push, no comment on any issue or PR.
 - **Fetch a branch by name** (`git fetch --depth 30 origin main`, or the branch the brief names). Never a bare
   `git fetch origin`.
+- **Clone light (Sam, 2026-11-19).** When you must clone `cpl-project-tracker`, use `git clone --filter=blob:none`,
+  or `--depth=1` when history is not needed. Never a full clone.
 - **No repository copies.** Scratch files go in a new subfolder of the scratchpad; run Python that reads them with
   `python3 -I`.
 - **Before every commit:** `git add`, then `CPL_VAULT_ROOT=/home/user/CPLBrain bash scripts/check_generated.sh`, and

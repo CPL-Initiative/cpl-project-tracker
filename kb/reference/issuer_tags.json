@@ -7,7 +7,9 @@
   "Agriculture Education Services and Technology (AEST)": [],
   "alifornia Veterinary Medical Association (CVMA)": [],
   "Alvord Unified School District": [],
+  "Amador Valley High School": [],
   "Amazon Web Services (AWS)": [],
+  "American Aerospace Technical Academy (AATA)": [],
   "American Bankers Association (ABA)": [],
   "American College of Sports Medicine (ACSM)": [],
   "American College of Sports Medicine (ACSM) / National Strength and Conditioning Association (NSCA)": [],
@@ -168,10 +170,12 @@
    "Dental Hygiene Board"
   ],
   "Dollar General": [],
+  "Dublin High School": [],
   "EC-Council": [
    "EC-Council"
   ],
   "El Modena High School": [],
+  "Emerald High School": [],
   "Emergency Care and Safety Institute (ECSI)": [],
   "Emergency Medical Technician-Paramedic-Didactic": [],
   "Emergency Nurses Association (ENA)": [],
@@ -196,6 +200,7 @@
   "GIS Certification Institute (GISCI)": [],
   "Global Information Assurance Certification (GIAC)": [],
   "Godinez High School": [],
+  "Goodwill Industries": [],
   "Google": [],
   "Graduate Level Institution of Higher Education": [],
   "Green Business Certification Inc. (GBCI)": [],
@@ -354,9 +359,11 @@
    "CVMA"
   ],
   "Alvord Unified School District": [],
+  "Amador Valley High School": [],
   "Amazon Web Services (AWS)": [
    "AWS"
   ],
+  "American Aerospace Technical Academy (AATA)": [],
   "American Bankers Association (ABA)": [
    "ABA"
   ],
@@ -641,11 +648,13 @@
    "RDH"
   ],
   "Dollar General": [],
+  "Dublin High School": [],
   "EC-Council": [
    "CEH",
    "CHFI"
   ],
   "El Modena High School": [],
+  "Emerald High School": [],
   "Emergency Care and Safety Institute (ECSI)": [
    "ECSI"
   ],
@@ -691,6 +700,7 @@
    "GIAC"
   ],
   "Godinez High School": [],
+  "Goodwill Industries": [],
   "Google": [],
   "Graduate Level Institution of Higher Education": [],
   "Green Business Certification Inc. (GBCI)": [

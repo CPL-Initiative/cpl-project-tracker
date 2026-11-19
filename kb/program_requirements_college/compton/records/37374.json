@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Cosmetology Level II",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=162",
+ "source_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=85",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9140,
+  "input_tokens": 9350,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9140,
-    "output_tokens": 829,
+    "input_tokens": 9350,
+    "output_tokens": 1623,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,65 +30,65 @@
     "model": null
    }
   ],
-  "output_tokens": 829,
+  "output_tokens": 1623,
   "output_tokens_details": {
-   "thinking_tokens": 290
+   "thinking_tokens": 675
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05314,
- "ms": 8310,
- "seconds": 8.5,
+ "cost_usd": 0.06986,
+ "ms": 14389,
+ "seconds": 14.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 4,
    "listed": 4,
-   "share": 0.0,
-   "missing": [
-    "COSM104",
-    "COSM105",
-    "COSM110",
-    "COSM112"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "COSM101"
+   ],
+   "flagged": [
+    "COSM101"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    32.0,
+    32.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,15 +100,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Cosmetology Level II – Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 32,
+    "max": 32
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,34 +125,103 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Acquire Skills: acquire intermediate skills to work in the cosmetology industry.",
+    "Cosmetology Hours: earn 1000 hours and be prepared to take the California State Board of Cosmetology written examination."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "COSM 104",
-    "why": "only its course description is in the text; no program requirements section printed"
+    "name": "Program Requirements: COSM 101",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Introduction to Cosmetology",
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "COSM 101",
+      "units": 16,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "COSM 105",
-    "why": "only its course description is in the text; no program requirements section printed"
+    "name": "Program Requirements: COSM 104/105",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Introduction to Cosmetology",
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "COSM 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "COSM 110",
-    "why": "only its course description (printed 'COSM 1 10') is in the text; no program requirements section printed"
-   },
-   {
-    "code": "COSM 112",
-    "why": "only its course description (printed 'COSM 1 12') is in the text; no program requirements section printed"
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM 110",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 112",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog pages 162-163) contains only course descriptions for COSM and CA courses. It has no program section for the Cosmetology Level II Certificate of Achievement: no heading, requirement list, total units, outcomes or careers. No blocks were recorded. A reviewer should find the program requirements page elsewhere in the 2026-2027 catalog.",
-   "Course codes in the PDF text show stray spaces ('COSM 1 10', 'COSM 1 12', 'COSM 1 14', 'COSM 1 16'). These are likely COSM 110, 112, 114 and 116.",
-   "The course descriptions mention preparation for the State Board of Cosmetology examination and employment. No career titles are named, and none were taken from course descriptions."
+   "The catalog prints 'COSM 101 Introduction to Cosmetology Procedures (16) or COSM 104/105 Introduction to Cosmetology I/II (16)'; recorded as two option blocks in one option_group. The 16 units are printed for the COSM 104/105 pair together, so individual units for COSM 104 and COSM 105 are left null (the state file stores 8 each).",
+   "COSM 101 is not in the closed list and is recorded as a catalog addition.",
+   "The note lists COSM 95, COSM 114, COSM 125, COSM 126, COSM 130 and COSM 140 as optional classes to help students reach the 1,000-hour state board requirement; they are not program requirements and are not recorded in blocks.",
+   "The award is counted in units (Total Units: 32) although the description refers to 1,000 hours.",
+   "The A.S. degree section above prints the same course requirements with different outcomes; only the certificate section was read.",
+   "No specific careers are named; the text says only that students will 'embark on their new career'."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "88032df88f96eb9b",
+ "source_codes": [
+  "COSM104",
+  "COSM110",
+  "COSM112"
+ ],
+ "source_coverage": 0.75
 }

@@ -407,10 +407,18 @@ jobs:
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)
         run: python3 tests/harvest_gap_census_test.py
+      # Named gaps (S680; Sam, 2026-11-17: collect with gaps noted and confidence scores): the gap and its
+      # scores, the census counting the row collected, the guarded SQL. Pure stdlib.
+      - name: Named gaps (collected with the gap named, scored, counted collected)
+        run: python3 tests/program_named_gaps_test.py
       # The units rules (S680; Commons Clarity's Part A on #3480): a correction lands exactly or the record
       # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
       - name: Units rules A1, A4, A5, A6, A8 and A11 (self-check, exact sums, named gaps)
         run: python3 tests/program_requirements_units_rules_test.py
+      # The S683 cheap-piles lists (#3358 section 2): A5's wrong answers are the self-check's own, key for key, and
+      # each of the 33 held-out records names a committed record and a gap from GAPS or none. Pure stdlib.
+      - name: Cheap piles S683 (A5's misses by cause, the 33 held-out records)
+        run: python3 tests/program_requirements_cheap_piles_s683_test.py
       # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
       # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
       - name: Discontinued programs (own-section mark, out of the gap, the file is current)
@@ -423,6 +431,10 @@ jobs:
       # the own page of at least 75% and accepts at most 30 sister programs' pages. Reads the committed records.
       - name: Reader page checks, rule A self-recall (own pages found, sister pages refused)
         run: python3 tests/reader_page_checks_recall_test.py
+      # S683: after a paid re-read, the filed record stays wherever the re-read is worse (a filed pass above all), put
+      # back byte for byte from the base, so step=reread leaves that row alone. Pure stdlib and a fixture git repo.
+      - name: Program re-read, keep the better record
+        run: python3 tests/program_reread_keep_better_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)

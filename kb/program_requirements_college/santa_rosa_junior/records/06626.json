@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Fire Technology",
  "award": "A.S. Degree",
- "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12394,
+  "input_tokens": 10474,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12394,
-    "output_tokens": 2384,
+    "input_tokens": 10474,
+    "output_tokens": 3951,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,98 +30,82 @@
     "model": null
    }
   ],
-  "output_tokens": 2384,
+  "output_tokens": 3951,
   "output_tokens_details": {
-   "thinking_tokens": 689
+   "thinking_tokens": 1140
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09726,
- "ms": 20313,
- "seconds": 20.7,
+ "cost_usd": 0.12092,
+ "ms": 29943,
+ "seconds": 30.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 28,
    "listed": 30,
-   "share": 0.0,
+   "share": 0.933,
    "missing": [
-    "EMC100",
-    "EMC103",
-    "FIRE1071",
-    "FIRE1072",
-    "FIRE208",
-    "FIRE2085",
-    "FIRE241",
-    "FIRE258",
     "FIRE280",
-    "FIRE284",
-    "FIRE2841",
-    "FIRE290",
-    "FIRE50",
-    "FIRE61",
-    "FIRE69",
-    "FIRE71",
-    "FIRE72",
-    "FIRE73",
-    "FIRE74",
-    "FIRE76",
-    "FIRE77",
-    "FIRE78",
-    "FIRE80",
-    "FIRE81",
-    "FIRE82",
-    "FIRE83",
-    "FIRE85",
-    "FIRE86A",
-    "FIRE86B",
-    "FIRE86C"
+    "FIRE284"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "AJ355",
+    "FIRE206",
+    "FIRE84"
+   ],
+   "flagged": [
+    "AJ355",
+    "FIRE206",
+    "FIRE84"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    30.0,
+    30.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 7,
    "courses": 0,
-   "count": 0,
+   "count": 7,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 2,
+   "not_verbatim": [
+    "fire marshall",
+    "fire investigator"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -129,15 +113,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No Fire Technology (A.S. Degree) section in the provided text; the text begins with Fire Technology (Certificate of Achievement)",
+   "section_heading": "Fire Technology (AS)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -154,44 +138,333 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Identify minimum qualifications and entry level skills for firefighter hiring. The student will be able to describe the following elements: application process, written exam process, physical agility exam, oral interview, chief’s interview, background investigation and the firefighter;",
+    "Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and firefighter safety including: size-up, report on conditions, the Incident Command System, RECEO, the 10 Standard Firefighting Orders, the 18 Situations that shout “Watch Out”, the 16 Firefighter Life Safety Initiatives and the common factors associated with injuries and line of duty deaths;",
+    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances and firefighter health and safety;",
+    "Analyze the causes of fire, determine extinguishing agents and methods; differentiate the stages of the fire and fire development, and compare methods of heat transfer;",
+    "Identify and describe the equipment and apparatus used in the fire service and the maintenance of said equipment and apparatus;",
+    "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety; and",
+    "Differentiate between fire detection and alarm systems and identify common health and safety concerns of firefighters and first responders."
+   ],
+   "careers": [
+    "fire marshall",
+    "fire investigator"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Fire Technology Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FIRE 71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 72",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 78",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any combination totaling at least 12.00 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "EMC 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 61",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 69",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 77",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 80",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 81",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 82",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 83",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 84",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FIRE 85",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 86A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 86B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 86C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 107.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 107.2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 206",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FIRE 208",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 208.5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 241",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 258",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 284.1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 290",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Notes (courses suggested to help fulfill the minimum of 60 units for the associate degree)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AJ 355",
+      "units": 0.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EMC 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMC 103",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 77",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 206",
+      "units": 1.25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FIRE 208",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 290",
+      "units": 17.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 241",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 258",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
-   {
-    "code": "EMC 100",
-    "why": "A.S. section not in the text; named only in the Fire Technology and Firefighter Academy certificate sections"
-   },
-   {
-    "code": "EMC 103",
-    "why": "A.S. section not in the text; named only in the Fire Technology and Firefighter Academy certificate sections"
-   },
-   {
-    "code": "FIRE 107.1",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 107.2",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 208",
-    "why": "A.S. section not in the text; named only in the certificate sections"
-   },
-   {
-    "code": "FIRE 208.5",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 241",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 258",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
    {
     "code": "FIRE 280",
     "why": "not in the text"
@@ -199,92 +472,49 @@
    {
     "code": "FIRE 284",
     "why": "not in the text"
-   },
-   {
-    "code": "FIRE 284.1",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 290",
-    "why": "A.S. section not in the text; named only in the certificate sections"
-   },
-   {
-    "code": "FIRE 50",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 61",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 69",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 71",
-    "why": "A.S. section not in the text; named only in the certificate sections"
-   },
-   {
-    "code": "FIRE 72",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 73",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 74",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 76",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 77",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 78",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 80",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 81",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 82",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 85",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 86A",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 86B",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE 86C",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "FIRE83",
-    "why": "A.S. section not in the text; printed as FIRE 83 only in the Certificate of Achievement section"
    }
   ],
   "notes": [
-   "The provided text (catalog pages 321-323) contains Fire Technology (Certificate of Achievement), Firefighter Academy (Certificate of Achievement) and the start of Fitness and Health Coach (Certificate of Achievement); it contains no section for the Fire Technology A.S. Degree, which likely appears on an earlier page (around page 319-320). Nothing was recorded for the A.S. award.",
-   "For reference only: the Fire Technology Certificate of Achievement requires 30.00 units: FIRE 71, 72, 73, 74, 76, 78 (3 units each) plus at least 12.00 units from a list of EMC and FIRE courses (including FIRE 84 and FIRE 206, which are not in the closed list). It prints seven Program Student Learning Outcomes. The A.S. degree may share these requirements and outcomes, but the text does not say so; a reviewer should fetch the A.S. section."
+   "The 12-unit elective list prints no units beside each course; units left null rather than taken from the closed list.",
+   "Catalog prints 'FIRE 83'; closed list stores 'FIRE83' (no space). Treated as the same course, catalog_addition false.",
+   "The A.S. section reprints ADT boilerplate (60 CSU-transferable units, Cal-GETC, minimum 18 units in the major, 'ADTs also require...'), apparently copied in error; the degree requirement list links to SRJC's local General Education Pattern. ge_pattern and degree_total left null; reviewer should check.",
+   "The 'Fire Science - Company Officer' requirements and outcomes printed at the top of page 151 belong to the preceding program and were not used.",
+   "PDF ligatures (ﬁ) normalized to 'fi' in outcomes and careers.",
+   "Suggested courses under 'Notes' recorded as a recommended block; they do not count toward the 30-unit major total. Several of them also appear in the 12-unit elective list."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "44477690021",
+ "catalog_year": "2026-2027",
+ "source_sha": "275dd2cf25d64c6c",
+ "source_codes": [
+  "EMC100",
+  "EMC103",
+  "FIRE1071",
+  "FIRE1072",
+  "FIRE208",
+  "FIRE2085",
+  "FIRE241",
+  "FIRE258",
+  "FIRE2841",
+  "FIRE290",
+  "FIRE50",
+  "FIRE61",
+  "FIRE69",
+  "FIRE71",
+  "FIRE72",
+  "FIRE73",
+  "FIRE74",
+  "FIRE76",
+  "FIRE77",
+  "FIRE78",
+  "FIRE80",
+  "FIRE81",
+  "FIRE82",
+  "FIRE83",
+  "FIRE85",
+  "FIRE86A",
+  "FIRE86B",
+  "FIRE86C"
+ ],
+ "source_coverage": 0.933
 }

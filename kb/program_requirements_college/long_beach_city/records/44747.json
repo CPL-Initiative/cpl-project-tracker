@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358); paired alternatives corrected (S681 second reader, A)"
   },
   "repeated": {
    "codes": [],
@@ -218,14 +218,17 @@
        },
        {
         "code": "BIO 60",
-        "units": 5,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "BIO 60 + BIO 60L"
        },
        {
         "code": "BIO 60L",
-        "units": 4,
+        "units": 1,
         "catalog_addition": false,
-        "units_max": 5
+        "units_max": null,
+        "together": "BIO 60 + BIO 60L"
        },
        {
         "code": "PHYSI 1",
@@ -423,8 +426,9 @@
   },
   {
    "rule": "A4",
-   "code": "BIO 60L",
-   "words": "BIO 60L, printed as an alternative to ANAT 1 with no units, takes its row's 4-5 units",
+   "code": "BIO 60 + BIO 60L",
+   "together": "state",
+   "words": "BIO 60 and its lab BIO 60L together are one option in place of ANAT 1, as the record's note says: each carries its own units from the state's course file (4, 1; 5 in all)",
    "statewide": "units_rules_A4"
   },
   {

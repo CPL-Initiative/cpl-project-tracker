@@ -1,0 +1,240 @@
+{
+ "college": "El Camino College",
+ "run": "44480396671",
+ "written": "2026-11-19T08:31:08Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/harvest-wave-s683",
+   "inputs": {
+    "college": "El Camino College",
+    "step": "reread",
+    "force": "44480396671"
+   },
+   "posts": 4,
+   "control_numbers": [
+    "30301",
+    "30302",
+    "46403",
+    "46404"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 6,
+  "kept": 2,
+  "restored": 2,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 1,
+  "held_for_person": 0,
+  "new": 2,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 1,
+  "folder_places_none_after": 5,
+  "records_after": 126,
+  "dropped_by_filing": 0,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44480396671": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T08:31:08Z",
+   "counts": {
+    "reread": 6,
+    "kept": 2,
+    "restored": 2,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 1,
+    "held_for_person": 0,
+    "new": 2,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 1,
+    "folder_places_none_after": 5,
+    "records_after": 126,
+    "dropped_by_filing": 0,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [
+    "19857",
+    "45290"
+   ],
+   "dropped_by_filing": [],
+   "programs": [
+    {
+     "control_number": "19857",
+     "title": "Architecture",
+     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+     "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3524&print",
+     "filed_source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+     "filed_run": "38631686677",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.571,
+      "placed": 8,
+      "listed": 14,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 14,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Certificate of Achievement' shares no word with the title 'Architecture'",
+     "not_own_program": true,
+     "next_read_held": null
+    },
+    {
+     "control_number": "30301",
+     "title": "Refrigeration",
+     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+     "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3522&print",
+     "filed_source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+     "filed_run": "38631686677",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
+      "listed": 3,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 3,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "30302",
+     "title": "Air Conditioning",
+     "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+     "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3519&print",
+     "filed_source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+     "filed_run": "38631686677",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 4,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "45290",
+     "title": "Cal-GETC",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print",
+     "filed_source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print",
+     "filed_run": "38631686677",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.751,
+      "placed": 217,
+      "listed": 289,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.775,
+      "placed": 224,
+      "listed": 289,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the filed record covers more (share 0.775 against 0.751)",
+     "next_read_held": null
+    },
+    {
+     "control_number": "46403",
+     "title": "Academic Skills",
+     "award": "Noncredit program",
+     "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4026&print",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "46404",
+     "title": "Math Essentials",
+     "award": "Noncredit program",
+     "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4034&print",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    }
+   ]
+  }
+ }
+}

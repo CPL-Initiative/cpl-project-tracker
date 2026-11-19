@@ -191,6 +191,8 @@
   var SWEEP_URL = "kb/exhibits_sweep.json";
   /* The titles beside a Review card and the rename batch (kb/_build_exhibits_related.py; Sam, 2026-11-11). */
   var RELATED_URL = "kb/exhibits_related.json";
+  /* The Same subject list beside a Review card (kb/_build_exhibits_review.py; Sam, 3:16 PM PT 2026-11-18). */
+  var SUBJECTS_URL = "kb/exhibits_review_subjects.json";
   var RENAME = "Rename batch";
   /* A rename batch row skipped: the proposal declined, so the batch does not offer it again. */
   var FIELD_RENAME_KEPT = "cert_rename_kept";
@@ -250,6 +252,8 @@
           adopt: null, adoptErr: false, open: null, links: null },
     // Related titles and the rename batch: the file, its titles indexed, and this visit's edits and decisions.
     rel: { data: null, error: null, idx: [], by: {}, all: null, plans: null, act: null, folded: {} },
+    // Same subject: the subjects file, read once on the first card that names a subject, and the card showing all.
+    ss: { data: null, error: null, loading: null, all: null },
     // Course details beside a Review card (Sam, 2026-11-12): the card it is open on, and the files read for it.
     cd: { open: null, ready: false, loading: null, err: "", byId: {}, byCourse: {}, topmap: {} },
     rb: { drafts: {}, skip: {}, done: {}, ask: false, busy: false, students: null, studentsWord: "" },
@@ -1069,6 +1073,107 @@
     return p && Object.prototype.hasOwnProperty.call(p, title) && !state.rb.done[title] ? { to: p[title] } : null;
   }
   var REL_MAX = 8;
+
+  /* ── Same subject (Sam, 3:16 PM PT 2026-11-18, relayed by COBIx on #3358 comment 6994477511) ──
+     The Las Positas card for MAPCXH-HSA(7-1-001, behind ECE 64 Play: Materials and Environments, showed three related
+     titles, and Sam suspected a widely used ECE title existed that he could not see without another tab. So a Review
+     card's panel lists every C-ID, CCN and M-ID title in the subject of the card's main local course
+     (kb/exhibits_review_subjects.json, from the course identity's SUBJ4 and the discipline its identities carry; TOP
+     stands in only where nothing else places the course, as a search aid), each with how many colleges hold it in the
+     identities map. Likeliest first: the words each title shares with the course's title, its COCI description and its
+     units, then with the credit recommendation, then with the card's title; the most colleges breaks a tie. The top
+     SS_MAX show, and Show all in this subject the rest. Use this title fills the canonical title box by the panel's
+     own path (o.use, the Related titles' Use this title); nothing is written until the card is saved, and Sam's
+     curation stays the decision. */
+  var SS_MAX = 10;
+  var SS_STOP = { hour: 1, unit: 1, through: 1, between: 1, student: 1, will: 1, including: 1, include: 1, use: 1, using: 1,
+    this: 1, that: 1, are: 1, from: 1, into: 1, their: 1, other: 1, such: 1, also: 1, how: 1, its: 1, all: 1 };
+  var SS_SYS = { "C-ID": "C-ID", "CCN-ID": "CCN", "CCN": "CCN", "M-ID": "M-ID" };
+  function loadSubjects() {
+    var ss = state.ss;
+    if (ss.data || ss.error) return Promise.resolve();
+    if (ss.loading) return ss.loading;
+    ss.loading = fetch(SUBJECTS_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) { ss.data = (d && d.subjects) || {}; })
+      .catch(function (e) { ss.error = String(e && e.message || e); })
+      .then(function () { ss.loading = null; });
+    return ss.loading;
+  }
+  /* A word reduced so "Children" meets "Child" and "Developmental" meets "Development". */
+  function ssStem(w) {
+    if (w === "children") return "child";
+    w = w.replace(/ies$/, "y").replace(/(?:es|s)$/, "");
+    if (w.length > 6) w = w.replace(/(?:al|ing|ed)$/, "");
+    return w;
+  }
+  function ssWords(text) {
+    var out = {}, list = String(text || "").toLowerCase().match(/[a-z][a-z0-9+#]{2,}/g) || [];
+    list.forEach(function (w) { if (!REL_STOP[w] && !SS_STOP[w]) { var k = ssStem(w); if (k.length > 2 && !SS_STOP[k]) out[k] = 1; } });
+    return out;
+  }
+  function ssShared(a, b) { var n = 0; for (var k in a) if (b[k]) n++; return n; }
+  /* The subject's rows, likeliest first, as { r: [id, title, colleges, lo, hi, system], score }. */
+  function ssRanked(h, rows, cardTitle) {
+    var c = (h.local_courses || [])[h.subject_course || 0] || [];
+    var ct = ssWords(c[2]), cd = ssWords(c[6]), cr = ssWords(c[5]), tw = ssWords(cardTitle || h.title || h.raw);
+    var u = typeof c[3] === "number" ? c[3] : null;
+    return rows.map(function (r) {
+      var w = ssWords(r[1]);
+      var fits = u != null && r[3] != null && r[4] != null && r[3] <= u && u <= r[4];
+      var score = 8 * ssShared(w, ct) + 3 * ssShared(w, cd) + (fits ? 2 : 0) + 1.5 * ssShared(w, cr) + ssShared(w, tw);
+      return { r: r, score: score };
+    }).sort(function (a, b) { return b.score - a.score || b.r[2] - a.r[2] || lowerCmp(a.r[1], b.r[1]) || (a.r[0] < b.r[0] ? -1 : a.r[0] > b.r[0] ? 1 : 0); });
+  }
+  function ssLabel(r) {
+    var n = r[2] || 0;
+    return r[1] + " (" + (SS_SYS[r[5]] || r[5] || "M-ID") + " " + r[0] + ") (" + fmt(n) + (n === 1 ? " college)" : " colleges)");
+  }
+  /* The Same subject section for a Review card, or null when the card names no subject. */
+  function sameSubject(o, redraw) {
+    var h = o.card;
+    if (!h || !h.subject) return null;
+    var ss = state.ss;
+    var sec = el("section", { cls: "exh-ss", "aria-labelledby": "exh-ss-h" },
+      [el("h5", { cls: "exh-rel-tier", id: "exh-ss-h", tabindex: "-1", text: "Same subject: " + h.subject })]);
+    if (!ss.data) {
+      sec.appendChild(el("p", { cls: "exh-muted exh-small", role: "status", text: ss.error
+        ? "The titles in this subject could not be read (" + ss.error + ")." : "Reading the titles in this subject…" }));
+      if (!ss.error) loadSubjects().then(redraw);
+      return sec;
+    }
+    var subj = ss.data[h.subject];
+    if (!subj || !(subj.rows || []).length) {
+      sec.appendChild(el("p", { cls: "exh-empty exh-small", text: "No C-ID, CCN or M-ID title is on file for this subject yet." }));
+      return sec;
+    }
+    var c = (h.local_courses || [])[h.subject_course || 0] || [];
+    var from = [c[1], c[2]].filter(Boolean).join(" ");
+    sec.appendChild(el("p", { cls: "exh-muted exh-small", text: (/^TOP /.test(h.subject)
+      ? "Placed by the TOP code of " : "From ") + (from || "the card's course") + (c[0] != null && college(c[0]) ? " at " + college(c[0]) : "")
+      + ". Likeliest first: the course's title, COCI description and units, then the credit recommendation, then the card's title."
+      + (/^TOP /.test(h.subject) ? " A TOP code is a search aid only." : "") }));
+    var ranked = ssRanked(h, subj.rows, o.title.value.trim());
+    var showAll = ss.all === o.key, list = showAll ? ranked : ranked.slice(0, SS_MAX);
+    var ul = el("ol", { cls: "exh-ss-list", id: "exh-ss-list" });
+    list.forEach(function (x) {
+      var r = x.r, label = ssLabel(r), li = el("li", null, [el("span", { cls: "exh-ss-t", text: label })]);
+      if (r[1] === o.title.value.trim()) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "This is the proposed title." }));
+      else li.appendChild(word("Use this title", function () { o.use({ t: r[1] }); redraw(); }, { cls: "exh-w exh-small", "aria-label": "Use this title: " + label }));
+      ul.appendChild(li);
+    });
+    sec.appendChild(ul);
+    var total = subj.total || subj.rows.length;
+    if (ranked.length > SS_MAX) {
+      sec.appendChild(word(showAll ? "Show the top " + SS_MAX : "Show all " + fmt(ranked.length) + " in this subject", function () {
+        ss.all = showAll ? null : o.key; redraw();
+        var f = document.getElementById("exh-ss-h"); if (f) f.focus();
+      }, { cls: "exh-w exh-small", "aria-controls": "exh-ss-list", "aria-expanded": showAll ? "true" : "false" }));
+    }
+    if (total > subj.rows.length) sec.appendChild(el("p", { cls: "exh-muted exh-small",
+      text: "The list holds the " + fmt(subj.rows.length) + " titles most colleges hold, of " + fmt(total) + " in this subject." }));
+    return sec;
+  }
   /* The side panel. o.title and o.issuer are the card's boxes; o.use(row) fills them. The list follows the title as
      it is edited. */
   function relatedPanel(o) {
@@ -1077,6 +1182,9 @@
     box.appendChild(body);
     function draw() {
       while (body.firstChild) body.removeChild(body.firstChild);
+      // Same subject leads; today's same-issuer and shared-words titles follow (Sam, 2026-11-18).
+      var ssec = sameSubject(o, draw);
+      if (ssec) body.appendChild(ssec);
       if (!state.rel.data) {
         body.appendChild(el("p", { cls: "exh-muted exh-small", text: state.rel.error
           ? "The titles in the reference could not be read (" + state.rel.error + ")." : "Reading the titles in the reference…" }));
@@ -2609,7 +2717,7 @@
         + (state.students ? " · most students first" : " · most colleges first") }),
       el("span", { text: next ? "Next: " + next.raw + ", " + shortList(whoBuilt(next)) : "" })]));
     if (state.cd.open === h.raw) return el("div", { cls: "exh-with-rel" }, [c, courseDetailsPanel(h)]);
-    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [], actions: true, top: courseSummary(h),
+    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [], actions: true, top: courseSummary(h), card: h,
       use: function (r) { useRow(r); drawAlign(); } });
     function useRow(r) {
       title.value = r.t;
@@ -5627,6 +5735,14 @@
     ".exh-rel-list { list-style:none; margin:0; padding:0; display:grid; gap:10px; }",
     ".exh-rel-list li { display:grid; gap:2px; justify-items:start; padding-bottom:8px; border-bottom:1px solid var(--border); min-width:0; }",
     ".exh-rel-t { color:var(--text-strong); overflow-wrap:anywhere; }",
+    /* Same subject (2026-11-18): the subject's C-ID, CCN and M-ID titles above the related ones. */
+    ".exh-ss { display:grid; gap:6px; padding-bottom:8px; border-bottom:1px solid var(--border); min-width:0; }",
+    ".exh-ss p { margin:0; overflow-wrap:anywhere; }",
+    ".exh-ss h5:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-ss-list { margin:0; padding-left:1.4em; display:grid; gap:6px; }",
+    ".exh-ss-list li { overflow-wrap:anywhere; }",
+    ".exh-ss-list li > .exh-w, .exh-ss-list li > .exh-muted { margin-left:6px; }",
+    ".exh-ss-t { color:var(--text-strong); }",
     ".exh-rel-paths { overflow-wrap:anywhere; }",
     ".exh-rb-table .exh-rel-paths { display:block; }",
     ".exh-rel-pend { color:var(--text-strong); font-weight:600; overflow-wrap:anywhere; }",

@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 592,
+   "count": 593,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3682,6 +3682,24 @@
      "title": "A report must read the screen, not recompute it",
      "type": "methodology",
      "updated": "2026-08-17"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [
+      "kb/program_requirements_reread_plan_s683.json",
+      "docs/program_requirements_harvest_lessons.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-reread-keeps-the-better-record.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "reread",
+      "data-quality",
+      "program-requirements-harvest"
+     ],
+     "title": "A reread keeps the better record",
+     "type": "methodology",
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-11",
@@ -14081,7 +14099,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 105,
+   "count": 106,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15299,6 +15317,21 @@
      "title": "Program requirements harvest lessons \u2014 archive 6 (S648 onward)",
      "type": null,
      "updated": "2026-11-18"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_7.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 7 (S655 onward)",
+     "type": null,
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-11-12",
@@ -16554,7 +16587,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -16583,7 +16616,7 @@
      ],
      "title": "Repo size \u2014 what lives in the tree, what lives in the bucket, and the limits \u2014 lane state",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -16809,7 +16842,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-29",
@@ -17091,7 +17124,7 @@
      ],
      "title": "Sam's rulings \u2014 one place to look up what he has ruled, in his words",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-10-04",
@@ -17106,7 +17139,7 @@
      ],
      "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-09-09",
@@ -17222,8 +17255,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 642,
+   "count": 643,
    "docs": [
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 684,
+     "path": "docs/session_684_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 684 handoff (from SkyNuthatch, S683)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
     {
      "created": "2026-11-18",
      "governs": [],
@@ -27984,5 +28031,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1517
+ "total": 1520
 }

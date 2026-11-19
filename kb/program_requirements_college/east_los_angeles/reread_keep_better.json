@@ -1,0 +1,146 @@
+{
+ "college": "East Los Angeles College",
+ "run": "44475516022",
+ "written": "2026-11-19T07:53:02Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/harvest-wave-s683",
+   "inputs": {
+    "college": "East Los Angeles College",
+    "step": "reread",
+    "force": "44475516022"
+   },
+   "posts": 1,
+   "control_numbers": [
+    "33681"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 2,
+  "kept": 1,
+  "restored": 1,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 1,
+  "held_for_person": 0,
+  "new": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 1,
+  "records_after": 134,
+  "dropped_by_filing": 3,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44475516022": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T07:53:02Z",
+   "counts": {
+    "reread": 2,
+    "kept": 1,
+    "restored": 1,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 1,
+    "held_for_person": 0,
+    "new": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 1,
+    "records_after": 134,
+    "dropped_by_filing": 3,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [
+    "45051"
+   ],
+   "dropped_by_filing": [
+    {
+     "control_number": "38332",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39800",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "45540",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "33681",
+     "title": "Mathematics",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=263",
+     "filed_source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265",
+     "filed_run": "39063389278",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.714,
+      "placed": 5,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.714,
+      "placed": 5,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "45051",
+     "title": "Japanese",
+     "award": "A.A. Degree",
+     "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
+     "filed_source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=220",
+     "filed_run": "39063389278",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading '(Academic Plan E045051C)' shares no word with the title 'Japanese'",
+     "not_own_program": true,
+     "next_read_held": null
+    }
+   ]
+  }
+ }
+}

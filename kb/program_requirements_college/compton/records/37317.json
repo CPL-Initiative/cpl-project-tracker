@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11482,
+  "input_tokens": 11462,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11482,
-    "output_tokens": 983,
+    "input_tokens": 11462,
+    "output_tokens": 1397,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 983,
+  "output_tokens": 1397,
   "output_tokens_details": {
-   "thinking_tokens": 313
+   "thinking_tokens": 617
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06559,
- "ms": 8721,
- "seconds": 9.1,
+ "cost_usd": 0.07379,
+ "ms": 12245,
+ "seconds": 16.6,
  "parts": null,
  "error": null,
  "score": {
@@ -173,10 +173,19 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints 'ATEC 1 14' and 'ATEC 1 16'; read as ATEC 114 and ATEC 116 (PDF spacing artifact).",
-   "Program Learning Outcomes are printed once under the Automotive Technology program heading for 'the degree or certificate program'; this certificate shares that list, so it is recorded here.",
-   "The certificate's own section names no careers; the Automotive Technology overview names technician roles only for students completing degree requirements, so careers were left empty."
+   "Program outcomes are printed once under the AUTOMOTIVE TECHNOLOGY program heading (page 76) for 'the degree or certificate program'; this certificate shares that list, so it is recorded here.",
+   "The Automotive Technology description names entry 'as a technician in automotive service, repair, tune up, smog certification, or automotive air conditioning' but only for a student 'completing degree requirements'; the certificate's own section names no careers, so careers is left empty. A reviewer may decide whether those apply.",
+   "A separate Certificate of Accomplishment 'Automotive Brakes and Suspension Technician' (ATEC 114, 116; 8 units) and 'Automotive Transmission and Drive Train Technician' (ATEC 134, 135; 8 units) appear on page 78; they are different awards and not recorded here."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "b2efa1e7f2d48ffb",
+ "source_codes": [
+  "ATEC114",
+  "ATEC116",
+  "ATEC134",
+  "ATEC135"
+ ],
+ "source_coverage": 1.0
 }

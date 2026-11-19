@@ -2242,7 +2242,34 @@
     var adoptChip = roepAdoptChip(rec, c.code, info);
     if (adoptChip) li.appendChild(adoptChip);
     li.appendChild(outcomeSlot(rec.college, c.code, info.title, roepPrintedOutcomes(rec, c.code)));
+    /* A paired alternative (S683, #3508): alternatives sharing one "together" label are one option taken
+       together in the row's place (Long Beach City 44747: BIO 60 and BIO 60L for ANAT 1). The option names its
+       members, each with its own units where it has them, and carries the group's figure: together_units, or
+       the members' units added. A member with no units prints no figure of its own. */
+    var groups = {}, drawn = {};
     (c.alternatives || []).forEach(function (a) {
+      if (a && a.together) (groups[a.together] = groups[a.together] || []).push(a);
+    });
+    (c.alternatives || []).forEach(function (a) {
+      if (a && a.together) {
+        if (drawn[a.together]) return;
+        drawn[a.together] = true;
+        var members = groups[a.together], gbits = ["or "], sum = 0, all = true;
+        members.forEach(function (g, k) {
+          var gi = courses[g.code] || {};
+          if (k) gbits.push(k === members.length - 1 ? " and " : ", ");
+          gbits.push(el("b", null, g.code));
+          if (gi.title) gbits.push(" " + gi.title);
+          if (g.units != null) { gbits.push(" (" + roepAmt(g.units, null, m) + ")"); sum += Number(g.units); } else all = false;
+          if (gi.here) gbits.push(" (CPL here)");
+        });
+        gbits.push(", taken together");
+        var gu = members[0].together_units != null ? roepAmt(members[0].together_units, members[0].together_units_max, m)
+          : (all ? roepAmt(sum, null, m) : "");
+        if (gu) gbits.push(" · " + gu);
+        li.appendChild(el("span", "cplpw-ralt", gbits));
+        return;
+      }
       var ai = courses[a.code] || {};
       var bits = ["or ", el("b", null, a.code)];
       if (ai.title) bits.push(" " + ai.title);

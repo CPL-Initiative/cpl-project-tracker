@@ -1,0 +1,285 @@
+{
+ "college": "Moorpark College",
+ "run": "44481524745",
+ "written": "2026-11-19T08:44:14Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/reread-wave-s683",
+   "inputs": {
+    "college": "Moorpark College",
+    "step": "reread",
+    "force": "44481524745"
+   },
+   "posts": 4,
+   "control_numbers": [
+    "18398",
+    "32565",
+    "37575",
+    "45352"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 6,
+  "kept": 4,
+  "restored": 2,
+  "restored_filed_pass": 1,
+  "restored_not_own_program": 2,
+  "held_for_person": 0,
+  "new": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 1,
+  "run_places_none_after": 2,
+  "folder_places_none_after": 4,
+  "records_after": 139,
+  "dropped_by_filing": 5,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44481524745": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T08:44:14Z",
+   "counts": {
+    "reread": 6,
+    "kept": 4,
+    "restored": 2,
+    "restored_filed_pass": 1,
+    "restored_not_own_program": 2,
+    "held_for_person": 0,
+    "new": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 1,
+    "run_places_none_after": 2,
+    "folder_places_none_after": 4,
+    "records_after": 139,
+    "dropped_by_filing": 5,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {
+    "42992": "passes_less"
+   },
+   "next_read_pays": [
+    "31117"
+   ],
+   "dropped_by_filing": [
+    {
+     "control_number": "37450",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39413",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39414",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40636",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "42643",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "18398",
+     "title": "General Studies: Society, Human Behavior, and Culture",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/society-human-behavior-culture/",
+     "filed_source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/society-human-behavior-culture/",
+     "filed_run": "38748862351",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.991,
+      "placed": 115,
+      "listed": 116,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.983,
+      "placed": 114,
+      "listed": 116,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.991 against 0.983)"
+    },
+    {
+     "control_number": "31117",
+     "title": "Administration of Justice",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/administration-justice-ast/",
+     "filed_source_url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+     "filed_run": "39600815599",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.974,
+      "placed": 37,
+      "listed": 38,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 38,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'REQUIREMENTS' shares no word with the title 'Administration of Justice'",
+     "not_own_program": true,
+     "next_read_held": null
+    },
+    {
+     "control_number": "31614",
+     "title": "Communication Studies",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
+     "filed_source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
+     "filed_run": "38748862351",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.833,
+      "placed": 15,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.778,
+      "placed": 14,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'REQUIREMENTS' shares no word with the title 'Communication Studies'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "32565",
+     "title": "Spanish",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/languages-world/spanish-aat/",
+     "filed_source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/languages-world/spanish-aat/",
+     "filed_run": "38748862351",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.742,
+      "placed": 23,
+      "listed": 31,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.71,
+      "placed": 22,
+      "listed": 31,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.742 against 0.71)"
+    },
+    {
+     "control_number": "37575",
+     "title": "Organizational Communication",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/organizational-communication-coa/",
+     "filed_source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/organizational-communication-coa/",
+     "filed_run": "38748862351",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.875,
+      "placed": 7,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.875)"
+    },
+    {
+     "control_number": "45352",
+     "title": "California General Education Transfer Curriculum (CaI-GETC)",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+     "filed_source_url": "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+     "filed_run": "39600815599",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 265,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 265,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    }
+   ]
+  }
+ }
+}

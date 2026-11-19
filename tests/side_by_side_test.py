@@ -11,7 +11,9 @@ What this pins, against the committed files (the fixture cards are COBIx's case_
   3. AUTO M9003 (nothing to read): its control number has no row in the program course file and no own description,
      and our tables agree on Automotive Technology.
   4. Exhibits: a Review card's exhibit says its official certification name is not on file and names the course the
-     Review builder set aside; a CPL type falls back to the exhibit id's path only when MAP's type is not on record.
+     Review builder set aside (checked on a constructed exhibit through both builders' own functions, since curation
+     can settle every such card; the committed file's cards of that kind, when any exist, read the same way); a CPL
+     type falls back to the exhibit id's path only when MAP's type is not on record.
   5. The builder is read-only and independent of the scorer: it imports no kb/_ccr_confidence_score.py, writes only
      its two outputs, and the committed outputs are what it builds today (--check).
 
@@ -79,15 +81,56 @@ check("the counts add up: seedless = merged away + not openable + openable",
 check("every card that reads none is among those that differ", k["scorer_reads_none"] <= k["scorer_and_list_differ"], k)
 
 # 4. Exhibits
-# The worked case is MAPICA-AATA-1-001 while it sits on a Review card; a CER procedures run can settle it (run
-# 44350607385 did), so the check then reads the first exhibit the Review builder set a course aside for as an industry certification.
-x = E["exhibits"].get("MAPICA-AATA-1-001") or {}
-if not x.get("a"):
-    x = next((r for r in E["exhibits"].values() if " was set aside: this exhibit is an industry certification, not credit by exam." in (r.get("a") or "")), {})
+# A Review card whose course was set aside lives only until a curator settles its title: Sam's curation of 2026-11-18
+# settled all 28 cards that left the queue, the Dublin EMR card (MAPICH-HSA(-1-001) the last of this kind among them,
+# and the daily of 2026-11-19 held none. So the check builds one: the smallest exhibit the Review builder sets a
+# course aside for (an industry certification, MAP id path ic, aligned to a college course), run through the Review
+# builder's own rule (course_title_fits) and the side by side builder's own build_exhibits on constructed inputs.
+SET_ASIDE = re.compile(r"[A-Z][^()]+ [A-Z]{2,6} ?\d+[A-Z]? \([^()]+\) was set aside: this exhibit is an industry "
+                       r"certification, not credit by exam\.")
+sys.path.insert(0, os.path.join(ROOT, "kb"))
+import importlib.util  # noqa: E402
+
+
+def module(rel, name):
+    spec = importlib.util.spec_from_file_location(name, os.path.join(ROOT, rel))
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+REVIEW = module("kb/_build_exhibits_review.py", "_build_exhibits_review_t")
+SBS = module("kb/_build_side_by_side.py", "_build_side_by_side_t")
+FX = "MAPICX-TEST-1-001"
+fits, why = REVIEW.course_title_fits({"ids": [FX], "types": ["Industry Certification"], "recs": ["one"]})
+check("4 the Review builder sets an industry certification's course title aside", fits is False
+      and why == "industry certification, not credit by exam", (fits, why))
+inputs = {
+    "kb/exhibits_adoption.json": {"credentials": {}},
+    "kb/coci_articulations.json": {"articulations": [{"exhibit_id": FX, "exhibit_title": "EMR (test college)",
+                                                      "unified_title": "Emergency Medical Responder",
+                                                      "cpl_type_description": "Industry Certification"}]},
+    "kb/unified_titles.json": {},
+    "kb/exhibit_cert_links.json": {"links": {}, "certs": {}},
+    "kb/exhibits_review.json": {"held": [{"raw": "EMR (test college)", "title": "Emergency Medical Responder",
+                                          "ids": [FX], "course_college": "Las Positas College", "course": "EMS 30",
+                                          "course_title_set_aside": {"title": "Emergency Medical Responder",
+                                                                     "basis": "M-ID EMST M1056", "why": why}}]},
+    "kb/coci_minted_courses.json": {"courses": {}},
+    "kb/coci_minted_singletons.json": {"courses": {}},
+    "kb/reference/cid_descriptors.json": {"descriptors": []},
+    "kb/reference/ccn_courses.json": {"courses": []},
+}
+SBS.load = inputs.__getitem__
+x = SBS.build_exhibits()["exhibits"].get(FX) or {}
 check("4 the Review card's exhibit: no official certification name on file", x.get("n") == 1 and x.get("k") == "cert-based", x)
-check("4 it names the course the Review builder set aside",
-      bool(re.fullmatch(r"[A-Z][^()]+ [A-Z]{2,6} ?\d+[A-Z]? \([^()]+\) was set aside: this exhibit is an industry "
-                        r"certification, not credit by exam\.", x.get("a") or "")), x.get("a"))
+check("4 it names the course the Review builder set aside", bool(SET_ASIDE.fullmatch(x.get("a") or "")), x.get("a"))
+# In the committed file, every exhibit of this kind reads the same way; today's count is printed, and may be 0.
+live = [r for r in E["exhibits"].values() if "industry certification, not credit by exam" in (r.get("a") or "")]
+print("exhibits whose course was set aside as an industry certification in today's file: %d" % len(live))
+check("4 each such exhibit in the committed file has no official name on file and names its course",
+      all(r.get("k") == "cert-based" and SET_ASIDE.fullmatch(r["a"]) for r in live),
+      [r for r in live if not SET_ASIDE.fullmatch(r["a"])][:2])
 check("4 the type comes from MAP's record when MAP has one",
       all(r.get("ts") == "map" for r in E["exhibits"].values() if r.get("t") in ("Credit By Exam", "Industry Certification")
           and r.get("ts") != "id") and E["counts"]["type_from_map"] > 0)

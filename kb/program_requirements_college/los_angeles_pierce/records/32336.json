@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Engineering Graphics and Design Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=150",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10357,
+  "input_tokens": 7202,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10357,
-    "output_tokens": 1343,
+    "input_tokens": 7202,
+    "output_tokens": 1366,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1343,
+  "output_tokens": 1366,
   "output_tokens_details": {
-   "thinking_tokens": 310
+   "thinking_tokens": 376
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06829,
- "ms": 13228,
- "seconds": 13.6,
+ "cost_usd": 0.05613,
+ "ms": 12468,
+ "seconds": 12.6,
  "parts": null,
  "error": null,
  "score": {
@@ -88,15 +88,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Evaluate and apply knowledge of the engineering design process, manufacturing processes, and materials to design and/or manufacturing projects."
-   ],
-   "why": [
-    "not in the catalog text as printed: Evaluate and apply knowledge of the engineering design process, manufacturing pr"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -106,11 +102,11 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "ENGINEERING GRAPHICS AND DESIGN TECHNOLOGY Certificate of Achievement (STATE CODE 32336)",
+   "section_heading": "Engineering Graphics and Design Technology Certificate (STATE CODE 32336)",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -206,17 +202,28 @@
   "missing_explained": [
    {
     "code": "CAOT 32",
-    "why": "not in the text; the certificate lists CAOT 055 Career Skills for the Workplace instead"
+    "why": "not in the text; catalog lists CAOT 055 Career Skills for the Workplace instead"
    }
   ],
   "notes": [
-   "Read only the Certificate of Achievement section (State Code 32336); the A.S. degree section (State Code 32318) printed just before it was ignored.",
-   "CAOT 055 (Career Skills for the Workplace) is not in the closed list, which names CAOT 32 Business Communications; possibly a replacement course - reviewer should check.",
-   "EGD TEK 101 is titled 'Engineering Graphics with CAD' in the catalog vs 'Engineering Graphics' in the state file.",
-   "Certificate total of 21 units is printed ('CERTIFICATE - TOTAL UNITS 21') and also stated in the program description.",
-   "No careers are named in the certificate section; it only refers to a Gainful Employment Disclosure website. The A.S. section mentions 'mechanical drafter or designer' but that belongs to the degree section and was not recorded.",
-   "The certificate prints its own four program learning outcomes (a subset of the A.S. degree's six)."
+   "The program's main heading is not in the excerpt (it likely sits at the bottom of the previous page); section_heading is taken from the award table and state code.",
+   "CAOT 055 (Career Skills for the Workplace) is printed in the required list but is not in the closed list, which instead names CAOT 32 Business Communications; a reviewer should check whether the course was replaced.",
+   "EGD TEK 101 is titled 'Engineering Graphics with CAD' in the catalog vs 'Engineering Graphics' in the closed list; same code.",
+   "Careers are not named in the text; it refers readers to a Gainful Employment Disclosure website.",
+   "Total of 21 units is printed both as 'CERTIFICATE - TOTAL UNITS 21' and in the program description; the required courses sum to 21.",
+   "Text after the award table belongs to the Chicana and Chicano Studies A.A. and was ignored."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "761a9f7bc463beed",
+ "source_codes": [
+  "EGDTEK101",
+  "EGDTEK111",
+  "EGDTEK210",
+  "EGDTEK310",
+  "INDTEK105",
+  "INDTEK130"
+ ],
+ "source_coverage": 0.857
 }

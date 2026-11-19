@@ -5,6 +5,8 @@ updated: 2026-11-18
 tags: [handoff, session]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
+superseded: true
+superseded_by: session_684_handoff.md
 ---
 
 # You are SkyNuthatch (Session 683)
@@ -156,6 +158,9 @@ A full checkpoint (lanes moved), written by the checkpoint-docs worker on draft 
 1. **Restart the COBIx watcher:** `bash scripts/cobix_watch.sh [state dir]` in the background. Every 5 minutes it runs
    two `gh api -X GET search/issues` searches for changed threads `cobi-cto` commented on, resuming from its saved
    last-seen file; act on each new `<!-- cobix -->` comment.
+1a. **Clone light** (Sam, 2026-11-19, added by a daytime side session on #3543): every session and worker clones
+   `cpl-project-tracker` with `git clone --filter=blob:none` (or `--depth=1` when history is not needed), never a full
+   clone. Rule's home: `docs/reference/scheduled_sessions.md`, *At the start*.
 2. **Merge rules** (Sam, about 1:10 PM PT, relayed by COBIx): at most 3 open PRs (plus #3511 and dependabot's), oldest
    finished first, one update from `main` right before its merge, no dependency-map rebuild inside a PR
    (`kb/_build_dependency_map.py` is not run in a PR; CI may flag the map until #3526 lands: leave it), no full rerun

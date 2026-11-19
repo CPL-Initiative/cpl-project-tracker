@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-18T23:47:13Z",
+  "written_at": "2026-11-19T09:27:50Z",
   "session": 683,
-  "moniker": "SkyDipper",
-  "run": "Sam's session",
+  "moniker": "SkyNuthatch",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_683_handoff.md",
+  "handoff": "docs/session_684_handoff.md",
   "next_step": {
-    "title": "Preview the page checks at two colleges before paying for rereads",
-    "text": "The reader now checks the pages a program record with no courses placed was read from. Tonight's run previews Mendocino College and City College of San Francisco for free first, and pays for the other 71 colleges' 444 records, about $21 in all, only if both previews read the right pages."
+    "title": "Land tonight's harvest work, then rebuild the display and label the re-read records again",
+    "text": "The next session applies tonight's memory rows, lands the one pull request that carries tonight's harvest work once its test passes, rebuilds what CPL Pathways and Sierra show, and labels again the re-read records whose gap labels the reread replaced. Then the reread plan's next ten colleges."
   },
   "calls": [
     {
@@ -337,6 +337,18 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-19T09:05:04Z",
+      "text": "Rereads and loads at 15 colleges: 133 program rows replaced by a better read and 72 inserted, from 18,240 rows to 18,312. Every load reported no error; the filed run costs came to $25.20."
+    },
+    {
+      "at": "2026-11-19T08:05:00Z",
+      "text": "Chabot College's course outlines loaded again with the fixed reader: 1,013 learning outcomes and 1,013 course objectives, filed as two kinds."
+    },
+    {
+      "at": "2026-11-19T09:19:00Z",
+      "text": "Recorded at the checkpoint: earlier tonight two reviewed plans applied on Sam's go of Nov 18, 99 records labeled with a named gap and 14 course unit rows corrected."
+    },
     {
       "at": "2026-11-18T23:08:57Z",
       "text": "The reader's page checks merged (PR 3514): they kept 10,046 of 13,243 pages a program was read from and accepted 22 sister pages. A reread plan lists 444 records at 73 colleges, about $21.38, the largest college $3.15. No record changed."

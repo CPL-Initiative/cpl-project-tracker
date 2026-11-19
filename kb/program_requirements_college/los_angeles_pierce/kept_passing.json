@@ -1,0 +1,628 @@
+{
+ "run": "44475498778",
+ "programs": [
+  {
+   "control_number": "08320",
+   "title": "Computer Applications",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104",
+   "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
+   "cost_usd": 0.07387,
+   "usage": {
+    "input_tokens": 11733,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 11733,
+      "output_tokens": 1347,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1347,
+    "output_tokens_details": {
+     "thinking_tokens": 497
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 4,
+     "listed": 8,
+     "share": 0.5,
+     "missing": [
+      "CAOT2",
+      "CAOT31",
+      "CAOT34",
+      "CAOT82"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      10.0,
+      10.0
+     ],
+     "stated": [
+      21.0,
+      21.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 10.0-10.0; the catalog states 21.0-21.0"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 8,
+     "listed": 8,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      21.0,
+      21.0
+     ],
+     "stated": [
+      21.0,
+      21.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "15057",
+   "title": "Infant Care Teacher",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
+   "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
+   "cost_usd": 0.05927,
+   "usage": {
+    "input_tokens": 11448,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 11448,
+      "output_tokens": 674,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 674,
+    "output_tokens_details": {
+     "thinking_tokens": 242
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 6,
+     "share": 0.0,
+     "missing": [
+      "CHDEV1",
+      "CHDEV10",
+      "CHDEV2",
+      "CHDEV30",
+      "CHDEV31",
+      "CHDEV42"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 6,
+     "listed": 6,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "CHDEV11"
+     ],
+     "flagged": [
+      "CHDEV11"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      15.0,
+      15.0
+     ],
+     "stated": [
+      15.0,
+      15.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "21812",
+   "title": "Automotive Service Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
+   "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
+   "cost_usd": 0.06569,
+   "usage": {
+    "input_tokens": 8222,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 8222,
+      "output_tokens": 1640,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1640,
+    "output_tokens_details": {
+     "thinking_tokens": 434
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 13,
+     "listed": 17,
+     "share": 0.765,
+     "missing": [
+      "AST1",
+      "AST2",
+      "AST3",
+      "AST4"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      26.0,
+      27.0
+     ],
+     "stated": [
+      46.0,
+      47.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 26.0-27.0; the catalog states 46.0-47.0"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 17,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      46.0,
+      47.0
+     ],
+     "stated": [
+      46.0,
+      47.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "42274",
+   "title": "Level 2 - English as a Second Language for Life Skills",
+   "award": "Noncredit program",
+   "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=227",
+   "filed_source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
+   "cost_usd": 0.06039,
+   "usage": {
+    "input_tokens": 11587,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 11587,
+      "output_tokens": 702,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 702,
+    "output_tokens_details": {
+     "thinking_tokens": 239
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "hours",
+    "coverage": {
+     "placed": 0,
+     "listed": 2,
+     "share": 0.0,
+     "missing": [
+      "ESLNC50CE",
+      "ESLNC8CE"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unstated",
+     "computed": null,
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record states no figure, but the catalog text names 3 hours, 3 hours, 6 hours, 3 units"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "hours",
+    "coverage": {
+     "placed": 2,
+     "listed": 2,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      270.0,
+      270.0
+     ],
+     "stated": [
+      270.0,
+      270.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [
+      "Compose written sentences about biographical information, daily life, and work situations with increasing complexity of grammatical form and usage."
+     ],
+     "why": [
+      "not in the catalog text as printed: Compose written sentences about biographical information, daily life, and work s"
+     ],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": false
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   }
+  }
+ ]
+}
