@@ -292,7 +292,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05911",
@@ -590,7 +594,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05919",
@@ -735,7 +743,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05922",
@@ -2093,7 +2105,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08579",
@@ -2435,7 +2451,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08591",
@@ -2447,7 +2467,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "09879",
@@ -3041,7 +3065,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11730",
@@ -3319,7 +3347,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "15418",
@@ -3519,7 +3551,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18381",
@@ -3531,7 +3567,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19011",
@@ -4082,7 +4122,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19659",
@@ -4369,7 +4413,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19795",
@@ -4381,7 +4429,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19849",
@@ -5639,7 +5691,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "30746",
@@ -6111,9 +6167,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "digital design basics, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -6124,29 +6180,12 @@
   "title": "Basic Office Software Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CMPWNC51A",
-   "CMPWNC55A",
-   "CMPWNC58A",
-   "CMPWNC62"
-  ],
-  "source": {
-   "url": "https://catalog.sbcc.edu/sel/career-skills/",
-   "title": "School of Extended Learning: Career Skills and Health Academy < CourseLeaf",
-   "h1": "Santa Barbara City College",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.25,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 8384
+  "text_chars": 0
  },
  {
   "control_number": "31450",
@@ -6168,9 +6207,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "basic internet skills, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6196,9 +6235,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "basic mac software skills, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6528,7 +6567,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32407",
@@ -6540,7 +6583,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32450",
@@ -6631,23 +6678,12 @@
   "title": "ESL 4 Intermediate High",
   "award": null,
   "shape": "other",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "801160ESL",
-   "801161ESL",
-   "801162ESL",
-   "801163ESL"
-  ],
-  "source": {
-   "url": "https://catalog.sbcc.edu/degrees-certificates-awards/",
-   "title": "Degrees, Certificates and Awards < CourseLeaf",
-   "h1": "Santa Barbara City College",
-   "text_from": "textContent",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 4000
+  "text_chars": 0
  },
  {
   "control_number": "32517",
@@ -6659,7 +6695,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32603",
@@ -6755,8 +6795,11 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "MATH150",
+   "MATH160",
+   "MATH200",
    "PHYS121",
    "PHYS122",
    "PHYS123"
@@ -6765,7 +6808,7 @@
    "url": "https://catalog.sbcc.edu/academic-departments/physics/physics-ast/",
    "title": "Physics, Associate in Science for Transfer (AS-T) < CourseLeaf",
    "h1": "Santa Barbara City College",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -6775,7 +6818,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3725
+  "text_chars": 5146
  },
  {
   "control_number": "32650",
@@ -7092,7 +7135,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32775",
@@ -7635,9 +7682,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "management toolbox, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -7653,7 +7700,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35324",
@@ -7675,9 +7726,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "effective marketing communication management, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -7703,9 +7754,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "workplace essentials, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -7731,9 +7782,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "customer relations, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -7759,9 +7810,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "high performance teams, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -7786,9 +7837,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl pronunciation and conversation, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -7813,9 +7864,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "sales techniques, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -7831,7 +7882,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35497",
@@ -7854,9 +7909,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "noncredit construction module, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -7894,9 +7949,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "enterprise communication 1, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -7922,9 +7977,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl level 1, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -7940,7 +7995,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35512",
@@ -7952,7 +8011,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35513",
@@ -7964,7 +8027,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35514",
@@ -7976,7 +8043,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35520",
@@ -8051,9 +8122,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "personal care attendant, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8079,9 +8150,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl intermediate grammar and composition, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -8106,9 +8177,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl pre ged math/english, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8134,9 +8205,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "medical assistant training program, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -8162,9 +8233,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "managing to maximize performance, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -8189,9 +8260,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl advanced grammar and composition, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8217,9 +8288,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "harness the cloud to maximize work performance, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -8246,9 +8317,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "enterprise communication 2, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -8521,9 +8592,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "career strategist, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -8548,9 +8619,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "basic digital imaging, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8575,9 +8646,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "restorative nurse assistant training, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8697,9 +8768,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "emerging leaders, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -8715,7 +8786,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36182",
@@ -8727,7 +8802,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36183",
@@ -8750,9 +8829,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "thrive and survive in the workplace, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -8780,9 +8859,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "social media for business, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -8809,9 +8888,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "project management, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -8836,9 +8915,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "powerful presentations, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8865,9 +8944,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "fundamental computer skills (bilingual), certificate of completion",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -8883,7 +8962,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36206",
@@ -8905,9 +8988,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "quickbooks basics for small business, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -8932,9 +9015,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "visual basic for applications fundamentals, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8950,7 +9033,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36396",
@@ -8962,7 +9049,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36397",
@@ -8982,9 +9073,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "desktop publishing principles (bilingual), certificate of completion",
+    "section_fit": 0.75
    }
   },
   "listed": 1,
@@ -9190,9 +9281,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "global trends in human resources, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -9208,7 +9299,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36839",
@@ -9242,9 +9337,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "web designer, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -9269,9 +9364,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "blogging for business, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -9299,9 +9394,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "microsoft office skills, level 1, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -9327,9 +9422,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "digital design basics, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -9357,9 +9452,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "computer basic skills, level 1, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -9385,9 +9480,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "basic mac software skills, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -9412,9 +9507,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "green gardener, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -9425,46 +9520,24 @@
   "title": "Secondary Education/Bi-lingual/Biliterate GED Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "GEDBNC100",
-   "GEDBNC60",
-   "GEDBNC70",
-   "GEDBNC80"
-  ],
-  "source": {
-   "url": "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/",
-   "title": "Adult High School and GED < CourseLeaf",
-   "h1": "Santa Barbara City College",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 5429
+  "text_chars": 0
  },
  {
   "control_number": "36971",
   "title": "Secondary Education/GED Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "GEDNC10",
-   "GEDNC20",
-   "GEDNC30",
-   "GEDNC50"
-  ],
-  "source": {
-   "url": "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/",
-   "title": "Adult High School and GED < CourseLeaf",
-   "h1": "Santa Barbara City College",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 4965
+  "text_chars": 0
  },
  {
   "control_number": "37183",
@@ -9485,9 +9558,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl vocational, healthcare, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -9512,9 +9585,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "beginning mac skills, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -9541,9 +9614,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "noncredit intermediate construction module, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -9567,9 +9640,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "noncredit electrical training module 1, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -9595,9 +9668,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "noncredit electrical training module 2, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -9623,9 +9696,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "noncredit electrical training module 3, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -9652,9 +9725,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "computer hardware fundamentals, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -9878,66 +9951,12 @@
   "title": "ADHS: Adult High School Diploma",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 0.979,
-  "codes_found": [
-   "HSCANC10",
-   "HSCANC20",
-   "HSCANC30",
-   "HSCANC40",
-   "HSCANC50",
-   "HSECNC10",
-   "HSECNC20",
-   "HSENNC1",
-   "HSENNC1A",
-   "HSENNC1B",
-   "HSENNC2",
-   "HSENNC2A",
-   "HSENNC2B",
-   "HSENNC3",
-   "HSENNC3A",
-   "HSENNC3B",
-   "HSENNC5",
-   "HSHENC10",
-   "HSHINC30",
-   "HSHINC40",
-   "HSHINC50",
-   "HSMANC10",
-   "HSMANC20",
-   "HSMANC30",
-   "HSMANC40",
-   "HSMANC50",
-   "HSPDNC10",
-   "HSPDNC100",
-   "HSPDNC20",
-   "HSPDNC30",
-   "HSPDNC40",
-   "HSPDNC50",
-   "HSPDNC60",
-   "HSPDNC70",
-   "HSPDNC80",
-   "HSPDNC90",
-   "HSPSNC20",
-   "HSPSNC30",
-   "HSSCNC10",
-   "HSSCNC20",
-   "HSSCNC30",
-   "HSSCNC40",
-   "HSVANC1",
-   "HSVANC1A",
-   "HSVANC1B",
-   "HSWHNC10",
-   "HSWHNC20"
-  ],
-  "source": {
-   "url": "https://catalog.sbcc.edu/sel/ahs-ged/",
-   "title": "School of Extended Learning: Adult High School and GED/Bilingual GED < CourseLeaf",
-   "h1": "Santa Barbara City College",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 48,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "38526",
@@ -10106,7 +10125,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "38713",
@@ -10204,9 +10227,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "workplace wellness, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -10231,9 +10254,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "teaching with humanizing technology, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -10244,12 +10267,28 @@
   "title": "Digital Photograph Management",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOWNC3",
+   "PHOWNC4",
+   "PHOWNC5"
+  ],
+  "source": {
+   "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photograph-management-certificate-completion/",
+   "title": "Digital Photograph Management, Certificate of Completion < CourseLeaf",
+   "h1": "Santa Barbara City College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "digital photograph management, certificate of completion",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1526
  },
  {
   "control_number": "39488",
@@ -10271,9 +10310,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "successful work and life transitions, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -10298,9 +10337,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "computer technology fundamentals, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -10410,9 +10449,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "microsoft office skills, level 2, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -10437,9 +10476,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "sustainable building module, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -10467,9 +10506,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "microsoft office skills, level 3, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -10771,9 +10810,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "tax preparation, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -10831,9 +10870,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "introduction to bookkeeping and accounting, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -10858,9 +10897,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "ecological landscape design, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -10956,20 +10995,20 @@
    "COMP271"
   ],
   "source": {
-   "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/",
-   "title": "Accounting Assistant/Bookkeeper, Level IV, Certificate of Achievement (C) < CourseLeaf",
+   "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-i-certificate-achievement/",
+   "title": "Accounting Assistant/Bookkeeper, Level I, Certificate of Achievement (C) < CourseLeaf",
    "h1": "Santa Barbara City College",
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "coa",
-    "section_line": "accounting assistant/bookkeeper, level iv, certificate of achievement (c)",
-    "section_fit": 0.75
+    "section_line": "accounting assistant/bookkeeper, level i, certificate of achievement (c)",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3932
+  "text_chars": 2356
  },
  {
   "control_number": "41282",
@@ -11094,9 +11133,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "safe food preparation and food service, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -11121,9 +11160,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "small scale food production for the home landscape, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -11149,9 +11188,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "nonprofit marketing, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -11176,9 +11215,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "nonprofit strategic planning, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -11204,9 +11243,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "nonprofits 101, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -11377,9 +11416,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "introduction to entrepreneurship, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -11405,9 +11444,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "nonprofit manager's toolbox, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -11432,9 +11471,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "digital printing: newsletter and magazines, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -11488,9 +11527,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "nonprofit finance, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -11515,9 +11554,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "increase efficiency and productivity with adobe acrobat tools, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -11543,9 +11582,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "visionary leadership, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -11571,9 +11610,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "nonprofit fundraising, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -11886,9 +11925,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl vocational, landscaping and gardening, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -11945,12 +11984,27 @@
   "title": "Digital Photography Level 1",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "PHOWNC3",
+   "PHOWNC4"
+  ],
+  "source": {
+   "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photography-essentials-nc-completion/",
+   "title": "Digital Photography Level 1, Certificate of Completion < CourseLeaf",
+   "h1": "Santa Barbara City College",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "digital photography level 1, certificate of completion",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1852
  },
  {
   "control_number": "44918",
@@ -12102,7 +12156,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 223 of 243 closed-list programs on their own page, 0 on another program's and 3 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45280",
@@ -12126,9 +12184,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "career launch and job search, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -12154,9 +12212,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "ai foundations and creative applications, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -12224,9 +12282,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certified nursing assistant, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -12306,9 +12364,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "ai for entrepreneurs, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -12377,9 +12435,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "spanish in the workforce, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,

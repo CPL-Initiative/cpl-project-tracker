@@ -55,7 +55,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "cd50860cf2cd98e1"
+   "text_sha": "c68adb2a857faf3d"
   },
   "listed": 33,
   "text_chars": 16000
@@ -99,7 +99,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "140c4e1730dd96f6"
+   "text_sha": "748b2b171b03c75f"
   },
   "listed": 16,
   "text_chars": 16000
@@ -109,107 +109,36 @@
   "title": "FINANCE AND BANKING",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.9,
-  "codes_found": [
-   "ACCTG21",
-   "BUS1",
-   "BUS15",
-   "BUS17",
-   "ECONC2001",
-   "ECONC2002",
-   "FINANCE15",
-   "FINANCE2",
-   "SUPV1"
-  ],
-  "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=78",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 77",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 77",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    78,
-    79,
-    80
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "39fda48fa7bab413"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 14184
+  "text_chars": 0
  },
  {
   "control_number": "02721",
   "title": "MANAGEMENT",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.875,
-  "codes_found": [
-   "ACCTG31",
-   "BUS17",
-   "MARKET21",
-   "MGMT13",
-   "MGMT2",
-   "MGMT31",
-   "MGMT33"
-  ],
-  "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 75",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 75",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    76,
-    77,
-    78,
-    79
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "f60468ae92d8d96b"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "02724",
   "title": "MARKETING",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ACCTG31",
-   "BUS17",
-   "INTBUS6",
-   "MARKET21",
-   "MARKET31",
-   "MGMT13",
-   "MGMT2",
-   "MGMT31"
-  ],
-  "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 75",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 75",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    76,
-    77,
-    78,
-    79
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "f60468ae92d8d96b"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "02726",
@@ -239,10 +168,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4d9acb668296ba85"
+   "text_sha": "58df7d9bbb174330"
   },
   "listed": 8,
-  "text_chars": 3065
+  "text_chars": 3037
  },
  {
   "control_number": "02727",
@@ -280,7 +209,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ac11d6899ecaf7e8"
+   "text_sha": "d4f1e528f6093824"
   },
   "listed": 13,
   "text_chars": 16000
@@ -314,10 +243,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "328ca525184b1bc5"
+   "text_sha": "14470b3bd85ca022"
   },
   "listed": 9,
-  "text_chars": 2360
+  "text_chars": 2340
  },
  {
   "control_number": "02729",
@@ -365,7 +294,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a44029c9da2b4a76"
+   "text_sha": "227c0443f4beefe4"
   },
   "listed": 23,
   "text_chars": 16000
@@ -404,7 +333,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4c10e315e7906e21"
+   "text_sha": "0f6ffb8b1f599fab"
   },
   "listed": 11,
   "text_chars": 16000
@@ -476,7 +405,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3040af6d4f142d21"
+   "text_sha": "e07b2c735befae67"
   },
   "listed": 45,
   "text_chars": 16000
@@ -531,7 +460,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "086ccd51cbcc3ae5"
+   "text_sha": "ed738e6c41dd06e1"
   },
   "listed": 27,
   "text_chars": 16000
@@ -571,7 +500,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "952a830ff4ff029c"
+   "text_sha": "bf22bb7d08b29bcb"
   },
   "listed": 12,
   "text_chars": 16000
@@ -606,10 +535,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d91e48832f793791"
+   "text_sha": "fe0e9cba4c915d0f"
   },
   "listed": 9,
-  "text_chars": 7807
+  "text_chars": 7772
  },
  {
   "control_number": "02744",
@@ -646,10 +575,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e99d5101179eb8ad"
+   "text_sha": "6943357d46ba7294"
   },
   "listed": 13,
-  "text_chars": 9615
+  "text_chars": 9533
  },
  {
   "control_number": "02745",
@@ -685,10 +614,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0a89aae80387983d"
+   "text_sha": "0a98575b1dc5d9d8"
   },
   "listed": 11,
-  "text_chars": 14217
+  "text_chars": 14144
  },
  {
   "control_number": "02746",
@@ -718,10 +647,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9694093e48661cc8"
+   "text_sha": "740987314b9e67bc"
   },
   "listed": 7,
-  "text_chars": 6688
+  "text_chars": 6656
  },
  {
   "control_number": "02748",
@@ -764,7 +693,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "def22de4bdc9e364"
+   "text_sha": "38897fa604d8ed4f"
   },
   "listed": 18,
   "text_chars": 16000
@@ -811,10 +740,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d534da4443d5a941"
+   "text_sha": "ae071f0d179fed3d"
   },
   "listed": 20,
-  "text_chars": 14015
+  "text_chars": 13941
  },
  {
   "control_number": "02750",
@@ -841,8 +770,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=166",
-   "title": "COOP ED 395 WORK EXPERIENCE - GENERAL I  .................... 3",
-   "h1": "COOP ED 395 WORK EXPERIENCE - GENERAL I  .................... 3",
+   "title": "COOP ED 395 WORK EXPERIENCE - GENERAL I .................... 3",
+   "h1": "COOP ED 395 WORK EXPERIENCE - GENERAL I .................... 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -851,10 +780,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c98f13852410062a"
+   "text_sha": "c04e4c7848ed89c2"
   },
   "listed": 14,
-  "text_chars": 9933
+  "text_chars": 9887
  },
  {
   "control_number": "02751",
@@ -897,7 +826,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "18bc22d33d9b8d07"
+   "text_sha": "e2a041298608db43"
   },
   "listed": 18,
   "text_chars": 16000
@@ -931,10 +860,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0c4fc51b23a03986"
+   "text_sha": "4bf82c8069baaff7"
   },
   "listed": 6,
-  "text_chars": 14728
+  "text_chars": 14678
  },
  {
   "control_number": "02755",
@@ -968,10 +897,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ed84af62d7e217fa"
+   "text_sha": "4129ef6418e3bf15"
   },
   "listed": 12,
-  "text_chars": 2502
+  "text_chars": 2493
  },
  {
   "control_number": "02756",
@@ -1002,10 +931,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9088be6bd56765b8"
+   "text_sha": "7267fb24c4a96121"
   },
   "listed": 8,
-  "text_chars": 7893
+  "text_chars": 7862
  },
  {
   "control_number": "02759",
@@ -1038,10 +967,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a3a9147a13f0063c"
+   "text_sha": "2474cf3525a25027"
   },
   "listed": 9,
-  "text_chars": 13786
+  "text_chars": 13688
  },
  {
   "control_number": "02760",
@@ -1065,8 +994,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
-   "title": "AND SOCIAL WORK  ............................. 3",
-   "h1": "AND SOCIAL WORK  ............................. 3",
+   "title": "AND SOCIAL WORK ............................. 3",
+   "h1": "AND SOCIAL WORK ............................. 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1075,10 +1004,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2c4aaf57c8da727d"
+   "text_sha": "9fb7d4f7d2473f99"
   },
   "listed": 11,
-  "text_chars": 5497
+  "text_chars": 5470
  },
  {
   "control_number": "02765",
@@ -1187,10 +1116,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b5a8a0714c476ac3"
+   "text_sha": "2bf53e3cf7bf06da"
   },
   "listed": 76,
-  "text_chars": 11561
+  "text_chars": 11467
  },
  {
   "control_number": "08211",
@@ -1220,10 +1149,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "aa6e87d42e94a1e0"
+   "text_sha": "b8b1e3f2c7a9df0e"
   },
   "listed": 8,
-  "text_chars": 2675
+  "text_chars": 2664
  },
  {
   "control_number": "08215",
@@ -1254,10 +1183,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ff693bee60bf6561"
+   "text_sha": "bfd1007b56764d72"
   },
   "listed": 9,
-  "text_chars": 2048
+  "text_chars": 2040
  },
  {
   "control_number": "08216",
@@ -1280,8 +1209,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=82",
-   "title": "ing closely with management and various types of businesses, pro -",
-   "h1": "ing closely with management and various types of businesses, pro -",
+   "title": "ing closely with management and various types of businesses, pro-",
+   "h1": "ing closely with management and various types of businesses, pro-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1292,7 +1221,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ff13346e819dc603"
+   "text_sha": "e2e7e936f6b61ebc"
   },
   "listed": 10,
   "text_chars": 16000
@@ -1344,10 +1273,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3858a4973a4c182f"
+   "text_sha": "bde373cff66f3a59"
   },
   "listed": 26,
-  "text_chars": 9145
+  "text_chars": 9072
  },
  {
   "control_number": "08224",
@@ -1381,10 +1310,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d6b78a1f87d471a2"
+   "text_sha": "eb044aaffbacb538"
   },
   "listed": 9,
-  "text_chars": 15709
+  "text_chars": 15647
  },
  {
   "control_number": "08225",
@@ -1421,7 +1350,7 @@
    "text_sha": "fc316d44b02d8ea8"
   },
   "listed": 12,
-  "text_chars": 2949
+  "text_chars": 2940
  },
  {
   "control_number": "08226",
@@ -1464,10 +1393,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b4017480d26ffb43"
+   "text_sha": "acdcc76245fcd27d"
   },
   "listed": 20,
-  "text_chars": 10321
+  "text_chars": 10279
  },
  {
   "control_number": "08229",
@@ -1522,10 +1451,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "1ebe0599a221f60b"
+   "text_sha": "7d84e3f055727cab"
   },
   "listed": 20,
-  "text_chars": 8626
+  "text_chars": 8572
  },
  {
   "control_number": "08235",
@@ -1559,10 +1488,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "71e4c59f8155025f"
+   "text_sha": "49fd1830d1f32776"
   },
   "listed": 11,
-  "text_chars": 9954
+  "text_chars": 9917
  },
  {
   "control_number": "08236",
@@ -1593,7 +1522,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "293ca67b7b95c528"
+   "text_sha": "1560b4ed4bb24061"
   },
   "listed": 6,
   "text_chars": 16000
@@ -1628,10 +1557,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2d35454e775910be"
+   "text_sha": "80762287ab603f00"
   },
   "listed": 8,
-  "text_chars": 11422
+  "text_chars": 11381
  },
  {
   "control_number": "08238",
@@ -1672,7 +1601,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4e56f71862abd88f"
+   "text_sha": "181a84f0f8654270"
   },
   "listed": 16,
   "text_chars": 16000
@@ -1699,8 +1628,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=90",
-   "title": "FAM &CS 031 MARRIAGE AND FAMILY LIFE  ........................ 3",
-   "h1": "FAM &CS 031 MARRIAGE AND FAMILY LIFE  ........................ 3",
+   "title": "FAM &CS 031 MARRIAGE AND FAMILY LIFE ........................ 3",
+   "h1": "FAM &CS 031 MARRIAGE AND FAMILY LIFE ........................ 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1710,10 +1639,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "073b3ab077fc964e"
+   "text_sha": "56fad20a64f6aa1b"
   },
   "listed": 11,
-  "text_chars": 14424
+  "text_chars": 14370
  },
  {
   "control_number": "08242",
@@ -1744,10 +1673,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9cf61205c0c7b246"
+   "text_sha": "6cf72d4ed058524b"
   },
   "listed": 8,
-  "text_chars": 6503
+  "text_chars": 6474
  },
  {
   "control_number": "08246",
@@ -1784,10 +1713,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "aa4e18ece3500dee"
+   "text_sha": "656e63ab50e82dd5"
   },
   "listed": 13,
-  "text_chars": 14969
+  "text_chars": 14875
  },
  {
   "control_number": "10771",
@@ -1820,10 +1749,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "15b0dfd20948df4c"
+   "text_sha": "44fe5398c039e244"
   },
   "listed": 10,
-  "text_chars": 4213
+  "text_chars": 4183
  },
  {
   "control_number": "10773",
@@ -1856,8 +1785,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=188",
-   "title": "LAW 033 LAW AND THE MEDIA  ............................... 3",
-   "h1": "LAW 033 LAW AND THE MEDIA  ............................... 3",
+   "title": "LAW 033 LAW AND THE MEDIA ............................... 3",
+   "h1": "LAW 033 LAW AND THE MEDIA ............................... 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1868,10 +1797,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e27330a8c8cfc632"
+   "text_sha": "8ace8b8343ba4d11"
   },
   "listed": 20,
-  "text_chars": 15206
+  "text_chars": 15109
  },
  {
   "control_number": "10774",
@@ -1908,7 +1837,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e2df3f175b8a6c44"
+   "text_sha": "511c1202751ad525"
   },
   "listed": 12,
   "text_chars": 16000
@@ -1979,10 +1908,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "656a4fcefd9bbb64"
+   "text_sha": "505b97742ebccf2f"
   },
   "listed": 48,
-  "text_chars": 11489
+  "text_chars": 11373
  },
  {
   "control_number": "10778",
@@ -2021,10 +1950,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "fe2236deab9b30dc"
+   "text_sha": "93728225458e1c83"
   },
   "listed": 5,
-  "text_chars": 3563
+  "text_chars": 3554
  },
  {
   "control_number": "10781",
@@ -2070,8 +1999,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
-   "title": "EARLY CHILDHOOD SETTINGS  ................... 3",
-   "h1": "EARLY CHILDHOOD SETTINGS  ................... 3",
+   "title": "EARLY CHILDHOOD SETTINGS ................... 3",
+   "h1": "EARLY CHILDHOOD SETTINGS ................... 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2082,7 +2011,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "fbfe60f5e77f15cf"
+   "text_sha": "1d1ec8e725b845d8"
   },
   "listed": 21,
   "text_chars": 16000
@@ -2116,10 +2045,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b3877ce02c08d976"
+   "text_sha": "c08cdc39142203c8"
   },
   "listed": 8,
-  "text_chars": 8215
+  "text_chars": 8179
  },
  {
   "control_number": "14274",
@@ -2164,7 +2093,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e3208c1bdda4369e"
+   "text_sha": "628528be0db4396f"
   },
   "listed": 20,
   "text_chars": 16000
@@ -2200,10 +2129,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ee36e23e11f2fca5"
+   "text_sha": "c3aa09eaa21d3e0a"
   },
   "listed": 10,
-  "text_chars": 7377
+  "text_chars": 7325
  },
  {
   "control_number": "19591",
@@ -2231,10 +2160,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ca2b4d9efc632d0e"
+   "text_sha": "b7e46029dc73c098"
   },
   "listed": 6,
-  "text_chars": 1706
+  "text_chars": 1696
  },
  {
   "control_number": "19842",
@@ -2355,10 +2284,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "130456520d81dca2"
+   "text_sha": "55639614571ce38c"
   },
   "listed": 123,
-  "text_chars": 5539
+  "text_chars": 5530
  },
  {
   "control_number": "19843",
@@ -2519,7 +2448,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ccc253f31fca5953"
+   "text_sha": "d71d09a9f0726c84"
   },
   "listed": 136,
   "text_chars": 16000
@@ -2623,10 +2552,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "dce6c5dae469605b"
+   "text_sha": "9060b5d46cde8f4c"
   },
   "listed": 80,
-  "text_chars": 11066
+  "text_chars": 10985
  },
  {
   "control_number": "19845",
@@ -2714,10 +2643,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c45f26519af552d3"
+   "text_sha": "5bed58075125b61d"
   },
   "listed": 65,
-  "text_chars": 6780
+  "text_chars": 6703
  },
  {
   "control_number": "21609",
@@ -2749,7 +2678,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e8948601ee068524"
+   "text_sha": "4f758e0b18a7e327"
   },
   "listed": 7,
   "text_chars": 16000
@@ -2784,10 +2713,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "39fda48fa7bab413"
+   "text_sha": "e0fa4d4fb8110578"
   },
   "listed": 8,
-  "text_chars": 14184
+  "text_chars": 14120
  },
  {
   "control_number": "21611",
@@ -2814,10 +2743,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "743005ac5bd84c89"
+   "text_sha": "74906f2bfeb112e5"
   },
   "listed": 4,
-  "text_chars": 8221
+  "text_chars": 8185
  },
  {
   "control_number": "21612",
@@ -2855,10 +2784,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "731123aeda70b482"
+   "text_sha": "9fbb80a795fc80af"
   },
   "listed": 4,
-  "text_chars": 3482
+  "text_chars": 3464
  },
  {
   "control_number": "21614",
@@ -2884,8 +2813,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=84",
-   "title": "DISCOVERING COMPUTERS: DIGITAL LITERACY  .... 3",
-   "h1": "DISCOVERING COMPUTERS: DIGITAL LITERACY  .... 3",
+   "title": "DISCOVERING COMPUTERS: DIGITAL LITERACY .... 3",
+   "h1": "DISCOVERING COMPUTERS: DIGITAL LITERACY .... 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2894,10 +2823,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e15d3cc2db4e99ef"
+   "text_sha": "514f3f23fe3a3624"
   },
   "listed": 13,
-  "text_chars": 4574
+  "text_chars": 4552
  },
  {
   "control_number": "21619",
@@ -2940,10 +2869,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5fe978cdad505acf"
+   "text_sha": "60b2afa2054ddebe"
   },
   "listed": 20,
-  "text_chars": 8335
+  "text_chars": 8263
  },
  {
   "control_number": "21620",
@@ -2985,10 +2914,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6fd9f713cf8c09ac"
+   "text_sha": "205005fd2cc80866"
   },
   "listed": 17,
-  "text_chars": 15790
+  "text_chars": 15661
  },
  {
   "control_number": "21624",
@@ -3042,10 +2971,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f51625c40e85fe2e"
+   "text_sha": "15cf4fe316e813ca"
   },
   "listed": 18,
-  "text_chars": 12867
+  "text_chars": 12811
  },
  {
   "control_number": "21628",
@@ -3078,10 +3007,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0777d145f23e1aea"
+   "text_sha": "03d76c0ac85b7e6c"
   },
   "listed": 11,
-  "text_chars": 2724
+  "text_chars": 2712
  },
  {
   "control_number": "21629",
@@ -3107,8 +3036,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
-   "title": "A ND SOCIAL WORK  ............................. 3",
-   "h1": "A ND SOCIAL WORK  ............................. 3",
+   "title": "A ND SOCIAL WORK ............................. 3",
+   "h1": "A ND SOCIAL WORK ............................. 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3117,10 +3046,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7a865ad38f6a4f6f"
+   "text_sha": "66bdb20bc67ca302"
   },
   "listed": 14,
-  "text_chars": 8273
+  "text_chars": 8226
  },
  {
   "control_number": "24016",
@@ -3149,10 +3078,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3d37ebab92983608"
+   "text_sha": "a2b1d83876a2430e"
   },
   "listed": 6,
-  "text_chars": 8213
+  "text_chars": 8164
  },
  {
   "control_number": "24069",
@@ -3176,10 +3105,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "1e2190793f6399c6"
+   "text_sha": "bf0cfba6fa9b1fb9"
   },
   "listed": 1,
-  "text_chars": 8021
+  "text_chars": 7991
  },
  {
   "control_number": "24071",
@@ -3206,10 +3135,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f03f143745052687"
+   "text_sha": "1e98f13011f2eb2e"
   },
   "listed": 4,
-  "text_chars": 7237
+  "text_chars": 7196
  },
  {
   "control_number": "24099",
@@ -3237,10 +3166,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "601d487b16417c23"
+   "text_sha": "6eaab8fac2bd2391"
   },
   "listed": 3,
-  "text_chars": 15964
+  "text_chars": 15862
  },
  {
   "control_number": "24118",
@@ -3262,8 +3191,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
-   "title": "VOC ED 238CE  JOB READINESS  .................................. 36",
-   "h1": "VOC ED 238CE  JOB READINESS  .................................. 36",
+   "title": "VOC ED 238CE  JOB READINESS .................................. 36",
+   "h1": "VOC ED 238CE  JOB READINESS .................................. 36",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3271,10 +3200,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "27727a0f15f36565"
+   "text_sha": "0e06144439f5ab4f"
   },
   "listed": 9,
-  "text_chars": 2831
+  "text_chars": 2806
  },
  {
   "control_number": "24294",
@@ -3290,8 +3219,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
-   "title": "VOC ED 247CE KITCHEN STEWARD SKILLS TRAINING  ................ 18",
-   "h1": "VOC ED 247CE KITCHEN STEWARD SKILLS TRAINING  ................ 18",
+   "title": "VOC ED 247CE KITCHEN STEWARD SKILLS TRAINING ................18",
+   "h1": "VOC ED 247CE KITCHEN STEWARD SKILLS TRAINING ................18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3301,10 +3230,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5864b83d55c06b00"
+   "text_sha": "59d35067888a3a7e"
   },
   "listed": 3,
-  "text_chars": 9333
+  "text_chars": 9263
  },
  {
   "control_number": "24344",
@@ -3326,8 +3255,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
-   "title": "VOC ED 129CE INTRODUCTION TO THE INTERNET  ................. 54",
-   "h1": "VOC ED 129CE INTRODUCTION TO THE INTERNET  ................. 54",
+   "title": "VOC ED 129CE INTRODUCTION TO THE INTERNET ................. 54",
+   "h1": "VOC ED 129CE INTRODUCTION TO THE INTERNET ................. 54",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3337,10 +3266,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e5c0aa40671de7d8"
+   "text_sha": "000f1cf6cf897c8a"
   },
   "listed": 9,
-  "text_chars": 12295
+  "text_chars": 12234
  },
  {
   "control_number": "24387",
@@ -3364,10 +3293,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "069c01b1a058a9e4"
+   "text_sha": "ab1014f0cb4d6012"
   },
   "listed": 2,
-  "text_chars": 4117
+  "text_chars": 4105
  },
  {
   "control_number": "24446",
@@ -3386,8 +3315,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
-   "title": "VOC ED 208CE IHSS: CARE FOR PEOPLE WITH DEMENTIA  ............ 9",
-   "h1": "VOC ED 208CE IHSS: CARE FOR PEOPLE WITH DEMENTIA  ............ 9",
+   "title": "VOC ED 208CE IHSS: CARE FOR PEOPLE WITH DEMENTIA ............ 9",
+   "h1": "VOC ED 208CE IHSS: CARE FOR PEOPLE WITH DEMENTIA ............ 9",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3396,10 +3325,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "02b3b75993df1729"
+   "text_sha": "b1b518c1aed4121f"
   },
   "listed": 6,
-  "text_chars": 6024
+  "text_chars": 5989
  },
  {
   "control_number": "30211",
@@ -3473,10 +3402,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5a4999d0805df384"
+   "text_sha": "bcee1945fe19944a"
   },
   "listed": 52,
-  "text_chars": 4892
+  "text_chars": 4849
  },
  {
   "control_number": "31030",
@@ -3513,7 +3442,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "14d4e70e55549263"
+   "text_sha": "8613f7482bf228a9"
   },
   "listed": 12,
   "text_chars": 16000
@@ -3553,10 +3482,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "8f300351d7d888e5"
+   "text_sha": "7a766459eceb5be7"
   },
   "listed": 14,
-  "text_chars": 5710
+  "text_chars": 5674
  },
  {
   "control_number": "31738",
@@ -3593,10 +3522,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "af25b2e906cc6a58"
+   "text_sha": "585f035f296fb3d1"
   },
   "listed": 14,
-  "text_chars": 7983
+  "text_chars": 7936
  },
  {
   "control_number": "32496",
@@ -3649,7 +3578,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2624e835397aa0c3"
+   "text_sha": "d7152410db1c23fc"
   },
   "listed": 28,
   "text_chars": 16000
@@ -3697,7 +3626,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d53a289e0ea031b0"
+   "text_sha": "95e2c7abfafd1ea9"
   },
   "listed": 20,
   "text_chars": 16000
@@ -3707,153 +3636,12 @@
   "title": "ART HISTORY",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.914,
-  "codes_found": [
-   "AFROAM7",
-   "ANTHRO102",
-   "ANTHRO121",
-   "ANTHRO151",
-   "ARMEN1",
-   "ARMEN11",
-   "ARMEN12",
-   "ARMEN2",
-   "ARMEN35",
-   "ARMEN36",
-   "ART201",
-   "ART202",
-   "ART204",
-   "ART205",
-   "ART209",
-   "ART282",
-   "ART300",
-   "ART301",
-   "ART302",
-   "ART307",
-   "ART308",
-   "ART309",
-   "ART501",
-   "ART502",
-   "ART603",
-   "ART606",
-   "ART700",
-   "ART701",
-   "ART708",
-   "ART709",
-   "ARTHC1100",
-   "ARTHIST103",
-   "ARTHIST130",
-   "ARTHIST139",
-   "ARTHIST140",
-   "ARTHIST151",
-   "ARTHIST171",
-   "ASIAN1",
-   "CHICANO4",
-   "CHICANO47",
-   "CHICANO7",
-   "CHICANO8",
-   "CHINESE1",
-   "CHINESE10",
-   "CHINESE2",
-   "CHINESE3",
-   "CHINESE4",
-   "CINEMA18",
-   "CINEMA4",
-   "DANCEST805",
-   "FRENCH1",
-   "FRENCH10",
-   "FRENCH2",
-   "FRENCH3",
-   "FRENCH4",
-   "HISTORY5",
-   "HISTORY59",
-   "HISTORY6",
-   "HISTORY7",
-   "HISTORY73",
-   "HISTORY81",
-   "HISTORY82",
-   "HISTORY86",
-   "HISTORY87",
-   "HUMAN30",
-   "HUMAN31",
-   "HUMAN6",
-   "HUMAN8",
-   "JAPAN1",
-   "JAPAN14",
-   "JAPAN2",
-   "JAPAN3",
-   "JAPAN4",
-   "JAPAN9",
-   "KOREAN1",
-   "KOREAN10",
-   "KOREAN13",
-   "KOREAN2",
-   "KOREAN21",
-   "KOREAN22",
-   "KOREAN26",
-   "KOREAN3",
-   "KOREAN4",
-   "LING1",
-   "MUSIC101",
-   "MUSIC111",
-   "MUSIC116",
-   "MUSIC121",
-   "MUSIC122",
-   "MUSIC135",
-   "MUSIC136",
-   "MUSIC141",
-   "PHILOS1",
-   "PHILOS14",
-   "PHILOS20",
-   "PHILOS30",
-   "PHILOS32",
-   "PHILOS40",
-   "PHOTO10",
-   "PHOTO34",
-   "PHOTO501",
-   "POLSCI19",
-   "POLSCI5",
-   "RUSSIAN1",
-   "RUSSIAN10",
-   "RUSSIAN2",
-   "RUSSIAN3",
-   "RUSSIAN4",
-   "SOC22",
-   "SOC31",
-   "SPANISH1",
-   "SPANISH10",
-   "SPANISH11",
-   "SPANISH15",
-   "SPANISH2",
-   "SPANISH21",
-   "SPANISH22",
-   "SPANISH3",
-   "SPANISH35",
-   "SPANISH36",
-   "SPANISH4",
-   "SPANISH6",
-   "SPANISH9",
-   "THEATER100",
-   "THEATER110",
-   "THEATER338",
-   "THEATER400"
-  ],
-  "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=60",
-   "title": "LACC 2025-2026 COLLEGE CATALOG 59",
-   "h1": "LACC 2025-2026 COLLEGE CATALOG 59",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    60,
-    61
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "5b8a0a426d6d566a"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 139,
-  "text_chars": 11461
+  "text_chars": 0
  },
  {
   "control_number": "32923",
@@ -3937,7 +3725,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "1a10c2ebffd5f202"
+   "text_sha": "256954d1b109fa88"
   },
   "listed": 62,
   "text_chars": 16000
@@ -4002,7 +3790,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b4a3f2a412a52879"
+   "text_sha": "73a626f880a2200e"
   },
   "listed": 38,
   "text_chars": 16000
@@ -4035,8 +3823,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=162",
-   "title": "qualification and screening process required to enter law enforce -",
-   "h1": "qualification and screening process required to enter law enforce -",
+   "title": "qualification and screening process required to enter law enforce-",
+   "h1": "qualification and screening process required to enter law enforce-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4047,7 +3835,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b6cdc94434e07ac8"
+   "text_sha": "4d798233c8b9917b"
   },
   "listed": 17,
   "text_chars": 16000
@@ -4093,7 +3881,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d370b12a65eb74ab"
+   "text_sha": "76716ff7b350aee3"
   },
   "listed": 21,
   "text_chars": 16000
@@ -4127,10 +3915,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9196fb10c15740cb"
+   "text_sha": "95ae166b5e8c750f"
   },
   "listed": 8,
-  "text_chars": 5824
+  "text_chars": 5786
  },
  {
   "control_number": "33157",
@@ -4166,10 +3954,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a7ce43108cf708bd"
+   "text_sha": "39803ca1158984ee"
   },
   "listed": 13,
-  "text_chars": 8548
+  "text_chars": 8490
  },
  {
   "control_number": "35337",
@@ -4196,10 +3984,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f97d5e284b4a2068"
+   "text_sha": "387b3c92356205b2"
   },
   "listed": 5,
-  "text_chars": 1518
+  "text_chars": 1506
  },
  {
   "control_number": "35338",
@@ -4226,10 +4014,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "32eaa552688aa28e"
+   "text_sha": "e26b2640ab21a4a8"
   },
   "listed": 5,
-  "text_chars": 2988
+  "text_chars": 2965
  },
  {
   "control_number": "35339",
@@ -4256,10 +4044,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6c6ae7e6944ed092"
+   "text_sha": "7de17adee43e93d0"
   },
   "listed": 4,
-  "text_chars": 6612
+  "text_chars": 6580
  },
  {
   "control_number": "35340",
@@ -4286,10 +4074,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b101e40df8fb4224"
+   "text_sha": "09c423bb5670cfbd"
   },
   "listed": 4,
-  "text_chars": 5357
+  "text_chars": 5328
  },
  {
   "control_number": "35341",
@@ -4317,10 +4105,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "009ca808db21cbde"
+   "text_sha": "b5f2444ad2fd4e59"
   },
   "listed": 6,
-  "text_chars": 3897
+  "text_chars": 3878
  },
  {
   "control_number": "35344",
@@ -4347,10 +4135,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2434a25fc6c4e977"
+   "text_sha": "f8641813cb79dd2d"
   },
   "listed": 4,
-  "text_chars": 6669
+  "text_chars": 6637
  },
  {
   "control_number": "35349",
@@ -4375,10 +4163,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9698837cf43dac5c"
+   "text_sha": "88e7ea410440761a"
   },
   "listed": 3,
-  "text_chars": 1815
+  "text_chars": 1808
  },
  {
   "control_number": "35936",
@@ -4393,8 +4181,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
-   "title": "PROGRAM  ................................... 23.4",
-   "h1": "PROGRAM  ................................... 23.4",
+   "title": "PROGRAM ...................................23.4",
+   "h1": "PROGRAM ...................................23.4",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4402,10 +4190,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2835f3dbfad002b2"
+   "text_sha": "95f32d443cb0aac1"
   },
   "listed": 2,
-  "text_chars": 3360
+  "text_chars": 3348
  },
  {
   "control_number": "36007",
@@ -4431,10 +4219,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "eca0351427bd62ae"
+   "text_sha": "888dc30ccbe6412b"
   },
   "listed": 4,
-  "text_chars": 3669
+  "text_chars": 3655
  },
  {
   "control_number": "36026",
@@ -4509,7 +4297,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9f4c91869d7ed4fd"
+   "text_sha": "e122d701a8f5f4b3"
   },
   "listed": 53,
   "text_chars": 16000
@@ -4543,10 +4331,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "259b3e224298203f"
+   "text_sha": "8f16711bb934733c"
   },
   "listed": 9,
-  "text_chars": 3101
+  "text_chars": 3087
  },
  {
   "control_number": "36275",
@@ -4574,10 +4362,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "923186d3e56b9b05"
+   "text_sha": "844dc4427c1e5614"
   },
   "listed": 6,
-  "text_chars": 3856
+  "text_chars": 3844
  },
  {
   "control_number": "36276",
@@ -4603,10 +4391,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ae3ac7a86974ac35"
+   "text_sha": "b866306e86bf4464"
   },
   "listed": 4,
-  "text_chars": 3190
+  "text_chars": 3173
  },
  {
   "control_number": "36277",
@@ -4633,10 +4421,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f002b08f8671a3d1"
+   "text_sha": "a1c8af52e59ada5d"
   },
   "listed": 2,
-  "text_chars": 14109
+  "text_chars": 14017
  },
  {
   "control_number": "36347",
@@ -4663,10 +4451,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "8ffa0b012dc65f84"
+   "text_sha": "701741ef3fe044c2"
   },
   "listed": 4,
-  "text_chars": 5947
+  "text_chars": 5922
  },
  {
   "control_number": "36348",
@@ -4692,10 +4480,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "13c0525a27546b4c"
+   "text_sha": "120a6c581cbbff6a"
   },
   "listed": 4,
-  "text_chars": 4070
+  "text_chars": 4055
  },
  {
   "control_number": "36581",
@@ -4722,10 +4510,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "fbc3f786e0abfa3b"
+   "text_sha": "f9fc443463b3bcb8"
   },
   "listed": 5,
-  "text_chars": 3839
+  "text_chars": 3817
  },
  {
   "control_number": "36658",
@@ -4795,10 +4583,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "810eb352ee2e2207"
+   "text_sha": "7e3f48be9d982bbd"
   },
   "listed": 49,
-  "text_chars": 6780
+  "text_chars": 6719
  },
  {
   "control_number": "36668",
@@ -4822,10 +4610,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f0caf6d5f7c2a5ff"
+   "text_sha": "e87c378df03196c8"
   },
   "listed": 2,
-  "text_chars": 4130
+  "text_chars": 4113
  },
  {
   "control_number": "37221",
@@ -4868,10 +4656,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7cff6c3d081aea72"
+   "text_sha": "ca92825952a5cd27"
   },
   "listed": 7,
-  "text_chars": 11592
+  "text_chars": 11517
  },
  {
   "control_number": "38156",
@@ -4899,10 +4687,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3b98235d1b5f4a80"
+   "text_sha": "47ed3f833f6a151b"
   },
   "listed": 6,
-  "text_chars": 4743
+  "text_chars": 4730
  },
  {
   "control_number": "38233",
@@ -4947,10 +4735,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e2274fb11e9f849d"
+   "text_sha": "55137343af5a1871"
   },
   "listed": 22,
-  "text_chars": 6706
+  "text_chars": 6645
  },
  {
   "control_number": "38385",
@@ -4995,10 +4783,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e2b724c797324560"
+   "text_sha": "d224452cbce25692"
   },
   "listed": 21,
-  "text_chars": 9621
+  "text_chars": 9539
  },
  {
   "control_number": "38605",
@@ -5027,10 +4815,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fe72f5aceae6d7e2"
+   "text_sha": "b71cf45929e43fe1"
   },
   "listed": 5,
-  "text_chars": 14750
+  "text_chars": 14688
  },
  {
   "control_number": "38651",
@@ -5068,10 +4856,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c164043a8cc1f47b"
+   "text_sha": "f9d1927963575f07"
   },
   "listed": 3,
-  "text_chars": 6292
+  "text_chars": 6266
  },
  {
   "control_number": "38827",
@@ -5101,10 +4889,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a519e2d7b8807d37"
+   "text_sha": "bdf2e0e9b06dd683"
   },
   "listed": 8,
-  "text_chars": 5567
+  "text_chars": 5546
  },
  {
   "control_number": "38828",
@@ -5125,8 +4913,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
-   "title": "CIS 219 INTRODUCTION TO ORACLE: SQL AND PL/SQL  ........ 3",
-   "h1": "CIS 219 INTRODUCTION TO ORACLE: SQL AND PL/SQL  ........ 3",
+   "title": "CIS 219 INTRODUCTION TO ORACLE: SQL AND PL/SQL ........ 3",
+   "h1": "CIS 219 INTRODUCTION TO ORACLE: SQL AND PL/SQL ........ 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5135,10 +4923,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5f6515599d156fef"
+   "text_sha": "d8d101fba76dd2db"
   },
   "listed": 8,
-  "text_chars": 8673
+  "text_chars": 8641
  },
  {
   "control_number": "38829",
@@ -5189,10 +4977,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "320601d4541eace4"
+   "text_sha": "658348121f4dc3bf"
   },
   "listed": 28,
-  "text_chars": 13756
+  "text_chars": 13673
  },
  {
   "control_number": "38856",
@@ -5220,10 +5008,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5388c795ba23179b"
+   "text_sha": "fcee78d0296321a8"
   },
   "listed": 5,
-  "text_chars": 9043
+  "text_chars": 9009
  },
  {
   "control_number": "38857",
@@ -5255,10 +5043,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "541a74e3d214d716"
+   "text_sha": "8416cb1e6fba1e99"
   },
   "listed": 10,
-  "text_chars": 3430
+  "text_chars": 3417
  },
  {
   "control_number": "38859",
@@ -5296,10 +5084,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ad6cde3585ffc6f6"
+   "text_sha": "3eafcff74fa56771"
   },
   "listed": 15,
-  "text_chars": 5218
+  "text_chars": 5196
  },
  {
   "control_number": "38860",
@@ -5336,10 +5124,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "22484a89ff6e14d3"
+   "text_sha": "3d1264618dd0daf7"
   },
   "listed": 15,
-  "text_chars": 2406
+  "text_chars": 2395
  },
  {
   "control_number": "38867",
@@ -5370,10 +5158,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "15daf50d807cc8f1"
+   "text_sha": "f0707884aad3cfee"
   },
   "listed": 8,
-  "text_chars": 6509
+  "text_chars": 6480
  },
  {
   "control_number": "39043",
@@ -5397,10 +5185,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b8319c5eee159dbf"
+   "text_sha": "23b898c0f10219f1"
   },
   "listed": 2,
-  "text_chars": 2562
+  "text_chars": 2552
  },
  {
   "control_number": "39190",
@@ -5424,10 +5212,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b7b1c50bbcc1389b"
+   "text_sha": "59f805070d463c24"
   },
   "listed": 2,
-  "text_chars": 3607
+  "text_chars": 3594
  },
  {
   "control_number": "39316",
@@ -5460,10 +5248,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "8d31e57fa82c55b3"
+   "text_sha": "9272bc31bc774c50"
   },
   "listed": 11,
-  "text_chars": 4022
+  "text_chars": 4002
  },
  {
   "control_number": "39327",
@@ -5484,8 +5272,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
-   "title": "VOC ED 129CE INTRODUCTION TO THE INTERNET  ................. 54",
-   "h1": "VOC ED 129CE INTRODUCTION TO THE INTERNET  ................. 54",
+   "title": "VOC ED 129CE INTRODUCTION TO THE INTERNET ................. 54",
+   "h1": "VOC ED 129CE INTRODUCTION TO THE INTERNET ................. 54",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5494,10 +5282,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "030a682f3848b947"
+   "text_sha": "477ea9d6511bb750"
   },
   "listed": 8,
-  "text_chars": 7997
+  "text_chars": 7949
  },
  {
   "control_number": "39348",
@@ -5537,7 +5325,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "1b629828620478cf"
+   "text_sha": "3461bc524c04e53b"
   },
   "listed": 15,
   "text_chars": 16000
@@ -5572,10 +5360,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d2d0cdc609f09b53"
+   "text_sha": "24f024d49c11e786"
   },
   "listed": 10,
-  "text_chars": 2001
+  "text_chars": 1989
  },
  {
   "control_number": "39561",
@@ -5622,7 +5410,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f9374e28c04497cb"
+   "text_sha": "fc8256c283af94cb"
   },
   "listed": 22,
   "text_chars": 16000
@@ -5658,10 +5446,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2ae5a85b2eeb3dc8"
+   "text_sha": "98ff3aef6f8acb77"
   },
   "listed": 15,
-  "text_chars": 11169
+  "text_chars": 11107
  },
  {
   "control_number": "39614",
@@ -5691,10 +5479,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "00800ba803379f68"
+   "text_sha": "03af86e86c7d5ee9"
   },
   "listed": 6,
-  "text_chars": 10713
+  "text_chars": 10632
  },
  {
   "control_number": "39615",
@@ -5723,10 +5511,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "16b1e1b27b93e5a4"
+   "text_sha": "742086ec703fdec1"
   },
   "listed": 6,
-  "text_chars": 6359
+  "text_chars": 6326
  },
  {
   "control_number": "39616",
@@ -5756,10 +5544,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f0ebf0d65101f561"
+   "text_sha": "be54c4d668e8b9b8"
   },
   "listed": 7,
-  "text_chars": 5853
+  "text_chars": 5804
  },
  {
   "control_number": "39617",
@@ -5789,10 +5577,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d0ebc910781a9a20"
+   "text_sha": "86812a6182fe0855"
   },
   "listed": 7,
-  "text_chars": 8256
+  "text_chars": 8193
  },
  {
   "control_number": "39702",
@@ -5818,10 +5606,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ed6ca2dee8dec243"
+   "text_sha": "a3fa332265aabbf2"
   },
   "listed": 3,
-  "text_chars": 5850
+  "text_chars": 5821
  },
  {
   "control_number": "39703",
@@ -5846,10 +5634,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "39188d06a09eefae"
+   "text_sha": "bd0fe42fe620a589"
   },
   "listed": 2,
-  "text_chars": 8214
+  "text_chars": 8177
  },
  {
   "control_number": "39789",
@@ -5882,10 +5670,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "4c7dc4bf5fdff25e"
+   "text_sha": "5b0b18b68fda4995"
   },
   "listed": 8,
-  "text_chars": 13568
+  "text_chars": 13480
  },
  {
   "control_number": "39854",
@@ -5904,8 +5692,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=146",
-   "title": "CS 216 OBJECT-ORIENTED PROGRAMMING IN C++  ........... 3",
-   "h1": "CS 216 OBJECT-ORIENTED PROGRAMMING IN C++  ........... 3",
+   "title": "CS 216 OBJECT-ORIENTED PROGRAMMING IN C++ ........... 3",
+   "h1": "CS 216 OBJECT-ORIENTED PROGRAMMING IN C++ ........... 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5916,7 +5704,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "3b705f4150b91a26"
+   "text_sha": "1cce9dafbf6a1aca"
   },
   "listed": 6,
   "text_chars": 16000
@@ -5943,10 +5731,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ae74c2d3350182c0"
+   "text_sha": "87340f04e01f2e00"
   },
   "listed": 2,
-  "text_chars": 1076
+  "text_chars": 1071
  },
  {
   "control_number": "40128",
@@ -5970,10 +5758,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "af6e06b6b5cfe6f9"
+   "text_sha": "9a9c4fbfb953898d"
   },
   "listed": 2,
-  "text_chars": 4216
+  "text_chars": 4194
  },
  {
   "control_number": "40132",
@@ -5997,10 +5785,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f01c1c99ed2b2419"
+   "text_sha": "d5c806b0248795d4"
   },
   "listed": 2,
-  "text_chars": 3357
+  "text_chars": 3345
  },
  {
   "control_number": "40138",
@@ -6015,8 +5803,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
-   "title": "VOC ED 338CE OPTICIAN TECHNICIAN: CONTACT LENS  ............. 36",
-   "h1": "VOC ED 338CE OPTICIAN TECHNICIAN: CONTACT LENS  ............. 36",
+   "title": "VOC ED 338CE OPTICIAN TECHNICIAN: CONTACT LENS ............. 36",
+   "h1": "VOC ED 338CE OPTICIAN TECHNICIAN: CONTACT LENS ............. 36",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6025,10 +5813,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "005f3fdf14ae85be"
+   "text_sha": "d5cfb82670c13db6"
   },
   "listed": 2,
-  "text_chars": 3912
+  "text_chars": 3895
  },
  {
   "control_number": "40139",
@@ -6052,10 +5840,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "508cd6ea93de2c0d"
+   "text_sha": "e0779cf41281fe9a"
   },
   "listed": 2,
-  "text_chars": 3102
+  "text_chars": 3092
  },
  {
   "control_number": "40193",
@@ -6070,8 +5858,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
-   "title": "VOC ED 239CE CUSTOMER SERVICE SKILLS  ........................ 18",
-   "h1": "VOC ED 239CE CUSTOMER SERVICE SKILLS  ........................ 18",
+   "title": "VOC ED 239CE CUSTOMER SERVICE SKILLS ........................18",
+   "h1": "VOC ED 239CE CUSTOMER SERVICE SKILLS ........................18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6079,10 +5867,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "8703eb1e5dac2c08"
+   "text_sha": "48249cf4b024d036"
   },
   "listed": 2,
-  "text_chars": 2449
+  "text_chars": 2439
  },
  {
   "control_number": "40199",
@@ -6107,10 +5895,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "61019e2b0953b499"
+   "text_sha": "d650c9380b9e86eb"
   },
   "listed": 3,
-  "text_chars": 4632
+  "text_chars": 4614
  },
  {
   "control_number": "40232",
@@ -6145,10 +5933,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f35cefeb0c62998a"
+   "text_sha": "c7ae87f8ea01397c"
   },
   "listed": 11,
-  "text_chars": 11330
+  "text_chars": 11288
  },
  {
   "control_number": "40237",
@@ -6177,10 +5965,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8f5f826ce6a544af"
+   "text_sha": "bb85bdf1b37bd29e"
   },
   "listed": 6,
-  "text_chars": 9936
+  "text_chars": 9902
  },
  {
   "control_number": "40524",
@@ -6206,10 +5994,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "74f4d6f03f2b7e72"
+   "text_sha": "b089cf64af85c55d"
   },
   "listed": 3,
-  "text_chars": 8182
+  "text_chars": 8119
  },
  {
   "control_number": "40543",
@@ -6234,75 +6022,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4569e5d5180b6a3b"
+   "text_sha": "7350f85e989585cb"
   },
   "listed": 2,
-  "text_chars": 6962
+  "text_chars": 6906
  },
  {
   "control_number": "40566",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "ADMJUS67",
-   "AFROAM7",
-   "ANTHRO102",
-   "ASIAN1",
-   "BUS1",
-   "BUS15",
-   "CHICANO4",
-   "CHICANO47",
-   "CHICANO7",
-   "CHICANO8",
-   "COMM121",
-   "COMM122",
-   "ECONC2001",
-   "ECONC2002",
-   "GEOG2",
-   "HISTC1001",
-   "HISTC1002",
-   "HISTORY5",
-   "HISTORY6",
-   "HISTORY73",
-   "HISTORY86",
-   "HISTORY87",
-   "LAW3",
-   "LAW7",
-   "MATH229",
-   "POLSC1000",
-   "POLSCI2",
-   "POLSCI60",
-   "POLSCI7",
-   "PSYCC1000",
-   "SOC11",
-   "SOC125",
-   "SOC2",
-   "SOC31",
-   "SOC32",
-   "STATC1000",
-   "STATC1000E"
-  ],
-  "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=165",
-   "title": "164 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "164 LACC 2026-2027 COLLEGE CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    165,
-    166,
-    167,
-    168
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "74e55c09cd7ed618"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 74,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "40592",
@@ -6332,10 +6067,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ce133c24a5bc805d"
+   "text_sha": "b5aabf4fea83232e"
   },
   "listed": 8,
-  "text_chars": 2242
+  "text_chars": 2232
  },
  {
   "control_number": "40593",
@@ -6365,10 +6100,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "138c55cfce886506"
+   "text_sha": "962989719a9294ea"
   },
   "listed": 16,
-  "text_chars": 3932
+  "text_chars": 3920
  },
  {
   "control_number": "40596",
@@ -6410,10 +6145,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "92c96f3c2c6f9b6e"
+   "text_sha": "db4423b89cb8f809"
   },
   "listed": 23,
-  "text_chars": 15379
+  "text_chars": 15300
  },
  {
   "control_number": "40642",
@@ -6446,7 +6181,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "7e56aa3a092a00d2"
+   "text_sha": "c2a58af8d155601c"
   },
   "listed": 8,
   "text_chars": 16000
@@ -6484,7 +6219,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b5d0687a378e75c3"
+   "text_sha": "b89e474324ce21b6"
   },
   "listed": 10,
   "text_chars": 16000
@@ -6519,10 +6254,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ab265efa3ef7f2f9"
+   "text_sha": "bccc007673a9644c"
   },
   "listed": 7,
-  "text_chars": 15835
+  "text_chars": 15758
  },
  {
   "control_number": "40661",
@@ -6557,10 +6292,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6fc8647c59baf920"
+   "text_sha": "9f624bb7ca2f4a56"
   },
   "listed": 10,
-  "text_chars": 14807
+  "text_chars": 14703
  },
  {
   "control_number": "40886",
@@ -6587,10 +6322,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "60656fd5c0a45fd0"
+   "text_sha": "39edc928df785e93"
   },
   "listed": 4,
-  "text_chars": 6315
+  "text_chars": 6277
  },
  {
   "control_number": "40887",
@@ -6617,10 +6352,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2f904faf50d999d7"
+   "text_sha": "3519a177e7341383"
   },
   "listed": 4,
-  "text_chars": 6260
+  "text_chars": 6222
  },
  {
   "control_number": "40888",
@@ -6647,10 +6382,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d4cb03234b3e38a8"
+   "text_sha": "e2c3e7876f8643c3"
   },
   "listed": 4,
-  "text_chars": 6033
+  "text_chars": 6011
  },
  {
   "control_number": "40889",
@@ -6676,10 +6411,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "548e5eb604b6aa84"
+   "text_sha": "2c2f03956dbc6a33"
   },
   "listed": 4,
-  "text_chars": 4547
+  "text_chars": 4529
  },
  {
   "control_number": "40897",
@@ -6711,10 +6446,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "28c5fad232a6fe8b"
+   "text_sha": "86e610f3227b0a29"
   },
   "listed": 8,
-  "text_chars": 11504
+  "text_chars": 11436
  },
  {
   "control_number": "40907",
@@ -6729,8 +6464,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218",
-   "title": "BSICSKL 075CE  INTRODUCTION TO POST-SECONDARY EDUCATION  ... 9",
-   "h1": "BSICSKL 075CE  INTRODUCTION TO POST-SECONDARY EDUCATION  ... 9",
+   "title": "BSICSKL 075CE INTRODUCTION TO POST-SECONDARY EDUCATION  ... 9",
+   "h1": "BSICSKL 075CE INTRODUCTION TO POST-SECONDARY EDUCATION  ... 9",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6738,10 +6473,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a162f35d30f3edce"
+   "text_sha": "fe1cbff96570ceba"
   },
   "listed": 2,
-  "text_chars": 2188
+  "text_chars": 2177
  },
  {
   "control_number": "40987",
@@ -6775,10 +6510,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "34a61ce754d6a7b5"
+   "text_sha": "f92476550bcac88a"
   },
   "listed": 11,
-  "text_chars": 7989
+  "text_chars": 7942
  },
  {
   "control_number": "40996",
@@ -6811,10 +6546,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "18d6a4209000b553"
+   "text_sha": "2d9d0401430aa563"
   },
   "listed": 10,
-  "text_chars": 5716
+  "text_chars": 5680
  },
  {
   "control_number": "40997",
@@ -6846,10 +6581,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "4cc2dacdbd9beb3c"
+   "text_sha": "1c4550027f9aa9ba"
   },
   "listed": 8,
-  "text_chars": 13643
+  "text_chars": 13545
  },
  {
   "control_number": "40998",
@@ -6873,10 +6608,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "619f4eb54099d486"
+   "text_sha": "3dc8655c7a405d32"
   },
   "listed": 2,
-  "text_chars": 1577
+  "text_chars": 1570
  },
  {
   "control_number": "40999",
@@ -6903,10 +6638,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ff0aea2d9d76da46"
+   "text_sha": "8c95d01d843c9548"
   },
   "listed": 5,
-  "text_chars": 3671
+  "text_chars": 3654
  },
  {
   "control_number": "41000",
@@ -6924,8 +6659,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=148",
-   "title": "CIS 219 INTRODUCTION TO ORACLE: SQL AND PL/SQL  ........ 3",
-   "h1": "CIS 219 INTRODUCTION TO ORACLE: SQL AND PL/SQL  ........ 3",
+   "title": "CIS 219 INTRODUCTION TO ORACLE: SQL AND PL/SQL ........ 3",
+   "h1": "CIS 219 INTRODUCTION TO ORACLE: SQL AND PL/SQL ........ 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6934,10 +6669,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "154a034b7eb70034"
+   "text_sha": "3f1037c414c2a366"
   },
   "listed": 5,
-  "text_chars": 7853
+  "text_chars": 7828
  },
  {
   "control_number": "41002",
@@ -6956,8 +6691,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=210",
-   "title": "GAD 210-3 PRODUCTION STUDIO III  ............................ 2",
-   "h1": "GAD 210-3 PRODUCTION STUDIO III  ............................ 2",
+   "title": "GAD 210-3 PRODUCTION STUDIO III ............................ 2",
+   "h1": "GAD 210-3 PRODUCTION STUDIO III ............................ 2",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6966,10 +6701,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "21d6f7e28b9dcf1b"
+   "text_sha": "7175522a8179e10f"
   },
   "listed": 6,
-  "text_chars": 7867
+  "text_chars": 7827
  },
  {
   "control_number": "41090",
@@ -7011,7 +6746,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "7c6295660fba4425"
+   "text_sha": "84cbd59df6f97afe"
   },
   "listed": 17,
   "text_chars": 16000
@@ -7038,10 +6773,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a5ceca938c5575bc"
+   "text_sha": "c7e21a3913334cc7"
   },
   "listed": 2,
-  "text_chars": 1070
+  "text_chars": 1064
  },
  {
   "control_number": "41255",
@@ -7065,10 +6800,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "64746be6365bae9e"
+   "text_sha": "df516def1064025f"
   },
   "listed": 2,
-  "text_chars": 2388
+  "text_chars": 2379
  },
  {
   "control_number": "41256",
@@ -7092,10 +6827,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4c12c0ed43de6530"
+   "text_sha": "c550945c87839ad6"
   },
   "listed": 2,
-  "text_chars": 2603
+  "text_chars": 2592
  },
  {
   "control_number": "41257",
@@ -7119,10 +6854,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "63afb8110a38867b"
+   "text_sha": "7c34191a3b6736cf"
   },
   "listed": 2,
-  "text_chars": 1255
+  "text_chars": 1251
  },
  {
   "control_number": "41258",
@@ -7137,8 +6872,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
-   "title": "VOC ED 063CE MANAGING MONEY  ............................... 36",
-   "h1": "VOC ED 063CE MANAGING MONEY  ............................... 36",
+   "title": "VOC ED 063CE MANAGING MONEY ............................... 36",
+   "h1": "VOC ED 063CE MANAGING MONEY ............................... 36",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7146,10 +6881,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2b3a77e2621d5680"
+   "text_sha": "11f38d548a52041c"
   },
   "listed": 2,
-  "text_chars": 1482
+  "text_chars": 1477
  },
  {
   "control_number": "41259",
@@ -7174,10 +6909,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d06546c7a331c595"
+   "text_sha": "47090503e1cdec5b"
   },
   "listed": 3,
-  "text_chars": 4604
+  "text_chars": 4587
  },
  {
   "control_number": "41271",
@@ -7270,10 +7005,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "05de6efb48d4d899"
+   "text_sha": "c492fa5becf50d4b"
   },
   "listed": 59,
-  "text_chars": 7499
+  "text_chars": 7440
  },
  {
   "control_number": "41527",
@@ -7302,10 +7037,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f9c1f4b9c5ff6fb2"
+   "text_sha": "9828d36af4ab0906"
   },
   "listed": 6,
-  "text_chars": 5138
+  "text_chars": 5105
  },
  {
   "control_number": "42057",
@@ -7330,10 +7065,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ea7e0ac777bb11b1"
+   "text_sha": "7c61d4cc5205f693"
   },
   "listed": 2,
-  "text_chars": 6747
+  "text_chars": 6716
  },
  {
   "control_number": "42058",
@@ -7357,10 +7092,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "eeee1666d6bc2241"
+   "text_sha": "1b7653cab4c89835"
   },
   "listed": 2,
-  "text_chars": 4530
+  "text_chars": 4509
  },
  {
   "control_number": "42059",
@@ -7384,10 +7119,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "12c93920604c90d9"
+   "text_sha": "59966c46965e8d7e"
   },
   "listed": 2,
-  "text_chars": 3310
+  "text_chars": 3294
  },
  {
   "control_number": "42068",
@@ -7401,8 +7136,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
-   "title": "M ARKETING: STRATEGY, PLANNING  .............. 18",
-   "h1": "M ARKETING: STRATEGY, PLANNING  .............. 18",
+   "title": "M ARKETING: STRATEGY, PLANNING ..............18",
+   "h1": "M ARKETING: STRATEGY, PLANNING ..............18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7410,10 +7145,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e728d149715540e6"
+   "text_sha": "1df5aa3f876785a0"
   },
   "listed": 1,
-  "text_chars": 3369
+  "text_chars": 3356
  },
  {
   "control_number": "42201",
@@ -7431,8 +7166,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
-   "title": "ASSISTANTS  ................................... 9",
-   "h1": "ASSISTANTS  ................................... 9",
+   "title": "ASSISTANTS ................................... 9",
+   "h1": "ASSISTANTS ................................... 9",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7441,10 +7176,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "cd549581938ed9a2"
+   "text_sha": "a5c8240b4b1c45c2"
   },
   "listed": 5,
-  "text_chars": 7776
+  "text_chars": 7738
  },
  {
   "control_number": "42224",
@@ -7470,10 +7205,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "130c50bf435846b5"
+   "text_sha": "e7a33094f8d9a489"
   },
   "listed": 4,
-  "text_chars": 5648
+  "text_chars": 5630
  },
  {
   "control_number": "42225",
@@ -7492,8 +7227,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=147",
-   "title": "CIS 211 SECURITY+  CERTIFICATION PREPARATION  ........... 3",
-   "h1": "CIS 211 SECURITY+  CERTIFICATION PREPARATION  ........... 3",
+   "title": "CIS 211 SECURITY+  CERTIFICATION PREPARATION ........... 3",
+   "h1": "CIS 211 SECURITY+  CERTIFICATION PREPARATION ........... 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7503,10 +7238,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2b0ccebdc5a8e4a5"
+   "text_sha": "00d4c5ed4fb271b8"
   },
   "listed": 6,
-  "text_chars": 12663
+  "text_chars": 12619
  },
  {
   "control_number": "42227",
@@ -7525,8 +7260,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
-   "title": "M EDICAL ASSISTANT  ............................ 9",
-   "h1": "M EDICAL ASSISTANT  ............................ 9",
+   "title": "M EDICAL ASSISTANT ............................ 9",
+   "h1": "M EDICAL ASSISTANT ............................ 9",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7535,10 +7270,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "07c335d34f1768da"
+   "text_sha": "52f5543fdc288822"
   },
   "listed": 6,
-  "text_chars": 6399
+  "text_chars": 6369
  },
  {
   "control_number": "42239",
@@ -7566,10 +7301,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "525b9f9e89ff62d0"
+   "text_sha": "7653ecb393cdbc9d"
   },
   "listed": 6,
-  "text_chars": 4895
+  "text_chars": 4875
  },
  {
   "control_number": "42299",
@@ -7595,10 +7330,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0bc90a66c6017cb3"
+   "text_sha": "c42ae425fc677c74"
   },
   "listed": 4,
-  "text_chars": 2363
+  "text_chars": 2355
  },
  {
   "control_number": "42506",
@@ -7628,7 +7363,7 @@
    "text_sha": "c35c4bcfa174cc58"
   },
   "listed": 5,
-  "text_chars": 1736
+  "text_chars": 1729
  },
  {
   "control_number": "42507",
@@ -7656,10 +7391,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "e95d645ddfd89140"
+   "text_sha": "9b5c336902dea951"
   },
   "listed": 6,
-  "text_chars": 4119
+  "text_chars": 4103
  },
  {
   "control_number": "42564",
@@ -7678,8 +7413,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=191",
-   "title": "ENGLISH 240 LITERATURE AND THE MOTION PICTURE I  ............ 3",
-   "h1": "ENGLISH 240 LITERATURE AND THE MOTION PICTURE I  ............ 3",
+   "title": "ENGLISH 240 LITERATURE AND THE MOTION PICTURE I ............ 3",
+   "h1": "ENGLISH 240 LITERATURE AND THE MOTION PICTURE I ............ 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7689,10 +7424,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "fa78dc175e133f72"
+   "text_sha": "cc9b84f72f054aaf"
   },
   "listed": 6,
-  "text_chars": 10960
+  "text_chars": 10875
  },
  {
   "control_number": "42568",
@@ -7724,10 +7459,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "7eaedf5807b1ad86"
+   "text_sha": "7a0933403041e205"
   },
   "listed": 9,
-  "text_chars": 6681
+  "text_chars": 6654
  },
  {
   "control_number": "42649",
@@ -7748,8 +7483,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
-   "title": "RESPONSIBILITY II  .............................. 18",
-   "h1": "RESPONSIBILITY II  .............................. 18",
+   "title": "RESPONSIBILITY II ..............................18",
+   "h1": "RESPONSIBILITY II ..............................18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7757,10 +7492,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ec88a2e788714518"
+   "text_sha": "27acd30dc2152828"
   },
   "listed": 8,
-  "text_chars": 3440
+  "text_chars": 3414
  },
  {
   "control_number": "42650",
@@ -7790,10 +7525,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9aeb2cd5a9186bb3"
+   "text_sha": "caf737c6a57fc782"
   },
   "listed": 8,
-  "text_chars": 1695
+  "text_chars": 1682
  },
  {
   "control_number": "42651",
@@ -7818,8 +7553,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
-   "title": "DISCOVERING COMPUTERS: DIGITAL LITERACY  .... 3",
-   "h1": "DISCOVERING COMPUTERS: DIGITAL LITERACY  .... 3",
+   "title": "DISCOVERING COMPUTERS: DIGITAL LITERACY .... 3",
+   "h1": "DISCOVERING COMPUTERS: DIGITAL LITERACY .... 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7829,10 +7564,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6f4414f16ae4a516"
+   "text_sha": "572f3aa2a9ce66f8"
   },
   "listed": 12,
-  "text_chars": 10781
+  "text_chars": 10732
  },
  {
   "control_number": "42797",
@@ -7871,7 +7606,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "54e360f32b85a7d1"
+   "text_sha": "f159250414a5c85e"
   },
   "listed": 15,
   "text_chars": 16000
@@ -7921,8 +7656,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=119",
-   "title": "E.S.L. 008  ADVANCED ESL COMPOSITION AND HUMANITIES  ..... 6",
-   "h1": "E.S.L. 008  ADVANCED ESL COMPOSITION AND HUMANITIES  ..... 6",
+   "title": "E.S.L. 008 ADVANCED ESL COMPOSITION AND HUMANITIES  ..... 6",
+   "h1": "E.S.L. 008 ADVANCED ESL COMPOSITION AND HUMANITIES  ..... 6",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7932,10 +7667,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "bb44aff164add17a"
+   "text_sha": "5bad3dbe792480aa"
   },
   "listed": 34,
-  "text_chars": 12375
+  "text_chars": 12246
  },
  {
   "control_number": "43016",
@@ -7957,8 +7692,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=103",
-   "title": "MGMT 013 SMALL BUSINESS ENTREPRENEURSHIP  .............. 3",
-   "h1": "MGMT 013 SMALL BUSINESS ENTREPRENEURSHIP  .............. 3",
+   "title": "MGMT 013 SMALL BUSINESS ENTREPRENEURSHIP .............. 3",
+   "h1": "MGMT 013 SMALL BUSINESS ENTREPRENEURSHIP .............. 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7966,10 +7701,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "96ff0bc6b4e9bcce"
+   "text_sha": "82623498eb5217d7"
   },
   "listed": 9,
-  "text_chars": 4471
+  "text_chars": 4447
  },
  {
   "control_number": "43107",
@@ -8043,7 +7778,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "05c3b4dd3b910349"
+   "text_sha": "0159937f75f1e847"
   },
   "listed": 49,
   "text_chars": 16000
@@ -8083,10 +7818,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "8890f2c2e5845347"
+   "text_sha": "5f05b25acf78d5b2"
   },
   "listed": 13,
-  "text_chars": 14929
+  "text_chars": 14820
  },
  {
   "control_number": "43169",
@@ -8131,7 +7866,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c7fcca6a296085a7"
+   "text_sha": "f8c1b76cef2c0f8a"
   },
   "listed": 20,
   "text_chars": 16000
@@ -8188,7 +7923,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "d327819a077cd2d5"
+   "text_sha": "25e01cc083a760f6"
   },
   "listed": 29,
   "text_chars": 16000
@@ -8217,10 +7952,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ff8d53b4696b0eeb"
+   "text_sha": "5e563f760770c1fa"
   },
   "listed": 4,
-  "text_chars": 4453
+  "text_chars": 4421
  },
  {
   "control_number": "43526",
@@ -8252,10 +7987,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "339c376b905157d8"
+   "text_sha": "b043ed2ab8812453"
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 15979
  },
  {
   "control_number": "43527",
@@ -8284,10 +8019,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e5c96fb2f82dc030"
+   "text_sha": "3bfa271069ca9f05"
   },
   "listed": 7,
-  "text_chars": 9020
+  "text_chars": 8937
  },
  {
   "control_number": "43631",
@@ -8312,10 +8047,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "48752a0c6acb4f69"
+   "text_sha": "962c8607c5b0319e"
   },
   "listed": 3,
-  "text_chars": 1415
+  "text_chars": 1407
  },
  {
   "control_number": "43708",
@@ -8333,8 +8068,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
-   "title": "VOC ED 443CE INTRODUCTION TO PROJECT MANAGEMENT  ......... 36",
-   "h1": "VOC ED 443CE INTRODUCTION TO PROJECT MANAGEMENT  ......... 36",
+   "title": "VOC ED 443CE INTRODUCTION TO PROJECT MANAGEMENT ......... 36",
+   "h1": "VOC ED 443CE INTRODUCTION TO PROJECT MANAGEMENT ......... 36",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8342,10 +8077,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "bfd43efce4a72144"
+   "text_sha": "3ba31600b46703e9"
   },
   "listed": 5,
-  "text_chars": 3233
+  "text_chars": 3210
  },
  {
   "control_number": "43793",
@@ -8369,10 +8104,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "56dbb22aa2037a47"
+   "text_sha": "575816741c4967f2"
   },
   "listed": 2,
-  "text_chars": 4872
+  "text_chars": 4840
  },
  {
   "control_number": "43855",
@@ -8412,7 +8147,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "490b317466e83c71"
+   "text_sha": "dd2d75a48e3818e8"
   },
   "listed": 15,
   "text_chars": 16000
@@ -8441,10 +8176,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a076bcc626128e7c"
+   "text_sha": "60aa826ac91ea219"
   },
   "listed": 2,
-  "text_chars": 13112
+  "text_chars": 13054
  },
  {
   "control_number": "43867",
@@ -8471,10 +8206,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "65c77aa2370b8f11"
+   "text_sha": "14010f62360e6c18"
   },
   "listed": 3,
-  "text_chars": 10576
+  "text_chars": 10533
  },
  {
   "control_number": "44022",
@@ -8498,10 +8233,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "67800b94547b9e2d"
+   "text_sha": "16e924f9b3acc09f"
   },
   "listed": 2,
-  "text_chars": 1050
+  "text_chars": 1049
  },
  {
   "control_number": "44023",
@@ -8530,10 +8265,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "edf1a914aad465a3"
+   "text_sha": "d2c403ad796a6d79"
   },
   "listed": 6,
-  "text_chars": 9334
+  "text_chars": 9276
  },
  {
   "control_number": "44024",
@@ -8564,7 +8299,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "3e6df868c18658df"
+   "text_sha": "100920cad098d647"
   },
   "listed": 6,
   "text_chars": 16000
@@ -8597,7 +8332,7 @@
    "text_sha": "1ed64306d8e06366"
   },
   "listed": 5,
-  "text_chars": 1747
+  "text_chars": 1746
  },
  {
   "control_number": "44082",
@@ -8623,10 +8358,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5bb0c8c4022303ef"
+   "text_sha": "0369185e2a1b39df"
   },
   "listed": 3,
-  "text_chars": 9004
+  "text_chars": 8960
  },
  {
   "control_number": "44581",
@@ -8678,7 +8413,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "670d72e70426dff6"
+   "text_sha": "e79d592de5189b4c"
   },
   "listed": 27,
   "text_chars": 16000
@@ -8710,7 +8445,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "606aea1adcb05484"
+   "text_sha": "f108c8444b34b7c4"
   },
   "listed": 4,
   "text_chars": 16000
@@ -8742,7 +8477,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e48c00fc08c487fd"
+   "text_sha": "dfc7cb2241e0a83b"
   },
   "listed": 4,
   "text_chars": 16000
@@ -8775,7 +8510,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "9b1f2afb5cbf8a1b"
+   "text_sha": "9a9d4fb6023baa98"
   },
   "listed": 5,
   "text_chars": 16000
@@ -8808,7 +8543,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a8f250957daddcdf"
+   "text_sha": "ae2f2c85deb667f4"
   },
   "listed": 5,
   "text_chars": 16000
@@ -8838,10 +8573,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4229b451dae60785"
+   "text_sha": "8e9c3dff60a0b122"
   },
   "listed": 3,
-  "text_chars": 13470
+  "text_chars": 13394
  },
  {
   "control_number": "44594",
@@ -8871,7 +8606,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "93f4316402203e48"
+   "text_sha": "b83835563978af16"
   },
   "listed": 5,
   "text_chars": 16000
@@ -8903,10 +8638,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "68cf710eca0bf3d3"
+   "text_sha": "0c106a96c64f45af"
   },
   "listed": 5,
-  "text_chars": 14466
+  "text_chars": 14383
  },
  {
   "control_number": "44603",
@@ -8942,10 +8677,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "3c4e6e08be5463ad"
+   "text_sha": "edbb52ef44c80f47"
   },
   "listed": 13,
-  "text_chars": 11767
+  "text_chars": 11691
  },
  {
   "control_number": "44630",
@@ -8982,10 +8717,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a0db9ce592289d0d"
+   "text_sha": "b06c2f7574ce2e43"
   },
   "listed": 2,
-  "text_chars": 4121
+  "text_chars": 4106
  },
  {
   "control_number": "44632",
@@ -9010,10 +8745,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d52a9bf537f8647b"
+   "text_sha": "f84c0f8c12945dbc"
   },
   "listed": 3,
-  "text_chars": 2910
+  "text_chars": 2899
  },
  {
   "control_number": "44638",
@@ -9059,7 +8794,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "17c9460b4257d9e3"
+   "text_sha": "00f1155a8a689e6c"
   },
   "listed": 21,
   "text_chars": 16000
@@ -9086,10 +8821,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6c8ec6459aad95b8"
+   "text_sha": "6eefd67d839e9451"
   },
   "listed": 2,
-  "text_chars": 2153
+  "text_chars": 2147
  },
  {
   "control_number": "44915",
@@ -9111,8 +8846,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=91",
-   "title": "EARLY CHILDHOOD SETTINGS  ................... 3",
-   "h1": "EARLY CHILDHOOD SETTINGS  ................... 3",
+   "title": "EARLY CHILDHOOD SETTINGS ................... 3",
+   "h1": "EARLY CHILDHOOD SETTINGS ................... 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9121,10 +8856,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "10ef1b96796bedea"
+   "text_sha": "a247a756083fe758"
   },
   "listed": 9,
-  "text_chars": 7426
+  "text_chars": 7401
  },
  {
   "control_number": "44931",
@@ -9161,8 +8896,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=101",
-   "title": "KIN MAJ 201 HEALTH AND FITNESS CENTER MANAGEMENT  ........ 3",
-   "h1": "KIN MAJ 201 HEALTH AND FITNESS CENTER MANAGEMENT  ........ 3",
+   "title": "KIN MAJ 201 HEALTH AND FITNESS CENTER MANAGEMENT ........ 3",
+   "h1": "KIN MAJ 201 HEALTH AND FITNESS CENTER MANAGEMENT ........ 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9172,10 +8907,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "5fe298401e8b52b9"
+   "text_sha": "da9deb85871a564d"
   },
   "listed": 24,
-  "text_chars": 15781
+  "text_chars": 15679
  },
  {
   "control_number": "44946",
@@ -9374,10 +9109,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "130456520d81dca2"
+   "text_sha": "55639614571ce38c"
   },
   "listed": 203,
-  "text_chars": 5539
+  "text_chars": 5530
  },
  {
   "control_number": "44963",
@@ -9392,8 +9127,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
-   "title": "VOC ED 250CE  GUESTROOM ATTENDANT SKILLS TRAINING  .......... 18",
-   "h1": "VOC ED 250CE  GUESTROOM ATTENDANT SKILLS TRAINING  .......... 18",
+   "title": "VOC ED 250CE  GUESTROOM ATTENDANT SKILLS TRAINING ..........18",
+   "h1": "VOC ED 250CE  GUESTROOM ATTENDANT SKILLS TRAINING ..........18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9401,10 +9136,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6e97238f35f59f95"
+   "text_sha": "32a1903e9b0424d2"
   },
   "listed": 2,
-  "text_chars": 1346
+  "text_chars": 1338
  },
  {
   "control_number": "44987",
@@ -9443,7 +9178,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "fe821d98a5a51bf6"
+   "text_sha": "499208534c18366a"
   },
   "listed": 14,
   "text_chars": 16000
@@ -9453,225 +9188,12 @@
   "title": "Essential Skills",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.961,
-  "codes_found": [
-   "AFROAM20",
-   "AFROAM7",
-   "ANATOMY1",
-   "ANIMATN118",
-   "ANTHRO101",
-   "ANTHRO102",
-   "ANTHRO121",
-   "ANTHRO151",
-   "ARMEN11",
-   "ARMEN12",
-   "ARTHC1100",
-   "ARTHIST103",
-   "ARTHIST130",
-   "ARTHIST139",
-   "ARTHIST140",
-   "ARTHIST151",
-   "ARTHIST171",
-   "ASIAN1",
-   "ASL3",
-   "ASTRON1",
-   "ASTRON11",
-   "BIOLOGY25",
-   "BIOLOGY3",
-   "BIOLOGY6",
-   "BIOLOGY7",
-   "BUS15",
-   "CHDEV1",
-   "CHDEV11",
-   "CHEM101",
-   "CHEM102",
-   "CHEM211",
-   "CHEM212",
-   "CHEM221",
-   "CHEM60",
-   "CHICANO4",
-   "CHICANO44",
-   "CHICANO47",
-   "CHICANO7",
-   "CHICANO8",
-   "CHINESE10",
-   "CHINESE3",
-   "CHINESE4",
-   "CINEMA18",
-   "CINEMA4",
-   "COMM100",
-   "COMM104",
-   "COMM105",
-   "COMM121",
-   "COMM122",
-   "COMM151",
-   "COMMC1000",
-   "DANCEST805",
-   "EARTH1",
-   "ECONC2001",
-   "ENGLC1000",
-   "ENGLC1001",
-   "ENGLISH101Z",
-   "ENGLISH102",
-   "ENGLISH203",
-   "ENGLISH204",
-   "ENGLISH205",
-   "ENGLISH206",
-   "ENGLISH207",
-   "ENGLISH208",
-   "ENGLISH211",
-   "ENGLISH212",
-   "ENGLISH214",
-   "ENGLISH215",
-   "ENGLISH216",
-   "ENGLISH218",
-   "ENGLISH219",
-   "ENGLISH239",
-   "ENGLISH240",
-   "ENGLISH252",
-   "ENGLISH255",
-   "ENGLISH270",
-   "ENVSCI1",
-   "FAM&CS31",
-   "FRENCH10",
-   "FRENCH3",
-   "FRENCH4",
-   "GEOG1",
-   "GEOG14",
-   "GEOG15",
-   "GEOG2",
-   "GEOG7",
-   "GEOLOGY1",
-   "GEOLOGY2",
-   "GEOLOGY6",
-   "HISTORY5",
-   "HISTORY59",
-   "HISTORY6",
-   "HISTORY7",
-   "HISTORY73",
-   "HISTORY81",
-   "HISTORY82",
-   "HISTORY86",
-   "HISTORY87",
-   "HUMAN30",
-   "HUMAN31",
-   "HUMAN6",
-   "HUMAN61",
-   "HUMAN8",
-   "JAPAN14",
-   "JAPAN3",
-   "JAPAN4",
-   "JAPAN9",
-   "JOURNAL105",
-   "KOREAN10",
-   "KOREAN13",
-   "KOREAN26",
-   "KOREAN3",
-   "KOREAN4",
-   "LAW3",
-   "LING1",
-   "LING2",
-   "LING3",
-   "MATH229",
-   "MATH230",
-   "MATH236",
-   "MATH245",
-   "MATH260",
-   "MATH260S",
-   "MATH261",
-   "MATH261S",
-   "MATH262",
-   "MATH263",
-   "MATH270",
-   "MATH272",
-   "MATH275",
-   "MICRO1",
-   "MICRO20",
-   "MUSIC111",
-   "MUSIC116",
-   "MUSIC118",
-   "MUSIC121",
-   "MUSIC122",
-   "MUSIC135",
-   "MUSIC136",
-   "MUSIC141",
-   "PHILOS1",
-   "PHILOS14",
-   "PHILOS20",
-   "PHILOS30",
-   "PHILOS32",
-   "PHILOS40",
-   "PHILOS5",
-   "PHOTO34",
-   "PHOTO501",
-   "PHYSICS101",
-   "PHYSICS102",
-   "PHYSICS103",
-   "PHYSICS11",
-   "PHYSICS12",
-   "PHYSICS14",
-   "PHYSICS161",
-   "PHYSICS21",
-   "PHYSICS22",
-   "PHYSICS6",
-   "PHYSICS7",
-   "PHYSIOL1",
-   "POLSC1000",
-   "POLSCI14",
-   "POLSCI19",
-   "POLSCI2",
-   "POLSCI5",
-   "POLSCI60",
-   "POLSCI7",
-   "PSYCC1000",
-   "PSYCH13",
-   "PSYCH14",
-   "PSYCH2",
-   "PSYCH41",
-   "PSYCH52",
-   "PSYCH74",
-   "RUSSIAN10",
-   "RUSSIAN3",
-   "RUSSIAN4",
-   "SOC1",
-   "SOC11",
-   "SOC12",
-   "SOC125",
-   "SOC2",
-   "SOC22",
-   "SOC31",
-   "SOC32",
-   "SPANISH10",
-   "SPANISH11",
-   "SPANISH15",
-   "SPANISH3",
-   "SPANISH4",
-   "SPANISH6",
-   "SPANISH9",
-   "STATC1000",
-   "THEATER100",
-   "THEATER110",
-   "THEATER338",
-   "THEATER400"
-  ],
-  "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=59",
-   "title": "58 LA CC 2025-2026 COLLEGE CATALOG",
-   "h1": "58 LA CC 2025-2026 COLLEGE CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    59,
-    60,
-    61
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "f96eaf3017df136a"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 206,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "45172",
@@ -9692,8 +9214,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=103",
-   "title": "THERAPY AIDE  ................................. 1",
-   "h1": "THERAPY AIDE  ................................. 1",
+   "title": "THERAPY AIDE ................................. 1",
+   "h1": "THERAPY AIDE ................................. 1",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9701,10 +9223,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "42b1dce0226371b2"
+   "text_sha": "dac0789b2cf79999"
   },
   "listed": 8,
-  "text_chars": 2129
+  "text_chars": 2118
  },
  {
   "control_number": "45792",
@@ -9730,10 +9252,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "664a3f03875a5559"
+   "text_sha": "87ac193e5fb19012"
   },
   "listed": 3,
-  "text_chars": 6996
+  "text_chars": 6962
  },
  {
   "control_number": "45934",
@@ -9750,8 +9272,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
-   "title": "VOC ED 405 CE PROFESSIONALISM IN HEALTH OCCUPATIONS  ........ 18",
-   "h1": "VOC ED 405 CE PROFESSIONALISM IN HEALTH OCCUPATIONS  ........ 18",
+   "title": "VOC ED 405 CE PROFESSIONALISM IN HEALTH OCCUPATIONS ........18",
+   "h1": "VOC ED 405 CE PROFESSIONALISM IN HEALTH OCCUPATIONS ........18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9760,10 +9282,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f7fe41074222bab8"
+   "text_sha": "5264f14892fe9b19"
   },
   "listed": 4,
-  "text_chars": 6867
+  "text_chars": 6839
  },
  {
   "control_number": "46097",
@@ -9798,10 +9320,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f0e785bc154bbb8b"
+   "text_sha": "39046f364f62f225"
   },
   "listed": 12,
-  "text_chars": 6130
+  "text_chars": 6107
  },
  {
   "control_number": "46117",
@@ -9844,10 +9366,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "860736c6da07d6b3"
+   "text_sha": "ea06d99e6a4df24d"
   },
   "listed": 19,
-  "text_chars": 14111
+  "text_chars": 14047
  },
  {
   "control_number": "46149",
@@ -9879,10 +9401,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "41502b18a08444b3"
+   "text_sha": "6659bcf9f6696134"
   },
   "listed": 9,
-  "text_chars": 6352
+  "text_chars": 6322
  },
  {
   "control_number": "46188",
@@ -9908,10 +9430,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c8f8ff400d268d57"
+   "text_sha": "affd13f2445a805f"
   },
   "listed": 4,
-  "text_chars": 2410
+  "text_chars": 2403
  },
  {
   "control_number": "46272",
@@ -9938,10 +9460,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9a3c42edbc1fcdb1"
+   "text_sha": "7fb6fae85388c032"
   },
   "listed": 4,
-  "text_chars": 7575
+  "text_chars": 7547
  },
  {
   "control_number": "46355",
@@ -9978,10 +9500,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "74c7621fd0a93b49"
+   "text_sha": "3208c924b652ab16"
   },
   "listed": 12,
-  "text_chars": 14734
+  "text_chars": 14684
  },
  {
   "control_number": "46374",
@@ -10021,10 +9543,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "9b8f28efc48bd969"
+   "text_sha": "ed5ecd9683fd5fe6"
   },
   "listed": 16,
-  "text_chars": 11317
+  "text_chars": 11275
  },
  {
   "control_number": "46381",
@@ -10047,8 +9569,8 @@
   ],
   "source": {
    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=174",
-   "title": "ADDICST 084  FIELD WORK PRACTICUM  ........................... 4",
-   "h1": "ADDICST 084  FIELD WORK PRACTICUM  ........................... 4",
+   "title": "ADDICST 084 FIELD WORK PRACTICUM ........................... 4",
+   "h1": "ADDICST 084 FIELD WORK PRACTICUM ........................... 4",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -10058,10 +9580,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "45dcefed81f587ce"
+   "text_sha": "f55042de24703032"
   },
   "listed": 10,
-  "text_chars": 14483
+  "text_chars": 14399
  },
  {
   "control_number": "46432",
@@ -10101,10 +9623,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "6671e75ffb389d07"
+   "text_sha": "af59bc0a2b1e3d9a"
   },
   "listed": 18,
-  "text_chars": 8809
+  "text_chars": 8750
  },
  {
   "control_number": "46433",
@@ -10147,7 +9669,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a0ebd391c7419d4b"
+   "text_sha": "414734b29ca924bf"
   },
   "listed": 18,
   "text_chars": 16000
@@ -10197,7 +9719,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c01012ad6b4d32be"
+   "text_sha": "8ee1bd309f08637d"
   },
   "listed": 22,
   "text_chars": 16000
@@ -10313,7 +9835,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "9ab810add137e9b4"
+   "text_sha": "a679108c28917c93"
   },
   "listed": 89,
   "text_chars": 16000

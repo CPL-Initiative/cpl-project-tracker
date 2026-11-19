@@ -446,5 +446,6 @@
    "Catalog prints codes with hyphens (ENGL-C1001); treated as the same courses as the closed list's ENGL C1001 etc."
   ]
  },
- "extracted_run": "39061732843"
+ "extracted_run": "39061732843",
+ "catalog_year": "2026-2027"
 }
