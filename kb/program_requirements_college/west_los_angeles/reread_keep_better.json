@@ -1,0 +1,204 @@
+{
+ "college": "West Los Angeles College",
+ "run": "44475503054",
+ "written": "2026-11-19T07:29:24Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [
+  "17111",
+  "37050",
+  "37839",
+  "39618"
+ ],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/harvest-wave-s683",
+   "inputs": {
+    "college": "West Los Angeles College",
+    "step": "reread",
+    "force": "44475503054"
+   },
+   "posts": 2,
+   "control_numbers": [
+    "32935",
+    "45685"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 3,
+  "kept": 2,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 1,
+  "new": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 1,
+  "records_after": 202,
+  "dropped_by_filing": 12,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44475503054": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T07:29:24Z",
+   "counts": {
+    "reread": 3,
+    "kept": 2,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 1,
+    "new": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 1,
+    "records_after": 202,
+    "dropped_by_filing": 12,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "03317",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19524",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19526",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19847",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19848",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24160",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "37983",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "38647",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39510",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40106",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "43507",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "46261",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "32935",
+     "title": "Early Childhood Education",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=97",
+     "filed_source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+     "filed_run": "39536207109",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "38677",
+     "title": "ESL Pathways",
+     "award": "Noncredit program",
+     "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "equal"
+     },
+     "outcome": "held",
+     "why": "no filed record, and the re-read's heading 'ACADEMIC PROGRAM CODE: W038677F' shares no word with the title 'ESL Pathways'"
+    },
+    {
+     "control_number": "45685",
+     "title": "Licensed Vocational Nursing",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134",
+     "filed_source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=209",
+     "filed_run": "39536207109",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  }
+ }
+}

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "American Sign Language/Interpreting",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=137",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7843,
+  "input_tokens": 9875,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7843,
-    "output_tokens": 1649,
+    "input_tokens": 9875,
+    "output_tokens": 1740,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1649,
+  "output_tokens": 1740,
   "output_tokens_details": {
-   "thinking_tokens": 522
+   "thinking_tokens": 478
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06435,
- "ms": 14125,
- "seconds": 14.2,
+ "cost_usd": 0.0743,
+ "ms": 14388,
+ "seconds": 14.7,
  "parts": null,
  "error": null,
  "score": {
@@ -92,25 +92,31 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Develop receptive and expressive skills in American Sign Language and Fingerspelling.",
+    "Develop knowledge and awareness of the similarities and differences between the Deaf Culture/Deaf community and the hearing community."
+   ],
+   "why": [
+    "not in the catalog text as printed: Develop receptive and expressive skills in American Sign Language and Fingerspel",
+    "not in the catalog text as printed: Develop knowledge and awareness of the similarities and differences between the "
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "CERTIFICATE - REQUIRED COURSES",
+   "section_heading": "AMERICAN SIGN LANGUAGE/INTERPRETING Certificate of Achievement (STATE CODE 37234)",
    "measure": "units",
    "total_units": {
     "min": 32,
@@ -137,7 +143,9 @@
     "Accurately interpret and transliterate between ASL and English in educational settings and community settings.",
     "Apply professional standards, practices, and ethics, not limited to the tenets of the Code of Professional Conduct, to interpreting."
    ],
-   "careers": []
+   "careers": [
+    "ASL/English interpreter"
+   ]
   },
   "blocks": [
    {
@@ -246,26 +254,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page begins mid-section; the program's own title heading is on the previous page and not in the text. The award line reads 'American Sign Language/Interpreting Certificate P037234D', so 'CERTIFICATE - REQUIRED COURSES' is used as the section heading.",
-   "Catalog prints codes with leading zeros (e.g., A S L 004); these were matched to closed-list codes without zeros (A S L 4) and not marked as catalog additions.",
-   "The Program Learning Outcomes printed on this page precede the certificate requirements and are read as belonging to the ASL/Interpreting program as a whole; the certificate shares them.",
-   "No careers are named; the text only refers to the Gainful Employment Disclosure website.",
-   "Text following the certificate (French A.A.) belongs to a different program and was ignored."
+   "Read only the Certificate of Achievement section (State code 37234, pages 136-137); the A.A. section above it adds a 3-unit elective choice (ANTHRO 161, COMM 121, COMM C1000) and totals 35 units, which do not apply to the certificate.",
+   "Catalog prints codes with leading zeros (A S L 004); matched to closed-list codes without zeros (A S L 4 etc.).",
+   "A S L 006, 022, 055 and 065 appear in the certificate's required list but are not in the closed list; recorded as catalog additions.",
+   "Required course units sum to 32, matching the printed CERTIFICATE - TOTAL UNITS 32.",
+   "Outcomes: the PDF breaks words with hyphens across lines ('Lan - guage', 'dif - ferences'); these were rejoined as 'Language' and 'differences'. The same outcomes list is also printed for the A.A. degree.",
+   "Career taken from the program description ('entry level employment as an ASL/English interpreter'); the listed work settings (college & university level, video relay service, etc.) were not recorded as careers."
   ]
  },
- "extracted_run": "44475498778",
- "catalog_year": "2026-2027",
- "source_sha": "ac3bd06bd6c3e087",
- "source_codes": [
-  "ASL10",
-  "ASL16",
-  "ASL23",
-  "ASL25",
-  "ASL30",
-  "ASL31",
-  "ASL4",
-  "ASL40",
-  "ASL5"
- ],
- "source_coverage": 1.0
+ "extracted_run": "39006383070"
 }
