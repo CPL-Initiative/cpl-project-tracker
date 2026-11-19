@@ -84,7 +84,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05130",
@@ -178,7 +182,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "05143",
@@ -248,7 +256,7 @@
    }
   },
   "listed": 46,
-  "text_chars": 15938
+  "text_chars": 16000
  },
  {
   "control_number": "07077",
@@ -370,7 +378,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "07866",
@@ -430,7 +442,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "07872",
@@ -627,7 +643,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 14192
+  "text_chars": 14252
  },
  {
   "control_number": "11747",
@@ -718,7 +734,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11835",
@@ -730,7 +750,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "12111",
@@ -763,7 +787,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 14192
+  "text_chars": 14252
  },
  {
   "control_number": "12306",
@@ -845,7 +869,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "15183",
@@ -943,7 +971,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16232",
@@ -985,7 +1017,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "17363",
@@ -1083,7 +1119,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 14935
+  "text_chars": 15065
  },
  {
   "control_number": "18311",
@@ -1551,7 +1587,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 14192
+  "text_chars": 14252
  },
  {
   "control_number": "20767",
@@ -1584,7 +1620,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 14192
+  "text_chars": 14252
  },
  {
   "control_number": "21974",
@@ -1785,7 +1821,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "21982",
@@ -1836,7 +1876,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "21984",
@@ -1928,7 +1972,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "21991",
@@ -2020,7 +2068,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "21995",
@@ -2153,7 +2205,7 @@
    }
   },
   "listed": 43,
-  "text_chars": 15093
+  "text_chars": 15223
  },
  {
   "control_number": "21999",
@@ -2214,7 +2266,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 13848
+  "text_chars": 13928
  },
  {
   "control_number": "22002",
@@ -2339,7 +2391,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22008",
@@ -2351,7 +2407,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30004",
@@ -2363,7 +2423,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30005",
@@ -2375,7 +2439,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30006",
@@ -2387,7 +2455,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30007",
@@ -2399,7 +2471,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30008",
@@ -2411,7 +2487,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30238",
@@ -2465,7 +2545,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30274",
@@ -2477,7 +2561,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "30674",
@@ -2652,7 +2740,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "31821",
@@ -2660,14 +2752,25 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "HIST100",
+   "HIST100H",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST103",
+   "HIST104",
+   "HIST107",
+   "HIST113",
+   "HIST115",
    "HIST116",
    "HIST117",
    "HIST141",
    "HIST142",
    "HIST145",
    "HIST146",
+   "HIST150",
    "HIST165",
    "HISTC1001",
    "HISTC1001H",
@@ -2675,20 +2778,20 @@
    "HISTC1002H"
   ],
   "source": {
-   "url": "https://catalog.miracosta.edu/transferinfo/csu/",
-   "title": "CSU Transfer | MiraCosta College Catalog",
-   "h1": "CSU Transfer",
-   "text_from": "innerText",
+   "url": "https://catalog.miracosta.edu/disciplines/history/",
+   "title": "History | MiraCosta College Catalog",
+   "h1": "History",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "award": 0,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "associate in arts degree history for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
-  "text_chars": 4483
+  "text_chars": 16000
  },
  {
   "control_number": "31936",
@@ -2696,7 +2799,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.762,
+  "coverage": 1.0,
   "codes_found": [
    "ART100",
    "ART101",
@@ -2713,23 +2816,28 @@
    "ART234",
    "ART244",
    "ART245",
-   "ART251"
+   "ART251",
+   "ARTH158",
+   "ARTH260",
+   "ARTH260H",
+   "ARTHC1100",
+   "ARTHC1200"
   ],
   "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
-   "title": "Liberal Arts: Creative and Applied Arts | MiraCosta College Catalog",
-   "h1": "Liberal Arts: Creative and Applied Arts",
-   "text_from": "innerText",
+   "url": "https://catalog.miracosta.edu/disciplines/art/",
+   "title": "Art | MiraCosta College Catalog",
+   "h1": "Art",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 0.0,
+    "section": "adt",
+    "section_line": "associate in arts degree studio arts for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 21,
-  "text_chars": 5177
+  "text_chars": 16000
  },
  {
   "control_number": "31937",
@@ -3326,9 +3434,9 @@
    "label": {
     "award": 1,
     "title": 0.333,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency advanced noncredit esl",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3339,44 +3447,12 @@
   "title": "Basic Education for Academic or Workforce Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "HSENG16",
-   "HSENG17",
-   "HSENG21",
-   "HSENG22",
-   "HSENG23",
-   "HSENG25",
-   "NCABE11",
-   "NCENG15",
-   "NCENG16",
-   "NCENG17",
-   "NCENG21",
-   "NCENG22",
-   "NCENG23",
-   "NCENG25",
-   "NCMTH11",
-   "NCMTH12",
-   "NCMTH13",
-   "NCMTH20",
-   "NCMTH21"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
-   "title": "Lifelong Learning (General NC) | MiraCosta College Catalog",
-   "h1": "Lifelong Learning (General NC)",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 38,
-  "text_chars": 15758
+  "text_chars": 0
  },
  {
   "control_number": "36121",
@@ -3622,7 +3698,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 15077
+  "text_chars": 15167
  },
  {
   "control_number": "36148",
@@ -3696,7 +3772,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 11241
+  "text_chars": 11291
  },
  {
   "control_number": "36153",
@@ -4116,9 +4192,9 @@
    "label": {
     "award": 1,
     "title": 0.333,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency intermediate noncredit esl",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4134,7 +4210,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36305",
@@ -4268,7 +4348,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 11767
+  "text_chars": 11817
  },
  {
   "control_number": "36417",
@@ -4303,7 +4383,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 10069
+  "text_chars": 10079
  },
  {
   "control_number": "36418",
@@ -4370,7 +4450,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 9636
+  "text_chars": 9686
  },
  {
   "control_number": "36427",
@@ -4499,7 +4579,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 10503
+  "text_chars": 10573
  },
  {
   "control_number": "37240",
@@ -4542,33 +4622,12 @@
   "title": "Social Justice Studies: Gender Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.889,
-  "codes_found": [
-   "ANTH107",
-   "ETHN207",
-   "PSYC104",
-   "PSYC104H",
-   "SOCI105",
-   "SOCI125",
-   "SOCI130",
-   "SOCI140"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/liberalartssocialandbehavioralsciences/",
-   "title": "Liberal Arts: Social and Behavioral Sciences | MiraCosta College Catalog",
-   "h1": "Liberal Arts: Social and Behavioral Sciences",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.2,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 7617
+  "text_chars": 0
  },
  {
   "control_number": "37407",
@@ -4611,37 +4670,19 @@
    }
   },
   "listed": 20,
-  "text_chars": 13161
+  "text_chars": 13050
  },
  {
   "control_number": "37408",
   "title": "Social Justice Studies: LGBTQ Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.625,
-  "codes_found": [
-   "ETHN207",
-   "FILM211",
-   "SOCI105",
-   "SOCI130",
-   "SOCI140"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/liberalartsmulticulturalstudies/",
-   "title": "Liberal Arts: Multicultural Studies | MiraCosta College Catalog",
-   "h1": "Liberal Arts: Multicultural Studies",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.4,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 6768
+  "text_chars": 0
  },
  {
   "control_number": "37409",
@@ -4713,7 +4754,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 11780
+  "text_chars": 11820
  },
  {
   "control_number": "38712",
@@ -4746,7 +4787,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 11780
+  "text_chars": 11820
  },
  {
   "control_number": "38727",
@@ -4887,45 +4928,19 @@
    }
   },
   "listed": 39,
-  "text_chars": 13417
+  "text_chars": 13457
  },
  {
   "control_number": "38751",
   "title": "Social Justice Studies: Chicana and Chicano Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CCS100",
-   "CCS232",
-   "ETHN207",
-   "HIST141",
-   "HIST142",
-   "LIT100",
-   "SOCI120",
-   "SOCI125",
-   "SOCI130",
-   "SOCI207",
-   "STATC1000",
-   "STATC1000E",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-   "title": "MCGE | MiraCosta College Catalog",
-   "h1": "MCGE",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "38963",
@@ -4937,7 +4952,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "39140",
@@ -4989,9 +5008,9 @@
    "label": {
     "award": 1,
     "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency english fundamentals: reading and writing for academic preparation",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5014,9 +5033,21 @@
   "title": "High School Equivalency Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 0.519,
+  "method": "link_search",
+  "coverage": 1.0,
   "codes_found": [
+   "HSAGT10",
+   "HSECN10",
+   "HSSCI11",
+   "HSSCI12",
+   "HSSCI21",
+   "HSSCI22",
+   "HSSCI23",
+   "HSSCI41",
+   "HSUSH11",
+   "HSUSH12",
+   "HSWHG11",
+   "HSWHG12",
    "NCABE11",
    "NCABE92",
    "NCENG15",
@@ -5030,23 +5061,18 @@
    "NCMTH12",
    "NCMTH13",
    "NCMTH20",
-   "NCMTH21"
+   "NCMTH21",
+   "NCWFP11"
   ],
   "source": {
-   "url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
-   "title": "Lifelong Learning (General NC) | MiraCosta College Catalog",
-   "h1": "Lifelong Learning (General NC)",
+   "url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/",
+   "title": "Adult High School | MiraCosta College Catalog",
+   "h1": "Adult High School",
    "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+   "label": null
   },
   "listed": 27,
-  "text_chars": 15758
+  "text_chars": 16000
  },
  {
   "control_number": "39492",
@@ -5109,62 +5135,19 @@
    }
   },
   "listed": 26,
-  "text_chars": 6941
+  "text_chars": 6971
  },
  {
   "control_number": "40264",
   "title": "Liberal Arts: Elementary Subject Matter Education",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.612,
-  "codes_found": [
-   "ART100",
-   "ART101",
-   "ART103",
-   "ARTH157",
-   "CCS232",
-   "COMM106",
-   "COMM212",
-   "COMMC1000",
-   "COMMC1004",
-   "DNCE101",
-   "DRAM105",
-   "DRAM130",
-   "ENGLC1000",
-   "ENGLC1001",
-   "ENGLC1001H",
-   "ENGLC1002",
-   "ENGLC1003",
-   "ENGLC1003H",
-   "FREN101",
-   "GRMN101",
-   "HIST100",
-   "HIST100H",
-   "HISTC1001",
-   "HISTC1001H",
-   "ITAL101",
-   "JAPN101",
-   "MUS116",
-   "PHIL100",
-   "READ100",
-   "SPAN101"
-  ],
-  "source": {
-   "url": "https://catalog.miracosta.edu/disciplines/liberalartsartsandhumanities/",
-   "title": "Liberal Arts: Arts and Humanities | MiraCosta College Catalog",
-   "h1": "Liberal Arts: Arts and Humanities",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.333,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 49,
-  "text_chars": 9248
+  "text_chars": 0
  },
  {
   "control_number": "40327",
@@ -5210,7 +5193,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 13417
+  "text_chars": 13457
  },
  {
   "control_number": "40575",
@@ -5239,7 +5222,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 10069
+  "text_chars": 10079
  },
  {
   "control_number": "40576",
@@ -5272,7 +5255,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 9636
+  "text_chars": 9686
  },
  {
   "control_number": "40577",
@@ -5392,7 +5375,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 13691
+  "text_chars": 13741
  },
  {
   "control_number": "41611",
@@ -5440,7 +5423,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "41618",
@@ -5603,7 +5590,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 15057
+  "text_chars": 15147
  },
  {
   "control_number": "41723",
@@ -5761,7 +5748,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 12635
+  "text_chars": 12725
  },
  {
   "control_number": "42864",
@@ -5811,7 +5798,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 13161
+  "text_chars": 13050
  },
  {
   "control_number": "43719",
@@ -5920,7 +5907,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 8319
+  "text_chars": 8369
  },
  {
   "control_number": "44000",
@@ -5969,7 +5956,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 9669
+  "text_chars": 9719
  },
  {
   "control_number": "44614",

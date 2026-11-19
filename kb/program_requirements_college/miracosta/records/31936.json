@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Studio Arts",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
+ "source_url": "https://catalog.miracosta.edu/disciplines/art/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8423,
+  "input_tokens": 12027,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8423,
-    "output_tokens": 1812,
+    "input_tokens": 12027,
+    "output_tokens": 2348,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1812,
+  "output_tokens": 2348,
   "output_tokens_details": {
-   "thinking_tokens": 360
+   "thinking_tokens": 810
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06993,
- "ms": 15948,
- "seconds": 17.0,
+ "cost_usd": 0.09507,
+ "ms": 19242,
+ "seconds": 23.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 21,
    "listed": 21,
-   "share": 0.0,
-   "missing": [
-    "ART100",
-    "ART101",
-    "ART102",
-    "ART103",
-    "ART203",
-    "ART204",
-    "ART207",
-    "ART210",
-    "ART216",
-    "ART223",
-    "ART225",
-    "ART232",
-    "ART234",
-    "ART244",
-    "ART245",
-    "ART251",
-    "ARTH158",
-    "ARTH260",
-    "ARTH260H",
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -83,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -120,22 +99,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Associate in Arts Degree — Studio Arts for Transfer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -145,102 +124,206 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Upon completion of this program, the student will possess knowledge and mastery of a variety of art making skills, be able to identify major movements in art and architecture, and be able to convey ideas and concepts about artwork."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ART 100",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
+    "name": "Required Core (12 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ART 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ART 102",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
+    "name": "List A (select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH 158",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH 260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH 260H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ART 103",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 203",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 204",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 207",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 210",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 216",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 223",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 225",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 232",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 234",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 244",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 245",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART 251",
-    "why": "Studio Arts A.A-T section not in the text; listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ART101",
-    "why": "Studio Arts A.A-T section not in the text; ART 101 listed only in the Liberal Arts: Creative and Applied Arts A.A. section"
-   },
-   {
-    "code": "ARTH158",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTH260",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTH260H",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTHC1100",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTHC1200",
-    "why": "not in the text"
+    "name": "List B (select three courses)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ART 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 203",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 204",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 207",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 216",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 223",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 232",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 234",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 244",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 245",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 251",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied catalog text is the Liberal Arts: Creative and Applied Arts page (Associate in Arts Degree, Liberal Arts with an Area of Emphasis in Creative and Applied Arts), not the Studio Arts A.A-T. No section for the Studio Arts A.A-T appears in the text, so no blocks, totals, outcomes or careers were recorded; section_heading is left empty.",
-   "The Liberal Arts page's program student learning outcome and its 'Select a minimum of 18 units' list belong to a different award and were not recorded for Studio Arts A.A-T.",
-   "The text is cut off mid-list (ends at DNCE 254). A reviewer should locate the Studio Arts A.A-T section on the college's Art discipline page."
+   "Closed-list codes without spaces (ART101, ARTH158, ARTH260, ARTH260H, ARTHC1100, ARTHC1200) were matched to the catalog's spaced codes (ART 101, ARTH 158, ARTH 260, ARTH 260H, ARTH C1100, ARTH C1200).",
+   "ARTH 260H is printed as its own line in List A; recorded as the honors alternative of ARTH 260.",
+   "List A and List B courses print no individual units; only list totals (3 and 9) are printed.",
+   "ART 207 is titled 'Film Photography I' in the catalog but 'Beginning Photography' in the state file; same code.",
+   "The 'Complete a minimum of 60 CSU-transferable semester units' line is a general graduation requirement for transfer degrees, not recorded as degree_total. No Cal-GETC unit figure is printed.",
+   "Courses marked * also satisfy Cal-GETC GE requirements."
   ]
  },
- "extracted_run": "39746427354"
+ "extracted_run": "44529741837",
+ "catalog_year": "2026-2027"
 }
