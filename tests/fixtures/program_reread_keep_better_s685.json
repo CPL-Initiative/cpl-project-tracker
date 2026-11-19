@@ -1166,5 +1166,77 @@
    "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-coa/",
    "own_address": true
   }
+ ],
+ "award_ending_cases": [
+  {
+   "slug": "college_of_the_redwoods",
+   "control_number": "01821",
+   "title": "Welding Technology",
+   "award": "A.S. Degree",
+   "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-ca-fall-2025",
+   "award_tail": "-ca",
+   "own_address": false,
+   "note": "COBIx on #3553, finding 1: the certificate's page (sources.json files it for 22673); -ca names no award slug_awards reads, and main's address test passed the A.S. here"
+  },
+  {
+   "slug": "college_of_the_redwoods",
+   "control_number": "22673",
+   "title": "Welding Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-ca-fall-2025",
+   "award_tail": "-ca",
+   "own_address": false,
+   "note": "the certificate on its own page shows nothing by the address either: slug_awards cannot read -ca (a false negative; the capture's title or h1 can still show the page)"
+  },
+  {
+   "slug": "college_of_the_redwoods",
+   "control_number": "01821",
+   "title": "Welding Technology",
+   "award": "A.S. Degree",
+   "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-fall-2025",
+   "award_tail": "",
+   "own_address": true,
+   "note": "the A.S.'s own page (sources.json files it for 01821): no award ending, read as on main"
+  },
+  {
+   "slug": "san_bernardino_valley",
+   "control_number": "39404",
+   "title": "Studio Arts",
+   "award": "A.A. Degree",
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/",
+   "award_tail": "-aa-t-degree",
+   "own_address": false,
+   "note": "constructed from 39404's address: an A.A. on the AA-T's page, COBIx's case (the Santa Rosa Junior 16986 shape); main's address test passed it"
+  },
+  {
+   "slug": "san_bernardino_valley",
+   "control_number": "39404",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/",
+   "award_tail": "-aa-t-degree",
+   "own_address": false,
+   "note": "the AA-T on its own page: slug_awards cannot read -aa-t-degree, so the address shows nothing (a false negative); the S685 replay keeps 39404 on its page title"
+  },
+  {
+   "slug": "ventura",
+   "control_number": "31298",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/administration-justice-ast/",
+   "award_tail": "-ast",
+   "own_address": true,
+   "note": "the stripped ending names the program's kind (adt)"
+  },
+  {
+   "slug": "ventura",
+   "control_number": "44186",
+   "title": "Administration in Early Education",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/administration-in-early-education-coa/",
+   "award_tail": "-coa",
+   "own_address": true,
+   "note": "the stripped ending names the program's kind (coa)"
+  }
  ]
 }

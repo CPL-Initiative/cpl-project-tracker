@@ -37,6 +37,10 @@ so the reread leaves that row alone. This test guards the failure mode: a filed 
     program's is held where the live row already holds this run (a wrong record live, the run in the why), and
     restored where the live run is a third one; a live run equal to this run is already posted: kept on the branch,
     named by no dispatch, a second pass after the post changes no file; a live run other than the filed one is held;
+  * COBIx on #3553: an award ending stripped from the address shows nothing unless the reader's slug_awards reads it
+    as the program's kind (College of the Redwoods 01821, the A.S. on the certificate's -ca page; an A.A. on an
+    -aa-t-degree page), an ending naming the program's kind still passes, an address with no ending reads as on
+    main, and the decision row carries the stripped ending as award_tail;
   * with live_runs absent, the every-branch fixture's outcomes, files and dispatch equal main's script at 94a02499
     (tests/fixtures/program_reread_keep_better_main_snapshot.json).
 
@@ -697,11 +701,64 @@ def test_capture_names_another_award(tmp):
           is not None, "heading_named fails beside a line naming no award")
 
 
+def test_award_ending(tmp):
+    """COBIx on #3553, finding 1: an award ending stripped from the address must be one the reader's slug_awards reads
+    as the program's kind, or the address shows nothing. Real addresses: College of the Redwoods 01821 (the A.S. on
+    the certificate's welding-technology-ca-fall-2025), an A.A. on San Bernardino Valley's studio-arts-aa-t-degree;
+    an ending naming the program's own kind still passes, and an address with no ending reads as on main. Finding 2:
+    the stripped ending is on the decision row as award_tail, "" when none."""
+    with open(REAL) as fh:
+        cases = json.load(fh)["award_ending_cases"]
+    check(sum(not c["own_address"] and c["award_tail"] in ("-ca", "-aa-t-degree") for c in cases) >= 2 and
+          any(c["own_address"] and c["award_tail"] for c in cases) and
+          any(c["own_address"] and not c["award_tail"] for c in cases), "the award-ending cases are not all there")
+    for c in cases:
+        note = {}
+        got = K.page_is_own({"control_number": c["control_number"], "title": c["title"], "award": c["award"],
+                             "source_url": c["source_url"]}, None, note)
+        check((got is not None) == c["own_address"], "%s %s (%s) on %s: %r"
+              % (c["control_number"], c["title"], c["award"][:20], c["source_url"], got))
+        check(note.get("award_tail") == c["award_tail"], "%s: award_tail %r, expected %r"
+              % (c["control_number"], note.get("award_tail"), c["award_tail"]))
+    # Through keep_better, with the fixture's Business Administration A.S.
+    base = "https://catalog.x.edu/programs-courses/business/"
+    folder_cases = {
+        "54001": (WORSE, PASS, "REQUIREMENTS", base + "business-administration-ca-fall-2025/"),  # the certificate's
+        "54002": (WORSE, PASS, "Course List", base + "business-administration-aa-t-degree/"),    # the AA-T's
+        "54003": (WORSE, PASS, "REQUIREMENTS", CL_URL),                                          # -as: its own kind
+        "54004": (WORSE, PASS, "Requirements", base + "business-administration/"),               # no ending
+        "54005": (WORSE, PASS, "Requirements", "https://x.edu/business-administration-ca"),     # the page title shows it
+        "54006": (WORSE, PASS, OWN, base + "business-administration-ca/"),                       # a heading naming it
+    }
+    sources = [source_entry("54005", "https://x.edu/business-administration-ca",
+                            title="Business Administration - Associate in Science | Fixture College Catalog")]
+    folder, rdir = generic_folder(tmp, folder_cases, sources)
+    acct = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    got = {r["control_number"]: r for r in acct["runs"][str(NEW)]["programs"]}
+    want = {"54001": ("restored", "-ca"), "54002": ("restored", "-aa-t-degree"), "54003": ("kept", "-as"),
+            "54004": ("kept", ""), "54005": ("kept", "-ca"), "54006": ("kept", None)}
+    for cn, (outcome, tail) in want.items():
+        check(got[cn]["outcome"] == outcome, "%s: %s (%s), expected %s" % (cn, got[cn]["outcome"],
+                                                                           got[cn]["why"][:90], outcome))
+        check(got[cn].get("award_tail") == tail, "%s: award_tail %r, expected %r"
+              % (cn, got[cn].get("award_tail"), tail))
+    for cn in ("54001", "54002"):
+        check("generic" in got[cn]["why"], "%s: set aside for another reason: %r" % (cn, got[cn]["why"][:120]))
+        check(read_bytes(os.path.join(rdir, cn + ".json")) == read_bytes_base(tmp, cn), "%s: not restored" % cn)
+    check("address" in got["54003"].get("own_page", "") and "address" in got["54004"].get("own_page", ""),
+          "54003/54004 kept on something other than the address")
+    check("page title" in got["54005"].get("own_page", ""), "54005: %r" % got["54005"].get("own_page"))
+    # The listing finding 2 asks for: rows kept on address evidence whose address carried an award ending.
+    listed = {cn for cn, r in got.items() if r["outcome"] == "kept" and r.get("award_tail")
+              and r.get("own_page", "").startswith("the address")}
+    check(listed == {"54003"}, "kept on an address with an award ending: %r" % sorted(listed))
+
+
 def main():
     for fn in (test_checked_list, test_folder, test_all_restored, test_checked_unfiled, test_live_runs,
                test_live_runs_file, test_control_number_shape, test_ascii_runs, test_generic_heading_scorer,
                test_generic_heading, test_order, test_second_pass, test_matches_main, test_real_cases,
-               test_address_cases, test_capture_names_another_award):
+               test_address_cases, test_capture_names_another_award, test_award_ending):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)

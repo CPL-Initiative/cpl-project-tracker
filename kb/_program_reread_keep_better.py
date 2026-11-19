@@ -16,7 +16,8 @@ with the same file at origin/main and keeps the better one.
   program page heads its list REQUIREMENTS, Course List, Major Requirements or Requirements, words the scorer's
   heading_content_words reads as naming no program; such a generic heading passes the first test only where the
   committed files show the page is the program's own (page_is_own): the last segment of the record's source_url,
-  less its term and award words, holds exactly the title's words, 2.0 counted; or the capture's sources.json entry
+  less its term and award words, holds exactly the title's words, 2.0 counted, and an award ending it carries is
+  one the reader's slug_awards reads as the program's award (COBIx on #3553); or the capture's sources.json entry
   for that page (heading_named, the page title, the h1) names every title word, while its title and h1 name no
   other award. S684 set aside Ventura's 4 and Evergreen Valley's 13 good re-reads on the word test alone. A
   heading carrying another program's words still fails, whatever the address. A re-read that fails is set aside
@@ -171,12 +172,13 @@ def _page(url: str | None) -> str:
     return urllib.parse.urlunsplit((p.scheme.lower(), p.netloc.lower(), p.path.rstrip("/"), p.query, ""))
 
 
-def page_is_own(rec: dict, source: dict | None = None) -> str | None:
+def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None) -> str | None:
     """What the committed files show of the page the re-read was read from being the program's own, or None.
     A text shows it when it names every word of the program's title (the pilot's title_tokens) and the scorer's
     heading_award_check, read over that text, finds no other award. The texts, in order:
-      * the last segment of the record's source_url, where the reader's slug_awards names no award or the program's
-        (a CourseLeaf program address: .../criminal-justice/administration-justice-ast/);
+      * the last segment of the record's source_url, where the reader's slug_awards names the program's award, or
+        names none on an address with no award ending (a CourseLeaf program address:
+        .../criminal-justice/administration-justice-ast/);
       * the capture's entry for the control number in sources.json, when its source.url is the record's page: the
         reader's heading_named (a PDF window whose heading names the program), its page title less the site's name,
         then its h1.
@@ -190,7 +192,14 @@ def page_is_own(rec: dict, source: dict | None = None) -> str | None:
     Studies 2.0), so a page and a title agree on it or nothing shows the page is the program's. A page title or h1
     must name every title word and agree on 2.0. And the capture's title or h1 must not name another award: a PDF
     window whose first line reads "Students completing the Associate in Arts for Transfer in Psychology" is the
-    AA-T's, whatever heading_named says (Santa Rosa Junior 16986, A.A.)."""
+    AA-T's, whatever heading_named says (Santa Rosa Junior 16986, A.A.).
+    An address whose award ending was stripped must have that ending read as the program's award (COBIx on #3553,
+    finding 1): AWARD_TAIL strips endings slug_awards cannot name (-ca, -cert, -degree, -adt, -aa-t-degree,
+    -associate-arts-transfer), and #3553's address test passed such an ending as naming no award, so the
+    Welding Technology A.S. (College of the Redwoods 01821) passed on welding-technology-ca-fall-2025, the
+    certificate's page. Where an ending was stripped and slug_awards names nothing, or not the program's kind, the
+    address shows nothing; an address with no award ending is read as before. note, when given, gets the stripped
+    ending as note["award_tail"] ("" when none), which keep_better writes on the decision row."""
     import urllib.parse
     import _program_requirements_college as C
     from _program_requirements_pilot import award_kind
@@ -210,9 +219,14 @@ def page_is_own(rec: dict, source: dict | None = None) -> str | None:
     slug = urllib.parse.unquote(parts.path).rstrip("/").rsplit("/", 1)[-1].lower()
     bare = TERM_TAIL.sub("", slug)
     named = AWARD_TAIL.sub("", bare)
+    if note is not None:
+        note["award_tail"] = bare[len(named):]
     awards = C.slug_awards(urllib.parse.urlunsplit(parts._replace(path="/" + bare)))
-    if named and page_words(named) == want and award_ok(re.sub(r"[-_]+", " ", bare)) \
-            and (not awards or award_kind(rec.get("award")) in awards):
+    # An award ending stripped from the address must be one slug_awards reads as the program's kind; with no
+    # ending stripped, an address that names no award still passes (COBIx on #3553, finding 1).
+    award_named = award_kind(rec.get("award")) in awards if bare != named else \
+        (not awards or award_kind(rec.get("award")) in awards)
+    if named and page_words(named) == want and award_ok(re.sub(r"[-_]+", " ", bare)) and award_named:
         return "the address's last segment %r names the program" % slug[:80]
     src = (source or {}).get("source") if isinstance((source or {}).get("source"), dict) else {}
     if not src or not url or _page(src.get("url")) != _page(url):
@@ -252,13 +266,14 @@ def page_words(text: str | None) -> set[str]:
     return out
 
 
-def own_program_why(rec: dict, source: dict | None = None) -> tuple[str | None, str | None]:
+def own_program_why(rec: dict, source: dict | None = None, note: dict | None = None) -> tuple[str | None, str | None]:
     """(why the re-read does not hold its own program or None, the page evidence that let a generic heading pass or
     None). The heading must share a word with the title (the pilot's title_tokens). A heading that shares none and
     carries no word that could name a program (the scorer's heading_content_words: "REQUIREMENTS", "Course List",
     "Major Requirements") is generic: it passes only where page_is_own shows the page is the program's own (S685).
     A heading that carries another program's words still fails, whatever the address. Then the scorer's
-    heading_award_check. A blank heading names no program and fails. source: the capture's sources.json entry."""
+    heading_award_check. A blank heading names no program and fails. source: the capture's sources.json entry.
+    note: handed to page_is_own, which writes the address's stripped award ending there when it is consulted."""
     from _program_requirements_pilot import title_tokens
     from _program_requirements_score import heading_award_check, heading_content_words
     record = rec.get("record") if isinstance(rec.get("record"), dict) else None
@@ -271,7 +286,7 @@ def own_program_why(rec: dict, source: dict | None = None) -> tuple[str | None, 
         if heading_content_words(heading):
             return ("the re-read's heading %r shares no word with the title %r" % (heading[:80], rec.get("title")),
                     None)
-        evidence = page_is_own(rec, source)
+        evidence = page_is_own(rec, source, note)
         if not evidence:
             return ("the re-read's heading %r is generic (it names no program), and nothing in the committed files "
                     "shows its page %s is the program's own" % (heading[:80], (rec.get("source_url") or "")[:120]),
@@ -460,9 +475,14 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         row = {"control_number": cn, "title": rec.get("title"), "award": rec.get("award"),
                "source_url": rec.get("source_url"), "filed_source_url": (filed or {}).get("source_url"),
                "filed_run": (filed or {}).get("extracted_run"), "reread": brief(new_score)}
-        not_own, own_page = own_program_why(rec, sources.get(str(cn)))
+        note: dict = {}
+        not_own, own_page = own_program_why(rec, sources.get(str(cn)), note)
         if own_page:
             row["own_page"] = own_page
+        # A generic heading consulted the address: its stripped award ending ("" for none), so a later reader can
+        # list every row kept on address evidence whose address carried one (COBIx on #3553, finding 2).
+        if "award_tail" in note:
+            row["award_tail"] = note["award_tail"]
         live = None if live_runs is None else live_runs.get(str(cn))
         live = None if live is None else str(live)
         if live_runs is not None:
