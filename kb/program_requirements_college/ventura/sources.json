@@ -24,7 +24,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -58,7 +61,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business management, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -107,7 +113,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -145,7 +154,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding technology, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -190,7 +202,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction technology, construction management option, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -224,7 +239,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "wastewater science, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -312,7 +330,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "fine art, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 66,
@@ -359,7 +380,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ceramics, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -431,7 +455,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 50,
@@ -471,7 +498,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "photography, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -514,7 +544,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -552,7 +585,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "criminal justice, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -592,7 +628,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -634,7 +673,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction technology, building inspection option, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -663,7 +705,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical assistant - administrative, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -700,7 +745,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "drafting technology: industrial design and manufacturing option, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -734,7 +782,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "water science, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -760,7 +811,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "emergency medical services: paramedic studies, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -797,7 +851,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social work/human services, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -915,7 +972,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies—natural sciences and mathematics, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 96,
@@ -1051,7 +1111,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies—social and behavioral sciences, associate in arts (aa)",
+    "section_fit": 1.0
    }
   },
   "listed": 114,
@@ -1222,7 +1285,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies—arts and humanities, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 149,
@@ -1324,7 +1390,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies—liberal studies, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 44,
@@ -1355,7 +1424,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1388,7 +1460,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business management, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1416,7 +1491,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical assistant - administrative, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1466,7 +1544,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engineering, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -1499,7 +1580,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive career education, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1537,7 +1621,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drafting technology: industrial design and manufacturing option, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1575,7 +1662,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1614,7 +1704,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "construction technology, construction management option, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -1653,7 +1746,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "construction technology, building inspection option, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -1685,7 +1781,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "wastewater science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1717,7 +1816,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "water science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1745,7 +1847,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fine art core, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1775,7 +1880,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ceramics—general, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1830,7 +1938,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 33,
@@ -1866,7 +1977,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1892,7 +2006,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emergency medical services: paramedic studies, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1934,7 +2051,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -1971,7 +2091,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "social work/human services, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2012,7 +2135,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "criminal justice, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -2049,7 +2175,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -2082,7 +2211,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2094,37 +2226,42 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.762,
+  "coverage": 0.857,
   "codes_found": [
    "ANTHV35",
-   "ANTHV35L",
    "CJV1",
    "CJV14",
    "CJV2",
    "CJV25",
    "CJV3",
+   "CJV30",
    "CJV35",
-   "CJV35L",
+   "CJV36",
    "CJV37",
    "CJV4",
+   "CJV49",
    "CJV5",
    "CJV8",
    "PSYCC1000",
    "PSYV4",
+   "SOCIC1000",
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
-   "title": "Course Identification Numbering System (C-ID) < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/administration-justice-ast/",
+   "title": "Administration of Justice, Associate in Science for Transfer < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 7984
+  "text_chars": 6272
  },
  {
   "control_number": "31361",
@@ -2177,7 +2314,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 35,
@@ -2209,7 +2349,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2245,7 +2388,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2296,7 +2442,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -2345,7 +2494,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -2381,7 +2533,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2412,7 +2567,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical assistant - multi-skilled, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2442,7 +2600,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical assistant - multi-skilled, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2474,7 +2635,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2516,7 +2680,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -2591,7 +2758,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 59,
@@ -2651,7 +2821,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 39,
@@ -2685,7 +2858,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2710,7 +2886,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biomedical device manufacturing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2740,7 +2919,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2773,7 +2955,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2809,7 +2994,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "digital marketing, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2842,7 +3030,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural design, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2874,7 +3065,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2903,7 +3097,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2934,7 +3131,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drafting technology, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2966,7 +3166,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital marketing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2998,7 +3201,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architectural science, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3031,7 +3237,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architectural design, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3093,7 +3302,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -3105,8 +3317,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.538,
+  "coverage": 0.564,
   "codes_found": [
+   "ARTV1",
    "BIOLC1001",
    "BIOLC1001L",
    "CDEVC1000",
@@ -3136,7 +3349,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs, associate in arts for transfer",
+    "section_fit": 0.75
    }
   },
   "listed": 39,
@@ -3171,7 +3387,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3198,7 +3417,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "diesel engine repair, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3225,7 +3447,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medium and heavy duty vehicle repair, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3256,7 +3481,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "diesel mechanics, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3290,7 +3518,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3325,7 +3556,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3364,7 +3598,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3388,7 +3625,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic law enforcement academy, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3417,7 +3657,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3446,7 +3689,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting technician, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3475,7 +3721,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pre-allied health sciences, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3507,7 +3756,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "associate teacher certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3539,7 +3791,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture business, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3563,7 +3818,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "basic law enforcement academy, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3579,7 +3837,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "39961",
@@ -3624,7 +3886,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "veterinary technology, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -3662,7 +3927,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "veterinary assistant, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3692,7 +3960,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture plant science, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3731,7 +4002,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "plant science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3767,7 +4041,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "advanced manufacturing, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3791,7 +4068,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "basic law enforcement academy (noncredit), certificate of completion",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -3824,7 +4104,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive career education, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3848,7 +4131,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "agriculture field supervisor (noncredit), certificate of completion",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -3890,7 +4176,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "food safety, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3923,7 +4212,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "food safety, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3963,7 +4255,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -3991,7 +4286,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive repair technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4021,7 +4319,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive performance technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4046,7 +4347,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive maintenance technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4073,7 +4377,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive service technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4103,7 +4410,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "food safety (noncredit), certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -4135,7 +4445,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4184,7 +4497,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social work and human services, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -4223,7 +4539,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chicana/o studies, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4239,7 +4558,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "41990",
@@ -4251,7 +4574,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "42026",
@@ -4271,7 +4598,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "mathematics readiness (noncredit), certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -4317,7 +4647,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "holistic health, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4356,7 +4689,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community health and health education, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4395,7 +4731,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture business, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4442,7 +4781,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture agriculture pest control adviser preparation, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -4474,7 +4816,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "heavy equipment and industrial systems operation and maintenance, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4501,7 +4846,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnc machinist, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4537,7 +4885,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film, television, and electronic media, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4566,7 +4917,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cnc machine operator, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4601,7 +4955,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "film studies, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -4634,7 +4991,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "public administration, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -4668,7 +5028,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive career education expert technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4701,7 +5064,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4748,7 +5114,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "creative writing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -4778,7 +5147,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pathway to law school, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4802,7 +5174,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "academic english foundations (noncredit), certificate of competency",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -4814,25 +5189,27 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.75,
   "codes_found": [
    "BUSV38",
    "CDV29",
-   "CDV38",
    "CDV65"
   ],
   "source": {
-   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/",
-   "title": "Child Development < Ventura College",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/administration-in-early-education-coa/",
+   "title": "Administration in Early Education, Certificate of Achievement < Ventura College",
    "h1": "2026-2027\nAcademic Catalog",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration in early education, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 8193
+  "text_chars": 3536
  },
  {
   "control_number": "44187",
@@ -4854,7 +5231,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to infant and toddler teaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4880,7 +5260,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to transitional kindergarten teaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4906,7 +5289,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "special needs teaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4938,7 +5324,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "antiracism in teaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4967,7 +5356,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "family child care teaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4999,7 +5391,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "preschool to third grade teaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -5027,7 +5422,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "infant and toddler teaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5043,7 +5441,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "44722",
@@ -5075,7 +5477,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletic coaching, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5099,7 +5504,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "employability (noncredit), certificate of completion",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -5115,7 +5523,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "44974",
@@ -5157,7 +5569,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "forensic science, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -5192,7 +5607,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chemistry, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5217,7 +5635,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5242,7 +5663,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -5361,7 +5785,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "intercollegiate athletics: 1-year certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 97,
@@ -5385,7 +5812,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emergency medical technician, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5435,7 +5865,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -5500,7 +5933,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "sports management, associate in arts",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
@@ -5620,7 +6056,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "intercollegiate athletics: 1-year certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 99,
@@ -5665,7 +6104,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -5676,12 +6118,149 @@
   "title": "California General Education Transfer Curriculum (Cal-GETC)",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.517,
+  "codes_found": [
+   "AGV12",
+   "AGV4",
+   "AGV6",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "ANTHV2",
+   "ANTHV3",
+   "ANTHV5",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTHV1",
+   "ARTHV6",
+   "ARTHV8",
+   "ARTHV9A",
+   "BIOLV10",
+   "BIOLV3",
+   "BIOLV4",
+   "CDEVC1000",
+   "CDV3",
+   "CDV5",
+   "CDV61",
+   "CHEMV102",
+   "CHEMV120A",
+   "CHEMV160A",
+   "CHSTV3",
+   "CJV1",
+   "CJV2",
+   "COMMC1000",
+   "COMMC1004",
+   "COMMV12",
+   "COMMV16",
+   "COMMV2",
+   "CSV17",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "ENGLV18",
+   "ENGLV21A",
+   "ENGLV21B",
+   "ENGLV22A",
+   "ENGLV22B",
+   "ENGLV30",
+   "ENGLV31",
+   "ESRMV1",
+   "ESRMV2",
+   "GEOGV1",
+   "GEOGV1L",
+   "GEOGV2",
+   "GEOGV5",
+   "GEOGV6",
+   "GEOGV8",
+   "GEOLV2",
+   "GEOLV2L",
+   "GEOLV3",
+   "GEOLV3L",
+   "GEOLV9",
+   "HEDV20",
+   "HEDV22",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTV70",
+   "HISTV76",
+   "HISTV82",
+   "HISTV86",
+   "MATHC2210",
+   "MATHC2220",
+   "MATHV20",
+   "MATHV21C",
+   "MATHV22",
+   "MATHV23",
+   "MATHV4",
+   "MATHV46",
+   "MATHV52",
+   "MUSV8",
+   "MUSV9A",
+   "MUSV9B",
+   "PHILV1",
+   "PHILV2",
+   "PHSCV1",
+   "PHSOV1",
+   "PHYSV2A",
+   "PHYSV2AL",
+   "PHYSV2B",
+   "PHYSV2BL",
+   "PHYSV3A",
+   "PHYSV3AL",
+   "PHYSV3B",
+   "PHYSV3BL",
+   "PHYSV4",
+   "PHYSV4L",
+   "PHYSV5",
+   "PHYSV5L",
+   "PHYSV6",
+   "PHYSV6L",
+   "POLSC1000",
+   "POLSV14",
+   "POLSV2",
+   "POLSV3",
+   "POLSV4",
+   "POLSV5",
+   "PSYCC1000",
+   "PSYV15",
+   "PSYV2",
+   "PSYV25",
+   "PSYV3",
+   "PSYV31",
+   "PSYV4",
+   "PSYV5",
+   "PSYV7",
+   "SOCV13",
+   "SOCV2",
+   "SOCV3",
+   "SOCV31",
+   "SOCV4",
+   "SOCV5",
+   "SOCV7",
+   "SPANV3",
+   "SPANV3S",
+   "SPANV4",
+   "SPANV4S",
+   "STATC1000",
+   "THAV1"
+  ],
+  "source": {
+   "url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
+   "title": "Course Identification Numbering System (C-ID) < Ventura College",
+   "h1": "2026-2027\nAcademic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.143,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 240,
-  "text_chars": 0
+  "text_chars": 8216
  },
  {
   "control_number": "45385",
@@ -5706,7 +6285,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "analog photography, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5753,7 +6335,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "forensic science, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -5790,7 +6375,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "small business management, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -5842,7 +6430,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "modern policing, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -5878,7 +6469,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business finance, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5943,7 +6537,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "speech-language pathology assistant, associate in science",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
@@ -5968,7 +6565,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pre-paramedic, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6002,7 +6602,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -6038,7 +6641,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science, associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -6085,7 +6691,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -6101,7 +6710,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45789",
@@ -6129,7 +6742,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6141,9 +6757,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.971,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHV3",
+   "ARTV1",
    "BIOLC1001",
    "BIOLC1001L",
    "BIOLV4",
@@ -6184,7 +6801,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
@@ -6209,7 +6829,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs and courses english for multilingual students—level 3: advanced academic oral communication skills (cocn)",
+    "section_fit": 0.727
    }
   },
   "listed": 3,
@@ -6234,7 +6857,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit programs and courses english for multilingual students—level 3: advanced academic written communication skills (cocn)",
+    "section_fit": 0.727
    }
   },
   "listed": 3,
@@ -6258,7 +6884,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "medical interpretation in spanish (noncredit), certificate of completion (cocn)",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
@@ -6282,7 +6911,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "spanish for medical personnel, certificate of completion (cocn)",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -6328,7 +6960,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "environmental science, associate in arts (aa)",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -6371,7 +7006,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "environmental studies, certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 23,
@@ -6395,7 +7033,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical interpretation in spanish, certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -6419,7 +7060,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish for medical personnel, certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -6447,7 +7091,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fine art—graphic design, certificate of achievement (coa)",
+    "section_fit": 0.8
    }
   },
   "listed": 6,
@@ -6476,7 +7123,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "figure sculpture, certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -6512,7 +7162,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "art history, certificate of achievement (coa)",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
@@ -6539,7 +7192,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fine art—drawing certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -6579,7 +7235,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fine art—painting, certificate of achievement (coa)",
+    "section_fit": 0.75
    }
   },
   "listed": 18,
@@ -6609,7 +7268,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sculpture, certificate of achievement (coa)",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -6636,7 +7298,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -6678,7 +7343,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "environmental science, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -6723,7 +7391,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "child and adolescent development, associate in arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -6750,7 +7421,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data science and artificial intelligence, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -6780,7 +7454,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -6808,7 +7485,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture animal science, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6834,7 +7514,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cisco ccna, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,

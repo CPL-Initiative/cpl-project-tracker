@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Ethnic Studies",
  "award": "A.A. Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=85",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=275",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8087,
+  "input_tokens": 12536,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8087,
-    "output_tokens": 1724,
+    "input_tokens": 12536,
+    "output_tokens": 3865,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,95 +30,78 @@
     "model": null
    }
   ],
-  "output_tokens": 1724,
+  "output_tokens": 3865,
   "output_tokens_details": {
-   "thinking_tokens": 205
+   "thinking_tokens": 1559
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06683,
- "ms": 13390,
- "seconds": 13.7,
+ "cost_usd": 0.12744,
+ "ms": 30547,
+ "seconds": 31.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 26,
    "listed": 27,
-   "share": 0.0,
+   "share": 0.963,
    "missing": [
-    "ANTH2",
-    "ANTH24",
-    "ARTH35",
-    "CDFS53",
-    "COUN15",
-    "ENGL33",
-    "ENGL36",
-    "ETHN1",
-    "ETHN2",
-    "ETHN3",
-    "FTV11",
-    "HIST28",
-    "HIST29",
-    "HIST31",
-    "HIST37",
-    "HSW82",
-    "HUMN3",
-    "MUSC13",
-    "MUSC45",
-    "MUSC7",
-    "POLS5",
-    "PSYC7",
-    "SJS1",
-    "SJS2",
-    "SJS30",
-    "SOC23",
-    "THEA13"
+    "SOC23"
    ],
-   "unexplained": [],
-   "none_placed": true,
+   "unexplained": [
+    "SOC23"
+   ],
+   "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 0,
-   "codes": [],
+   "count": 1,
+   "codes": [
+    "SOCI23"
+   ],
    "flagged": [],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 9,
+   "not_verbatim": [
+    "public policy and administration",
+    "communications fields",
+    "media production"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -130,11 +113,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Solano Community College General Education 2026–2027 (Local/Non-Transfer Pathway)",
+   "section_heading": "Ethnic Studies Associate in Arts",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -150,126 +133,306 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate understanding of the profound historical, political, social, cultural and economic contributions of racially marginalized groups in U.S. society.",
+    "Gain comparative knowledge of the unique experiences of Black/African American, Native American, U.S. Latinx, and Asian American Pacific Islander populations—how these experiences differ and overlap",
+    "Develop critical-thinking skills necessary to recognize and combat multiple forms of racism and intersecting forms of oppression including classism, sexism, xenophobia, homophobia and transphobia."
+   ],
+   "careers": [
+    "DEI (diversity, equity, and inclusion) work",
+    "education",
+    "the arts",
+    "human services",
+    "public policy and administration",
+    "communications fields",
+    "journalism",
+    "media production",
+    "marketing"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ANTH 2",
-    "why": "Listed only in the local GE pattern (Area 4, Cross-Cultural); Ethnic Studies A.A. section not in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ETHN 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ANTH 24",
-    "why": "Listed only in the GE pattern (Areas 4, 6); program section not in the text"
+    "name": "List A: (select two courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANTH 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 028",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 029",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ARTH 35",
-    "why": "Listed only in the GE pattern (Area 6, Cross-Cultural); program section not in the text"
+    "name": "List B: Select four courses from List B or List A (may use any course(s) not used for List A)",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ARTH 035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 036",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 045",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CDFS 53",
-    "why": "Listed only in the GE pattern (Area 4, Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "COUN 15",
-    "why": "Listed only in the GE pattern (Area 4, Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "ENGL 33",
-    "why": "Listed only in the GE pattern (Area 6); program section not in the text"
-   },
-   {
-    "code": "ENGL 36",
-    "why": "Listed only in the GE pattern (Area 6, Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "ETHN 1",
-    "why": "Listed only in the GE pattern; program section not in the text"
-   },
-   {
-    "code": "ETHN 2",
-    "why": "Listed only in the GE pattern; program section not in the text"
-   },
-   {
-    "code": "ETHN 3",
-    "why": "Listed only in the GE pattern (Area 4); program section not in the text"
-   },
-   {
-    "code": "FTV 11",
-    "why": "Listed only in the GE pattern (Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "HIST 28",
-    "why": "Listed only in the GE pattern (Areas 4, 6); program section not in the text"
-   },
-   {
-    "code": "HIST 29",
-    "why": "Listed only in the GE pattern (Areas 4, 6); program section not in the text"
-   },
-   {
-    "code": "HIST 31",
-    "why": "Listed only in the GE pattern (Areas 4, 6); program section not in the text"
-   },
-   {
-    "code": "HIST 37",
-    "why": "Listed only in the GE pattern (Area 4, Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "HSW 82",
-    "why": "Listed only in the GE pattern (Area 4, Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "HUMN 3",
-    "why": "Listed only in the GE pattern (Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "MUSC 13",
-    "why": "Listed only in the GE pattern (Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "MUSC 45",
-    "why": "Not in the text"
-   },
-   {
-    "code": "MUSC 7",
-    "why": "Not in the text"
-   },
-   {
-    "code": "POLS 5",
-    "why": "Listed only in the GE pattern (Area 4, Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "PSYC 7",
-    "why": "Listed only in the GE pattern (Area 4, Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "SJS 1",
-    "why": "Listed only in the GE pattern (Area 4); program section not in the text"
-   },
-   {
-    "code": "SJS 2",
-    "why": "Listed only in the GE pattern (Area 4, Cross-Cultural); program section not in the text"
-   },
-   {
-    "code": "SJS 30",
-    "why": "Listed only in the GE pattern (Area 4); program section not in the text"
-   },
-   {
-    "code": "SOC 23",
-    "why": "Listed only in the GE pattern (Area 4); program section not in the text"
-   },
-   {
-    "code": "THEA 13",
-    "why": "Listed only in the GE pattern (Cross-Cultural); program section not in the text"
+    "name": "List C: (select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDFS 053",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTV 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 037",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSW 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMN 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SJS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SJS 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SJS 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (PDF page 85, printed page 84) is the Solano Community College Local/Non-Transfer General Education worksheet (Areas 4, 5, 6, Health/Lifelong Learning, Cross-Cultural Studies), not the Ethnic Studies A.A. Degree section. No program requirements, totals, outcomes or careers for the award could be recorded.",
-   "GE courses never go in blocks, so courses appearing in the GE lists were not placed. A reviewer should locate the actual Ethnic Studies A.A. page in the 2026-27 catalog (likely a different page number)."
+   "The catalog prints codes zero-padded (ETHN 001, ANTH 024); these were matched to the closed list's unpadded codes (ETHN 1, ANTH 24) and not flagged as additions.",
+   "SOCI 023 (Sociology of African Americans) is printed with subject SOCI; the closed list stores it as SOC 23. Treated as the same course, not a catalog addition; reviewer should confirm.",
+   "List C prints 'MUS C013 Multicultural Music in America', an apparent typo for MUSC 013; recorded as MUSC 013 (closed list MUSC 13).",
+   "List B block: the four courses may come from List B or from any List A course not used for the List A requirement; List A courses are not repeated in the List B block.",
+   "List B prints only three courses (ARTH 035, ENGL 036, MUSC 045) before a page break; the list appears complete since page 276 begins with List C, but reviewer may verify nothing was cut off.",
+   "The description says the degree is earned by completing the 24-unit major, general education, and electives as needed to complete a minimum of 60 units; recorded electives_fill_degree true. degree_total left null because the 60 is stated as a minimum rule rather than a printed total; no GE pattern or GE units are named in the section.",
+   "The course descriptions list ETHN cross-listed equivalents (ETHN 024=ANTH 024, ETHN 028/029/031=HIST, ETHN 033/036=ENGL, ETHN 035=ARTH 035) but the program requirements list only the non-ETHN codes, so no alternatives were added.",
+   "Text uses broken ligatures (e.g., 'Ɵ ' for 'ti'); outcomes and careers were transcribed with the ligatures restored. Outcome 2 has no terminal period as printed."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "e5c35e2ed54d7131",
+ "source_codes": [
+  "ANTH2",
+  "ANTH24",
+  "ARTH35",
+  "CDFS53",
+  "COUN15",
+  "ENGL33",
+  "ENGL36",
+  "ETHN1",
+  "ETHN2",
+  "ETHN3",
+  "FTV11",
+  "HIST28",
+  "HIST29",
+  "HIST31",
+  "HIST37",
+  "HSW82",
+  "HUMN3",
+  "MUSC13",
+  "MUSC45",
+  "MUSC7",
+  "POLS5",
+  "PSYC7",
+  "SJS1",
+  "SJS2",
+  "SJS30",
+  "THEA13"
+ ],
+ "source_coverage": 0.963
 }

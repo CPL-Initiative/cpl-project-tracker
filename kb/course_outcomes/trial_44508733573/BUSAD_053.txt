@@ -1,0 +1,153 @@
+Course Outline Report
+BUSAD 053 - Business Computations
+Discipline: Business
+Department: Business and Economics
+Term Effective: Fall 2017
+Requisites
+None
+Entrance Skill
+A. Requisite Skills:
+None
+B. Recommended Skills:
+None
+Units and Hours
+Semester Units: 3.000
+Lecture Units: 3
+Lecture Contact Hours: 48 - 54
+Lecture Out of Class Hours: 96 - 108
+Independent Study Units: 0
+Independent Study Contact Hours: 0
+Independent Study Out of Class Hours: 0
+Lab/Field Units: 0
+Lab/Field Contact Hours: 0
+Lab/Field Out of Class Hours: 0
+Activity Units: 0
+Activity Contact Hours: 0
+Activity Out of Class Hours: 0
+Total Units: 3
+Total Contact Hours: 48 - 54
+Total Out of Class Hours: 96 - 108
+Total Student Learning Hours: 144 - 162
+Recommended Course Enrollment: 35
+Need for the Course
+
+This course is regularly offered at community colleges. The intent of the course is to offer students a business-based pre-algebra course that will provide them with the requisite skills needed to succeed in higher level business courses and/or a college algebra course. Many students enrolling at CHC need a transition course from arithmetic to algebra and may benefit from an applied approach.
+
+Goals for the Course
+Provide students with reinforcement of mathematical computations.
+Challenge students to understand how to process and interpret information to arrive at logical conclusions to common business math applications.
+Develop proficiency in the application of mathematics to solve business problems.
+Understand the important role math plays in all facets of the business world.
+Catalog/Schedule Description
+The course includes a review of arithmetic and covers operations with signed numbers, single variable equations, ratios, proportions, percents, markups, payroll discounts, annuities, mortgages, simple and compound interest as they relate to business needs.
+Student Learning Outcomes:
+Upon satisfactory completion of the course, students will be able to:
+Process and interpret information to arrive at logical conclusions to common business math applications.
+Apply mathematics skills to solve business math problems.
+Describe the important role that mathematics plays in all facets of the business world.
+Course Objectives
+Upon satisfactory completion of the course, students will be able to:
+Add, subtract, multiply, and divide whole numbers
+Add, subtract, multiply, divide negative and positive numbers
+Add, subtract, multiply, and divide fractions, mixed numbers and decimals
+Use orders of operations to evaluate expressions (including those with parenthesis, whole numbers powers, and perfect roots)
+Use variables and combine like terms
+Identify, distinguish between, appropriately use and demonstrate the following properties with integers: a. commutative, associative and distributive properties, b. additive and multiplicative inverses, c. identities elements of addition and multiplication, d. properties of one (1) and zero (0)
+Understand and use checking accounts and prepare a bank statement reconciliation
+Solve simple single variable first degree equations
+Use equations to solve business related problems
+Convert between decimals and percents and fractions and percents
+Use percentage formulas and proportions to solve business problems involving percents
+Develop and revise business invoices
+Calculate single and series trade discounts, cash discounts and terms of sale
+Calculate and evaluate mark-up and mark-on based on cost or selling price
+Calculate and evaluate mark-down and mark-off based on cost or selling price
+Calculate gross earnings, incentive pay plans, payroll deductions, employer's payroll expenses and self-employed person's tax responsibility
+Calculate simple interest for loans with specified terms and use the simple interest formula to find principal, rate or time values
+Calculate compound amount and compound interest and present values of a future amount
+Calculate the present value of an annuity, future value of an annuity, sinking fund payment, and amortization payments
+Calculate finance charges and new balances on charge accounts, credit cards, and lines of credit
+Calculate finance charges, annual percentage rates, and amount of payoff and monthly payment amounts for installment loans
+Calculate the closing costs, monthly payments, total interest, and PITI of both fixed-rate and adjustable-rate mortgages
+Calculate the closing costs, monthly payments, and total interest for home equity loans and lines of credit
+Course Content
+Lecture Outline
+Whole numbers and Exponents
+Integers
+Fractions and Mixed Numbers
+Decimals and Square Roots
+Checking Accounts
+Using Equations to Solve Business Problems
+Decimals, Percents and Their Application in Business
+Invoices, Trade discounts, and Cash Discounts
+Markup and Markdown
+Payroll
+Simple Interest and Promissory Notes
+Compound Interest and Present Value
+Annuities
+Consumer and Business Credit
+Mortgages
+Representative Texts and Instructional Materials
+These suggested materials serve as examples of required intensity and do not limit the selection of alternative high quality texts or OER resources.
+
+Textbooks: Business Mathematics, Clendenen, G. & Salzman, S., Pearson, 2015
+Contemporary Business Mathematics for Colleges, Deitz, J. E. & Southam, J. L., Cengage, 2016
+Other: Texas Instruments BA II PLUS Financial Calculator
+
+Methods of Instruction
+Audio Visual Presentations
+Class Activities
+Class Discussions
+Collaborative Group Work
+Computer-aided Instruction
+Demonstration
+Distributed Education
+Lecture
+Emergency Remote Instruction Yes
+In emergency circumstances that require campus closure, remote instruction may be incorporated. Courses offered remotely will achieve or adapt stated learning outcomes for the remote environment. Instruction will maintain regular effective contact through conferencing and LMS applications. Instructional materials will be adapted to meet ADA compliance. Instructors will be supported through available campus resources including Alternative Media and Assistive Technology Specialist, DSPS Office, PD Lead, DE Lead, and other available resources to help ensure that instructional materials are accessible to persons with disabilities.
+Methods of Evaluation
+The methods and percentages are examples for guidance and are not intended to be strictly followed.
+
+Comprehensive final exam (20 - 40%)
+Tests and quizzes (30 - 70%)
+Homework (10 - 15%)
+In-class projects and other activities (0 - 10%)
+Universal Design for Learning (UDL) and Diversity, Equity, Inclusion, Accessibility and Antiracism (DEIAA)
+UDL and UDL Curricular Design Framework
+Universal Design for Learning (UDL) and Diversity, Equity, Inclusion, Accessibility, and Anti-Racism (DEIAA) principles are intentionally embedded throughout the Course Outline of Record to support equitable learning and facilitate DEIAA review through the following elements:
+Course Title: Titles are written clearly to reflect content using inclusive language that supports understanding for all students and avoids "gatekeeping" terminology.
+Catalog Description: Descriptions use accessible, asset-based language that validates student experiences and engages diverse learners.
+Objectives and Course Learning Outcomes: Objectives and outcomes are stated clearly to advance equitable results and include the critical analysis of diversity and equity within the discipline.
+Content: Curriculum is intentionally designed to accommodate different learning needs and reflect inclusive, non-monocultural perspectives.
+Outside of Class Assignments: Assignments offer diverse ways to demonstrate mastery and reduce barriers to provide equitable, engaging practice aligned with course goals.
+Methods of Instruction: Instruction utilizes an inclusive design framework featuring multi-modal delivery and active participation responsive to a broad range of cultural perspectives.
+Methods of Evaluation: Evaluation utilizes transparent assessments—both formative and summative—prioritizing clear communication and iterative feedback to eliminate achievement gaps.
+Digital Accessibility (WCAG & Section 508): All digital components, including documents, media, and third-party tools, are designed to meet current WCAG (Level AA) and Section 508 standards. This ensures that technology serves as a bridge to content rather than a barrier to entry for students using assistive technologies.
+Distance Education: Course design ensures full digital accessibility and equivalent engagement across all modalities through Regular and Substantive Interaction (RSI).
+Regular and Substantive Interaction (RSI): Scheduled, instructor-led interactions support student persistence by initiating frequent, meaningful feedback and building a sense of belonging.
+Representative Textbooks & OER: Selection prioritizes zero-cost materials and Open Educational Resources (OER) to eliminate financial barriers that disproportionately affect minoritized students.
+Instructional Materials: Materials incorporate authors and scholars from diverse backgrounds to ensure representative perspectives and a globally relevant curriculum.
+Anti-Racist Curriculum Audit: Course content and disciplinary histories are critically examined to challenge systemic biases and integrate the contributions of historically excluded BIPOC scholars.
+Distance Education
+1. Distance Education Format
+Recommended Online Enrollment: 35
+Hybrid - Partially Online (PO): Instruction involving regular and substantive interaction (RSI) for some portion of the approved contact hours that takes place synchronously or asynchronously and is supported by materials and activities delivered in person and online through the college's learning management system, and through the use of other required materials. This includes periodic synchronously scheduled meetings for lecture, lab, or testing where the instructor and student are together. Any portion of a class that is delivered online must follow a separate approval process. The approved online portion must fulfill all Title 5 regulations for regular and substantive interaction. The class schedule indicates when and where the in-person meetings occur and how many hours are to be completed online. Any scheduled or synchronous online meetings should also be included in the schedule of courses.
+Synchronous/Asynchronous Fully Online (FO): Instruction involving regular and substantive interaction (RSI) that takes place synchronously or asynchronously and is supported by online materials and activities delivered through the college's learning management system and using other required materials. All approved instructional contact hours, including online proctored assessments, are delivered through these online interactions, ensuring consistent instructor-led guidance, feedback, and proactive outreach. No in-person assessments are required. Estimated time a student would spend on course-related tasks per week for each course unit: the student should spend a minimum of 1 hour online and 2 hours of additional work offline. For example: a 3-unit class would have 3 hours online and 6 additional hours offline per week.
+2. The Department of Education stipulates that faculty teaching hybrid or fully online sections comply with regulations regarding Regular and Substantive Interaction (RSI) with students. Below is a summary of methods that can be used to reflect RSI in online courses. Use at least two of the methods below:
+Monitor and guide regularly scheduled class discussions (either using Zoom or in Canvas) and participate when concepts need clarification, providing ways to establish connections between concepts and student ideas using methods such as guided questions, Socratic dialog, and Q and A.
+Regular feedback given to students on their submitted work through Canvas Speedgrader in written, video, and/or audio format; document markup on student work; and/or rubrics in Canvas.
+Proactive instructor outreach by responding to student questions in a timely manner through office hours, email, Canvas Inbox, and/or other communication tools, but also when students have not logged in for a week, have missing assignments, or appear to need help without asking for it.
+Regular use of Canvas announcements with substantial support such as study tips, preview of key concepts, explanation of a vocabulary word, and other.
+Regularly scheduled office hours posted in areas such as the home page, syllabus, welcome page, and/or other.
+Regularly scheduled live instruction (e.g., Zoom lectures in real time) for synchronous classes
+Other No
+3. Accessibility: Accommodations regarding disabled student accessibility to online content must be made as prescribed in the Distance Education Guidelines regarding Section 508, as published by the California Community College Chancellor’s office. For example: The following are general principles that should be followed in ensuring that distance education courses are accessible to students with disabilities.
+A. All DE resources must be designed to afford students with disabilities maximum opportunity to access distance education resources “anytime, anywhere” without the need for outside assistance (i.e., sign language interpreters, aides, etc.).
+B. Distance education resources must generally be designed to provide “built-in” accommodation (i.e., closed captioning, descriptive narrative) and/or interface design/content layout, which is accessible to “industry standard” assistive computer technology in common use by persons with disabilities. Whenever possible, information should be provided in the alternative format preferred by the student.
+C. Adoption of access solutions which include assigning assistants (i.e., sign language interpreters, readers) to work with an individual student to provide access to distance education resources should only be considered as a last resort when all efforts to enhance the native accessibility of the course material have failed.
+D. Access to DE courses, resources and materials include the audio, video, and text components of courses. Access to resources and materials include the audio, video, multimedia and text components of Web sites, electronic chat rooms, e-mail, instructional software, CD-ROM, DVD, laser disc, video tape, audio tape, electronic text, and print materials. Where access to Web sites not controlled by the college is required or realistically necessary to completion of a course, the college must take steps to ensure that such sites are accessible or provide the same material by other accessible means.
+E. Distance education courses, resources and materials must be designed and delivered in such a way that the level of communication and course taking experience is the same for students with or without Disabilities.
+Last Revision
+2017-04-10
+Board Approval
+2017-05-11

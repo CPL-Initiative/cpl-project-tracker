@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-19T12:21:29Z",
+ "written_at": "2026-11-19T12:41:10Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,8 +158,8 @@
   "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 17 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 11 hosts (ccc, cccd, chabot, cuesta, hancockcollege, laspositas, rccd, redwoods, sac, sdccd, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
+  "slo": "Course SLO reads are committed for 19 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 13 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, rccd, redwoods, sac, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16325,
-  "gap": 6010,
+  "passing": 16369,
+  "gap": 5966,
   "with_gap": 118,
-  "cost_usd": 1336.87,
-  "passed_at_read": 15572,
+  "cost_usd": 1335.3,
+  "passed_at_read": 15704,
   "cost_receipts": 118,
   "spent_usd": 1133.52,
   "spent_runs": 118,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16230,
-  "gap": 6010,
+  "passing": 16274,
+  "gap": 5966,
   "collected_with_gaps": 95,
   "discontinued": 0
  },
@@ -1147,8 +1147,7 @@
    "gap": 64,
    "causes": {
     "no_closed_list": 52,
-    "page_not_found": 2,
-    "places_none": 3,
+    "page_not_found": 5,
     "unknown_without_live": 7
    },
    "census_causes": {
@@ -1172,10 +1171,10 @@
    "outcomes_file": "kb/status/commons_data_programs/ca_ada.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-19T05:01:45Z",
+   "read_at": "2026-11-19T11:18:18Z",
    "read_kind": "capture",
-   "cost_usd": 5.5,
-   "passed_at_read": 61,
+   "cost_usd": 5.36,
+   "passed_at_read": 63,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -1184,13 +1183,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 75,
-   "found": 73,
-   "extracted": 73,
+   "found": 70,
+   "extracted": 70,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 12,
+    "arithmetic": 7,
     "repeated": 0,
     "outcomes": 0
    },
@@ -1200,23 +1199,22 @@
    "capture_root": "https://catalog.canadacollege.edu/current/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 56.5,
-   "run": "39202270482",
+   "read_seconds": 63.6,
+   "run": "44511395665",
    "levers": {
     "program_course_file_check": 52,
     "reconcile_steps": 7,
-    "reader_page_assignment": 3,
-    "reader_page_search": 2
+    "reader_page_search": 5
    },
    "collection": {
     "program_reader": {
-     "records": 73,
+     "records": 70,
      "models": {
-      "claude-opus-5-5": 73
+      "claude-opus-5-5": 70
      },
-     "run": "39202270482",
-     "at": "2026-10-19T05:01:45Z",
-     "cost_usd": 5.5,
+     "run": "44511395665",
+     "at": "2026-11-19T11:18:18Z",
+     "cost_usd": 5.36,
      "platform": "custom_html"
     },
     "slo_read": null,
@@ -1892,12 +1890,12 @@
    "harvested": true,
    "slug": "clovis_community",
    "programs": 129,
-   "passing": 73,
-   "gap": 56,
+   "passing": 80,
+   "gap": 49,
    "causes": {
     "no_closed_list": 8,
-    "page_not_found": 6,
-    "places_none": 15,
+    "page_not_found": 12,
+    "places_none": 2,
     "unknown_without_live": 27
    },
    "census_causes": {
@@ -1922,10 +1920,10 @@
    "outcomes_file": "kb/status/commons_data_programs/clovis_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T05:25:41Z",
+   "read_at": "2026-11-19T12:15:47Z",
    "read_kind": "capture",
-   "cost_usd": 8.34,
-   "passed_at_read": 65,
+   "cost_usd": 8.22,
+   "passed_at_read": 77,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -1934,13 +1932,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 121,
-   "found": 115,
-   "extracted": 115,
+   "found": 109,
+   "extracted": 109,
    "errors": 0,
    "failed_checks": {
-    "coverage": 21,
-    "invented": 6,
-    "arithmetic": 45,
+    "coverage": 5,
+    "invented": 3,
+    "arithmetic": 27,
     "repeated": 0,
     "outcomes": 5
    },
@@ -1950,27 +1948,27 @@
    "capture_root": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 39.5,
-   "run": "39006155986",
+   "read_seconds": 63.7,
+   "run": "44522071814",
    "levers": {
     "reconcile_steps": 27,
-    "reader_page_assignment": 15,
+    "reader_page_search": 12,
     "program_course_file_check": 8,
-    "reader_page_search": 6
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
-     "records": 115,
+     "records": 109,
      "models": {
-      "claude-opus-5-5": 115
+      "claude-opus-5-5": 109
      },
-     "run": "39006155986",
-     "at": "2026-10-17T05:25:41Z",
-     "cost_usd": 8.34,
+     "run": "44522071814",
+     "at": "2026-11-19T12:15:47Z",
+     "cost_usd": 8.22,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 56,
+    "plo_programs": 66,
     "ppm_member": {
      "host": "programmap.cloviscollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -2979,7 +2977,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/college_of_the_siskiyous.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_siskiyous.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "elumen"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-07T08:18:59Z",
    "read_kind": "capture",
@@ -3028,7 +3028,13 @@
      "cost_usd": 4.86,
      "platform": "elumen"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44508568959",
+     "at": "2026-11-19T11:06:07Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/siskiyous/read_44508568959_p1of1.json"
+    },
     "plo_programs": 69,
     "ppm_member": null,
     "maps": {
@@ -3619,7 +3625,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/crafton_hills.json",
    "outcomes_file": "kb/status/commons_data_programs/crafton_hills.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-17T13:16:55Z",
    "read_kind": "capture",
@@ -3667,7 +3675,13 @@
      "cost_usd": 6.0,
      "platform": "smartcatalog"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44509906805",
+     "at": "2026-11-19T12:11:10Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/craftonhills/read_44509906805_p2of2.json"
+    },
     "plo_programs": 74,
     "ppm_member": null,
     "maps": {
@@ -4460,13 +4474,13 @@
    "harvested": true,
    "slug": "evergreen_valley",
    "programs": 93,
-   "passing": 63,
-   "gap": 30,
+   "passing": 75,
+   "gap": 18,
    "causes": {
     "no_closed_list": 1,
-    "page_not_found": 6,
-    "places_none": 12,
-    "unknown_without_live": 11
+    "page_not_found": 3,
+    "places_none": 4,
+    "unknown_without_live": 10
    },
    "census_causes": {
     "page_not_found": 1,
@@ -4487,10 +4501,10 @@
    "outcomes_file": "kb/status/commons_data_programs/evergreen_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-15T14:10:30Z",
+   "read_at": "2026-11-19T11:59:06Z",
    "read_kind": "capture",
-   "cost_usd": 5.92,
-   "passed_at_read": 54,
+   "cost_usd": 6.14,
+   "passed_at_read": 81,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4499,43 +4513,43 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 92,
-   "found": 86,
-   "extracted": 86,
+   "found": 88,
+   "extracted": 89,
    "errors": 0,
    "failed_checks": {
-    "coverage": 12,
+    "coverage": 1,
     "invented": 0,
-    "arithmetic": 32,
+    "arithmetic": 8,
     "repeated": 0,
     "outcomes": 0
    },
    "platform": "courseleaf",
-   "catalog_year": "2025-2026",
+   "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.evc.edu/",
    "capture_root": "https://catalog.evc.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 725.5,
-   "run": "38748875071",
+   "read_seconds": 761.1,
+   "run": "44519542333",
    "levers": {
-    "reader_page_assignment": 12,
-    "reconcile_steps": 11,
-    "reader_page_search": 6,
+    "reconcile_steps": 10,
+    "reader_page_assignment": 4,
+    "reader_page_search": 3,
     "program_course_file_check": 1
    },
    "collection": {
     "program_reader": {
-     "records": 86,
+     "records": 89,
      "models": {
-      "claude-opus-5-5": 86
+      "claude-opus-5-5": 89
      },
-     "run": "38748875071",
-     "at": "2026-10-15T14:10:30Z",
-     "cost_usd": 5.92,
+     "run": "44519542333",
+     "at": "2026-11-19T11:59:06Z",
+     "cost_usd": 6.14,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 74,
+    "plo_programs": 85,
     "ppm_member": {
      "host": "programmap.evc.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -6458,13 +6472,12 @@
    "harvested": true,
    "slug": "los_angeles_city",
    "programs": 260,
-   "passing": 225,
-   "gap": 35,
+   "passing": 226,
+   "gap": 34,
    "causes": {
     "no_closed_list": 2,
-    "page_not_found": 8,
-    "places_none": 6,
-    "unknown_without_live": 19
+    "page_not_found": 14,
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 7,
@@ -6490,10 +6503,10 @@
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-12T11:50:06Z",
+   "read_at": "2026-11-19T11:06:52Z",
    "read_kind": "capture",
-   "cost_usd": 20.28,
-   "passed_at_read": 210,
+   "cost_usd": 19.54,
+   "passed_at_read": 215,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6502,13 +6515,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 258,
-   "found": 250,
-   "extracted": 250,
+   "found": 244,
+   "extracted": 244,
    "errors": 0,
    "failed_checks": {
-    "coverage": 14,
-    "invented": 8,
-    "arithmetic": 24,
+    "coverage": 7,
+    "invented": 7,
+    "arithmetic": 14,
     "repeated": 0,
     "outcomes": 14
    },
@@ -6518,25 +6531,24 @@
    "capture_root": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 116.0,
-   "run": "43212072618",
+   "read_seconds": 220.1,
+   "run": "44511401763",
    "levers": {
-    "reconcile_steps": 14,
-    "reader_page_search": 8,
-    "reader_page_assignment": 6,
+    "reader_page_search": 14,
+    "reconcile_steps": 13,
     "scorer_noncredit_hours": 4,
     "program_course_file_check": 2,
     "ge_units_steps": 1
    },
    "collection": {
     "program_reader": {
-     "records": 250,
+     "records": 244,
      "models": {
-      "claude-opus-5-5": 250
+      "claude-opus-5-5": 244
      },
-     "run": "43212072618",
-     "at": "2026-11-12T11:50:06Z",
-     "cost_usd": 20.28,
+     "run": "44511401763",
+     "at": "2026-11-19T11:06:52Z",
+     "cost_usd": 19.54,
      "platform": "pdf"
     },
     "slo_read": null,
@@ -8817,12 +8829,12 @@
    "harvested": true,
    "slug": "ohlone",
    "programs": 204,
-   "passing": 126,
-   "gap": 78,
+   "passing": 133,
+   "gap": 71,
    "causes": {
     "no_closed_list": 25,
-    "page_not_found": 33,
-    "places_none": 12,
+    "page_not_found": 36,
+    "places_none": 2,
     "unknown_without_live": 8
    },
    "census_causes": {
@@ -8848,10 +8860,10 @@
    "outcomes_file": "kb/status/commons_data_programs/ohlone.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T19:39:44Z",
+   "read_at": "2026-11-19T11:36:05Z",
    "read_kind": "capture",
    "cost_usd": 10.02,
-   "passed_at_read": 117,
+   "passed_at_read": 125,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8860,13 +8872,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 179,
-   "found": 146,
-   "extracted": 146,
+   "found": 143,
+   "extracted": 143,
    "errors": 0,
    "failed_checks": {
-    "coverage": 13,
+    "coverage": 4,
     "invented": 1,
-    "arithmetic": 18,
+    "arithmetic": 9,
     "repeated": 0,
     "outcomes": 8
    },
@@ -8876,28 +8888,28 @@
    "capture_root": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 54.1,
-   "run": "39063337090",
+   "read_seconds": 57.1,
+   "run": "44515665022",
    "levers": {
-    "reader_page_search": 33,
+    "reader_page_search": 36,
     "program_course_file_check": 25,
-    "reader_page_assignment": 12,
-    "reconcile_steps": 5,
-    "ge_units_steps": 3
+    "reconcile_steps": 6,
+    "ge_units_steps": 2,
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
-     "records": 146,
+     "records": 143,
      "models": {
-      "claude-opus-5-5": 146
+      "claude-opus-5-5": 143
      },
-     "run": "39063337090",
-     "at": "2026-10-17T19:39:44Z",
+     "run": "44515665022",
+     "at": "2026-11-19T11:36:05Z",
      "cost_usd": 10.02,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 127,
+    "plo_programs": 134,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -10937,12 +10949,11 @@
    "harvested": true,
    "slug": "santa_barbara_city",
    "programs": 319,
-   "passing": 225,
-   "gap": 94,
+   "passing": 229,
+   "gap": 90,
    "causes": {
     "no_closed_list": 32,
-    "page_not_found": 33,
-    "places_none": 7,
+    "page_not_found": 36,
     "unknown_without_live": 22
    },
    "census_causes": {
@@ -10968,10 +10979,10 @@
    "outcomes_file": "kb/status/commons_data_programs/santa_barbara_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-22T13:05:28Z",
+   "read_at": "2026-11-19T12:00:23Z",
    "read_kind": "capture",
-   "cost_usd": 18.39,
-   "passed_at_read": 210,
+   "cost_usd": 18.21,
+   "passed_at_read": 229,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -10980,13 +10991,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 287,
-   "found": 254,
-   "extracted": 254,
+   "found": 251,
+   "extracted": 251,
    "errors": 0,
    "failed_checks": {
-    "coverage": 8,
+    "coverage": 1,
     "invented": 0,
-    "arithmetic": 43,
+    "arithmetic": 21,
     "repeated": 0,
     "outcomes": 0
    },
@@ -10996,28 +11007,27 @@
    "capture_root": "https://catalog.sbcc.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1851.4,
-   "run": "39782741424",
+   "read_seconds": 1794.5,
+   "run": "44519697720",
    "levers": {
-    "reader_page_search": 33,
+    "reader_page_search": 36,
     "program_course_file_check": 32,
     "reconcile_steps": 20,
-    "reader_page_assignment": 7,
     "scorer_noncredit_hours": 2
    },
    "collection": {
     "program_reader": {
-     "records": 254,
+     "records": 251,
      "models": {
-      "claude-opus-5-5": 254
+      "claude-opus-5-5": 251
      },
-     "run": "39782741424",
-     "at": "2026-10-22T13:05:28Z",
-     "cost_usd": 18.39,
+     "run": "44519697720",
+     "at": "2026-11-19T12:00:23Z",
+     "cost_usd": 18.21,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 248,
+    "plo_programs": 251,
     "ppm_member": {
      "host": "degree-map.sbcc.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -11389,13 +11399,14 @@
    "harvested": true,
    "slug": "shasta",
    "programs": 150,
-   "passing": 81,
-   "gap": 69,
+   "passing": 88,
+   "gap": 62,
    "causes": {
+    "found_not_extracted": 1,
     "no_closed_list": 13,
-    "page_not_found": 13,
-    "places_none": 21,
-    "unknown_without_live": 22
+    "page_not_found": 21,
+    "places_none": 4,
+    "unknown_without_live": 23
    },
    "census_causes": {
     "no_closed_list": 12,
@@ -11421,10 +11432,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-10-17T05:29:29Z",
+   "read_at": "2026-11-19T11:24:18Z",
    "read_kind": "capture",
-   "cost_usd": 11.12,
-   "passed_at_read": 50,
+   "cost_usd": 10.97,
+   "passed_at_read": 80,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -11433,15 +11444,15 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 137,
-   "found": 124,
-   "extracted": 124,
+   "found": 116,
+   "extracted": 116,
    "errors": 0,
    "failed_checks": {
-    "coverage": 21,
-    "invented": 0,
-    "arithmetic": 72,
+    "coverage": 6,
+    "invented": 1,
+    "arithmetic": 33,
     "repeated": 0,
-    "outcomes": 5
+    "outcomes": 6
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -11449,24 +11460,25 @@
    "capture_root": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 104.6,
-   "run": "39006384701",
+   "read_seconds": 156.9,
+   "run": "44513230805",
    "levers": {
-    "reader_page_assignment": 21,
-    "reconcile_steps": 21,
+    "reconcile_steps": 22,
+    "reader_page_search": 21,
     "program_course_file_check": 13,
-    "reader_page_search": 13,
-    "ge_units_steps": 1
+    "reader_page_assignment": 4,
+    "ge_units_steps": 1,
+    "paid_read": 1
    },
    "collection": {
     "program_reader": {
-     "records": 124,
+     "records": 115,
      "models": {
-      "claude-opus-5-5": 124
+      "claude-opus-5-5": 115
      },
-     "run": "39006384701",
-     "at": "2026-10-17T05:29:29Z",
-     "cost_usd": 11.12,
+     "run": "44513230805",
+     "at": "2026-11-19T11:24:18Z",
+     "cost_usd": 10.97,
      "platform": "pdf"
     },
     "slo_read": {
@@ -11476,7 +11488,7 @@
      "source_kind": "course_outline",
      "file": "kb/course_outcomes/shasta/read_43168135589_p2of2.json"
     },
-    "plo_programs": 82,
+    "plo_programs": 87,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -11723,13 +11735,13 @@
    "harvested": true,
    "slug": "solano_community",
    "programs": 171,
-   "passing": 120,
-   "gap": 51,
+   "passing": 126,
+   "gap": 45,
    "causes": {
     "no_closed_list": 8,
-    "page_not_found": 1,
-    "places_none": 18,
-    "unknown_without_live": 24
+    "page_not_found": 12,
+    "places_none": 2,
+    "unknown_without_live": 23
    },
    "census_causes": {
     "coverage_fails": 6,
@@ -11754,10 +11766,10 @@
    "outcomes_file": "kb/status/commons_data_programs/solano_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-13T02:52:52Z",
+   "read_at": "2026-11-19T11:24:41Z",
    "read_kind": "capture",
-   "cost_usd": 13.17,
-   "passed_at_read": 98,
+   "cost_usd": 12.87,
+   "passed_at_read": 103,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -11776,15 +11788,15 @@
     "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
    },
    "listed_closed": 163,
-   "found": 162,
-   "extracted": 162,
+   "found": 151,
+   "extracted": 151,
    "errors": 0,
    "failed_checks": {
-    "coverage": 25,
-    "invented": 6,
-    "arithmetic": 37,
+    "coverage": 8,
+    "invented": 7,
+    "arithmetic": 18,
     "repeated": 0,
-    "outcomes": 25
+    "outcomes": 27
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -11792,28 +11804,28 @@
    "capture_root": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 131.2,
-   "run": "43355021555",
+   "read_seconds": 103.3,
+   "run": "44514080886",
    "levers": {
-    "reader_page_assignment": 18,
     "reconcile_steps": 16,
-    "ge_units_steps": 8,
+    "reader_page_search": 12,
     "program_course_file_check": 8,
-    "reader_page_search": 1
+    "ge_units_steps": 7,
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
-     "records": 162,
+     "records": 151,
      "models": {
-      "claude-opus-5-5": 162
+      "claude-opus-5-5": 151
      },
-     "run": "43355021555",
-     "at": "2026-11-13T02:52:52Z",
-     "cost_usd": 13.17,
+     "run": "44514080886",
+     "at": "2026-11-19T11:24:41Z",
+     "cost_usd": 12.87,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 142,
+    "plo_programs": 148,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -12054,8 +12066,9 @@
    "passing": 142,
    "gap": 42,
    "causes": {
+    "found_not_extracted": 1,
     "no_closed_list": 6,
-    "page_not_found": 5,
+    "page_not_found": 4,
     "places_none": 3,
     "unknown_without_live": 28
    },
@@ -12082,10 +12095,10 @@
    "outcomes_file": "kb/status/commons_data_programs/ventura.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-21T15:06:57Z",
+   "read_at": "2026-11-19T11:29:46Z",
    "read_kind": "capture",
-   "cost_usd": 12.5,
-   "passed_at_read": 121,
+   "cost_usd": 12.81,
+   "passed_at_read": 143,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -12094,13 +12107,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 178,
-   "found": 173,
-   "extracted": 173,
+   "found": 174,
+   "extracted": 174,
    "errors": 0,
    "failed_checks": {
     "coverage": 3,
-    "invented": 0,
-    "arithmetic": 52,
+    "invented": 1,
+    "arithmetic": 31,
     "repeated": 0,
     "outcomes": 0
    },
@@ -12110,14 +12123,15 @@
    "capture_root": "https://catalog.vcccd.edu/ventura/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1598.6,
-   "run": "39622549965",
+   "read_seconds": 1542.9,
+   "run": "44514835321",
    "levers": {
     "reconcile_steps": 22,
     "program_course_file_check": 6,
     "ge_units_steps": 5,
-    "reader_page_search": 5,
+    "reader_page_search": 4,
     "reader_page_assignment": 3,
+    "paid_read": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
@@ -12126,9 +12140,9 @@
      "models": {
       "claude-opus-5-5": 173
      },
-     "run": "39622549965",
-     "at": "2026-10-21T15:06:57Z",
-     "cost_usd": 12.5,
+     "run": "44514835321",
+     "at": "2026-11-19T11:29:46Z",
+     "cost_usd": 12.81,
      "platform": "courseleaf"
     },
     "slo_read": null,
@@ -12162,8 +12176,8 @@
    "gap": 74,
    "causes": {
     "no_closed_list": 18,
-    "page_not_found": 25,
-    "places_none": 8,
+    "page_not_found": 32,
+    "places_none": 1,
     "unknown_without_live": 23
    },
    "census_causes": {
@@ -12190,10 +12204,10 @@
    "outcomes_file": "kb/status/commons_data_programs/victor_valley.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-12T12:11:04Z",
+   "read_at": "2026-11-19T11:34:59Z",
    "read_kind": "capture",
-   "cost_usd": 10.13,
-   "passed_at_read": 140,
+   "cost_usd": 9.66,
+   "passed_at_read": 142,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -12202,13 +12216,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 201,
-   "found": 176,
-   "extracted": 176,
+   "found": 169,
+   "extracted": 169,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
+    "coverage": 2,
     "invented": 0,
-    "arithmetic": 35,
+    "arithmetic": 26,
     "repeated": 1,
     "outcomes": 0
    },
@@ -12218,29 +12232,29 @@
    "capture_root": "https://catalog.vvc.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1670.7,
-   "run": "43215222441",
+   "read_seconds": 1714.7,
+   "run": "44515659606",
    "levers": {
-    "reader_page_search": 25,
+    "reader_page_search": 32,
     "program_course_file_check": 18,
     "reconcile_steps": 11,
     "scorer_noncredit_hours": 10,
-    "reader_page_assignment": 8,
-    "ge_units_steps": 2
+    "ge_units_steps": 2,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 176,
+     "records": 169,
      "models": {
-      "claude-opus-5-5": 176
+      "claude-opus-5-5": 169
      },
-     "run": "43215222441",
-     "at": "2026-11-12T12:11:04Z",
-     "cost_usd": 10.13,
+     "run": "44515659606",
+     "at": "2026-11-19T11:34:59Z",
+     "cost_usd": 9.66,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 6,
+    "plo_programs": 1,
     "ppm_member": null,
     "maps": {
      "held": 0,

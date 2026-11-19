@@ -1,0 +1,438 @@
+{
+ "run": "44508907581",
+ "at": "2026-11-19T10:49:16Z",
+ "loads": 1,
+ "wanted": {
+  "rio_hondo": 1023
+ },
+ "wanted_union": 1023,
+ "sample_rows_with_code": 0,
+ "discover": {
+  "url": "https://riohondo.curriqunet.com/",
+  "final_url": "https://riohondo.curriqunet.com/",
+  "status": 200,
+  "title": "Dashboard",
+  "access": "ok",
+  "rows_at_load": {
+   "count": 0,
+   "rows": []
+  },
+  "structure": {
+   "headers": [],
+   "tables": [
+    {
+     "rows": 0,
+     "id": "table",
+     "cls": ""
+    }
+   ],
+   "controls": [
+    {
+     "tag": "SPAN",
+     "text": "5",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "3",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "2",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    }
+   ],
+   "inputs": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-client-item-6",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "search",
+     "name": null,
+     "id": null,
+     "placeholder": "Keyword Search",
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-0",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-1",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-2",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-3",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-4",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-5",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-6",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-7",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-8",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-9",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-10",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-11",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-12",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-13",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-14",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-15",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-16",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-17",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-18",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-19",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-20",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-21",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-22",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-23",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-24",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-25",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-26",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-27",
+     "placeholder": null,
+     "options": null
+    }
+   ],
+   "forms": [
+    {
+     "action": "https://riohondo.curriqunet.com/",
+     "method": "get",
+     "id": ""
+    },
+    {
+     "action": "https://riohondo.curriqunet.com/Account/Logon",
+     "method": "post",
+     "id": "form-login"
+    },
+    {
+     "action": "https://riohondo.curriqunet.com/Account/RequestAccess",
+     "method": "post",
+     "id": "form-request-access"
+    },
+    {
+     "action": "https://riohondo.curriqunet.com/Account/RequestToResetPassword",
+     "method": "post",
+     "id": "form-requestToResetPassword"
+    },
+    {
+     "action": "https://riohondo.curriqunet.com/DynamicReports/AllFieldsComparisonReportByEntity",
+     "method": "get",
+     "id": "ref: <Node>"
+    }
+   ],
+   "scripts": [
+    "https://challenges.cloudflare.com/turnstile/v0/api.js",
+    "https://riohondo.curriqunet.com/bundles/modernizr?v=2twPtszsTL39hTiKwvPlVlNga_BJ8EIzShIX0ej7LAo1",
+    "https://cdnjs.cloudflare.com/ajax/libs/bowser/2.11.0/bundled.js",
+    "https://code.jquery.com/jquery-3.6.0.js",
+    "https://code.jquery.com/ui/1.13.1/jquery-ui.js",
+    "https://kit.fontawesome.com/bc028f3168.js",
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+    "https://riohondo.curriqunet.com/bundles/ckeditor?v=_InKorEytW7MN9wJB38-ckDLe_tF_xsnkHqlwPQ_J-Q1",
+    "https://cdnjs.cloudflare.com/ajax/libs/dot/1.1.3/doT.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery-extendext/1.0.0/jquery-extendext.js",
+    "https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js",
+    "https://unpkg.com/bootstrap-table@1.21.2/dist/bootstrap-table.min.js",
+    "https://riohondo.curriqunet.com/bundles/curriqunet?v=8hKlYvq7g-WxIrlH1YlTjHBVEiiuHg9jBTrsr4IcEA01",
+    "https://riohondo.curriqunet.com/bundles/dashboard?v=k1ozuum88wLlyv7BteWhIUbc-hlC0jidR-2jgv77GQg1"
+   ]
+  },
+  "rows_after_scroll": 0,
+  "calls_at_load": [
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v5-font-face.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */@font-face{font-family:\"Font Awesome 5 Brands\";font-display:block;font-weight:400;src:url(../webfonts/pro-fa-brands-400-0.woff2) format(\"woff2\"),url(../webfonts/pro-fa-brands-400-0.ttf) format(\"truetype\");unicode-range:u+e007,u+e013,u+e01a,u+e01e,u+e049,u+e052,u+e055-e057,u+e077-e084,u+e087-e088,u+f081-f082,u+f08c,u+f092,u+f099-f09b,u+f0d2-f0d5,u+f0e1,u+f113,u+f136,u+f13b-f13c,u+f15a,u+f167-f169,u+f16b-f16e,u+f170-f171,u+f173-f174,u+f179-f17e,u+f180-f181,u+f184,u+f189-f18d,u+f194,u+f198,u+f19a-f19b,u+f19e,u+f1a0-f1a4,u+f1b4,u+f1bc,u+f1be,u+f1e8,u+f1ed,u+f1f0-f1f1,u+f20e,u+f210,u+f213-f214,u+f232,u+f23a,u+f26b,u+f270,u+f288,u+f299,u+f2a6,u+f2b0,u+f2c5-f2c6,u+f2e0,u+f368,u+f379,u+f392-f393,u+f39f,u+f3a9,u+f3ab-f3ac,u+f3c0,u+f3c7,u+f3ca,u+f3e2,u+f3eb-f3ec,u+f3ef,u+f3f8,u+f3fe,u+f419,u+f41b,u+f4d5,u+f4e4,u+f4f8-f4f9,u+f514,u+f5b5,u+f6c9,u+f731,u+f77b,u+f7af,u+f7e1,u+f83b}@font-face{font-family:\"Font Awesome 5 Brands\";font-display:block;font-weight:400;src:url(../webfonts/pro-fa-brands-400-1.woff2) format(\"woff2\"),url(../webfonts/pro-fa-brands-400-1.ttf) format(\"truetype\");unicode-range:u+f1a5-f1aa,u+f1b5-f1b7,u+f1bd,u+f1ca-f1cc,u+f1d0-f1d7,u+f1e7,u+f1e9,u+f1ee,u+f1f2-f1f5,u+f202-f203,u+f208-f209,u+f20d,u+f211-f212,u+f215-f216,u+f231,u+f237,u+f23b-f23e,u+f24b-f24c,u+f25e,u+f260-f261,u+f263-f26a,u+f26d-f26e,u+"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v4-shims.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */.fa.fa-glass{--fa:\"\\f000\"}.fa.fa-envelope-o{--fa:\"\\f0e0\"}.fa.fa-envelope-o,.fa.fa-star-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-star-o{--fa:\"\\f005\"}.fa.fa-close,.fa.fa-remove{--fa:\"\\f00d\"}.fa.fa-gear{--fa:\"\\f013\"}.fa.fa-trash-o{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f2ed\"}.fa.fa-home{--fa:\"\\f015\"}.fa.fa-file-o{--fa:\"\\f15b\"}.fa.fa-clock-o,.fa.fa-file-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-clock-o{--fa:\"\\f017\"}.fa.fa-arrow-circle-o-down{--fa:\"\\f358\"}.fa.fa-arrow-circle-o-down,.fa.fa-arrow-circle-o-up{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-arrow-circle-o-up{--fa:\"\\f35b\"}.fa.fa-play-circle-o{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f144\"}.fa.fa-repeat,.fa.fa-rotate-right{--fa:\"\\f01e\"}.fa.fa-refresh{--fa:\"\\f021\"}.fa.fa-list-alt{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f022\"}.fa.fa-dedent{--fa:\"\\f03b\"}.fa.fa-video-camera{--fa:\"\\f03d\"}.fa.fa-picture-o{--fa:\"\\f03e\"}.fa.fa-photo,.fa.fa-picture-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-photo{--fa:\"\\f03e\"}.fa.fa-image{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f03e\"}.fa.fa-map-marker{--fa:\"\\f3c5\"}.fa.fa-pencil-square-o{--fa:\"\\f044\"}.fa.fa-edit,.fa.fa-pencil-square-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-edit{--fa:\"\\f044\""
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/assets/bc028f3168/83253378/custom-icons.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "@charset \"utf-8\";.fak.fa-regular-ballot-check-gear:before,.fa-kit.fa-regular-ballot-check-gear:before{content:\"\u00ee\u20ac\u009d\"}.fak.fa-regular-circle-slash:before,.fa-kit.fa-regular-circle-slash:before{content:\"\u00ee\u20ac\u2039\"}.fak.fa-regular-list-tree-circle-arrow-down:before,.fa-kit.fa-regular-list-tree-circle-arrow-down:before{content:\"\u00ee\u20ac\u0090\"}.fak.fa-regular-list-tree-circle-arrow-up:before,.fa-kit.fa-regular-list-tree-circle-arrow-up:before{content:\"\u00ee\u20ac\u2018\"}.fak.fa-regular-sliders-magnifying-glass:before,.fa-kit.fa-regular-sliders-magnifying-glass:before{content:\"\u00ee\u20ac\u201c\"}.fak.fa-regular-table-list-pen:before,.fa-kit.fa-regular-table-list-pen:before{content:\"\u00ee\u20ac\u0178\"}.fak.fa-regular-user-headset-at:before,.fa-kit.fa-regular-user-headset-at:before{content:\"\u00ee\u20ac\u201d\"}.fak.fa-sharp-light-diagram-cells-circle-arrow-down:before,.fa-kit.fa-sharp-light-diagram-cells-circle-arrow-down:before{content:\"\u00ee\u20ac\u017d\"}.fak.fa-sharp-light-window-maximize-circle-arrow-up:before,.fa-kit.fa-sharp-light-window-maximize-circle-arrow-up:before{content:\"\u00ee\u20ac\u008f\"}.fak.fa-solid-arrow-right-to-arc-lock:before,.fa-kit.fa-solid-arrow-right-to-arc-lock:before{content:\"\u00ee\u20ac\u0161\"}.fak.fa-solid-bell-exclamation-user:before,.fa-kit.fa-solid-bell-exclamation-user:before{content:\"\u00ee\u20ac\u2013\"}.fak.fa-solid-bread-slice-circle-exclamation:before,.fa-kit.fa-solid-bread-slice-circle-exclamation:before{content:\"\u00ee\u20ac\u0192\"}.fak.fa-solid-copy-pen:before,.fa-kit.fa-solid-copy-pen:before{content:\"\u00ee\u20ac\u2019\"}.fak.fa-solid-file-circle-plus:before,.fa-kit.fa-solid-file-circle-plus:before{con"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */.fa{font-family:var(--fa-style-family,\"Font Awesome 6 Pro\");font-weight:var(--fa-style,900)}.fa,.fa-brands,.fa-classic,.fa-duotone,.fa-light,.fa-regular,.fa-sharp,.fa-sharp-duotone,.fa-solid,.fa-thin,.fab,.fad,.fadl,.fadr,.fadt,.fal,.far,.fas,.fasdl,.fasdr,.fasds,.fasdt,.fasl,.fasr,.fass,.fast,.fat{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}.fa-brands:before,.fa-classic:before,.fa-duotone:before,.fa-light:before,.fa-regular:before,.fa-sharp-duotone:before,.fa-sharp:before,.fa-solid:before,.fa-thin:before,.fa:before,.fab:before,.fad:before,.fadl:before,.fadr:before,.fadt:before,.fal:before,.far:before,.fas:before,.fasdl:before,.fasdr:before,.fasds:before,.fasdt:before,.fasl:before,.fasr:before,.fass:before,.fast:before,.fat:before{content:var(--fa)}.fa-duotone.fa-light:after,.fa-duotone.fa-regular:after,.fa-duotone.fa-solid:after,.fa-duotone.fa-thin:after,.fa-duotone:after,.fa-sharp-duotone.fa-light:after,.fa-sharp-duotone.fa-regular:after,.fa-sharp-duotone.fa-solid:after,.fa-sharp-duotone.fa-thin:after,.fa-sharp-duotone:after,.fad:after,.fadl:after,.fadr:after,.fadt:after,.fasdl:after,.fasdr:after,.fasds:after,.fasdt:after{content:var(--fa--fa)}.fa-classic.fa-duotone{fo"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v4-font-face.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-0.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-0.ttf) format(\"truetype\");unicode-range:u+f001,u+f004-f005,u+f007-f008,u+f00c,u+f011-f012,u+f015,u+f018-f019,u+f01c,u+f023-f025,u+f02a,u+f02c-f031,u+f03a,u+f03d,u+f04a-f04e,u+f05b,u+f060-f064,u+f067-f068,u+f06b-f06d,u+f072,u+f075,u+f077-f078,u+f07b,u+f084,u+f086,u+f091,u+f093,u+f095,u+f09c,u+f0a3,u+f0ad,u+f0b0-f0b1,u+f0c0-f0c2,u+f0c6,u+f0c8,u+f128,u+f12a,u+f155,u+f283,u+f292,u+f295}@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-1.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-1.ttf) format(\"truetype\");unicode-range:u+f040,u+f0c9,u+f0cc,u+f0ce,u+f0d1,u+f0d7,u+f0dc,u+f0e0,u+f0e7-f0e8,u+f0f3,u+f106,u+f108-f109,u+f10e,u+f110-f112,u+f11e,u+f121,u+f126,u+f129,u+f12c-f12e,u+f130-f132,u+f135,u+f13d,u+f140,u+f145,u+f15b,u+f164,u+f188,u+f1ab,u+f1ad-f1ae,u+f1b2,u+f1b8,u+f1bb,u+f1c0,u+f1ce,u+f1d8,u+f1dc,u+f1e4-f1e6,u+f1eb-f1ec,u+f205,u+f217,u+f21a-f21d,u+f22d,u+f233-f234,u+f238,u+f246,u+f251,u+f275,u+f29e,u+f2a0,u+f2a7,u+f2bb,u+f2cc-f2cd,u+f2db}@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-3.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-3.ttf) format(\"truety"
+   },
+   {
+    "method": "POST",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3973406589:1795080015:QdrMyPo9x37BlDCgaY737otbnbjJvE8S3-R_LoTzp7s/a5cea568fd688864/CsxKHXUQ5gvxKFTGcnxZMIRgviHcc8VXJc_zNInu1NMa426nhL474Rmzn_0ZWu5fZoWZMVSbMyD-gmyFdwCBy8xEuC0gDQXXdBEKoUUwwZ4U-soP-NHwT-Y81DHHMiGdfw",
+    "status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "post": "xT7Ouc-uMRFQONoz51$xvtI8XzZj5T9h$pZKKca+hdy4E+tQ+ixVsIhZ+pz3WIKNy67CHqS5nGB$Yq9$PAp42AxdYCvaVZ5qLAVIlHiZ4dkZZN034qTIS06-BjXGLR759Mp5d1co6i$mPLYf+OiPluymMNMz-1C6OijxDIE9$gpxQs2bE$rsZqHDYus0W6uahR$zDI9OkHWF$YhLKgpL95m5MwH8-xpl77e2M1zcph6qLDofiqFRTE0l30g$x06c$U$sOu+m8+fWPiG-5t8nYmSYHdZnR3usA9S89SBvwsOIM+vT0K4jvgowgfjvm390BlieE1Tt7Kh1iwY-rHLBttFMuYE5IxkHzrn0ywKR86MS7lMTqrwcbveX2XNI02jRk6Q4TQu062iq1rCp73ql82+5+iNNRMaCQ0LE4K6NQMerjvkvFhVO7zNVxDXGjk-U-L+X6OIrvSf0n7cExdRVn4QDs80n1OCZGOGdY8TmFaD3czMo8lek",
+    "head": "ubCjm8WzoYWKyH6XnZnBp5LPnMvHjZiRmtDNl9/Zy9HUndTGuLyzoqejqezIw97t7c/txKit7c/5ucn2u9239bkB7fIE9/wF1QUGyxAK3efj0QfUFOwR1Bj6HvQM9Pva3BDxJ+IH3hwMJiYpMCoBCDQACBcjDw0ULvUM9ScpMiADP/siPSI9FhpEQwcqBxARRR9ENDRCEDk5FxNeOjJLGF1EI2JYW1U3KTlVamZgLm5daExHQklsUk1selg2a0xZhH4/WIdcZ0CIiY5LT0thW12KYWpPjXCCVG55Xo2hbG+YmYJepmZ2k4OIfK+eiIyssWuFqYiSk3m8lIiqnY14r7ezd4CUvKG2wch/wIWGjKDIq8qUr8KvsY2z2t2+wK/YtMCbnuTep6nFtLff6cux8+bV08PE9dra+67q2fC9uPje/sXdwOS/1ADM1QsM4xHc3d0DDRQMEwYH/NT7HusB9vT+Bt/dKB0WCyHp/Ssf7PAJA/U0JCgj8hnuNAsWIB43IRlBGkkbPxU2Sz5ILh4aUh8nHkEwECM4NU5SLD4yTCMdHiImQyFkR2k+TWBncGdUPmRfbUAzeTplUztnTm1WVFhUWVKCU4KCXnZ4im2FkolLlk54im1rhnJTbZ1dnmF9WqKAWaN6l3iheIaEe5t/aqahgbOAgpeHlYqZt7ORo7GXw7WZkISJs8iawp+bspG0z4fRj7izta3FuLyb3LOsorbW57Xct+irpuPG57zKqNDc8862yvTo+e3N/unKutLi0/L+ufb38uD03QUBBQLoy/XQ8gkRAvjl8B75+tnbFyXeFAQiCeUZJC4o5fovCx4REiw2Cjj4Bg44KPgoMRYaFiVGHSY8Ozw1CSwZJUJJKTBHNyk1SFsnXDFOKCpiLVkgOzFRIT5EPkotSkg8LG8qdXFockxSVlxLV1I/e4FBhFg9f4WIiF5hPop4WUZLaF58lJBnjI5pV49VbpiXXnBbl4aem5+Ek3xlmq2wi4eEhaaycpGycbWsqbd8vpahe6GUo7+XlLiJfcDGxK2fqKmyocGvla3YtLLE18etmMyYza2uur7W4tzgtM3q0MW/re/N5cTSwbnS9dvw883A3t7OBv3wAdcE2t3ixsbN6Nr99A7pCuTw7NrVHOYKCxAjHxcN7d8BFOYh/SArCwr+Bxsu5jQn7/ctCBc1Oy8wHA85QA0wNxg8GyUZR0EYTB4wRyRNIRQkOU5bRxMnXUAuS08eRmFYMyZHQE0pLTteQUNFYl9hUERhN09JN39WfUqCTnFfYnqAgIpbPmSCT0Zxe4xrgFBoc1BQfI+cW2p+nJybWpibn19bhaiGf25ljIOwhYKCpXG4tY67h465jXiSqn2ehJicoJnDu8a+zbmvsKWevauqwMyl2NDVvbacz7TjrtnX07u5yKi5otmrptrPyLyxzeDH7su45unW+MfT+M3vwt0GvtD8AeLUv8cL0OLk5AwVBeQCDvTT2fHuDdv88N8f4SQZHRcD"
+   },
+   {
+    "method": "GET",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a5cea568fd688864/1795085344331/2e14d1e28491078245a7556d77d3705271001119a25a31343139b3bcc81eda53/ChqJwRUoUYwb0ue468m4p8Y9_SsJAeaQXEDNGXZFUyfKFLsIog2PNLZ5s0gnR9bOnmCzxFYW74Fhgo1PIJySLeeZAz9uYLrFnWD35Q30LErY72k5EF7K_rbSHX_T11nacUcvA6rYiIxBGV_RUc3YevwCiopAFvXNXZoZ_T1-C23pjCFjXusByOBMt5lRD-3STTGU74W1i8tyv81Uprg9ObRML8e95hkyJOXDHdtacmJp-wr9sEXhnRCMXLeaurK8zONG_cF37IpSs65fpA1p_m3fXAP4OHfooL056EgfVdb0WKmlT8LNSWvGKzblKTVGJFi7hOxxrXLnmhrdK_s0OIaNoeJJpxtV0CX66nWkOYCukvo6XgmOeDdSPeJqCy_3PPvYLB2wgbj5649CiYQmbCj5t1FYLMcJcIBbQIZEc3PVHi0ANvEle1FUxuLrFRkhqUVrRIjuPcMnLwhW2PQbI-F338Zfbky7UkFM9UPCJ9YAqxnLd0cN0zaSYjf7Xflq0wpwlUiAMcF6nrD-hUkj3gewoHTKlctw8Yy363Tz3XfOhcTU-j5UhDd2gm1G7G0N-SjvMMTgqrctGK0FKesUgD43HxkJY9G0VbXTyrn24qg8y2X5mUeIpwhXqyMfkLQah80kY_y5nW-aZef-HOaGUs0",
+    "status": 401,
+    "content_type": "text/plain; charset=utf-8",
+    "post": "",
+    "head": ""
+   },
+   {
+    "method": "POST",
+    "url": "https://riohondo.curriqunet.com/Search/_getSearchModel",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "",
+    "head": "{\"EntityType\":0,\"PageTitle\":null,\"ClientEntityTypeName\":null,\"IsDistrict\":false,\"ClientEntityTypeId\":0,\"ClientList\":[{\"Id\":6,\"Title\":\"Rio Hondo\",\"Address1\":null,\"Address2\":null,\"City\":null,\"State\":null,\"Zip\":null,\"ContactTitle\":null,\"ContactPhone\":null,\"ContactFax\":null,\"ContactEmail\":null,\"Active\":false,\"Code\":null,\"MetadataCached\":null,\"ClientSetting\":null,\"CacheIdentifier\":\"00000000-0000-0000-0000-000000000000\",\"DistrictId\":0,\"TimeZone\":null,\"IsDistrictClient\":false,\"IsInDistrict\":false,\"IsCurrentSite\":false,\"AaCodes\":[],\"Agreements\":[],\"ArticulationTypes\":[],\"AssessmentMethods\":[],\"AssignmentTypes\":[],\"AwardTypes\":[],\"BasicSkills\":[],\"CaClassCodes\":[],\"CanCodes\":[],\"CompairableTypes\":[],\"ContactTypes\":[],\"ContentReviewTypes\":[],\"ContractEdCodes\":[],\"CoopEdCodes\":[],\"CsuCodes\":[],\"DeliveryMethods\":[],\"EvaluationMethods\":[],\"FaCodes\":[],\"IgetcCodes\":[],\"InstructionTypes\":[],\"MajorRestrictionCodes\":[],\"MaterialTypes\":[],\"MatricAdviseCodes\":[],\"MatricPlacementCodes\":[],\"MatricSvcsCodes\":[],\"NonCreditCodes\":[],\"ObjectiveTypes\":[],\"OesCodes\":[],\"OfferCodes\":[],\"PreCoRequisiteTypes\":[],\"PripCodes\":[],\"ProgramCodes\":[],\"ProgramOesCodes\":[],\"ProgramRequisiteTypes\":[],\"ProgramTypes\":[],\"ReportTypes\":[],\"RequirementTypes\":[],\"RequisiteTypes\":[],\"RevisionTypes\":[],\"SamCodes\":[],\"SpecialClassCodes\":[],\"StudentAssessCodes\":[],\"WorkBasedCodes\":[],\"MetaSelectedSections\":[],\"Courses\":[],\"InstitutionPrograms\":[],\"InstitutionUsers\":[],\"InstutionCourseLinkers\":[],\"OrganizationEntities\":[],\"O"
+   },
+   {
+    "method": "POST",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3973406589:1795080015:QdrMyPo9x37BlDCgaY737otbnbjJvE8S3-R_LoTzp7s/a5cea568fd688864/CsxKHXUQ5gvxKFTGcnxZMIRgviHcc8VXJc_zNInu1NMa426nhL474Rmzn_0ZWu5fZoWZMVSbMyD-gmyFdwCBy8xEuC0gDQXXdBEKoUUwwZ4U-soP-NHwT-Y81DHHMiGdfw",
+    "status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "post": "xT7Ouc-uMRFQONoz51$xvtI8XzZj5T9h$pZKKca+hdy4E+tQ+ixVsIhZ+pz3WIKNy67CHqS5nGB$Yq9$PAp42AxdYCvaVZ5qLAVIlHiZ4dkZZN034qTIS06-BjXGLR759Mp5d1co6i$mPLYf+OiPluymMNMz-1C6OijxDIE9$gpM$zpbk7ANhT7+PvLOd5U$Qo7r2ijbe+tp2WqMhnfYvItv1rceWkA$SQBVfGrrMuyhVFmX3a9izc2Gn7K7+KrIkIa6H+2zxRqVADitAmPtPMzcS++vwpsdifXZEAi5GOsYm1f8Kq-gkMDeH9SRinaAtNQVGXzmfOVoS0ytsFGDLseVpuqBVXZUId6ck1uc4bnyYC81k7gMDIUEA0t0uuRirHSX2zjW8w54VvyuRGbcEijCuYLzyScugsY3jvkwe$P0Fk6gGe9hcX6wvDd8i8R1UEcTFvhhqd2PL9ueae3YgQvujWkIP7YQBfhZTL9CMkSa-MaNduE9",
+    "head": "ubCjm8WzoYWKyH6XnZnBp5LOi47HxJjaptLUmJ6enqvTvr7En8inudrpvcbA6M3Zqcrd4MKw4bDp09n03Oz11wG13dUE+wXe9uHMBAXk48rMzQPhCu8V6cza2uzrChzp3fMEAuYk8RPq5BrtDiwELTQuJi0iNCTx+RMuHP479g0wMjQjIxQJISAFOj4IO0c7PSYTDUgyRi4bTFMrLVpQHxUcNDZUMWhCNWA+N2lqMWFjUWZnV3huOVNWe1BWU085XWB8VWFUZlhnaE1kbV1ug3NyXYt4i1Bie41+mmdtd5V6fJekpoJ6YpaWp56Ca52BiZ+PnrZqhHCTiIaPkoqqkKCOfJagw56piL+XxaumroyQspXLtpWh1K3Ttbium5q82LSc3K/Js+qh2KrCrq/C7vOy6e/U2O/Fw/vU1rXzwPTt4OHX0trd9QT8Be7fCt7+CtEUB+YH0QsG/O776fYV2hX9F+78FRwe/B4o7e4j7QgNAQoRMxoSOhMu+RIcESIwOyASGyIdSTwJBj9DMCcrVEtJK0o3NC86G144O1EcSx9cLmZSPT9haWBVRD9QRipBb19DX3NRd1NKRX88T11jUWF9T4RAfFZFVH9XaYhgYWiBaVaXloqbmVZ8c5SLd2tudW6ghXGAfpV2hKaHbapqsIGIsYuMj4WlpKeymq6gl4uko5PGmcC6pJ2licK4jZvChrTUlLmw2Kyal62xvq26377RpObn4+fG1eXE7seo8+bzy+Ox08z2u/nqtwHO09wE3M/Y0/fa5fzL5MnOzwz65e8G8NPR+BkZGRgXHtrrHxMaECPlIvYoBgEaKBz5Ci4lKQ3wDjoSOCgQBikQ9zMtIC4APDEERioGPB5BLyNIBSspQSpGOjtLO1FVU0pVYS9AXF5FYmUqSENiTyxhaERBZHBTYVhvYkoyOFNQaXl6d3p8Q297h3JraFmMTVBxRIV9ZF9zdmaZiWdmnntcdX5Zk3twl4GpZ6ufZ4B5nZKAjZRnjpa2oXh0fJt2scCAsq6jop+vubjJxcC6i4ax0Mi+jcufrJGzsdrVs86ysNLd5M6cuLzo2sHf5NzZ2+PI7Mvu6NXK6K/Pstflze/g8tLzA87Y2Qi//fnG4wfG/eXI/RADFgcQ0unVCdje79L9IB4lFvLz4xnp6Cgp+SkE7P7qEi4WGCTr9fowH/oyLQshHTo6IxEdJRcUICBNCx4nCRQkQFEhFRpNVU1GU1tbKhwtOTBaXVxAXztEPCxdLltBSkpiNUBEajJFTnpyXzlAcEB9WnhYQouCfkVXgWlJZW5zb2tqho+PZHR0ao6YjJuUXZ15Y3NjaoONepZ8n4+pn5yjf7J1mIeSj5m+f3y8dIyjvrDCtoihlcSXo5+kvayhi9K3xciusaiWyNfdy9etntni2sC8x8Dow8bo3LrBqcbDq7PItbfu6O+v3rnu4vm6zNwBz78ABwXq9f3HAQnw593zDfHr5A/U/e/73ewT+vf64PoZ2t8f"
+   },
+   {
+    "method": "POST",
+    "url": "https://riohondo.curriqunet.com/Search/GetPublicSavedSearch",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "clientIds%5B%5D=6&entityTypeId=1&clientEntityTypeId=11",
+    "head": "[{\"Id\":0,\"SearchName\":null,\"SearchConfig\":\"{\\r\\n  \\\"rules\\\": null,\\r\\n  \\\"displayColumns\\\": [\\r\\n    { \\\"id\\\": \\\"field-check-field-888-58164\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-872-58161\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-873-58162\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-ProposalType-1\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-status-1\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-880-62694\\\", \\\"location\\\": \\\"2\\\" }\\r\\n  ],\\r\\n  \\\"filterByUser\\\": false,\\r\\n  \\\"keyword\\\": \\\"\\\",\\r\\n  \\\"searchName\\\": \\\"\\\",\\r\\n  \\\"userId\\\": 39006,\\r\\n  \\\"clientEntityTypeId\\\": 11,\\r\\n  \\\"clientEntitySubTypeId\\\": null,\\r\\n  \\\"clientIds\\\": [6],\\r\\n  \\\"entityId\\\": 1,\\r\\n  \\\"sortOptions\\\": [],\\r\\n  \\\"sortAscendingFlag\\\": \\\"1\\\",\\r\\n  \\\"isDefaultSearchForClientEntityType\\\": false,\\r\\n  \\\"isPublicSearchForClientEntityType\\\": true,\\r\\n  \\\"publicSearchClientId\\\": 6,\\r\\n  \\\"campusIds\\\": [],\\r\\n  \\\"mode\\\": \\\"basic\\\"\\r\\n}\",\"IsPublic\":false}]"
+   },
+   {
+    "method": "POST",
+    "url": "https://riohondo.curriqunet.com/Search/GetSearchFields",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "cetId=11&entityTypeId=1&clientIds%5B%5D=6&filterScope=0",
+    "head": "{\"fields\":[{\"id\":\"field-872-58161\",\"tabname\":\"Course Cover Sheet\",\"tabId\":38935,\"label\":\"Course Title\",\"precision\":\"0\",\"scale\":\"0\",\"datatype\":\"nvarchar\",\"canfilter\":1,\"EntityTypeId\":\"11\",\"IsSubject\":false,\"IsCourseNumber\":false,\"IsCourseTitle\":true,\"IsProposalType\":false,\"IsStatus\":false,\"IsAwardType\":false,\"IsProgramTitle\":false,\"IsDepartment\":false,\"IsApprovalSubject\":false,\"IsApprovalDepartment\":false,\"IsApprovalProposalType\":false,\"IsApprovalPosition\":false,\"IsCourseSemester\":false,\"IsProgramSemester\":false,\"IsPackageTitle\":false,\"IsModuleTitle\":false,\"IsModuleSemester\":false,\"IsModuleSubject\":false,\"IsDivision\":false,\"IsTier3\":false,\"ClientEntityTypeId\":null,\"IsPackageSubject\":false,\"clientId\":6,\"RootMultiLevelDetailSectionId\":0,\"RootMultiLevelDetailSection\":null,\"RootMultiLevelDetailSectionMBSId\":0,\"IsMultiLevelDetail\":false,\"HardCodedLongLookupList\":false},{\"id\":\"field-873-58162\",\"tabname\":\"Course Cover Sheet\",\"tabId\":38935,\"label\":\"Subject/Prefix\",\"precision\":\"10\",\"scale\":\"0\",\"datatype\":\"int\",\"canfilter\":1,\"EntityTypeId\":\"11\",\"IsSubject\":true,\"IsCourseNumber\":false,\"IsCourseTitle\":false,\"IsProposalType\":false,\"IsStatus\":false,\"IsAwardType\":false,\"IsProgramTitle\":false,\"IsDepartment\":false,\"IsApprovalSubject\":false,\"IsApprovalDepartment\":false,\"IsApprovalProposalType\":false,\"IsApprovalPosition\":false,\"IsCourseSemester\":false,\"IsProgramSemester\":false,\"IsPackageTitle\":false,\"IsModuleTitle\":false,\"IsModuleSemester\":false,\"IsModuleSubject\":false,\"IsDivision\":false,\"IsTier"
+   },
+   {
+    "method": "POST",
+    "url": "https://riohondo.curriqunet.com/Search/GetPublicSavedSearch",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "clientIds%5B%5D=6&entityTypeId=1&clientEntityTypeId=11",
+    "head": "[{\"Id\":0,\"SearchName\":null,\"SearchConfig\":\"{\\r\\n  \\\"rules\\\": null,\\r\\n  \\\"displayColumns\\\": [\\r\\n    { \\\"id\\\": \\\"field-check-field-888-58164\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-872-58161\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-873-58162\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-ProposalType-1\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-status-1\\\", \\\"location\\\": \\\"1\\\" },\\r\\n    { \\\"id\\\": \\\"field-check-field-880-62694\\\", \\\"location\\\": \\\"2\\\" }\\r\\n  ],\\r\\n  \\\"filterByUser\\\": false,\\r\\n  \\\"keyword\\\": \\\"\\\",\\r\\n  \\\"searchName\\\": \\\"\\\",\\r\\n  \\\"userId\\\": 39006,\\r\\n  \\\"clientEntityTypeId\\\": 11,\\r\\n  \\\"clientEntitySubTypeId\\\": null,\\r\\n  \\\"clientIds\\\": [6],\\r\\n  \\\"entityId\\\": 1,\\r\\n  \\\"sortOptions\\\": [],\\r\\n  \\\"sortAscendingFlag\\\": \\\"1\\\",\\r\\n  \\\"isDefaultSearchForClientEntityType\\\": false,\\r\\n  \\\"isPublicSearchForClientEntityType\\\": true,\\r\\n  \\\"publicSearchClientId\\\": 6,\\r\\n  \\\"campusIds\\\": [],\\r\\n  \\\"mode\\\": \\\"basic\\\"\\r\\n}\",\"IsPublic\":false}]"
+   }
+  ],
+  "calls_after_scroll": [],
+  "body_head": "Login\nSearch\nSearch\nCurriculum-Courses\nCourse Type\nSearch\nReset\nSubject \nStatus \nOutput Fields 5\nSort Options \nAdvanced Filters\nCampus Resources\nClick here for Planning and Program Review Support\nClick here for Curriculum Information, Documents and Forms"
+ }
+}

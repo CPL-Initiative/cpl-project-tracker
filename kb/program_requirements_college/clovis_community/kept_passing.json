@@ -1,0 +1,177 @@
+{
+ "run": "44522071814",
+ "programs": [
+  {
+   "control_number": "35886",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=187",
+   "filed_source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=187",
+   "cost_usd": 0.08087,
+   "usage": {
+    "input_tokens": 7433,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7433,
+      "output_tokens": 2557,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2557,
+    "output_tokens_details": {
+     "thinking_tokens": 981
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 23,
+     "listed": 23,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "SOCIC1000",
+       "listed": "SOC1A",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      19.0,
+      20.0
+     ],
+     "stated": [
+      19.0,
+      21.0
+     ],
+     "against": "program",
+     "why": [
+      "'Substitution Courses' chooses courses but names no minimum"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 7,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 22,
+     "listed": 23,
+     "share": 0.957,
+     "missing": [
+      "SOC1A"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "SOCIC1000"
+     ],
+     "flagged": [
+      "SOCIC1000"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      19.0,
+      20.0
+     ],
+     "stated": [
+      19.0,
+      21.0
+     ],
+     "against": "program",
+     "why": [],
+     "short_high": true,
+     "rescored": "Sam's ruling of 2026-11-17, short high end"
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 7,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  }
+ ]
+}

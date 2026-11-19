@@ -5,11 +5,12 @@
   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "COMM10",
    "COMM12",
    "COMM15",
+   "COMM2",
    "COMM25",
    "COMM4",
    "COMM8",
@@ -18,14 +19,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "6aa984d05abfbba4"
   },
   "listed": 9,
   "text_chars": 2759
@@ -49,14 +52,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=136",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "52160be4d8985466"
   },
   "listed": 9,
   "text_chars": 3557
@@ -80,8 +85,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -89,10 +94,12 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "3f75b058b0c3d6af"
   },
   "listed": 9,
-  "text_chars": 9254
+  "text_chars": 9253
  },
  {
   "control_number": "33430",
@@ -110,14 +117,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=136",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "52160be4d8985466"
   },
   "listed": 6,
   "text_chars": 3557
@@ -128,12 +137,17 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.682,
+  "coverage": 0.909,
   "codes_found": [
+   "BIOL10",
    "BIOL11A",
    "BIOL11B",
+   "BIOL13",
+   "BIOL13L",
+   "BIOL2",
    "BIOL20",
    "BIOL22",
+   "BIOL3",
    "BIOL31",
    "BIOL5",
    "CHEM1A",
@@ -147,21 +161,27 @@
    "PHYS4C"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=104",
+   "title": "LIFE SCIENCE",
+   "h1": "LIFE SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    138,
-    139,
-    140,
-    141
+    104,
+    105,
+    106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 104,
+    "share": 0.909
+   },
+   "text_sha": "0984b683c8a86c36"
   },
   "listed": 22,
-  "text_chars": 10969
+  "text_chars": 8161
  },
  {
   "control_number": "33432",
@@ -186,8 +206,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -196,7 +216,9 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "dfc2eea6d6f65e08"
   },
   "listed": 15,
   "text_chars": 12004
@@ -230,8 +252,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -240,7 +262,9 @@
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "dfc2eea6d6f65e08"
   },
   "listed": 22,
   "text_chars": 12004
@@ -250,34 +274,12 @@
   "title": "Business Administration Marketing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.733,
-  "codes_found": [
-   "ACCTG40",
-   "ACCTG4A",
-   "BA10",
-   "BA23",
-   "BA33",
-   "BA39",
-   "BA47",
-   "BA5",
-   "IS15",
-   "MKTG10",
-   "MKTG12"
-  ],
-  "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    110
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 3328
+  "text_chars": 0
  },
  {
   "control_number": "33458",
@@ -294,8 +296,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -304,7 +306,9 @@
     119,
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4ccb293dba05c507"
   },
   "listed": 4,
   "text_chars": 13360
@@ -338,86 +342,47 @@
    "PHOTO1"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=97",
+   "title": "art. An Art: Two-Dimensional AA degree is designed",
+   "h1": "art. An Art: Two-Dimensional AA degree is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    97,
     98,
     99,
-    100,
-    101
+    100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7100a56ad6dc7495"
   },
   "listed": 20,
-  "text_chars": 12645
+  "text_chars": 9734
  },
  {
   "control_number": "33460",
   "title": "Business Administration: Accounting",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "ACCTG40",
-   "BA10",
-   "BA23",
-   "BA33",
-   "BA39",
-   "BA47",
-   "BA5",
-   "IS15"
-  ],
-  "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    109,
-    110
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 6480
+  "text_chars": 0
  },
  {
   "control_number": "33461",
   "title": "Business Administration: Information Systems Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.643,
-  "codes_found": [
-   "ACCTG40",
-   "ACCTG4A",
-   "BA10",
-   "BA23",
-   "BA33",
-   "BA39",
-   "BA47",
-   "BA5",
-   "IS15"
-  ],
-  "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    109,
-    110
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 6480
+  "text_chars": 0
  },
  {
   "control_number": "33462",
@@ -442,15 +407,17 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "089b59df70f4dc88"
   },
   "listed": 15,
   "text_chars": 6480
@@ -461,7 +428,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.833,
   "codes_found": [
    "ECE1",
    "ECE11",
@@ -469,14 +436,15 @@
    "ECE13",
    "ECE2",
    "ECE20",
+   "ECE3",
    "ECE4",
    "ECE6",
    "ECE7"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -484,7 +452,9 @@
     120,
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "053ae2ca9a7bea64"
   },
   "listed": 12,
   "text_chars": 10987
@@ -495,28 +465,31 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.625,
+  "coverage": 0.75,
   "codes_found": [
    "ECE1",
    "ECE2",
+   "ECE3",
    "ECE4",
    "ECE6",
    "ECE7"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "The Teacher III Certificate of Achievement is designed",
+   "h1": "The Teacher III Certificate of Achievement is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     120,
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "55ee7a684c2ac463"
   },
   "listed": 8,
-  "text_chars": 7480
+  "text_chars": 7343
  },
  {
   "control_number": "33466",
@@ -524,7 +497,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.8,
   "codes_found": [
    "ECE1",
    "ECE11",
@@ -533,6 +506,7 @@
    "ECE15",
    "ECE2",
    "ECE20",
+   "ECE3",
    "ECE30",
    "ECE31",
    "ECE4",
@@ -543,21 +517,23 @@
    "ECE8"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=117",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    117,
     118,
     119,
-    120,
-    121
+    120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "4ccb293dba05c507"
   },
   "listed": 20,
-  "text_chars": 13554
+  "text_chars": 13360
  },
  {
   "control_number": "33467",
@@ -570,25 +546,28 @@
    "COMM10",
    "COMM12",
    "COMM15",
+   "COMM2",
    "COMM25",
    "COMM4",
    "COMM8",
-   "COMMC1000",
-   "PHIL2"
+   "COMMC1000"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=162",
+   "title": "ASSOCIATE IN ARTS IN COMMUNICATION STUDIES",
+   "h1": "ASSOCIATE IN ARTS IN COMMUNICATION STUDIES",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    111
+    162,
+    163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b56713c49b2b8a85"
   },
   "listed": 9,
-  "text_chars": 2759
+  "text_chars": 5365
  },
  {
   "control_number": "33468",
@@ -596,12 +575,14 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "CSCI26",
    "CSCI40",
    "CSCI41",
    "CSCI45",
+   "MATH5A",
+   "MATH5B",
    "PHYS2A",
    "PHYS2B",
    "PHYS4A",
@@ -609,15 +590,17 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "fa697ac1a2345e6c"
   },
   "listed": 10,
   "text_chars": 5428
@@ -641,8 +624,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -650,7 +633,9 @@
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f6636d64b79afadf"
   },
   "listed": 8,
   "text_chars": 10172
@@ -674,8 +659,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -683,7 +668,9 @@
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f6636d64b79afadf"
   },
   "listed": 8,
   "text_chars": 10172
@@ -746,17 +733,19 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=151",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b84629a36959dbb5"
   },
   "listed": 23,
-  "text_chars": 2860
+  "text_chars": 2859
  },
  {
   "control_number": "33476",
@@ -779,8 +768,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -789,10 +778,12 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "922e05f0f0ea9ee9"
   },
   "listed": 11,
-  "text_chars": 11126
+  "text_chars": 11125
  },
  {
   "control_number": "33478",
@@ -814,8 +805,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -824,10 +815,12 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "922e05f0f0ea9ee9"
   },
   "listed": 9,
-  "text_chars": 11126
+  "text_chars": 11125
  },
  {
   "control_number": "33479",
@@ -846,15 +839,17 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "089b59df70f4dc88"
   },
   "listed": 7,
   "text_chars": 6480
@@ -879,14 +874,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "bdcb32f6155d887d"
   },
   "listed": 9,
   "text_chars": 3328
@@ -909,18 +906,21 @@
    "WTD114"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=149",
+   "title": "wastewater treatment certificate of achievement.",
+   "h1": "wastewater treatment certificate of achievement.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    149,
     150
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5e1c9871f3865b21"
   },
   "listed": 8,
-  "text_chars": 2754
+  "text_chars": 4673
  },
  {
   "control_number": "33482",
@@ -948,8 +948,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -958,10 +958,12 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "922e05f0f0ea9ee9"
   },
   "listed": 15,
-  "text_chars": 11126
+  "text_chars": 11125
  },
  {
   "control_number": "33483",
@@ -969,7 +971,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 0.938,
   "codes_found": [
    "BA10",
    "BA39",
@@ -984,12 +986,13 @@
    "IS47",
    "IS50A",
    "IS61",
-   "MATH103"
+   "MATH103",
+   "MATH5A"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -998,58 +1001,36 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "922e05f0f0ea9ee9"
   },
   "listed": 16,
-  "text_chars": 11126
+  "text_chars": 11125
  },
  {
   "control_number": "33484",
   "title": "Liberal Arts & Sciences: Arts & Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "HIST20"
-  ],
-  "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=122",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    122
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 3143
+  "text_chars": 0
  },
  {
   "control_number": "33485",
   "title": "Liberal Arts & Sciences: Natural Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "GEOL9"
-  ],
-  "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=122",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    122
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 3143
+  "text_chars": 0
  },
  {
   "control_number": "33486",
@@ -1057,12 +1038,14 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.909,
+  "coverage": 0.97,
   "codes_found": [
    "ART2",
    "ARTHC1100",
    "ARTHC1200",
    "ARTHC1200H",
+   "BIOL10",
+   "BIOL3",
    "COMM25",
    "CSCI1",
    "ECE2",
@@ -1092,8 +1075,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "The Liberal Studies Associate in Arts Degree is",
+   "h1": "The Liberal Studies Associate in Arts Degree is",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1102,10 +1085,12 @@
     141,
     142
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e46d106f9933c569"
   },
   "listed": 33,
-  "text_chars": 10924
+  "text_chars": 9867
  },
  {
   "control_number": "33487",
@@ -1119,14 +1104,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     107
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b8717e7e6e5c34e5"
   },
   "listed": 1,
   "text_chars": 2505
@@ -1149,11 +1136,12 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.632,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL20",
    "BIOL22",
    "BIOL5",
+   "CHEM10",
    "CHEM3A",
    "DANCE10",
    "DANCE12A",
@@ -1161,6 +1149,9 @@
    "DANCE15",
    "DANCE28",
    "DANCE9",
+   "FN35",
+   "FN40",
+   "HLTH1",
    "HLTH2",
    "KINES22",
    "PE12",
@@ -1171,25 +1162,42 @@
    "PE16",
    "PE19",
    "PE29",
+   "PE32B",
+   "PE32C",
+   "PE36B",
+   "PE36C",
+   "PE36D",
+   "PE39B",
+   "PE43B",
+   "PE43C",
+   "PE45",
+   "PE49",
    "PE49A",
    "PE6",
    "PE7",
    "PE71"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=146",
+   "title": "PHYSICAL EDUCATION",
+   "h1": "PHYSICAL EDUCATION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    173,
-    174
+    146,
+    147
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 146,
+    "share": 1.0
+   },
+   "text_sha": "8efc12a126dbbaa9"
   },
   "listed": 38,
-  "text_chars": 5958
+  "text_chars": 4017
  },
  {
   "control_number": "33490",
@@ -1215,14 +1223,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     107
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b8717e7e6e5c34e5"
   },
   "listed": 1,
   "text_chars": 2505
@@ -1239,14 +1249,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     148
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "cb82394bf2881ad6"
   },
   "listed": 1,
   "text_chars": 2720
@@ -1257,7 +1269,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 0.938,
   "codes_found": [
    "BA10",
    "BA39",
@@ -1272,12 +1284,13 @@
    "IS62",
    "IS63",
    "IS64",
-   "MATH103"
+   "MATH103",
+   "MATH5A"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=132",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1286,10 +1299,12 @@
     134,
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "58b96e048259b22e"
   },
   "listed": 16,
-  "text_chars": 10255
+  "text_chars": 10251
  },
  {
   "control_number": "33494",
@@ -1297,7 +1312,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 0.938,
   "codes_found": [
    "BA23",
    "CRIM1",
@@ -1312,22 +1327,25 @@
    "PSYC42",
    "PSYCC1000",
    "PSYCC1000H",
+   "SOC1A",
    "STATC1000"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "Administration of Justice for Transfer Degree",
+   "h1": "Administration of Justice for Transfer Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     152,
     153
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1b444cb10d464605"
   },
   "listed": 16,
-  "text_chars": 6805
+  "text_chars": 4444
  },
  {
   "control_number": "33495",
@@ -1348,30 +1366,54 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "title": "Business Administration for Transfer Degree 2.0 will",
+   "h1": "Business Administration for Transfer Degree 2.0 will",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     159,
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "419ada8457e7778f"
   },
   "listed": 10,
-  "text_chars": 6621
+  "text_chars": 5109
  },
  {
   "control_number": "33496",
   "title": "Communication Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.529,
+  "codes_found": [
+   "COMM10",
+   "COMM12",
+   "COMM15",
+   "COMM2",
+   "COMM25",
+   "COMM4",
+   "COMM8",
+   "COMMC1000",
+   "COMMC1000H"
+  ],
+  "source": {
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "6aa984d05abfbba4"
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2759
  },
  {
   "control_number": "33497",
@@ -1383,27 +1425,27 @@
   "codes_found": [
    "ECE1",
    "ECE2",
+   "ECE3",
    "ECE4",
    "ECE6",
-   "ECE7",
-   "ECE8"
+   "ECE7"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=163",
+   "title": "Early Childhood Education for Transfer Degree is",
+   "h1": "Early Childhood Education for Transfer Degree is",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    118,
-    119,
-    120,
-    121
+    163,
+    164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e16fb0908bd76216"
   },
   "listed": 8,
-  "text_chars": 13554
+  "text_chars": 4778
  },
  {
   "control_number": "33498",
@@ -1448,17 +1490,19 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     167
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "918ec41ded1ef7fa"
   },
   "listed": 33,
-  "text_chars": 3443
+  "text_chars": 3442
  },
  {
   "control_number": "33499",
@@ -1466,7 +1510,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.968,
+  "coverage": 1.0,
   "codes_found": [
    "ASL2",
    "ASL3",
@@ -1492,6 +1536,7 @@
    "HISTC1002H",
    "PSYCC1000",
    "PSYCC1000H",
+   "SOC1A",
    "SOCI3",
    "SPAN2",
    "SPAN3",
@@ -1500,20 +1545,23 @@
    "SPAN4NS"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=170",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=169",
+   "title": "ASSOCIATE IN ARTS IN HISTORY FOR TRANSFER",
+   "h1": "ASSOCIATE IN ARTS IN HISTORY FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    169,
     170,
     171,
     172
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9e1ba2896ad4d17d"
   },
   "listed": 31,
-  "text_chars": 8425
+  "text_chars": 9513
  },
  {
   "control_number": "33500",
@@ -1521,8 +1569,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.931,
+  "coverage": 1.0,
   "codes_found": [
+   "BA23",
    "BIOL20",
    "BIOL22",
    "BIOL5",
@@ -1549,22 +1598,32 @@
    "PE7",
    "PE71",
    "PHYS2A",
-   "PHYS4A"
+   "PHYS4A",
+   "STATC1000"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=147",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=173",
+   "title": "KINESIOLOGY",
+   "h1": "KINESIOLOGY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    147,
-    148
+    173,
+    174,
+    175,
+    176
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 173,
+    "share": 1.0
+   },
+   "text_sha": "7ee15ee01b5380c2"
   },
   "listed": 29,
-  "text_chars": 5431
+  "text_chars": 12482
  },
  {
   "control_number": "33501",
@@ -1572,28 +1631,34 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.625,
+  "coverage": 1.0,
   "codes_found": [
    "BA23",
    "CSCI26",
    "CSCI40",
+   "MATH5A",
+   "MATH5B",
+   "MATH6",
    "PHYS4A",
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=174",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    174,
     175,
     176
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c219a76116edb396"
   },
   "listed": 8,
-  "text_chars": 6532
+  "text_chars": 9445
  },
  {
   "control_number": "33502",
@@ -1601,14 +1666,18 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.739,
+  "coverage": 0.957,
   "codes_found": [
    "BA23",
+   "BIOL10",
    "BIOL11A",
+   "BIOL3",
    "BIOL5",
    "CSCI40",
    "ECE14",
    "ECE2",
+   "MATH5A",
+   "MATH5B",
    "PSYC16",
    "PSYC25",
    "PSYC33",
@@ -1619,12 +1688,13 @@
    "PSYC5",
    "PSYCC1000",
    "PSYCC1000H",
+   "SOC1A",
    "STATC1000"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=182",
-   "title": null,
-   "h1": null,
+   "title": "Transfer (AA-T in Psychology) prepares students for",
+   "h1": "Transfer (AA-T in Psychology) prepares students for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1633,10 +1703,12 @@
     184,
     185
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1a26c49406ecc173"
   },
   "listed": 23,
-  "text_chars": 10360
+  "text_chars": 9643
  },
  {
   "control_number": "33503",
@@ -1644,29 +1716,36 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
    "PHYS4C"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=179",
+   "title": "PHYSICS",
+   "h1": "PHYSICS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    123,
-    124,
-    125,
-    126
+    179,
+    180
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 179,
+    "share": 1.0
+   },
+   "text_sha": "c5f9d93280ec6e33"
   },
   "listed": 6,
-  "text_chars": 13294
+  "text_chars": 7001
  },
  {
   "control_number": "33504",
@@ -1674,10 +1753,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.636,
+  "coverage": 0.727,
   "codes_found": [
    "BA23",
    "PSYC5",
+   "SOC1A",
    "SOCI11",
    "SOCI1B",
    "SOCI2",
@@ -1686,18 +1766,20 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=186",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE IN ARTS IN SOCIOLOGY FOR TRANSFER",
+   "h1": "ASSOCIATE IN ARTS IN SOCIOLOGY FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     186,
     187
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e3745255f92c2f5a"
   },
   "listed": 11,
-  "text_chars": 6484
+  "text_chars": 6465
  },
  {
   "control_number": "33505",
@@ -1727,20 +1809,26 @@
    "PHOTO1"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=155",
+   "title": "ASSOCIATE IN ARTS IN STUDIO ARTS FOR",
+   "h1": "ASSOCIATE IN ARTS IN STUDIO ARTS FOR",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    98,
-    99,
-    100
+    155,
+    156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 155,
+    "share": 0.947
+   },
+   "text_sha": "cde6207d61cc7f77"
   },
   "listed": 19,
-  "text_chars": 8958
+  "text_chars": 4435
  },
  {
   "control_number": "33506",
@@ -1748,13 +1836,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 0.975,
   "codes_found": [
    "ASL2",
    "ASL3",
    "ASL4",
    "BA18",
    "CHIN2",
+   "ECONC2001",
    "ENGL43A",
    "ENGL43B",
    "ENGL44A",
@@ -1779,23 +1868,32 @@
    "HISTC1002H",
    "LING10",
    "MUS16A",
+   "PHIL1",
+   "PHIL1C",
+   "PHIL1CH",
    "PHIL1D",
    "PHIL2",
+   "PHIL3A",
+   "PHIL4",
+   "PHIL6",
    "SPAN3NS"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=178",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=177",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    177,
     178
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "98e9d50206028535"
   },
   "listed": 40,
-  "text_chars": 2682
+  "text_chars": 5613
  },
  {
   "control_number": "33508",
@@ -1803,9 +1901,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.88,
+  "coverage": 0.96,
   "codes_found": [
    "ART2",
+   "BIOL10",
+   "BIOL3",
    "COMM25",
    "COMMC1000",
    "COMMC1000H",
@@ -1829,20 +1929,21 @@
    "SCI1A"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=166",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
+   "title": "in Arts in Elementary Teacher Education for Transfer",
+   "h1": "in Arts in Elementary Teacher Education for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    166,
-    167,
-    168
+    121,
+    122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c7646ac67e3e6b20"
   },
   "listed": 25,
-  "text_chars": 9074
+  "text_chars": 5683
  },
  {
   "control_number": "33768",
@@ -1863,8 +1964,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1873,10 +1974,12 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "922e05f0f0ea9ee9"
   },
   "listed": 9,
-  "text_chars": 11126
+  "text_chars": 11125
  },
  {
   "control_number": "33930",
@@ -1905,18 +2008,20 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=149",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     149,
     150
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "93cbc524b3373876"
   },
   "listed": 4,
-  "text_chars": 6334
+  "text_chars": 6331
  },
  {
   "control_number": "35129",
@@ -1924,31 +2029,35 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.571,
+  "coverage": 0.643,
   "codes_found": [
    "BIOL11A",
    "BIOL11B",
    "CHEM1A",
    "CHEM1B",
+   "MATH5A",
    "PHYS2A",
    "PHYS2B",
    "PHYS4A",
    "PHYS4B"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=158",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=157",
+   "title": "ASSOCIATE IN SCIENCE IN BIOLOGY FOR TRANSFER",
+   "h1": "ASSOCIATE IN SCIENCE IN BIOLOGY FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    157,
     158,
     159
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "abe1d22cadce4cb0"
   },
   "listed": 14,
-  "text_chars": 6303
+  "text_chars": 7533
  },
  {
   "control_number": "35209",
@@ -1975,8 +2084,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=181",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in Political Science for Transfer",
+   "h1": "The Associate in Arts in Political Science for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1985,10 +2094,12 @@
     183,
     184
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f1fb372ee50477ea"
   },
   "listed": 14,
-  "text_chars": 11259
+  "text_chars": 10694
  },
  {
   "control_number": "35535",
@@ -1996,7 +2107,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG4A",
    "ACCTG4B",
@@ -2005,22 +2116,26 @@
    "BA5",
    "IS15",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "STATC1000"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=165",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER",
+   "h1": "ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     165
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5a48c209b7c2db88"
   },
   "listed": 11,
-  "text_chars": 2811
+  "text_chars": 2780
  },
  {
   "control_number": "35845",
@@ -2040,7 +2155,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.957,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "COMM10",
@@ -2054,6 +2169,7 @@
    "HISTC1001",
    "HISTC1002",
    "HISTC1002H",
+   "SOC1A",
    "SOCI2",
    "SOCI32",
    "SPAN1",
@@ -2067,17 +2183,19 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=187",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in Spanish for Transfer Degree",
+   "h1": "The Associate in Arts in Spanish for Transfer Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     187
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3fdc0e38d025d442"
   },
   "listed": 23,
-  "text_chars": 3155
+  "text_chars": 2833
  },
  {
   "control_number": "36050",
@@ -2085,15 +2203,17 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.808,
   "codes_found": [
    "ANTH2",
    "ANTH3",
    "ANTH4",
+   "ANTHRO1",
    "ART10",
    "ART11",
    "ART17",
    "ART19",
+   "ART2",
    "ART3",
    "ART30A",
    "ART37A",
@@ -2105,6 +2225,7 @@
    "ART9",
    "ARTHC1200",
    "ARTHC1200H",
+   "CHIN2",
    "ECONC2001",
    "ETHNST32",
    "HIST1",
@@ -2128,20 +2249,23 @@
    "SPAN4NS"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=155",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=154",
+   "title": "The Associate in Arts in Art History for Transfer",
+   "h1": "The Associate in Arts in Art History for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    154,
     155,
     156,
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "43ae87dd1ce66c35"
   },
   "listed": 52,
-  "text_chars": 8665
+  "text_chars": 11006
  },
  {
   "control_number": "36326",
@@ -2149,10 +2273,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.957,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "ANTH3",
+   "ANTHRO1",
    "BA23",
    "BIOL13",
    "BIOL2",
@@ -2176,45 +2301,31 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=168",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE IN ARTS IN GEOGRAPHY FOR TRANSFER",
+   "h1": "ASSOCIATE IN ARTS IN GEOGRAPHY FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "287bbde8c15e05f8"
   },
   "listed": 23,
-  "text_chars": 2801
+  "text_chars": 2770
  },
  {
   "control_number": "36539",
   "title": "Rehabilitation Aide",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.556,
-  "codes_found": [
-   "BIOL5",
-   "COMM10",
-   "HCA5",
-   "OT10",
-   "OT17"
-  ],
-  "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=141",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    141
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 2604
+  "text_chars": 0
  },
  {
   "control_number": "36632",
@@ -2222,11 +2333,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 0.867,
   "codes_found": [
    "ANTH2",
    "ANTH3",
    "ANTH4",
+   "ANTHRO1",
    "BA23",
    "BIOL20",
    "GEOG10",
@@ -2239,8 +2351,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=153",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2248,7 +2360,9 @@
     154,
     155
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "38df58a7b928264a"
   },
   "listed": 15,
   "text_chars": 9960
@@ -2271,18 +2385,20 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103,
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e85fbee5a57c8401"
   },
   "listed": 8,
-  "text_chars": 5490
+  "text_chars": 5489
  },
  {
   "control_number": "37030",
@@ -2290,7 +2406,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.765,
+  "coverage": 0.882,
   "codes_found": [
    "CSCI40",
    "ENGR10",
@@ -2301,6 +2417,8 @@
    "ENGR6",
    "ENGR8",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -2308,8 +2426,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2318,7 +2436,9 @@
     125,
     126
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "fcea12dfb49f8795"
   },
   "listed": 17,
   "text_chars": 13294
@@ -2329,7 +2449,7 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.765,
+  "coverage": 0.882,
   "codes_found": [
    "CSCI40",
    "ENGR10",
@@ -2340,6 +2460,8 @@
    "ENGR6",
    "ENGR8",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -2347,8 +2469,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2357,7 +2479,9 @@
     125,
     126
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "fcea12dfb49f8795"
   },
   "listed": 17,
   "text_chars": 13294
@@ -2368,7 +2492,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 0.929,
   "codes_found": [
    "CHEM1A",
    "CSCI40",
@@ -2377,6 +2501,8 @@
    "ENGR5",
    "ENGR6",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -2384,8 +2510,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2393,7 +2519,9 @@
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "d9314b671696874d"
   },
   "listed": 14,
   "text_chars": 10446
@@ -2416,7 +2544,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 0.929,
   "codes_found": [
    "CHEM1A",
    "CSCI40",
@@ -2425,6 +2553,8 @@
    "ENGR40",
    "ENGR6",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -2432,8 +2562,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2442,7 +2572,9 @@
     126,
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5fda7ba3c04051f4"
   },
   "listed": 14,
   "text_chars": 13949
@@ -2453,7 +2585,7 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 0.929,
   "codes_found": [
    "CHEM1A",
    "CSCI40",
@@ -2462,6 +2594,8 @@
    "ENGR40",
    "ENGR6",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -2469,8 +2603,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2479,7 +2613,9 @@
     126,
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5fda7ba3c04051f4"
   },
   "listed": 14,
   "text_chars": 13949
@@ -2490,7 +2626,7 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 0.929,
   "codes_found": [
    "CHEM1A",
    "CSCI40",
@@ -2499,6 +2635,8 @@
    "ENGR5",
    "ENGR6",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -2506,8 +2644,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2515,7 +2653,9 @@
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "d9314b671696874d"
   },
   "listed": 14,
   "text_chars": 10446
@@ -2526,7 +2666,7 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "CHEM1A",
    "CSCI40",
@@ -2538,6 +2678,8 @@
    "ENGR6",
    "ENGR8",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -2545,15 +2687,17 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "0e6d1eb3eae2e693"
   },
   "listed": 16,
   "text_chars": 7266
@@ -2564,7 +2708,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "CHEM1A",
    "CSCI40",
@@ -2576,6 +2720,8 @@
    "ENGR6",
    "ENGR8",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -2583,15 +2729,17 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "0e6d1eb3eae2e693"
   },
   "listed": 16,
   "text_chars": 7266
@@ -2614,7 +2762,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "BA23",
    "BIOL11A",
@@ -2624,6 +2772,7 @@
    "CHEM1B",
    "ECONC2001",
    "GEOL1",
+   "MATH5A",
    "PHYS2A",
    "PHYS2B",
    "PHYS4A",
@@ -2632,8 +2781,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=158",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2642,7 +2791,9 @@
     160,
     161
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b27fa399ac3d05e0"
   },
   "listed": 14,
   "text_chars": 13210
@@ -2673,14 +2824,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=129",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "cee7f88c3613352d"
   },
   "listed": 16,
   "text_chars": 2614
@@ -2703,18 +2856,20 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103,
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e85fbee5a57c8401"
   },
   "listed": 8,
-  "text_chars": 5490
+  "text_chars": 5489
  },
  {
   "control_number": "37310",
@@ -2747,14 +2902,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "a54dab945cd88ed6"
   },
   "listed": 10,
   "text_chars": 2604
@@ -2778,14 +2935,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "429b3330c8d015b9"
   },
   "listed": 8,
   "text_chars": 2904
@@ -2814,18 +2973,20 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Science Degree in accounting",
+   "h1": "The Associate in Science Degree in accounting",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     94,
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "588f802030c14ab3"
   },
   "listed": 15,
-  "text_chars": 6407
+  "text_chars": 4395
  },
  {
   "control_number": "38394",
@@ -2833,16 +2994,25 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.565,
+  "coverage": 0.957,
   "codes_found": [
    "ANTH2",
    "BA23",
    "COMM10",
    "ENGL49",
+   "GEOG2",
    "HISTC1001",
    "HISTC1002",
    "HISTC1002H",
+   "MUS16",
+   "MUS16A",
+   "PHIL1C",
+   "PHIL1CH",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC45",
    "PSYC5",
+   "SOC1A",
    "SOCI11",
    "SOCI1B",
    "SOCI2",
@@ -2850,20 +3020,28 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=185",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=183",
+   "title": "SOCIAL JUSTICE STUDIES",
+   "h1": "SOCIAL JUSTICE STUDIES",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    183,
+    184,
     185,
-    186,
-    187
+    186
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 183,
+    "share": 0.957
+   },
+   "text_sha": "070bf2f87d13586d"
   },
   "listed": 23,
-  "text_chars": 8515
+  "text_chars": 10470
  },
  {
   "control_number": "38401",
@@ -2879,14 +3057,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "062c84e5798215ab"
   },
   "listed": 3,
   "text_chars": 3015
@@ -2905,14 +3085,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "062c84e5798215ab"
   },
   "listed": 3,
   "text_chars": 3015
@@ -2931,14 +3113,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "379682af7a8e75a4"
   },
   "listed": 3,
   "text_chars": 3150
@@ -2949,7 +3133,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 0.926,
   "codes_found": [
    "BA23",
    "BIOL5",
@@ -2974,12 +3158,13 @@
    "PSYC16",
    "PSYC38",
    "PSYCC1000",
+   "SOC1A",
    "STATC1000"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=145",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2988,10 +3173,12 @@
     147,
     148
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "7ff58f7841084733"
   },
   "listed": 27,
-  "text_chars": 12030
+  "text_chars": 12026
  },
  {
   "control_number": "40009",
@@ -2999,7 +3186,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.769,
+  "coverage": 0.923,
   "codes_found": [
    "CHEM1A",
    "CHEM1B",
@@ -3007,6 +3194,8 @@
    "CHEM29A",
    "CHEM29B",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -3014,15 +3203,17 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161,
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "bfcf8d25b0b4edc2"
   },
   "listed": 13,
   "text_chars": 6245
@@ -3033,26 +3224,30 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "CHEM1A",
    "CHEM1B",
    "GEOL1",
-   "GEOL2WL"
+   "GEOL2WL",
+   "MATH5A",
+   "MATH5B"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=169",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE IN SCIENCE IN GEOLOGY FOR TRANSFER",
+   "h1": "ASSOCIATE IN SCIENCE IN GEOLOGY FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     169
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a5810aa18d691708"
   },
   "listed": 6,
-  "text_chars": 3088
+  "text_chars": 3059
  },
  {
   "control_number": "40703",
@@ -3060,10 +3255,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.9,
   "codes_found": [
    "ANTH2",
    "BA23",
+   "BIOL10",
+   "BIOL3",
    "BIOL5",
    "ECE14",
    "ECE2",
@@ -3074,14 +3271,15 @@
    "PSYC38",
    "PSYC42",
    "PSYCC1000",
+   "SOC1A",
    "SOCI2",
    "SOCI32",
    "STATC1000"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3089,10 +3287,12 @@
     165,
     166
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "2735ac52abe7aed7"
   },
   "listed": 20,
-  "text_chars": 8862
+  "text_chars": 8861
  },
  {
   "control_number": "41135",
@@ -3114,20 +3314,23 @@
    "MUSCO5"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=142",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=141",
+   "title": "The Certificate of Achievement in Audio Production",
+   "h1": "The Certificate of Achievement in Audio Production",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    141,
     142,
     143,
     144
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "aac04d48fd5db846"
   },
   "listed": 10,
-  "text_chars": 9263
+  "text_chars": 10019
  },
  {
   "control_number": "41136",
@@ -3150,8 +3353,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=142",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3159,10 +3362,12 @@
     143,
     144
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "bbc2215b214c4d85"
   },
   "listed": 10,
-  "text_chars": 9263
+  "text_chars": 9257
  },
  {
   "control_number": "41137",
@@ -3185,18 +3390,20 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=143",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Achievement in Live Sound provides",
+   "h1": "The Certificate of Achievement in Live Sound provides",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     143,
     144
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5e8f2a2bddeab506"
   },
   "listed": 10,
-  "text_chars": 6564
+  "text_chars": 6072
  },
  {
   "control_number": "41138",
@@ -3218,18 +3425,21 @@
    "MUSCO6"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=143",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    143,
     144
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cc27aff56b0b22c4"
   },
   "listed": 10,
-  "text_chars": 3547
+  "text_chars": 6558
  },
  {
   "control_number": "41298",
@@ -3241,26 +3451,27 @@
   "codes_found": [
    "ECE1",
    "ECE2",
-   "ECE20",
+   "ECE3",
    "ECE4",
    "ECE6",
    "ECE7"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=120",
+   "title": "The Teacher III Certificate of Achievement is designed",
+   "h1": "The Teacher III Certificate of Achievement is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    119,
     120,
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "55ee7a684c2ac463"
   },
   "listed": 7,
-  "text_chars": 10987
+  "text_chars": 7343
  },
  {
   "control_number": "41534",
@@ -3268,29 +3479,35 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.7,
+  "coverage": 0.9,
   "codes_found": [
    "CHEM1A",
    "CHEM1B",
    "CHEM28B",
    "CHEM29A",
    "CHEM29B",
+   "MATH5A",
+   "MATH5B",
    "PHYS4A",
    "PHYS4B"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=160",
+   "title": "An Associate in Science in Chemistry for Transfer",
+   "h1": "An Associate in Science in Chemistry for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    161
+    160,
+    161,
+    162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d8844e66ee86d7bd"
   },
   "listed": 10,
-  "text_chars": 3560
+  "text_chars": 6588
  },
  {
   "control_number": "42232",
@@ -3311,17 +3528,19 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Achievement in Elementary Teacher",
+   "h1": "The Certificate of Achievement in Elementary Teacher",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7c53b82bc7196627"
   },
   "listed": 8,
-  "text_chars": 3812
+  "text_chars": 3327
  },
  {
   "control_number": "42234",
@@ -3342,18 +3561,21 @@
    "PHIL2"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
+   "title": "The Certificate of Achievement in Elementary Teacher",
+   "h1": "The Certificate of Achievement in Elementary Teacher",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "01bfd0f073e0aee7"
   },
   "listed": 9,
-  "text_chars": 3143
+  "text_chars": 6472
  },
  {
   "control_number": "42235",
@@ -3361,9 +3583,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.727,
+  "coverage": 0.909,
   "codes_found": [
    "ART2",
+   "BIOL10",
+   "BIOL3",
    "ENGLC1002",
    "ENGLC1002H",
    "HISTC1001",
@@ -3373,18 +3597,21 @@
    "SCI1A"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
+   "title": "The Certificate of Achievement in Elementary Teacher",
+   "h1": "The Certificate of Achievement in Elementary Teacher",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "01bfd0f073e0aee7"
   },
   "listed": 11,
-  "text_chars": 3143
+  "text_chars": 6472
  },
  {
   "control_number": "42379",
@@ -3416,8 +3643,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3426,7 +3653,9 @@
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "16bf91a80c4bf8fb"
   },
   "listed": 20,
   "text_chars": 12645
@@ -3437,11 +3666,13 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
    "CHEM1A",
    "CHEM1B",
    "MATH17",
+   "MATH5A",
+   "MATH5B",
    "MATH6",
    "PHYS4A",
    "PHYS4B",
@@ -3449,17 +3680,19 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=180",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     180
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "d4ee51dc07a72d5b"
   },
   "listed": 9,
-  "text_chars": 3485
+  "text_chars": 3484
  },
  {
   "control_number": "42706",
@@ -3487,29 +3720,53 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in Music for Transfer degree",
+   "h1": "The Associate in Arts in Music for Transfer degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     175
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a6fcf4caf058700c"
   },
   "listed": 17,
-  "text_chars": 3287
+  "text_chars": 1885
  },
  {
   "control_number": "42839",
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "COMM10",
+   "COMM12",
+   "COMM15",
+   "COMM2",
+   "COMM25",
+   "COMM4",
+   "COMM8",
+   "COMMC1000",
+   "COMMC1000H"
+  ],
+  "source": {
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "6aa984d05abfbba4"
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 2759
  },
  {
   "control_number": "42888",
@@ -3528,14 +3785,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     150
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "7d0fb730356a77fa"
   },
   "listed": 6,
   "text_chars": 2754
@@ -3569,18 +3828,20 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=176",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "7cca38a4c5a25d3d"
   },
   "listed": 18,
-  "text_chars": 6174
+  "text_chars": 6173
  },
  {
   "control_number": "43174",
@@ -3601,21 +3862,21 @@
    "PHOTO1"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=100",
+   "title": "The Certificate of Achievement in Graphic Design",
+   "h1": "The Certificate of Achievement in Graphic Design",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    98,
-    99,
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8d4f6d16de3d6661"
   },
   "listed": 9,
-  "text_chars": 12645
+  "text_chars": 6499
  },
  {
   "control_number": "43175",
@@ -3639,20 +3900,21 @@
    "PHOTO1"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=100",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    99,
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ce005f14792708a7"
   },
   "listed": 12,
-  "text_chars": 9400
+  "text_chars": 6546
  },
  {
   "control_number": "43179",
@@ -3677,8 +3939,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Achievement in Animation (Digital",
+   "h1": "The Certificate of Achievement in Animation (Digital",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3686,42 +3948,24 @@
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "83e0861b56b17060"
   },
   "listed": 12,
-  "text_chars": 9400
+  "text_chars": 8320
  },
  {
   "control_number": "43376",
   "title": "Agriculture Plant Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.875,
-  "codes_found": [
-   "BA23",
-   "CHEM3A",
-   "CHEM3B",
-   "ECONC2001",
-   "PLS1",
-   "PLS2",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=105",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    105,
-    106,
-    107
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 9263
+  "text_chars": 0
  },
  {
   "control_number": "43501",
@@ -3743,8 +3987,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "title": "The Plant Science Certificate of Achievement provides",
+   "h1": "The Plant Science Certificate of Achievement provides",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3752,10 +3996,12 @@
     106,
     107
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3c35607f5877f799"
   },
   "listed": 9,
-  "text_chars": 9263
+  "text_chars": 7886
  },
  {
   "control_number": "43534",
@@ -3763,7 +4009,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.966,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "BA23",
@@ -3789,6 +4035,7 @@
    "PSYC42",
    "PSYCC1000",
    "PSYCC1000H",
+   "SOC1A",
    "SOCI1B",
    "SOCI2",
    "SOCI3",
@@ -3796,8 +4043,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=185",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3805,10 +4052,12 @@
     186,
     187
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "abdabbaec3305a6d"
   },
   "listed": 29,
-  "text_chars": 8515
+  "text_chars": 8513
  },
  {
   "control_number": "44139",
@@ -3831,14 +4080,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "f69c49521193407a"
   },
   "listed": 10,
   "text_chars": 3702
@@ -3883,14 +4134,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e919e831751f05fe"
   },
   "listed": 5,
   "text_chars": 2966
@@ -3925,14 +4178,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5f8f17067ce24db9"
   },
   "listed": 19,
   "text_chars": 2279
@@ -3943,28 +4198,40 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL13",
+   "BIOL13L",
+   "BIOL7",
    "GEOG10",
    "GEOG11",
    "GEOG18",
+   "PLS1",
+   "PLS1L",
    "PLS2",
    "PLS2L"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=168",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=128",
+   "title": "GEOGRAPHIC INFORMATION SYSTEMS",
+   "h1": "GEOGRAPHIC INFORMATION SYSTEMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    168
+    128,
+    129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 128,
+    "share": 1.0
+   },
+   "text_sha": "8052a0d4c265b6d6"
   },
   "listed": 10,
-  "text_chars": 2801
+  "text_chars": 3753
  },
  {
   "control_number": "44551",
@@ -3972,24 +4239,28 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.571,
+  "coverage": 0.857,
   "codes_found": [
    "CSCI26",
    "CSCI40",
    "CSCI41",
-   "DATA8"
+   "DATA8",
+   "MATH5A",
+   "MATH5B"
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "fa697ac1a2345e6c"
   },
   "listed": 7,
   "text_chars": 5428
@@ -4022,21 +4293,22 @@
    "ARM52"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=102",
+   "title": "The Industrial Robotics Technician Certificate of",
+   "h1": "The Industrial Robotics Technician Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    101,
     102,
     103,
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5146162139535571"
   },
   "listed": 6,
-  "text_chars": 12810
+  "text_chars": 7556
  },
  {
   "control_number": "45319",
@@ -4057,19 +4329,20 @@
    "PLS2L"
   ],
   "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=105",
-   "title": null,
-   "h1": null,
+   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=106",
+   "title": "The Wildlife and Plant Technician Certificate of",
+   "h1": "The Wildlife and Plant Technician Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    105,
     106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5fcaf9a11b7303f2"
   },
   "listed": 9,
-  "text_chars": 6756
+  "text_chars": 3587
  },
  {
   "control_number": "45325",
@@ -4093,8 +4366,8 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4102,10 +4375,12 @@
     103,
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "c1bfba67236cadc4"
   },
   "listed": 12,
-  "text_chars": 9123
+  "text_chars": 9120
  },
  {
   "control_number": "45571",
@@ -4123,17 +4398,19 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "Enrolled Agent Preparation Program Certificate of",
+   "h1": "Enrolled Agent Preparation Program Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a0385fe4be3cc1ad"
   },
   "listed": 6,
-  "text_chars": 2904
+  "text_chars": 1022
  },
  {
   "control_number": "45746",
@@ -4154,14 +4431,16 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=160",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "a2b32afd00cbf186"
   },
   "listed": 9,
   "text_chars": 3343
@@ -4216,15 +4495,17 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=171",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     171,
     172
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "3a131374e904671e"
   },
   "listed": 40,
   "text_chars": 5469
@@ -4246,62 +4527,31 @@
   ],
   "source": {
    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "transfer into four-year computer science programs.",
+   "h1": "transfer into four-year computer science programs.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "fe878d0aa0191a47"
   },
   "listed": 7,
-  "text_chars": 5428
+  "text_chars": 4592
  },
  {
   "control_number": "46537",
   "title": "Elementary Teacher Education: Integrated Programs",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.875,
-  "codes_found": [
-   "ART2",
-   "COMMC1000",
-   "COMMC1000H",
-   "ECE2",
-   "EDUC10",
-   "ENGLC1000",
-   "ENGLC1000H",
-   "ENGLC1002",
-   "ENGLC1002H",
-   "GEOG6",
-   "GEOL9",
-   "HIST20",
-   "HISTC1001",
-   "LING11",
-   "MATH10A",
-   "MATH10B",
-   "MUS12",
-   "PHIL2",
-   "POLSC1000",
-   "POLSC1000H",
-   "SCI1A"
-  ],
-  "source": {
-   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=121",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    121,
-    122
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 24,
-  "text_chars": 6957
+  "text_chars": 0
  }
 ]

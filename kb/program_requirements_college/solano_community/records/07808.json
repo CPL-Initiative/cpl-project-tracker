@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Industrial Biotechnology",
  "award": "A.S. Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=162",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=160",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7926,
+  "input_tokens": 10937,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7926,
-    "output_tokens": 2004,
+    "input_tokens": 10937,
+    "output_tokens": 2511,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2004,
+  "output_tokens": 2511,
   "output_tokens_details": {
-   "thinking_tokens": 855
+   "thinking_tokens": 1237
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07178,
- "ms": 17623,
- "seconds": 18.0,
+ "cost_usd": 0.09397,
+ "ms": 22262,
+ "seconds": 23.2,
  "parts": null,
  "error": null,
  "score": {
@@ -76,7 +76,26 @@
     24.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     22.0,
+     24.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     36.0,
+     38.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -93,15 +112,14 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 1,
+   "not_verbatim": [
+    "production technicians"
+   ],
+   "pass": false
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -120,20 +138,22 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
-    "Explain how the structure and funcƟ on of protein pharmaceuƟ cals and evaluate which protein properƟ es a producƟ on facility can exploit to purify a parƟ cular protein from other cellular components.",
-    "Construct a pathway analyzing how a drug or biologic is produced by geneƟ cally engineered cells and subsequently puriﬁ ed.",
-    "Explain how the manufacturer of pharmaceuƟ cals is regulated by the Food and Drug AdministraƟ on and other internaƟ onal regulatory agencies and how quality systems assure the safety, purity, idenƟ ty, consistency, potency, and stability of a product."
+    "Explain how the structure and function of protein pharmaceuticals and evaluate which protein properties a production facility can exploit to purify a particular protein from other cellular components.",
+    "Construct a pathway analyzing how a drug or biologic is produced by genetically engineered cells and subsequently purified.",
+    "Explain how the manufacturer of pharmaceuticals is regulated by the Food and Drug Administration and other international regulatory agencies and how quality systems assure the safety, purity, identity, consistency, potency, and stability of a product."
    ],
-   "careers": []
+   "careers": [
+    "production technicians"
+   ]
   },
   "blocks": [
    {
@@ -232,12 +252,26 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 162; the A.S. section heading and program description are not in the text. Section heading taken from the outcomes lead-in ('Industrial Biotechnology Associate in Science').",
-   "The catalog prints 'Select Option A or Option B 8-10' as a combined line; individual option blocks have no printed totals, so stated is null on each.",
-   "Outcomes copied as printed, including PDF ligature artifacts (e.g., 'funcƟ on' for 'function', 'puriﬁ ed' for 'purified').",
-   "The Certificate of Achievement section on page 163 (Options A, B, C; 18-24 units; CHEM 012, BIOT 010, BIOT 160) was not used. Its description names 'production technicians' as a career, but that text belongs to the certificate section, so careers is left empty for the A.S.",
-   "No degree total or GE pattern is printed in the excerpt for the A.S."
+   "Read only the Industrial Biotechnology Associate in Science section (page labelled 161); the Biomanufacturing B.S. and the Certificate of Achievement sections were ignored.",
+   "The catalog prints 'Select Option A or Option B ... 8-10' as a line in the required list; Option A totals 10 units and Option B 8 units. No per-option total is printed, so each option's stated is null.",
+   "degree_total 60 is taken from the section's sentence 'the 22-24 unit major, General Education, and electives as needed to complete a minimum of 60 units'; it is a minimum stated for this award. Reviewer may prefer null.",
+   "General Education pattern is not named (just 'General Education'), so ge_pattern is null; no GE units printed.",
+   "Catalog codes use zero-padded numbers (BIOT 001, CHEM 001, BIOL 002) matched to closed-list BIOT 1, CHEM 1, BIOL002 etc. CHEM 010 is not in the closed list and is marked a catalog addition.",
+   "BIOL 002 is titled 'Principles of Cell and Molecular Biology' in this section versus 'Cell and Molecular Biology' in the closed list.",
+   "PDF extraction showed ligature artifacts (e.g., 'funcƟ on', 'puriﬁ ed'); outcomes were transcribed with the ligatures restored to normal letters (ti, fi)."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "ed07e2fc32fcf3a5",
+ "source_codes": [
+  "BIOL14",
+  "BIOL2",
+  "BIOT1",
+  "BIOT52",
+  "BIOT62",
+  "BIOT63",
+  "CHEM1"
+ ],
+ "source_coverage": 1.0
 }
