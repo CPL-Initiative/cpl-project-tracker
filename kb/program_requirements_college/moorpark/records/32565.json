@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8124,
-    "output_tokens": 3041,
+    "output_tokens": 3050,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,27 +30,27 @@
     "model": null
    }
   ],
-  "output_tokens": 3041,
+  "output_tokens": 3050,
   "output_tokens_details": {
-   "thinking_tokens": 947
+   "thinking_tokens": 967
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09332,
- "ms": 24115,
- "seconds": 24.5,
+ "cost_usd": 0.0935,
+ "ms": 25481,
+ "seconds": 26.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 23,
    "listed": 31,
-   "share": 0.71,
+   "share": 0.742,
    "missing": [
     "CHINM100",
-    "COMMM4",
     "FRENM100",
     "GERMM100",
     "ITALM100",
@@ -61,19 +61,24 @@
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMMM4",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ACCTM110",
-    "CHINM110",
-    "COMMC1004"
+    "CHINM110"
    ],
    "flagged": [
     "ACCTM110",
-    "CHINM110",
-    "COMMC1004"
+    "CHINM110"
    ],
    "pass": true
   },
@@ -136,7 +141,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "REQUIREMENTS",
+   "section_heading": "Spanish A.A-T Degree (REQUIREMENTS)",
    "measure": "units",
    "total_units": {
     "min": 23,
@@ -389,10 +394,6 @@
     "why": "not in the text"
    },
    {
-    "code": "COMM M04",
-    "why": "not in the text; catalog lists COMM C1004 Interpersonal Communication instead"
-   },
-   {
     "code": "FREN M100",
     "why": "not in the text"
    },
@@ -419,16 +420,21 @@
    {
     "code": "SPAN M110S",
     "why": "not in the text"
+   },
+   {
+    "code": "COMM M04",
+    "why": "not in the text; catalog lists COMM C1004 Interpersonal Communication instead (likely renumbered)"
    }
   ],
   "notes": [
-   "The 'Substitution Courses' list is not recommended coursework in the usual sense: it appears to list courses a student may take to make up units if they place out of a core course without receiving units (footnote 1). It is recorded with rule 'recommended' so it does not count toward the 23-24 unit major total; reviewer should check. The list also ends with 'Any course not selected from LIST A', which is not recorded as a code.",
-   "SOCI C1000 / SOCI C1000H are printed with a space; the closed list stores them as SOCIC1000 / SOCIC1000H. Treated as the same courses (catalog_addition false).",
-   "COMM C1004 (Interpersonal Communication) appears in LIST A in place of the closed list's COMM M04 with the same title; marked as a catalog addition.",
-   "Degree summary: Total Units for Major 23-24, General Education (Cal-GETC) 34, Double-Counted Units 3-6, Electives Units 5-9, Total Units Required for the AA-T Degree 60. Electives 5-9 recorded as degree_elective_units.",
-   "Program student learning outcomes are from the page's outcomes tab for the program; recorded as printed (first outcome begins with lowercase 'to').",
-   "Section heading taken from the page's REQUIREMENTS tab; the page title itself is not printed in the text."
+   "The 'Substitution Courses' list (ending 'Any course not selected from LIST A') appears to be courses students take when they place out of a core course without units (footnote 1, to reach at least 18 units in the major). It is not a required choice, so it is recorded with rule 'recommended' so it does not count toward the total; reviewer should check this reading.",
+   "SOCI C1000/SOCI C1000H are printed with a space; closed list stores them as SOCIC1000/SOCIC1000H; treated as the same courses.",
+   "COMM C1004 (Interpersonal Communication) is not in the closed list, which has COMM M04 with the same title; recorded as a catalog addition.",
+   "Degree summary: Total Units for Major 23-24, Cal-GETC 34, Double-Counted Units 3-6, Electives Units 5-9, Total Units Required for the AA-T Degree 60. Electives 5-9 recorded in degree_elective_units.",
+   "Core block printed '(20 units)'; major total 23-24 includes 'Units from LIST A 3-4'.",
+   "Outcomes are printed for the program as a whole on the page's outcomes tab; the award shares them. The first outcome is copied as printed, beginning with 'to'."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "44481524745",
+ "catalog_year": "2026-2027"
 }

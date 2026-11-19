@@ -1,0 +1,1025 @@
+{
+ "college": "Santa Rosa Junior College",
+ "run": "44477690021",
+ "written": "2026-11-19T07:38:25Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/reread-wave-s683",
+   "inputs": {
+    "college": "Santa Rosa Junior College",
+    "step": "reread",
+    "force": "44477690021"
+   },
+   "posts": 23,
+   "control_numbers": [
+    "06606",
+    "06626",
+    "14704",
+    "15434",
+    "15463",
+    "15494",
+    "30816",
+    "31035",
+    "31201",
+    "31461",
+    "31462",
+    "32253",
+    "32301",
+    "32328",
+    "32330",
+    "33164",
+    "33166",
+    "36760",
+    "38700",
+    "42872",
+    "44788",
+    "44902",
+    "45486"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 27,
+  "kept": 19,
+  "restored": 3,
+  "restored_filed_pass": 1,
+  "restored_not_own_program": 2,
+  "held_for_person": 1,
+  "new": 4,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 3,
+  "run_places_none_after": 2,
+  "folder_places_none_after": 2,
+  "records_after": 237,
+  "dropped_by_filing": 35,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44477690021": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T07:38:25Z",
+   "counts": {
+    "reread": 27,
+    "kept": 19,
+    "restored": 3,
+    "restored_filed_pass": 1,
+    "restored_not_own_program": 2,
+    "held_for_person": 1,
+    "new": 4,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 3,
+    "run_places_none_after": 2,
+    "folder_places_none_after": 2,
+    "records_after": 237,
+    "dropped_by_filing": 35,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {
+    "13887": "covers_less",
+    "19288": "covers_less",
+    "30635": "covers_less"
+   },
+   "next_read_pays": [
+    "16986",
+    "32357",
+    "37016"
+   ],
+   "dropped_by_filing": [
+    {
+     "control_number": "06623",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "09605",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "09616",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "13898",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "16937",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19287",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19328",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19329",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21706",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21709",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21710",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21719",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21722",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21724",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21734",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21737",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21742",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "30732",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "30923",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31378",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "35252",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "37254",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39418",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39901",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39902",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39903",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39904",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39939",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39940",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39941",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39942",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "43236",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "44248",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "44303",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "44304",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "06606",
+     "title": "Radiologic Technology",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=197",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.909,
+      "placed": 30,
+      "listed": 33,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 33,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "06626",
+     "title": "Fire Technology",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.933,
+      "placed": 28,
+      "listed": 30,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 30,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "14704",
+     "title": "Mathematics",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=170",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=516",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.714,
+      "placed": 5,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 7,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "15434",
+     "title": "Social and Behavioral Sciences",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=200",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=89",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.963,
+      "placed": 79,
+      "listed": 82,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 82,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "15463",
+     "title": "Dental Hygiene",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=140",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=140",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.804,
+      "placed": 45,
+      "listed": 56,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.804,
+      "placed": 45,
+      "listed": 56,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "15494",
+     "title": "Surveying Technology",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "16986",
+     "title": "Psychology",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=195",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.947,
+      "placed": 18,
+      "listed": 19,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.947,
+      "placed": 18,
+      "listed": 19,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Psychology'",
+     "not_own_program": true,
+     "next_read_held": null
+    },
+    {
+     "control_number": "30816",
+     "title": "Communication Studies",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=131",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.857,
+      "placed": 12,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.786,
+      "placed": 11,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "31035",
+     "title": "Psychology",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=195",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.913,
+      "placed": 21,
+      "listed": 23,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.826,
+      "placed": 19,
+      "listed": 23,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "31201",
+     "title": "Administrative Assistant",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=423",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.714,
+      "placed": 10,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 14,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "31461",
+     "title": "Early Childhood Education",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=141",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=127",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.75,
+      "placed": 6,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.75,
+      "placed": 6,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "31462",
+     "title": "Administration of Justice",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=101",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.944,
+      "placed": 17,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.833,
+      "placed": 15,
+      "listed": 18,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "32253",
+     "title": "English",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=145",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.846,
+      "placed": 22,
+      "listed": 26,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 26,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "32301",
+     "title": "Art History",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=116",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.84,
+      "placed": 89,
+      "listed": 106,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 106,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds coverage.none_placed false and the filed record does not"
+    },
+    {
+     "control_number": "32328",
+     "title": "Physics",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=536",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.714,
+      "placed": 5,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 7,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "32330",
+     "title": "Mathematics",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=172",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=516",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.7,
+      "placed": 7,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.coverage.pass and the filed record does not"
+    },
+    {
+     "control_number": "32357",
+     "title": "Kinesiology",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=164",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=169",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 135,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": false,
+      "share": 0.533,
+      "placed": 72,
+      "listed": 135,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the filed record holds coverage.none_placed false and the re-read does not",
+     "next_read_held": null
+    },
+    {
+     "control_number": "33164",
+     "title": "Hospitality, Event and Tourism Management",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.583,
+      "placed": 7,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "33166",
+     "title": "Anthropology",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.714,
+      "placed": 15,
+      "listed": 21,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.714,
+      "placed": 15,
+      "listed": 21,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "36760",
+     "title": "Public Health Science",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=182",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 13,
+      "arithmetic": "incomplete"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "37014",
+     "title": "Cal-GETC GE Pattern",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=156",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 235,
+      "arithmetic": "incomplete"
+     },
+     "outcome": "held",
+     "why": "no filed record, and the re-read's heading 'Not present in the provided text (excerpt covers History (AA-T), Hospitality Man' shares no word with the title 'Cal-GETC GE Pattern'"
+    },
+    {
+     "control_number": "37016",
+     "title": "SRJC Local GE",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=94",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=94",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.586,
+      "placed": 258,
+      "listed": 440,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": null,
+      "passes_live": false,
+      "coverage_pass": null,
+      "none_placed": null,
+      "share": null,
+      "placed": null,
+      "listed": null,
+      "arithmetic": null
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "heading_award_check: the record's heading 'General Education- 2026-27 SRJC Associate Degree Graduation Requirements (Local GE)' names a degree; the program is a certificate",
+     "not_own_program": true,
+     "next_read_held": null
+    },
+    {
+     "control_number": "38700",
+     "title": "Biology",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=120",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=121",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.917,
+      "placed": 11,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.917,
+      "placed": 11,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "42872",
+     "title": "Hospitality Management",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=497",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 9,
+      "arithmetic": "incomplete"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "44788",
+     "title": "Music",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=175",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 66,
+      "listed": 66,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 66,
+      "listed": 66,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "44902",
+     "title": "Hospitality: Event Management",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.875,
+      "placed": 7,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "45486",
+     "title": "Nutrition and Dietetics",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=185",
+     "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=185",
+     "filed_run": "39006464249",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.875,
+      "placed": 28,
+      "listed": 32,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.875,
+      "placed": 28,
+      "listed": 32,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    }
+   ]
+  }
+ }
+}

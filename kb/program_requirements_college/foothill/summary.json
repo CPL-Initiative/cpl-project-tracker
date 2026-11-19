@@ -2,28 +2,383 @@
  "college": "Foothill College",
  "programs": 209,
  "with_closed_list": 190,
- "found": 185,
- "extracted": 185,
+ "found": 169,
+ "extracted": 169,
  "errors": 0,
- "passed_machine_checks": 138,
+ "passed_machine_checks": 144,
  "failed": {
-  "coverage": 21,
+  "coverage": 4,
   "invented": 0,
-  "arithmetic": 45,
+  "arithmetic": 23,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 14.82,
- "cost_per_program": 0.0801,
+ "cost_usd_run": 0.07,
+ "cost_usd_filed": 13.73,
+ "cost_per_program": 0.0812,
+ "extract_calls": 1,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "06104",
+   "title": "General Studies: Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 9222,
+     "content": 9749,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19484",
+   "title": "Art History",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/art-history-aat/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.774,
+    "body": 0.774,
+    "content": 0.161,
+    "net": 24,
+    "listed": 31,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 5800,
+     "content": 6630,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35561",
+   "title": "Humanities",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/humanities/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.222,
+    "net": 9,
+    "listed": 9,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 10710,
+     "content": 11414,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35772",
+   "title": "Music History & Literature",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
   {
    "control_number": "36414",
    "title": "Interventional Pulmonology Assistant",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39675",
+   "title": "Bio-Health Diversity and Inclusion Leadership",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39889",
+   "title": "Advanced Software Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39891",
+   "title": "Software Development in Java",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39996",
+   "title": "Software Development in C++",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/child-adolescent-development-aat/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.071,
+    "body": 0.071,
+    "content": 0.0,
+    "net": 1,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 1 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4495,
+     "content": 5453,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40239",
+   "title": "Communication Studies I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/communication-studies-2-aat/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.1,
+    "net": 10,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4656,
+     "content": 5606,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40240",
+   "title": "Communication Studies II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/communication-studies-2-aat/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.1,
+    "net": 10,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4656,
+     "content": 5606,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43207",
+   "title": "Photography Criticism",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-commercial-photography/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3624,
+     "content": 4619,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43676",
+   "title": "Web Applications Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44253",
+   "title": "Spanish-Advanced",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-college-careers-advanced/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2901,
+     "content": 3925,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45656",
+   "title": "Vacuum Technology",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-refrigeration-technology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6181,
+     "content": 7137,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Close this window",
+      242
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45754",
+   "title": "Principles of Machine Learning and Artificial Intelligence",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46561",
+   "title": "Pre-Law Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   }
  ],
- "run": "39726637264"
+ "run": "44477699881"
 }

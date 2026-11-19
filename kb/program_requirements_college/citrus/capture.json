@@ -5,113 +5,202 @@
  "catalog_year": "2026-2027",
  "programs": 193,
  "with_closed_list": 185,
- "started": "2026-10-22T05:13:06Z",
+ "started": "2026-11-19T07:44:14Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.citruscollege.edu/sitemap.xml",
-  "status": 200,
-  "listed": 1787,
+  "status": null,
+  "listed": 0,
   "nested": 0,
-  "program_pages": 280,
+  "program_pages": 0,
   "refused": null,
-  "errors": null
+  "errors": [
+   "https://catalog.citruscollege.edu/sitemap.xml: APIRequestContext.get: unable to verify the first certificate; if the root CA is installed locally, try running Node.js with --use-system-ca"
+  ],
+  "failed": null
  },
- "pages_read": 348,
+ "index_fallback": 286,
+ "index_failed": [],
+ "listing_failed": 0,
+ "pages_read": 354,
+ "pages_listed": 354,
+ "pages_answered": 354,
  "child_pages": 68,
  "banner_h1": null,
- "loads": 352,
- "seconds": 1804.6,
- "found": 175,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 175,
+   "hits": 172,
+   "recall": 0.983,
+   "false": 2,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 0,
+   "false_matches": [
+    {
+     "control_number": "11242",
+     "title": "Child Development Master Teacher",
+     "page": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-certificate-achievement/"
+    },
+    {
+     "control_number": "11244",
+     "title": "Public Works Administration",
+     "page": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-administration-certificate-achievement/"
+    },
+    {
+     "control_number": "11242",
+     "title": "Child Development Master Teacher",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-certificate-achievement/",
+     "h1": "Certificate in Child Development Master Teacher"
+    },
+    {
+     "control_number": "11244",
+     "title": "Public Works Administration",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-administration-certificate-achievement/",
+     "h1": "Certificate in Public Works Administration"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "11242",
+     "title": "Child Development Master Teacher",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-certificate-achievement/",
+     "h1": "Certificate in Child Development Master Teacher"
+    },
+    {
+     "control_number": "11244",
+     "title": "Public Works Administration",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-administration-certificate-achievement/",
+     "h1": "Certificate in Public Works Administration"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 8,
+  "by_result": {
+   "not_searched": 8
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "02357",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14642",
+    "title": "Digital and Web Design",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30269",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32762",
+    "title": "Heating, Ventilation and Air Conditioning Technician",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "37813",
+    "title": "English as a Second Language - Speaking",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40286",
+    "title": "Customer Service",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40287",
+    "title": "Customer Service and Call Center",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40288",
+    "title": "Customer Service for Retail",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 356,
+ "seconds": 1771.3,
+ "found": 177,
  "by_method": {
   "no_closed_list": 8,
-  "not_found": 4,
-  "page_claimed": 6,
-  "sitemap_page": 175
+  "not_found": 5,
+  "page_claimed": 3,
+  "sitemap_page": 177
  },
  "shared_pages": {},
  "not_found": [
   {
-   "control_number": "02356",
-   "title": "Criminal Justice",
-   "award": "A.S. Degree",
+   "control_number": "11240",
+   "title": "Child Develop. Master Teacher: Early Intervention Specialty",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-justice-studies-adt/",
+    "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-early-intervention-certificate-achievement/",
     "label": {
-     "award": 0,
-     "title": 0.5
+     "award": 1,
+     "title": 0.714
     },
     "field": "innerText+tabs",
-    "coverage": 0.0,
+    "coverage": 1.0,
     "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "content": 0.067,
+    "net": 15,
+    "listed": 15,
+    "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 5728,
-     "content": 26866,
-     "tabs": 5577
+     "body": 5228,
+     "content": 22360,
+     "tabs": 1720
     },
     "tab_panels": [
      [
       "Learning Outcomes",
-      353
+      753
      ],
      [
       "Requirements",
-      2910
-     ],
-     [
-      "Curriculum Map",
-      2623
-     ],
-     [
-      "Career Information",
-      600
-     ],
-     [
-      "Close this window",
-      147
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "30937",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText+tabs",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5410,
-     "content": 24275,
-     "tabs": 3898
-    },
-    "tab_panels": [
-     [
-      "Learning Outcomes",
-      384
-     ],
-     [
-      "Requirements",
-      1723
-     ],
-     [
-      "Curriculum Map",
-      2131
+      1700
      ],
      [
       "Career Information",
@@ -122,7 +211,96 @@
       147
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31430",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/english/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.969,
+    "body": 0.0,
+    "content": 0.656,
+    "net": 31,
+    "listed": 32,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 6685,
+     "content": 46960,
+     "tabs": 25109
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      358
+     ],
+     [
+      "GE for Transfer",
+      2085
+     ],
+     [
+      "Courses",
+      22984
+     ],
+     [
+      "Programs",
+      117
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31431",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/physics/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 0.6,
+    "net": 5,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 4989,
+     "content": 29969,
+     "tabs": 9045
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      1040
+     ],
+     [
+      "Courses",
+      9030
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "44410",
@@ -165,7 +343,8 @@
       147
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44462",
@@ -208,7 +387,8 @@
       147
      ]
     ]
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -221,35 +401,8 @@
     "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/design-engineering-drawing-technology-as/",
     "https://catalog.citruscollege.edu/disciplines/architecture/architecture-as/",
     "https://catalog.citruscollege.edu/disciplines/architecture/architecture-as/"
-   ]
-  },
-  {
-   "control_number": "20037",
-   "title": "Criminal Justice",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/"
-   ]
-  },
-  {
-   "control_number": "33327",
-   "title": "Correctional Science",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
-    "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
-   ]
-  },
-  {
-   "control_number": "33599",
-   "title": "Correctional Science",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
-    "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "36543",
@@ -262,7 +415,8 @@
     "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
     "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
     "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/information-technology-certificate-achievement/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "46167",
@@ -272,330 +426,918 @@
     "https://catalog.citruscollege.edu/disciplines/biotechnology/biomanufacturing-certificate-achievement/",
     "https://catalog.citruscollege.edu/disciplines/biotechnology/biotechnology-as/",
     "https://catalog.citruscollege.edu/disciplines/biotechnology/biotechnology-as/"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 7,
-  "0.8-1.0": 26,
-  "1.0": 142
+  "0.5-0.8": 6,
+  "0.8-1.0": 16,
+  "1.0": 155
  },
  "would_extract": {
   "against": "kb/program_requirements_college/citrus",
-  "kept": 144,
-  "programs": 31,
+  "kept": 159,
+  "kept_moved": 0,
+  "programs": 18,
   "list": [
    {
-    "control_number": "11240",
-    "title": "Child Develop. Master Teacher: Early Intervention Specialty",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/child-development/",
+    "control_number": "02312",
+    "title": "Business",
+    "award": "A.S. Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/business/business-as/",
     "coverage": 1.0,
-    "was_url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-as/",
-    "was_coverage": 0.533,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/business/business-as/",
+    "was_coverage": 0.966,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "11244",
-    "title": "Public Works Administration",
+    "control_number": "02356",
+    "title": "Criminal Justice",
+    "award": "A.S. Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19636",
+    "title": "Liberal Arts - Humanities",
+    "award": "A.A. Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
+    "was_coverage": 0.989,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "20037",
+    "title": "Criminal Justice",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.citruscollege.edu/disciplines/public-works/",
-    "coverage": 0.778,
-    "was_url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-supervision-management-skill-award/",
-    "was_coverage": 0.556,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30830",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/sociology/sociology-adt/",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "30877",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/psychology/psychology-adt/",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "30940",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-adt/",
+    "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-certificate-achievement/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "31179",
-    "title": "Early Childhood Education",
+    "control_number": "30937",
+    "title": "Administration of Justice",
     "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/child-development/early-childhood-education-adt/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-associate-teacher-skill-award/",
-    "was_coverage": 0.556,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31430",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/english/",
-    "coverage": 0.969,
-    "was_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31431",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/physics/",
+    "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/administration-justice-adt/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "31539",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-adt/",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_method": "not_found"
    },
    {
     "control_number": "31572",
     "title": "History",
     "award": "A.A- T Degree",
     "url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
-    "coverage": 0.971,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
+    "was_coverage": 0.971,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "31840",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-adt/",
+    "control_number": "33327",
+    "title": "Correctional Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-certificate-achievement/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "32305",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/journalism-adt/",
+    "control_number": "33599",
+    "title": "Correctional Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-as/",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "33308",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/foreign-languages/spanish-adt/",
+    "control_number": "35368",
+    "title": "Website Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "33607",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/art-history-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "33609",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/studio-arts-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35078",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/biology/biology-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37121",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/philosophy/philosophy-adt/",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37131",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/economics/economics-adt/",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37315",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/geography/global-studies-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37384",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/anthropology/anthropology-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37537",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/nutrition-dietetics-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37629",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/computer-science/computer-science-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "38754",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/biology/environmental-science-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "40210",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/music/music-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "40957",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/earth-science/geology-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41356",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/geography/geography-adt/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "control_number": "35453",
+    "title": "Social Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/",
+    "coverage": 0.982,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/",
+    "was_coverage": 0.945,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41679",
     "title": "Business Administration 2.0",
     "award": "A.S. T Degree",
     "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "42822",
-    "title": "Film, Television and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/film-television-electronic-media-adt/",
+    "control_number": "41842",
+    "title": "CPA Exam Preparation: Business-Related Subjects Requirement",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
+    "was_coverage": 0.977,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41843",
+    "title": "CPA Licensure: Accounting Study and Ethics",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
+    "was_coverage": 0.987,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42170",
+    "title": "Business - Accounting Emphasis",
+    "award": "A.S. Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/",
+    "was_coverage": 0.963,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42713",
+    "title": "Educational Teaching Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/",
+    "coverage": 0.889,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "42837",
     "title": "Law, Public Policy, and Society",
     "award": "A.A- T Degree",
     "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
-    "coverage": 0.939,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "coverage": 1.0,
+    "was_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+    "was_coverage": 0.939,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "45031",
     "title": "Cal-GETC",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
-    "coverage": 0.979,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "coverage": 0.987,
+    "was_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+    "was_coverage": 0.979,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "45069",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/communication-studies-adt/",
+    "control_number": "46565",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
+    "was_coverage": 0.944,
+    "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39726639865"
+ "fingerprints": {
+  "02310": {
+   "sha256": "e2b47b4e199227334d2a9fb0fc8e57d7e033243d92589fd0ba94c1e638b7b5b7",
+   "url": "https://catalog.citruscollege.edu/disciplines/forestry-wildland-resources/wildland-resources-forestry-certificate-achievement/"
+  },
+  "02312": {
+   "sha256": "ac9567c961d4935d0df080629be4e4c5fdf831cf9e6b7f10ccf07bd55f0a0887",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/business-as/"
+  },
+  "02323": {
+   "sha256": "92f774afa88ae90a4dc07b6888b04e32e3250b23cb1e515a8e8fb305d1af87db",
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education-competitive-athletics/kinesiology-as/"
+  },
+  "02327": {
+   "sha256": "7c7579785bb873f0873e06edd2980c3ecf9baac1075b14839c6f573637e722fa",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/medium-heavy-diesel-truck-technology-as/"
+  },
+  "02328": {
+   "sha256": "17f9008eb07927284c73be88d4deb1452b6f10b5448d321ee4d6a152fb45d087",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-technology-as/"
+  },
+  "02331": {
+   "sha256": "78fda7ed4202b7e59b868759d3930cb0aef74698d96f7daede639be99ac9d905",
+   "url": "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/design-engineering-drawing-technology-as/"
+  },
+  "02333": {
+   "sha256": "2377cd1136e8423341765d1588c851a8db96bf43d6212f0397ab0ab834975e84",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/"
+  },
+  "02337": {
+   "sha256": "2fe1f2e61d810e8d7baa8c36dad5ac240cc7cdd1904ae4e28de61716bf8c88d7",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/photography-as/"
+  },
+  "02341": {
+   "sha256": "e3f87bbee9f8783b638cf469104cc05c198c5bab5637a65a6099a456faf51442",
+   "url": "https://catalog.citruscollege.edu/disciplines/vocational-nursing/vocational-nursing-as/"
+  },
+  "02343": {
+   "sha256": "da3dc7dfbdb0d1efaf0a866d4543d79a244f04b5ee03a7093d46210353902680",
+   "url": "https://catalog.citruscollege.edu/disciplines/dental-assisting-registered/dental-assisting-as/"
+  },
+  "02355": {
+   "sha256": "98b9439d5aa1e2fa8ed8ab09674efed3b3a33a3842279c02acfaee5d4b00404b",
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-as/"
+  },
+  "02356": {
+   "sha256": "a8da6d3cef75c961d791378c221096bcbc47292e7aa57d38afcc696fdba5504d",
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-as/"
+  },
+  "02362": {
+   "sha256": "1a7cd57771eaa34fde2cf85993560eb87ec58256186561e3dee6ccc5dfc0e483",
+   "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/cosmetology-as/"
+  },
+  "02369": {
+   "sha256": "7725012c4921b8a65668fc23af48ed144cebdc71f368c0a7b69af8ee42ded760",
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-teacher-certificate-achievement/"
+  },
+  "07092": {
+   "sha256": "f473b61fe37718a8e84a04762d6497b44a6872746fbd79e2008125b9411c599f",
+   "url": "https://catalog.citruscollege.edu/disciplines/recording-technology/audio-recording-technology-certificate-achievement/"
+  },
+  "07412": {
+   "sha256": "fa22fb9c165815d11da8287c2700585d933ff76ca7dc5550704ce4469669cd71",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/ceramics-one-year-certificate-achievement/"
+  },
+  "07413": {
+   "sha256": "c7abf78a1221574fbd93389d12f90b3f6cfc611269d566667c297b2f735e6e8d",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/ceramics-two-year-certificate-achievement/"
+  },
+  "11207": {
+   "sha256": "fc290cbfeb946a7d8d54d592068e700eb9bc650abcfeccd1cbee74a104ae9362",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/accounting-certificate-achievement/"
+  },
+  "11219": {
+   "sha256": "9eab9962b597da61cd93303dfa8de5a4839dc3ac7296d5be228efd47bcdb3dc0",
+   "url": "https://catalog.citruscollege.edu/disciplines/office-technology/administrative-office-occupations-certificate-achievement/"
+  },
+  "11231": {
+   "sha256": "a90418f6f790519e8f7dce203ec8aa78cca7baff2fe306a8567dabafb070c20c",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/toyota-lexus-technician-certificate-achievement/"
+  },
+  "11235": {
+   "sha256": "8c201797a53a91b67d76227b8d265eacae272a07d4d59c39ec9f4dc3631fba68",
+   "url": "https://catalog.citruscollege.edu/disciplines/architecture/computer-aided-design-cad-architecture-drafting-certificate-achievement/"
+  },
+  "11236": {
+   "sha256": "57e407a1b13ccebc3ec2321fb33068b3e20c9c35713b94c6868f9d413d27ddd4",
+   "url": "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/computer-generated-imagery-cgi-certificate-achievement/"
+  },
+  "11237": {
+   "sha256": "abb15566b5cabc5760a6802090ec87286b2b1f03f53da11a637a097c9006d17f",
+   "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-technology-as/"
+  },
+  "11242": {
+   "sha256": "c5217b66c402cf0d1cb4c98d27a35876561ae09ce42ca812c71c38582e79e076",
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-early-intervention-certificate-achievement/"
+  },
+  "11244": {
+   "sha256": "cd8a60a9bf4b55547bbeb72b2596c37546b0ecefb2431f1b36eed88e4df896e4",
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/"
+  },
+  "11247": {
+   "sha256": "958fb3d44d0d36635996bcb857bfa2e14a6a5afd11d8eddde719373d857c51db",
+   "url": "https://catalog.citruscollege.edu/disciplines/esthetician/certificate-achievement-esthetician/"
+  },
+  "12397": {
+   "sha256": "7d5b4fdc48e71ae89f2ea93191975dee6754405c0cbd1e07767724f76f74e568",
+   "url": "https://catalog.citruscollege.edu/disciplines/dance/commercial-dance-certificate-achievement/"
+  },
+  "14643": {
+   "sha256": "7e0b8804311646b7669ae29db920e43d6a918e5bc74b6251de0bb5ff27b11720",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/digital-web-design-certificate-achievement/"
+  },
+  "14897": {
+   "sha256": "a2c6c74eeb61f51a1830ffbfe0c7acff027949feb8bf3b4419169d7c46aafbf5",
+   "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/information-technology-certificate-achievement/"
+  },
+  "15315": {
+   "sha256": "6e87143e4d5341779c9c8b0b868fea8ad01c045943cdb43f17042cb0d07b518b",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-fundamentals-certificate-achievement/"
+  },
+  "15322": {
+   "sha256": "2c5b027da2b3d82be50310316fa6f0150a021be335faa221d88b67feefa2a71d",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-service-certificate-achievement/"
+  },
+  "15941": {
+   "sha256": "89b4bff588d1405514235317d9c6ae91e6e5c74dd8fc590244a2b96e3f844a58",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-research-development-certificate-achievement/"
+  },
+  "17394": {
+   "sha256": "b1be502bd50865ab6f930475b697e3651ea7b8086160ec1fce58c945ed3f5c24",
+   "url": "https://catalog.citruscollege.edu/disciplines/theatre/emerging-theatre-technologies-certificate-achievement/"
+  },
+  "17502": {
+   "sha256": "c31416672704c9a0d1191d16e50a0a1c87b37ca012a62cac180d3491d9e08ace",
+   "url": "https://catalog.citruscollege.edu/disciplines/registered-nursing/registered-nursing-as/"
+  },
+  "18962": {
+   "sha256": "7527100c486aa10acb06b4101f22d55dec859de547333038bcd0b9d7c84e2f79",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-diagnostic-technician-certificate-achievement/"
+  },
+  "19636": {
+   "sha256": "6a061e526e32d388bea084b8734449d96d9c348b69667f183899195792399c2c",
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/"
+  },
+  "20027": {
+   "sha256": "e5daa1b16150365838542e6beaa34604f758a9c7357eac11c247b225c418ed92",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/medium-heavy-truck-service-diagnosis-repair-technician-certificate-achievement/"
+  },
+  "20031": {
+   "sha256": "4c53b6c67f80d10c42819350ca96b13e6ea3c0be2dc1bf9a5b1af6aa632e0b35",
+   "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-technology-certificate-achievement/"
+  },
+  "20032": {
+   "sha256": "7a149c7055764899fab433149518acbf1418a52f17d0596120fbbd8fbfc4d967",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/photography-certificate-achievement/"
+  },
+  "20033": {
+   "sha256": "eb76f15a003f34736ab29066ecd23efab79228c2d202f4be1f2887efa643d2b3",
+   "url": "https://catalog.citruscollege.edu/disciplines/vocational-nursing/vocational-nursing-certificate-achievement/"
+  },
+  "20034": {
+   "sha256": "b59f642eb9c4de234d53371e1af05d8bbc5d4990ced8cf3c1a4f61dcf3f78cf5",
+   "url": "https://catalog.citruscollege.edu/disciplines/dental-assisting-registered/dental-assisting-certificate-achievement/"
+  },
+  "20036": {
+   "sha256": "a9f39e5184809ca8eb66303d970f4679c4b31db9ca8d56c18e14a15f6498d136",
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-maintenance-services-certificate-achievement/"
+  },
+  "20037": {
+   "sha256": "e5bd27ffca238a806a7ebc8c3439f0a127cc87ad5d8590236c602ec1b03dff13",
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-certificate-achievement/"
+  },
+  "20038": {
+   "sha256": "0b54d46e1c144270dd741eef6827f56249a8565a096cdd68373cb9b25ab3afb5",
+   "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/cosmetology-certificate-achievement/"
+  },
+  "30174": {
+   "sha256": "490310f1b959a25fe40444458954fd013b778a5a14d38bf2c80c43606dffa0f3",
+   "url": "https://catalog.citruscollege.edu/disciplines/english/english-literature-aa/"
+  },
+  "30175": {
+   "sha256": "f036271229e133020f81dbb5784c56048e2097f526eebff0595a058b1de7ebb4",
+   "url": "https://catalog.citruscollege.edu/disciplines/english/literature-certificate-achievement/"
+  },
+  "30176": {
+   "sha256": "29ff74d5e4832769c51de38ead16738d0fb7cc2dd73b13bf10b3e1ca213308e9",
+   "url": "https://catalog.citruscollege.edu/disciplines/english/writing-competency-certificate-achievement/"
+  },
+  "30365": {
+   "sha256": "9f8b7a13779376d564ca1b03247b3f2f41b5f6da6cf3a63758ad59f20b603dca",
+   "url": "https://catalog.citruscollege.edu/disciplines/music/music-aa/"
+  },
+  "30454": {
+   "sha256": "ef247192cb15e9dad59e9be1c57054cd55311460fa61475c456edb5ba80c21a4",
+   "url": "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/"
+  },
+  "30507": {
+   "sha256": "3bbc227c97576ac274ca6497e337c3c084264336142be52040da6aeacabcc915",
+   "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-aa/"
+  },
+  "30508": {
+   "sha256": "7f35b3dc5ff48466a74ce676a47aef2eb718da07494a30f783b2d0febd83ba2c",
+   "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-acting-emphasis-aa/"
+  },
+  "30560": {
+   "sha256": "79ee1e8343e7677e6e14b86114c3efefc4a21159f0e2ad6dee536cf20b889ed7",
+   "url": "https://catalog.citruscollege.edu/disciplines/dance/dance-aa/"
+  },
+  "30830": {
+   "sha256": "71932e22d9adfb03d6409c71f5eca3fc5dd45506d47e6393bca63ff72ed1f121",
+   "url": "https://catalog.citruscollege.edu/disciplines/sociology/sociology-adt/"
+  },
+  "30877": {
+   "sha256": "115122c6bc2f22b2e0dca047c200ae871e0964b9d74272c31857146185e7ae2f",
+   "url": "https://catalog.citruscollege.edu/disciplines/psychology/psychology-adt/"
+  },
+  "30937": {
+   "sha256": "b31e75116f2baa83266f70aa9e421b3f0dd41a090219ff2151fe636680f5618d",
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/administration-justice-adt/"
+  },
+  "30940": {
+   "sha256": "73322254a705928dcd15f7daa373ff80bb7caa43b642c507dcd337a9018676c7",
+   "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-adt/"
+  },
+  "31179": {
+   "sha256": "9ff2c1b04b6f14782ae2ea45ce536d41c1d98e572dd7d4c1221478eac4a17e15",
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/early-childhood-education-adt/"
+  },
+  "31205": {
+   "sha256": "01d9e21e6021d6c7ebc9225df86e5dcdcb2b132e2a764aff607899c65bedfa74",
+   "url": "https://catalog.citruscollege.edu/disciplines/recording-technology/recording-technology-as/"
+  },
+  "31539": {
+   "sha256": "f662dd89bef06de076f8000fb9beacec1c6952eb1267a2d29dd040c1763e09cb",
+   "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-adt/"
+  },
+  "31572": {
+   "sha256": "d4d6d10006a8fd9c31515523d7c794f8aed4ac6f4a6e0b9a7da2459b38612720",
+   "url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/"
+  },
+  "31840": {
+   "sha256": "7cfeba83f3e8e7194bc447b5fdd36e0e9e597ae8291aad1575d35c05c0402d6e",
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-adt/"
+  },
+  "32305": {
+   "sha256": "50120a017083c7258f8cd09b447cacf6180481df482fb9cf0badbd55fe3e1003",
+   "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/journalism-adt/"
+  },
+  "32404": {
+   "sha256": "7a128431ed922b1bd122d4afd94f611edd8c797d98caeb160950f8c14472549c",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-beginning-certificate-competency/"
+  },
+  "32405": {
+   "sha256": "1c6220d59c6e58437151cba8262a310425dc7a58ef11ebdebb89da47c465c76f",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-intermediate-certificate-competency/"
+  },
+  "32406": {
+   "sha256": "611b61e08742c2e48cb57d2354dcdeedad8a2e2613c03b7deb11038c990ec428",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-program-completion-certificate-competency/"
+  },
+  "33165": {
+   "sha256": "1dfe34341e191486ad81f2d90709d35b13dec5d81d6134dd81951d93c670b956",
+   "url": "https://catalog.citruscollege.edu/disciplines/engineering/pre-engineering-as/"
+  },
+  "33308": {
+   "sha256": "4354537a1ee228a8081bc1df5057c86be82995c44af1ecea1296d7a5728f942e",
+   "url": "https://catalog.citruscollege.edu/disciplines/foreign-languages/spanish-adt/"
+  },
+  "33327": {
+   "sha256": "c7682f83de28477d4112dbc6f32ee3229696b1d9ed419b6449426f17f3f3aa0e",
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-certificate-achievement/"
+  },
+  "33350": {
+   "sha256": "34b0c124470d58eb8b6996ab346a14957d76553cd8b4603a0ae7e44a7c34dde0",
+   "url": "https://catalog.citruscollege.edu/disciplines/biotechnology/biomanufacturing-certificate-achievement/"
+  },
+  "33599": {
+   "sha256": "27d274cf2a186163d0b8fb7925c02fe122ac1dfebc30f79b9586ecb1f913cfb4",
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-as/"
+  },
+  "33602": {
+   "sha256": "91b4129fc40a12218f7c3290384fd584c8facb24eba571b71b8197223ed9e4d0",
+   "url": "https://catalog.citruscollege.edu/disciplines/biology/pre-allied-health-as/"
+  },
+  "33607": {
+   "sha256": "f52c8b168f43bb27c187205fdd69da10335c400f7a6180f32a91b1c4d433ae67",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/art-history-adt/"
+  },
+  "33609": {
+   "sha256": "17efbd4dd554787de79ff487af8f9c92a476fd0904b07c5c2b66129609e677df",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/studio-arts-adt/"
+  },
+  "33688": {
+   "sha256": "73d74d9d6f7d79fda6038be74ccaff8073e9350a17c70c340f7786434e930724",
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/"
+  },
+  "33909": {
+   "sha256": "98b5dd98d1f02eaa2da08a57918a7fbc8b266891b440f488bff0411253f0df3f",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-general-service-repair-certificate-achievement/"
+  },
+  "33960": {
+   "sha256": "05b015b7dcd8f831b89a67584e98e17e92eff22b0b8e6b997ccb9ff6a605a2a3",
+   "url": "https://catalog.citruscollege.edu/disciplines/biotechnology/biotechnology-as/"
+  },
+  "35078": {
+   "sha256": "b4ee239af9ec7b0b815fe3b302bc324aa264aedc0e804fdcf248d60c2df9b658",
+   "url": "https://catalog.citruscollege.edu/disciplines/biology/biology-adt/"
+  },
+  "35368": {
+   "sha256": "85ab97df0d421407c55f0ea2e48291c8520582b694356c94da786a44671b704d",
+   "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/"
+  },
+  "35453": {
+   "sha256": "4b754ebbe666af4ad42ec3237b511fa08c8e96c808e2dfacff6304f373c555b1",
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/"
+  },
+  "35598": {
+   "sha256": "aabfa1ebe93e864e211f6b68de03e4f6b849cef259ef7d1487a6d82204aab5ee",
+   "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/database-administrator-certificate-achievement/"
+  },
+  "35599": {
+   "sha256": "fbf602e5593660db5ece4b782abcce05c3089c6862a45f415acc362c7c33a9cb",
+   "url": "https://catalog.citruscollege.edu/disciplines/office-technology/business-information-professional-certificate-of-achievement/"
+  },
+  "35775": {
+   "sha256": "f420999dcab0f424c768f2243362784287c7237a5284483cab510200557de1a4",
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-certificate-achievement/"
+  },
+  "36306": {
+   "sha256": "15a43603302113a162a89d3d7dd754c98479075b7970602124efbde669c4209c",
+   "url": "https://catalog.citruscollege.edu/disciplines/architecture/architecture-as/"
+  },
+  "36540": {
+   "sha256": "6bd6962175a3daf0febe808515475689aacc0b3a941559d70e885f8bcc347c1d",
+   "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-efficiency-management-certificate-achievement/"
+  },
+  "36541": {
+   "sha256": "b17e5e39f07230b54e93e6190124bcd49ed307997f0222fef291fc2baddf1da9",
+   "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-efficiency-management-as/"
+  },
+  "36542": {
+   "sha256": "2fde211f542ed884ae42a630a985e845d77886d1df895ecad41e87ebd039bda6",
+   "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/it-technican-computer-retail-certificate-achievement/"
+  },
+  "36626": {
+   "sha256": "bf6313f63b085006d94957dc5b431194accee217887bcda5bc6218f92e4b086f",
+   "url": "https://catalog.citruscollege.edu/disciplines/esthetician/esthetician-as/"
+  },
+  "36663": {
+   "sha256": "41e6928ca99fa28d3e58a2bd3d802d788b54c27be6c87240f4dd05cfe66ece65",
+   "url": "https://catalog.citruscollege.edu/disciplines/computer-science/gaming-applications-development-certificate-achievement/"
+  },
+  "36924": {
+   "sha256": "9bbda6cfaeccdac6cc9afa256d904be147d8c3991c3b5767595de68f080f8fe8",
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/peace-studies-aa/"
+  },
+  "37121": {
+   "sha256": "caaa974212a5e6c25840ea4ab3ef7825c6c7c7b35d12e69f16d600e3d7c63228",
+   "url": "https://catalog.citruscollege.edu/disciplines/philosophy/philosophy-adt/"
+  },
+  "37131": {
+   "sha256": "7eed3a34ae84b40125f5450f3a0a5d95a4fba3f06e03ed988a33e0fd570f3b24",
+   "url": "https://catalog.citruscollege.edu/disciplines/economics/economics-adt/"
+  },
+  "37315": {
+   "sha256": "39f4da9563f0f83498753ac2e2297f90c083e4d20051df2ce2fd1fc8278a9342",
+   "url": "https://catalog.citruscollege.edu/disciplines/geography/global-studies-adt/"
+  },
+  "37384": {
+   "sha256": "726139f82f8b5e41e9dc0a43582ef9ec58d1fcbf25ad12de22d60072c6d1618b",
+   "url": "https://catalog.citruscollege.edu/disciplines/anthropology/anthropology-adt/"
+  },
+  "37501": {
+   "sha256": "e8e734cba54d67f25f54cb29e98c0340a3c6783ad36aa5fbed4ef0f2a0c679dc",
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-management-as/"
+  },
+  "37502": {
+   "sha256": "0903c26f0383f91b0c7f431d34d5541a9b92b2ce5e4bba4039d7cdab151f7f3c",
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-as/"
+  },
+  "37537": {
+   "sha256": "c88476d0a29f9e1464d25f418881a840d7284e8ad4af71559506e191c4852da0",
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/nutrition-dietetics-adt/"
+  },
+  "37571": {
+   "sha256": "17ba6fd962dec7aec82bf43aa0c6213b9af9f09a1745556e407e313128f5eb1f",
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-management-certificate-achievement/"
+  },
+  "37572": {
+   "sha256": "8cb58fbfa111afb8c8e411087d9c7aa91b75ed72f624851291c7165b7a6f711d",
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-quality-control-certificate-achievement/"
+  },
+  "37629": {
+   "sha256": "aeb4ad14f44c908bce93752cc5763ba6bdf492c429c9b4eed98e41f44c2aa2fe",
+   "url": "https://catalog.citruscollege.edu/disciplines/computer-science/computer-science-adt/"
+  },
+  "37635": {
+   "sha256": "be078f3b05108cb518dc27e4c9d6aff282a778d1bcdd5ee978a68a996737ccb7",
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-inspection-certificate-achievement/"
+  },
+  "37814": {
+   "sha256": "f56325486cc06155c11865416d9869b4b4d341dd5e4befaaa3476da891bfa6d4",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-pronunciation-certificate-competency/"
+  },
+  "37815": {
+   "sha256": "cd9e3e1c6b3f05ecfc56d00f085bff15cc46bce7a2ee5108ab162c7dd33b73ca",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-intermediate-grammar-certificate-competency/"
+  },
+  "37816": {
+   "sha256": "858f73beb08544e865d8f0181dcd40338919abfde34d5c927f7e03354f6421c6",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-computer-literacy-certificate-competency/"
+  },
+  "37817": {
+   "sha256": "eb04d7f19b817a9c2f79e2621b9a3bfc9d83ac999a20a0848c5cbccb06ce369d",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-beginning-grammar-certificate-competency/"
+  },
+  "37962": {
+   "sha256": "0dad01385ca58fb6479402b859e8235da26ef6af58f3d312724dcc8f9ad64f5e",
+   "url": "https://catalog.citruscollege.edu/disciplines/forestry-wildland-resources/wildland-resources-forestry-as/"
+  },
+  "38167": {
+   "sha256": "c089d16fad8c6d984bb4ee2624181be62ab174917457aa03524840e95524bcdc",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/stationary-power-generation-service-diagnosis-repair-technician-certificate-achievement/"
+  },
+  "38207": {
+   "sha256": "eefc87ee2fb3fde97349dd29b752f228ee068ba9e87ed5fc74a3b968b824982a",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/diesel-engine-service-diagnosis-repair-technician-certificate-achievement/"
+  },
+  "38431": {
+   "sha256": "9b1dfed73370d5ecd8a1eca14644c4745376ae1fc39b0f3982cb02944b755830",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/clean-energy-vehicle-electrification-technology-certificate-achievement/"
+  },
+  "38754": {
+   "sha256": "5b6c54b102dceb08bff42bc9ef61dc6aca0bb9ef3616b7a77fea74a8fdc22bf0",
+   "url": "https://catalog.citruscollege.edu/disciplines/biology/environmental-science-adt/"
+  },
+  "40210": {
+   "sha256": "81f8f743060ee558a498112d08eb441416e1d9deba12475fdd3a60e5bce79cc7",
+   "url": "https://catalog.citruscollege.edu/disciplines/music/music-adt/"
+  },
+  "40284": {
+   "sha256": "815a79b6dfbef933b7b503e05afa13164b2bb25d51dbbb5896f6a64912e2f6ea",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/workforce-readiness-certificate-competency/"
+  },
+  "40285": {
+   "sha256": "44b5fe749c67716c2608a835de07e0226cb4c08a51e37220c0745ecb3026f780",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/business-information-worker-certificate-competency/"
+  },
+  "40436": {
+   "sha256": "da3bde463da7932eab95403c63c02137f573e3a9ed54093fc4bd3b0db6401191",
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/film-studies-aa/"
+  },
+  "40641": {
+   "sha256": "a60a6bccac4619f932fce58f78b2f3df66a6727a25b3de83c9997f38c1ca27b4",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/payroll-accounting-certificate-achievement/"
+  },
+  "40680": {
+   "sha256": "a169d96ac01fc814805909d1b64d9988e5d4299f151b18b36db86970e9f5f8be",
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-appraisal-certificate-achievement/"
+  },
+  "40681": {
+   "sha256": "3584accc41b62f644c6e3ad8322bbf4091d906555493563a968fc55bbdef34b2",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/income-tax-preparer-certificate-achievement/"
+  },
+  "40716": {
+   "sha256": "ac3c9402d1de25be4299ee15b972368f830da17fb2ae27658d32a289d8e88019",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/income-tax-assistant-certificate-achievement/"
+  },
+  "40957": {
+   "sha256": "972a2bd9fe533539ae12fae3f988c18222c0c36a44daddcd9bf27a5293475d3b",
+   "url": "https://catalog.citruscollege.edu/disciplines/earth-science/geology-adt/"
+  },
+  "40975": {
+   "sha256": "6aeb3c1649288dd90922f91b656d07ce6fce758dc14e574f8a06597feb0d901c",
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-sales-certificate-achievement/"
+  },
+  "40977": {
+   "sha256": "8875756d9464c4f1f6c18a9636069878fd2cac4d0ae00b742e6c035089735491",
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/media-arts-certificate-achievement/"
+  },
+  "40990": {
+   "sha256": "57fa832b86f806c3dd373730317ed6db0f4b469099a5beaaef098f05d8ac21ff",
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/hardscape-maintenance-technology-certificate-achievement/"
+  },
+  "41006": {
+   "sha256": "f7e11b89b938e6dfbfa4eb3f5347805a48891994c31b5e1111c68d3e0ef0fe52",
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-inspection-certificate-achievement/"
+  },
+  "41080": {
+   "sha256": "5a817cfb910c2bce3e9172d74af5945c4bc5b65b5b71139c6cc79a05b63b5996",
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/greenscape-maintenance-technology-certificate-achievement/"
+  },
+  "41167": {
+   "sha256": "dba4d4ca1dc55af701b2f6e92a87603b5ad3a8e0bd5a6997d5b642f13b7e8d64",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/business-entrepreneurship-certificate-competency/"
+  },
+  "41356": {
+   "sha256": "abe946184d7cfbd19c131939c64d160c04ff6ecd2a6e36c0d04cc3c3e2c4ebcd",
+   "url": "https://catalog.citruscollege.edu/disciplines/geography/geography-adt/"
+  },
+  "41616": {
+   "sha256": "84e012ead3975e61dcf922c08e5a0b58c5b0829dda548ef32b38455517625969",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/medical-terminology-certificate-competency/"
+  },
+  "41679": {
+   "sha256": "82eccc162b765738a96f5dc5ef559fdcc44222233758387df24e8b1961f90ae6",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/"
+  },
+  "41841": {
+   "sha256": "b7f6d83d15348e5f1bd5707e548c64e1d6659da4a21aea4571242f7ea65017fc",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-accounting-subjects-requirement-certificate-achievement/"
+  },
+  "41842": {
+   "sha256": "e2d42aa1ab3912630add505b5c67fab5a0a5ee2184f8958f83fac4983b1794a3",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/"
+  },
+  "41843": {
+   "sha256": "4bf940a98caa23647e0d704015029c8b1ca6ea13013aadcbe8bb4a8353a0ce12",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/"
+  },
+  "41913": {
+   "sha256": "24828637db6d44317d7264c205fc3c8f57ebf31e8eebd84dda1cab86e1c97182",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/small-business-management-certificate-completion/"
+  },
+  "41914": {
+   "sha256": "869ced1a43743a76ee148f6b0934f96fbb9a50de95ff39839b0d355203db4d1e",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-automotive-service-certificate-completion/"
+  },
+  "41931": {
+   "sha256": "8092e5185ccb57e600d3f3001c92f47e659dfd12ad72d5e75cfd789001bb2735",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-noncredit-credit-transition-certificate-competency/"
+  },
+  "41932": {
+   "sha256": "ce0e564e761fd66277147e82ec556ace0c24b13001537087a1d973296bb3a730",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-american-sign-language-asl-certificate-completion/"
+  },
+  "41966": {
+   "sha256": "cca930ee7003a634bcb8b648df0d913c0c52fdff86a61abdcf6beec50144b75a",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-careers-health-certificate-completion/"
+  },
+  "41987": {
+   "sha256": "435158b35fa009afce0c68fc641815046576e91e44a09469e530b84f7ea66a0e",
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/special-inspection-reinforced-concrete-certificate-achievement/"
+  },
+  "42009": {
+   "sha256": "bb9c1dc117526f8af3dc894a49ecfba2828050106c7ead30e7e9c02af353956a",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/human-resources-management-certificate-competency/"
+  },
+  "42060": {
+   "sha256": "2ab2552325c22b254b04421e5695d373ddaebb9c0a0b80c732635843f21d4908",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/drone-technology-certificate-competency/"
+  },
+  "42170": {
+   "sha256": "8dc98c2a4f42945697bf3e28e71307c363324387886e65439d5c7b2c55eb262b",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/"
+  },
+  "42172": {
+   "sha256": "ec1903afa1907c115346413212cd52585b2e1bfadd5b2bffd2423f347a31d730",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/accounting-as/"
+  },
+  "42353": {
+   "sha256": "3fe0d437cbd5baa62ad7b1f243783e8977558828742af2d9d39830b0caf817d9",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/management-level-ii-certificate-achievement/"
+  },
+  "42354": {
+   "sha256": "cc46ee26a361b58992e1a1a34cb61b71aef20a3fff951bc5821a2b38cfb63844",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/small-business-management-entrepreneurship-level-i-certificate-achievement/"
+  },
+  "42355": {
+   "sha256": "1ca5c737ff4e68dc39202656e3a50d991899f23c3b41d39db7c33d352f469dc5",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/small-business-management-entrepreneurship-level-ii-certificate-achievement/"
+  },
+  "42356": {
+   "sha256": "62feb1ace68162d45e5f3ff48f335d095439a74a491d2049db6d2d51132a1e9c",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/human-resources-management-level-ii-certificate-achievement/"
+  },
+  "42357": {
+   "sha256": "c4facd404a312533e3466f30aa7238bed74e2390aab0d3eebc16dce67fa628f4",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/management-level-i-certificate-achievement/"
+  },
+  "42358": {
+   "sha256": "b9e3ad49121a484c1ea7eb64ae5b2366dea201ec44c626d952c342a73aa14a83",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/marketing-certificate-achievement/"
+  },
+  "42396": {
+   "sha256": "1a5c40c20a63b0560460833119d9751fc451caf00329ffd2f9640a57f6ae027a",
+   "url": "https://catalog.citruscollege.edu/disciplines/business/human-resources-management-level-i-certificate-achievement/"
+  },
+  "42707": {
+   "sha256": "a129b4afa1d0fa8fd7f49d819d2f3862a21316214df2daf521d696064b414dc9",
+   "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/public-relations-aa/"
+  },
+  "42713": {
+   "sha256": "faa718515272255ca20950622357edfc8484bfc12cbb4d4b7ba3fa9cf1803bc0",
+   "url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/"
+  },
+  "42808": {
+   "sha256": "9979af238583866cb26ac337557b7ee9408c07bd305de963aea4f9a742931333",
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/quickbooks-certificate-achievement/"
+  },
+  "42822": {
+   "sha256": "80aeccff9e2754ac71726e59607cbb87c87acdebf0ea82ce1b0df4ab10a2e81e",
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/film-television-electronic-media-adt/"
+  },
+  "42837": {
+   "sha256": "44a3da6608c1f77190bcaacbee3d9fa72d3d5a576106c0f02c9bc639c36cc607",
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/"
+  },
+  "42975": {
+   "sha256": "57a3fef89227b0e5bd2af15af7562a17fc2094b03147ed029ce2348f5369d5e4",
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-investing-ii-certificate-achievement/"
+  },
+  "43033": {
+   "sha256": "204dbcc4fa2fd4d39f6643189bc902bb71b490511978a710fb31598647a8fcec",
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-investing-i-certificate-achievement/"
+  },
+  "44264": {
+   "sha256": "e26c02fb0e34b783812d070a807074e58f114abcb722201ee027a4e203740815",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/basic-still-life-portrait-drawing-older-adults-certificate-competency/"
+  },
+  "44270": {
+   "sha256": "67b2c768e2756b0204e23e81eae3290bfd0ace0ab29659c20ea67d528aba3590",
+   "url": "https://catalog.citruscollege.edu/disciplines/engineering/engineering-fundamentals-certificate-achievement/"
+  },
+  "44427": {
+   "sha256": "6895e86b86ef6db03e581653646de9d98e44a551b2c24e4db00fca13c504c4d0",
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-health-safety-specialist-certificate-achievement/"
+  },
+  "44940": {
+   "sha256": "bf64bfdbac846ad68a2f9ce42e325255695ba2bb5299d6817753d3a98452eb5d",
+   "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/barbering-certificate-achievement/"
+  },
+  "45010": {
+   "sha256": "45d4ee7a331fc6cd977797d882976987b355a41484fea668de7d13247b7e212c",
+   "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/barbering-as/"
+  },
+  "45031": {
+   "sha256": "10e1e4fd01335b0f28aabf4825120dfba469e3b71a75b8299dedcbc18b486a2b",
+   "url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/"
+  },
+  "45069": {
+   "sha256": "87ada8039efcb073d1545c7f14e0ce28291d77fe3d442690bcd72a282cee7302",
+   "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/communication-studies-adt/"
+  },
+  "45304": {
+   "sha256": "35d6e8b8ee192de849add3e84d3cabcc605deb8d20d04de492050bb042fc80f4",
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-human-performance-as/"
+  },
+  "45347": {
+   "sha256": "d944b24e14c7bfe4bc534b8856945df521f6a27ef3c0a3502a2f6e33fc1e9f69",
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-sport-management-as/"
+  },
+  "45514": {
+   "sha256": "d0b813bd35e1936809f41f08cafe8109772227c212d6ef494a42b9a5716e840e",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/drone-operations-certificate-competency/"
+  },
+  "45728": {
+   "sha256": "9306507f00c428c8327ab072e05cb99dcd3e7627cba084d889a96265875ce693",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-basic-service-repair-certificate-achievement/"
+  },
+  "45759": {
+   "sha256": "111baf52df1e2898a3269395a140eed0e58f88a45ba74276b9901faaa8212f2f",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-grammar-completion-certificate-competency/"
+  },
+  "45761": {
+   "sha256": "d77df38c639cc713bd8c2d2f388dccdd29c3acb9d973b5ae6b3732d763dd9989",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/medical-front-office-clerk-certificate-competency/"
+  },
+  "45762": {
+   "sha256": "891c3a5131ecfa575c15a7ec32493eca0d8ce8f715b50eea40506dc9f2ee9814",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/life-skills-certificate-competency/"
+  },
+  "45763": {
+   "sha256": "328cc9d6139c816aad93bafe7923258d31c55731690b01a2f8c066e554090d35",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/entry-level-healthcare-skills-certificate-competency/"
+  },
+  "45764": {
+   "sha256": "9427a27b25b97dc60a7e205de16b9c52c2870674dd09ef14fdddca85aacd3f43",
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/health-wellness-healthcare-certificate-competency/"
+  },
+  "45819": {
+   "sha256": "c7d1620be7f21d3a81b5a4b339033ac1c8c6cc77c582dcc611912aedd61cb19b",
+   "url": "https://catalog.citruscollege.edu/disciplines/uas/drone-technology-as/"
+  },
+  "45836": {
+   "sha256": "8a75bdb804408bb4900696c794280a4e22365069784253c8263b1fe68292ee4b",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-undercar-service-repair-certificate-achievement/"
+  },
+  "45837": {
+   "sha256": "5e5f9b3491df88099638f9e34c940fc83312a22f395416e360100940bf85e343",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-underhood-service-repair-certificate-achievement/"
+  },
+  "45946": {
+   "sha256": "fd5f2b8e3f6d4f78d707b7e8850e7e6589edaa8005e1c3707b989596d144098f",
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/heavy-truck-maintenance-certificate-achievement/"
+  },
+  "46195": {
+   "sha256": "7d8e08ca5c901186bb03cb461f463a652c2898694de435b0cc4a67a6dc162d85",
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education-competitive-athletics/athletics-skill-award/"
+  },
+  "46376": {
+   "sha256": "19da63641ea62477875d49ff007d43acf1770376499199a426e6f2e88025b1d0",
+   "url": "https://catalog.citruscollege.edu/disciplines/architecture/essentials-computer-aided-design-cad-architecture-drafting-certificate-achievement/"
+  },
+  "46565": {
+   "sha256": "1916342c5a0a21dde673bffc46876dbfe23a44a915a00852e1f7381329ea76b5",
+   "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/"
+  }
+ },
+ "run": "44481520157"
 }

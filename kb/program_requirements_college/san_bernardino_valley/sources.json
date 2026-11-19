@@ -736,7 +736,7 @@
   "title": "Geology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1668,7 +1668,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 4955
+  "text_chars": 5342
  },
  {
   "control_number": "09375",
@@ -1698,7 +1698,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 4955
+  "text_chars": 5342
  },
  {
   "control_number": "09376",
@@ -1736,7 +1736,7 @@
   "title": "Career Specialist",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2057,9 +2057,11 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.867,
+  "coverage": 1.0,
   "codes_found": [
    "CIT100",
+   "COMM111",
+   "COMM111H",
    "COMM174",
    "ENGLC1000",
    "ENGLC1000H",
@@ -2311,31 +2313,12 @@
   "title": "Manual Lathe and Milling Machine Operator",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH21",
-   "MACH22",
-   "MACH75",
-   "MACH90",
-   "MACH98",
-   "TECALC87"
-  ],
-  "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
-   "title": "Machinist Technology | Academic Catalog",
-   "h1": "Machinist Technology",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 9273
+  "text_chars": 0
  },
  {
   "control_number": "17044",
@@ -2591,7 +2574,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.988,
+  "coverage": 0.994,
   "codes_found": [
    "ANTH108",
    "ANTH108H",
@@ -2655,6 +2638,7 @@
    "FTVM122",
    "FTVM131",
    "FTVM162",
+   "HIST100",
    "HIST107",
    "HIST107H",
    "HIST137",
@@ -2777,7 +2761,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.99,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH100",
    "ANTH102",
@@ -2828,6 +2812,7 @@
    "HEALTH100",
    "HEALTH101",
    "HEALTH113",
+   "HIST100",
    "HIST107",
    "HIST107H",
    "HIST137",
@@ -3553,94 +3538,36 @@
   "title": "Computer Numerical Control: CAD/CAM",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH129",
-   "MACH21",
-   "MACH22",
-   "MACH70",
-   "MACH71",
-   "MACH72",
-   "MACH73",
-   "MACH74",
-   "MACH90",
-   "TECALC87"
-  ],
-  "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
-   "title": "Machinist Technology | Academic Catalog",
-   "h1": "Machinist Technology",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 9273
+  "text_chars": 0
  },
  {
   "control_number": "22806",
   "title": "Machinist Standard",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH129",
-   "MACH21",
-   "MACH22",
-   "MACH90"
-  ],
-  "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/machinist-standard-as-degree/",
-   "title": "Computer Numerical Control (CNC) Machining Associate of Science Degree | Academic Catalog",
-   "h1": "Computer Numerical Control (CNC) Machining Associate of Science Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 5773
+  "text_chars": 0
  },
  {
   "control_number": "22809",
   "title": "Tool & Die",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH129",
-   "MACH21",
-   "MACH22",
-   "MACH90",
-   "TECALC87"
-  ],
-  "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/machinist-technology/",
-   "title": "Machinist Technology | Academic Catalog",
-   "h1": "Machinist Technology",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 9273
+  "text_chars": 0
  },
  {
   "control_number": "22816",
@@ -4152,8 +4079,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.96,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHRO125",
    "ENGL122",
    "ENGL123",
    "ENGL125",
@@ -4200,53 +4128,12 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ADJUS101",
-   "ADJUS102",
-   "ADJUS103",
-   "ADJUS104",
-   "ADJUS105",
-   "ADJUS106",
-   "ADJUS108",
-   "ADJUS151",
-   "ADJUS152",
-   "ADJUS153",
-   "ADJUS154",
-   "ADJUS155",
-   "ADJUS156",
-   "CIT101",
-   "ECON208",
-   "ENGLC1001",
-   "ENGLC1001H",
-   "PHIL102",
-   "PHIL103",
-   "POLSC1000",
-   "POLSC1000H",
-   "PSYC105",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "SOCIC1000",
-   "SOCIC1000H",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-aat-degree/",
-   "title": "Administration of Justice Associate in Science for Transfer Degree | Academic Catalog",
-   "h1": "Administration of Justice Associate in Science for Transfer Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "administration of justice associate in science for transfer degree",
-    "section_fit": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 28,
-  "text_chars": 6554
+  "text_chars": 0
  },
  {
   "control_number": "31886",
@@ -4254,8 +4141,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHRO102",
+   "ANTHRO102H",
    "COMMC1000",
    "COMMC1000H",
    "ENGLC1001",
@@ -4412,8 +4301,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHRO102",
+   "ANTHRO102H",
    "COMM135",
    "ECON100",
    "ECON208",
@@ -4421,6 +4312,7 @@
    "ECONC2001H",
    "ECONC2002",
    "ECONC2002H",
+   "HIST100",
    "HIST137",
    "HIST150",
    "HIST170",
@@ -4609,8 +4501,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHRO102",
+   "ANTHRO102H",
    "ECON208",
    "ENGLC1001",
    "ENGLC1001H",
@@ -4859,7 +4753,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 153 of 176 closed-list programs on their own page, 4 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35566",
@@ -5620,7 +5518,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4500
+  "text_chars": 5046
  },
  {
   "control_number": "36197",
@@ -6522,7 +6420,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "38987",
@@ -6534,7 +6436,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "39191",
@@ -6778,37 +6684,19 @@
    }
   },
   "listed": 5,
-  "text_chars": 5614
+  "text_chars": 4988
  },
  {
   "control_number": "39236",
   "title": "Social Media Narrative Production",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "FTVM111",
-   "FTVM112",
-   "FTVM198",
-   "FTVM215",
-   "FTVM233"
-  ],
-  "source": {
-   "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/film-television-electronic-media-ast-degree/",
-   "title": "Film, Television, and Electronic Media Associate in Science for Transfer Degree | Academic Catalog",
-   "h1": "Film, Television, and Electronic Media Associate in Science for Transfer Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.25,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 5356
+  "text_chars": 0
  },
  {
   "control_number": "39237",
@@ -7061,8 +6949,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "ART105",
+   "ART107",
+   "ART108",
    "ART120",
    "ART121",
    "ART124A",
@@ -7093,7 +6984,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 4976
+  "text_chars": 5267
  },
  {
   "control_number": "39446",
@@ -7252,7 +7143,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 4685
+  "text_chars": 4120
  },
  {
   "control_number": "39610",
@@ -7407,13 +7298,16 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 0.81,
   "codes_found": [
+   "ANTHRO102",
+   "ANTHRO102H",
    "ETHS107",
    "ETHS107H",
    "ETHS141",
    "ETHS141H",
    "GEOG102",
+   "HIST100",
    "HIST145",
    "HIST145H",
    "HIST170",
@@ -7438,7 +7332,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 5986
+  "text_chars": 6032
  },
  {
   "control_number": "41217",
@@ -7517,8 +7411,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.609,
+  "coverage": 0.696,
   "codes_found": [
+   "ANTHRO102",
+   "ANTHRO102H",
    "BIOLC1000",
    "CDEVC1000",
    "CDEVC1000H",
@@ -7648,8 +7544,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
+   "ANTHRO102",
+   "ANTHRO102H",
    "ECONC2001",
    "ECONC2001H",
    "ECONC2002",
@@ -7886,10 +7784,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH102",
    "ANTH102H",
+   "COMM111",
+   "COMM111H",
    "COMM125",
    "COMM135",
    "COMM140",
@@ -7929,9 +7829,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.814,
+  "coverage": 0.884,
   "codes_found": [
    "ADJUS101",
+   "ANTHRO102",
+   "ANTHRO102H",
    "BIOL250",
    "BIOL251",
    "BIOL260",
@@ -7949,6 +7851,7 @@
    "ENGLC1001H",
    "ETHS141",
    "ETHS141H",
+   "HIST100",
    "HIST137",
    "HISTC1001H",
    "HISTC1002",
@@ -8249,7 +8152,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.973,
+  "coverage": 1.0,
   "codes_found": [
    "ARTH103",
    "ARTHC1200",
@@ -8272,6 +8175,7 @@
    "GEOG120",
    "GEOL140",
    "GEOL141",
+   "HIST100",
    "HIST145",
    "HIST145H",
    "HIST170",
@@ -8536,7 +8440,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "45509",
@@ -8678,7 +8586,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 4482
+  "text_chars": 3729
  },
  {
   "control_number": "46163",

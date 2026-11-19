@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Computer Information Systems",
  "award": "A.S. Degree",
- "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
+ "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=116",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7042,
+  "input_tokens": 7877,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7042,
-    "output_tokens": 2311,
+    "input_tokens": 7877,
+    "output_tokens": 2650,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2311,
+  "output_tokens": 2650,
   "output_tokens_details": {
-   "thinking_tokens": 605
+   "thinking_tokens": 840
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07439,
- "ms": 19547,
- "seconds": 20.0,
+ "cost_usd": 0.08451,
+ "ms": 23089,
+ "seconds": 25.6,
  "parts": null,
  "error": null,
  "score": {
@@ -71,34 +71,35 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     45.0,
     45.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 14,
    "not_verbatim": [],
    "pass": true
   },
@@ -108,15 +109,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science degree in Computer Information Systems",
+   "section_heading": "COMPUTER INFORMATION SYSTEMS ▌ Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 45,
+    "max": 45
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -133,8 +134,27 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Create, debug, and comment computer programming codes in order to integrate multiple language constructs in a single project.",
+    "Create business applications using advanced computer software.",
+    "Identify and describe computer hardware, networking concepts, and computer software."
+   ],
+   "careers": [
+    "programming",
+    "software engineering",
+    "database administration",
+    "computer networking",
+    "multimedia programming",
+    "web programming technologies",
+    "network engineering",
+    "software development",
+    "user support",
+    "web development",
+    "Computer Programmers",
+    "Web Developers",
+    "Computer Network Support Specialists",
+    "Computer User Support Specialists"
+   ]
   },
   "blocks": [
    {
@@ -347,13 +367,39 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section; no A.S. heading is printed in the text, so section_heading is taken from the opening sentence ('Requirements for the Associate in Science degree in Computer Information Systems').",
-   "The A.S. text states 24 units of Required Courses and 21 units of Major Electives but prints no major total for the degree; total_units left null. 'Major Units: 45' is printed under the Certificate of Achievement heading, not the A.S.",
-   "Required courses are printed by semester (Semester I and II); recorded as one 'all' block. Semesters III and IV say 'Four elective courses' and 'Three elective courses', which correspond to the 21-unit Major Electives block.",
-   "General education is required but no pattern or GE unit figure is named on this page (refers to Graduation Requirements).",
-   "Catalog titles differ from the state file for CIS 126 (catalog: Adobe Dreamweaver; state: Computer Information Systems), CIS 146 (catalog: Multimedia Presentation for the Internet; state: Introduction to Web Page Design), CIS 112 (catalog: Introduction to Linux), and CIS 148 — reviewer may want to confirm the codes match.",
-   "No program learning outcomes or careers are printed in the text."
+   "Outcomes are printed once for the Degree/Certificate program as a whole; the A.S. shares them.",
+   "The page 116 summary table row 'Systems T002900C A.S. 21* 24 21 45' has its column headers cut off; it appears to show 21 GE units, 24 required, 21 electives, 45 total. ge_units left null because the header is not in the text and the footnote says any GE pattern may be used.",
+   "'At least 60 degree applicable units are required to earn an Associate degree' is a generic statement, not recorded as degree_total.",
+   "Catalog titles differ from the state file for CIS 126 (Adobe Dreamweaver vs Computer Information Systems), CIS 146 (Multimedia Presentation for the Internet vs Introduction to Web Page Design), and CIS 112 (Introduction to Linux vs Operating Systems - Beginning Linux); codes match.",
+   "Semester III/IV list 'Four elective courses' and 'Three elective courses', consistent with 21 units of Major Electives."
   ]
  },
- "extracted_run": "39054673977"
+ "extracted_run": "44475507447",
+ "catalog_year": "2026-2027",
+ "source_sha": "1e37169d0517bba5",
+ "source_codes": [
+  "CIS101",
+  "CIS112",
+  "CIS120",
+  "CIS126",
+  "CIS146",
+  "CIS148",
+  "CIS149",
+  "CIS165",
+  "CIS192",
+  "CIS210",
+  "CIS215",
+  "CS101",
+  "CS111",
+  "CS112",
+  "CS113",
+  "CS115",
+  "CS116",
+  "CS119",
+  "CS143",
+  "CS170",
+  "CS171",
+  "CS216"
+ ],
+ "source_coverage": 1.0
 }

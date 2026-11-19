@@ -32,7 +32,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "83052b885efa7456"
   },
   "listed": 13,
   "text_chars": 16000
@@ -74,7 +75,8 @@
     345
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b7a95992d3be4084"
   },
   "listed": 26,
   "text_chars": 4704
@@ -110,7 +112,8 @@
     262
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e248888f10b18e2e"
   },
   "listed": 10,
   "text_chars": 15482
@@ -147,7 +150,8 @@
     267
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "987dee349230618e"
   },
   "listed": 13,
   "text_chars": 4978
@@ -183,7 +187,8 @@
     124
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "dd0a945a8d2b6237"
   },
   "listed": 12,
   "text_chars": 5114
@@ -221,7 +226,8 @@
     220
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "74cf3f704604cf26"
   },
   "listed": 14,
   "text_chars": 4992
@@ -269,7 +275,8 @@
     307
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9728839d30550638"
   },
   "listed": 12,
   "text_chars": 5235
@@ -303,7 +310,8 @@
     354
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "88f46f18bb839443"
   },
   "listed": 10,
   "text_chars": 4885
@@ -343,7 +351,8 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "45b0347c1df035ff"
   },
   "listed": 14,
   "text_chars": 14998
@@ -379,7 +388,8 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b979298f876264d7"
   },
   "listed": 10,
   "text_chars": 14710
@@ -411,7 +421,8 @@
     215
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "799637984e10cf28"
   },
   "listed": 8,
   "text_chars": 2377
@@ -446,7 +457,8 @@
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c4c060999d2d6372"
   },
   "listed": 9,
   "text_chars": 14173
@@ -499,7 +511,8 @@
     370
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "79304dbcf9fc775d"
   },
   "listed": 29,
   "text_chars": 10767
@@ -551,7 +564,8 @@
     185
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "11b1fafe8dd311a9"
   },
   "listed": 30,
   "text_chars": 15155
@@ -583,7 +597,8 @@
     303
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "402ecdaf8c3feb33"
   },
   "listed": 9,
   "text_chars": 5103
@@ -628,20 +643,26 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356",
-   "title": "356  Radiologic Technology (Certiﬁcate of Achievement)",
-   "h1": "356  Radiologic Technology (Certiﬁcate of Achievement)",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=197",
+   "title": "Radiologic Technology (AS)",
+   "h1": "Radiologic Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    356,
-    357
+    197,
+    198
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 197,
+    "share": 0.909
+   },
+   "text_sha": "18c7b207995735db"
   },
   "listed": 33,
-  "text_chars": 9914
+  "text_chars": 9428
  },
  {
   "control_number": "06610",
@@ -671,7 +692,8 @@
     304
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "90111946449dc7a9"
   },
   "listed": 9,
   "text_chars": 5033
@@ -681,32 +703,12 @@
   "title": "Corrections",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.727,
-  "codes_found": [
-   "AJ26",
-   "AJ53",
-   "AJ57",
-   "AJ61",
-   "AJ70",
-   "AJ71",
-   "AJ99I",
-   "PSYCC1000"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
-   "title": "SRJC 2026-2027 Catalog 103",
-   "h1": "SRJC 2026-2027 Catalog 103",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    103
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 5086
+  "text_chars": 0
  },
  {
   "control_number": "06626",
@@ -746,21 +748,26 @@
    "FIRE86C"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
-   "title": "SRJC 2026-2027 Catalog 321",
-   "h1": "SRJC 2026-2027 Catalog 321",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151",
+   "title": "SRJC 2026-2027 Catalog 151",
+   "h1": "SRJC 2026-2027 Catalog 151",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    321,
-    322,
-    323
+    151,
+    152
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 151,
+    "share": 0.933
+   },
+   "text_sha": "275dd2cf25d64c6c"
   },
   "listed": 30,
-  "text_chars": 15485
+  "text_chars": 10257
  },
  {
   "control_number": "06633",
@@ -863,7 +870,8 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "29b27b88525a9b6e"
   },
   "listed": 79,
   "text_chars": 16000
@@ -873,48 +881,12 @@
   "title": "AGVI: Viticulture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "AGME50",
-   "AGRI30",
-   "AGRI70",
-   "AGRI99I",
-   "NRM87",
-   "SPAN50A",
-   "VIT1",
-   "VIT113",
-   "VIT114",
-   "VIT120",
-   "VIT121",
-   "VIT123",
-   "VIT124",
-   "VIT131",
-   "VIT133",
-   "VIT51",
-   "VIT52",
-   "VIT54",
-   "VIT55",
-   "VIT60",
-   "VIT70",
-   "WEE99I"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=109",
-   "title": "SRJC 2026-2027 Catalog 109",
-   "h1": "SRJC 2026-2027 Catalog 109",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    109,
-    110,
-    111
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 22,
-  "text_chars": 14366
+  "text_chars": 0
  },
  {
   "control_number": "09613",
@@ -946,7 +918,8 @@
     267
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "27cfcf400fce868f"
   },
   "listed": 8,
   "text_chars": 16000
@@ -956,44 +929,12 @@
   "title": "Business: Bookkeeper",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BAD1",
-   "BAD52",
-   "BBK51",
-   "BBK521",
-   "BBK531",
-   "BBK532",
-   "BGN110",
-   "BGN201",
-   "BGN81",
-   "CS1671",
-   "CS601A",
-   "CS611A",
-   "CS611B",
-   "CS631A",
-   "HR62",
-   "HR64",
-   "HR65"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=259",
-   "title": "SRJC 2026-2027 Catalog 259",
-   "h1": "SRJC 2026-2027 Catalog 259",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    259,
-    260,
-    261,
-    262
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "09626",
@@ -1017,7 +958,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0503cfa95f07dbd5"
   },
   "listed": 4,
   "text_chars": 10196
@@ -1053,7 +995,8 @@
     155
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8d11e93a83356ef5"
   },
   "listed": 11,
   "text_chars": 9772
@@ -1095,7 +1038,8 @@
     370
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "988497bc37d317d1"
   },
   "listed": 19,
   "text_chars": 5325
@@ -1140,7 +1084,8 @@
     373
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "89ea8e9c7d3a8dcd"
   },
   "listed": 20,
   "text_chars": 10827
@@ -1183,7 +1128,8 @@
     373
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "48aba3a8c877c415"
   },
   "listed": 19,
   "text_chars": 5160
@@ -1230,7 +1176,8 @@
     369
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "18d5d2f186840f86"
   },
   "listed": 21,
   "text_chars": 16000
@@ -1263,10 +1210,11 @@
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f267dcff1e3384dc"
   },
   "listed": 9,
-  "text_chars": 5405
+  "text_chars": 5403
  },
  {
   "control_number": "09772",
@@ -1311,7 +1259,8 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "93c0779299f39a0b"
   },
   "listed": 26,
   "text_chars": 4651
@@ -1355,7 +1304,8 @@
     156
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b2cee99b54612528"
   },
   "listed": 19,
   "text_chars": 9954
@@ -1424,7 +1374,8 @@
     365
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "54609ff50da353a5"
   },
   "listed": 35,
   "text_chars": 9933
@@ -1463,10 +1414,11 @@
     212
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "db1204d591cf5fd4"
   },
   "listed": 13,
-  "text_chars": 14895
+  "text_chars": 14894
  },
  {
   "control_number": "13887",
@@ -1502,7 +1454,8 @@
     206
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9549231a16abbb43"
   },
   "listed": 18,
   "text_chars": 4975
@@ -1512,28 +1465,12 @@
   "title": "CS Computer Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "CS12",
-   "CS1711",
-   "MATH4",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=435",
-   "title": "SRJC 2026-2027 Catalog 435",
-   "h1": "SRJC 2026-2027 Catalog 435",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    435
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 6611
+  "text_chars": 0
  },
  {
   "control_number": "14148",
@@ -1567,7 +1504,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "baf6df898157b483"
   },
   "listed": 14,
   "text_chars": 9465
@@ -1612,7 +1550,8 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c50bcb1069a75371"
   },
   "listed": 21,
   "text_chars": 8985
@@ -1646,7 +1585,8 @@
     188
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0d5cbb2a1a33b1b9"
   },
   "listed": 10,
   "text_chars": 5265
@@ -1686,7 +1626,8 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "28f9b66bca6867c0"
   },
   "listed": 15,
   "text_chars": 16000
@@ -1729,7 +1670,8 @@
     190
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ef7431c5f67a3ec7"
   },
   "listed": 18,
   "text_chars": 9172
@@ -1749,20 +1691,27 @@
    "MATH6"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=171",
-   "title": "SRJC 2026-2027 Catalog 171",
-   "h1": "SRJC 2026-2027 Catalog 171",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=170",
+   "title": "Mathematics (AS)",
+   "h1": "Mathematics (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    170,
     171,
     172
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 170,
+    "share": 0.714
+   },
+   "text_sha": "efded5e305123ee0"
   },
   "listed": 7,
-  "text_chars": 9502
+  "text_chars": 10141
  },
  {
   "control_number": "14998",
@@ -1790,7 +1739,8 @@
     194
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0d756b8533d47966"
   },
   "listed": 7,
   "text_chars": 4890
@@ -1828,7 +1778,8 @@
     185
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2a7d1e05afd2936f"
   },
   "listed": 13,
   "text_chars": 9906
@@ -1870,7 +1821,8 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6ad4553922c692d8"
   },
   "listed": 19,
   "text_chars": 4708
@@ -1904,7 +1856,8 @@
     334
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "56060da09f9fc346"
   },
   "listed": 10,
   "text_chars": 10086
@@ -1915,8 +1868,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.841,
+  "coverage": 0.963,
   "codes_found": [
+   "AJ25",
+   "AJ26",
    "ANTH2",
    "ANTH21",
    "ANTH3",
@@ -1926,10 +1881,14 @@
    "ANTH4",
    "ANTH42",
    "ANTH5",
+   "BAD10",
+   "BEHS49",
+   "CHLD901",
    "COMM10",
    "COMM7",
    "COUN20",
    "COUN7",
+   "CS5711",
    "ECON12",
    "ECONC2001",
    "ECONC2002",
@@ -1972,35 +1931,45 @@
    "PSYC11",
    "PSYC14",
    "PSYC15",
+   "PSYC1B",
    "PSYC3",
    "PSYC30",
    "PSYC34",
    "PSYC35",
    "PSYC4",
    "PSYC40",
+   "PSYC5",
    "PSYC7",
    "PSYC8",
    "PSYC9",
+   "PSYCC1000",
    "SOC10",
    "SOC15",
    "SOC2",
    "SOC3",
-   "SOC30"
+   "SOC30",
+   "SOC5"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=89",
-   "title": "SRJC 2026-2027 Catalog 89",
-   "h1": "SRJC 2026-2027 Catalog 89",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=200",
+   "title": "200  Social and Behavioral Sciences (AA)",
+   "h1": "200  Social and Behavioral Sciences (AA)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89,
-    90,
-    91,
-    92
+    200,
+    201,
+    202,
+    203
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 200,
+    "share": 0.963
+   },
+   "text_sha": "ddb4a3e3fafdb88e"
   },
   "listed": 82,
   "text_chars": 16000
@@ -2090,7 +2059,8 @@
     184
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "47e1e13b6f6212ec"
   },
   "listed": 71,
   "text_chars": 16000
@@ -2230,7 +2200,8 @@
     160
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "bc276f57efc65855"
   },
   "listed": 120,
   "text_chars": 8627
@@ -2241,9 +2212,10 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 0.804,
   "codes_found": [
    "CHEM3A",
+   "CHEM3AL",
    "CHEM60",
    "CHEM8",
    "COMM3",
@@ -2298,7 +2270,8 @@
     140
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1bdbbcca165b4b7e"
   },
   "listed": 56,
   "text_chars": 4452
@@ -2309,28 +2282,37 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "APTE191",
    "CEST51",
    "LIR10",
+   "SURV53",
    "SURV56",
    "SURV60"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
-   "title": "114  ArlRmotSnsng&Photogrammtry (AS)",
-   "h1": "114  ArlRmotSnsng&Photogrammtry (AS)",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208",
+   "title": "208  Surveying Technology (AS)",
+   "h1": "208  Surveying Technology (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    114
+    208,
+    209,
+    210
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 208,
+    "share": 1.0
+   },
+   "text_sha": "959c8f7ff4180a03"
   },
   "listed": 6,
-  "text_chars": 4794
+  "text_chars": 15248
  },
  {
   "control_number": "15499",
@@ -2368,7 +2350,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d93c61eac320900b"
   },
   "listed": 15,
   "text_chars": 16000
@@ -2424,7 +2407,8 @@
     162
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "413e9657fba77231"
   },
   "listed": 32,
   "text_chars": 4483
@@ -2483,7 +2467,8 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "84a50a7d9cf8162e"
   },
   "listed": 34,
   "text_chars": 8749
@@ -2532,7 +2517,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "55feadc4afb548f5"
   },
   "listed": 23,
   "text_chars": 14366
@@ -2576,10 +2562,11 @@
     210
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "adf39b4914e05573"
   },
   "listed": 19,
-  "text_chars": 9825
+  "text_chars": 9824
  },
  {
   "control_number": "16694",
@@ -2614,7 +2601,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fa13c8314fb933f4"
   },
   "listed": 25,
   "text_chars": 4896
@@ -2654,7 +2642,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fa13c8314fb933f4"
   },
   "listed": 16,
   "text_chars": 4896
@@ -2694,7 +2683,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "261689ffb6a99655"
   },
   "listed": 15,
   "text_chars": 9758
@@ -2740,7 +2730,8 @@
     195
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "89f0bdaf6caa71d0"
   },
   "listed": 20,
   "text_chars": 16000
@@ -2775,7 +2766,8 @@
     124
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "dd0a945a8d2b6237"
   },
   "listed": 11,
   "text_chars": 5114
@@ -2812,7 +2804,8 @@
     148
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "eb287255889defee"
   },
   "listed": 13,
   "text_chars": 5176
@@ -2822,29 +2815,12 @@
   "title": "AMT: CNC Machining II Tech",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH161",
-   "MACH162",
-   "MACH511A",
-   "MACH80A",
-   "MACH80B"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=104",
-   "title": "104  Advanced Manufacturing Tech (AS)",
-   "h1": "104  Advanced Manufacturing Tech (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    104
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 5013
+  "text_chars": 0
  },
  {
   "control_number": "16965",
@@ -2880,7 +2856,8 @@
     174
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a46cae07f63e0791"
   },
   "listed": 16,
   "text_chars": 5200
@@ -2891,9 +2868,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.895,
+  "coverage": 0.947,
   "codes_found": [
    "PSYC10",
+   "PSYC10L",
    "PSYC11",
    "PSYC15",
    "PSYC1B",
@@ -2921,7 +2899,8 @@
     196
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5bbaa50fae1f01a3"
   },
   "listed": 19,
   "text_chars": 4157
@@ -2953,7 +2932,8 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "037f363561cb1333"
   },
   "listed": 8,
   "text_chars": 4571
@@ -3003,7 +2983,8 @@
     375
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fd023bf9072d288c"
   },
   "listed": 25,
   "text_chars": 9718
@@ -3041,7 +3022,8 @@
     272
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5338137bb1fb2bbe"
   },
   "listed": 15,
   "text_chars": 9694
@@ -3077,7 +3059,8 @@
     199
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "93b1f1f0db65d2a2"
   },
   "listed": 12,
   "text_chars": 4841
@@ -3135,7 +3118,8 @@
     365
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "54609ff50da353a5"
   },
   "listed": 35,
   "text_chars": 9933
@@ -3175,10 +3159,11 @@
     212
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "db1204d591cf5fd4"
   },
   "listed": 14,
-  "text_chars": 14895
+  "text_chars": 14894
  },
  {
   "control_number": "18478",
@@ -3205,7 +3190,8 @@
     378
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "24715624e78c80fd"
   },
   "listed": 6,
   "text_chars": 4902
@@ -3266,7 +3252,8 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "66ec1547e5fede13"
   },
   "listed": 38,
   "text_chars": 14495
@@ -3299,7 +3286,8 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "87ff81d16190b9e4"
   },
   "listed": 10,
   "text_chars": 9332
@@ -3355,7 +3343,8 @@
     237
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6d7bd196ced6f77b"
   },
   "listed": 32,
   "text_chars": 9992
@@ -3420,7 +3409,8 @@
     357
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6b0294a53e253c7e"
   },
   "listed": 42,
   "text_chars": 9914
@@ -3430,35 +3420,12 @@
   "title": "Dietetic Technician",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.647,
-  "codes_found": [
-   "DIET107",
-   "DIET107L",
-   "DIET108",
-   "DIET108L",
-   "DIET176",
-   "DIET50",
-   "DIET52",
-   "DIET70",
-   "FDNT10",
-   "FDNT70",
-   "PHYZ58"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=461",
-   "title": "SRJC 2026-2027 Catalog 461",
-   "h1": "SRJC 2026-2027 Catalog 461",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    461
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 6488
+  "text_chars": 0
  },
  {
   "control_number": "19288",
@@ -3487,7 +3454,8 @@
     192
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "904d565de91b3bb5"
   },
   "listed": 11,
   "text_chars": 9148
@@ -3526,7 +3494,8 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "bde9aa1927266c37"
   },
   "listed": 17,
   "text_chars": 4911
@@ -3536,60 +3505,24 @@
   "title": "Geospatial Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "APTE191",
-   "CEST192",
-   "CEST51",
-   "GIS40"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208",
-   "title": "208  Surveying Technology (AS)",
-   "h1": "208  Surveying Technology (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    208,
-    209
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 10297
+  "text_chars": 0
  },
  {
   "control_number": "19329",
   "title": "Geospatial Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.714,
-  "codes_found": [
-   "APTE191",
-   "CEST192",
-   "CEST51",
-   "GIS40",
-   "LIR10"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208",
-   "title": "208  Surveying Technology (AS)",
-   "h1": "208  Surveying Technology (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    208,
-    209,
-    210
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 15249
+  "text_chars": 0
  },
  {
   "control_number": "19402",
@@ -3621,10 +3554,11 @@
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f267dcff1e3384dc"
   },
   "listed": 11,
-  "text_chars": 5405
+  "text_chars": 5403
  },
  {
   "control_number": "19596",
@@ -3666,7 +3600,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ffdfb455ab09fa31"
   },
   "listed": 21,
   "text_chars": 4829
@@ -3715,7 +3650,8 @@
     126
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b402c570c34153dd"
   },
   "listed": 22,
   "text_chars": 16000
@@ -3726,54 +3662,17 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.955,
+  "coverage": 0.626,
   "codes_found": [
    "ANAT1",
-   "ATHL1",
-   "ATHL10",
-   "ATHL10L",
-   "ATHL11",
-   "ATHL11L",
-   "ATHL13",
-   "ATHL14",
-   "ATHL15L",
-   "ATHL17",
-   "ATHL17L",
-   "ATHL18",
-   "ATHL2",
-   "ATHL21",
-   "ATHL221L",
-   "ATHL222L",
-   "ATHL27",
-   "ATHL28",
-   "ATHL29L",
-   "ATHL3",
-   "ATHL30",
-   "ATHL31",
-   "ATHL31L",
-   "ATHL32",
-   "ATHL32L",
-   "ATHL33",
-   "ATHL34",
-   "ATHL37",
-   "ATHL38",
-   "ATHL41",
-   "ATHL41L",
-   "ATHL42",
-   "ATHL45",
-   "ATHL45L",
-   "ATHL8",
-   "ATHL9",
    "BIO10",
    "CHEM3A",
-   "CHEM60",
-   "FDNT10",
+   "CHEM3AL",
    "KFIT101",
    "KFIT11",
    "KFIT111",
    "KFIT12",
    "KFIT121",
-   "KFIT151",
    "KFIT161",
    "KFIT171",
    "KFIT201",
@@ -3803,7 +3702,6 @@
    "KFIT6",
    "KFIT61",
    "KFIT62",
-   "KFIT63",
    "KFIT71",
    "KFIT72",
    "KFIT8",
@@ -3813,25 +3711,13 @@
    "KFIT91",
    "KFIT92",
    "KFIT93",
-   "KIN49",
-   "KIN5",
    "KIN53",
-   "KIN62A",
-   "KIN62B",
-   "KIN62C",
-   "KIN62D",
-   "KIN80",
-   "KIN81",
-   "KIN82",
-   "KIN83",
    "KINA1",
    "KINA101",
    "KINA11",
    "KINA12",
    "KINA121",
    "KINA123",
-   "KINA13",
-   "KINA14",
    "KINA21",
    "KINA23",
    "KINA31",
@@ -3865,7 +3751,6 @@
    "KINT43",
    "KINT61",
    "KINT62",
-   "KINT63",
    "KINT7",
    "KINT71",
    "KINT72",
@@ -3878,22 +3763,22 @@
    "PHYZ1"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=166",
-   "title": "166  Kinesiology (AA)",
-   "h1": "166  Kinesiology (AA)",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=168",
+   "title": "The Kinesiology Associate in Arts for Transfer degree is designed to",
+   "h1": "The Kinesiology Associate in Arts for Transfer degree is designed to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    166,
-    167,
     168,
-    169
+    169,
+    170
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "52180d477c027efe"
   },
   "listed": 157,
-  "text_chars": 14413
+  "text_chars": 12104
  },
  {
   "control_number": "19599",
@@ -3937,7 +3822,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8a4f3edadd540908"
   },
   "listed": 22,
   "text_chars": 13066
@@ -3981,7 +3867,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8a4f3edadd540908"
   },
   "listed": 19,
   "text_chars": 13066
@@ -4020,7 +3907,8 @@
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "609174fc54c936f8"
   },
   "listed": 14,
   "text_chars": 9064
@@ -4054,7 +3942,8 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8827d03ae2f95ed2"
   },
   "listed": 10,
   "text_chars": 4432
@@ -4064,40 +3953,12 @@
   "title": "AGWS: Enology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "AGBU2",
-   "AGRI99I",
-   "CHEM3A",
-   "CHEM3AL",
-   "CHEM42",
-   "CHEM8",
-   "VIT55",
-   "WEE99I",
-   "WINE1",
-   "WINE110",
-   "WINE3",
-   "WINE421",
-   "WINE422",
-   "WINE55",
-   "WINE70"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=110",
-   "title": "110  AGWS: Enology (AS)",
-   "h1": "110  AGWS: Enology (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    110,
-    111
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 9758
+  "text_chars": 0
  },
  {
   "control_number": "21708",
@@ -4134,7 +3995,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fa13c8314fb933f4"
   },
   "listed": 16,
   "text_chars": 4896
@@ -4144,76 +4006,24 @@
   "title": "AGWS: Wine Hosp & Marketing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.6,
-  "codes_found": [
-   "WINE1111",
-   "WINE1112",
-   "WINE112",
-   "WINE116",
-   "WINE117",
-   "WINE119",
-   "WINE124",
-   "WINE128",
-   "WINE130",
-   "WINE131",
-   "WINE1321",
-   "WINE1322"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=560",
-   "title": "560  Wine Studies (WINE)",
-   "h1": "560  Wine Studies (WINE)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    560,
-    561
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 20,
-  "text_chars": 12923
+  "text_chars": 0
  },
  {
   "control_number": "21710",
   "title": "AGEH: Landscape Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.867,
-  "codes_found": [
-   "AGBU2",
-   "AGBU56",
-   "AGRI98",
-   "HORT12",
-   "HORT144",
-   "HORT184",
-   "HORT195",
-   "HORT196",
-   "HORT70",
-   "HORT71",
-   "HORT8",
-   "HORT80",
-   "HORT91"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=106",
-   "title": "106  AGEH: Landscape Design (AS)",
-   "h1": "106  AGEH: Landscape Design (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    106,
-    107,
-    108
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 14354
+  "text_chars": 0
  },
  {
   "control_number": "21712",
@@ -4247,7 +4057,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "83052b885efa7456"
   },
   "listed": 12,
   "text_chars": 16000
@@ -4281,7 +4092,8 @@
     154
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1c3a50fb06728b94"
   },
   "listed": 10,
   "text_chars": 4359
@@ -4321,7 +4133,8 @@
     156
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b2cee99b54612528"
   },
   "listed": 15,
   "text_chars": 9954
@@ -4363,7 +4176,8 @@
     345
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b7a95992d3be4084"
   },
   "listed": 18,
   "text_chars": 4704
@@ -4373,42 +4187,12 @@
   "title": "Sustainable Agriculture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "AGRI20",
-   "AGRI30",
-   "AGRI56",
-   "AGRI70",
-   "AGRI98",
-   "ANSC153",
-   "SUAG103",
-   "SUAG109",
-   "SUAG116",
-   "SUAG117",
-   "SUAG119",
-   "SUAG120",
-   "SUAG160",
-   "SUAG5",
-   "SUAG56",
-   "SUAG64",
-   "SUAG65"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=209",
-   "title": "SRJC 2026-2027 Catalog 209",
-   "h1": "SRJC 2026-2027 Catalog 209",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    209,
-    210
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 9825
+  "text_chars": 0
  },
  {
   "control_number": "21720",
@@ -4436,7 +4220,8 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "037f363561cb1333"
   },
   "listed": 7,
   "text_chars": 4571
@@ -4446,25 +4231,12 @@
   "title": "Diesel Equipment Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "WEE99I"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=97",
-   "title": "SRJC 2026-2027 Catalog 97",
-   "h1": "SRJC 2026-2027 Catalog 97",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    97
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 4124
+  "text_chars": 0
  },
  {
   "control_number": "21723",
@@ -4483,33 +4255,12 @@
   "title": "Advanced Manufacturing Tech",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "APTE45",
-   "APTE46",
-   "MACH162",
-   "MACH511A",
-   "MACH511B",
-   "MACH80A",
-   "MACH80B",
-   "WELD170"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=104",
-   "title": "104  Advanced Manufacturing Tech (AS)",
-   "h1": "104  Advanced Manufacturing Tech (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    104,
-    105
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 9972
+  "text_chars": 0
  },
  {
   "control_number": "21726",
@@ -4535,7 +4286,8 @@
     129
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "07f0f8e1aae70067"
   },
   "listed": 5,
   "text_chars": 5107
@@ -4564,7 +4316,8 @@
     360
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "17469392f7918144"
   },
   "listed": 5,
   "text_chars": 5064
@@ -4604,7 +4357,8 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "45b0347c1df035ff"
   },
   "listed": 14,
   "text_chars": 14998
@@ -4642,7 +4396,8 @@
     174
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a46cae07f63e0791"
   },
   "listed": 15,
   "text_chars": 5200
@@ -4652,91 +4407,24 @@
   "title": "Pharmacy Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "PHT102",
-   "PHT103",
-   "PHT150",
-   "PHT152",
-   "PHT154A",
-   "PHT154B",
-   "PHT155",
-   "PHT156",
-   "PHT157",
-   "PHT157L"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=188",
-   "title": "188  Philosophy (AA)",
-   "h1": "188  Philosophy (AA)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    188
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 5265
+  "text_chars": 0
  },
  {
   "control_number": "21737",
   "title": "Interior Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "APTE46",
-   "APTE59",
-   "ARCH12",
-   "ARCH21",
-   "ARCH22",
-   "ARCH23",
-   "ARCH60",
-   "ARCH65",
-   "ART3",
-   "ART4",
-   "ART5",
-   "ART7A",
-   "ART82",
-   "BMK50",
-   "BMK51",
-   "BMK54",
-   "BMK57",
-   "BMK59",
-   "COMM4",
-   "COMMC1000",
-   "CONS105",
-   "CS7111",
-   "CS7411",
-   "INDE122",
-   "INDE20",
-   "INDE50",
-   "INDE52",
-   "INDE62",
-   "INDE63",
-   "INDE64",
-   "INDE67",
-   "INDE71",
-   "INDE73"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=162",
-   "title": "162  Interior Design (AA)",
-   "h1": "162  Interior Design (AA)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    162
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 33,
-  "text_chars": 4483
+  "text_chars": 0
  },
  {
   "control_number": "21738",
@@ -4764,7 +4452,8 @@
     331
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f1d9c0d5c038e0db"
   },
   "listed": 7,
   "text_chars": 4497
@@ -4800,7 +4489,8 @@
     148
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "eb287255889defee"
   },
   "listed": 12,
   "text_chars": 5176
@@ -4833,7 +4523,8 @@
     319
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4ff3592c7f7fade6"
   },
   "listed": 8,
   "text_chars": 9259
@@ -4843,48 +4534,12 @@
   "title": "Child Development: Teacher",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.828,
-  "codes_found": [
-   "CHLD111A",
-   "CHLD183",
-   "CHLD1851",
-   "CHLD186",
-   "CHLD220",
-   "CHLD51",
-   "CHLD53A",
-   "CHLD53B",
-   "CHLD54",
-   "CHLD552",
-   "CHLD555",
-   "CHLD556",
-   "CHLD557",
-   "CHLD66",
-   "CHLD791",
-   "CHLD792",
-   "CHLD794",
-   "CHLD82",
-   "CHLD901",
-   "CHLD902",
-   "CHLD903",
-   "CHLD904",
-   "CHLD95",
-   "CHLD96"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=127",
-   "title": "SRJC 2026-2027 Catalog 127",
-   "h1": "SRJC 2026-2027 Catalog 127",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    127
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 29,
-  "text_chars": 4651
+  "text_chars": 0
  },
  {
   "control_number": "21743",
@@ -4913,7 +4568,8 @@
     272
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5338137bb1fb2bbe"
   },
   "listed": 7,
   "text_chars": 9694
@@ -4950,7 +4606,8 @@
     272
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5338137bb1fb2bbe"
   },
   "listed": 12,
   "text_chars": 9694
@@ -4983,7 +4640,8 @@
     334
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "df57a9f721fb339e"
   },
   "listed": 10,
   "text_chars": 5125
@@ -5038,7 +4696,8 @@
     323
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3e20bc4625b47efa"
   },
   "listed": 29,
   "text_chars": 15485
@@ -5066,7 +4725,8 @@
     257
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "19fa736c955aea85"
   },
   "listed": 5,
   "text_chars": 3838
@@ -5111,7 +4771,8 @@
     186
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3257d182ac2b20e2"
   },
   "listed": 21,
   "text_chars": 4938
@@ -5137,7 +4798,8 @@
     258
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1bbf7cf085390fb6"
   },
   "listed": 2,
   "text_chars": 4618
@@ -5179,7 +4841,8 @@
     141
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "29edec48987500f3"
   },
   "listed": 19,
   "text_chars": 5242
@@ -5209,7 +4872,8 @@
     214
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1b2ad577214673e1"
   },
   "listed": 6,
   "text_chars": 8861
@@ -5219,31 +4883,12 @@
   "title": "Film & Media Arts Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.875,
-  "codes_found": [
-   "CS7422",
-   "FMA10",
-   "FMA18",
-   "FMA19",
-   "FMA20",
-   "FMA21",
-   "FMA22"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=482",
-   "title": "482  Film and Media Arts (FMA)",
-   "h1": "482  Film and Media Arts (FMA)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    482
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 6388
+  "text_chars": 0
  },
  {
   "control_number": "30750",
@@ -5280,7 +4925,8 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "14feee75572e785b"
   },
   "listed": 15,
   "text_chars": 16000
@@ -5317,7 +4963,8 @@
     314
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "32dc94cc4809bb7a"
   },
   "listed": 11,
   "text_chars": 14378
@@ -5348,7 +4995,8 @@
     313
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d3f68fa4a2264ab9"
   },
   "listed": 6,
   "text_chars": 9426
@@ -5377,10 +5025,11 @@
     315
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fe28573a060c8975"
   },
   "listed": 5,
-  "text_chars": 4839
+  "text_chars": 4837
  },
  {
   "control_number": "30816",
@@ -5404,19 +5053,21 @@
    "JOUR2"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=131",
-   "title": "SRJC 2026-2027 Catalog 131",
-   "h1": "SRJC 2026-2027 Catalog 131",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130",
+   "title": "130  Communication Studies 2.0 (AA-T)",
+   "h1": "130  Communication Studies 2.0 (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    130,
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "609174fc54c936f8"
   },
   "listed": 14,
-  "text_chars": 4630
+  "text_chars": 9064
  },
  {
   "control_number": "30840",
@@ -5454,7 +5105,8 @@
     206
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0690b3e138eb3808"
   },
   "listed": 16,
   "text_chars": 14802
@@ -5496,7 +5148,8 @@
     141
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "29edec48987500f3"
   },
   "listed": 18,
   "text_chars": 5242
@@ -5506,30 +5159,12 @@
   "title": "Wastewater Treatment Operatns",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "WWTR112",
-   "WWTR120",
-   "WWTR121",
-   "WWTR122",
-   "WWTR123",
-   "WWTR124"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214",
-   "title": "214  Wastewater Treatment Operatns (AS)",
-   "h1": "214  Wastewater Treatment Operatns (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    214
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 4855
+  "text_chars": 0
  },
  {
   "control_number": "31035",
@@ -5537,10 +5172,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.87,
+  "coverage": 0.913,
   "codes_found": [
    "BIO10",
    "PSYC10",
+   "PSYC10L",
    "PSYC11",
    "PSYC14",
    "PSYC15",
@@ -5570,7 +5206,8 @@
     196
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ac6f15c9936e318b"
   },
   "listed": 23,
   "text_chars": 4866
@@ -5607,7 +5244,8 @@
     157
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3e71c48eb2d7151d"
   },
   "listed": 10,
   "text_chars": 16000
@@ -5641,7 +5279,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8b129b185a18fa16"
   },
   "listed": 10,
   "text_chars": 5275
@@ -5678,7 +5317,8 @@
     155
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "75166514c913c5a1"
   },
   "listed": 11,
   "text_chars": 15049
@@ -5720,7 +5360,8 @@
     214
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "883bcd13857b5cfc"
   },
   "listed": 18,
   "text_chars": 4855
@@ -5735,60 +5376,50 @@
   "codes_found": [
    "BGN100",
    "BGN110",
-   "BGN111",
    "BGN154",
    "BGN71",
-   "BGN99I",
    "BMG52",
    "BMG664",
    "CS601A",
-   "CS611A"
+   "CS611A",
+   "CS611B",
+   "LIR10"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=423",
-   "title": "SRJC 2026-2027 Catalog 423",
-   "h1": "SRJC 2026-2027 Catalog 423",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
+   "title": "Administrative Assistant (AS)",
+   "h1": "Administrative Assistant (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    423,
-    424
+    103,
+    104,
+    105,
+    106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 103,
+    "share": 0.714
+   },
+   "text_sha": "a3e6f6531e0a5e78"
   },
   "listed": 14,
-  "text_chars": 12373
+  "text_chars": 16000
  },
  {
   "control_number": "31378",
   "title": "Solar Photovoltaics: System Installation, Design & Sales",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.75,
-  "codes_found": [
-   "REEN101",
-   "REEN102",
-   "REEN103",
-   "REEN104",
-   "REEN105",
-   "REEN106"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=543",
-   "title": "SRJC 2026-2027 Catalog 543",
-   "h1": "SRJC 2026-2027 Catalog 543",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    543
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 6215
+  "text_chars": 0
  },
  {
   "control_number": "31461",
@@ -5806,19 +5437,21 @@
    "CHLD904"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=142",
-   "title": "Early Childhood Education for Transfer Requirements",
-   "h1": "Early Childhood Education for Transfer Requirements",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=141",
+   "title": "Early Childhood Education (AS-T)",
+   "h1": "Early Childhood Education (AS-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    141,
     142
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b38735fc3831b0ac"
   },
   "listed": 8,
-  "text_chars": 3956
+  "text_chars": 6745
  },
  {
   "control_number": "31462",
@@ -5826,8 +5459,10 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.833,
+  "coverage": 0.944,
   "codes_found": [
+   "AJ21",
+   "AJ22",
    "AJ25",
    "AJ26",
    "AJ53",
@@ -5845,19 +5480,22 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
-   "title": "SRJC 2026-2027 Catalog 103",
-   "h1": "SRJC 2026-2027 Catalog 103",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=101",
+   "title": "• Administration of Justice (AS-T) (p. 102)",
+   "h1": "• Administration of Justice (AS-T) (p. 102)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    101,
+    102,
     103
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "6266c9db218060d1"
   },
   "listed": 18,
-  "text_chars": 5086
+  "text_chars": 11785
  },
  {
   "control_number": "31463",
@@ -5891,19 +5529,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=193",
-   "title": "SRJC 2026-2027 Catalog 193",
-   "h1": "SRJC 2026-2027 Catalog 193",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=192",
+   "title": "192  Political Science (AA-T)",
+   "h1": "192  Political Science (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    192,
     193,
     194,
-    195,
-    196
+    195
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "89f0bdaf6caa71d0"
   },
   "listed": 23,
   "text_chars": 16000
@@ -5940,21 +5579,28 @@
    "ENGLC1002"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=146",
-   "title": "English for Transfer Core Requirements",
-   "h1": "English for Transfer Core Requirements",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=145",
+   "title": "English (AA-T)",
+   "h1": "English (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    145,
     146,
     147,
     148
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 145,
+    "share": 0.846
+   },
+   "text_sha": "bcd8ac35ceb2b1dc"
   },
   "listed": 26,
-  "text_chars": 12716
+  "text_chars": 15060
  },
  {
   "control_number": "32268",
@@ -6002,7 +5648,8 @@
     207
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6b8cbf1bccd48627"
   },
   "listed": 28,
   "text_chars": 3846
@@ -6046,7 +5693,8 @@
     144
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "36513cf7af96ea8c"
   },
   "listed": 27,
   "text_chars": 4832
@@ -6079,20 +5727,22 @@
    "POLSC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=163",
-   "title": "The Associate in Arts for Transfer in Journalism degree is designed",
-   "h1": "The Associate in Arts for Transfer in Journalism degree is designed",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=162",
+   "title": "Journalism (AA-T)",
+   "h1": "Journalism (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    162,
     163,
     164
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d83fa27ed6b16a7b"
   },
   "listed": 18,
-  "text_chars": 9805
+  "text_chars": 10070
  },
  {
   "control_number": "32300",
@@ -6191,7 +5841,8 @@
     160
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2472e0bf24d47654"
   },
   "listed": 90,
   "text_chars": 16000
@@ -6202,14 +5853,29 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.736,
+  "coverage": 0.858,
   "codes_found": [
-   "ANTH21",
-   "ANTH3",
-   "ANTH30",
    "ANTH31",
-   "ANTH32",
-   "ANTH34",
+   "ANTH43",
+   "ART12",
+   "ART14A",
+   "ART19",
+   "ART23",
+   "ART24",
+   "ART26",
+   "ART27A",
+   "ART28A",
+   "ART3",
+   "ART31A",
+   "ART33A",
+   "ART4",
+   "ART5",
+   "ART7A",
+   "ARTH11",
+   "ARTH12",
+   "ARTH13",
+   "ARTH14",
+   "ARTH25",
    "ARTHC1200",
    "COMM2",
    "DANC2",
@@ -6230,28 +5896,25 @@
    "FMA14",
    "FMA15",
    "FMA4",
+   "FREN1",
    "FREN2",
    "FREN3",
    "FREN4",
    "GD15",
+   "GERM1",
    "GERM2",
    "GERM3",
    "GERM4",
    "HIST11",
    "HIST12",
-   "HIST22",
-   "HIST26",
-   "HIST30",
-   "HIST33",
    "HIST41",
    "HIST42",
-   "HIST81",
-   "HIST82",
    "HUM41",
    "HUM5",
    "HUM6",
    "HUM7",
    "HUM8",
+   "ITAL1",
    "ITAL2",
    "ITAL3",
    "ITAL4",
@@ -6276,6 +5939,7 @@
    "RELS3",
    "RELS32",
    "RELS666",
+   "SPAN1",
    "SPAN2",
    "SPAN3",
    "SPAN4",
@@ -6284,20 +5948,26 @@
    "THAR6"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88",
-   "title": "88  General Education- 2026-27 Cal-GETC GE",
-   "h1": "88  General Education- 2026-27 Cal-GETC GE",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=116",
+   "title": "116  Art History (AA-T)",
+   "h1": "116  Art History (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    88,
-    89
+    116,
+    117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 116,
+    "share": 0.858
+   },
+   "text_sha": "4af9ac2f12ae0f94"
   },
   "listed": 106,
-  "text_chars": 7970
+  "text_chars": 8829
  },
  {
   "control_number": "32328",
@@ -6315,8 +5985,8 @@
   ],
   "source": {
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
-   "title": "The Physics Degree Program is designed to prepare students for transfer",
-   "h1": "The Physics Degree Program is designed to prepare students for transfer",
+   "title": "190  Physics (AS)",
+   "h1": "190  Physics (AS)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6324,10 +5994,16 @@
     191
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 190,
+    "share": 0.714
+   },
+   "text_sha": "2bb3a5d043121006"
   },
   "listed": 7,
-  "text_chars": 7691
+  "text_chars": 9472
  },
  {
   "control_number": "32330",
@@ -6355,7 +6031,13 @@
     172
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 172,
+    "share": 0.7
+   },
+   "text_sha": "c506f3c1cd79a899"
   },
   "listed": 10,
   "text_chars": 4630
@@ -6366,16 +6048,22 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.533,
+  "coverage": 0.726,
   "codes_found": [
+   "ANAT1",
    "CHEM3A",
+   "CHEM3AL",
    "KFIT101",
+   "KFIT11",
    "KFIT111",
+   "KFIT12",
    "KFIT121",
    "KFIT161",
    "KFIT171",
    "KFIT201",
+   "KFIT21",
    "KFIT211",
+   "KFIT22",
    "KFIT251",
    "KFIT261",
    "KFIT301",
@@ -6408,6 +6096,30 @@
    "KFIT91",
    "KFIT92",
    "KFIT93",
+   "KIN1",
+   "KINA1",
+   "KINA101",
+   "KINA11",
+   "KINA12",
+   "KINA121",
+   "KINA123",
+   "KINA21",
+   "KINA23",
+   "KINA31",
+   "KINA32",
+   "KINA41",
+   "KINC10",
+   "KINC11",
+   "KINC12",
+   "KINC13",
+   "KINC14",
+   "KINC21",
+   "KINC22",
+   "KINC23",
+   "KINC4",
+   "KINC41",
+   "KINC42",
+   "KINC43",
    "KINI21",
    "KINI22",
    "KINI23",
@@ -6435,26 +6147,26 @@
    "KINT82",
    "KINT83",
    "KINT91",
-   "PHYS20A",
-   "PHYS40",
-   "PSYC9",
-   "PSYCC1000",
-   "STATC1000"
+   "PHYZ1"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=169",
-   "title": "SRJC 2026-2027 Catalog 169",
-   "h1": "SRJC 2026-2027 Catalog 169",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=164",
+   "title": "transfer to various allied health and kinesiology majors. The major is",
+   "h1": "transfer to various allied health and kinesiology majors. The major is",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    169
+    164,
+    165,
+    166,
+    167
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "77d5ad892b3801a4"
   },
   "listed": 136,
-  "text_chars": 3614
+  "text_chars": 12647
  },
  {
   "control_number": "32559",
@@ -6503,7 +6215,8 @@
     206
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "caba1d8d5a8502fb"
   },
   "listed": 29,
   "text_chars": 5218
@@ -6543,7 +6256,8 @@
     213
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ad2fe57aacb3f2e7"
   },
   "listed": 16,
   "text_chars": 4232
@@ -6579,7 +6293,8 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "477322784619b175"
   },
   "listed": 19,
   "text_chars": 4343
@@ -6622,7 +6337,8 @@
     190
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ef7431c5f67a3ec7"
   },
   "listed": 18,
   "text_chars": 9172
@@ -6656,7 +6372,8 @@
     328
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "90a49cdc28832c38"
   },
   "listed": 12,
   "text_chars": 13881
@@ -6667,7 +6384,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 0.714,
   "codes_found": [
    "ANAT1",
    "ANTH19",
@@ -6681,6 +6398,7 @@
    "ANTH43",
    "ANTH5",
    "GEOL1",
+   "GEOL1L",
    "PHSC21",
    "STATC1000"
   ],
@@ -6694,7 +6412,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5e345dc7ae5da1a1"
   },
   "listed": 21,
   "text_chars": 4291
@@ -6736,7 +6455,8 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "74e167861724ecbd"
   },
   "listed": 18,
   "text_chars": 4717
@@ -6779,7 +6499,8 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "74e167861724ecbd"
   },
   "listed": 19,
   "text_chars": 4717
@@ -6808,7 +6529,8 @@
     272
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "311a78c3357e8abf"
   },
   "listed": 3,
   "text_chars": 14641
@@ -6840,7 +6562,8 @@
     311
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0683c6fb7eb2f7c8"
   },
   "listed": 7,
   "text_chars": 9138
@@ -6862,31 +6585,12 @@
   "title": "EMLS Credit: Intermediate",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.7,
-  "codes_found": [
-   "EMLS371",
-   "EMLS371A",
-   "EMLS371B",
-   "EMLS372",
-   "EMLS372A",
-   "EMLS372B",
-   "EMLS372CP"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=475",
-   "title": "SRJC 2026-2027 Catalog 475",
-   "h1": "SRJC 2026-2027 Catalog 475",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    475
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 6373
+  "text_chars": 0
  },
  {
   "control_number": "35400",
@@ -6920,7 +6624,8 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e66c20d7edb23735"
   },
   "listed": 11,
   "text_chars": 14072
@@ -6959,7 +6664,8 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e66c20d7edb23735"
   },
   "listed": 13,
   "text_chars": 14072
@@ -6997,7 +6703,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ca8e3caa2588163e"
   },
   "listed": 13,
   "text_chars": 8552
@@ -7046,7 +6753,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8a4f3edadd540908"
   },
   "listed": 26,
   "text_chars": 13066
@@ -7109,7 +6817,8 @@
     205
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c08787be48fae613"
   },
   "listed": 37,
   "text_chars": 16000
@@ -7143,7 +6852,8 @@
     353
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0201d3b7d1780dde"
   },
   "listed": 10,
   "text_chars": 4637
@@ -7190,7 +6900,8 @@
     248
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e33c1c632c8a1b1a"
   },
   "listed": 10,
   "text_chars": 9533
@@ -7221,7 +6932,8 @@
     229
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d06083b04962eb88"
   },
   "listed": 6,
   "text_chars": 9622
@@ -7249,7 +6961,8 @@
     263
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fa4787909429a081"
   },
   "listed": 4,
   "text_chars": 4827
@@ -7277,7 +6990,8 @@
     223
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4ca94c46b013e475"
   },
   "listed": 4,
   "text_chars": 4612
@@ -7312,7 +7026,8 @@
     150
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b53f402b366511c0"
   },
   "listed": 10,
   "text_chars": 10030
@@ -7347,19 +7062,21 @@
    "ETHS27"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=179",
-   "title": "SRJC 2026-2027 Catalog 179",
-   "h1": "SRJC 2026-2027 Catalog 179",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=178",
+   "title": "The Native American Studies Associate in Arts is designed to prepare",
+   "h1": "The Native American Studies Associate in Arts is designed to prepare",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    178,
     179
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "1a77bde3c259ffa9"
   },
   "listed": 8,
-  "text_chars": 5024
+  "text_chars": 7158
  },
  {
   "control_number": "36114",
@@ -7382,7 +7099,8 @@
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "118cc3d727ac15da"
   },
   "listed": 2,
   "text_chars": 4898
@@ -7410,7 +7128,8 @@
     231
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2b9fae393df52b7c"
   },
   "listed": 3,
   "text_chars": 9438
@@ -7441,7 +7160,8 @@
     229
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "898912f325fb4b1d"
   },
   "listed": 4,
   "text_chars": 16000
@@ -7483,7 +7203,8 @@
     264
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "51b6a7f4bf4c6e68"
   },
   "listed": 15,
   "text_chars": 16000
@@ -7508,19 +7229,21 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=158",
-   "title": "158  Humanities (AA)",
-   "h1": "158  Humanities (AA)",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=157",
+   "title": "SRJC 2026-2027 Catalog 157",
+   "h1": "SRJC 2026-2027 Catalog 157",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    157,
     158
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "bbb8e19c86e87d3c"
   },
   "listed": 10,
-  "text_chars": 5181
+  "text_chars": 9634
  },
  {
   "control_number": "36666",
@@ -7548,7 +7271,8 @@
     224
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "da68afbab9741c6d"
   },
   "listed": 7,
   "text_chars": 4403
@@ -7582,7 +7306,8 @@
     185
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e214f143e586554b"
   },
   "listed": 13,
   "text_chars": 16000
@@ -7623,7 +7348,8 @@
     234
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f790ecfa69a807e8"
   },
   "listed": 5,
   "text_chars": 4769
@@ -7775,7 +7501,8 @@
     159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3ca75f9974ad533f"
   },
   "listed": 235,
   "text_chars": 16000
@@ -8070,7 +7797,8 @@
     97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4bf37265f0add7db"
   },
   "listed": 442,
   "text_chars": 16000
@@ -8099,7 +7827,8 @@
     323
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3ebecea5707942ab"
   },
   "listed": 5,
   "text_chars": 4972
@@ -8121,26 +7850,12 @@
   "title": "Adult Ed: Student Success Worker",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ADED7613",
-   "ADED764"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=223",
-   "title": "SRJC 2026-2027 Catalog 223",
-   "h1": "SRJC 2026-2027 Catalog 223",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    223
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4612
+  "text_chars": 0
  },
  {
   "control_number": "37299",
@@ -8167,7 +7882,8 @@
     235
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "290b935243a328a1"
   },
   "listed": 5,
   "text_chars": 10880
@@ -8195,7 +7911,8 @@
     229
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2d1dbf15e3e89b89"
   },
   "listed": 4,
   "text_chars": 4576
@@ -8235,7 +7952,8 @@
     262
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e0569ca494de8045"
   },
   "listed": 13,
   "text_chars": 16000
@@ -8270,7 +7988,8 @@
     291
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "16631531152ed4dd"
   },
   "listed": 9,
   "text_chars": 15072
@@ -8302,7 +8021,8 @@
     229
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3f9dd3660bbfb9ef"
   },
   "listed": 6,
   "text_chars": 14404
@@ -8335,7 +8055,8 @@
     293
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "bf08ddef745cd802"
   },
   "listed": 8,
   "text_chars": 14734
@@ -8368,7 +8089,8 @@
     284
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b827a64b53748cdb"
   },
   "listed": 6,
   "text_chars": 16000
@@ -8397,7 +8119,8 @@
     233
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6c34ce6d9f59158b"
   },
   "listed": 5,
   "text_chars": 4841
@@ -8433,10 +8156,11 @@
     121
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e0e737cece0f58a1"
   },
   "listed": 12,
-  "text_chars": 9529
+  "text_chars": 9528
  },
  {
   "control_number": "38721",
@@ -8462,7 +8186,8 @@
     229
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "898912f325fb4b1d"
   },
   "listed": 2,
   "text_chars": 16000
@@ -8492,7 +8217,8 @@
     229
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d06083b04962eb88"
   },
   "listed": 7,
   "text_chars": 9622
@@ -8526,7 +8252,8 @@
     152
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "275dd2cf25d64c6c"
   },
   "listed": 9,
   "text_chars": 10257
@@ -8559,7 +8286,8 @@
     152
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "275dd2cf25d64c6c"
   },
   "listed": 8,
   "text_chars": 10257
@@ -8569,33 +8297,12 @@
   "title": "CS Web and Mobile Full-Stack",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "CS10A",
-   "CS5033",
-   "CS50A",
-   "CS50B",
-   "CS50C",
-   "CS5513",
-   "CS7411",
-   "CS8162",
-   "GD51"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=137",
-   "title": "SRJC 2026-2027 Catalog 137",
-   "h1": "SRJC 2026-2027 Catalog 137",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    137
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 4571
+  "text_chars": 0
  },
  {
   "control_number": "39472",
@@ -8625,7 +8332,8 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "037f363561cb1333"
   },
   "listed": 9,
   "text_chars": 4571
@@ -8650,257 +8358,117 @@
    "WELD170"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": "SRJC 2026-2027 Catalog 215",
-   "h1": "SRJC 2026-2027 Catalog 215",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214",
+   "title": "The Welding Technology Associate of Science degree prepares students",
+   "h1": "The Welding Technology Associate of Science degree prepares students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    214,
     215
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "f78d95478a798312"
   },
   "listed": 10,
-  "text_chars": 2377
+  "text_chars": 3021
  },
  {
   "control_number": "39901",
   "title": "Weld: Gas Tungsten Arc: GTAW",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH161",
-   "WELD104",
-   "WELD113",
-   "WELD170"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": "SRJC 2026-2027 Catalog 215",
-   "h1": "SRJC 2026-2027 Catalog 215",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    215
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 2377
+  "text_chars": 0
  },
  {
   "control_number": "39902",
   "title": "Weld: Shielded Metal Arc: SMAW",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH161",
-   "WELD101",
-   "WELD113",
-   "WELD170"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": "SRJC 2026-2027 Catalog 215",
-   "h1": "SRJC 2026-2027 Catalog 215",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    215
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 2377
+  "text_chars": 0
  },
  {
   "control_number": "39903",
   "title": "Weld: Flux Cored Arc: FCAW",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH161",
-   "WELD103",
-   "WELD113",
-   "WELD170"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": "SRJC 2026-2027 Catalog 215",
-   "h1": "SRJC 2026-2027 Catalog 215",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    215
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 2377
+  "text_chars": 0
  },
  {
   "control_number": "39904",
   "title": "Weld: Gas Metal Arc: GMAW",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "MACH161",
-   "WELD102",
-   "WELD113",
-   "WELD170"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=215",
-   "title": "SRJC 2026-2027 Catalog 215",
-   "h1": "SRJC 2026-2027 Catalog 215",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    215
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 2377
+  "text_chars": 0
  },
  {
   "control_number": "39939",
   "title": "AGWS: Wine Cellar Worker",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.818,
-  "codes_found": [
-   "VIT55",
-   "WINE1",
-   "WINE110",
-   "WINE1111",
-   "WINE1112",
-   "WINE3",
-   "WINE421",
-   "WINE422",
-   "WINE70"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=241",
-   "title": "SRJC 2026-2027 Catalog 241",
-   "h1": "SRJC 2026-2027 Catalog 241",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    241,
-    242
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 9850
+  "text_chars": 0
  },
  {
   "control_number": "39940",
   "title": "AGWS: Wine Cellar Worker",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.818,
-  "codes_found": [
-   "VIT55",
-   "WINE1",
-   "WINE110",
-   "WINE1111",
-   "WINE1112",
-   "WINE3",
-   "WINE421",
-   "WINE422",
-   "WINE70"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=241",
-   "title": "SRJC 2026-2027 Catalog 241",
-   "h1": "SRJC 2026-2027 Catalog 241",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    241,
-    242
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 9850
+  "text_chars": 0
  },
  {
   "control_number": "39941",
   "title": "Solar Photovoltaics: System Design & Sales",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "REEN101",
-   "REEN102",
-   "REEN103",
-   "REEN105",
-   "REEN106"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=543",
-   "title": "SRJC 2026-2027 Catalog 543",
-   "h1": "SRJC 2026-2027 Catalog 543",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    543
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 6215
+  "text_chars": 0
  },
  {
   "control_number": "39942",
   "title": "Solar Photovoltaics: System Installation",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "REEN101",
-   "REEN102",
-   "REEN103",
-   "REEN104",
-   "REEN106"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=543",
-   "title": "SRJC 2026-2027 Catalog 543",
-   "h1": "SRJC 2026-2027 Catalog 543",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    543
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 6215
+  "text_chars": 0
  },
  {
   "control_number": "39943",
@@ -8928,7 +8496,8 @@
     200
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "317ff12d9aa37021"
   },
   "listed": 7,
   "text_chars": 4599
@@ -8959,7 +8528,8 @@
     200
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "317ff12d9aa37021"
   },
   "listed": 7,
   "text_chars": 4599
@@ -8998,7 +8568,8 @@
     196
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5261a34d48cccb23"
   },
   "listed": 13,
   "text_chars": 14501
@@ -9031,7 +8602,8 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3738aff11f643009"
   },
   "listed": 9,
   "text_chars": 5550
@@ -9064,7 +8636,8 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9c709f507f3dde9e"
   },
   "listed": 9,
   "text_chars": 10182
@@ -9097,7 +8670,8 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9c709f507f3dde9e"
   },
   "listed": 9,
   "text_chars": 10182
@@ -9130,7 +8704,8 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3738aff11f643009"
   },
   "listed": 9,
   "text_chars": 5550
@@ -9166,7 +8741,8 @@
     150
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "21069922ac2ea8b4"
   },
   "listed": 14,
   "text_chars": 5099
@@ -9213,7 +8789,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fb83d0d2c8be392c"
   },
   "listed": 10,
   "text_chars": 9393
@@ -9255,7 +8832,8 @@
     134
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9e1ba51b988a4d56"
   },
   "listed": 17,
   "text_chars": 10589
@@ -9297,7 +8875,8 @@
     134
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9e1ba51b988a4d56"
   },
   "listed": 17,
   "text_chars": 10589
@@ -9324,7 +8903,8 @@
     358
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "957fccaf4bf41c68"
   },
   "listed": 5,
   "text_chars": 4203
@@ -9359,7 +8939,8 @@
     307
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9728839d30550638"
   },
   "listed": 11,
   "text_chars": 5235
@@ -9386,7 +8967,8 @@
     231
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f0a661d0aedbfada"
   },
   "listed": 3,
   "text_chars": 4563
@@ -9412,7 +8994,8 @@
     232
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "42e1eac919f83754"
   },
   "listed": 2,
   "text_chars": 4750
@@ -9442,7 +9025,8 @@
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a8edae65339fbead"
   },
   "listed": 6,
   "text_chars": 4630
@@ -9471,7 +9055,8 @@
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a8edae65339fbead"
   },
   "listed": 5,
   "text_chars": 4630
@@ -9500,7 +9085,8 @@
     331
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6f83e7351593531b"
   },
   "listed": 4,
   "text_chars": 9101
@@ -9532,7 +9118,8 @@
     498
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "45b13a56abdb24a2"
   },
   "listed": 9,
   "text_chars": 12389
@@ -9576,7 +9163,8 @@
     286
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "49ea7a4d8714f24e"
   },
   "listed": 19,
   "text_chars": 9708
@@ -9586,32 +9174,12 @@
   "title": "ArlRmotSnsng&Photogrammtry",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "APTE191",
-   "CEST51",
-   "CEST85",
-   "GIS40",
-   "SURV56",
-   "SURV60",
-   "SURV62",
-   "SURV63"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
-   "title": "114  ArlRmotSnsng&Photogrammtry (AS)",
-   "h1": "114  ArlRmotSnsng&Photogrammtry (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    114
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 4794
+  "text_chars": 0
  },
  {
   "control_number": "43237",
@@ -9641,7 +9209,8 @@
     114
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8fbc0dc649a7c635"
   },
   "listed": 9,
   "text_chars": 4794
@@ -9675,7 +9244,8 @@
     352
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3dfab62ff3917ce8"
   },
   "listed": 9,
   "text_chars": 9809
@@ -9713,7 +9283,8 @@
     266
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c909799268044795"
   },
   "listed": 14,
   "text_chars": 4750
@@ -9749,7 +9320,8 @@
     296
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1c6259f98cf68d82"
   },
   "listed": 12,
   "text_chars": 4748
@@ -9780,7 +9352,8 @@
     352
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f0730f6c92b8f3d7"
   },
   "listed": 5,
   "text_chars": 15064
@@ -9810,7 +9383,8 @@
     352
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3dfab62ff3917ce8"
   },
   "listed": 5,
   "text_chars": 9809
@@ -9840,7 +9414,8 @@
     352
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3dfab62ff3917ce8"
   },
   "listed": 5,
   "text_chars": 9809
@@ -9866,7 +9441,8 @@
     219
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c6ee2ad9be3dac22"
   },
   "listed": 2,
   "text_chars": 5027
@@ -9893,7 +9469,8 @@
     218
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "69ca6e3d0f7abf9b"
   },
   "listed": 3,
   "text_chars": 4649
@@ -9924,7 +9501,8 @@
     314
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b6185630f50b36de"
   },
   "listed": 8,
   "text_chars": 4950
@@ -9953,7 +9531,8 @@
     306
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cbfb4a48868e3674"
   },
   "listed": 5,
   "text_chars": 4864
@@ -9982,7 +9561,8 @@
     224
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "47d740e8a04e6539"
   },
   "listed": 4,
   "text_chars": 9017
@@ -10028,7 +9608,8 @@
     186
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3257d182ac2b20e2"
   },
   "listed": 22,
   "text_chars": 4938
@@ -10066,7 +9647,8 @@
     255
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "525d792b7cfcedfe"
   },
   "listed": 11,
   "text_chars": 16000
@@ -10103,7 +9685,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a4a69d5ba8518656"
   },
   "listed": 13,
   "text_chars": 4994
@@ -10145,7 +9728,8 @@
     285
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cd7b4e07d35d2a6d"
   },
   "listed": 18,
   "text_chars": 9655
@@ -10192,7 +9776,8 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3c2624fb793ead2e"
   },
   "listed": 23,
   "text_chars": 9696
@@ -10202,43 +9787,12 @@
   "title": "HVACR Fundamentals",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BGN81",
-   "BMG52",
-   "BMG664",
-   "BMK50",
-   "CONS101",
-   "CONS102",
-   "CS5",
-   "CS611A",
-   "CS611B",
-   "ELEC51A",
-   "ESHP115",
-   "HVAC101",
-   "HVAC102",
-   "HVAC103",
-   "HVAC104",
-   "MACH162",
-   "WEE99I",
-   "WELD170"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=161",
-   "title": "SRJC 2026-2027 Catalog 161",
-   "h1": "SRJC 2026-2027 Catalog 161",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    161,
-    162
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 18,
-  "text_chars": 9053
+  "text_chars": 0
  },
  {
   "control_number": "44269",
@@ -10266,7 +9820,8 @@
     250
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1a6280b8e05a42fa"
   },
   "listed": 6,
   "text_chars": 9687
@@ -10309,7 +9864,8 @@
     162
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "97a969d6cc020e86"
   },
   "listed": 18,
   "text_chars": 9053
@@ -10345,7 +9901,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a4a69d5ba8518656"
   },
   "listed": 12,
   "text_chars": 4994
@@ -10379,7 +9936,8 @@
     343
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "21beb69661b41a47"
   },
   "listed": 10,
   "text_chars": 9911
@@ -10414,7 +9972,8 @@
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a685190d8dbf35d1"
   },
   "listed": 11,
   "text_chars": 5417
@@ -10452,7 +10011,8 @@
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c8705265bd91a23f"
   },
   "listed": 14,
   "text_chars": 10956
@@ -10462,61 +10022,24 @@
   "title": "Automotive Fundamental",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ATL101",
-   "ATL105",
-   "ATL110",
-   "ATL161",
-   "ATL162",
-   "ATL170"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=118",
-   "title": "118  Automotive Technology (AS)",
-   "h1": "118  Automotive Technology (AS)",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    118,
-    119
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 10956
+  "text_chars": 0
  },
  {
   "control_number": "44304",
   "title": "Automotive Transmission",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ATL101",
-   "ATL105",
-   "ATL120",
-   "ATL130",
-   "ATL161",
-   "ATL162"
-  ],
-  "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=119",
-   "title": "SRJC 2026-2027 Catalog 119",
-   "h1": "SRJC 2026-2027 Catalog 119",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    119
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 5417
+  "text_chars": 0
  },
  {
   "control_number": "44305",
@@ -10546,7 +10069,8 @@
     250
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e403df6b8ae65253"
   },
   "listed": 9,
   "text_chars": 5085
@@ -10577,10 +10101,11 @@
     316
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c2b3024231dbb95b"
   },
   "listed": 7,
-  "text_chars": 4549
+  "text_chars": 4548
  },
  {
   "control_number": "44307",
@@ -10612,7 +10137,8 @@
     255
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4a916e33d5002db8"
   },
   "listed": 12,
   "text_chars": 5161
@@ -10647,7 +10173,8 @@
     343
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "887cae2ec64c8c10"
   },
   "listed": 9,
   "text_chars": 14815
@@ -10682,7 +10209,8 @@
     343
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2a3c6e35eea390fd"
   },
   "listed": 11,
   "text_chars": 4845
@@ -10756,21 +10284,23 @@
    "MUSP42D"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
-   "title": "176  Music (AA)",
-   "h1": "176  Music (AA)",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=175",
+   "title": "The Associate in Arts in Music prepares students for careers in music",
+   "h1": "The Associate in Arts in Music prepares students for careers in music",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    175,
     176,
     177,
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "d18b64589a1b337e"
   },
   "listed": 66,
-  "text_chars": 13066
+  "text_chars": 13407
  },
  {
   "control_number": "44893",
@@ -10808,7 +10338,8 @@
     248
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7c3d989a2e6f464c"
   },
   "listed": 18,
   "text_chars": 4676
@@ -10841,7 +10372,8 @@
     328
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "90a49cdc28832c38"
   },
   "listed": 8,
   "text_chars": 13881
@@ -10868,7 +10400,8 @@
     298
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ea786dffad116f9e"
   },
   "listed": 3,
   "text_chars": 5378
@@ -10893,7 +10426,8 @@
     160
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f2486fcac5f3117d"
   },
   "listed": 1,
   "text_chars": 4651
@@ -10904,7 +10438,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.844,
+  "coverage": 0.875,
   "codes_found": [
    "ANAT1",
    "ANTH3",
@@ -10913,6 +10447,7 @@
    "BIO22",
    "CHEM12A",
    "CHEM3A",
+   "CHEM3AL",
    "CHEM8",
    "COMM7",
    "COUN20",
@@ -10944,7 +10479,8 @@
     185
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a8b64e93274dbbe3"
   },
   "listed": 32,
   "text_chars": 4673
@@ -10981,10 +10517,11 @@
     367
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8f5990defc4cc0d4"
   },
   "listed": 12,
-  "text_chars": 11077
+  "text_chars": 11076
  },
  {
   "control_number": "45523",
@@ -11022,7 +10559,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6ab66c8ed7261074"
   },
   "listed": 16,
   "text_chars": 9467
@@ -11083,7 +10621,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a16b39515a18d76e"
   },
   "listed": 45,
   "text_chars": 4508
@@ -11139,7 +10678,8 @@
     204
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4718c4a15cbc1125"
   },
   "listed": 34,
   "text_chars": 8297
@@ -11173,19 +10713,21 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=131",
-   "title": "SRJC 2026-2027 Catalog 131",
-   "h1": "SRJC 2026-2027 Catalog 131",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130",
+   "title": "130  Communication Studies 2.0 (AA-T)",
+   "h1": "130  Communication Studies 2.0 (AA-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    130,
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "609174fc54c936f8"
   },
   "listed": 21,
-  "text_chars": 4630
+  "text_chars": 9064
  },
  {
   "control_number": "45782",
@@ -11218,7 +10760,8 @@
     114
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6262e491a11dd485"
   },
   "listed": 12,
   "text_chars": 9429
@@ -11253,7 +10796,8 @@
     295
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3811905a6fd94412"
   },
   "listed": 12,
   "text_chars": 4633
@@ -11305,7 +10849,8 @@
     147
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "356a54c38f1603f2"
   },
   "listed": 28,
   "text_chars": 16000

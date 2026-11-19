@@ -1,0 +1,1005 @@
+{
+ "college": "Los Angeles Mission College",
+ "control_number": "44849",
+ "shape": "certificate",
+ "title": "Cal-GETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=220",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14990,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14990,
+    "output_tokens": 8549,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8549,
+  "output_tokens_details": {
+   "thinking_tokens": 1655
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.23094,
+ "ms": 59089,
+ "seconds": 59.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 146,
+   "share": 0.0,
+   "missing": [
+    "ADMJUS1",
+    "ADMJUS4",
+    "AFROAM2",
+    "AFROAM4",
+    "ANATOMY1",
+    "ANTHRO101",
+    "ANTHRO102",
+    "ANTHRO104",
+    "ANTHRO111",
+    "ANTHRO121",
+    "ART201",
+    "ART300",
+    "ART501",
+    "ART502",
+    "ARTHC1200",
+    "ARTHIST103",
+    "ARTHIST110",
+    "ARTHIST126",
+    "ARTHIST130",
+    "ARTHIST140",
+    "ARTHIST161",
+    "ARTHIST170",
+    "ASTRON1",
+    "ASTRON5",
+    "BIOLOGY3",
+    "BIOLOGY5",
+    "BIOLOGY6",
+    "BIOLOGY7",
+    "BIOTECH2",
+    "CHDEV1",
+    "CHEM101",
+    "CHEM102",
+    "CHEM211",
+    "CHEM212",
+    "CHEM51",
+    "CHEM65",
+    "CHICANO19",
+    "CHICANO2",
+    "CHICANO20",
+    "CHICANO37",
+    "CHICANO42",
+    "CHICANO44",
+    "CHICANO46",
+    "CHICANO47",
+    "CHICANO52",
+    "CHICANO54",
+    "CHICANO57",
+    "CHICANO58",
+    "CHICANO7",
+    "CHICANO8",
+    "CINEMA107",
+    "CINEMA3",
+    "CINEMA4",
+    "DANCEST805",
+    "EARTH1",
+    "EARTH2",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGLC1000",
+    "ENGLC1000E",
+    "ENGLC1001",
+    "ENGLISH101Y",
+    "ENGLISH101Z",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH208",
+    "ENGLISH218",
+    "ENGLISH240",
+    "ENVSCI2",
+    "ESL110",
+    "GEOG1",
+    "GEOG15",
+    "GEOG2",
+    "GEOG7",
+    "GEOLOGY1",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY1",
+    "HISTORY2",
+    "HISTORY86",
+    "HUMAN1",
+    "HUMAN3",
+    "JOURNAL100",
+    "LAW3",
+    "LING1",
+    "MATH230",
+    "MATH238",
+    "MATH245",
+    "MATH247",
+    "MATH248",
+    "MATH260",
+    "MATH261",
+    "MATH262",
+    "MATH263",
+    "MATH270",
+    "MATH275",
+    "MICRO20",
+    "MUSIC111",
+    "MUSIC141",
+    "OCEANO1",
+    "PHILOS1",
+    "PHILOS14",
+    "PHILOS20",
+    "PHILOS33",
+    "PHILOS5",
+    "PHOTO121",
+    "PHYSICS37",
+    "PHYSICS38",
+    "PHYSICS39",
+    "PHYSICS6",
+    "PHYSICS7",
+    "PHYSIOL1",
+    "PHYSSC1",
+    "PHYSSC14",
+    "POLSC1000",
+    "POLSCI2",
+    "POLSCI3",
+    "POLSCI5",
+    "POLSCI7",
+    "PSYCC1000",
+    "PSYCH13",
+    "PSYCH14",
+    "PSYCH2",
+    "PSYCH41",
+    "PSYCH52",
+    "SOC1",
+    "SOC11",
+    "SOC13",
+    "SOC2",
+    "SOC28",
+    "SOC3",
+    "SOC31",
+    "SPANISH15",
+    "SPANISH26",
+    "SPANISH3",
+    "SPANISH4",
+    "SPANISH5",
+    "SPANISH6",
+    "STAT101",
+    "STATC1000",
+    "STATC1000E",
+    "THEATER100",
+    "THEATER110",
+    "THEATER114"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cal-GETC",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADM JUS 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ADM JUS 4",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "AFRO AM 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "AFRO AM 4",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ANATOMY 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ANTHRO 101",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ANTHRO 104",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ANTHRO 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ART 201",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ART 300",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ART 501",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ART 502",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "only in LACCD GE Plan list (ARTH C1200); no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ARTHIST 103",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ARTHIST 110",
+    "why": "named only as former number of ARTH C1100 in LACCD GE Plan; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ARTHIST 126",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ARTHIST 130",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ARTHIST 140",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ARTHIST 161",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ARTHIST 170",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ASTRON 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ASTRON 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOLOGY 3",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "BIOLOGY 5",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "BIOLOGY 6",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "BIOLOGY 7",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "BIOTECH 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHDEV001",
+    "why": "only in LACCD GE Plan list (CH DEV 001); no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHEM 101",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHEM 211",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHEM 212",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHEM 51",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHEM 65",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 19",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 20",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 37",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 42",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 44",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 46",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 52",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 54",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 57",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 58",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CINEMA 107",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CINEMA 3",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "CINEMA 4",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "DANCEST 805",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "E.S.L. 110",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "EARTH 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "EARTH 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ENGL C1000E",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 101Y",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 101Z",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 102",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 203",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 205",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 206",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 208",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 218",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "English 240",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "ENV SCI 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "GEOG 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "GEOLOGY 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "only in LACCD GE Plan list (HIST C1001); no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "only in LACCD GE Plan list (HIST C1002); no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "HISTORY 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "HISTORY 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "HUMAN 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "HUMAN 3",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "JOURNAL 100",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "LAW 3",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "LING 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 230",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 238",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 245",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 247",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 248",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 260",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 261",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 262",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 263",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 270",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MATH 275",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MICRO 20",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MUSIC 111",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "MUSIC 141",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "OCEANO 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHILOS 14",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHILOS 20",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHILOS 33",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHILOS 5",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHOTO 121",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHYS SC 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHYS SC 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 37",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHYSICS 38",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHYSICS 39",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHYSICS 6",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHYSICS 7",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PHYSIOL 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "POL SCI 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "POL SCI 3",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "POL SCI 5",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "POL SCI 7",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PSYCH 13",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PSYCH 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PSYCH 41",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "PSYCH 52",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SOC 1",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SOC 11",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SOC 13",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SOC 2",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SOC 28",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SOC 3",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SOC 31",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SPANISH 15",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SPANISH 26",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SPANISH 3",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SPANISH 4",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SPANISH 5",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "SPANISH 6",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "STAT 101",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "THEATER 110",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   },
+   {
+    "code": "THEATER 114",
+    "why": "only in LACCD GE Plan list; no Cal-GETC certificate section in text"
+   }
+  ],
+  "notes": [
+   "The supplied text does not contain the Cal-GETC Certificate of Achievement requirements. 'Cal-GETC' appears only as a row in the Program Completion table (page 222); section_heading records that row name.",
+   "Page 221 prints the 'LACCD GENERAL EDUCATION PLAN 2026-2027' (local GE for associate degrees, minimum 27 semester units), which explicitly may NOT be used for ADTs and is not the Cal-GETC pattern; its courses were not recorded as blocks for this award.",
+   "The Area 5 Natural Sciences list on page 221 appears cut off (no lab area shown), which may explain why ANTHRO 111, ASTRON 5, EARTH 2, GEOG 15 and PHYS SC 14 are absent.",
+   "No total units, outcomes or careers are printed for the Cal-GETC certificate in this text. A reviewer should locate the actual Cal-GETC certificate pages (likely elsewhere in the catalog)."
+  ]
+ },
+ "extracted_run": "44475511939",
+ "catalog_year": "2026-2027",
+ "source_sha": "b837dc1e327d7caf",
+ "source_codes": [
+  "ADMJUS1",
+  "ADMJUS4",
+  "AFROAM2",
+  "AFROAM4",
+  "ANATOMY1",
+  "ANTHRO101",
+  "ANTHRO102",
+  "ANTHRO104",
+  "ANTHRO121",
+  "ART201",
+  "ART300",
+  "ART501",
+  "ART502",
+  "ARTHIST103",
+  "ARTHIST110",
+  "ARTHIST126",
+  "ARTHIST130",
+  "ARTHIST140",
+  "ARTHIST161",
+  "ARTHIST170",
+  "ASTRON1",
+  "BIOLOGY3",
+  "BIOLOGY5",
+  "BIOLOGY6",
+  "BIOLOGY7",
+  "BIOTECH2",
+  "CHDEV1",
+  "CHEM101",
+  "CHEM102",
+  "CHEM211",
+  "CHEM212",
+  "CHEM51",
+  "CHEM65",
+  "CHICANO2",
+  "CHICANO37",
+  "CHICANO42",
+  "CHICANO44",
+  "CHICANO46",
+  "CHICANO47",
+  "CHICANO52",
+  "CHICANO54",
+  "CHICANO57",
+  "CHICANO58",
+  "CHICANO7",
+  "CHICANO8",
+  "CINEMA107",
+  "CINEMA3",
+  "CINEMA4",
+  "DANCEST805",
+  "EARTH1",
+  "ECONC2001",
+  "ENGLC1001",
+  "ENGLISH101Y",
+  "ENGLISH101Z",
+  "ENGLISH102",
+  "ENGLISH203",
+  "ENGLISH205",
+  "ENGLISH206",
+  "ENGLISH208",
+  "ENGLISH218",
+  "ENGLISH240",
+  "ENVSCI2",
+  "ESL110",
+  "GEOG1",
+  "GEOG2",
+  "GEOG7",
+  "GEOLOGY1",
+  "HISTC1001",
+  "HISTORY1",
+  "HISTORY2",
+  "HISTORY86",
+  "HUMAN1",
+  "HUMAN3",
+  "JOURNAL100",
+  "LAW3",
+  "LING1",
+  "MATH230",
+  "MATH238",
+  "MATH245",
+  "MATH247",
+  "MATH248",
+  "MATH260",
+  "MATH261",
+  "MATH262",
+  "MATH263",
+  "MATH270",
+  "MATH275",
+  "MICRO20",
+  "MUSIC111",
+  "MUSIC141",
+  "OCEANO1",
+  "PHILOS1",
+  "PHILOS14",
+  "PHILOS20",
+  "PHILOS33",
+  "PHILOS5",
+  "PHOTO121",
+  "PHYSICS37",
+  "PHYSICS38",
+  "PHYSICS39",
+  "PHYSICS6",
+  "PHYSICS7",
+  "PHYSIOL1",
+  "PHYSSC1",
+  "POLSC1000",
+  "POLSCI2",
+  "POLSCI3",
+  "POLSCI5",
+  "POLSCI7",
+  "PSYCC1000",
+  "PSYCH13",
+  "PSYCH14",
+  "PSYCH2",
+  "PSYCH41",
+  "PSYCH52",
+  "SOC1",
+  "SOC11",
+  "SOC13",
+  "SOC2",
+  "SOC28",
+  "SOC3",
+  "SOC31",
+  "SPANISH15",
+  "SPANISH26",
+  "SPANISH3",
+  "SPANISH4",
+  "SPANISH5",
+  "SPANISH6",
+  "THEATER100",
+  "THEATER110",
+  "THEATER114"
+ ],
+ "source_coverage": 0.897
+}

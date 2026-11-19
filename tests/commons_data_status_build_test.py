@@ -81,8 +81,11 @@ for k in ("programs", "passing", "gap"):
     check("(3) statewide %s is the sum of the college rows" % k, S[k] == sum(c[k] for c in hv), (S[k], sum(c[k] for c in hv)))
 check("(3) each college's passing plus still-to-pass is its listed programs", all(c["passing"] + c["gap"] == c["programs"] for c in hv))
 check("(3) each college's still-to-pass is the sum of its causes", all(sum(c["causes"].values()) == c["gap"] for c in hv))
+# A record collected with a named gap and a discontinued program leave the census's gap and count beside the passing.
+cc = d["census_check"]
 check("(3) the program figures equal the gap census's committed-files count",
-      (S["programs"], S["passing"], S["gap"]) == (d["census_check"]["universe"], d["census_check"]["passing"], d["census_check"]["gap"]), d["census_check"])
+      (S["programs"], S["passing"], S["gap"])
+      == (cc["universe"], cc["passing"] + cc.get("collected_with_gaps", 0) + cc.get("discontinued", 0), cc["gap"]), cc)
 check("(3) unread is the universe less the harvested", S["unread"] == len(C) - S["harvested"] == sum(1 for c in C if not c["harvested"]))
 
 # (4) unread is null, never zero

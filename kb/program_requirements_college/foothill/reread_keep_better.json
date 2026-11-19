@@ -1,0 +1,163 @@
+{
+ "college": "Foothill College",
+ "run": "44477699881",
+ "written": "2026-11-19T08:01:20Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/reread-wave-s683",
+   "inputs": {
+    "college": "Foothill College",
+    "step": "reread",
+    "force": "44477699881"
+   },
+   "posts": 1,
+   "control_numbers": [
+    "39351"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 1,
+  "kept": 1,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 0,
+  "new": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 0,
+  "records_after": 169,
+  "dropped_by_filing": 16,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44477699881": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T08:01:20Z",
+   "counts": {
+    "reread": 1,
+    "kept": 1,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "new": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 169,
+    "dropped_by_filing": 16,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "06104",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "19484",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "35561",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "35772",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39675",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39889",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39891",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39996",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40239",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40240",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "43207",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "43676",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "44253",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "45656",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "45754",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "46561",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "39351",
+     "title": "Film, Television, and Electronic Media",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.foothill.edu/degrees-certificates/film-television-electronic-media/",
+     "filed_source_url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+     "filed_run": "38675242638",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 12,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  }
+ }
+}

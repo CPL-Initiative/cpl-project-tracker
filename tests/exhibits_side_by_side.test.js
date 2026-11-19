@@ -29,16 +29,27 @@ function txt(el) {
 const src = fs.readFileSync("exhibits.js", "utf8");
 const SBS = JSON.parse(fs.readFileSync("kb/exhibit_side_by_side.json", "utf8"));
 // The Review card's fixture is the exhibit the builder set a course aside for as an industry certification:
-// MAPICA-AATA-1-001 while it sits on a Review card, else the first such row in the built file. A CER procedures run can
-// settle the worked case and the rebuild then drops its row (run 44350607385, 2026-11-18), so the fixture is picked by
-// rule from the built data, never written in by hand (COBIx on #3520).
+// MAPICA-AATA-1-001 while it sits on a Review card, else the first such row in the built file. Such a row lives only
+// until a curator settles its title: a CER procedures run settled the worked case (run 44350607385, 2026-11-18), and
+// Sam's curation of 2026-11-18 settled the last of the kind, so the daily of 2026-11-19 built none (#3542 found the same
+// for tests/side_by_side_test.py). When today's file holds one, the card reads it, picked by rule, never written in by
+// hand (COBIx on #3520); when it holds none, the card reads the smallest such row, built here in the builder's shape
+// (kb/_build_side_by_side.py; tests/side_by_side_test.py runs that builder on a constructed exhibit of this kind).
 const SET_ASIDE = /^(.+) ([A-Z]{2,6} ?\d+[A-Z]?) \(([^()]+)\) was set aside: this exhibit is an industry certification, not credit by exam\.$/;
 const isCase = (r) => r && r.n === 1 && r.k === "cert-based" && SET_ASIDE.test(r.a || "");
-const REV_ID = isCase(SBS.exhibits["MAPICA-AATA-1-001"]) ? "MAPICA-AATA-1-001"
-  : Object.keys(SBS.exhibits).find((id) => isCase(SBS.exhibits[id]));
+const LIVE = Object.keys(SBS.exhibits).filter((id) => isCase(SBS.exhibits[id]));
+console.log("exhibits set aside as an industry certification in today's file: " + LIVE.length);
+const BUILT = "MAPICX-TEST-1-001";
+const REV_ID = isCase(SBS.exhibits["MAPICA-AATA-1-001"]) ? "MAPICA-AATA-1-001" : (LIVE[0] || BUILT);
+if (REV_ID === BUILT) {
+  SBS.exhibits[BUILT] = { l: "EMR (test college)", c: "Emergency Medical Responder", t: "Industry Certification", ts: "map",
+    k: "cert-based", n: 1,
+    a: "Las Positas College EMS 30 (Emergency Medical Responder) was set aside: this exhibit is an industry certification, not credit by exam." };
+}
 const RR = SBS.exhibits[REV_ID] || {};
 const RM = SET_ASIDE.exec(RR.a || "") || [];
-check("(0) the built file holds a set-aside exhibit for the Review card", !!REV_ID, String(REV_ID));
+check("(0) the Review card has a set-aside exhibit (today's file's, or the one built here)", isCase(RR) && RM.length === 4,
+  String(REV_ID));
 const css = src.slice(src.indexOf('".exh-sbs {'), src.indexOf('"@media (prefers-reduced-motion: reduce) { .exh-wrap'));
 check("(5) the view's CSS names no raw hex color", css.length > 50 && !/#[0-9a-fA-F]{3,8}\b/.test(css), css.slice(0, 120));
 

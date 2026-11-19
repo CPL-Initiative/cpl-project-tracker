@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6932,
+  "input_tokens": 6835,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6932,
-    "output_tokens": 1617,
+    "input_tokens": 6835,
+    "output_tokens": 1649,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 1617,
+  "output_tokens": 1649,
   "output_tokens_details": {
-   "thinking_tokens": 588
+   "thinking_tokens": 589
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06007,
- "ms": 13862,
- "seconds": 14.2,
+ "cost_usd": 0.06032,
+ "ms": 15498,
+ "seconds": 15.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "ECO200"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO200",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -246,11 +247,26 @@
    }
   ],
   "notes": [
-   "ECON C2001 in the catalog matches closed-list ECONC2001 (same course, spacing differs); treated as not a catalog addition.",
-   "ECON C2002 (Principles of Macroeconomics) is not on the closed list, which has ECO 200 Principles of Macroeconomics; likely the common-course-numbered replacement. Reviewer should confirm.",
-   "No general education pattern or GE units are named in this section; 'Total Degree Units 60' is printed as this award's total and recorded as degree_total.",
-   "Careers list taken from the Career Opportunities paragraph; employer types (accounting firms, banks, real estate companies, human resource departments, etc.) were not recorded as careers."
+   "ECON C2001 in the catalog is matched to closed-list ECONC2001 (same title, spacing differs); state file stores no units for it.",
+   "ECON C2002 Principles of Macroeconomics is not in the closed list (closed list has ECO 200 with the same title); recorded as a catalog addition, likely a common-course renumbering.",
+   "Total Major Units 28 – 29 recorded as total_units; Total Degree Units 60 recorded as degree_total.",
+   "The page names no general education pattern or GE units for this degree; it states students are exempt from Mendocino College Institutional Requirements.",
+   "Careers taken from the 'Career Opportunities in BUSINESS ADMINISTRATION' paragraph; employer types (accounting firms, banks, etc.) not listed as careers."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": "44474793355",
+ "catalog_year": "2026-2027",
+ "source_sha": "dc98a0ef38a29736",
+ "source_codes": [
+  "BUS200",
+  "BUS201",
+  "BUS212",
+  "BUS230",
+  "ECO200",
+  "ECONC2001",
+  "MTH210",
+  "MTH230",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

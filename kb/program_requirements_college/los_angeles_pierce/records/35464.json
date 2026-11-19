@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10714,
+  "input_tokens": 10613,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10714,
-    "output_tokens": 3034,
+    "input_tokens": 10613,
+    "output_tokens": 3397,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,52 @@
     "model": null
    }
   ],
-  "output_tokens": 3034,
+  "output_tokens": 3397,
   "output_tokens_details": {
-   "thinking_tokens": 1031
+   "thinking_tokens": 1376
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10354,
- "ms": 23770,
- "seconds": 24.1,
+ "cost_usd": 0.11039,
+ "ms": 27385,
+ "seconds": 27.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 18,
    "listed": 23,
-   "share": 0.739,
+   "share": 0.783,
    "missing": [
     "ART101",
     "ART102",
     "ENGLC1001",
-    "HISTORY11",
     "PHILOS5",
     "PHYSSC4"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HISTORY11",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ARTHC1100",
-    "ARTHC1200",
-    "HISTC1001"
+    "ARTHC1200"
    ],
    "flagged": [
     "ARTHC1100",
-    "ARTHC1200",
-    "HISTC1001"
+    "ARTHC1200"
    ],
    "pass": true
   },
@@ -115,7 +119,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Elementary Teacher Education: Integrated Programs AA-T",
+   "section_heading": "Elementary Teacher Education: Integrated Programs",
    "measure": "units",
    "total_units": {
     "min": 41,
@@ -345,11 +349,11 @@
    },
    {
     "code": "ENGL C1001",
-    "why": "not in the text for this award; appears only in the English AA-T section"
+    "why": "named only in the English AA-T section"
    },
    {
     "code": "HISTORY 11",
-    "why": "not in the text; required list prints HIST C1001 instead"
+    "why": "not in the text; section prints HIST C1001 instead"
    },
    {
     "code": "PHILOS 5",
@@ -361,13 +365,38 @@
    }
   ],
   "notes": [
-   "The section begins on a page before page 52; its heading and description are not in the text. section_heading taken from the award table line 'Elementary Teacher Education: Integrated Programs AA-T'.",
-   "The 'OR' between ENGLISH 102 and HISTORY 086 is read as ENGLISH 102 or HISTORY 086 (one choice); this reading makes the required courses sum to 25 units, and with Lists A (4), B (3) and C (9) matches the printed major total of 41.",
-   "List A says 'Select one course from the following' but prints only EARTH 003; PHYS SC 4 from the closed list may have been dropped or cut off. Reviewer should check.",
-   "List C 'Select 9 units' from three 3-unit courses effectively requires all three.",
-   "The 60-unit ADT requirement and 'minimum of 18 semester units' major sentence are generic and not recorded as totals. GE units (34) taken from the award table 'Cal-GETC (34 units)'.",
-   "Codes printed with zero-padded numbers (e.g., BIOLOGY 003) are treated as the closed-list courses (e.g., BIOLOGY 3)."
+   "The text starts mid-section on page 52; the program heading is not in the excerpt, so section_heading uses the award table name 'Elementary Teacher Education: Integrated Programs' (AA-T, P046335G).",
+   "The 'OR' is printed between ENGLISH 102 and HISTORY 086; recorded as ENGLISH 102 or HISTORY 086. Summing required courses this way (25) plus Lists A-C (16) gives the printed 41 total, but a reviewer should confirm, since PHILOS 5 (closed list) may have been the intended alternative to ENGLISH 102.",
+   "ENGLISH 102 is printed with title 'Academic Writing and Literature', which differs from the closed list title.",
+   "List A prints only one course (EARTH 003); PHYS SC 4 from the closed list may have been dropped from the catalog.",
+   "List C 'Select 9 units' lists exactly 9 units of courses, so effectively all are required.",
+   "The 60-unit ADT statement is generic text for all ADTs and was not recorded as degree_total; ge_units 34 is from the award table 'Cal-GETC (34 units)'.",
+   "The excerpt also contains the English AA-T and Environmental Science AS-T sections, which were not read."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "9d5fa7c72c6ec961",
+ "source_codes": [
+  "ART103",
+  "ART105",
+  "ART109",
+  "BIOLOGY3",
+  "CHDEV1",
+  "COMMC1000",
+  "EARTH3",
+  "EDUC1",
+  "EDUC203",
+  "ENGLC1000",
+  "ENGLC1001",
+  "ENGLISH102",
+  "GEOG7",
+  "HISTORY11",
+  "HISTORY86",
+  "MATH215",
+  "MUSIC111",
+  "POLSC1000",
+  "THEATER100"
+ ],
+ "source_coverage": 0.826
 }

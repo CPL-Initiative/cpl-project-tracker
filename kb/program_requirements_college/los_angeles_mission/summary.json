@@ -2,20 +2,34 @@
  "college": "Los Angeles Mission College",
  "programs": 160,
  "with_closed_list": 140,
- "found": 128,
- "extracted": 128,
+ "found": 127,
+ "extracted": 127,
  "errors": 0,
- "passed_machine_checks": 109,
+ "passed_machine_checks": 112,
  "failed": {
-  "coverage": 5,
+  "coverage": 4,
   "invented": 2,
-  "arithmetic": 11,
+  "arithmetic": 7,
   "repeated": 0,
   "outcomes": 5
  },
- "cost_usd": 8.92,
- "cost_per_program": 0.0697,
+ "cost_usd_run": 0.34,
+ "cost_usd_filed": 9.03,
+ "cost_per_program": 0.0711,
+ "extract_calls": 2,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "18463",
+   "title": "General Studies: Arts and Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
   {
    "control_number": "35231",
    "title": "Business Information Worker",
@@ -26,25 +40,40 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39476",
+   "title": "UCTP PHYSICS",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "40788",
    "title": "English for Academic Purposes Intermediate 2",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "40789",
    "title": "English for Academic Purposes Intermediate 1",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "40791",
    "title": "English for Academic Purposes Advanced 2",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "42632",
@@ -53,25 +82,29 @@
    "near_miss": {
     "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=63",
     "coverage": 0.333
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42633",
    "title": "Beginning Level ESL",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "42634",
    "title": "High-Beginning Level ESL",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "43167",
    "title": "Intermediate Level ESL",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "43929",
@@ -80,35 +113,29 @@
    "near_miss": {
     "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=79",
     "coverage": 0.385
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43930",
    "title": "ESL Pathway to Health Occupations Careers",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=9",
-    "coverage": 0.154
-   }
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=79",
+    "coverage": 0.462
+   },
+   "status": "Active"
   },
   {
    "control_number": "44777",
    "title": "ESL Pathway to Child Development Careers",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=8",
+    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=43",
     "coverage": 0.25
-   }
-  },
-  {
-   "control_number": "44849",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=226",
-    "coverage": 0.411
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39054675770"
+ "run": "44475511939"
 }

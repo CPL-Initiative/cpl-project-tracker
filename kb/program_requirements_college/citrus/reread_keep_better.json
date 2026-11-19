@@ -1,0 +1,606 @@
+{
+ "college": "Citrus College",
+ "run": "44481520157",
+ "written": "2026-11-19T08:22:31Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/reread-wave-s683",
+   "inputs": {
+    "college": "Citrus College",
+    "step": "reread",
+    "force": "44481520157"
+   },
+   "posts": 11,
+   "control_numbers": [
+    "02312",
+    "19636",
+    "20037",
+    "30937",
+    "31572",
+    "33327",
+    "35368",
+    "41842",
+    "41843",
+    "42713",
+    "46565"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 18,
+  "kept": 8,
+  "restored": 5,
+  "restored_filed_pass": 3,
+  "restored_not_own_program": 5,
+  "held_for_person": 2,
+  "new": 3,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 1,
+  "folder_places_none_after": 2,
+  "records_after": 175,
+  "dropped_by_filing": 3,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44481520157": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T08:22:31Z",
+   "counts": {
+    "reread": 18,
+    "kept": 8,
+    "restored": 5,
+    "restored_filed_pass": 3,
+    "restored_not_own_program": 5,
+    "held_for_person": 2,
+    "new": 3,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 1,
+    "folder_places_none_after": 2,
+    "records_after": 175,
+    "dropped_by_filing": 3,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [
+    "35453",
+    "45031"
+   ],
+   "dropped_by_filing": [
+    {
+     "control_number": "11240",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31430",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "31431",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "02312",
+     "title": "Business",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/business/business-as/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/business/business-as/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 29,
+      "listed": 29,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.966,
+      "placed": 28,
+      "listed": 29,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.966)"
+    },
+    {
+     "control_number": "02356",
+     "title": "Criminal Justice",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-as/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 13,
+      "listed": 13,
+      "arithmetic": "equal"
+     },
+     "outcome": "held",
+     "why": "no filed record, and the re-read's heading 'Requirements' shares no word with the title 'Criminal Justice'"
+    },
+    {
+     "control_number": "19636",
+     "title": "Liberal Arts - Humanities",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 91,
+      "listed": 91,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.989,
+      "placed": 90,
+      "listed": 91,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.989)"
+    },
+    {
+     "control_number": "20037",
+     "title": "Criminal Justice",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-certificate-achievement/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "30937",
+     "title": "Administration of Justice",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/administration-justice-adt/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 14,
+      "listed": 14,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "31572",
+     "title": "History",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/history/history-adt/",
+     "filed_run": "39726639865",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 34,
+      "listed": 34,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.971,
+      "placed": 33,
+      "listed": 34,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.971)"
+    },
+    {
+     "control_number": "33327",
+     "title": "Correctional Science",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-certificate-achievement/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "33599",
+     "title": "Correctional Science",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-as/",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 9,
+      "listed": 9,
+      "arithmetic": "equal"
+     },
+     "outcome": "held",
+     "why": "no filed record, and the re-read's heading 'Requirements' shares no word with the title 'Correctional Science'"
+    },
+    {
+     "control_number": "35368",
+     "title": "Website Development",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "35453",
+     "title": "Social Sciences",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.982,
+      "placed": 54,
+      "listed": 55,
+      "arithmetic": "unequal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.945,
+      "placed": 52,
+      "listed": 55,
+      "arithmetic": "unequal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Requirements' shares no word with the title 'Social Sciences'",
+     "not_own_program": true,
+     "next_read_held": null
+    },
+    {
+     "control_number": "41679",
+     "title": "Business Administration 2.0",
+     "award": "A.S. T Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/business/business-administration-adt/",
+     "filed_run": "39726639865",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 13,
+      "listed": 13,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.923,
+      "placed": 12,
+      "listed": 13,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Requirements' shares no word with the title 'Business Administration 2.0'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "41842",
+     "title": "CPA Exam Preparation: Business-Related Subjects Requirement",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 43,
+      "listed": 43,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.977,
+      "placed": 42,
+      "listed": 43,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.977)"
+    },
+    {
+     "control_number": "41843",
+     "title": "CPA Licensure: Accounting Study and Ethics",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 77,
+      "listed": 77,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.987,
+      "placed": 76,
+      "listed": 77,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.987)"
+    },
+    {
+     "control_number": "42170",
+     "title": "Business - Accounting Emphasis",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 27,
+      "listed": 27,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.963,
+      "placed": 26,
+      "listed": 27,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Requirements' shares no word with the title 'Business - Accounting Emphasis'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "42713",
+     "title": "Educational Teaching Studies",
+     "award": "A.A. Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.889,
+      "placed": 16,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.833,
+      "placed": 15,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.889 against 0.833)"
+    },
+    {
+     "control_number": "42837",
+     "title": "Law, Public Policy, and Society",
+     "award": "A.A- T Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/law-public-policy-society-adt/",
+     "filed_run": "39726639865",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 33,
+      "listed": 33,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.939,
+      "placed": 31,
+      "listed": 33,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'Requirements' shares no word with the title 'Law, Public Policy, and Society'",
+     "not_own_program": true,
+     "next_read_held": "held_no_gain"
+    },
+    {
+     "control_number": "45031",
+     "title": "Cal-GETC",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+     "filed_source_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+     "filed_run": "39726639865",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 235,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 235,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'General Education Requirements: Option I' shares no word with the title 'Cal-GETC'",
+     "not_own_program": true,
+     "next_read_held": null
+    },
+    {
+     "control_number": "46565",
+     "title": "Mathematics",
+     "award": "A.S. Degree",
+     "source_url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
+     "filed_source_url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
+     "filed_run": "38675245799",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 18,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.944,
+      "placed": 17,
+      "listed": 18,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.944)"
+    }
+   ]
+  }
+ }
+}
