@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Japanese",
  "award": "A.A. Degree",
- "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=220",
+ "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8364,
+  "input_tokens": 8521,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8364,
-    "output_tokens": 1532,
+    "input_tokens": 8521,
+    "output_tokens": 1688,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1532,
+  "output_tokens": 1688,
   "output_tokens_details": {
-   "thinking_tokens": 443
+   "thinking_tokens": 642
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0641,
- "ms": 13909,
- "seconds": 14.2,
+ "cost_usd": 0.06784,
+ "ms": 13797,
+ "seconds": 17.0,
  "parts": null,
  "error": null,
  "score": {
@@ -96,7 +96,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
@@ -107,7 +107,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Japanese",
+   "section_heading": "(Academic Plan E045051C)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -132,7 +132,12 @@
     "Analyze and develop cultural, historical, artistic, and social concepts related to Japan and Japanese-speaking communities, demonstrating awareness of how language reflects cultural values and perspectives.",
     "Communicate effectively in Japanese, in both spoken and written forms, using vocabulary, expressions, and structures appropriate for a variety of familiar and some unfamiliar contexts and formats, including the appropriate use of politeness and register."
    ],
-   "careers": []
+   "careers": [
+    "education",
+    "international relations",
+    "business",
+    "media"
+   ]
   },
   "blocks": [
    {
@@ -212,13 +217,24 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted text begins mid-section on page 220; the Japanese A.A. section heading and the start of its description are on the preceding page and not in the text. section_heading 'Japanese' is inferred from the program name and should be checked.",
-   "Catalog codes are printed with leading zeros (JAPAN 001 etc.); these match closed-list JAPAN 1, 2, 3, 4, 7, 9.",
-   "JAPAN 014 Japanese Popular Culture is not in the closed list and is recorded as a catalog addition.",
-   "The page prints 'Cal-GETC GE Pattern' and 'Total 60' (recorded as degree_total) but prints no major total and no GE units; the 23 major units shown are not printed as a total. A note says 3 units of major courses may be double counted in LACCD General Education Area 3, which conflicts with the Cal-GETC pattern named; reviewer should check which GE pattern applies.",
-   "The program learning outcomes are printed directly above this award's course list and are recorded for this award.",
-   "Text after the Japanese section belongs to the Associate in Arts in Spanish for Transfer and was not read."
+   "The section's title heading is not in the extracted text (it begins on page 219 with '(Academic Plan E045051C)'); presumably the Japanese A.A. heading printed just above. Reviewer should confirm.",
+   "The page prints 'Total ... 60' after the Cal-GETC GE Pattern line, recorded as degree_total; no major total is printed (the blocks sum to 23 units, not recorded as total_units).",
+   "No units are printed for the Cal-GETC pattern, so ge_units is null.",
+   "Note: 3 units of major courses may be double counted in LACCD General Education Area 3.",
+   "Catalog codes JAPAN 001/002/003/004/007/009 correspond to closed-list JAPAN 1/2/3/4/7/9; JAPAN 014 Japanese Popular Culture is not in the closed list.",
+   "The following text belongs to the Associate in Arts in Spanish for Transfer and was not read for this record."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": "44475516022",
+ "catalog_year": "2026-2027",
+ "source_sha": "1f88e879030fb782",
+ "source_codes": [
+  "JAPAN1",
+  "JAPAN2",
+  "JAPAN3",
+  "JAPAN4",
+  "JAPAN7",
+  "JAPAN9"
+ ],
+ "source_coverage": 1.0
 }
