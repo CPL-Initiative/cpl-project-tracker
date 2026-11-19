@@ -294,3 +294,5 @@ alter table public.cpl_library add constraint cpl_library_remediation_ck check (
 -- publish_target ('internal' or 'public'), template (boolean) and division (whose settings a piece follows) live with
 -- the two tables they need, cpl_library_checks and cpl_library_division_settings, and the trigger that resets
 -- publish_target when a piece is unlisted: kb/migrations/2026-11-19_library_publishing_model.sql (rollback beside it).
+-- cpl_library_checks.url, the page a check ran against (a pass lists a piece only at that url; COBIx on #3572,
+-- 7023899407): kb/migrations/2026-11-19_library_check_binds_url.sql (rollback beside it).

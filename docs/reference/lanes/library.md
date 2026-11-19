@@ -46,9 +46,8 @@ the tab publishes to the Internal Library and Public says the check record is no
   Public confirmation. A draft's check never carries to the page, which is checked again once it is up.
 - DECIDED (S687): the rollback refuses while `cpl_library_checks` holds rows, since nothing else keeps them.
 - DECIDED (S687 conductor, on COBIx's #3572 comments 7022946691, 7023361983 and 7023581179;
-  `d-library-new-page-unlists-s687`): a listed piece leaves the Public Library when its `url` changes, always, since no
-  check is keyed on a url; and when its `version` changes, unless the latest check for the new version key passes. It
-  keeps `publish_target = 'public'` so part 2's run checks the new page and lists it again. Every writer, the service
+  `d-library-new-page-unlists-s687`): a listed piece leaves the Public Library when its `url` changes, always; and
+  when its `version` changes, unless the latest check for the new version key passes. It keeps `publish_target = 'public'` so part 2's run checks the new page and lists it again. Every writer, the service
   role included, since unlisting is the safe direction. Until part 2 relists, this overrides Sam's "a Public Library
   piece stays listed while redrafted, showing the last published version" (Nov 19, item 9; his to reverse): a draft
   stays a draft and unlists nothing, and only a published new version or a new url does. Trigger
@@ -61,15 +60,20 @@ the tab publishes to the Internal Library and Public says the check record is no
 - DECIDED (S687, `d-library-3560-in-four-prs-s687`): #3560 lands in four PRs, one after another, since its asks share
   `library.js`: 1 the two publish buttons, Template and the check gate (#3572); 2 the check run and the footer; 3 the
   progress bar; 4 Publish all, Add existing, redraft and republish. Memory rows: run 44624406317.
-- Known limit, part 2's to close: a check names a version, not its contents, so a version key set back to one that
-  passed keeps that key's check, and a page whose contents change at the same url and version keeps its listing. A
-  move to a new url is closed: it always unlists.
+- Known limit, part 2's to close: a check names a version key and a url, not the page's contents, so a page whose
+  contents change at the same url and version keeps its listing. The tab's gate in `library.js` reads the key alone;
+  the function refuses what it offers at a moved url.
+- DECIDED (S688 conductor, COBIx on #3572, 7023899407; `d-library-check-binds-url-s688`): a check binds to the url it
+  checked (`cpl_library_checks.url`). `cpl_library_set_public()` and the trigger's version branch count a pass only at
+  the record's current url and key, so the old url's pass never relists a moved piece. Old rows keep a null url, which
+  matches nothing. Part 2's check run must write `url` on every check row.
+  `kb/migrations/2026-11-19_library_check_binds_url.sql`, not yet applied.
 - DECIDED (S687): a new piece pressed to Public is never listed at the press (it has no page yet); part 2's check run
   lists it once its page passes. Only the service role writes a check, so the tab never certifies a piece.
 - DECIDED (S687): Replace the public copy on a revision is unchanged until part 4 (redraft and republish).
 
-**NEXT (#3560):** part 2, the check run in `library-publish.yml` (writes `cpl_library_checks`, lists the pieces whose
-`publish_target` is public once they pass) and the footer from each piece's check record; part 3, the progress bar;
+**NEXT (#3560):** part 2, the check run in `library-publish.yml` (writes `cpl_library_checks` with the `url` it
+checked on every row, lists the pieces whose `publish_target` is public once they pass) and the footer from each piece's check record; part 3, the progress bar;
 part 4, Publish all, Add existing, redraft and republish.
 
 ✅ **The tab is built** (`library.js`, under *Sierra & Team Tools*; the side
