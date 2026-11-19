@@ -1159,6 +1159,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/clep_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/clock_time_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
+| `tests/cobix_watch_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_flags_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_offerings_sync_chunk_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_program_cip_test.py` | workflows: `js-tests.yml` | — |
@@ -1618,5 +1619,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1073 file
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1074 file
 datasets · 195 external services · 629 consumers · 75 workflows · 41 tabs.

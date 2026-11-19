@@ -4,7 +4,7 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1073,
+  "file_datasets": 1074,
   "external_services": 195,
   "consumers": 629,
   "workflows": 75,
@@ -24839,7 +24839,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 96
+     "line": 100
     }
    ],
    "served": false,
@@ -26110,6 +26110,19 @@
    "main_committers": []
   },
   "file:tests/cobi_live_banner.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/cobix_watch_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -36363,6 +36376,7 @@
     "tests/pages_allowlist.test.js",
     "scripts/repo_size_guard.py",
     "tests/repo_size_guard_test.py",
+    "tests/cobix_watch_test.py",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/refresh_button_no_secret_test.py",
