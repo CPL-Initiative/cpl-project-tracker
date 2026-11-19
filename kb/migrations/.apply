@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-18_s683_cpl_memory_rows.sql
-name=s683_cpl_memory_rows
+file=kb/migrations/2026-11-19_s681_prreq_units_rules_preread.sql
+name=s681_prreq_units_rules_preread
