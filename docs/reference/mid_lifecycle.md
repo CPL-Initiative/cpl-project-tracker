@@ -492,6 +492,27 @@ Moved from `CLAUDE.md` §11 on 2026-10-21 (S442 SkyManzanita, Open Asks Sheet 10
 >
 > ⚠️ These are **enforced at every re-mint; deviations become audit findings.**
 
+**The course flag files rebuild; a re-mint does not re-key them (S683).**
+`kb/coci_retired_cards.json`, `kb/coci_inactive_cards.json` and
+`kb/coci_not_applicable.json` (read through `kb/_flags.py`) are id-keyed, but
+they are derived from the minted files, the curation overlay and the Courses
+List's file (`unified_courses_members.js`), so a re-mint leaves them out of its
+re-key set and `kb/_post_apply_chain.py` does not run their builders: the List
+file still carries the old ids until `excel_to_dashboard.py` rebuilds it, and a
+builder run before that would read every re-keyed card as empty. The daily build
+runs the three builders after the List file and before the auditor
+(`scripts/daily_build.sh`), so the dispatched daily run that lands a re-mint
+heals them. Each file carries `_ids_current_through`, the last map in
+`ALIAS_MAPS` when it was built. Once the re-mint's map is registered there,
+`kb/_flags.py` sets aside the card flags of any file with an older stamp, prints
+why, and the auditor lists the kinds under `stats.flag_files_set_aside`: between
+the apply and the daily run, those flagged cards return to the counts, and no
+live card is hidden by an id the re-mint reassigned. The not-applicable file's
+course entries (college and control number) stay in force. The inactive builder
+also refuses a `credential_reference_data.js` that names a card id the links
+file no longer holds. Dispatch the daily run in the same cron window, as the
+playbook already says.
+
 **M-ID structural invariants** (enforced at every re-mint; deviations
 become audit findings):
 - **Honors exception (S653; Sam, Sheet 197 card 3, 2026-11-14).** An Honors

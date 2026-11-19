@@ -1,8 +1,8 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "7dc362df288542b2c5f0f56d02320e2bcd6232c4",
-  "date": "2026-11-17"
+  "sha": "326b95cecc85cae22fe369b46996d96f706675a5",
+  "date": "2026-11-18"
  },
  "as_of": "2026-11-17",
  "read_from": [
@@ -14,14 +14,14 @@
   "disagree": 373,
   "cannot_tell": 3735,
   "heading_absent": 539,
-  "disagree_passing": 168,
+  "disagree_passing": 172,
   "disagree_loaded": 212,
-  "check_would_fail_passing": 136,
+  "check_would_fail_passing": 139,
   "check_would_fail_passing_transfer_local": 32,
   "window_after": 2,
   "window_after_passing": 2,
   "suspect": 375,
-  "suspect_passing": 170,
+  "suspect_passing": 174,
   "check_would_fail_passing_generic_heading": 0,
   "award_not_program": 77,
   "award_not_program_passing": 69
@@ -66,8 +66,8 @@
  "pdf_ranked_by_disagree_passing": [
   "santa_rosa_junior",
   "college_of_the_desert",
-  "west_los_angeles",
   "shasta",
+  "west_los_angeles",
   "sacramento_city",
   "city_of_san_francisco",
   "east_los_angeles",
@@ -5345,7 +5345,7 @@
     }
    ],
    "control_number_print": {
-    "picks": 5,
+    "picks": 10,
     "cn_printed_picks": 0,
     "labels_in_openings": {},
     "positions": {},
@@ -6443,7 +6443,7 @@
    "disagree": 23,
    "cannot_tell": 27,
    "heading_absent": 10,
-   "disagree_passing": 15,
+   "disagree_passing": 18,
    "disagree_loaded": 22,
    "pdf_disagree": 0,
    "pdf_disagree_passing": 0,
@@ -6455,10 +6455,10 @@
     "award": 22,
     "title": 1
    },
-   "check_would_fail_passing": 15,
+   "check_would_fail_passing": 18,
    "check_would_fail_passing_transfer_local": 0,
    "check_kinds_passing": {
-    "certificate_under_local_degree": 15
+    "certificate_under_local_degree": 18
    },
    "check_would_fail_passing_generic_heading": 0,
    "award_not_program": 0,
@@ -6466,7 +6466,7 @@
    "window_after": 0,
    "window_after_passing": 0,
    "suspect": 23,
-   "suspect_passing": 15,
+   "suspect_passing": 18,
    "suspect_loaded": 22,
    "disagreements": [
     {
@@ -6480,7 +6480,7 @@
      "heading_names_a_program": true,
      "title_share": 1.0,
      "window": null,
-     "passes_live": false,
+     "passes_live": true,
      "places_none": false,
      "method": "sitemap_page"
     },
@@ -6600,7 +6600,7 @@
      "heading_names_a_program": true,
      "title_share": 1.0,
      "window": null,
-     "passes_live": false,
+     "passes_live": true,
      "places_none": false,
      "method": "sitemap_page"
     },
@@ -6615,7 +6615,7 @@
      "heading_names_a_program": true,
      "title_share": 1.0,
      "window": null,
-     "passes_live": false,
+     "passes_live": true,
      "places_none": false,
      "method": "sitemap_page"
     },
@@ -9538,12 +9538,12 @@
    "disagree": 7,
    "cannot_tell": 48,
    "heading_absent": 12,
-   "disagree_passing": 3,
+   "disagree_passing": 4,
    "disagree_loaded": 5,
    "pdf_disagree": 7,
-   "pdf_disagree_passing": 3,
+   "pdf_disagree_passing": 4,
    "pdf_suspect": 7,
-   "pdf_suspect_passing": 3,
+   "pdf_suspect_passing": 4,
    "pdf_agree": 69,
    "pdf_cannot_tell": 48,
    "by_reason": {
@@ -9561,7 +9561,7 @@
    "window_after": 0,
    "window_after_passing": 0,
    "suspect": 7,
-   "suspect_passing": 3,
+   "suspect_passing": 4,
    "suspect_loaded": 5,
    "disagreements": [
     {
@@ -9575,7 +9575,7 @@
      "heading_names_a_program": true,
      "title_share": 0.0,
      "window": null,
-     "passes_live": false,
+     "passes_live": true,
      "places_none": false,
      "method": "pdf_pages"
     },

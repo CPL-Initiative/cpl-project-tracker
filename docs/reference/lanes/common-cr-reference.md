@@ -31,8 +31,10 @@ is 44 of 50. Sam kept it as built (Open Asks Sheet 108 card 5, 13:24Z 2026-10-20
 identity behind the course-count guard; Jev runs the new pairs, the unanchored clusters and the newer
 anchored pairs under the 0.85 gate, then a sheet of 40 to 60. Beside it, the six head wordings left
 are Sam's to decide on the tab. The CCR's title-rung sitting (pointer at the foot of this file) is the
-CCR's ladder, not this reference's. **NEXT (S679, #3468 applied):** read the first `map_ace_catalog_cr` fill's runner
-log after the 04:57 UTC load and re-measure COBIx's 859 typographic rows and 25,984 waiting on ACE text.
+CCR's ladder, not this reference's. **The CR exact match (#3518, parked as issue #3523, PR closed, branch kept; `f-cr-exact-match-live-counts-s683`):**
+live counts of 2026-11-18: the inventory's 29,995 rows are MAP only 3,334, an exact match 202, and a typographic or real
+difference 26,459; `map_ace_catalog_cr` holds 104,688 rows over 25,742 exhibits. **NEXT:** a plain session takes the
+exact match up from issue #3523 against those counts.
 
 ## ACE's own text beside MAP's (S678, 2026-11-17; COBIx item 5 on #3464)
 

@@ -1131,17 +1131,19 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts in Studio Arts for Transfer",
+   "h1": "Associate in Arts in Studio Arts for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "79dbbf044096ace6"
   },
   "listed": 10,
-  "text_chars": 1576
+  "text_chars": 1470
  },
  {
   "control_number": "31178",
@@ -1312,17 +1314,19 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree in Economics for Transfer",
+   "h1": "Associate in Arts Degree in Economics for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     58
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3b62cacaa7976210"
   },
   "listed": 5,
-  "text_chars": 3407
+  "text_chars": 1617
  },
  {
   "control_number": "33322",
@@ -1489,8 +1493,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science Degree: Agriculture Animal Science for Transfer",
+   "h1": "Associate in Science Degree: Agriculture Animal Science for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1498,10 +1502,12 @@
     50,
     51
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "148269c8c341d8c6"
   },
   "listed": 10,
-  "text_chars": 7502
+  "text_chars": 7393
  },
  {
   "control_number": "33730",
@@ -1525,8 +1531,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science Degree: Agriculture Business for Transfer",
+   "h1": "Associate in Science Degree: Agriculture Business for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1535,10 +1541,12 @@
     50,
     51
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7d56cd12cfce8d10"
   },
   "listed": 11,
-  "text_chars": 10707
+  "text_chars": 8897
  },
  {
   "control_number": "35106",
@@ -1848,8 +1856,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science Degree in Business Administration for Transfer 2.0",
+   "h1": "Associate in Science Degree in Business Administration for Transfer 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1857,10 +1865,12 @@
     59,
     60
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0fb7c3be1de23179"
   },
   "listed": 9,
-  "text_chars": 8462
+  "text_chars": 8356
  },
  {
   "control_number": "42798",

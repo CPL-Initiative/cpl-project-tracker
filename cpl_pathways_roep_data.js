@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "cdd185495ce4",
+ "build": "545de21a6edc",
  "built": "2026-11-13",
  "inputs": {
   "records": 18209,
   "map_read_at": "2026-11-13",
   "registry_read_at": "2026-11-13",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-11-17 03:10",
-  "cer": "2026-11-17T03:11:26+00:00"
+  "memberships": "2026-11-18 03:58",
+  "cer": "2026-11-18T03:59:11+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -262,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -531,7 +531,7 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+         "credential": "Emergency Medical Response — CPR Pro and Healthcare Provider",
          "colleges": [
           "Modesto Junior College"
          ]
@@ -555,7 +555,7 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Standard First Aid/CPR/AED",
+         "credential": "Standard First Aid, CPR, and AED",
          "colleges": [
           "Modesto Junior College"
          ]
@@ -618,7 +618,7 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+         "credential": "Emergency Medical Response — CPR Pro and Healthcare Provider",
          "colleges": [
           "Modesto Junior College"
          ]
@@ -642,7 +642,7 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Standard First Aid/CPR/AED",
+         "credential": "Standard First Aid, CPR, and AED",
          "colleges": [
           "Modesto Junior College"
          ]
@@ -835,7 +835,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -1660,7 +1660,7 @@ window.CPL_PATHWAYS_ROEP = {
        "recs": 0,
        "credentials_n": 1,
        "credentials": [
-        "Ironworker Apprenticeship — OSHA 30/Extension Review"
+        "Ironworker Apprenticeship — OSHA 30 and Extension Review"
        ],
        "exhibits_n": 1,
        "untitled_n": 0,
@@ -1668,7 +1668,7 @@ window.CPL_PATHWAYS_ROEP = {
         {
          "exhibit": "MAPCXA-E&R-1-001",
          "title": "Ext & Review",
-         "credential": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+         "credential": "Ironworker Apprenticeship — OSHA 30 and Extension Review",
          "type": "Credit By Exam",
          "recs": [
           "1.5 hours in OSHA 30/Extension Review"
@@ -1865,7 +1865,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -2758,7 +2758,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -3829,7 +3829,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -4731,7 +4731,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -5633,7 +5633,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -6520,7 +6520,7 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Heavy/Medium Duty Truck Technology Apprenticeship",
+         "credential": "Heavy and Medium Duty Truck Technology Apprenticeship",
          "colleges": [
           "San Bernardino Valley College"
          ]
@@ -7177,7 +7177,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -7707,7 +7707,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -9134,7 +9134,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -10052,15 +10052,15 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Maternal-Newborn Nursing",
+         "credential": "Maternal and Newborn Nursing Care",
          "colleges": [
-          "Chaffey College"
+          "Napa Valley College"
          ]
         },
         {
-         "credential": "Maternal/Newborn Nursing Care",
+         "credential": "Maternal-Newborn Nursing",
          "colleges": [
-          "Napa Valley College"
+          "Chaffey College"
          ]
         }
        ]
@@ -10404,7 +10404,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -11125,7 +11125,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -11478,7 +11478,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -11801,7 +11801,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -13752,7 +13752,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -14103,7 +14103,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -14862,7 +14862,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -16505,7 +16505,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -17320,7 +17320,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -18046,7 +18046,7 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+         "credential": "Emergency Medical Response — CPR Pro and Healthcare Provider",
          "colleges": [
           "Modesto Junior College"
          ]
@@ -18070,7 +18070,7 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         },
         {
-         "credential": "Standard First Aid/CPR/AED",
+         "credential": "Standard First Aid, CPR, and AED",
          "colleges": [
           "Modesto Junior College"
          ]
@@ -18364,7 +18364,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -19142,7 +19142,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   },
@@ -19310,7 +19310,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "cdd185495ce4",
+    "build": "545de21a6edc",
     "built": "2026-11-13"
    }
   }

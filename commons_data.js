@@ -54,6 +54,10 @@
   function fmt(n) { return n == null ? "" : Number(n).toLocaleString("en-US"); }
   function plural(n, one, many) { return fmt(n) + " " + (Number(n) === 1 ? one : many); }
   function pct(n, d) { return n == null || !d ? null : n / d; }
+  /* A file path is for the team, folded under a word, never in the line a reader sees first (COBIx on #3510, A5). */
+  function teamFiles(label, text) {
+    return el("details", { cls: "cdd-src cdd-files", "data-team-files": "" }, [el("summary", { text: "For the team: " + label.charAt(0).toLowerCase() + label.slice(1) }), el("p", { text: text })]);
+  }
   function day(v) {
     if (!v) return "";
     var d = new Date(v);
@@ -71,6 +75,8 @@
     if (a.recent != null && days <= a.recent) return "recent";
     return "stale";
   }
+  /* The SLO read queue's state in words (COBIx on #3510, A5): "held" is an insider word, said as paused. */
+  function sloState(st) { return st === "held" ? "paused" : st === "none" ? "has nothing to read" : String(st || ""); }
   function costPer(c) { return c.cost_usd != null && c.passed_at_read ? c.cost_usd / c.passed_at_read : null; }
   /* A stamp in Pacific time with its hour; a bare date (the SLO queue's "on") is a calendar day and is shown as one. */
   function when(v) {
@@ -185,17 +191,17 @@
   }
   function attemptFailed(M) { var a = (M.live || {}).last_attempt; return a && a.ok === false ? a : null; }
   /* "live read, Nov 13, 2026", the basis and date every live figure carries. */
-  function liveWords(M) { return "live read, " + (day((M.live || {}).read_at) || "on a date the file does not give"); }
+  function liveWords(M) { return "database count, " + (day((M.live || {}).read_at) || "on a date the file does not give"); }
   /* What a reader needs beside a live figure: the earlier read's date when the builder kept it. */
   function keptWords(M) {
     var a = attemptFailed(M);
     if (!a || !liveRead(M)) return "";
-    return "The latest live read" + (a.at ? ", " + day(a.at) + "," : "") + " did not complete (" + words(a.error_class || "other") + "); these figures are from the earlier read of " + day(M.live.read_at) + ".";
+    return "The latest database count" + (a.at ? ", " + day(a.at) + "," : "") + " did not complete (" + words(a.error_class || "other") + "); these figures are from the earlier read of " + day(M.live.read_at) + ".";
   }
   /* Why a live figure reads TBA. */
   function liveReason(M) {
     var a = attemptFailed(M);
-    return "The live read has not run yet." + (a ? " Its last attempt" + (a.at ? ", " + day(a.at) + "," : "") + " did not complete (" + words(a.error_class || "other") + ")." : "");
+    return "The database count has not run yet." + (a ? " Its last attempt" + (a.at ? ", " + day(a.at) + "," : "") + " did not complete (" + words(a.error_class || "other") + ")." : "");
   }
   function overallOf(M, c) {
     if (!liveRead(M) || !c) return null;
@@ -206,8 +212,8 @@
     if (!liveRead(M) || !c) return null;
     return ((M.live || {}).colleges || {})[String(c.id)] || null;
   }
-  var MISSING = "The live read holds no counts for this college.";
-  var NO_COUNT = "The live read holds this college but no count for this figure.";
+  var MISSING = "The database count holds no counts for this college.";
+  var NO_COUNT = "The database count holds this college but no count for this figure.";
   function liveSrc(M, k) { return ((M.live || {}).tables || {})[k] || "the live counts"; }
   function pc(v) { return v == null ? "" : Math.round(v * 100) + "%"; }
   /* A registry boolean in words: the registry records a link only when one is seen, so the word is "held". */
@@ -253,12 +259,22 @@
         : { v: "TBA", l: "Collection freshness", d: "The file gives no freshness thresholds (rule.age_days), so no capture's age is read.", tba: true },
       ny && n("reread") ? { f: "reread", v: fmt(n("reread")), l: "Needs a " + yearWords(ny) + " re-read", d: "Collected, but the committed capture read an earlier catalog year." } : null,
       slosTile(M),
-      { f: "slo", v: fmt(n("slo")), l: "SLO read waiting", d: "Colleges whose public pages print no SLOs, or whose SLO read is held or waiting on a reader." },
+      { f: "slo", v: fmt(n("slo")), l: "Student learning outcome (SLO) read waiting", d: "Colleges whose public pages print no SLOs, or whose SLO read is paused or waiting on a reader." },
       { f: "scouted", v: fmt(n("scouted")), l: "Scouted for a wave", d: "Colleges whose catalog host was checked ahead of a collection wave, " + fmt(S.scout_barrier) + " with an access barrier. Not a completeness score." },
       cp == null ? { v: "TBA", l: "Read cost per passing program", d: "No committed read receipt carries a cost yet.", tba: true }
-        : { v: "$" + cp.toFixed(3), l: "Read cost per passing program", d: "Dollars for the last committed read, divided by programs that passed at read time: $" + Number(S.cost_usd).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " over " + fmt(S.passed_at_read) + ", " + fmt(S.cost_receipts) + " receipts." + (S.spent_usd != null ? " Spent by the runs themselves: $" + Number(S.spent_usd).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " over " + fmt(S.spent_runs) + " runs, each run's own cost, counted from " + S.spent_since + "." : " Spent by the runs themselves: TBA.") },
+        : { v: "$" + cp.toFixed(3), l: "Read cost per passing program", d: costWords(S) },
       apiTile(M)
     ];
+  }
+  /* The cost card's line (COBIx on #3510, A3 and A4): two totals side by side, so it says what each counts, defines
+     "receipts" and "runs" in the same sentence, says why the totals differ, and writes the date in words. */
+  function costWords(S) {
+    var usd = function (v) { return "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+    var out = "Dollars spent reading the colleges' catalogs, divided by the programs that passed the machine checks when they were read: " + usd(S.cost_usd) +
+      " over " + fmt(S.passed_at_read) + " programs, from " + fmt(S.cost_receipts) + " receipts (the record each college's read files, with what its records cost).";
+    if (S.spent_usd == null) return out + " What the reading jobs paid themselves: TBA.";
+    return out + " What the reading jobs paid themselves: " + usd(S.spent_usd) + " over " + fmt(S.spent_runs) + " runs (each run is one reading job, with its own cost), since " +
+      (when(S.spent_since) || "a date the file does not give") + ". The totals differ because the receipts keep the cost of every record on file, whichever job paid for it, while the runs count only the jobs since that date, and a job that only rechecks records it already holds costs nothing.";
   }
   /* Active programs with a passing record, of the Active programs: the live table's completeness count, basis live,
      with its confidence beside it (Sam's direction on #3229: a completeness count with its confidence level beside it). A figure
@@ -270,7 +286,7 @@
     var open = n("gaps") ? { f: "gaps", word: "Their " + plural(n("gaps"), "college", "colleges") + ", most first" } : null;
     if (CL.basis === "live" && CL.colleges)
       return { v: fmt(CL.gap), l: "Programs still to pass", open: open,
-        d: "Of the " + fmt(CL.programs) + " Active programs in the gap census's live read (" + CL.at + "), those without a passing record; each college's causes sum to its figure." +
+        d: "Of the " + fmt(CL.programs) + " Active programs in the gap census's database count (" + (when(CL.at) || "on a date the file does not give") + "), those without a passing record; each college's causes sum to its figure." +
           (CL.colleges < S0.harvested ? " " + plural(S0.harvested - CL.colleges, "college reads", "colleges read") + " from the committed captures." : "") };
     return { v: fmt(S0.gap), l: "Programs still to pass", open: open,
       d: "Of the " + fmt(S0.programs) + " programs listed in the committed captures, those that do not yet pass the machine checks." };
@@ -278,7 +294,7 @@
   function activeTile(M, conf) {
     var st = (M.live || {}).statewide || {}, pr = st.programs || {}, rc = st.records || {};
     if (!liveRead(M)) return { v: "TBA", l: "Active programs complete", d: liveReason(M), tba: true };
-    if (pr.active == null || rc.active_passing == null) return { v: "TBA", l: "Active programs complete", d: "The live read holds no statewide count of Active programs.", tba: true };
+    if (pr.active == null || rc.active_passing == null) return { v: "TBA", l: "Active programs complete", d: "The database count holds no statewide count of Active programs.", tba: true };
     return { v: fmt(rc.active_passing) + " of " + fmt(pr.active), l: "Active programs complete", conf: conf, basis: liveWords(M),
       d: "Of the " + fmt(pr.active) + " Active programs in COCI, " + liveWords(M) + ", those with a passing record in the live program requirements table." + (keptWords(M) ? " " + keptWords(M) : "") };
   }
@@ -308,9 +324,9 @@
      collected slos"). It opens their view. */
   function slosTile(M) {
     var R = slosRows(M);
-    if (!liveRead(M)) return { v: "TBA", l: "Colleges with collected SLOs", d: liveReason(M), tba: true };
+    if (!liveRead(M)) return { v: "TBA", l: "Colleges with collected student learning outcomes (SLOs)", d: liveReason(M), tba: true };
     var so = R.filter(function (r) { return r.slo; }).length, ob = R.filter(function (r) { return r.obj; }).length;
-    return { view: "slos", v: fmt(so) + " of " + fmt(M.colleges.length), l: "Colleges with collected SLOs", basis: liveWords(M),
+    return { view: "slos", v: fmt(so) + " of " + fmt(M.colleges.length), l: "Colleges with collected student learning outcomes (SLOs)", basis: liveWords(M),
       d: "Colleges whose course SLOs the " + liveWords(M) + " holds; " + plural(ob, "college holds", "colleges hold") + " objectives too. Opens them." };
   }
   function apiTile(M) {
@@ -325,7 +341,7 @@
     { k: "name", label: "College", d0: 1, val: function (c) { return c.name; } },
     { k: "overall", label: "Overall", d0: 1, val: function (c) { var o = overallOf(VIEW.M, c); return o ? o.value : -1; } },
     /* Sam, in session, S649: "add an slo/objective progress bar to the top row". Sorts on the SLO share. */
-    { k: "out", label: "SLOs and objectives", d0: 1, val: function (c) { var o = outcomeShares(VIEW.M, c); return o ? o.slo : -1; } },
+    { k: "out", label: "Student learning outcomes (SLOs) and objectives", d0: 1, val: function (c) { var o = outcomeShares(VIEW.M, c); return o ? o.slo : -1; } },
     { k: "pr", label: "Program requirements", d0: 1, val: function (c) { var P = prOf(c); return c.harvested ? pct(P.passing, P.programs) || 0 : -1; } },
     { k: "gap", label: "Still to pass", d0: -1, val: function (c) { return c.harvested ? prOf(c).gap : -1; } },
     { k: "read", label: "Last read", d0: -1, val: function (c) { return c.read_at ? new Date(c.read_at).getTime() : 0; } },
@@ -447,7 +463,7 @@
   function sortWords(M) {
     var s = S.sort || defaultSort(M);
     var col = COLUMNS.filter(function (c) { return c.k === s.k; })[0] || COLUMNS[0];
-    if (s.auto && s.k === "overall") return "Sorted highest overall completeness first (" + liveWords(M) + "); a college the live read does not hold comes last. A column heading sorts another way for this visit.";
+    if (s.auto && s.k === "overall") return "Sorted highest overall completeness first (" + liveWords(M) + "); a college the database count does not hold comes last. A column heading sorts another way for this visit.";
     if (s.auto) return "Sorted highest program requirements passing first, colleges not collected yet at the bottom. A column heading sorts another way for this visit.";
     var by = "Sorted by " + col.label.toLowerCase() + ", " + (col.k === "name" ? SORT_WORDS[String(s.d)].name : SORT_WORDS[String(s.d)].other);
     if (s.card) return by + ", as its card opens the list" + noValueWords(col, s.d) + ". Show all colleges returns to highest completeness first.";
@@ -457,7 +473,7 @@
      other column's missing value sorts as the lowest. */
   function noValueWords(col, d) {
     if (col.k === "name") return "";
-    if (col.k === "overall") return "; colleges the live read does not hold last";
+    if (col.k === "overall") return "; colleges the database count does not hold last";
     return "; colleges with no value " + (d === 1 ? "first" : "last");
   }
   function sorted(M, list) {
@@ -496,7 +512,7 @@
       c.read_kind === "capture_preview" ? el("span", { cls: "cdd-of", text: "Read on a pull request branch" }) : null] : [el("span", { cls: "cdd-quiet", text: "Not yet" })]);
     var cp = costPer(c);
     var flags = [];
-    if (c.slo_queue) flags.push("SLO read " + c.slo_queue.state);
+    if (c.slo_queue) flags.push("SLO read " + sloState(c.slo_queue.state));
     if (c.scout) flags.push("Scouted: " + String(c.scout.recommendation || "").replace(/_/g, " ") + (c.scout.challenge && c.scout.challenge !== "none" ? ", " + c.scout.challenge : ""));
     var open = String(S.open) === String(c.id);
     var word = el("button", { type: "button", cls: "cmn-word cdd-name", "data-expand": String(c.id), "aria-expanded": open ? "true" : "false",
@@ -514,13 +530,13 @@
     var ov = overallOf(M, c);
     var ovCell = el("td", { "data-label": "Overall", cls: ov ? null : "cdd-quiet" }, ov
       ? [el("span", { cls: "cdd-pr" }, [meter(ov.value), el("span", { cls: "cdd-n", text: pc(ov.value) }), el("span", { cls: "cdd-of", text: cap(liveWords(M)) })])]
-      : [liveRead(M) ? "Not in the live read" : "TBA"]);
+      : [liveRead(M) ? "Not in the database count" : "TBA"]);
     var os = outcomeShares(M, c);
-    var outCell = el("td", { "data-label": "SLOs and objectives", cls: os ? "cdd-outs" : "cdd-quiet" }, os
+    var outCell = el("td", { "data-label": "Student learning outcomes (SLOs) and objectives", cls: os ? "cdd-outs" : "cdd-quiet" }, os
       ? [el("span", { cls: "cdd-pr" }, [meter(os.slo), el("span", { cls: "cdd-n", text: pc(os.slo) }), el("span", { cls: "cdd-of", text: "SLOs" })]),
         c.objectives_printed === false && !os.objN ? el("span", { cls: "cdd-of", "data-noobj": "true", text: NO_OBJ_SHORT })
           : el("span", { cls: "cdd-pr" }, [meter(os.obj), el("span", { cls: "cdd-n", text: pc(os.obj) }), el("span", { cls: "cdd-of", text: "Objectives" })])]
-      : [liveRead(M) ? "Not in the live read" : "TBA"]);
+      : [liveRead(M) ? "Not in the database count" : "TBA"]);
     return el("tr", { "data-college": c.name, "data-id": String(c.id), cls: open ? "cdd-open" : null }, [name, ovCell, outCell, pr,
       el("td", { "data-label": "Still to pass", cls: "cdd-num", text: c.harvested ? fmt(prOf(c).gap) : "" }),
       read,
@@ -551,13 +567,13 @@
       return { programs: c.census_programs, passing: c.census_passing, gap: c.census_gap, live: true, at: (c.census_basis || {}).at || "" };
     return { programs: c ? c.programs : null, passing: c ? c.passing : null, gap: c ? c.gap : null, live: false, at: "" };
   }
-  function prWords(P) { return P.live ? "Active programs, gap census live read" + (P.at ? " " + P.at.slice(0, 10) : "") : "listed programs, committed captures"; }
+  function prWords(P) { return P.live ? "Active programs, gap census database count" + (P.at ? " of " + when(P.at.slice(0, 10)) : "") : "listed programs, committed captures"; }
   function causesOf(c) { return (c && (c.census_causes || c.causes)) || {}; }
   function leversOf(c) { return (c && (c.census_levers || c.levers)) || {}; }
   function censusWords(c) {
     var b = (c && c.census_basis) || {};
-    if (b.basis === "live") return "From the database check" + (censusDay(c) ? " of " + censusDay(c) : "") + ": the gap census's live read of our saved program records in the database. That check did not read the college's catalog again. These are the programs still to pass at this college, by cause, the same counts its lists hold.";
-    return "From the committed files only: the gap census's live read does not hold this college, so these causes can differ from its counts.";
+    if (b.basis === "live") return "From the database check" + (censusDay(c) ? " of " + censusDay(c) : "") + ": the gap census's database count of our saved program records in the database. That check did not read the college's catalog again. These are the programs still to pass at this college, by cause, the same counts its lists hold.";
+    return "From the committed files only: the gap census's database count does not hold this college, so these causes can differ from its counts.";
   }
   function causeWord(M, k) { return ((M.rule || {}).causes || {})[k] || words(k); }
   /* Commons Clarity's units ride-along with Sam (#3461, page findings 1 to 4 and 6, S678). */
@@ -623,12 +639,12 @@
       src: "" };
     if (c.harvested) {
       var P = prOf(c), v = pct(P.passing, P.programs);
-      pr.src = P.live ? "the gap census's live read (kb/status/harvest_gap_census.json, " + P.at + ") for Active programs, passing now, still to pass and each cause; kb/program_requirements_college/" + c.slug + "/ for the capture's own figures"
+      pr.src = P.live ? "the gap census's database count (kb/status/harvest_gap_census.json, " + P.at + ") for Active programs, passing now, still to pass and each cause; kb/program_requirements_college/" + c.slug + "/ for the capture's own figures"
         : "kb/program_requirements_college/" + (c.slug || "<slug>") + "/ (capture and summary) for every figure; causes through the gap census's committed-files functions";
       pr.num = P.passing; pr.den = P.programs; pr.value = v == null ? "None listed" : Math.round(v * 100) + "%";
       pr.note = fmt(P.passing) + " of " + fmt(P.programs) + " " + prWords(P) + ", pass the machine checks";
       /* The figures above the causes share the causes' base; the capture's own counts follow under their own label. */
-      pr.lines = (P.live ? [["Active programs (gap census live read)", fmt(P.programs)], ["Passing now (gap census live read)", fmt(P.passing)], ["Still to pass (gap census live read)", fmt(P.gap)]]
+      pr.lines = (P.live ? [["Active programs (gap census database count)", fmt(P.programs)], ["Passing now (gap census database count)", fmt(P.passing)], ["Still to pass (gap census database count)", fmt(P.gap)]]
         : [["Passing now (committed captures)", fmt(P.passing)], ["Still to pass (committed captures)", fmt(P.gap)]])
         .concat([["Listed by the capture (Active, Teachout and Approved)", fmt(c.programs)], c.listed_closed != null ? ["With a closed course list (the capture)", fmt(c.listed_closed)] : null,
         c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (the capture; a reread can add some)", fmt(c.extracted)] : null].filter(Boolean));
@@ -649,7 +665,7 @@
       lo = (lv && lv.outcomes) || {}, lg = (lv && lv.registry) || {};
     /* A completed live read that holds no counts for this college is its own case, with its own reason. */
     var gone = !lv && liveRead(M) ? MISSING : "";
-    var liveAt = lv ? { at: M.live.read_at, kind: "live read" } : null;
+    var liveAt = lv ? { at: M.live.read_at, kind: "database count" } : null;
     if (lv) {
       pr.live = { title: "From the " + liveWords(M), lines: [["Active programs", fmt(lp.active)], ["Teachout programs (apart from Active)", fmt(lp.teachout)],
         ["Approved programs (apart from Active)", fmt(lp.approved)], ["Program records on file", fmt(lr.total)], ["Active programs with a passing record", fmt(lr.active_passing)],
@@ -661,9 +677,9 @@
     } else pr.later = [["Teachout and Approved programs", "TBA", gone || liveReason(M)]];
     L.push(pr);
 
-    var slo = { key: "slo", group: "Collected", label: "Course SLOs", held: !!c.slo_queue, src: "kb/course_outcomes/queue.json", tba: lv ? "" : gone || tbaOf(M, "slo") };
+    var slo = { key: "slo", group: "Collected", label: "Course student learning outcomes (SLOs)", held: !!c.slo_queue, src: "kb/course_outcomes/queue.json", tba: lv ? "" : gone || tbaOf(M, "slo") };
     if (c.slo_queue) {
-      slo.state = "SLO read " + c.slo_queue.state;
+      slo.state = "SLO read " + sloState(c.slo_queue.state);
       slo.note = c.slo_queue.why || "";
       if (c.slo_queue.on) slo.stamp = { at: c.slo_queue.on, kind: "queued" };
     }
@@ -722,7 +738,7 @@
     if (lv) cat.parts.push({ key: "registry", title: "What the program source registry holds (" + liveWords(M) + ")",
       lines: lg.row === false ? [["Registry row", "No registry row for this college"]]
         : [["Catalog link", heldWord(lg.catalog_link)], ["Curriculum view", heldWord(lg.course_outline_link)]],   // the pathway source: its own card (#3310)
-      stamp: { at: M.live.read_at, kind: "live read" } });
+      stamp: { at: M.live.read_at, kind: "database count" } });
     if (lv) cat.src = (cat.src ? cat.src + "; " : "") + "live: " + liveSrc(M, "registry");
     L.push(cat);
     L.push({ key: "desc", group: "Connected", label: "Course descriptions", tba: tbaOf(M, "descriptions") });
@@ -742,7 +758,7 @@
     });
     if (c.scout && ((c.scout.challenge && c.scout.challenge !== "none") || c.scout.recommendation === "blocked"))
       G.push("Source scout: " + words(c.scout.challenge && c.scout.challenge !== "none" ? c.scout.challenge : c.scout.recommendation) + " (recommends " + words(c.scout.recommendation) + ")");
-    if (c.slo_queue) G.push("Course SLOs, SLO read " + c.slo_queue.state + (c.slo_queue.why ? ": " + c.slo_queue.why : ""));
+    if (c.slo_queue) G.push("Course SLOs, SLO read " + sloState(c.slo_queue.state) + (c.slo_queue.why ? ": " + c.slo_queue.why : ""));
     var sp = c.spot_check;
     if (sp && sp.held) G.push("Display held: " + sp.differs + " spot-checked records differ from the catalog");
     else if (sp && sp.differs === 1) G.push("One spot-checked record differs from the catalog");
@@ -1120,7 +1136,7 @@
     return [noHead ? null : el("h4", { text: "Overall" }),
       el("span", { cls: "cdd-pr" }, [meter(ov.value), el("span", { cls: "cdd-n", text: pc(ov.value) }),
         el("span", { cls: "cdd-of", text: "Catalog source, program requirements and outcomes (SLOs and PLOs averaged), averaged" })]),
-      dl([["Catalog source", pc(p.catalog)], ["Program requirements passing", pc(p.requirements)], ["Course SLOs", pc(p.slos)], ["Program PLOs", pc(p.plos)]]),
+      dl([["Catalog source", pc(p.catalog)], ["Program requirements passing", pc(p.requirements)], ["Course student learning outcomes (SLOs)", pc(p.slos)], ["Program learning outcomes (PLOs)", pc(p.plos)]]),
       c ? el("p", { cls: "cdd-of cdd-dsword" }, [paneWord(sloWord(M, c), { k: "slos" }, c.id), paneWord("Program PLOs collected", { k: "plos" }, c.id)]) : null,
       el("p", { cls: "cdd-basis", text: cap(liveWords(M)) }),
       keptWords(M) ? el("p", { cls: "cdd-of", "data-kept": "true", text: keptWords(M) }) : null].filter(Boolean);
@@ -1229,7 +1245,7 @@
         text: !c.programs_file ? "The committed files hold no program list for this college."
           : !P || P.state === "loading" ? "Reading the program."
           : P.state === "error" ? "The program list could not be read (" + c.programs_file + "), so this program cannot be shown. The counts beside its cause stand."
-          : (c.census_basis || {}).basis === "live" ? "The gap census's live read does not list program " + p.a + " as still to pass at " + c.name + "."
+          : (c.census_basis || {}).basis === "live" ? "The gap census's database count does not list program " + p.a + " as still to pass at " + c.name + "."
           : "The program list holds no program " + p.a + "." })] };
       var lw = LW[r.lever] || {};
       /* The capture matched this page to the program; a match can be wrong (review of #3261: one program opened
@@ -1255,9 +1271,9 @@
       kids.push(lv ? dl([["Courses with SLOs on Active programs", fmt(lo.slo_courses_on_active) + " of " + fmt(lc.active_courses)], ["Courses with SLOs, in all", fmt(lo.slo_courses)],
         ["SLOs loaded", lo.slo_loaded_at ? when(lo.slo_loaded_at) : "Not yet"], ["Courses with objectives on Active programs", fmt(lo.objective_courses_on_active) + " of " + fmt(lc.active_courses)],
         ["Courses with objectives, in all", fmt(lo.objective_courses)], ["Objectives loaded", lo.objective_loaded_at ? when(lo.objective_loaded_at) : "Not yet"]])
-        : tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M)));
+        : tba(liveRead(M) ? "The database count holds no counts for this college." : liveReason(M)));
       if (c.objectives_printed === false && !lo.objective_courses) kids.push(el("p", { cls: "cdd-of", "data-noobj": "true", text: NO_OBJ }));
-      if (lv && !lo.slo_courses && !lo.objective_courses) kids.push(el("p", { cls: "cdd-state", text: "Not read yet: the SLO read has not reached " + c.name + (c.slo_queue ? " (SLO read " + c.slo_queue.state + (c.slo_queue.why ? ": " + c.slo_queue.why : "") + ")" : "") + "." }));
+      if (lv && !lo.slo_courses && !lo.objective_courses) kids.push(el("p", { cls: "cdd-state", text: "Not read yet: the SLO read has not reached " + c.name + (c.slo_queue ? " (SLO read " + sloState(c.slo_queue.state) + (c.slo_queue.why ? ": " + c.slo_queue.why : "") + ")" : "") + "." }));
       kids.push(el("h3", { text: "By subject, from the committed course outline reads" }));
       var cs = O && O.state === "ok" ? (O.d.courses || {}) : null;
       if (wait) kids.push(wait);
@@ -1267,7 +1283,7 @@
         kids.push(el("p", { cls: "cdd-of", "data-subject-note": "true", text: "A district-wide outline counts once for each college that names it, and a course counts here whether or not it sits on an Active program, so this total can differ from the live figure above." }));
         kids.push(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "SLO and objective courses by subject", tabindex: "0" }, [el("table", { cls: "cdd-causes cdd-subj" }, [
           el("caption", { text: "Courses by subject" }),
-          el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Subject" }), el("th", { scope: "col", cls: "cdd-num", text: "With SLOs" }), el("th", { scope: "col", cls: "cdd-num", text: "With objectives" })])]),
+          el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Subject" }), el("th", { scope: "col", cls: "cdd-num", text: "With student learning outcomes (SLOs)" }), el("th", { scope: "col", cls: "cdd-num", text: "With objectives" })])]),
           el("tbody", null, [].concat.apply([], cs.by_subject.map(function (r, i) { return subjRows(c, r, i); })))])]));
       }
       kids.push(el("h3", { id: "cdd-plo-h", text: "Program learning outcomes" }));
@@ -1275,14 +1291,14 @@
       var vw = el("button", { type: "button", cls: "cmn-word", "data-view": "slos", text: "Every college with collected SLOs" });
       vw.addEventListener("click", function () { S.panel = null; S.pane = null; go("slos"); });
       kids.push(el("p", { cls: "cdd-of" }, [vw]));
-      return { title: "Course SLOs and objectives", basis: "A view in COBI, from the live read and the committed course outline reads.", kids: kids };
+      return { title: "Course SLOs and objectives", basis: "A view in COBI, from the database count and the committed course outline reads.", kids: kids };
     }
     kids.push(el("h3", { text: "From the " + liveWords(M) }));
     kids.push(lv ? dl([["Active programs whose record carries PLOs", fmt(lr.active_with_plos) + " of " + fmt(lp.active)]])
-      : tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M)));
+      : tba(liveRead(M) ? "The database count holds no counts for this college." : liveReason(M)));
     kids.push(el("h3", { text: "Each program's PLOs, from the committed records" }));
     ploBody(M, c, O, lv, lr).forEach(function (n) { kids.push(n); });
-    return { title: "Program PLOs", basis: "A view in COBI, from the live read and the committed program records.", kids: kids };
+    return { title: "Program PLOs", basis: "A view in COBI, from the database count and the committed program records.", kids: kids };
   }
   /* Each program's PLOs from the college's committed outcomes file, the one list both panes draw (#3412, item 3: the
      SLO pane reaches PLOs too, from the same file; no second store). */
@@ -1327,7 +1343,7 @@
       var w = el("button", { type: "button", cls: "cmn-word cdd-name", "data-slos-college": slugOf(r.c), text: r.c.name });
       w.addEventListener("click", function () { openPane(r.c.id, { k: "slos" }, w); });
       return el("tr", { "data-slos-row": r.c.name }, [el("th", { scope: "row", "data-label": "College" }, [w, el("span", { cls: "cdd-dist", text: r.c.district || "" })]),
-        el("td", { "data-label": "Courses with SLOs", cls: "cdd-num", text: fmt(r.slo) }),
+        el("td", { "data-label": "Courses with student learning outcomes (SLOs)", cls: "cdd-num", text: fmt(r.slo) }),
         el("td", { "data-label": "On Active programs" }, [el("span", { cls: "cdd-pr" }, [meter(r.den ? Math.min(1, r.sloA / r.den) : 0), el("span", { cls: "cdd-n", text: r.den ? pc(Math.min(1, r.sloA / r.den)) : "" }), el("span", { cls: "cdd-of", text: fmt(r.sloA) + " of " + fmt(r.den) + " courses" })])]),
         r.c.objectives_printed === false && !r.obj ? el("td", { "data-label": "Courses with objectives", cls: "cdd-of", "data-noobj": "true", text: "Outlines print none" })
           : el("td", { "data-label": "Courses with objectives", cls: "cdd-num", text: fmt(r.obj) }),
@@ -1336,7 +1352,7 @@
     var table = el("table", { cls: "cdd-table", id: "cdd-slos-table" }, [
       el("caption", { cls: "cdd-sr", text: "Each college with collected SLOs or objectives: its courses with SLOs, the share on Active programs, its courses with objectives, and when they were loaded" }),
       el("colgroup", null, [el("col", { cls: "cdd-c-sname" }), el("col", { cls: "cdd-c-sn" }), el("col", { cls: "cdd-c-sact" }), el("col", { cls: "cdd-c-sn" }), el("col", { cls: "cdd-c-sat" })]),
-      el("thead", null, [el("tr", null, ["College", "Courses with SLOs", "On Active programs", "Courses with objectives", "Loaded"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), body]);
+      el("thead", null, [el("tr", null, ["College", "Courses with student learning outcomes (SLOs)", "On Active programs", "Courses with objectives", "Loaded"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), body]);
     sec.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": VIEWS.slos, tabindex: "0" }, [table]));
     return sec;
   }
@@ -1355,7 +1371,8 @@
     sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: "To do: " + (b.title || "Find catalogs or course outlines for the colleges whose sites block automated reading") }));
     sec.appendChild(el("p", { cls: "cdd-src", text: fmt(open.length) + " of " + fmt(b.colleges.length) + " colleges still to find, " + fmt(b.local_courses_open)
       + " local courses in all; " + (b.still_taught_total != null ? fmt(b.still_taught_total) + " of them are still taught, and only those are hunted. " : "")
-      + "File a catalog or the course outlines in " + (b.file_in || "kb/hand_filed_catalogs/outlines") + " and the college clears here and on the Commons." }));
+      + "File a catalog or the course outlines in the hand-filed catalogs folder, and the college clears here and on the Commons." }));
+    sec.appendChild(teamFiles("Where to file it", b.file_in || "kb/hand_filed_catalogs/outlines"));
     var ul = el("ul", { cls: "cdd-todo-list" });
     open.forEach(function (c) {
       ul.appendChild(el("li", { "data-todo-college": c.slug }, [c.college + ": " + fmt(c.local_courses) + " local courses, " + (c.reason || "the site blocks automated reading") + ". ",
@@ -1399,7 +1416,7 @@
     out.push(section("Confidence", c.confidence ? [el("p", { cls: "cdd-state", text: cap(c.confidence.level) }), el("p", { cls: "cdd-of", text: c.confidence.why })]
       : [tba("Not collected yet: confidence starts with the first collection.")]));
     out.push(section("Overall", ov ? overallBits(M, ov, true, c)
-      : [tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M) + (tbaOf(M, "overall") ? " " + tbaOf(M, "overall") : ""))]));
+      : [tba(liveRead(M) ? "The database count holds no counts for this college." : liveReason(M) + (tbaOf(M, "overall") ? " " + tbaOf(M, "overall") : ""))]));
     GROUPS.forEach(function (g) {
       var ds = datasets(M, c).filter(function (d) { return d.group === g; });
       out.push(section(g, ds.map(function (d) {
@@ -1618,7 +1635,7 @@
       el("h2", { cls: "cmn-title", id: "cdd-h", text: S.view ? VIEWS[S.view] : TITLE }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: S.view === "districts" ? "Each district's colleges together: how many are collected, how complete their collection is and how confident we are in it, from the same figures as the college list."
-        : S.view === "slos" ? "The colleges whose course SLOs or objectives the live read holds: how many courses, how many sit on Active programs, and when each was loaded."
+        : S.view === "slos" ? "The colleges whose course SLOs or objectives the database count holds: how many courses, how many sit on Active programs, and when each was loaded."
         : S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
         : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
         : S.view ? exts().map(function (x) { return (x.ledes || {})[S.view]; }).filter(Boolean)[0] || ""
@@ -1637,8 +1654,8 @@
     /* A module's band at the top of the list (the College Collections ETA, #3360). */
     extCall("top", [M, extHost()]).forEach(function (n) { wrap.appendChild(n); });
     wrap.appendChild(el("p", { cls: "cdd-stamp", id: "cdd-stamp" }, [el("strong", { text: "From the committed files. " }),
-      "Built " + (day(M.written) || "on a date the file does not give") + ". A program count here is the programs each college's capture listed; the Program Requirements tab counts the live Active programs. Dates are Pacific time.",
-      el("span", { cls: "cdd-stamp-live", id: "cdd-stamp-live" }, [el("strong", { text: "From the live read. " }),
+      "These figures were gathered " + (day(M.written) || "on a date the file does not give") + "; the Last Updated date in the page header is when the whole site was last published. A program count here is the programs each college's capture listed; the Program Requirements tab counts the live Active programs. Dates are Pacific time.",
+      el("span", { cls: "cdd-stamp-live", id: "cdd-stamp-live" }, [el("strong", { text: "From the database count. " }), "COBI counts the program and course tables in its database each night. ",
         liveRead(M) ? "The overall bar and every figure marked live come from the " + liveWords(M) + ", kept apart from the committed files' figures." + (keptWords(M) ? " " + keptWords(M) : "")
           : "The overall bar and the live counts read TBA. " + liveReason(M)])]));
 
@@ -1702,7 +1719,7 @@
     var body = el("tbody");
     var head = el("tr");
     var table = el("table", { cls: "cdd-table", id: "cdd-colleges" }, [
-      el("caption", { cls: "cdd-sr", text: "Each college: its overall completeness (live read), its courses with SLOs and with objectives (live read), its collected program requirements, programs still to pass, last read, read cost and confidence" }),
+      el("caption", { cls: "cdd-sr", text: "Each college: its overall completeness (database count), its courses with SLOs and with objectives (database count), its collected program requirements, programs still to pass, last read, read cost and confidence" }),
       el("colgroup", null, [el("col", { cls: "cdd-c-name" }), el("col", { cls: "cdd-c-ov" }), el("col", { cls: "cdd-c-out" }), el("col", { cls: "cdd-c-pr" }), el("col", { cls: "cdd-c-gap" }), el("col", { cls: "cdd-c-read" }), el("col", { cls: "cdd-c-cost" }), el("col", { cls: "cdd-c-conf" })]),
       el("thead", null, [head]), body
     ]);
@@ -1925,8 +1942,8 @@
       var x = a.mean == null ? 2 : a.mean, y = b.mean == null ? 2 : b.mean;
       return x - y || a.name.localeCompare(b.name);
     });
-    sec.appendChild(el("p", { cls: "cdd-sortline", id: "cdd-dist-sum", text: fmt(R.length) + " districts, lowest overall completeness first (" + (liveRead(M) ? liveWords(M) : "the live read has not run yet") +
-      "); a district the live read does not hold comes last. A district's name opens the college list at its colleges." }));
+    sec.appendChild(el("p", { cls: "cdd-sortline", id: "cdd-dist-sum", text: fmt(R.length) + " districts, lowest overall completeness first (" + (liveRead(M) ? liveWords(M) : "the database count has not run yet") +
+      "); a district the database count does not hold comes last. A district's name opens the college list at its colleges." }));
     var body = el("tbody", null, R.map(function (d) {
       /* The name opens exactly its colleges (the district is in the address, district/<slug>); the bucket of colleges
          with no district has no address, so it stays plain text. */
@@ -1940,7 +1957,7 @@
         el("td", { "data-label": "Collected", cls: "cdd-num", text: fmt(d.collected) + " of " + fmt(d.colleges) }),
         el("td", { "data-label": "Program requirements passing" }, d.programs ? [el("span", { cls: "cdd-pr" }, [meter(d.passing / d.programs), el("span", { cls: "cdd-n", text: pc(d.passing / d.programs) }),
           el("span", { cls: "cdd-of", text: fmt(d.passing) + " of " + fmt(d.programs) + " listed programs" })])] : [el("span", { cls: "cdd-quiet", text: "Not collected yet" })]),
-        el("td", { "data-label": "Overall, mean of its colleges" }, d.mean == null ? [el("span", { cls: "cdd-quiet", text: liveRead(M) ? "Not in the live read" : "TBA" })]
+        el("td", { "data-label": "Overall, mean of its colleges" }, d.mean == null ? [el("span", { cls: "cdd-quiet", text: liveRead(M) ? "Not in the database count" : "TBA" })]
           : [el("span", { cls: "cdd-pr" }, [meter(d.mean), el("span", { cls: "cdd-n", text: pc(d.mean) }), el("span", { cls: "cdd-of", text: "Of " + plural(d.ov.length, "college", "colleges") })])]),
         el("td", { "data-label": "Confidence" }, [lv ? cap(lv) : el("span", { cls: "cdd-quiet", text: "TBA" })])
       ]);
@@ -1991,15 +2008,15 @@
     function stage(name) { var x = D.filter(function (d) { return d.name === name; })[0]; return x && x.stage ? " Dictionary stage: " + x.stage + "." : ""; }
     var items = [
       ["The College view", "Internal only: one college's page in plain words, drawn from the fields the builder flags shareable. It waits on Sam's review; it has no share link and nothing goes to a college."],
-      ["AI workers per college", "Waits on a committed record of each worker and the colleges it serves; the district bots wait on the district profiles (#3198)."],
+      ["AI workers per college", "Waits on a committed record of each worker and the colleges it serves; the district bots wait on the district profiles."],
       /* Sam, Nov 13, 7:13 AM PT, on #3229: a long-term direction, recorded here and not built. */
       ["A signed-in Sierra where college staff may direct changes", "College staff could give directions for procedure and rule changes that improve the accuracy, completeness, connectivity and visibility of their college's collection. Waits on Sierra's sign-in and access controls; a long-term direction, not built in this slice."],
       /* S649: each cause opens its programs, and each program its own catalog page; what remains is the registry's. */
-      ["Curriculum view and pathway source links per college", "The live registry says whether each is held, never its address. Waits on the live read carrying the links themselves; the catalog the capture read opens from the row, and each program still to pass opens its own catalog page from its cause."],
+      ["Curriculum view and pathway source links per college", "The live registry says whether each is on record, never its address. Waits on the database count carrying the links themselves; the catalog the capture read opens from the row, and each program still to pass opens its own catalog page from its cause."],
       ["The JST funnel",(tbaOf(M, "jst") || "Waits on an authorized-student feed.") + stage("JST authorizations")],
-      ["SIS and curriculum system tiles", "Wait on the district profiles (#3198); a college's system stays unknown until its profile names it."],
+      ["SIS and curriculum system tiles", "Wait on the district profiles; a college's system stays unknown until its profile names it."],
       ["Program pathway maps per college", mapsLine(M)],
-      ["Course descriptions per college", (tbaOf(M, "descriptions") || "Waits on the description classifier's counts (#3219).") + stage("Course descriptions")],
+      ["Course descriptions per college", (tbaOf(M, "descriptions") || "Waits on the description classifier's counts.") + stage("Course descriptions")],
       ["MIS course matches per college", (tbaOf(M, "mis") || "Waits on a join of the committed MIS course file to each college.") + stage("COMIS / MIS data")],
       ["COE regional demand per college", (tbaOf(M, "coe") || "Waits on a per-college read of the regional crosswalk.") + stage("COE labor market data")]
     ];
@@ -2016,16 +2033,16 @@
     if (R.basis) items.push("Basis: " + R.basis + ".");
     if (R.passing) items.push("Passing: " + R.passing + ".");
     var O = M.overall || {}, LR = (M.live || {}).rule || {};
-    if (O.rule || R.overall) items.push("Overall (basis live): " + (O.rule || R.overall) + ".");
-    items.push("Live read: " + (liveRead(M) ? cap(liveWords(M)) + "." + (keptWords(M) ? " " + keptWords(M) : "") : liveReason(M)));
-    if (LR.registry) items.push("Registry: a link reads held when the registry records one, since it records a link only when one is seen.");
+    if (O.rule || R.overall) items.push("Overall completeness: " + (O.rule || R.overall) + ".");
+    items.push("Database count: " + (liveRead(M) ? "COBI's nightly count of its program and course tables, last taken " + day(M.live.read_at) + "." + (keptWords(M) ? " " + keptWords(M) : "") : liveReason(M)));
+    if (LR.registry) items.push("Registry: a link reads on record when the registry records one, since it records a link only when one is seen.");
     if (R.confidence) items.push("Confidence: " + R.confidence + ".");
     if (R.age_days) items.push("Age: fresh within " + R.age_days.fresh + " days, recent within " + R.age_days.recent + ", stale after.");
     var src = Object.keys(M.sources).map(function (k) { return M.sources[k]; });
     return el("section", { cls: "cdd-notes", id: "cdd-notes", "aria-labelledby": "cdd-notes-h" }, [
       el("h3", { id: "cdd-notes-h", cls: "cdd-h3", text: "How these figures are read" }),
       el("ul", null, items.map(function (t) { return el("li", { text: t }); })),
-      el("p", { cls: "cdd-src", text: "Sources: " + src.join("; ") + "." }),
+      teamFiles("The files behind these figures", src.join("; ") + "."),
       el("p", { cls: "cdd-src", text: "A college's name opens its row: each dataset the committed files hold for it, with its bar, its date and its open gaps. The row opens the same college in a side panel, with every dataset College Data Collection tracks; one with no committed source reads TBA and says why." })
     ]);
   }

@@ -135,7 +135,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   tile(o, "gaps").click();
   check("filter gaps: the harvested colleges with programs still to pass, most first", JSON.stringify(rows(o)) === JSON.stringify(["Gamma College", "Alpha College"]));
   tile(o, "slo").click();
-  check("filter slo: the colleges in the SLO queue", JSON.stringify(rows(o)) === JSON.stringify(["Beta College"]) && /SLO read held/.test(txt(o.d.querySelector("#cdd-colleges tbody"))));
+  check("filter slo: the colleges in the SLO queue", JSON.stringify(rows(o)) === JSON.stringify(["Beta College"]) && /SLO read paused/.test(txt(o.d.querySelector("#cdd-colleges tbody"))));
   tile(o, "scouted").click();
   check("filter scouted: the scouted colleges, with the barrier named", JSON.stringify(rows(o)) === JSON.stringify(["Gamma College"]) && /firewall/.test(txt(o.d.querySelector("#cdd-colleges tbody"))));
   check("filter: the count line says what is shown", /^Showing 1 of 5: Scouted for a wave$/.test(txt(o.d.querySelector("#cdd-shown"))));
@@ -148,7 +148,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     check("TBA ⭐: " + l + " reads TBA with its reason and opens nothing", t && txt(t.querySelector(".cdd-v")) === "TBA" && t.tagName === "DIV" && txt(t.querySelector(".cdd-d")).length > 0);
   });
   check("slice 3: the JST funnel draws no empty tile; it is a line under Coming next", !plain(o, "JST funnel") && /The JST funnel\. Waits on a feed\./.test(txt(o.d.querySelector('#cdd-next [data-next="The JST funnel"]'))));
-  check("slice 3: before the first live read the overall tile says the live read has not run yet", /The live read has not run yet\./.test(txt(plain(o, "Overall completeness"))));
+  check("slice 3: before the first database count the overall tile says the database count has not run yet", /The database count has not run yet\./.test(txt(plain(o, "Overall completeness"))));
   check("plain: program requirements passing is the file's sum, shown, not a button",
     plain(o, "Program requirements passing") && txt(plain(o, "Program requirements passing").querySelector(".cdd-v")) === "74%"
     && /Of the 190 programs listed in the committed captures, 140 pass/.test(txt(plain(o, "Program requirements passing"))));
@@ -257,7 +257,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   word(2).click();
   const m2 = x.d.getElementById("cdd-more-2");
   check("row 8: one row open at a time; Beta's row shows its SLO queue state", !x.d.getElementById("cdd-more-1") && word(1).getAttribute("aria-expanded") === "false"
-    && m2 && cards(m2).indexOf("slo") >= 0 && /SLO read held/.test(txt(m2)) && /a parser/.test(txt(m2)));
+    && m2 && cards(m2).indexOf("slo") >= 0 && /SLO read paused/.test(txt(m2)) && /a parser/.test(txt(m2)));
   word(4).click();
   const m4 = x.d.getElementById("cdd-more-4");
   check("row 9 ⭐: an uncollected college's row says Not collected yet, never a zero", m4 && !cards(m4).length && /Not collected yet/.test(txt(m4)) && !/0%/.test(txt(m4)));
@@ -279,7 +279,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   [["plo", "PLO reason."], ["obj", "Objectives reason."], ["desc", "Descriptions reason."], ["cpl", "CPL reason."], ["mis", "MIS reason."], ["coe", "COE reason."], ["slo", "SLO reason."]].forEach(function (t) {
     check("panel TBA ⭐: " + t[0] + " reads TBA with the builder's reason, no number", sec(t[0]).indexOf("TBA. " + t[1]) >= 0 && !/\d+%/.test(sec(t[0])));
   });
-  check("panel 3: the overall bar reads TBA with its reason; Teachout and Approved too", /Overall\s*TBA\. The live read has not run yet\. Catalog source, SLOs and PLOs are live tables\./.test(txt(P)) && /Teachout and Approved programs: TBA\. The live read has not run yet\./.test(sec("pr")));
+  check("panel 3: the overall bar reads TBA with its reason; Teachout and Approved too", /Overall\s*TBA\. The database count has not run yet\. Catalog source, SLOs and PLOs are live tables\./.test(txt(P)) && /Teachout and Approved programs: TBA\. The database count has not run yet\./.test(sec("pr")));
   check("panel 4 ⭐: the panel leads with Confidence, then Overall, then the datasets Collected then Connected (#3229)",
     JSON.stringify(Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).slice(0, 4)) === '["Confidence","Overall","Collected","Connected"]');
   const datesSec = Array.from(P.querySelectorAll(".cdd-psec")).filter((s) => txt(s.querySelector("h3")) === "Dates")[0];
@@ -479,29 +479,29 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const s1 = load("#commons/data", READ);
   await s1.M.boot(); await settle();
   const ovT = tile(s1, "overall");
-  check("overall 1 ⭐: after a live read the overall tile shows the statewide mean with its basis and date in words, and is a button",
-    ovT && ovT.tagName === "BUTTON" && txt(ovT.querySelector(".cdd-v")) === "45%" && /live read, Nov 13, 2026/.test(txt(ovT)) && !plain(s1, "Overall completeness"));
+  check("overall 1 ⭐: after a database count the overall tile shows the statewide mean with its basis and date in words, and is a button",
+    ovT && ovT.tagName === "BUTTON" && txt(ovT.querySelector(".cdd-v")) === "45%" && /database count, Nov 13, 2026/.test(txt(ovT)) && !plain(s1, "Overall completeness"));
   ovT.click();
   check("overall 2 ⭐: the tile opens the colleges it averages, lowest first, and the address carries it",
     JSON.stringify(rows(s1)) === JSON.stringify(["Gamma College", "Alpha College"]) && s1.w.location.hash === "#commons/data/overall" && reported(s1) === "commons/data/overall"
     && /Mean of 2 colleges/i.test(txt(ovT)));
-  check("overall 3 ⭐: the list column shows each college's bar with Live read and its date; a college the read does not hold is not a zero",
-    /^60%\s*Live read, Nov 13, 2026$/.test(ovCell(s1, "Alpha College")) || (/60%/.test(ovCell(s1, "Alpha College")) && /Live read, Nov 13, 2026/.test(ovCell(s1, "Alpha College"))));
+  check("overall 3 ⭐: the list column shows each college's bar with Database count and its date; a college the read does not hold is not a zero",
+    /^60%\s*Database count, Nov 13, 2026$/.test(ovCell(s1, "Alpha College")) || (/60%/.test(ovCell(s1, "Alpha College")) && /Database count, Nov 13, 2026/.test(ovCell(s1, "Alpha College"))));
   s1.d.querySelector("#cdd-all").click();
-  check("overall 4: a college outside the live read says so, never 0%", ovCell(s1, "Beta College") === "Not in the live read" && !/0%/.test(ovCell(s1, "Beta College")));
-  check("overall 5: the committed basis stays labeled apart from the live one", /From the committed files\./.test(txt(s1.d.querySelector("#cdd-stamp"))) && /From the live read\. .*live read, Nov 13, 2026/.test(txt(s1.d.querySelector("#cdd-stamp-live"))));
+  check("overall 4: a college outside the database count says so, never 0%", ovCell(s1, "Beta College") === "Not in the database count" && !/0%/.test(ovCell(s1, "Beta College")));
+  check("overall 5: the committed basis stays labeled apart from the live one", /From the committed files\./.test(txt(s1.d.querySelector("#cdd-stamp"))) && /From the database count\. .*database count, Nov 13, 2026/.test(txt(s1.d.querySelector("#cdd-stamp-live"))));
   s1.d.querySelector('[data-expand="1"]').click();
   const ovCard = s1.d.querySelector('#cdd-more-1 [data-ds="overall"]');
-  check("overall 6: the row shows the overall bar, its four parts and its basis", ovCard && /60%/.test(txt(ovCard)) && /Catalog source\s*67%/.test(txt(ovCard)) && /Program requirements passing\s*80%/.test(txt(ovCard)) && /Live read, Nov 13, 2026/.test(txt(ovCard)));
+  check("overall 6: the row shows the overall bar, its four parts and its basis", ovCard && /60%/.test(txt(ovCard)) && /Catalog source\s*67%/.test(txt(ovCard)) && /Program requirements passing\s*80%/.test(txt(ovCard)) && /Database count, Nov 13, 2026/.test(txt(ovCard)));
   s1.d.querySelector('[data-panel-open="1"]').click();
   const P1 = s1.d.getElementById("cdd-panel"), psec = (k) => txt(P1.querySelector('[data-ds="' + k + '"]'));
-  check("overall 7 ⭐: the panel's overall section shows the bar and parts, no TBA", /Overall\s*60%/.test(txt(P1)) && /Course SLOs\s*75%/.test(txt(P1)) && !/Overall\s*TBA/.test(txt(P1)));
-  check("live 1 ⭐: Active, Teachout and Approved are shown apart, from the live read",
+  check("overall 7 ⭐: the panel's overall section shows the bar and parts, no TBA", /Overall\s*60%/.test(txt(P1)) && /Course student learning outcomes \(SLOs\)\s*75%/.test(txt(P1)) && !/Overall\s*TBA/.test(txt(P1)));
+  check("live 1 ⭐: Active, Teachout and Approved are shown apart, from the database count",
     /Active programs\s*100/.test(psec("pr")) && /Teachout programs \(apart from Active\)\s*3/.test(psec("pr")) && /Approved programs \(apart from Active\)\s*4/.test(psec("pr"))
-    && /Program records on file\s*96/.test(psec("pr")) && /Active programs with a passing record\s*80/.test(psec("pr")) && /From the live read, Nov 13, 2026/.test(psec("pr")) && !/Teachout and Approved programs: TBA/.test(psec("pr")));
+    && /Program records on file\s*96/.test(psec("pr")) && /Active programs with a passing record\s*80/.test(psec("pr")) && /From the database count, Nov 13, 2026/.test(psec("pr")) && !/Teachout and Approved programs: TBA/.test(psec("pr")));
   check("live 2: the committed figure keeps its own label beside the live lines", /80 of 100 listed programs, committed captures, pass the machine checks/.test(psec("pr")));
   check("live 3 ⭐: SLOs and PLOs read from the live counts with their basis; the TBA lines are gone",
-    /300 of 400 courses on Active programs have SLOs/.test(psec("slo")) && /75%/.test(psec("slo")) && /Live read, Nov 13, 2026/.test(psec("slo")) && !/SLO reason/.test(psec("slo"))
+    /300 of 400 courses on Active programs have SLOs/.test(psec("slo")) && /75%/.test(psec("slo")) && /Database count, Nov 13, 2026/.test(psec("slo")) && !/SLO reason/.test(psec("slo"))
     && /50 of 100 Active programs carry PLOs/.test(psec("plo")) && !/PLO reason/.test(psec("plo")) && /0 of 400 courses on Active programs have objectives/.test(psec("obj")));
   const reg = P1.querySelector('[data-ds="cat"] [data-part="registry"]');
   check("live 4 ⭐: the registry checks are words, held or not, never 'checked'",
@@ -531,16 +531,16 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   // not read, and a first attempt that failed
   const s3 = load("#commons/data", NOTREAD);
   await s3.M.boot(); await settle();
-  check("not read 1 ⭐: until the first live read the overall tile reads TBA with the reason, and opens nothing",
-    plain(s3, "Overall completeness") && txt(plain(s3, "Overall completeness").querySelector(".cdd-v")) === "TBA" && /The live read has not run yet\./.test(txt(plain(s3, "Overall completeness"))) && !tile(s3, "overall"));
+  check("not read 1 ⭐: until the first database count the overall tile reads TBA with the reason, and opens nothing",
+    plain(s3, "Overall completeness") && txt(plain(s3, "Overall completeness").querySelector(".cdd-v")) === "TBA" && /The database count has not run yet\./.test(txt(plain(s3, "Overall completeness"))) && !tile(s3, "overall"));
   check("not read 2: every row's overall reads TBA", Array.from(s3.d.querySelectorAll('#cdd-colleges td[data-label="Overall"]')).every((td) => txt(td) === "TBA"));
   s3.d.querySelector('[data-expand="1"]').click(); s3.d.querySelector('[data-panel-open="1"]').click();
   const P3 = s3.d.getElementById("cdd-panel");
-  check("not read 3: the panel's live lines read TBA with the reason; the committed reasons stay", /Overall\s*TBA\. The live read has not run yet\./.test(txt(P3))
-    && /Teachout and Approved programs: TBA\. The live read has not run yet\./.test(txt(P3)) && /TBA\. PLO reason\./.test(txt(P3)) && !P3.querySelector('[data-part="registry"]'));
+  check("not read 3: the panel's live lines read TBA with the reason; the committed reasons stay", /Overall\s*TBA\. The database count has not run yet\./.test(txt(P3))
+    && /Teachout and Approved programs: TBA\. The database count has not run yet\./.test(txt(P3)) && /TBA\. PLO reason\./.test(txt(P3)) && !P3.querySelector('[data-part="registry"]'));
   const s4 = load("#commons/data", FIRSTFAIL);
   await s4.M.boot(); await settle();
-  check("not read 4: a first attempt that failed is named, still TBA", /The live read has not run yet\. Its last attempt, Nov 13, 2026, did not complete \(timeout\)\./.test(txt(plain(s4, "Overall completeness"))));
+  check("not read 4: a first attempt that failed is named, still TBA", /The database count has not run yet\. Its last attempt, Nov 13, 2026, did not complete \(timeout\)\./.test(txt(plain(s4, "Overall completeness"))));
 
   // the API checklist and its tile
   const at = s3.d.querySelector('.cdd-tile[data-view="apis"]');
@@ -633,31 +633,31 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   // ── (11) the review of #3236: each confirmed finding, a check that failed before its fix ──
   const R2 = JSON.parse(JSON.stringify(READ));
   R2.colleges[1].platform = "pdf";                                   // Beta: pdf too, so pdf counts 2 statewide
-  R2.live.colleges[4] = JSON.parse(JSON.stringify(LIVE_COLLEGES[1]));   // Delta: never harvested, but in the live read
+  R2.live.colleges[4] = JSON.parse(JSON.stringify(LIVE_COLLEGES[1]));   // Delta: never harvested, but in the database count
   R2.live.colleges[3].outcomes.slo_courses_on_active = null;            // Gamma: one table came back without a count
   R2.live.colleges[3].registry = { row: false, catalog_link: false, course_outline_link: false, sequence_source: false, sequence_checked: false };
   R2.overall.statewide.colleges = 7;                                    // the builder's own count behind its mean
   const v1 = load("#commons/data/college/beta-college", R2);
   await v1.M.boot(); await settle();
   const PB = v1.d.getElementById("cdd-panel"), bsec = (k) => txt(PB.querySelector('[data-ds="' + k + '"]'));
-  check("review3236 missing 1 ⭐: a college the completed live read does not hold gets its own true reason, never 'has not run yet'",
-    /Teachout and Approved programs: TBA\. The live read holds no counts for this college\./.test(bsec("pr")) && !/has not run yet/.test(txt(PB)));
+  check("review3236 missing 1 ⭐: a college the completed database count does not hold gets its own true reason, never 'has not run yet'",
+    /Teachout and Approved programs: TBA\. The database count holds no counts for this college\./.test(bsec("pr")) && !/has not run yet/.test(txt(PB)));
   check("review3236 missing 2 ⭐: its SLO, PLO, objective and registry sections say the same, not the not-carried reasons",
-    ["slo", "plo", "obj", "cat"].every((k) => /The live read holds no counts for this college\./.test(bsec(k))) && !/Registry reason|PLO reason|Objectives reason/.test(txt(PB)));
+    ["slo", "plo", "obj", "cat"].every((k) => /The database count holds no counts for this college\./.test(bsec(k))) && !/Registry reason|PLO reason|Objectives reason/.test(txt(PB)));
   const v2 = load("#commons/data/college/alpha-college", R2);
   await v2.M.boot(); await settle();
   const PA = v2.d.getElementById("cdd-panel"), asec = (k) => txt(PA.querySelector('[data-ds="' + k + '"]'));
-  check("review3236 stamp 1 ⭐: a live figure carries the live read's stamp, never 'Not yet' (PLOs, objectives with no load time)",
-    /Updated .* PT \(live read\)/.test(asec("plo")) && !/Not yet/.test(asec("plo")) && !/Not yet/.test(asec("obj")));
+  check("review3236 stamp 1 ⭐: a live figure carries the database count's stamp, never 'Not yet' (PLOs, objectives with no load time)",
+    /Updated .* PT \(database count\)/.test(asec("plo")) && !/Not yet/.test(asec("plo")) && !/Not yet/.test(asec("obj")));
   const v3 = load("#commons/data/college/delta-college", R2);
   await v3.M.boot(); await settle();
   const PD = v3.d.getElementById("cdd-panel");
-  check("review3236 stamp 2: program requirements for a college in the live read but never harvested carry the live stamp",
-    /\(live read\)/.test(txt(PD.querySelector('[data-ds="pr"]'))) && !/Not yet/.test(txt(PD.querySelector('[data-ds="pr"]'))) && /Teachout programs \(apart from Active\)\s*3/.test(txt(PD.querySelector('[data-ds="pr"]'))));
+  check("review3236 stamp 2: program requirements for a college in the database count but never harvested carry the live stamp",
+    /\(database count\)/.test(txt(PD.querySelector('[data-ds="pr"]'))) && !/Not yet/.test(txt(PD.querySelector('[data-ds="pr"]'))) && /Teachout programs \(apart from Active\)\s*3/.test(txt(PD.querySelector('[data-ds="pr"]'))));
   const v4 = load("#commons/data/college/gamma-college", R2);
   await v4.M.boot(); await settle();
   const PG = v4.d.getElementById("cdd-panel"), gsec = (k) => txt(PG.querySelector('[data-ds="' + k + '"]'));
-  check("review3236 null ⭐ (COBIx 1): a count the live read lacks reads TBA, never 0%", /TBA\./.test(gsec("slo")) && !/0%|0 of/.test(gsec("slo")));
+  check("review3236 null ⭐ (COBIx 1): a count the database count lacks reads TBA, never 0%", /TBA\./.test(gsec("slo")) && !/0%|0 of/.test(gsec("slo")));
   const regG = PG.querySelector('[data-ds="cat"] [data-part="registry"]');
   check("review3236 registry (COBIx 3): no registry row reads as such, not three not-held lines", regG && /No registry row for this college/.test(txt(regG)) && !/not held|not looked for/.test(txt(regG)));
   const v5 = load("#commons/data", R2);
@@ -697,8 +697,8 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const pos = (l) => labels.indexOf(l);
   check("3229 order ⭐: Collected, then Confidence and the completeness figures, before what is in the way and the team's figures",
     pos("Collected") === 0 && pos("Confidence") > 0 && pos("Confidence") < pos("Program requirements passing") && pos("Program requirements passing") < pos("Active programs complete")
-    && pos("Active programs complete") < pos("Overall completeness") && pos("Overall completeness") < pos("Programs still to pass") && pos("Programs still to pass") < pos("SLO read waiting")
-    && pos("SLO read waiting") < pos("Scouted for a wave") && pos("Scouted for a wave") < pos("Read cost per passing program"), labels);
+    && pos("Active programs complete") < pos("Overall completeness") && pos("Overall completeness") < pos("Programs still to pass") && pos("Programs still to pass") < pos("Student learning outcome (SLO) read waiting")
+    && pos("Student learning outcome (SLO) read waiting") < pos("Scouted for a wave") && pos("Scouted for a wave") < pos("Read cost per passing program"), labels);
   check("3229 confidence card ⭐ (point 4): one card, three level words, each opening its colleges",
     labels.filter((l) => /^Confidence/.test(l)).length === 1 && JSON.stringify(Array.from(w1.d.querySelectorAll('.cdd-tile[data-tile="Confidence"] button.cdd-partw')).map(txt)) === '["1 strong","1 partial","1 limited"]');
   const confOf = (l) => txt(Array.from(w1.d.querySelectorAll(".cdd-tiles .cdd-tile")).filter((t) => txt(t.querySelector(".cdd-l")) === l)[0].querySelector(".cdd-conf"));
@@ -706,7 +706,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     ["Program requirements passing", "Active programs complete", "Overall completeness"].every((l) => /^Confidence: limited at 1 college, partial at 1, strong at 1$/.test(confOf(l))));
   const act = Array.from(w1.d.querySelectorAll(".cdd-tiles .cdd-tile")).filter((t) => txt(t.querySelector(".cdd-l")) === "Active programs complete")[0];
   check("3229 active ⭐: the live completeness count reads N of N with its basis and date, and stays plain (summed over every college)",
-    act.tagName === "DIV" && txt(act.querySelector(".cdd-v")) === "90 of 140" && /live read, Nov 13, 2026/.test(txt(act)));
+    act.tagName === "DIV" && txt(act.querySelector(".cdd-v")) === "90 of 140" && /database count, Nov 13, 2026/.test(txt(act)));
   check("3229 no person headline ⭐ (point 5): no card names a person's confirmation or a review", !labels.some((l) => /confirm|review/i.test(l))
     && !/confirmed|reviewed/i.test(txt(w1.d.querySelector(".cdd-tiles"))));
   const gapCard = plain(w1, "Programs still to pass");
@@ -719,7 +719,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("3229 bases ⭐ (conductor): each completeness card's definition starts with its base, and the first says why the two differ",
     /^Of the 190 programs listed in the committed captures, 140 pass/.test(txt(prCard.querySelector(".cdd-d")))
     && /The captures list Active, Teachout and Approved programs; the Active programs card counts Active programs only\./.test(txt(prCard.querySelector(".cdd-d")))
-    && /^Of the 140 Active programs in COCI, live read, Nov 13, 2026,/.test(txt(plain(w1, "Active programs complete").querySelector(".cdd-d"))));
+    && /^Of the 140 Active programs in COCI, database count, Nov 13, 2026,/.test(txt(plain(w1, "Active programs complete").querySelector(".cdd-d"))));
   w1.d.querySelector("#cdd-all").click();
   check("3229 focus (review): Show all colleges leaves the focus on the list's heading, never lost", w1.d.activeElement === w1.d.getElementById("cdd-list-h"));
   const fr = Array.from(w1.d.querySelectorAll('.cdd-tile[data-tile="Collection freshness"] button.cdd-partw'));
@@ -781,7 +781,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const cc = plain(h1, "Confidence");
   const nums = (s) => (String(s).match(/\d+/g) || []);
   check("3243 confidence ⭐: the Confidence card's line is the builder's rule.confidence_card, and every threshold in it is in rule.confidence (the held case included)",
-    REAL.rule.confidence_card && txt(cc.querySelector(".cdd-d")) === REAL.rule.confidence_card && /display held/.test(REAL.rule.confidence_card)
+    REAL.rule.confidence_card && txt(cc.querySelector(".cdd-d")) === REAL.rule.confidence_card && /display held|hidden until they agree/.test(REAL.rule.confidence_card)
     && nums(REAL.rule.confidence_card).every((x) => nums(REAL.rule.confidence).indexOf(x) >= 0) && !/5 or more spot-checked/.test(SRC));
   // Prose only: a file path such as kb/_harvest_gap_census.py is an identifier, not a word on the page.
   const prose = (root) => {
@@ -808,10 +808,10 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const d1 = load("#commons/data", READ);
   await d1.M.boot(); await settle();
   const sortLine = (x) => x.d.getElementById("cdd-sortline");
-  check("default 1 ⭐: with a live read the list opens highest overall completeness first; a college the read does not hold comes last",
+  check("default 1 ⭐: with a database count the list opens highest overall completeness first; a college the read does not hold comes last",
     JSON.stringify(rows(d1)) === '["Alpha College","Gamma College","Beta College","Delta College","Epsilon Continuing Education"]', rows(d1));
   check("default 2 ⭐: the order is said in words above the list and announced (role status)",
-    sortLine(d1) && sortLine(d1).getAttribute("role") === "status" && /^Sorted highest overall completeness first \(live read, Nov 13, 2026\)/.test(txt(sortLine(d1)))
+    sortLine(d1) && sortLine(d1).getAttribute("role") === "status" && /^Sorted highest overall completeness first \(database count, Nov 13, 2026\)/.test(txt(sortLine(d1)))
     && (sortLine(d1).compareDocumentPosition(d1.d.getElementById("cdd-colleges")) & d1.w.Node.DOCUMENT_POSITION_FOLLOWING));
   check("default 3: the Overall heading carries the order and aria-sort descending",
     d1.d.querySelector('button.cdd-sort[data-sort="overall"]').parentNode.getAttribute("aria-sort") === "descending" && /high first/.test(txt(d1.d.querySelector('button.cdd-sort[data-sort="overall"]'))));
@@ -832,11 +832,11 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   d3.d.querySelector('button.cdd-sort[data-sort="overall"]').click();
   check("default 6 ⭐ (review): a first click on Overall from the default is the person's sort, low first, said for this visit, the college the read does not hold last",
     JSON.stringify(rows(d3)) === '["Gamma College","Alpha College","Beta College","Delta College","Epsilon Continuing Education"]' && ariaSort(d3, "overall") === "ascending"
-    && /^Sorted by overall, low first, for this visit; colleges the live read does not hold last\./.test(txt(sortLine(d3))) && d3.d.activeElement.getAttribute("data-sort") === "overall", txt(sortLine(d3)));
+    && /^Sorted by overall, low first, for this visit; colleges the database count does not hold last\./.test(txt(sortLine(d3))) && d3.d.activeElement.getAttribute("data-sort") === "overall", txt(sortLine(d3)));
   d3.d.querySelector('button.cdd-sort[data-sort="overall"]').click();
   check("default 6b ⭐ (review): a second click reverses it, high first, and the colleges the read does not hold stay last",
     JSON.stringify(rows(d3)) === '["Alpha College","Gamma College","Beta College","Delta College","Epsilon Continuing Education"]' && ariaSort(d3, "overall") === "descending"
-    && /^Sorted by overall, high first, for this visit; colleges the live read does not hold last\./.test(txt(sortLine(d3))));
+    && /^Sorted by overall, high first, for this visit; colleges the database count does not hold last\./.test(txt(sortLine(d3))));
   d3.d.querySelector('button.cdd-sort[data-sort="pr"]').click();
   check("default 6c (review): a person's sort on another column says where colleges with no value go", /^Sorted by program requirements, low first, for this visit; colleges with no value first\./.test(txt(sortLine(d3))), txt(sortLine(d3)));
   // A card's order lasts only while its list shows.
@@ -868,7 +868,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     && !/sort|overall|name/.test(Object.values(d1.w.localStorage._o || {}).filter((v) => !/^\{"tab"/.test(v)).join(" ")) && !/sort/.test(d1.w.location.hash));
   const d2 = load("#commons/data", DATA);
   await d2.M.boot(); await settle();
-  check("default 8: before the first live read the list opens highest program requirements passing first, not-collected colleges at the bottom, and says so",
+  check("default 8: before the first database count the list opens highest program requirements passing first, not-collected colleges at the bottom, and says so",
     JSON.stringify(rows(d2)) === '["Beta College","Alpha College","Gamma College","Delta College","Epsilon Continuing Education"]'
     && /^Sorted highest program requirements passing first, colleges not collected yet at the bottom\./.test(txt(sortLine(d2))), rows(d2));
 

@@ -23,6 +23,12 @@ page text, so a run without --capture can find only the prior-year rule's progra
 THE COLLECTION LANE'S COLLEGES are left out tonight (the conductor's split, one writer per college): the colleges
 of COLLECTION_LANE in kb/collection_lane.py, or --skip-college NAME in addition.
 
+RULE D (S683; the reader's page checks, kb/_reader_page_checks.py, #3480 Source 7). A capture read with
+CPL_RULE_D_NOT_PRINTED=1 files a program whose title no line of the current PDF catalog prints with the gap "not
+printed in the <year> catalog" (sources/<cn>.json "gap"). Not printing it is half of prior_year_only, so such a
+program is listed under not_printed for this check, never flagged: a prior-year read (CAPTURE_PRIOR) that finds it
+flags it, and one that does not clears it. The list appears only when a capture is read.
+
 Writes kb/status/program_discontinued.json. kb/_harvest_gap_census.py reads it and lists each flagged
 program beside the gap, out of it. Writes no table: git revert undoes the flag.
 
@@ -160,6 +166,21 @@ def capture_flags(capture_dir: str) -> list[dict]:
     return out
 
 
+def capture_not_printed(capture_dir: str) -> list[dict]:
+    """The programs a runner capture filed with rule D's gap (not printed in the current catalog): candidates for
+    the prior-year read, never flags."""
+    out = []
+    for path in sorted(glob.glob(os.path.join(capture_dir, "sources", "*.json"))):
+        with open(path, encoding="utf-8") as fh:
+            d = json.load(fh) or {}
+        gap = d.get("gap")
+        if isinstance(gap, str) and gap.startswith("not printed in the "):
+            out.append({"college": d.get("college"), "control_number": str(d.get("control_number") or os.path.basename(path)[:-5]),
+                        "title": d.get("title"), "award": d.get("award"), "gap": gap,
+                        "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"})
+    return out
+
+
 def build(captures: list[str] = (), skip: tuple[str, ...] = (), base: str = COLLEGE_DIR) -> dict:
     flags, left_out = {}, 0
     for f in prior_year_flags(base) + [x for c in captures for x in capture_flags(c)]:
@@ -173,10 +194,15 @@ def build(captures: list[str] = (), skip: tuple[str, ...] = (), base: str = COLL
     for r in rows:
         by_college[r["college"]] = by_college.get(r["college"], 0) + 1
         by_how[r["how"]] = by_how.get(r["how"], 0) + 1
-    return {"rule": RULING, "held_colleges": list(COLLECTION_LANE) + [s for s in skip],
-            "left_out_held": left_out, "flagged": len(rows), "by_how": by_how, "by_college": by_college,
-            "page_text": "capture" if captures else "none committed: catalog_mark needs a runner capture (--capture)",
-            "flags": rows}
+    out = {"rule": RULING, "held_colleges": list(COLLECTION_LANE) + [s for s in skip],
+           "left_out_held": left_out, "flagged": len(rows), "by_how": by_how, "by_college": by_college,
+           "page_text": "capture" if captures else "none committed: catalog_mark needs a runner capture (--capture)",
+           "flags": rows}
+    if captures:
+        seen = set(flags)
+        out["not_printed"] = [r for c in captures for r in capture_not_printed(c)
+                              if not held(r.get("college"), skip) and (r["college"], r["control_number"]) not in seen]
+    return out
 
 
 def keys(path: str = OUT) -> dict:
