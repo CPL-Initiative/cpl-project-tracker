@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s685_cpl_memory_email_scrub.sql",
+ "name": "s685_cpl_memory_email_scrub",
+ "version": "20261119130028",
+ "sha256": "da6d33ccc1adc4d17a4c490abf514bb3b62f4e2fe87c90d8328110c8527696f4",
+ "run": "44528997886",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-issuer-tags-registered-empty-s684\",\"status\":\"proposed\",\"summary_chars\":345,\"still_holds_an_at_sign\":false,\"phrase_now\":\"Sam's own saves of 2026-11-18 (reviewed_by on 18 of 20 rows)\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
