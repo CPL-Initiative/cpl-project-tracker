@@ -1454,6 +1454,10 @@ jobs:
       # Pure-stdlib python.
       - name: Course outcomes read (outcomes as printed, slices, pages only)
         run: python3 tests/course_outcomes_read_test.py
+      # Mt. San Antonio's SLO pages (S683, #3533 ask 5): no full read before the
+      # self-recall count on hand-read filed pages passes. Pure-stdlib python.
+      - name: Mt. San Antonio SLO reader (self-recall gate)
+        run: python3 tests/mtsac_slo_read_test.py
       # The exhibit subject fill (S638; Sam, in session 2026-11-11): MIL7 fills
       # automotive from its course, a person's subject is never touched, undo
       # takes exactly the cohort back, a second run inserts nothing. Pure-stdlib python.

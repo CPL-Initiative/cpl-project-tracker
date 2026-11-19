@@ -447,9 +447,58 @@ def cccd_index(slug: str) -> dict:
     return {"url": cap["catalog_url"], "host": "cccd", "index": index}
 
 
+# Mt. San Antonio's SLO pages (S683; the Courses area's ask 5 on #3533): its CourseLeaf
+# catalog prints no SLOs (queue.json, S387), and the college's own SLO site prints a
+# course's outcomes at /slo/index.html?course=<SUBJ NUM>, listing 1,605 courses on /slo.
+# The page is addressed by code, so the index is built from the loaded records' codes.
+# No load has proved the page: a full read waits on the self-recall count below.
+MTSAC_SLO = "https://www.mtsac.edu/slo/index.html?course=%s"
+MTSAC_SLUG = "mt_san_antonio"
+MTSAC_RECALL = os.path.join(HERE, "course_outcomes", "mtsac_recall.json")
+# The share of hand-read filed pages whose parse must match by eye, on at least this many pages.
+MTSAC_RECALL_PAGES, MTSAC_RECALL_SHARE = 12, 0.9
+
+
+def mtsac_index(slug: str = MTSAC_SLUG) -> dict:
+    """Mt. San Antonio's course index: each code its loaded records name, its SLO page
+    as the one report. Filed under host mtsac (the first label of www.mtsac.edu names nothing)."""
+    index = {}
+    for code in index_mod.record_codes([slug])[slug]:
+        index[code] = [{"title": None, "course_id": None,
+                        "reports": [MTSAC_SLO % urllib.parse.quote(code)]}]
+    return {"url": "https://www.mtsac.edu/slo/", "host": "mtsac", "index": index}
+
+
+def mtsac_recall(path: str = MTSAC_RECALL, out_dir: str = OUT_DIR) -> dict:
+    """The self-recall count: each filed trial page a person read by eye, its outcomes
+    and objectives counted, against what parse_page reads from the same filed page.
+    The file names the trial and, per course code, {"slo": n, "objective": n, "by": who}."""
+    if not os.path.exists(path):
+        return {"pages": 0, "right": 0, "wrong": [], "ok": False, "why": "no hand-read pages filed yet"}
+    want = json.load(open(path))
+    folder = os.path.join(out_dir, "trial_%s" % want["trial"])
+    right, wrong = 0, []
+    for code, eye in sorted(want["pages"].items()):
+        stem = re.sub(r"[^A-Za-z0-9]+", "_", code)
+        got = parse_page(gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read(),
+                         open(os.path.join(folder, stem + ".txt")).read(), "other")
+        seen = {"slo": len(got.get("outcomes") or []), "objective": len(got.get("objectives") or [])}
+        if seen == {"slo": eye["slo"], "objective": eye["objective"]}:
+            right += 1
+        else:
+            wrong.append((code, {"slo": eye["slo"], "objective": eye["objective"]}, seen))
+    pages = len(want["pages"])
+    ok = pages >= MTSAC_RECALL_PAGES and right >= MTSAC_RECALL_SHARE * pages
+    return {"pages": pages, "right": right, "wrong": wrong, "ok": ok,
+            "why": None if ok else "%d of %d hand-read pages parse right; a full read needs %d%% of at least %d"
+            % (right, pages, int(MTSAC_RECALL_SHARE * 100), MTSAC_RECALL_PAGES)}
+
+
 def catalog_index(slug: str) -> dict:
     """The course index for a college whose catalog addresses each course page by its
-    code: eLumen, or the Coast district's outlines."""
+    code: eLumen, the Coast district's outlines, or Mt. San Antonio's SLO pages."""
+    if slug == MTSAC_SLUG:
+        return mtsac_index(slug)
     cap = json.load(open(os.path.join(HERE, "program_requirements_college", slug, "capture.json")))
     host = urllib.parse.urlparse(cap.get("catalog_url") or "").netloc
     return cccd_index(slug) if host == "catalog.cccd.edu" else elumen_index(slug)
@@ -659,6 +708,12 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     if a.reparse:
         return reparse(a.reparse)
+    if a.catalog == MTSAC_SLUG and not a.trial:
+        rc = mtsac_recall()
+        if not rc["ok"]:
+            raise SystemExit("mt_san_antonio: no full read before the self-recall count passes (%s). Run a trial, "
+                             "count its filed pages by eye into kb/course_outcomes/mtsac_recall.json, then "
+                             "python3 tests/mtsac_slo_read_test.py." % rc["why"])
     if a.catalog:
         index, a.slugs = catalog_index(a.catalog), a.catalog
     elif a.index:
