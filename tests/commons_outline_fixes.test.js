@@ -28,6 +28,9 @@ const FILES = {
   "kb/status/commons_data.json": JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8")),
   "kb/reference/industry_credential_skills.json": JSON.parse(fs.readFileSync("kb/reference/industry_credential_skills.json", "utf8"))
 };
+// The hunt with every still-taught course open: a fixture, so these checks hold whatever a person has answered since
+// (S693: Sam answered all 12 on 2026-11-20, which emptied the live to-do).
+FILES["kb/status/commons_data.json"].blocked_hunt = JSON.parse(fs.readFileSync("tests/fixtures/commons_hunt_open.json", "utf8"));
 const HUNT = FILES["kb/status/commons_data.json"].blocked_hunt;
 
 function load(files) {

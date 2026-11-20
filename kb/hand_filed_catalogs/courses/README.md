@@ -29,6 +29,8 @@ downloads the whole log (`gh run view <run> --log`) and parses it. On 2026-11-20
 from catalog.nocccd.edu, while the session sandbox got 202 with AWS WAF's check page. The runner was served no check
 and passed none.
 
+A course a person pasted by hand is filed apart, in `../handed_over/courses.json`, and wins over the row here.
+
 ## Who reads these files
 
 The M-ID description pipeline (the M-ID cards with no description) and the "no longer offered" catalog factor, which

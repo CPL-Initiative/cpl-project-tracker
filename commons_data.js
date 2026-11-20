@@ -1401,17 +1401,27 @@
   /* Sam's blocked-catalog hunt (S678, #3464 item 8: "Make sure those blocked catalogs and cors are on my cdc to do"; "To
      do should be on both cdc and commons"): the one to-do, from the same file the Commons' Waiting on a person list
      reads (kb/_blocked_catalogs.py). A college leaves it once its catalog or outlines are filed; none left, no block. */
+  /* A day written in words (Nov 20, 2026), as this page writes every date; "" when it is no day. */
+  function dayWords(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v || ""));
+    return m ? ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1] : String(v || "");
+  }
   function blockedTodo(M) {
     var b = M.blocked;
-    if (!b || !Array.isArray(b.colleges) || !b.open) return null;
+    /* A course a person answered is off the to-do and stays on this page (S693; the second read of pull request 3613 found the
+       page saying no college is on the list while 12 answered courses sat in the file). */
+    var answered = b && Array.isArray(b.colleges) ? b.colleges.filter(function (c) { return (c.answered || []).length; }) : [];
+    if (!b || !Array.isArray(b.colleges) || (!b.open && !answered.length)) return null;
     /* Sam, 2026-11-20 (his work order): blocked outlines are a priority only for the courses still taught, and those
        are named here. Once the hunt file lists its courses, a college is on the to-do only while it has one. */
     var listed = Array.isArray(b.courses);
     var open = b.colleges.filter(function (c) { return !c.filed && (!listed || c.hunted); });
-    var aside = listed ? b.colleges.filter(function (c) { return !c.hunted; }) : [];
+    var aside = listed ? b.colleges.filter(function (c) { return !c.hunted && !(c.answered || []).length; }) : [];
     var sec = el("section", { cls: "cdd-psec cdd-todo", id: "cdd-blocked", "aria-labelledby": "cdd-blocked-h", "data-todo": "blocked-catalogs" });
-    sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: "To do: " + (b.title || "Course Outline and Catalog Fixes Needed") }));
-    if (listed) {
+    sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: (b.open ? "To do: " : "") + (b.title || "Course Outline and Catalog Fixes Needed") }));
+    if (!b.open) {
+      sec.appendChild(el("p", { cls: "cdd-src", "data-todo-none": "", text: "No still-taught course waits on an outline from a person." }));
+    } else if (listed) {
       sec.appendChild(el("p", { cls: "cdd-src", text: fmt(b.still_taught_open) + (b.still_taught_open === 1 ? " course still taught at " : " courses still taught at ")
         + fmt(open.length) + (open.length === 1 ? " college needs its course outline. " : " colleges need their course outline. ")
         + "The outline reader cannot reach these colleges' outlines, so a person fetches each one. Blocked outlines for courses no longer taught are set aside." }));
@@ -1421,7 +1431,7 @@
         + " local courses in all; " + (b.still_taught_total != null ? fmt(b.still_taught_total) + " of them are still taught, and only those are hunted. " : "")
         + "Send the PDF to COBIx in your Grok Bot chat." }));
     }
-    sec.appendChild(teamFiles("Where a session files it", b.file_in || "kb/hand_filed_catalogs/outlines"));
+    if (b.open) sec.appendChild(teamFiles("Where a session files it", b.file_in || "kb/hand_filed_catalogs/outlines"));
     var ul = el("ul", { cls: "cdd-todo-list" });
     open.forEach(function (c) {
       /* Sam, 2026-11-20: an outline or catalog address here is a link that opens in a new tab. It is his exception to
@@ -1438,7 +1448,21 @@
       if (hw) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [hw]));
       ul.appendChild(el("li", { "data-todo-college": c.slug }, kids));
     });
-    sec.appendChild(ul);
+    if (open.length) sec.appendChild(ul);
+    if (answered.length) {
+      var nAns = answered.reduce(function (n, c) { return n + c.answered.length; }, 0);
+      sec.appendChild(el("p", { cls: "cdd-src", "data-todo-answered-h": "", text: "Answered by a person, and off the to-do: " + fmt(nAns) + (nAns === 1 ? " course at " : " courses at ")
+        + fmt(answered.length) + (answered.length === 1 ? " college. " : " colleges. ") + "Each course's outcomes are still missing until its outline is in hand." }));
+      sec.appendChild(el("ul", { cls: "cdd-todo-list", "data-todo-answered": "" }, answered.map(function (c) {
+        var kids = [el("strong", { text: c.college }), ".", el("ul", { cls: "cdd-todo-courses" }, c.answered.map(function (x) {
+          return el("li", { "data-todo-course": x.control_number || null }, [x.course + ", " + x.title + ": " + (x.what || "answered")
+            + ([x.by, x.on].filter(Boolean).length ? " (" + [x.by, dayWords(x.on)].filter(Boolean).join(", ") + ")" : "") + "."]);
+        }))];
+        var hw = handoverWord(M, c.college, "Hand over more for it");
+        if (hw) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [hw]));
+        return el("li", { "data-todo-college": c.slug }, kids);
+      })));
+    }
     if (aside.length) sec.appendChild(el("p", { cls: "cdd-src", "data-todo-aside": "", text: "No still-taught course waits at "
       + aside.map(function (c) { return c.college; }).join(aside.length === 2 ? " or " : ", ") + "." }));
     if (!listed) sec.appendChild(el("p", { cls: "cdd-src", text: "The course-by-course list, still-taught courses first: TBA until the hunt list is filed with the courses." }));
