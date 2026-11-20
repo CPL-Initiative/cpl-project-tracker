@@ -32,6 +32,12 @@ that UTC day), restarted the COBIx watcher, and wrote this split before any work
 2. **Merge rules:** at most 3 open PRs (plus #3511 and dependabot's), the oldest finished first
    (`d-oldest-finished-among-finished-s688`), one update from `main` right before its merge, no dependency-map rebuild
    inside a PR, no full rerun when the input fingerprints match. S689 held seven at 10:02Z: bring it back to three.
+2a. **Collection comes first (Sam, 2026-11-20, 2:24 AM PT, relayed by COBIx on #3584, comment 7037137301):** *"get all
+   the cows back in the pasture first and then we can tend to their needs."* Data waves go first; a fix goes ahead of
+   the next wave only if it blocks that wave or would file bad data (wrong rows reaching the live tables). Minor
+   findings and hunches, COBIx's included, go into one follow-up PR per night, after the waves, never a PR each.
+   Review rounds match what the change needs: a small fix that writes no shared data needs no second round
+   (`r-collection-first-sam-2026-11-20`; S689 held seven PRs open against a cap of three).
 3. **Merge order** (the oldest finished first, each on a green `test` after its thread is read): #3594 (merge verdict;
    `test` green on 6da4dc0c, updated from `main`) and #3598 (the display page file, 54cfd8ea) are finished; #3584 (this
    checkpoint) after the sign-off refresh; #3595 once Mt. San Antonio's load files; #3596, then #3597, once each MAJOR
@@ -102,10 +108,16 @@ Nov 19, relayed by COBIx on #3560) is unchanged. For his information only:
   originator names. The CCSF trial waits until it files outcomes only; whether the committed pages stay goes to a plain
   session with COBIx.
 
-## Decisions
+## Decisions Sam made
 
-No new ruling from Sam in his own words reached this run, so `sam_rulings.md` has no new row. The conductor's, all
-reversible: `d-issuer-tags-four-high-schools-s689`, `d-reader-pages-ship-after-two-rounds-s689`,
+- **Collection comes first** (Nov 20, 2:24 AM PT, relayed by COBIx on #3584, comment 7037137301): *"get all the cows
+  back in the pasture first and then we can tend to their needs."* Row `r-collection-first-sam-2026-11-20`
+  (verified, applied with `execute_sql` by 11:30Z); `sam_rulings.md`; the standing block, item 2a. The checkpoint at f0a2087a missed it: the
+  watcher surfaced the 10:24Z comment only at 10:50Z (search lag), after the documents were written.
+
+## Decisions (the session's)
+
+The conductor's, all reversible: `d-issuer-tags-four-high-schools-s689`, `d-reader-pages-ship-after-two-rounds-s689`,
 `d-ccsf-outline-trial-no-staff-names-s689`. Memory rows: `kb/migrations/2026-11-20_s689_cpl_memory_rows.sql` (15
 rows, `proposed`; rollback beside it), not pointed at by `.apply`; the conductor applies it.
 

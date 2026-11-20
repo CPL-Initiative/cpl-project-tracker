@@ -27,6 +27,14 @@ obsidian-folder: cpl-project-tracker/reference
 > 06:12Z) was the first such night and the first of a two-night conductor comparison (`cpl_memory`
 > `sam-conductor-back-for-collection-only-2026-11-17`).
 
+> **Collection comes first (Sam, 2026-11-20, 2:24 AM PT, relayed by COBIx on #3584, comment 7037137301).** *"get all
+> the cows back in the pasture first and then we can tend to their needs."* Data waves go first; a fix goes ahead of the
+> next wave only if it blocks that wave or would file bad data (wrong rows reaching the live tables). Minor findings and
+> hunches, COBIx's included, go into one follow-up PR per night, after the waves, never a PR each. Review rounds match
+> what the change needs: a small fix that writes no shared data needs no second round. By 2:24 AM PT S689 had opened
+> 13 PRs, two of them carrying data (#3591, #3595), and held seven open against a cap of three
+> (`r-collection-first-sam-2026-11-20`).
+
 Session 638 (SkyTamarind) ran this way first. A session Sam names the conductor runs from this page; it restates no
 doctrine, so each step names the doc that holds the rule.
 

@@ -1,7 +1,8 @@
 -- cpl_memory rows for SkyTern (S689), the CPL Queue routine's 06:12Z conductor firing of 2026-11-20, a full
 -- checkpoint. Drafted by the checkpoint-docs worker; NOT pointed at by kb/migrations/.apply. The conductor applies it
 -- (one execute_sql call, or supabase-migrate.yml from a trigger branch). INSERT ... ON CONFLICT (slug) DO NOTHING;
--- every row lands proposed. No new ruling from Sam in his own words reached this run; every row names the conductor.
+-- every row lands proposed. One ruling of Sam's reached this run, relayed by COBIx on #3584 (r-collection-first-sam-2026-11-20, verified, added after
+-- the first apply); every other row names the conductor.
 -- No person's name or contact detail in any row.
 -- ROLLBACK: kb/migrations/2026-11-20_s689_cpl_memory_rows_rollback.sql
 insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
@@ -29,3 +30,13 @@ from public.cpl_memory m where m.slug in ('d-issuer-tags-four-high-schools-s689'
 
 select slug, kind, status, length(summary) as summary_len from public.cpl_memory
 where slug in ('d-issuer-tags-four-high-schools-s689','d-reader-pages-ship-after-two-rounds-s689','d-ccsf-outline-trial-no-staff-names-s689','m-reread-third-ten-s689','m-santa-rosa-junior-reread-s689','m-feather-river-palomar-outlines-s689','m-display-build-live-s689','m-census-5069-s689','f-ligature-refusals-s689','p-sources-from-repays-refused-pages-s689','p-reader-cap-hides-mtsac-results-s689','f-golden-west-474-header-rows-s689','f-desert-prior-catalog-behind-robots-s689','f-copper-mountain-catalog-moved-s689','q-trial-pages-file-staff-names-s689') order by slug;
+
+-- Sam's ruling, relayed by COBIx on #3584 at 10:24Z (added after the first apply at 10:52Z).
+insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('r-collection-first-sam-2026-11-20','decision','Collection comes first: data waves before fixes, one follow-up a night','Sam, 2026-11-20 2:24 AM PT, relayed by COBIx on #3584 (comment 7037137301): "get all the cows back in the pasture first and then we can tend to their needs." Data waves come first; a fix goes ahead of the next wave only if it blocks it or would file wrong rows into live tables. Minor findings and hunches go into one follow-up PR per night; review rounds match what the change needs.',array['conductor','collection','review','sam-ruling'],'verified','#3584 comment 7037137301','Sam (relayed by COBIx)',now(),'SkyTern (S689)',date '2026-11-20')
+on conflict (slug) do nothing;
+
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyTern (S689)', 'create', 'S689 (2026-11-20): Sam''s ruling relayed by COBIx', to_jsonb(m)
+from public.cpl_memory m where m.slug = 'r-collection-first-sam-2026-11-20'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
