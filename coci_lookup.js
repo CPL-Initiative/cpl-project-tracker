@@ -319,7 +319,7 @@
     CLOSEST.loading = true;
     fetch("kb/coci_closest_mid.json", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error("kb/coci_closest_mid.json answered " + r.status); return r.json(); })
-      .then(function (F) { CLOSEST.f = { rows: F.rows || {}, levels: (F.measure && F.measure.levels) || [], at: F.identity_file || "" }; },
+      .then(function (F) { CLOSEST.f = { rows: F.rows || {}, levels: (F.measure && F.measure.levels) || [], links: F.links || {}, at: F.identity_file || "" }; },
         function (e) { CLOSEST.error = String(e && e.message || e); })
       .then(function () { CLOSEST.loading = false; LIST.memo = null; if (state.view === "courses" && CLOSEST.f) mountList(); });
   }
@@ -327,16 +327,30 @@
      catalog]] }, or null for a row outside the pile. Three levels in words, never a raw score, and a course with no
      strong match is offered a new M-ID (COBIx's note, relayed by Sam, 2026-11-20). A pile course with no candidate at
      all sits at the last level with no closest course. */
+  /* links: the exhibit links of the first recommendation (kb/coci_closest_mid.json's links: records in
+     kb/coci_articulations.json on that M-ID), counted at a strong or possible match only. A course with no strong match
+     counts none from its candidate: that candidate is right about one time in five, and the course needs a new M-ID. */
   function closestOf(row) {
     if (!CLOSEST.f || row.mid || row.cid || row.ccn || row.kept) return null;
     var e = CLOSEST.f.rows[row.ctrl], L = CLOSEST.f.levels, none = L[L.length - 1] || null;
-    if (!e || !e[2] || !e[2].length) return none ? { mid: "", level: none, top: [] } : null;
+    if (!e || !e[2] || !e[2].length) return none ? { mid: "", level: none, top: [], links: 0 } : null;
     var lv = L.filter(function (x) { return (x.bands || []).indexOf(e[1]) >= 0; })[0] || none;
-    return lv ? { mid: e[2][0][0], level: lv, top: e[2] } : null;
+    return lv ? { mid: e[2][0][0], level: lv, top: e[2], links: lv.key === "none" ? 0 : linksOf(e[2][0][0]) } : null;
+  }
+  function linksOf(mid) { return (CLOSEST.f && +CLOSEST.f.links[mid]) || 0; }
+  function linkWords(n) { return n ? fmt(n) + (n === 1 ? " exhibit link" : " exhibit links") : ""; }
+  /* The pile's order (COBIx, relayed by Sam, 2026-11-20: "sort the pile by how many exhibits each M-ID would unlock"):
+     the links of a strong or possible match, most first, a strong match before a possible one at the same count, then
+     the title; a course with no strong match after them all, by title (a null sorts last either way). */
+  function pileRank(r) {
+    var rec = r.rec;
+    if (!rec || rec.level.key === "none") return null;
+    return rec.links * 2 + (rec.level.key === "strong" ? 1 : 0);
   }
   function pct(x) { return x == null ? "" : Math.round(x * 100) + "%"; }
   function closestWords(rec) {
-    return rec.level.key === "none" ? "Propose a new M-ID" : rec.mid + ", " + (rec.level.key === "strong" ? "strong match" : "possible match");
+    return rec.level.key === "none" ? "Propose a new M-ID" : rec.mid + ", " + (rec.level.key === "strong" ? "strong match" : "possible match")
+      + (rec.links ? ", " + linkWords(rec.links) : "");
   }
   function closestCell(r, mk) {
     return r.rec ? [mk("span", { cls: "cplcoci-chip rec", title: "The closest common course and how sure the match is, measured on courses whose M-ID is known" },
@@ -452,8 +466,9 @@
       { h: "Transfer", w: 5, v: function (r) { return r.cid ? "Yes" : "No"; } },
       { h: "TOP", w: 9, v: function (r) { return r.top; } },
       { h: "Identities (M-ID, C-ID, CCN)", w: 14, v: function (r) { return r.ids; }, cell: idChips },
-      // Sorts by the level's measured share right, so the strong matches come first.
-      { h: "Closest M-ID", w: 9, n: true, suffix: "%", v: function (r) { return r.rec && r.rec.level.share != null ? Math.round(r.rec.level.share * 100) : null; }, cell: closestCell },
+      // Shows the level's measured share right (and downloads it); sorts by the exhibits the M-ID would unlock (pileRank).
+      { h: "Closest M-ID", w: 9, n: true, suffix: "%", v: function (r) { return r.rec && r.rec.level.share != null ? Math.round(r.rec.level.share * 100) : null; },
+        sortBy: pileRank, cell: closestCell },
       { h: "Control number", w: 7, v: function (r) { return r.ctrl; } }
     ]);
   }
@@ -1178,6 +1193,7 @@
       if (t[2]) why.push(fmt(t[2]) + " of its " + fmt(t[3]) + (t[3] === 1 ? " local course carries" : " local courses carry") + " this same title");
       else why.push("none of its " + fmt(t[3]) + (t[3] === 1 ? " local course" : " local courses") + " carries this same title");
       if (t[4] != null) why.push("catalog descriptions overlap " + pct(t[4]));
+      if (linksOf(t[0])) why.push(linkWords(linksOf(t[0])) + " point to it");
       return el("li", { "data-rec": t[0] }, [el("strong", null, [t[0]]), ": " + why.join("; ") + ". ", skyLink(t[0], "Open " + t[0] + " in SkyView")]);
     })));
     out.push(el("p", { "class": "cplcoci-meta" }, ["A recommendation saves nothing. Assigning a course or proposing a new M-ID from this panel is being built; today a course joins a common course in SkyView."]));
@@ -1328,6 +1344,9 @@
         file: "coci-courses-list", placeholder: "Find by title, college, code or M-ID",
         findLabel: "Find in the list" },
       state: listState, rows: function () { return listBuild().rows; }, cols: listCols,
+      // The Needs an M-ID pile opens on the exhibits each closest M-ID would unlock, most first (pileRank); a header
+      // press is the person's own sort for the visit. The figure stays plain text: no COBI view lists an M-ID's exhibits.
+      sortFor: function (L) { return L.f === "nomid" ? [{ col: listCols().map(function (c) { return c.h; }).indexOf("Closest M-ID"), dir: -1 }] : null; },
       key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: mountList,
       head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, hayFolded: true, findWords: true,
       fixedRows: true, findDelay: 160, drawer: listDrawer,

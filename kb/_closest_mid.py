@@ -26,13 +26,28 @@ the others, so any recommendation for it counts wrong: that is the pile's real c
 M-ID. The confidence filed beside a recommendation is the share right in its score band, and the bands are filed
 with their counts so a reader can check them.
 
+THE EXHIBIT LINKS (COBIx, relayed by Sam, 2026-11-20: "sort the pile by how many exhibits each M-ID would unlock, so
+Group Communication, with 67 links, comes first"). A link is one record in kb/coci_articulations.json's articulations
+whose course_id is the M-ID. The file writes `links`, the count for each M-ID a row recommends; the Courses List sorts
+the pile by the links of each row's first recommendation. The file's ids pass through kb/alias_chain.py before they
+are counted (CLAUDE.md Rule 7). It carries its applied re-key markers and is re-keyed at every apply, so the newest map
+is its baseline: no map is pending and no id moves (kb/_build_inactive_cards.py measured what resolving it again does:
+1,291 of 2,144 M-ID links moved onto unrelated cards). The builder refuses a file without the markers.
+
+THE DAILY RUN (scripts/daily_build.sh, after the course flags). The file stores a fingerprint of what it read: the
+identity file without its generated_at, the course list and its descriptions, the not-applicable flags, the exhibit
+links, the alias chain and this script. With --if-changed a run whose fingerprint matches the file's leaves the file
+untouched. The sample is seeded, so a run on the same inputs writes the same bytes.
+
 Usage: python3 kb/_closest_mid.py            (writes kb/coci_closest_mid.json and prints the bands)
+       python3 kb/_closest_mid.py --if-changed   (the daily run: nothing happens when no input changed)
        python3 kb/_closest_mid.py --sample 6000 --seed 20261120
 """
 from __future__ import annotations
 
 import argparse
 import glob
+import hashlib
 import json
 import math
 import os
@@ -49,6 +64,8 @@ ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5", "vi": "6"}
 W = {"title": 0.50, "exact": 0.22, "subject": 0.12, "units": 0.06, "catalog": 0.10}
 BANDS = [0.0, 0.35, 0.45, 0.55, 0.65, 0.75, 0.85, 1.01]
 KEEP = 3
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import alias_chain  # noqa: E402  (CLAUDE.md Rule 7: imported, never copied)
 
 
 def load_js(path: str, var: str):
@@ -174,6 +191,55 @@ class Index:
         return top[:KEEP]
 
 
+def input_paths(root: str) -> list[str]:
+    """What the build reads, repo-relative, in a fixed order: the fingerprint covers exactly these."""
+    descs = sorted(os.path.relpath(f, root).replace(os.sep, "/") for f in glob.glob(os.path.join(root, "coci_lookup_desc_*.js")))
+    return (["unified_courses_members.js", "coci_lookup_data.js"] + descs
+            + ["kb/coci_not_applicable.json", "kb/coci_articulations.json", "kb/alias_chain.py", "kb/_closest_mid.py"])
+
+
+GENERATED_AT = re.compile(rb'"generated_at"\s*:\s*"[^"]*"')
+
+
+def fingerprint(root: str, sample: int, seed: int) -> str:
+    """sha256 over the inputs' bytes and the run's settings. The identity file's generated_at is left out: the daily
+    pipeline restamps it every run, and a restamp alone changes no recommendation."""
+    h = hashlib.sha256(("sample=%d seed=%d\n" % (sample, seed)).encode())
+    for rel in input_paths(root):
+        with open(os.path.join(root, rel), "rb") as f:
+            b = f.read()
+        if rel == "unified_courses_members.js":
+            b = GENERATED_AT.sub(b'"generated_at":""', b, count=1)
+        h.update(rel.encode() + b"\0" + hashlib.sha256(b).hexdigest().encode() + b"\n")
+    return h.hexdigest()
+
+
+def link_maps(articulations: dict) -> list:
+    """The alias maps still pending for kb/coci_articulations.json's ids: none, by its applied markers (the file is
+    current-era). A file without them may be from an older era, so the build stops rather than guess."""
+    from _build_remint_blast_radius import APPLIED_MARKERS
+    missing = [k for k in APPLIED_MARKERS if not (articulations or {}).get(k)]
+    if missing:
+        raise SystemExit("ABORT: kb/coci_articulations.json lacks applied markers %s; its ids may be from an older era. "
+                         "Re-key it (kb/_remint_apply_articulations.py) before building." % ", ".join(missing))
+    pending, _ = alias_chain.pending_maps(None, baseline_through=alias_chain.ALIAS_MAPS[-1])
+    return alias_chain.load_maps(pending)
+
+
+def exhibit_links(articulations: dict, maps: list) -> tuple[Counter, int]:
+    """Links per identity: one per articulation record, on its course_id resolved through the alias chain. Returns the
+    counts and how many records the chain moved."""
+    n, moved = Counter(), 0
+    for a in (articulations or {}).get("articulations") or []:
+        cid = (a or {}).get("course_id")
+        if not cid:
+            continue
+        cur = alias_chain.resolve_id(cid, maps)
+        moved += cur != cid
+        n[cur] += 1
+    return n, moved
+
+
 def band_of(score: float) -> int:
     for i in range(len(BANDS) - 1):
         if BANDS[i] <= score < BANDS[i + 1]:
@@ -185,13 +251,30 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--sample", type=int, default=6000)
     ap.add_argument("--seed", type=int, default=20261120)
-    ap.add_argument("--out", default=OUT)
+    ap.add_argument("--out", default=None, help="default kb/coci_closest_mid.json")
+    ap.add_argument("--root", default=ROOT, help=argparse.SUPPRESS)  # a test's fixture tree
+    ap.add_argument("--if-changed", action="store_true", help="leave the file untouched when no input changed")
     a = ap.parse_args(argv)
+    root = a.root
+    a.out = a.out or os.path.join(root, "kb", "coci_closest_mid.json")
+    fp = fingerprint(root, a.sample, a.seed)
+    if a.if_changed and os.path.exists(a.out):
+        try:
+            with open(a.out, encoding="utf-8") as f:
+                was = json.load(f).get("fingerprint")
+        except (OSError, ValueError):
+            was = None
+        if was == fp:
+            print("inputs unchanged (fingerprint %s); %s left as built" % (fp[:12], os.path.relpath(a.out, root)))
+            return 0
 
-    L = load_js(os.path.join(ROOT, "coci_lookup_data.js"), "window.CPL_COCI_LOOKUP")
-    M = load_js(os.path.join(ROOT, "unified_courses_members.js"), "window.CPL_UC_MEMBERS")
+    L = load_js(os.path.join(root, "coci_lookup_data.js"), "window.CPL_COCI_LOOKUP")
+    M = load_js(os.path.join(root, "unified_courses_members.js"), "window.CPL_UC_MEMBERS")
+    with open(os.path.join(root, "kb", "coci_articulations.json"), encoding="utf-8") as f:
+        arts = json.load(f)
+    links_all, links_moved = exhibit_links(arts, link_maps(arts))
     descs = {}
-    for f in sorted(glob.glob(os.path.join(ROOT, "coci_lookup_desc_*.js"))):
+    for f in sorted(glob.glob(os.path.join(root, "coci_lookup_desc_*.js"))):
         s = open(f, encoding="utf-8").read()
         descs.update(json.loads(s[s.index("=", s.index('window.CPL_COCI_DESC["')) + 1:].strip().rstrip(";")))
     members = M["members"]
@@ -240,7 +323,7 @@ def main(argv=None) -> int:
     # The pile.
     # The pile is the Courses List's Needs an M-ID: no M-ID, no C-ID, no CCN, and not kept out of the counts
     # (kb/coci_not_applicable.json: independent study, internships, a bare number; Sam, 2026-11-17).
-    na = json.load(open(os.path.join(ROOT, "kb", "coci_not_applicable.json"), encoding="utf-8")).get("courses") or {}
+    na = json.load(open(os.path.join(root, "kb", "coci_not_applicable.json"), encoding="utf-8")).get("courses") or {}
     pile = [c for c in courses if c["ctrl"] not in by_cn and not c["cid"] and not c["ccn"] and (c["college"] + "|" + c["ctrl"]) not in na]
     rows = {}
     for c in pile:
@@ -252,22 +335,34 @@ def main(argv=None) -> int:
         # title, the common course's local courses, catalog overlap or null], ...]].
         rows[c["ctrl"]] = [b["confidence"], band_of(top[0]["score"]),
                            [[x["mid"], round(x["score"], 2), x["same"], x["n"], None if x["catalog"] is None else round(x["catalog"], 2)] for x in top]]
+    named = sorted({x[0] for r in rows.values() for x in r[2]})
+    links = {m: links_all[m] for m in named if links_all.get(m)}
     for lv in levels:  # a pile course with no candidate at all sits at the last level
         lv["pile"] = sum(1 for r in rows.values() if r[1] in lv["bands"]) + (len(pile) - len(rows) if lv["key"] == "none" else 0)
     out = {
-        "_what": "The closest common course (M-ID) for each local course that needs one, with a measured confidence. Built by kb/_closest_mid.py from committed files; display only. A person curates from the course's panel.",
+        "_what": "The closest common course (M-ID) for each local course that needs one, with a measured confidence, and the exhibit links each recommended M-ID carries (links). Built by kb/_closest_mid.py from committed files, daily when an input changed (fingerprint); display only. A person curates from the course's panel.",
         "identity_file": M.get("generated_at"), "course_list": L.get("_built_at"),
         "weights": W, "seed": a.seed,
         "measure": {"sampled": len(sample), "no_candidate": none, "bands": bands, "levels": levels,
                     "how": "Each sampled course is taken out of its own common course, then ranked. Right means the first recommendation is its own M-ID. A course that was its common course's only local course counts wrong whatever is recommended (only_course)."},
         "pile": len(pile), "recommended": len(rows),
-        "row_shape": "control number: [confidence, band, [[M-ID, score, courses with the same title, the common course's local courses, catalog overlap or null], up to three]]",
+        "row_shape": "control number: [confidence, band, [[M-ID, score, courses with the same title, the common course's local courses, catalog overlap or null], up to three]]; links: M-ID: exhibit links",
         "rows": rows,
+        "links_what": "Exhibit links per recommended M-ID: the records in kb/coci_articulations.json whose course_id, "
+                      "resolved through kb/alias_chain.py, is the M-ID. Only M-IDs some row recommends, and only those "
+                      "with a link; an M-ID absent here has none. The Courses List sorts the pile by the links of each "
+                      "row's first recommendation at a strong or possible match.",
+        "links_moved_by_alias_chain": links_moved,
+        "links_on_ids_not_in_identity_file": sum(n for m, n in links_all.items() if m not in members),
+        "links": links,
+        "fingerprint": fp,
     }
     with open(a.out, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
         f.write("\n")
     print("pile %d, recommended %d; sample %d (no candidate %d)" % (len(pile), len(rows), len(sample), none))
+    print("  exhibit links: %d recommended M-IDs carry one; the alias chain moved %d records; %d records name an id "
+          "today's identity file does not hold" % (len(links), links_moved, sum(n for m, n in links_all.items() if m not in members)))
     for b in bands:
         print("  score %.2f to %.2f: n %5d  right %5d  in top 3 %5d  only course %4d  confidence %s"
               % (b["from"], b["to"], b["n"], b["right"], b["right_in_3"], b["only_course"], b["confidence"]))
