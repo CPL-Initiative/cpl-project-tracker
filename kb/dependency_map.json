@@ -4,7 +4,7 @@
   "supabase_tables": 118,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1084,
+  "file_datasets": 1085,
   "external_services": 195,
   "consumers": 634,
   "workflows": 75,
@@ -4127,6 +4127,13 @@
       "map-queue",
       "map-users"
      ]
+    },
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 462
     }
    ],
    "main_committers": []
@@ -14947,7 +14954,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 657
+     "line": 711
     }
    ],
    "served": false,
@@ -27853,6 +27860,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/mtsac_slo_read_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/next_slo_colleges_test.py": {
    "consumers": [
     {
@@ -36832,6 +36852,7 @@
     "tests/course_outline_registry_fill_test.py",
     "tests/course_outline_index_test.py",
     "tests/course_outcomes_read_test.py",
+    "tests/mtsac_slo_read_test.py",
     "tests/exhibit_subject_fill_test.py",
     "tests/course_outcomes_load_test.py",
     "tests/course_outcomes_objectives_standing_test.py",

@@ -1286,6 +1286,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/model_run_gates_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mojibake_repair_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mq_title5_rename_test.py` | workflows: `js-tests.yml` | — |
+| `tests/mtsac_slo_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/next_slo_colleges_test.py` | workflows: `js-tests.yml` | — |
 | `tests/occupation_matcher_stemming_test.py` | workflows: `js-tests.yml` | — |
 | `tests/orphan_parent_worklist_test.py` | workflows: `js-tests.yml` | — |
@@ -1568,7 +1569,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.mccd.edu` | tabs: `map-queue`, `map-users` |
 | `www.mendocino.edu` | tabs: `map-queue`, `map-users` |
 | `www.miracosta.edu` | tabs: `map-queue`, `map-users` |
-| `www.mtsac.edu` | tabs: `map-queue`, `map-users` |
+| `www.mtsac.edu` | tabs: `map-queue`, `map-users` · scripts: `kb/_course_outcomes_read.py` |
 | `www.nafri.gov` | scripts: `kb/fire_electrical_external_credentials.py` |
 | `www.napavalley.edu` | tabs: `map-queue`, `map-users` |
 | `www.nccer.org` | scripts: `kb/fire_electrical_external_credentials.py` |
@@ -1631,5 +1632,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1084 file
+Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1085 file
 datasets · 195 external services · 634 consumers · 75 workflows · 41 tabs.
