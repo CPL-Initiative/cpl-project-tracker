@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 76,
  "with_closed_list": 76,
- "started": "2026-10-17T05:28:38Z",
+ "started": "2026-11-20T06:32:05Z",
  "pdf": {
   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
   "access": "ok",
@@ -13,102 +13,1030 @@
   "bytes": 5360849,
   "pages_total": 206,
   "error": null,
-  "chars_total": 737951,
-  "pypdf_accepted": 71,
+  "chars_total": 737592,
+  "pypdf_accepted": 76,
   "sample": [
    "p62: ' \\nHumanities Cluster \\n \\nAssociate of Arts Degree for Transfer, English \\nThe Associate in Arts in English for Transfer Degree AA-T helps prepare students for transfer to a 4 -\\nyear institution by developing strong writing and revisioning ski'",
    "p124: ' \\n  Total Hours Required 216.0 \\n \\nCertificate of Competency, High Intermediate English as a Second \\nLanguage (ESL) \\nThis Certificate of Competency focuses on refining fundamental language and communication skills in \\nEnglish. Program emphas'"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "picks": [
+   {
+    "control_number": "04736",
+    "pages": [
+     89,
+     90
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] Associate of Science Degree, Diesel Technology Upon completion of the Diesel Technology program, students will be prepared for employment in diesel service and repair management services. The student will be "
+   },
+   {
+    "control_number": "04750",
+    "pages": [
+     85,
+     86,
+     87
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Certificate of Achievement, Child Development Level II – Teacher Permit The Level II certificate fulfills the educational and practical requirements for students interested in working with children from infa"
+   },
+   {
+    "control_number": "09688",
+    "pages": [
+     87
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] Certificate of Achievement, Family Daycare This certificate meets the training needs of family day care providers, individuals who are licensed to care for children in their homes. The following course of stu"
+   },
+   {
+    "control_number": "17763",
+    "pages": [
+     77
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Certificate of Achievement, Management Information Systems This certificate program will prepare students to acquire basic knowledge in developing skills needed to analyze and solve business problems using th"
+   },
+   {
+    "control_number": "18206",
+    "pages": [
+     89
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] Certificate of Achievement, Automotive Technology Upon completion of the Automotive Technology Certificate, the students will have acquired entry-level knowledge and understanding of the tools, techniques, an"
+   },
+   {
+    "control_number": "18482",
+    "pages": [
+     71,
+     72,
+     73,
+     74
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Associate of Science Degree, Accounting This degree prepares students for entry-level positions in industry and service occupations, such as payroll, accounts receivable, accounts payable, and management. "
+   },
+   {
+    "control_number": "18483",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] Associate of Science Degree for Transfer, Administration of Justice Designed for those who wish to enter the law enforcement field and related employment or to provide in-service training for employed office"
+   },
+   {
+    "control_number": "18487",
+    "pages": [
+     88,
+     89
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] Associate of Science Degree, Automotive Technology Upon completion of the Automotive Technology program, the students will have acquired entry-level knowledge and understanding of the tools, techniques, and p"
+   },
+   {
+    "control_number": "18488",
+    "pages": [
+     71,
+     72,
+     73,
+     74
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] BADM 6 Business Communications 3.0 Subtotal 3.0 Major Units Required 26.0 Cal-GETC General Education Coursework 34.0 Transferable Electives Required 6.0 Total Units Required 60.0 Associ"
+   },
+   {
+    "control_number": "18489",
+    "pages": [
+     79,
+     80,
+     81
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Associate of Science Degree for Transfer, Early Childhood Education The AS-T in Early Childhood Education is designed to provide a clear pathway to a CSU major and baccalaureate degree. California Community C"
+   },
+   {
+    "control_number": "18490",
+    "pages": [
+     91
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] Certificate of Achievement, Cosmetology This certificate is designed to exceed minimum Board of Cosmetology standards. A combination of lecture and laboratory instruction includes personal hygiene and groomin"
+   },
+   {
+    "control_number": "18491",
+    "pages": [
+     90,
+     91
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] Associate of Science Degree, Cosmetology This program prepares students for careers in the cosmetology industry through instruction in the theory and practical application of hair, skin, and nail care. Studen"
+   },
+   {
+    "control_number": "18494",
+    "pages": [
+     74
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] Certificate of Achievement, Management This certificate prepares students with entry-level positions in industry and service occupations, such as payroll, accounts receivable, accounts payable, and management"
+   },
+   {
+    "control_number": "18500",
+    "pages": [
+     96,
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] Welding Cluster Associate of Science Degree, Welding Technology This course of study prepares students for entry-level positions in industry and service occupations requiring skills in Welding Technology. "
+   },
+   {
+    "control_number": "18501",
+    "pages": [
+     96,
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] Associate of Science Degree, Welding Technology This course of study prepares students for entry-level positions in industry and service occupations requiring skills in Welding Technology. Program Learning"
+   },
+   {
+    "control_number": "18503",
+    "pages": [
+     64,
+     65,
+     66,
+     67
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] PHIL 8 Modern Philosophy 3.0 Subtotal 3.0 List B: Choose two from the following or any course not previously used from List A HIST 1A Survey of Western Civilization I: The Ancient Near East to 1648 3.0 HIS"
+   },
+   {
+    "control_number": "18588",
+    "pages": [
+     111,
+     112,
+     113
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] Certificate of Achievement, Administration of Justice The certificate was designed to enhance student success, leadership development, and career/workforce opportunities, enabling all in the community to thr"
+   },
+   {
+    "control_number": "18589",
+    "pages": [
+     73,
+     74
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] Certificate of Achievement, Accounting This certificate prepares students for entry-level positions in industry and service occupations, such as payroll, accounts receivable, accounts payable, and management."
+   },
+   {
+    "control_number": "19967",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] Certificate of Achievement, Diesel Technology Upon completion of the Diesel Technology program, students will be prepared for employment in diesel service and repair management services. The student will be p"
+   },
+   {
+    "control_number": "30562",
+    "pages": [
+     75,
+     76,
+     77
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Certificate of Achievement, Warehousing and Logistics, Level 2 The Certificate of Achievement in Warehousing and Logistics is designed for people working in the fields of logistics and/or operations managemen"
+   },
+   {
+    "control_number": "30733",
+    "pages": [
+     72,
+     73,
+     74,
+     75
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 72] Associate of Science Degree, Warehousing and Logistics The Associate of Science Degree in Warehousing and Logistics is designed for people working in the fields of logistics and/or operations management with "
+   },
+   {
+    "control_number": "31034",
+    "pages": [
+     107,
+     108,
+     109,
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] Associate of Arts Degree for Transfer, Sociology Sociology is the study of human social behavior, groups and how environments influence behavior. Sociologists focus on the origins, organizations, institution"
+   },
+   {
+    "control_number": "31051",
+    "pages": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 106] Associate of Arts Degree for Transfer, Psychology Psychology is a diverse field of academic study and practical application which explores human behaviors and mental processes including an individual’s menta"
+   },
+   {
+    "control_number": "33065",
+    "pages": [
+     79,
+     80,
+     81
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Associate of Science Degree for Transfer, Early Childhood Education The AS-T in Early Childhood Education is designed to provide a clear pathway to a CSU major and baccalaureate degree. California Community C"
+   },
+   {
+    "control_number": "33066",
+    "pages": [
+     105,
+     106,
+     107,
+     108
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] Associate of Arts Degree for Transfer, Political Science The Associates in Arts in Political Science for Transfer (AA-T) helps students learn about the operation of political authority at the local, nation"
+   },
+   {
+    "control_number": "33067",
+    "pages": [
+     103,
+     104,
+     105,
+     106
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 103] ETHN 1 Introduction to Ethnic Studies 3.0 ETHN 5 Introduction to the Latinx Experience 3.0 ETHN 6 Introduction to African American Studies 3.0 GEOG 3 World Regional Geography 3.0 HIST 1A Survey of Wes"
+   },
+   {
+    "control_number": "33070",
+    "pages": [
+     60,
+     61
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 60] Associate of Arts Degree for Transfer, Art History This program offers academic and career preparation that provides students with the skills and knowledge needed to transfer to a four -year college or to est"
+   },
+   {
+    "control_number": "33071",
+    "pages": [
+     70,
+     71,
+     72,
+     73
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Associate of Science Degree for Transfer, Business Administration 2.0 The Associate of Science in Business Administration 2.0 for Transfer degree is intended for students who plan to complete a bachelor's de"
+   },
+   {
+    "control_number": "33076",
+    "pages": [
+     109,
+     110,
+     111,
+     112
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 109] SOCI 10 Introduction to Criminology 3.0 Area 4: Quantitative Reasoning and Research Methods STAT C1000 Introduction to Statistics 4.0 SOCI 12 Research in Social Sciences 3.0 Subtotal 9.0-10.0 Major U"
+   },
+   {
+    "control_number": "33083",
+    "pages": [
+     62,
+     63
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 62] Associate of Arts Degree for Transfer, English The Associate in Arts in English for Transfer Degree AA-T helps prepare students for transfer to a 4 - year institution by developing strong writing and revisioni"
+   },
+   {
+    "control_number": "35346",
+    "pages": [
+     93,
+     94
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Certificate of Achievement, Industrial Maintenance Electrical and Instrumentation, Level 3 This certificate prepares students for entry level positions in industry and service occupations requiring skills in"
+   },
+   {
+    "control_number": "35710",
+    "pages": [
+     86,
+     87
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Certificate of Achievement, Child Development Level III – Master Teacher Permit The Level III certificate is considered a stackable certificate that follows Level II. This certificate aligns with California "
+   },
+   {
+    "control_number": "35769",
+    "pages": [
+     86,
+     87
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Certificate of Achievement, Child Development Level III – Master Teacher Permit The Level III certificate is considered a stackable certificate that follows Level II. This certificate aligns with Californi"
+   },
+   {
+    "control_number": "39136",
+    "pages": [
+     111,
+     112,
+     113
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 111] Certificate of Achievement, Administration of Justice The certificate was designed to enhance student success, leadership development, and career/workforce opportunities, enabling all in the community to thr"
+   },
+   {
+    "control_number": "39150",
+    "pages": [
+     76,
+     77
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 76] foundation for those students who plan to complete a four-year program in computer business information systems or related fields of study. The program also provides skills to upgrade current skills to assume"
+   },
+   {
+    "control_number": "39360",
+    "pages": [
+     118,
+     119,
+     120
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 118] Associate of Science Degree for Transfer, Computer Science Computer science is the study of the theory and methods of processing information in digital computers, the design of computer software and hardware"
+   },
+   {
+    "control_number": "39436",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] Associate of Arts Degree for Transfer, Kinesiology The Associate in Arts in Kinesiology for Transfer (AA-T), also called the Kinesiology AA-T Degree, prepares students to transfer to CSU campuses that offer "
+   },
+   {
+    "control_number": "39522",
+    "pages": [
+     77,
+     78,
+     79,
+     80
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.867,
+    "opens": "[page 77] Associate of Arts Degree for Transfer, Elementary Teacher Education: Integrated Programs The Associate in Arts for Transfer Degree in Elementary Teacher Education: Integrated Programs offers students a bread"
+   },
+   {
+    "control_number": "39588",
+    "pages": [
+     63,
+     64,
+     65,
+     66
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 63] Associate of Arts Degree for Transfer, Philosophy The Associate in Arts in Philosophy degree for Transfer (AA-T) prepares the student to transfer to the CSUs as a junior to further their studies of Philosophy"
+   },
+   {
+    "control_number": "39655",
+    "pages": [
+     75,
+     76,
+     77
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] • Develop strategic understanding of logistics and supply chain management and be able to take into account the relationships between this discipline and other areas of business to make holistic judgements wh"
+   },
+   {
+    "control_number": "39670",
+    "pages": [
+     66,
+     67
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 66] Associate of Arts Degree for Transfer, Studio Arts This program offers academic and career preparation that provides students with the skills and knowledge needed to transfer to a four-year college or to esta"
+   },
+   {
+    "control_number": "39719",
+    "pages": [
+     92,
+     93,
+     94,
+     95
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] Associate of Science Degree, Industrial Maintenance Mechanic Technology This course of study prepares students for entry level positions in industry and service occupations requiring skills in Industrial Mai"
+   },
+   {
+    "control_number": "39906",
+    "pages": [
+     73,
+     74,
+     75,
+     76
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 73] • Demonstrate critical thinking skills, making the intellectual connection between quantitative and qualitative tools, theories and context to properly and effectively solve problems and make decisions, as we"
+   },
+   {
+    "control_number": "40021",
+    "pages": [
+     114,
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 114] Associate of Science Degree for Transfer, Biology The Associate of Science in Biology for Transfer prepares students to think like scientists, using concept-based knowledge in biology. The biology professors"
+   },
+   {
+    "control_number": "40065",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Certificate of Achievement, Industrial Maintenance Electrical and Instrumentation, Level 3 This certificate prepares students for entry level positions in industry and service occupations requiring skills in"
+   },
+   {
+    "control_number": "40088",
+    "pages": [
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] Certificate of Achievement, Welding Technology-Gas Tungsten Arc Welding (GTAW) This course of study advances student’s opportunities for entry level positions in industry and service occupations requiring We"
+   },
+   {
+    "control_number": "40097",
+    "pages": [
+     120
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] Associate of Science Degree for Transfer, Chemistry The Associate in Science in Chemistry for Transfer Degree prepares students to think like scientists, using concept-based knowledge in chemistry. Stud"
+   },
+   {
+    "control_number": "40101",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Certificate of Achievement, Welding Technology- Semi-Automatic Arc Welding (GMAW/FCAW) This course of study advances student’s opportunities for entry level positions in industry and service occupations requ"
+   },
+   {
+    "control_number": "40102",
+    "pages": [
+     97,
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] Required Core Courses WELD 50A Introduction to Welding 3.0 WELD 51 Shielded Metal Arc Welding and Cutting 3.0 WELD 52 Position Welding (Arc Welding) 3.0 WELD 56 Blueprint Reading (Metal Trades) 3.0 Subtota"
+   },
+   {
+    "control_number": "40103",
+    "pages": [
+     98,
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] • Demonstrate knowledge about the required materials of the trade and can operate equipment in a safe manner. • Demonstrate skills necessary to receive industry recognized certification in the Shielded Metal Ar"
+   },
+   {
+    "control_number": "40633",
+    "pages": [
+     119,
+     120
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 119] Associate of Science Degree for Transfer, Mathematics The Associate in Science in Mathematics for Transfer will allow students to seamlessly transfer to a CSU campus by providing the necessary breadth in the"
+   },
+   {
+    "control_number": "40827",
+    "pages": [
+     121,
+     122
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] Certificate of Completion, Customer Service and Digital Literacy The Customer Service and Digital Literacy Certificate of Completion is designed to prepare students for the employment market at the entry-lev"
+   },
+   {
+    "control_number": "40830",
+    "pages": [
+     122
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 122] Certificate of Completion, Trades Technician This certificate is designed to give the Trades Technician student the fundamental technical skills and knowledge required for entry-level employment. Covered in "
+   },
+   {
+    "control_number": "41033",
+    "pages": [
+     117,
+     118
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] KINA 17A Beginning Basketball 0.5 - 1.0 KINA 18A Beginning Softball 0.5 - 1.0 Subtotal 1.0 List A: Choose any 2 courses from the following CHEM 2A General Chemistry I 5.0 KINL 23 First Aid and Safety 3.0"
+   },
+   {
+    "control_number": "41079",
+    "pages": [
+     113
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] Certificate of Achievement, Emergency Medical Technician This program of study will qualify students for National Registry of EMT's Testing/Certification which is required by the State of California and the "
+   },
+   {
+    "control_number": "41081",
+    "pages": [
+     121,
+     122
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] Non-Credit Certificates Certificate of Completion, Basic Skills Education Program This program is for students to improve their study of mathematics, reading, and vocabulary skills. Students will learn "
+   },
+   {
+    "control_number": "41251",
+    "pages": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.868,
+    "opens": "[page 99] Associate of Arts Degree, Liberal Arts The Associate degree in Liberal Arts is designed for students who wish to have a broad knowledge of the liberal arts and sciences plus additional coursework in an Area"
+   },
+   {
+    "control_number": "41261",
+    "pages": [
+     112,
+     113
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] Associate of Science Degree, Pre-Allied Health Sciences The Associate of Science Degree in Pre-Allied Health Sciences is a single degree pathway for students pursuing a Bachelor's degree in nursing, nutritio"
+   },
+   {
+    "control_number": "41556",
+    "pages": [
+     70,
+     71,
+     72,
+     73
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 70] Associate of Science Degree for Transfer, Business Administration 2.0 The Associate of Science in Business Administration 2.0 for Transfer degree is intended for students who plan to complete a bachelor's de"
+   },
+   {
+    "control_number": "42255",
+    "pages": [
+     121
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] Certificate of Completion, Basic Skills Education Program This program is for students to improve their study of mathematics, reading, and vocabulary skills. Students will learn mathematics skills includin"
+   },
+   {
+    "control_number": "42759",
+    "pages": [
+     67,
+     68,
+     69
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] Associate of Arts Degree for Transfer, Theatre Arts The Associate in Arts for Transfer Degree, Theatre Arts (ADT) focuses on the solid foundation of fundamental skills learned through a variety of performance"
+   },
+   {
+    "control_number": "43165",
+    "pages": [
+     61,
+     62
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] Associate of Arts Degree for Transfer, Communication Studies 2.0 The Associates in Arts in Communication Studies for Transfer 2.0 focuses on concepts such as public communication, argument, rhetoric, and theo"
+   },
+   {
+    "control_number": "43495",
+    "pages": [
+     123
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] Certificate of Competency, Beginning English as a Second Language (ESL) This Certificate of Competency focuses on building the foundations of literacy in English for speakers of other languages. This Certif"
+   },
+   {
+    "control_number": "43650",
+    "pages": [
+     69
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 69] Certificate of Achievement, Technical Theatre A Certificate of Achievement in Technical Theatre is recommended for those considering a professional career in the entertainment industry or theatre. A certifica"
+   },
+   {
+    "control_number": "44290",
+    "pages": [
+     123,
+     124
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] Certificate of Competency, Intermediate English as a Second Language (ESL) The Certificate of Competency focuses on the development of fundamental language and communication skills in English. Program empha"
+   },
+   {
+    "control_number": "44292",
+    "pages": [
+     124
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] Certificate of Competency, High Intermediate English as a Second Language (ESL) This Certificate of Competency focuses on refining fundamental language and communication skills in English. Program emphasis "
+   },
+   {
+    "control_number": "45801",
+    "pages": [
+     77,
+     78,
+     79,
+     80
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Associate of Arts Degree for Transfer, Elementary Teacher Education: Integrated Programs The Associate in Arts for Transfer Degree in Elementary Teacher Education: Integrated Programs offers students a bread"
+   },
+   {
+    "control_number": "46575",
+    "pages": [
+     81,
+     82,
+     83,
+     84
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.979,
+    "opens": "[page 81] CDEV 49 Practicum - Field Experience 4.0 Subtotal 28.0 Track 6: Master Teacher: Language and Literacy Specialization CDEV 6 Child, Family, Community 3.0 CDEV 11A Principles and Practices in Early Childhood "
+   }
+  ],
+  "page_checks": {
+   "read": 15,
+   "own_page": 7,
+   "no_own_page": 8,
+   "not_printed": 0
+  },
+  "unproven": []
  },
  "loads": 1,
- "seconds": 26.7,
- "found": 71,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 47.7,
+ "found": 68,
  "by_method": {
-  "not_found": 5,
-  "pdf_pages": 71
+  "not_found": 8,
+  "pdf_pages": 68
  },
  "shared_pages": {
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89": [
    "04736",
-   "19967"
+   "18206"
   ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133": [
-   "09688",
-   "35770"
-  ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76": [
+  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=77": [
    "17763",
-   "39150",
-   "39151",
-   "39655"
+   "39522",
+   "45801"
   ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=88": [
-   "18206",
-   "18487"
+  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=71": [
+   "18482",
+   "18488"
   ],
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109": [
    "18483",
-   "18588",
    "33076"
   ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72": [
-   "18488",
-   "18494"
+  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79": [
+   "18489",
+   "33065"
   ],
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90": [
-   "18490",
-   "18491"
+   "18491",
+   "19967"
   ],
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96": [
    "18500",
-   "18501",
-   "40088",
-   "40101",
-   "40102",
-   "40103"
+   "18501"
   ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65": [
-   "18503",
-   "33083"
+  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=111": [
+   "18588",
+   "39136"
   ],
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73": [
    "18589",
+   "39906"
+  ],
+  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=75": [
    "30562",
-   "30733",
-   "39906",
-   "40066"
+   "39655"
   ],
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=70": [
    "33071",
    "41556"
   ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92": [
-   "35100",
-   "39719",
-   "40067"
-  ],
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93": [
    "35346",
-   "39718",
    "40065"
   ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=119": [
-   "39360",
-   "40633"
+  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86": [
+   "35710",
+   "35769"
   ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=78": [
-   "39522",
-   "45801"
+  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=97": [
+   "40088",
+   "40102"
+  ],
+  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=98": [
+   "40101",
+   "40103"
   ],
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121": [
    "40827",
    "41081",
    "42255"
-  ],
-  "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=112": [
-   "41261",
-   "43659"
   ],
   "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=123": [
    "43495",
@@ -117,65 +1045,413 @@
  },
  "not_found": [
   {
-   "control_number": "04750",
-   "title": "Child Development Level II",
+   "control_number": "35100",
+   "title": "Industrial Maintenance Mechanic Technology, Level 3",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
-    "coverage": 0.125
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "35710",
-   "title": "Child Development Level III",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "35770",
+   "title": "Child Development Level I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
-    "coverage": 0.059
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "35769",
-   "title": "Child Development Level IV",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "39151",
+   "title": "Computer and Network Specialist (Network+)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
-    "coverage": 0.182
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "42759",
-   "title": "Theatre Arts",
+   "control_number": "39718",
+   "title": "Industrial Maintenance Electrical and Instrumentation",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40024",
+   "title": "Social Justice",
    "award": "A.A- T Degree",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=66",
-    "coverage": 0.353
-   }
+    "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
+    "rule": "A",
+    "refused_b": 1
+   },
+   "status": "Active"
   },
   {
-   "control_number": "46575",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "40066",
+   "title": "Warehousing & Logistics Level I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=84",
-    "coverage": 0.333
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40067",
+   "title": "Industrial Maintenance Mechanic Technology, Level 2",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43659",
+   "title": "Certified Nursing Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Approved"
   }
  ],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 5,
-  "0.8-1.0": 8,
-  "1.0": 58
+  "0.5-0.8": 0,
+  "0.8-1.0": 5,
+  "1.0": 63
  },
  "would_extract": {
   "against": "kb/program_requirements_college/barstow_community",
-  "kept": 71,
+  "kept": 34,
   "kept_moved": 0,
-  "programs": 0,
-  "list": [],
+  "programs": 15,
+  "list": [
+   {
+    "control_number": "04750",
+    "title": "Child Development Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "09688",
+    "title": "Family Daycare",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=87",
+    "coverage": 1.0,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18489",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=134",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "18503",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=64",
+    "coverage": 1.0,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
+    "was_coverage": 0.988,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33065",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79",
+    "coverage": 1.0,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=136",
+    "was_coverage": 0.5,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33066",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=105",
+    "coverage": 1.0,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=105",
+    "was_coverage": 0.727,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33067",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=103",
+    "coverage": 1.0,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33083",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=62",
+    "coverage": 1.0,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35710",
+    "title": "Child Development Level III",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35769",
+    "title": "Child Development Level IV",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39136",
+    "title": "Corrections",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=111",
+    "coverage": 1.0,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=102",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39588",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=63",
+    "coverage": 0.875,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=101",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41251",
+    "title": "Liberal Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=99",
+    "coverage": 0.868,
+    "was_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=100",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42759",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=67",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46575",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=81",
+    "coverage": 0.979,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ],
   "held_worse_window": [],
-  "held_no_gain": [],
+  "held_no_gain": [
+   {
+    "control_number": "17763",
+    "title": "Management Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=77",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18206",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18488",
+    "title": "Business",
+    "award": "A.S. Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=71",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18490",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=91",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18494",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=74",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18588",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=111",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "19967",
+    "title": "Diesel Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30562",
+    "title": "Warehousing and Logistics, Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=75",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30733",
+    "title": "Warehousing & Logistics",
+    "award": "A.S. Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "39360",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=118",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "39522",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=77",
+    "coverage": 0.867,
+    "was_coverage": 0.867
+   },
+   {
+    "control_number": "39655",
+    "title": "Computer Business Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=75",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "39670",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=66",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40088",
+    "title": "Welding Technology-Gas Tungsten Arc Welding (GTAW)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=97",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40101",
+    "title": "Welding Technology- Semi-Automatic Arc Welding (GMAW/FCAW)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=98",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40102",
+    "title": "Welding Technology-Shielded Metal Arc Welding (SMAW)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=97",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40103",
+    "title": "Welding Technology- Welding Fabrication",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=98",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "43650",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=69",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45801",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=77",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
   "held_opens_on_list": [],
   "refused_passing": [],
   "forced_unbound": []
@@ -185,108 +1461,112 @@
    "sha256": "b4ffd79ac5f1eb728716502ff5c3a63641311a834109327ef8d065135258f7b8",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89"
   },
+  "04750": {
+   "sha256": "d554e65e48990a6bd5ad28159113205548dc1349304f025f02a1529949d718c7",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=85"
+  },
   "09688": {
-   "sha256": "4a25725f61c0c4b7cd1c3399b922d102d3648b8ced10e8013786c057167fc6d7",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133"
+   "sha256": "720e3ec073f04b4395c23dcdc13d4c1f931b8012406c5df8221a5a08eea59063",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=87"
   },
   "17763": {
-   "sha256": "0364518eaf50b3fa8a6cfddf83a9896a0239ee1c32ccc661f8a7242b058c73b2",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76"
+   "sha256": "7902264920732f8f05d4780a833fd545663e2d2376b4be845eced196efd6303c",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=77"
   },
   "18206": {
-   "sha256": "3d8f5ae54e4c8ff7dcff2bfca406db6cd5d6ebdea7343fed840c2e8ae0f5c513",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=88"
+   "sha256": "4c427cce5772cf149acfc1ac717e5b4cf5b12a4fa45049a98974d2a20e443fa3",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89"
   },
   "18482": {
-   "sha256": "021f34b6fc408a64bd95c3346a46b56c959589a562350e85850f24b955dd8d3b",
+   "sha256": "9254362be28fd1a72cd79e193db2ad6fba280eb73c20b7f905e937e569013445",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=71"
   },
   "18483": {
-   "sha256": "b2d0f72e8e049164be499005edac1ea0b8ce803b1ec2e4758ebf3ffd835d72ac",
+   "sha256": "5d43a29ee5c6468fd554e82a4c62f9c929946098acb8ddf3de1e3f1120cfc263",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109"
   },
   "18487": {
-   "sha256": "3d8f5ae54e4c8ff7dcff2bfca406db6cd5d6ebdea7343fed840c2e8ae0f5c513",
+   "sha256": "647735fe135c9641c1dab7a46a8c87ab7cb997afb51da6c502563f3b3dde411d",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=88"
   },
   "18488": {
-   "sha256": "c1605d369498e979e4daa68a46d36c9cbd6d01c389734b02478e9498ddfc2c3b",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72"
+   "sha256": "021f34b6fc408a64bd95c3346a46b56c959589a562350e85850f24b955dd8d3b",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=71"
   },
   "18489": {
-   "sha256": "07057848de2dee2c05f2be0a89bc386acb9a208e55a2186e6c49dd832e3437a3",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=134"
+   "sha256": "c9822c726317d535554e617d286a40f3b48e17152a195e243375433a3a59adb0",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79"
   },
   "18490": {
-   "sha256": "4bd36e3bbc4688c36ec31f11c1a76ba3e637a3b4965b99ba2f0ad91330e17a3e",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90"
+   "sha256": "66551a677b2bfa6ae6ca1867a715094b4ed9f11c0b6f845923a5a4c00591c693",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=91"
   },
   "18491": {
-   "sha256": "4bd36e3bbc4688c36ec31f11c1a76ba3e637a3b4965b99ba2f0ad91330e17a3e",
+   "sha256": "b641a9d846d6505ed1f2303f9f3f794f8f5872f8a9c95e110578a29e5fefca35",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90"
   },
   "18494": {
-   "sha256": "c1605d369498e979e4daa68a46d36c9cbd6d01c389734b02478e9498ddfc2c3b",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72"
+   "sha256": "05b25673e45fe50f278e95778a22a2b718b7b2ab2ede0a3d34b845d04a2f2e6f",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=74"
   },
   "18500": {
    "sha256": "0d30fca1fa18ebe228f92ad40117005e369513c970fc4b499defb5dc2fecd58a",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96"
   },
   "18501": {
-   "sha256": "0d30fca1fa18ebe228f92ad40117005e369513c970fc4b499defb5dc2fecd58a",
+   "sha256": "6d6cf847118be815b5e50bb27d6bf7a0a050a478a94b26cd7d875b89c21aedd8",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96"
   },
   "18503": {
-   "sha256": "26a327103e70bb9d178825b014d482023727281e595b5b51328e72abd44f9b53",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65"
+   "sha256": "f27675048fe3b8936465e18dee2d55e2982d6d7a1116982ca51c44334573eb7e",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=64"
   },
   "18588": {
-   "sha256": "b2d0f72e8e049164be499005edac1ea0b8ce803b1ec2e4758ebf3ffd835d72ac",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109"
+   "sha256": "9fd2487306f28e20e29bc1f990166cf401d05a3324651eb95af26283ae9a69b6",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=111"
   },
   "18589": {
-   "sha256": "18125de46f6bd14ff9734e5f457cbc1362588f956c7a769cd937a146f3c27a70",
+   "sha256": "7e97964b2098a9ed8463aaef43ce296b8f004d90f1f35187016dd46cd7a005b3",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73"
   },
   "19967": {
-   "sha256": "b4ffd79ac5f1eb728716502ff5c3a63641311a834109327ef8d065135258f7b8",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=89"
+   "sha256": "53baa85e427162da6aac8013e6c42c7ed91979033b3d23b82a3da0b12635e1a6",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=90"
   },
   "30562": {
-   "sha256": "dd90f6c0133fe8712384e3470be7d219b5886325d36de26ef2d77597ffe6d8c5",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73"
+   "sha256": "6c1556dfc15db35478dcb54907492f4ec36bcec370040f03edc3a6aa0193fdcb",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=75"
   },
   "30733": {
-   "sha256": "dd90f6c0133fe8712384e3470be7d219b5886325d36de26ef2d77597ffe6d8c5",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73"
+   "sha256": "e96c814ca484979ab0525c7df0b409150082e70638cf264586cff0578951c207",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=72"
   },
   "31034": {
-   "sha256": "2ada13fb37d2e3dedb18db8aca58ea32517d86e49fc573bcae14cd5a50ccf66c",
+   "sha256": "a58de64fd095d55faaa7643d94310094f175e3d8b18e93d9a7b589b6d9a49481",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=107"
   },
   "31051": {
-   "sha256": "925262407e3720b4096b12418691f3c1d6716eb5f23923bea0a464bc7ccf3ca7",
+   "sha256": "4cfd1581d4ebcd13123a6ddb1f5f5ea0cacf739aeeb49aa6fb2b79f98c501db7",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=106"
   },
   "33065": {
-   "sha256": "1489ca3fcba6c854f66151edae2964a3dffd2455772c9ba88e09b7b96293b5b4",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=136"
+   "sha256": "c9822c726317d535554e617d286a40f3b48e17152a195e243375433a3a59adb0",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79"
   },
   "33066": {
    "sha256": "270dc196179fddd607e25e9d6ed4a1b887b3ebb5ab509959ac8c3b63ebd27acf",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=105"
   },
   "33067": {
-   "sha256": "17a2d9452e4ff5ff484023d2ef8d3625d22d8192373c10636adefbba0bb5d31d",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83"
+   "sha256": "40f2a9b5cde38885ca83a838865528da2cfe0727df8c05a6f65976323e1b2abb",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=103"
   },
   "33070": {
-   "sha256": "7c4c610fef20cb9a624610350fe9f5580f8bed1a0700e3ec454b2dd31e407914",
+   "sha256": "90cf64382feea5ee4a5def991bbe7fd8ec4cbd55e52a2c6f5ed4495abf931be1",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=60"
   },
   "33071": {
-   "sha256": "49f586a7c7dbb3fb60179e6a955830d94afd67d5b9da4ae856b73331c377609f",
+   "sha256": "cfbc97bad3ba01159080d4c8a97de32799119a8d212b9e41dac9bf07e1641eab",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=70"
   },
   "33076": {
@@ -294,63 +1574,55 @@
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=109"
   },
   "33083": {
-   "sha256": "c4b97934757c5eace69fffcb899e851e65594d31a1eca9e52e1ca55d2ca1c996",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65"
-  },
-  "35100": {
-   "sha256": "363109323bf64dc34ccfce4f1d172c607e85ab3c2efe25007066c815f43013d5",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92"
+   "sha256": "e7b213620489d1aa120b634538ccaf3e303d08900642b9d060013b72f88fea2c",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=62"
   },
   "35346": {
    "sha256": "fe0a45138df21c2df10313a4dc110e39cec34e781e1b98599b9f2e65890fd86a",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93"
   },
-  "35770": {
-   "sha256": "aa64856dc5d31ba442a5ece5a9becb23434c9481af25e68b8d3fe2b1370abf50",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133"
+  "35710": {
+   "sha256": "de387907a62a8e1bd580822659fa60764977b5698e430536d948a2b767e015b6",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86"
+  },
+  "35769": {
+   "sha256": "b1e4b53d17e251f9cd49da22722b7440b48e1dabb97a5d904327199a04880952",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86"
   },
   "39136": {
-   "sha256": "9e7d60ddd4168c9a002634131f4bd5be4c672021befacff341ad87090eae86ee",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=102"
+   "sha256": "9fd2487306f28e20e29bc1f990166cf401d05a3324651eb95af26283ae9a69b6",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=111"
   },
   "39150": {
    "sha256": "0364518eaf50b3fa8a6cfddf83a9896a0239ee1c32ccc661f8a7242b058c73b2",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76"
   },
-  "39151": {
-   "sha256": "0364518eaf50b3fa8a6cfddf83a9896a0239ee1c32ccc661f8a7242b058c73b2",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76"
-  },
   "39360": {
-   "sha256": "43cc487141bc17d2bbe86fc2066959bbcd559e9260449ad9a1c3607a85fde64e",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=119"
+   "sha256": "8085df9ff3f6db5869381f2f9d59285f4601d5ec489c953c8f32e709b8116976",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=118"
   },
   "39436": {
    "sha256": "f1e64ccf94f6afa2cdbd9203bb2183cb35ecacbf5f7fa52020e3792066e5b240",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=116"
   },
   "39522": {
-   "sha256": "c169e8e931ed81be061206e06a09dcc36ef3e6d3151ce24dac85ef3280e3e2cc",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=78"
+   "sha256": "2ba33c981f4c8a65ce57b2b583b80f8353d26ddd4fbdd2e4027fadeff7229aa3",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=77"
   },
   "39588": {
-   "sha256": "405acc5168e9a23741fa501359cb36a1f6f28b89a5e99ec876c8d6c47281aef7",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=101"
+   "sha256": "c89793df8926d7f4d857f8ed5cd84d98efa125dcfa05ae14e91628e09439eabf",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=63"
   },
   "39655": {
-   "sha256": "0364518eaf50b3fa8a6cfddf83a9896a0239ee1c32ccc661f8a7242b058c73b2",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=76"
+   "sha256": "ba0e9b10abc73479557c6972c4ded39d1c9ffb9a836467c25320ef3c14d6e121",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=75"
   },
   "39670": {
-   "sha256": "88036b90d0dce7827d7853d94b6f3784dd2c82f3ff6c7b268462f089564c69cb",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=67"
-  },
-  "39718": {
-   "sha256": "fe0a45138df21c2df10313a4dc110e39cec34e781e1b98599b9f2e65890fd86a",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93"
+   "sha256": "c55f9114d0ee483803b13711297b91a47afb86bcde7a3cefd43abb82eedd05f8",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=66"
   },
   "39719": {
-   "sha256": "cd6c5a5812deab688e3c07fee4d8a53ffc3484b3702803c7dd83d0ff028270ee",
+   "sha256": "2e24454b21b8249f8f2eaa5d5a8af599f6da8673abf66bf18123b86d168ac28d",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92"
   },
   "39906": {
@@ -358,55 +1630,43 @@
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73"
   },
   "40021": {
-   "sha256": "e00ce57920ac8c6ffc14f6d20bf7b0f228469240cfa8a41c19d1536780730c6b",
+   "sha256": "290b2db294ec417887a45ce93c9056873ed7dd505479c81009bbfb28517f536d",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=114"
-  },
-  "40024": {
-   "sha256": "40f2a9b5cde38885ca83a838865528da2cfe0727df8c05a6f65976323e1b2abb",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=103"
   },
   "40065": {
    "sha256": "f57574a54452f5de1ad13aeac4101bd7d55af5a962c3e5d855eb3f03daf407ea",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=93"
   },
-  "40066": {
-   "sha256": "1db5c1ba4fc22e7b8bfa4e76e6788974f96b123b2888dc67782f2786c51005ca",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=73"
-  },
-  "40067": {
-   "sha256": "363109323bf64dc34ccfce4f1d172c607e85ab3c2efe25007066c815f43013d5",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=92"
-  },
   "40088": {
-   "sha256": "0d30fca1fa18ebe228f92ad40117005e369513c970fc4b499defb5dc2fecd58a",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96"
+   "sha256": "c47603c013ce3a1608ee053906515bf56d613f351ec0e4e0913d5b6e0198b545",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=97"
   },
   "40097": {
-   "sha256": "c6c4cf0670ada2f6acb60b9228bd03fa0bc2484468941fc3b32569ddd7899974",
+   "sha256": "aa7866d02a03273b1dd5b633c002de0525f82d3cff021e62e6632f146091c60b",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=120"
   },
   "40101": {
-   "sha256": "0d30fca1fa18ebe228f92ad40117005e369513c970fc4b499defb5dc2fecd58a",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96"
+   "sha256": "3b132e41931221ef462f74a963e16d381e10aaa25fa3d786fc79c41767cbb279",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=98"
   },
   "40102": {
-   "sha256": "0d30fca1fa18ebe228f92ad40117005e369513c970fc4b499defb5dc2fecd58a",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96"
+   "sha256": "9a0e5b548ad4b40f3eefbe4e7d518b2221a386d1b299412a9bb5031ebf6540b5",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=97"
   },
   "40103": {
-   "sha256": "0d30fca1fa18ebe228f92ad40117005e369513c970fc4b499defb5dc2fecd58a",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=96"
+   "sha256": "f315bd624711cbf74c60ecf1d57895f2fde0836c9ab33fa2ff9e661912375404",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=98"
   },
   "40633": {
-   "sha256": "43cc487141bc17d2bbe86fc2066959bbcd559e9260449ad9a1c3607a85fde64e",
+   "sha256": "ea67f38ecc1c4b784466be441a8bd13c86fe17b142eb50300d458a1278a00200",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=119"
   },
   "40827": {
-   "sha256": "e0a9e676f405026c78e1c61ef84fc38c05b967cf50319bd299edc30c360f51af",
+   "sha256": "a551371e31998bad5d881fa68fe5d29accee5d7835f488d2fa783a551c120e77",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121"
   },
   "40830": {
-   "sha256": "62d66bb8786ef595e4600afa896391026cde4d28ccdff3d78497a8f061add461",
+   "sha256": "9d553105f20010d67668dcec64ddd54cc4e720025c137fd57bd453888c4d2df1",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=122"
   },
   "41033": {
@@ -414,7 +1674,7 @@
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=117"
   },
   "41079": {
-   "sha256": "4eae8b34e200521cc70b6df0bf3427bdea714d9615a612fa9e66d5414c18ea93",
+   "sha256": "4e1c628a42221ce794da8c690081e7a88cfc288911d3172242f858681e772d99",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=113"
   },
   "41081": {
@@ -422,23 +1682,27 @@
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121"
   },
   "41251": {
-   "sha256": "f9a0019b7cd60e06524d554e72894d7cddad1158d0e1ec0bf7352f3fb4baf507",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=100"
+   "sha256": "e376fbb38a08cad760bb949dc2a42d5d7e38a4c7eaa59326c7fe40a0b03c729b",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=99"
   },
   "41261": {
-   "sha256": "ffd6175ac80057b12b5f0913f125aaf2b96d86a1aa43172ef41ac8360cd835af",
+   "sha256": "41a3f7a3c7a5128de732c58397f4814e281ebd24cdd1416aef9695378637fe15",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=112"
   },
   "41556": {
-   "sha256": "49f586a7c7dbb3fb60179e6a955830d94afd67d5b9da4ae856b73331c377609f",
+   "sha256": "cfbc97bad3ba01159080d4c8a97de32799119a8d212b9e41dac9bf07e1641eab",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=70"
   },
   "42255": {
-   "sha256": "5fb74ae4ab350203bd82b8d1b53510942a6c226cc4d95889970cfeac763be4aa",
+   "sha256": "f6ff9d3c95bde3057257787d1477a07d75d486507340b2fcc71874202680d9bb",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=121"
   },
+  "42759": {
+   "sha256": "672c4f573d353486bf79ba9e9bf66ed347a4bc962e7fe9ffcf9e504a28f6ba54",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=67"
+  },
   "43165": {
-   "sha256": "55fe79af1e56c67a88ae1af232969eaabac2d3b481a07260f9ef455654931dac",
+   "sha256": "fee655c4fc4faeb35e608fcfd9a3a7e6ce97545f3c946dd1d2d1ddb6eccecaed",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=61"
   },
   "43495": {
@@ -446,30 +1710,25 @@
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=123"
   },
   "43650": {
-   "sha256": "5c92b0bc4ea7165372c44b6c9380b9edae934d4c79cdbaaba97a002ad545de0c",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=68"
-  },
-  "43659": {
-   "sha256": "ffd6175ac80057b12b5f0913f125aaf2b96d86a1aa43172ef41ac8360cd835af",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=112"
+   "sha256": "0cb6cda9948b9257cb197445b93a36efbf456a8188e8e229b662a8a931d132a6",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=69"
   },
   "44290": {
-   "sha256": "bccc8e6acad3d0ffb2d5c255ad2fa4ac5b001a3e11a456111e1561f62582d471",
+   "sha256": "cd26c43830fd831dfff7caea17b3400260d9eab750f059b67a3bebf41f4c2329",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=123"
   },
   "44292": {
-   "sha256": "af293c60bf798f68f723305d3b02d18b46ed57e4f4a0f1a13d66510260fc5ecc",
+   "sha256": "92aa75bc2efba69d8f926c0d5d72c94fcd7b240203a38c462b755cd6eefe22ee",
    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=124"
   },
   "45801": {
-   "sha256": "c169e8e931ed81be061206e06a09dcc36ef3e6d3151ce24dac85ef3280e3e2cc",
-   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=78"
+   "sha256": "2ba33c981f4c8a65ce57b2b583b80f8353d26ddd4fbdd2e4027fadeff7229aa3",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=77"
+  },
+  "46575": {
+   "sha256": "b23a3bc81247f62664e0372eaae65ec3a964541229085601b823b4b30ed175f1",
+   "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=81"
   }
  },
- "staged_from": {
-  "run": "39006332820",
-  "proof": "the filed account equal but for its run, and 71 programs at their address and coverage",
-  "pages_loaded": 0
- },
- "run": "43691950026"
+ "run": "44687777798"
 }

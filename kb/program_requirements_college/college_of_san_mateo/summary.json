@@ -2,23 +2,50 @@
  "college": "College of San Mateo",
  "programs": 98,
  "with_closed_list": 64,
- "found": 60,
- "extracted": 60,
+ "found": 58,
+ "extracted": 58,
  "errors": 0,
  "passed_machine_checks": 55,
  "failed": {
-  "coverage": 2,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 5,
+  "arithmetic": 3,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.74,
- "cost_usd_filed": 4.96,
- "cost_per_program": 0.0827,
- "extract_calls": 6,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 4.87,
+ "cost_per_program": 0.084,
+ "extract_calls": 0,
  "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "30818",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/mathematics-as-t.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 444,
+     "content": 2348,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
   {
    "control_number": "41970",
    "title": "International Business",
@@ -72,7 +99,34 @@
     "tab_panels": []
    },
    "status": "Active"
+  },
+  {
+   "control_number": "42137",
+   "title": "Business Analytics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/business-analytics-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.571,
+    "body": 0.571,
+    "content": 0.571,
+    "net": 1,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 1 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2735,
+     "content": 11508,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
- "run": "44090902577"
+ "run": "44687781989"
 }

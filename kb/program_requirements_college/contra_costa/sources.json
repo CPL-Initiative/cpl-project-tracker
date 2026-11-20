@@ -23,7 +23,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological science - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -54,7 +57,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -84,7 +90,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -109,7 +118,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business office technology: general office - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -172,7 +184,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "journalism - associate in arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 41,
@@ -188,7 +203,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01391",
@@ -200,7 +219,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01393",
@@ -227,7 +250,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -252,17 +278,20 @@
    "AUSER238"
   ],
   "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-collision-repair-technology-fall-2020",
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-collision-repair-technology-fall-2020v2",
    "title": "Automotive Collision Repair Technology",
    "h1": "Automotive Collision Repair Technology",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 2483
+  "text_chars": 2595
  },
  {
   "control_number": "01408",
@@ -270,7 +299,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 0.958,
   "codes_found": [
    "ART101",
    "ART102",
@@ -286,6 +315,7 @@
    "ART165",
    "ART174",
    "ART184",
+   "ART190",
    "ART194",
    "ART232",
    "ART240",
@@ -302,7 +332,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "studio arts a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -335,7 +368,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "spanish - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -364,7 +400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "registered nursing - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -396,7 +435,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "early childhood education - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -412,7 +454,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01434",
@@ -442,7 +488,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "psychology - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -473,7 +522,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "law enforcement - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -489,7 +541,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01442",
@@ -501,7 +557,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01443",
@@ -521,7 +581,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "african american studies - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -537,7 +600,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01445",
@@ -549,7 +616,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01446",
@@ -561,7 +632,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "01447",
@@ -569,10 +644,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "ADJUS120",
    "ADJUS135",
+   "ECON220",
    "GEOG130",
    "HIST122",
    "HIST123",
@@ -592,7 +668,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "political science - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -633,7 +712,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "sociology - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -649,7 +731,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "07598",
@@ -681,7 +767,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biotechnology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -710,7 +799,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "real estate - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -738,7 +830,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -789,7 +884,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical assisting - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -820,7 +918,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "early childhood education: montessori education preschool teacher associate in science degree (credit)",
+    "section_fit": 0.857
    }
   },
   "listed": 10,
@@ -836,7 +937,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "07616",
@@ -865,7 +970,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "la raza studies - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -877,12 +985,14 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "BUS186",
    "BUS187",
    "BUS294",
    "CIS135",
+   "ECON220",
+   "ECON221",
    "MATH171",
    "MATH180",
    "MATHC2210",
@@ -895,7 +1005,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -911,7 +1024,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16849",
@@ -923,7 +1040,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16850",
@@ -935,7 +1056,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18981",
@@ -943,7 +1068,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.946,
+  "coverage": 0.958,
   "codes_found": [
    "AFRAM112",
    "AFRAM113",
@@ -973,6 +1098,8 @@
    "ART165",
    "ART174",
    "ART184",
+   "ART190",
+   "ART191",
    "ART194",
    "ART222",
    "ART224",
@@ -1111,7 +1238,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: arts & humanities - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 168,
@@ -1157,7 +1287,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: communication in the english language - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -1227,7 +1360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: math and science - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 48,
@@ -1239,7 +1375,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.863,
+  "coverage": 0.89,
   "codes_found": [
    "ADJUS120",
    "ADJUS121",
@@ -1257,6 +1393,8 @@
    "ECHD144",
    "ECHD161",
    "ECHD220",
+   "ECON220",
+   "ECON221",
    "GEOG120",
    "GEOG130",
    "GEOG150",
@@ -1312,7 +1450,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: social and behavioral sciences - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 73,
@@ -1348,7 +1489,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biotechnology technician certificate of achievement (credit)",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
@@ -1364,7 +1508,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20837",
@@ -1390,7 +1538,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1419,7 +1570,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1435,7 +1589,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20842",
@@ -1456,7 +1614,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business office technology: general office - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1484,7 +1645,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20855",
@@ -1505,17 +1670,20 @@
    "AUSER238"
   ],
   "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-collision-repair-technology-fall-2020v2",
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-collision-repair-technology-fall-2020",
    "title": "Automotive Collision Repair Technology",
    "h1": "Automotive Collision Repair Technology",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive collision repair technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2595
+  "text_chars": 2483
  },
  {
   "control_number": "20857",
@@ -1548,7 +1716,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical assisting- certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1579,7 +1750,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education: montessori education preschool teacher certificate of achievement (credit)",
+    "section_fit": 0.857
    }
   },
   "listed": 10,
@@ -1611,7 +1785,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education certificate of achievement (credit)",
+    "section_fit": 0.75
    }
   },
   "listed": 10,
@@ -1638,7 +1815,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary arts: classical/modern food preparation and restaurant training - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1654,7 +1834,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20883",
@@ -1666,7 +1850,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20884",
@@ -1678,7 +1866,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "20886",
@@ -1690,7 +1882,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30199",
@@ -1702,7 +1898,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30224",
@@ -1714,7 +1914,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30225",
@@ -1726,7 +1930,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30243",
@@ -1738,7 +1946,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30244",
@@ -1750,7 +1962,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30249",
@@ -1774,7 +1990,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice: correctional specialist - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1802,7 +2021,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice: police records and services technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1825,28 +2047,12 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.545,
-  "codes_found": [
-   "ADJUS121",
-   "ADJUS122",
-   "ADJUS124",
-   "ADJUS130",
-   "ADJUS222",
-   "ADJUS223"
-  ],
-  "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/administration-of-justice-corrections-spring-2022",
-   "title": "Administration of Justice: Corrections",
-   "h1": "Administration of Justice: Corrections",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 2457
+  "text_chars": 0
  },
  {
   "control_number": "31965",
@@ -1871,7 +2077,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engineering - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1887,7 +2096,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 44 of 95 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32320",
@@ -1911,7 +2124,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics - a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1955,7 +2171,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biotechnology assistant certificate of achievement (credit)",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -1987,7 +2206,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2020,7 +2242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2056,7 +2281,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2093,7 +2321,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2117,17 +2348,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-science-technology-engineering-and-mathematics-stem-fall-2026",
-   "title": "Liberal Arts: Science, Technology, Engineering and Mathematics (STEM)",
-   "h1": "Liberal Arts: Science, Technology, Engineering and Mathematics (STEM)",
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/mathematics-fall-2026",
+   "title": "Mathematics",
+   "h1": "Mathematics",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics - associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
-  "text_chars": 4624
+  "text_chars": 2904
  },
  {
   "control_number": "32925",
@@ -2167,7 +2401,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -2195,7 +2432,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2225,7 +2465,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education - a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2255,7 +2498,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pre-allied health - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2267,8 +2513,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 0.933,
   "codes_found": [
+   "ECON220",
+   "ECON221",
    "ENGLC1001",
    "JRNAL120",
    "JRNAL122",
@@ -2289,7 +2537,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2312,7 +2563,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive hybrid technician certificate of achievement (credit)",
+    "section_fit": 0.75
    }
   },
   "listed": 1,
@@ -2337,7 +2591,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chassis level i technician certificate of achievement (credit)",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
@@ -2361,7 +2618,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "powertrains level i technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2388,7 +2648,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emergency medical services - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2458,7 +2721,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 48,
@@ -2487,7 +2753,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2517,7 +2786,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2548,7 +2820,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2582,7 +2857,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2594,11 +2872,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
    "BUS186",
    "BUS187",
    "BUS240",
+   "ECON220",
+   "ECON221",
    "MATH180",
    "MATH200",
    "MATH290",
@@ -2613,7 +2893,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2638,17 +2921,20 @@
    "AUSER238"
   ],
   "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-service-technician-fall-2025",
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-service-technician-fall-2024",
    "title": "Automotive Service Technician",
    "h1": "Automotive Service Technician",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive service technician certificate of achievement (credit)",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
-  "text_chars": 4605
+  "text_chars": 2511
  },
  {
   "control_number": "33660",
@@ -2681,7 +2967,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "physical education/kinesiology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2692,12 +2981,31 @@
   "title": "Business Administration",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "BUS186",
+   "BUS187",
+   "BUS294",
+   "CIS135",
+   "ECON220",
+   "ECON221"
+  ],
+  "source": {
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-administration-fall-2026v2",
+   "title": "Business Administration",
+   "h1": "Business Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1938
  },
  {
   "control_number": "35126",
@@ -2718,17 +3026,20 @@
    "AUSER238"
   ],
   "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-service-technician-fall-2024",
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-service-technician-fall-2025",
    "title": "Automotive Service Technician",
    "h1": "Automotive Service Technician",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive service technician - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2511
+  "text_chars": 4605
  },
  {
   "control_number": "35208",
@@ -2754,7 +3065,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2788,7 +3102,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pre law studies - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2799,12 +3116,33 @@
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "BIOLC1000",
+   "BIOSC132",
+   "BIOSC134",
+   "CHEM119",
+   "HED110",
+   "HED120",
+   "PSYCH120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/public-health-fall-2026",
+   "title": "Public Health",
+   "h1": "Public Health",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667,
+    "section": "adt",
+    "section_line": "public health associate in science degree for transfer (credit)",
+    "section_fit": 0.5
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4977
  },
  {
   "control_number": "36157",
@@ -2828,7 +3166,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emed: paramedic studies - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2859,7 +3200,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in philosophy",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2886,7 +3230,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business office technology: business information worker - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2919,7 +3266,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2945,7 +3295,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chemistry certificate of achievement (credit)",
+    "section_fit": 0.5
    }
   },
   "listed": 4,
@@ -2984,7 +3337,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice: latino and chicano studies associate in arts degree for transfer (credit)",
+    "section_fit": 0.714
    }
   },
   "listed": 17,
@@ -3032,7 +3388,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "beginning esl - noncredit certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -3058,7 +3417,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "high-beginning esl - noncredit certificate of competency",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -3085,7 +3447,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "intermediate esl - noncredit certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -3111,7 +3476,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "high-intermediate esl - noncredit certificate of competency",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -3135,7 +3503,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl pronunciation - noncredit certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -3159,7 +3530,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer user support specialist - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3184,7 +3558,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "network and security specialist - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3208,7 +3585,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "college level reading and writing proficiency - noncredit certificate",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -3230,17 +3610,20 @@
    "CIS99"
   ],
   "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021v2",
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021",
    "title": "Information Technology",
    "h1": "Information Technology",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "information technology a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3684
+  "text_chars": 3843
  },
  {
   "control_number": "40761",
@@ -3257,17 +3640,20 @@
    "CIS99"
   ],
   "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021",
+   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021v2",
    "title": "Information Technology",
    "h1": "Information Technology",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3843
+  "text_chars": 3684
  },
  {
   "control_number": "41346",
@@ -3275,13 +3661,15 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
    "BUS109",
    "BUS186",
    "BUS187",
    "BUS240",
    "BUS294",
+   "ECON220",
+   "ECON221",
    "MATH180",
    "STATC1000"
   ],
@@ -3292,7 +3680,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 associate in science degree for transfer (credit)",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -3334,7 +3725,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "ethnic studies associate in arts degree (credit)",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
@@ -3360,7 +3754,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "biological testing technician noncredit (non-credit)",
+    "section_fit": 0.5
    }
   },
   "listed": 4,
@@ -3384,7 +3781,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "project management certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3410,7 +3810,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "laboratory professional i noncredit (non-credit)",
+    "section_fit": 0.4
    }
   },
   "listed": 4,
@@ -3421,28 +3824,12 @@
   "title": "UCTP Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.6,
-  "codes_found": [
-   "MATH200",
-   "MATH290",
-   "MATH292",
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS130"
-  ],
-  "source": {
-   "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/mathematics-fall-2026",
-   "title": "Mathematics",
-   "h1": "Mathematics",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 2904
+  "text_chars": 0
  },
  {
   "control_number": "42741",
@@ -3474,7 +3861,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "humanities - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3503,7 +3893,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education: associate teacher infant and toddler certificate of achievement (credit)",
+    "section_fit": 0.875
    }
   },
   "listed": 7,
@@ -3515,7 +3908,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "ART101",
    "ART102",
@@ -3528,6 +3921,8 @@
    "ART158",
    "ART174",
    "ART184",
+   "ART190",
+   "ART191",
    "ART194",
    "ART274",
    "ART284"
@@ -3539,7 +3934,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts - a.a. for transfer degree (aa-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3576,7 +3974,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts associate in arts degree for transfer (credit)",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
@@ -3604,7 +4005,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "biological manufacturing technician- certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3637,7 +4041,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3672,7 +4079,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3684,7 +4094,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.867,
+  "coverage": 1.0,
   "codes_found": [
    "ART101",
    "ART102",
@@ -3696,6 +4106,8 @@
    "ART120",
    "ART132",
    "ART174",
+   "ART190",
+   "ART191",
    "ART194",
    "HUMAN120",
    "SOCIO142"
@@ -3707,7 +4119,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history - associate in arts for transfer degree (a.a-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 15,

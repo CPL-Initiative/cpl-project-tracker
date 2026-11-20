@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Automotive Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6518",
- "record_shape": 5,
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6519",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6845,
+  "input_tokens": 7149,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6845,
-    "output_tokens": 1522,
+    "input_tokens": 7149,
+    "output_tokens": 1914,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,96 +30,103 @@
     "model": null
    }
   ],
-  "output_tokens": 1522,
+  "output_tokens": 1914,
   "output_tokens_details": {
-   "thinking_tokens": 553
+   "thinking_tokens": 445
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05782,
- "ms": 13696,
- "seconds": 13.9,
+ "cost_usd": 0.06688,
+ "ms": 14957,
+ "seconds": 15.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 17,
    "listed": 17,
-   "share": 0.0,
-   "missing": [
-    "AT10",
-    "AUTOT161A",
-    "AUTOT161B",
-    "AUTOT19",
-    "AUTOT51",
-    "AUTOT52",
-    "AUTOT53",
-    "AUTOT54",
-    "AUTOT55",
-    "AUTOT56",
-    "AUTOT57",
-    "AUTOT58",
-    "AUTOT58A",
-    "AUTOT58B",
-    "AUTOT58C",
-    "AUTOT9",
-    "WELD1"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 7,
+   "codes": [
+    "ATGM51",
+    "ATGM52",
+    "ATGM53",
+    "ATGM54",
+    "ATGM55",
+    "ATGM56",
+    "ATGM57"
+   ],
+   "flagged": [
+    "ATGM51",
+    "ATGM52",
+    "ATGM53",
+    "ATGM54",
+    "ATGM55",
+    "ATGM56",
+    "ATGM57"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    57.5,
+    57.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    57.5,
+    57.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Automotive Technology, Associate of Science - Major #8051",
+   "section_heading": "Automotive Technology, Certificate of Achievement - Major #8051",
    "measure": "units",
    "total_units": {
+    "min": 57.5,
+    "max": 57.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -130,87 +137,210 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Create a diagnostic path appropriate for a given system to industry standards.",
+    "Recommend an appropriate repair procedure for a given system to industry standards."
+   ],
+   "careers": [
+    "skilled technician in the automotive service and repair industry"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AT 10",
-    "why": "named only in the A.S. section"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 53.5,
+     "max": 53.5
+    },
+    "courses": [
+     {
+      "code": "AT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 19",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATGM 51",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 52",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATGM 52",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 53",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATGM 53",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 54",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATGM 54",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 55",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATGM 55",
+        "units": 6,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATGM 56",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 57",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ATGM 57",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 161A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 161B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AUTOT 161A",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 161B",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 19",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 51",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 52",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 53",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 54",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 55",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 56",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 57",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 58",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 58A",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 58B",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 58C",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "AUTOT 9",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "WELD 1",
-    "why": "named only in the A.S. section"
+    "name": "Electives (4 units)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AUTOT 58",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 58A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 58B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOT 58C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text contains only the Automotive Technology Associate of Science (Major #8051) section; no Certificate of Achievement section is printed, so no blocks, total, outcomes or careers are recorded for the certificate.",
-   "The A.S. section lists Required Courses (53.5 units: AT 10, AUTOT 9, AUTOT 19 at 10 units, AUTOT 51-57, AUTOT 161A, AUTOT 161B, WELD 1) and Electives (4 units) from AUTOT 58, 58A, 58B, 58C, Total 57.5. A reviewer should check whether the certificate shares this coursework; the 57.5 total would fit the 30-to-fewer-than-60 unit certificate range.",
-   "AUTOT 19 is printed at 10 units in the A.S. section while the closed list stores 1 unit.",
-   "The A.S. section prints two learning outcomes and describes entry-level employment as a skilled technician in the automotive service and repair industry; these were not recorded because they belong to the A.S. section."
+   "AUTOT 19 is printed with 10 units in the catalog, while the closed list stores 1 unit (variable-unit work experience); recorded as printed (10), which matches the Required Courses block total of 53.5.",
+   "AUTOT 51-57 are printed as '(same as ATGM 5x)'; the ATGM cross-listed codes are recorded as alternatives with catalog_addition true. Reviewer may prefer to treat them as cross-list notes only.",
+   "Electives block requires 4 units from four 1-unit courses, so effectively all four are needed.",
+   "Source URL references a 2025-2026 catalog page title within the 2026-27 catalog path; confirm catalog year."
   ]
  },
- "extracted_run": "38563582873"
+ "extracted_run": "44692355661",
+ "catalog_year": "2026-2027"
 }

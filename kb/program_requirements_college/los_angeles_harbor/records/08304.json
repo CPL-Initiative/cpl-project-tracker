@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Nursing Professional RN - LVN to RN",
  "award": "A.S. Degree",
- "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=142",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=141",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11463,
+  "input_tokens": 11683,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11463,
-    "output_tokens": 2580,
+    "input_tokens": 11683,
+    "output_tokens": 3367,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2580,
+  "output_tokens": 3367,
   "output_tokens_details": {
-   "thinking_tokens": 790
+   "thinking_tokens": 1137
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09745,
- "ms": 22582,
- "seconds": 23.0,
+ "cost_usd": 0.11407,
+ "ms": 26948,
+ "seconds": 28.1,
  "parts": null,
  "error": null,
  "score": {
@@ -83,17 +83,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -107,7 +107,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Degrees and Certificates – NURSING AND HEALTH PROFESSIONS (LVN to RN A.S. degree requirements, continued from the preceding page)",
+   "section_heading": "Academic Plan: H008304C (Associate of Science Degree, Professional Nursing, L.V.N. to R.N.)",
    "measure": "units",
    "total_units": {
     "min": 67,
@@ -118,7 +118,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "LACCD GE Plan",
+   "ge_pattern": "LACCD GE",
    "degree_total": {
     "min": null,
     "max": null
@@ -128,8 +128,19 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Integrate the nursing process using the Roy Adaptation Model to promote adaptation of individuals, families, and the community.",
+    "Internalize professional behaviors in the practice of nursing.",
+    "Formulate clinical judgments that promote the health of patients and families",
+    "Provide safe, patient-centered care.",
+    "Assimilate effectively within nursing and inter-professional teams fostering effective communication to achieve quality patient care.",
+    "Integrate best current evidence with clinical expertise for optimal health care",
+    "Describe strategies for improving outcomes of care in clinical practice.",
+    "Incorporate information and technology to communicate, manage knowledge, mitigate error, and support decision making"
+   ],
+   "careers": [
+    "Registered Nurse"
+   ]
   },
   "blocks": [
    {
@@ -347,14 +358,40 @@
    }
   ],
   "notes": [
-   "The excerpt begins mid-section on page 142; the LVN to RN A.S. degree heading, description and any outcomes/careers are on the preceding page and not included. Section identified by the Transition Semester (NURSING 329A/B) and the following NON-DEGREE LVN to RN PATHWAY section.",
-   "total_units 67 is printed as 'Total Prerequisite and Major Units 67'; it includes GE area placeholders (Math LACCD GE area 2, Arts and Humanities Area 3, Ethnic Studies Area 6, 3 units each) that are not specific courses and are not placed in blocks.",
-   "Block totals (24, 13, 12) include the GE area placeholder units; the listed courses alone sum to 21, 10 and 9.",
-   "SOC 001 / ANTHRO 102 and COMM C1000 are starred as general education courses but are named as specific required courses, so they are recorded in blocks.",
-   "American Institutions (LACCD GE area 4A) is waived for Nursing degrees (AP4100).",
-   "Closed-list code NURSING323 matched to catalog 'NURSING 323'.",
-   "Courses in the Non-Degree LVN to RN Pathway (29 units) and the Pre-Health Professions sections were not recorded; they belong to other programs/routes."
+   "The program heading itself is not printed in the supplied text (it likely appears on the preceding page); section identified by 'Academic Plan: H008304C' and the description of the A.S. Degree, Professional Nursing, L.V.N. to R.N.",
+   "total_units 67 is printed as 'Total Prerequisite and Major Units 67'; it includes three LACCD GE area slots (Math GE Area 2 in the prerequisites, Arts and Humanities GE Area 3 in the second semester, Ethnic Studies GE Area 6 in the fourth semester, 3 units each) which are GE and not placed in blocks, so block course units sum to 58.",
+   "The text says 'This degree requires over 60 units' but prints no whole-degree total; degree_total left null. Students must complete all LACCD GE except Areas 4A and 7; American Institutions (Area 4A) is waived for Nursing degrees.",
+   "Closed list stores 'NURSING323' without a space; catalog prints 'NURSING 323' and it was treated as the same course (not a catalog addition). Catalog codes ANATOMY 001, MICRO 020, PHYSIOL 001, PSYCH 041, SOC 001 match closed-list ANATOMY 1, MICRO 20, PHYSIOL 1, PSYCH 41, SOC 1.",
+   "SOC 001/ANTHRO 102 and COMM C1000 are asterisked as general education courses recommended to be taken before entering the program, but are listed as named requirements in the semester blocks, so they were placed in blocks.",
+   "Program Student Learning Outcomes are printed for the Associate Degree Nursing Program as a whole ('Upon graduation from the Associate Degree Nursing Program'); this LVN to RN award shares them. The line-broken 'inter-\\nprofessional' was recorded as 'inter-professional'.",
+   "The Non-Degree LVN to RN Pathway section (29 units, not an award) and the Pre-Health Professions AS were ignored."
   ]
  },
- "extracted_run": "39006381839"
+ "extracted_run": "44687664966",
+ "catalog_year": "2026-2027",
+ "source_sha": "fe6a2d9aa7629cf8",
+ "source_codes": [
+  "ANATOMY1",
+  "ANTHRO102",
+  "COMMC1000",
+  "ENGLC1000",
+  "MICRO20",
+  "NURSING311",
+  "NURSING321",
+  "NURSING323",
+  "NURSING325",
+  "NURSING329A",
+  "NURSING329B",
+  "NURSING333",
+  "NURSING335",
+  "NURSING339",
+  "NURSING343",
+  "NURSING345",
+  "NURSING347",
+  "PHYSIOL1",
+  "PSYCC1000",
+  "PSYCH41",
+  "SOC1"
+ ],
+ "source_coverage": 0.955
 }

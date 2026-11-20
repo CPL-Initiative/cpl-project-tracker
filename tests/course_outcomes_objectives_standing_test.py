@@ -55,8 +55,8 @@ def trial_pages(system):
             txt, page = os.path.join(folder, stem + ".txt"), os.path.join(folder, stem + ".html.gz")
             if not (os.path.exists(txt) and os.path.exists(page)):
                 continue
-            got = read.parse_page(gzip.open(page, "rt").read(), open(txt).read(), sys_)
-            out.append((os.path.basename(folder), row["code"], got))
+            got = read.parse_page(gzip.open(page, "rt").read(), open(txt).read(), sys_, row.get("report"))
+            out.append((os.path.basename(folder), row["code"], {**got, "report": row.get("report")}))
     return out
 
 
@@ -98,7 +98,8 @@ def _():
 def _():
     pages = trial_pages("curriqunet")
     assert len(pages) >= 60, len(pages)
-    miss = [(t, c) for t, c, g in pages if has_slos(g) and not g["objectives"]]
+    # A report whose template prints no objectives section is the record's to name (Feather River's 485, S689).
+    miss = [(t, c) for t, c, g in pages if has_slos(g) and not g["objectives"] and read.prints_objectives(g["report"])]
     assert not miss, miss[:6]
     assert read.OBJECTIVES_BY_SYSTEM["curriqunet"]["printed"] is True
 
@@ -188,6 +189,9 @@ def _():
             continue
         if printed is not True and all("objectives" in r for r in rows):
             continue  # the objectives reader ran, and this system's template printed none: the record names why
+        if all("objectives" in r for r in rows) and not any(read.prints_objectives(r.get("report"))
+                                                             for r in rows if has_slos(r)):
+            continue  # the objectives reader ran, and each SLO page's report prints no objectives section (S689)
         bad.append((host, slug, system, printed, "SLOs and no objectives, and the reread plan does not name it"))
     assert not bad, bad
 
@@ -201,8 +205,13 @@ def _():
         if not all("objectives" in r for r in rows):
             continue  # filed before the reader took objectives: the plan's reread
         slo = [r for r in rows if has_slos(r)]
+        assert slo, (host, slug, "no SLO pages")
+        # A page from a report whose template prints no objectives section is not counted (Feather River's 485, S689).
+        slo = [r for r in slo if read.prints_objectives(r.get("report"))]
+        if not slo:
+            continue
         obj = [r for r in slo if r.get("objectives")]
-        assert slo and len(obj) * 2 >= len(slo), (host, slug, len(obj), len(slo))
+        assert len(obj) * 2 >= len(slo), (host, slug, len(obj), len(slo))
 
 
 @check("the reread plan covers every SLO college without objectives (a landed step may stay until it moves to done), "

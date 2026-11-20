@@ -3,26 +3,84 @@
  "programs": 321,
  "with_closed_list": 301,
  "found": 288,
- "extracted": 292,
+ "extracted": 288,
  "errors": 0,
  "passed_machine_checks": 276,
  "failed": {
-  "coverage": 5,
+  "coverage": 1,
   "invented": 0,
-  "arithmetic": 15,
+  "arithmetic": 11,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 18.94,
- "cost_per_program": 0.0649,
+ "cost_usd_run": 0.05,
+ "cost_usd_filed": 18.55,
+ "cost_per_program": 0.0644,
+ "extract_calls": 1,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "17757",
+   "title": "Civil Design Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24204",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.714,
+    "body": 0.714,
+    "content": 0.714,
+    "net": 5,
+    "listed": 7,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 19130,
+     "content": 19130,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "22709",
+   "title": "Computer Information Technology: Office Technologies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24209",
+    "label": {
+     "award": 1,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.167,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 9093,
+     "content": 9093,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
   {
    "control_number": "30863",
    "title": "Diesel Fuel and Emission Systems",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "31408",
@@ -30,7 +88,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "34004",
@@ -56,7 +115,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "35257",
@@ -64,7 +124,35 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41785",
+   "title": "UCTP - Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24155",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.833,
+    "body": 0.833,
+    "content": 0.833,
+    "net": 10,
+    "listed": 12,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 9639,
+     "content": 9639,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "42032",
@@ -90,7 +178,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45631",
@@ -116,8 +205,9 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "43154073220"
+ "run": "44688858512"
 }

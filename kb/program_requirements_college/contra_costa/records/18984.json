@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10136,
-    "output_tokens": 5429,
+    "output_tokens": 5625,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 5429,
+  "output_tokens": 5625,
   "output_tokens_details": {
-   "thinking_tokens": 1482
+   "thinking_tokens": 1661
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14912,
- "ms": 38844,
- "seconds": 39.4,
+ "cost_usd": 0.15304,
+ "ms": 41358,
+ "seconds": 42.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 63,
+   "placed": 65,
    "listed": 73,
-   "share": 0.863,
+   "share": 0.89,
    "missing": [
-    "ECON220",
-    "ECON221",
     "POLSC130",
     "POLSC140",
     "PSYCH118",
@@ -63,10 +61,22 @@
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON221",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON220",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 7,
    "codes": [
     "AFRAM122",
     "AFRAM123",
@@ -74,9 +84,7 @@
     "AFRAM210",
     "AFRAM225",
     "AFRAM228",
-    "BUS109",
-    "ECONC2001",
-    "ECONC2002"
+    "BUS109"
    ],
    "flagged": [
     "AFRAM122",
@@ -85,9 +93,7 @@
     "AFRAM210",
     "AFRAM225",
     "AFRAM228",
-    "BUS109",
-    "ECONC2001",
-    "ECONC2002"
+    "BUS109"
    ],
    "pass": true
   },
@@ -179,13 +185,13 @@
   },
   "blocks": [
    {
-    "name": "For breadth, complete courses in at least two disciplines:",
+    "name": "For breadth, complete courses in at least two disciplines",
     "rule": "choose_units",
     "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
@@ -739,13 +745,14 @@
    }
   ],
   "notes": [
-   "Single list: select a minimum of 18 units; the catalog's discipline headings (Administration of Justice, Business & Economics, etc.) are categories, and the breadth rule requires courses in at least two disciplines from the list.",
-   "degree_total 60 taken from the Unit Summary 'Total Overall Units (min/max) 60-60'; Unit Summary lists General Education Units and Elective Units to reach 60 as 'None', so ge_units is null and no GE pattern is named.",
-   "Several courses appear cross-listed under different codes (e.g., AFRAM122/HIST122, AFRAM123/HIST123, AFRAM140/PSYCH140, AFRAM210/HIST110, AFRAM225/POLSC225, AFRAM228/SOCIO225, LARAZ127/HIST127); recorded separately as printed. Reviewer may check whether cross-listed pairs should count as one choice.",
-   "The third program outcome is cut off in the source text ('...cultural perspect'); copied as printed without completion. Further outcomes may be missing.",
-   "Potential Careers section prints 'None'; careers left empty.",
-   "Codes such as POLSC1000, PSYCC1000, HISTC1001 were matched to closed-list POLS C1000, PSYC C1000, HIST C1001 despite spacing differences."
+   "Major requires a minimum of 18 units from the list with courses in at least two disciplines; the catalog's discipline subheadings (Administration of Justice, Business & Economics, etc.) were merged into one choose_units block.",
+   "Codes recorded as printed without spaces (e.g., POLSC1000 = POLS C1000, PSYCC1000 = PSYC C1000, HISTC1001 = HIST C1001); these were treated as matching the closed list.",
+   "Several cross-listed courses appear under both AFRAM and HIST/PSYCH/POLSC/SOCIO codes (e.g., AFRAM122/HIST122, AFRAM140/PSYCH140, AFRAM225/POLSC225, AFRAM228/SOCIO225, AFRAM210/HIST110); each is recorded as printed, as separate entries.",
+   "Degree total 60-60 taken from the Unit Summary 'Total Overall Units'; GE units printed as 'None', no GE pattern named; 'Elective Units to reach 60' printed as 'None'.",
+   "The third program outcome is cut off in the source text ('...cultural perspect'); recorded as printed. Outcomes are printed for the program 'Liberal Arts: Social and Behavioral Sciences' as a whole, which this A.A. shares.",
+   "Potential Careers section prints 'None'."
   ]
  },
- "extracted_run": "38979730323"
+ "extracted_run": "44687786167",
+ "catalog_year": "2026-2027"
 }

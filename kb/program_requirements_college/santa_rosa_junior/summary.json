@@ -2,21 +2,21 @@
  "college": "Santa Rosa Junior College",
  "programs": 283,
  "with_closed_list": 279,
- "found": 238,
- "extracted": 238,
+ "found": 259,
+ "extracted": 259,
  "errors": 0,
- "passed_machine_checks": 203,
+ "passed_machine_checks": 226,
  "failed": {
-  "coverage": 13,
+  "coverage": 11,
   "invented": 9,
-  "arithmetic": 28,
+  "arithmetic": 26,
   "repeated": 1,
   "outcomes": 1
  },
- "cost_usd_run": 4.24,
- "cost_usd_filed": 21.2,
- "cost_per_program": 0.0891,
- "extract_calls": 30,
+ "cost_usd_run": 4.22,
+ "cost_usd_filed": 22.74,
+ "cost_per_program": 0.0878,
+ "extract_calls": 37,
  "extract_failed": [],
  "not_found": [
   {
@@ -36,29 +36,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "09605",
-   "title": "AGVI: Viticulture",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "09616",
-   "title": "Business: Bookkeeper",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -68,18 +47,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=132",
-    "coverage": 0.375
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "16937",
-   "title": "AMT: CNC Machining II Tech",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "coverage": 0.375,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -90,7 +59,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -101,7 +71,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -112,18 +83,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21706",
-   "title": "AGWS: Enology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -134,29 +95,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21710",
-   "title": "AGEH: Landscape Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21719",
-   "title": "Sustainable Agriculture",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -167,7 +107,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -182,79 +123,14 @@
    "status": "Active"
   },
   {
-   "control_number": "21724",
-   "title": "Advanced Manufacturing Tech",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21734",
-   "title": "Pharmacy Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21737",
-   "title": "Interior Design",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21742",
-   "title": "Child Development: Teacher",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "30732",
-   "title": "Film & Media Arts Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "30923",
-   "title": "Wastewater Treatment Operatns",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "31378",
    "title": "Solar Photovoltaics: System Installation, Design & Sales",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -265,17 +141,6 @@
    "near_miss": {
     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=94",
     "coverage": 0.293
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "35252",
-   "title": "EMLS Credit: Intermediate",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
    },
    "status": "Active"
   },
@@ -300,6 +165,18 @@
    "status": "Active"
   },
   {
+   "control_number": "36760",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
    "control_number": "37015",
    "title": "CSU GE Pattern",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -316,62 +193,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39418",
-   "title": "CS Web and Mobile Full-Stack",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39901",
-   "title": "Weld: Gas Tungsten Arc: GTAW",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39902",
-   "title": "Weld: Shielded Metal Arc: SMAW",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39903",
-   "title": "Weld: Flux Cored Arc: FCAW",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39904",
-   "title": "Weld: Gas Metal Arc: GMAW",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -382,7 +205,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -393,7 +217,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -404,7 +229,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -415,54 +241,11 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "43236",
-   "title": "ArlRmotSnsng&Photogrammtry",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "44248",
-   "title": "HVACR Fundamentals",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "44303",
-   "title": "Automotive Fundamental",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "44304",
-   "title": "Automotive Transmission",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   }
  ],
- "run": "44477690021"
+ "run": "44701011374"
 }

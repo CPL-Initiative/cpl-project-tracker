@@ -1188,6 +1188,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/commons_status_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_id_route_test.py` | workflows: `js-tests.yml` | — |
+| `tests/course_outcomes_header_fix_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_load_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_objectives_standing_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_read_test.py` | workflows: `js-tests.yml` | — |
@@ -1643,5 +1644,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1093 file
+Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1094 file
 datasets · 197 external services · 635 consumers · 75 workflows · 41 tabs.

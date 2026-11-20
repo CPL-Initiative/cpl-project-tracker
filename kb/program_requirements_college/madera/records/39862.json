@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7085,
-    "output_tokens": 2298,
+    "output_tokens": 2227,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 2298,
+  "output_tokens": 2227,
   "output_tokens_details": {
-   "thinking_tokens": 718
+   "thinking_tokens": 625
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0743,
- "ms": 17813,
- "seconds": 18.2,
+ "cost_usd": 0.07288,
+ "ms": 18345,
+ "seconds": 18.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 18,
    "listed": 18,
-   "share": 0.944,
-   "missing": [
-    "OT44"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BT6",
+     "listed": "OT44",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "BT5",
-    "BT6"
+    "BT5"
    ],
    "flagged": [
-    "BT5",
-    "BT6"
+    "BT5"
    ],
    "pass": true
   },
@@ -316,15 +319,15 @@
    }
   ],
   "notes": [
-   "Source URL is the 2025-2026 MCC catalog, while the program record is for catalog year 2026-2027; verify the year.",
-   "Each typing course (BT 106, BT 107, BT 108) may instead be met by a typing certification (25/35/45 wpm, via OT 150/OT 151/OT 152 certifications), which is why the block's stated total is 0.0-4.5. The certifications are not courses, so they are not recorded as alternatives.",
-   "ACCTG 40 (4.0) OR BT 131 (3.5) is printed under Required Courses with its own 3.5-4.0 sub-total; it is included in the Required Courses block, whose 23.5-24.0 total matches this reading.",
-   "Catalog prints BT 26, BT 106, BT 107, BT 108 and BT 131 with a space; the closed list has them without a space (BT26, BT106, etc.). They are treated as the same courses.",
-   "BT 12 is printed at 2.0 units, whereas the state file stores 1.5.",
-   "The printed total of 25.5-32.5 can fall below the 30-unit floor of the award type named in the program record; verify this.",
-   "BT 6 (Records Management) and BT 5 (Workplace Communication) are not in the closed list.",
-   "The Learning Outcome(s) are printed for this certificate section."
+   "The Required Courses stated total 23.5-24.0 covers the twelve listed BT courses (20 units) plus the ACCTG 40 (4.0) OR BT 131 (3.5) choice, so that choice is recorded in the same block with BT 131 as an alternative.",
+   "Each typing course (BT 106, BT 107, BT 108) may instead be met by a typing certification (25, 35, 45 wpm respectively; referenced as OT 150, OT 151, OT 152 certifications); hence the block's stated range 0.0-4.5. The certifications are not courses and are not recorded as alternatives.",
+   "BT 12 is printed with 2.0 units in the catalog, while the state file stores 1.5.",
+   "BT 6 (Records Management) and BT 5 (Workplace Communication) are not on the closed list; recorded as catalog additions.",
+   "Catalog prints BT 26, BT 106, BT 107, BT 108, BT 131 with a space; the closed list stores them without (BT26, BT106, etc.) — treated as the same courses.",
+   "Printed total 25.5-32.5 can fall below the 30-unit floor implied by the award type (Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units); reviewer may check.",
+   "Source URL refers to the 2025-2026 catalog while the program record is for 2026-2027."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }
