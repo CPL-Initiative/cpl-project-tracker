@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8049,
-    "output_tokens": 3066,
+    "output_tokens": 2830,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3066,
+  "output_tokens": 2830,
   "output_tokens_details": {
-   "thinking_tokens": 960
+   "thinking_tokens": 854
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09352,
- "ms": 24619,
- "seconds": 24.8,
+ "cost_usd": 0.0888,
+ "ms": 21645,
+ "seconds": 22.1,
  "parts": null,
  "error": null,
  "score": {
@@ -370,15 +370,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "No explicit section heading printed; the text begins mid-word ('he Associate in Arts...'), so the heading was taken from the program description.",
-   "List A requires three courses drawn from at least two of four areas: Area 1 History or Government (AFRAM 008, 030, 031, 032); Area 2 Arts and Humanities (AFRAM 026, 029, 045); Area 3 Social Science (AFRAM 002, 005, 011, 012, 014A, 016, 023, 045, 038); Area 4 Quantitative Reasoning and Research Methods (STAT C1000 or MATH 013). Recorded as one block; the at-least-two-areas constraint is not captured structurally.",
-   "AFRAM 045 is printed in both Area 2 and Area 3; listed once.",
-   "Catalog prints codes with leading zeros (e.g., ETHST 001, AFRAM 035) matching closed-list codes ETHST 1, AFRAM 35, etc.; treated as the same courses.",
-   "Several List A courses are marked '( Historical )' (AFRAM 030, 031, 026, 029, 002, 038, MATH 013); reviewer may check whether they are still offered.",
-   "Catalog prints 'Electives to meet 60 units' with no units; electives_fill_degree set true.",
-   "Career sentence also mentions 'working in higher education or graduate school'; recorded 'higher education' as the career field, graduate school omitted as not a career.",
-   "The text's statement of 'a minimum of 18 semester units ... in a major' is the generic AA-T rule; total_units taken from the printed 'Total Major Units: 18.00-19.00'."
+   "List A requires three courses from at least two of four areas: Area 1 History or Government (AFRAM 008, 030, 031, 032); Area 2 Arts and Humanities (AFRAM 026, 029, 045); Area 3 Social Science (AFRAM 002, 005, 011, 012, 014A, 016, 023, 045, 038); Area 4 Quantitative Reasoning and Research Methods (STAT C1000 or MATH 013). Areas recorded in one block; each area prints 0.00 units.",
+   "AFRAM 045 is printed under both Area 2 and Area 3; listed once.",
+   "Catalog prints zero-padded codes (e.g., AFRAM 008) matching closed-list codes (AFRAM 8); treated as the same courses.",
+   "Several courses are marked '( Historical )' in the catalog (AFRAM 030, 031, 026, 029, 002, 038, MATH 013).",
+   "Page prints 'Electives to meet 60 units' with no unit figure; electives_fill_degree set true.",
+   "Text begins with 'he Associate...' (first letter cut off); no explicit section heading printed, heading taken from the program description.",
+   "Career 'higher education' taken from 'working in higher education or graduate school'."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

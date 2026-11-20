@@ -2,53 +2,31 @@
  "college": "Laney College",
  "programs": 175,
  "with_closed_list": 175,
- "found": 150,
- "extracted": 150,
+ "found": 156,
+ "extracted": 156,
  "errors": 0,
- "passed_machine_checks": 118,
+ "passed_machine_checks": 138,
  "failed": {
   "coverage": 0,
   "invented": 0,
-  "arithmetic": 32,
+  "arithmetic": 18,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 10.1,
+ "cost_usd_run": 2.5,
+ "cost_usd_filed": 10.5,
  "cost_per_program": 0.0673,
+ "extract_calls": 32,
+ "extract_failed": [],
  "not_found": [
-  {
-   "control_number": "01147",
-   "title": "Management and Supervision",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44436",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.333,
-    "body": 0.333,
-    "content": 0.333,
-    "net": 2,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 2 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2097,
-     "content": 2097,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
   {
    "control_number": "01151",
    "title": "Performance and Production for Video, Broadcast and Digital Cinematography",
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "09024",
@@ -56,33 +34,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "09037",
-   "title": "Chicanx and Latinx Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44453",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.409,
-    "body": 0.409,
-    "content": 0.409,
-    "net": 9,
-    "listed": 22,
-    "why": "coverage 0.41 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 4651,
-     "content": 4651,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "21544",
@@ -90,7 +43,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "21546",
@@ -98,59 +52,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30964",
-   "title": "Electrical Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44612",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2990,
-     "content": 2990,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "31279",
-   "title": "Electrical Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44613",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2913,
-     "content": 2913,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36572",
@@ -176,7 +79,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36935",
@@ -184,7 +88,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36936",
@@ -192,59 +97,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37473",
-   "title": "Solar Photovoltaic Professionals",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44614",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2019,
-     "content": 2019,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37484",
-   "title": "Social Justice Studies: Chicanx and Latinx Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44454",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.294,
-    "body": 0.294,
-    "content": 0.294,
-    "net": 5,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 5 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4563,
-     "content": 4563,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37932",
@@ -270,7 +124,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41602",
@@ -278,7 +133,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42407",
@@ -286,7 +142,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44095",
@@ -294,7 +151,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45097",
@@ -302,8 +160,9 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38935141023"
+ "run": "44744386009"
 }

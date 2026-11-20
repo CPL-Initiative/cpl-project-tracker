@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6762,
-    "output_tokens": 1284,
+    "output_tokens": 1303,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1284,
+  "output_tokens": 1303,
   "output_tokens_details": {
-   "thinking_tokens": 346
+   "thinking_tokens": 347
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05273,
- "ms": 15349,
- "seconds": 15.6,
+ "cost_usd": 0.05311,
+ "ms": 10151,
+ "seconds": 10.7,
  "parts": null,
  "error": null,
  "score": {
@@ -136,7 +136,7 @@
   },
   "blocks": [
    {
-    "name": "Core Courses",
+    "name": "Core Courses (16.25 units)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -207,11 +207,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints ECT 013, ECT 012 and ECT 015 with zero-padded numbers; they are read as the closed-list courses ECT 13, ECT 12 and ECT 15 and not as catalog additions.",
-   "The catalog prints WELD 215A as 0.75 units; the state file stores 0.8.",
-   "The Career Opportunities line also lists 'opportunities at the Port area'. It names no job title or career field, so it is not recorded as a career.",
-   "Some outcomes begin with a printed label ('Safe use of materials:', 'Explain concepts related to refrigeration:'). The labels are kept as printed."
+   "Catalog prints ECT 013, ECT 012, ECT 015 with leading zeros; treated as the closed-list courses ECT 13, ECT 12, ECT 15 (catalog_addition false).",
+   "WELD 215A is printed as 0.75 units in the catalog; the state file stores 0.8.",
+   "Career Opportunities also lists 'opportunities at the Port area', which is a location rather than a named career; not recorded as a career.",
+   "The first two outcomes carry printed labels ('Safe use of materials:', 'Explain concepts related to refrigeration:'), kept as printed.",
+   "Page contains stray CSS text between the outcomes and the course table; ignored."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }
