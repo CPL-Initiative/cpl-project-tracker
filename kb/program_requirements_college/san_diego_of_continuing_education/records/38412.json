@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Digital Design",
  "award": "Noncredit program",
- "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6619,
+  "input_tokens": 6635,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6619,
-    "output_tokens": 818,
+    "input_tokens": 6635,
+    "output_tokens": 965,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 818,
+  "output_tokens": 965,
   "output_tokens_details": {
-   "thinking_tokens": 199
+   "thinking_tokens": 358
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04284,
- "ms": 7606,
- "seconds": 7.8,
+ "cost_usd": 0.04584,
+ "ms": 9121,
+ "seconds": 28.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 4,
    "listed": 4,
-   "share": 0.0,
-   "missing": [
-    "COMM660",
-    "COMM661",
-    "COMM662",
-    "COMM663"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -90,18 +85,18 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Education) Transitions Credit by Exam Active Agreements",
+   "section_heading": "Digital Design",
    "measure": "hours",
    "total_units": {
     "min": null,
@@ -123,33 +118,70 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "digital media and design industry"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "COMM 660",
-    "why": "named only in credit-by-exam articulation table, not as a Digital Design program requirement"
-   },
-   {
-    "code": "COMM 661",
-    "why": "named only in credit-by-exam articulation table, not as a Digital Design program requirement"
-   },
-   {
-    "code": "COMM 662",
-    "why": "named only in credit-by-exam articulation table, not as a Digital Design program requirement"
-   },
-   {
-    "code": "COMM 663",
-    "why": "named only in credit-by-exam articulation table, not as a Digital Design program requirement"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM 660",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 661",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 662",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 663",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied page is the Credit by Exam Active Agreements table, not the Digital Design noncredit program section. No program requirements, hours, outcomes or careers are printed, so no blocks were recorded.",
-   "The table shows that COMM 660, COMM 661, COMM 662 and COMM 663 (Portfolio Design) together articulate to DSGN 102 Digital Media I (3 units) at City College Art – Graphic Design, active through Summer 2027. COMM 660, COMM 661 and COMM 662 together articulate to MULT 100 at Mesa Multimedia, active through Summer 2028.",
-   "Measure is set to hours because this is a noncredit program, but the text prints no hours. A reviewer should locate the actual Digital Design program page in the 2026-2027 CE catalog."
+   "Measure set to hours because this is a noncredit program, but the text prints no hours for any course or for the program; all hour fields are null.",
+   "The catalog prints COMM 663 as 'Portfolio Design' while the closed list titles it 'Portfolio Design Print and Web'; same code, treated as the same course.",
+   "The description calls the award a 'Digital Design Certificate'; the 'Certificate of Completion:' label that heads the next program suggests this one is also a Certificate of Completion, but its own label is not in the excerpt.",
+   "No program learning outcomes are printed in the excerpt.",
+   "Career entry taken from 'entry-level employment in the digital media and design industry'; the text also mentions the 'print and visual design industry' as where the skills apply. Reviewer may check whether these count as careers."
   ]
  },
- "extracted_run": "39035224783"
+ "extracted_run": "44739577102",
+ "catalog_year": "2026-2027",
+ "source_sha": "b2e6b80a48ad39b5",
+ "source_codes": [
+  "COMM660",
+  "COMM661",
+  "COMM662",
+  "COMM663"
+ ],
+ "source_coverage": 1.0
 }

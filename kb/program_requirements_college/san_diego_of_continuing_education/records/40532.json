@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Intermediate Low Prevocational ESL",
  "award": "Noncredit program",
- "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=113",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7376,
+  "input_tokens": 7136,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7376,
-    "output_tokens": 872,
+    "input_tokens": 7136,
+    "output_tokens": 779,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 872,
+  "output_tokens": 779,
   "output_tokens_details": {
-   "thinking_tokens": 390
+   "thinking_tokens": 369
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04694,
- "ms": 9414,
- "seconds": 9.7,
+ "cost_usd": 0.04412,
+ "ms": 7945,
+ "seconds": 8.1,
  "parts": null,
  "error": null,
  "score": {
@@ -58,9 +58,15 @@
    "pass": false
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ESLA428A",
+    "ESLA428B"
+   ],
+   "flagged": [
+    "ESLA428A",
+    "ESLA428B"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -99,7 +105,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Int Low Prevocational ESL 1  ESLA 427A",
+   "section_heading": "Certificate of Competency: Intermediate Low Prevocational ESL",
    "measure": "hours",
    "total_units": {
     "min": null,
@@ -123,24 +129,52 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESLA 428A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESLA 428B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "ESLA 427A",
-    "why": "Appears only as a course description; the text prints no program requirements section for this award."
+    "why": "not in this section; the catalog prints ESLA 428A 'Int Low Prevocational 1' here, and prints ESLA 427A only in the Intermediate High section"
    },
    {
     "code": "ESLA 427B",
-    "why": "Appears only as a course description; the text prints no program requirements section for this award."
+    "why": "not in the text; the catalog prints ESLA 428B 'Int Low Prevocational 2' here"
    }
   ],
-  "notes": [
-   "The supplied text (catalog page 113) is the course descriptions section, not a program page. It prints descriptions for ESLA 427A and ESLA 427B but no program heading, requirement list, hours, total or outcomes for the Intermediate Low Prevocational ESL program.",
-   "No blocks were recorded because the text does not state which courses the program requires. A reviewer should locate the program section elsewhere in the 2026-2027 CE catalog.",
-   "Measure is set to hours because this is a noncredit program, but the text prints no hours for either course or for the program.",
-   "The course descriptions contain sentences beginning 'Students will demonstrate acquisition of...'. These are part of the descriptions, not printed outcomes lists, so they were not recorded as course outcomes."
-  ]
+  "notes": []
  },
- "extracted_run": "39035224783"
+ "extracted_run": "44739577102",
+ "catalog_year": "2026-2027",
+ "source_sha": "e084acfb7ecc9be6",
+ "source_codes": [
+  "ESLA427A"
+ ],
+ "source_coverage": 0.5
 }
