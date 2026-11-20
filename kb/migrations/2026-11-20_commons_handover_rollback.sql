@@ -39,3 +39,8 @@ delete from storage.buckets b
 
 select to_regclass('public.commons_handover') is not null as table_kept,
        exists (select 1 from storage.buckets where id = 'commons-handover') as bucket_kept;
+
+-- Applied: supabase-migrate run 44789876384 created the bucket, the table and the three functions on 2026-11-20
+-- (ledger version 20261120180930). Its receipt is kb/receipts/migration_commons_handover_44789876384.json; a live
+-- read the same hour showed one storage policy (a reviewer's INSERT), the reviewer read on the table, and no
+-- insert, update, delete or mark for an API role.
