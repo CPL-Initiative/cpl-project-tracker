@@ -1,0 +1,190 @@
+{
+ "run": "44763594152",
+ "programs": [
+  {
+   "control_number": "32946",
+   "title": "Philosophy",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4553",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4553",
+   "cost_usd": 0.09029,
+   "usage": {
+    "input_tokens": 7373,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7373,
+      "output_tokens": 3040,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3040,
+    "output_tokens_details": {
+     "thinking_tokens": 1389
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 17,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 3,
+     "codes": [
+      "HUM10H",
+      "HUM18",
+      "PHI35"
+     ],
+     "flagged": [
+      "HUM10H",
+      "HUM18",
+      "PHI35"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      21.0,
+      21.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       21.0,
+       21.0
+      ],
+      "stated": [
+       21.0,
+       21.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 17,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 3,
+     "codes": [
+      "HUM10H",
+      "HUM18",
+      "PHI35"
+     ],
+     "flagged": [
+      "HUM10H",
+      "HUM18",
+      "PHI35"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      21.0,
+      21.0
+     ],
+     "stated": [
+      21.0,
+      21.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  }
+ ]
+}
