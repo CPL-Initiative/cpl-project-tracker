@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s690_reread_live_read_mtsac.sql",
+ "name": "s690_reread_live_read_mtsac",
+ "version": "20261120150232",
+ "sha256": "03269f63e04df905cc4c965ad821f2f4e14071cf4aaa7edd47c5064ab3c32454",
+ "run": "44759070274",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-20T15:02:33Z\",\"chk\":{\"Mt. San Antonio College\":[\"03086\",\"08086\",\"31650\",\"33876\",\"42916\",\"43670\"]},\"sum\":{\"Mt. San Antonio College\":[383,397,379,0,4,0]},\"diff\":[[\"Mt. San Antonio College\",\"03086\",\"37195340082\",\"38059865531\"],[\"Mt. San Antonio College\",\"08086\",\"37195340082\",\"38064250199\"],[\"Mt. San Antonio College\",\"33876\",\"37171952080\",\"39891607837\"],[\"Mt. San Antonio College\",\"42916\",\"37171952080\",\"38059865531\"]],\"gone\":{\"Mt. San Antonio College\":[\"14039\",\"31598\",\"36115\",\"38084\",\"39517\",\"41116\",\"41569\",\"42726\",\"42727\",\"42754\",\"42755\",\"42756\",\"42757\",\"42758\"]},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
