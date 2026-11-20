@@ -1480,6 +1480,10 @@ jobs:
       # report 28. No network. Pure-stdlib python.
       - name: CCSF CurricUNET route (census seed, route_of, checked search)
         run: python3 tests/ccsf_curricunet_route_test.py
+      # CCSF's report 28 names curriculum staff: its reads file parsed outcomes only, no page
+      # file, and no full read before the trial's rows are counted by eye (S690). No network.
+      - name: CCSF outline reads file parsed outcomes only
+        run: python3 tests/ccsf_outcomes_only_test.py
       # The course outcomes read (S374; Sam, Open Asks Sheet 70 card 3): each
       # course's SLOs as printed, every wanted course in one slice, no table write.
       # Pure-stdlib python.

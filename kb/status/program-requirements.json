@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-20T01:23:36Z",
-  "session": 688,
-  "moniker": "SkyLinnet",
-  "run": "Sam's session",
+  "written_at": "2026-11-20T10:53:29Z",
+  "session": 689,
+  "moniker": "SkyTern",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_689_handoff.md",
+  "handoff": "docs/session_690_handoff.md",
   "next_step": {
-    "title": "A prior-year read for College of the Desert's eight, then the reread plan's third ten",
-    "text": "The next session reads the 2025-26 catalog for the eight College of the Desert programs the 2026-27 catalog no longer prints, so the discontinued check can flag or clear them. Rule D now keeps an older read's mark for any program a newer, narrower read never looked at. Then it rereads the third ten colleges of the reread plan, one run at a time, at $40 per college per run."
+    "title": "The reread plan's fourth ten colleges, and free reads at Solano and Cañada",
+    "text": "The next session rereads the next ten colleges of the reread plan, Napa Valley to Butte, one run at a time at $40 per college per run, keeping the better of each filed record and its re-read. It also reads Solano's and Cañada's catalogs again for free, now that the page checks read headings printed with PDF ligatures, and pays only for programs whose own page is found."
   },
   "calls": [
     {
@@ -337,6 +337,38 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-20T08:19:00Z",
+      "text": "The page checks now read a catalog heading printed with a PDF ligature or a stand-in letter, so a program whose heading prints Certificate that way is no longer refused its own page. A refused program stays marked until a record places its courses, so no later read pays for the refused page again."
+    },
+    {
+      "at": "2026-11-20T08:45:00Z",
+      "text": "Santa Rosa Junior was read again where its certificate headings had been refused: 23 program records added and 6 replaced by a better read, for $4.22. Its gaps in the census fell from 41 to 19."
+    },
+    {
+      "at": "2026-11-20T09:16:00Z",
+      "text": "The reread plan's third ten colleges, Sierra to Madera, were read again, checked against what is live, posted and loaded: 56 program records added and 37 replaced by a better read, for $8.32."
+    },
+    {
+      "at": "2026-11-20T09:30:00Z",
+      "text": "Course outlines were loaded at Feather River, 336 learning outcome rows, and Palomar, 1,108 learning outcome rows and 1,106 course objectives, 2,550 rows in all, after the outline reader stopped filing table headers as outcomes."
+    },
+    {
+      "at": "2026-11-20T09:30:00Z",
+      "text": "City College of San Francisco's course outlines can now be listed from its public outline site: 1,417 of the 1,469 courses wanted have an outline. Its first outline read waits until the reader files only the outcomes, without the staff names the pages print."
+    },
+    {
+      "at": "2026-11-20T10:00:00Z",
+      "text": "College of the Desert's eight programs missing from its 2026-27 catalog keep their gap: its 2025-26 catalog is online only in an archive that the college's robots file closes to readers."
+    },
+    {
+      "at": "2026-11-20T10:31:04Z",
+      "text": "What CPL Pathways and Sierra show was rebuilt once with the night's records: 18,459 program statements under one build, confirmed by a closing count of the live table."
+    },
+    {
+      "at": "2026-11-20T10:36:00Z",
+      "text": "The harvest gap census counts 5,069 programs still to collect, down from 5,145, with 15,120 of 20,282 passing every check. Programs read with no courses placed fell from 396 to 309."
+    },
     {
       "at": "2026-11-20T00:21:30Z",
       "text": "Cosumnes River's four local degrees now read from the page that prints their heading."
@@ -764,7 +796,7 @@
     {
       "day": "2026-11-20",
       "active": 20282,
-      "complete": 15044,
+      "complete": 15120,
       "colleges": 118
     }
   ],
@@ -775,7 +807,7 @@
   },
   "harvest": {
     "day": "2026-11-20",
-    "gaps": 3443,
+    "gaps": 3449,
     "parts": {
       "links": {
         "catalog": [
@@ -796,21 +828,21 @@
         20282
       ],
       "coci": [
-        16903,
+        16979,
         20282
       ],
       "outcomes": {
         "slo": [
-          17246,
+          18309,
           88736
         ],
         "plo": [
-          16903,
+          16979,
           20282
         ]
       },
       "careers": [
-        15904,
+        15980,
         20282
       ]
     }

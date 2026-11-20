@@ -99,6 +99,13 @@ jobs:
           else args+=(--part "${{ matrix.part }}" --of "${parts:-1}"); fi
           python3 kb/_course_outcomes_read.py "${args[@]}"
 
+      - name: Keep only parsed outcomes from an outcomes-only host
+        # City College of San Francisco's report 28 names curriculum staff, so its reads file parsed outcomes only
+        # (d-ccsf-outline-trial-no-staff-names-s689). The reader writes no page file there; this removes any that
+        # reached such a folder before the artifact and the commit below keep it.
+        if: always()
+        run: python3 kb/_course_outcomes_read.py --strip-page-files kb/course_outcomes/
+
       - name: Keep the slice's files as an artifact
         if: always()
         uses: actions/upload-artifact@v7

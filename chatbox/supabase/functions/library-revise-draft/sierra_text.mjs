@@ -11,6 +11,7 @@ export function readingText(html) {
   const body = String(html || "")
     .replace(/<!-- cpl-public-header:start[\s\S]*?<!-- cpl-public-header:end -->/g, " ")
     .replace(/<header\b[^>]*\bclass="cplh"[\s\S]*?<\/header>/gi, " ")
+    .replace(/<!-- cpl-library-check:[\s\S]*?<!-- \/cpl-library-check -->/g, " ")
     .replace(/<(head|script|style|svg|nav|noscript|template)\b[\s\S]*?<\/\1>/gi, " ")
     .replace(/<!--[\s\S]*?-->/g, " ")
     .replace(/<\/(p|div|li|h[1-6]|tr|section|article|td|th)>/gi, "$& \n")
