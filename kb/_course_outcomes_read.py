@@ -790,11 +790,16 @@ def read_one(reader, course: dict) -> dict:
     page = cor.load_full(reader, course["report"])
     body = page.get("body") or ""
     html_ = page.get("html") or ""
-    got = parse_page(page_html_of(reader, page), body, page_system(course["report"]), course["report"])
+    parsed_html = page_html_of(reader, page)
+    got = parse_page(parsed_html, body, page_system(course["report"]), course["report"])
+    # html_chars is what the parser read; html_cut is true only when that is the Reader's copy cut at its cap (the
+    # browser's whole page could not be read in its place). CCSF's report 28 pages run past 400,000 characters of
+    # HTML around 5,000 to 15,000 of text (trial 44738175152), so the whole page stands in on every one.
     row = {**course, "status": page.get("status"), "final_url": page.get("final_url"),
            "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
-           "chars": len(body), "text_cut": len(body) >= TEXT_CAP, "html_chars": len(html_),
-           "html_cut": len(html_) >= READER_HTML_CAP, "offered_at": offered_at(body), **got}
+           "chars": len(body), "text_cut": len(body) >= TEXT_CAP, "html_chars": len(parsed_html),
+           "html_cut": len(html_) >= READER_HTML_CAP and len(parsed_html) <= len(html_),
+           "offered_at": offered_at(body), **got}
     if outcomes_only(course["report"]):
         row["section_heads"] = section_heads(body)
     return file_row(row)
