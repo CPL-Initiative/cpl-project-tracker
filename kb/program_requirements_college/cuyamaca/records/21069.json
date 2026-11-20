@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Business Office Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7723,
-    "output_tokens": 2190,
+    "output_tokens": 2287,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2190,
+  "output_tokens": 2287,
   "output_tokens_details": {
-   "thinking_tokens": 487
+   "thinking_tokens": 598
   },
   "service_tier": "standard",
-  "inference_geo": "global",
-  "speed": "standard"
+  "inference_geo": "global"
  },
- "cost_usd": 0.07469,
- "ms": 18160,
- "seconds": 18.6,
+ "cost_usd": 0.07663,
+ "ms": 19379,
+ "seconds": 20.6,
  "parts": null,
  "error": null,
  "score": {
@@ -61,18 +60,20 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    24.0,
-    24.0
+    27.0,
+    27.0
    ],
    "stated": [
     24.0,
     24.0
    ],
    "against": "program",
-   "why": []
+   "why": [
+    "the blocks sum to 27.0-27.0; the catalog states 24.0-24.0"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -96,7 +97,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -172,28 +173,28 @@
      },
      {
       "code": "BOT-101A",
-      "units": 1.5,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BOT-101B",
-      "units": 1.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BOT-102A",
-      "units": 1.5,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BOT-102B",
-      "units": 1.5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -334,13 +335,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The Certificate of Achievement section prints no course list of its own; it states that students who complete only the major requirements above qualify, so the blocks and the 24-unit total are taken from the A.S. major course list.",
-   "The catalog prints BOT-101A & BOT-101B as one row with 3 units, and BOT-102A & BOT-102B as one row with 3 units; each pair is split into two required courses with 1.5 units each (per the state file) so the row total of 3 is preserved.",
-   "Units for the courses in the 'Select at least six units' list are not printed in the text, so they are null.",
-   "The program learning outcomes and career opportunities are printed once for the page (degree and certificate together); the certificate shares them.",
-   "'Plus General Education Requirements' applies to the A.S. degree only, not the certificate."
+   "The Certificate of Achievement section states that students who complete only the major requirements above (the A.S. course list) qualify for the certificate; blocks and the 24-unit total are read from that A.S. major list.",
+   "The catalog prints BOT-101A & BOT-101B as one row with 3 units, and BOT-102A & BOT-102B as one row with 3 units; the 3 units are recorded on the first code of each pair and the second code's units left null (closed list stores 1.5 each).",
+   "Units are not printed beside the elective courses in the 'Select at least six units' list, so their units are null.",
+   "The Program Learning Outcomes are printed once for the program (A.S. and Certificate page) and are shared by this certificate.",
+   "Careers come from the shared Career Opportunities list for the program."
   ]
  },
- "extracted_run": "44752892297",
- "catalog_year": "2026-2027"
+ "extracted_run": "38748833332"
 }

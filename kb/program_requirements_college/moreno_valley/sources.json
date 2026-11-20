@@ -31,10 +31,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "business administration: general business concentration - associate of science degree and certificate of achievement - mas524/c/mce524",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 16,
@@ -72,10 +69,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "business administration: general business concentration - associate of science degree and certificate of achievement - mas524/c/mce524",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 16,
@@ -109,10 +103,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "business administration: accounting concentration - associate of science degree and certificate of achievement - mas523/c/mce523",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 13,
@@ -146,10 +137,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "business administration: accounting concentration - associate of science degree and certificate of achievement - mas523/c/mce523",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 13,
@@ -185,10 +173,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "business administration: management concentration - associate of science degree and certificate of achievement - mas521/c/mce521",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 14,
@@ -224,10 +209,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "business administration: management concentration - associate of science degree and certificate of achievement - mas521/c/mce521",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 14,
@@ -260,10 +242,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "business administration: marketing concentration - associate of science degree and certificate of achievement - mas525/c/mce525",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 11,
@@ -296,10 +275,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "business administration: marketing concentration - associate of science degree and certificate of achievement - mas525/c/mce525",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 11,
@@ -335,10 +311,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "business administration: real estate concentration - associate of science degree and certificate of achievement - mas527/c/mce527",
-    "section_fit": 0.714
+    "title": 1.0
    }
   },
   "listed": 14,
@@ -374,10 +347,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "business administration: real estate concentration - associate of science degree and certificate of achievement - mas527/c/mce527",
-    "section_fit": 0.714
+    "title": 1.0
    }
   },
   "listed": 14,
@@ -412,10 +382,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "simulation and gaming: game art - associate of science degree and certificate of achievement - mas739/c/mce739",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 13,
@@ -450,10 +417,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "simulation and gaming: game art - associate of science degree and certificate of achievement - mas739/c/mce739",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 13,
@@ -490,10 +454,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "computer programming - associate of science degree and certificate of achievement - mas728/c/mce728",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 17,
@@ -530,10 +491,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "computer programming - associate of science degree and certificate of achievement - mas728/c/mce728",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 17,
@@ -565,14 +523,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "education paraprofessional - associate of science degree and certificate of achievement - mas603/c/mce603",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2202
+  "text_chars": 2320
  },
  {
   "control_number": "30130",
@@ -598,14 +553,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "education paraprofessional - associate of science degree and certificate of achievement - mas603/c/mce603",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2202
+  "text_chars": 2320
  },
  {
   "control_number": "30133",
@@ -633,14 +585,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "administrative/clinical medical assisting - associate of science degree and certificate of achievement - mas718/c/mce718",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2226
+  "text_chars": 2391
  },
  {
   "control_number": "30134",
@@ -668,14 +617,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "administrative/clinical medical assisting - associate of science degree and certificate of achievement - mas718/c/mce718",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2226
+  "text_chars": 2391
  },
  {
   "control_number": "30135",
@@ -705,14 +651,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "transcriptionist/health documentation specialist - associate of science degree and certificate of achievement - mas1040/c/mce1040",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 2846
+  "text_chars": 2978
  },
  {
   "control_number": "30136",
@@ -742,14 +685,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "transcriptionist/health documentation specialist - associate of science degree and certificate of achievement - mas1040/c/mce1040",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 2846
+  "text_chars": 2978
  },
  {
   "control_number": "30137",
@@ -780,10 +720,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "dental assistant - associate of science degree and certificate of achievement - mas621/c/mce621",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 13,
@@ -818,10 +755,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "dental assistant - associate of science degree and certificate of achievement - mas621/c/mce621",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 13,
@@ -840,7 +774,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 67 of 85 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -870,10 +804,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "paramedic - associate of science degree and certificate of achievement - mas585/c/mce585",
-    "section_fit": 0.333
+    "title": 1.0
    }
   },
   "listed": 11,
@@ -906,10 +837,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "paramedic - associate of science degree and certificate of achievement - mas585/c/mce585",
-    "section_fit": 0.333
+    "title": 1.0
    }
   },
   "listed": 11,
@@ -954,14 +882,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "early childhood education - associate of science degree and certificate of achievement - mas544/c/mce544",
-    "section_fit": 0.6
+    "title": 1.0
    }
   },
   "listed": 23,
-  "text_chars": 3588
+  "text_chars": 3901
  },
  {
   "control_number": "30145",
@@ -1001,14 +926,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "early childhood education - associate of science degree and certificate of achievement - mas544/c/mce544",
-    "section_fit": 0.6
+    "title": 1.0
    }
   },
   "listed": 23,
-  "text_chars": 3588
+  "text_chars": 3901
  },
  {
   "control_number": "30146",
@@ -1040,14 +962,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "early childhood intervention assistant - associate of science degree and certificate of achievement - mas601/c/mce601",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3573
+  "text_chars": 3775
  },
  {
   "control_number": "30147",
@@ -1079,14 +998,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "early childhood intervention assistant - associate of science degree and certificate of achievement - mas601/c/mce601",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3573
+  "text_chars": 3775
  },
  {
   "control_number": "30148",
@@ -1147,10 +1063,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "social work, human services, & counseling practices - associate of science degree and certificate of achievement - mas987/c/mce987",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 43,
@@ -1214,10 +1127,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "social work, human services, & counseling practices - associate of science degree and certificate of achievement - mas987/c/mce987",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 42,
@@ -1239,20 +1149,17 @@
    "ADJ8"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4455",
-   "title": "Administration of Justice - Associate of Science Degree and Certificate of Achievement - MAS504/C/MCE504",
-   "h1": "Administration of Justice - Associate of Science Degree and Certificate of Achievement - MAS504/C/MCE504",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4454",
+   "title": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)",
+   "h1": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "administration of justice - associate of science degree and certificate of achievement - mas504/c/mce504",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 1923
+  "text_chars": 3307
  },
  {
   "control_number": "30151",
@@ -1276,10 +1183,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "administration of justice - associate of science degree and certificate of achievement - mas504/c/mce504",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 6,
@@ -1290,12 +1194,23 @@
   "title": "Administration of Justice/Law Enforcement Basic Peace Officer Academy Intensive",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJB1B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4459",
+   "title": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy - Associate of Science Degree and Certificate of Achievement - MAS922/C/MCE922",
+   "h1": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy - Associate of Science Degree and Certificate of Achievement - MAS922/C/MCE922",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.889
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 2785
  },
  {
   "control_number": "30158",
@@ -1321,10 +1236,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "fire technology - associate of science degree and certificate of achievement - mas555/c/mce555",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 8,
@@ -1354,10 +1266,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "fire technology - associate of science degree and certificate of achievement - mas555/c/mce555",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 8,
@@ -1383,10 +1292,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "firefighter academy - associate of science degree and certificate of achievement - mas669/c/mce669",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -1412,10 +1318,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "firefighter academy - associate of science degree and certificate of achievement - mas669/c/mce669",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -1440,10 +1343,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "community interpretation - associate of science degree and certificate of achievement - mas557/c/mce557",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -1468,10 +1368,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "community interpretation - associate of science degree and certificate of achievement - mas557/c/mce557",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -1601,10 +1498,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "kinesiology, health and wellness - associate of arts degree - maa498/c",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 109,
@@ -1781,10 +1675,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "communication, media and languages - associate of arts degree - maa495/c",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 99,
@@ -2134,10 +2025,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "fine and applied arts - associate of arts degree - maa496/c",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 209,
@@ -2630,7 +2518,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 67 of 85 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -2682,14 +2570,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "sociology - associate in arts for transfer (adt) - maa696 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 3291
+  "text_chars": 3489
  },
  {
   "control_number": "31220",
@@ -2715,14 +2600,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "early childhood education - associate in science for transfer (adt) - mas530 (cal-getc)",
-    "section_fit": 0.429
+    "title": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2925
+  "text_chars": 3041
  },
  {
   "control_number": "31232",
@@ -2836,10 +2718,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "music - associate in arts for transfer (adt) - maa705 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 17,
@@ -2886,14 +2765,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "spanish - associate in arts for transfer (adt) - maa708 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 25,
-  "text_chars": 3668
+  "text_chars": 3964
  },
  {
   "control_number": "32265",
@@ -2923,14 +2799,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "english - associate in arts for transfer (adt) - maa649 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3812
+  "text_chars": 4051
  },
  {
   "control_number": "32266",
@@ -2956,10 +2829,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "studio arts - associate in arts for transfer (adt) - maa694 (cal-getc)",
-    "section_fit": 0.333
+    "title": 1.0
    }
   },
   "listed": 8,
@@ -3005,14 +2875,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "anthropology - associate in arts for transfer (adt) - maa618 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 25,
-  "text_chars": 3849
+  "text_chars": 4143
  },
  {
   "control_number": "32639",
@@ -3076,14 +2943,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "psychology - associate in arts for transfer (adt) - maa568 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 2292
+  "text_chars": 2457
  },
  {
   "control_number": "32941",
@@ -3135,11 +2999,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.941,
   "codes_found": [
    "ETS14",
    "ETS15",
-   "HIS2",
    "HIST1",
    "HIST14",
    "HIST15",
@@ -3162,10 +3025,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "philosophy - associate in arts for transfer (adt) - maa717 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 17,
@@ -3303,14 +3163,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "administration of justice - associate in science for transfer (adt) - mas643 (cal-getc)",
-    "section_fit": 0.333
+    "title": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 3077
+  "text_chars": 3307
  },
  {
   "control_number": "37393",
@@ -3379,14 +3236,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "kinesiology - associate in arts for transfer (adt) - maa891 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 28,
-  "text_chars": 3302
+  "text_chars": 3652
  },
  {
   "control_number": "37533",
@@ -3421,10 +3275,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "art history - associate in arts for transfer (adt) - maa743 (cal-getc)",
-    "section_fit": 0.333
+    "title": 1.0
    }
   },
   "listed": 17,
@@ -3487,10 +3338,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "military social work - certificate of achievement - mce903",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 41,
@@ -3555,10 +3403,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "behavioral therapist - certificate of achievement - mce1044",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 43,
@@ -3623,10 +3468,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "child welfare and family studies - certificate of achievement - mce1038",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 43,
@@ -3693,10 +3535,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "drug and alcohol studies - certificate of achievement - mce1045",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 45,
@@ -3737,10 +3576,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "multicultural counseling & advocacy resources - certificate of achievement - mce1039",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 20,
@@ -3804,10 +3640,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "social justice system studies - certificate of achievement - mce988",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 42,
@@ -3833,10 +3666,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "it technician pathway: it systems support and sales - certificate of achievement - mce905",
-    "section_fit": 0.857
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -3862,10 +3692,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "basic graphic design - certificate of achievement - mce939",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -3889,10 +3716,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "introduction to education profession for esl students - certificate of competency - mcc8007",
-    "section_fit": 0.833
+    "title": 1.0
    }
   },
   "listed": 2,
@@ -3917,10 +3741,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "computer maintenance and security - certificate of completion - mcc8006",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -3945,10 +3766,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "operating systems and internet literacy - certificate of completion - mcc8008",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -4009,7 +3827,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 67 of 85 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -4032,10 +3850,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "emerging leaders - certificate of completion - mcc8013",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -4062,10 +3877,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "enterprise communication - certificate of completion - mcc8014",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 5,
@@ -4091,10 +3903,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "workplace essentials - certificate of completion - mcc8017",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -4118,10 +3927,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "sales techniques - certificate of completion - mcc8016",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 2,
@@ -4146,10 +3952,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "customer relations - certificate of completion - mcc8012",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -4177,10 +3980,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "coding prep - certificate of completion - mcc8010",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 6,
@@ -4205,10 +4005,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "accounting basics for small business - certificate of completion - mcc8009",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -4233,10 +4030,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "internet of things (iot): embedded systems & microcontrollers - certificate of completion - mcc8018",
-    "section_fit": 0.714
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -4273,10 +4067,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "administration of justice/corrections - associate of science degree - mas932/c",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -4306,10 +4097,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "web master: web developer - certificate of achievement - mce934",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 9,
@@ -4338,10 +4126,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "web master: web designer - certificate of achievement - mce933",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 7,
@@ -4367,10 +4152,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "it technician pathway: it systems specialist - certificate of achievement - mce937",
-    "section_fit": 0.833
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -4396,10 +4178,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "it technician pathway: cybersecurity specialist - certificate of achievement - mce936",
-    "section_fit": 0.833
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -4426,10 +4205,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "python programming - certificate of achievement - mce938",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 5,
@@ -4453,10 +4229,7 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 2,
@@ -4480,10 +4253,7 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 2,
@@ -4546,10 +4316,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "advanced american college english - certificate of competency - mcc8027",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -4568,7 +4335,7 @@
   "text_chars": 0,
   "catalog_lookup": {
    "result": "not_searched",
-   "why": "the matcher found 67 of 85 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
   }
  },
  {
@@ -4589,10 +4356,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "successful career transitions - certificate of completion - mcc8038",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 2,
@@ -4618,10 +4382,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "non-credit entrepreneurial essentials - certificate of completion - mcc8035",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -4647,10 +4408,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "non-credit entrepreneurial foundations - certificate of completion - mcc8036",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -4678,10 +4436,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "non-credit entrepreneurship and the team - certificate of completion - mcc8037",
-    "section_fit": 0.8
+    "title": 1.0
    }
   },
   "listed": 6,
@@ -4708,10 +4463,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "it technician pathway: cybersecurity healthcare specialist - certificate of achievement - mce986",
-    "section_fit": 0.857
+    "title": 1.0
    }
   },
   "listed": 5,
@@ -4737,10 +4489,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "entrepreneurial essentials - certificate of achievement - mce977",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 4,
@@ -4765,10 +4514,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "project management professional - certificate of achievement - mce984",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -4795,10 +4541,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "entrepreneurial foundations - certificate of achievement - mce978",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 5,
@@ -4826,10 +4569,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "entrepreneurship and the team - certificate of achievement - mce979",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 6,
@@ -4856,10 +4596,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "it technician pathway: cybersecurity analyst - certificate of achievement - mce985",
-    "section_fit": 0.833
+    "title": 1.0
    }
   },
   "listed": 5,
@@ -4884,10 +4621,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "family childcare provider - certificate of completion - mcc8033",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 3,
@@ -4917,10 +4651,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "fitness professionals - certificate of achievement - mce1061",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 8,
@@ -4960,10 +4691,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "information technology (it) cybersecurity - associate of science degree - mas1012/c",
-    "section_fit": 0.6
+    "title": 1.0
    }
   },
   "listed": 18,
@@ -4993,10 +4721,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "emergency management and homeland security - cybersecurity - associate of science degree and certificate of achievement - mas1087/c/mce1087",
-    "section_fit": 0.714
+    "title": 1.0
    }
   },
   "listed": 8,
@@ -5025,10 +4750,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 7,
@@ -5058,10 +4780,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "emergency management and homeland security - cybersecurity - associate of science degree and certificate of achievement - mas1087/c/mce1087",
-    "section_fit": 0.714
+    "title": 1.0
    }
   },
   "listed": 8,
@@ -5112,10 +4831,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 29,
@@ -5193,14 +4909,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "crime and intelligence analysis - associate of science degree and certificate of achievement - mas1013/c/mce1013",
-    "section_fit": 0.6
+    "title": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 3375
+  "text_chars": 3576
  },
  {
   "control_number": "41655",
@@ -5245,10 +4958,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 27,
@@ -5282,14 +4992,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "geography - associate in arts for transfer (adt) - maa759 (cal-getc)",
-    "section_fit": 0.2
+    "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3086
+  "text_chars": 3267
  },
  {
   "control_number": "41676",
@@ -5325,14 +5032,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "crime and intelligence analysis - associate of science degree and certificate of achievement - mas1013/c/mce1013",
-    "section_fit": 0.6
+    "title": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 3375
+  "text_chars": 3576
  },
  {
   "control_number": "41711",
@@ -5357,10 +5061,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "it project management - certificate of achievement - mce1010",
-    "section_fit": 0.75
+    "title": 1.0
    }
   },
   "listed": 7,
@@ -5468,10 +5169,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "emergency management and homeland security - associate of science degree and certificate of achievement - mas1086/c/mce1086",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 42,
@@ -5535,10 +5233,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "emergency management and homeland security - associate of science degree and certificate of achievement - mas1086/c/mce1086",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 42,
@@ -5572,10 +5267,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 12,
@@ -5650,10 +5342,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 7,
@@ -5687,10 +5376,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 12,
@@ -5722,14 +5408,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "early childhood education school age - certificate of achievement - mce1060",
-    "section_fit": 0.833
+    "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 1527
+  "text_chars": 1661
  },
  {
   "control_number": "42688",
@@ -5755,10 +5438,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "entrepreneurship - associate of science degree - mas531/c",
-    "section_fit": 0.5
+    "title": 1.0
    }
   },
   "listed": 8,
@@ -5839,10 +5519,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "business administration: logistics management concentration - associate of science degree and certificate of achievement - mas580/c/mce580",
-    "section_fit": 0.714
+    "title": 1.0
    }
   },
   "listed": 10,
@@ -5884,14 +5561,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "communication studies 2.0 - associate in arts for transfer (adt) - maa1059 (cal-getc)",
-    "section_fit": 0.333
+    "title": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 2862
+  "text_chars": 3090
  },
  {
   "control_number": "42829",
@@ -5919,10 +5593,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "business administration: logistics management concentration - associate of science degree and certificate of achievement - mas580/c/mce580",
-    "section_fit": 0.714
+    "title": 1.0
    }
   },
   "listed": 10,
@@ -5998,14 +5669,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "child and adolescent development - associate in arts for transfer (adt) - maa886 (cal-getc)",
-    "section_fit": 0.429
+    "title": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 3669
+  "text_chars": 3953
  },
  {
   "control_number": "43884",
@@ -6094,14 +5762,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "modern policing - associate of science degree - mas1096/c",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 30,
-  "text_chars": 3834
+  "text_chars": 4164
  },
  {
   "control_number": "45017",
@@ -6164,10 +5829,7 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "drug and alcohol studies - associate of science degree and certificate of achievement - mas1045/c/mce1045",
-    "section_fit": 0.6
+    "title": 1.0
    }
   },
   "listed": 45,
@@ -6250,7 +5912,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.913,
   "codes_found": [
    "ANT2",
    "ANT2H",
@@ -6297,15 +5959,6 @@
    "GEG1H",
    "GEG2",
    "GEG3",
-   "HIS16",
-   "HIS17",
-   "HIS18",
-   "HIS19",
-   "HIS2",
-   "HIS35",
-   "HIS42",
-   "HIS60",
-   "HIS61",
    "HIST1",
    "HIST25",
    "HIST2H",
@@ -6364,14 +6017,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "global studies -  certificate of achievement - mce1119",
-    "section_fit": 0.667
+    "title": 1.0
    }
   },
   "listed": 104,
-  "text_chars": 6921
+  "text_chars": 8211
  },
  {
   "control_number": "46200",
@@ -6406,14 +6056,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "nutrition and dietetics - associate in science degree for transfer (adt) - mas908 (cal-getc )",
-    "section_fit": 0.286
+    "title": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 3534
+  "text_chars": 3740
  },
  {
   "control_number": "46215",
@@ -6444,14 +6091,11 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 3493
+  "text_chars": 3658
  },
  {
   "control_number": "46236",

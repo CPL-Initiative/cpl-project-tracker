@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "University Studies: Science and Mathematics",
  "award": "A.S. Degree",
- "source_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/stem/university-studies-science-mathematics/",
+ "source_url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/stem/university-studies-mathematics-natural-science-computer-science-as/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8833,
+  "input_tokens": 9491,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8833,
-    "output_tokens": 3582,
+    "input_tokens": 9491,
+    "output_tokens": 5085,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,137 @@
     "model": null
    }
   ],
-  "output_tokens": 3582,
+  "output_tokens": 5085,
   "output_tokens_details": {
-   "thinking_tokens": 544
+   "thinking_tokens": 1149
   },
   "service_tier": "standard",
-  "inference_geo": "global",
-  "speed": "standard"
+  "inference_geo": "global"
  },
- "cost_usd": 0.10697,
- "ms": 28130,
- "seconds": 28.5,
+ "cost_usd": 0.13966,
+ "ms": 36403,
+ "seconds": 36.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 55,
+   "placed": 40,
    "listed": 55,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.727,
+   "missing": [
+    "BIO122",
+    "BIO133",
+    "BIO134",
+    "BIO135",
+    "BIO251",
+    "BIOLC1001",
+    "CS119",
+    "CS119L",
+    "CS181",
+    "CS182",
+    "CS281",
+    "CS282",
+    "KUMY133",
+    "KUMY134",
+    "KUMY135"
+   ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 39,
    "codes": [
-    "BIOLC1000"
+    "ANTHC1001L",
+    "ASTR120",
+    "BIO105",
+    "BIO110",
+    "BIO112",
+    "BIO114",
+    "BIO118",
+    "BIO215",
+    "BIOLC1000",
+    "CHEM110",
+    "CHEM113",
+    "CHEM115",
+    "CHEM116",
+    "CHEM117",
+    "CSIS165",
+    "CSIS240",
+    "CSIS250",
+    "CSIS251",
+    "CSIS255",
+    "CSIS293",
+    "CSIS294",
+    "CSIS296",
+    "CSIS297",
+    "GEOG104",
+    "GEOG106",
+    "GEOG130",
+    "GEOG140",
+    "GEOG150",
+    "GEOG170",
+    "GEOL121",
+    "GEOL150",
+    "GEOL210",
+    "GEOL230",
+    "OCEA150",
+    "PSC100",
+    "PSC110",
+    "PSC111",
+    "PSC120",
+    "SCI110"
    ],
    "flagged": [
-    "BIOLC1000"
+    "ANTHC1001L",
+    "ASTR120",
+    "BIO105",
+    "BIO110",
+    "BIO112",
+    "BIO114",
+    "BIO118",
+    "BIO215",
+    "BIOLC1000",
+    "CHEM110",
+    "CHEM113",
+    "CHEM115",
+    "CHEM116",
+    "CHEM117",
+    "CSIS165",
+    "CSIS240",
+    "CSIS250",
+    "CSIS251",
+    "CSIS255",
+    "CSIS293",
+    "CSIS294",
+    "CSIS296",
+    "CSIS297",
+    "GEOG104",
+    "GEOG106",
+    "GEOG130",
+    "GEOG140",
+    "GEOG150",
+    "GEOG170",
+    "GEOL121",
+    "GEOL150",
+    "GEOL210",
+    "GEOL230",
+    "OCEA150",
+    "PSC100",
+    "PSC110",
+    "PSC111",
+    "PSC120",
+    "SCI110"
    ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    6.0,
-    6.0
+    3.0,
+    3.0
    ],
    "stated": [
     18.0,
@@ -77,28 +168,9 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
-   ],
-   "degree": {
-    "pass": false,
-    "status": "unequal",
-    "computed": [
-     40.0,
-     40.0
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [
-     "the blocks and general education sum to 40.0-40.0; the catalog prints 60.0-60.0 for the degree"
-    ]
-   }
+    "'Natural Science' chooses units but names no minimum",
+    "'Computer Science' chooses units but names no minimum"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -126,7 +198,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "University Studies: Science and Mathematics (A.S.) — Requirements",
+   "section_heading": "Requirements",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -148,333 +220,13 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
+    "Solve complex problems using mathematics, natural and/or computer science.",
     "Utilize high level mathematical skills to analyze data and/or solve problems.",
-    "Analyze concepts of physical and biological science to evaluate scientific information and solve scientific problems.",
-    "Draw scientific conclusions about simple and complex systems by collecting, assessing, and analyzing information."
+    "Analyze concepts of physical and biological science to evaluate scientific information and solve scientific problems."
    ],
    "careers": []
   },
   "blocks": [
-   {
-    "name": "Science",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "ANTH-C1001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ASTR-C1001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ASTR-C1001L",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-122",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-133",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-134",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-135",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-140",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-141",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-141L",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-152",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIOL-C1000",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "BIOL-C1001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-230",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-240",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BIO-251",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM-102",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM-120",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM-141",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM-142",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM-231",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CHEM-232",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS-119",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS-119L",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS-181",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS-182",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS-281",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS-282",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOG-120",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOG-121",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL-104",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL-110",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL-111",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "KUMY-133",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "KUMY-134",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "KUMY-135",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "OCEA-112",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "OCEA-113",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHYC-110",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHYC-130",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHYC-131",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHYC-201",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHYC-202",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHYC-203",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
    {
     "name": "Mathematics",
     "rule": "choose_units",
@@ -486,104 +238,649 @@
     },
     "courses": [
      {
-      "code": "MATH-170",
-      "units": 3,
+      "code": "BIO-215",
+      "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH-175",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH-176",
-      "units": 6,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH-178",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH-245",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH-281",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH-284",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH-285",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "MATH-C2210",
-      "units": 5,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH-C2220",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
+      "code": "MATH-170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-175",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-178",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-245",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-281",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-284",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-285",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSC-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
       "code": "PSY-215",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "STAT-C1000",
-      "units": 4,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "Natural Science",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH-C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH-C1001L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR-C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR-C1001L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO-105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO-112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO-114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO-118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-141L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM-113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM-116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM-117",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-231",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-232",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG-104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG-106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG-121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG-150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG-170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL-104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL-111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL-121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL-150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL-210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL-230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "OCEA-112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCEA-113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OCEA-150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYC-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-203",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSC-100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSC-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSC-111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SCI-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Computer Science",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSIS-165",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-251",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-293",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-294",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-296",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS-297",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
-  "notes": [
-   "The area of emphasis requires 'a minimum of 18 units' (recorded as total_units 18): at least 3 units from Science and 3 units from Mathematics; the remaining 12 units may come from either list. These blocks overlap in the 12 flexible units, so block minimums (3 + 3) do not sum to 18.",
-   "Limitation of one Statistics course (PSY-215 and STAT-C1000 appear to be the statistics courses; only one may count).",
-   "Degree total recorded from 'Complete 60 transferable units'; the page does not explicitly say electives fill the remainder, so electives_fill_degree left false — reviewer may wish to check.",
-   "Cal-GETC 34 units recorded as ge_units.",
-   "BIOL-C1000 (Introduction to Biology With Lab, 4) is not in the closed list; recorded as catalog addition. BIOL-C1001 matched to closed-list 'BIOLC1001'.",
-   "The text lists baccalaureate majors students may be interested in (astronomy, biological sciences, etc.); these are transfer majors, not careers, so careers left empty.",
-   "The catalog text begins mid-sentence; the program description may be cut off at the start."
-  ]
+  "missing_explained": [
+   {
+    "code": "BIO 122",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIO 133",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIO 134",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIO 135",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIO 251",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOLC1001",
+    "why": "not in the text (page lists BIOL-C1000 instead)"
+   },
+   {
+    "code": "CS 119",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 119L",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 181",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 182",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 281",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS 282",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 133",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 134",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 135",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
  },
- "extracted_run": "44752892297",
- "catalog_year": "2026-2027"
+ "extracted_run": "38748833332"
 }

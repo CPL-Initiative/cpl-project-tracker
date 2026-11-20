@@ -4,7 +4,7 @@
  "shape": "degree",
  "title": "General Studies: Communication and Language Arts",
  "award": "A.A. Degree",
- "source_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/language-communication/general-studies-communication-language-arts/",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/general-studies-communication-language-arts/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8539,
-    "output_tokens": 3393,
+    "output_tokens": 3304,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 3393,
+  "output_tokens": 3304,
   "output_tokens_details": {
-   "thinking_tokens": 331
+   "thinking_tokens": 330
   },
   "service_tier": "standard",
-  "inference_geo": "global",
-  "speed": "standard"
+  "inference_geo": "global"
  },
- "cost_usd": 0.10202,
- "ms": 25085,
- "seconds": 26.6,
+ "cost_usd": 0.10024,
+ "ms": 23357,
+ "seconds": 23.8,
  "parts": null,
  "error": null,
  "score": {
@@ -586,14 +585,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Rule: choose a minimum of 18 units total; at least 3 units from Communication and at least 3 units from Language Arts; the remaining 12 units may come from either list. Blocks record the 3-unit minimums; the 18-unit total is in total_units.",
-   "BUS-128 is printed in both the Communication and Language Arts lists; recorded in each block but it should count only once.",
-   "ENGL-236/ETHN-236 and ENGL-238/ETHN-238 appear to be cross-listed courses (same titles) printed as separate rows; recorded separately as printed.",
-   "ENGL-130 through ENGL-133 and ENGL-140 through ENGL-143 (Short Fiction Writing and Poetry Writing) are in the catalog list but not in the closed list; marked as catalog additions.",
-   "GE pattern is the college's local AS or AA General Education Requirements; the page prints no unit figure for GE and no degree total.",
-   "Program learning outcomes are printed for the program page as a whole (General Studies: Communication and Language Arts) and recorded for this A.A."
+   "Rule: choose a minimum of 18 units total, with at least 3 units in Communication and 3 units in Language Arts; the remaining 12 units may come from either category. Block minimums (3 each) reflect the per-category floor; the 18-unit total is in total_units.",
+   "BUS-128 is printed in both the Communication and Language Arts lists; recorded in each block.",
+   "ENGL-236/ETHN-236 and ENGL-238/ETHN-238 share titles (likely cross-listed) but are printed as separate rows; recorded separately.",
+   "ENGL-130 through ENGL-133 and ENGL-140 through ENGL-143 are not in the closed list; marked catalog additions.",
+   "No degree total or GE unit figure printed; GE is the college's AS or AA General Education Requirements."
   ]
  },
- "extracted_run": "44752892297",
- "catalog_year": "2026-2027"
+ "extracted_run": "38748833332"
 }

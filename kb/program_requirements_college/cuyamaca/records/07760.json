@@ -4,7 +4,7 @@
  "shape": "degree",
  "title": "Elementary Education",
  "award": "A.A. Degree",
- "source_url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-education-aa/",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-education-aa/",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8741,
-    "output_tokens": 5170,
+    "output_tokens": 4909,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 5170,
+  "output_tokens": 4909,
   "output_tokens_details": {
-   "thinking_tokens": 1648
+   "thinking_tokens": 1495
   },
   "service_tier": "standard",
-  "inference_geo": "global",
-  "speed": "standard"
+  "inference_geo": "global"
  },
- "cost_usd": 0.13836,
- "ms": 39716,
- "seconds": 41.2,
+ "cost_usd": 0.13314,
+ "ms": 38333,
+ "seconds": 38.9,
  "parts": null,
  "error": null,
  "score": {
@@ -187,7 +186,7 @@
     ]
    },
    {
-    "name": "1. Composition: Select one of the following",
+    "name": "1. Composition: Select one of the following (critical thinking)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -234,7 +233,7 @@
     ]
    },
    {
-    "name": "2. Communication (minimum three units)",
+    "name": "2. Communication (minimum three units): Select one of the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -452,7 +451,7 @@
     ]
    },
    {
-    "name": "12. Ethnic Studies (Select one from each section) A.",
+    "name": "12. Ethnic Studies A.",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -520,7 +519,7 @@
     ]
    },
    {
-    "name": "12. Ethnic Studies (Select one from each section) B.",
+    "name": "12. Ethnic Studies B.",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -662,16 +661,15 @@
    }
   ],
   "notes": [
-   "Total Units 62-65 is printed under the degree's single course list, which itself serves as a broad GE-style major; no separate GE pattern or degree total is printed, so it is recorded as total_units. Reviewer may consider whether it is better read as a degree total.",
-   "Section 12 Ethnic Studies prints a combined 6 units for selecting one course from section A and one from section B; recorded as two choose-1 blocks with stated null.",
-   "Many Ethnic Studies options are cross-listed twins printed as separate rows (ETHN-130/HIST-130, ETHN-131/HIST-131, ENGL-236/ETHN-236, ENGL-238/ETHN-238, ETHN-107/HIST-107, ETHN-114/SOC-114); kept as separate entries as printed.",
-   "13. Additional Requirements also requires 'ES Activity (at least two ES courses listed in GE Area 7B)' for 2-3 units; no specific course codes are printed, so it is not recorded as a course.",
-   "Units for courses inside 'Select one of the following' lists are not printed beside each course; units left null and block totals recorded in stated.",
-   "BIOL-C1000 (Introduction to Biology With Lab, 4) is not on the closed list, which names BIOLC1001 Introduction to Biology; possibly a code/numbering mismatch to check.",
-   "Career titles were printed with a footnote marker '1' (Bachelor Degree or higher required); the marker was removed.",
-   "PSC-100 is a recommended elective offered at Grossmont College and is not on the closed list."
+   "Total Units 62-65 is printed for the major course list and recorded as total_units; no separate degree total or GE pattern total is printed.",
+   "The description mentions CSU lower division GE certification, but the requirements name no GE pattern; ge_pattern left null.",
+   "12. Ethnic Studies prints 6 units for both sections combined (select one from each of A and B); each section recorded as a choose-1 block with stated null.",
+   "13. Additional Requirements also includes 'ES Activity (at least two ES courses listed in GE Area 7B) 2-3' units with no specific course codes; not recorded as a block but counted within the 62-65 total.",
+   "Composition block 1 prints 4-6 units for ENGL-C1000 or ESL-122 without per-course units; units left null. Units for courses in other choose blocks are not printed beside each course and left null.",
+   "Cross-listed courses (e.g., ETHN-130/HIST-130, ENGL-236/ETHN-236, ETHN-114/SOC-114) are printed as separate entries and recorded separately.",
+   "PSC-100 is a recommended elective offered at Grossmont College; not counted toward the total.",
+   "Career list footnote '1' (Bachelor Degree or higher required) stripped from career titles."
   ]
  },
- "extracted_run": "44752892297",
- "catalog_year": "2026-2027"
+ "extracted_run": "38748833332"
 }

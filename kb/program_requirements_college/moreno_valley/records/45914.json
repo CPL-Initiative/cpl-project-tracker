@@ -5,11 +5,11 @@
  "title": "Global Studies",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6365",
- "record_shape": 6,
+ "record_shape": 3,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10994,
+  "input_tokens": 9997,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10994,
-    "output_tokens": 7937,
+    "input_tokens": 9997,
+    "output_tokens": 8720,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,18 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 7937,
+  "output_tokens": 8720,
   "output_tokens_details": {
-   "thinking_tokens": 1766
+   "thinking_tokens": 2420
   },
   "service_tier": "standard",
-  "inference_geo": "global",
-  "speed": "standard"
+  "inference_geo": "global"
  },
- "cost_usd": 0.20272,
- "ms": 57647,
- "seconds": 58.4,
- "parts": null,
+ "cost_usd": 0.21439,
+ "ms": 93722,
+ "seconds": 94.2,
  "error": null,
  "score": {
   "measure": "units",
@@ -93,8 +91,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    5.0,
-    8.0
+    17.0,
+    20.0
    ],
    "stated": [
     15.0,
@@ -102,10 +100,6 @@
    ],
    "against": "program",
    "why": [
-    "'Group 1 - Arts' chooses units but names no minimum",
-    "'Group 2: Natural, Behavioral, and Social Sciences' chooses units but names no minimum",
-    "'Group 3 - Business Administration' chooses units but names no minimum",
-    "'Group 6 - History' chooses units but names no minimum",
     "'Group 7 - RCCD Study Abroad Program' chooses units but names no minimum"
    ]
   },
@@ -142,20 +136,7 @@
     "max": 15
    },
    "open_elective_units": null,
-   "degree_elective_units": {
-    "min": null,
-    "max": null
-   },
    "ge_pattern": null,
-   "degree_total": {
-    "min": null,
-    "max": null
-   },
-   "ge_units": {
-    "min": null,
-    "max": null
-   },
-   "electives_fill_degree": false,
    "outcomes": [
     "Analyze global systems (e.g., political, economic, cultural, ecological, arts, histories) and explain how local and international issues are interconnected.",
     "Discuss the history, art, culture, politics, or religions of (an)other country(ies).",
@@ -163,18 +144,17 @@
     "Evaluate major global challenges (such as climate change, migration, health, inequality, or technology) using evidence-based reasoning and interdisciplinary approaches.",
     "Communicate effectively across cultural or global contexts, demonstrating sensitivity to diverse audiences and perspectives.",
     "Reflect on the responsibilities of global citizenship and propose ways individuals and communities can contribute to equitable and sustainable solutions."
-   ],
-   "careers": []
+   ]
   },
   "blocks": [
    {
     "name": "Group 1 - Arts",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -319,11 +299,11 @@
    {
     "name": "Group 2: Natural, Behavioral, and Social Sciences",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -488,11 +468,11 @@
    {
     "name": "Group 3 - Business Administration",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -528,7 +508,7 @@
    {
     "name": "Group 4 - World Languages",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 2,
     "option_group": null,
     "stated": {
      "min": 2,
@@ -769,7 +749,7 @@
    {
     "name": "Group 5 - English, Humanities, and Philosophy",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -918,11 +898,11 @@
    {
     "name": "Group 6 - History",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -1040,52 +1020,52 @@
   "missing_explained": [
    {
     "code": "HIS 2",
-    "why": "catalog prints it under the HIST subject as HIST-2 (recorded as catalog addition)"
+    "why": "catalog prints it as HIST-2 (subject HIS renamed HIST); recorded HIST-2 as a catalog addition"
    },
    {
     "code": "HIS 16",
-    "why": "catalog prints it under the HIST subject as HIST-16 (recorded as catalog addition)"
+    "why": "catalog prints it as HIST-16 (subject HIS renamed HIST); recorded HIST-16 as a catalog addition"
    },
    {
     "code": "HIS 17",
-    "why": "catalog prints it under the HIST subject as HIST-17 (recorded as catalog addition)"
+    "why": "catalog prints it as HIST-17 (subject HIS renamed HIST); recorded HIST-17 as a catalog addition"
    },
    {
     "code": "HIS 18",
-    "why": "catalog prints it under the HIST subject as HIST-18 (recorded as catalog addition)"
+    "why": "catalog prints it as HIST-18 (subject HIS renamed HIST); recorded HIST-18 as a catalog addition"
    },
    {
     "code": "HIS 19",
-    "why": "catalog prints it under the HIST subject as HIST-19 (recorded as catalog addition)"
+    "why": "catalog prints it as HIST-19 (subject HIS renamed HIST); recorded HIST-19 as a catalog addition"
    },
    {
     "code": "HIS 35",
-    "why": "catalog prints it under the HIST subject as HIST-35 (recorded as catalog addition)"
+    "why": "catalog prints it as HIST-35 (subject HIS renamed HIST); recorded HIST-35 as a catalog addition"
    },
    {
     "code": "HIS 42",
-    "why": "catalog prints it under the HIST subject as HIST-42 (recorded as catalog addition)"
+    "why": "catalog prints it as HIST-42 (subject HIS renamed HIST); recorded HIST-42 as a catalog addition"
    },
    {
     "code": "HIS 60",
-    "why": "catalog prints it as HIST-60, which is also on the closed list as HIST60"
+    "why": "catalog prints HIST-60, which matches closed-list HIST60; HIS 60 is the older code"
    },
    {
     "code": "HIS 61",
-    "why": "catalog prints it as HIST-61, which is also on the closed list as HIST61"
+    "why": "catalog prints HIST-61, which matches closed-list HIST61; HIS 61 is the older code"
    }
   ],
   "notes": [
-   "Overall rule: 'Select a minimum of 15 units from at least four groups.' (15.00). Each group is recorded as a choose_units block with no per-group minimum; the 15-unit total must be spread across at least four of the seven groups.",
-   "Group 4 prints '2.00- 5.00' and Group 5 prints '3.00' beside the group heading; recorded as stated, but these may be the range of course units in the group rather than a group requirement.",
-   "Group 7 - RCCD Study Abroad Program lists no specific courses: 'Any course taken while participating in an RCCD Study Abroad Program.' Recorded as an empty block.",
-   "Honors twins (e.g., ARTH-C1100H, MUS-19H, ANT-2H, GEG-1H, POLS-2H, POLS-4H, ARA-11H, SPA-2H, HUM-4H, HUM-5H, HUM-10H, HIST-2H) recorded as alternatives of their base course.",
-   "Cross-listed pairs printed as separate rows (ECON-6/POLS-6, ENGL-8/HUM-8, ETS-13/PHI-14) are kept as separate entries as printed.",
-   "Closed list uses both HIS and HIST subject codes; catalog prints all history courses as HIST. HIST-2, -16, -17, -18, -19, -35, -42 are marked catalog additions since only HIS versions are on the closed list.",
-   "THE-35 is printed as 'Classical Acting with Emphasis in Shakespearean Verse'; closed list title is 'Clasicl Acting-Shakespeare Emphasis'. Treated as the same course.",
-   "No careers are named in the text."
+   "Overall rule: 'Select a minimum of 15 units from at least four groups.' Each group is recorded as its own block; the student must draw from at least four of the seven groups. option_group left null because this is not a choice of one whole block.",
+   "Each group prints a unit amount (3.00; Group 4 prints 2.00-5.00). I read it as the minimum taken from a group when that group is used and recorded it as the block minimum and stated; reviewer should confirm.",
+   "Group 7 (RCCD Study Abroad Program) lists no courses: 'Any course taken while participating in an RCCD Study Abroad Program.' Recorded as an empty block with no minimum.",
+   "Honors versions are recorded as alternatives of their base course (ARTH-C1100H, ARTH-C1200H, MUS-19H, ANT-2H, GEG-1H, POLS-2H, POLS-4H, ARA-11H, SPA-2H, HUM-4H, HUM-5H, HUM-10H, HIST-2H).",
+   "The catalog prints history courses as HIST-16, HIST-17, HIST-18, HIST-19, HIST-2, HIST-35, HIST-42; the closed list stores these as HIS. They are flagged as catalog additions under the strict code rule but are likely the same courses under a renamed subject.",
+   "MUS-22, THE-3, THE-9 and THE-34 are marked '( Historical )' in the catalog but are still listed in Group 1.",
+   "Cross-listed pairs appear as separate entries as printed: ECON-6/POLS-6, ENGL-8/HUM-8, ETS-13/PHI-14.",
+   "THE-35 is printed as 'Classical Acting with Emphasis in Shakespearean Verse'; the closed-list title differs slightly."
   ]
  },
- "extracted_run": "44763594152",
- "catalog_year": "2026-2027"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

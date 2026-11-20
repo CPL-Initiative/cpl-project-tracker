@@ -2,31 +2,58 @@
  "college": "Fullerton College",
  "programs": 332,
  "with_closed_list": 326,
- "found": 316,
- "extracted": 316,
+ "found": 313,
+ "extracted": 313,
  "errors": 0,
- "passed_machine_checks": 284,
+ "passed_machine_checks": 260,
  "failed": {
   "coverage": 16,
   "invented": 12,
-  "arithmetic": 18,
+  "arithmetic": 41,
   "repeated": 1,
   "outcomes": 0
  },
- "cost_usd_run": 0.19,
- "cost_usd_filed": 22.4,
- "cost_per_program": 0.0709,
- "extract_calls": 3,
- "extract_failed": [],
+ "cost_usd": 22.21,
+ "cost_per_program": 0.071,
  "not_found": [
+  {
+   "control_number": "03876",
+   "title": "Administration of Justice",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-administration-associate-arts-degree/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5512,
+     "content": 8640,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      600
+     ]
+    ]
+   }
+  },
   {
    "control_number": "36483",
    "title": "IGETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "41372",
@@ -57,8 +84,7 @@
       550
      ]
     ]
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "42402",
@@ -89,8 +115,7 @@
       318
      ]
     ]
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "44110",
@@ -121,8 +146,7 @@
       441
      ]
     ]
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "45832",
@@ -153,8 +177,7 @@
       28604
      ]
     ]
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "46098",
@@ -185,8 +208,7 @@
       802
      ]
     ]
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "46115",
@@ -217,8 +239,7 @@
       477
      ]
     ]
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "46119",
@@ -249,8 +270,7 @@
       371
      ]
     ]
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "46122",
@@ -281,8 +301,7 @@
       427
      ]
     ]
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "46124",
@@ -313,9 +332,8 @@
       418
      ]
     ]
-   },
-   "status": "Active"
+   }
   }
  ],
- "run": "44762380826"
+ "run": "38675136988"
 }
