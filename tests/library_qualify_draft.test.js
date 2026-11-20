@@ -47,6 +47,11 @@ function check(name, cond, why) { results.push([name, !!cond, why]); }
     { title: "Confirm & Qualify", description: 'A "page" & more', published: "Published by the Chancellor's Office. Draft 1.",
       main: '<main id="main"><div class="hero"><h1>Confirm</h1></div><section aria-labelledby="g"><h2 id="g">Guides</h2><p>x</p></section></main>' }).html;
   check("(1) from Draft 1, the server's steps make exactly this page (fromDraft1)", fromDraft1(d1) === html);
+  // The Library check stamps the starter page's own accessibility line too (653864b7, 2026-11-20); a new piece built
+  // in its frame must not inherit a line that names the starter's check.
+  const stamped = starter.replace("</body>", "<!-- cpl-library-check: one line -->\n<div class=\"cpl-check-line\"><p>Accessibility: checked</p></div>\n<!-- /cpl-library-check -->\n</body>");
+  const fresh = np.buildNewPage(stamped, SLUG, { title: "T", main: '<main id="main"><h1>T</h1></main>' }).html || "";
+  check("(1) ⭐ a new piece carries none of its starter's accessibility check line", /cpl-library-check:/.test(stamped) && /<main id="main">/.test(fresh) && !/cpl-library-check|cpl-check-line/.test(fresh));
   const md5 = require("crypto").createHash("md5").update(html, "utf8").digest("hex");
   const sqlBase = path.join(ROOT, "kb", "receipts", "cpl_library_s647_" + SLUG);
   const fwd = fs.readFileSync(sqlBase + ".sql", "utf8"), proof = fs.readFileSync(sqlBase + "_proof.sql", "utf8");
