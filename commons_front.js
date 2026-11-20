@@ -337,9 +337,9 @@
      own (#commons/course/<control number>), and each college opens College Data Collection's own panel at the place to
      act. commons_handover.js draws both; without it the names stay plain words and the page reads as before. */
   function HO() { return window.CPL_HANDOVER || null; }
-  function courseLinks(c) {
+  function courseLinks(c, list) {
     var H = HO(), out = [];
-    (c.still_taught || []).forEach(function (x, i) {
+    (list || c.still_taught || []).forEach(function (x, i) {
       if (i) out.push(", ");
       if (!H) { out.push(x.course); return; }
       var row = { course: x.course, control_number: x.control_number, college_slug: c.slug };
@@ -361,19 +361,53 @@
       if (H) out.push(p(["Choose a course to open it beside this list, then drop its outline, give a link to try, or paste the data. A college's name opens its own panel."]));
       out.push(p([el("strong", { text: "Send the PDF to COBIx in your Grok Bot chat." })]));
     }
+    /* What a person answered, off the to-do and still in reach (S693; Sam worked all 12 on 2026-11-20): each college,
+       its courses by what was handed over, each name opening the course's panel. */
+    var ans = huntAnswered(M);
+    if (ans.length) {
+      out.push(p([el("strong", { text: "Answered by a person" }), ", and off this list. Each course's outcomes are still missing until its outline is in hand; an outline dropped in the course's panel adds them."], "cmf-answered-h"));
+      out.push(el("ul", { cls: "cmf-need-list cmf-hunt cmf-answered" }, ans.map(function (c) {
+        var kids = [el("span", { cls: "cmf-need-t", text: c.college }), ": "];
+        c.groups.forEach(function (g, i) {
+          if (i) kids.push(" ");
+          kids = kids.concat(courseLinks(c, g.courses), [". " + g.what + "."]);
+        });
+        return el("li", { "data-hunt-answered": c.slug }, [p(kids), p([], "cmf-standing")]);
+      })));
+    }
     out.push(p([a("#collect/outlines-blocked", "Open the courses by college")], "cmf-need-links"));
     return out;
+  }
+  /* The colleges with an answered course, each with its courses grouped by what the person handed over. */
+  function huntAnswered(M) {
+    var h = M.hunt;
+    if (!h || !Array.isArray(h.colleges)) return [];
+    return h.colleges.filter(function (c) { return (c.answered || []).length; }).map(function (c) {
+      var groups = [], by = {};
+      c.answered.forEach(function (x) {
+        var w = x.what || "Answered";
+        if (!Object.prototype.hasOwnProperty.call(by, w)) { by[w] = { what: w, courses: [] }; groups.push(by[w]); }
+        by[w].courses.push(x);
+      });
+      return { slug: c.slug, college: c.college, groups: groups };
+    });
   }
   /* What has been handed over so far, beside each college (the public counts: no person, file name or address). */
   function drawStanding(M) {
     var H = HO(), o = huntOpen(M);
     if (!H || !o) return;
     H.summary().then(function (rows) {
-      o.colleges.forEach(function (c) {
-        var li = document.querySelector('.cmf-hunt li[data-hunt-college="' + c.slug + '"]'), line = li && li.querySelector(".cmf-standing");
-        if (!line) return;
-        var said = H.standing(rows, { subject_kind: "college", college: c.college });
-        line.textContent = said.length ? "Handed over: " + said.join("; ") + "." : "";
+      var seen = {};
+      [["data-hunt-college", o.colleges], ["data-hunt-answered", huntAnswered(M)]].forEach(function (pair) {
+        pair[1].forEach(function (c) {
+          /* A college with courses on both lists says what was handed over once, beside its open courses. */
+          if (seen[c.slug]) return;
+          var li = document.querySelector(".cmf-hunt li[" + pair[0] + '="' + c.slug + '"]'), line = li && li.querySelector(".cmf-standing");
+          if (!line) return;
+          seen[c.slug] = true;
+          var said = H.standing(rows, { subject_kind: "college", college: c.college });
+          line.textContent = said.length ? "Handed over: " + said.join("; ") + "." : "";
+        });
       });
       var t = document.getElementById("cmf-term-standing");
       if (t) { var ts = H.standing(rows, { subject_kind: "dataset", dataset: "term_reports" }); t.textContent = ts.length ? "Handed over: " + ts.join("; ") + "." : ""; }

@@ -292,6 +292,11 @@ jobs:
       # keeps every note written.
       - name: Commons hand-over note against Postgres (a fifth kind, guarded in the database)
         run: python3 tests/commons_handover_note_sql_proof.py
+      # The S693 answer-as-filed write (a guarded UPDATE of 11 rows a person entered): it answers only the rows it
+      # names, only while each still stands as it was read, the receipt's result holds what each replaced, and the
+      # rollback puts it back.
+      - name: Commons hand-over, answered as filed, against Postgres (guarded, with before-values)
+        run: python3 tests/handover_mark_filed_sql_proof.py
       # The reader's pickup for hand-overs (kb/_handover_pickup.py): a bot check is filed as one and the reader loads
       # nothing more from that host, and what it found is counts and heading words, never a page's text or a name.
       # pypdf reads the dropped PDFs the test builds.

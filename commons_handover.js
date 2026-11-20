@@ -525,17 +525,22 @@
   function courseKey(c) { return String(c.control_number || (c.college_slug + "-" + String(c.course).toLowerCase().replace(/[^a-z0-9]+/g, "-"))); }
   function courseHref(c) { return "#commons/course/" + encodeURIComponent(courseKey(c)); }
   /* The still-taught courses whose outline needs a person, from the hunt (commons_data.json blocked_hunt), in the
-     page's own order: hunted colleges not yet filed, each with its courses. */
+     page's own order: hunted colleges not yet filed, each with its courses; then the courses a person answered. */
   function coursesOf(hunt) {
     if (!hunt || !Array.isArray(hunt.colleges)) return [];
     var card = {};
     (hunt.courses || []).forEach(function (x) { if (x.control_number) card[x.control_number] = x.mid_card_at_filing || ""; });
     var out = [];
+    function push(c, x, answered) {
+      out.push({ course: x.course, title: x.title || "", control_number: x.control_number || "", mid_card: card[x.control_number] || "",
+        college: c.college, college_slug: c.slug, catalog_url: c.catalog_url || "", reason: c.reason || "", answered: answered || null });
+    }
     hunt.colleges.filter(function (c) { return c.hunted && !c.filed; }).forEach(function (c) {
-      (c.still_taught || []).forEach(function (x) {
-        out.push({ course: x.course, title: x.title || "", control_number: x.control_number || "", mid_card: card[x.control_number] || "",
-          college: c.college, college_slug: c.slug, catalog_url: c.catalog_url || "", reason: c.reason || "" });
-      });
+      (c.still_taught || []).forEach(function (x) { push(c, x, null); });
+    });
+    /* A course a person answered is off the to-do and keeps its panel: more can be handed over there (S693). */
+    hunt.colleges.forEach(function (c) {
+      (c.answered || []).forEach(function (x) { push(c, x, { what: x.what || "", how: x.how || "", by: x.by || "", on: x.on || "" }); });
     });
     return out;
   }
@@ -568,9 +573,12 @@
     var have = el("div", { id: "cho-have-wrap" });
     function drawHave(rows) {
       have.textContent = "";
+      var a = c.answered, who = a ? " (" + [a.by, a.on].filter(Boolean).join(", ") + ")" : "";
       have.appendChild(haveList([
-        ["Description and hours", "Our reader fills them from the college's catalog. Nothing is needed from you."],
-        ["Outcomes", "Missing. The course's outline holds its SLOs and objectives, and our reader cannot reach it" + (c.reason ? " (" + c.reason + ")." : ".")],
+        a ? ["Answered", a.what + who + ". It is off the to-do. A person's entry wins over a later machine read."] : null,
+        a && a.how === "paste" ? null : ["Description and hours", a ? "None is filed: the course was noted, with no data." : "Our reader fills them from the college's catalog. Nothing is needed from you."],
+        ["Outcomes", (a ? "Still missing" : "Missing") + ". The course's outline holds its SLOs and objectives, and our reader cannot reach it" + (c.reason ? " (" + c.reason + ")." : ".")
+          + (a ? " An outline dropped here adds them." : "")],
         handedLine(rows, subject)
       ]));
     }
@@ -578,7 +586,7 @@
     summary().then(function (rows) { if (P.list[P.at] === c) drawHave(rows); });
     var carry = P.carry; P.carry = "";
     var inner = el("div", { cls: "cho-panel-in" }, [
-      el("div", { cls: "cho-panel-top" }, [el("p", { cls: "cho-eyebrow", text: "Course outline needed" }), close]),
+      el("div", { cls: "cho-panel-top" }, [el("p", { cls: "cho-eyebrow", text: c.answered ? "Answered by a person" : "Course outline needed" }), close]),
       el("p", { cls: "cho-words cho-pos" }, [el("span", { id: "cho-pos", text: "Course " + (P.at + 1) + " of " + P.list.length }), prev, next]),
       el("h3", { id: "cho-panel-h", tabindex: "-1", text: c.course + (c.title ? ", " + c.title : "") }),
       el("p", { cls: "cho-muted", text: c.college + "." + (c.mid_card ? " M-ID card " + c.mid_card + "." : "") }),

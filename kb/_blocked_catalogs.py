@@ -32,16 +32,28 @@ def status(root):
     except the courses still taught, and those are named. So once the config lists its courses, a college is HUNTED
     only when it has a still-taught course, it is OPEN while hunted and not filed, and a college with none is SET
     ASIDE: kept in the list with its reason, off the to-do. Before the course list is filed (courses is null) every
-    college is hunted, as S678 built it."""
+    college is hunted, as S678 built it.
+
+    S693: a course whose config row carries `answered` (what a person handed over for it, by whom and when) is not on
+    the to-do. Each college's `still_taught` holds the courses still waiting, `answered` the ones a person answered,
+    and a college is hunted only while it has a course still waiting."""
     cfg = _load(os.path.join(root, CONFIG))
     if not cfg:
         return None
     courses = cfg.get("courses")
     listed = isinstance(courses, list)
-    by = {}
+    # A course a person has answered (S693; Sam, 2026-11-20, worked all 12: eight catalog descriptions pasted, four
+    # noted as not in the catalog) leaves the to-do and is listed as answered. Asking again for what a person already
+    # gave is the failure CLAUDE.md names (no re-asking; a person's entry is terminal).
+    by, done = {}, {}
     for x in courses or []:
-        by.setdefault(x.get("slug"), []).append({"course": x.get("course"), "control_number": x.get("control_number"),
-                                                 "title": x.get("title")})
+        row = {"course": x.get("course"), "control_number": x.get("control_number"), "title": x.get("title")}
+        a = x.get("answered")
+        if isinstance(a, dict) and a.get("what"):
+            done.setdefault(x.get("slug"), []).append(dict(row, what=a.get("what"), how=a.get("how"), by=a.get("by"),
+                                                           on=a.get("on")))
+        else:
+            by.setdefault(x.get("slug"), []).append(row)
     rows = []
     for c in cfg.get("colleges") or []:
         slug = c["slug"]
@@ -51,16 +63,20 @@ def status(root):
         rows.append({"slug": slug, "college": c["college"], "reason": c.get("reason"),
                      "catalog_url": cap.get("catalog_url"), "local_courses": c.get("local_courses"),
                      "filed": filed, "filed_file": (FILED + "/" + slug + ".json") if filed else None,
-                     "still_taught": mine if listed else None, "hunted": bool(mine) if listed else True})
+                     "still_taught": mine if listed else None, "answered": done.get(slug, []) if listed else None,
+                     "hunted": bool(mine) if listed else True})
     hunted = [r for r in rows if r["hunted"]]
     still = [r for r in hunted if not r["filed"]]
+    # A college whose still-taught courses a person has all answered is done, not set aside.
+    answered = [r for r in rows if not r["hunted"] and r.get("answered")]
     return {"title": cfg.get("title"), "hunt": cfg.get("hunt"), "source": cfg.get("source"), "colleges": rows,
-            "open": len(still), "done": len(hunted) - len(still),
-            "hunted": len(hunted), "set_aside": len(rows) - len(hunted),
+            "open": len(still), "done": len(hunted) - len(still) + len(answered),
+            "hunted": len(hunted), "set_aside": len(rows) - len(hunted) - len(answered),
             "local_courses": sum(r["local_courses"] or 0 for r in rows),
             "local_courses_open": sum(r["local_courses"] or 0 for r in still),
             "still_taught_total": len(courses) if listed else cfg.get("still_taught_total"),
             "still_taught_open": sum(len(r["still_taught"] or []) for r in still) if listed else None,
+            "still_taught_answered": sum(len(r["answered"] or []) for r in rows) if listed else None,
             "courses": courses, "file_in": FILED, "open_link": OPEN}
 
 

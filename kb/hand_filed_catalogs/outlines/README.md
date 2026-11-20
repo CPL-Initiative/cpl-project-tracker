@@ -27,5 +27,6 @@ A signed-in reviewer can hand an outline over without a session: each still-taug
 opens a panel with a drop box, Try the link, a place to paste the data and a place to leave a note (a course that
 is not in the catalog is noted there), and each college's College Data Collection panel has the same box
 (`commons_handover.js`). The file goes to the private bucket `commons-handover`
-and a row in `commons_handover`; nothing is filed in this folder by that route. The lane names the steps that carry a
+and a row in `commons_handover`; nothing is filed in this folder by that route. Pasted course data and notes are
+filed in `../handed_over/courses.json`, and a course filed there is off the hunt's to-do (S693). The lane names the steps that carry a
 hand-over into the outcomes table: [`docs/reference/lanes/commons.md`](../../../docs/reference/lanes/commons.md).
