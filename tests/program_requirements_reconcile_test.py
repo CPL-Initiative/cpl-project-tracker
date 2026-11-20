@@ -1806,6 +1806,93 @@ check("Moreno Valley 38758: the note keeps the heading and the total, not the co
       and "Total : 20" in [n for n in mnotes if n["field"] == "total_units"][0]["words"]
       and "MUS-87" not in [n for n in mnotes if n["field"] == "total_units"][0]["words"])
 
+print("Berkeley City's statewide Cal-GETC step beside its local set step (S689)")
+_bcc = R.load_steps()["Berkeley City College"]
+check("Berkeley City carries a statewide_cal_getc step quoting its Cal-GETC tab (node 41802)",
+      R.calgetc_step(_bcc) is not None and "41802" in _bcc["statewide_cal_getc"]["evidence"])
+_bcc_rec = {"program": {"section_heading": "English - AA-T Degree", "total_units": {"min": 22, "max": 22},
+                        "ge_pattern": "Cal-GETC", "degree_total": {"min": 60, "max": 60},
+                        "ge_units": {"min": None, "max": None}, "electives_fill_degree": False},
+            "blocks": []}
+_bcc_page = ("English - AA-T Degree\nMajor Requirements 22\nGeneral Education (Cal-GETC) and Elective Courses 38\n"
+             "Total Units 60\nPolitical Science - AA-T Degree\n")
+_sib = [{"control_number": "31984", "title": "Political Science", "section_heading": "Political Science - AA-T Degree"}]
+_out, _notes = R.reconcile(_bcc_rec, _bcc_page, "Berkeley City College", "A.A- T Degree", title="English",
+                           siblings=_sib, control_number="31138")
+check("Berkeley City English AA-T 31138: the local 18 is left out and the statewide 34 fills, by its note",
+      _out["program"]["ge_units"] == {"min": 34, "max": 34}
+      and [n.get("statewide") for n in _notes if n["field"] == "ge_units"] == ["cal_getc_34"])
+check("the fill's note keeps the page's combined line",
+      [n.get("combined") for n in _notes if n["field"] == "ge_units"] == ["General Education (Cal-GETC) and Elective Courses 38"])
+for _page, _label in [
+        (_bcc_page.replace("Courses 38", "Courses 30"), "a combined figure that is not the degree's remainder (22 + 30)"),
+        (_bcc_page.replace("Major Requirements 22", "Major Requirements 28").replace("Courses 38", "Courses 32"),
+         "a combined figure under the statewide 34"),
+        (_bcc_page.replace("Total Units 60", "Cal-GETC 37 units\nTotal Units 60"), "a Cal-GETC line printing its own figure"),
+        (_bcc_page.replace("General Education (Cal-GETC) and Elective Courses 38", "General Education (Cal-GETC) 38"),
+         "a general education figure with no electives in its line")]:
+    _rec2 = _bcc_rec if "Requirements 28" not in _page else dict(
+        _bcc_rec, program=dict(_bcc_rec["program"], total_units={"min": 28, "max": 28}))
+    _why = R.calgetc_hold(_rec2, _page, "A.A- T Degree", "English", _sib, _bcc, "31138")[0]
+    check("the combined line holds as a printed figure: %s" % _label, bool(_why) and "figure" in _why)
+check("COMBINED_GE_ELECTIVES reads Alameda's G.E. line and its decimal figure",
+      R.calgetc_combined("G.E. (Cal-GETC) and elective units 35.00", {"total_units": {"min": 25, "max": 25},
+                                                                     "degree_total": {"min": 60, "max": 60}})[1]
+      == ["G.E. (Cal-GETC) and elective units 35.00"])
+_cos = dict(_bcc, statewide_cal_getc=dict(_bcc["statewide_cal_getc"], combined_line=None))
+check("without the step's combined_line the reading is off: the combined line holds as a printed figure",
+      "figure" in (R.calgetc_hold(_bcc_rec, _bcc_page, "A.A- T Degree", "English", _sib, _cos, "31138")[0] or ""))
+check("a range major is never read against a single combined figure",
+      R.calgetc_combined(_bcc_page, {"total_units": {"min": 22, "max": 24}, "degree_total": {"min": 60, "max": 60}})[1] == [])
+check("a range major beside the combined range that mirrors it (Political Science 31984: 18-19 and 41-42)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Courses 41-42",
+                         {"total_units": {"min": 18, "max": 19}, "degree_total": {"min": 60, "max": 60}})[1]
+      == ["General Education (Cal-GETC) and Elective Courses 41-42"])
+check("a combined range that does not mirror the major's holds (18-19 beside 40-42)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Courses 40-42",
+                         {"total_units": {"min": 18, "max": 19}, "degree_total": {"min": 60, "max": 60}})[1] == [])
+check("a combined range whose low end is under 34 holds (Elementary Teacher Education 31835: 39-44 beside 16-21)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Requirements 16-21",
+                         {"total_units": {"min": 39, "max": 44}, "degree_total": {"min": 60, "max": 60}})[1] == [])
+_loc = dict(_bcc_rec, program=dict(_bcc_rec["program"], ge_pattern=None, section_heading="English - AA Degree"))
+_out, _notes = R.reconcile(_loc, _bcc_page.replace("AA-T", "AA").replace(" (Cal-GETC)", ""), "Berkeley City College",
+                           "A.A. Degree", title="English", siblings=_sib, control_number="99999")
+check("a Berkeley City local degree still takes the local 18, never the statewide 34",
+      _out["program"]["ge_units"] == {"min": 18, "max": 18}
+      and not any(n.get("statewide") for n in _notes))
+_plan = RM2.calgetc_apply_plan([], "Berkeley City College")
+check("the apply plan takes Berkeley City's statewide step, never its local-only set step, as the Cal-GETC route",
+      _plan["route"] == "statewide step")
+# The page renders the line as a table row with its figure alone in the cell below (reconcile run 44719698056 read
+# every Berkeley City AA-T so: "General Education (Cal-GETC) and Elective Courses" over "38").
+_cell = _bcc_page.replace("Elective Courses 38", "Elective Courses\n38")
+_out, _notes = R.reconcile(_bcc_rec, _cell, "Berkeley City College", "A.A- T Degree", title="English",
+                           siblings=_sib, control_number="31138")
+check("the combined line with its figure in the cell below fills the statewide 34 (English AA-T 31138)",
+      _out["program"]["ge_units"] == {"min": 34, "max": 34}
+      and [n.get("combined") for n in _notes if n["field"] == "ge_units"]
+      == ["General Education (Cal-GETC) and Elective Courses / 38"])
+check("the cell below a combined range mirrors a range major (Political Science 31984: 18-19 over 41-42)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Courses\n\n41-42",
+                         {"total_units": {"min": 18, "max": 19}, "degree_total": {"min": 60, "max": 60}})[1]
+      == ["General Education (Cal-GETC) and Elective Courses / 41-42"])
+check("the cell below under 34 holds (Business Administration 2.0 41766: 28 over 32)",
+      "figure" in (R.calgetc_hold(dict(_bcc_rec, program=dict(_bcc_rec["program"], total_units={"min": 28, "max": 28})),
+                                  _cell.replace("Requirements 22", "Requirements 28").replace("\n38", "\n32"),
+                                  "A.A- T Degree", "English", _sib, _bcc, "31138")[0] or ""))
+check("a cell below that is no figure alone holds (a label over a course line)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Courses\nENGL 1A 4",
+                         {"total_units": {"min": 22, "max": 22}, "degree_total": {"min": 60, "max": 60}})[1] == [])
+check("a combined range whose high end overshoots holds (18-19 beside 41-43: 18 + 43 is 61)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Courses 41-43",
+                         {"total_units": {"min": 18, "max": 19}, "degree_total": {"min": 60, "max": 60}})[1] == [])
+for _c in ("Los Angeles City College", "Los Angeles Pierce College"):
+    check("%s's Cal-GETC plan keeps its college set step route (the local-only filter is Berkeley City's)" % _c,
+          RM2.calgetc_apply_plan([], _c)["route"] == "college set step")
+check("the combined reading is quoted at Berkeley City alone",
+      sorted(c for c, v in R.load_steps().items() if isinstance(v, dict)
+             and (R.calgetc_step(v) or {}).get("combined_line")) == ["Berkeley City College"])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

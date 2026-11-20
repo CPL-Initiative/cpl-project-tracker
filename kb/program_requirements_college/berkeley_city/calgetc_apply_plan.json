@@ -1,0 +1,870 @@
+{
+ "college": "Berkeley City College",
+ "route": "statewide step",
+ "step": {
+  "evidence": "https://bcc.curriqunet.com/catalog/view//iq/40736/41800/41802 (the catalog's 'California General Education Transfer Curriculum (Cal-GETC)' tab under Transfer Information, list 41800; read with its _getPage, https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=41802, by college page read run 43140339800, plan kb/college_reads/berkeley_city_ge_guides.json, S639): the tab prints the pattern's areas with no units and no total, as this entry's why records ('the catalog's Cal-GETC tab (node 41802, the same read) prints the pattern's areas with no units and no total, so no figure rests on Berkeley City's own words'). The transfer degrees name Cal-GETC beside 'Total Units 60' and print one combined 'General Education (Cal-GETC) and Elective Courses N' line (English AA-T 31138: 'Major Requirements 22', 'General Education (Cal-GETC) and Elective Courses 38', 'Total Units 60', by its reading's own note), which no GE figure rests on either. So the catalog names Cal-GETC and prints no figure for it, the shape Sam's Sheet 187 card 5 ('Use 34 statewide', 2026-11-13) fills under d-calgetc-34-per-college-evidence-s648. S689, the cheap-piles worker: the 21 transfer degrees S639 left waiting take the statewide 34 through the rule's record, section and sum gates; the reconcile run's fresh text runs the section gates.",
+  "checked": "2026-11-20",
+  "combined_line": "General Education (Cal-GETC) and Elective Courses 38 (English AA-T 31138, between 'Major Requirements 22' and 'Total Units 60'): one figure for general education and electives together, the degree's remainder after the major, read as no Cal-GETC figure only where major plus it is the degree total and it is at least 34 (calgetc_combined)",
+  "hold": {}
+ },
+ "measured_on": {
+  "commit": "8f37e3fbcc67104097fc2c91a9f9f2a771d57ed2",
+  "date": "2026-11-20T08:21:23+00:00",
+  "records": "kb/program_requirements_college/<slug>/records/",
+  "tool": "python3 kb/_program_requirements_readings_measure.py --calgetc-apply 'Berkeley City College'",
+  "kind": "a dry run on the filed records; the reconcile run reads the pages"
+ },
+ "counts": {
+  "rows": 22,
+  "apply": 15,
+  "held": 7,
+  "fail_to_pass": 14,
+  "pass_to_fail": 0,
+  "held_would_pass": 7
+ },
+ "first_reconcile": false,
+ "apply": [
+  "31138",
+  "31984",
+  "33548",
+  "37850",
+  "37851",
+  "37877",
+  "39386",
+  "39856",
+  "40244",
+  "41777",
+  "41794",
+  "41795",
+  "41796",
+  "41834",
+  "43006"
+ ],
+ "held": [
+  "31835",
+  "41766",
+  "41902",
+  "42381",
+  "42838",
+  "43097",
+  "46229"
+ ],
+ "restore_before_reread": [],
+ "rows": [
+  {
+   "control_number": "31138",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    56.0,
+    56.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "31835",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    73.0,
+    78.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "31984",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": false,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    52.0,
+    53.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "33548",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    54.0,
+    59.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "37850",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    58.0,
+    58.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "37851",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "37877",
+   "title": "Film, Television, And Electronic Media",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    53.0,
+    53.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "39386",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    53.0,
+    53.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "39856",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    52.0,
+    53.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "40244",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    57.0,
+    57.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "41766",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    62.0,
+    62.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "41777",
+   "title": "Philosophy",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "41794",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "41795",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    53.0,
+    54.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "41796",
+   "title": "Global Studies",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    55.0,
+    59.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "41834",
+   "title": "Child and Adolescent Development",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    53.0,
+    54.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "41902",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    69.0,
+    69.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "42381",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    62.0,
+    63.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "42838",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    64.0,
+    64.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "43006",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    52.0,
+    53.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "43097",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    66.0,
+    66.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "46229",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    73.0,
+    78.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  }
+ ],
+ "run_review": {
+  "run": "44719698056",
+  "changed": 17,
+  "kept": [],
+  "restored": [
+   "01102",
+   "09065",
+   "18597",
+   "19267",
+   "31138",
+   "31835",
+   "37797",
+   "37850",
+   "37851",
+   "37921",
+   "37936",
+   "40244",
+   "41869",
+   "43006",
+   "43932",
+   "46221",
+   "46229"
+  ],
+  "fail_to_pass_kept": [],
+  "held_would_pass": [],
+  "pass_to_fail_kept": [],
+  "records": [
+   {
+    "control_number": "01102",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     },
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "09065",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Course\n3 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     },
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Course\n3 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "18597",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "electives_fill_degree",
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n3 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     },
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n3 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "19267",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n4 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     },
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n4 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "31138",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "31835",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "held in the plan: the statewide rule holds it: overlap"
+   },
+   {
+    "control_number": "37797",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "37850",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "37851",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "37921",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "a passing record would fail"
+   },
+   {
+    "control_number": "37936",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     },
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "40244",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "41869",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "43006",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "43932",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "46221",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "electives_fill_degree",
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     },
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "46229",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "held in the plan: the statewide rule holds it: overlap"
+   }
+  ],
+  "pins": {},
+  "records_restored": true,
+  "pages_moved_restored": [],
+  "pages_moved_kept": [],
+  "files": "sources.json and capture.json are origin/main's but for the kept programs' entries; summary.json is origin/main's with its counts taken again from the records"
+ }
+}
