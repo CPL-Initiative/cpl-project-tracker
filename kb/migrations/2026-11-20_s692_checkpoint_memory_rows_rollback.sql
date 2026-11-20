@@ -1,0 +1,4 @@
+-- Rollback of 2026-11-20_s692_checkpoint_memory_rows.sql. Deletes only this file's create log rows and rows (by slug).
+delete from public.cpl_memory_log where action = 'create' and memory_id in (select id from public.cpl_memory where slug in ('m-handover-slice-1-merged-2026-11-20','p-lints-stops-at-first-failure-2026-11-20','p-receipt-commit-moves-head-no-ci-2026-11-20','p-new-script-and-browser-install-lints-2026-11-20'));
+delete from public.cpl_memory where slug in ('m-handover-slice-1-merged-2026-11-20','p-lints-stops-at-first-failure-2026-11-20','p-receipt-commit-moves-head-no-ci-2026-11-20','p-new-script-and-browser-install-lints-2026-11-20');
+select count(*) as rows_left from public.cpl_memory where slug in ('m-handover-slice-1-merged-2026-11-20','p-lints-stops-at-first-failure-2026-11-20','p-receipt-commit-moves-head-no-ci-2026-11-20','p-new-script-and-browser-install-lints-2026-11-20');
