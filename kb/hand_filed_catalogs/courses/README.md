@@ -35,3 +35,4 @@ joins on `code`. The plain session and COBIx wire them in.
 
 - `north_orange_continuing_education.json`: NOCE 2026-2027, 48 subject pages, 1,089 courses (runs 44756513382 and
   44757980757; Sky, S690).
+- `southwestern.json`: Southwestern 2026-2027, 86 of 89 subject pages, 1,692 courses (run 44759854547; Sky, S690).
