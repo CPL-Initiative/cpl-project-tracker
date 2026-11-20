@@ -1,0 +1,1353 @@
+{
+ "college": "Bakersfield College",
+ "catalog_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 249,
+ "with_closed_list": 241,
+ "started": "2026-11-20T12:51:37Z",
+ "elumen": {
+  "catalog": "2026-2027-Catalog",
+  "read": "publish/content",
+  "menu_programs": 283,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 283,
+  "menu_hubs": [],
+  "hub_programs": 283,
+  "program_pages_listed": 283,
+  "listing_failed": 0,
+  "program_pages": 283
+ },
+ "pages_read": 283,
+ "pages_listed": 283,
+ "pages_answered": 283,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 222,
+   "hits": 212,
+   "recall": 0.955,
+   "false": 1,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 6,
+   "false_matches": [
+    {
+     "control_number": "39560",
+     "title": "UCTP Physics",
+     "page": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/uctp-physics-summer-2020"
+    },
+    {
+     "control_number": "39560",
+     "title": "UCTP Physics",
+     "award": "A.S. T Degree",
+     "page": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/uctp-physics-summer-2020",
+     "h1": "UCTP Physics"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "39560",
+     "title": "UCTP Physics",
+     "award": "A.S. T Degree",
+     "page": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/uctp-physics-summer-2020",
+     "h1": "UCTP Physics"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 8,
+  "by_result": {
+   "not_searched": 8
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "02023",
+    "title": "Electrician Apprenticeship",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 212 of 222 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09247",
+    "title": "Sheetmetal Apprencticeship",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 212 of 222 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09248",
+    "title": "Industrial Technology (General)",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 212 of 222 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "20265",
+    "title": "Welding",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 212 of 222 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "35045",
+    "title": "Commercial Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 212 of 222 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "36703",
+    "title": "ASL Interpreter Training Program",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 212 of 222 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "39559",
+    "title": "Recruiting and Managing Employees",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 212 of 222 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "42075",
+    "title": "Small Business Development",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 212 of 222 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 284,
+ "seconds": 1177.8,
+ "found": 230,
+ "by_method": {
+  "no_closed_list": 8,
+  "not_found": 9,
+  "page_claimed": 2,
+  "sitemap_page": 230
+ },
+ "shared_pages": {
+  "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-infant-toddler-certificate-of-achievement-summer-2019": [
+   "09258",
+   "11282"
+  ],
+  "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-fall-2026": [
+   "33173",
+   "45618"
+  ],
+  "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021": [
+   "40359",
+   "40393"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "02090",
+   "title": "Liberal Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/liberal-arts-associate-of-arts-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 179,
+    "why": "coarse net: the page's code tokens name 0 of 179 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2138,
+     "content": 2138,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "09237",
+   "title": "Animal Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-animal-science-associate-in-science-for-transfer-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.375,
+    "body": 0.375,
+    "content": 0.375,
+    "net": 6,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 6 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3859,
+     "content": 3859,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36716",
+   "title": "California State University General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/california-state-university-csu-general-education-breadth-certificate-of-achievement-summer-2019",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 152,
+    "why": "coarse net: the page's code tokens name 0 of 152 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1768,
+     "content": 1768,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36745",
+   "title": "Intersegmental General Education (IGETC) for STEM",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/intersegmental-general-education-transfer-igetc-for-stem-general-education-certificate-of-achievement-summer-2019",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 123,
+    "why": "coarse net: the page's code tokens name 0 of 123 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1833,
+     "content": 1833,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36746",
+   "title": "Intersegmental General Education (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/intersegmental-general-education-transfer-igetc-for-stem-general-education-certificate-of-achievement-summer-2019",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 123,
+    "why": "coarse net: the page's code tokens name 0 of 123 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1833,
+     "content": 1833,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43364",
+   "title": "Sheet Metal Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sheet-metal-apprenticeship-certificate-of-achievement-spring-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 1 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2651,
+     "content": 2651,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43365",
+   "title": "Electrician Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electrician-apprenticeship-certificate-of-achievement-spring-2024",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 1 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2796,
+     "content": 2796,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45809",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/california-general-education-transfer-curriculum-cal-getc-certificate-of-achievement-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 180,
+    "why": "coarse net: the page's code tokens name 0 of 180 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3457,
+     "content": 3457,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46263",
+   "title": "Basic First Aid and CPR",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "01987",
+   "title": "Plant Science",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-associate-of-science-spring-2019"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "30711",
+   "title": "Communication",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/communication-studies-2-0-associate-in-arts-for-transfer-fall-2025",
+    "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/police-science-associate-of-science-fall-2025"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 7,
+  "0.8-1.0": 20,
+  "1.0": 203
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/bakersfield",
+  "kept": 230,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "01988": {
+   "sha256": "c5fff26860f4dfda92ed002e095f1c0956bf398e3fa348f784600ee50df41f39",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-associate-of-science-spring-2019"
+  },
+  "01992": {
+   "sha256": "5671590b50ff56d3502e8b4ebacb12a97b959ad96b1d6f9dbddd2ddd9fbd2b6a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/architecture-architectural-drafting-associate-of-science-summer-2019"
+  },
+  "01997": {
+   "sha256": "a3e89dbb562351d279209a12478fdff7033a658040bce3f7ff8a32a891c5d328",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/accounting-associate-of-arts-fall-2026"
+  },
+  "02004": {
+   "sha256": "be07d04a7c3341cdba9fcf27f6719f31e5223327f8e53f33f04c0e810a5ef205",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/administrative-office-assistant-associate-of-arts-fall-2025"
+  },
+  "02010": {
+   "sha256": "e7194bf25e539a00dc162b203d739adb7a68417ae98706946bb6884b81eabf82",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/american-sign-language-associate-of-arts-fall-2025"
+  },
+  "02014": {
+   "sha256": "cd3a396ef360666106e9b9d47de53b635fee721556a3258d9102fab00257161a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-associate-of-science-summer-2025"
+  },
+  "02015": {
+   "sha256": "9fa57fdb32d7d0211fca664e7ce5c164810abd9a6160650c3f9e2de9317478e5",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronics-associate-of-science-summer-2019"
+  },
+  "02027": {
+   "sha256": "a8e222ae21c720909e8153e3b3bf256afa8fee3edea7a65053c44044a0082192",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-drawing-associate-of-science-summer-2019"
+  },
+  "02029": {
+   "sha256": "c13959d0597ebaa0da57d0606093531ad42c5ef4aa2f01b59b1a9077681b9efb",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-technology-associate-of-science-fall-2025"
+  },
+  "02031": {
+   "sha256": "bf0ec43b5e37fe7c3ffafe2f599858eb8d8af5b077e3cee3120252445d93130e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/welding-associate-of-science-fall-2025"
+  },
+  "02044": {
+   "sha256": "e18372c96523305b52c9df9baffa27a315836db87ede4d6821ad3db469e817f0",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-nursing-associate-of-science-fall-2025"
+  },
+  "02045": {
+   "sha256": "ab8c41479f2b3c60a28b50176041ddbf1793af8c2639cf478ee4650452a3477d",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/vocational-nursing-program-certificate-of-achievement-summer-2019"
+  },
+  "02048": {
+   "sha256": "ab56765bac5f84d7112b3184e22ccf451908ece5afac674952883f6821b03738",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/radiologic-technology-associate-of-science-summer-2019"
+  },
+  "02068": {
+   "sha256": "961adde0815bb6b0d915842a7dc72d34b46f6c821011a425fb826f9f773ea8d2",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/criminal-justice-associate-of-arts-fall-2025"
+  },
+  "02069": {
+   "sha256": "4f7f5f7719213c8a27b0f52108f8d9fdddf0cf682e31557036014e7a883b5b9a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/correctional-administration-associate-of-arts-fall-2025"
+  },
+  "02081": {
+   "sha256": "7d2cece114eefccf05107872dafb0b5eb22390e7fe545ceb149f9e6e90292ed1",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-associate-of-science-fall-2026"
+  },
+  "09241": {
+   "sha256": "1d893c6f0276624871cf70292b652e64c3b2829b4dd6b0f0cd41749e7eda5705",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/bookkeeping-certificate-of-achievement-spring-2021"
+  },
+  "09243": {
+   "sha256": "65759321dc3e0c6ef8fba198ca66d111d01274c0ab71e821cf2b23e4512bc7c0",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-technology-associate-of-science-spring-2020"
+  },
+  "09244": {
+   "sha256": "bd502831d8310f537ba45b1ba3b3f6274b14a3e4761d695cf193339c39c17881",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/woodworking-cabinetmaking-associate-of-science-spring-2019"
+  },
+  "09258": {
+   "sha256": "69bd3b325fd916ce4c6ef7b757c7f039a6ba72973517f53e4fec975877e7a786",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-infant-toddler-certificate-of-achievement-summer-2019"
+  },
+  "09259": {
+   "sha256": "f36b20da5685f3ee3b32d2e860c170438d69064b30e2b16e0a754c2e7e8ee854",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/dietetic-services-supervisor-program-certificate-of-achievement-spring-2025"
+  },
+  "09260": {
+   "sha256": "a12af0b574587366f3f04901e82956f2cbca058fd1cbddfdb29bbf7cedd2f885",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-service-management-associate-of-science-fall-2026"
+  },
+  "09966": {
+   "sha256": "b66ad6a87424002f3bae35b4d206787d9adfcd6ef2aa6fb8782f0b01feef7ec0",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-associate-of-arts-fall-2025"
+  },
+  "09968": {
+   "sha256": "0b709cb9909470d646427176ef2a4a51a6859d0c08b8912745136f6c43705b9d",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-services-associate-of-arts-summer-2026"
+  },
+  "11276": {
+   "sha256": "bd889400a3ad1f4ead9060bf09e1d9093efb19e8ac2e460083099dcb036961e5",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/office-assistant-certificate-of-achievement-spring-2021"
+  },
+  "11281": {
+   "sha256": "4bb8a136372c27efc6ab863d92f04589f9a5856e0cfe90e672e55fae37f5b4af",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/lvn-to-registered-nursing-associate-of-science-fall-2025"
+  },
+  "11282": {
+   "sha256": "69bd3b325fd916ce4c6ef7b757c7f039a6ba72973517f53e4fec975877e7a786",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-infant-toddler-certificate-of-achievement-summer-2019"
+  },
+  "16988": {
+   "sha256": "418d0d331575bfce950c18d55ebe15837fecbc3e44538a09f7815115adb53ce2",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/wildland-firefighting-associate-of-science-fall-2025"
+  },
+  "20235": {
+   "sha256": "0d6df2ae7302c95f7ab50b30134a8c794c4d34225ac6293a1e483f510b76f341",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/animal-science-certificate-of-achievement-summer-2019"
+  },
+  "20238": {
+   "sha256": "87eb08b19c0ec4c93d5b0bffe0eef74809d666c6d7d7fc622090a97854332f46",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-certificate-of-achievement-summer-2019"
+  },
+  "20239": {
+   "sha256": "937c231fbcbc1e95f10519ce7887222e235e593cb4753147f304b8b1e7761595",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-business-certificate-of-achievement-summer-2023"
+  },
+  "20251": {
+   "sha256": "d88934364e56f0f89ac8ddd27b8009f5147dd3f8aef5355f365775b2cb184518",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronics-technology-certificate-of-achievement-summer-2019"
+  },
+  "20253": {
+   "sha256": "dde9dfe1fe52429806dd7e9dd3bfe4955656329f1d4729d076fe4824593a9c99",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/construction-technology-certificate-of-achievement-summer-2019"
+  },
+  "20259": {
+   "sha256": "84eaea9b7ab1a256a14212db3993d5a866aed1ec67c513cccea9b2c03e417c2b",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/woodworking-cabinetmaking-certificate-of-achievement-summer-2019"
+  },
+  "20262": {
+   "sha256": "5cfc10004aabcff3403efab51e544fdf1c6dadfc1ea7b84400cead047cc52d97",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-technology-certificate-of-achievement-summer-2026"
+  },
+  "20268": {
+   "sha256": "7120a59c4c989c7347192f56cd0f576cfde854ac795504c3c574c48ddac18511",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-certificate-of-achievement-fall-2026"
+  },
+  "20269": {
+   "sha256": "18af37994e45c789265521b23a5e5684cddbbfeb56ed5a33903f511beb8cc5e1",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-certificate-of-achievement-summer-2026"
+  },
+  "30593": {
+   "sha256": "20ec3e97c4382eb0ec3dac0a6373e1e6af8dc44cdfebaaa58a8f39f9fa524d42",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/psychology-associate-in-arts-for-transfer-fall-2025"
+  },
+  "30628": {
+   "sha256": "772962f3c52c1dd54281a95892114530119e4d8dd1d5b113cd30fa3f2adc5813",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sociology-associate-in-arts-for-transfer-fall-2025"
+  },
+  "31667": {
+   "sha256": "f1983d43ea34927d0c7d0cf94ca708338456e1a5d1c6d775906fc45c2b5759fa",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/studio-arts-associate-in-arts-for-transfer-fall-2026"
+  },
+  "32459": {
+   "sha256": "9e169a29c7c119b42c166c7ae5bfb1dc474034bf9ef9705c7337e8ca47884de7",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/anthropology-associate-in-arts-for-transfer-fall-2025"
+  },
+  "32460": {
+   "sha256": "baf488be4b2a14be1fcb83a7343eb533ddb48f61d4b8968d1416f196a42076d1",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/geology-associate-in-science-for-transfer-fall-2025"
+  },
+  "32461": {
+   "sha256": "d8cf6744c95dae04e822e30249e68021388bee6c486a8625c134c3f76909bed5",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physics-associate-in-science-for-transfer-fall-2025"
+  },
+  "32557": {
+   "sha256": "ff90b27189a6e19971044d2b4942e791d77fbda15b291709f03097eefa270836",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mathematics-associate-in-science-for-transfer-fall-2025"
+  },
+  "32724": {
+   "sha256": "bf12d1e7a3594e4142898f39a57a4f5f38ff3ebcef1251cdf0ac6d77c3419808",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/music-associate-in-arts-for-transfer-fall-2025"
+  },
+  "32769": {
+   "sha256": "e1ecfc12cc15bb709b0bef1b47bb707507e4618f3d2c10f1319b865a91544296",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/theatre-arts-associate-in-arts-for-transfer-fall-2025"
+  },
+  "32781": {
+   "sha256": "c415b870cc14f12be091e088bd71b5c026dd704876223e3fa92148936f559c6c",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/history-associate-in-arts-for-transfer-fall-2026"
+  },
+  "32783": {
+   "sha256": "1cc80d6d19090750d74caa0fa6480c546a611ab3ef33ef976be6f1c9d8b08d53",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/political-science-associate-in-arts-for-transfer-fall-2026"
+  },
+  "32786": {
+   "sha256": "ce6b5c1b6f62f2b4f3ebaede14f6c56736c8f079e0bd288ee412d4dcfba9a059",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/journalism-associate-in-arts-for-transfer-fall-2026"
+  },
+  "32796": {
+   "sha256": "021851a39a30ff820e19ab69b8348ad703a4b414f352ff5b6b63024e9a108d24",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-associate-in-art-for-transfer-fall-2026"
+  },
+  "32797": {
+   "sha256": "78efa4795592be39e2fb4473a0cb614ee4f1638b8b3cec68042547943f8d6eb4",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/administration-of-justice-associate-in-science-for-transfer-fall-2025"
+  },
+  "32800": {
+   "sha256": "b3f5916cdfefeabcae7bd6f543e00c2a6f3b256f1c65fbc1e1b6bff03993d4ba",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/spanish-associate-in-arts-for-transfer-fall-2025"
+  },
+  "32826": {
+   "sha256": "8494f1141c15919434ccd6a84466d24adc609240e66de640a2b106a0f3e0a8c8",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/computer-science-associate-in-science-for-transfer-fall-2025"
+  },
+  "32897": {
+   "sha256": "a539f396fa7580115d9bd47c5c5cdf5d577d79352479eddf0f46bb7ed01ecc2a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/early-childhood-education-associate-in-science-for-transfer-fall-2025"
+  },
+  "32967": {
+   "sha256": "2f78b40473458ef284a2b3d3dd510dd0f2fb9d0a0da04c6fecd6be4ce04c8306",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/economics-associate-in-arts-for-transfer-fall-2026"
+  },
+  "33173": {
+   "sha256": "8f7d4244b9059da6c55c20f7b2a8ef676fe415885d1ef1f692482a4611cb87a0",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-fall-2026"
+  },
+  "33247": {
+   "sha256": "44e95508da8af788d3f8445ef824b2bee170c5e378636acc367f8d850f65e47f",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/photography-certificate-of-achievement-summer-2025"
+  },
+  "33262": {
+   "sha256": "1b83834d5aa37bd97288705a890db37b9e806fe76ef1d8575698285b00158d0e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/philosophy-associate-in-arts-in-for-transfer-fall-2025"
+  },
+  "33328": {
+   "sha256": "52e59edeeb4c9c99fdeb1b33fdb82706b63ada4fa6ce70187426907e924ec11d",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-fighter-i-academy-certificate-of-achievement-summer-2026"
+  },
+  "33781": {
+   "sha256": "314dfb5ba81fd601232d7ff7b6498c19fbeb6277ad2540a31d8d69c6e2cd35b3",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paramedic-program-associate-of-science-summer-2019"
+  },
+  "33787": {
+   "sha256": "f68e0d6fadb1b7d644f85941ba021e1df8580d19a532c6502932cd0929f25f9d",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paramedic-certificate-of-achievement-summer-2019"
+  },
+  "33894": {
+   "sha256": "bcf6daffea8ccd917b9ae2b9af9255185695e16cf95355ab6f0e564080e553e7",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/comptia-certificate-of-achievement-fall-2019"
+  },
+  "34006": {
+   "sha256": "abdfd72ea2e26ff7c48205ca2b5b3242a8131edb1239ca20c20135079c33ff77",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-bachelor-of-science-spring-2024"
+  },
+  "35102": {
+   "sha256": "b9bc102dd5e5f54b0a41b0cb808fd03768611ddf32266643d7f13ae6b3f7838a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/executive-chief-fire-officer-certificate-of-achievement-summer-2026"
+  },
+  "35113": {
+   "sha256": "c043df551cb6f83e2e24721eeb6600d0f5f092bfb6606b23347368f66c5e498e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/media-arts-certificate-of-achievement-fall-2026"
+  },
+  "35302": {
+   "sha256": "a3b576a8db2474d4cb753ab33be634698ea209c80cc926c003fa7afa6d7b096e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/biology-associate-in-science-for-transfer-fall-2025"
+  },
+  "35389": {
+   "sha256": "79a64c3c6cecabd1bb9884012aba04825f4441654b2a84a851c4b1a99bfe89b8",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/chemistry-associate-in-science-for-transfer-summer-2019"
+  },
+  "35469": {
+   "sha256": "02848be1bab2ddcc8fc2c4212c504892068d0b0b9a99cf828565fe12708d7bfb",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-heating-and-air-conditioning-certificate-of-achievement-summer-2018"
+  },
+  "35471": {
+   "sha256": "cd2176e83d4db42968f0798ccd41eeedff5bb79b6dec5f70fb1386a064c5a57b",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automatic-transmissions-certificate-of-achievement-summer-2018"
+  },
+  "35480": {
+   "sha256": "537b1682c1c72fbe48b354a81810fcb7c07a2eff3fc2dcb18f268f90e937213e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-science-associate-in-science-for-transfer-summer-2021"
+  },
+  "35625": {
+   "sha256": "d83a7cdf6a921889bcad01c317b90f82ece3dc8f556d75aa66fdc88f07a49f90",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-plant-science-associate-in-science-for-transfer-fall-2026"
+  },
+  "35695": {
+   "sha256": "b4ff53e8794e165b89f81aea4f1bcfdf84c4c233be8fe3be6e9174d6d33dece9",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engine-overhaul-and-repair-certificate-of-achievement-summer-2018"
+  },
+  "35696": {
+   "sha256": "1f02f6f5c1328e63afb98ff8c82105b2c2f3aab419e74199ee6d38f7c0a478b9",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/light-duty-diesel-performance-certificate-of-achievement-summer-2026"
+  },
+  "35697": {
+   "sha256": "b0da4b3f448487f6573193bd7f24e514e3a418c3d9af11b174fb7e904f3f4ae6",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manual-drive-train-and-axles-certificate-of-achievement-summer-2018"
+  },
+  "35725": {
+   "sha256": "bcd8b6ad23ecd31a343bbd8899c109ceba878adf6681533afd500a6ff1f2cb72",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/brake-systems-certificate-of-achievement-summer-2018"
+  },
+  "35726": {
+   "sha256": "e12aaffe79bf85811c647daeae8fe0db64f348964b93d4ec628948ff9705e6d8",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engine-performance-certificate-of-achievement-summer-2025"
+  },
+  "35727": {
+   "sha256": "3c071cd189ba9b4536dc8978075d178207cfe9e7237f95ad1fe6418a166c320e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/suspension-and-steering-certificate-of-achievement-summer-2018"
+  },
+  "35728": {
+   "sha256": "deb4c3c58d714fa6f78a82efac3fdd75eb20d872963fd42b00f55444bad1a9f8",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-technology-associate-of-science-fall-2018"
+  },
+  "35729": {
+   "sha256": "73ace6ee7c43da694a6da1993bcc10a2f1ef498005e17f073c926aeec35209ea",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electrical-and-electronic-systems-certificate-of-achievement-summer-2018"
+  },
+  "35807": {
+   "sha256": "b809f51f4cb447d90c4b20579cdbd2363d3e87f3f990974f09773d56aba32ea2",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-business-associate-in-science-for-transfer-fall-2026"
+  },
+  "35826": {
+   "sha256": "27bd5fbb395c853bdff0d5f4517371c95a88142dd5f3132258859eaa5f96cb77",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-animal-science-associate-in-science-for-transfer-fall-2025"
+  },
+  "35984": {
+   "sha256": "d440f4d1274af3f5e518b386535a3c5c49916bfcf6921cb85cf653379f47f38f",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-information-technology-associate-of-science-summer-2022"
+  },
+  "36024": {
+   "sha256": "9b61a98932e645cc5f8cf774fb0b39d378466fb392cc1b9244cad7fda1f8faeb",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-agriculture-associate-of-science-fall-2025"
+  },
+  "36037": {
+   "sha256": "458490cf76317da0293a49c7eba00cece385b540ed8caaba97741bec93fc861a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-industrial-technology-associate-of-science-fall-2025"
+  },
+  "36485": {
+   "sha256": "718235ea7b2a368f113fd52c587b833af39745d560badae6400e92d8c38578d7",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-drawing-certificate-of-achievement-fall-2018"
+  },
+  "36488": {
+   "sha256": "907089aa6857e98703559a3095ff70d9e670e4f947cf5f701d459576c47e5051",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-business-associate-of-science-fall-2025"
+  },
+  "36489": {
+   "sha256": "0c57ec4f0b73d4d7ed0049d0978932b6c9742311854f68d3e73cda0678a9fd9b",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-health-science-associate-of-science-fall-2025"
+  },
+  "36571": {
+   "sha256": "81606e2fb039f760562f78588bbfa2bd2becd122acacbab041c74509adb43ca6",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/art-history-associate-in-arts-for-transfer-fall-2025"
+  },
+  "36579": {
+   "sha256": "b11c6e0980e7cd4fcb28475d6c7fa1d2e3a805f13c0ae075190a051cf66d1b84",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-associate-of-science-fall-2023"
+  },
+  "36590": {
+   "sha256": "45c831dac556a8d42334a16df2f1d093525f478e8f718b5090447b9cac9bdcbe",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/heavy-equipment-technician-certificate-of-achievement-fall-2026"
+  },
+  "36640": {
+   "sha256": "26f68660ad761ec04390d75c06913030614358bccf10cb32553024048de4f024",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/construction-management-associate-of-science-summer-2018"
+  },
+  "36772": {
+   "sha256": "5e59d04702c752842d4b1d84ae8f08588cd3e22767cfae4e3db96c9b62337f25",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-metal-fabrication-technology-associate-of-science-summer-2018"
+  },
+  "36773": {
+   "sha256": "c333cc7f2c5da2294b90a14d42ddd695268f693b4b06177b9f7f4ecec1c04771",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-science-associate-in-science-for-transfer-fall-2019"
+  },
+  "36778": {
+   "sha256": "ba822bd0ec7ecca19aa13c55aed4106e3789a73a05a490748a45612ac140bc46",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-navigator-certificate-of-achievement-fall-2021"
+  },
+  "36781": {
+   "sha256": "6adacf251483ca177ea22e7f7ac2405fd9547a1b0c720a862522a3cdcc58e62c",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-special-education-certificate-of-achievement-fall-2026"
+  },
+  "37018": {
+   "sha256": "1e8760ff5f13f8c6f3b09d1a422f47e0e0f7ef278bc576e3aa532a3d050c64da",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hvac-technology-certificate-of-achievement-fall-2026"
+  },
+  "37055": {
+   "sha256": "aee35280dd90f8cf2e39a63e43589d7bdd0f32cc0b89e1c4c12dbeb0d6cf7d17",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-certificate-of-achievement-fall-2018"
+  },
+  "37068": {
+   "sha256": "4b24ee6f374baa6ae84a8c54b59744436347e3530d94bd23f9ad248e749ebb5c",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/information-technology-certificate-of-achievement-spring-2019"
+  },
+  "37147": {
+   "sha256": "118f2865ac8149560bb5b94357619e057713ca96c891ca57d7846dbbeea4b30d",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hvac-technology-associate-of-science-fall-2025"
+  },
+  "37178": {
+   "sha256": "8f59f4091d11f6f024978be52c83e27f73dbf00151d5ed43cdd5cba436cbe6b5",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/process-technology-certificate-of-achievement-summer-2019"
+  },
+  "37319": {
+   "sha256": "fdf11267582ac82bb828a22d367ee81014e62a4be2b85d89fe9f4f1e2e789a80",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/process-technology-associate-of-science-summer-2020"
+  },
+  "37368": {
+   "sha256": "203524735e83457c609ada8f48f8c36898e5274bb7ff0c3bd732917cb296f7d6",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mechanized-agriculture-associate-of-science-fall-2026"
+  },
+  "37394": {
+   "sha256": "ba2b999e9497e467d8ee85312c7f72548ef3251d62093cf51dd362119cdc2247",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-technology-certificate-of-achievement-summer-2019"
+  },
+  "37843": {
+   "sha256": "600660a1798c3490955fd96231e58c7cf35e5f47a8412add04b3e8e127215f27",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/transitional-kindergarten-certificate-of-achievement-spring-2022"
+  },
+  "37903": {
+   "sha256": "5aa040d150d07fa83c5a3ccd18c700c82744547fa8ea9c67c7b751bfd146a415",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/web-design-and-development-certificate-of-achievement-fall-2024"
+  },
+  "38523": {
+   "sha256": "e4bfcba7ab218687a2ed5e7bc6a6910ee0905fdcce04a8ae8a1294d7360869cf",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/japanese-associate-of-arts-fall-2025"
+  },
+  "38832": {
+   "sha256": "5e597cc0b9b1d42a524f7ac257df11a1bf2eb805edc0eb2e1ca10750ee2633c1",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-i-certificate-of-achievement-spring-2020"
+  },
+  "38841": {
+   "sha256": "384df4e4d39663ade3b85696a4e4292e9ff9ae5cd1235b38502459d1bf967da2",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-iii-certificate-of-achievement-summer-2026"
+  },
+  "38842": {
+   "sha256": "8515bb8eeef97c8041f0964873cbac6336c8aa1d979e040203616fd79e9e4aac",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-ii-certificate-of-achievement-summer-2020"
+  },
+  "39473": {
+   "sha256": "ab2acfffbb9dd152764a9f590ec2a0b61bc86573803a0ecf9e369f55fe047de9",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/uctp-chemistry-fall-2025"
+  },
+  "39516": {
+   "sha256": "dbe54c93d381b9d7dbb8d30e48043ead0d5749c1b4e6a6f061ffd4e4ba8368ea",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-biology-associate-of-science-summer-2025"
+  },
+  "39541": {
+   "sha256": "a92e6eb4aff429eb38865a3a86464b4736c90914585d0c2238e15ad308f98271",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-intermediate-certificate-of-competency-summer-2020"
+  },
+  "39542": {
+   "sha256": "5f4680a2cbf1b6dc6fbf2ba22a1800dadc21fc28a10a1a5877cc7e4c8952b890",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-listening-speaking-certificate-of-competency-summer-2020"
+  },
+  "39543": {
+   "sha256": "ab659d007b6cbcdc5c41a8edb1f38930c9fa04b24727359a8037f6fa673ab967",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-reading-certificate-of-competency-summer-2020"
+  },
+  "39544": {
+   "sha256": "42d4233602dd74bf7c61d592214ea5dbca6e9834fde39efd043975bc21bec04c",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-writing-certificate-of-competency-summer-2020"
+  },
+  "39545": {
+   "sha256": "4b7d9072610946bf007b59f264e13c305701f68efffaca398618f96a4e6a01e8",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sales-techniques-certificate-of-completion-fall-2020"
+  },
+  "39547": {
+   "sha256": "e9b8b6215d52fe0f3af5d6ad8a8d6656e172fd216e41ef7e029b90cf256bc53e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-science-and-technology-associate-of-science-fall-2025"
+  },
+  "39549": {
+   "sha256": "e066917db0114892c2c0d8914849214326d2858c09eeae53fa2f667ad064eba9",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/introduction-to-early-care-and-education-certificate-of-completion-spring-2020"
+  },
+  "39550": {
+   "sha256": "0a47f537859d2fb98e6db2691b9568f09fef614201412eb443aac212ba9f1f4d",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-internet-skills-certificate-of-completion-fall-2020"
+  },
+  "39551": {
+   "sha256": "17b77acfe8a37c6eb104f5dd7609f88dfd745fb4d1f1e6c70434e558a7e6ea30",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-office-skills-certificate-of-completion-spring-2020"
+  },
+  "39552": {
+   "sha256": "8e0e7b667738f107240d577c90a5c5456f68ca9b4db64bc41a55b47c0dc7cb86",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-office-software-skills-certificate-of-completion-spring-2020"
+  },
+  "39553": {
+   "sha256": "c15b4d6e142e1e615e39b716d869b6f4d1d42c45e8f346fe7c04580420e32da6",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/beginning-computer-skills-certificate-of-completion-fall-2020"
+  },
+  "39554": {
+   "sha256": "43b3153960284344fb91d96daffc29ab9d0b75b283a93866f089565f6ce22f38",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/customer-relations-certificate-of-completion-fall-2020"
+  },
+  "39555": {
+   "sha256": "f9bd54146080a40c152e9c13e0256f5e4c1b5f2853cdd04547620dd191cff2db",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/entrepreneurship-certificate-of-completion-fall-2020"
+  },
+  "39556": {
+   "sha256": "43d5fe485cfc4a00a9afa85cea94e2b8edd4ccb2c7207998b84fc2ec3081c26a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/digital-marketing-for-small-business-certificate-of-completion-fall-2020"
+  },
+  "39557": {
+   "sha256": "577e5963e001e87ef31c0507e2b38a2d0ec2d0870cb15a6a09b4267252d2a51a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/powerful-presentation-certificate-of-completion-fall-2020"
+  },
+  "39558": {
+   "sha256": "dcb7ff5f206655a228ce4138a919a08af5ae1f07b8f09729fc43706ad8cbd23a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/quickbooks-basics-for-small-business-certificate-of-completion-spring-2020"
+  },
+  "39560": {
+   "sha256": "a0ff198a874f41bb823c7597f34f4ff8df9d9a491e8227e5e6396e9001470210",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physics-2-0-associate-in-science-for-transfer-fall-2026"
+  },
+  "39686": {
+   "sha256": "1a0d52b6183923d235384a71505934a9a7613fe7cfd11cd60e8f29abf012d22b",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-certificate-of-achievement-fall-2020"
+  },
+  "39687": {
+   "sha256": "83934291890be544890cc27134a556d4f3393541c14257062025fb03403e9eb4",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-advanced-certificate-of-competency-summer-2020"
+  },
+  "39688": {
+   "sha256": "0f5df40ea3be0126815bf615a317cee1572e61ac20b9370672f90083837fea65",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-introduction-certificate-of-competency-summer-2020"
+  },
+  "40073": {
+   "sha256": "71319d6d38aefdc968f13c6412927befa9bba7206ec8aee517736561fd778afc",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/nutrition-and-dietetics-associate-in-science-for-transfer-fall-2026"
+  },
+  "40258": {
+   "sha256": "0f1da8d74d6853a6402bb077585df08b3006f8a5ac334a62ece38ec6b005a2d3",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/application-of-transformational-policing-certificate-of-completion-spring-2021"
+  },
+  "40259": {
+   "sha256": "e27072167830f1b9a0a9178670b02b917a17e309161b07560972ff4653f62a01",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/online-teaching-certificate-of-completion-spring-2021"
+  },
+  "40334": {
+   "sha256": "dc44223c56b3089168604345ec0e1e8451c5f907d61041c26a5b3997610ee2d2",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-science-and-technology-certificate-of-achievement-summer-2021"
+  },
+  "40359": {
+   "sha256": "2c98d22b649d48ef3991f2e7cc0fc60282c3c19ad87b8f86d7063e2655bf4860",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021"
+  },
+  "40393": {
+   "sha256": "2c98d22b649d48ef3991f2e7cc0fc60282c3c19ad87b8f86d7063e2655bf4860",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021"
+  },
+  "40685": {
+   "sha256": "cdc8f16f0bfb0a3bbc00d97ddb662208c05ad52c0258d31397c3a8ec4d73e48a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-iv-certificate-of-achievement-fall-2023"
+  },
+  "40686": {
+   "sha256": "4c60fb6bae9d2853ef96befcb434381fa09db693ff7d16bf48502b23fbe65d31",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/online-teaching-level-ii-certificate-of-achievement-summer-2021"
+  },
+  "40749": {
+   "sha256": "e531663f06cf063c294d38cf60b02ca27c59b1a7f5d313db1c98b2d0176c8c61",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/education-studies-associate-of-science-fall-2025"
+  },
+  "40880": {
+   "sha256": "a106f9d38e60c9a4da0b2887352fc4b10221c5a042c2e18931a912265838d764",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physical-therapist-assistant-associate-of-science-fall-2025"
+  },
+  "41001": {
+   "sha256": "989915f99dd6b6b619158440ed065b7799484f9a30497f04b43b58a2c530b253",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/social-justice-studies-associate-in-arts-for-transfer-fall-2025"
+  },
+  "41348": {
+   "sha256": "4146bf4e8fa43a8b86e49cf6d97c4a26b886f6d79768a06e99df03569d733121",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logistics-management-associate-of-science-summer-2025"
+  },
+  "41349": {
+   "sha256": "f4fe13691a0602873b7af341a9de84610c2a1cd1ba638e1e87cd384e6309666b",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logistics-management-certificate-of-achievement-fall-2021"
+  },
+  "41350": {
+   "sha256": "e3984b688f4128c0a7d80d150ec341ec7468f4dd4eb3b81e5af4418fad474629",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/inclusive-and-accessible-digital-content-certificate-of-completion-fall-2021"
+  },
+  "41351": {
+   "sha256": "f25691762d2047e95082e9ad4fd9cb4e4ba9b1d4c0d9e725e0bfd1d6688aad48",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/business-administration-2-0-associate-in-science-for-transfer-fall-2026"
+  },
+  "41352": {
+   "sha256": "07ef5ce05186c35256f1365eb6f905ab50b6790d2ca50cae4313bf41a1b0716a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/applied-leadership-certificate-of-completion-fall-2021"
+  },
+  "41548": {
+   "sha256": "18361ff564a8e435b51c00fd60e4856320a45116403c906552d2925df1998148",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-for-non-health-professionals-certificate-of-completion-summer-2021"
+  },
+  "41549": {
+   "sha256": "3d99c56a283dbb5456554fae3c37bc31a8ff20277a17c0a6fd0370236fa94748",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/kitchen-techniques-for-new-culinarians-certificate-of-completion-summer-2021"
+  },
+  "41550": {
+   "sha256": "74969e5950f9c0621e810837e15d38c55b9155453165b687e0e81a520b3bb336",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/school-food-service-certificate-of-completion-summer-2021"
+  },
+  "41574": {
+   "sha256": "a4916cfea42476c8ede23e6faa6be7dc48b070f9bd88d8d23acd52f0b206cab1",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/introduction-to-welding-processes-certificate-of-completion-summer-2022"
+  },
+  "41894": {
+   "sha256": "5f7f38d9088c0a2332552fcd178c745a38847b52806d8f9d709ba15c29a82078",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mammography-program-certificate-of-completion-spring-2022"
+  },
+  "42034": {
+   "sha256": "2f419526b21726d931ee966f89e5061566ae6da0fe95ffd17a7df7b2a11d38c8",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/college-and-academic-writing-success-certificate-of-competency-summer-2022"
+  },
+  "42035": {
+   "sha256": "98c307bf092947fc07cc235266fadb32263e5ca3d33104a1e6f34a3a3c6820bd",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-basic-certificate-of-competency-summer-2022"
+  },
+  "42036": {
+   "sha256": "b12ee37266932a8f59a9c1f4d1053495f11f4dcb26fa3749b202fd5f60b2ace6",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/study-skills-for-college-success-certificate-of-competency-summer-2022"
+  },
+  "42069": {
+   "sha256": "1334ebef98691cf83e1a1f5553515fdaed5a5267a6a3afd4650ccd9c3be13f86",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-industrial-and-construction-skills-certificate-of-completion-summer-2022"
+  },
+  "42070": {
+   "sha256": "363534cdcdb9fd9be9616a61c2045fcddf90fde3ba48896a7f82f69e0132f27e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-safety-certificate-of-completion-summer-2023"
+  },
+  "42071": {
+   "sha256": "e1622649c91c6bd77c6f215ec5f26ce92369db8b53c5ab641efc312638112392",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/student-success-certificate-of-competency-summer-2022"
+  },
+  "42072": {
+   "sha256": "c98384d54e93c72a673b0e8c60a85372af176fa1667000fea1d2b371a8bf1f82",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/teaching-and-learning-certificate-of-completion-fall-2022"
+  },
+  "42073": {
+   "sha256": "7f493237333a366ac906c290fd94cd71480f5ce84a0efe844494ddfff4f22d43",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/warehousing-certificate-of-completion-spring-2022"
+  },
+  "42074": {
+   "sha256": "02693ab79e4bbc45362f3c2ddd7a362ff043554305b68444e870d39c63a963f4",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/modern-energy-certificate-of-completion-summer-2022"
+  },
+  "42076": {
+   "sha256": "45d6c593d62b7aafde999a3a39fd18aa78c510def37a442adbf26df6b1aace1e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/small-business-execution-certificate-of-completion-summer-2022"
+  },
+  "42077": {
+   "sha256": "f5271bf647eb1a1fe9f6119104a6cd9cb671f0a671ca13f014006a1c085ad310",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/small-business-funding-certificate-of-completion-summer-2022"
+  },
+  "42226": {
+   "sha256": "bcdacbf483760731e7446f77a568d743882757fab74d3bc2a7d311b3f7e84322",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/law-public-policy-and-society-associate-in-arts-for-transfer-fall-2026"
+  },
+  "42307": {
+   "sha256": "8aa5843b1c1c0892696e2824cce2beefe731e424a45b974af5351e058b908640",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/edible-education-garden-certificate-of-completion-summer-2022"
+  },
+  "42310": {
+   "sha256": "7b412736fb6eb895c578891923917556143cf1c0d2e858d1838bb78c38ae5d20",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-and-adolescent-development-associate-in-arts-for-transfer-fall-2025"
+  },
+  "42508": {
+   "sha256": "8fa15e5ed9b222303ee9258b2944217e68b725a7f32786cd082339a85e917d8c",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resource-management-certificate-of-achievement-summer-2023"
+  },
+  "42523": {
+   "sha256": "82dc2a77ebcae60231b7ebf58dd97f0662fa26eaa3d22c462cc7f2b7c0f54419",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/research-laboratory-technology-associate-of-science-summer-2025"
+  },
+  "42536": {
+   "sha256": "66f32caad8c509dbe724dced9a19b04befd8743000fee6d8e8815bccb3d37426",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resource-management-associate-of-science-fall-2026"
+  },
+  "42569": {
+   "sha256": "b996efda4be9c015a3b6c47e7e29ef80ead5922b1f515a897daa9fb44d92810f",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-resource-management-associate-of-science-fall-2026"
+  },
+  "42570": {
+   "sha256": "4d45f4e88f632075a5bdd60917a664514f9cdf702bfcdb4da97c0f5a3b76a395",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-resource-management-certificate-of-achievement-summer-2023"
+  },
+  "42766": {
+   "sha256": "67962943501294f836fca2a6005ae130f6cd6de28aff5c47233c7fa14531a4de",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/cesar-e-chavez-leadership-certificate-of-completion-fall-2022"
+  },
+  "42934": {
+   "sha256": "04708bff6c1a9fc46e490ef77db5bafed6132687cb61f75ff8c7c6bee0c62bf3",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/social-emotional-and-cognitive-development-certificate-of-completion-fall-2022"
+  },
+  "43011": {
+   "sha256": "8c40d459f8f81b6dd37c104dcc3c8e5240a734d3bbcc016d13a6143f559dfced",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/police-science-associate-of-science-fall-2025"
+  },
+  "43012": {
+   "sha256": "b324fb96013bc7ba1707db02a0d925d66d145b6721d7ae43b8e0d1a62c244731",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/pest-control-adviser-preparation-certificate-of-achievement-spring-2023"
+  },
+  "43022": {
+   "sha256": "f340f3c970200e85f6ce82879f0dd76ebfa88535c9f39546d3ebb6a8098572d2",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agricultural-engineering-technology-associate-of-science-fall-2025"
+  },
+  "43157": {
+   "sha256": "2b0e19af6aebef8dd9ce1337576ffb9bf722e765348c8fdee10706d76bce5e37",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mechanical-engineering-technology-associate-of-science-fall-2025"
+  },
+  "43184": {
+   "sha256": "5324547b1615d8d127166e5bfa76cb74bb0550bd2497bb04ba25b7cdd8b241f0",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-detailing-certificate-of-completion-fall-2022"
+  },
+  "43190": {
+   "sha256": "146a848f594067f7821c7696600504ebda45f55340fcb6c6f71a88fe0b9f7c0a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronic-systems-engineering-technology-associate-of-science-fall-2025"
+  },
+  "43264": {
+   "sha256": "c2b1240659bff5bb58a5e40e01636c266a3920eebd54c419a193983c9e448068",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/diesel-engine-systems-certificate-of-completion-summer-2023"
+  },
+  "43265": {
+   "sha256": "5b25bc4b6d2371d81d5b22fd1042f72d9984d8ebc15381dcb7a646fdbee68b06",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mobile-equipment-electrical-systems-certificate-of-completion-summer-2023"
+  },
+  "43266": {
+   "sha256": "de2fa52207792895f6a5a6e19feb853f98dcb1885dc2e835363bf12da2a34338",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mobile-equipment-hydraulic-systems-certificate-of-completion-summer-2023"
+  },
+  "43267": {
+   "sha256": "c3a6b93b4d3bf5796474977f791116feac511f08688ef5b7b1d54e821cff690c",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/equipment-technician-level-1-certificate-of-completion-summer-2023"
+  },
+  "43268": {
+   "sha256": "ad8484d91931647176e96b109ed6edb0841d8ccafdb4d1b0662390f625ac0f38",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/academic-research-skills-certificate-of-competency-summer-2023"
+  },
+  "43269": {
+   "sha256": "3136359686edad7359d2f9ad5db3da42ef658ef5e17a48622884513156c57c0a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/college-and-math-skill-building-success-certificate-of-competency-fall-2023"
+  },
+  "43270": {
+   "sha256": "0d90ca5e86ce05d8dfec96269edb18cd21c009b88fe208f40df0175ef68482b3",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sports-medicine-certificate-of-achievement-summer-2024"
+  },
+  "43434": {
+   "sha256": "4aadf48ceb5f7328c80375333c4eeb66b206198dc2492b51e183f1fcc1a842ff",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hospitality-management-associate-in-science-for-transfer-fall-2026"
+  },
+  "43499": {
+   "sha256": "4a7fe89906d5e14ab0cae0f9f1de198a6b4edfc6c88026b190c037a77ff0c044",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/research-laboratory-technology-bachelor-of-science-fall-2023"
+  },
+  "43531": {
+   "sha256": "6ada073c065ec1a20148cefbc8f1cd85d07df91bb3281d67be35b6054099be2a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/forest-resource-management-associate-of-science-summer-2025"
+  },
+  "43532": {
+   "sha256": "22e7eb6f173329c15f35c407baa198a705d327b452f63a8d818bb4001ccc1e89",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/forest-resource-management-certificate-of-achievement-summer-2025"
+  },
+  "43602": {
+   "sha256": "60284d29b3cac7b9715eb4861f80ba97a91c4db3ef02e73cba30cab56aefb620",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/civil-engineering-technology-associate-of-science-fall-2025"
+  },
+  "43639": {
+   "sha256": "4dae96a566cc6fd3e776c2a589e42f1208be602ff827bd9c1569a9e3abbbaddf",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/data-analyst-apprenticeship-certificate-of-achievement-summer-2023"
+  },
+  "43643": {
+   "sha256": "60cc2284c51d93bc98710e2687ea6b5358d7681648aaec26273976a71de274d9",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/help-desk-support-technician-apprenticeship-certificate-of-achievement-summer-2023"
+  },
+  "43829": {
+   "sha256": "8aaf2eedcb659694b46a2850d206b5111f055ffba4355070d13e889f2a1663b5",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/civil-engineering-technology-certificate-of-achievement-summer-2024"
+  },
+  "43830": {
+   "sha256": "7fd6fd30c3e569dcace5361d6f15cca374815a2e5ea27df2ae9642694d71d03e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/general-engineering-certificate-of-achievement-summer-2026"
+  },
+  "43850": {
+   "sha256": "ad089d91c3122c7e50621fe6b07af150bbb264a1bf6bfdb85665dafb0e59d2c9",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sustainable-landscape-certificate-of-achievement-summer-2022"
+  },
+  "43851": {
+   "sha256": "503d88bb0a86799e4c26ca5285899cc87f49780b11a9abbce8112d61f5b5641d",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/ornamental-horticulture-certificate-of-achievement-summer-2022"
+  },
+  "43873": {
+   "sha256": "0af290b55ca757b436bd0444690e0a4034fd0668e883a4209934b5845eeb8a88",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/ornamental-horticulture-associate-of-science-spring-2024"
+  },
+  "43877": {
+   "sha256": "0aa5cba39a9ffc77df0f8005b07efbc53a93ff5eb63ea93e2a8b9e6bdbf194a9",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/communication-studies-2-0-associate-in-arts-for-transfer-fall-2025"
+  },
+  "43985": {
+   "sha256": "6ca4b4055c0304f22d6eb3c69c8d9a8e870a81164537d9afa20d084bfd4f09f0",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/coaching-certificate-of-achievement-summer-2024"
+  },
+  "44031": {
+   "sha256": "bd469e4ed2e79cb0f740bca7ae8a89473718c8cdf01686ca4a496401d39b93df",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/emerging-media-literacy-certificate-of-competency-summer-2024"
+  },
+  "44282": {
+   "sha256": "b4e8544cda065d762eec3d6a42dd5d475b6f7d97d9fab3fbc20a89eb82ac244d",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-informatics-ii-certificate-of-achievement-fall-2024"
+  },
+  "44284": {
+   "sha256": "c340f479c577cc99ef41c172b45fdb724f1d7ea9f8b2810d3b469cd6402b3d5e",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/intercollegiate-athletics-certificate-of-achievement-summer-2025"
+  },
+  "44372": {
+   "sha256": "b65a430624fa0a8a2daa925855f04b6e586dd5ef82bab15e099a462a6f83d7fb",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fitness-trainer-certificate-of-achievement-summer-2025"
+  },
+  "44380": {
+   "sha256": "4c857049553777402fdbe98b1667775fecf646d14b41b34fe2ba234cb8b74d52",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/graphic-design-level-i-certificate-of-achievement-summer-2025"
+  },
+  "44440": {
+   "sha256": "27e827a4492e971e2e89532e5d489a324c8e41d1810875bd670671ef30f3888b",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/digital-marketer-apprenticeship-certificate-of-achievement-summer-2024"
+  },
+  "44441": {
+   "sha256": "7968f62b26c6d3acaa8767f17e210b543bc59fdee73c4271de05c79eaedc0ae4",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/plant-science-certificate-of-achievement-summer-2025"
+  },
+  "44442": {
+   "sha256": "744f6768b70cbf1544c666ba61754851dae44ce71626c82942cdbe96bbf1ab93",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-management-certificate-of-achievement-summer-2025"
+  },
+  "44544": {
+   "sha256": "4ef57c4915babffd5494facc684181b4b4293ed8c009eb1234fe864a7179addb",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/community-health-worker-ii-certificate-of-achievement-fall-2024"
+  },
+  "44746": {
+   "sha256": "79101d2b516a6a4af58fde8beb1869974f82b581f062d32ab422cb53bc8bd9fd",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-associate-in-science-for-transfer-fall-2025"
+  },
+  "44836": {
+   "sha256": "26f7ac10c932cfd02fe38471225d692b35db58ff8b4b40e6780adc6d89c6dbb7",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/building-a-canvas-course-certificate-of-completion-summer-2025"
+  },
+  "44837": {
+   "sha256": "b377be4434df94c56062fd8f1c38ab0c9975ffd785343164d275f0c6c496c6a7",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/teaching-with-ai-today-and-tomorrow-certificate-of-completion-summer-2025"
+  },
+  "44859": {
+   "sha256": "a75baaa2ea8adcbd18c7503dcab6798751ba742514282c86d156b93714daf169",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/energy-management-and-auditing-certificate-of-completion-summer-2025"
+  },
+  "44895": {
+   "sha256": "adf0bd2b4eda8ba1af2930df9de3e2b5f8b5cea4090b60528365ab93e68123a1",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/kinesiology-associate-in-arts-for-transfer-fall-2025"
+  },
+  "44917": {
+   "sha256": "721ca36c8dc9c6da86ea17a042a9b7e3dadb00e72eca2b18e62b643ab621c162",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/plant-science-associate-of-science-summer-2025"
+  },
+  "44952": {
+   "sha256": "97c70e54ae38660929cf09aa5807f47baab66483d7b3c4e625500997eb7d5e8a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/recreation-parks-and-tourism-management-certificate-of-achievement-summer-2025"
+  },
+  "44953": {
+   "sha256": "af4cb1f40f6b79a9161cbe70b2b0f17a94bef109ac9d52b3111fcb4a6c2a3a62",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/clinical-medical-assistant-certificate-of-achievement-summer-2025"
+  },
+  "45086": {
+   "sha256": "ff7dffd4f6b5b24ffa35250134d6a5407b2a9a1fdcd89a6b266e0b9365318b94",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/artificial-intelligence-ai-proficiency-for-college-and-career-certificate-of-competency-summer-2026"
+  },
+  "45142": {
+   "sha256": "6b0497a51791b648cfa180c48456f871fa4d433bea44d9040fdd026137a4c2c7",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/respiratory-therapy-associate-of-science-summer-2025"
+  },
+  "45197": {
+   "sha256": "ae298c372e3c9dfa3afd2e0790eadcb8c2f4760cce71464e71902c69e40486d2",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logic-argumentation-and-critical-thinking-certificate-of-achievement-summer-2026"
+  },
+  "45404": {
+   "sha256": "dd2143b2ad9ce1bc7f056e20b2e86022e4c388e01d89a43d641ff629c72931ba",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/graphic-design-level-ii-certificate-of-achievement-summer-2025"
+  },
+  "45618": {
+   "sha256": "8f7d4244b9059da6c55c20f7b2a8ef676fe415885d1ef1f692482a4611cb87a0",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-fall-2026"
+  },
+  "46070": {
+   "sha256": "3b54579327ca693dc01b9cdc694144c72bc5113e2b9544a46baa8622341fd1e4",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-veterinary-technician-certificate-of-achievement-fall-2026"
+  },
+  "46087": {
+   "sha256": "6f5b1d2bfebea7322a8cef008c2a520d23ef1d8b440924b9590b95d3012c6c8a",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/medical-coding-specialist-certificate-of-achievement-fall-2026v2"
+  },
+  "46164": {
+   "sha256": "76b6d768d3ea55b5b278e19d267cffc1df9987d3224753331d2b5e5b50e8c52f",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/adult-and-juvenile-correctional-and-probation-officer-certificate-of-achievement-fall-2026"
+  },
+  "46495": {
+   "sha256": "bd43bc948132dfda8f91cb9ab63490d092ada8df1fa6ed622019d51c7c86c71b",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-fundamentals-certificate-of-achievement-fall-2026"
+  },
+  "46496": {
+   "sha256": "a5e29fd989b8e206d715cf571a4e22e5ef2942384eff9957147eaba6c0e9b3da",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-service-management-certificate-of-achievement-fall-2026"
+  },
+  "46497": {
+   "sha256": "8ec416df3a5a41656dc1aeecdd241c987b257af00955e99f8b8b31499667ee1b",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/institutional-food-service-management-certificate-of-achievement-fall-2026"
+  },
+  "46572": {
+   "sha256": "8d0ce3f2cd17255a5e741a29516ecba7f3be56f3d0c6573ff5825c86d95fbf23",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-information-technology-assistant-certificate-of-achievement-fall-2026"
+  },
+  "46573": {
+   "sha256": "a09cb33e269da420af200012dc04a1c4a894ed2f0883f04cc65010ef07f96840",
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-resource-management-certificate-of-achievement-fall-2026"
+  }
+ },
+ "run": "44739190248"
+}
