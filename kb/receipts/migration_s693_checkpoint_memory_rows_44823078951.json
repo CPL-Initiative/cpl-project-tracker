@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s693_checkpoint_memory_rows.sql",
+ "name": "s693_checkpoint_memory_rows",
+ "version": "20261120214740",
+ "sha256": "620ca83ebfd8448ce129fd512021f8f76b1e22c9b0b7c245140ee5c429ed8a32",
+ "run": "44823078951",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-answered-course-leaves-the-to-do-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":381},{\"slug\":\"d-assign-from-panel-waits-on-the-build-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":357},{\"slug\":\"f-closest-mid-measured-2026-11-20\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":379},{\"slug\":\"p-isolated-agent-starts-in-the-session-directory-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":291},{\"slug\":\"p-privacy-hook-names-a-script-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":317},{\"slug\":\"p-test-tied-to-a-live-worklist-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":303},{\"slug\":\"r-closest-mid-column-sam-2026-11-20\",\"kind\":\"decision\",\"status\":\"verified\",\"summary_len\":372},{\"slug\":\"r-jev-for-binary-decisions-at-scale-sam-2026-11-20\",\"kind\":\"decision\",\"status\":\"verified\",\"summary_len\":336},{\"slug\":\"r-mids-first-then-course-exhibit-titles-sam-2026-11-20\",\"kind\":\"decision\",\"status\":\"verified\",\"summary_len\":315},{\"slug\":\"r-needs-an-mid-leaves-out-cid-ccn-sam-2026-11-20\",\"kind\":\"decision\",\"status\":\"verified\",\"summary_len\":368},{\"slug\":\"r-subjects-card-on-the-commons-sam-2026-11-20\",\"kind\":\"decision\",\"status\":\"verified\",\"summary_len\":370}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

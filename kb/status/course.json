@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 692,
-  "moniker": "SkyGannet",
+  "session": 693,
+  "moniker": "SkyKittiwake",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_693_handoff.md",
+  "handoff": "docs/session_694_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-20T18:49:53Z",
+  "written_at": "2026-11-20T21:03:52Z",
   "project": "course",
   "next_step": {
-    "title": "File the first handed-over outline",
-    "text": "A signed-in reviewer can now hand over a course outline, a link or the data itself on the CPL Commons. Read what was handed over, see the upload and the reader's pickup work end to end, and file the first one into its course by hand. Then count the course cards on one base, so the Commons and its rankings read one count."
+    "title": "Assign a course to an M-ID from its panel",
+    "text": "The Courses List now names the 2,508 courses that need an M-ID and suggests the closest one with a measured confidence. Next, teach the daily build to place a course that sits outside the identity file with its fields, dry-run it, take a second read, then add the control that assigns a course from its panel."
   },
   "changes": [
+    {
+      "at": "2026-11-20T20:50:00Z",
+      "text": "The Courses List's two gap lists are one, Needs an M-ID: 2,508 courses with no M-ID, no C-ID and no CCN. A Closest M-ID column suggests a common course for each, with a confidence measured on 6,000 known courses (a score of 0.75 or more was right 93% of the time); 82 of the 2,508 score that high, so most need new M-IDs."
+    },
+    {
+      "at": "2026-11-20T20:10:00Z",
+      "text": "Every hand-over box takes a note, and a signed-in reviewer sees each thing handed over by name. Sam handed over 3 catalog links, 8 pasted catalog descriptions and 7 term reports; the change that files the 12 still-taught courses as answered is under review."
+    },
     {
       "at": "2026-11-20T18:44:00Z",
       "text": "Hand it over in place, slice 1: each of the 12 still-taught courses on the CPL Commons opens a panel that takes a dropped outline, a link to try or the pasted data, under a reviewer's own sign-in. The file is private, and the page shows counts of what was handed over."
