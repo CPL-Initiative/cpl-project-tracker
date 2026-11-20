@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_library_check_after_page_change.sql",
+ "name": "library_check_after_page_change",
+ "version": "20261120041948",
+ "sha256": "39a4ac3757d08af81fa99da69a2d906e87f0c37a037d5e5ab75d114f20d0d395",
+ "run": "44673522564",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"cpl_library\":{\"records\":60,\"page_changed_at_set\":0}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
