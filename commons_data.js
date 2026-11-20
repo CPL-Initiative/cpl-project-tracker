@@ -424,7 +424,9 @@
      tab ... give the option to go to new tab from the sidebar"). Each is a word in the address after the college (or
      after a view): one that names an item takes it as the next word, a safe word (a control number, a key, a slug),
      never a URL, since the arrival splits the address on "/". */
-  var PANES = { catalog: 0, scout: 0, capture: 0, run: 0, pathways: 0, slos: 0, plos: 0, program: 1, source: 1, entry: 1 };
+  /* handover (Sam, 2026-11-20, "hand it over in place"): the college's own panel at the place to act, with the drop
+     box, Try the link and the API procedure boxes (commons_handover.js). */
+  var PANES = { catalog: 0, scout: 0, capture: 0, run: 0, pathways: 0, slos: 0, plos: 0, handover: 0, program: 1, source: 1, entry: 1 };
   function paneRoute(p) { return p ? "/" + p.k + (PANES[p.k] && p.a ? "/" + p.a : "") : ""; }
   function listRoute(filter, platform, district) {
     return (filter && filter !== "all" ? "/" + filter : "") + (platform ? "/platform/" + platform : "") + (district ? "/district/" + district : "");
@@ -1200,7 +1202,27 @@
     if (p.k === "capture") return !!c.harvested;
     if (p.k === "run") return !!actionsHref(c.run);
     if (p.k === "program") return !!(c.programs_file && p.a);
-    return true;   // pathways, slos, plos
+    return true;   // pathways, slos, plos, handover
+  }
+  /* The hand-over pane (d-college-opens-cdc-panel-2026-11-20: this panel, never a second one). commons_handover.js
+     draws it; the module loads the first time the pane opens, then the panel draws again. */
+  function handoverPane(M, c) {
+    var HO = window.CPL_HANDOVER, title = "Hand over course outlines";
+    if (HO && typeof HO.collegePane === "function") {
+      try { return HO.collegePane(M, c, { datasets: datasets }); }
+      catch (e) { return { title: title, kids: [tba("This pane could not be drawn.")] }; }
+    }
+    if (window.CPL_TABS && window.CPL_TABS.loadScript && !handoverPane.asked) {
+      handoverPane.asked = true;
+      window.CPL_TABS.loadScript("commons_handover.js", "CPL_HANDOVER", function () { if (S.pane && S.pane.k === "handover" && VIEW.panel) drawPanel(); });
+      return { title: title, kids: [el("p", { cls: "cdd-of", role: "status", text: "Opening the hand-over." })] };
+    }
+    return { title: title, kids: [tba("The hand-over (commons_handover.js) could not be loaded. Reload the tab to try again.")] };
+  }
+  /* The word that opens it, by the college's name as the hunt file gives it. */
+  function handoverWord(M, name, word) {
+    var c = M.colleges.filter(function (x) { return x.name === name; })[0];
+    return c ? paneWord(word, { k: "handover", a: "" }, c.id) : null;
   }
   function paneView(M, c, p) {
     if (extPane(p.k)) { try { return extPane(p.k)(M, extHost()); } catch (e) { return { title: "Not drawn", kids: [tba("This pane could not be drawn.")] }; } }
@@ -1273,6 +1295,7 @@
           r.url ? el("p", { cls: "cdd-of", text: "The capture matched this page to the program by its title and award. A match can be wrong; the new tab shows the page itself." }) : null].filter(Boolean) };
     }
     if (p.k === "slos" || p.k === "plos") return outcomesPane(M, c, p.k);
+    if (p.k === "handover") return handoverPane(M, c);
     return { title: "Not found", kids: [] };
   }
   function outcomesPane(M, c, k) {
@@ -1410,6 +1433,9 @@
         return el("li", { "data-todo-course": x.control_number || null }, [x.course + ", " + x.title]);
       })));
       else kids.push(" " + fmt(c.local_courses) + " local courses, " + (c.reason || "the site blocks automated reading") + ".");
+      /* Hand it over in place (Sam, 2026-11-20): each college on the to-do opens its own panel at the place to act. */
+      var hw = handoverWord(M, c.college, "Hand over its outlines");
+      if (hw) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [hw]));
       ul.appendChild(el("li", { "data-todo-college": c.slug }, kids));
     });
     sec.appendChild(ul);
@@ -1470,6 +1496,8 @@
         kids = kids.concat(liveBits(d, now));
         if (d.parts) kids = kids.concat(parts(d, now, c));
         if (d.word) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [paneWord(d.word[0], d.word[1], c.id)]));
+        /* Hand it over in place (Sam, 2026-11-20): the place to act sits with the outlines it serves. */
+        if (d.key === "slo") kids.push(el("p", { cls: "cdd-of cdd-dsword", "data-handover-word": "" }, [paneWord("Hand over this college's course outlines, a link or an API", { k: "handover", a: "" }, c.id)]));
         if (d.src && d.held) kids.push(el("p", { cls: "cdd-src", text: "Source: " + d.src }));
         return el("div", { cls: "cdd-pds", "data-ds": d.key }, kids);
       })));

@@ -55,6 +55,10 @@ name: cpl-chat deploy
 # library-publish.yml. verify_jwt off for the same reason: it checks its caller (a
 # reviewer's session only) itself.
 #
+# AND handover-try-link (2026-11-20): the Commons' "Try the link" dispatches
+# commons-handover-pickup.yml with the hand-over's id. verify_jwt off for the same
+# reason: it checks its caller (a reviewer's session only) itself. It fetches no address.
+#
 # SHARED CODE (S643): docket-process and library-publish-now import
 # ../_shared/group_queue.mjs, the one check of the daily-dashboard concurrency group's
 # queue. program-requirements-extract imports ../_shared/service_caller.mjs, the check
@@ -85,6 +89,7 @@ on:
           - library-revise-draft
           - funding-door
           - library-publish-now
+          - handover-try-link
 
 concurrency:
   group: cpl-chat-deploy

@@ -281,6 +281,18 @@ jobs:
       # its rollback run against a throwaway Postgres the test starts itself (SKIP when no binaries are present).
       - name: Library publishing model against Postgres (set_public refuses with no passing check)
         run: python3 tests/library_publishing_sql_proof.py
+      # Hand it over in place (Sam, 2026-11-20): the hand-over table, its private bucket and its three functions run
+      # against the same throwaway Postgres. The anon key and a non-reviewer are shut out, the reviewer's name is
+      # stamped by the database, no API role reads a file back, and the rollback keeps handed-over rows.
+      - name: Commons hand-over against Postgres (the sign-in rule and the private store hold in the database)
+        run: python3 tests/commons_handover_sql_proof.py
+      # The reader's pickup for hand-overs (kb/_handover_pickup.py): a bot check is filed as one and the reader loads
+      # nothing more from that host, and what it found is counts and heading words, never a page's text or a name.
+      # pypdf reads the dropped PDFs the test builds.
+      - name: Commons hand-over pickup (bot checks, counts only, no names kept)
+        run: |
+          pip install --quiet pypdf
+          python3 tests/handover_pickup_test.py
       # The runner-applied migration (Sam, Open Asks Sheet 74 card 2, 2026-10-13):
       # only a committed .sql under chatbox/, kb/ or supabase/, a migration name the
       # ledger accepts, and a receipt naming the file's sha256. Pure-stdlib python.

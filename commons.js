@@ -972,7 +972,7 @@
     if (ASE.on) return window.CPL_COMMONS_ASE ? CPL_COMMONS_ASE.address() : "commons/ase";
     /* The collection view's address is #collect/...; inside the tab it reads commons/collect/..., which arrive() opens. */
     if (DATA.on) return "commons/" + (window.CPL_COMMONS_DATA ? CPL_COMMONS_DATA.address() : "collect");
-    if (FRONT.on) return FRONT.focus ? "commons/needs-you" : "commons";
+    if (FRONT.on) return FRONT.course ? "commons/course/" + FRONT.course : FRONT.focus ? "commons/needs-you" : "commons";
     if (RECORD.on) return "commons/details/decisions";
     if (BATCH.pin) return "commons/case/" + BATCH.pin;
     return show === "all" ? "commons/details" : "commons/" + show;
@@ -1015,7 +1015,9 @@
      cases (#commons/case/<id>) open it as before. */
   /* #commons/needs-you (#3566) opens the front page scrolled to Needs you (FRONT.focus). The front page reads the same
      run logs and done marks as the decision record (load()), so its Decisions waiting is decisions()'s open list. */
-  var FRONT = { on: true, focus: "" };
+  /* #commons/course/<control number> opens the front page with that course's hand-over panel beside it
+     (commons_handover.js; Sam, 2026-11-20: a course opens in place, at an address of its own). */
+  var FRONT = { on: true, focus: "", course: "" };
   /* The decision record (#3566, design decision 2): #commons/details/decisions. */
   var RECORD = { on: false };
   function need(src, name) {
@@ -1027,14 +1029,19 @@
       if (!window.CPL_COMMONS_FRONT || !window.CPL_PROGRAM_RECORDS) { notice(root, "The CPL Commons page (commons_front.js) could not be loaded. Reload the tab to try again."); return null; }
       return load().then(function (r) {
         var D = decisions(r.data, r.S, r.S.__marksRead);
-        return CPL_COMMONS_FRONT.boot(root, r.data, { decisions: D, marksNote: function () { return marksNote(D, "cmf-marks"); }, focus: FRONT.focus });
+        return CPL_COMMONS_FRONT.boot(root, r.data, { decisions: D, marksNote: function () { return marksNote(D, "cmf-marks"); }, focus: FRONT.focus,
+          /* The panel reports each course it opens and its close, so the address a sign-in link returns to follows it. */
+          course: FRONT.course, onCourse: function (k) { FRONT.course = k || ""; seenHash = String(location.hash || ""); } });
       }).then(null, function (e) {
         notice(root, "The Commons' figures could not be read (" + (e && e.message ? e.message : e) + "). Reload the tab to try again.");
         return null;
       });
     }
     /* The program-records figure first: the front page and #collect compute it in one place (#3566). */
-    return need("commons_program_records.js", "CPL_PROGRAM_RECORDS").then(function () { return need("commons_front.js", "CPL_COMMONS_FRONT"); }).then(go);
+    /* The hand-over module before the page draws, so each course and college in Needs you is a link; if it fails to
+       load, the page draws without it. */
+    return need("commons_program_records.js", "CPL_PROGRAM_RECORDS").then(function () { return need("commons_front.js", "CPL_COMMONS_FRONT"); })
+      .then(function () { return need("commons_handover.js", "CPL_HANDOVER"); }).then(go);
   }
   window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") away = true; });
   function arrive() {
@@ -1049,8 +1056,9 @@
     var cm = h.replace(/^#/, "").match(/^(?:commons\/)?collect(?:\/(.*))?$/);
     ASE.on = !!(a && a[0] === "ase");
     DATA.on = !!cm || !!(a && a[0] === "data");
-    FRONT.on = !ASE.on && !DATA.on && (!a || a[0] === "needs-you");
-    FRONT.focus = FRONT.on && a ? "needs" : "";
+    FRONT.on = !ASE.on && !DATA.on && (!a || a[0] === "needs-you" || a[0] === "course");
+    FRONT.focus = FRONT.on && a && a[0] === "needs-you" ? "needs" : "";
+    FRONT.course = FRONT.on && a && a[0] === "course" ? String(a[1] || "") : "";
     RECORD.on = !!(a && a[0] === "details" && a[1] === "decisions");
     if (ASE.on) { ASE.title = a.slice(1).join("/"); return true; }
     if (DATA.on) { DATA.filter = cm ? cm[1] || "" : a.slice(1).join("/"); return true; }   // a filter, a college (college/<slug>) or both
@@ -1072,13 +1080,21 @@
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
     if (!(e && e.detail && e.detail.tab === "commons")) return;
-    var wasAse = ASE.on || DATA.on, wasFront = FRONT.on, wasRecord = RECORD.on, root = document.getElementById(ROOT_ID);
+    var wasAse = ASE.on || DATA.on, wasFront = FRONT.on, wasRecord = RECORD.on, hadCourse = FRONT.course, root = document.getElementById(ROOT_ID);
     var named = arrive();
     if (ASE.on) { if (named) showAse(root); return; }
     if (DATA.on) { if (named) showData(root); return; }
     if (wasAse || FRONT.on !== wasFront || RECORD.on !== wasRecord) { boot(); return; }
     /* #commons/needs-you on the front page already drawn: scroll to Needs you, no redraw. */
-    if (FRONT.on) { if (named && FRONT.focus && window.CPL_COMMONS_FRONT) CPL_COMMONS_FRONT.focusNeeds(); return; }
+    /* A course's address on the front page already drawn opens its panel, and leaving that address (browser Back)
+       closes it; neither redraws the page. */
+    if (FRONT.on) {
+      var F = window.CPL_COMMONS_FRONT;
+      if (F && named && FRONT.course && F.openCourse) F.openCourse(FRONT.course);
+      else if (F && hadCourse && !FRONT.course && F.closeCourse) F.closeCourse();
+      if (F && named && FRONT.focus) F.focusNeeds();
+      return;
+    }
     if (RECORD.on) return;
     if (named && redraw) redraw();
     /* each visit counts the batch again, so one finished in Exhibits reads done on the way back (#2963 step 1) */

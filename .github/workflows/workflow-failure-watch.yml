@@ -25,6 +25,7 @@ on:
       - "CSR quarterly (compare)"
       - "CodeQL"
       - "College contacts harvest"
+      - "Commons hand-over pickup"
       - "Credential catalog sync (Sierra)"
       - "Daily CPL Dashboard"
       - "Dependency map"

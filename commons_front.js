@@ -333,19 +333,66 @@
     return fmt(o.courses) + (o.courses === 1 ? " course still taught at " : " courses still taught at ") + fmt(o.colleges.length)
       + (o.colleges.length === 1 ? " college needs its course outline from a person." : " colleges need their course outline from a person.");
   }
+  /* Hand it over in place (Sam, 2026-11-20, his locked mock): each course opens beside this list at an address of its
+     own (#commons/course/<control number>), and each college opens College Data Collection's own panel at the place to
+     act. commons_handover.js draws both; without it the names stay plain words and the page reads as before. */
+  function HO() { return window.CPL_HANDOVER || null; }
+  function courseLinks(c) {
+    var H = HO(), out = [];
+    (c.still_taught || []).forEach(function (x, i) {
+      if (i) out.push(", ");
+      if (!H) { out.push(x.course); return; }
+      var row = { course: x.course, control_number: x.control_number, college_slug: c.slug };
+      out.push(el("a", { href: H.courseHref(row), "data-course": H.courseKey(row), text: x.course }));
+    });
+    return out;
+  }
   function outlineFixes(M) {
-    var o = huntOpen(M), out = [p([huntWords(M)])];
+    var o = huntOpen(M), out = [p([huntWords(M)])], H = HO();
     if (o && o.colleges.length) {
       out.push(el("ul", { cls: "cmf-need-list cmf-hunt" }, o.colleges.map(function (c) {
         return el("li", { "data-hunt-college": c.slug }, [
-          p([el("span", { cls: "cmf-need-t", text: c.college }), ": " + (c.still_taught || []).map(function (x) { return x.course; }).join(", ") + "."]),
+          p([H ? el("a", { cls: "cmf-need-t", href: H.collegeHref(c.college), "data-college-panel": c.slug, text: c.college }) : el("span", { cls: "cmf-need-t", text: c.college }), ": "]
+            .concat(courseLinks(c), ["."])),
+          p([], "cmf-standing"),
           c.catalog_url ? p([el("a", { cls: "cmf-out", href: c.catalog_url, target: "_blank", rel: "noopener", text: c.catalog_url })]) : null
         ].filter(Boolean));
       })));
+      if (H) out.push(p(["Choose a course to open it beside this list, then drop its outline, give a link to try, or paste the data. A college's name opens its own panel."]));
       out.push(p([el("strong", { text: "Send the PDF to COBIx in your Grok Bot chat." })]));
     }
     out.push(p([a("#collect/outlines-blocked", "Open the courses by college")], "cmf-need-links"));
     return out;
+  }
+  /* What has been handed over so far, beside each college (the public counts: no person, file name or address). */
+  function drawStanding(M) {
+    var H = HO(), o = huntOpen(M);
+    if (!H || !o) return;
+    H.summary().then(function (rows) {
+      o.colleges.forEach(function (c) {
+        var li = document.querySelector('.cmf-hunt li[data-hunt-college="' + c.slug + '"]'), line = li && li.querySelector(".cmf-standing");
+        if (!line) return;
+        var said = H.standing(rows, { subject_kind: "college", college: c.college });
+        line.textContent = said.length ? "Handed over: " + said.join("; ") + "." : "";
+      });
+      var t = document.getElementById("cmf-term-standing");
+      if (t) { var ts = H.standing(rows, { subject_kind: "dataset", dataset: "term_reports" }); t.textContent = ts.length ? "Handed over: " + ts.join("; ") + "." : ""; }
+    });
+  }
+  /* Term Reports Needed (the mock's group; cpl_memory q-term-report-sources-2026-11-20): the set-aside for courses a
+     college no longer offers compares term course files, and three more are wanted. The same hand-over box takes one. */
+  function termReports(M) {
+    var H = HO();
+    if (!H) return null;
+    var hold = el("div", { cls: "cmf-term-box" });
+    var d = el("details", { cls: "cho-term", id: "cmf-term" }, [el("summary", { text: "Hand over a term report" }), hold]);
+    d.addEventListener("toggle", function () {
+      if (!d.open || hold.firstChild) return;
+      hold.appendChild(H.box({ subject_kind: "dataset", dataset: "term_reports" }, { apiHeading: "h5", apis: [{ which: "term_report", dataset: "term_reports" }], onChange: function () { drawStanding(M); } }));
+    });
+    return el("div", { cls: "cmf-need", id: "cmf-need-terms" }, [el("h4", { text: "Term Reports Needed" }),
+      p(["To set aside courses a college no longer offers, the Commons compares the term course files each college reported to the Chancellor's Office. Fall 2025 is on hand. Three more are wanted, newest first: Spring 2026, Spring 2025 and Fall 2024."]),
+      el("p", { cls: "cmf-standing", id: "cmf-term-standing" }), d]);
   }
 
   /* Needs you (#3566). Decisions waiting reads the decisions list commons.js hands in (decisions(): the same list the
@@ -383,8 +430,9 @@
         el("div", { cls: "cmf-need" }, [el("h4", { text: "Fixes owed to you" }),
           p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. Sky owes that fix. Nothing for you to decide."])]),
         rows,
+        termReports(M),
         titles
-      ])
+      ].filter(Boolean))
     ]);
   }
   /* The held titles' line. L is the live read (heldLive): { held, saved: [{ raw, value }], open, at }; null while it
@@ -672,7 +720,9 @@
     return Promise.all([readJson(FILES.program), readJson(FILES.data), readJson(FILES.skills)]).then(function (r) {
       var M = model(C, r[0], r[1], r[2]);
       render(root, M, opts);
+      wireHandover(M, opts);
       if (opts.focus === "needs") focusNeeds();
+      if (opts.course) openCourse(opts.course);
       /* The live read redraws only the held line; a failed read leaves the status file's line, named as of its time. */
       var live = heldLive().then(function (L) {
         var box = document.getElementById("cmf-held");
@@ -683,6 +733,37 @@
       return live.then(function () { return M; });
     });
   }
+  /* The course panel (#commons/course/<control number>). A press on a course opens it in place: the address follows
+     without a page move, and Close puts the address back. commons.js opens the course an arrival names and closes it
+     when the address leaves (browser Back). */
+  var COURSE = { noted: null };
+  function setCourseAddress(key) {
+    var h = key ? "#commons/course/" + encodeURIComponent(key) : "#commons";
+    try { if (window.history && history.replaceState && location.hash !== h) history.replaceState(null, "", h); } catch (e) { /* the panel still opens */ }
+    if (COURSE.noted) COURSE.noted(key || "");
+  }
+  function wireHandover(M, opts) {
+    var H = HO();
+    COURSE.noted = (opts && opts.onCourse) || null;
+    if (!H) return;
+    H.panel.set(H.coursesOf(M.hunt), { host: document.getElementById("tab-commons") || document.body, onAddress: setCourseAddress });
+    H.panel.onChange(function () { drawStanding(M); });
+    drawStanding(M);
+  }
+  function openCourse(key, from) {
+    var H = HO();
+    if (!H) return false;
+    var cur = H.panel.current();
+    if (cur && H.courseKey(cur) === String(key)) return true;   /* already open on it: what a person typed stays */
+    return H.panel.open(key, from || null);
+  }
+  function closeCourse() { var H = HO(); if (H && H.panel.isOpen()) H.panel.close(); }
+  document.addEventListener("click", function (e) {
+    var l = e.target && e.target.closest ? e.target.closest(".cmf-needs a[data-course]") : null;
+    if (!l || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (openCourse(l.getAttribute("data-course"), l)) e.preventDefault();
+  });
+
   /* #commons/needs-you (#3566): the front page scrolled to Needs you, its heading focused. */
   function focusNeeds() {
     var h = document.getElementById("cmf-needs-h");
@@ -703,7 +784,7 @@
     var t = String(h || "").replace(/^#/, "").split("/")[0];
     return t === "collect" ? "commons" : t;
   }
-  function atFront(h) { return /^#?(commons\/?|commons\/needs-you(\/.*)?)?$/.test(String(h || "")); }
+  function atFront(h) { return /^#?(commons\/?|commons\/needs-you(\/.*)?|commons\/course\/.*)?$/.test(String(h || "")); }
   function placeBack() {
     var old = document.getElementById(BACK.id), h = location.hash || "", t = tabOf(h);
     if (BACK.tab && (t !== BACK.tab || atFront(h))) BACK.tab = null;
@@ -799,6 +880,8 @@
     ".cmf-need-list li { display:grid; gap:2px; min-width:0; overflow-wrap:anywhere; }",
     ".cmf-need-t { font-weight:600; }",
     ".cmf-held { display:grid; gap:4px; }",
+    ".cmf-need p.cmf-standing { color:var(--cmn-muted); font-size:.86rem; } .cmf-need p.cmf-standing:empty { display:none; }",
+    ".cmf-term-box { margin-top:4px; }",
     ".cmf-saved-list { margin:4px 0 0; padding-left:18px; color:var(--cmn-ink-2); font-size:.88rem; overflow-wrap:anywhere; }",
     "#cmf-needs-h:focus { outline:none; }",
     ".cmf a { color:var(--cmn-link); text-underline-offset:3px; }",
@@ -845,6 +928,6 @@
   }
 
   window.CPL_COMMONS_FRONT = { boot: boot, model: model, render: render, migrate: migrate, readFold: readFold, KEYS: KEYS,
-    focusNeeds: focusNeeds, heldLive: heldLive, drawHeld: drawHeld, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
+    focusNeeds: focusNeeds, openCourse: openCourse, closeCourse: closeCourse, heldLive: heldLive, drawHeld: drawHeld, placeBack: placeBack, markBack: markBack, BACK: BACK, LIVE: LIVE,
     FOLD_KEY: FOLD_KEY, ORDER_KEY: ORDER_KEY, DETAILS_ORDER_KEY: DETAILS_ORDER_KEY, DETAILS_FOLD_KEY: DETAILS_FOLD_KEY, FILES: FILES, ASKED: ASKED };
 })();
