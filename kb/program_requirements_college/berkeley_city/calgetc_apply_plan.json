@@ -1216,7 +1216,8 @@
   "records_restored": true,
   "pages_moved_restored": [],
   "pages_moved_kept": [],
-  "files": "sources.json and capture.json are origin/main's but for the kept programs' entries; summary.json is origin/main's with its counts taken again from the records"
+  "files": "sources.json and capture.json are origin/main's but for the kept programs' entries; summary.json is origin/main's with its counts taken again from the records",
+  "kept_records_on": "claude/s690-piles-berkeley-city at c3454162: the 15 kept records as reviewed, the reread's input; follow-up PR #3602 files this review alone, so main keeps its records until the reread lands"
  },
  "earlier_run_reviews": [
   {

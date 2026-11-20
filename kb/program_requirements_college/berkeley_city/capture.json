@@ -289,9 +289,9 @@
     "control_number": "31984",
     "title": "Political Science",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
     "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -299,40 +299,40 @@
     "control_number": "39386",
     "title": "Sociology",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.917,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.917,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "40244",
     "title": "Spanish",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.667,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.667,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "41777",
     "title": "Philosophy",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.889,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.889,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "41795",
     "title": "Psychology",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.875,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.875,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
@@ -364,110 +364,8 @@
     "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40911",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31138",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014",
-    "was_coverage": 0.875,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37850",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37851",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39970",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39970",
-    "was_coverage": 0.846,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43006",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39972",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39972",
-    "was_coverage": 0.846,
-    "was_method": "sitemap_page"
    }
   ]
  },
- "run": "43141644775",
- "fingerprints": {
-  "31138": {
-   "sha256": "7ebcc9677bafa8437327fa674a288817c7d0f3822006ad4696a940a27c797e16",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014"
-  },
-  "31984": {
-   "sha256": "98751e6e5ae96d0af38acbcdb09de3c3063700b67402f42cb5ac3c548851d4f7",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071"
-  },
-  "33548": {
-   "sha256": "dab7b0950cbb249214c5c0f2df72f4cb1f03467b8b200da769c6d5508941c939",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39985"
-  },
-  "37850": {
-   "sha256": "0a23a0902b73a49bfe5d64cb7570890919bb6b9a002d71df0d845f7b3a454ad3",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976"
-  },
-  "37851": {
-   "sha256": "e19897160da0c9426b329155dded3017dc347aa01a2354c0b37ce89e24397cef",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39970"
-  },
-  "37877": {
-   "sha256": "869f0913e0234d81976651c51a038df4dcc34186a466a2071e3c1a32d0ce4678",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40052"
-  },
-  "39386": {
-   "sha256": "144ec55acbe6385e2c78dfc347f51c5e5bee870a928adfbeb368e1426d2e97d3",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073"
-  },
-  "39856": {
-   "sha256": "af6cec198ac8be0353b18437e85dae4b45f3da97faf475d539215ea8fa50f306",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40065"
-  },
-  "40244": {
-   "sha256": "43d3e6eb839466fb24434e023b9304c50eede9684d5859f3b62371dd9c1403cd",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036"
-  },
-  "41777": {
-   "sha256": "f5045170dad3ecaf537a0e81660555816f31e440ffb7f122f6f0b2672ed54fb3",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975"
-  },
-  "41794": {
-   "sha256": "9194e5bcdd7b99bcfe5a481554102ba1e69e24000dc324cdbb72dc07554c575a",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40068"
-  },
-  "41795": {
-   "sha256": "08f2fb53b2d6ef84c357534bb6449453995d1fd7c656389cf5604e79ddfc6ab9",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072"
-  },
-  "41796": {
-   "sha256": "3d466b53a973dced4949c13c7c010689dc3207edb6248defd4ec33055b427d75",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40067"
-  },
-  "41834": {
-   "sha256": "6edf03a85419fca9a6ee838cbd75602051fb77e20977175621b093da0391c854",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40015"
-  },
-  "43006": {
-   "sha256": "269fc13c3fb41e16c61fa46d4b324b04de353fb2b2d76366bb5d8bb06db114db",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39972"
-  }
- }
+ "run": "43141644775"
 }

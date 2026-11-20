@@ -61,37 +61,34 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    23.0,
-    29.0
-   ],
-   "stated": [
     23.0,
     23.0
    ],
-   "against": "program",
-   "why": [],
-   "meets": true,
-   "degree": {
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     57.0,
-     63.0
+     23.0,
+     23.0
     ],
     "stated": [
-     60.0,
-     60.0
+     23.0,
+     23.0
     ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "within": true
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -116,7 +113,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -137,8 +134,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": false,
    "outcomes": [],
@@ -270,24 +267,5 @@
    "Text is cut off at the end ('A minimum grade'); no program learning outcomes appear in the provided text."
   ]
  },
- "extracted_run": 44751547030,
- "reconciled": [
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "General Education (Cal-GETC) and Elective Courses (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)",
-   "statewide": "cal_getc_34",
-   "standing": "under",
-   "basis": "sheet-81",
-   "combined": "General Education (Cal-GETC) and Elective Courses / 37"
-  }
- ],
- "read_run": "39891604919"
+ "extracted_run": "39891604919"
 }
