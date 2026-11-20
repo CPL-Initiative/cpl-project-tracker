@@ -75,7 +75,7 @@ check("⭐ with some courses answered, the to-do counts only what waits and the 
   bAns && /^10 courses still taught at 3 colleges need their course outline\./.test(txt(bAns.querySelector("p")))
     && /^Answered by a person, and off the to-do: 2 courses at 2 colleges\./.test(txt(bAns.querySelector("[data-todo-answered-h]")))
     && bAns.querySelectorAll("[data-todo-answered] [data-todo-course]").length === 2
-    && /OT 110, Orthopedic Anatomy and Physiology: Catalog description and units or hours filed \(A Person, 2026-11-20\)\./.test(txt(bAns.querySelector("[data-todo-answered]"))), bAns && txt(bAns).slice(0, 400));
+    && /OT 110, Orthopedic Anatomy and Physiology: Catalog description and units or hours filed \(A Person, Nov 20, 2026\)\./.test(txt(bAns.querySelector("[data-todo-answered]"))), bAns && txt(bAns).slice(0, 400));
 check("an answered course is never also on the to-do list, and a half-answered college is on both lists once each",
   bAns && !Array.from(bAns.querySelectorAll(".cdd-todo-list:not([data-todo-answered]) [data-todo-course]")).some((li) => /OT 110|HLTH 167/.test(txt(li)))
     && bAns.querySelectorAll('.cdd-todo-list:not([data-todo-answered]) > [data-todo-college="north_orange_continuing_education"]').length === 1

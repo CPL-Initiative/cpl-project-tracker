@@ -1401,6 +1401,11 @@
   /* Sam's blocked-catalog hunt (S678, #3464 item 8: "Make sure those blocked catalogs and cors are on my cdc to do"; "To
      do should be on both cdc and commons"): the one to-do, from the same file the Commons' Waiting on a person list
      reads (kb/_blocked_catalogs.py). A college leaves it once its catalog or outlines are filed; none left, no block. */
+  /* A day written in words (Nov 20, 2026), as this page writes every date; "" when it is no day. */
+  function dayWords(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(v || ""));
+    return m ? ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1] : String(v || "");
+  }
   function blockedTodo(M) {
     var b = M.blocked;
     /* A course a person answered is off the to-do and stays on this page (S693; the second read of pull request 3613 found the
@@ -1451,7 +1456,7 @@
       sec.appendChild(el("ul", { cls: "cdd-todo-list", "data-todo-answered": "" }, answered.map(function (c) {
         var kids = [el("strong", { text: c.college }), ".", el("ul", { cls: "cdd-todo-courses" }, c.answered.map(function (x) {
           return el("li", { "data-todo-course": x.control_number || null }, [x.course + ", " + x.title + ": " + (x.what || "answered")
-            + ([x.by, x.on].filter(Boolean).length ? " (" + [x.by, x.on].filter(Boolean).join(", ") + ")" : "") + "."]);
+            + ([x.by, x.on].filter(Boolean).length ? " (" + [x.by, dayWords(x.on)].filter(Boolean).join(", ") + ")" : "") + "."]);
         }))];
         var hw = handoverWord(M, c.college, "Hand over more for it");
         if (hw) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [hw]));

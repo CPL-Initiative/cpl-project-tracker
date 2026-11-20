@@ -573,7 +573,10 @@
     var have = el("div", { id: "cho-have-wrap" });
     function drawHave(rows) {
       have.textContent = "";
-      var a = c.answered, who = a ? " (" + [a.by, a.on].filter(Boolean).join(", ") + ")" : "";
+      var a = c.answered, on = a && /^(\d{4})-(\d{2})-(\d{2})$/.exec(a.on || "");
+      /* The day in words (Nov 20, 2026), as the Commons writes every date. */
+      var day = on ? ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][Number(on[2]) - 1] + " " + Number(on[3]) + ", " + on[1] : (a && a.on) || "";
+      var who = a ? " (" + [a.by, day].filter(Boolean).join(", ") + ")" : "";
       have.appendChild(haveList([
         a ? ["Answered", a.what + who + ". It is off the to-do. A person's entry wins over a later machine read."] : null,
         a && a.how === "paste" ? null : ["Description and hours", a ? "None is filed: the course was noted, with no data." : "Our reader fills them from the college's catalog. Nothing is needed from you."],

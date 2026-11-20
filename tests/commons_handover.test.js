@@ -375,7 +375,7 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   press(x.w, ansLinks.find((l) => txt(l) === pastedCourse.course)); await settle();
   panel = x.d.querySelector("#cho-panel");
   check("(16) ⭐ an answered course's panel says it is answered, by whom and when, and that its outcomes are still missing",
-    txt(panel.querySelector(".cho-eyebrow")) === "Answered by a person" && /Answered ?Catalog description and units or hours filed \(A Person, 2026-11-20\)\. It is off the to-do\./.test(txt(panel.querySelector("#cho-have-wrap")))
+    txt(panel.querySelector(".cho-eyebrow")) === "Answered by a person" && /Answered ?Catalog description and units or hours filed \(A Person, Nov 20, 2026\)\. It is off the to-do\./.test(txt(panel.querySelector("#cho-have-wrap")))
       && /Outcomes ?Still missing\..*An outline dropped here adds them\./.test(txt(panel.querySelector("#cho-have-wrap"))) && !/Nothing is needed from you/.test(txt(panel.querySelector("#cho-have-wrap"))),
     txt(panel.querySelector("#cho-have-wrap")));
   check("(16) the answered course's panel still takes a hand-over, and the panel steps through all 12 courses",
@@ -383,7 +383,7 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   press(x.w, ansLinks.find((l) => txt(l) === aOhl.answered[0].course)); await settle();
   panel = x.d.querySelector("#cho-panel");
   check("(16) a course answered with a note says no data is filed for it",
-    /Answered ?Noted as not in the 2026-2027 catalog \(A Person, 2026-11-20\)/.test(txt(panel.querySelector("#cho-have-wrap"))) && /Description and hours ?None is filed: the course was noted, with no data\./.test(txt(panel.querySelector("#cho-have-wrap"))),
+    /Answered ?Noted as not in the 2026-2027 catalog \(A Person, Nov 20, 2026\)/.test(txt(panel.querySelector("#cho-have-wrap"))) && /Description and hours ?None is filed: the course was noted, with no data\./.test(txt(panel.querySelector("#cho-have-wrap"))),
     txt(panel.querySelector("#cho-have-wrap")));
   // the committed block, whatever it holds today: every answered course is a link, and none is also on the to-do
   x = load("#commons", { hunt: LIVE_HUNT });
