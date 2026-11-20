@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 283,
  "with_closed_list": 264,
- "started": "2026-11-20T06:27:02Z",
+ "started": "2026-11-20T15:58:44Z",
  "pdf": {
   "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf",
   "access": "ok",
@@ -2275,7 +2275,7 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 174.0,
+ "seconds": 135.2,
  "found": 156,
  "by_method": {
   "no_closed_list": 19,
@@ -2489,7 +2489,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -2500,7 +2501,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -2570,7 +2572,9 @@
    "near_miss": {
     "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
     "rule": "A",
-    "refused_b": 1
+    "refused_b": 1,
+    "plain_named": true,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -2923,7 +2927,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=353",
-    "coverage": 0.0
+    "coverage": 0.0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -2990,7 +2995,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3183,7 +3189,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Approved"
   },
@@ -5245,5 +5252,5 @@
    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=97"
   }
  },
- "run": "44687772295"
+ "run": "44768505170"
 }
