@@ -85,6 +85,8 @@ check(C.pdf_start(None, reg, {}, started)[0] == FILE and started.get("procedure_
 PAGE = "https://collegeofthedesert.edu/students/catalog-schedule/default.php"
 got, why = C.prior_read("%s 2025-2026 30578" % PAGE, DESERT, PROGS)
 check(why is None and got and got["format"] == "pdf", "a page on the PDF's host is a prior start: %r" % why)
+got2, why2 = C.prior_read("https://catalog.collegeofthedesert.edu/archive/2025-2026/ 2025-2026 30578", DESERT, PROGS)
+check(why2 is None and got2 and got2["format"] == "pdf", "the registry's own catalog host's archive is a prior start: %r" % why2)
 preg = C.prior_reg(DESERT, got)
 pstep = C.P.procedure_catalog(preg["procedure"])
 check(pstep and pstep.get("follow_year") == "2025-2026" and "file" not in pstep and pstep["start"] == PAGE

@@ -5310,8 +5310,10 @@ PRIOR_PLATFORMS = ("curriqunet",)
 
 
 def pdf_hosts(reg: dict) -> set[str]:
-    """The hosts a PDF catalog's file comes from: the registry's own file, else its procedure step's page and file."""
-    urls = [reg.get("catalog_url")] if is_pdf_catalog(reg) else []
+    """The hosts a PDF catalog's file comes from: the registry's own file, its procedure step's page and file, and
+    the registry's catalog host (College of the Desert's past years sit on its CourseLeaf host's archive,
+    catalog.collegeofthedesert.edu/archive/2025-2026/, while its current PDF is on the college's own site; S689)."""
+    urls = [reg.get("catalog_url")]
     step = P.procedure_catalog(reg.get("procedure")) or {}
     if step.get("format") == "pdf":
         urls += [step.get("start"), step.get("file")]
