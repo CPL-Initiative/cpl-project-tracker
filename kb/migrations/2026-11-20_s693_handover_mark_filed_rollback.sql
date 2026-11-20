@@ -24,3 +24,7 @@ select jsonb_agg(public.commons_handover_mark(h.id, v.status, null, v.run, v.fou
     ('bdfc4e24-bbb9-4ecc-8741-7306a66c82a7'::uuid, 'reads', '44806543827', '{"chars":5537,"outcomes":0,"final_host":"catalog.swccd.edu","objectives":0,"http_status":200,"content_type":"text/html","section_heads":["LIBRARY"]}'::jsonb)
   ) as v(id, status, run, found) on v.id = h.id
  where h.status = 'filed' and h.status_run = 'session-693';
+
+-- Applied: supabase-migrate run 44816461613 answered all 11 rows as filed on 2026-11-20 (ledger version
+-- 20261120210345). Its receipt is kb/receipts/migration_s693_handover_mark_filed_44816461613.json. The values it
+-- recorded for each row match the ones written above (checked the same hour), so this file and the receipt agree.
