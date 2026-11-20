@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-20_s693_handover_mark_filed.sql
-name=s693_handover_mark_filed
+file=kb/migrations/2026-11-20_s693_checkpoint_memory_rows.sql
+name=s693_checkpoint_memory_rows

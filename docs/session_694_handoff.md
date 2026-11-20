@@ -134,7 +134,7 @@ the pickup by hand when the page's button failed.
 |---|---|---|
 | #3610 | merged (`e0b90801`) | none |
 | #3612 | merged (`ad5ce4e6`) | none |
-| #3613 | open, draft | apply its write, gate on `test`, merge |
+| #3613 | merged (`a2b0de7c`); its 11-row write applied by run 44816461613 | none |
 | #3614 (Closest M-ID, three levels) | merged (`18ef351a`) | none |
 | this checkpoint (`claude/s693-checkpoint`) | open, draft | merge at sign-off if `test` is green |
 
