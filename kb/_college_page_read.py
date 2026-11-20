@@ -448,7 +448,7 @@ CAPTURE_LINES = 1400     # lines of one page's capture view printed
 # never past these ceilings. A session downloads the whole log (`gh run view --log`), which the MCP's 5,000-line window
 # would otherwise cut.
 CAPTURE_LINES_MAX = 20000
-PDF_PAGE_CAP_MAX = 400
+PDF_PAGE_CAP_MAX = 1000
 
 
 def plan_cap(plan: dict | None, key: str, default: int, ceiling: int) -> int:
@@ -679,7 +679,9 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
             len(idx), len(rec["pages"]), ", and the page after each" if plan.get("pdf_after") else ""))
         for i in idx:
             print("[pdf page %d]" % (i + 1))
-            print(fold(rec["pages"][i]))
+            # A filing read keeps each line as the extractor split it ("pdf_unfolded"), so a course heading
+            # shorter than FOLD_UNDER is not joined to the lines around it (S690).
+            print(unfolded(rec["pages"][i], cap=CAPTURE_LINES_MAX) if plan.get("pdf_unfolded") else fold(rec["pages"][i]))
         return
     if not text:
         return

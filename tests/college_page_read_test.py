@@ -303,6 +303,15 @@ _buf = io.StringIO()
 with contextlib.redirect_stdout(_buf):
     cpr.print_page(1, {"url": "https://x.edu/kids/", "kind": "html", "capture_view": True, "text": _lines}, pat, {})
 check("(100 more lines)" in _buf.getvalue(), "print_page keeps the default cap for a plan that names none")
+_pdf = {"url": "https://x.edu/catalog.pdf", "kind": "pdf", "pages": ["Ironworker\nACCT 1\nAccounting I\n3 Units"]}
+_buf = io.StringIO()
+with contextlib.redirect_stdout(_buf):
+    cpr.print_page(1, _pdf, pat, {"pdf_unfolded": True})
+check("ACCT 1\nAccounting I\n3 Units" in _buf.getvalue(), "pdf_unfolded prints a PDF page line for line")
+_buf = io.StringIO()
+with contextlib.redirect_stdout(_buf):
+    cpr.print_page(1, _pdf, pat, {})
+check("ACCT 1 · Accounting I · 3 Units" in _buf.getvalue(), "a plan without pdf_unfolded keeps the folded PDF print")
 dp = cpr.dropped_panels(got)
 check([d[0] for d in dp] == ["Search"] and dp[0][1].startswith("Search the catalog"),
       "the capture view lists each tab panel the capture leaves out, with its text")
