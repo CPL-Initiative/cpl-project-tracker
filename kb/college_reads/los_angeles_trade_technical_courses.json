@@ -1,0 +1,45 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): every course the 2026-27 catalog prints, for kb/hand_filed_catalogs/courses/. Sam's hand-fetched copy, posted by COBIx as a text gist split into parts at page breaks (the college's host refuses the runner), printed line for line. No model call.",
+ "college": "Los Angeles Trade-Technical College",
+ "outside_hosts": {
+  "githubusercontent.com": "COBIx's gist of the catalog Sam fetched by hand on 2026-11-18 (#3584, comment 7042043701)"
+ },
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bUNITS?\\b"
+ ],
+ "capture_lines": 20000,
+ "pages": [
+  {
+   "url": "https://gist.githubusercontent.com/cobi-cto/f53a59b38007c2a0be8fc3b36c5d209d/raw/lattc-2026-27-catalog-part-01-of-04.txt",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://gist.githubusercontent.com/cobi-cto/f53a59b38007c2a0be8fc3b36c5d209d/raw/lattc-2026-27-catalog-part-02-of-04.txt",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://gist.githubusercontent.com/cobi-cto/f53a59b38007c2a0be8fc3b36c5d209d/raw/lattc-2026-27-catalog-part-03-of-04.txt",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://gist.githubusercontent.com/cobi-cto/f53a59b38007c2a0be8fc3b36c5d209d/raw/lattc-2026-27-catalog-part-04-of-04.txt",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}
