@@ -80,9 +80,13 @@ def read_files(host: str, slugs: list[str] | None = None) -> list[str]:
     one college must not repost the others)."""
     best: dict[tuple, tuple] = {}
     want = set(slugs or [])
+    # A read queue.json's never_load names is never posted, nor stands in for a slice (S689: Feather River's
+    # 44535960153 and Mt. San Antonio's 44695707506 filed table headers and a course listing as SLOs).
+    queue = os.path.join(OUT_DIR, "queue.json")
+    void = {str(k) for k in (json.load(open(queue)).get("never_load") or {})} if os.path.exists(queue) else set()
     for path in glob.glob(os.path.join(OUT_DIR, host, "read_*_p*of*.json")):
         d = json.load(open(path))
-        if not d.get("complete"):
+        if not d.get("complete") or str(d.get("run")) in void:
             continue
         if want and not (want & set(str(d.get("slugs") or "").split(","))):
             continue

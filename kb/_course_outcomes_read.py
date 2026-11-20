@@ -683,14 +683,19 @@ def mtsac_outcomes_from_html(page_html: str) -> dict | None:
 
 def parse_page(page_html: str, text: str, system: str | None = None, report: str | None = None) -> dict:
     """The outcomes a page prints (_parse_outcomes) and, beside them, its course objectives (Sam, 2026-11-02)."""
-    return {**_parse_outcomes(page_html, text, system), **objectives_block(page_html, text, report)}
+    return {**_parse_outcomes(page_html, text, system, report), **objectives_block(page_html, text, report)}
 
 
-def _parse_outcomes(page_html: str, text: str, system: str | None = None) -> dict:
+def _parse_outcomes(page_html: str, text: str, system: str | None = None, report: str | None = None) -> dict:
     """The outcomes a page prints: each college's group (SDCCD's All Fields report), else
     the SLO area of an integrated outline (RCCD), else an eLumen course page's block,
-    else the text reader. Mt. San Antonio's course results block comes first wherever it prints."""
+    else the text reader. Mt. San Antonio's course results block comes first wherever it prints,
+    and a Mt. San Antonio SLO page whose HTML holds no block files none: its text is the site's course
+    listing, never a course's SLOs (full read 44695707506, S689)."""
     got = mtsac_outcomes_from_html(page_html)
+    if got is None and (report or "").startswith(MTSAC_SLO.split("?")[0]):
+        got = {"shape": "none", "heading": None, "lead": None, "outcomes": [], "maps_to": None,
+               "parsed_from": "html", "why_none": "no course results block in the page's HTML"}
     if got is not None:
         return {**got, "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
     if system in ("elumen", "courseleaf"):
@@ -707,10 +712,28 @@ def _parse_outcomes(page_html: str, text: str, system: str | None = None) -> dic
     return {**got, "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
 
 
+# The Reader keeps 400,000 characters of a page's HTML. Mt. San Antonio's SLO page prints its course results block
+# past 671,000 (trial 44687943107), so full read 44695707506 parsed the text instead and filed the site's course
+# listing on every page (S689). A page cut at that length is parsed from the browser's whole HTML.
+READER_HTML_CAP = 400000
+
+
+def page_html_of(reader, page: dict) -> str:
+    """The page's HTML as the parser reads it: the Reader's copy, or the browser's whole page where that copy was
+    cut at READER_HTML_CAP."""
+    html_ = page.get("html") or ""
+    if len(html_) >= READER_HTML_CAP:
+        try:
+            return reader.page.content() or html_
+        except Exception:
+            return html_
+    return html_
+
+
 def read_one(reader, course: dict) -> dict:
     page = cor.load_full(reader, course["report"])
     body = page.get("body") or ""
-    got = parse_page(page.get("html") or "", body, page_system(course["report"]), course["report"])
+    got = parse_page(page_html_of(reader, page), body, page_system(course["report"]), course["report"])
     return {**course, "status": page.get("status"), "final_url": page.get("final_url"),
             "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
             "chars": len(body), "offered_at": offered_at(body), **got}

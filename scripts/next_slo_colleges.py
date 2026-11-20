@@ -184,8 +184,9 @@ def trial_verdict(trial):
 
 def route_of(name, folder, cen):
     """How the read reaches a college's course pages: ("catalog", host folder) for a catalog
-    that addresses each course by code (eLumen, the Coast district), ("index", curriQunet host)
-    for a curriQunet dashboard, else (None, the reason)."""
+    that addresses each course by code (eLumen, the Coast district), ("index", host) for a
+    curriQunet dashboard or a CurricUNET host whose search answers anonymous requests (City College
+    of San Francisco's ccsf.curricunet.com, S689), else (None, the reason)."""
     host = (folder or {}).get("catalog_host") or ""
     if host == CCCD:
         return "catalog", "cccd"
@@ -193,14 +194,15 @@ def route_of(name, folder, cen):
         return "catalog", host.split(".")[0].lower()
     row = cen.get(name) or {}
     system, access, outline = row.get("cor_system"), row.get("cor_access"), row.get("cor_outline")
-    cq = urllib.parse.urlparse(row.get("cor_url") or "").netloc
-    if cq.endswith(".curriqunet.com") and access == "public" and outline in ("outline_with_slos", "list_only"):
+    cq = urllib.parse.urlparse(row.get("cor_url") or "").netloc.lower()
+    governet = cq.endswith(".curriqunet.com") or cq.endswith(".curricunet.com")
+    if governet and access == "public" and outline in ("outline_with_slos", "list_only"):
         return "index", cq
     if not row:
         return None, "the census has no row for it"
     if system == "none_found":
         return None, "the census found no course outline system"
-    if cq.endswith(".curriqunet.com") and outline == "outline":
+    if governet and outline == "outline":
         return None, "the census's %s outline printed no SLO heading" % cq
     if system == "elumen":
         return None, "its eLumen catalog is not the catalog its harvest capture names"

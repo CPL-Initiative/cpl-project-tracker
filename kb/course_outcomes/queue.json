@@ -30,6 +30,7 @@
  }
 ,
  "never_load": {
+  "44695707506": "Mt. San Antonio's full read on the results-block reader (S689): the Reader cut each page's HTML at 400,000 characters, before the course results block at about 671,000, so the text reader filed the site's course listing (19 lines) as every page's SLOs; cancelled after 2 of 5 parts",
   "44535960153": "Feather River's full read on report 485 (S685): 336 of its 2,072 SLOs are the \"Learning Outcomes\" table header and ENVR 041's 167 objectives are lecture topics; it filed no pages, so no reader fix can reparse it (S689, the second reader on #3586)"
  }
 }

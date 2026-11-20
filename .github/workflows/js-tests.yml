@@ -1475,6 +1475,11 @@ jobs:
       # Reads pages only and writes no table. Pure-stdlib python.
       - name: Course outline index (course codes, the loaded records)
         run: python3 tests/course_outline_index_test.py
+      # City College of San Francisco's CurricUNET route (S689; COBIx on #3533):
+      # the census seed, route_of on curricunet.com, the checked JSON search and
+      # report 28. No network. Pure-stdlib python.
+      - name: CCSF CurricUNET route (census seed, route_of, checked search)
+        run: python3 tests/ccsf_curricunet_route_test.py
       # The course outcomes read (S374; Sam, Open Asks Sheet 70 card 3): each
       # course's SLOs as printed, every wanted course in one slice, no table write.
       # Pure-stdlib python.
