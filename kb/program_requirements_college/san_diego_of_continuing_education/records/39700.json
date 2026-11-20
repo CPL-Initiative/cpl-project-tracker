@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "AWS Cloud Solutions",
  "award": "Noncredit program",
- "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9851,
+  "input_tokens": 8610,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9851,
-    "output_tokens": 824,
+    "input_tokens": 8610,
+    "output_tokens": 940,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 824,
+  "output_tokens": 940,
   "output_tokens_details": {
-   "thinking_tokens": 366
+   "thinking_tokens": 410
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05588,
- "ms": 7339,
- "seconds": 7.7,
+ "cost_usd": 0.05324,
+ "ms": 9767,
+ "seconds": 28.8,
  "parts": null,
  "error": null,
  "score": {
@@ -157,10 +157,18 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints this award as a noncredit Certificate of Completion, so measure is set to hours. It prints no hours for either course and no total hours, so units and total_units are null.",
-   "The catalog prints no program learning outcomes for this certificate.",
-   "The career list is read from the description's sentence 'cloud roles including associate cloud architect, SysOps, and DevOps roles'. 'DevOps' is recorded without the trailing word 'roles'."
+   "Noncredit certificate of completion; the catalog section prints no hours for the courses or for the program, so all hour fields are null. Measure set to hours because the award is noncredit, though no hours are printed.",
+   "No program learning outcomes are printed in this section.",
+   "The careers list is read from the program description. The text says 'cloud roles including associate cloud architect, SysOps, and DevOps roles'; SysOps and DevOps are recorded as separate roles.",
+   "The same page also prints other certificates, such as Cloud Solutions AWS-Specialty Machine Learning and AWS-Specialty Security. They share COMP 671 and COMP 672 but were not read for this record."
   ]
  },
- "extracted_run": "39035224783"
+ "extracted_run": "44739577102",
+ "catalog_year": "2026-2027",
+ "source_sha": "7b49d665a2c43b46",
+ "source_codes": [
+  "COMP671",
+  "COMP672"
+ ],
+ "source_coverage": 1.0
 }

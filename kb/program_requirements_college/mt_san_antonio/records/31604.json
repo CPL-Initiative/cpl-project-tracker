@@ -5,11 +5,11 @@
  "title": "English",
  "award": "A.A- T Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/english/aa-english-for-transfer/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6719,
+  "input_tokens": 8332,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6719,
-    "output_tokens": 2332,
+    "input_tokens": 8332,
+    "output_tokens": 2451,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 2332,
+  "output_tokens": 2451,
   "output_tokens_details": {
-   "thinking_tokens": 389
+   "thinking_tokens": 490
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07352,
- "ms": 17157,
- "seconds": 17.4,
+ "cost_usd": 0.08235,
+ "ms": 19245,
+ "seconds": 19.7,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 29,
    "listed": 29,
-   "share": 0.931,
-   "missing": [
-    "ENGL1B",
-    "ENGL1BH"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002H",
+     "listed": "ENGL1BH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ENGLC1002",
-    "ENGLC1002H"
-   ],
-   "flagged": [
-    "ENGLC1002",
-    "ENGLC1002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -77,7 +83,31 @@
     19.0,
     19.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     7.0,
+     7.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -93,6 +123,14 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -104,14 +142,28 @@
     "max": 19
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "write an essay using appropriate academic format",
     "write researched analytical papers using proper documentation",
     "analyze major themes in a range of literary genres",
     "compare and contrast literary elements such as authorial approaches, narrative styles, character development, and thematic concerns",
     "recognize cultural influences on literature"
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -368,21 +420,22 @@
   "missing_explained": [
    {
     "code": "ENGL 1B",
-    "why": "not in the text; catalog names ENGL C1002 in the core instead"
+    "why": "not in the text; the page lists ENGL C1002 in its place"
    },
    {
     "code": "ENGL 1BH",
-    "why": "not in the text; catalog names ENGL C1002H in the core instead"
+    "why": "not in the text; the page lists ENGL C1002H in its place"
    }
   ],
   "notes": [
-   "The catalog prints no units beside individual courses, only block totals (Core 7, List A 6, List B 3, List C 3), so course units are null.",
-   "List B also accepts any course not already used from List A; List C also accepts any course not already used in List A or List B. Those List A/B courses are not repeated in the List B/C blocks.",
-   "ENGL C1002 and ENGL C1002H are not in the closed list (which has ENGL 1B/1BH instead); recorded as catalog additions.",
-   "Catalog prints LIT 46 as 'The Bible As Literature: Old Testament'; closed list title differs slightly.",
-   "Program Learning Outcomes come from the page's outcomes tab, printed for the program as a whole; the AA-T is the only award on the page and shares them.",
-   "Footnote: courses may be double-counted for the major and Cal-GETC; GE units shown as 34, total degree 60."
+   "The catalog prints no units beside individual courses, only block totals (Core 7, List A 6, List B 3, List C 3); course units are left null.",
+   "List B also allows 'any course not already used from List A'; List C also allows 'any course not already used in List A or List B'.",
+   "Page prints 'Total Units for Major 19', 'General Education (Cal-GETC) Units 34' and 'Total Units 60'; no elective units are printed, so open elective units are left null.",
+   "Footnote: courses may be double-counted for the major and Cal-GETC, but not across more than one Cal-GETC area.",
+   "Outcomes come from the page's outcomes tab for this program.",
+   "ENGL C1002 and ENGL C1002H are not in the closed list and are recorded as catalog additions."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

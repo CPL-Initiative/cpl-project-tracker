@@ -26,7 +26,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -38,7 +41,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.615,
+  "coverage": 0.769,
   "codes_found": [
    "ACCT120",
    "ACCT122",
@@ -47,7 +50,9 @@
    "ACCT127",
    "BUSI100",
    "BUSI103",
-   "COMS165"
+   "COMS165",
+   "ECON100",
+   "ECON101"
   ],
   "source": {
    "url": "https://catalog.napavalley.edu//areas-of-study/accounting/accounting-as/",
@@ -56,7 +61,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -84,7 +92,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "03687",
@@ -112,7 +124,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -142,7 +157,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -153,24 +171,12 @@
   "title": "Vocational Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "ENGLC1000",
-   "PSYC125"
-  ],
-  "source": {
-   "url": "https://catalog.napavalley.edu//areas-of-study/nursing/",
-   "title": "Nursing | Napa Valley College",
-   "h1": "NURSING",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.5
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 4012
+  "text_chars": 0
  },
  {
   "control_number": "03697",
@@ -206,7 +212,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -222,7 +231,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "03707",
@@ -234,7 +247,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/administration-of-justice-as/",
+    "title": "Administration of Justice: AS Degree | Napa Valley College",
+    "h1": "ADMINISTRATION OF JUSTICE: AS DEGREE",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "03708",
@@ -267,7 +294,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -299,7 +329,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -334,7 +367,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -350,7 +386,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "11495",
@@ -362,7 +402,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/counseling/university-preparation-aa/",
+    "title": "University Preparation for a Specific Major: Associate of Arts Degree | Napa Valley College",
+    "h1": "UNIVERSITY PREPARATION FOR A SPECIFIC MAJOR: ASSOCIATE OF ARTS DEGREE",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "12318",
@@ -384,7 +438,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -400,7 +457,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18047",
@@ -412,7 +473,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/emergency-medical-services/emt-p-paramedic-as/",
+    "title": "EMT-P Paramedic: AS Degree | Napa Valley College",
+    "h1": "EMT-P PARAMEDIC: AS DEGREE",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "18048",
@@ -424,7 +499,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/emergency-medical-services/emt-p-paramedic-certificate-of-achievement/",
+    "title": "EMT-P Paramedic: Certificate of Achievement | Napa Valley College",
+    "h1": "EMT-P PARAMEDIC: CERTIFICATE OF ACHIEVEMENT",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "18382",
@@ -436,7 +525,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18383",
@@ -448,7 +541,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "19036",
@@ -473,7 +570,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality management: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -515,7 +615,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -553,7 +656,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -590,7 +696,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -606,7 +715,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/psychology/psychology-aa/",
+    "title": "Psychology: AA Degree | Napa Valley College",
+    "h1": "PSYCHOLOGY: AA DEGREE",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19123",
@@ -645,7 +768,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -682,7 +808,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -693,12 +822,36 @@
   "title": "Studio Arts-Painting and Drawing Emphasis",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "ARTH105",
+   "ARTH106",
+   "ARTH118",
+   "ARTH130",
+   "ARTS101",
+   "ARTS110",
+   "ARTS111",
+   "ARTS112",
+   "ARTS120",
+   "ARTS150",
+   "ARTS260"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//getting-your-degree/c-id/",
+   "title": "Course Identification Numbering System (C-ID) | Napa Valley College",
+   "h1": "COURSE IDENTIFICATION NUMBERING SYSTEM (C-ID)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 4415
  },
  {
   "control_number": "19127",
@@ -706,8 +859,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 0.933,
   "codes_found": [
+   "ARTH105",
+   "ARTH106",
    "ARTS110",
    "ARTS111",
    "ARTS112",
@@ -728,7 +883,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -762,7 +920,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -790,7 +951,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -821,7 +985,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "viticulture and enology: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -848,7 +1015,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "wine marketing and sales: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -877,7 +1047,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting› bookkeeping: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -905,7 +1078,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "19944",
@@ -930,7 +1107,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technology› welding technology: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -958,7 +1138,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "19948",
@@ -1005,7 +1189,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child and family studies: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
@@ -1031,7 +1218,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "human services› human services: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1043,9 +1233,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
    "ARTH101",
+   "ARTH105",
+   "ARTH106",
    "ARTH110",
    "ARTH118",
    "ARTH130",
@@ -1062,7 +1254,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -1074,9 +1269,11 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.625,
+  "coverage": 0.875,
   "codes_found": [
    "COMS215",
+   "MATH120",
+   "MATH121",
    "MATH220",
    "MATH221",
    "MATH222",
@@ -1089,11 +1286,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics› mathematics 2.0: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 3950
+  "text_chars": 4045
  },
  {
   "control_number": "31019",
@@ -1117,7 +1317,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1128,12 +1331,29 @@
   "title": "911 Dispatcher",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ADMJ120",
+   "ADMJ121",
+   "ADMJ122",
+   "ADMJ123"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-administration-of-justice-certificate-of-achievement/",
+   "title": "Law Enforcement-Administration of Justice: Certificate of Achievement | Napa Valley College",
+   "h1": "LAW ENFORCEMENT-ADMINISTRATION OF JUSTICE: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2812
  },
  {
   "control_number": "31467",
@@ -1141,7 +1361,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH121",
    "COMM120",
@@ -1153,7 +1373,8 @@
    "COMMC1000",
    "ENGLC1001",
    "ENGLC1002",
-   "PSYCC1000"
+   "PSYCC1000",
+   "SOCI120"
   ],
   "source": {
    "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/",
@@ -1162,7 +1383,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies› communication studies 2.0: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1174,7 +1398,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.93,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ120",
    "ADMJ121",
@@ -1187,6 +1411,8 @@
    "CFS140",
    "CFS180",
    "COMM126",
+   "ECON100",
+   "ECON101",
    "ETHS112",
    "ETHS113",
    "ETHS160",
@@ -1209,6 +1435,7 @@
    "PSYC128",
    "PSYC220",
    "PSYCC1000",
+   "SOCI120",
    "SOCI122",
    "SOCI130",
    "SOCI140",
@@ -1224,11 +1451,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology› sociology: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
-  "text_chars": 5594
+  "text_chars": 5633
  },
  {
   "control_number": "31676",
@@ -1236,8 +1466,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.85,
+  "coverage": 0.95,
   "codes_found": [
+   "ARTH105",
+   "ARTH106",
    "ARTH110",
    "ARTH118",
    "ARTH130",
@@ -1263,11 +1495,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history› art history: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 5468
+  "text_chars": 5599
  },
  {
   "control_number": "31686",
@@ -1275,8 +1510,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.867,
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH105",
+   "ARTH106",
    "ARTH130",
    "ARTS101",
    "ARTS105",
@@ -1298,7 +1535,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "arts› studio arts: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1346,7 +1586,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology› kinesiology: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -1362,19 +1605,57 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/political-science/political-science-aa-t/",
+    "title": "Political Science: AA-T Degree | Napa Valley College",
+    "h1": "POLITICAL SCIENCE: AA-T DEGREE",
+    "awards": [
+     "adt"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "32313",
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ120",
+   "ADMJ121",
+   "ADMJ122",
+   "ADMJ123",
+   "ADMJ124",
+   "ADMJ125",
+   "ADMJ130",
+   "ADMJ190",
+   "PSYCC1000",
+   "SOCI120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/administration-of-justice-as-t/",
+   "title": "Administration of Justice: AS-T Degree | Napa Valley College",
+   "h1": "ADMINISTRATION OF JUSTICE: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice› administration of justice: as-t degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4588
  },
  {
   "control_number": "32314",
@@ -1403,7 +1684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology› psychology: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1436,7 +1720,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music› music: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1477,7 +1764,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish› spanish: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1489,7 +1779,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.964,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH120",
    "ANTH121",
@@ -1513,6 +1803,7 @@
    "LGBT120",
    "PSYC128",
    "PSYC220",
+   "SOCI120",
    "SOCI122",
    "SOCI140",
    "SOCI150",
@@ -1526,7 +1817,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology› anthropology: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -1562,7 +1856,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english› english: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1574,7 +1871,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.692,
+  "coverage": 0.846,
   "codes_found": [
    "ACCT125",
    "ACCT126",
@@ -1584,7 +1881,9 @@
    "BUSI142",
    "BUSI251",
    "BUSI297",
-   "COMS165"
+   "COMS165",
+   "ECON100",
+   "ECON101"
   ],
   "source": {
    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as/",
@@ -1593,7 +1892,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -1623,7 +1925,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "lgbt studies: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1650,7 +1955,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theater arts› theater arts: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1662,7 +1970,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.926,
+  "coverage": 0.963,
   "codes_found": [
    "ANTH121",
    "ANTH122",
@@ -1684,6 +1992,7 @@
    "POLSC1000",
    "PSYC123",
    "PSYC175",
+   "SOCI120",
    "SOCI122",
    "SOCI130",
    "SOCI140",
@@ -1697,7 +2006,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history› history: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -1709,8 +2021,10 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "MATH120",
+   "MATH121",
    "MATH221",
    "PHYS140",
    "PHYS240",
@@ -1723,7 +2037,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics› physics 2.0: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1739,7 +2056,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "36251",
@@ -1747,7 +2068,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL110",
    "BIOL120",
@@ -1761,6 +2082,7 @@
    "GEOL110",
    "GEOL111",
    "MATH108",
+   "MATH120",
    "PHYS120",
    "PHYS121",
    "PHYS140",
@@ -1774,7 +2096,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -1786,8 +2111,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.867,
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH105",
+   "ARTH106",
    "ARTH110",
    "ARTS101",
    "ARTS105",
@@ -1809,7 +2136,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1821,7 +2151,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 0.857,
   "codes_found": [
    "ACCT120",
    "ACCT127",
@@ -1832,7 +2162,9 @@
    "BUSI144",
    "BUSI251",
    "BUSI297",
-   "COMS165"
+   "COMS165",
+   "ECON100",
+   "ECON101"
   ],
   "source": {
    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/entrepreneurship-as/",
@@ -1841,7 +2173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1869,7 +2204,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1894,7 +2232,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "combination welding technician: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1924,7 +2265,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1960,7 +2304,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technician basic: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1987,7 +2334,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood intervention: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1998,47 +2348,50 @@
   "title": "Dance",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "DANS128A",
+   "DANS128B",
+   "DANS133",
+   "DANS136",
+   "DANS136B",
+   "DANS136D",
+   "DANS137A",
+   "DANS160",
+   "DANS170",
+   "KINE130",
+   "KINE154",
+   "KINE154B",
+   "KINE201"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//getting-your-degree/",
+   "title": "Getting Your Degree At Napa Valley College | Napa Valley College",
+   "h1": "GETTING YOUR DEGREE AT NAPA VALLEY COLLEGE",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4462
  },
  {
   "control_number": "36865",
   "title": "Ethnic Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ANTH150",
-   "COMM126",
-   "ENGL224",
-   "ENGL226",
-   "ETHS112",
-   "ETHS113",
-   "ETHS160",
-   "FILM110",
-   "HIST150",
-   "HIST152",
-   "HUMA151",
-   "MUSI114",
-   "PSYC128"
-  ],
-  "source": {
-   "url": "https://catalog.napavalley.edu//getting-your-degree/general-education/",
-   "title": "General Education | Napa Valley College",
-   "h1": "GENERAL EDUCATION",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 10669
+  "text_chars": 0
  },
  {
   "control_number": "36866",
@@ -2064,7 +2417,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "addiction studies› addiction studies: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2092,7 +2448,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "content marketing: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2117,7 +2476,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child and family studies-associate teacher: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2143,7 +2505,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child and family studies-associate teacher with administration: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -2190,7 +2555,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "ethnic studies› social justice studies-ethnic studies: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -2220,7 +2588,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2273,7 +2644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "hospitality management: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2297,7 +2671,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "lgbtq community awareness (noncredit): certificate of completion",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -2322,7 +2699,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "lgbt education› lgbt education for educators: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2347,7 +2727,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -2359,8 +2742,10 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH105",
+   "ARTH106",
    "ARTH110",
    "ARTH118",
    "ARTH130",
@@ -2387,7 +2772,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film, television, and electronic media: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2399,17 +2787,20 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.769,
+  "coverage": 1.0,
   "codes_found": [
    "ADS120",
    "BIOL105",
    "BIOL120",
    "BIOL218",
    "BIOL219",
+   "ECON100",
+   "ECON101",
    "HSRV120",
    "HSRV124",
    "HSRV190",
    "PSYCC1000",
+   "SOCI120",
    "STATC1000"
   ],
   "source": {
@@ -2419,7 +2810,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "human services› social work and human services: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2443,7 +2837,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl: low-advanced academic (noncredit): certificate of competency",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -2467,7 +2864,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl: high-intermediate academic (noncredit): certificate of competency",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -2491,7 +2891,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl: low-intermediate academic (noncredit): certificate of competency",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -2515,7 +2918,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl: pre-intermediate academic (noncredit): certificate of competency",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -2542,7 +2948,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2554,7 +2963,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL120",
    "CHEM120",
@@ -2562,6 +2971,8 @@
    "COMS216",
    "COMS217",
    "COMS218",
+   "MATH120",
+   "MATH121",
    "PHYS140",
    "PHYS240"
   ],
@@ -2572,7 +2983,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science› computer science: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2599,7 +3013,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary arts-advanced: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2627,7 +3044,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "wine production: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2639,24 +3059,30 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "ADMJ120",
+   "ADMJ123",
    "ETHS112",
    "ETHS113",
-   "ETHS160"
+   "ETHS160",
+   "LGBT120"
   ],
   "source": {
-   "url": "https://catalog.napavalley.edu//areas-of-study/ethnic-studies/ethnic-studies-aa/",
-   "title": "Ethnic Studies: AA Degree | Napa Valley College",
-   "h1": "ETHNIC STUDIES: AA DEGREE",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-community-policing-coa/",
+   "title": "Law Enforcement-Community Policing: Certificate of Achievement | Napa Valley College",
+   "h1": "LAW ENFORCEMENT-COMMUNITY POLICING: CERTIFICATE OF ACHIEVEMENT",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community policing: certificate of achievement law enforcement-community policing: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 4063
+  "text_chars": 2585
  },
  {
   "control_number": "42591",
@@ -2674,29 +3100,50 @@
    "ADMJ130"
   ],
   "source": {
-   "url": "https://catalog.napavalley.edu//getting-your-degree/c-id/",
-   "title": "Course Identification Numbering System (C-ID) | Napa Valley College",
-   "h1": "COURSE IDENTIFICATION NUMBERING SYSTEM (C-ID)",
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-juvenile-justice-coa/",
+   "title": "Law Enforcement-Juvenile Justice: Certificate of Achievement | Napa Valley College",
+   "h1": "LAW ENFORCEMENT-JUVENILE JUSTICE: CERTIFICATE OF ACHIEVEMENT",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "juvenile justice: certificate of achievement law enforcement-juvenile justice: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3975
+  "text_chars": 2513
  },
  {
   "control_number": "42592",
   "title": "Law Enforcement-Mental Health and Addiction",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ120",
+   "ADMJ122",
+   "ADS135",
+   "HSRV120",
+   "HSRV130"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-mental-health-addiction-coa/",
+   "title": "Law Enforcement-Mental Health and Addiction: Certificate of Achievement | Napa Valley College",
+   "h1": "LAW ENFORCEMENT-MENTAL HEALTH AND ADDICTION: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mental health and addiction: certificate of achievement law enforcement-mental health and addiction: certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2472
  },
  {
   "control_number": "42609",
@@ -2704,13 +3151,16 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.545,
+  "coverage": 0.818,
   "codes_found": [
    "ACCT125",
    "ACCT126",
    "BUSI100",
    "BUSI103",
+   "ECON100",
+   "ECON101",
    "MATH115",
+   "MATH120",
    "STATC1000"
   ],
   "source": {
@@ -2720,7 +3170,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2731,24 +3184,57 @@
   "title": "Law Enforcement-Crime Scene Investigation",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ121",
+   "ADMJ125",
+   "ADMJ140"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-crime-scene-investigation-coa/",
+   "title": "Law Enforcement-Crime Scene Investigation: Certificate of Achievement | Napa Valley College",
+   "h1": "LAW ENFORCEMENT-CRIME SCENE INVESTIGATION: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "crime scene investigation: certificate of achievement law enforcement-crime scene investigation: certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2260
  },
  {
   "control_number": "43354",
   "title": "Law Enforcement-Career Preparation",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ120",
+   "ADMJ121",
+   "ADMJ123",
+   "ADMJ190"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/administration-of-justice/law-enforcement-career-preparation-coa/",
+   "title": "Law Enforcement-Career Preparation: Certificate of Achievement | Napa Valley College",
+   "h1": "LAW ENFORCEMENT-CAREER PREPARATION: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "career preparation: certificate of achievement law enforcement-career preparation: certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2303
  },
  {
   "control_number": "43712",
@@ -2756,13 +3242,15 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.769,
+  "coverage": 0.923,
   "codes_found": [
    "BIOL120",
    "CHEM120",
    "CHEM121",
+   "ECON101",
    "GEOL110",
    "GEOL111",
+   "MATH120",
    "PHYS120",
    "PHYS121",
    "PHYS140",
@@ -2776,7 +3264,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "environmental science: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2802,7 +3293,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "geographic information systems: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -2814,7 +3308,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.92,
+  "coverage": 0.96,
   "codes_found": [
    "ANTH121",
    "ANTH150",
@@ -2832,6 +3326,7 @@
    "LGBT121",
    "PHIL128",
    "PSYC123",
+   "SOCI120",
    "SOCI122",
    "SOCI130",
    "SOCI140",
@@ -2847,7 +3342,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies-gender studies: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -2873,7 +3371,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2903,7 +3404,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography› photography: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2915,8 +3419,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH105",
+   "ARTH106",
    "ARTH110",
    "ARTH118",
    "ARTH130",
@@ -2943,7 +3449,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -2955,8 +3464,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH105",
+   "ARTH106",
    "ARTH110",
    "ARTH118",
    "ARTH130",
@@ -2985,7 +3496,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -2997,7 +3511,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH121",
    "COMM120",
@@ -3010,7 +3524,8 @@
    "COMMC1000",
    "ENGLC1001",
    "ENGLC1002",
-   "PSYCC1000"
+   "PSYCC1000",
+   "SOCI120"
   ],
   "source": {
    "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/",
@@ -3019,7 +3534,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies› communication studies 2.0: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3031,7 +3549,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.792,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT125",
    "ACCT126",
@@ -3039,17 +3557,22 @@
    "BUSI103",
    "BUSI105",
    "COMS101",
+   "ECON100",
+   "ECON101",
    "HIST150",
    "HIST152",
    "HISTC1001",
    "HISTC1002",
    "MATH115",
+   "MATH120",
+   "MATH121",
    "MATH220",
    "MATH221",
    "POLI145",
    "POLSC1000",
    "PSYC123",
    "PSYCC1000",
+   "SOCI120",
    "SOCI122",
    "STATC1000"
   ],
@@ -3060,11 +3583,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics› economics: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
-  "text_chars": 4726
+  "text_chars": 4810
  },
  {
   "control_number": "44536",
@@ -3072,7 +3598,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.966,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH121",
    "ANTH150",
@@ -3095,6 +3621,7 @@
    "LGBT121",
    "PHIL128",
    "PSYC123",
+   "SOCI120",
    "SOCI122",
    "SOCI130",
    "SOCI140",
@@ -3110,7 +3637,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies-lgbtq studies: aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -3140,7 +3670,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music› music-mariachi: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3171,7 +3704,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "theater arts› theater arts-acting: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3200,7 +3736,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3216,7 +3755,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "45337",
@@ -3236,7 +3779,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "non-credit› non-credit: community health worker certificate of completion",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
@@ -3260,7 +3806,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "non-credit› non-credit: fire resilient landscaping certificate of completion",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
@@ -3294,7 +3843,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "21st century employability skills: certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3319,7 +3871,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business marketing: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3346,7 +3901,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child and family studies-trauma informed early care and education: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3371,7 +3929,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business start-up: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3395,7 +3956,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "machine tool technology› machine tool technology-one year: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3420,7 +3984,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welder's assistant: certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3432,11 +3999,13 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
    "COMS120",
    "COMS215",
    "COMS216",
+   "MATH120",
+   "MATH121",
    "MATH220",
    "MATH221",
    "MATH222",
@@ -3449,11 +4018,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics› mathematics 2.0: as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3950
+  "text_chars": 4045
  },
  {
   "control_number": "46582",
@@ -3483,7 +4055,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,

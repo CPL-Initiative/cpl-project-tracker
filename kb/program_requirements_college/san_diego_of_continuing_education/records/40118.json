@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Baking and Pastry Arts I",
  "award": "Noncredit program",
- "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+ "source_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=71",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6723,
+  "input_tokens": 6526,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6723,
-    "output_tokens": 808,
+    "input_tokens": 6526,
+    "output_tokens": 829,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 808,
+  "output_tokens": 829,
   "output_tokens_details": {
-   "thinking_tokens": 261
+   "thinking_tokens": 361
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04305,
- "ms": 8507,
- "seconds": 8.9,
+ "cost_usd": 0.04268,
+ "ms": 8406,
+ "seconds": 27.1,
  "parts": null,
  "error": null,
  "score": {
-  "measure": "hours",
+  "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "FDNT661",
-    "FDNT662"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -88,19 +85,19 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "San Diego College of Continuing Education (SDCCE) to College CTE (Career Technical Education) Transitions Credit by Exam Active Agreements",
-   "measure": "hours",
+   "section_heading": "Baking and Pastry Arts I",
+   "measure": "units",
    "total_units": {
     "min": null,
     "max": null
@@ -121,26 +118,54 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "entry-level baker"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "FDNT 661",
-    "why": "Named only in the credit-by-exam articulation table (to Mesa CACM 160), not in a program requirements section"
-   },
-   {
-    "code": "FDNT 662",
-    "why": "Named only in the credit-by-exam articulation table (with FDNT 663 and FDNT 664, to Mesa CACM 212), not in a program requirements section"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FDNT 661",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDNT 662",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied page is the SDCCE-to-college Credit by Exam agreements table, not the Baking and Pastry Arts I program section; it prints no requirements, hours, total, outcomes or careers for this award, so no blocks were recorded.",
-   "Measure set to hours because this is a noncredit program, but the text prints no hours for any course or for the program.",
-   "The table also names FDNT 663 Advanced Pastries and Cakes and FDNT 664 Chocolate & Sugar Fundamentals, which are not in the closed list; they are not recorded because they appear only in the articulation table, not as requirements of this award.",
-   "Reviewer should locate the actual Baking and Pastry Arts I program page in the 2026-2027 CE catalog."
+   "This noncredit program's section prints no hours or units for its courses or a total. Measure is left as 'units' by default, and every units field is null.",
+   "The 'Certificate of Completion:' line after the required courses appears to introduce the next program (Baking and Pastry Arts II), so it was not applied to this award.",
+   "The catalog prints FDNT 661's title as 'Baking and Pastry Essentials'; the state file stores it as 'Baking & Pastry Essentials'.",
+   "No program learning outcomes are printed in this section.",
+   "'starting their own cottage industry business' was not recorded as a career title."
   ]
  },
- "extracted_run": "39035224783"
+ "extracted_run": "44739577102",
+ "catalog_year": "2026-2027",
+ "source_sha": "c78c6d95812855fb",
+ "source_codes": [
+  "FDNT661",
+  "FDNT662"
+ ],
+ "source_coverage": 1.0
 }

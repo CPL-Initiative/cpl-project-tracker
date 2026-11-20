@@ -2,20 +2,35 @@
  "college": "Santa Monica College",
  "programs": 256,
  "with_closed_list": 240,
- "found": 239,
- "extracted": 239,
- "errors": 1,
- "passed_machine_checks": 157,
+ "found": 230,
+ "extracted": 230,
+ "errors": 0,
+ "passed_machine_checks": 181,
  "failed": {
-  "coverage": 14,
+  "coverage": 1,
   "invented": 1,
-  "arithmetic": 78,
+  "arithmetic": 44,
   "repeated": 1,
-  "outcomes": 5
+  "outcomes": 7
  },
- "cost_usd": 20.34,
- "cost_per_program": 0.0851,
+ "cost_usd_run": 0.47,
+ "cost_usd_filed": 19.88,
+ "cost_per_program": 0.0864,
+ "extract_calls": 5,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "08969",
+   "title": "Computer Business Applications",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "08982",
    "title": "General Science",
@@ -23,8 +38,104 @@
    "near_miss": {
     "url": "https://catalog.smc.edu/current/catalog.pdf#page=141",
     "coverage": 0.245
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19604",
+   "title": "Logistics and Supply Chain Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21003",
+   "title": "Computer Business Applications",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30390",
+   "title": "Early Childhood Education Master Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31006",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=96",
+    "coverage": 0.11,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38913",
+   "title": "System Administrator",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.smc.edu/current/catalog.pdf#page=70",
+    "coverage": 0.0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39976",
+   "title": "Architecture",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43986",
+   "title": "Introduction to Logistics and Supply Chain Management",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45012",
+   "title": "Biotechnology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "plain_named": true,
+    "page_checks": true
+   },
+   "status": "Active"
   }
  ],
- "run": "39567439681"
+ "run": "44739378155"
 }

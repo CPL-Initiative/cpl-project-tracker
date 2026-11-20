@@ -93,7 +93,8 @@
     104
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e165202cd7f31f58"
   },
   "listed": 72,
   "text_chars": 16000
@@ -142,7 +143,8 @@
     85
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "eb77a64879209c9c"
   },
   "listed": 26,
   "text_chars": 16000
@@ -182,10 +184,11 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ae75680c23bc3360"
   },
   "listed": 15,
-  "text_chars": 12143
+  "text_chars": 12142
  },
  {
   "control_number": "03258",
@@ -222,10 +225,11 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ae75680c23bc3360"
   },
   "listed": 15,
-  "text_chars": 12143
+  "text_chars": 12142
  },
  {
   "control_number": "03259",
@@ -255,18 +259,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=106",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 105",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 105",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 105",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e13c666a88d6d687"
   },
   "listed": 17,
-  "text_chars": 6570
+  "text_chars": 6569
  },
  {
   "control_number": "03263",
@@ -305,10 +310,11 @@
     160
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "49dd68c03d2c0a69"
   },
   "listed": 18,
-  "text_chars": 12130
+  "text_chars": 12129
  },
  {
   "control_number": "03264",
@@ -342,8 +348,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -353,7 +359,8 @@
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e6417c7bd69ea9a7"
   },
   "listed": 9,
   "text_chars": 16000
@@ -433,10 +440,11 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f77c7799df142b56"
   },
   "listed": 55,
-  "text_chars": 10353
+  "text_chars": 10352
  },
  {
   "control_number": "03272",
@@ -490,8 +498,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=172",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 171",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 171",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 171",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 171",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -499,10 +507,11 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "95654774c392752f"
   },
   "listed": 58,
-  "text_chars": 11333
+  "text_chars": 11332
  },
  {
   "control_number": "03273",
@@ -548,7 +557,8 @@
     201
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c45a46c9a70a28d3"
   },
   "listed": 23,
   "text_chars": 16000
@@ -616,8 +626,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=124",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 123",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 123",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -625,10 +635,11 @@
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5f8f2340d68bb357"
   },
   "listed": 54,
-  "text_chars": 12066
+  "text_chars": 12065
  },
  {
   "control_number": "03275",
@@ -669,8 +680,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=182",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 181",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 181",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 181",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 181",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -678,10 +689,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "48bc4c2eab7b4076"
   },
   "listed": 28,
-  "text_chars": 12149
+  "text_chars": 12147
  },
  {
   "control_number": "03276",
@@ -714,7 +726,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e709436780380a8c"
   },
   "listed": 12,
   "text_chars": 5771
@@ -754,7 +767,8 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b80ad8af4cb3b6f8"
   },
   "listed": 27,
   "text_chars": 16000
@@ -805,10 +819,11 @@
     192
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "299987059ea60661"
   },
   "listed": 26,
-  "text_chars": 10982
+  "text_chars": 10981
  },
  {
   "control_number": "03283",
@@ -854,8 +869,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=144",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 143",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 143",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 143",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 143",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -863,10 +878,11 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "17e899082dfb79df"
   },
   "listed": 33,
-  "text_chars": 10969
+  "text_chars": 10968
  },
  {
   "control_number": "03284",
@@ -910,8 +926,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=144",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 143",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 143",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 143",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 143",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -919,10 +935,11 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "17e899082dfb79df"
   },
   "listed": 31,
-  "text_chars": 10969
+  "text_chars": 10968
  },
  {
   "control_number": "03302",
@@ -971,10 +988,11 @@
     122
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "04828f75d394f711"
   },
   "listed": 27,
-  "text_chars": 10910
+  "text_chars": 10909
  },
  {
   "control_number": "08962",
@@ -1024,7 +1042,8 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b8d421a3f344bdaf"
   },
   "listed": 26,
   "text_chars": 16000
@@ -1056,22 +1075,26 @@
    "JOURN43"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
+   "title": "104 SMC CATALOG 2026–2027",
+   "h1": "104 SMC CATALOG 2026–2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    102,
-    103,
-    104,
-    105
+    105,
+    106
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 105,
+    "share": 1.0
+   },
+   "text_sha": "ae75680c23bc3360"
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 12142
  },
  {
   "control_number": "08964",
@@ -1109,10 +1132,11 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a166fde04f229eaa"
   },
   "listed": 15,
-  "text_chars": 15326
+  "text_chars": 15325
  },
  {
   "control_number": "08965",
@@ -1137,8 +1161,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=178",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 177",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 177",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 177",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 177",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1148,7 +1172,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "063b37433647e524"
   },
   "listed": 12,
   "text_chars": 16000
@@ -1175,8 +1200,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=178",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 177",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 177",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 177",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 177",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1186,7 +1211,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "063b37433647e524"
   },
   "listed": 11,
   "text_chars": 16000
@@ -1229,57 +1255,31 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=146",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 145",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 145",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 145",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 145",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     146
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "504ea228dfd1a168"
   },
   "listed": 16,
-  "text_chars": 5770
+  "text_chars": 5769
  },
  {
   "control_number": "08969",
   "title": "Computer Business Applications",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.824,
-  "codes_found": [
-   "ACCTG1",
-   "ACCTG21",
-   "BUS34A",
-   "CIS1",
-   "CIS30",
-   "CIS35A",
-   "CIS35B",
-   "CIS37",
-   "CIS38",
-   "CIS39",
-   "CIS50",
-   "OFTECH1",
-   "OFTECH10",
-   "OFTECH5"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=113",
-   "title": "112 SMC CATALOG 2026–2027",
-   "h1": "112 SMC CATALOG 2026–2027",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    113,
-    114
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 9502
+  "text_chars": 0
  },
  {
   "control_number": "08970",
@@ -1329,8 +1329,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1340,7 +1340,8 @@
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e6417c7bd69ea9a7"
   },
   "listed": 37,
   "text_chars": 16000
@@ -1378,7 +1379,8 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b98b23d53226da47"
   },
   "listed": 11,
   "text_chars": 16000
@@ -1431,10 +1433,11 @@
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "02987b4585e0dfff"
   },
   "listed": 16,
-  "text_chars": 11891
+  "text_chars": 11890
  },
  {
   "control_number": "10345",
@@ -1470,7 +1473,8 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b80ad8af4cb3b6f8"
   },
   "listed": 17,
   "text_chars": 16000
@@ -1509,10 +1513,11 @@
     158
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "85f48b3089d3c51e"
   },
   "listed": 15,
-  "text_chars": 11052
+  "text_chars": 11051
  },
  {
   "control_number": "13430",
@@ -1541,18 +1546,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=126",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 125",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 125",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 125",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 125",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     126
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b05cbdefa456b52b"
   },
   "listed": 16,
-  "text_chars": 5960
+  "text_chars": 5959
  },
  {
   "control_number": "13431",
@@ -1587,8 +1593,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=86",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 85",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 85",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 85",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 85",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1596,10 +1602,11 @@
     87
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "603a24144f51faff"
   },
   "listed": 22,
-  "text_chars": 11883
+  "text_chars": 11882
  },
  {
   "control_number": "13751",
@@ -1621,8 +1628,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=130",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 129",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 129",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 129",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 129",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1631,7 +1638,8 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1ab81650ef0e6ae"
   },
   "listed": 10,
   "text_chars": 16000
@@ -1672,8 +1680,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1683,7 +1691,8 @@
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e6417c7bd69ea9a7"
   },
   "listed": 13,
   "text_chars": 16000
@@ -1733,7 +1742,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "472bbd04f03d693e"
   },
   "listed": 23,
   "text_chars": 16000
@@ -1757,8 +1767,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1768,7 +1778,8 @@
     115
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2d223718c6bf4eeb"
   },
   "listed": 8,
   "text_chars": 16000
@@ -1811,7 +1822,8 @@
     141
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fc4c5ade25c5e229"
   },
   "listed": 18,
   "text_chars": 11053
@@ -1845,8 +1857,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=140",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 139",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 139",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 139",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 139",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1854,10 +1866,11 @@
     141
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e7ac1e0405b74c92"
   },
   "listed": 18,
-  "text_chars": 11994
+  "text_chars": 11993
  },
  {
   "control_number": "19297",
@@ -1934,7 +1947,8 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b0ab191d53dde8a4"
   },
   "listed": 57,
   "text_chars": 16000
@@ -2014,7 +2028,8 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "297345b947a70da7"
   },
   "listed": 57,
   "text_chars": 16000
@@ -2061,7 +2076,8 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2348c59963e1aa28"
   },
   "listed": 24,
   "text_chars": 5449
@@ -2108,7 +2124,8 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2348c59963e1aa28"
   },
   "listed": 24,
   "text_chars": 5449
@@ -2136,7 +2153,8 @@
     104
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fbfcbc5221337293"
   },
   "listed": 4,
   "text_chars": 4404
@@ -2163,8 +2181,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=104",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 103",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 103",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 103",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 103",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2173,7 +2191,8 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "40f6ef1d2e4171cd"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2200,8 +2219,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=104",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 103",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 103",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 103",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 103",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2210,7 +2229,8 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "40f6ef1d2e4171cd"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2220,45 +2240,12 @@
   "title": "Logistics and Supply Chain Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.947,
-  "codes_found": [
-   "ACCTG1",
-   "ACCTG21",
-   "BUS1",
-   "BUS32",
-   "BUS5",
-   "BUS50",
-   "BUS52",
-   "BUS53",
-   "BUS57",
-   "BUS80",
-   "BUS81",
-   "BUS82",
-   "BUS83",
-   "BUS85",
-   "BUS86",
-   "BUS87",
-   "CIS4",
-   "COMST37"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    102,
-    103,
-    104,
-    105
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "19605",
@@ -2266,17 +2253,13 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.95,
+  "coverage": 0.7,
   "codes_found": [
-   "ACCTG1",
-   "ACCTG21",
    "BUS1",
    "BUS32",
    "BUS5",
-   "BUS50",
    "BUS51",
    "BUS52",
-   "BUS53",
    "BUS57",
    "BUS80",
    "BUS81",
@@ -2285,26 +2268,29 @@
    "BUS85",
    "BUS86",
    "BUS87",
-   "CIS4",
    "COMST37"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=105",
+   "title": "Logistics and Supply Chain Management,",
+   "h1": "Logistics and Supply Chain Management,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    102,
-    103,
-    104,
-    105
+    105,
+    106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 105,
+    "share": 0.7
+   },
+   "text_sha": "9400bb7908408066"
   },
   "listed": 20,
-  "text_chars": 16000
+  "text_chars": 10711
  },
  {
   "control_number": "19701",
@@ -2335,8 +2321,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=184",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 183",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 183",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 183",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 183",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2346,7 +2332,8 @@
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ff2143adce02e88b"
   },
   "listed": 18,
   "text_chars": 16000
@@ -2388,7 +2375,8 @@
     186
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4a174c226c544925"
   },
   "listed": 15,
   "text_chars": 16000
@@ -2529,8 +2517,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=164",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 163",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 163",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 163",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 163",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2538,10 +2526,11 @@
     165
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2295881ddd53f156"
   },
   "listed": 192,
-  "text_chars": 10595
+  "text_chars": 10588
  },
  {
   "control_number": "19955",
@@ -2622,10 +2611,11 @@
     165
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ebfcb273253e018d"
   },
   "listed": 102,
-  "text_chars": 5192
+  "text_chars": 5187
  },
  {
   "control_number": "20350",
@@ -2675,10 +2665,11 @@
     84
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "892a5ef181485dde"
   },
   "listed": 4,
-  "text_chars": 11381
+  "text_chars": 11380
  },
  {
   "control_number": "20995",
@@ -2708,18 +2699,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=106",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 105",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 105",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 105",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 105",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e13c666a88d6d687"
   },
   "listed": 17,
-  "text_chars": 6570
+  "text_chars": 6569
  },
  {
   "control_number": "20996",
@@ -2756,8 +2748,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=178",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 177",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 177",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 177",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 177",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2767,7 +2759,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "063b37433647e524"
   },
   "listed": 12,
   "text_chars": 16000
@@ -2794,8 +2787,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=178",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 177",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 177",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 177",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 177",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2805,7 +2798,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "063b37433647e524"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2847,10 +2841,11 @@
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "02987b4585e0dfff"
   },
   "listed": 17,
-  "text_chars": 11891
+  "text_chars": 11890
  },
  {
   "control_number": "21000",
@@ -2888,10 +2883,11 @@
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "02987b4585e0dfff"
   },
   "listed": 16,
-  "text_chars": 11891
+  "text_chars": 11890
  },
  {
   "control_number": "21001",
@@ -2918,7 +2914,8 @@
     126
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "470d4f3ce1487736"
   },
   "listed": 6,
   "text_chars": 3364
@@ -2948,7 +2945,8 @@
     87
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ef38c45ba9eae4f5"
   },
   "listed": 5,
   "text_chars": 10834
@@ -2958,39 +2956,12 @@
   "title": "Computer Business Applications",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.824,
-  "codes_found": [
-   "ACCTG1",
-   "ACCTG21",
-   "BUS34A",
-   "CIS1",
-   "CIS30",
-   "CIS35A",
-   "CIS35B",
-   "CIS37",
-   "CIS38",
-   "CIS39",
-   "CIS50",
-   "OFTECH1",
-   "OFTECH10",
-   "OFTECH5"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=113",
-   "title": "112 SMC CATALOG 2026–2027",
-   "h1": "112 SMC CATALOG 2026–2027",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    113,
-    114
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 9502
+  "text_chars": 0
  },
  {
   "control_number": "21004",
@@ -3012,8 +2983,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3023,7 +2994,8 @@
     115
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2d223718c6bf4eeb"
   },
   "listed": 9,
   "text_chars": 16000
@@ -3048,8 +3020,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3059,7 +3031,8 @@
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e6417c7bd69ea9a7"
   },
   "listed": 9,
   "text_chars": 16000
@@ -3095,8 +3068,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3104,10 +3077,11 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "149c06b7e525d242"
   },
   "listed": 20,
-  "text_chars": 10561
+  "text_chars": 10560
  },
  {
   "control_number": "21009",
@@ -3153,7 +3127,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "472bbd04f03d693e"
   },
   "listed": 22,
   "text_chars": 16000
@@ -3182,8 +3157,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=116",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 115",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 115",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3193,7 +3168,8 @@
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e6417c7bd69ea9a7"
   },
   "listed": 13,
   "text_chars": 16000
@@ -3237,8 +3213,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=182",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 181",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 181",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 181",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 181",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3246,10 +3222,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "48bc4c2eab7b4076"
   },
   "listed": 28,
-  "text_chars": 12149
+  "text_chars": 12147
  },
  {
   "control_number": "21016",
@@ -3282,7 +3259,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e709436780380a8c"
   },
   "listed": 12,
   "text_chars": 5771
@@ -3321,10 +3299,11 @@
     158
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1f34bbaf13fafbe8"
   },
   "listed": 15,
-  "text_chars": 9078
+  "text_chars": 9077
  },
  {
   "control_number": "21020",
@@ -3346,8 +3325,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=130",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 129",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 129",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 129",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 129",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3356,7 +3335,8 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1ab81650ef0e6ae"
   },
   "listed": 10,
   "text_chars": 16000
@@ -3379,19 +3359,30 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.593,
+  "coverage": 1.0,
   "codes_found": [
    "COSM10A",
    "COSM10B",
+   "COSM11A",
+   "COSM11B",
+   "COSM11C",
+   "COSM11D",
    "COSM16",
    "COSM18",
    "COSM20",
+   "COSM21A",
+   "COSM21B",
+   "COSM21C",
+   "COSM21E",
    "COSM26",
    "COSM28A",
    "COSM28B",
    "COSM30",
    "COSM36",
+   "COSM42",
    "COSM48B",
+   "COSM49C",
+   "COSM50C",
    "COSM64",
    "COSM95A",
    "COSM95B",
@@ -3399,19 +3390,26 @@
    "COSM95D"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=122",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 121",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 121",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=121",
+   "title": "Cosmetology, Associate Degree or",
+   "h1": "Cosmetology, Associate Degree or",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    121,
     122
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 121,
+    "share": 1.0
+   },
+   "text_sha": "1a7790c20eef1c9f"
   },
   "listed": 27,
-  "text_chars": 5620
+  "text_chars": 8615
  },
  {
   "control_number": "22828",
@@ -3519,10 +3517,11 @@
     84
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "bab9c8f42e00296e"
   },
   "listed": 14,
-  "text_chars": 9336
+  "text_chars": 9335
  },
  {
   "control_number": "30294",
@@ -3557,10 +3556,11 @@
     180
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d0d048da26ddec51"
   },
   "listed": 1,
-  "text_chars": 10888
+  "text_chars": 10887
  },
  {
   "control_number": "30309",
@@ -3604,8 +3604,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=144",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 143",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 143",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 143",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 143",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3613,10 +3613,11 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "17e899082dfb79df"
   },
   "listed": 31,
-  "text_chars": 10969
+  "text_chars": 10968
  },
  {
   "control_number": "30310",
@@ -3661,8 +3662,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=144",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 143",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 143",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 143",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 143",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3670,10 +3671,11 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "17e899082dfb79df"
   },
   "listed": 32,
-  "text_chars": 10969
+  "text_chars": 10968
  },
  {
   "control_number": "30342",
@@ -3708,7 +3710,8 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b98b23d53226da47"
   },
   "listed": 11,
   "text_chars": 16000
@@ -3718,37 +3721,12 @@
   "title": "Early Childhood Education Master Teacher",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.6,
-  "codes_found": [
-   "ECE21",
-   "ECE41",
-   "ECE43",
-   "ECE45",
-   "ECE48",
-   "ECE49",
-   "ECE51",
-   "ECE54",
-   "ECE55",
-   "ECE64",
-   "ECE88A",
-   "PSYCH11"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=269",
-   "title": "268 SMC CATALOG 2026–2027",
-   "h1": "268 SMC CATALOG 2026–2027",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    269,
-    270
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 20,
-  "text_chars": 13122
+  "text_chars": 0
  },
  {
   "control_number": "30586",
@@ -3778,10 +3756,11 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "09c2549df208bf59"
   },
   "listed": 8,
-  "text_chars": 8094
+  "text_chars": 8093
  },
  {
   "control_number": "30855",
@@ -3861,8 +3840,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=188",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 187",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 187",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 187",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 187",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3871,7 +3850,8 @@
     190
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6c7462929fc983f5"
   },
   "listed": 67,
   "text_chars": 16000
@@ -3930,10 +3910,11 @@
     198
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c3384c2b3d0a1909"
   },
   "listed": 34,
-  "text_chars": 5669
+  "text_chars": 5668
  },
  {
   "control_number": "30899",
@@ -4021,146 +4002,23 @@
     190
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c0cb6e17a560946a"
   },
   "listed": 67,
-  "text_chars": 12157
+  "text_chars": 12156
  },
  {
   "control_number": "31006",
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "pdf_pages",
-  "coverage": 0.721,
-  "codes_found": [
-   "AHIS11",
-   "AHIS15",
-   "AHIS17",
-   "AHIS18",
-   "AHIS21",
-   "AHIS22",
-   "AHIS3",
-   "AHIS52",
-   "ANTHRO14",
-   "ANTHRO2",
-   "ANTHRO20",
-   "ANTHRO21",
-   "ANTHRO22",
-   "ANTHRO3",
-   "ANTHRO4",
-   "ANTHRO7",
-   "ARABIC1",
-   "ART10A",
-   "ART13",
-   "ART40B",
-   "ARTHC1100",
-   "CHNESE1",
-   "CHNESE2",
-   "CHNESE3",
-   "CHNESE4",
-   "CHNESE9",
-   "DANCE2",
-   "DANCE5",
-   "ECON15",
-   "ENGL32",
-   "ENGL51",
-   "ENGL52",
-   "ENGL55",
-   "FILM1",
-   "FILM2",
-   "FILM7",
-   "FRENCH1",
-   "FRENCH2",
-   "FRENCH3",
-   "FRENCH4",
-   "GEOG8",
-   "GERMAN1",
-   "GERMAN2",
-   "GERMAN3",
-   "GERMAN4",
-   "HEBREW1",
-   "HEBREW2",
-   "HIST15",
-   "HISTC1001",
-   "HISTC1002",
-   "HUM26",
-   "ITAL1",
-   "ITAL2",
-   "ITAL3",
-   "JAPAN1",
-   "JAPAN2",
-   "JAPAN3",
-   "JAPAN4",
-   "KOREAN1",
-   "KOREAN2",
-   "KOREAN3",
-   "KOREAN4",
-   "MUSIC1",
-   "MUSIC30",
-   "MUSIC31",
-   "MUSIC32",
-   "MUSIC33",
-   "MUSIC36",
-   "MUSIC37",
-   "MUSIC39",
-   "MUSIC60A",
-   "MUSIC60B",
-   "NUTR7",
-   "PERSIN1",
-   "PERSIN2",
-   "PHILOS1",
-   "PHILOS10",
-   "PHILOS11",
-   "PHILOS2",
-   "PHILOS3",
-   "PHILOS4",
-   "PHILOS5",
-   "PHILOS51",
-   "PHILOS52",
-   "PHOTO52",
-   "POLSC22",
-   "POLSC51",
-   "POLSC52",
-   "RELST51",
-   "RELST52",
-   "RUSS1",
-   "RUSS2",
-   "SOCIOL30",
-   "SOCIOL31",
-   "SOCIOL32",
-   "SOCIOL33",
-   "SOCIOL34",
-   "SPAN1",
-   "SPAN11",
-   "SPAN12",
-   "SPAN2",
-   "SPAN20",
-   "SPAN3",
-   "SPAN4",
-   "SPAN9",
-   "THART2",
-   "THART41",
-   "THART5",
-   "WGS10",
-   "WGS20",
-   "WGS30"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=164",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 163",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 163",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    164,
-    165
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 154,
-  "text_chars": 10595
+  "text_chars": 0
  },
  {
   "control_number": "31095",
@@ -4206,18 +4064,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=198",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 197",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 197",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 197",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 197",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     198
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "81100368ee10d9dd"
   },
   "listed": 33,
-  "text_chars": 5292
+  "text_chars": 5291
  },
  {
   "control_number": "31152",
@@ -4364,7 +4223,8 @@
     163
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a1f813e3b7732d9f"
   },
   "listed": 125,
   "text_chars": 16000
@@ -4517,7 +4377,8 @@
     163
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a1f813e3b7732d9f"
   },
   "listed": 128,
   "text_chars": 16000
@@ -4608,18 +4469,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=152",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 151",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 151",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 151",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 151",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     152
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "46108c86771750e2"
   },
   "listed": 89,
-  "text_chars": 5886
+  "text_chars": 5885
  },
  {
   "control_number": "31314",
@@ -4729,10 +4591,11 @@
     152
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d482e4d81aea904b"
   },
   "listed": 88,
-  "text_chars": 10509
+  "text_chars": 10508
  },
  {
   "control_number": "31368",
@@ -4764,7 +4627,8 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8eead909efdb2cd6"
   },
   "listed": 8,
   "text_chars": 16000
@@ -4802,7 +4666,8 @@
     104
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "bd5cb380626aee98"
   },
   "listed": 12,
   "text_chars": 16000
@@ -4945,7 +4810,8 @@
     158
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "142c73770b4c0fac"
   },
   "listed": 134,
   "text_chars": 16000
@@ -4994,18 +4860,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=168",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 167",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 167",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 167",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 167",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e385c6f37716ad9e"
   },
   "listed": 21,
-  "text_chars": 5628
+  "text_chars": 5627
  },
  {
   "control_number": "32283",
@@ -5041,10 +4908,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a5d7bccb40a68e39"
   },
   "listed": 18,
-  "text_chars": 8286
+  "text_chars": 8285
  },
  {
   "control_number": "32382",
@@ -5078,18 +4946,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=168",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 167",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 167",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 167",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 167",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e385c6f37716ad9e"
   },
   "listed": 21,
-  "text_chars": 5628
+  "text_chars": 5627
  },
  {
   "control_number": "32753",
@@ -5111,8 +4980,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=200",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 199",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 199",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 199",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 199",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5120,10 +4989,11 @@
     201
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "81b01360275938d0"
   },
   "listed": 9,
-  "text_chars": 11615
+  "text_chars": 11614
  },
  {
   "control_number": "32792",
@@ -5157,7 +5027,8 @@
     201
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c45a46c9a70a28d3"
   },
   "listed": 11,
   "text_chars": 16000
@@ -5168,30 +5039,39 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
+   "THART2",
    "THART20",
    "THART21",
    "THART23",
    "THART25",
+   "THART28B",
    "THART31",
    "THART32",
    "THART5"
   ],
   "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=201",
-   "title": "200 SMC CATALOG 2026–2027",
-   "h1": "200 SMC CATALOG 2026–2027",
+   "url": "https://catalog.smc.edu/current/catalog.pdf#page=200",
+   "title": "Technical Theatre, Associate Degree or",
+   "h1": "Technical Theatre, Associate Degree or",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    200,
     201
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 200,
+    "share": 1.0
+   },
+   "text_sha": "99b0333443d72ac3"
   },
   "listed": 9,
-  "text_chars": 5490
+  "text_chars": 7847
  },
  {
   "control_number": "33255",
@@ -5236,10 +5116,11 @@
     146
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6aa7ae3b2a2bf903"
   },
   "listed": 23,
-  "text_chars": 10973
+  "text_chars": 10972
  },
  {
   "control_number": "33269",
@@ -5301,7 +5182,8 @@
     189
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7e1bd69931f92815"
   },
   "listed": 38,
   "text_chars": 16000
@@ -5349,7 +5231,8 @@
     161
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "670a2c8b06e2bf45"
   },
   "listed": 21,
   "text_chars": 16000
@@ -5427,7 +5310,8 @@
     163
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "747b7d56e067fbe3"
   },
   "listed": 52,
   "text_chars": 16000
@@ -5481,10 +5365,11 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "764b6a766f668136"
   },
   "listed": 28,
-  "text_chars": 13854
+  "text_chars": 13853
  },
  {
   "control_number": "33339",
@@ -5541,7 +5426,8 @@
     196
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6ca6e02daf91f96e"
   },
   "listed": 37,
   "text_chars": 4793
@@ -5595,7 +5481,8 @@
     152
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "88eb13be25c9ee68"
   },
   "listed": 27,
   "text_chars": 16000
@@ -5643,10 +5530,11 @@
     146
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6aa7ae3b2a2bf903"
   },
   "listed": 23,
-  "text_chars": 10973
+  "text_chars": 10972
  },
  {
   "control_number": "33827",
@@ -5698,7 +5586,8 @@
     136
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b4e50a10e34ea703"
   },
   "listed": 28,
   "text_chars": 16000
@@ -5759,8 +5648,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=176",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 175",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 175",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 175",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 175",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5770,7 +5659,8 @@
     179
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ec2cc6d75ea4349d"
   },
   "listed": 45,
   "text_chars": 16000
@@ -5804,10 +5694,11 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3fc327abc3ca9ffa"
   },
   "listed": 9,
-  "text_chars": 11557
+  "text_chars": 11556
  },
  {
   "control_number": "35744",
@@ -5838,10 +5729,11 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3fc327abc3ca9ffa"
   },
   "listed": 9,
-  "text_chars": 11557
+  "text_chars": 11556
  },
  {
   "control_number": "36265",
@@ -5902,7 +5794,8 @@
     190
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e1dc30e7bbe05ddb"
   },
   "listed": 37,
   "text_chars": 16000
@@ -5921,18 +5814,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=154",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 153",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 153",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 153",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 153",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     154
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9cb86a80a550ac07"
   },
   "listed": 3,
-  "text_chars": 6238
+  "text_chars": 6237
  },
  {
   "control_number": "36390",
@@ -5956,7 +5850,8 @@
     133
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "73d228fe39b3b0fe"
   },
   "listed": 3,
   "text_chars": 6241
@@ -5982,7 +5877,8 @@
     98
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cffdff37cef237f5"
   },
   "listed": 2,
   "text_chars": 4696
@@ -6008,7 +5904,8 @@
     107
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3b65aff1461e14e9"
   },
   "listed": 2,
   "text_chars": 5645
@@ -6034,7 +5931,8 @@
     107
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ab95219217b94339"
   },
   "listed": 2,
   "text_chars": 3614
@@ -6077,10 +5975,11 @@
     196
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "089edc0488d603ca"
   },
   "listed": 18,
-  "text_chars": 10175
+  "text_chars": 10174
  },
  {
   "control_number": "36851",
@@ -6109,7 +6008,8 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a6017649226af941"
   },
   "listed": 8,
   "text_chars": 3324
@@ -6163,7 +6063,8 @@
     85
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4c8b7be01cc6428b"
   },
   "listed": 29,
   "text_chars": 10278
@@ -6186,8 +6087,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6195,10 +6096,11 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "aaa9434283e9da31"
   },
   "listed": 7,
-  "text_chars": 10525
+  "text_chars": 10524
  },
  {
   "control_number": "37145",
@@ -6228,7 +6130,8 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b98b23d53226da47"
   },
   "listed": 6,
   "text_chars": 16000
@@ -6254,7 +6157,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cbaca6b36fe75e78"
   },
   "listed": 2,
   "text_chars": 5528
@@ -6303,7 +6207,8 @@
     196
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5beb8e78e25d76b0"
   },
   "listed": 23,
   "text_chars": 16000
@@ -6330,7 +6235,8 @@
     197
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ed3ce1b791430fed"
   },
   "listed": 3,
   "text_chars": 5605
@@ -6357,7 +6263,8 @@
     197
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "dbc811946f3b45a0"
   },
   "listed": 3,
   "text_chars": 5698
@@ -6384,7 +6291,8 @@
     197
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "dbc811946f3b45a0"
   },
   "listed": 3,
   "text_chars": 5698
@@ -6414,10 +6322,11 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "27b4f8f3a7888990"
   },
   "listed": 4,
-  "text_chars": 12326
+  "text_chars": 12325
  },
  {
   "control_number": "37757",
@@ -6445,7 +6354,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6f96b9bfdb8cf79e"
   },
   "listed": 4,
   "text_chars": 16000
@@ -6464,18 +6374,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=298",
-   "title": "SMC CATALOG 2026–2027  | Course Descriptions 297",
-   "h1": "SMC CATALOG 2026–2027  | Course Descriptions 297",
+   "title": "SMC CATALOG 2026–2027 | Course Descriptions 297",
+   "h1": "SMC CATALOG 2026–2027 | Course Descriptions 297",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     298
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9fdbf4544f5503bc"
   },
   "listed": 3,
-  "text_chars": 6769
+  "text_chars": 6768
  },
  {
   "control_number": "37871",
@@ -6508,10 +6419,11 @@
     136
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cb0e46619fe69d28"
   },
   "listed": 11,
-  "text_chars": 11613
+  "text_chars": 11612
  },
  {
   "control_number": "37872",
@@ -6544,10 +6456,11 @@
     136
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cb0e46619fe69d28"
   },
   "listed": 11,
-  "text_chars": 11613
+  "text_chars": 11612
  },
  {
   "control_number": "37885",
@@ -6575,10 +6488,11 @@
     136
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cb0e46619fe69d28"
   },
   "listed": 6,
-  "text_chars": 11613
+  "text_chars": 11612
  },
  {
   "control_number": "38087",
@@ -6612,10 +6526,11 @@
     114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3a8149380b7c1a18"
   },
   "listed": 12,
-  "text_chars": 8783
+  "text_chars": 8782
  },
  {
   "control_number": "38088",
@@ -6642,10 +6557,11 @@
     114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "bb3e20a657951413"
   },
   "listed": 5,
-  "text_chars": 5903
+  "text_chars": 5902
  },
  {
   "control_number": "38478",
@@ -6691,7 +6607,8 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9eb3957e6d78bd8e"
   },
   "listed": 22,
   "text_chars": 16000
@@ -6720,10 +6637,11 @@
     114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "44196a148752c4ad"
   },
   "listed": 4,
-  "text_chars": 9502
+  "text_chars": 9501
  },
  {
   "control_number": "38544",
@@ -6751,7 +6669,8 @@
     87
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e40d7f0fefedf921"
   },
   "listed": 7,
   "text_chars": 3605
@@ -6783,7 +6702,8 @@
     87
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5dd14afb7b61d9cf"
   },
   "listed": 7,
   "text_chars": 7660
@@ -6805,8 +6725,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=86",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 85",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 85",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 85",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 85",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6814,10 +6734,11 @@
     87
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "603a24144f51faff"
   },
   "listed": 6,
-  "text_chars": 11883
+  "text_chars": 11882
  },
  {
   "control_number": "38551",
@@ -6844,7 +6765,8 @@
     87
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e884e568d127682d"
   },
   "listed": 6,
   "text_chars": 5591
@@ -6869,8 +6791,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=118",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 117",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 117",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 117",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 117",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6878,10 +6800,11 @@
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9efb0789f6663631"
   },
   "listed": 9,
-  "text_chars": 11207
+  "text_chars": 11206
  },
  {
   "control_number": "38645",
@@ -6900,18 +6823,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=118",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 117",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 117",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 117",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 117",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     118
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "31fc032562a08b65"
   },
   "listed": 6,
-  "text_chars": 5610
+  "text_chars": 5609
  },
  {
   "control_number": "38734",
@@ -6931,8 +6855,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=118",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 117",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 117",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 117",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 117",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6941,7 +6865,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e952ee96d27de62c"
   },
   "listed": 7,
   "text_chars": 16000
@@ -6971,7 +6896,8 @@
     126
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2c4f2a9ddd72bd0d"
   },
   "listed": 6,
   "text_chars": 4304
@@ -7006,7 +6932,8 @@
     83
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0890c8e21f6fc2d0"
   },
   "listed": 11,
   "text_chars": 1809
@@ -7036,7 +6963,8 @@
     126
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "882253ecdaf0b4f7"
   },
   "listed": 6,
   "text_chars": 2347
@@ -7046,32 +6974,12 @@
   "title": "System Administrator",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "CIS9A",
-   "CS41",
-   "CS43",
-   "CS70",
-   "CS9A"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=114",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 113",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 113",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    114,
-    115,
-    116,
-    117
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "38941",
@@ -7119,10 +7027,11 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "557139cd63a18860"
   },
   "listed": 26,
-  "text_chars": 10104
+  "text_chars": 10103
  },
  {
   "control_number": "38945",
@@ -7164,7 +7073,8 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fb9ddad9f8ba6d49"
   },
   "listed": 21,
   "text_chars": 3953
@@ -7191,7 +7101,8 @@
     114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4d13fe4d1df58f45"
   },
   "listed": 3,
   "text_chars": 2660
@@ -7225,7 +7136,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ef667f5ceba2ddf1"
   },
   "listed": 8,
   "text_chars": 16000
@@ -7247,8 +7159,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7256,10 +7168,11 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "aaa9434283e9da31"
   },
   "listed": 8,
-  "text_chars": 10525
+  "text_chars": 10524
  },
  {
   "control_number": "39671",
@@ -7306,10 +7219,11 @@
     89
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b890d4c36d9ca530"
   },
   "listed": 25,
-  "text_chars": 12834
+  "text_chars": 12833
  },
  {
   "control_number": "39680",
@@ -7356,7 +7270,8 @@
     169
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "348a06bdba31c402"
   },
   "listed": 26,
   "text_chars": 3003
@@ -7393,7 +7308,8 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4168983817308004"
   },
   "listed": 11,
   "text_chars": 16000
@@ -7425,7 +7341,8 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3f015e09c901b1c2"
   },
   "listed": 5,
   "text_chars": 16000
@@ -7446,50 +7363,31 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=92",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 91",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 91",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 91",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 91",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2c299bd20d31facb"
   },
   "listed": 6,
-  "text_chars": 5789
+  "text_chars": 5788
  },
  {
   "control_number": "39976",
   "title": "Architecture",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.727,
-  "codes_found": [
-   "ARC10",
-   "ARC11",
-   "ARC20",
-   "ARC21",
-   "ARC30",
-   "ARC31",
-   "ARC32",
-   "ARC40"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=214",
-   "title": "SMC CATALOG 2026–2027  | Course Descriptions 213",
-   "h1": "SMC CATALOG 2026–2027  | Course Descriptions 213",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    214
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 5260
+  "text_chars": 0
  },
  {
   "control_number": "39977",
@@ -7518,10 +7416,11 @@
     158
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "85f48b3089d3c51e"
   },
   "listed": 7,
-  "text_chars": 11052
+  "text_chars": 11051
  },
  {
   "control_number": "40423",
@@ -7551,7 +7450,8 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "35464c081197997a"
   },
   "listed": 9,
   "text_chars": 6302
@@ -7577,7 +7477,8 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "35464c081197997a"
   },
   "listed": 2,
   "text_chars": 6302
@@ -7606,7 +7507,8 @@
     138
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "eae43c402e99899a"
   },
   "listed": 5,
   "text_chars": 4088
@@ -7635,7 +7537,8 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "35464c081197997a"
   },
   "listed": 5,
   "text_chars": 6302
@@ -7667,7 +7570,8 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8294dfe739a62536"
   },
   "listed": 8,
   "text_chars": 4805
@@ -7696,7 +7600,8 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "82f15d8f6c58c334"
   },
   "listed": 4,
   "text_chars": 8183
@@ -7727,7 +7632,8 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8b40435a70b68815"
   },
   "listed": 7,
   "text_chars": 5147
@@ -7764,7 +7670,8 @@
     122
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0b496c82b97c8dcd"
   },
   "listed": 13,
   "text_chars": 3993
@@ -7808,10 +7715,11 @@
     122
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "04828f75d394f711"
   },
   "listed": 19,
-  "text_chars": 10910
+  "text_chars": 10909
  },
  {
   "control_number": "41083",
@@ -7852,7 +7760,8 @@
     118
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "94fc73085a3497a4"
   },
   "listed": 17,
   "text_chars": 16000
@@ -7892,10 +7801,11 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c27942d51ca72bd1"
   },
   "listed": 17,
-  "text_chars": 11098
+  "text_chars": 11097
  },
  {
   "control_number": "41362",
@@ -7921,7 +7831,8 @@
     85
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2aae9728f0156892"
   },
   "listed": 5,
   "text_chars": 3706
@@ -7958,7 +7869,8 @@
     104
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "bd5cb380626aee98"
   },
   "listed": 10,
   "text_chars": 16000
@@ -7981,18 +7893,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=114",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 113",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 113",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 113",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 113",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c8420037f070362b"
   },
   "listed": 7,
-  "text_chars": 4459
+  "text_chars": 4458
  },
  {
   "control_number": "41632",
@@ -8021,10 +7934,11 @@
     132
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f6b0d6782246036d"
   },
   "listed": 6,
-  "text_chars": 14674
+  "text_chars": 14673
  },
  {
   "control_number": "41781",
@@ -8056,7 +7970,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0e4bd72ac02e5b45"
   },
   "listed": 9,
   "text_chars": 16000
@@ -8077,8 +7992,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8086,10 +8001,11 @@
     103
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "65fadb4decf065aa"
   },
   "listed": 5,
-  "text_chars": 11160
+  "text_chars": 11159
  },
  {
   "control_number": "41783",
@@ -8114,7 +8030,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "14e6804af986faf4"
   },
   "listed": 4,
   "text_chars": 1401
@@ -8142,7 +8059,8 @@
     112
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e161154850272426"
   },
   "listed": 4,
   "text_chars": 3257
@@ -8177,7 +8095,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "10e81a4d1eeee493"
   },
   "listed": 8,
   "text_chars": 16000
@@ -8210,7 +8129,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7938f1503b297b43"
   },
   "listed": 9,
   "text_chars": 2821
@@ -8241,7 +8161,8 @@
     122
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cad252c02e8ad397"
   },
   "listed": 7,
   "text_chars": 2098
@@ -8295,7 +8216,8 @@
     172
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "40c891ff3d5353db"
   },
   "listed": 27,
   "text_chars": 16000
@@ -8323,7 +8245,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e709436780380a8c"
   },
   "listed": 4,
   "text_chars": 5771
@@ -8341,18 +8264,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=154",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 153",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 153",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 153",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 153",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     154
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9cb86a80a550ac07"
   },
   "listed": 2,
-  "text_chars": 6238
+  "text_chars": 6237
  },
  {
   "control_number": "41945",
@@ -8367,18 +8291,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=154",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 153",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 153",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 153",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 153",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     154
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9cb86a80a550ac07"
   },
   "listed": 2,
-  "text_chars": 6238
+  "text_chars": 6237
  },
  {
   "control_number": "42173",
@@ -8395,8 +8320,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=112",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 111",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 111",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8404,10 +8329,11 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "aaa9434283e9da31"
   },
   "listed": 5,
-  "text_chars": 10525
+  "text_chars": 10524
  },
  {
   "control_number": "42333",
@@ -8436,7 +8362,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9b78ef68e1495363"
   },
   "listed": 5,
   "text_chars": 16000
@@ -8458,8 +8385,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=150",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 149",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 149",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 149",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 149",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8467,10 +8394,11 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "91967ab63c36fa46"
   },
   "listed": 6,
-  "text_chars": 11182
+  "text_chars": 11181
  },
  {
   "control_number": "42454",
@@ -8519,7 +8447,8 @@
     150
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d4f7933ff2749cd1"
   },
   "listed": 25,
   "text_chars": 16000
@@ -8551,8 +8480,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=124",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 123",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 123",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8560,10 +8489,11 @@
     125
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5f8f2340d68bb357"
   },
   "listed": 16,
-  "text_chars": 12066
+  "text_chars": 12065
  },
  {
   "control_number": "42586",
@@ -8595,18 +8525,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=168",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 167",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 167",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 167",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 167",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e385c6f37716ad9e"
   },
   "listed": 19,
-  "text_chars": 5628
+  "text_chars": 5627
  },
  {
   "control_number": "42587",
@@ -8638,18 +8569,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=168",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 167",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 167",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 167",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 167",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e385c6f37716ad9e"
   },
   "listed": 19,
-  "text_chars": 5628
+  "text_chars": 5627
  },
  {
   "control_number": "43001",
@@ -8699,7 +8631,8 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "60723a77cfd83e0c"
   },
   "listed": 26,
   "text_chars": 16000
@@ -8729,10 +8662,11 @@
     180
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d550b9e87deb4a32"
   },
   "listed": 5,
-  "text_chars": 7966
+  "text_chars": 7965
  },
  {
   "control_number": "43352",
@@ -8758,7 +8692,8 @@
     107
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "66375831f85d63d8"
   },
   "listed": 4,
   "text_chars": 7951
@@ -8802,10 +8737,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a5d7bccb40a68e39"
   },
   "listed": 19,
-  "text_chars": 8286
+  "text_chars": 8285
  },
  {
   "control_number": "43550",
@@ -8829,10 +8765,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0012361c39bb12dc"
   },
   "listed": 4,
-  "text_chars": 5660
+  "text_chars": 5659
  },
  {
   "control_number": "43551",
@@ -8858,7 +8795,8 @@
     182
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1b7ee725569f01e5"
   },
   "listed": 5,
   "text_chars": 2448
@@ -8879,8 +8817,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=182",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 181",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 181",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 181",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 181",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8888,10 +8826,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "48bc4c2eab7b4076"
   },
   "listed": 5,
-  "text_chars": 12149
+  "text_chars": 12147
  },
  {
   "control_number": "43561",
@@ -8919,7 +8858,8 @@
     83
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b043fce40ce47d58"
   },
   "listed": 7,
   "text_chars": 4499
@@ -8945,7 +8885,8 @@
     172
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "08d255657dbf0381"
   },
   "listed": 2,
   "text_chars": 3392
@@ -8974,7 +8915,8 @@
     172
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "eaa3ca5ebf052178"
   },
   "listed": 5,
   "text_chars": 868
@@ -9024,10 +8966,11 @@
     122
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "46199e5dd0d8b9fb"
   },
   "listed": 25,
-  "text_chars": 11636
+  "text_chars": 11635
  },
  {
   "control_number": "43767",
@@ -9074,10 +9017,11 @@
     122
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "04828f75d394f711"
   },
   "listed": 25,
-  "text_chars": 10910
+  "text_chars": 10909
  },
  {
   "control_number": "43769",
@@ -9094,8 +9038,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 101",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9103,10 +9047,11 @@
     103
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "65fadb4decf065aa"
   },
   "listed": 4,
-  "text_chars": 11160
+  "text_chars": 11159
  },
  {
   "control_number": "43914",
@@ -9131,7 +9076,8 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ea9753211f963bb9"
   },
   "listed": 4,
   "text_chars": 1763
@@ -9153,8 +9099,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=100",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 99",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 99",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 99",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 99",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9162,10 +9108,11 @@
     101
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "16cf29027217914b"
   },
   "listed": 6,
-  "text_chars": 11743
+  "text_chars": 11742
  },
  {
   "control_number": "43982",
@@ -9188,8 +9135,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=100",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 99",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 99",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 99",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 99",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9197,46 +9144,23 @@
     101
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "16cf29027217914b"
   },
   "listed": 10,
-  "text_chars": 11743
+  "text_chars": 11742
  },
  {
   "control_number": "43986",
   "title": "Introduction to Logistics and Supply Chain Management",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "BUS1",
-   "BUS53",
-   "BUS55",
-   "BUS57",
-   "BUS80",
-   "BUS81",
-   "BUS82",
-   "BUS83",
-   "BUS87"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=102",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 101",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    102,
-    103,
-    104,
-    105
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "44004",
@@ -9264,18 +9188,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=90",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 89",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 89",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 89",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 89",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     90
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b3c5a0fd908f0d08"
   },
   "listed": 15,
-  "text_chars": 5921
+  "text_chars": 5920
  },
  {
   "control_number": "44519",
@@ -9321,10 +9246,11 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "70160594b810eb32"
   },
   "listed": 25,
-  "text_chars": 5015
+  "text_chars": 5014
  },
  {
   "control_number": "44528",
@@ -9376,8 +9302,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=124",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 123",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 123",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 123",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9385,10 +9311,11 @@
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5f8f2340d68bb357"
   },
   "listed": 39,
-  "text_chars": 12066
+  "text_chars": 12065
  },
  {
   "control_number": "44601",
@@ -9405,18 +9332,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=198",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 197",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 197",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 197",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 197",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     198
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "81100368ee10d9dd"
   },
   "listed": 4,
-  "text_chars": 5292
+  "text_chars": 5291
  },
  {
   "control_number": "44634",
@@ -9442,7 +9370,8 @@
     190
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "14e5c5b5ea077844"
   },
   "listed": 5,
   "text_chars": 2804
@@ -9472,7 +9401,8 @@
     172
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8fee1099e4bccc15"
   },
   "listed": 6,
   "text_chars": 1920
@@ -9482,37 +9412,12 @@
   "title": "Biotechnology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.923,
-  "codes_found": [
-   "BIOL30",
-   "BIOL31",
-   "BIOL32",
-   "BIOL33",
-   "BIOL34",
-   "BIOL35",
-   "BIOL36",
-   "BIOL90B",
-   "CHEM11",
-   "ENGLC1000",
-   "ENGLC1001",
-   "MCRBIO1"
-  ],
-  "source": {
-   "url": "https://catalog.smc.edu/current/catalog.pdf#page=99",
-   "title": "dynamic sector. The stackable Biotechnology Certificate and AS Degree",
-   "h1": "dynamic sector. The stackable Biotechnology Certificate and AS Degree",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    99,
-    100
-   ],
-   "extractor": "pypdf",
-   "heading_named": true
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 10594
+  "text_chars": 0
  },
  {
   "control_number": "45094",
@@ -9551,7 +9456,8 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7429c353833f9e28"
   },
   "listed": 6,
   "text_chars": 3561
@@ -9578,10 +9484,11 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "12f5b487377b3cc1"
   },
   "listed": 2,
-  "text_chars": 12549
+  "text_chars": 12548
  },
  {
   "control_number": "45163",
@@ -9606,10 +9513,11 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "62506e0a3a55de94"
   },
   "listed": 2,
-  "text_chars": 13399
+  "text_chars": 13398
  },
  {
   "control_number": "45166",
@@ -9633,10 +9541,11 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "12f5b487377b3cc1"
   },
   "listed": 2,
-  "text_chars": 12549
+  "text_chars": 12548
  },
  {
   "control_number": "45167",
@@ -9660,10 +9569,11 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "13042564ba2a53f3"
   },
   "listed": 2,
-  "text_chars": 9226
+  "text_chars": 9225
  },
  {
   "control_number": "45168",
@@ -9687,10 +9597,11 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "12f5b487377b3cc1"
   },
   "listed": 2,
-  "text_chars": 12549
+  "text_chars": 12548
  },
  {
   "control_number": "45449",
@@ -9722,7 +9633,8 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "380eb479f2b43606"
   },
   "listed": 11,
   "text_chars": 5856
@@ -9760,10 +9672,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "10efe2f904c74186"
   },
   "listed": 13,
-  "text_chars": 8226
+  "text_chars": 8225
  },
  {
   "control_number": "45572",
@@ -9794,7 +9707,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "de93b8eee0aeb493"
   },
   "listed": 7,
   "text_chars": 16000
@@ -9834,7 +9748,8 @@
     147
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b77d8f0f7fa3f0d1"
   },
   "listed": 15,
   "text_chars": 5101
@@ -9873,7 +9788,8 @@
     147
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "530cc6aa76afa79a"
   },
   "listed": 15,
   "text_chars": 4776
@@ -9901,10 +9817,11 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "286c152b06548200"
   },
   "listed": 3,
-  "text_chars": 6888
+  "text_chars": 6887
  },
  {
   "control_number": "45811",
@@ -9933,7 +9850,8 @@
     163
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0969c867084c02fa"
   },
   "listed": 8,
   "text_chars": 6420
@@ -9965,7 +9883,8 @@
     163
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0969c867084c02fa"
   },
   "listed": 8,
   "text_chars": 6420
@@ -9993,7 +9912,8 @@
     163
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0a605940b72ef417"
   },
   "listed": 4,
   "text_chars": 4778
@@ -10015,8 +9935,8 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=162",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 161",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 161",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 161",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 161",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -10024,10 +9944,11 @@
     163
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9e724669002e3a5b"
   },
   "listed": 6,
-  "text_chars": 12215
+  "text_chars": 12214
  },
  {
   "control_number": "45815",
@@ -10054,7 +9975,8 @@
     163
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "734a52ae1bc8b093"
   },
   "listed": 6,
   "text_chars": 3517
@@ -10111,10 +10033,11 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9a021da4522535b5"
   },
   "listed": 42,
-  "text_chars": 6149
+  "text_chars": 6148
  },
  {
   "control_number": "45952",
@@ -10135,18 +10058,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=158",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 157",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 157",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 157",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 157",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     158
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ec08929d33cfb0c2"
   },
   "listed": 8,
-  "text_chars": 5237
+  "text_chars": 5236
  },
  {
   "control_number": "46135",
@@ -10170,7 +10094,8 @@
     105
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "117563a35a49b2e9"
   },
   "listed": 3,
   "text_chars": 5310
@@ -10213,10 +10138,11 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7d0c886c0d6d3b2a"
   },
   "listed": 17,
-  "text_chars": 12567
+  "text_chars": 12566
  },
  {
   "control_number": "46191",
@@ -10240,7 +10166,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1680c3db612e9175"
   },
   "listed": 3,
   "text_chars": 5591
@@ -10276,7 +10203,8 @@
     185
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4bfc5d214b1a7519"
   },
   "listed": 12,
   "text_chars": 4649
@@ -10324,7 +10252,8 @@
     196
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e5875fb2943debf9"
   },
   "listed": 22,
   "text_chars": 16000
@@ -10344,18 +10273,19 @@
   ],
   "source": {
    "url": "https://catalog.smc.edu/current/catalog.pdf#page=190",
-   "title": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 189",
-   "h1": "SMC CATALOG 2026–2027  | Degrees, Certificates, and Transfer Preparation Information 189",
+   "title": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 189",
+   "h1": "SMC CATALOG 2026–2027 | Degrees, Certificates, and Transfer Preparation Information 189",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     190
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "90344b74888672bd"
   },
   "listed": 4,
-  "text_chars": 6373
+  "text_chars": 6372
  },
  {
   "control_number": "46470",
@@ -10379,7 +10309,8 @@
     190
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "af45aa4ebf4f170a"
   },
   "listed": 3,
   "text_chars": 4434

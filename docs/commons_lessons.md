@@ -1,7 +1,7 @@
 ---
 title: "The Commons — lessons"
 date: 2026-10-18
-updated: 2026-11-19
+updated: 2026-11-20
 tags: [lessons, commons, program-requirements, cer-procedures, skyview, common-cr-reference]
 artifacts:
   - commons_progress.js
@@ -412,3 +412,55 @@ at `#cr-reference/names`. A second S687 session holds the data write into `cr_re
   "2 Rename batch" is curator work, not Sam's.
 - The ranking COBIx proposed for Needs you was taken; the conductor-model flip and the Malone ask stay off the page
   (`d-commons-needs-you-ranking-s687`).
+
+## The plain session of 2026-11-20 (SkyShrike, Sam's session): the Commons order mock and the outline fixes
+
+**What landed.** Sam opened with his work order of 2026-11-20 (COBIx's relay on #3584, comment 7038766315, and page
+fixes found only in his own copy). The session read the order against the code and replied on #3584 with the gaps and
+shortcuts, then built a mock in the Commons look that Sam locked (*"yes, build it!"*):
+https://claude.ai/artifact/68ERWyrwiApcF3QM1KuYM2 (version 16; source, scripts and a version-by-version README with his
+words in `CPLBrain/04-projects/cpl-initiative/commons-order-mock/`). #3605 (`161a77cd`) shipped the first slice: the 12
+still-taught courses filed in `kb/reference/blocked_catalog_hunt.json`, `kb/_blocked_catalogs.py` hunting a college only
+while it has one (4 on the to-do; El Camino and Fullerton set aside), Needs you naming its groups for their work, one
+count on both pages (the typed-in 140 and 13 gone), and catalog addresses opening in a new tab with Sam's line. Guard
+`tests/commons_outline_fixes.test.js`, with four suites updated.
+
+**Sam's rulings.** *No longer offered* (`r-no-longer-offered-sam-2026-11-20`) and hand it over in place
+(`r-hand-over-in-place-sam-2026-11-20`); his words are in `docs/reference/sam_rulings.md` and the two vault braindumps
+of the day. Credit recommendations joining the curation order was already recorded by S689
+(`r-curation-order-adds-crs-sam-2026-11-20`). Two calls he delegated (*"want you to go with your recommendation"*):
+the Courses bot owns step b, and a one-college M-ID card counts as done, flagged.
+
+**The first-pass M-ID census (rough; the vault folder's two scripts).** On the counted scope of 15,720 cards (the
+Commons counts 15,911, so one definition is owed): 10,412 with no SLO or objective text from any local course; 635 with
+no description (455 noncredit); 154 with no published list of local courses; 3,440 one-college cards; 5,305 with a
+description and outcomes. 893 cards carry credit for prior learning (an exhibit or credit recommendation points to them,
+`kb/coci_articulations.json` read raw); 407 of those have no outcomes, and six of the eight most-linked have no
+published local courses (COMM M1037 Group Communication, 67 links), so that code fix comes first.
+
+**The no-longer-offered test on the two factors on hand** (absent from `kb/reference/cb_course_basic_fall2025.csv`,
+and on no Active program): 37,911 of 139,835 state-listed courses are absent from Fall 2025; 12,713 of 73,230 courses
+on counted cards meet both; 1,124 cards have no course still offered, and setting them aside takes no-outcomes to 9,317
+and no-description to 117. North Orange Continuing Education: 1,156 of 1,969 courses; its waiting cards fall from 744 to
+306. Nothing is set aside: the rule waits on the added term files and the catalog check.
+
+**Course outline access by college** (`program_source_registry`, live read): 18 public and printing SLOs, 17 public and
+unchecked, 14 public with no SLOs, 59 with no public site found, 6 behind a sign-in, 3 that refuse our reader, 1 not
+reached. Outcomes are on file for 29 colleges, and 3 of the 69 out of reach already have them (Coastline, Golden West,
+Orange Coast), so the registry is stale for those three.
+
+**Lessons.**
+- **Check the saved reads before advising that a source is blocked.** The session first told Sam the bot-checked
+  catalog sites should wait, on a test made from its own cloud address. The committed captures showed our named reader
+  reads North Orange and Southwestern with no challenge (runs 43342034608 and 44529722751), and since #3536 it stops at
+  a challenge. KB note: `methodology-check-the-saved-reads-before-calling-a-source-blocked`.
+- **Rank collection by the cards that carry credit.** Sam read the list as ranked by exhibits with credit
+  recommendations before it was; once it was, the top of the list changed and a code fix (published local course lists)
+  moved ahead of any collection. Section added to `methodology-rank-cleanup-by-downstream-impact`.
+- **A figure read from one field undercounts the gap and overcounts the scope.** An earlier 5,750 cards with no
+  description read the card's own field and counted flagged cards; reading every local course and leaving flagged cards
+  out gave 635.
+- **A cpl_memory summary is at most 400 characters**, and one longer row refuses the whole insert; assert lengths with
+  a script before applying.
+- **Unverified:** the Data Mart did not open from the session (a certificate error, then HTTP 503), and
+  `kb/_fetch_program_course_files.py` has never succeeded, so whether it holds past term course files is unknown.

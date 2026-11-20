@@ -5,11 +5,11 @@
  "title": "Studio Arts",
  "award": "A.A- T Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/studio-arts/aa-studio-arts-transfer/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6705,
+  "input_tokens": 8318,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6705,
-    "output_tokens": 2788,
+    "input_tokens": 8318,
+    "output_tokens": 2777,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,55 +30,71 @@
     "model": null
    }
   ],
-  "output_tokens": 2788,
+  "output_tokens": 2777,
   "output_tokens_details": {
-   "thinking_tokens": 721
+   "thinking_tokens": 655
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08258,
- "ms": 31069,
- "seconds": 31.7,
+ "cost_usd": 0.08881,
+ "ms": 22195,
+ "seconds": 22.8,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 24,
    "listed": 24,
-   "share": 0.708,
-   "missing": [
-    "AHIS11",
-    "AHIS12",
-    "AHIS12H",
-    "AHIS4",
-    "AHIS5",
-    "AHIS6",
-    "AHIS9"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTH11",
+     "listed": "AHIS11",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH12",
+     "listed": "AHIS12",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH12H",
+     "listed": "AHIS12H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH6",
+     "listed": "AHIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH9",
+     "listed": "AHIS9",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHIS4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHIS5",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
-   "codes": [
-    "ARTH11",
-    "ARTH12",
-    "ARTH12H",
-    "ARTH6",
-    "ARTH9",
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
-   "flagged": [
-    "ARTH11",
-    "ARTH12",
-    "ARTH12H",
-    "ARTH6",
-    "ARTH9",
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -92,7 +108,31 @@
     24.0,
     24.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     58.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     2.0,
+     2.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -108,6 +148,14 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -119,12 +167,26 @@
     "max": 24
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Be prepared to transfer to the California State University system or other public and private colleges and universities to complete Bachelor of Arts or Bachelor of Fine Arts in Art, Studio Art, Fine Art, or Visual Art degrees.",
     "Be able to apply visual arts concepts that are basic to many forms and fields of art and design in visual, oral, and written communication.",
     "Be able to analyze historical, contemporary, peer, and personal visual artwork that range in modes of artistic expression."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -330,42 +392,42 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "AHIS 11",
-    "why": "not in text; catalog prints ARTH 11 instead"
-   },
-   {
-    "code": "AHIS 12",
-    "why": "not in text; catalog prints ARTH 12 instead"
-   },
-   {
-    "code": "AHIS 12H",
-    "why": "not in text; catalog prints ARTH 12H instead"
-   },
-   {
     "code": "AHIS 4",
-    "why": "not in text; catalog prints ARTH C1100 in List A"
+    "why": "not in the text; catalog prints ARTH C1100 in its place"
    },
    {
     "code": "AHIS 5",
-    "why": "not in text; catalog prints ARTH C1200 in Core"
+    "why": "not in the text; catalog prints ARTH C1200 in its place"
    },
    {
     "code": "AHIS 6",
-    "why": "not in text; catalog prints ARTH 6 instead"
+    "why": "not in the text; catalog prints ARTH 6"
    },
    {
     "code": "AHIS 9",
-    "why": "not in text; catalog prints ARTH 9 instead"
+    "why": "not in the text; catalog prints ARTH 9"
+   },
+   {
+    "code": "AHIS 11",
+    "why": "not in the text; catalog prints ARTH 11"
+   },
+   {
+    "code": "AHIS 12",
+    "why": "not in the text; catalog prints ARTH 12"
+   },
+   {
+    "code": "AHIS 12H",
+    "why": "not in the text; catalog prints ARTH 12H"
    }
   ],
   "notes": [
-   "The catalog prints no units beside individual courses; only block totals (Core 12, List A 3, List B 9) and Total Units for Major 24 are printed, so course units are null.",
-   "Closed list uses AHIS prefixes for art history courses while the catalog prints ARTH (and ARTH C1100/C1200 common-course numbers); ARTH codes without a closed-list match are marked catalog_addition. Reviewer should check whether AHIS and ARTH are the same courses renumbered.",
-   "List B: choose three courses with no more than one from any one of the six curricular areas (Ceramics: ARTS 30A, ARTS 33; Color: ARTD 21; Drawing: ARTD 15B, ARTD 17A; Painting: ARTD 25A; Printmaking: ARTD 43A, ARTD 44A; Sculpture: ARTS 40A, ARTS 41A). Recorded as one block; the per-area limit is not captured in the structure.",
-   "Overview text says the major is 'at least 18 units' while the table states Total Units for Major 24; total_units records the 24 printed for the major.",
-   "Outcomes are the Program Learning Outcomes from the page's outcomes tab for this program; the tab also links to SLOs not included in the text.",
-   "Footnote: courses may be double-counted for the major and Cal-GETC (Cal-GETC 34 units, total 60)."
+   "The catalog prints no units beside individual courses; only block totals (Core 12, List A 3, List B 9) are printed, so course units are null.",
+   "List B: choose three courses with no more than one from any one of the six curricular areas (Ceramics: ARTS 30A, ARTS 33; Color: ARTD 21; Drawing: ARTD 15B, ARTD 17A; Painting: ARTD 25A; Printmaking: ARTD 43A, ARTD 44A; Sculpture: ARTS 40A, ARTS 41A). Recorded as one choose_courses block.",
+   "Art history courses appear under subject ARTH (and C-ID codes ARTH C1100/C1200) in the catalog while the closed list stores AHIS codes; ARTH codes without a closed-list match marked as catalog additions. Closed-list ARTHC1200H, ARTHC1100H, ARTH6H, ARTH11H, ARTD20 matched despite spacing differences.",
+   "Description says a major of at least 18 units; the page prints Total Units for Major 24, recorded as total_units. Degree total 60 and Cal-GETC 34 printed; 24+34=58, remaining units not specified as electives on the page. Footnote: courses may be double-counted for the major and Cal-GETC.",
+   "Outcomes taken from the page's Program Learning Outcomes tab for this program."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

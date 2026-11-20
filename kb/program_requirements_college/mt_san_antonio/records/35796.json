@@ -5,11 +5,11 @@
  "title": "World Languages and Global Studies",
  "award": "A.A. Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/world-languages-global-studies/world-languages-global-studies-aa-degree/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10021,
+  "input_tokens": 11634,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10021,
-    "output_tokens": 8143,
+    "input_tokens": 11634,
+    "output_tokens": 8114,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,49 +30,63 @@
     "model": null
    }
   ],
-  "output_tokens": 8143,
+  "output_tokens": 8114,
   "output_tokens_details": {
-   "thinking_tokens": 1722
+   "thinking_tokens": 1601
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.20294,
- "ms": 57470,
- "seconds": 57.8,
+ "cost_usd": 0.20882,
+ "ms": 58230,
+ "seconds": 58.9,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 89,
+   "placed": 94,
    "listed": 94,
-   "share": 0.947,
-   "missing": [
-    "AHIS12",
-    "AHIS12H",
-    "AHIS14",
-    "AHIS15",
-    "AHIS9"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTH12",
+     "listed": "AHIS12",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH12H",
+     "listed": "AHIS12H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH14",
+     "listed": "AHIS14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH15",
+     "listed": "AHIS15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH9",
+     "listed": "AHIS9",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 1,
    "codes": [
-    "ARTH12",
-    "ARTH12H",
-    "ARTH14",
-    "ARTH15",
-    "ARTH9",
     "SPAN30"
    ],
    "flagged": [
-    "ARTH12",
-    "ARTH12H",
-    "ARTH14",
-    "ARTH15",
-    "ARTH9",
     "SPAN30"
    ],
    "pass": true
@@ -88,6 +102,7 @@
     19.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -104,6 +119,17 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -115,20 +141,40 @@
     "max": 19
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate proficiency in at least one language other than English",
-    "Demonstrate understanding of at least one culture other than their native on",
+    "Demonstrate understanding of at least one culture other than their native one",
     "Demonstrate awareness of the interconnected nature of language and culture",
     "Recognize cultural expressions across disciplines"
+   ],
+   "careers": [
+    "International Business",
+    "Government",
+    "Teaching",
+    "Travel and Arts",
+    "Journalism"
    ]
   },
   "blocks": [
    {
-    "name": "Language Core Courses - Option 1: Chinese",
+    "name": "Option 1: Choose sixteen units of sequential courses in one language. (Chinese)",
     "rule": "all",
     "minimum": null,
-    "option_group": "Language Core",
+    "option_group": "Language Core Courses",
     "stated": {
      "min": 16,
      "max": 16
@@ -165,10 +211,10 @@
     ]
    },
    {
-    "name": "Language Core Courses - Option 1: French",
+    "name": "Option 1: Choose sixteen units of sequential courses in one language. (French)",
     "rule": "all",
     "minimum": null,
-    "option_group": "Language Core",
+    "option_group": "Language Core Courses",
     "stated": {
      "min": 16,
      "max": 16
@@ -205,10 +251,10 @@
     ]
    },
    {
-    "name": "Language Core Courses - Option 1: Italian",
+    "name": "Option 1: Choose sixteen units of sequential courses in one language. (Italian)",
     "rule": "all",
     "minimum": null,
-    "option_group": "Language Core",
+    "option_group": "Language Core Courses",
     "stated": {
      "min": 16,
      "max": 16
@@ -245,10 +291,10 @@
     ]
    },
    {
-    "name": "Language Core Courses - Option 1: Japanese",
+    "name": "Option 1: Choose sixteen units of sequential courses in one language. (Japanese)",
     "rule": "all",
     "minimum": null,
-    "option_group": "Language Core",
+    "option_group": "Language Core Courses",
     "stated": {
      "min": 16,
      "max": 16
@@ -285,10 +331,10 @@
     ]
    },
    {
-    "name": "Language Core Courses - Option 1: Korean",
+    "name": "Option 1: Choose sixteen units of sequential courses in one language. (Korean)",
     "rule": "all",
     "minimum": null,
-    "option_group": "Language Core",
+    "option_group": "Language Core Courses",
     "stated": {
      "min": 16,
      "max": 16
@@ -325,10 +371,10 @@
     ]
    },
    {
-    "name": "Language Core Courses - Option 1: Spanish",
+    "name": "Option 1: Choose sixteen units of sequential courses in one language. (Spanish)",
     "rule": "all",
     "minimum": null,
-    "option_group": "Language Core",
+    "option_group": "Language Core Courses",
     "stated": {
      "min": 16,
      "max": 16
@@ -365,10 +411,10 @@
     ]
    },
    {
-    "name": "Language Core Courses - Option 2: Choose sixteen units in two levels of two different languages from the list above or the following list",
+    "name": "Option 2: Choose sixteen units in two levels of two different languages from the list above or the following list",
     "rule": "choose_units",
     "minimum": 16,
-    "option_group": "Language Core",
+    "option_group": "Language Core Courses",
     "stated": {
      "min": 16,
      "max": 16
@@ -1076,36 +1122,35 @@
   "missing_explained": [
    {
     "code": "AHIS 9",
-    "why": "catalog prints ARTH 9 (same title) instead; recorded as ARTH 9 catalog addition"
+    "why": "catalog prints it as ARTH 9 (History of Asian Art and Architecture), recorded as catalog addition"
    },
    {
     "code": "AHIS 12",
-    "why": "catalog prints ARTH 12 (same title) instead; recorded as ARTH 12 catalog addition"
+    "why": "catalog prints it as ARTH 12, recorded as catalog addition"
    },
    {
     "code": "AHIS 12H",
-    "why": "catalog prints ARTH 12H (same title) instead; recorded as ARTH 12H catalog addition"
+    "why": "catalog prints it as ARTH 12H, recorded as catalog addition"
    },
    {
     "code": "AHIS 14",
-    "why": "catalog prints ARTH 14 (same title) instead; recorded as ARTH 14 catalog addition"
+    "why": "catalog prints it as ARTH 14, recorded as catalog addition"
    },
    {
     "code": "AHIS 15",
-    "why": "catalog prints ARTH 15 (same title) instead; recorded as ARTH 15 catalog addition"
+    "why": "catalog prints it as ARTH 15, recorded as catalog addition"
    }
   ],
   "notes": [
-   "The catalog prints no units beside individual courses, so every course units field is null; only block totals (Language Core 16, tracks 3) and Total Units 19 are printed.",
-   "Outcomes printed twice: in the Overview (where outcome 2 ends 'native one') and in the Program Learning Outcomes tab (where it ends 'native on'). Recorded the Program Learning Outcomes tab version verbatim; reviewer should check the typo.",
-   "Language Core Courses (16 units): Option 1 is sixteen units of sequential courses in one language, recorded as six sequence blocks (Chinese, French, Italian, Japanese, Korean, Spanish) in option_group 'Language Core'; Option 2 is a choose-16-units block in the same group. The 16 printed on the Language Core heading was applied as stated on each option block.",
-   "Option 2 requires two levels of two different languages ('from the list above or the following list'); the language-pairing constraint is not expressible in the block rule.",
-   "Tracks: 'Choose three units within one of the following tracks' recorded as three choose_units 3 blocks in option_group 'Tracks'. Track A has regional subheadings (China and Japan, France, Italy, Germany, Spanish Speaking Countries) kept in one block since the rule applies to the whole track.",
-   "LING 3 appears in both Track A and Track C.",
-   "Catalog prints ARTH 9, 12, 12H, 14, 15 where the closed list has AHIS codes with identical titles; likely a prefix change. SPAN 30 is not in the closed list.",
-   "CUL 107 and R-TV 25 treated as matching closed-list CUL107 and R TV 25 (formatting differences only).",
-   "Degree requires 'General Education coursework' without naming a specific pattern; ge_pattern left null."
+   "The catalog prints no units beside individual courses; all course units are null. Block totals: Language Core Courses 16, tracks 3, Total Units 19.",
+   "Language Core (16 units) offers Option 1 (sixteen units of sequential courses in one language, printed as six four-course sequences separated by OR) or Option 2 (sixteen units in two levels of two different languages from the list above or the following list). Each Option 1 sequence is recorded as its own 'all' block, and Option 2 as a choose_units block, all in option_group 'Language Core Courses'; the printed 16 is recorded as stated on each.",
+   "Students choose three units within one of Tracks A, B or C; each track is recorded as a choose_units block in option_group 'Tracks'. Track A is subdivided by region (For China and Japan; For France; For Italy; For Germany; For Spanish Speaking Countries); all regional courses are kept in one Track A block. LING 3 appears in both Track A and Track C.",
+   "ARTH 9, 12, 12H, 14, 15 match the titles of closed-list AHIS 9, 12, 12H, 14, 15; recorded as printed with catalog_addition true. SPAN 30 (Spanish Composition: Exploring U.S. Latino Topics) is not in the closed list.",
+   "CUL 107 (closed list CUL107) and R-TV 25 (closed list R TV 25) treated as matching closed-list courses despite formatting differences.",
+   "Degree requires 'General Education coursework' without naming a pattern or printing GE units or a degree total; ge_pattern left null.",
+   "Outcomes copied from the overview section; the Outcomes tab prints the same list for the program, with 'native on' (apparent typo) in the second outcome."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8283,
+  "input_tokens": 8317,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8283,
-    "output_tokens": 4004,
+    "input_tokens": 8317,
+    "output_tokens": 4151,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 4004,
+  "output_tokens": 4151,
   "output_tokens_details": {
-   "thinking_tokens": 1137
+   "thinking_tokens": 1242
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.11321,
- "ms": 29293,
- "seconds": 29.7,
+ "cost_usd": 0.11629,
+ "ms": 30527,
+ "seconds": 30.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 19,
    "listed": 20,
-   "share": 0.85,
+   "share": 0.95,
    "missing": [
-    "ARTH105",
-    "ARTH106",
     "FILM100"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ARTH105",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ARTH106",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 22,
+   "count": 20,
    "codes": [
     "ANTH121",
     "ANTH122",
@@ -66,8 +77,6 @@
     "ANTH131",
     "ARTH101",
     "ARTH145",
-    "ARTHC1100",
-    "ARTHC1200",
     "ARTS100",
     "ARTS102",
     "ETHS100",
@@ -90,8 +99,6 @@
     "ANTH131",
     "ARTH101",
     "ARTH145",
-    "ARTHC1100",
-    "ARTHC1200",
     "ARTS100",
     "ARTS102",
     "ETHS100",
@@ -152,7 +159,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts in Art History for Transfer",
+   "section_heading": "DEGREE REQUIREMENTS",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -556,11 +563,11 @@
   "missing_explained": [
    {
     "code": "ARTH 105",
-    "why": "not in the text; catalog prints ARTH-C1100 (likely the common-course renumbering of this course)"
+    "why": "not in the text; catalog prints ARTH-C1100 (Survey of Art from Prehistory to the Medieval Era) instead"
    },
    {
     "code": "ARTH 106",
-    "why": "not in the text; catalog prints ARTH-C1200 (likely the common-course renumbering of this course)"
+    "why": "not in the text; catalog prints ARTH-C1200 (Survey of Art from the Renaissance to Contemporary) instead"
    },
    {
     "code": "FILM 100",
@@ -568,14 +575,15 @@
    }
   ],
   "notes": [
-   "The extracted text begins mid-sentence and prints no page heading; section_heading taken from the degree name in the description (Associate in Arts in Art History for Transfer).",
-   "No units are printed beside individual courses; only block totals (9, 3, 3, 3) and Total Units 18 are printed, so course units are null.",
-   "The first required row is ARTH-C1100 or ARTH-C1200; the block's 9 units imply one of these plus ARTS-110 and ARTH-130.",
-   "List A also allows 'any course not already taken from the required course list above' (i.e., the other of ARTH-C1100/ARTH-C1200).",
-   "List C also allows 'Any course from List A or B not already used'.",
-   "The 60-unit statement is the general ADT requirement, not printed as this award's total; degree_total left null. Cal-GETC is named but no GE units are printed.",
-   "Outcomes are printed under 'PROGRAM LEARNING OUTCOMES' for this program page."
+   "The page prints no units beside individual courses; course units are left null. Block totals (9, 3, 3, 3) and Total Units 18 are as printed.",
+   "ARTH-C1100/ARTH-C1200 appear to be Cal-GETC/C-ID common course numbers replacing closed-list ARTH 105/ARTH 106; recorded as catalog additions.",
+   "List A also allows 'any course not already taken from the required course list above' (e.g., the unused ARTH-C1100/C1200 alternative).",
+   "List C also allows 'Any course from List A or B not already used'; those courses are not repeated in the List C block.",
+   "ARTH-101, ARTH-118, ARTH-180 and PHOT-180 appear in both List A and List C as printed.",
+   "The 60-unit statement is the generic ADT requirement and is not recorded as a degree total; Cal-GETC units are not printed.",
+   "The text begins mid-sentence; the page's top heading is cut off, so section_heading uses the 'DEGREE REQUIREMENTS' heading."
   ]
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }

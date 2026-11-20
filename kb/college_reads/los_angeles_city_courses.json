@@ -1,0 +1,22 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): every course the 2026-27 catalog prints, for kb/hand_filed_catalogs/courses/. The college's own catalog PDF, which opens to the runner (the program capture reads it), printed line for line on every page that names units or hours. No model call.",
+ "college": "Los Angeles City College",
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bUNITS?\\b",
+  "\\bHours?\\b"
+ ],
+ "pdf_page_cap": 1000,
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
+   "answers": [
+    "courses"
+   ]
+  }
+ ]
+}

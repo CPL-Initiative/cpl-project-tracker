@@ -20,7 +20,9 @@ a host the plan names with its reason) on a host the plan's college owns or a
 named outside host, and names a question the plan defines; a form a plan
 submits posts to the page's own site. Run from repo root: python3 tests/college_page_read_test.py
 """
+import contextlib
 import glob
+import io
 import json
 import os
 import re
@@ -274,6 +276,42 @@ check(cpr.unfolded("A\n\n\n  \nB\nC") == "A\n(blank)\nB\nC",
       "a run of blank lines prints once as (blank), short lines stay one a line")
 check(cpr.unfolded("\n".join("x%d" % i for i in range(5)), cap=3).endswith("x2\n(2 more lines)"),
       "a long page prints its first CAPTURE_LINES lines and says how many it left")
+# A filing read (S690, NOCE's Kids College page past 1,400 lines) raises the caps from its plan, within ceilings.
+check(cpr.plan_cap({}, "capture_lines", cpr.CAPTURE_LINES, cpr.CAPTURE_LINES_MAX) == cpr.CAPTURE_LINES,
+      "a plan that names no cap keeps the default")
+check(cpr.plan_cap({"capture_lines": 5000}, "capture_lines", cpr.CAPTURE_LINES, cpr.CAPTURE_LINES_MAX) == 5000,
+      "a plan raises the capture view's line cap")
+check(cpr.plan_cap({"capture_lines": 10}, "capture_lines", cpr.CAPTURE_LINES, cpr.CAPTURE_LINES_MAX) == cpr.CAPTURE_LINES,
+      "a plan never lowers a cap")
+check(cpr.plan_cap({"pdf_page_cap": 10 ** 6}, "pdf_page_cap", cpr.PDF_PAGE_CAP, cpr.PDF_PAGE_CAP_MAX) == cpr.PDF_PAGE_CAP_MAX,
+      "a plan never passes the ceiling")
+check(cpr.plan_cap({"pdf_page_cap": "x"}, "pdf_page_cap", cpr.PDF_PAGE_CAP, cpr.PDF_PAGE_CAP_MAX) == cpr.PDF_PAGE_CAP,
+      "a cap that is not a number keeps the default")
+_many = ["Ironworker %d" % i for i in range(30)]
+check(len(cpr.pdf_pages_to_print(_many, pat)) == cpr.PDF_PAGE_CAP
+      and len(cpr.pdf_pages_to_print(_many, pat, cap=cpr.plan_cap({"pdf_page_cap": 30}, "pdf_page_cap",
+                                                                  cpr.PDF_PAGE_CAP, cpr.PDF_PAGE_CAP_MAX))) == 30,
+      "a raised PDF page cap prints every page that names a keyword")
+_lines = "\n".join("x%d" % i for i in range(1500))
+_buf = io.StringIO()
+with contextlib.redirect_stdout(_buf):
+    cpr.print_page(1, {"url": "https://x.edu/kids/", "kind": "html", "capture_view": True, "text": _lines},
+                   pat, {"capture_lines": 2000})
+check("x1499" in _buf.getvalue() and "more lines" not in _buf.getvalue(),
+      "print_page prints a capture view whole under the plan's raised cap")
+_buf = io.StringIO()
+with contextlib.redirect_stdout(_buf):
+    cpr.print_page(1, {"url": "https://x.edu/kids/", "kind": "html", "capture_view": True, "text": _lines}, pat, {})
+check("(100 more lines)" in _buf.getvalue(), "print_page keeps the default cap for a plan that names none")
+_pdf = {"url": "https://x.edu/catalog.pdf", "kind": "pdf", "pages": ["Ironworker\nACCT 1\nAccounting I\n3 Units"]}
+_buf = io.StringIO()
+with contextlib.redirect_stdout(_buf):
+    cpr.print_page(1, _pdf, pat, {"pdf_unfolded": True})
+check("ACCT 1\nAccounting I\n3 Units" in _buf.getvalue(), "pdf_unfolded prints a PDF page line for line")
+_buf = io.StringIO()
+with contextlib.redirect_stdout(_buf):
+    cpr.print_page(1, _pdf, pat, {})
+check("ACCT 1 · Accounting I · 3 Units" in _buf.getvalue(), "a plan without pdf_unfolded keeps the folded PDF print")
 dp = cpr.dropped_panels(got)
 check([d[0] for d in dp] == ["Search"] and dp[0][1].startswith("Search the catalog"),
       "the capture view lists each tab panel the capture leaves out, with its text")

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T06:24:18Z",
+ "written_at": "2026-11-20T16:28:36Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 15044,
+     "n": 15120,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,23 +34,23 @@
    ],
    "issues": [
     {
-     "n": 2231,
+     "n": 2144,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3007,
+     "n": 3018,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
      "open": "#program-requirements/list/unread"
     },
     {
-     "n": 6,
-     "words": "colleges whose sites block automated reading: find their catalog or course outlines (345 local courses, 12 still taught)",
-     "owner": "Sam (file it in kb/hand_filed_catalogs/outlines)",
+     "n": 4,
+     "words": "colleges where 12 still-taught courses need their course outline from a person",
+     "owner": "Sam (send the PDF to COBIx; a session files it in kb/hand_filed_catalogs/outlines)",
      "carry": "no_procedure",
      "open": "#commons/data"
     }
@@ -70,15 +70,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-19T14:12:35Z",
+    "at": "2026-11-20T08:15:45Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 15044,
-    "failing": 2231,
-    "unread": 3007,
-    "records": 18896,
+    "complete": 15120,
+    "failing": 2144,
+    "unread": 3018,
+    "records": 18885,
     "colleges": 118,
     "outside_active": 1621,
     "confirmed": 32,
@@ -125,16 +125,16 @@
    ],
    "issues": [
     {
-     "n": 36,
+     "n": 16,
      "words": "titles held for a person",
-     "owner": "a curator (a merge would join two issuers 19, the classifier is unsure 12, the classifier's title has a course code left in 5)",
+     "owner": "a curator (a merge would join two issuers 9, the classifier is unsure 7)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 546,
-     "words": "credentials with no Common SUBJ (466 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "n": 563,
+     "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
      "open": "#exhibits/list/nosubj",
@@ -173,7 +173,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-20T06:19:51Z",
+    "at": "2026-11-20T16:27:02Z",
     "every_hours": 24
    },
    "facts": {
@@ -186,14 +186,14 @@
     "confirmed": 1539,
     "records": 3285,
     "records_stamped": 2515,
-    "saved_at": "2026-11-19T16:53:08Z",
+    "saved_at": "2026-11-20T16:27:02Z",
     "fold_at": "2026-11-20T06:19:51Z",
     "map_titles": 5403,
     "unclassified": 29,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 546,
+    "no_subject": 563,
     "review_list": 12,
     "returned_unacknowledged": 0
    },
@@ -390,7 +390,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-19T06:22:43Z",
+    "at": "2026-11-19T11:06:51-08:00",
     "every_hours": null
    },
    "facts": {
@@ -591,9 +591,9 @@
    ],
    "pair": [
     {
-     "n": 63476,
+     "n": 72831,
      "of": null,
-     "words": "outcomes read from 16,629 courses at 24 colleges",
+     "words": "outcomes read from 19,146 courses at 27 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -601,8 +601,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 63476,
-    "courses": 16629,
+    "outcomes": 72831,
+    "courses": 19146,
     "colleges": [
      "allan_hancock",
      "cabrillo",
@@ -615,6 +615,7 @@
      "crafton_hills",
      "cuesta",
      "diablo_valley",
+     "feather_river",
      "golden_west",
      "lake_tahoe_community",
      "las_positas",
@@ -622,18 +623,20 @@
      "mission",
      "modesto_junior",
      "moreno_valley",
+     "mt_san_antonio",
      "norco",
      "orange_coast",
+     "palomar",
      "riverside_city",
      "santa_ana",
      "santiago_canyon",
      "shasta"
     ],
-    "reads": 60
+    "reads": 70
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-19T12:11:10Z",
+    "at": "2026-11-20T11:37:28Z",
     "every_hours": null
    },
    "sources": [
@@ -677,9 +680,9 @@
      {
       "ref": "requirements",
       "title": "Program Requirements",
-      "n": 6,
-      "words": "colleges whose sites block automated reading: find their catalog or course outlines (345 local courses, 12 still taught)",
-      "owner": "Sam (file it in kb/hand_filed_catalogs/outlines)",
+      "n": 4,
+      "words": "colleges where 12 still-taught courses need their course outline from a person",
+      "owner": "Sam (send the PDF to COBIx; a session files it in kb/hand_filed_catalogs/outlines)",
       "open": "#commons/data"
      },
      {
@@ -714,9 +717,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 36,
+      "n": 16,
       "words": "titles held for a person",
-      "owner": "a curator (a merge would join two issuers 19, the classifier is unsure 12, the classifier's title has a course code left in 5)",
+      "owner": "a curator (a merge would join two issuers 9, the classifier is unsure 7)",
       "open": "#exhibits/held"
      },
      {
@@ -776,7 +779,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2231,
+    "n": 2144,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -784,7 +787,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3007,
+    "n": 3018,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -792,8 +795,8 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 546,
-    "words": "credentials with no Common SUBJ (466 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "n": 563,
+    "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    },
@@ -811,7 +814,7 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 3007,
+    "n": 3018,
     "was": 2800,
     "since": "2026-11-13",
     "words": "active programs with no record yet",
@@ -822,10 +825,10 @@
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
-    "n": 546,
+    "n": 563,
     "was": 374,
     "since": "2026-11-13",
-    "words": "credentials with no Common SUBJ (466 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "words": "credentials with no Common SUBJ (467 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    }
@@ -838,13 +841,13 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 967,
+     "placed": 979,
      "untouched": 891,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 0,
+     "left": 12,
      "looked": 57
     },
     {
@@ -871,13 +874,13 @@
     },
     {
      "name": "high-school-rop",
-     "placed": 62,
+     "placed": 63,
      "untouched": 38,
      "kept": 19,
      "renamed": 5,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 1,
      "looked": 24
     },
     {
@@ -926,13 +929,13 @@
     }
    ],
    "total": {
-    "placed": 1479,
+    "placed": 1492,
     "untouched": 1346,
     "kept": 23,
     "renamed": 86,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 13,
     "looked": 109
    }
   },
@@ -1034,10 +1037,10 @@
   {
    "kind": "job",
    "ref": "requirements",
-   "n": 6,
+   "n": 4,
    "title": "Program Requirements",
-   "words": "colleges whose sites block automated reading: find their catalog or course outlines (345 local courses, 12 still taught)",
-   "teaches": "Sam (file it in kb/hand_filed_catalogs/outlines)",
+   "words": "colleges where 12 still-taught courses need their course outline from a person",
+   "teaches": "Sam (send the PDF to COBIx; a session files it in kb/hand_filed_catalogs/outlines)",
    "open": "#commons/data",
    "reason": "no_procedure"
   },
@@ -1055,10 +1058,10 @@
  "next_batch": {
   "kind": "job",
   "ref": "requirements",
-  "n": 6,
+  "n": 4,
   "title": "Program Requirements",
-  "words": "colleges whose sites block automated reading: find their catalog or course outlines (345 local courses, 12 still taught)",
-  "teaches": "Sam (file it in kb/hand_filed_catalogs/outlines)",
+  "words": "colleges where 12 still-taught courses need their course outline from a person",
+  "teaches": "Sam (send the PDF to COBIx; a session files it in kb/hand_filed_catalogs/outlines)",
   "open": "#commons/data",
   "reason": "no_procedure"
  }

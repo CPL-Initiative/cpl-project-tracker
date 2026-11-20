@@ -171,6 +171,8 @@ Their record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../..
 
 ## NEXT
 
+**DECIDED** `d-step-b-owner-courses-bot-2026-11-20` (the plain session of 2026-11-20, under Sam's delegation: *"want you to go with your recommendation"*): the Courses bot owns curation step b, the local subject title. It drafts each title from the state subject code and the catalog's subject heading, as COBIx suggested on #3584; a curator settles the ones that disagree. No view builds step b yet. His to revise.
+
 **Sheet 107 cards 1-3 (S436, 2026-10-20), applied:** the record moved verbatim to [`docs/common_subject_code_tab_lessons.md`](../../common_subject_code_tab_lessons.md), *Moved from the lane (S577): Sheet 107*.
 
 **For a curator (found in the file-eight fresh read):** five of the 79 are merged into a parent in another discipline:
@@ -195,7 +197,7 @@ and 13:18Z) read the same sha256, now the `cid_data` baseline. `/approved-course
 `cid_courses` and `cid_home` stay `no_baseline`. Next for it: diff that CSV against `kb/reference/cid_descriptors.json`
 (495 descriptors, the CCCCO file of 2026-05-20) on a runner, so a `changed` names the descriptors that moved. `mq_list` stays `on: false` (half built) until the index diff runs on the runner too.
 
-**The anchor re-key, APPLIED (S612 SkySunflower, 2026-11-08; Sam, Open Asks Sheet 171 card 4, *proposed*, 20:14Z; Commons ruling 3, #2921).** `kb/_anchor_rekey_apply.py` moved 20 of the curated anchor's keys in `kb/common_courses.json` onto their Common SUBJ and re-pointed 21 `kb/course_crosswalk.json` pointers; receipt `kb/anchor_rekey_out/2026-11-08/` (last in `kb/alias_chain.py`; stamp `_anchor_rekey_from`). 15 kept their number (CNSR to CBIT 7, FTVE to FMED 3, GRAF to GFCD 5). Five took the lowest DIES or PARA number nothing has used: AUTD M10FX, FY, FZ to DIES M10II, IJ, IK, and PLGL M10IA, IB to PARA M10KX, KY. AUTD M10FX and FY were read as re-keys in the S611 dry run, but the 2026-09-04 prefix fold had put two HVAC singletons on the ids the Z-band retirement gave those diesel entries the day before, and the 2026-11-05 recode took the singletons to DIES M10FX and FY: following the map would have merged Diesel Engines with an HVAC course, so they took the collision rule Sam ruled (proceeded on the recommendation; reply to reverse). The dry run now flags that case. kb_curation held no row on any old or new key, so nothing in Supabase moved. The anchor's era stamp is `kb/common_courses_era.json`, since `excel_to_dashboard.py` walks the anchor whole. Held: the three dead-format HOSP keys; their disciplines, Travel Services and Hotel and Motel Services, are not in the MQ registry, so neither has a Common SUBJ (the curator worklist).
+**The anchor re-key, APPLIED (S612 SkySunflower, 2026-11-08):** 20 anchor keys onto their Common SUBJ, receipt `kb/anchor_rekey_out/2026-11-08/` (last in `kb/alias_chain.py`); held, the three dead-format HOSP keys (the curator worklist). The paragraph as it stood: [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/common-subjects-reference.md (plain session, 2026-11-20)*.
 
 **Then:** the strays Sheet 106 does not cover (86 codes with no checkable answer, and the seven set aside) stay on
 the discipline-blank worklist for a curator; the Commons' remaining Progress

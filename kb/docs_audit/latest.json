@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1546,
-    "bytes": 16648572,
+    "files": 1548,
+    "bytes": 16676089,
     "over_budget": 3,
-    "handoff_max": 691,
+    "handoff_max": 692,
     "always_loaded_files": 1,
     "always_loaded_bytes": 62634,
     "superseded_files": 0,
@@ -26,45 +26,46 @@
       },
       "other": {
         "files": 164,
-        "bytes": 5530150,
+        "bytes": 5539105,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 11536,
+        "bytes": 11970,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2849944,
+        "bytes": 2854607,
         "over": 1
       },
       "kb_note": {
-        "files": 599,
-        "bytes": 2914687,
+        "files": 600,
+        "bytes": 2919196,
         "over": 0
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 540626,
+        "bytes": 539714,
         "over": 0
       },
       "handoff": {
-        "files": 650,
-        "bytes": 4738995,
+        "files": 651,
+        "bytes": 4748863,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 3,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 77
+      "vault_heavy_path": 77,
+      "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 28848,
-      "bytes": 1745507603,
-      "heavy_bytes": 1198961782,
-      "heavy_share": 0.687,
+      "files": 28930,
+      "bytes": 1755936514,
+      "heavy_bytes": 1199789678,
+      "heavy_share": 0.683,
       "ignore_filters": [
         "agent-acde763d805f26640/kb/program_requirements_college",
         "agent-acde763d805f26640/kb/regional_cpl_out",
@@ -202,10 +203,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 157055777,
+        "bytes": 157846239,
         "kind": "dir"
       },
-      "message": "directory totals 157,055,777 B inside the vault"
+      "message": "directory totals 157,846,239 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -222,10 +223,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84492169,
+        "bytes": 84494737,
         "kind": "dir"
       },
-      "message": "directory totals 84,492,169 B inside the vault"
+      "message": "directory totals 84,494,737 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -292,20 +293,20 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 14713003,
+        "bytes": 14729561,
         "kind": "dir"
       },
-      "message": "directory totals 14,713,003 B inside the vault"
+      "message": "directory totals 14,729,561 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/status/commons_data_programs",
       "detail": {
-        "bytes": 10287520,
+        "bytes": 10305828,
         "kind": "dir"
       },
-      "message": "directory totals 10,287,520 B inside the vault"
+      "message": "directory totals 10,305,828 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -966,6 +967,18 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "handoff_drops_active_lane",
+      "fixable": false,
+      "path": "docs/session_692_handoff.md",
+      "detail": {
+        "lanes": [
+          "repo-size"
+        ],
+        "days": 7
+      },
+      "message": "`docs/session_692_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: repo-size. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8907,
-    "output_tokens": 3630,
+    "output_tokens": 3819,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3630,
+  "output_tokens": 3819,
   "output_tokens_details": {
-   "thinking_tokens": 1010
+   "thinking_tokens": 1112
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10823,
- "ms": 26430,
- "seconds": 26.7,
+ "cost_usd": 0.11201,
+ "ms": 29180,
+ "seconds": 31.0,
  "parts": null,
  "error": null,
  "score": {
@@ -61,11 +61,24 @@
    "pass": true
   },
   "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     38.0,
+     39.0,
      42.0
     ],
     "stated": [
@@ -80,23 +93,9 @@
     "why": [],
     "fill": [
      18.0,
-     22.0
+     21.0
     ]
-   },
-   "pass": true,
-   "status": "equal",
-   "meets": true,
-   "computed": [
-    18.0,
-    21.0
-   ],
-   "stated": [
-    18.0,
-    18.0
-   ],
-   "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   }
   },
   "repeated": {
    "codes": [],
@@ -151,18 +150,18 @@
     "Identify and describe the general history of racial/ethnic people in the U.S."
    ],
    "careers": [
+    "government",
+    "community-based agencies",
     "Teaching",
     "Social Work",
     "Public Health",
     "Community Organizing",
-    "higher education",
-    "government",
-    "community-based agencies"
+    "higher education"
    ]
   },
   "blocks": [
    {
-    "name": "Core Requirement 1: Introduction to Ethnic Studies ( 3 units):",
+    "name": "Core Requirement 1: Introduction to Ethnic Studies ( 3 units)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -181,7 +180,7 @@
     ]
    },
    {
-    "name": "Core Requirement 2: Intersections of Race and Gender (3 units):",
+    "name": "Core Requirement 2: Intersections of Race and Gender (3 units)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -216,7 +215,7 @@
     ]
    },
    {
-    "name": "Comparative Ethnic Studies Courses ( 6 units):",
+    "name": "Comparative Ethnic Studies Courses ( 6 units)",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -256,7 +255,7 @@
     ]
    },
    {
-    "name": "Ethnic Studies Electives (6 units):",
+    "name": "Ethnic Studies Electives (6 units)",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -318,7 +317,13 @@
       "code": "AFRAM 018",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "M/LAT 032",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
@@ -441,13 +446,6 @@
       "catalog_addition": false
      },
      {
-      "code": "M/LAT 032",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "M/LAT 033",
       "units": 3,
       "units_max": null,
@@ -495,15 +493,18 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Core Requirement 2 lists four cross-listed 'Women of Color' courses (AFRAM/ASAME/NATAM/M/LAT 035) as separate rows; recorded as one choice with the other three as alternatives.",
-   "AFRAM 018 and M/LAT 032 are cross-listed (same as) but printed as separate rows in the electives block; kept as separate entries.",
-   "Electives block says 'Select any two courses (if not used previously)'; recorded as choose_courses 2 with stated 6 units.",
-   "M/LAT 039 is printed with 2.00-6.00 units while the closed list stores 2.",
+   "Catalog prints codes with leading zeros (e.g. ETHST 001, AFRAM 035); matched to closed-list codes without zeros (ETHST 1, AFRAM 35), so catalog_addition is false.",
+   "Core Requirement 2 lists four cross-listed 'Women of Color' courses (AFRAM/ASAME/NATAM/M/LAT 035) as separate rows; recorded as one required choice with the cross-lists as alternatives.",
+   "AFRAM 018 and M/LAT 032 are cross-listed (same as); recorded once with M/LAT 032 as alternative.",
+   "Comparative Ethnic Studies Courses block prints no explicit selection wording; read '6 units' over four 3-unit courses as choose 6 units.",
+   "M/LAT 039 printed as 2.00-6.00 units in catalog; closed list stores 2.",
    "Page prints 'General Education Units 21.00' without naming a GE pattern; ge_pattern left null.",
    "'Elective Courses to meet 60 units' printed with no units; electives_fill_degree set true.",
-   "Catalog codes use zero-padded numbers (e.g., ETHST 001) matching closed-list codes (ETHST 1).",
-   "Several courses are marked '( Historical )' in the catalog listing; reviewer may verify they remain offered for 2026-2027."
+   "Many courses are marked '( Historical )' in the catalog listing; reviewer may check whether they are still offered for 2026-2027.",
+   "Catalog text contains embedded CSS styling, ignored.",
+   "Careers 'government' and 'community-based agencies' taken from the program description; 'graduate school' not recorded as a career."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

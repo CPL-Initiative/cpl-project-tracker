@@ -9,13 +9,14 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyPetrel (Session 691)
 
+**Routing.** This handoff is the CPL Queue routine's. A plain session Sam opens follows `docs/session_692_handoff.md` (SkyGannet, from SkyShrike, the plain session that ran beside this one).
+
 From SkyMerlin, S690, the CPL Queue routine's 11:12Z firing of 2026-11-20: it found S689 live on #3584 and stood down
 at 11:13Z, was told *"keep going"* at 11:45Z, waited for S689's sign-off push (about 12:13Z), declared on draft #3599
 and took the queue. A conductor run for collection only under Sam's routine prompt of 2026-11-17, following the COBIx
 brief on #3358 (updated 2026-11-20T02:38Z) and Sam's work order of Nov 20. A **full checkpoint** (lanes moved; Rule 10
 data writes ran: reread and pages posts and loads, City College of San Francisco's outline load), written by the
-checkpoint-docs worker at about 16:50Z while the run went on. Lines marked **CONDUCTOR FILLS AT SIGN-OFF** are the
-conductor's. Skipped: step 2 (the new `kb/hand_filed_catalogs/courses/` folder carries its own README in #3604), step 3
+checkpoint-docs worker at about 16:50Z while the run went on. The conductor filled its sign-off lines at 17:43Z.
 (no user-facing surface changed; #3600 is not deployed), step 7 (no M-ID pipeline move: no re-mint, no roadmap state
 change) and step 9 (the UI pass is its own queue item).
 
@@ -46,9 +47,14 @@ subscription tools).
 2c. **The plain page read** (Sam's go, 6:26 AM PT on Nov 20, `r-plain-page-read-blocked-catalogs-sam-2026-11-20`):
    the colleges marked *Sky can read* in the harvest lane are read every night with an ordinary page request; robots.txt
    first, no challenge solved, no 403 retried.
-3. **Merge order:** the wave #3604 (`claude/s690-wave`) first, then the display page-file PR, then the follow-up PR
-   (`claude/s690-follow-up`); this checkpoint #3599 at sign-off. **CONDUCTOR FILLS AT SIGN-OFF:** what merged, with its
-   sha, and what carries over.
+3. **Merge order:**
+   - **Merged:** #3604 (the wave, with the display page folded in, so #3606 closed into it) as `b2635d43`.
+   - **First, #3602** (the night's one follow-up PR, `claude/s690-follow-up`, head bf11c15d), which carries over. Update it
+     from `main` once and rebuild `kb/status/commons_data.json` with `kb/_build_commons_data_status.py`: it conflicts on that
+     generated file. Then wait for `test` and merge. Its second reader's round 1 is done: verdict fix first, and the blocking
+     `catalog_style` was dropped. A fix that drops code needs no second round.
+   - **This checkpoint #3599** merges at sign-off.
+   - **Dependabot's #3383** waits as before.
 
 ## What shipped (squash-merged on `main`, `test` green on each head, each thread read)
 
@@ -61,8 +67,21 @@ subscription tools).
   gate counts by eye from the trial's job-log SLO excerpt under the parser's fingerprint; the second reader's first
   round was BLOCKING (the hand counts equalled the parser's own), the second said merge.
 - S689 merged its checkpoint #3584 (`bcc3f8a8`) at about 13:49Z.
-- **CONDUCTOR FILLS AT SIGN-OFF:** #3604's merge and sha; the display build (its id, the gate, the whole build, the
-  closing count) and its page-file PR; the census on `main` against 5,069; the follow-up PR's number, merge and sha.
+- **#3604 `b2635d43`** (17:41Z), the wave: City College of San Francisco's 1,416 outline rows, the 17,341 printed courses,
+  the program records at nine colleges (CCSF's seven from its 2025-26 catalog among them) and the display page.
+  - CCSF's prior-year read: capture 44777204746, 7 of 27 own pages, extract 44777882954 ($0.49), load 44779214785.
+    The other 20 need another source.
+- **Display build `ac082e9d96dc`**, replacing `4c57fd250cce`:
+  - Laney first: 44773599660, 156 of 156.
+  - The gate: 44774197489.
+  - The whole build: 44774570780, writing 18,337, 0 errors.
+  - The closing count: 44775521409, with 18,493 rows at the new build. One row still sits at `4c57fd250cce`, a gap
+    older than the build.
+- **The census:** `harvest-gap-census.yml` dispatched on `main` after #3604 at 17:42Z; read its result against 5,069 first.
+  The live headline at about 17:06Z, before the census, was 15,163 of 20,282 passing at 118 colleges.
+- **The follow-up PR, #3602** (open; see the merge order). Its rereads already ran live: Berkeley City 44783512034
+  (15 posted, 14 machine pass) and Glendale 44783518135 (59 posted, 47 machine pass). The conductor's live read
+  confirmed 15 and 59 rows, none checked. The PR files their records.
 
 ## Records collected and outline rows added
 
@@ -250,10 +269,10 @@ pair apply and the CR exact match (the plain session's list, brief section 4).
 
 | PR or branch | State | Next |
 |---|---|---|
-| #3599 this declaration and checkpoint (`claude/awesome-fermat-8o89wm`) | draft, the checkpoint | **CONDUCTOR FILLS AT SIGN-OFF:** merged at sign-off, its sha |
-| #3604 the wave (`claude/s690-wave`) | open at the checkpoint; CI rerun after the `commons_data` status rebuild (92d05499) | **CONDUCTOR FILLS AT SIGN-OFF** |
-| `claude/s690-display` | the display build, running at the checkpoint | its page-file PR after #3604; **CONDUCTOR FILLS AT SIGN-OFF** |
-| `claude/s690-follow-up` | the night's one follow-up PR, in progress | **CONDUCTOR FILLS AT SIGN-OFF:** its number and state |
+| #3599 this declaration and checkpoint (`claude/awesome-fermat-8o89wm`) | the checkpoint | merged at sign-off (see `main`) |
+| #3604 the wave (`claude/s690-wave`) | merged `b2635d43` | none |
+| `claude/s690-display` | the display build, running at the checkpoint | the page folded into #3604; #3606 closed | none |
+| `claude/s690-follow-up` | #3602, open, head bf11c15d; rereads ran live | update from `main` once, rebuild `commons_data.json`, merge on a green `test` |
 | #3600, #3601 | merged (9fc88a07, 46f92c76) | #3600's deploy, a plain session's |
 | #3593, #3597 | closed with pointers (comments 7039647197, 7039648134) | fold into the follow-up PR |
 | #3603 | closed into #3604 | none |
@@ -265,10 +284,9 @@ pair apply and the CR exact match (the plain session's list, brief section 4).
 
 ## Let go
 
-**CONDUCTOR FILLS AT SIGN-OFF:** the COBIx watcher stopped, and each PR subscription, check-in and artifact watch
-dropped, named here. The brief's ledger names none held at the checkpoint; the watcher was running in the background.
+Dropped in the sign-off turn: the COBIx watcher (its Monitor stopped). No PR subscription was held (each PR was gated by reads), no check-in is scheduled, and no artifact is watched. Every worker is finished and its checkout removed, except the checkpoint's own.
 
-Spend: CONDUCTOR FILLS AT SIGN-OFF, about $135 at 16:03Z (an estimate from the session's and its workers' token counts at list prices); from 2026-11-20T11:12Z.
+Spend: $202 (estimate from token counts at list prices; Opus 5.5 $200.50, Sonnet 5.5 $1.31, Haiku 5.5 $0.19); collection $181.50, infrastructure $20.50; 2026-11-20T11:12Z to 2026-11-20T17:43Z.
 
 The filed extraction runs' own cost is listed apart: $7.68 (the pages levers), $7.89 (rows 46 to 55) and rows 56 to
 73's runs (Cuyamaca $2.30 and the others, in their receipts). After the line is final, with its tags, run
@@ -276,4 +294,4 @@ The filed extraction runs' own cost is listed apart: $7.68 (the pages levers), $
 
 Opening line: *Greetings, you are SkyPetrel (Session 691), see SkyMerlin's handoff — `docs/session_691_handoff.md` — let's keep rolling with our queue.*
 
-S690 final (CONDUCTOR FILLS AT SIGN-OFF; the checkpoint's figures in brackets): cost about [$135 at 16:03Z] at list prices, estimated from token counts, plus [$7.68, $7.89 and rows 56 to 73's] filed extraction runs; records collected: [35] new program records (plus [129] replaced by a better reread and [6] restored) and [17,341] printed catalog courses; outline rows added: [1,416]; substantive PRs merged: [2, #3600 and #3601], not counting the checkpoint.
+S690 final: cost about $202 at list prices, estimated from token counts, plus $18.36 of named filed extraction runs (pages $7.68, reread batch 1 $7.89, City College of San Francisco's prior year $0.49, Cuyamaca $2.30) plus batch 2's other extracts, in their run receipts; records collected: 42 new program records (plus 203 replaced by a better reread or rescore, 6 restored, 3 held for a person) and 17,341 printed catalog courses; outline rows added: 1,416; substantive PRs merged: 3 (#3600, #3601, #3604), not counting checkpoints.

@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s690_reread_live_read.sql",
+ "name": "s690_reread_live_read",
+ "version": "20261120133146",
+ "sha256": "b23a51a1a649efaf48fa0b82bf49fdd2119d2f5157e871243a744e24373310e7",
+ "run": "44744830810",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-20T13:31:46Z\",\"chk\":{},\"sum\":{\"Napa Valley College\":[94,98,94,0,0,0],\"Santa Monica College\":[225,239,224,0,1,0],\"Cerro Coso Community College\":[52,65,52,0,0,0],\"San Diego College of Continuing Education\":[90,109,90,0,0,0]},\"diff\":[[\"Santa Monica College\",\"43767\",\"37548804006\",\"39567439681\"]],\"gone\":{\"Napa Valley College\":[\"03696\",\"36865\",\"42590\",\"42591\"],\"Santa Monica College\":[\"08963\",\"08969\",\"19604\",\"19605\",\"21003\",\"21026\",\"30390\",\"31006\",\"33000\",\"38913\",\"39976\",\"43986\",\"45012\",\"46189\"],\"Cerro Coso Community College\":[\"01980\",\"11580\",\"20632\",\"30793\",\"33715\",\"38666\",\"38705\",\"42678\",\"44598\",\"44996\",\"46220\",\"46361\",\"46375\"],\"San Diego College of Continuing Education\":[\"24101\",\"24236\",\"24238\",\"24306\",\"24313\",\"31482\",\"33750\",\"35140\",\"35838\",\"38411\",\"38412\",\"39774\",\"39927\",\"40118\",\"40119\",\"40516\",\"40532\",\"42361\",\"44336\"]},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

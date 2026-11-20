@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-597 document(s).
+598 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -339,6 +339,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [CER ⇄ CCR crossover — course-identity integrations for exhibit-title curation](../kb-notes/cer-ccr-crossover-integrations.md) | methodology | published | 2026-07-07 |  |
 | [Change the input, not the consumers — derive the old field at the single seam](../kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md) | methodology | published | 2026-07-27 |  |
 | [Check a page inside every frame that embeds it](../kb-notes/methodology-check-a-page-inside-every-frame-that-embeds-it.md) | methodology | published | 2026-10-09 | 2026-10-09 |
+| [Check the saved reads before calling a source blocked](../kb-notes/methodology-check-the-saved-reads-before-calling-a-source-blocked.md) | methodology | published | 2026-11-20 | 2026-11-20 |
 | [Coarse TOP-division discipline fallback — make the orphan tail visible without faking precision](../kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [College-homonym subject codes — detect, scope, retract](../kb-notes/methodology-college-homonym-subject-codes.md) | methodology | published | 2026-06-11 |  |
 | [Confirmed merges via a decision row — never infer, never block the clean set](../kb-notes/methodology-confirmed-merge-via-decision-row.md) | methodology | published | 2026-07-08 |  |
@@ -404,7 +405,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Methodology — one ranked list cannot answer two questions](../kb-notes/methodology-one-ranked-list-cannot-answer-two-questions.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [Methodology — Parity test as the proof for a data-source cutover](../kb-notes/methodology-parity-test-cutover-proof.md) | methodology | published | 2026-05-29 | 2026-05-31 |
 | [Methodology — provenance is a field, not a footnote (and a two-state detector is wrong about the middle)](../kb-notes/methodology-provenance-is-a-field.md) | methodology | published | 2026-08-05 | 2026-08-05 |
-| [Methodology — Rank a cleanup queue by downstream impact, not a structural proxy](../kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-06-09 |
+| [Methodology — Rank a cleanup queue by downstream impact, not a structural proxy](../kb-notes/methodology-rank-cleanup-by-downstream-impact.md) | methodology | published | 2026-06-09 | 2026-11-20 |
 | [Methodology — rebuild a flattened diagram as a built slide (and reconcile it against its own arithmetic)](../kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [Methodology — recompute a document's figures from the live engine, don't copy them](../kb-notes/methodology-recompute-a-documents-figures-from-the-live-engine.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [Methodology — retheming a generator-owned HTML monolith via token value-swap](../kb-notes/methodology-token-retheme-on-generated-html.md) | methodology | published | 2026-06-12 | 2026-06-12 |

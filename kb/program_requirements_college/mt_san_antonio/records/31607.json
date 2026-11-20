@@ -5,11 +5,11 @@
  "title": "Art History",
  "award": "A.A- T Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/art-history/aa-art-history-transfer/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8773,
+  "input_tokens": 10386,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8773,
-    "output_tokens": 7102,
+    "input_tokens": 10386,
+    "output_tokens": 6447,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,73 +30,101 @@
     "model": null
    }
   ],
-  "output_tokens": 7102,
+  "output_tokens": 6447,
   "output_tokens_details": {
-   "thinking_tokens": 2050
+   "thinking_tokens": 1417
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.17713,
- "ms": 78417,
- "seconds": 78.8,
+ "cost_usd": 0.17048,
+ "ms": 45429,
+ "seconds": 45.8,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 45,
    "listed": 45,
-   "share": 0.711,
-   "missing": [
-    "AHIS11",
-    "AHIS12",
-    "AHIS12H",
-    "AHIS13",
-    "AHIS14",
-    "AHIS15",
-    "AHIS3",
-    "AHIS4",
-    "AHIS5",
-    "AHIS6",
-    "AHIS7",
-    "AHIS8",
-    "AHIS9"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTH11",
+     "listed": "AHIS11",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH12",
+     "listed": "AHIS12",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH12H",
+     "listed": "AHIS12H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH13",
+     "listed": "AHIS13",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH14",
+     "listed": "AHIS14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH15",
+     "listed": "AHIS15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH3",
+     "listed": "AHIS3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH6",
+     "listed": "AHIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH7",
+     "listed": "AHIS7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH8",
+     "listed": "AHIS8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTH9",
+     "listed": "AHIS9",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHIS4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHIS5",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 13,
-   "codes": [
-    "ARTH11",
-    "ARTH12",
-    "ARTH12H",
-    "ARTH13",
-    "ARTH14",
-    "ARTH15",
-    "ARTH3",
-    "ARTH6",
-    "ARTH7",
-    "ARTH8",
-    "ARTH9",
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
-   "flagged": [
-    "ARTH11",
-    "ARTH12",
-    "ARTH12H",
-    "ARTH13",
-    "ARTH14",
-    "ARTH15",
-    "ARTH3",
-    "ARTH6",
-    "ARTH7",
-    "ARTH8",
-    "ARTH9",
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -110,7 +138,31 @@
     18.0,
     18.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     8.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -126,6 +178,14 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -137,13 +197,27 @@
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Students will demonstrate the ability to critically analyze visual objects as works of art.",
     "Students completing a course in \"Area C: Arts\" will be able to analyze modes of artistic expression.",
     "Students will demonstrate the ability to critically analyze visual objects as artifacts of visual culture from a variety of perspectives, utilizing various modes of analysis.",
     "Student completing an assignment will be able to identify the influence of culture on human expression."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -822,66 +896,67 @@
   "missing_explained": [
    {
     "code": "AHIS 3",
-    "why": "catalog prints this number and title as ARTH 3"
+    "why": "catalog prints it as ARTH 3 (prefix changed); recorded as ARTH 3"
    },
    {
     "code": "AHIS 4",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists ARTH C1100 survey instead"
    },
    {
     "code": "AHIS 5",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists ARTH C1200 survey instead"
    },
    {
     "code": "AHIS 6",
-    "why": "catalog prints this number and title as ARTH 6"
+    "why": "catalog prints it as ARTH 6; recorded as ARTH 6"
    },
    {
     "code": "AHIS 7",
-    "why": "catalog prints this number and title as ARTH 7"
+    "why": "catalog prints it as ARTH 7; recorded as ARTH 7"
    },
    {
     "code": "AHIS 8",
-    "why": "catalog prints this number and title as ARTH 8"
+    "why": "catalog prints it as ARTH 8; recorded as ARTH 8"
    },
    {
     "code": "AHIS 9",
-    "why": "catalog prints this number and title as ARTH 9"
+    "why": "catalog prints it as ARTH 9; recorded as ARTH 9"
    },
    {
     "code": "AHIS 11",
-    "why": "catalog prints this number and title as ARTH 11"
+    "why": "catalog prints it as ARTH 11; recorded as ARTH 11"
    },
    {
     "code": "AHIS 12",
-    "why": "catalog prints this number and title as ARTH 12"
+    "why": "catalog prints it as ARTH 12; recorded as ARTH 12"
    },
    {
     "code": "AHIS 12H",
-    "why": "catalog prints this number and title as ARTH 12H"
+    "why": "catalog prints it as ARTH 12H; recorded as ARTH 12H"
    },
    {
     "code": "AHIS 13",
-    "why": "catalog prints this number and title as ARTH 13"
+    "why": "catalog prints it as ARTH 13; recorded as ARTH 13"
    },
    {
     "code": "AHIS 14",
-    "why": "catalog prints this number and title as ARTH 14"
+    "why": "catalog prints it as ARTH 14; recorded as ARTH 14"
    },
    {
     "code": "AHIS 15",
-    "why": "catalog prints this number and title as ARTH 15"
+    "why": "catalog prints it as ARTH 15; recorded as ARTH 15"
    }
   ],
   "notes": [
-   "The catalog prints no units beside individual courses; course units are null. Block totals (Core 9, List A 3, List B 3, List C 3) and Total Units for Major 18 are as printed.",
-   "The closed list stores many art history courses under the AHIS prefix (AHIS 3, 6-9, 11-15, 12H) while the catalog prints them as ARTH with identical numbers and titles. These ARTH codes are recorded with catalog_addition true and the AHIS codes listed in missing_explained; a reviewer should confirm they are the same courses renumbered/re-prefixed. Closed-list codes printed without a space (ARTH10, ARTH11H, ARTH16, ARTH16H, ARTH3H, ARTH6H, ARTHC1100H, ARTHC1200H, ARTD20) were treated as matching the catalog's spaced codes.",
-   "ARTH C1100 and ARTH C1200 (non-honors) do not appear in the closed list in any form and are recorded as catalog additions.",
-   "Core Courses is read as three required entries: one of ARTH C1100/C1100H/C1200/C1200H; one of ARTH 9/11/11H/12/12H/13/16/16H; and ARTD 15A.",
-   "List C: 'Choose one course not already used from List A or List B'; its list repeats all List A and List B courses. Courses also appear across Core and List A/C (e.g., ARTH 9, 11, 12, 13, 16); a course may not be used twice.",
-   "Outcomes come from the page's Outcomes tab under 'Program Learning Outcomes' for this program. The second outcome references 'Area C: Arts', which reads like a GE-area outcome; a reviewer may wish to check it. The page also links to separate SLOs not included in the text.",
-   "Degree requires 60 units including Cal-GETC (34 units printed); courses may double-count for the major and Cal-GETC."
+   "The catalog prints units only for block totals (Core 9, List A 3, List B 3, List C 3), not beside individual courses, so course units are null.",
+   "The closed list mixes AHIS and ARTH prefixes; catalog codes printed as ARTH whose closed-list form uses AHIS were marked catalog_addition true and the AHIS codes listed in missing_explained. A reviewer may treat these as the same courses (titles match).",
+   "ARTH C1100H and ARTH C1200H were matched to closed-list ARTHC1100H and ARTHC1200H (spacing difference only); ARTH C1100 and ARTH C1200 are not in the closed list.",
+   "Core Courses: the first row is one of ARTH C1100/C1100H/C1200/C1200H; the second row is one of ARTH 9/11/11H/12/12H/13/16/16H; ARTD 15A is required.",
+   "List C: choose one course not already used from List A or List B; it repeats both lists.",
+   "Program Learning Outcomes are printed on the program's outcomes tab and recorded as this award's outcomes.",
+   "Total Units for Major 18; General Education (Cal-GETC) 34; Total Units 60. Courses may be double-counted for the major and Cal-GETC."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

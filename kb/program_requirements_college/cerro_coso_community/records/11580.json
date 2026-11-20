@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Child Development Site Supervisor",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=85",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7821,
+  "input_tokens": 8829,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7821,
-    "output_tokens": 1658,
+    "input_tokens": 8829,
+    "output_tokens": 2075,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,74 +30,80 @@
     "model": null
    }
   ],
-  "output_tokens": 1658,
+  "output_tokens": 2075,
   "output_tokens_details": {
-   "thinking_tokens": 678
+   "thinking_tokens": 764
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06444,
- "ms": 15775,
- "seconds": 16.1,
+ "cost_usd": 0.07682,
+ "ms": 17306,
+ "seconds": 34.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "CHDVC100",
-    "CHDVC102",
-    "CHDVC104",
-    "CHDVC106",
-    "CHDVC121",
-    "CHDVC125",
-    "CHDVC200",
-    "CHDVC203"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "CHDVC251",
+    "CHDVC252",
+    "CHDVC281"
+   ],
+   "flagged": [
+    "CHDVC251",
+    "CHDVC252",
+    "CHDVC281"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    33.0,
+    33.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
-   "not_verbatim": [],
-   "why": [],
+   "count": 4,
+   "not_verbatim": [
+    "Integrate understandings of children’s development and needs to maintain healthy, safe, supportive, and challenging learning environments that demonstrate culturally relevant, inclusive, age-appropriate, and anti-bias approaches respectful of children, families, and early learning professionals.",
+    "Design appropriate strategies and program policies in compliance with California state laws and regulations that guide the administration of respectful and responsive quality care and education programs."
+   ],
+   "why": [
+    "not in the catalog text as printed: Integrate understandings of children's development and needs to maintain healthy",
+    "not in the catalog text as printed: Design appropriate strategies and program policies in compliance with California"
+   ],
    "heading_printed": true,
-   "heading_without_outcomes": true,
-   "pass": true
+   "heading_without_outcomes": false,
+   "pass": false
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -108,11 +114,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "(no Child Development Site Supervisor section in the provided text)",
+   "section_heading": "Child Development Site Supervisor Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 33,
+    "max": 33
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,51 +135,130 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Examine teaching and care practices that provide a developmentally appropriate program to support children’s growth, development, and learning.",
+    "Identify one’s own values, experiences, and philosophies and how they guide and inform practice.",
+    "Integrate understandings of children’s development and needs to maintain healthy, safe, supportive, and challenging learning environments that demonstrate culturally relevant, inclusive, age-appropriate, and anti-bias approaches respectful of children, families, and early learning professionals.",
+    "Design appropriate strategies and program policies in compliance with California state laws and regulations that guide the administration of respectful and responsive quality care and education programs."
+   ],
+   "careers": [
+    "administrator of programs serving children in a group setting"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CHDV C100",
-    "why": "not in a Site Supervisor section; the text has no such section. It appears in an untitled list at the top of the page (likely another certificate) and in the Master Teacher certificate."
-   },
-   {
-    "code": "CHDV C102",
-    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
-   },
-   {
-    "code": "CHDV C104",
-    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
-   },
-   {
-    "code": "CHDV C106",
-    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
-   },
-   {
-    "code": "CHDV C121",
-    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
-   },
-   {
-    "code": "CHDV C125",
-    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
-   },
-   {
-    "code": "CHDV C200",
-    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
-   },
-   {
-    "code": "CHDV C203",
-    "why": "not in a Site Supervisor section; it appears only in the untitled list at the top of the page and in the Master Teacher certificate."
+    "name": "Complete all the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHDV C100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHDV C251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHDV C252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHDV C281",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided text (catalog page 76, PDF page 84) contains no section for the Child Development Site Supervisor Certificate of Achievement. Site Supervisor is mentioned only as a state permit type inside the Master Teacher certificate's description.",
-   "The top of the page has the tail of a course list whose heading is cut off at the previous page break. It holds CHDV C100 (code cut off), C102, C104, C106, C121, C125, C200 and C203, each 3 units. These are exactly the closed-list courses. The 'Teacher Permit Requirements: Teacher Certificate requirements...' paragraph follows it, which suggests this list belongs to the Child Development Teacher certificate rather than Site Supervisor. A reviewer should check the previous page and the actual Site Supervisor section; the next page may also hold it.",
-   "The Child Development Master Teacher Certificate of Achievement (33 units) and its program learning outcomes are printed on this page. They belong to that award and were not recorded here.",
-   "No blocks, totals, outcomes or careers were recorded because the named award's section is not in the text."
+   "The PDF text extraction renders ligatures as special glyphs (e.g. 'pracƟces', 'respecƞul', 'anƟ -bias'); outcomes are recorded with the ligatures read as the letters they represent ('practices', 'respectful', 'anti-bias'). Reviewer should confirm against the PDF.",
+   "The third and fourth outcomes are run together in the extracted text ('professionals.Design appropriate...') with the bullet apparently lost; they are recorded as two separate outcomes. Reviewer should check against the PDF.",
+   "The course table's columns are scrambled by the page layout (codes and titles misaligned); all 11 courses are listed under 'Complete all the following courses', each at 3 units, summing to the stated 33 units.",
+   "CHDV C251, CHDV C252 and CHDV C281 (administration and adult supervision courses) are not in the closed list and are recorded as catalog additions.",
+   "The Site Supervisor Permit note (AA or 60 units, 24 ECE/CD units, 6 administration units, 2 adult supervision units) is a state permit requirement, not part of this certificate's total.",
+   "Permit titles (Assistant Teacher, Associate Teacher, Teacher, Site Supervisor Permits) are named as permits rather than careers and were not recorded as careers."
   ]
  },
- "extracted_run": "39046789844"
+ "extracted_run": "44737711062",
+ "catalog_year": "2026-2027",
+ "source_sha": "58f7404f5f79c52c",
+ "source_codes": [
+  "CHDVC100",
+  "CHDVC102",
+  "CHDVC104",
+  "CHDVC106",
+  "CHDVC121",
+  "CHDVC125",
+  "CHDVC200",
+  "CHDVC203"
+ ],
+ "source_coverage": 1.0
 }

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7443,
+  "input_tokens": 7508,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7443,
-    "output_tokens": 1430,
+    "input_tokens": 7508,
+    "output_tokens": 1650,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1430,
+  "output_tokens": 1650,
   "output_tokens_details": {
-   "thinking_tokens": 380
+   "thinking_tokens": 614
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05837,
- "ms": 12011,
- "seconds": 12.4,
+ "cost_usd": 0.06303,
+ "ms": 15159,
+ "seconds": 15.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 9,
    "listed": 9,
-   "share": 0.778,
-   "missing": [
-    "MATH120",
-    "MATH121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -111,7 +115,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Mathematics 2.0: AS-T Degree",
+   "section_heading": "MATHEMATICS 2.0: AS-T DEGREE",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -238,19 +242,21 @@
   "missing_explained": [
    {
     "code": "MATH 120",
-    "why": "not in the text; catalog lists MATH-C2210 Calculus I: Early Transcendentals (common course number) instead"
+    "why": "not in the text; catalog prints MATH-C2210 Calculus I: Early Transcendentals (likely common-course renumbering)"
    },
    {
     "code": "MATH 121",
-    "why": "not in the text; catalog lists MATH-C2220 Calculus II: Early Transcendentals (common course number) instead"
+    "why": "not in the text; catalog prints MATH-C2220 Calculus II: Early Transcendentals (likely common-course renumbering)"
    }
   ],
   "notes": [
-   "MATH-C2210 and MATH-C2220 appear to be the common-course-numbered replacements for closed-list MATH 120 and MATH 121; recorded as catalog additions.",
-   "List A prints no units beside individual courses, only the block total 3-4; course units left null.",
-   "The page states the degree totals 'no more than 60 semester CSU-transferable units' (up to 66 for some STEM ADTs); read as a general ADT statement, not a printed degree total, so degree_total is null. No Cal-GETC unit figure is printed.",
-   "Careers taken from the department description ('preparing students for success in STEM fields, business, social sciences, education, and beyond'); reviewer may judge whether these are career fields."
+   "MATH-C2210 and MATH-C2220 appear to be the common course numbers replacing closed-list MATH 120 and MATH 121; recorded as catalog additions.",
+   "List A prints no units beside individual courses, only the block range 3-4; course units left null.",
+   "The 60-unit statement is the general ADT requirement, not printed as this award's total; degree_total left null.",
+   "Careers taken from the department description ('preparing students for success in STEM fields, business, social sciences, education, and beyond'); reviewer should confirm these count as career fields.",
+   "Program learning outcomes are printed on this AS-T page; recorded for this award."
   ]
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }

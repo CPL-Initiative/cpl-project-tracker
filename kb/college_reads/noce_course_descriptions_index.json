@@ -1,0 +1,16 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701): read NOCE's 2026-27 course descriptions with a plain page read. This first read lists the subject pages from the course-descriptions index and the CDCP program index, and reads one subject page (MEDO) to see its shape. robots.txt first; /search/, /ribbit/, /azindex/, /archive/ and /wiztest/ are never named. No model call.",
+ "college": "North Orange Continuing Education",
+ "questions": {
+  "subjects": "Which subject pages the course-descriptions index links to.",
+  "programs": "Which program pages the CDCP certificate index and the high school diploma page link to.",
+  "course_shape": "How a subject page prints each course: number, title, hours, prerequisites, description."
+ },
+ "keywords": ["[Hh]ours?", "Prerequisite", "Advisory"],
+ "pages": [
+  {"url": "https://catalog.nocccd.edu/noce/course-descriptions/", "answers": ["subjects"], "links": "/noce/course-descriptions/[a-z0-9_-]+/"},
+  {"url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/", "answers": ["programs"], "links": "/noce/career-development-college-preparation-cdcp-certificate-programs/[a-z0-9_-]+|/noce/high-school-diploma-program/"},
+  {"url": "https://catalog.nocccd.edu/noce/high-school-diploma-program/", "answers": ["programs"], "links": "/noce/high-school-diploma-program/[a-z0-9_-]+"},
+  {"url": "https://catalog.nocccd.edu/noce/course-descriptions/medo/", "answers": ["course_shape"]}
+ ]
+}

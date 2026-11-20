@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8133,
-    "output_tokens": 3342,
+    "output_tokens": 3410,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 3342,
+  "output_tokens": 3410,
   "output_tokens_details": {
-   "thinking_tokens": 1191
+   "thinking_tokens": 1233
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09937,
- "ms": 26834,
- "seconds": 27.2,
+ "cost_usd": 0.10073,
+ "ms": 28132,
+ "seconds": 28.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 18,
    "listed": 18,
-   "share": 0.944,
-   "missing": [
-    "MATH120"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH120",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "CHEM240",
     "CHEM241",
-    "MATH106",
-    "MATHC2210"
+    "MATH106"
    ],
    "flagged": [
     "CHEM240",
     "CHEM241",
-    "MATH106",
-    "MATHC2210"
+    "MATH106"
    ],
    "pass": true
   },
@@ -145,7 +149,7 @@
    "careers": [
     "science",
     "technology",
-    "health care fields"
+    "health care"
    ]
   },
   "blocks": [
@@ -398,18 +402,19 @@
   "missing_explained": [
    {
     "code": "MATH 120",
-    "why": "not in the text; the page names MATH-C2210 Calculus I: Early Transcendentals instead"
+    "why": "not in the text; catalog lists MATH-C2210 Calculus I: Early Transcendentals instead"
    }
   ],
   "notes": [
-   "The student completes one of two emphases; each emphasis is two blocks (core and electives), all four tagged option_group 'Emphasis'. Option 1 = first two blocks, Option 2 = last two blocks. Each option prints Total Units 18-21.",
-   "The mathematics requirement is MATH-C2210 or the pair MATH-106 & MATH-108 taken together (two pre-calculus courses); the 5-7 printed beside MATH-C2210 spans both paths, recorded as units 5, units_max 7. Alternatives MATH-106 and MATH-108 together form one path.",
-   "GEOL-110 & GEOL-111 are printed as one elective entry taken together (lecture and lab); recorded as two separate courses in the Option 2 electives block.",
-   "Elective courses print no individual units.",
-   "BIOL-110 is titled 'Introduction to Biology with Lab' in the catalog vs 'Survey of Biology' in the closed list.",
-   "The 60-unit sentence is the general Associate degree requirement, not printed as this award's total; degree_total left null.",
-   "The program learning outcomes are one list for the program, tagged by emphasis; recorded as printed."
+   "The student completes one of two emphases (Option 1: Life Science, Option 2: Physical Sciences); each option consists of two blocks (core + electives), all four tagged option_group 'Emphasis'. A student completes BOTH blocks of the chosen option, not one block of four.",
+   "Each option prints 'Total Units 18-21'; recorded as total_units. The 60-unit sentence is the generic associate degree requirement, so degree_total is null.",
+   "The math row prints '5-7' beside MATH-C2210 for the whole row; the alternative path is MATH-106 AND MATH-108 together (College Algebra and Trigonometry), recorded as two alternatives. MATH-106 units not printed.",
+   "In Option 2 electives, GEOL-110 & GEOL-111 are printed as one paired choice (lecture and lab taken together); recorded as two separate entries.",
+   "Elective course units are not printed beside the courses; units left null. Electives block requires a minimum of 4 units (printed 4-5).",
+   "Option 2 lists BIOL-110 with the title 'Introduction to Biology with Lab', while the closed list titles it 'Survey of Biology'.",
+   "PHYS-140 alternative in Option 2 core has no units printed beside it."
   ]
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }

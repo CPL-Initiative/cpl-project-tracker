@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7367,
-    "output_tokens": 2321,
+    "output_tokens": 2262,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2321,
+  "output_tokens": 2262,
   "output_tokens_details": {
-   "thinking_tokens": 604
+   "thinking_tokens": 569
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07589,
- "ms": 19198,
- "seconds": 19.5,
+ "cost_usd": 0.07471,
+ "ms": 17882,
+ "seconds": 18.1,
  "parts": null,
  "error": null,
  "score": {
@@ -372,21 +372,21 @@
   "missing_explained": [
    {
     "code": "HIST 120",
-    "why": "not in the text; catalog prints HISTC1001 United States History to 1877 in its place (likely common course renumbering)"
+    "why": "not in the text; catalog lists HISTC1001 (United States History to 1877) in the core instead"
    },
    {
     "code": "HIST 121",
-    "why": "not in the text; catalog prints HISTC1002 United States History since 1865 in its place (likely common course renumbering)"
+    "why": "not in the text; catalog lists HISTC1002 (United States History since 1865) in the core instead"
    }
   ],
   "notes": [
-   "degree_total 60 taken from the page header 'Units: 60 units' printed for this award; the major total 'History for Transfer (Total 18)' is recorded as total_units.",
-   "HISTC1001 and HISTC1002 are printed in common-course-numbering format and are not in the closed list; they appear to replace HIST 120 and HIST 121.",
-   "The last two 3-unit blocks also allow 'any course not used above', i.e., a course from an earlier block not already used to satisfy it (e.g., HIST180 if HIST140 was used); recorded with only the printed list of courses.",
-   "Cal-GETC is required but the page prints no units for the GE pattern.",
-   "Program learning outcomes are printed for the program as a whole; this award is the only one on the page, so they are recorded here."
+   "HISTC1001 and HISTC1002 appear to be Common Course Numbering replacements for closed-list HIST 120 and HIST 121; recorded as catalog additions.",
+   "The last two 3-unit blocks read 'plus at least 3 units from any course not used above, or:' — a student may also satisfy each with an unused course from the earlier lists; only the newly listed courses are recorded in each block.",
+   "degree_total of 60 taken from the page's 'Units: 60 units' header for this award; the major total of 18 is printed as 'History for Transfer (Total 18)'.",
+   "Cal-GETC is named as the GE pattern, but no GE unit total is printed.",
+   "Codes are recorded as printed without a space (e.g., HIST140)."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": "43379378196"
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12398,
-    "output_tokens": 7132,
+    "output_tokens": 7289,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 7132,
+  "output_tokens": 7289,
   "output_tokens_details": {
-   "thinking_tokens": 1608
+   "thinking_tokens": 1727
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.19223,
- "ms": 52095,
- "seconds": 52.6,
+ "cost_usd": 0.19537,
+ "ms": 53442,
+ "seconds": 54.3,
  "parts": null,
  "error": null,
  "score": {
@@ -150,7 +150,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "General Education",
    "degree_total": {
     "min": 60,
     "max": 60
@@ -964,21 +964,21 @@
    },
    {
     "code": "THART 21",
-    "why": "not in the text (THART 031 listed instead)"
+    "why": "not in the text; catalog lists THART 031 instead"
    }
   ],
   "notes": [
-   "Description says 19 units of general education and 23 units of electives (18+19+23=60), but the requirements table prints General Education Requirements 21.00 and 'Electives to meet 60 units' with no elective units; ge_units recorded as 21 from the table and electives_fill_degree set true.",
-   "The GE pattern is not named (only 'the General Education pattern'); ge_pattern left null.",
-   "Description also says students complete 'the General Education pattern and elective courses for an additional 42 units'.",
-   "AFRAM 018 and M/LAT 032 are cross-listed ('same as'); the catalog lists each as its own row, recorded separately; they should not both count.",
-   "SPAN 053B is printed 'same as ADAM 001'; ADAM 001 recorded as an alternative with no units printed.",
-   "Discipline subheader rows print unexplained unit figures (e.g., ART 3.00, DANCFOLK 3.00, ENGL 3.00, ESOL 6.00, MUSIC 9.00, PHIL 3.00, and 3.00 under the block heading); not recorded as block rules.",
-   "DANCE 007 is titled 'Global Dance Perspectives' in the catalog but 'Dance Study Abroad' in the state file.",
-   "ARTH C1100/C1200 are printed with 'or ART 002'/'or ART 003' alternatives; ENGL C1002 (4 units) with 'or ENGL 001B'; alternative units not printed.",
-   "Catalog codes are zero-padded (e.g., AFRAM 018) versus the closed list (AFRAM 18); treated as the same courses.",
-   "Several MUSIC and AFRAM courses are marked '( Historical )' in the list."
+   "Catalog codes are zero-padded (e.g. AFRAM 018, ARTH C1100) and were matched to closed-list codes AFRAM 18, ARTHC1100, etc.",
+   "AFRAM 018 and M/LAT 032 are printed as cross-listed ('same as') but each appears as its own row; recorded separately. SPAN 053B is printed 'same as ADAM 001', recorded ADAM 001 as an alternative (catalog addition, no units printed).",
+   "ARTH C1100 'or ART 002 - History of Western Art:' and ARTH C1200 'or ART 003', and ENGL C1002 'or ENGL 001B Composition and Reading.' recorded as alternatives; no units printed for the alternatives.",
+   "Subject subheader rows print stray unit figures (ART 3.00, DANCFOLK 3.00, ENGL 3.00, ESOL 6.00, MUSIC 9.00, PHIL 3.00, plus 3.00 under the block heading); their meaning is unclear and they were not recorded as rules.",
+   "Narrative says 19 units of general education and 23 units of electives (and 'an additional 42 units'), while the table prints General Education Requirements 21.00 and 'Electives to meet 60 units'. Table figures used for ge_units and electives_fill_degree; reviewer should check.",
+   "DANCE 007 is titled 'Global Dance Perspectives' in the catalog vs 'Dance Study Abroad' in the closed list.",
+   "Several MUSIC and AFRAM courses are marked '( Historical )' in the catalog.",
+   "GE pattern is not named specifically; recorded as 'General Education' (local GE presumed).",
+   "Rule 'from at least two disciplines' is an additional constraint on the 18-unit selection."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

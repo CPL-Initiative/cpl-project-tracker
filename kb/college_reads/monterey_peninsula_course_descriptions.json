@@ -1,0 +1,560 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): every subject page the 2026-27 course-descriptions index lists (index read 44764187505), each line for line through the capture view, for kb/hand_filed_catalogs/courses/. An address is the index's own link where the read showed it, else the subject code in lower case, CourseLeaf's form. No model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description, line for line."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bHours?\\b"
+ ],
+ "capture_lines": 8000,
+ "pages": [
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/adpe/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/admj/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/sign/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/anat/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/anth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/artb/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/arce/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/artd/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/artg/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/arth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/art/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/artp/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/arts/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/artv/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/astr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/athl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/auto/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/biol/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/busi/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/busc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/chem/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/musc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/comm/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/csci/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/csis/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/coun/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/danc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/dntl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/eced/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/econ/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/educ/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/emms/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/engr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/engl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/ensl/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/etnc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/fash/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/fptc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/fren/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/gwos/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/gent/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/geog/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/geol/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/glst/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/hlth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/hist/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/hort/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/hosp/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/hums/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/huma/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/inds/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/jpns/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/jour/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/kins/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/letp/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/lnsk/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/libr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/ling/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/stat/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/meda/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/musi/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/nurs/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/nutf/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/ocen/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/phil/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/phed/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/pfit/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/phys/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/phso/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/pols/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/psyc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/real/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/soci/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/span/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/thea/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/work/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/wrld/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.mpc.edu/course-descriptions/pdf/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}

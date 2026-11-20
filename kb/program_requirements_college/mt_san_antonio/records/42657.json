@@ -5,11 +5,11 @@
  "title": "Business Administration 2.0",
  "award": "A.S. T Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/business/business-administration2-transfer/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6115,
+  "input_tokens": 7728,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6115,
-    "output_tokens": 1736,
+    "input_tokens": 7728,
+    "output_tokens": 1895,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,56 @@
     "model": null
    }
   ],
-  "output_tokens": 1736,
+  "output_tokens": 1895,
   "output_tokens_details": {
-   "thinking_tokens": 456
+   "thinking_tokens": 557
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05918,
- "ms": 20360,
- "seconds": 20.7,
+ "cost_usd": 0.06881,
+ "ms": 15915,
+ "seconds": 16.2,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 16,
    "listed": 16,
-   "share": 0.75,
-   "missing": [
-    "BUSC1A",
-    "BUSC1AH",
-    "BUSC1B",
-    "BUSC1BH"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "BUSC1B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001H",
+     "listed": "BUSC1BH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "BUSC1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002H",
+     "listed": "BUSC1AH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -83,7 +93,27 @@
     28.0,
     30.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     64.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -99,6 +129,14 @@
    "heading_without_outcomes": true,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -110,8 +148,22 @@
     "max": 30
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
-   "outcomes": []
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -232,29 +284,31 @@
   "missing_explained": [
    {
     "code": "BUSC 1A",
-    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+    "why": "not in the text; catalog lists ECON C2002 (Principles of Macroeconomics) instead"
    },
    {
     "code": "BUSC 1AH",
-    "why": "not in the text; catalog lists ECON C2002H Principles of Macroeconomics - Honors instead"
+    "why": "not in the text; catalog lists ECON C2002H (Macroeconomics - Honors) instead"
    },
    {
     "code": "BUSC 1B",
-    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+    "why": "not in the text; catalog lists ECON C2001 (Principles of Microeconomics) instead"
    },
    {
     "code": "BUSC 1BH",
-    "why": "not in the text; catalog lists ECON C2001H Principles of Microeconomics - Honors instead"
+    "why": "not in the text; catalog lists ECON C2001H (Microeconomics - Honors) instead"
    }
   ],
   "notes": [
-   "The catalog prints no units beside individual courses; only the Core Courses block total (28-30) and Total Units for the Major (28-30) are printed, so all course units are null.",
-   "Closed-list code 'ECON17' was matched to the catalog's 'ECON 17' (Applied Business Statistics); treated as the same course, not a catalog addition.",
-   "ECON C2001/C2001H and ECON C2002/C2002H are not in the closed list (marked catalog additions); they appear to replace the closed list's BUSC 1B/1BH and BUSC 1A/1AH (same titles), likely a Cal-GETC common course renumbering. Reviewer should confirm.",
-   "Every row in Core Courses is required; 'or' rows are recorded as alternatives on a single entry.",
-   "The outcomes tab prints a 'Program Learning Outcomes' heading with only a link ('Review Student Learning Outcomes (SLOs) for this program.') and no outcomes, so program.outcomes is empty.",
-   "General Education (Cal-GETC) 34 units and 60 total degree units are stated; GE courses are not recorded in blocks."
+   "The catalog's units column is empty beside every course; only the block total (28-30) and the major total (28-30) are printed, so course units are null.",
+   "Closed-list code 'ECON17' is taken to be the catalog's 'ECON 17' (Applied Business Statistics); recorded as not a catalog addition.",
+   "ECON C2001/C2001H and ECON C2002/C2002H appear to be the C-ID common-numbered replacements for closed-list BUSC 1B/1BH and BUSC 1A/1AH; recorded as catalog additions.",
+   "Degree total 60 and Cal-GETC 34 are printed; the page notes courses may be double-counted for the major and Cal-GETC. No elective units are printed.",
+   "The intro sentence 'a major of at least 18 units or more' is a general ADT rule, not this award's total; the printed 'Total Units for the Major 28-30' is used.",
+   "The outcomes tab prints a 'Program Learning Outcomes' heading with only a link to review SLOs and no outcomes; outcomes left empty.",
+   "'enter the local job market' is not a named career; careers left empty."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

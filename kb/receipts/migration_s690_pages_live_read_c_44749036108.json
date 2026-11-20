@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s690_pages_live_read_c.sql",
+ "name": "s690_pages_live_read_c",
+ "version": "20261120135935",
+ "sha256": "3bcf03072eab02e889ae266295d6ed8a00840997589a4f33ca1d04f26c383641",
+ "run": "44749036108",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-20T13:59:35Z\",\"chk\":[],\"gone\":[\"08013\"],\"pair\":{},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

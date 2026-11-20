@@ -3638,12 +3638,40 @@
   "title": "Databases for Developers",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNIT195",
+   "CNIT197",
+   "CS111B",
+   "CS131B",
+   "CS150A",
+   "CS155P",
+   "CS160A",
+   "CS177",
+   "CS195",
+   "CS211E",
+   "CS231"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228",
+   "title": "The Certificate of Achievement in Databases for Developers includes",
+   "h1": "The Certificate of Achievement in Databases for Developers includes",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228,
+    229,
+    230,
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e69333ded485c91b"
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16000,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "19583",
@@ -8961,12 +8989,37 @@
   "title": "iPhone App Programming",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNIT197",
+   "CS110B",
+   "CS110C",
+   "CS111B",
+   "CS111C",
+   "CS177",
+   "CS195",
+   "CS212"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=229",
+   "title": "Courses Required for the Certificate of Achievement in iPhone App",
+   "h1": "Courses Required for the Certificate of Achievement in iPhone App",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    229,
+    230,
+    231,
+    232
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cb0d2416c909b15f"
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 16000,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "37602",
@@ -11732,12 +11785,35 @@
   "title": "Entrepreneurship and Innovation in Broadcast Media",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCST119",
+   "BCST135",
+   "BCST136",
+   "ENTR101",
+   "MRKT140",
+   "MRKT180"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=150",
+   "title": "138 Br oadcast Electronic Media Arts",
+   "h1": "138 Br oadcast Electronic Media Arts",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151,
+    152,
+    153
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "14c4e767d80ada86"
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 16000,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "40169",
@@ -11923,12 +11999,39 @@
   "title": "Entrepreneurship in Visual Media Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENTR101",
+   "MRKT140",
+   "PHOT100",
+   "VMD101",
+   "VMD105",
+   "VMD120",
+   "VMD140",
+   "VMD150",
+   "VMD154",
+   "VMD192"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=468",
+   "title": "Courses Required for the Certificate of Achievement in",
+   "h1": "Courses Required for the Certificate of Achievement in",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    468,
+    469,
+    470,
+    471
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "89350a1eb167f0fb"
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 16000,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "40205",
@@ -12483,24 +12586,70 @@
   "title": "Build Automation for DevOps & QA",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNIT133",
+   "CS131B",
+   "CS160A",
+   "CS160B",
+   "CS177",
+   "CS178"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=226",
+   "title": "Courses Required for the Certificate of Achievement in Build",
+   "h1": "Courses Required for the Certificate of Achievement in Build",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    226,
+    227,
+    228,
+    229
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "817e9470e73d7977"
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 16000,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "40706",
   "title": "Database Administration",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNIT415",
+   "CS150A",
+   "CS155B",
+   "CS155P",
+   "CS160A",
+   "CS160B"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=228",
+   "title": "Courses Required for the Certificate of Achievement in Database",
+   "h1": "Courses Required for the Certificate of Achievement in Database",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    228,
+    229,
+    230,
+    231
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8b3bceff150db8f5"
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 16000,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "40750",
@@ -13351,12 +13500,35 @@
   "title": "Entrepreneurship and Innovation in Journalism",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENTR101",
+   "JOUR22",
+   "JOUR24",
+   "JOUR26",
+   "JOUR35",
+   "JOUR36",
+   "JOUR37",
+   "MRKT140"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2025-2026.pdf#page=353",
+   "title": "Journalism 341",
+   "h1": "Journalism 341",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    353,
+    354
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "acdc163a41bea1c1"
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 10559,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "41354",
