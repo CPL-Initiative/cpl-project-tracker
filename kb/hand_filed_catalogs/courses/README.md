@@ -53,6 +53,8 @@ joins on `code`. The plain session and COBIx wire them in.
   230 (run 44764775167) and noncredit pages from 231 (run 44763620806).
 - `el_camino.json`: El Camino 2026-2027, 1,442 courses from Sam's hand-fetched copy (COBIx's text gist, run
   44762315427), whose course pages print one column. The Fall and Summer 2026 addenda are not read.
+- `monterey_peninsula.json`: Monterey Peninsula 2026-2027, 76 of 78 subject pages, 1,137 courses (run 44765198579).
+- `long_beach_city.json`: Long Beach City 2026-2027, 123 of 128 subject pages, 1,595 courses (run 44765123063).
 
 Mission, Pierce, Trade-Tech and West Los Angeles were read from the colleges' own PDFs, which the program capture already reads. Sam's hand-fetched copies
 (COBIx's gists) print two columns side by side (`pdftotext -layout`), which this parse does not split.
