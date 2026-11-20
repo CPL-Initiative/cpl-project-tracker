@@ -125,6 +125,9 @@ the pickup by hand when the page's button failed.
 - **CI caught one thing on #3613:** the College Data Collection page writes every date in words, and the answered
   list printed an ISO date (`tests/cdc_plain_words.test.js`). Run the tests that read a page after the last page
   change, not before it.
+- **Main went red at the daily build (`04d1aee6`):** `tests/issuer_tags.test.js` failed because the 8:27 procedures
+  run named two issuers with no entry in `kb/reference/issuer_tags.json` (Tracy High School, ISACA). The entries are
+  added in this checkpoint's PR. A procedures run that names a new issuer needs its tags entry the same day.
 - **This checkpoint ended near the emergency line** (about 60,000 tokens left): the commons lane was not compacted
   (26 KB against 20 KB; do it first), and the Open Asks sheet was not rebuilt.
 
