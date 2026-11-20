@@ -12,9 +12,8 @@ obsidian-folder: cpl-project-tracker/handoffs
 From SkyTern, S689, the CPL Queue routine's 06:12Z firing of 2026-11-20 (started 06:13Z): a conductor run for
 collection only under Sam's routine prompt of 2026-11-17, following the COBIx brief on #3358 as updated
 2026-11-20T02:38Z. A **full checkpoint** (lanes moved; Rule 10 data writes ran: reread posts and loads, outline loads),
-written by the checkpoint-docs worker at about 10:45Z while the run went on. Still running at this writing: lane 2's
-cheap-piles PRs (their first review round came back at about 10:30Z) and Mt. San Antonio's outline read and load; the
-conductor refreshes this file at sign-off. Skipped: steps 2 and 3 (no KB structure or user-facing surface changed), 7 (no M-ID pipeline move) and 9
+written by the checkpoint-docs worker at about 10:45Z while the run went on. The conductor refreshed it at sign-off (about 12:11Z): every PR the run opened is merged or
+carried over (#3593, #3597), and Mt. San Antonio's outlines are loaded. Skipped: steps 2 and 3 (no KB structure or user-facing surface changed), 7 (no M-ID pipeline move) and 9
 (the UI pass is its own queue item).
 
 **The start.** No session was live: the only open PR was dependabot's #3383, and `main`'s newest commit was handoff
@@ -38,10 +37,8 @@ that UTC day), restarted the COBIx watcher, and wrote this split before any work
    findings and hunches, COBIx's included, go into one follow-up PR per night, after the waves, never a PR each.
    Review rounds match what the change needs: a small fix that writes no shared data needs no second round
    (`r-collection-first-sam-2026-11-20`; S689 held seven PRs open against a cap of three).
-3. **Merge order** (the oldest finished first, each on a green `test` after its thread is read): #3594 (merge verdict;
-   `test` green on 6da4dc0c, updated from `main`) and #3598 (the display page file, 54cfd8ea) are finished; #3584 (this
-   checkpoint) after the sign-off refresh; #3595 once Mt. San Antonio's load files; #3596, then #3597, once each MAJOR
-   is fixed; #3593 after its `--calgetc-review`; #3592 after a self-recall test of `year_pdf_link`. Dependabot's #3383
+3. **Merge order:** none of S689's PRs remains to merge. #3593 and #3597 carry over and fold into S690's one
+   follow-up PR after the next wave (item 2a), with the minor findings of #3586, #3590 and #3594; dependabot's #3383
    waits as before.
 
 ## What shipped (squash-merged on `main`, `test` green on each head, each thread read)
@@ -55,9 +52,14 @@ that UTC day), restarted the COBIx watcher, and wrote this split before any work
 - **#3586 `9d11684a`** (09:51Z): the outline readers skip a column header, read Palomar's objectives, know report 485
   prints none, take Mt. San Antonio's results block, and pass over a `never_load` read.
 - **#3591 `d449bb5d`** (10:13Z): the wave, the third ten, Santa Rosa Junior, the free captures and the live reads.
+- **#3594 `a03baa73`**: `slug_awards` reads `-ca`, `-cert(ificate)`, `-aa-t-degree`, `-for-transfer` and `-adt`.
+  **#3598 `eae40d6b`**: the display page file. **#3596 `3455814d`**: keep-the-better names a load only for rows the
+  load inserts (`load_skips`), and compares runs as numbers. **#3592 `57c00120`**: rule D's prior-year read opens a
+  PDF catalog by its direct link, and a `blocked_sources` row records Desert's archive. **#3595 `86c1dedb`**: the outline
+  files (Feather River, Palomar and Mt. San Antonio's reads and receipts, CCSF's census and index).
 - **Display build `4c57fd250cce`**, live and confirmed by its closing count: 18,459 programs, replacing `3361e3aa5b7d`
   (one college, Barstow, run 44718082566; the gate 44718607626; the whole build 44718939233; the closing count
-  44719715170). Its page file is #3598, which the conductor merges; the gate and close-read receipts wait on
+  44719715170). Its page file is #3598 (`eae40d6b`); the gate and close-read receipts wait on
   `claude/s689-display-gate-read` and `claude/s689-display-close-read` for the next wave.
 - **The census** (run 44719996895, `main` fb454129): 5,069 left of 20,282, down from 5,145; passing 15,120;
   `places_none` 396 to 309.
@@ -67,8 +69,9 @@ that UTC day), restarted the COBIx watcher, and wrote this split before any work
 - **Program records: 79 new, 43 replaced by a better re-read.** The reread plan's third ten: 56 new and 37 replaced
   ($8.32; live read 44695498920). Santa Rosa Junior: 23 new and 6 replaced ($4.22; load 44703311509); its census gaps
   went from 41 to 19.
-- **Outline rows: 2,550.** Feather River 336 SLO rows (load 44700832207); Palomar 1,108 SLO and 1,106 objective rows
-  (load 44708472734).
+- **Outline rows: 3,623.** Feather River 336 SLO rows (load 44700832207); Palomar 1,108 SLO and 1,106 objective rows
+  (load 44708472734); Mt. San Antonio 1,073 SLO rows (read 44710704435, load 44729553938; 629 pages print no SLOs).
+- **CRE: 4,808** (79 new records at 15 each, plus 3,623 outline rows).
 
 Read in order: this file; the NEXT of [`program-requirements-harvest`](reference/lanes/program-requirements-harvest.md);
 `docs/program_requirements_harvest_lessons.md`, *S689*; `docs/reference/conductor_mode.md`, *What went wrong in S689*;
@@ -93,6 +96,8 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
    `cpl_library_checks` held 0 rows). Then part 4, then part 3. A plain session's; conductor runs stay on collection.
 5. **cer-procedures** (the pair apply) and **repo-size** (Part 5 waits on Sam's go; the slimming items): a plain
    session's.
+6. **For the night's one follow-up PR, beside #3593 and #3597:** `kb/_build_spend_daily.py` never sets the spend
+   file's top-level `updated` (still 2026-11-15) when it writes `sessions` (COBIx's brief of Nov 19).
 
 ## For Sam
 
@@ -181,31 +186,25 @@ pair apply and the CR exact match: the plain session's list (brief section 4).
 
 | PR or branch | State | Next |
 |---|---|---|
-| #3584 this declaration and checkpoint (`claude/awesome-fermat-cx0hdk`) | draft; checkpoint pushed | the conductor's sign-off refresh; merge on a green `test` |
-| #3592 rule D's prior-year read on a PDF catalog (`claude/rule-d-desert-s689`, 236eddc4) | draft, lane 2; blocking finding | a self-recall test of `year_pdf_link` (Santa Monica read 4, 0, 1), then merge |
-| #3593 Berkeley City's statewide Cal-GETC 34 (`claude/ge-units-rule-s689`, f2389173) | draft, lane 2, held | a free `step=reconcile extract=0` at Berkeley City and `--calgetc-review`, then merge and the reread |
-| #3594 `slug_awards` endings (`claude/slug-endings-s689`, 6da4dc0c) | lane 2; merge verdict, `test` green | merge |
-| #3595 the outline files (`claude/outline-files-s689`, 8e3c14eb) | draft; Mt. San Antonio's read and load in flight | merge once that load files |
-| #3596 `needs_load`, run ids as numbers, `live_read_at` (`claude/keep-better-needs-load-s689`, efd25f92) | draft, lane 2; one MAJOR | list only rows a load inserts (from `load_rows`), then merge |
-| #3597 a no-ending address two awards share (`claude/keep-better-shared-address-s689`, f206420b) | draft, lane 2; one MAJOR | Redwoods 22673, then merge after #3596 |
-| #3598 the display page file (54cfd8ea) | build `4c57fd250cce` live and confirmed | the conductor merges it |
+| #3584 this declaration and checkpoint (`claude/awesome-fermat-cx0hdk`) | merged at sign-off | none |
+| #3593 Berkeley City's Cal-GETC 34 (`claude/ge-units-rule-s689`, e3a57de0) | draft, carried over; the reconcile run's 17 records restored | S690's follow-up: a second free reconcile, `--calgetc-review` with `--restore`, a self-recall of the next-line reading, a review, then the reread |
+| #3597 a no-ending address two awards share (`claude/keep-better-shared-address-s689`, 82022d5c) | draft, carried over; one blocking test with `main` merged | S690's follow-up: accept either evidence for the `-ca` page title, merge `main`, rerun (COBIx comment 7038199226) |
+| #3589, #3588, #3587, #3590, #3586, #3591, #3594, #3598, #3596, #3592, #3595 | merged (41cae8c9, 3a73ff71, cd9e8451, 2d3d28b2, 9d11684a, d449bb5d, a03baa73, eae40d6b, 3455814d, 57c00120, 86c1dedb) | none |
 | `claude/s689-display-gate-read` (d4bc261a), `claude/s689-display-close-read` (146cd876) | receipts, no PR | ride the next wave |
-| #3589, #3588, #3587, #3590, #3586, #3591 | merged (41cae8c9, 3a73ff71, cd9e8451, 2d3d28b2, 9d11684a, d449bb5d) | none |
-| samueltlee/CPLBrain, the vault note (`claude/pensive-archimedes-cx0hdk`) | draft PR | merge it |
+| samueltlee/CPLBrain#830, the vault note and the braindump (`claude/pensive-archimedes-cx0hdk`) | draft | merge it |
 | #3383 | dependabot's | as before |
 
-Lane 2's first review round came back at about 10:30Z and its fixes went to the worker. #3511 is no longer open.
+Lane 2 ran two review rounds: #3592, #3594 and #3596 merged; #3593 and #3597 carry over. #3511 is no longer open.
 
 ## Let go
 
-Written by the conductor at sign-off: each PR subscription, check-in and artifact watch it drops, and the COBIx
-watcher. At this writing the ledger names none held beyond the watcher.
+Dropped in the sign-off turn: the COBIx watcher (stopped). No PR subscription was held (the run gated each PR by
+reads), no check-in is scheduled, and no artifact is watched. Every worker is finished and its checkout removed.
 
-Spend: $138.26 (Opus 5.5 $137.46, Haiku 5.5 $0.80); collection $137.00, infrastructure $1.26; 2026-11-20T06:13Z to 2026-11-20T10:16Z.
+Spend: $193.54 (Opus 5.5 $191.96, Haiku 5.5 $1.58); collection $178.26, infrastructure $15.28; 2026-11-20T06:13Z to 2026-11-20T12:11Z.
 
-An estimate from token counts at list prices, as of 10:16Z; the conductor rewrites the line at sign-off. The filed
-extraction runs' own cost, $12.54 (the third ten $8.32, Santa Rosa Junior $4.22), is listed apart.
+An estimate from the session's and its workers' token counts at list prices (Opus 5.5 at $4 and $20 per million tokens, cache reads $0.20, cache writes $5; `kb/_spend_meter.py`), to 12:11Z; the sign-off turns after it add about $2. The filed extraction runs' own cost, $12.54 (the third ten $8.32, Santa Rosa Junior $4.22), is listed apart. Lane 1 and its readers: $118.31. The cheap-piles share: $35.68 (its worker and its second reader) and no records posted (College of the Desert's 8 sit behind robots.txt; Berkeley City's rule holds for S690). The checkpoint-docs worker: $12.28 (infrastructure).
 
 Opening line: *Greetings, you are SkyMerlin (Session 690), see SkyTern's handoff — `docs/session_690_handoff.md` — let's keep rolling with our queue.*
 
-S689 so far (10:16Z; the conductor fills the final line at sign-off): cost about $138.26 at list prices plus $12.54 of extraction runs; records collected 79 new program records and 43 replaced by a better re-read; outline rows added 2,550; substantive PRs merged 6 (#3589, #3588, #3587, #3590, #3586, #3591).
+S689 final: cost about $193.54 at list prices, estimated from token counts, plus $12.54 of filed extraction runs; records collected: 79 new program records (plus 43 replaced by a better re-read); outline rows added: 3,623; substantive PRs merged: 11, not counting the checkpoint.
