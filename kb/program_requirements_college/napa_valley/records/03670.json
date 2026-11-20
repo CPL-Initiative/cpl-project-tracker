@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7210,
-    "output_tokens": 1993,
+    "output_tokens": 1499,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,55 @@
     "model": null
    }
   ],
-  "output_tokens": 1993,
+  "output_tokens": 1499,
   "output_tokens_details": {
-   "thinking_tokens": 762
+   "thinking_tokens": 550
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0687,
- "ms": 15580,
- "seconds": 16.3,
+ "cost_usd": 0.05882,
+ "ms": 13094,
+ "seconds": 23.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 10,
    "listed": 13,
-   "share": 0.615,
+   "share": 0.769,
    "missing": [
     "COMM126",
     "COMS101",
-    "ECON100",
-    "ECON101",
     "MATH106"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON101",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON100",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "BUSI105",
-    "BUSI148",
-    "ECONC2001",
-    "ECONC2002"
+    "BUSI148"
    ],
    "flagged": [
     "BUSI105",
-    "BUSI148",
-    "ECONC2001",
-    "ECONC2002"
+    "BUSI148"
    ],
    "pass": true
   },
@@ -104,7 +111,7 @@
    "pass": true
   },
   "careers": {
-   "count": 9,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -129,7 +136,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "NVC General Education",
+   "ge_pattern": "NVC General Education pattern",
    "degree_total": {
     "min": null,
     "max": null
@@ -145,10 +152,6 @@
    ],
    "careers": [
     "Accounting",
-    "Accounting Clerk",
-    "Bookkeeper",
-    "Payroll Clerk",
-    "entry-level Accountant",
     "Accounting clerks",
     "Bookkeepers",
     "Payroll clerks",
@@ -162,8 +165,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 40,
+     "max": 40
     },
     "courses": [
      {
@@ -265,24 +268,19 @@
    },
    {
     "code": "ECON 100",
-    "why": "not in the text; catalog lists ECON-C2002 Principles of Macroeconomics instead (likely common course renumbering)"
+    "why": "not in the text; catalog lists ECON-C2002 Principles of Macroeconomics instead"
    },
    {
     "code": "ECON 101",
-    "why": "not in the text; catalog lists ECON-C2001 Principles of Microeconomics instead (likely common course renumbering)"
+    "why": "not in the text; catalog lists ECON-C2001 Principles of Microeconomics instead"
    },
    {
     "code": "MATH 106",
     "why": "not in the text"
    }
   ],
-  "notes": [
-   "The 'Total Units 40' printed under the single Required Core Courses list is recorded as total_units (it equals the sum of the listed courses).",
-   "'Each degree must total at least 60 units' and the 60-unit associate degree sentence are generic statements, not recorded as degree_total.",
-   "ECON-C2001 and ECON-C2002 appear to be Common Course Numbering replacements for closed-list ECON 101 and ECON 100; marked as catalog additions since the codes differ.",
-   "ACCT-127 is titled 'Introduction to Accounting with Quickbooks' in the catalog vs 'Computer Accounting' in the state file.",
-   "BUSI-105 and BUSI-148 are required in the catalog but absent from the closed list."
-  ]
+  "notes": []
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }

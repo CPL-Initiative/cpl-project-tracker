@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7271,
-    "output_tokens": 1946,
+    "output_tokens": 1882,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,49 +30,55 @@
     "model": null
    }
   ],
-  "output_tokens": 1946,
+  "output_tokens": 1882,
   "output_tokens_details": {
-   "thinking_tokens": 827
+   "thinking_tokens": 816
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.068,
- "ms": 17030,
- "seconds": 17.4,
+ "cost_usd": 0.06672,
+ "ms": 16108,
+ "seconds": 16.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 6,
    "listed": 6,
-   "share": 0.667,
-   "missing": [
-    "MATH120",
-    "MATH121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "COMS120",
     "COMS215",
     "MATH220",
-    "MATH222",
-    "MATHC2210",
-    "MATHC2220"
+    "MATH222"
    ],
    "flagged": [
     "COMS120",
     "COMS215",
     "MATH220",
-    "MATH222",
-    "MATHC2210",
-    "MATHC2220"
+    "MATH222"
    ],
    "pass": true
   },
@@ -249,20 +255,21 @@
   "missing_explained": [
    {
     "code": "MATH 120",
-    "why": "not in the text; the page lists MATH-C2210 Calculus I: Early Transcendentals instead (likely common course numbering replacement)"
+    "why": "not in the text; catalog lists MATH-C2210 Calculus I: Early Transcendentals instead"
    },
    {
     "code": "MATH 121",
-    "why": "not in the text; the page lists MATH-C2220 Calculus II: Early Transcendentals instead (likely common course numbering replacement)"
+    "why": "not in the text; catalog lists MATH-C2220 Calculus II: Early Transcendentals instead"
    }
   ],
   "notes": [
-   "The catalog text begins mid-sentence; the program's own heading (likely 'Physics 2.0 AS-T') is cut off, so section_heading uses the printed 'DEGREE REQUIREMENTS' heading.",
-   "Total Units 36 is printed for the whole course list and recorded as total_units; the block's stated is left null to avoid duplicating it.",
-   "No units printed beside COMS-215 (alternative to COMS-120).",
-   "Degree total not recorded: the page says the degree totals 'no more than 66' units and gives the generic ADT 60-unit requirement, neither printed as this award's total.",
-   "Career entries are taken from the CAREER OPPORTUNITIES section headings and the named areas/fields; reviewer may want to check whether the area headings (Research, Development and Design, Teaching) should count as careers."
+   "The catalog text begins mid-sentence; the program heading (likely 'Physics 2.0 AS-T') is not in the text, so the section heading recorded is the 'DEGREE REQUIREMENTS' heading.",
+   "Total Units 36 is the major total; the 60-unit and 'no more than 66' statements are general ADT requirements, not a printed degree total, so degree_total is null.",
+   "COMS-215 is printed without units beside it.",
+   "MATH-C2210 and MATH-C2220 appear to be common-course-numbered replacements for closed-list MATH 120 and MATH 121.",
+   "Careers taken from the CAREER OPPORTUNITIES section headings and the areas/fields named under Management and Other Areas."
   ]
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }
