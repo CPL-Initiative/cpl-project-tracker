@@ -5,11 +5,11 @@
  "title": "Social and Behavioral Sciences",
  "award": "A.A. Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/social-behavioral-sciences/aa-liberal-arts-sciences-emphasis-social-behavioral-sciences/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9421,
+  "input_tokens": 11040,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9421,
-    "output_tokens": 5958,
+    "input_tokens": 11040,
+    "output_tokens": 6370,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,70 +30,85 @@
     "model": null
    }
   ],
-  "output_tokens": 5958,
+  "output_tokens": 6370,
   "output_tokens_details": {
-   "thinking_tokens": 1452
+   "thinking_tokens": 1637
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.15684,
- "ms": 44296,
- "seconds": 44.8,
+ "cost_usd": 0.17156,
+ "ms": 46038,
+ "seconds": 47.0,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 74,
+   "placed": 92,
    "listed": 93,
-   "share": 0.796,
+   "share": 0.989,
    "missing": [
-    "BUSC1A",
-    "BUSC1AH",
-    "BUSC1B",
-    "BUSC1BH",
-    "COMM26",
-    "COMM26H",
-    "COMM7",
-    "COMM7H",
-    "HIST7",
-    "HIST7H",
-    "HIST8",
-    "HIST8H",
-    "LIBR1",
-    "PSYC10",
-    "PSYC3",
-    "SOC23",
-    "SOC4",
-    "STATC1000",
-    "STATC1000H"
+    "SOC4"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "BUSC1B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001H",
+     "listed": "BUSC1BH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "BUSC1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002H",
+     "listed": "BUSC1AH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST7H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HIST8H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 3,
    "codes": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H",
     "GEOG1LH",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
+    "PSYC10H",
+    "PSYC3H"
    ],
    "flagged": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H",
     "GEOG1LH",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
+    "PSYC10H",
+    "PSYC3H"
    ],
    "pass": true
   },
@@ -108,6 +123,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 9.0-9.0; the catalog states 18.0-18.0"
    ]
@@ -126,6 +142,17 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": false
  },
  "record": {
@@ -137,12 +164,28 @@
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Analyze cultural and gender diversity in humans.",
     "Explain the development of the person within society.",
     "Explain how biology relates to behavior or society.",
     "Discuss historical and political implications on society."
+   ],
+   "careers": [
+    "social sciences"
    ]
   },
   "blocks": [
@@ -739,99 +782,153 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIBR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 7H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 26H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 3H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 10H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "BUSC 1A",
-    "why": "not in the text; ECON C2002 listed instead"
+    "why": "not in the text; catalog lists ECON C2002 instead"
    },
    {
     "code": "BUSC 1AH",
-    "why": "not in the text; ECON C2002H listed instead"
+    "why": "not in the text; catalog lists ECON C2002H instead"
    },
    {
     "code": "BUSC 1B",
-    "why": "not in the text; ECON C2001 listed instead"
+    "why": "not in the text; catalog lists ECON C2001 instead"
    },
    {
     "code": "BUSC 1BH",
-    "why": "not in the text; ECON C2001H listed instead"
+    "why": "not in the text; catalog lists ECON C2001H instead"
    },
    {
     "code": "HIST 7",
-    "why": "not in the text; HIST C1001 listed instead"
+    "why": "not in the text; catalog lists HIST C1001 instead"
    },
    {
     "code": "HIST 7H",
-    "why": "not in the text; HIST C1001H listed instead"
+    "why": "not in the text; catalog lists HIST C1001H instead"
    },
    {
     "code": "HIST 8",
-    "why": "not in the text; HIST C1002 listed instead"
+    "why": "not in the text; catalog lists HIST C1002 instead"
    },
    {
     "code": "HIST 8H",
-    "why": "not in the text; HIST C1002H listed instead"
+    "why": "not in the text; catalog lists HIST C1002H instead"
    },
    {
     "code": "HIST30",
-    "why": "variant of HIST 30 without a space; HIST 30 placed in Category 3"
+    "why": "duplicate closed-list entry of HIST 30 (no space); placed as HIST 30"
    },
    {
     "code": "SOC 4",
     "why": "not in the text"
-   },
-   {
-    "code": "LIBR 1",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "COMM 7",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "COMM 7H",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "COMM 26",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "COMM 26H",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "PSYC 3",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "PSYC 10",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "SOC 23",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "listed as a recommended elective"
-   },
-   {
-    "code": "STAT C1000H",
-    "why": "listed as a recommended elective"
    }
   ],
   "notes": [
-   "The catalog prints no units beside individual courses in the category lists, so course units are null.",
-   "Rule: at least one course (3 units minimum) from each of the three categories (Core Courses line prints 9), plus 'additional 9 units from any course not already used in category 1, 2, or 3 for a total of 18 units.' This additional 9 units is not recorded as a separate block; it appears to mean further courses from the category lists, so open_elective_units is left null. Reviewer should confirm whether those 9 units may come from any course.",
-   "The degree requires 'General Education coursework' but names no specific GE pattern.",
-   "Recommended Electives (LIBR 1, COMM 7/7H, COMM 26/26H, PSYC 3/3H, PSYC 10/10H, SOC 23, STAT C1000/C1000H) are not requirements and are not placed; PSYC 3H and PSYC 10H are also absent from the closed list.",
-   "Catalog additions: GEOG 1LH, ECON C2001/C2001H, ECON C2002/C2002H, HIST C1001/C1001H, HIST C1002/C1002H, which appear to replace closed-list BUSC 1A/1B and HIST 7/8 courses.",
-   "Program Learning Outcomes are printed on the page's Outcomes tab for the program (the A.A. degree page); recorded for this award. The page also references a Sociology AA-T in navigation, which was not read."
+   "Section text: 'Select additional 9 units from any course not already used in category 1, 2, or 3 for a total of 18 units.' Read as 9 more units from the three category lists (not open electives), so open_elective_units is null; reviewer should confirm.",
+   "Core Courses line 'Select at least one course from each of the three categories' prints 9 units across the three category blocks (3 each); total 18 recorded as total_units.",
+   "No units are printed beside courses in categories 1-3; units left null. Alternatives' units are not printed and left null.",
+   "General education named only as 'General Education coursework'; no specific pattern, so ge_pattern null. No degree total printed.",
+   "Outcomes are printed on the page's Outcomes tab for this program (Program Learning Outcomes) and recorded for this A.A.",
+   "Career field taken from 'prepare students for careers and/or higher education in the social sciences'.",
+   "Catalog uses new C-ID codes (ECON C2001/C2002, HIST C1001/C1002) not in the closed list; recorded as catalog additions. GEOG 1LH, PSYC 3H, PSYC 10H also not in closed list.",
+   "Page also shows a Sociology (AA-T Degree A0419) toggle; only the A8991 AA section was read."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }
