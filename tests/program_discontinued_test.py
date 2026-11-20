@@ -87,7 +87,21 @@ try:
             {"control_number": "20003", "title": "Welding", "award": "Certificate", "near_miss": {"rule": "D"}}]}, fh)
     with open(os.path.join(base, "lassen", "capture.json"), "w") as fh:
         json.dump({"college": "Lassen College", "catalog_year": "2026-2027", "run": "9", "not_found": []}, fh)
+    # COBIx's third point on #3569 (S688): a newer read scoped to some programs (limit, force) speaks only for those.
+    os.makedirs(os.path.join(base, "chico"))
+    with open(os.path.join(base, "chico", "capture_preview.json"), "w") as fh:
+        json.dump({"college": "Chico College", "catalog_year": "2026-2027", "run": "3", "fingerprints": {},
+                   "not_found": [{"control_number": c, "title": t, "near_miss": {"rule": "D"}}
+                                 for c, t in (("20004", "Forestry"), ("20005", "Geology"))]}, fh)
+    with open(os.path.join(base, "chico", "capture.json"), "w") as fh:
+        json.dump({"college": "Chico College", "catalog_year": "2026-2027", "run": "8",
+                   "fingerprints": {"20005": {"sha256": "x"}}, "not_found": []}, fh)
     _np = [r["control_number"] for r in D.committed_not_printed(base)]
+    check("20004" in _np, "an older read's rule D mark stands for a program a newer scoped read never covered")
+    check("20005" not in _np, "a newer scoped read that found a page for a program clears the older mark")
+    check(D.read_covers({"fingerprints": {"1": {}}, "not_found": [{"control_number": "2"}],
+                         "page_claimed": [{"control_number": "3"}]}) == {"1", "2", "3"},
+          "a read covers what it fingerprinted, filed as not found, or filed as claimed")
     check("20003" not in _np, "a later full capture clears an older preview's rule D mark")
     check("20001" in _np, "a newer preview's mark stands over an older capture")
     cap = os.path.join(tmp, "out")
