@@ -1,10 +1,12 @@
 -- cpl_memory rows for SkyLinnet (S688), Sam's session of 2026-11-19 (started 23:40Z with handoff 688's opening line), a light
 -- checkpoint plus memory rows. Drafted by the checkpoint-docs worker; NOT pointed at by kb/migrations/.apply. The conductor
--- applies it through supabase-migrate.yml. INSERT ... ON CONFLICT (slug) DO NOTHING; every row lands proposed. Sam gave
--- no direction this run beyond the opening line, so no row quotes him. No contact detail in any row. The Library row
+-- applied it with execute_sql at 2026-11-20 about 01:30Z under Sam's word that session SQL needs no ask (row
+-- r-sql-needs-no-ask-sam-2026-11-20, which quotes him). INSERT ... ON CONFLICT (slug) DO NOTHING; the session's own rows land
+-- proposed, Sam's ruling lands verified. No contact detail in any row. The Library row
 -- d-library-check-binds-url-s688 is #3577's own file (2026-11-19_s688_library_memory_rows.sql), not this one.
 -- ROLLBACK: kb/migrations/2026-11-20_s688_cpl_memory_rows_rollback.sql
 insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('r-sql-needs-no-ask-sam-2026-11-20','decision','Sam: session SQL is authorized, no ask before it','Sam, S688 (2026-11-20 about 01:20Z): "You have sql with and don''t need to ping for allows With Auth". Read as: SQL through the Supabase connector is authorized, and a session runs it without asking first. Rule 10 still governs a write: a live read first, INSERT-only or a guarded update, and a committed receipt or rollback file.',array['supabase','permissions','sam-ruling'],'verified','Sam in session S688','Sam',now(),'SkyLinnet (S688)',date '2026-11-20'),
 ('p-skip-tag-in-commit-message-s688','pitfall','GitHub skips CI for a push whose head commit message holds the skip tag anywhere','S688: the first revert pushed to #3500 quoted the bot commit''s [skip ci] tag in its own message, and GitHub skipped every workflow for that push, so test never ran on the head. The tag counts anywhere in the head commit''s message, quoted or not. Name it as the skip tag in a human commit message; the revert was reworded and pushed with --force-with-lease.',array['ci','github-actions','merge-gate'],'proposed','#3500; #3578','SkyLinnet (S688), Sam''s session',null,'SkyLinnet (S688)',date '2026-11-20'),
 ('p-bot-commit-leaves-head-untested-s688','pitfall','A bot commit on a PR head leaves test absent on that head','S688: on #3500 and #3529 the update from main carried #3571''s first_light.js, so first-light-art.yml committed a timestamp-only tools/first_light_verify.json with the skip tag onto the PR head. A built-in-token or skip-tagged commit starts no test run, so the head had none. Revert to the tested tree with a human push, or fix the producer (#3578).',array['ci','first-light','merge-gate'],'proposed','#3500; #3529; #3578','SkyLinnet (S688), Sam''s session',null,'SkyLinnet (S688)',date '2026-11-20'),
 ('d-oldest-finished-among-finished-s688','decision','The oldest finished first means the oldest among PRs that are finished','S688: the merge rule''s "the oldest finished first" was read as the oldest among PRs that are finished. A finished younger PR (#3578, #3579) merged while an older one still waited on its test run, rather than the queue idling behind it. Reversible: a later reader may hold younger PRs instead.',array['merge-rules','conductor','branch-policy'],'proposed','#3578; #3579','SkyLinnet (S688), Sam''s session',null,'SkyLinnet (S688)',date '2026-11-20'),
@@ -15,8 +17,8 @@ on conflict (slug) do nothing;
 
 insert into public.cpl_memory_log (memory_id, actor, action, note, after)
 select id, 'SkyLinnet (S688)', 'create', 'S688 (2026-11-20)', to_jsonb(m)
-from public.cpl_memory m where m.slug in ('p-skip-tag-in-commit-message-s688','p-bot-commit-leaves-head-untested-s688','d-oldest-finished-among-finished-s688','d-revert-stamp-commit-for-test-s688','m-s688-five-merged','m-s687-rows-applied-s688')
+from public.cpl_memory m where m.slug in ('r-sql-needs-no-ask-sam-2026-11-20','p-skip-tag-in-commit-message-s688','p-bot-commit-leaves-head-untested-s688','d-oldest-finished-among-finished-s688','d-revert-stamp-commit-for-test-s688','m-s688-five-merged','m-s687-rows-applied-s688')
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
 
 select slug, kind, status, length(summary) as summary_len from public.cpl_memory
-where slug in ('p-skip-tag-in-commit-message-s688','p-bot-commit-leaves-head-untested-s688','d-oldest-finished-among-finished-s688','d-revert-stamp-commit-for-test-s688','m-s688-five-merged','m-s687-rows-applied-s688') order by slug;
+where slug in ('r-sql-needs-no-ask-sam-2026-11-20','p-skip-tag-in-commit-message-s688','p-bot-commit-leaves-head-untested-s688','d-oldest-finished-among-finished-s688','d-revert-stamp-commit-for-test-s688','m-s688-five-merged','m-s687-rows-applied-s688') order by slug;

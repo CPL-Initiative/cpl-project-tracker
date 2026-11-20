@@ -9,9 +9,9 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyTern (Session 689)
 
-From SkyLinnet, S688: Sam's session, started 2026-11-19T23:40Z when he pasted handoff 688's opening line, with no
-other direction. A **light checkpoint plus memory rows**: no lane's state changed and the run wrote no re-mint or data
-receipt. Skipped: steps 2 (`kb/README.md`), 3 (`README.md`), 7 (the Pipeline tab) and 9, and `conductor_mode.md`. The
+From SkyLinnet, S688: Sam's session, started 2026-11-19T23:40Z when he pasted handoff 688's opening line; his one
+direction is under *Decisions Sam made*. A **light checkpoint plus memory rows**: no lane's state changed and the run
+wrote no re-mint; its data writes are #3577's two migrate runs and the memory rows, each with a receipt or file. Skipped: steps 2 (`kb/README.md`), 3 (`README.md`), 7 (the Pipeline tab) and 9, and `conductor_mode.md`. The
 status files (step 12) and every apply are the conductor's.
 
 ## Open with the standing block (COBIx on #3358; Sam's rule for the next two or three sessions)
@@ -25,9 +25,10 @@ status files (step 12) and every apply are the conductor's.
    finished ones, `d-oldest-finished-among-finished-s688`), one update from `main` right before its merge, no
    dependency-map rebuild inside a PR, no full rerun when the input fingerprints match.
 3. **Merge order:** empty once this checkpoint (`claude/checkpoint-s688`) lands; only dependabot's #3383 is open.
-   #3577's two migrations were applying at sign-off from the trigger branch `claude/s688-library-gate-apply` (never
-   merges): the schema `library_check_binds_url` (commit f3354f83), then `s688_library_memory_rows` (commit ea5bd537,
-   row `d-library-check-binds-url-s688`). Confirm both runs' receipts on that branch before any Library work.
+   #3577's two migrations are applied from the trigger branch `claude/s688-library-gate-apply` (never merges): the
+   schema `library_check_binds_url`, run 44653210148, and the row `d-library-check-binds-url-s688`, run 44653244676;
+   both succeeded. A live read at 01:28Z found the `url` column, both function bodies matching on url, the trigger
+   function closed to anon, 0 check rows and 21 listed pieces unchanged.
 
 ## What shipped (squash-merged on `main`, `test` green on each head, each thread read)
 
@@ -71,10 +72,16 @@ CI); the [`commons`](reference/lanes/commons.md) lane's confidence-scorer and Ne
 1. The conductor-model flip on the CPL Queue routine's form is yours.
 2. [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current): one card.
 
+## Decisions Sam made
+
+- **Session SQL needs no ask** (Sam, 2026-11-20 about 01:20Z, verbatim): *"You have sql with and don't need to ping for
+  allows With Auth"*. Row `r-sql-needs-no-ask-sam-2026-11-20`, verified. Rule 10 still governs each write.
+
 ## Decisions (the session's, reversible; `cpl_memory`, proposed)
 
-`d-oldest-finished-among-finished-s688`, `d-revert-stamp-commit-for-test-s688`. Rows drafted in
-`kb/migrations/2026-11-20_s688_cpl_memory_rows.sql` (6 rows, rollback beside it); the conductor applies them.
+`d-oldest-finished-among-finished-s688`, `d-revert-stamp-commit-for-test-s688`. The seven rows in
+`kb/migrations/2026-11-20_s688_cpl_memory_rows.sql` (rollback beside it) were applied with `execute_sql` at 01:28Z
+under Sam's word above; all seven returned.
 
 ## Patterns that worked
 
