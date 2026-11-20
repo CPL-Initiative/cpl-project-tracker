@@ -1863,6 +1863,26 @@ check("a Berkeley City local degree still takes the local 18, never the statewid
 _plan = RM2.calgetc_apply_plan([], "Berkeley City College")
 check("the apply plan takes Berkeley City's statewide step, never its local-only set step, as the Cal-GETC route",
       _plan["route"] == "statewide step")
+# The page renders the line as a table row with its figure alone in the cell below (reconcile run 44719698056 read
+# every Berkeley City AA-T so: "General Education (Cal-GETC) and Elective Courses" over "38").
+_cell = _bcc_page.replace("Elective Courses 38", "Elective Courses\n38")
+_out, _notes = R.reconcile(_bcc_rec, _cell, "Berkeley City College", "A.A- T Degree", title="English",
+                           siblings=_sib, control_number="31138")
+check("the combined line with its figure in the cell below fills the statewide 34 (English AA-T 31138)",
+      _out["program"]["ge_units"] == {"min": 34, "max": 34}
+      and [n.get("combined") for n in _notes if n["field"] == "ge_units"]
+      == ["General Education (Cal-GETC) and Elective Courses / 38"])
+check("the cell below a combined range mirrors a range major (Political Science 31984: 18-19 over 41-42)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Courses\n\n41-42",
+                         {"total_units": {"min": 18, "max": 19}, "degree_total": {"min": 60, "max": 60}})[1]
+      == ["General Education (Cal-GETC) and Elective Courses / 41-42"])
+check("the cell below under 34 holds (Business Administration 2.0 41766: 28 over 32)",
+      "figure" in (R.calgetc_hold(dict(_bcc_rec, program=dict(_bcc_rec["program"], total_units={"min": 28, "max": 28})),
+                                  _cell.replace("Requirements 22", "Requirements 28").replace("\n38", "\n32"),
+                                  "A.A- T Degree", "English", _sib, _bcc, "31138")[0] or ""))
+check("a cell below that is no figure alone holds (a label over a course line)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Courses\nENGL 1A 4",
+                         {"total_units": {"min": 22, "max": 22}, "degree_total": {"min": 60, "max": 60}})[1] == [])
 check("a combined range whose high end overshoots holds (18-19 beside 41-43: 18 + 43 is 61)",
       R.calgetc_combined("General Education (Cal-GETC) and Elective Courses 41-43",
                          {"total_units": {"min": 18, "max": 19}, "degree_total": {"min": 60, "max": 60}})[1] == [])

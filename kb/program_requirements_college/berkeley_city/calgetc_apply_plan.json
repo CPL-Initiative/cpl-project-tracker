@@ -542,5 +542,325 @@
    "degree_total": 60.0,
    "held": "the statewide rule holds it: overlap"
   }
- ]
+ ],
+ "run_review": {
+  "run": "44719698056",
+  "changed": 17,
+  "kept": [],
+  "restored": [
+   "01102",
+   "09065",
+   "18597",
+   "19267",
+   "31138",
+   "31835",
+   "37797",
+   "37850",
+   "37851",
+   "37921",
+   "37936",
+   "40244",
+   "41869",
+   "43006",
+   "43932",
+   "46221",
+   "46229"
+  ],
+  "fail_to_pass_kept": [],
+  "held_would_pass": [],
+  "pass_to_fail_kept": [],
+  "records": [
+   {
+    "control_number": "01102",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     },
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "09065",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Course\n3 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     },
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Course\n3 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "18597",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "electives_fill_degree",
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n3 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     },
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n3 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "19267",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n4 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     },
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n4 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "31138",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "31835",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "held in the plan: the statewide rule holds it: overlap"
+   },
+   {
+    "control_number": "37797",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "37850",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "37851",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "37921",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "a passing record would fail"
+   },
+   {
+    "control_number": "37936",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     },
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "40244",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "41869",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "43006",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace says why the rule held it)"
+   },
+   {
+    "control_number": "43932",
+    "extracted_run": 44719698056,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "46221",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "electives_fill_degree",
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "electives_fill_degree",
+      "was": false,
+      "now": true,
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+     },
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 18,
+       "max": 18
+      },
+      "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+     }
+    ],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "46229",
+    "extracted_run": 44719698056,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "held in the plan: the statewide rule holds it: overlap"
+   }
+  ],
+  "pins": {}
+ }
 }

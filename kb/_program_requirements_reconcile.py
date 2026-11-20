@@ -295,9 +295,13 @@ DOUBLE_COUNT = re.compile(r"double[\s-]+count|count(?:ed|s)?\s+(?:toward|towards
 # "Major Requirements 22" / "General Education (Cal-GETC) and Elective Courses 38" / "Total Units 60"; College of
 # Alameda's "G.E. (Cal-GETC) and elective units 35.00"). Its figure is the degree's remainder after the major, which
 # no Cal-GETC figure rests on (S639 at Berkeley City: "the line is general education and electives together").
-COMBINED_GE_ELECTIVES = re.compile(
-    r"(?:\bgeneral\s+education\b|\bG\.\s*E\.|\bGE\b)[^\n]{0,40}?\band\s+electives?\b[^\n]*?"
-    r"(?<![\w.])(?P<n>\d{1,2}(?:\.\d{1,2})?)(?:\s*[-\u2013]\s*(?P<m>\d{1,2}(?:\.\d{1,2})?))?(?![\w.]*\d)", re.I)
+_COMBINED_LABEL = r"(?:\bgeneral\s+education\b|\bG\.\s*E\.|\bGE\b)[^\n]{0,40}?\band\s+electives?\b"
+_COMBINED_FIG = r"(?P<n>\d{1,2}(?:\.\d{1,2})?)(?:\s*[-\u2013]\s*(?P<m>\d{1,2}(?:\.\d{1,2})?))?"
+COMBINED_GE_ELECTIVES = re.compile(r"%s[^\n]*?(?<![\w.])%s(?![\w.]*\d)" % (_COMBINED_LABEL, _COMBINED_FIG), re.I)
+# The same line printed as a table row whose figure sits alone in the cell below, as Berkeley City's curriQunet pages
+# render it ("General Education (Cal-GETC) and Elective Courses" over "38"; reconcile run 44719698056, S689).
+COMBINED_GE_ELECTIVES_LABEL = re.compile(r"%s[^\n\d]*$" % _COMBINED_LABEL, re.I)
+COMBINED_FIG_ALONE = re.compile(r"^\s*%s\s*(?:units?)?\s*$" % _COMBINED_FIG, re.I)
 
 
 def calgetc_combined(sec: str, prog: dict) -> tuple[str, list[str]]:
@@ -309,14 +313,24 @@ def calgetc_combined(sec: str, prog: dict) -> tuple[str, list[str]]:
     maj, total = _lo_hi(prog.get("total_units")), _lo_hi(prog.get("degree_total"))
     if maj[0] is None or total[0] is None or total[0] != total[1]:
         return sec, []
-    kept, dropped = [], []
-    for ln in sec.split("\n"):
-        m = COMBINED_GE_ELECTIVES.search(ln)
+    lines = sec.split("\n")
+    kept, dropped, skip = [], [], set()
+    for i, ln in enumerate(lines):
+        if i in skip:
+            continue
+        m, below = COMBINED_GE_ELECTIVES.search(ln), None
+        if not m and COMBINED_GE_ELECTIVES_LABEL.search(ln):
+            # The figure alone in the cell below: the next line that is not blank.
+            j = next((k for k in range(i + 1, len(lines)) if lines[k].strip()), None)
+            m = COMBINED_FIG_ALONE.match(lines[j]) if j is not None else None
+            below = j if m else None
         lo = float(m.group("n")) if m else None
         hi = float(m.group("m")) if m and m.group("m") else lo
         if m and abs(maj[0] + hi - total[0]) <= 0.01 and abs(maj[1] + lo - total[0]) <= 0.01 \
                 and lo >= CAL_GETC_UNITS["min"]:
-            dropped.append(ln.strip())
+            dropped.append(ln.strip() + ("" if below is None else " / " + lines[below].strip()))
+            if below is not None:
+                skip.update(range(i + 1, below + 1))
             continue
         kept.append(ln)
     return "\n".join(kept), dropped
