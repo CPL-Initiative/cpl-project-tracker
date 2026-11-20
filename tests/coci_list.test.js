@@ -100,7 +100,7 @@ function input(w, node, v) { node.value = v; node.dispatchEvent(new w.Event("inp
   check("the List spans the window (the engine's host lifts the cap)", !!d.getElementById(P + "host") && /\.main-container:has\(#ccl-host\)\{max-width:none/.test(txt(d.getElementById(P + "css"))));
 
   // ── (2) columns by name ──
-  const want = ["Title", "College", "Subject", "Number", "Units", "Credit", "Transfer", "TOP", "Identities (M-ID, C-ID, CCN)", "Control number"];
+  const want = ["Title", "College", "Subject", "Number", "Units", "Credit", "Transfer", "TOP", "Identities (M-ID, C-ID, CCN)", "Closest M-ID", "Control number"];
   check("the columns are the tab's, by name", want.every((h) => colOf(d, h) >= 0) && heads(d).length === want.length);
   check("no Edit, flag, find and replace or AI sort: the List reads only",
     !word(d, /^Edit/) && !word(d, /^Find and replace$/) && !word(d, /^AI sort$/) && !Array.from(d.querySelectorAll("thead th")).some((th) => txt(th) === "Flag"));
