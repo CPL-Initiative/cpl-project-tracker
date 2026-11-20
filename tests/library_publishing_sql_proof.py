@@ -91,7 +91,10 @@ create table public.cpl_library (
   kind text, occasion text, made_on date, versions jsonb not null default '[]'::jsonb,
   for_kind text, for_category text, for_name text);
 create table public.cpl_memory (
-  slug text primary key, kind text, title text, summary text, tags text[], status text, source text,
+  -- kind and summary carry the live table's checks (S688: a 'ruling' kind passed this stub and would fail live).
+  slug text primary key, kind text check (kind in ('fact','pitfall','opportunity','risk','wishlist','question',
+  'decision','milestone','procedure')), title text, summary text check (char_length(summary) <= 400), tags text[],
+  status text, source text,
   verified_by text, verified_at timestamptz, author text, event_date date);
 """
 
