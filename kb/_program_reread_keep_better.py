@@ -235,15 +235,14 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
     # ending stripped, an address that names no award still passes (COBIx on #3553, finding 1).
     award_named = award_kind(rec.get("award")) in awards if bare != named else \
         (not awards or award_kind(rec.get("award")) in awards)
-    if award_named and bare == named and not awards and siblings:
-        kind = award_kind(rec.get("award"))
-        shared = sorted(str(x.get("control_number")) for x in siblings
-                        if str(x.get("control_number")) != str(rec.get("control_number"))
-                        and page_words(x.get("title")) == want and award_kind(x.get("award")) != kind)
-        if shared:
-            award_named = False
-            if note is not None:
-                note["shared_title"] = shared
+    kind = award_kind(rec.get("award"))
+    shared = sorted(str(x.get("control_number")) for x in siblings or []
+                    if str(x.get("control_number")) != str(rec.get("control_number"))
+                    and page_words(x.get("title")) == want and award_kind(x.get("award")) != kind)
+    if shared and note is not None:
+        note["shared_title"] = shared
+    if award_named and bare == named and not awards and shared:
+        award_named = False
     if named and page_words(named) == want and award_ok(re.sub(r"[-_]+", " ", bare)) and award_named:
         return "the address's last segment %r names the program" % slug[:80]
     src = (source or {}).get("source") if isinstance((source or {}).get("source"), dict) else {}
@@ -256,6 +255,11 @@ def page_is_own(rec: dict, source: dict | None = None, note: dict | None = None,
         return "the capture's window heading names the program (sources.json heading_named)"
     for key, text in texts:
         words = page_words(text)
+        # Two awards share the title: a page title or h1 that prints only the title words cannot say whose page it
+        # is either (Redwoods' "Welding Technology" over the A.S.'s page), so it must print the program's award
+        # (award_kinds_in; S689 review, round 1).
+        if shared and kind not in C.award_kinds_in(text):
+            continue
         if text and want <= words and ("2.0" in want) == ("2.0" in words):
             return "the capture's %s %r names the program" % ("page title" if key == "title" else key, text[:80])
     return None

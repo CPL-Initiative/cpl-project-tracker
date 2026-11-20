@@ -632,9 +632,20 @@ def test_shared_title(tmp):
     check(K.page_is_own(cert, None, {}, same) is not None, "a sibling of the same award kind leaves the address")
     other = [dict(sib[0], title="Welding Technology Advanced"), sib[1]]
     check(K.page_is_own(cert, None, {}, other) is not None, "a sibling with other title words leaves the address")
-    src = {"source": {"url": url, "title": "Welding Technology - Certificate of Achievement | Catalog"}}
-    check((K.page_is_own(cert, src, {}, sib) or "").startswith("the capture's page title"),
-          "the row falls back to the capture's page title")
+    # The capture's own entries, as kb/program_requirements_college/college_of_the_redwoods/sources.json files them:
+    # 01821's page titles itself "Welding Technology", 22673's "Welding Technology CA".
+    as_src = {"control_number": "01821", "source": {"url": url, "title": "Welding Technology", "h1": "Welding Technology"}}
+    ca_url = url.replace("technology-fall", "technology-ca-fall")
+    ca_src = {"control_number": "22673",
+              "source": {"url": ca_url, "title": "Welding Technology CA", "h1": "Welding Technology CA"}}
+    check(K.page_is_own(cert, as_src, {}, sib) is None,
+          "the certificate on the A.S.'s page with its real capture entry: the bare title shows nothing")
+    check(K.page_is_own(cert, as_src, {}) is not None, "without siblings the bare title passes, as before")
+    rec22673 = dict(cert, record={"program": {"section_heading": "REQUIREMENTS"}})
+    why, _ = K.own_program_why(rec22673, as_src, {}, sib)
+    check(why and "generic" in why, "own_program_why sets the certificate on the A.S.'s page aside: %r" % why)
+    check((K.page_is_own(dict(cert, source_url=ca_url), ca_src, {}, sib) or "").startswith("the capture's page title"),
+          "the certificate on its own page: the title prints CA, its award, and shows it")
 
 
 def test_needs_load(tmp):
