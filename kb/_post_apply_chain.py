@@ -2,7 +2,7 @@
 """The Rule-7 post-apply chain driver (Session 50 — Sam liked the idea).
 
 After a re-mint apply (and any bundled twin merge) has mutated the KB and the
-corresponding alias maps are registered in kb/_rekey_promotions.py ALIAS_MAPS,
+corresponding alias maps are registered in kb/alias_chain.py ALIAS_MAPS,
 this driver runs the NONE-SKIPPABLE downstream chain in order, fail-fast:
 
   1. promotions   python3 kb/_rekey_promotions.py --apply

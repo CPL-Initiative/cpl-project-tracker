@@ -58,6 +58,17 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # A report whose only change is its `_generated` stamp is put back, so a
+          # branch update that merely carries first_light.js from main does not get a
+          # commit that skips CI and leaves the PR head with no `test` run (S688: #3500
+          # and #3529 both lost their test on such a commit).
+          for f in tools/first_light_candidates.json tools/first_light_verify.json; do
+            if git cat-file -e "HEAD:$f" 2>/dev/null && \
+               [ "$(git show "HEAD:$f" | jq -S 'if type == "object" then del(._generated) else . end')" = \
+                 "$(jq -S 'if type == "object" then del(._generated) else . end' "$f")" ]; then
+              git checkout -- "$f"
+            fi
+          done
           git add tools/first_light_candidates.json tools/first_light_verify.json
           if git diff --cached --quiet; then
             echo "No report changes to commit."
