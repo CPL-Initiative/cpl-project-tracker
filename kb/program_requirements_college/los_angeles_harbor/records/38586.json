@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Philosophy",
  "award": "A.A- T Degree",
- "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=147",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8912,
+  "input_tokens": 9297,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8912,
-    "output_tokens": 2947,
+    "input_tokens": 9297,
+    "output_tokens": 4244,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,76 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2947,
+  "output_tokens": 4244,
   "output_tokens_details": {
-   "thinking_tokens": 271
+   "thinking_tokens": 1220
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09459,
- "ms": 20556,
- "seconds": 20.7,
+ "cost_usd": 0.12207,
+ "ms": 31691,
+ "seconds": 32.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 46,
    "listed": 46,
-   "share": 0.0,
-   "missing": [
-    "ENGLISH203",
-    "ENGLISH204",
-    "ENGLISH205",
-    "ENGLISH206",
-    "ENGLISH207",
-    "ENGLISH208",
-    "ENGLISH209",
-    "ENGLISH211",
-    "ENGLISH214",
-    "ENGLISH215",
-    "ENGLISH218",
-    "ENGLISH219",
-    "ENGLISH234",
-    "ENGLISH239",
-    "ENGLISH240",
-    "ENGLISH251",
-    "ENGLISH260",
-    "ENGLISH265",
-    "ENGLISH270",
-    "ENGLISH271",
-    "FRENCH10",
-    "FRENCH2",
-    "FRENCH26",
-    "FRENCH3",
-    "HISTORY1",
-    "HISTORY2",
-    "HISTORY74",
-    "HISTORY81",
-    "HISTORY82",
-    "HISTORY86",
-    "HISTORY87",
-    "HUMAN1",
-    "HUMAN17",
-    "HUMAN6",
-    "HUMAN60",
-    "PHILOS1",
-    "PHILOS20",
-    "PHILOS33",
-    "PHILOS6",
-    "PHILOS9",
-    "SPANISH12",
-    "SPANISH2",
-    "SPANISH3",
-    "SPANISH35",
-    "SPANISH36",
-    "SPANISH4"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -108,29 +61,49 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     74.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -140,232 +113,471 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Degrees and Certificates – LIBERAL ARTS AND SCIENCES",
+   "section_heading": "Philosophy - Associate in Arts for Transfer (AA-T) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 12,
+    "max": 20
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Possess a foundational understanding of Metaphysics, Epistemology, Logic, Ethics, and Value Theory.",
+    "Inquire into the basic nature of concepts such as truth, justice, rightness, knowledge, beauty, and reality.",
+    "Critically investigate how these concepts aid in both the formation of beliefs and decision making for an individual and society."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ENGLISH 203",
-    "why": "Philosophy A.A.-T section not in the text"
+    "name": "REQUIRED CORE COURSES: SELECT TWO (6 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PHILOS 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHILOS 006",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHILOS 020",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGLISH 204",
-    "why": "Philosophy A.A.-T section not in the text"
+    "name": "LIST A: SELECT ONE COURSE (3 UNITS)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHILOS 033",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGLISH 205",
-    "why": "Philosophy A.A.-T section not in the text"
+    "name": "LIST B: SELECT TWO COURSES (6 UNITS)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HISTORY 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGLISH 206",
-    "why": "Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 207",
-    "why": "Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 208",
-    "why": "Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 209",
-    "why": "Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 211",
-    "why": "Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 214",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 215",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 218",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 219",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 234",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 239",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 240",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 251",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 260",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 265",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 270",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "ENGLISH 271",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "FRENCH 10",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "FRENCH 2",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "FRENCH 26",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "FRENCH 3",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HISTORY 1",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HISTORY 2",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HISTORY 74",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HISTORY 81",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HISTORY 82",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HISTORY 86",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HISTORY 87",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HUMAN 1",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HUMAN 17",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HUMAN 6",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "HUMAN 60",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "PHILOS 1",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "PHILOS 20",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "PHILOS 33",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "PHILOS 6",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "PHILOS 9",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPANISH 12",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "SPANISH 2",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "SPANISH 3",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "SPANISH 35",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "SPANISH 36",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
-   },
-   {
-    "code": "SPANISH 4",
-    "why": "listed only in the Liberal Arts and Sciences section; Philosophy A.A.-T section not in the text"
+    "name": "LIST C: SELECT ONE COURSE (3-5 UNITS)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGLISH 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 208",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 214",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 218",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 219",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 234",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 239",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 026",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 074",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 081",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 086",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 087",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 017",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 035",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 036",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 122) is the tail of a Liberal Arts and Sciences (Arts and Humanities emphasis) course list, ending with 'Major 18-20 ... Total Units 60'. It does not contain the Philosophy A.A.-T section, so no blocks, totals, outcomes or careers were recorded for the named award.",
-   "The Liberal Arts list's totals (Major 18-20, Additional LACCD GE 2-24, Additional Degree-applicable 16-30, Total 60) belong to that other program and were not recorded.",
-   "Reviewer should locate the Philosophy A.A.-T section elsewhere in the 2026-2027 LAHC catalog (the page link may point to the wrong page)."
+   "Required Core is headed 'SELECT TWO (6 UNITS)' but printed as two 'or' pairs (PHILOS 009 or PHILOS 006; PHILOS 001 or PHILOS 020); recorded as a required block of two entries with alternatives, i.e. one course from each pair.",
+   "List A also allows 'Any Required Core not already used' (PHILOS 009/006/001/020); List B also allows 'Any List A course not already used'; List C also allows 'Any List A or B course not already used.' These cross-references are not duplicated as courses in the later blocks.",
+   "Catalog prints codes with leading zeros (e.g. PHILOS 009, FRENCH 003); these match closed-list codes without zeros (PHILOS 9, FRENCH 3), so not marked as additions. FRENCH 003 is printed as 'Intermediate French' vs closed-list 'INTERMEDIATE FRENCH I'.",
+   "ge_units recorded as the 34 semester units stated for Cal-GETC in the requirements text; the totals table separately prints 'Additional Cal-GETC Requirement* 22-28' (not including 6-12 double-countable major units).",
+   "degree_elective_units taken from 'Additional CSU-Transferable Units 12-20'; degree_total from 'Total Units 60'.",
+   "Students with catalog rights prior to Fall 2025 may follow CSU GE Breadth or IGETC instead of Cal-GETC."
   ]
  },
- "extracted_run": "39006381839"
+ "extracted_run": "44687664966",
+ "catalog_year": "2026-2027",
+ "source_sha": "a140566f25c26eb9",
+ "source_codes": [
+  "ENGLISH203",
+  "ENGLISH204",
+  "ENGLISH205",
+  "ENGLISH206",
+  "ENGLISH207",
+  "ENGLISH208",
+  "ENGLISH209",
+  "ENGLISH211",
+  "ENGLISH214",
+  "ENGLISH215",
+  "ENGLISH218",
+  "ENGLISH219",
+  "ENGLISH234",
+  "ENGLISH239",
+  "ENGLISH240",
+  "ENGLISH251",
+  "ENGLISH260",
+  "ENGLISH265",
+  "ENGLISH270",
+  "ENGLISH271",
+  "FRENCH10",
+  "FRENCH2",
+  "FRENCH26",
+  "FRENCH3",
+  "HISTORY1",
+  "HISTORY2",
+  "HISTORY74",
+  "HISTORY81",
+  "HISTORY82",
+  "HISTORY86",
+  "HISTORY87",
+  "HUMAN1",
+  "HUMAN17",
+  "HUMAN6",
+  "HUMAN60",
+  "PHILOS1",
+  "PHILOS20",
+  "PHILOS33",
+  "PHILOS6",
+  "PHILOS9",
+  "SPANISH12",
+  "SPANISH2",
+  "SPANISH3",
+  "SPANISH35",
+  "SPANISH36",
+  "SPANISH4"
+ ],
+ "source_coverage": 1.0
 }

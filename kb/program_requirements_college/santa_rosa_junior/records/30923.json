@@ -1,0 +1,211 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "30923",
+ "shape": "certificate",
+ "title": "Wastewater Treatment Operatns",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=375",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11799,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11799,
+    "output_tokens": 1528,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1528,
+  "output_tokens_details": {
+   "thinking_tokens": 677
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07776,
+ "ms": 13021,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Wastewater Treatment Operatns (Certiﬁcate of Achievement)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Read and interpret meters and gauges that monitor the puriﬁcation process and operation;",
+    "Apply data to formulas that determine treatment requirements, flow levels, and concentration levels;",
+    "Collect water samples, operate chemical-feeding devices, and perform laboratory tests;",
+    "Use information to control pumps, valves, and generators that move wastewater through treatment processes and dispose of the waste materials;",
+    "Use computers to monitor and regulate processes and equipment and to generate reports; and",
+    "Apply to take the Wastewater Treatment Plant Operator Examination Grade II."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Wastewater Treatment Operations - Complete 18.00 Units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "WWTR 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WWTR 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WWTR 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WWTR 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WWTR 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WWTR 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section spans pages 375-376; the running header on page 376 reads 'Water Distribution (Skills Certificate)', which is a PDF page-header artifact, not this program's heading.",
+   "Total Hours/Units 18 printed under the requirement list; recorded as total_units.",
+   "The program description mentions 'mid-level positions in the operation of wastewater treatment facilities and wastewater collection systems'; not recorded as a named career since it names no specific job title or career field.",
+   "Outcomes copied with the PDF's 'ﬁ' ligature as printed."
+  ]
+ },
+ "extracted_run": "44701011374",
+ "catalog_year": "2026-2027",
+ "source_sha": "606a82601b7862ef",
+ "source_codes": [
+  "WWTR112",
+  "WWTR120",
+  "WWTR121",
+  "WWTR122",
+  "WWTR123",
+  "WWTR124"
+ ],
+ "source_coverage": 1.0
+}

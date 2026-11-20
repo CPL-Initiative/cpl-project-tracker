@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 283,
  "with_closed_list": 279,
- "started": "2026-11-19T07:15:06Z",
+ "started": "2026-11-20T08:15:45Z",
  "pdf": {
   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
   "access": "ok",
@@ -225,15 +225,15 @@
    {
     "control_number": "06606",
     "pages": [
-     197,
-     198
+     356,
+     357
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.909,
-    "opens": "[page 197] Radiologic Technology (AS) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https://www.santarosa.edu/depart"
+    "opens": "[page 356] 356 Radiologic Technology (Certiﬁcate of Achievement) 1. A designated course (e.g., NRM 15); 2. A deﬁned combination of courses (e.g., NRM 2.1 and NRM 2.2); or 3. A set number of units that can be fulﬁlled fr"
    },
    {
     "control_number": "06610",
@@ -250,15 +250,16 @@
    {
     "control_number": "06626",
     "pages": [
-     151,
-     152
+     321,
+     322,
+     323
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.933,
-    "opens": "[page 151] SRJC 2026-2027 Catalog 151 1. The California Intersegmental General Education Transfer Curriculum (Cal-GETC) Requirements. 2. A minimum of 18 semester units in a major or area of emphasis, as determined by the"
+    "opens": "[page 321] SRJC 2026-2027 Catalog 321 Fire Technology (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Departmen"
    },
    {
     "control_number": "06633",
@@ -276,6 +277,20 @@
     "opens": "[page 124] 124 Business: Real Estate (AA) 2. Demonstrate competency in speciﬁc human resource administrative responsibilities in the areas of hiring, salary administration, beneﬁts administration, and records administra"
    },
    {
+    "control_number": "09605",
+    "pages": [
+     240,
+     241,
+     242
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 240] 240 AGVI: Viticulture (Certiﬁcate of Achievement) NRM 173 Range Plants of Sonoma County Total Hours/Units 11.5 PROGRAM STUDENT LEARNING OUTCOMES 1. Describe common ecosystem structure and function in Sonoma C"
+   },
+   {
     "control_number": "09613",
     "pages": [
      264,
@@ -289,6 +304,19 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 264] 264 Business: Entrepreneurship (Certiﬁcate of Achievement) Business: Entrepreneurship (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs"
+   },
+   {
+    "control_number": "09616",
+    "pages": [
+     262,
+     263
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 262] 262 Business: Bookkeeper (Certiﬁcate of Achievement) 4. Explain and ensure compliance with complex banking and SBA lending regulations, “Banker’s Alphabet” and other fair lending laws, and ethics of banking. "
    },
    {
     "control_number": "09626",
@@ -513,7 +541,6 @@
    {
     "control_number": "14704",
     "pages": [
-     170,
      171,
      172
     ],
@@ -522,7 +549,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.714,
-    "opens": "[page 170] Mathematics (AS) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https://www.santarosa.edu/departments Prog"
+    "opens": "[page 171] SRJC 2026-2027 Catalog 171 all of the following requirements must be met in order for the degree to be conferred: • A General Education Pattern (https://curriculum.santarosa.edu/ about-associate-degrees#ge) • "
    },
    {
     "control_number": "14998",
@@ -577,17 +604,17 @@
    {
     "control_number": "15434",
     "pages": [
-     200,
-     201,
-     202,
-     203
+     89,
+     90,
+     91,
+     92
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.963,
-    "opens": "[page 200] 200 Social and Behavioral Sciences (AA) 1. The California Intersegmental General Education Transfer Curriculum (Cal-GETC) Requirements. 2. A minimum of 18 semester units in a major or area of emphasis, as det"
+    "coverage": 0.841,
+    "opens": "[page 89] SRJC 2026-2027 Catalog 89 SPAN 40 Introductory Spanish for Spanish Speakers 4 SPAN 41 Intermediate Spanish for Spanish Speakers 4 AREA 4: Social and Behavioral Sciences Two courses: two academic disciplines are"
    },
    {
     "control_number": "15436",
@@ -632,16 +659,14 @@
    {
     "control_number": "15494",
     "pages": [
-     208,
-     209,
-     210
+     114
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 208] 208 Surveying Technology (AS) 6. Achieve greater awareness of global and cultural traditions; and 7. Create a portfolio of ﬁne art and designs. Surveying Technology (AS) For questions about this program, plea"
+    "coverage": 0.833,
+    "opens": "[page 114] 114 ArlRmotSnsng&Photogrammtry (AS) INDE 73 Portfolio Development 2 Select any combination totaling at least 3.00 units from the following: 3 CONS 103 Construction Materials, Methods and Equipment ARCH 26B Di"
    },
    {
     "control_number": "15499",
@@ -785,6 +810,19 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 148] 148 Fashion Design (AA) Some courses are only offered during the spring semester, or only periodically at SRJC (ECON 12 Introduction to Economics and the Environment and ENGL 10 Introduction to Environmental "
+   },
+   {
+    "control_number": "16937",
+    "pages": [
+     243,
+     244
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 243] AMT: CNC Machining II Tech (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: http"
    },
    {
     "control_number": "16965",
@@ -1084,6 +1122,19 @@
     "opens": "[page 130] 130 Communication Studies 2.0 (AA-T) Students are required to complete 60 semester units that are eligible for transfer to the California State University, including both of the following: 1. The California I"
    },
    {
+    "control_number": "21706",
+    "pages": [
+     241,
+     242
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 241] AGWS: Enology (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https://www.santa"
+   },
+   {
     "control_number": "21708",
     "pages": [
      111
@@ -1094,6 +1145,19 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 111] SRJC 2026-2027 Catalog 111 Program Description The AGWS: Wine Marketing and Sales major prepares students with skills such as basic knowledge of retail wine sales, construction a wine marketing plan, applying "
+   },
+   {
+    "control_number": "21710",
+    "pages": [
+     238,
+     239
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.867,
+    "opens": "[page 238] 238 AGEH: Landscape Design (Certiﬁcate of Achievement) AGEH: Landscape Design (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santaro"
    },
    {
     "control_number": "21712",
@@ -1148,6 +1212,19 @@
     "opens": "[page 345] SRJC 2026-2027 Catalog 345 Natural Resources Core Requirements - Complete 20.00 Units Code Title Hours/ Units Select any combination totaling at least 20.00 units from the following: 20 AGRI 20 Introduction to"
    },
    {
+    "control_number": "21719",
+    "pages": [
+     361,
+     362
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 361] Sustainable Agriculture (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https:/"
+   },
+   {
     "control_number": "21720",
     "pages": [
      137
@@ -1158,6 +1235,19 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 137] SRJC 2026-2027 Catalog 137 1. The California Intersegmental General Education Transfer Curriculum (Cal-GETC) Requirements. 2. A minimum of 18 semester units in a major or area of emphasis, as determined by the"
+   },
+   {
+    "control_number": "21724",
+    "pages": [
+     221,
+     222
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 221] Advanced Manufacturing Tech (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: htt"
    },
    {
     "control_number": "21726",
@@ -1210,6 +1300,34 @@
     "opens": "[page 174] 174 Medium Heavy Truck Technology (AS) • A Minimum Standard of Scholarship (https:// curriculum.santarosa.edu/about-associate-degrees#gpa) For all students admitted for the Fall 2009 term or any term thereaft"
    },
    {
+    "control_number": "21734",
+    "pages": [
+     348,
+     349
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 348] 348 Pharmacy Technician (Certiﬁcate of Achievement) Residence Requirement 1. A student must complete at least six units or 20 percent of the total units (whichever is greater) of the certiﬁcate program at San"
+   },
+   {
+    "control_number": "21737",
+    "pages": [
+     329,
+     330,
+     331,
+     332
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 329] Interior Design (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https://www.san"
+   },
+   {
     "control_number": "21738",
     "pages": [
      331
@@ -1245,6 +1363,19 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 318] 318 Fashion Fundamentals (Certiﬁcate of Achievement) students receive timely, clear, and consistent information about the requirement. Policy 3.2,Revised December 2012 Fashion Design Requirements - Complete 2"
+   },
+   {
+    "control_number": "21742",
+    "pages": [
+     275,
+     276
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.897,
+    "opens": "[page 275] SRJC 2026-2027 Catalog 275 Child Development: Associate Teacher Requirements - Complete 12.00 Units Code Title Hours/ Units CHLD 51 Principles and Practices of Early Childhood Education 3 CHLD 90.4 Introduc"
    },
    {
     "control_number": "21743",
@@ -1360,6 +1491,19 @@
     "opens": "[page 213] The Associate in Arts for Transfer in Theatre Arts is designed for students who are pursuing a baccalaureate degree. It provides a basic foundation in theatre history and literature, hands-on experience in sev"
    },
    {
+    "control_number": "30732",
+    "pages": [
+     319,
+     320
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 319] Film & Media Arts Production (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: ht"
+   },
+   {
     "control_number": "30750",
     "pages": [
      134,
@@ -1453,6 +1597,21 @@
     "opens": "[page 141] SRJC 2026-2027 Catalog 141 Students will explore the principles of three-dimensional (3D) modeling, texturing, lighting and animating, as well as the application of particle systems and dynamics to produce a r"
    },
    {
+    "control_number": "30923",
+    "pages": [
+     375,
+     376,
+     377,
+     378
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 375] SRJC 2026-2027 Catalog 375 ANSC 61 Livestock Feeding and Nutrition ANSC 134 Livestock Reproduction ANSC 171 Livestock Behavior and Humane Management EQSC 25 Equine Science EQSC 60 Equine Anatomy and Physiology"
+   },
+   {
     "control_number": "31035",
     "pages": [
      196
@@ -1520,17 +1679,15 @@
    {
     "control_number": "31201",
     "pages": [
-     103,
-     104,
-     105,
-     106
+     423,
+     424
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.714,
-    "opens": "[page 103] Administrative Assistant (AS) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https://www.santarosa.edu/dep"
+    "opens": "[page 423] SRJC 2026-2027 Catalog 423 BGN 99I Administrative Assistant Internship (0.5-8 Units) Internships are an opportunity for students to receive college credit for working in a position related to their ﬁeld of"
    },
    {
     "control_number": "31461",
@@ -1666,7 +1823,7 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 0.714,
-    "opens": "[page 190] 190 Physics (AS) Philosophy for Transfer List A Requirements Select any combination totaling at least 3.00 units from the following: 3 PHIL 20 History of Western Philosophy: Ancient and Medieval PHIL 21 Histo"
+    "opens": "[page 190] The Physics Degree Program is designed to prepare students for transfer and upper division work at four-year colleges and universities in the ﬁelds of physics, astronomy, astrophysics, or applied physics. Stud"
    },
    {
     "control_number": "32330",
@@ -1819,6 +1976,19 @@
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
+    "opens": "[page 310] 310 EMLS Credit: Advanced (Certiﬁcate of Achievement) EMLS Credit: Advanced (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa"
+   },
+   {
+    "control_number": "35252",
+    "pages": [
+     310,
+     311
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.9,
     "opens": "[page 310] 310 EMLS Credit: Advanced (Certiﬁcate of Achievement) EMLS Credit: Advanced (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa"
    },
    {
@@ -2060,21 +2230,6 @@
     "opens": "[page 224] 224 AE: Family Child Care Provider (Certiﬁcate of Completion) ADED 747A Carpentry I 0 ADED 747B Carpentry II 0 Program Student Learning Outcomes 1. Use carpentry hand tools, power tools, and personal protecti"
    },
    {
-    "control_number": "36760",
-    "pages": [
-     182,
-     183,
-     184,
-     185
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.538,
-    "opens": "[page 182] 182 Nursing ADN (AS) Nursing ADN (AS) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https://www.santaros"
-   },
-   {
     "control_number": "36875",
     "pages": [
      234
@@ -2305,6 +2460,20 @@
     "opens": "[page 151] SRJC 2026-2027 Catalog 151 1. The California Intersegmental General Education Transfer Curriculum (Cal-GETC) Requirements. 2. A minimum of 18 semester units in a major or area of emphasis, as determined by the"
    },
    {
+    "control_number": "39418",
+    "pages": [
+     298,
+     299,
+     300
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 298] 298 CS Web and Mobile Full-Stack (Certiﬁcate of Achievement) Program Description The Computer Studies: Web and Mobile Front-End Developer Non-Credit Certiﬁcate of Completion is designed to provide students wi"
+   },
+   {
     "control_number": "39472",
     "pages": [
      137
@@ -2328,6 +2497,63 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 214] The Welding Technology Associate of Science degree prepares students for work in areas of shipbuilding, bridges and building construction, pipeline construction, refrigeration, missile and aircraft constructio"
+   },
+   {
+    "control_number": "39901",
+    "pages": [
+     380,
+     381,
+     382
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 380] 380 Weld: Gas Tungsten Arc: GTAW (Certiﬁcate of Achievement) 3. A set number of units that can be fulﬁlled from a list of courses (e.g., “3 units in any combination from the following: NRM 1, 2, 3, 4, 10, 22,"
+   },
+   {
+    "control_number": "39902",
+    "pages": [
+     381,
+     382
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 381] Weld: Shielded Metal Arc: SMAW (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: "
+   },
+   {
+    "control_number": "39903",
+    "pages": [
+     378,
+     379,
+     380,
+     381
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 378] Weld: Flux Cored Arc: FCAW (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: http"
+   },
+   {
+    "control_number": "39904",
+    "pages": [
+     379,
+     380,
+     381,
+     382
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 379] SRJC 2026-2027 Catalog 379 construction, automobile and related industries where metal must be joined together. Developments in metallurgy have created many types of metals which require new techniques to join"
    },
    {
     "control_number": "39943",
@@ -2556,15 +2782,16 @@
    {
     "control_number": "42872",
     "pages": [
-     497,
-     498
+     326,
+     327,
+     328
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.778,
-    "opens": "[page 497] SRJC 2026-2027 Catalog 497 HORT 91 Landscape Construction/Estimation (3 Units) Introduction to the ﬁeld of landscape contracting, including cost estimating and bidding procedures. Course includes hands-on "
+    "coverage": 1.0,
+    "opens": "[page 326] 326 Hospitality Management (Certiﬁcate of Achievement) Hemp Agriculture - Complete 24.00 Units Code Title Hours/ Units AGRI 20 Introduction to Plant Science 4 AGRI 30 Introduction to Soil Science 3 AGRI 70 In"
    },
    {
     "control_number": "42873",
@@ -2578,6 +2805,19 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 285] SRJC 2026-2027 Catalog 285 CS 81.41 Programming Essentials in Python for Networking 3 GD 60 Creating the Professional Portfolio 1.5 Select 16-17 units from one (1) of the Elective Specialization Groups below: "
+   },
+   {
+    "control_number": "43236",
+    "pages": [
+     245,
+     246
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 245] ArlRmotSnsng&Photogrammtry (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: http"
    },
    {
     "control_number": "43237",
@@ -2795,6 +3035,20 @@
     "opens": "[page 136] 136 CS Web and Multimedia (AA) Major Requirements Code Title Hours/ Units Advanced Virtual Production (RVPA) Major APTE 43 Computer Modeling and Animation 3 CS 70.1 Photoshop 1: Fundamental Skills 3 CS 42 Int"
    },
    {
+    "control_number": "44248",
+    "pages": [
+     327,
+     328,
+     329
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 327] HVACR Fundamentals (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https://www."
+   },
+   {
     "control_number": "44269",
     "pages": [
      249,
@@ -2869,6 +3123,35 @@
     "titled": false,
     "coverage": 0.929,
     "opens": "[page 118] 118 Automotive Technology (AS) Major Requirements Code Title Hours/ Units Automotive Diagnostic Technician Major ATL 101 Transportation Information Systems and Shop Practices 3 ATL 105 Service Writing and Sho"
+   },
+   {
+    "control_number": "44303",
+    "pages": [
+     251,
+     252,
+     253,
+     254
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 251] Automotive Fundamental (Certiﬁcate of Achievement) For questions about this program, please contact the Department Chair (https://academicaffairs.santarosa.edu/department-chairs). Department websites: https://"
+   },
+   {
+    "control_number": "44304",
+    "pages": [
+     253,
+     254,
+     255
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 253] SRJC 2026-2027 Catalog 253 students receive timely, clear, and consistent information about the requirement. Policy 3.2,Revised December 2012 Automotive Maintenance and Light Repair - Complete 32 Units Code Ti"
    },
    {
     "control_number": "44305",
@@ -3115,9 +3398,9 @@
    }
   ],
   "page_checks": {
-   "read": 45,
-   "own_page": 11,
-   "no_own_page": 34,
+   "read": 37,
+   "own_page": 24,
+   "no_own_page": 13,
    "not_printed": 0
   },
   "unproven": []
@@ -3125,12 +3408,12 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 370.7,
- "found": 238,
+ "seconds": 258.7,
+ "found": 259,
  "by_method": {
   "no_closed_list": 4,
-  "not_found": 41,
-  "pdf_pages": 238
+  "not_found": 20,
+  "pdf_pages": 259
  },
  "shared_pages": {
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=105": [
@@ -3158,10 +3441,13 @@
    "06593",
    "21726"
   ],
-  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151": [
+  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356": [
+   "06606",
+   "18923"
+  ],
+  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321": [
    "06626",
-   "39242",
-   "39244"
+   "21747"
   ],
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=174": [
    "09626",
@@ -3201,18 +3487,13 @@
    "14703",
    "32770"
   ],
-  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=170": [
-   "14704",
-   "15403"
-  ],
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=194": [
    "14998",
    "40890"
   ],
-  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=200": [
-   "15434",
-   "39943",
-   "40690"
+  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114": [
+   "15494",
+   "43237"
   ],
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=120": [
    "15499",
@@ -3248,6 +3529,10 @@
    "17638",
    "21743",
    "21744"
+  ],
+  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=378": [
+   "18478",
+   "39903"
   ],
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=145": [
    "19289",
@@ -3313,11 +3598,16 @@
   ],
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326": [
    "33164",
+   "42872",
    "44902"
   ],
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113": [
    "33166",
    "45782"
+  ],
+  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=310": [
+   "35248",
+   "35252"
   ],
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=108": [
    "35400",
@@ -3342,6 +3632,18 @@
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=234": [
    "36875",
    "37299"
+  ],
+  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151": [
+   "39242",
+   "39244"
+  ],
+  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=298": [
+   "39418",
+   "45234"
+  ],
+  "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=200": [
+   "39943",
+   "40690"
   ],
   "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=173": [
    "41201",
@@ -3388,29 +3690,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "09605",
-   "title": "AGVI: Viticulture",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "09616",
-   "title": "Business: Bookkeeper",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3420,18 +3701,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=132",
-    "coverage": 0.375
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "16937",
-   "title": "AMT: CNC Machining II Tech",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "coverage": 0.375,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3442,7 +3713,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3453,7 +3725,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3464,18 +3737,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21706",
-   "title": "AGWS: Enology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3486,29 +3749,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21710",
-   "title": "AGEH: Landscape Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21719",
-   "title": "Sustainable Agriculture",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3519,7 +3761,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3534,79 +3777,14 @@
    "status": "Active"
   },
   {
-   "control_number": "21724",
-   "title": "Advanced Manufacturing Tech",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21734",
-   "title": "Pharmacy Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21737",
-   "title": "Interior Design",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "21742",
-   "title": "Child Development: Teacher",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "30732",
-   "title": "Film & Media Arts Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "30923",
-   "title": "Wastewater Treatment Operatns",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
    "control_number": "31378",
    "title": "Solar Photovoltaics: System Installation, Design & Sales",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3617,17 +3795,6 @@
    "near_miss": {
     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=94",
     "coverage": 0.293
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "35252",
-   "title": "EMLS Credit: Intermediate",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
    },
    "status": "Active"
   },
@@ -3652,6 +3819,18 @@
    "status": "Active"
   },
   {
+   "control_number": "36760",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0,
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
    "control_number": "37015",
    "title": "CSU GE Pattern",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -3668,62 +3847,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39418",
-   "title": "CS Web and Mobile Full-Stack",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39901",
-   "title": "Weld: Gas Tungsten Arc: GTAW",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39902",
-   "title": "Weld: Shielded Metal Arc: SMAW",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39903",
-   "title": "Weld: Flux Cored Arc: FCAW",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "39904",
-   "title": "Weld: Gas Metal Arc: GMAW",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3734,7 +3859,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3745,7 +3871,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3756,7 +3883,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -3767,51 +3895,8 @@
    "near_miss": {
     "why": "rule A: no page prints the program's title with its award",
     "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "43236",
-   "title": "ArlRmotSnsng&Photogrammtry",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "44248",
-   "title": "HVACR Fundamentals",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "44303",
-   "title": "Automotive Fundamental",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
-   },
-   "status": "Active"
-  },
-  {
-   "control_number": "44304",
-   "title": "Automotive Transmission",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "rule A: no page prints the program's title with its award",
-    "rule": "A",
-    "refused_b": 0
+    "refused_b": 0,
+    "page_checks": true
    },
    "status": "Active"
   }
@@ -3819,35 +3904,35 @@
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 21,
-  "0.8-1.0": 73,
-  "1.0": 144
+  "0.5-0.8": 19,
+  "0.8-1.0": 77,
+  "1.0": 163
  },
  "would_extract": {
   "against": "kb/program_requirements_college/santa_rosa_junior",
-  "kept": 201,
+  "kept": 215,
   "kept_moved": 0,
-  "programs": 30,
+  "programs": 37,
   "list": [
    {
-    "control_number": "06606",
-    "title": "Radiologic Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=197",
-    "coverage": 0.909,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356",
-    "was_coverage": 0.909,
-    "was_method": "pdf_pages"
+    "control_number": "09605",
+    "title": "AGVI: Viticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=240",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "06626",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151",
-    "coverage": 0.933,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
-    "was_coverage": 0.933,
-    "was_method": "pdf_pages"
+    "control_number": "09616",
+    "title": "Business: Bookkeeper",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=262",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "13887",
@@ -3860,44 +3945,14 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "14704",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=170",
-    "coverage": 0.714,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=171",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15434",
-    "title": "Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=200",
-    "coverage": 0.963,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=89",
-    "was_coverage": 0.841,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15463",
-    "title": "Dental Hygiene",
-    "award": "A.S. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=140",
-    "coverage": 0.804,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=140",
-    "was_coverage": 0.786,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15494",
-    "title": "Surveying Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208",
+    "control_number": "16937",
+    "title": "AMT: CNC Machining II Tech",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=243",
     "coverage": 1.0,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
-    "was_coverage": 0.833,
-    "was_method": "pdf_pages"
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "16986",
@@ -3906,7 +3961,7 @@
     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
     "coverage": 0.947,
     "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
-    "was_coverage": 0.895,
+    "was_coverage": 0.947,
     "was_method": "pdf_pages"
    },
    {
@@ -3920,6 +3975,86 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "19598",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=168",
+    "coverage": 0.626,
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=168",
+    "was_coverage": 0.626,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21706",
+    "title": "AGWS: Enology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21710",
+    "title": "AGEH: Landscape Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=238",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21719",
+    "title": "Sustainable Agriculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=361",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21724",
+    "title": "Advanced Manufacturing Tech",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21734",
+    "title": "Pharmacy Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=348",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21737",
+    "title": "Interior Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=329",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21742",
+    "title": "Child Development: Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=275",
+    "coverage": 0.897,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
     "control_number": "30635",
     "title": "Theatre Arts",
     "award": "A.A. Degree",
@@ -3930,93 +4065,43 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "30816",
-    "title": "Communication Studies",
+    "control_number": "30732",
+    "title": "Film & Media Arts Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=319",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30923",
+    "title": "Wastewater Treatment Operatns",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=375",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31463",
+    "title": "Political Science",
     "award": "A.A- T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130",
-    "coverage": 0.857,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=131",
-    "was_coverage": 0.857,
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=192",
+    "coverage": 0.957,
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=192",
+    "was_coverage": 0.957,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "31035",
-    "title": "Psychology",
+    "control_number": "32299",
+    "title": "Journalism",
     "award": "A.A- T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
-    "coverage": 0.913,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196",
-    "was_coverage": 0.87,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31201",
-    "title": "Administrative Assistant",
-    "award": "A.S. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
-    "coverage": 0.714,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=423",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31461",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=141",
-    "coverage": 0.75,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=142",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31462",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=101",
-    "coverage": 0.944,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103",
-    "was_coverage": 0.833,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32253",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=145",
-    "coverage": 0.846,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=146",
-    "was_coverage": 0.846,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32301",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=116",
-    "coverage": 0.858,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88",
-    "was_coverage": 0.736,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32328",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
-    "coverage": 0.714,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32330",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=172",
-    "coverage": 0.7,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=172",
-    "was_coverage": 0.7,
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=162",
+    "coverage": 1.0,
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=162",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -4025,38 +4110,38 @@
     "award": "A.A- T Degree",
     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=164",
     "coverage": 0.726,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=169",
-    "was_coverage": 0.533,
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=164",
+    "was_coverage": 0.726,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33164",
-    "title": "Hospitality, Event and Tourism Management",
+    "control_number": "35252",
+    "title": "EMLS Credit: Intermediate",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
-    "coverage": 0.667,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
-    "was_coverage": 0.667,
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=310",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36088",
+    "title": "Native American Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=178",
+    "coverage": 1.0,
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=178",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "33166",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113",
-    "coverage": 0.714,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=113",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36760",
-    "title": "Public Health Science",
+    "control_number": "36633",
+    "title": "Hospitality Management",
     "award": "A.S. T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=182",
-    "coverage": 0.538,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=182",
-    "was_coverage": 0.538,
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=157",
+    "coverage": 1.0,
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=157",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -4080,98 +4165,14 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "38700",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=120",
-    "coverage": 0.917,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=120",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42872",
-    "title": "Hospitality Management",
+    "control_number": "39418",
+    "title": "CS Web and Mobile Full-Stack",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=497",
-    "coverage": 0.778,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=497",
-    "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44788",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=175",
-    "coverage": 0.894,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=176",
-    "was_coverage": 0.894,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44902",
-    "title": "Hospitality: Event Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
-    "coverage": 0.875,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45486",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=185",
-    "coverage": 0.875,
-    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=185",
-    "was_coverage": 0.844,
-    "was_method": "pdf_pages"
-   }
-  ],
-  "held_worse_window": [
-   {
-    "control_number": "19598",
-    "title": "Kinesiology",
-    "award": "A.A. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=168",
-    "coverage": 0.626,
-    "was_coverage": 0.955
-   }
-  ],
-  "held_no_gain": [
-   {
-    "control_number": "31463",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=192",
-    "coverage": 0.957,
-    "was_coverage": 0.957
-   },
-   {
-    "control_number": "32299",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=162",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=298",
     "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36088",
-    "title": "Native American Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=178",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36633",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=157",
-    "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "39900",
@@ -4179,7 +4180,99 @@
     "award": "A.S. Degree",
     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39901",
+    "title": "Weld: Gas Tungsten Arc: GTAW",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=380",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39902",
+    "title": "Weld: Shielded Metal Arc: SMAW",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=381",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39903",
+    "title": "Weld: Flux Cored Arc: FCAW",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=378",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39904",
+    "title": "Weld: Gas Metal Arc: GMAW",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=379",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42872",
+    "title": "Hospitality Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326",
+    "coverage": 1.0,
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=497",
+    "was_coverage": 0.778,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43236",
+    "title": "ArlRmotSnsng&Photogrammtry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=245",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44248",
+    "title": "HVACR Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=327",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44303",
+    "title": "Automotive Fundamental",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=251",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44304",
+    "title": "Automotive Transmission",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=253",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "45601",
@@ -4187,7 +4280,69 @@
     "award": "A.A- T Degree",
     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130",
     "coverage": 0.905,
-    "was_coverage": 0.905
+    "was_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130",
+    "was_coverage": 0.905,
+    "was_method": "pdf_pages"
+   }
+  ],
+  "held_worse_window": [
+   {
+    "control_number": "15434",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=89",
+    "coverage": 0.841,
+    "was_coverage": 0.963
+   },
+   {
+    "control_number": "15494",
+    "title": "Surveying Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114",
+    "coverage": 0.833,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [
+   {
+    "control_number": "06606",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356",
+    "coverage": 0.909,
+    "was_coverage": 0.909
+   },
+   {
+    "control_number": "06626",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321",
+    "coverage": 0.933,
+    "was_coverage": 0.933
+   },
+   {
+    "control_number": "14704",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=171",
+    "coverage": 0.714,
+    "was_coverage": 0.714
+   },
+   {
+    "control_number": "31201",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=423",
+    "coverage": 0.714,
+    "was_coverage": 0.714
+   },
+   {
+    "control_number": "32328",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
+    "coverage": 0.714,
+    "was_coverage": 0.714
    }
   ],
   "held_opens_on_list": [],
@@ -4256,24 +4411,32 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=303"
   },
   "06606": {
-   "sha256": "03a7dcf9964f942dc64158577c4efeff7b151fd5ca5c0b561d06317a36a6aa85",
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=197"
+   "sha256": "90605b498dc706b607db720f9d363af03fc2dee590a0be709def6f001755955a",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=356"
   },
   "06610": {
    "sha256": "674c393740e0cd6971fae53f3533ac639da3498cfccba1cf142bb36e2097ecd6",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=304"
   },
   "06626": {
-   "sha256": "fddba5d4a77f3d5b388333dff69b967333f86232b88912a2df30c52c7c2eb078",
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151"
+   "sha256": "d6aa2faaec38e9ddae7b36ff2c6c27dde7591dc36edef81f8ee1fafaf661b995",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=321"
   },
   "06633": {
    "sha256": "54a80256532f7be777262e2c3bdc20c7f79b6200dac461b14073da4f5a08ae3f",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=124"
   },
+  "09605": {
+   "sha256": "be04b443a59a7cd0c48014baac9dee392ceba15089fb94e8dbdedb9a58e4dba0",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=240"
+  },
   "09613": {
    "sha256": "f5b1964e7654beddc6f98cc9de966815c315ed29bf379876c367c167ea86067e",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=264"
+  },
+  "09616": {
+   "sha256": "cc2d627e91206e771803e625b33a040fb274ff8e7778abc08dec38eaa4ffdf43",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=262"
   },
   "09626": {
    "sha256": "083eac2b648a2b881756d89098da7784a9f581be1ad68f7261ec0a77d5a7c3a0",
@@ -4344,8 +4507,8 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=189"
   },
   "14704": {
-   "sha256": "1859ac0dfeeb9f408fe9eb037d2582f0f9df6c30b698317e44088c98d5d63def",
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=170"
+   "sha256": "15b9a0cf2b0d4553ad8f3bb8b3cd1c8587c73f6d8135c0edc58caf1af036829a",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=171"
   },
   "14998": {
    "sha256": "eb867ddf02a892acd7c5c08c112084cd38d02d95a4c2bb14943a988c39cece55",
@@ -4364,8 +4527,8 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=333"
   },
   "15434": {
-   "sha256": "c74dbd8e08a914dfb13b2dfe7b7b6394344d0b4757b3d383763dd0b96942de81",
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=200"
+   "sha256": "4cbb647a9705d2f4ebcae89e8eac18a5f71cd8832e362e274efbc2493726e4e2",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=89"
   },
   "15436": {
    "sha256": "c6e90406aa18ff36d883b9076d9d03f69fe22af7f189aea156dda6cbf9c420e0",
@@ -4380,8 +4543,8 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=140"
   },
   "15494": {
-   "sha256": "2b1b361752a456748bdef5d0d1af1098d9477454f2bbede719ea82550c05d6b2",
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=208"
+   "sha256": "476c9f49c3c1ae5a5e3bfaf3d15feb2caad98cea37047d93a0ff63a8feadb822",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=114"
   },
   "15499": {
    "sha256": "242162e5ba597401f5f590c5a3093634accc8cadd78a4a01cc30a55a101eb4c8",
@@ -4426,6 +4589,10 @@
   "16906": {
    "sha256": "b95c119890f67334d9a44403c1ca0a03f825bbad951a2658ca31549d7b0f646a",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=148"
+  },
+  "16937": {
+   "sha256": "78e3bf84347b2f87841719c4de2be394b3837ac64d78de7df6b0cee7fac25d2e",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=243"
   },
   "16965": {
    "sha256": "ada4ba9e3d5e58bba0b914e5ae169b11fb29eb853f3fd66b102aa54a150bf530",
@@ -4519,9 +4686,17 @@
    "sha256": "2f98dd82ab53193824271bfec38681b51b5bd8a958ad5368e856a86021733731",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=130"
   },
+  "21706": {
+   "sha256": "46e5bdd62694a787ab1597ef9b8964d7df306a1d929f35312ebad7595316fb7a",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=241"
+  },
   "21708": {
    "sha256": "32deffbb85a015342b204d820909c3371d677277b88ac5c0785a2e49a9d71176",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=111"
+  },
+  "21710": {
+   "sha256": "0686ed03f36c719506fcc62b0f9ae9ddf5f844b93dff6c3f05cda2e1fc7bccf5",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=238"
   },
   "21712": {
    "sha256": "3ccd720824b4066e86d804d9a707d077e4e33ae0c330957327774f0b09639583",
@@ -4539,9 +4714,17 @@
    "sha256": "8e858b1b09028ebed6c0c57a2c0c8a03f689df0a06cd66f2bdc89950ea54f703",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=345"
   },
+  "21719": {
+   "sha256": "e2f1bd50198926b120e20c5ddbbcf55da3e6e1003303c54d14ce6ae6aff4f96c",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=361"
+  },
   "21720": {
    "sha256": "ef6f46ce3542d5177a400e0a877311e9e9f16f9cf7e356718b1198cc63519334",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=137"
+  },
+  "21724": {
+   "sha256": "0bbd06efe40f815d909a1d95101d600b7ec0d9d1261b7af125a278eb756c4e90",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=221"
   },
   "21726": {
    "sha256": "e644185a1591831a78a780d68a4e31fda4dfe0dc19a218deab414f02d79bc7d6",
@@ -4559,6 +4742,14 @@
    "sha256": "ada4ba9e3d5e58bba0b914e5ae169b11fb29eb853f3fd66b102aa54a150bf530",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=174"
   },
+  "21734": {
+   "sha256": "ec1c07163258831b3833dcbea737c52b2e20db1f38c6620d5439db200996b210",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=348"
+  },
+  "21737": {
+   "sha256": "e0ced6ba6c3a76ef18f7be3a68cfb9b091374092807e9627f644f728a9a9247d",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=329"
+  },
   "21738": {
    "sha256": "f4283046996300ef746b8ce91ebce9f4cad574e60103714c80f838a9bbdf6f4a",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=331"
@@ -4570,6 +4761,10 @@
   "21740": {
    "sha256": "7287e15206b766cf342d781ccb7d31844af23e767040886be9215660d9be301b",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=318"
+  },
+  "21742": {
+   "sha256": "84e79f227d9c4afaffe316b0422547b7a1456dd77ccb905db5a91b31aa5d6d03",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=275"
   },
   "21743": {
    "sha256": "44ee61bc0edf629609307c517a7767a1e7c21764799c31e1d00cc21e22300b80",
@@ -4607,6 +4802,10 @@
    "sha256": "ea4c3cc2917babf0adf844478349c1c7a109f0de1f9b0a7674f87428d11c878b",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=213"
   },
+  "30732": {
+   "sha256": "747bef22ec5fd0dbfc512733694b0db27ef230be9a7c9a9b8be71eae0c2cebe8",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=319"
+  },
   "30750": {
    "sha256": "675076c31622d062b1821bdec9ea370e0f5b5c55ba82589edb268d19d6bf219c",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=134"
@@ -4635,6 +4834,10 @@
    "sha256": "9261344c63d20d29c91a5d0d745276b255183ac4bf3a209c2edd2d9f6f7ae7a2",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=141"
   },
+  "30923": {
+   "sha256": "0069cee5dfe5c24deeb27c3d6547745e68644db11ff90f309ea2d1d39d535e7a",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=375"
+  },
   "31035": {
    "sha256": "a42a223b61c4e02806e1641df6dc1f1e8981e42051f1cde5d11a8d615ab77daf",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=196"
@@ -4656,8 +4859,8 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214"
   },
   "31201": {
-   "sha256": "c73f748f8c230c4ea3c11347c291ebcbd217b03701a250cc5ce6792008c06b15",
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=103"
+   "sha256": "2b86e4cbffaad151a2e5a43dd7a26f6a01854bd86caa853de92108a764cc9bf6",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=423"
   },
   "31461": {
    "sha256": "759838229ba0fe601ce147e1359ebf5e9ea9232051c4bd9fc3b1415791b12a0c",
@@ -4696,7 +4899,7 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=116"
   },
   "32328": {
-   "sha256": "cbdd9d38fb89b0ca889ee2663bc175c4568a727989f267945a9f646a65255c5c",
+   "sha256": "d245ce6089a081b57e0c0d88be2b38b6a621c197d0f6f9b79e190d992d383efd",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190"
   },
   "32330": {
@@ -4744,6 +4947,10 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=270"
   },
   "35248": {
+   "sha256": "1df43edcad8cb0f5b981cc1b64471b1d502d229c41ec0b61ce373e282d8d79cb",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=310"
+  },
+  "35252": {
    "sha256": "1df43edcad8cb0f5b981cc1b64471b1d502d229c41ec0b61ce373e282d8d79cb",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=310"
   },
@@ -4819,10 +5026,6 @@
    "sha256": "1bd66e9b2859226b1fc5d6c08fbd40efd72e58cfb76f80db0ee63a53e0649ae8",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=224"
   },
-  "36760": {
-   "sha256": "4f03e703bc0b5339ecb2eba95e245c8a0b5240f52e4286aa90da2db0ef52cb65",
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=182"
-  },
   "36875": {
    "sha256": "a5e0c4463101bacd857e8cb2a56dbf6c37afeb85d9a1f3dfe2c378e8ebf25b61",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=234"
@@ -4891,6 +5094,10 @@
    "sha256": "fddba5d4a77f3d5b388333dff69b967333f86232b88912a2df30c52c7c2eb078",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=151"
   },
+  "39418": {
+   "sha256": "0d7c35e0655c3c81fa878093750dcd120849a292ada097eb4102db31fa0d5394",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=298"
+  },
   "39472": {
    "sha256": "ef6f46ce3542d5177a400e0a877311e9e9f16f9cf7e356718b1198cc63519334",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=137"
@@ -4898,6 +5105,22 @@
   "39900": {
    "sha256": "e671b1cf6e9d7fa6578dccf6e89a0584a4d72e3cbc2e5e84c2f8a50e941eab6f",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=214"
+  },
+  "39901": {
+   "sha256": "1bf6e82752ecb9b55f0eb1a8abfe8e4506628ce5b76b02872dac41ed5e9f2d69",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=380"
+  },
+  "39902": {
+   "sha256": "4395ffc11ece3af321ffca32c8e054a3ad21a4ba07590f24cc93a92b1e4cd458",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=381"
+  },
+  "39903": {
+   "sha256": "27caa0617d28d05d09095b79705105ee46c1895e799904d4cbd172e3fcd3f048",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=378"
+  },
+  "39904": {
+   "sha256": "e693421d77b787f117daebc0842e240ef781cfbd1e2486dbe66c7cd2acfd41a7",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=379"
   },
   "39943": {
    "sha256": "d07dcf5133b983068ead2cba796015f3f000a98070ae9334ae0dc33bb56c8278",
@@ -4972,12 +5195,16 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=330"
   },
   "42872": {
-   "sha256": "974b55cb0a69abdfb834427f02102554e7807ef65bcc258c527f5396a2a71ebd",
-   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=497"
+   "sha256": "52a0821396111a1c6f3d87cf75b62b2e7409ffe3fb9a6b1f9e19406c4b515903",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=326"
   },
   "42873": {
    "sha256": "3fdb8ccae2db8f317861781f7395fe2c0b1b3911cd269074fcca529545bb8c37",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=285"
+  },
+  "43236": {
+   "sha256": "aaf40d527aa3cd0db5bb8f5c1b63b92be61f7655b31259cb8f7b3e55eee2361d",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=245"
   },
   "43237": {
    "sha256": "476c9f49c3c1ae5a5e3bfaf3d15feb2caad98cea37047d93a0ff63a8feadb822",
@@ -5047,6 +5274,10 @@
    "sha256": "17d20a852229106b7c302fd5748021e8f46cd35f328d905efa3d74bcdfa6d059",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=136"
   },
+  "44248": {
+   "sha256": "f9596157c750cfd05ec3e34cb1d16336ed09f7edeabc356b526b99248d3c751e",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=327"
+  },
   "44269": {
    "sha256": "51cac566a6f87d1dac0f8a9f353e807aaed569e9bd73d726e1180651716fd844",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=249"
@@ -5070,6 +5301,14 @@
   "44295": {
    "sha256": "b533bf4a20f7020d50df808f7839780f32cbc3aae8fc908b2c87640f00764d3e",
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=118"
+  },
+  "44303": {
+   "sha256": "7f850ea8d39f2f9ec24e3c6cf33999738dd83dca16a282b000489631fd5826a9",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=251"
+  },
+  "44304": {
+   "sha256": "f431164e05210a0c3b1761e4315b50bc3ac2702eeceaa1f6b5b2121ccc3046ce",
+   "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=253"
   },
   "44305": {
    "sha256": "71f79fa608192558748cc33462b958161437fad35f660002e4aaff1b61354b27",
@@ -5148,5 +5387,5 @@
    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=144"
   }
  },
- "run": "44477690021"
+ "run": "44701011374"
 }

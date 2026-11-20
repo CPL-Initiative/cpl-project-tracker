@@ -5,16 +5,19 @@
  "found": 106,
  "extracted": 106,
  "errors": 0,
- "passed_machine_checks": 81,
+ "passed_machine_checks": 93,
  "failed": {
-  "coverage": 13,
+  "coverage": 5,
   "invented": 4,
-  "arithmetic": 23,
+  "arithmetic": 10,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 6.89,
+ "cost_usd_run": 1.97,
+ "cost_usd_filed": 6.89,
  "cost_per_program": 0.065,
+ "extract_calls": 29,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "39787",
@@ -22,15 +25,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45293",
-   "title": "Modern Policing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45353",
@@ -38,7 +34,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45445",
@@ -46,8 +43,36 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46525",
+   "title": "Agriculture Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 5,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3233,
+     "content": 3233,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
- "run": "38935148408"
+ "run": "44692816081"
 }

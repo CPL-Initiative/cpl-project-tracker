@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Information Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021v2",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7145,
+  "input_tokens": 7094,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7145,
-    "output_tokens": 1621,
+    "input_tokens": 7094,
+    "output_tokens": 1274,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,54 +30,58 @@
     "model": null
    }
   ],
-  "output_tokens": 1621,
+  "output_tokens": 1274,
   "output_tokens_details": {
-   "thinking_tokens": 842
+   "thinking_tokens": 449
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.061,
- "ms": 16971,
- "seconds": 17.5,
+ "cost_usd": 0.05386,
+ "ms": 11667,
+ "seconds": 12.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 6,
-   "share": 0.0,
+   "share": 0.833,
    "missing": [
-    "CCT155",
-    "CCT160",
-    "CCT275",
-    "CIS101",
-    "CIS110",
-    "CIS99"
+    "CIS110"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "CIS135",
+    "COMP110"
+   ],
+   "flagged": [
+    "CIS135",
+    "COMP110"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    24.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 21.0-24.0; the catalog states 22.0-22.0"
    ]
   },
   "repeated": {
@@ -106,11 +110,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Information Technology",
+   "section_heading": "Information Technology - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -133,41 +137,84 @@
     "Computer Network Support Specialists"
    ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Courses with suggested sequence",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMP110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CCT275",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CCT155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CCT160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS099",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "CIS 101",
-    "why": "named only in the A.S. degree section; no Certificate of Achievement section in the text"
-   },
-   {
-    "code": "CCT 275",
-    "why": "named only in the A.S. degree section; no Certificate of Achievement section in the text"
-   },
-   {
-    "code": "CCT 155",
-    "why": "named only in the A.S. degree section; no Certificate of Achievement section in the text"
-   },
-   {
-    "code": "CCT 160",
-    "why": "named only in the A.S. degree section; no Certificate of Achievement section in the text"
-   },
-   {
-    "code": "CIS 99",
-    "why": "named only in the A.S. degree section (as CIS099 Occupational Work Experience); no Certificate of Achievement section in the text"
-   },
-   {
     "code": "CIS 110",
-    "why": "not in the text"
+    "why": "not in the text; the catalog lists COMP110 (Introduction to Computational Science, 2 units) instead, possibly a renumbered or replacement course"
    }
   ],
   "notes": [
-   "The catalog text prints only the Information Technology Associate in Science Degree (22 credits). It has no section for the requested Certificate of Achievement (16 to fewer than 30 units), so no blocks or totals are recorded for this award.",
-   "The A.S. section lists CIS101 (4), CIS135 (4), CCT275 (4), COMP110 (2), CCT155 (3), CCT160 (3) and CIS099 (1-4, take 2 units). It shows major 22/22, local GE 15/20, electives 18/23 and total program 60/60. The page mentions stackable certificates in Information Technology earned while taking these courses but does not print their requirements. A reviewer should find the certificate's own catalog page.",
-   "CIS135 and COMP110 appear in the A.S. section but not in the closed list, which suggests the certificate's course list differs from the degree's.",
-   "The careers come from the program description at the top of the page, which describes the A.S. degree. They are recorded because the page presents them for the Information Technology program as a whole.",
-   "No program learning outcomes are printed in the text. The text is cut off at the end ('sit for CompTIA's A')."
+   "CIS099 (Occupational Work Experience, 1-4 units) is matched to closed-list CIS 99 (Work Experience); the description says the program requires 2 units of occupational work experience, which reconciles the course units (4+4+2+4+3+3+2) with the stated 22-unit total.",
+   "COMP110 is not on the closed list; its 2 units match closed-list CIS 110 (Fundamental Computer Literacy), so a reviewer should check whether it replaces CIS 110.",
+   "CIS135 (Introduction to Computers) is not on the closed list.",
+   "The text prints no program learning outcomes; the text is cut off at the end in the Development Criteria section.",
+   "Courses are grouped by a suggested semester sequence (Fall/Spring); all are required and recorded in one block."
   ]
  },
- "extracted_run": "38979730323"
+ "extracted_run": "44687786167",
+ "catalog_year": "2026-2027"
 }

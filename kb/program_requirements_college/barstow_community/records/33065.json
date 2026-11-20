@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Early Childhood Education",
  "award": "A.S. T Degree",
- "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=136",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9586,
+  "input_tokens": 9545,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9586,
-    "output_tokens": 972,
+    "input_tokens": 9545,
+    "output_tokens": 1873,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,66 @@
     "model": null
    }
   ],
-  "output_tokens": 972,
+  "output_tokens": 1873,
   "output_tokens_details": {
-   "thinking_tokens": 315
+   "thinking_tokens": 539
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05778,
- "ms": 9612,
- "seconds": 10.1,
+ "cost_usd": 0.07564,
+ "ms": 15065,
+ "seconds": 27.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "CDEVC1000",
-    "CHLD11A",
-    "CHLD14",
-    "CHLD20",
-    "CHLD25",
-    "CHLD49",
-    "CHLD6",
-    "CHLD9"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEV11A",
+     "listed": "CHLD11A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV14",
+     "listed": "CHLD14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV20",
+     "listed": "CHLD20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV25",
+     "listed": "CHLD25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV49",
+     "listed": "CHLD49",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV6",
+     "listed": "CHLD6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV9",
+     "listed": "CHLD9",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -70,29 +98,49 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.0,
+    25.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -102,80 +150,161 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No program section in text (pages 136-137 hold course descriptions only)",
+   "section_heading": "Associate of Science Degree for Transfer, Early Childhood Education",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 4,
+    "max": 4
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Apply research theories, social interrelationships and developmentally age appropriate activities, teaching strategies, and develop a curriculum based on their observations and assessments that contribute toward the development of the young child.",
+    "Advocate for young children, to ensure appropriate resources and best practices for their education.",
+    "Demonstrate skills learned to create a high quality-learning environment that facilitates the emotional, cognitive, language, physical and social domains of the child."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "CDEVC1000",
-    "why": "appears only as course description CDEV C1000; no requirements list in text"
-   },
-   {
-    "code": "CHLD 11A",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLD 14",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLD 20",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLD 25",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLD 49",
-    "why": "named only as former code of CDEV 49 in a course description; no requirements list in text"
-   },
-   {
     "code": "CHLD 6",
-    "why": "named only as former code of CDEV 6 in a course description; no requirements list in text"
+    "why": "catalog prints it as CDEV 6 (same title, Child, Family, Community)"
    },
    {
     "code": "CHLD 9",
-    "why": "named only as former code of CDEV 9 in a course description; no requirements list in text"
+    "why": "catalog prints it as CDEV 9 (same title, Introduction to Early Childhood Curriculum)"
+   },
+   {
+    "code": "CHLD 11A",
+    "why": "catalog prints it as CDEV 11A (same title)"
+   },
+   {
+    "code": "CHLD 14",
+    "why": "catalog prints it as CDEV 14 (same title)"
+   },
+   {
+    "code": "CHLD 20",
+    "why": "catalog prints it as CDEV 20 (same title)"
+   },
+   {
+    "code": "CHLD 25",
+    "why": "catalog prints it as CDEV 25 (same title)"
+   },
+   {
+    "code": "CHLD 49",
+    "why": "catalog prints it as CDEV 49 (same title)"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 136-137) contains only course descriptions (CDEV, CHLD, CBIS courses), not the Early Childhood Education A.S.-T requirements section; the page link likely points to the wrong page. A reviewer should locate the program section elsewhere in the catalog.",
-   "The course descriptions show CHLD courses were renamed: CHLD 49 -> CDEV 49 (4 units), CHLD 6 -> CDEV 6 (3 units), CHLD 9 -> CDEV 9 (3 units), CHLD 4 -> CDEV C1000 (3 units). Closed-list CHLD codes may correspond to these CDEV codes.",
-   "No program learning outcomes or careers appear in the text; nothing recorded."
+   "The catalog prints all courses with subject CDEV, while the closed list uses CHLD for every course except CDEVC1000. Titles and units match exactly, so these are likely the same courses under a renamed subject; the CDEV codes are marked catalog_addition true and the CHLD codes are listed in missing_explained. A reviewer should confirm the subject change.",
+   "CDEV C1000 is treated as matching closed-list CDEVC1000 (spacing difference only).",
+   "The page prints 'Major Units Required 25.0', 'Cal-GETC General Education Coursework 34.0', 'Transferable Electives Required 4.0' and 'Total Units Required 60.0'. The 4 transferable elective units are recorded in degree_elective_units as outside the major.",
+   "The sentence 'A minimum of 18 semester units ... in a major' is a general ADT rule and is not recorded as this award's total.",
+   "Only the AS-T section was read. The following A.S. Child Development section (with its tracks and different outcomes) is a separate award and was ignored."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": "44687777798",
+ "catalog_year": "2026-2027",
+ "source_sha": "a8e0052243e0c881",
+ "source_codes": [
+  "CDEVC1000",
+  "CHLD11A",
+  "CHLD14",
+  "CHLD20",
+  "CHLD25",
+  "CHLD49",
+  "CHLD6",
+  "CHLD9"
+ ],
+ "source_coverage": 1.0
 }

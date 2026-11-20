@@ -5,28 +5,511 @@
  "catalog_year": "2026-2027",
  "programs": 367,
  "with_closed_list": 318,
- "started": "2026-10-22T09:54:20Z",
+ "started": "2026-11-20T06:35:51Z",
  "scope": null,
  "sitemap": {
   "url": "https://curriculum.pasadena.edu/sitemap.xml",
   "status": 200,
   "listed": 539,
   "nested": 0,
-  "program_pages": 384,
+  "program_pages": 386,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null,
+  "challenged": null
  },
- "pages_read": 384,
+ "listing_failed": 0,
+ "pages_read": 386,
+ "pages_listed": 386,
+ "pages_answered": 386,
  "child_pages": 0,
  "banner_h1": "2026-2027 ACADEMIC CATALOG",
- "loads": 401,
- "seconds": 1981.2,
- "found": 297,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 118,
+   "hits": 105,
+   "recall": 0.89,
+   "false": 0,
+   "false_off_own": 4,
+   "false_no_claims": 4,
+   "shared": 181,
+   "false_matches": [
+    {
+     "control_number": "31599",
+     "title": "Adult High School Diploma",
+     "award": "Noncredit program",
+     "page": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-high-school-diploma/",
+     "h1": ""
+    },
+    {
+     "control_number": "33404",
+     "title": "ADULT BASIC EDUCATION",
+     "award": "Noncredit program",
+     "page": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
+     "h1": ""
+    },
+    {
+     "control_number": "44543",
+     "title": "Electric Vehicle Charging Station Technician",
+     "award": "Noncredit program",
+     "page": "https://curriculum.pasadena.edu/noncredit-courses/evst/",
+     "h1": ""
+    },
+    {
+     "control_number": "46043",
+     "title": "Central Sterile Processing Technician",
+     "award": "Noncredit program",
+     "page": "https://curriculum.pasadena.edu/noncredit-courses/cstn/",
+     "h1": ""
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "31599",
+     "title": "Adult High School Diploma",
+     "award": "Noncredit program",
+     "page": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-high-school-diploma/",
+     "h1": ""
+    },
+    {
+     "control_number": "33404",
+     "title": "ADULT BASIC EDUCATION",
+     "award": "Noncredit program",
+     "page": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/adult-basic-education-cert-competency/",
+     "h1": ""
+    },
+    {
+     "control_number": "44543",
+     "title": "Electric Vehicle Charging Station Technician",
+     "award": "Noncredit program",
+     "page": "https://curriculum.pasadena.edu/noncredit-courses/evst/",
+     "h1": ""
+    },
+    {
+     "control_number": "46043",
+     "title": "Central Sterile Processing Technician",
+     "award": "Noncredit program",
+     "page": "https://curriculum.pasadena.edu/noncredit-courses/cstn/",
+     "h1": ""
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 49,
+  "by_result": {
+   "not_searched": 49
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "03104",
+    "title": "ACCOUNTING - CERTIFIED BOOKKEEPER",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03140",
+    "title": "NURSING - VOCATIONAL NURSING",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03148",
+    "title": "Fashion",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03150",
+    "title": "Paralegal Studies",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03172",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09345",
+    "title": "ELECTRICAL TECHNOLOGY",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09361",
+    "title": "MEDICAL ASSISTING - MEDICAL OFFICE ADMINISTRATION",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09362",
+    "title": "MEDICAL ASSISTING - MEDICAL INSURANCE BILLER",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "10335",
+    "title": "Applied Arts Divisional Major",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11544",
+    "title": "CHDV: Preschool Music Education",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14689",
+    "title": "AUTOMOTIVE TECHNOLOGY - POWERTRAIN TECHNICIAN",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15431",
+    "title": "Construction Welding",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15432",
+    "title": "Gas Tungsten & Gas Metal Welding",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "16371",
+    "title": "Fashion Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19240",
+    "title": "Communication Arts",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19241",
+    "title": "Engineering and Technology",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19243",
+    "title": "Gender, Ethnicity and Multicultural Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "19245",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22579",
+    "title": "ACCOUNTING - CERTIFIED BOOKKEEPER",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22595",
+    "title": "VIDEO PRODUCTION",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22604",
+    "title": "ELECTRICAL TECHNOLOGY",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22619",
+    "title": "Construction Welding",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22620",
+    "title": "Gas Tungsten & Gas Metal Welding",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22632",
+    "title": "MEDICAL ASSISTING - MEDICAL INSURANCE BILLER",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22636",
+    "title": "NURSING - VOCATIONAL NURSING",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22640",
+    "title": "Fashion",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22644",
+    "title": "CHDV: Preschool Music Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22650",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22653",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "24043",
+    "title": "Business Office Systems Program",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "31586",
+    "title": "TELEVISION AND RADIO - VIDEO POST PRODUCTION",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32020",
+    "title": "ARCHITECTURE",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32764",
+    "title": "Certificate of Completion in Secondary Education",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33406",
+    "title": "BASIC WORKFORCE READINESS FOR DEVELOPMENTALLY DISABLED ADULTS",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33408",
+    "title": "FAMILY HOME CHILD CARE PROVIDER",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33409",
+    "title": "FAMILY HOME CHILD CARE PROVIDER - BI",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33410",
+    "title": "GENERAL EDUCATION DIPLOMA",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33411",
+    "title": "GENERAL EDUCATION DIPLOMA - BILINGUAL",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33414",
+    "title": "INTRODUCTION TO STARTING A SMALL BUSINESS - BI",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33415",
+    "title": "VESL GREEN CONSTRUCTION",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33419",
+    "title": "WORKPLACE READINESS",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33558",
+    "title": "INTRODUCTION TO STARTING A SMALL BUSINESS",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33559",
+    "title": "INTRODUCTION TO MEDICAL INTERPRETATION AND TRANSLATION",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33695",
+    "title": "CHILD CARE PROVIDER",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33696",
+    "title": "INTRODUCTION TO LEGAL INTERPRETATION AND TRANSLATION",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33738",
+    "title": "COMPUTER KEYBOARDING",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "33740",
+    "title": "COMPUTER SKILLS",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "35860",
+    "title": "ESLN INTERMEDIATE ORAL COMMUNICATION SKILLS",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "36194",
+    "title": "COMPUTER SKILLS 2",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 404,
+ "seconds": 1926.2,
+ "found": 299,
  "by_method": {
   "no_closed_list": 49,
-  "not_found": 9,
-  "page_claimed": 12,
-  "sitemap_page": 297
+  "not_found": 10,
+  "page_claimed": 9,
+  "sitemap_page": 299
  },
  "shared_pages": {
   "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-financial-investments-as-cert-achievement/": [
@@ -88,6 +571,10 @@
   "https://curriculum.pasadena.edu/academic-programs/radiology/radiologic-technology-as-cert-achievement/": [
    "03146",
    "22634"
+  ],
+  "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/": [
+   "03160",
+   "22651"
   ],
   "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-administration-as-cert-achievement/": [
    "03161",
@@ -401,8 +888,8 @@
     "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 9165,
-     "content": 35154,
+     "body": 9179,
+     "content": 35177,
      "tabs": 0
     },
     "tab_panels": [
@@ -415,7 +902,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "33361",
@@ -423,7 +911,8 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "33362",
@@ -444,8 +933,8 @@
     "why": "coarse net: the page's code tokens name 2 of 345 listed courses",
     "error": null,
     "chars": {
-     "body": 9883,
-     "content": 34673,
+     "body": 9897,
+     "content": 34696,
      "tabs": 0
     },
     "tab_panels": [
@@ -458,7 +947,17 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33423",
+   "title": "PRE-APPRENTICESHIP IN BUILDING TRADES AND CONSTRUCTION INDUSTRY",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "36733",
@@ -479,8 +978,8 @@
     "why": "coarse net: the page's code tokens name 29 of 91 listed courses",
     "error": null,
     "chars": {
-     "body": 9326,
-     "content": 35190,
+     "body": 9340,
+     "content": 35213,
      "tabs": 0
     },
     "tab_panels": [
@@ -493,7 +992,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "36782",
@@ -501,7 +1001,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39026",
@@ -522,8 +1023,8 @@
     "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
     "error": null,
     "chars": {
-     "body": 3942,
-     "content": 31013,
+     "body": 3956,
+     "content": 31036,
      "tabs": 0
     },
     "tab_panels": [
@@ -536,7 +1037,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42196",
@@ -557,8 +1059,8 @@
     "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 3705,
-     "content": 31075,
+     "body": 3719,
+     "content": 31098,
      "tabs": 0
     },
     "tab_panels": [
@@ -571,7 +1073,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42197",
@@ -592,8 +1095,8 @@
     "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
     "error": null,
     "chars": {
-     "body": 3825,
-     "content": 31201,
+     "body": 3839,
+     "content": 31224,
      "tabs": 0
     },
     "tab_panels": [
@@ -606,7 +1109,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42972",
@@ -614,7 +1118,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -625,18 +1130,8 @@
    "pages": [
     "https://curriculum.pasadena.edu/academic-programs/design-studies/product-design-as-cert-achievement/",
     "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-designer-mech-design-and-fab-level-2-as-coa/"
-   ]
-  },
-  {
-   "control_number": "03160",
-   "title": "Administration of Justice",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://curriculum.pasadena.edu/academic-programs/dental/dental-hygiene-as-cert-achievement/",
-    "https://curriculum.pasadena.edu/academic-programs/health-science/health-sciences-associate-in-science/",
-    "https://curriculum.pasadena.edu/academic-programs/nursing/nursing-rn-as-cert-achievement/",
-    "https://curriculum.pasadena.edu/academic-programs/legal-studies/law-public-policy-society-aat/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "03163",
@@ -646,7 +1141,8 @@
     "https://curriculum.pasadena.edu/academic-programs/dental/dental-hygiene-as-cert-achievement/",
     "https://curriculum.pasadena.edu/academic-programs/health-science/health-sciences-associate-in-science/",
     "https://curriculum.pasadena.edu/academic-programs/nursing/nursing-rn-as-cert-achievement/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "09352",
@@ -654,7 +1150,8 @@
    "award": "A.S. Degree",
    "pages": [
     "https://curriculum.pasadena.edu/academic-programs/building-construction/building-construction-inspection-cert-achievement/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "22633",
@@ -662,15 +1159,8 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "pages": [
     "https://curriculum.pasadena.edu/academic-programs/medical-assisting/medical-assisting-administrative-clinical-as-cert-achievement/"
-   ]
-  },
-  {
-   "control_number": "22651",
-   "title": "Administration of Justice",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://curriculum.pasadena.edu/academic-programs/legal-studies/law-public-policy-society-aat/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "22652",
@@ -680,15 +1170,8 @@
     "https://curriculum.pasadena.edu/academic-programs/dental/dental-hygiene-as-cert-achievement/",
     "https://curriculum.pasadena.edu/academic-programs/nursing/nursing-rn-as-cert-achievement/",
     "https://curriculum.pasadena.edu/academic-programs/health-science/health-sciences-associate-in-science/"
-   ]
-  },
-  {
-   "control_number": "31143",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://curriculum.pasadena.edu/academic-programs/legal-studies/law-public-policy-society-aat/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "36463",
@@ -698,7 +1181,8 @@
     "https://curriculum.pasadena.edu/academic-programs/engineering/mechanical-engineering-technician-cert-achievement/",
     "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-designer-mech-design-and-fab-level-2-as-coa/",
     "https://curriculum.pasadena.edu/academic-programs/welding/welding-fabrication-as-certificate-achievement/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "36784",
@@ -706,7 +1190,8 @@
    "award": "A.S. Degree",
    "pages": [
     "https://curriculum.pasadena.edu/academic-programs/kinesiology/yoga-teacher-training-cert-achievement/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "41034",
@@ -715,7 +1200,8 @@
    "pages": [
     "https://curriculum.pasadena.edu/academic-programs/kinesiology/yoga-teacher-training-cert-achievement/",
     "https://curriculum.pasadena.edu/academic-programs/dance/dance-aa/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "43088",
@@ -724,100 +1210,1256 @@
    "pages": [
     "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-bim-designer-building-design-and-env-level-2-as-coa/",
     "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-designer-mech-design-and-fab-level-2-as-coa/"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 14,
-  "0.8-1.0": 33,
+  "0.5-0.8": 15,
+  "0.8-1.0": 34,
   "1.0": 250
  },
  "would_extract": {
   "against": "kb/program_requirements_college/pasadena_city",
-  "kept": 289,
-  "programs": 8,
+  "kept": 296,
+  "kept_moved": 0,
+  "programs": 3,
   "list": [
    {
-    "control_number": "03143",
-    "title": "DENTAL ASSISTING",
+    "control_number": "03160",
+    "title": "Administration of Justice",
     "award": "A.S. Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/dental/registered-dental-assisting-as-cert-achievement/",
-    "coverage": 1.0,
-    "was_url": "https://curriculum.pasadena.edu/academic-programs/dental/registered-dental-assisting-as-cert-achievement/",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
+    "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "22637",
-    "title": "Dental Assisting",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://curriculum.pasadena.edu/academic-programs/dental/registered-dental-assisting-as-cert-achievement/",
+    "control_number": "22651",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/",
     "coverage": 1.0,
-    "was_url": "https://curriculum.pasadena.edu/academic-programs/dental/registered-dental-assisting-as-cert-achievement/",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "32543",
-    "title": "EARLY CHILDHOOD EDUCATION",
+    "control_number": "31143",
+    "title": "Administration of Justice",
     "award": "A.S. T Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-early-childhood-education-ast/",
-    "coverage": 1.0,
-    "was_url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-early-childhood-education-ast/",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39717",
-    "title": "Laser Technology",
-    "award": "A.S. Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/laser-technology/laser-technology-as-certificate-of-achievement/",
-    "coverage": 1.0,
+    "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-ast/",
+    "coverage": 0.875,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41037",
-    "title": "Geographic Information Systems and Technology",
-    "award": "A.S. Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/geography/geographic-information-systems-and-technology-as-certificate-of-achievement/",
-    "coverage": 0.857,
-    "was_url": "https://curriculum.pasadena.edu/academic-programs/geography/geotech-gis-occupational-skills-cert/",
-    "was_coverage": 0.571,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41367",
-    "title": "Welding Fabrication",
-    "award": "A.S. Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/welding/welding-fabrication-as-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": "https://curriculum.pasadena.edu/academic-programs/welding/gas-tungsten-gas-metal-welding-as-cert-achievement/",
-    "was_coverage": 0.5,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41845",
-    "title": "Advanced Materials Nanotechnology",
-    "award": "A.S. Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/natural-sciences/advanced-materials-nanotechnology-as-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "45510",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://curriculum.pasadena.edu/academic-programs/education/elementary-teacher-education--integrated-programs-aat/",
-    "coverage": 1.0,
-    "was_url": "https://curriculum.pasadena.edu/academic-programs/education/elementary-teacher-education--integrated-programs-aat/",
-    "was_coverage": 0.969,
-    "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39758679671"
+ "fingerprints": {
+  "03105": {
+   "sha256": "23e581a41014bad4dffad264cefbdafde9e970dbab75c60060dbf4715399e3f8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-financial-investments-as-cert-achievement/"
+  },
+  "03106": {
+   "sha256": "af895be9ca2dfe0cf889e06ecb6235a80a3533303b2845925fcd958a55867f1e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-management-as-cert-achievement/"
+  },
+  "03108": {
+   "sha256": "5a9438d4f0c269f156407909bc343af89dc0a9305bd32686f1f0cb545b36c26e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-marketing-management-as-cert-achievement/"
+  },
+  "03109": {
+   "sha256": "6c615dfb2ab459f58f35b2bd29b9ffa1234f64ade39b7f8952f37778ba6d3891",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-administrative-assistant-as-cert-achievement/"
+  },
+  "03110": {
+   "sha256": "d6e2246732d02752b58377fe607c7695443237337e623ff26a87b5e928030c4b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-printed-media-as-cert-achievement/"
+  },
+  "03111": {
+   "sha256": "a5b32de02382decefba1743fa0017d538b5e802980a3965991be3e51f30e9762",
+   "url": "https://curriculum.pasadena.edu/academic-programs/television-radio/broadcast-journalism-as-cert-achievement/"
+  },
+  "03112": {
+   "sha256": "3dbcf8b8b2e26f43cac2581c67501a3d77db3f1d73f8ea617fc0c51e6ed7f4ed",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-system-network-administration-as-cert-achievement/"
+  },
+  "03121": {
+   "sha256": "e2e2ba0e10525c021f3127172d2b1d5a73778201f8c5d8a418920193d2e1a005",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/automotive-technology-all-automotive-systems-as-cert-achievement/"
+  },
+  "03130": {
+   "sha256": "42e00aecbf7984ffaac85a0aa41ceeccb14e6600dfcffa8cb713ca60fb7e7923",
+   "url": "https://curriculum.pasadena.edu/academic-programs/photography/photography-as-cert-achievement/"
+  },
+  "03139": {
+   "sha256": "e1f0a88f3ed8a790e59368ff0fc2eabdffaf0107da157dfb9dd5469e2595e024",
+   "url": "https://curriculum.pasadena.edu/academic-programs/nursing/nursing-rn-as-cert-achievement/"
+  },
+  "03142": {
+   "sha256": "76ce4aeecc888286773303bba41e58e73660eaf84b9fa0455d0f22df7313bb88",
+   "url": "https://curriculum.pasadena.edu/academic-programs/medical-assisting/medical-assisting-administrative-clinical-as-cert-achievement/"
+  },
+  "03143": {
+   "sha256": "e7bda4fbda4d8002403c27fade93d9ab0cb176ac0a711c7f7b7b694c48b3198b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/dental/registered-dental-assisting-as-cert-achievement/"
+  },
+  "03144": {
+   "sha256": "c3f20f9e02a9bf1d15de3263fe4b031fa761f9564b0c3eea9df65bf106f65d78",
+   "url": "https://curriculum.pasadena.edu/academic-programs/dental/dental-hygiene-as-cert-achievement/"
+  },
+  "03145": {
+   "sha256": "b6b5b1f96e4c03b2657e81eb870a415584f7f3be45e159a74a77fe09457202f9",
+   "url": "https://curriculum.pasadena.edu/academic-programs/dental/restorative-dental-technology-as-cert-achievement/"
+  },
+  "03146": {
+   "sha256": "d5cfcc77f594f028b17706058ceda3d7249cc8fc7e0ca746b6f79559d5ccbce3",
+   "url": "https://curriculum.pasadena.edu/academic-programs/radiology/radiologic-technology-as-cert-achievement/"
+  },
+  "03160": {
+   "sha256": "889ba404d39cbcd93153abc3420d6322d5b97f474e197476bf4bf418760579f7",
+   "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/"
+  },
+  "03161": {
+   "sha256": "f9468379741ee073839b5c7c4ef7cc33dd838b513b5a599f6c786a625be449b8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-administration-as-cert-achievement/"
+  },
+  "09324": {
+   "sha256": "6f4aefc5eee11ca2a3a4a1f23457c8d69fa8eb5c59cf3aa1dbc7535e886abdd7",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-entrepreneurship-small-business-management-as-cert-achievement/"
+  },
+  "09325": {
+   "sha256": "c1994d2ec2458a7df5153e3603dda8c70ee01c6861fbeb9213e104dc9ef4fbfe",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-retail-management-as-cert-achievement/"
+  },
+  "09326": {
+   "sha256": "b5862e60125b9ed9513b5dda0a9abde17fa797b15029deb5e0660431fd199320",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-international-businesstrade-as-cert-achievement/"
+  },
+  "09332": {
+   "sha256": "2bd7ede67d4ef432e669084b23bb82be0cdaeee95d55db24abd6f14a6c98ac4a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-business-software-specialist-as-cert-achievement/"
+  },
+  "09333": {
+   "sha256": "120342dd7305cfbd3d2e94f9545d60fa56ac54804ba49ec2cda63ca8245fb8de",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-office-assistant-as-cert-achievement/"
+  },
+  "09334": {
+   "sha256": "392788a1f5e6bfe426c162a3a744b113b5deb0647587efaf03d98577d637b34a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-photojournalism-as-cert-achievement/"
+  },
+  "09337": {
+   "sha256": "019ff6d255cea32a91f5261bed8063301281ede1aa5d2e18b3778cf8b83dba36",
+   "url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-operations-as-cert-achievement/"
+  },
+  "09338": {
+   "sha256": "68c6019a1e28bda1c426341ea2fcdc42c15bb1472d98b62adc3aea68bb48be87",
+   "url": "https://curriculum.pasadena.edu/academic-programs/television-radio/video-production-as-cert-achievement/"
+  },
+  "09339": {
+   "sha256": "c4b183d3f66d2f00ee786e410db36c9cf2258b7737722a0ba6e1a3457af1fe30",
+   "url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-radio-radio-production-as-cert-achievement/"
+  },
+  "09342": {
+   "sha256": "0688e15d7cbc43bcae11afc2769f481787c99ab3c2cb56b9bb87c4f1b75d56cb",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-software-development-as-cert-achievement/"
+  },
+  "09343": {
+   "sha256": "4084b7631d4b3065f3519a177f9ca6e2850230fadf467c483eb229e601588603",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-full-stack-web-development-as-cert-achievement/"
+  },
+  "09353": {
+   "sha256": "a6a2a765891e19b66982a54838a2ff9d74a891acf298be7b90dc9bf21da84bd6",
+   "url": "https://curriculum.pasadena.edu/academic-programs/theater-arts/theater-technology-as-cert-achievement/"
+  },
+  "09356": {
+   "sha256": "647efa7270d7b2fa7ec950cd6ff5a82a15de555494a1bfc6144fd6d57d53b2ab",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art-graphic-design-as-cert-achievement/"
+  },
+  "09357": {
+   "sha256": "587dc80c6a3a7e6a5083ae902d85b1964a3bca4c4ccb5a2588b637f53d6a3464",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-studies/product-design-as-cert-achievement/"
+  },
+  "10562": {
+   "sha256": "5ff3ee59389b7e972f8db253ff533769ba12f9e7a45bd89d243c6425db57f88e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/speech-language-pathology/speech-language-pathology-assistant-as/"
+  },
+  "11539": {
+   "sha256": "82711d22eea3063e5892a1aeb6da521db12e3aff4024b642de5e086e753885b5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-infant-toddler-as-cert-achievement/"
+  },
+  "11542": {
+   "sha256": "f9468379741ee073839b5c7c4ef7cc33dd838b513b5a599f6c786a625be449b8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-administration-as-cert-achievement/"
+  },
+  "11543": {
+   "sha256": "dc46801e96044b4c8c2e71c2fbf258e141eb2fd76df36fe6bdd1b90071745113",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-special-education-as-cert-achievement/"
+  },
+  "11727": {
+   "sha256": "77a5f1409f08411cbadaa3871ea1a42e4e9c1e458874fb1c056023ee36d915e2",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-as-cert-achievement/"
+  },
+  "11760": {
+   "sha256": "652fe3ae601530450dc7737897140ddf37c34e37841bdcc7dfa43cc91161e547",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-studies/product-design-technology-as-cert-achievement/"
+  },
+  "11761": {
+   "sha256": "8c62d92980fef46e3d139c198d46191dcef1efe59d6ab2803f20acd3ef297157",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-studies/product-design-graphics-as-cert-achievement/"
+  },
+  "12205": {
+   "sha256": "5e74325f849b41a3dae20a3d55c42f212b0e5ddda6947d07b089fbc32aeae55b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/library/library-technology-as-cert-achievement/"
+  },
+  "12214": {
+   "sha256": "58ab081b6eca0e7566de54ab3b9acbeb82780eba37bf955f10e6d815a8591714",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/hospitality-management-as-cert-of-achievement/"
+  },
+  "14690": {
+   "sha256": "479989e5f3a505ee15797e4cc19e801fd698be4ab6cc766d9374d3dc24f3b76d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/automotive-technology-undercar-technician-as-cert-achievement/"
+  },
+  "14692": {
+   "sha256": "5596a389f9dc5d38668c0c8386acb71b539d8eb0f075144557d0900b3b98d789",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/automotive-technology-engine-performance-technician-ase-cert-achievement/"
+  },
+  "16605": {
+   "sha256": "5653fa9a337047550428c201219047440bb15df0fc862a42dfb73e1433c9aa2b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-laboratory-assistant-cert-achievement/"
+  },
+  "16984": {
+   "sha256": "916c8b43eb055869835d7a7906ed83dbbb4a63fdbdb51cd1b205a17f4fce2e90",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-computational-biology-cert-achievement/"
+  },
+  "16985": {
+   "sha256": "ae5872ae4bd10d507763895f1a585fc519db4357424742e0a997ec7af748929c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-stem-cell-culture-cert-achievement/"
+  },
+  "19239": {
+   "sha256": "b693e21065cbbdd86678396c096db2bc20f32089803b2d561e6fb0c3082fe59f",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-aa/"
+  },
+  "19242": {
+   "sha256": "188476e3ba9b857307bc3fa9f3e01cb2c645d79c713438b7d1383d6b6d37ca54",
+   "url": "https://curriculum.pasadena.edu/academic-programs/english/english-literature-aa/"
+  },
+  "19244": {
+   "sha256": "28c1042c1b427c36d545ba1280db54883a9e955cfcf2db1a33e96f4f6fb4f44d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/humanities/humanities-aa/"
+  },
+  "19246": {
+   "sha256": "863ed5b68e8ccf38db3ab0c17481f18d4e74b8210b49a6356294258e8997ba76",
+   "url": "https://curriculum.pasadena.edu/academic-programs/natural-sciences/natural-sciences-as/"
+  },
+  "19247": {
+   "sha256": "e4891f1c4e2ede6e16cf5aa8935a7148d324aff5a184eb391f7a0dd7a7fb06f9",
+   "url": "https://curriculum.pasadena.edu/academic-programs/social-behavioral-sciences/social-behavioral-sciences-aa/"
+  },
+  "19248": {
+   "sha256": "cb8620b370497648801de258886e4835ec8bc194183065df0eb9d8a050356561",
+   "url": "https://curriculum.pasadena.edu/academic-programs/communication-studies/speech-communication-aa/"
+  },
+  "19257": {
+   "sha256": "595f3568dbbe29faa8f985098f62d875358f8f7762f0c0c5cfd984a0b3aec27d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/kinesiology/kinesiology-wellness-aa/"
+  },
+  "19356": {
+   "sha256": "cee03baa29e1c2223a749010b588dfa0e08a399742f305a4370d5876dc89584a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/automotive-technology-automotive-electrical-systems-technician-cert-achievement/"
+  },
+  "19959": {
+   "sha256": "497775d0a0fe412605b13605a730652cc998afae4317e477615e4467dc809692",
+   "url": "https://curriculum.pasadena.edu/academic-programs/linquistics/linguistics-aa/"
+  },
+  "19960": {
+   "sha256": "b9ceaf76c1bec558666c38744e51fd9c11d68bfa9fca0bfc7f6cb8d2bf210fda",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/chinese-aa/"
+  },
+  "19961": {
+   "sha256": "c8d06e8cabc31a372e546d39abe73f30c2203df3b6a19d7ecb84761787525e38",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/french-aa/"
+  },
+  "19962": {
+   "sha256": "f8bc42d7e22a8df3912981ecb83210ce505b3c1ed0cbb26b731088dff265bf4c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/german-aa/"
+  },
+  "19963": {
+   "sha256": "972a575d701c63c92ffa5555ca5e6d96916227b8d462f65abd4d9307c4bfe6fb",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/italian-aa/"
+  },
+  "19964": {
+   "sha256": "1445e892786b4f863732a487e7916dc9d920871363301cdd0924b208f643651d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/japanese-aa/"
+  },
+  "19965": {
+   "sha256": "5ccd83850e3180f181210d0cce0a1ea9111ed6f6aed6e049b7e4b48e3e6fd181",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/russian-aa/"
+  },
+  "19966": {
+   "sha256": "4d0240432f6e42cb176cac9f6013038a8ebb1a6c47d299771bdc09a6b465e75c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/spanish-aa/"
+  },
+  "22580": {
+   "sha256": "23e581a41014bad4dffad264cefbdafde9e970dbab75c60060dbf4715399e3f8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-financial-investments-as-cert-achievement/"
+  },
+  "22581": {
+   "sha256": "af895be9ca2dfe0cf889e06ecb6235a80a3533303b2845925fcd958a55867f1e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-management-as-cert-achievement/"
+  },
+  "22582": {
+   "sha256": "6f4aefc5eee11ca2a3a4a1f23457c8d69fa8eb5c59cf3aa1dbc7535e886abdd7",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-entrepreneurship-small-business-management-as-cert-achievement/"
+  },
+  "22583": {
+   "sha256": "c1994d2ec2458a7df5153e3603dda8c70ee01c6861fbeb9213e104dc9ef4fbfe",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-retail-management-as-cert-achievement/"
+  },
+  "22584": {
+   "sha256": "b5862e60125b9ed9513b5dda0a9abde17fa797b15029deb5e0660431fd199320",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-international-businesstrade-as-cert-achievement/"
+  },
+  "22585": {
+   "sha256": "5a9438d4f0c269f156407909bc343af89dc0a9305bd32686f1f0cb545b36c26e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-marketing-management-as-cert-achievement/"
+  },
+  "22586": {
+   "sha256": "6c615dfb2ab459f58f35b2bd29b9ffa1234f64ade39b7f8952f37778ba6d3891",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-administrative-assistant-as-cert-achievement/"
+  },
+  "22587": {
+   "sha256": "2bd7ede67d4ef432e669084b23bb82be0cdaeee95d55db24abd6f14a6c98ac4a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-business-software-specialist-as-cert-achievement/"
+  },
+  "22588": {
+   "sha256": "1418f4162be1bfa10f509f4af626c70f91a0206f9280fb4cd0e4157905e909df",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-office-assistant-as-cert-achievement/"
+  },
+  "22590": {
+   "sha256": "392788a1f5e6bfe426c162a3a744b113b5deb0647587efaf03d98577d637b34a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-photojournalism-as-cert-achievement/"
+  },
+  "22591": {
+   "sha256": "66167a82f9a746e7c569ec633d2197e44e39198d0c37176529078b102d4b7eae",
+   "url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-printed-media-as-cert-achievement/"
+  },
+  "22592": {
+   "sha256": "c4b183d3f66d2f00ee786e410db36c9cf2258b7737722a0ba6e1a3457af1fe30",
+   "url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-radio-radio-production-as-cert-achievement/"
+  },
+  "22594": {
+   "sha256": "019ff6d255cea32a91f5261bed8063301281ede1aa5d2e18b3778cf8b83dba36",
+   "url": "https://curriculum.pasadena.edu/academic-programs/television-radio/television-operations-as-cert-achievement/"
+  },
+  "22597": {
+   "sha256": "a5b32de02382decefba1743fa0017d538b5e802980a3965991be3e51f30e9762",
+   "url": "https://curriculum.pasadena.edu/academic-programs/television-radio/broadcast-journalism-as-cert-achievement/"
+  },
+  "22601": {
+   "sha256": "4084b7631d4b3065f3519a177f9ca6e2850230fadf467c483eb229e601588603",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-full-stack-web-development-as-cert-achievement/"
+  },
+  "22603": {
+   "sha256": "3dbcf8b8b2e26f43cac2581c67501a3d77db3f1d73f8ea617fc0c51e6ed7f4ed",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-system-network-administration-as-cert-achievement/"
+  },
+  "22611": {
+   "sha256": "91115bd8dc7118ef9f435be13ffc428f1254edac4bfe471ec7f619565b5c2905",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/automotive-technology-all-automotive-systems-as-cert-achievement/"
+  },
+  "22612": {
+   "sha256": "5596a389f9dc5d38668c0c8386acb71b539d8eb0f075144557d0900b3b98d789",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/automotive-technology-engine-performance-technician-ase-cert-achievement/"
+  },
+  "22613": {
+   "sha256": "61ca30bf47f33dcee5f895f2e1e8d38bd19d90cbf8cf9e7570ab3d78bcd7f971",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/automotive-technology-powertrain-technician-as-cert-achievement/"
+  },
+  "22614": {
+   "sha256": "479989e5f3a505ee15797e4cc19e801fd698be4ab6cc766d9374d3dc24f3b76d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/automotive-technology-undercar-technician-as-cert-achievement/"
+  },
+  "22617": {
+   "sha256": "545259dfa02c65b8613e156c8c4734a9606f0268e54fed3546dbbfcc4aca4927",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-designer-mech-design-and-fab-level-2-as-coa/"
+  },
+  "22622": {
+   "sha256": "5754e4283c4318ef0a74c071419d6e0e9edb211c8d64ae64b65de38c8569d85b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/building-construction/building-construction-inspection-cert-achievement/"
+  },
+  "22624": {
+   "sha256": "a6a2a765891e19b66982a54838a2ff9d74a891acf298be7b90dc9bf21da84bd6",
+   "url": "https://curriculum.pasadena.edu/academic-programs/theater-arts/theater-technology-as-cert-achievement/"
+  },
+  "22626": {
+   "sha256": "42e00aecbf7984ffaac85a0aa41ceeccb14e6600dfcffa8cb713ca60fb7e7923",
+   "url": "https://curriculum.pasadena.edu/academic-programs/photography/photography-as-cert-achievement/"
+  },
+  "22627": {
+   "sha256": "587dc80c6a3a7e6a5083ae902d85b1964a3bca4c4ccb5a2588b637f53d6a3464",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-studies/product-design-as-cert-achievement/"
+  },
+  "22628": {
+   "sha256": "8c62d92980fef46e3d139c198d46191dcef1efe59d6ab2803f20acd3ef297157",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-studies/product-design-graphics-as-cert-achievement/"
+  },
+  "22629": {
+   "sha256": "652fe3ae601530450dc7737897140ddf37c34e37841bdcc7dfa43cc91161e547",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-studies/product-design-technology-as-cert-achievement/"
+  },
+  "22630": {
+   "sha256": "647efa7270d7b2fa7ec950cd6ff5a82a15de555494a1bfc6144fd6d57d53b2ab",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art-graphic-design-as-cert-achievement/"
+  },
+  "22631": {
+   "sha256": "76ce4aeecc888286773303bba41e58e73660eaf84b9fa0455d0f22df7313bb88",
+   "url": "https://curriculum.pasadena.edu/academic-programs/medical-assisting/medical-assisting-administrative-clinical-as-cert-achievement/"
+  },
+  "22634": {
+   "sha256": "d5cfcc77f594f028b17706058ceda3d7249cc8fc7e0ca746b6f79559d5ccbce3",
+   "url": "https://curriculum.pasadena.edu/academic-programs/radiology/radiologic-technology-as-cert-achievement/"
+  },
+  "22635": {
+   "sha256": "211855344afeb4556e260b02e248fdbd373a956bd373ef745f71128b40db1532",
+   "url": "https://curriculum.pasadena.edu/academic-programs/nursing/nursing-rn-as-cert-achievement/"
+  },
+  "22637": {
+   "sha256": "e7bda4fbda4d8002403c27fade93d9ab0cb176ac0a711c7f7b7b694c48b3198b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/dental/registered-dental-assisting-as-cert-achievement/"
+  },
+  "22638": {
+   "sha256": "c3f20f9e02a9bf1d15de3263fe4b031fa761f9564b0c3eea9df65bf106f65d78",
+   "url": "https://curriculum.pasadena.edu/academic-programs/dental/dental-hygiene-as-cert-achievement/"
+  },
+  "22639": {
+   "sha256": "b6b5b1f96e4c03b2657e81eb870a415584f7f3be45e159a74a77fe09457202f9",
+   "url": "https://curriculum.pasadena.edu/academic-programs/dental/restorative-dental-technology-as-cert-achievement/"
+  },
+  "22641": {
+   "sha256": "7df7ca81567298985df3b1e2d2b8082e74f0bcd44cd8927721bce719a3ce1d7e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-language-literacy-as-cert-achievement/"
+  },
+  "22642": {
+   "sha256": "f9468379741ee073839b5c7c4ef7cc33dd838b513b5a599f6c786a625be449b8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-administration-as-cert-achievement/"
+  },
+  "22643": {
+   "sha256": "dc46801e96044b4c8c2e71c2fbf258e141eb2fd76df36fe6bdd1b90071745113",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-special-education-as-cert-achievement/"
+  },
+  "22646": {
+   "sha256": "f9468379741ee073839b5c7c4ef7cc33dd838b513b5a599f6c786a625be449b8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-administration-as-cert-achievement/"
+  },
+  "22647": {
+   "sha256": "82711d22eea3063e5892a1aeb6da521db12e3aff4024b642de5e086e753885b5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-infant-toddler-as-cert-achievement/"
+  },
+  "22649": {
+   "sha256": "58ab081b6eca0e7566de54ab3b9acbeb82780eba37bf955f10e6d815a8591714",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/hospitality-management-as-cert-of-achievement/"
+  },
+  "22651": {
+   "sha256": "889ba404d39cbcd93153abc3420d6322d5b97f474e197476bf4bf418760579f7",
+   "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/"
+  },
+  "30214": {
+   "sha256": "0d8bcfc39f322f361b8db731e10758d7221e34d5cef093ada2b10f2688cf187c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/anesthesia/anesthesia-technology-as-cert-achievement/"
+  },
+  "30215": {
+   "sha256": "0d8bcfc39f322f361b8db731e10758d7221e34d5cef093ada2b10f2688cf187c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/anesthesia/anesthesia-technology-as-cert-achievement/"
+  },
+  "30795": {
+   "sha256": "168bb00e021a3dbfe858c922bddfecdbdb6f5b176f728acee459d785e28cbd94",
+   "url": "https://curriculum.pasadena.edu/academic-programs/sociology/sociology-aat/"
+  },
+  "30796": {
+   "sha256": "d1f25adcec48ca51c2104c20bdf84ebf17992876b1874839b0056aca62eac875",
+   "url": "https://curriculum.pasadena.edu/academic-programs/psychology/psychology-aat/"
+  },
+  "30903": {
+   "sha256": "fcfa02899da33bfc35e54da1fb64eb2d7b7954be57fe7b81ad058d8102ab3c87",
+   "url": "https://curriculum.pasadena.edu/academic-programs/communication-studies/communication-studies2-aat/"
+  },
+  "30915": {
+   "sha256": "98b5e072364361a75080d8ec0d98c76eae981c0094b98176b5d23276128cb9cc",
+   "url": "https://curriculum.pasadena.edu/academic-programs/mathematics/mathematics2-ast/"
+  },
+  "31101": {
+   "sha256": "8c06d3452ad5b7ebf4b129907fd8cfb6922bae74e43c85e3f9e0860365af1fe9",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/business-office-systems-cert-completion/"
+  },
+  "31102": {
+   "sha256": "3a98da1f46690e72da8043347026342cae940e99f2c9328a8526fe997930b4d8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/art/studio-arts-aat/"
+  },
+  "31103": {
+   "sha256": "7f3699740d55727a0218fcab78ea568e330cb38f5035dc334be2058b6ab8c301",
+   "url": "https://curriculum.pasadena.edu/academic-programs/theater-arts/theatre-arts-aat/"
+  },
+  "31134": {
+   "sha256": "055e25e7fccb8d78a20aadadb9e8448d4c20799e6f992611aafe5dab2ff56ddc",
+   "url": "https://curriculum.pasadena.edu/academic-programs/history/history-aat/"
+  },
+  "31135": {
+   "sha256": "0f9a95bb0d120449e4e152b73605127851577391367c39667220665cf66257c1",
+   "url": "https://curriculum.pasadena.edu/academic-programs/geology/geology-ast/"
+  },
+  "31136": {
+   "sha256": "a60764e6805aea5c56bd3915432567f5b579779fb6d4f8c3266b07a6bed178ca",
+   "url": "https://curriculum.pasadena.edu/academic-programs/art/art-history-aat/"
+  },
+  "31143": {
+   "sha256": "2803a2e103082ff75dbc57eb94f0cd8cf843176ec2cea5b1094bfcddc18c760e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-ast/"
+  },
+  "31426": {
+   "sha256": "0c9b897541cb6a99775588e98ce5fcc6fd0d1c4cd2d3796bef5dcc2a8aa62d0a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-ast/"
+  },
+  "31427": {
+   "sha256": "5db586156eb207e9cc09f205acad44a3a8740bc6d897e8471b287698e6059566",
+   "url": "https://curriculum.pasadena.edu/academic-programs/physics/physics-ast/"
+  },
+  "31428": {
+   "sha256": "42c43fb8f586eea49b7228a5959edfcf9c38e3a37cac402c8a4386362cad2e18",
+   "url": "https://curriculum.pasadena.edu/academic-programs/english/english-aat/"
+  },
+  "31599": {
+   "sha256": "473e0f30b709b9121498662c6fc9af35b73dfd1cf85fc114eb77ab37a207550d",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/ahsd/"
+  },
+  "32505": {
+   "sha256": "7f1b61b332be5128acc907cd3433833d0e8dead4e190acd4ebe660cfbbff6372",
+   "url": "https://curriculum.pasadena.edu/academic-programs/journalism/journalism-aat/"
+  },
+  "32515": {
+   "sha256": "9f3374a4d665a454725b0928dd2685abd9e81bec2dd099cc4cd66b431296c8b5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/political-science/political-science-aat/"
+  },
+  "32543": {
+   "sha256": "22cbf72ff546ae8c82306f7a4df01d535a2e874eb4471eedfe242a6e539367bd",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-early-childhood-education-ast/"
+  },
+  "32971": {
+   "sha256": "07283a7bcf84a99c4d865adcfe8cc049fd0e8861ddcd96d2f75076e82a24f9c5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/kinesiology/kinesiology-aat/"
+  },
+  "33139": {
+   "sha256": "dbff185e5e05efdb9646d8e59fce4e3ddff215f88264ca254076951758b280b6",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/english-second-language/esl-literacy-cert-competency/"
+  },
+  "33140": {
+   "sha256": "00c71aa7362f71c9757e8b6ab75fc857464b3452e25e3df2539d2fd73f63564b",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/esln/"
+  },
+  "33141": {
+   "sha256": "88c25ddc66f606e2fd88aad0bafe8e111dcac91ff7ff51614190e387f23dc585",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/esln/"
+  },
+  "33142": {
+   "sha256": "0d10806209c2ae489f8ce367f1e54543389fbf767b5be150b9366cd85057486b",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/esln/"
+  },
+  "33143": {
+   "sha256": "a87a55bf3fecc74db31ed9533a6435e14ed240983c4a901b0fc0f74116513288",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/esln/"
+  },
+  "33144": {
+   "sha256": "551d7855463799816860bf96083782a8db897d022b5bf5cd8a20015b2272a17c",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/esln/"
+  },
+  "33404": {
+   "sha256": "e11a47d5d24157ace9abd713c968d2b59b103665f087d45831f4f4c5b0c60ca5",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/abe/"
+  },
+  "33405": {
+   "sha256": "0aed7bfed8a69f4103818ad8a7040810fff893b0714503105d2e359cf592ecce",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/basic-graphic-design-cert-completion/"
+  },
+  "33413": {
+   "sha256": "1ae94c3b40c43f429e20ebe0a561e7ea80718300e919af324f3912db5323a9dd",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/medical-front-office-clerk-cert-completion/"
+  },
+  "33416": {
+   "sha256": "b3bb842acfb88371380fe479ec505d1f2edd8c1e45c2717887d85262bd910023",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/vocational-english-second-language/vesl-child-care-provider-cert-competency/"
+  },
+  "33418": {
+   "sha256": "8d2f604fc6b67ee9570699f4206f3bc4500d6f4cdb3e766cc0c4ffbc2d9603eb",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/vocational-english-second-language/vesl-health-care-cert-competency/"
+  },
+  "33544": {
+   "sha256": "0d98b7e9ea79150eeb0c56c80af38f07fdb52ad20637735bed9e3a4ea443eccf",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/spanish-aat/"
+  },
+  "33624": {
+   "sha256": "597bc6fba79b953f2698aad7c4133361ae7957b4d63979ea8b160b2efeda29d6",
+   "url": "https://curriculum.pasadena.edu/academic-programs/music/music-aat/"
+  },
+  "33697": {
+   "sha256": "43efca628c3e46c27a67508ddc207e7ba8f6e629828f44ce6d74f76b53a0dc01",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/general-office-clerk-cert-competency/"
+  },
+  "33699": {
+   "sha256": "5e14359479cfd16bbfb7b18d9457e3f35c6e1e709998246c3489b1c73d6c7833",
+   "url": "https://curriculum.pasadena.edu/noncredit-courses/pcan/"
+  },
+  "33744": {
+   "sha256": "5dbe2fc16d87c07f828ae28fac1308fc0b44dbe8a710c0d4fce1c63451871237",
+   "url": "https://curriculum.pasadena.edu/academic-programs/gerontology/gerontology-as-cert-achievement/"
+  },
+  "33806": {
+   "sha256": "5dbe2fc16d87c07f828ae28fac1308fc0b44dbe8a710c0d4fce1c63451871237",
+   "url": "https://curriculum.pasadena.edu/academic-programs/gerontology/gerontology-as-cert-achievement/"
+  },
+  "33908": {
+   "sha256": "44cf9dd00ad76bd67949d35a9108f87b3d7faf72f1c40279699a5d5c87f5d3af",
+   "url": "https://curriculum.pasadena.edu/academic-programs/art/studio-art-as-cert-achievement/"
+  },
+  "35002": {
+   "sha256": "ddfaff5b5a858db76d5245106131975e4b346a4a110b32c30e1711521add948c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/electrical-electronic-technology/photovoltaic-design-installation-as-cert-achievement/"
+  },
+  "35003": {
+   "sha256": "ddfaff5b5a858db76d5245106131975e4b346a4a110b32c30e1711521add948c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/electrical-electronic-technology/photovoltaic-design-installation-as-cert-achievement/"
+  },
+  "35080": {
+   "sha256": "44cf9dd00ad76bd67949d35a9108f87b3d7faf72f1c40279699a5d5c87f5d3af",
+   "url": "https://curriculum.pasadena.edu/academic-programs/art/studio-art-as-cert-achievement/"
+  },
+  "35094": {
+   "sha256": "8c9da68b9c9bb3d9daeb3689cdcefdc5de304f37b8da64248379014865c49539",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-business-information-worker-as-cert-achievement/"
+  },
+  "35095": {
+   "sha256": "8c9da68b9c9bb3d9daeb3689cdcefdc5de304f37b8da64248379014865c49539",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-business-information-worker-as-cert-achievement/"
+  },
+  "35544": {
+   "sha256": "77a5f1409f08411cbadaa3871ea1a42e4e9c1e458874fb1c056023ee36d915e2",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-as-cert-achievement/"
+  },
+  "35578": {
+   "sha256": "516f5eaf3aafd09ebdf16f152212b0632c95b9708f3a06452b0e4d9fd9c286dc",
+   "url": "https://curriculum.pasadena.edu/academic-programs/anthropology/anthropology-aat/"
+  },
+  "35813": {
+   "sha256": "806b411aec2e0baadb117418dbfc1f3e1739ebc924ad79d518b429999390e108",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-business-information-worker-ii-as-cert-achievement/"
+  },
+  "35814": {
+   "sha256": "806b411aec2e0baadb117418dbfc1f3e1739ebc924ad79d518b429999390e108",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-information-technology/business-information-technology-business-information-worker-ii-as-cert-achievement/"
+  },
+  "35858": {
+   "sha256": "e430c608c9ac90608fba81d394a410dc002d4ef00c62b956d45345a06fb2de86",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/vocational-english-second-language/vesl-work-readiness-communication-skills-cert-competency/"
+  },
+  "35859": {
+   "sha256": "629d625876dd55a60733965ecdcfd3a25e76e2d3cf1152e0bd7b90cea37f321e",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-advanced-oral-communication-skills-cert-competency/"
+  },
+  "35861": {
+   "sha256": "2750d8139291ad0f2421b0a92dcf1aa150b6748227d421887cea420be059fa80",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-intermediate-written-communication-skills-cert-competency/"
+  },
+  "35862": {
+   "sha256": "5f67037971404da40111695586c520abd75aab51c90c66827306e2f16b157be9",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-advanced-written-communication-skills-cert-competency/"
+  },
+  "36082": {
+   "sha256": "678c4830e460f378ccba5f1b3de75ecdb809ca704f2d5935392f55276abdee75",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-help-deskuser-support-as-cert-achievement/"
+  },
+  "36083": {
+   "sha256": "678c4830e460f378ccba5f1b3de75ecdb809ca704f2d5935392f55276abdee75",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-help-deskuser-support-as-cert-achievement/"
+  },
+  "36084": {
+   "sha256": "dc2d7076a9dfc42d929a56ddfab63ddc7a2a9050180a904b6f0e418091be9c36",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-cybersecurity-as-cert-achievement/"
+  },
+  "36085": {
+   "sha256": "c60209c39fc29017f6f7f0a4c94c950b604c94dfbc7bf8494272fd6c105421e6",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-cybersecurity-as-cert-achievement/"
+  },
+  "36086": {
+   "sha256": "2d1577565debbc3c780e8247b08e322176c9213ccaa9283559851715838361bf",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems--computer-retail-sales-support-as-cert-achievement/"
+  },
+  "36087": {
+   "sha256": "2d1577565debbc3c780e8247b08e322176c9213ccaa9283559851715838361bf",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems--computer-retail-sales-support-as-cert-achievement/"
+  },
+  "36203": {
+   "sha256": "465e735a385029e8e6f073b39dca2900f5ee307745fc551e7194015ee7780702",
+   "url": "https://curriculum.pasadena.edu/academic-programs/geography/geography-aat/"
+  },
+  "36343": {
+   "sha256": "c4ce836e9fc7df42797b48dbe7fef75e2d94af5e1e9e5bf54f46cb0e2a958100",
+   "url": "https://curriculum.pasadena.edu/academic-programs/music/music-entrepreneurship-as-cert-achievement/"
+  },
+  "36352": {
+   "sha256": "c4ce836e9fc7df42797b48dbe7fef75e2d94af5e1e9e5bf54f46cb0e2a958100",
+   "url": "https://curriculum.pasadena.edu/academic-programs/music/music-entrepreneurship-as-cert-achievement/"
+  },
+  "36353": {
+   "sha256": "5e74325f849b41a3dae20a3d55c42f212b0e5ddda6947d07b089fbc32aeae55b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/library/library-technology-as-cert-achievement/"
+  },
+  "36364": {
+   "sha256": "6dde8d2c9cd15d00a3b68ed9c9ff6880439c7e4bf9e4e135012088e01785efe3",
+   "url": "https://curriculum.pasadena.edu/academic-programs/engineering/engineering-civil-engineering-emphasis-as/"
+  },
+  "36365": {
+   "sha256": "5529dc9ce6c17dcb64130c6db7830eb3b6cb05cabaaec36d0b06a746ed3590e6",
+   "url": "https://curriculum.pasadena.edu/academic-programs/engineering/engineering-electrical-engineering-emphasis-as/"
+  },
+  "36367": {
+   "sha256": "be62f1acdc1d8798ce1ccb1459e14a96d8bfd83cb15b4b41267593aaf9ba58cd",
+   "url": "https://curriculum.pasadena.edu/academic-programs/engineering/engineering-mechanical-aerospace-manufacturing-engineering-emphasis-as/"
+  },
+  "36435": {
+   "sha256": "1834b97f22edba144274e84fa6eca71d41e8d0e39bdfa863297be5c349ddb49c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-multicultural-awareness-as-cert-achievement/"
+  },
+  "36436": {
+   "sha256": "61a7c171fb51225c100e54c2c4f45c7812119ca17bf62bff35486cec32cb1c79",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-early-intervention-as-cert-achievement/"
+  },
+  "36437": {
+   "sha256": "61a7c171fb51225c100e54c2c4f45c7812119ca17bf62bff35486cec32cb1c79",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-early-intervention-as-cert-achievement/"
+  },
+  "36438": {
+   "sha256": "bc24ed912c316ea816fd99b365d430b656c234e86a1db908000f5f8f77f4d863",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-science-math-integration-as-cert-achievement/"
+  },
+  "36439": {
+   "sha256": "1834b97f22edba144274e84fa6eca71d41e8d0e39bdfa863297be5c349ddb49c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-multicultural-awareness-as-cert-achievement/"
+  },
+  "36440": {
+   "sha256": "bc24ed912c316ea816fd99b365d430b656c234e86a1db908000f5f8f77f4d863",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-science-math-integration-as-cert-achievement/"
+  },
+  "36462": {
+   "sha256": "124d74875e85a7eaa590d1cd131146d4f86352acff746fcb24c5da1cdaf42283",
+   "url": "https://curriculum.pasadena.edu/academic-programs/engineering/mechanical-engineering-technician-cert-achievement/"
+  },
+  "36649": {
+   "sha256": "7c81dcdd704d80195efd7bfb7c69c1488d35f640d9e52433967f91d141d3dc24",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art-animation-motion-arts-as-cert-achievement/"
+  },
+  "36650": {
+   "sha256": "e88324041cea924c582d6ae7f97327fbe3d61aec4439c61166f5e568da62feae",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art-web-design-development-as-cert-achievement/"
+  },
+  "36651": {
+   "sha256": "78b588fd1a7fc91ac1291145bf0a665c456a6e6482d74f29029248ab81290610",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art--interactive-art-design-as-cert-achievement/"
+  },
+  "36652": {
+   "sha256": "78b588fd1a7fc91ac1291145bf0a665c456a6e6482d74f29029248ab81290610",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art--interactive-art-design-as-cert-achievement/"
+  },
+  "36654": {
+   "sha256": "e88324041cea924c582d6ae7f97327fbe3d61aec4439c61166f5e568da62feae",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art-web-design-development-as-cert-achievement/"
+  },
+  "36657": {
+   "sha256": "7c81dcdd704d80195efd7bfb7c69c1488d35f640d9e52433967f91d141d3dc24",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art-animation-motion-arts-as-cert-achievement/"
+  },
+  "36688": {
+   "sha256": "0688e15d7cbc43bcae11afc2769f481787c99ab3c2cb56b9bb87c4f1b75d56cb",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-information-systems/computer-information-systems-software-development-as-cert-achievement/"
+  },
+  "36736": {
+   "sha256": "ae1125b9fe0d050f6d1ab3f363780d00fc7bca08e869c758a78c80dfb67c5379",
+   "url": "https://curriculum.pasadena.edu/academic-programs/kinesiology/nutrition-dietitics-ast/"
+  },
+  "36774": {
+   "sha256": "7df7ca81567298985df3b1e2d2b8082e74f0bcd44cd8927721bce719a3ce1d7e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-language-literacy-as-cert-achievement/"
+  },
+  "36777": {
+   "sha256": "378c006e94532e8e944b4d79314644781e81accdb686eb9445bf5885ab3df316",
+   "url": "https://curriculum.pasadena.edu/academic-programs/television-radio/film-television-electronic-media-ast/"
+  },
+  "36783": {
+   "sha256": "8da38abc58eec08de7ecc7233e5b1e42cf370dd8f4955037f9736cd76ae78592",
+   "url": "https://curriculum.pasadena.edu/academic-programs/kinesiology/yoga-teacher-training-cert-achievement/"
+  },
+  "37089": {
+   "sha256": "8c10a0aa6580ad967181ae3bf6b281e538df0a187f25266eca312d919b4705ab",
+   "url": "https://curriculum.pasadena.edu/academic-programs/public-health/public-health-ast/"
+  },
+  "37424": {
+   "sha256": "0b92eae3449d2dbc4126765ecda05e15b4a34c91d31839d0a7d543f985f8d820",
+   "url": "https://curriculum.pasadena.edu/academic-programs/economics/economics-aat/"
+  },
+  "37425": {
+   "sha256": "a06fa15379c8f875c8c2d7a2cd29710952f63bbe76ad92e4241a72ac5b636e60",
+   "url": "https://curriculum.pasadena.edu/academic-programs/philosophy/philosophy-aat/"
+  },
+  "37684": {
+   "sha256": "b939f6f333e9b03f28b7bced1414e5b12a650a7196e745277b4d9d3c2b790ca7",
+   "url": "https://curriculum.pasadena.edu/academic-programs/dance/dance-aa/"
+  },
+  "37771": {
+   "sha256": "66d54c50acc180621988e0a0686bb7c86673698de1224498ec668a99d611137d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art--game-design-development-as-cert-achievement/"
+  },
+  "37772": {
+   "sha256": "66d54c50acc180621988e0a0686bb7c86673698de1224498ec668a99d611137d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art--game-design-development-as-cert-achievement/"
+  },
+  "37773": {
+   "sha256": "81074d9e432ff6479e657813ddad1c8dd431dabbd1a61dc3977799580b52f6c5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art-design-media-arts-foundation-as-cert-achievement/"
+  },
+  "37858": {
+   "sha256": "5058ef6c4c873186ed1bdb1647b945e528bc7c006c82a8da1eb760539ebe830c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/music/music-cert-achievement/"
+  },
+  "37861": {
+   "sha256": "81074d9e432ff6479e657813ddad1c8dd431dabbd1a61dc3977799580b52f6c5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-media-art/design-media-art-design-media-arts-foundation-as-cert-achievement/"
+  },
+  "37954": {
+   "sha256": "c3fe54ac94275d668266e3713fa048cbf6eba4d01a484089e590f8dc31a40afb",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biology/biology2-ast/"
+  },
+  "38192": {
+   "sha256": "020a4e3b5720c3aed666953f9f66335bc13b163d083783f46fe6a5c2a922846f",
+   "url": "https://curriculum.pasadena.edu/academic-programs/environmental-studies/agriculture-plant-science-ast/"
+  },
+  "38193": {
+   "sha256": "4fcfea3f79fd40bf57631905cf6f1b2858e1540687cb39897ac2f9d9d146ad83",
+   "url": "https://curriculum.pasadena.edu/academic-programs/social-justice-studies/social-justice-studies-general-aat/"
+  },
+  "38204": {
+   "sha256": "db8b688cab096a00fb06b02d99567134f0120e8ff861c020301c2b3b04b02a42",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/basic-bookkeeping-assistant-cert-completion/"
+  },
+  "38481": {
+   "sha256": "3e96ec76073a3b371ce08d176d3413e2775d623a9b60e5ccfad091d3bd6bc01c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/global-studies/global-studies-aat/"
+  },
+  "38855": {
+   "sha256": "df6c876b9f1c16c5cf9884e1cc9dd74c2cb09e638b472b60c31938626a3089f2",
+   "url": "https://curriculum.pasadena.edu/academic-programs/child-development/child-development-child-adolescent-development-aat/"
+  },
+  "38863": {
+   "sha256": "339a2c07b99f7227499236a19999dc2c2aab81bd393de51093f1fc2b595db203",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/american-sign-language-aa-cert-achievement/"
+  },
+  "38868": {
+   "sha256": "70de3b997956e0f1bcf5f3e114a6f8f81ff384cd14bd4b262aab47f755a88e0e",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/french-cert-achievement/"
+  },
+  "38871": {
+   "sha256": "2700c5cb2e1d9e22d3dfdde91d3c1c991678b913f32c84f22c89026890d37f35",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-studies/jewelrymetalworking-as-cert-achievement/"
+  },
+  "38872": {
+   "sha256": "2700c5cb2e1d9e22d3dfdde91d3c1c991678b913f32c84f22c89026890d37f35",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-studies/jewelrymetalworking-as-cert-achievement/"
+  },
+  "38924": {
+   "sha256": "4120fc7f7f1fd8eca2e7a2e808c5b5e3d3f670afd11ef911519e250e8f4bf95b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/machine-shop-technology/computer-numerical-control-cnc-machinist-specialist-as-cert-achievement/"
+  },
+  "38925": {
+   "sha256": "4120fc7f7f1fd8eca2e7a2e808c5b5e3d3f670afd11ef911519e250e8f4bf95b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/machine-shop-technology/computer-numerical-control-cnc-machinist-specialist-as-cert-achievement/"
+  },
+  "38926": {
+   "sha256": "cbbe095d0c64fbe781d5f8f3dbfdd9b59ffa7e47e0679bdb75ca21317c099fc9",
+   "url": "https://curriculum.pasadena.edu/academic-programs/machine-shop-technology/machine-shop-technology-as-cert-achievement/"
+  },
+  "38927": {
+   "sha256": "cbbe095d0c64fbe781d5f8f3dbfdd9b59ffa7e47e0679bdb75ca21317c099fc9",
+   "url": "https://curriculum.pasadena.edu/academic-programs/machine-shop-technology/machine-shop-technology-as-cert-achievement/"
+  },
+  "39412": {
+   "sha256": "339a2c07b99f7227499236a19999dc2c2aab81bd393de51093f1fc2b595db203",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/american-sign-language-aa-cert-achievement/"
+  },
+  "39567": {
+   "sha256": "55ec51b63fded9fe53bfb5b7df3b8c59344b18fc2b46bd307f7ed1b7a11404de",
+   "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/law-public-policy-society-aat/"
+  },
+  "39713": {
+   "sha256": "e1314b8553caaab1726d5345d5c9f7f085be4befa523930211d1f7ef1846da4d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/laser-technology/laser-technology-as-certificate-of-achievement/"
+  },
+  "39714": {
+   "sha256": "ed38677351544f93896c03692838d991bc1b0149fe5968b02238ffc6f8b2aa4a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/laser-technology/laser-technology-certificate-of-achievement/"
+  },
+  "39717": {
+   "sha256": "e1314b8553caaab1726d5345d5c9f7f085be4befa523930211d1f7ef1846da4d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/laser-technology/laser-technology-as-certificate-of-achievement/"
+  },
+  "40759": {
+   "sha256": "ae1b73c83f25aa97d3ccad4729eb06be792b0336ab52c9eb598c67210c7f17fb",
+   "url": "https://curriculum.pasadena.edu/academic-programs/languages/italian-cert-achievement/"
+  },
+  "40995": {
+   "sha256": "0e8df0454c61508bd92660e574d8b047c13a7e9541de32ae9911620cc50625a0",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-laboratory-skills-occupational-skills-cert/"
+  },
+  "41023": {
+   "sha256": "c8d172916aaf0466ab2de043e7668e2ab5e70e006060f6e11d4e273ef95eb7b6",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/certified-culinarian-cert-achievement/"
+  },
+  "41027": {
+   "sha256": "6637d15e3889af699767561037f9292b1f024698b173fdf4ce7f5419c084a1b5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/geography/geographic-information-systems-and-technology-as-certificate-of-achievement/"
+  },
+  "41035": {
+   "sha256": "09556cb0e1fd2cfca329fa8078ec45762b444bff1740c68bcaa7e5a0a227611b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/certified-baker/"
+  },
+  "41036": {
+   "sha256": "6637d15e3889af699767561037f9292b1f024698b173fdf4ce7f5419c084a1b5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/geography/geographic-information-systems-and-technology-as-certificate-of-achievement/"
+  },
+  "41037": {
+   "sha256": "6637d15e3889af699767561037f9292b1f024698b173fdf4ce7f5419c084a1b5",
+   "url": "https://curriculum.pasadena.edu/academic-programs/geography/geographic-information-systems-and-technology-as-certificate-of-achievement/"
+  },
+  "41120": {
+   "sha256": "fbdd85a965aea8d714c73887229d92291094a4a01357a50d648454a0e3e80d6b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-entrepreneurship-occupational-skills-cert/"
+  },
+  "41121": {
+   "sha256": "c8d172916aaf0466ab2de043e7668e2ab5e70e006060f6e11d4e273ef95eb7b6",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/certified-culinarian-cert-achievement/"
+  },
+  "41122": {
+   "sha256": "09556cb0e1fd2cfca329fa8078ec45762b444bff1740c68bcaa7e5a0a227611b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/certified-baker/"
+  },
+  "41367": {
+   "sha256": "b63525dcf329938f5d5d635250d50e3c27f4fd62bdefced333abd592e97d5419",
+   "url": "https://curriculum.pasadena.edu/academic-programs/welding/welding-fabrication-as-certificate-achievement/"
+  },
+  "41517": {
+   "sha256": "0c9b897541cb6a99775588e98ce5fcc6fd0d1c4cd2d3796bef5dcc2a8aa62d0a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-ast/"
+  },
+  "41583": {
+   "sha256": "07e627e080ddc4690fcad73e8361994dea73bc8632ec66df97176e0c2b5f5325",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/hospitality-ast/"
+  },
+  "41804": {
+   "sha256": "795f22985862db11789cd87814076cb79b6ef4e0903137e1c5a5cc1c95d649da",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/medical-sector-hospitality-food-and-beverage-leadership/"
+  },
+  "41809": {
+   "sha256": "15aea11dd5332bd83ffcddf9201d6cd362a01e51dbb1c72b7079726e3ab971d8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-data-analytics-as-cert-of-achievement/"
+  },
+  "41810": {
+   "sha256": "15aea11dd5332bd83ffcddf9201d6cd362a01e51dbb1c72b7079726e3ab971d8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-data-analytics-as-cert-of-achievement/"
+  },
+  "41817": {
+   "sha256": "6759dc1cd5bc386c6e5b977f35e089f584417ab625681c36c11aded1cb49a20b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/hospitality-service-leadership-certificate-of-achievement/"
+  },
+  "41844": {
+   "sha256": "b73c7f25303e018145fdcbb9ca276ec0afee43398e4030a5e9eb218ef325a78d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/natural-sciences/advanced-materials-nanotechnology-as-certificate-achievement/"
+  },
+  "41845": {
+   "sha256": "b73c7f25303e018145fdcbb9ca276ec0afee43398e4030a5e9eb218ef325a78d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/natural-sciences/advanced-materials-nanotechnology-as-certificate-achievement/"
+  },
+  "41846": {
+   "sha256": "2b1e3176a44f3c15e384b8ebead8e6aaba6445cf0c1d86bd471f8b2ad5ebfc76",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/cruiseline-sector-hospitality-leadership-certificate-of-achievement/"
+  },
+  "41939": {
+   "sha256": "8e73b6287a7daa51243d406cae958249b32efa90f4bf0b8771012b020e8a9708",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/introduction-legal-interpretation-translation-cert-completion/"
+  },
+  "41953": {
+   "sha256": "27aede9f3c8d39e03a0bc11b54e48b62725ec00f1723ffc86f87b74e9d1eb7fe",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/introduction-medical-interpretation-translation-cert-completion/"
+  },
+  "41965": {
+   "sha256": "c5df8c5b3294819b4e7e56372e838766c5880e5f7c061190ff5484d4014fc440",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/immigrant-education/esln-path-to-citizenship-cert-of-competency/"
+  },
+  "41989": {
+   "sha256": "53a60a44602887c354e9caca8d6f41f458a0d9f8abacef302493f1a132e60fbb",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/health-professions-basic-cert-completion/"
+  },
+  "42039": {
+   "sha256": "459845297d8415ed2da2c0d15c8f285784d7801d0e8d2384055031e1247e6b33",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-human-resource-management-as-cert-achievement/"
+  },
+  "42107": {
+   "sha256": "bb0450bc546bd327cc5398b6a57ad1305f9cde54a31bdce8955ad93fd8dc8a73",
+   "url": "https://curriculum.pasadena.edu/academic-programs/welding/los-angeles-structural-welding-license-certificate-of-achievement/"
+  },
+  "42108": {
+   "sha256": "459845297d8415ed2da2c0d15c8f285784d7801d0e8d2384055031e1247e6b33",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/business-administration-human-resource-management-as-cert-achievement/"
+  },
+  "42138": {
+   "sha256": "45833fb26f7ed064d1d8b4f6cebfc6cf303b72864562d50e1a8ab3fb7ae49fae",
+   "url": "https://curriculum.pasadena.edu/academic-programs/building-construction/sustainable-building-const-as-cert-achievement/"
+  },
+  "42140": {
+   "sha256": "af221ef057c474965e2bce64c71573937844d4563ccdbaf3aae1e77ae0f91e52",
+   "url": "https://curriculum.pasadena.edu/academic-programs/building-construction/building-construction-project-management-as-cert-achievement/"
+  },
+  "42141": {
+   "sha256": "5754e4283c4318ef0a74c071419d6e0e9edb211c8d64ae64b65de38c8569d85b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/building-construction/building-construction-inspection-cert-achievement/"
+  },
+  "42149": {
+   "sha256": "45833fb26f7ed064d1d8b4f6cebfc6cf303b72864562d50e1a8ab3fb7ae49fae",
+   "url": "https://curriculum.pasadena.edu/academic-programs/building-construction/sustainable-building-const-as-cert-achievement/"
+  },
+  "42179": {
+   "sha256": "af221ef057c474965e2bce64c71573937844d4563ccdbaf3aae1e77ae0f91e52",
+   "url": "https://curriculum.pasadena.edu/academic-programs/building-construction/building-construction-project-management-as-cert-achievement/"
+  },
+  "42194": {
+   "sha256": "b63525dcf329938f5d5d635250d50e3c27f4fd62bdefced333abd592e97d5419",
+   "url": "https://curriculum.pasadena.edu/academic-programs/welding/welding-fabrication-as-certificate-achievement/"
+  },
+  "42195": {
+   "sha256": "0e7d0f806b05036e660426652a800ebd81039a43d3b540c5eec347ab1814a5de",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/education-persons-substantial-disabilities/career-exploration-and-planning-for-students-with-developmental-differences-cert-completion/"
+  },
+  "42198": {
+   "sha256": "74c0bea3b2bfeaafc5e041299d7aaa884c3ef6e17d210a8664b03aaf3e0c2209",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/education-persons-substantial-disabilities/job-seach-and-application-process-for-students-with-developmental-differences-cert-completion/"
+  },
+  "42199": {
+   "sha256": "cb8c61dc15869e64c99eb4efe5858f3856e594fa606d45a4509a09b7aafbe8ee",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/education-persons-substantial-disabilities/workplace-employability-skills-for-students-with-developmental-differences-cert-completion/"
+  },
+  "42397": {
+   "sha256": "95f814b1ab56533bd61a35b91225a04149101514db90051bcd73bfff98ccde36",
+   "url": "https://curriculum.pasadena.edu/academic-programs/electrical-electronic-technology/electronics-technology-basic-digital-technician-cert-of-achievement/"
+  },
+  "42442": {
+   "sha256": "935bf7de4dbd68749424fde8f0d53afadba239804a0c5d6a3f161fc7e8b85464",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/global-trade-and-logistics-cert-of-achievement/"
+  },
+  "42498": {
+   "sha256": "7f56bbacb8bf1edf325459f4554beb9a806efb6be46e56870211cf2703d5e148",
+   "url": "https://curriculum.pasadena.edu/academic-programs/business-administration/supply-chain-management-cert-of-achievement/"
+  },
+  "42827": {
+   "sha256": "299d4e30b28c429ebe031a278eee9fa5a981bbd2df651cf0601f6b124b5c10bd",
+   "url": "https://curriculum.pasadena.edu/academic-programs/health-science/health-sciences-associate-in-science/"
+  },
+  "42971": {
+   "sha256": "d3475c399c10f0f93d6a579038cdecdf194be3f9d42667bb06ab90160c248918",
+   "url": "https://curriculum.pasadena.edu/academic-programs/emergency-medical-technology/emed-emergency-medical-services-cert/"
+  },
+  "42974": {
+   "sha256": "8c1f31ed9fbae0b918523411b7c1d7df77bbbe99ffed48293b63897571a3d16a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/certified-hospitality-entrepreneur-certificate-of-achievement/"
+  },
+  "42979": {
+   "sha256": "e6e81d5e2d928b581bf216f69cb0ba03b4734d4f6305a05b78c7edf8df70b711",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-bim-technician-building-design-and-env-level-1-coa/"
+  },
+  "42980": {
+   "sha256": "327940401d719822bbfb4837ca44811915a3fbb621ccb0d04e9a79b3389c946f",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-bim-modeler-building-design-and-fab-coa/"
+  },
+  "42981": {
+   "sha256": "2c5357adbca687d2c065657d20bd37a62a6e46b0abb90bdccc83c0d2d61ac70a",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-technician-mech-design-and-fab-level-1-coa/"
+  },
+  "42998": {
+   "sha256": "38ec215ae9e4a200ea54c17d75616438a5c74e4aea6f3bbbe91c216ff79af42b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/fire-technology/fire-academy-preparation-as-cert-of-achieve/"
+  },
+  "43056": {
+   "sha256": "8952b43b93a0191dc1783e9f3e5da290393b34b51a490220c55c73322c24cd0b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/culinary-management-and-operations-cert-achievement/"
+  },
+  "43064": {
+   "sha256": "8952b43b93a0191dc1783e9f3e5da290393b34b51a490220c55c73322c24cd0b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/culinary-management-and-operations-cert-achievement/"
+  },
+  "43069": {
+   "sha256": "38ec215ae9e4a200ea54c17d75616438a5c74e4aea6f3bbbe91c216ff79af42b",
+   "url": "https://curriculum.pasadena.edu/academic-programs/fire-technology/fire-academy-preparation-as-cert-of-achieve/"
+  },
+  "43087": {
+   "sha256": "138f060aefccafc5b22f52e54cefc2282f9911a17f091f46ecbf3bbdab2fd4de",
+   "url": "https://curriculum.pasadena.edu/academic-programs/design-technology/cad-bim-designer-building-design-and-env-level-2-as-coa/"
+  },
+  "43538": {
+   "sha256": "10d881aca0f43731b95a8c9dfcc49f6b74865fa99bc9afc9c9d47f9e01b15091",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-science/data-science-as-cert-achievement/"
+  },
+  "43542": {
+   "sha256": "10d881aca0f43731b95a8c9dfcc49f6b74865fa99bc9afc9c9d47f9e01b15091",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-science/data-science-as-cert-achievement/"
+  },
+  "43761": {
+   "sha256": "c9607e70ade89d5a5bd9206d7990e0bc9c144e6a6a54a80bc433de4eedcbf7ba",
+   "url": "https://curriculum.pasadena.edu/academic-programs/engineering/applied-sciences-as/"
+  },
+  "43898": {
+   "sha256": "fcfa02899da33bfc35e54da1fb64eb2d7b7954be57fe7b81ad058d8102ab3c87",
+   "url": "https://curriculum.pasadena.edu/academic-programs/communication-studies/communication-studies2-aat/"
+  },
+  "43905": {
+   "sha256": "8c10a0aa6580ad967181ae3bf6b281e538df0a187f25266eca312d919b4705ab",
+   "url": "https://curriculum.pasadena.edu/academic-programs/public-health/public-health-ast/"
+  },
+  "43944": {
+   "sha256": "474ae20eaf9a508a7fccea93fa181a54c8a610aca718551ffcf07b3468387077",
+   "url": "https://curriculum.pasadena.edu/academic-programs/automotive-technology/honda-pact-certificate-of-achievement/"
+  },
+  "43945": {
+   "sha256": "d3b169793828c7a79b29e8361b1707334d480530067b43bd4dff88714373a9c8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-stem-cell-based-biomanufacturing-as-cert-achievement/"
+  },
+  "43946": {
+   "sha256": "d3b169793828c7a79b29e8361b1707334d480530067b43bd4dff88714373a9c8",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-stem-cell-based-biomanufacturing-as-cert-achievement/"
+  },
+  "43984": {
+   "sha256": "ae5872ae4bd10d507763895f1a585fc519db4357424742e0a997ec7af748929c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/biological-technology/biological-technology-stem-cell-culture-cert-achievement/"
+  },
+  "44015": {
+   "sha256": "51cbcf3a22f8f215cab92d927023516bc4bc4438bb740067d17314e90d1abe7d",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/high-school-equivalency-prep/"
+  },
+  "44323": {
+   "sha256": "65428e14f2a711e024b27ce0679ecf32563323a636a7a63bc2f60de9b3057841",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/elementary-secondary-basic-skills/algebraic-foundations-cert-of-competency/"
+  },
+  "44434": {
+   "sha256": "2caa134f14b47e507be049686d9a09f44b0920a95c4ac8f87185122efed7116c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/fire-technology/wildland-fire-technology-as-cert-of-achieve/"
+  },
+  "44543": {
+   "sha256": "8ad5a3122b4820ab8ae8f08c5ed9220e8d536c83fa724d46c3ade3267e52bffc",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/electric-vehicle-charging-station-technician-certificate-of-completion/"
+  },
+  "44670": {
+   "sha256": "1d8b20b18ea4b3eb147ec2c2204d8dec089bd43ae48b0515a52d03b4cf7c95bc",
+   "url": "https://curriculum.pasadena.edu/academic-programs/environmental-studies/agricultural-entrepreneurship-as-cert-achievement/"
+  },
+  "44671": {
+   "sha256": "1d8b20b18ea4b3eb147ec2c2204d8dec089bd43ae48b0515a52d03b4cf7c95bc",
+   "url": "https://curriculum.pasadena.edu/academic-programs/environmental-studies/agricultural-entrepreneurship-as-cert-achievement/"
+  },
+  "44723": {
+   "sha256": "c39fc6a3b5be7a5bc3f0ac6bb2b3c33e68e649385061ef09e4d628e0d392a031",
+   "url": "https://curriculum.pasadena.edu/academic-programs/music/popular-music-aa/"
+  },
+  "44873": {
+   "sha256": "f0380af7eb353afbc0dd679d8decfaa57baa26baef75868b2f0023d450ea42d3",
+   "url": "https://curriculum.pasadena.edu/academic-programs/education/educational-aide-cert-of-ach/"
+  },
+  "44896": {
+   "sha256": "03ea6d5979dc2322820d3a5c8a5925919971f188d0478f83baffa5913a9a67f7",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-intermediate-condensed-levels-literacy-1-cert-competency/"
+  },
+  "44897": {
+   "sha256": "bfcc8d29b9cd388789ea0b20d462914e3c36ce69b4d03f5c02520a13c880f3cd",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/english-second-language/esln-intermediate-condensed-levels-2-3-cert-competency/"
+  },
+  "44936": {
+   "sha256": "41bb48d480753619d2aa2e410c3924a8a6b98e925a7359b788b408b59f07a22d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/environmental-studies/urban-forestry-as-cert-achievement/"
+  },
+  "44954": {
+   "sha256": "41bb48d480753619d2aa2e410c3924a8a6b98e925a7359b788b408b59f07a22d",
+   "url": "https://curriculum.pasadena.edu/academic-programs/environmental-studies/urban-forestry-as-cert-achievement/"
+  },
+  "44955": {
+   "sha256": "8b7a428ebdcc4c09aab03e3f420a089a04252c752436b6af780eea2f7b7fcd30",
+   "url": "https://curriculum.pasadena.edu/academic-programs/hospitality-management/first-time-hospitality-manager-certificate-of-achievement/"
+  },
+  "44956": {
+   "sha256": "e754a80e55e6533ec34677f7b14d543d90cba08e18806f0f33f03d99f673ec94",
+   "url": "https://curriculum.pasadena.edu/academic-programs/health-science/telemetry-technician-certificate-of-achievement/"
+  },
+  "44957": {
+   "sha256": "205df28c9401ce34e5d8cbb9027d4558e281dcbd69bf87bab30dfdb8e9b76446",
+   "url": "https://curriculum.pasadena.edu/academic-programs/accounting/accounting-taxation-for-enrolled-agents-cert-achievement/"
+  },
+  "44958": {
+   "sha256": "3f3650f2da6f4a9c74bfb9e8dd58b910569432d6069578e9897021b5e79056be",
+   "url": "https://curriculum.pasadena.edu/academic-programs/computer-science/computer-science-ast/"
+  },
+  "45510": {
+   "sha256": "dcd9352e4e5462bdb987fdd490c67e1314c0f9a903c33c2817a7f80b3d225ddd",
+   "url": "https://curriculum.pasadena.edu/academic-programs/education/elementary-teacher-education--integrated-programs-aat/"
+  },
+  "45823": {
+   "sha256": "e8642ea1b0276759a0ae49b05ed05143ac78815aa48fab9e4904ef8813d00260",
+   "url": "https://curriculum.pasadena.edu/academic-programs/cinema/virtual-prod-cinema-as-cert-achievement/"
+  },
+  "45842": {
+   "sha256": "e8642ea1b0276759a0ae49b05ed05143ac78815aa48fab9e4904ef8813d00260",
+   "url": "https://curriculum.pasadena.edu/academic-programs/cinema/virtual-prod-cinema-as-cert-achievement/"
+  },
+  "45887": {
+   "sha256": "c7b13d0c34224505ab83742b544cd8ee39f330132a9f6b64f295b6183918580e",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/construct-trades-readiness-cert-completion/"
+  },
+  "46043": {
+   "sha256": "fe271c746e537ae25267bd5d9973276d8c969410f191292b6a97483df869edd3",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/central-sterile-process-tech-cert-completion/"
+  },
+  "46266": {
+   "sha256": "37ba7d14aff24d1efefc12c1b766d96e9a1a9399341e3b3de2dea35a4739c53b",
+   "url": "https://curriculum.pasadena.edu/noncredit-division/short-term-career-technical-education/carpentry-fundamentals-cert-of-completion/"
+  },
+  "46377": {
+   "sha256": "e54c6504314ba72d10857e77eccbb186dbb5a673a2ac0be6234e15457344bfe0",
+   "url": "https://curriculum.pasadena.edu/academic-programs/medical-assisting/patient-intake-specialist-cert-of-achievement/"
+  },
+  "46462": {
+   "sha256": "2caa134f14b47e507be049686d9a09f44b0920a95c4ac8f87185122efed7116c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/fire-technology/wildland-fire-technology-as-cert-of-achieve/"
+  },
+  "46463": {
+   "sha256": "05500684861bc4ef0f77cc2160c325e6314fd34862a672b3c51056c58a3ff853",
+   "url": "https://curriculum.pasadena.edu/academic-programs/kinesiology/personal-training-as-cert-achievement/"
+  },
+  "46492": {
+   "sha256": "2caa134f14b47e507be049686d9a09f44b0920a95c4ac8f87185122efed7116c",
+   "url": "https://curriculum.pasadena.edu/academic-programs/fire-technology/wildland-fire-technology-as-cert-of-achieve/"
+  },
+  "46493": {
+   "sha256": "05500684861bc4ef0f77cc2160c325e6314fd34862a672b3c51056c58a3ff853",
+   "url": "https://curriculum.pasadena.edu/academic-programs/kinesiology/personal-training-as-cert-achievement/"
+  }
+ },
+ "run": "44688457642"
 }

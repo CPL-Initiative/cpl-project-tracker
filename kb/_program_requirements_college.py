@@ -452,7 +452,16 @@ SLUG_AWARD = [
     ("as", re.compile(r"associate-(?:in-|of-)?science-degree/?$")),
     ("aa", re.compile(r"associate-(?:in-|of-)?arts-degree/?$")),
     ("other", re.compile(r"certif\w*-(?:of-)?specialization/?$")),
+    # Endings the committed addresses print that the rows above miss (S689; lane NEXT (4), measured on the passing
+    # records' addresses: -for-transfer 16, -as-t-degree and -aa-t-degree 27, -adt 30, -ca 204, each naming the
+    # program's own award on every one).
+    ("adt", re.compile(r"-for-transfer/?$|-a[as]-?t-degree/?$|-adt/?$")),
+    ("coa", re.compile(r"-ca/?$")),
 ]
+# "-certificate" and "-cert" name a certificate and not which: Certificate of Achievement on 549 passing records'
+# addresses, a noncredit certificate on 7 (S689). Such an address names both kinds, so it rules out a degree and
+# leaves the certificate's kind to the page's other words.
+SLUG_CERTIFICATE = re.compile(r"-cert(?:ificates?)?/?$")
 
 
 # Grossmont addresses a degree and its certificate on one page as
@@ -462,23 +471,32 @@ SLUG_AWARD = [
 # (page read 39750446541, S446). SLUG_AWARD read the certificate alone, so the A.S. scored no
 # award on its own page and lost it to the certificate: 6 of Grossmont's 15 page-claimed. Such
 # an address names both awards.
-SLUG_DEGREE_CERT = re.compile(r"-(a[as])-cert\w*-(?:of-)?achievement/?$")
+SLUG_DEGREE_CERT = re.compile(r"-(a[as])-(?:cert\w*-(?:of-)?achievement|ca)/?$")
 
 
 def slug_awards(url: str) -> set[str]:
     """Every award an address names: both for a degree-and-certificate address
     (SLUG_DEGREE_CERT), else slug_award()'s one, else none."""
-    path = urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
+    path = _slug_path(url)
     m = SLUG_DEGREE_CERT.search(path)
     if m:
         return {m.group(1), "coa"}
     one = slug_award(url)
-    return {one} if one else set()
+    if one:
+        return {one}
+    return {"coa", "noncredit"} if SLUG_CERTIFICATE.search(path) else set()
+
+
+def _slug_path(url: str) -> str:
+    """An address's path, lowercased. A term or year after the award stays (Antelope Valley's eLumen addresses,
+    "-as-fall-2026" over a certificate's list and "-cert-fall-2026" over a degree's, would read the wrong award on
+    38 passing records; S689), so keep-the-better's TERM_TAIL alone sets it aside."""
+    return urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
 
 
 def slug_award(url: str) -> str | None:
     """The award an address names in its last segment, or None."""
-    path = urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
+    path = _slug_path(url)
     for kind, pat in SLUG_AWARD:
         if pat.search(path):
             return kind
@@ -5289,7 +5307,35 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
 # start page of that year's catalog on the registry's own host (Riverside City's 2025-2026 is curriQunet archive 71,
 # Catalog/archive/71/iq/4079/4130, S663), its year, and the control numbers to read there. Only those programs are
 # read, and file_run files them beside the college's records rather than in place of them.
+# A catalog read as one PDF (College of the Desert's procedure step, S647) takes its prior year as that year's file:
+# "<the .pdf> <catalog_year> <cn,...>", on a host the registry's PDF or catalog comes from (S689, rule D's prior
+# read). Following a page's link to the year's file was built and set aside: its matcher had no self-recall test on
+# committed link lists (S689 review, round 1).
 PRIOR_PLATFORMS = ("curriqunet",)
+
+
+def pdf_hosts(reg: dict) -> set[str]:
+    """The hosts a PDF catalog's file comes from: the registry's own file, its procedure step's page and file, and
+    the registry's catalog host (College of the Desert's past years sit on its CourseLeaf host's archive,
+    catalog.collegeofthedesert.edu/archive/2025-2026/, while its current PDF is on the college's own site; S689)."""
+    urls = [reg.get("catalog_url")]
+    step = P.procedure_catalog(reg.get("procedure")) or {}
+    if step.get("format") == "pdf":
+        urls += [step.get("start"), step.get("file")]
+    return {(urllib.parse.urlparse(u).hostname or "").lower() for u in urls if u} - {""}
+
+
+def prior_reg(reg: dict, prior: dict) -> dict:
+    """The registry row a prior-year read captures from: that year's start page and year, and for a PDF catalog its
+    procedure step naming that year's file (pdf_start reads a named file and loads no page; resume and the wait stay)."""
+    out = dict(reg, catalog_url=prior["start"], catalog_year=prior["catalog_year"])
+    if prior.get("format") == "pdf":
+        proc = reg.get("procedure") if isinstance(reg.get("procedure"), dict) else {}
+        step = dict(proc.get("catalog") or {}) if isinstance(proc.get("catalog"), dict) else {}
+        step.update(file=prior["start"], format="pdf", catalog_year=prior["catalog_year"])
+        step.setdefault("start", prior["start"])
+        out["procedure"] = dict(proc, catalog=step)
+    return out
 
 
 def prior_read(spec: str | None, reg: dict, programs: list[dict]) -> tuple[dict | None, str | None]:
@@ -5301,18 +5347,26 @@ def prior_read(spec: str | None, reg: dict, programs: list[dict]) -> tuple[dict 
     if len(parts) != 3:
         return None, "CAPTURE_PRIOR is '<start> <catalog_year> <cn,cn,...>'"
     start, year, cns = parts
-    if (reg.get("catalog_platform") or "") not in PRIOR_PLATFORMS:
-        return None, "a prior-year read opens on %s catalogs; this one is %s" % (
-            ", ".join(PRIOR_PLATFORMS), reg.get("catalog_platform"))
     host = (urllib.parse.urlparse(start).hostname or "").lower()
-    if not host or host != (urllib.parse.urlparse(reg.get("catalog_url") or "").hostname or "").lower():
+    as_pdf = reads_as_pdf(reg)
+    if (reg.get("catalog_platform") or "") not in PRIOR_PLATFORMS and not as_pdf:
+        return None, "a prior-year read opens on %s catalogs and PDF catalogs; this one is %s" % (
+            ", ".join(PRIOR_PLATFORMS), reg.get("catalog_platform"))
+    if as_pdf:
+        if not urllib.parse.urlparse(start).path.lower().endswith(".pdf"):
+            return None, "a PDF catalog's prior year is that year's file: name the .pdf"
+        if not host or host not in pdf_hosts(reg):
+            return None, "the prior catalog's file must be on the host the registry's PDF comes from"
+    elif not host or host != (urllib.parse.urlparse(reg.get("catalog_url") or "").hostname or "").lower():
         return None, "the prior catalog's start page must be on the registry's catalog host"
     m = re.fullmatch(r"(20\d\d)-(20\d\d)", year)
     if not m or int(m.group(2)) != int(m.group(1)) + 1:
         return None, "catalog_year is YYYY-YYYY"
-    cur = re.match(r"\s*(20\d\d)", reg.get("catalog_year") or "")
+    # A row naming the catalog's page names no year; a PDF's procedure step does (S407).
+    current = reg.get("catalog_year") or (P.procedure_catalog(reg.get("procedure")) or {}).get("catalog_year") or ""
+    cur = re.match(r"\s*(20\d\d)", current)
     if cur and int(m.group(1)) >= int(cur.group(1)):
-        return None, "a prior-year read reads a year before the registry's %s" % reg.get("catalog_year")
+        return None, "a prior-year read reads a year before the registry's %s" % current
     only = [c for c in cns.split(",") if c]
     have = {p["control_number"] for p in programs}
     if not only or any(not c.isdigit() for c in only):
@@ -5324,7 +5378,10 @@ def prior_read(spec: str | None, reg: dict, programs: list[dict]) -> tuple[dict 
     if listless:
         # The read finds a program by its closed list; the no-closed-list lookup refuses archive pages (COBIx, #3382).
         return None, "a prior-year read finds a program by its closed list; none for %s" % ", ".join(listless)
-    return {"start": start, "catalog_year": year, "only": sorted(set(only))}, None
+    out = {"start": start, "catalog_year": year, "only": sorted(set(only))}
+    if as_pdf:
+        out["format"] = "pdf"
+    return out, None
 
 
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
@@ -5344,7 +5401,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         RC.mark(programs, os.path.join(COLLEGE_DIR, slug_of(college)))
     if prior:
         programs = [p for p in programs if p["control_number"] in prior["only"]]
-        reg = dict(reg, catalog_url=prior["start"], catalog_year=prior["catalog_year"])
+        reg = prior_reg(reg, prior)
         # The prior year's pages print that year's codes (course_renumbers_by_year; S663).
         import _program_requirements_reconcile as RY
         programs = with_renumbers(programs, RY.course_renumbers(college, year=prior["catalog_year"]),
@@ -7310,7 +7367,9 @@ def file_prior(dest: str, out_dir: str, report: dict) -> int:
         return 0
     # The address every page of this read sits under: curriQunet's view prefix (Catalog/archive/71/iq/), else the
     # start page's own.
-    prefix = (report.get("curriqunet") or {}).get("view_prefix") or cq_base(prior["start"])[1]
+    # A PDF catalog's pages are the file's own (<file>#page=N).
+    prefix = (report.get("curriqunet") or {}).get("view_prefix") or (
+        prior["start"] if prior.get("format") == "pdf" else cq_base(prior["start"])[1])
     os.makedirs(os.path.join(dest, "records"), exist_ok=True)
     filed, kept = [], []
     for cn in sorted(only):

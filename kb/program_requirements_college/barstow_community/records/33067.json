@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "History",
  "award": "A.A- T Degree",
- "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=103",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8433,
+  "input_tokens": 10523,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8433,
-    "output_tokens": 1468,
+    "input_tokens": 10523,
+    "output_tokens": 2156,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1468,
+  "output_tokens": 2156,
   "output_tokens_details": {
-   "thinking_tokens": 362
+   "thinking_tokens": 460
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06309,
- "ms": 12338,
- "seconds": 12.7,
+ "cost_usd": 0.08521,
+ "ms": 16229,
+ "seconds": 16.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 12,
    "listed": 12,
-   "share": 0.0,
-   "missing": [
-    "HIST1A",
-    "HIST1B",
-    "HIST4",
-    "HIST5",
-    "HIST8A",
-    "HIST8B",
-    "HISTC1001",
-    "HISTC1002",
-    "POLI2",
-    "POLSC1000",
-    "PSYCC1000",
-    "SOCIC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -74,29 +61,49 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     69.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -106,97 +113,245 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text shows only part of the Cal-GETC pattern (Areas 3-6 and the optional CSU U.S. History requirement), not the History A.A-T section",
+   "section_heading": "Associate of Arts Degree for Transfer, History",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 11,
+    "max": 17
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate a thorough knowledge of the roots and early history of world civilizations, including political, social, economic, scientific, technological, and artistic changes and achievements.",
+    "Distinguish between primary and secondary historical sources and use them to compose a well-researched argument.",
+    "Effectively conduct research and write a coherent historical essay or research paper that articulates a clear argument, effectively uses and interprets multiple forms of evidence, identifies arguments in secondary historical texts, and uses appropriate citations."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A, Area 1: Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 8A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A, Area 2: Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 8B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B, Area 1 Diversity: Choose one course from the following not previously used in List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 8A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 8B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B, Area 2: Choose one course from the following or any one course not previously used from List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "HIST 1A",
-    "why": "Listed only as a Cal-GETC Area 4 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "HIST 1B",
-    "why": "Listed only as a Cal-GETC Area 4 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "HIST 4",
-    "why": "Listed only as a Cal-GETC Area 4 and US1 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "HIST 5",
-    "why": "Listed only as a Cal-GETC Area 4 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "HIST 8A",
-    "why": "Listed only as a Cal-GETC Area 4 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "HIST 8B",
-    "why": "Listed only as a Cal-GETC Area 4 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "HIST C1001",
-    "why": "Listed only as a Cal-GETC Area 4 and US1 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "HIST C1002",
-    "why": "Listed only as a Cal-GETC Area 4 and US1 option; the History A.A-T section is not in the text"
-   },
-   {
     "code": "POLI 2",
-    "why": "Not in the text under this code; the Cal-GETC Area 4 list prints POLS 2 Comparative Government; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "POLS C1000",
-    "why": "Listed only as a Cal-GETC Area 4, US2 and US3 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "Listed only as a Cal-GETC Area 4 option; the History A.A-T section is not in the text"
-   },
-   {
-    "code": "SOCI C1000",
-    "why": "Listed only as a Cal-GETC Area 4 option; the History A.A-T section is not in the text"
+    "why": "not in the text; catalog prints POLS 2 Comparative Government instead (recorded as catalog addition)"
    }
   ],
   "notes": [
-   "The extracted pages (83-84) hold part of a Cal-GETC general education pattern (Areas 3-6, the optional CSU U.S. History/Constitution requirement, Total Units Required 34.0) and the start of the Child Development Level I certificate. They do not include the History A.A-T requirements. The cited page anchor may point to the wrong page; a reviewer should locate the History A.A-T section.",
-   "The 34.0 'Total Units Required' belongs to the Cal-GETC pattern listing, not to the History A.A-T major, so it is not recorded as total_units, degree_total or ge_units for this award.",
-   "The catalog prints 'POLS 2 Comparative Government', while the closed list stores 'POLI 2 Comparative Government'. These are probably the same course under a different subject code.",
-   "No program learning outcomes or careers for History appear in the text."
+   "The course list at the top of page 103 (ending 'Major Units Required 18.0 ... General Education Course Work 24.0-37.0') belongs to a preceding program, not the History AA-T; it was not used.",
+   "List B, Area 2 also allows any one course not previously used from List A (HIST 1A, 1B, 8A, 8B); those courses are recorded in the List A blocks only.",
+   "HIST 1A/1B/8A/8B appear in both List A and List B Area 1; a course may not be used in both.",
+   "Catalog prints 'Transferable Electives Required 11.0-17.0' although Major 18 + Cal-GETC 34 = 52 of 60 implies 8; recorded as printed in degree_elective_units. Reviewer should check.",
+   "Closed list stores POLI 2; catalog prints POLS 2 with the same title (Comparative Government), likely a subject-code change."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": "44687777798",
+ "catalog_year": "2026-2027",
+ "source_sha": "6e107885499f5ef9",
+ "source_codes": [
+  "HIST1A",
+  "HIST1B",
+  "HIST4",
+  "HIST5",
+  "HIST8A",
+  "HIST8B",
+  "HISTC1001",
+  "HISTC1002",
+  "POLI2",
+  "POLSC1000",
+  "PSYCC1000",
+  "SOCIC1000"
+ ],
+ "source_coverage": 1.0
 }

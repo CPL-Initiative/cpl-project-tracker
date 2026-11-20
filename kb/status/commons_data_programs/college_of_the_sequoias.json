@@ -1,5 +1,4 @@
-{"schema":1,"college":"College of the Sequoias","slug":"college_of_the_sequoias","basis":"live","census_at":"2026-11-19 23:51Z","correction_rules":false,"programs":[
-{"cn":"32649","title":"Administration of Justice","award":"A.S. T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"schema":1,"college":"College of the Sequoias","slug":"college_of_the_sequoias","basis":"live","census_at":"2026-11-20 10:36Z","correction_rules":false,"programs":[
 {"cn":"10064","title":"Administration of Justice-Corrections","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"18585","title":"Administration of Justice: Law Enforcement","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"39336","title":"Culinary Arts","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
@@ -7,17 +6,10 @@
 {"cn":"45497","title":"Equipment Technician","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"44392","title":"Food Safety Management","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"10048","title":"Graphic Design","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"20064","title":"Graphic Design","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"37463","title":"Industrial Automation","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"45498","title":"Modern Policing","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"42925","title":"Multimedia Design","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"44493","title":"Paramedicine","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"35434","title":"Elementary Teacher Education","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cos.edu//transfer-information-requirements/"},
-{"cn":"45818","title":"Elementary Teacher Education: Integrated Programs","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cos.edu//transfer-information-requirements/"},
-{"cn":"20064","title":"Graphic Design","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cos.edu/areas-study/graphic-design/"},
-{"cn":"35456","title":"Kinesiology","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cos.edu//associate-degree-requirements/"},
-{"cn":"38674","title":"Nutrition and Dietetics","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cos.edu//transfer-information-requirements/"},
-{"cn":"44216","title":"Public Health","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cos.edu//transfer-information-requirements/"},
-{"cn":"36805","title":"Social Justice Studies - Chicano Studies","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.cos.edu//transfer-information-requirements/"},
 {"cn":"36073","title":"American Sign Language","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.cos.edu//areas-study/american-sign-language/associate-arts-american-sign-language-not-for-transfer-aa/","units":{"sum":[64.0,66.0],"printed":[60.0,60.0],"status":"unequal","measure":"units","against":"degree"}},
 {"cn":"06718","title":"Architecture","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.cos.edu//areas-study/architecture/associate-science-architecture-not-for-transfer-as/","units":{"sum":[63.0,63.0],"printed":[60.0,60.0],"status":"unequal","measure":"units","against":"degree"}},
 {"cn":"06740","title":"Art","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.cos.edu//areas-study/art/associate-arts-art-transfer-aa/","units":{"sum":[64.0,64.0],"printed":[61.0,61.0],"status":"unequal","measure":"units","against":"degree"}},
@@ -39,5 +31,5 @@
 {"cn":"06715","title":"Plant Science","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.cos.edu//areas-study/plant-science/associate-science-plant-science-not-transfer-as/","units":{"sum":[66.0,66.0],"printed":[60.0,60.0],"status":"unequal","measure":"units","against":"degree"}},
 {"cn":"06748","title":"Registered Nursing","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.cos.edu//areas-study/nursing/associate-science-registered-nursing-not-for-transfer-as/","units":{"sum":[72.0,87.0],"printed":[60.0,75.0],"status":"unequal","measure":"units","against":"degree"}},
 {"cn":"06770","title":"Sports Medicine/Athletic Training/Exercise Science","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.cos.edu//areas-study/sports-medicine/associate-science-sports-medicine-athletic-trainer-transfer-as/","units":{"sum":[66.0,73.0],"printed":[60.0,60.0],"status":"unequal","measure":"units","against":"degree"}},
-{"cn":"35415","title":"University Studies - Pathway to Math and Science","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/","units":{"sum":[4.0,10.0],"printed":[18.0,18.0],"status":"unequal","measure":"units","against":"program"}}
+{"cn":"35415","title":"University Studies - Pathway to Math and Science","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/","units":{"sum":[6.0,30.0],"printed":[18.0,18.0],"status":"unequal","measure":"units","against":"program"}}
 ]}

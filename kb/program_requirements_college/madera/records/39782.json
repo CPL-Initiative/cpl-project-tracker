@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6494,
-    "output_tokens": 1476,
+    "output_tokens": 1408,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,45 @@
     "model": null
    }
   ],
-  "output_tokens": 1476,
+  "output_tokens": 1408,
   "output_tokens_details": {
-   "thinking_tokens": 367
+   "thinking_tokens": 293
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0555,
- "ms": 11929,
- "seconds": 12.3,
+ "cost_usd": 0.05414,
+ "ms": 12201,
+ "seconds": 15.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 10,
-   "share": 0.8,
+   "share": 0.9,
    "missing": [
-    "MATH5A",
     "PHYS4A"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "MATHC2210",
     "PHYS2B"
    ],
    "flagged": [
-    "MATHC2210",
     "PHYS2B"
    ],
    "pass": true
@@ -187,7 +191,7 @@
     ]
    },
    {
-    "name": "Unnamed list (4.0 units)",
+    "name": "(unnamed list, 4.0)",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -253,12 +257,13 @@
    }
   ],
   "notes": [
-   "The second block has no printed heading; only '4.0' appears before its course list. It is read as choose 4 units (one course) from the list, consistent with 19.0 + 4.0 = Total 23.0.",
-   "STAT C1000 is marked '( Historical )' in the catalog list.",
-   "Source URL refers to the 2025-2026 catalog while the requested catalog year is 2026-2027; reviewer should confirm the year.",
-   "No general education pattern or degree total is printed in this section; Total 23.0 is recorded as the major total.",
-   "Requirement: all courses must be completed with a 'C' or better grade."
+   "The second list has no printed heading or instruction; only a '4.0' block total is printed before it. Read as choose 4 units (one course) from the list, consistent with Math Core 19 + 4 = Total 23.",
+   "STAT C1000 is marked '( Historical )' in the catalog.",
+   "Source URL is the 2025-2026 MCC catalog, while the requested catalog year is 2026-2027; reviewer should verify the year.",
+   "No general education pattern or degree total is printed on this page; total 23.0 is the major total.",
+   "Learning outcomes are printed for this program as a whole under 'Learning Outcome(s):'."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }
