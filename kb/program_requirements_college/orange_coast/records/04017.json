@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9389,
-    "output_tokens": 2866,
+    "output_tokens": 3130,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2866,
+  "output_tokens": 3130,
   "output_tokens_details": {
-   "thinking_tokens": 664
+   "thinking_tokens": 846
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09488,
- "ms": 23368,
- "seconds": 23.8,
+ "cost_usd": 0.10016,
+ "ms": 24128,
+ "seconds": 25.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 40,
+   "placed": 41,
    "listed": 41,
-   "share": 0.976,
-   "missing": [
-    "ENGLA101H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1003H",
+     "listed": "ENGLA101H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGLC1003H"
-   ],
-   "flagged": [
-    "ENGLC1003H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -470,17 +472,18 @@
    }
   ],
   "notes": [
-   "ENGL A119 and ENGL A168 match closed-list entries printed without a space (ENGLA119, ENGLA168); treated as the same courses, not catalog additions.",
-   "ENGL C1003H is not in the closed list; recorded as a catalog addition.",
-   "The catalog prints no units beside individual courses in the 'Select two' and Restricted Electives lists; only block totals (6 and 9) are printed.",
-   "Restricted Electives may also be chosen from Required Core courses (the 'Select two' list) not already used; those courses are recorded only once, in the core choice block.",
-   "General education printed as 'Up to 27' units for OCC AA GE (Cal-GETC up to 34 units may be substituted); ge_units left null because no fixed figure is printed.",
+   "The catalog prints units only for ENGL C1003 (4) and block totals (6 and 9); no units are printed beside the other courses, so their units are null.",
+   "Restricted Electives may also be chosen from Required Core courses not already used ('Select a minimum of nine units from Required Core courses not already used or from the following list'); those core courses are not repeated in the Restricted Electives block.",
+   "ENGL A119 and ENGL A168 match closed-list entries written without a space (ENGLA119, ENGLA168); treated as the same courses, not catalog additions.",
+   "ENGL C1003H (honors alternative) is not in the closed list and is marked as a catalog addition.",
+   "GE is printed as 'OCC AA General Education and Multicultural Requirements ... Up to 27'; ge_units left null because only an upper bound is printed. Footnote says the Cal-GETC pattern (up to 34 units) may be substituted.",
    "Degree-applicable electives are printed as 'Varies' to satisfy the 60-unit degree total, so electives_fill_degree is true.",
-   "Program Learning Outcomes are printed in the overview for this degree.",
-   "The program sequence lists ENGL C1000 as a GE/sequence course, not a major requirement; it is not placed in a block."
+   "Program Sequence total prints 60-61 units; the Requirements tab prints 'Total Minimum Degree Units - OCC AA GE 60', recorded as degree_total.",
+   "Outcomes are printed under 'Program Outcomes / Program Learning Outcomes' on this award's page."
   ]
  },
- "extracted_run": 43136182950,
+ "extracted_run": "44747523200",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "degree_total_minimum",
@@ -500,6 +503,5 @@
    },
    "words": "OCC AA General Education and Multicultural Requirements 1,2,3\tUp to 27 (https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-associate-arts-degree/: Film & Television A.A. 03967, REQUIREMENTS tab: 'OCC AA General Education and Multicultural Requirements 2,3,4 Up to 27' and footnote 2 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json))"
   }
- ],
- "read_run": "38670927724"
+ ]
 }
