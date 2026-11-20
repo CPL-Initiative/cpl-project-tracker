@@ -2,19 +2,51 @@
  "college": "Cuyamaca College",
  "programs": 186,
  "with_closed_list": 186,
- "found": 182,
- "extracted": 182,
+ "found": 180,
+ "extracted": 180,
  "errors": 0,
- "passed_machine_checks": 146,
+ "passed_machine_checks": 164,
  "failed": {
-  "coverage": 4,
+  "coverage": 1,
   "invented": 0,
-  "arithmetic": 36,
+  "arithmetic": 16,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 13.84,
- "cost_per_program": 0.0761,
- "not_found": [],
- "run": "38748833332"
+ "cost_usd_run": 2.3,
+ "cost_usd_filed": 13.14,
+ "cost_per_program": 0.073,
+ "extract_calls": 24,
+ "extract_failed": [],
+ "not_found": [
+  {
+   "control_number": "39205",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.gcccd.edu/cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-science/computer-science-transfer-as-t/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.133,
+    "body": 0.133,
+    "content": 0.0,
+    "net": 2,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 2 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5113,
+     "content": 31414,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  }
+ ],
+ "run": "44752892297"
 }
