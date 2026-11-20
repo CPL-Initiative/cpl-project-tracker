@@ -130,9 +130,9 @@ def latest_pass(checks, record):
 def drift_unlists(record, checks, page):
     """True when a listed piece comes off the Public Library before its new check: it has a passing check of its page
     and that pass no longer speaks for the page on disk (certified_check). A legacy listing, one with no passing check
-    at its current key and url (every listing before the check run), stays listed
-    until its first check: check_phase unlists it if that check fails (d-library-legacy-unlists-on-failed-first-check-s688)
-    and leaves it listed with its pass line if it passes; from its first pass on, this rule applies."""
+    at its current key and url (the 21 pieces listed before the check run), stays listed with its Not yet certified line
+    whatever its checks find (Sam's ruling, Nov 19, 2026, 7:32 PM PT, relayed by COBIx on #3581, 7029505105;
+    r-library-legacy-listings-stay-sam-2026-11-19); from its first pass on, this rule applies."""
     return bool(record and record.get("public_listed") and latest_pass(checks, record)
                 and not certified_check(record, checks, page))
 
@@ -530,9 +530,8 @@ def check_phase(plan_path, engine=run_engine, now=None):
     receipt["unlisted"] = []
     rows, report_of, before, got, sha_of, insert_error, errors = [], {}, {}, [], {}, None, []
     # A listed piece whose page is not the page its latest passing check saw comes off the Public Library before its
-    # new check runs (drift_unlists). A legacy listing, with no passing check yet, stays listed through this loop and is
-    # judged by its first check below (d-library-legacy-unlists-on-failed-first-check-s688).
-    legacy = {r["id"] for r in todo if r.get("public_listed") and not latest_pass(checks, r)}
+    # new check runs (drift_unlists). A legacy listing, with no passing check yet, stays listed whatever its checks find
+    # (Sam's ruling, r-library-legacy-listings-stay-sam-2026-11-19).
     for r in list(todo):
         if not r.get("public_listed"):
             continue
@@ -600,12 +599,6 @@ def check_phase(plan_path, engine=run_engine, now=None):
                                "out (scripts/library_check.py content_hash). The line prints this check's pass only while "
                                "the page still has this hash." % r["slug"]}
             (ROOT / report_of[r["slug"]][:-4]).with_suffix(".json").write_text(json.dumps(proof, indent=2) + "\n", encoding="utf-8")
-    # A legacy listing whose first check failed comes off the Public Library now: nothing stays public on a failed check
-    # (Sam: "nothing lists publicly until it passes"). One whose first check passed stays listed with its pass line.
-    for g in got:
-        r = next((x for x in todo if x["id"] == g.get("library_id")), None)
-        if r and r["id"] in legacy and g.get("result") == "fail":
-            unlist_pair(r, "its first accessibility check did not pass", receipt, rpath, errors)
     # Every line from the rows actually written: a failed page reads Not yet certified at once.
     stamped = restamp(records, checks, settings)
     passed = {g.get("library_id"): g for g in got if g.get("result") == "pass"}

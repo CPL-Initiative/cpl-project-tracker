@@ -102,15 +102,14 @@ three failed pushes, and Pages deploys though a check step failed. Schema
   on the Public Library, and every Library page whose content differs from its latest check's committed sha or has no
   proof; a page whose check failed waits for new content, and the run never checks the same content twice. Only a page at its own Pages address (`library/<slug>/`) is checked; a piece
   elsewhere (claude.ai, SharePoint) reads Not yet certified until it has a Pages copy.
-- DECIDED (S688 conductor, COBIx's option (b) on #3581, 7029405508; `d-library-legacy-unlists-on-failed-first-check-s688`,
-  replacing `d-library-legacy-listings-stay-s688`): it reconciles Sam's two rulings on #3560, that existing pieces show
-  Not yet certified until re-checked and that nothing lists publicly until it passes. A legacy listing, listed with no
-  passing check at its current key and url (all 21 listed pieces on Nov 20, when the table held no check rows), stays
-  listed through the pre-check and is checked once. If that first check passes, it stays listed with its pass line. If
-  it fails, the check step unlists it with the same guarded pair as the drift unlisting (before-values in the receipt,
-  then the `updated_at`-guarded restore of `publish_target = 'public'`), and a later passing check relists it.
-  Unlisting is the safe direction, so it runs in the check step; listing still only follows the push. From a piece's
-  first pass on, the drift rule applies. Reversible: `drift_unlists` and the legacy loop in `scripts/library_check.py`.
+- RULED (Sam, Nov 19, 2026, 7:32 PM PT, relayed by COBIx on #3581,
+  [7029505105](https://github.com/CPL-Initiative/cpl-project-tracker/pull/3581#issuecomment-7029505105);
+  `r-library-legacy-listings-stay-sam-2026-11-19`, keeping `d-library-legacy-listings-stay-s688` as written): *"The 21
+  pieces listed today stay on the Public Library as "Not yet certified" while their findings are fixed. They are not
+  taken off when the first check fails."* A legacy listing, listed with no passing check at its current key and url,
+  stays listed whatever its checks find; a failed check shows its findings on the card for the team to fix. The
+  exception covers only those legacy listings: anything new, and any version or url change, still lists only on a pass.
+  From a piece's first pass on, the drift rule applies. The rule is `drift_unlists` in `scripts/library_check.py`.
 - DECIDED (S688, `d-library-run-lists-by-guarded-update-s688`): the run lists a passing piece whose `publish_target` is
   `public` by writing the columns `cpl_library_set_public()` writes, as the service role (the guard trigger admits it),
   guarded on the record as read and on the url and version checked. `set_public()` refuses the service key at its first

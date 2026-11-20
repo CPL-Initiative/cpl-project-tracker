@@ -409,11 +409,15 @@ def main():
         ok, _, err = c.psql(open(P2_ROWS).read() + open(P2_ROWS).read())
         got = c.psql("select count(*) || '|' || max(char_length(summary)) || '|' || count(*) filter (where status = 'proposed') "
                      "from public.cpl_memory where slug like 'd-library-%-s688' and slug <> 'd-library-check-binds-url-s688';")[1].split("|")
-        check("the eight part 2 memory rows load once each, proposed, in 400 characters or fewer, and are re-runnable",
-              ok and got[0] == "8" and int(got[1]) <= 400 and got[2] == "8", err or got)
+        check("the seven part 2 decision rows load once each, proposed, in 400 characters or fewer, and are re-runnable",
+              ok and got[0] == "7" and int(got[1]) <= 400 and got[2] == "7", err or got)
+        sam = c.psql("select count(*) || '|' || max(status) || '|' || max(verified_by) || '|' || count(verified_at) || '|' || "
+                     "max(char_length(summary)) from public.cpl_memory where slug = 'r-library-legacy-listings-stay-sam-2026-11-19';")[1].split("|")
+        check("Sam's ruling row loads once, verified, verified by Sam as relayed by COBIx, with a time, in under 380 characters",
+              sam[0] == "1" and sam[1] == "verified" and sam[2] == "Sam (relayed by COBIx on #3581)" and sam[3] == "1" and int(sam[4]) < 380, sam)
         c.psql(open(P2_RB).read())
-        check("their rollback removes all eight", c.psql("select count(*) from public.cpl_memory where slug like 'd-library-%-s688' "
-                                                        "and slug <> 'd-library-check-binds-url-s688';")[1] == "0")
+        check("their rollback removes all eight", c.psql("select count(*) from public.cpl_memory where (slug like 'd-library-%-s688' "
+                                                        "and slug <> 'd-library-check-binds-url-s688') or slug = 'r-library-legacy-listings-stay-sam-2026-11-19';")[1] == "0")
 
         n_url = c.psql("select count(*) from public.cpl_library_checks where url is not null;")[1]
         ok, _, err = c.psql(open(BINDS_RB).read())
