@@ -14,12 +14,12 @@
  "summary": {
   "read": 322,
   "shapes": {
-   "list": 280,
+   "list": 269,
    "none": 40,
-   "paragraph": 2
+   "paragraph": 13
   },
   "status_not_200": 31,
-  "outcomes": 1269
+  "outcomes": 1021
  },
  "rows": [
   {
@@ -38,9 +38,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform basic accounting functions such as recording journal entries, posting to general ledger accounts, and preparing trial balances.",
     "Complete the accounting cycle for a business entity to set the foundation for further study in accounting.",
     "Utilize accounting modules to record sales, cash receipts, purchases, cash payments, and other business transactions.",
@@ -48,7 +47,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "cd90e3adfed76106121676c33749ce7f"
+   "fingerprint": "27d4afe14aff27d5c70976c74d1ebe07"
   },
   {
    "code": "ACCT G102",
@@ -66,9 +65,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Define cost accounting elements that form the framework for cost accounting.",
     "Implement job order cost systems, process cost systems, and activity-based costing.",
     "Perform cost-volume-profit analysis.",
@@ -76,7 +74,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b512e540bdc4d848ec13c48acfb01899"
+   "fingerprint": "5e2a237f93f99d6ab1679261fb6632bf"
   },
   {
    "code": "ACCT G110",
@@ -94,9 +92,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Complete a payroll register and employee earnings records as part of a payroll cycle.",
     "Calculate gross and net earnings in accordance with various pay structures.",
     "Determine income tax withholdings, Federal Insurance Contributions Act (FICA) taxes, net pay, and unemployment taxes for employers.",
@@ -104,7 +101,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "2614b24eb35657e13bd15c106f00e3e0"
+   "fingerprint": "74cae433f15b8c308c0d450c63123127"
   },
   {
    "code": "ACCT G113",
@@ -122,9 +119,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Calculate net profit or loss for a business as it appears on Schedule C or IRS Form 1040 - Profit or Loss From Business.",
     "Calculate partner's share of income from a partnership as reported on Schedule K-1 of IRS Form 1065.",
     "Prepare Form 1120-S, Income Tax Return for an S corporation.",
@@ -133,7 +129,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "dd4b655c0b24428ce9bd1ca14a257d05"
+   "fingerprint": "f82cbd19ef06349b7ced61d6406ff70e"
   },
   {
    "code": "ACCT G120",
@@ -151,9 +147,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Examine QuickBooks Online navigation bar and settings.",
     "Create a company in QuickBooks.",
     "Set up the chart of accounts in QuickBooks Online.",
@@ -162,7 +157,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "dff33053543670af2b9798fb3d3bddb0"
+   "fingerprint": "9e1cb171a6bfdfcafa786f6f04af5244"
   },
   {
    "code": "ACCT G163",
@@ -180,17 +175,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
-    "Course Outcomes",
     "Prepare a profit and loss statement with accompanying monthly variance analysis.",
     "Compute start-up cost projections for a small business in accordance with the business plan.",
     "Compare cash flow statement with net income to analyze certainty of customer collections and timing of vendor payments."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "cb831bc9efb7dcb10ebca156d3c21585"
+   "fingerprint": "ef7724795157b429f314fb9aa9123e04"
   },
   {
    "code": "ACCT G211",
@@ -208,9 +201,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Prepare a multiple-step income statement, retained earnings statement with prior period adjustments, and balance sheet in accordance with generally accepted accounting principles.",
     "Perform accounting for discounted notes receivable and notes payable such as recognizing initial recognition, amortization of discount, and analyzing effect on interest revenue/expense.",
     "Determine a company's inventory using a number of costing, estimation, and valuation techniques such as first-in, first-out (FIFO), last-in, first -out (LIFO), and variations thereof.",
@@ -220,7 +212,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "eca56a35cd2226b0a6ceb931c768b54e"
+   "fingerprint": "4db01d1df107ff094f22d008afb6dda2"
   },
   {
    "code": "ACCT G215",
@@ -238,9 +230,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "List the internal control objectives, elements of internal control, and key controls.",
     "Compare and contrast the original COSO Integrated Framework against the COSO Enterprise Risk Management (ERM) Framework in response to the Sarbanes-Oxley Act, as well as the updated principles to the internal control framework.",
     "State the key provisions of the Sarbanes-Oxley Act, including its corporate requirements, impact on the accounting and auditing profession, and civil and criminal penalties imposed on corporate officers.",
@@ -248,7 +239,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "86ce2201c9f3e5d26cbe9ec3b9ba2ce8"
+   "fingerprint": "a0e3523e695235d919bf3bf770bd6ae7"
   },
   {
    "code": "ACCT G250",
@@ -266,9 +257,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze financial statements, including the income statement, balance sheet, and statement of cash flows, to assess a company's financial health.",
     "Apply financial ratios to evaluate a company’s operating efficiency, liquidity, solvency, market value, and profitability.",
     "Evaluate the quality of earnings and potential ethical issues or fraud in financial reporting.",
@@ -277,7 +267,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "021afa29c65c7cfb83691fedc3a1983e"
+   "fingerprint": "3b71cd23755a80e607986f3c624e5c45"
   },
   {
    "code": "ANTH G100",
@@ -295,9 +285,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Appraise the educational value of the holistic nature of anthropological inquiry.",
     "Assess the importance of symbolism in cultural identity.",
     "Examine the challenges and benefits of fieldwork in anthropology.",
@@ -305,7 +294,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "cdecd7b5da10a2b7c5c1e05dfd5d6287"
+   "fingerprint": "b58eeee0ba207124b75755e47c8a17d6"
   },
   {
    "code": "ANTH G140",
@@ -323,9 +312,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Differentiate between shamans, priests, healers, diviners, and other religious specialists.",
     "Describe the various concepts of witchcraft in small-scale and Euro-American societies in both historic and modern contexts.",
     "Explain the anthropological perspective and theoretical approaches towards the analysis of supernatural beliefs and practices.",
@@ -333,7 +321,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e20cb2633845d3b40bcde1f82ea354c6"
+   "fingerprint": "989168cb75b99162af84198aafb6f092"
   },
   {
    "code": "ANTH G185",
@@ -351,9 +339,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Assess the importance of the multidisciplinary approach to physical anthropological inquiry.",
     "Estimate the influence of historical context on foundational concepts of evolution.",
     "Compare the processes of mitosis and meiosis.",
@@ -361,7 +348,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "531bf5f71826b612b4ecaf4cde7fe06b"
+   "fingerprint": "46cdc0a4406f92cda0c104463640e515"
   },
   {
    "code": "ANTH G190",
@@ -379,9 +366,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe the complex relationship between language, gender, class and ethnicity.",
     "Analyze the biological and cultural aspects of language acquisition.",
     "Describe the structural components of language.",
@@ -389,7 +375,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "5ce5b36bdcd3ceb09695ce0327caf5c1"
+   "fingerprint": "bced4e9c2ada2f566d00763910f9a930"
   },
   {
    "code": "ART G100",
@@ -407,16 +393,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify the major art movements throughout history and the diverse cultural, economic, and scientific forces that affected these movements when comparing art forms and media of the visual arts.",
     "Identify a major artist and/or art movement and the function of aesthetics in evaluating a work of art.",
     "Identify and choose appropriate vocabulary for art history and art production."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "dd9d738695c882c589044f4c033dc7a9"
+   "fingerprint": "b5b82ae35f97cfe1981c0b2c41b45259"
   },
   {
    "code": "ART G104",
@@ -434,9 +419,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain how cultural, political, and technical developments have affected modern and contemporary art and architecture.",
     "Differentiate between major modern and contemporary art movements and architectural styles.",
     "Identify key modern and contemporary artworks and architecture.",
@@ -444,7 +428,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a18bf7cdaf1462110c0df84f15f29c8b"
+   "fingerprint": "e5d43c9f35bc18cb6eaccb461b963110"
   },
   {
    "code": "ART G106",
@@ -484,9 +468,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Use a broad range of color theory vocabulary.",
     "Identify the four main color harmonies: monochromatic, complimentary, analogous, and tetradic.",
     "Describe historical and contemporary theories, trends, materials, and approaches in color science.",
@@ -494,7 +477,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "adbd5275b4949437b9156e7764a3c833"
+   "fingerprint": "dfc15f6ebbbb581edd1329c016ca9b7b"
   },
   {
    "code": "ART G115",
@@ -539,9 +522,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate intermediate representational drawing skills and knowledge of materials and processes.",
     "Use a broad range of drawing vocabulary.",
     "Express ideas and concepts through verbal and visual means, integrating form and content.",
@@ -549,7 +531,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "66cf1bc92adcd772263661fcac64ea6f"
+   "fingerprint": "6c394a0f4d9cfe45d2f725e33e990abc"
   },
   {
    "code": "ART G119",
@@ -567,9 +549,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Utilize expressive drawing techniques to interpret human forms, textures and values subjectively in a variety of media.",
     "Draw the human figure from direct observation with an advanced accuracy of proportion, measurement and placement.",
     "Evaluate works of art and articulate an informed personal reaction to them in discussion and/or written critiques.",
@@ -577,7 +558,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "fe3477d82d0a4b57c4c382d021239878"
+   "fingerprint": "28f28ef1b5a4c2374722e58369d2af88"
   },
   {
    "code": "ART G122",
@@ -621,16 +602,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Evaluate, interpret, and appreciate human creations in the visual arts.",
     "Explain how cultural, political and technical developments have affected the arts of Mesoamerica and South America",
     "Use appropriate art history vocabulary."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "091778bc32a6396d934daa8eaf2f28db"
+   "fingerprint": "ab947fe41688f9e599dd9bd4d61e61c1"
   },
   {
    "code": "ART G129",
@@ -781,16 +761,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply the elements and principles of design to objects made with a variety of craft media.",
     "Examine contemporary trends, materials, and approaches in the area of craft.",
     "Create an object combining two or more specialized techniques in a variety of craft media."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "58dd517b169e29bb721598ed63ab104a"
+   "fingerprint": "33356feb15c967e03ab05060180bb561"
   },
   {
    "code": "ART G161",
@@ -986,9 +965,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop skills necessary for intercollegiate athletics competition in baseball.",
     "Develop a personal commitment to athletic excellence.",
     "Compete as a member of the baseball team.",
@@ -997,7 +975,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a85803e7a176c4822588f5ae268b7632"
+   "fingerprint": "59e528a61534b3f1feee6da024bf94f1"
   },
   {
    "code": "ATHL G244",
@@ -1015,9 +993,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop skills necessary for intercollegiate athletics competition in cross country.",
     "Develop a personal commitment to athletic excellence.",
     "Compete as a member of the cross country team.",
@@ -1026,7 +1003,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "72caaaef20ade436bfa7331493107a96"
+   "fingerprint": "62952769eae9a602704534660dfc616c"
   },
   {
    "code": "ATHL G249",
@@ -1044,9 +1021,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop skills necessary for intercollegiate athletics competition in soccer.",
     "Develop a personal commitment to athletic excellence.",
     "Compete as a member of the soccer team.",
@@ -1055,7 +1031,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1fc873553d3754ef12fec09a1b31723c"
+   "fingerprint": "3f427937e0a39ace907aa099eaf49eae"
   },
   {
    "code": "ATHL G253",
@@ -1073,9 +1049,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop skills necessary for intercollegiate athletics competition in swimming.",
     "Develop a personal commitment to athletic excellence.",
     "Compete as a member of the swimming team.",
@@ -1084,7 +1059,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7dc16c39d507553059cf5192f814cd4d"
+   "fingerprint": "106bf03085db945d04af055f5fa22610"
   },
   {
    "code": "ATHL G255",
@@ -1102,9 +1077,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop skills necessary for intercollegiate athletics competition in track.",
     "Develop a personal commitment to athletic excellence.",
     "Compete as a member of the track team.",
@@ -1113,7 +1087,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1690ab1f22c838d7c5d3c32a0aa40395"
+   "fingerprint": "b8182525827f76900d0b23dd600322d0"
   },
   {
    "code": "ATHL G259",
@@ -1131,9 +1105,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop skills necessary for intercollegiate athletics competition in volleyball.",
     "Develop a personal commitment to athletic excellence.",
     "Compete as a member of the volleyball team.",
@@ -1142,7 +1115,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c8556f1bc3828ff943eed32846c864a3"
+   "fingerprint": "b55b1c7389ad1b1f428d70059f194cc2"
   },
   {
    "code": "ATHL G263",
@@ -1160,9 +1133,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop skills necessary for intercollegiate athletics competition in water polo.",
     "Develop a personal commitment to athletic excellence.",
     "Compete as a member of the water polo team.",
@@ -1171,7 +1143,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "50121b6daab9e8bfc95811152a9301b3"
+   "fingerprint": "afdfd6a1ac4d98dd8fa1059ab447c07d"
   },
   {
    "code": "ATHL G279",
@@ -1189,9 +1161,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop skills necessary for intercollegiate athletics competition in beach volleyball.",
     "Develop a personal commitment to athletic excellence.",
     "Compete as a member of the beach volleyball team.",
@@ -1200,7 +1171,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e3c31456ff99ee216d80d971376f5755"
+   "fingerprint": "4488c24a90749384bb35362758eee52f"
   },
   {
    "code": "AUTO G003N",
@@ -1218,16 +1189,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate safe lifting practices outlined by manufacturerer's service information.",
     "Perform multipoint vehicle inspection, identifying and documenting faulty components and systems.",
     "Perform an oil maintenance service on a vehicle based on manufacturer's specifications."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "445db10754b68eb80de70990313aa3a9"
+   "fingerprint": "e8ac9b2232d78f2fac65f5fa581a4713"
   },
   {
    "code": "AUTO G045N",
@@ -1245,16 +1215,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze automotive engines and related components for correct system operation.",
     "Use diagnostic tools and equipment for automotive repair.",
     "Analyze five gas exhaust emissions."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "5d7752a3337ace18a0d5fbd1955611f0"
+   "fingerprint": "e592f26813b6ae5dc2afb27c40106115"
   },
   {
    "code": "AUTO G101",
@@ -1272,9 +1241,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze automotive systems and related components for correct operation.",
     "Demonstrate basic automotive maintenance procedures.",
     "Demonstrate industry recognized vehicle lifting procedures.",
@@ -1282,7 +1250,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "21bf9d426a3c88bb52d4d7093e428751"
+   "fingerprint": "47a7f5ae11ef48316edc6c65aec82c75"
   },
   {
    "code": "AUTO G120",
@@ -1300,16 +1268,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze automotive electrical systems for correct system operation.",
     "Demonstrate proper use of diagnostic tools and equipment used for automotive repair.",
     "Utilize precision electrical measurements to determine an appropriate course of action."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "729e050361248f698ecb6c82a963b1ea"
+   "fingerprint": "0c94f1cf1864104a74c9f290ae109e0a"
   },
   {
    "code": "AUTO G130",
@@ -1327,16 +1294,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Diagnose automotive engine performance and emission systems and related circuits.",
     "Use diagnostic tools and equipment used for automotive engine performance and emission repairs.",
     "Interpret basic engine performance concerns through fundamental measurements and diagnosis."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "32e129faccdf8d368d87cabdf8bee64c"
+   "fingerprint": "13f302c92d42252a57519420d3d44947"
   },
   {
    "code": "AUTO G140",
@@ -1354,16 +1320,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze automotive braking systems and related components for correct system operation.",
     "Demonstrate mastery of diagnostic tools and equipment used for automotive repair.",
     "Evaluate brake components based on precision measurements compared to factory specifications."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d685844a8db83374dd6d665c0f07f560"
+   "fingerprint": "8e469db1d8c24c94c844206efb14a9f0"
   },
   {
    "code": "AUTO G145",
@@ -1381,16 +1346,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze automotive engines and related components for correct system operation.",
     "Use diagnostic tools and equipment for automotive repair.",
     "Analyze five gas exhaust emissions."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "5d7752a3337ace18a0d5fbd1955611f0"
+   "fingerprint": "e592f26813b6ae5dc2afb27c40106115"
   },
   {
    "code": "AUTO G151",
@@ -1408,16 +1372,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze automatic transmissions, transaxles and related components for correct system operation.",
     "Utilize diagnostic tools and equipment for automatic transmission and transaxle disagnosis and repair.",
     "Solve power flow concerns within automatic transmission and transaxles through systematic analysis."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e69c54b2e181b56f1293288aa557ee6c"
+   "fingerprint": "8224da7ecb219a65a51ac8efc3e9944b"
   },
   {
    "code": "AUTO G170",
@@ -1435,16 +1398,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Diagnose automotive hybrid systems faults for normal system operation.",
     "Use diagnostic tools and equipment used for hybrid automotive repair.",
     "Identify high voltage systems and components."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "72153efbd9faca1b4e7928df04e4f338"
+   "fingerprint": "2b0a4de1e1c708ba973acf24b68ca11e"
   },
   {
    "code": "BIOL G100",
@@ -1462,9 +1424,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the core concepts of biology.",
     "Connect theoretical concepts in biology with everyday applications and situations.",
     "Analyze data in a laboratory setting.",
@@ -1472,7 +1433,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "5fa7db4e519b997aed2d92daf0e2da4a"
+   "fingerprint": "c3a998751695c2b4738f07b72aea8815"
   },
   {
    "code": "BIOL G104",
@@ -1490,9 +1451,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe the core concepts of biology as they pertain to marine biology.",
     "Explain how physical and chemical properties influence oceans and ocean basins.",
     "Identify the diversity and adaptations of organisms found in each marine environment.",
@@ -1501,7 +1461,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e8ac8583588ed5b11d9199a08972fc21"
+   "fingerprint": "dbadd5fd86244a3e05df2175cc68e292"
   },
   {
    "code": "BIOL G110",
@@ -1519,9 +1479,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe ocean life zones.",
     "Describe the steps that may be taken to preserve endangered species.",
     "Outline human impact on ecosystems.",
@@ -1530,7 +1489,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "30f23bd7039ce0e666303c0c00e2c414"
+   "fingerprint": "85bfa18302f386f72216be967d7c90dc"
   },
   {
    "code": "BIOL G160",
@@ -1548,9 +1507,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe how disruptions in homeostasis alter normal physiology.",
     "Apply critical thinking and analytical skills to explain the development of signs and symptoms in various disease processes.",
     "Recognize the most common disorders and diseases related to each of the major body systems.",
@@ -1559,7 +1517,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "dba99fc16a7b837332eba77f024d233e"
+   "fingerprint": "0c29436485c93e1a20858bfbdf4c5dbc"
   },
   {
    "code": "BIOL G182",
@@ -1577,9 +1535,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Diagram the phylogenetic relationships among the major animal phyla.",
     "Identify the characteristics and anatomy of animals found in the chordate subphyla and vertebrate classes.",
     "Analyze the mechanisms and attributes of ecosystems, communities/populations.",
@@ -1588,7 +1545,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1b5fb007e953e332f80da4a7350f634e"
+   "fingerprint": "ac265a7df447f9036cf7dbb50ae94098"
   },
   {
    "code": "BIOL G186",
@@ -1606,9 +1563,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Differentiate among organisms of different taxonomic levels (and therefore phylogeny) using specific symplesiomorphies and synaopmorphies.",
     "Demonstrate how environmental pressures spurred evolutionary adaptations which ultimately gave rise to the apomorphies among major taxa.",
     "Explain the major physiological mechanisms of each of the kingdoms.",
@@ -1618,7 +1574,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f78d3cc53e17f29a755c1ddcc3383b44"
+   "fingerprint": "46f9b6038a6dfec15df4b55f97b5e10e"
   },
   {
    "code": "BIOL G210",
@@ -1636,9 +1592,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Use aseptic technique in laboratory manipulations using microorganisms.",
     "Separate mixed cultures of bacteria through specific techniques.",
     "Identify unknown microorganisms through specific techniques.",
@@ -1646,7 +1601,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "50ca067d083ae602396f70f13453e9ab"
+   "fingerprint": "f8ceabebc0e594a427dacfb0baffa1af"
   },
   {
    "code": "BIOL G220",
@@ -1664,9 +1619,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform laboratory dissections using the proper instruments and techniques while adhering to laboratory safety protocol.",
     "Explain major anatomical concepts.",
     "Name and identify the basic structures of the human body.",
@@ -1675,7 +1629,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7d09eeace98ff57ace895264537e0d00"
+   "fingerprint": "b8fc95a5af185debca9670850631a3e8"
   },
   {
    "code": "BIOL G225",
@@ -1693,9 +1647,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Summarize the human body systems and their interactions.",
     "Interpret data pertaining to human physiological processes.",
     "Identify normal and abnormal physiological values.",
@@ -1703,7 +1656,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c2fa1c41f57653b35f8a06f17c405679"
+   "fingerprint": "4090b17b02aa767880bd62d06683e885"
   },
   {
    "code": "BUS G012N",
@@ -1721,15 +1674,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the strategies necessary to launch a small business.",
     "Examine the financial and legal requirements to run a small business."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b740615deab49beb4b17762a4e8b84af"
+   "fingerprint": "df2f722556b99eb45d3f3b7ca3b62624"
   },
   {
    "code": "BUS G101",
@@ -1747,16 +1699,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Evaluate a business idea using the Opportunity Discover Canvas methodology.",
     "Describe the process of developing a personal business brand.",
     "Practice business protocols and professionalism."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "fcc27a56f9f1bef607eaf4a796cb3dea"
+   "fingerprint": "43089d75524b750de906ded0404cf5c6"
   },
   {
    "code": "BUS G110",
@@ -1796,16 +1747,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze business problems by producing written and oral communications that reflect decision makingin today’s changing workplace.",
     "Compose a variety of positive, negative, routine, and persuasive business communications using thethree-step writing process (planning, drafting, and revising).",
     "Create document styles that are useful for various business writing tasks."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "292dab9c4d86fd25906ac9bb8b782ad5"
+   "fingerprint": "636d43b9baf9160cb850174b0fb51a48"
   },
   {
    "code": "BUS G140",
@@ -1849,16 +1799,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop vision and mission statements for a business.",
     "Evaluate a business idea for potential marketplace viability.",
     "Prepare a business plan for a new or existing business."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "39aa09827d378e95348121817a389835"
+   "fingerprint": "a913fcddbb132ee4bd817eb7bbaeff9a"
   },
   {
    "code": "BUS G159",
@@ -1876,16 +1825,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze legal structures and regulatory requirements for forming a small business.",
     "Identify best practices to protect business property and minimize liability exposure.",
     "Analyze principles of employment and agency law in the hiring and employment of staff and/or independent contractors in a small business."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "86b23c5a06ae0d56ddcd9dbcc6b05b10"
+   "fingerprint": "e737f5f3ade456726aaac0fda64ad784"
   },
   {
    "code": "BUS G210",
@@ -1903,9 +1851,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe the roles of various participants in the financial markets.",
     "Identify the benefits of a diversified investment portfolio.",
     "Analyze the relationship between interest rates and bond prices.",
@@ -1913,7 +1860,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f1f8becb2c5daccb2eb893ea03e9c523"
+   "fingerprint": "37fe0ce42bad6461c65084984d8a7f5a"
   },
   {
    "code": "CBA G011N",
@@ -1931,16 +1878,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Type a minimum of 30 words per minute with five or less errors on a two minute timed proficiency test.",
     "Demonstrate mastery of alphabetic letters both lowercase and capitals, numbers, and symbol key reaches by touch.",
     "Evaluate skills on practice work and timed proficiency tests by proofreading work, measuring speed development and identifying errors."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "35d8fb492c84f2bfc3156fd3634b6043"
+   "fingerprint": "121c8e6584507863f19a8d8b05ec0a68"
   },
   {
    "code": "CBA G013N",
@@ -1958,15 +1904,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compose a multipage document that includes text, graphics, headers and footers, and a bulleted or numbered list.",
     "Create a one page document that includes at least five formatting features."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ab89a54b7a3369f32b1a67681036a92d"
+   "fingerprint": "4438f7b4cd0fec55277c8c45820ed02b"
   },
   {
    "code": "CBA G015N",
@@ -1984,9 +1929,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Manage a worksheet by inserting, deleting, formatting, editing, and copying content.",
     "Create basic formulas and functions for calculations, analysis, and making decisions.",
     "Develop a spreadsheet using spreadsheet software for simple business solutions.",
@@ -1994,7 +1938,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d95b21174d116ff3e2dd1a9b2bb9437c"
+   "fingerprint": "61c161e12693d48ffac966a171527530"
   },
   {
    "code": "CHEM G110",
@@ -2012,9 +1956,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply the atomic theory to create electron configurations, Lewis structures, and three-dimensional drawings of molecules.",
     "Interpret the conditions of typical organic chemistry reactions to predict the reaction products.",
     "Demonstrate the use of laboratory equipment to make accurate measurements of mass, volume, and temperature.",
@@ -2023,7 +1966,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e97ebd12430e08eefbde12f858cc251f"
+   "fingerprint": "8ae4c8e7564933d3310aa695fbf869c5"
   },
   {
    "code": "CHEM G180",
@@ -2041,9 +1984,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Recall the composition of matter according to the atomic theory.",
     "Interpret the properties of matter in terms of its composition according to the atomic theory.",
     "Analyze the changes of matter in terms of its composition according to the atomic theory.",
@@ -2053,7 +1995,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d3d7c6953cc04459769e28677eb86a66"
+   "fingerprint": "ff12fe44ff6e9d57878f80ebdb712e06"
   },
   {
    "code": "CHEM G220",
@@ -2071,9 +2013,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Use names and structures for organic molecules containing alkyl, cycloalkyl, alkyl halide, alkene, alkyne, alcohol, and ether functional groups.",
     "Analyze the shape and energy of organic molecules using stereochemistry and various structural representations.",
     "Predict the products, specify the reagents needed, and draw electron-pushing mechanisms for organic reactions studied in this course.",
@@ -2085,7 +2026,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b8cceb85a6871e715ac815727950fd1c"
+   "fingerprint": "c16517070310fcde4daf37ba508c6e94"
   },
   {
    "code": "CJ G010N",
@@ -2103,9 +2044,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compare the roles of security guards and sworn law enforcement.",
     "Apply the California Penal Code and US Constitution to various enforcement scenarios.",
     "Evaluate criminal and civil liability issues surrounding use of force.",
@@ -2114,7 +2054,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "0bafac22a533cca248519f123fc275f1"
+   "fingerprint": "387c0f0c30ca816f837fc7b9ff13144b"
   },
   {
    "code": "CJ G054N",
@@ -2154,9 +2094,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify how local, state, and federal laws apply to the actions and conduct of peace officers in the State of California.",
     "Apply skills and strategies related to California peace officer tasks and duties.",
     "Pass physical fitness standards as established by POST guidelines.",
@@ -2165,7 +2104,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "9f14c817f272102db5c8890131d6c953"
+   "fingerprint": "2dca9f768c5ca05a3295bb661c90599f"
   },
   {
    "code": "CJ G089N",
@@ -2227,9 +2166,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe the processes and differences between the adult and juvenile justice systems.",
     "Explain the difference between a dependent juvenile from a delinquent juvenile.",
     "Evaluate significant court decisions affecting juveniles today.",
@@ -2238,7 +2176,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e7ec1ce9ba9c53db23b0db0586b27491"
+   "fingerprint": "4ccad67590dd066fea606403106022be"
   },
   {
    "code": "CJ G137",
@@ -2256,9 +2194,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explore tactical communication/verbal persuasion concepts as they relate to: effective listening skills, techniques and strategies helpful in de-escalating crisis situations, diffusing conflict, and obtaining voluntary compliance in situations involving violent/combative/uncooperative persons.",
     "List the difference between society’s cultural stereotyping and law enforcement profiling.",
     "Evaluate the benefits of cultural diversity within a law enforcement organization and how it benefits the community it serves.",
@@ -2266,7 +2203,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "57994049a03afd87ec95be6a3ea8befe"
+   "fingerprint": "7c0a94ae2d12c97eee7a7b1e73eebc4d"
   },
   {
    "code": "CJ G141",
@@ -2284,9 +2221,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify the goals and characteristics of criminal law.",
     "Discuss the philosophical and historical evolution of criminal law, noting the role of the judiciary in its development.",
     "Define the elements of offenses against the person, property, morals, and public welfare.",
@@ -2294,7 +2230,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "9cd53a46f531edf176d1413e59dd008c"
+   "fingerprint": "3926d72941a9382474016fc3dc1dafe8"
   },
   {
    "code": "CJ G150",
@@ -2312,9 +2248,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Examine crime causation theories.",
     "Describe the historical development of prisons.",
     "Describe various intermediate sanctions that include treatment and rehabilitation programs.",
@@ -2322,7 +2257,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "3c38728d1e9299f26f521c6ea6ef38d9"
+   "fingerprint": "d4abb94b5583e58ec15ea670ceab3ea6"
   },
   {
    "code": "CJ G152",
@@ -2362,9 +2297,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Use effective verbal and nonverbal practices personally, professionally and in the context of oral presentations.",
     "Analyze interpersonal communication theories, theoretical foundations (including ethos, pathos and logos) and rhetorical theory.",
     "Employ constructive criticism skills in the context of speech analysis and peer evaluation.",
@@ -2372,7 +2306,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "372ecbea645257be3f5e710214f82a1a"
+   "fingerprint": "48d57c34a6f9878ee89422b26a83e5b0"
   },
   {
    "code": "CMST G180",
@@ -2390,16 +2324,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain and evaluate the different techniques used in various mass communications.",
     "Measure the effectiveness of the different techniques used in various mass communications.",
     "Assess the impact and importance of the mass media on society."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "4c1993a595e6d58ca5ee1d79ed1f1bc3"
+   "fingerprint": "648c9c41f67d103d056d0e2e4071b39f"
   },
   {
    "code": "CMST G225",
@@ -2417,9 +2350,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify the distinct differences between litigation, arbitration, mediation and negotiation.",
     "Analyze the underlying issues of a dispute as they pertain to mediation, negotiation and conflict styles.",
     "Resolve ethical issues in mediation with appropriate strategies.",
@@ -2427,7 +2359,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "5f58044d5fc3e9c03931027d71d7cd1b"
+   "fingerprint": "450e71ea9709f41e038d23c13c205ad1"
   },
   {
    "code": "CMST G260",
@@ -2445,9 +2377,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compare and contrast theories of organizational communication.",
     "Analyze personal work history and current career goals.",
     "Apply course concepts and best practices to create a professional resume.",
@@ -2456,7 +2387,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "9ea1583c1b13ae2707b8e5ae191fff8d"
+   "fingerprint": "8a6a2b93ddd25e832356838a222486b1"
   },
   {
    "code": "COLL G100",
@@ -2719,16 +2650,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Differentiate between private and public higher education in California and the U.S.",
     "Compare and contrast the requirements for transfer using an Associate Degree for Transfer, major preparation, and university admission selection criteria.",
     "Utilize campus and electronic resources in conducting university research."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "97289c03463c647e568b3e431a027f72"
+   "fingerprint": "0bb2d88dc25f6681811b77a509d101a4"
   },
   {
    "code": "CS G130",
@@ -2746,9 +2676,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the activities of the components of a computer system such as: CPU, memory, ports, buses, input/output devices and component development.",
     "Demonstrate the fundamentals of computer-based operating systems and utility programs.",
     "Describe and demonstrate application software programs such as: word processing, spreadsheets, data base organizational concepts, entering and querying a data base, and presentation software.",
@@ -2758,7 +2687,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "896cf8d6905e657e8842f4f13aa1defd"
+   "fingerprint": "ace852e0c278651e8f34b09a486c11f7"
   },
   {
    "code": "CS G135",
@@ -2824,9 +2753,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Create a C# application by applying object-oriented programming techniques, including designing classes and methods, and implementing concepts of polymorphism and inheritances.",
     "Design a C# applications that incorporate Windows forms.",
     "Utilize the basic principles of the event-driven and graphical programming model.",
@@ -2834,7 +2762,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "423963c1a01419c6a723c110bbde55cd"
+   "fingerprint": "34725f673adec7fede560c3c31b51ea9"
   },
   {
    "code": "CS G189",
@@ -2852,16 +2780,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply complex data storage mechanisms and manipulation algorithms.",
     "Implement object-oriented class hierarchy and inheritance.",
     "Develop programs that use abstract data structures."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7eefccf7ba50a8cb4e9ad43045b044f3"
+   "fingerprint": "4ae212c8fde69ba13c9eefe27ce5d893"
   },
   {
    "code": "CS G231",
@@ -2879,16 +2806,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Implement object-oriented class hierarchy and inheritance.",
     "Apply complex data storage mechanisms and manipulation algorithms.",
     "Develop programs that use abstract data structures."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "2bba6b6dd4f6e5686349ded39a27d676"
+   "fingerprint": "6ed809e9a6d53995cecf6221fea2096c"
   },
   {
    "code": "CS G262",
@@ -2906,14 +2832,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "ILOs",
-    "iSLO 1. Specialized Subject Knowledge (Majors) - Demonstrate a depth of knowledge, skills, and abilities in a particular major.",
-    "iSLO 3. Analytic skills - Identify, evaluate, and apply a variety of methods to solve problems.",
-    "iSLO 4. Information competency skills - Determine the scope of information needs; locate and retrieve relevant information; organize, analyze, and evaluate information; and understand the ethical and legal issues surrounding information and information technology.",
-    "iSLO 5. Quantitative skills - Convert information into relevant symbolic and mathematical forms (e.g. equations, graphs, diagrams, tables), provide accurate explanations of information presented in mathematical forms, and successfully perform calculations and symbolic operations.",
-    "Course Outcomes",
     "Describe how formal tools of symbolic logic are used to model real-life situations, including those arising in computing contexts such as program correctness, database queries, and algorithms.",
     "Relate the ideas of mathematical induction to recursion and recursively defined structures.",
     "Analyze a problem to create relevant recurrence equations.",
@@ -2922,7 +2842,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "6f014858cde32b3ed3f34d045fa481e2"
+   "fingerprint": "1a4df8c818fbd89d63d131e186d7f06c"
   },
   {
    "code": "DANC G101",
@@ -2940,9 +2860,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe the major components of dance.",
     "Employ dance vocabulary as appropriate.",
     "Delineate dance styles and techniques.",
@@ -2952,7 +2871,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "6a324c9c5adf7d49e6ca41c774cad74c"
+   "fingerprint": "b255484363dd4c59ca68c9f38857d176"
   },
   {
    "code": "DANC G106",
@@ -2996,16 +2915,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate the the basic patterns of selected dances through dance participation.",
     "Describe and demonstrate different styles and characteristics of ballroom dances.",
     "Recognize and evaluate the role of social dancing in American culture."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1b1ad0868e0cc43fab475c5bda138fd5"
+   "fingerprint": "6298206aba924212119a962b6b9d9b45"
   },
   {
    "code": "DANC G115",
@@ -3023,16 +2941,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Produce rhythmic tap sounds in time with the various music selections at a beginning level.",
     "Demonstrate basic fundamental movements of tap dance.",
     "Execute a choreographed tap dance routine at a beginning level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "9b4381c0da14e4f25fcf8dffc58e742e"
+   "fingerprint": "ae41ca8a4c31a242a2621fe6be2e6c7e"
   },
   {
    "code": "DANC G120",
@@ -3050,9 +2967,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform the required ballet barre exercises and techniques at a beginning level.",
     "Demonstrate improved body alignment, balance, coordination, strength, flexibility, endurance and movement memory at a beginning level.",
     "Use ballet terminology and basic principles of ballet history and genres to facilitate critical evaluation of a live dance concert performance at a beginning level,",
@@ -3060,7 +2976,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "6d3478f47c4c0f8c4a259b48b8d365c3"
+   "fingerprint": "74519baf84f01907474393f800b57733"
   },
   {
    "code": "DANC G130",
@@ -3078,16 +2994,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate movement from various musical theatre styles with attention to alignment, quality, weight, and rhythm.",
     "Analyze anatomical and kinesthetic principles as they relate to alignment and expression.",
     "Demonstrate classical jazz dance technique with enhanced performance quality and expression."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "df34a9849dae5d96309eb14bd764e7aa"
+   "fingerprint": "563319ddb9521bae57b0760ae5f438f7"
   },
   {
    "code": "DANC G136",
@@ -3127,16 +3042,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform intermediate-level tap patterns and techniques.",
     "Demonstrate rhythms and tempos in choreographed tap dance routines, using varied phrasing in different time signatures, at an intermediate level.",
     "Execute a choreographed tap dance routine at an intermediate level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "4f5493d40cee6993e83ff7c5de4746bf"
+   "fingerprint": "7fb7eb146e204cd95ca4bec6b9a3ea24"
   },
   {
    "code": "DANC G160",
@@ -3154,16 +3068,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate warm-up sequences including: stretches, cardiovascular exercises, and strengthening exercises.",
     "Demonstrate various styles of jazz dance combinations.",
     "Identify tempo, rhythm, syncopation, and counts in various musical selections."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "3e6d6c5391c26ff395093a33d63d19dd"
+   "fingerprint": "e4372bc316bb0178533202c17a293aa1"
   },
   {
    "code": "DANC G201",
@@ -3181,9 +3094,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform professional level modern dance warm-up and stretching exercises.",
     "Use musical accompaniment for modern dance composition and improvisation at a professional level.",
     "Explore spatial, rhythmic and qualitative (use of energy/force) concepts through professional level exercises and combinations.",
@@ -3192,7 +3104,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7fd4395ba2e2c051c0deafa7908dcef6"
+   "fingerprint": "544a4f51df6261fca246d6a4e3219f89"
   },
   {
    "code": "DANC G213",
@@ -3210,16 +3122,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate advanced patterns of selected ballroom dances through dance participation1. and execution.",
     "Demonstrate varied styles and characteristics of ballroom dances at an advanced level.",
     "Describe and evaluate the role of advanced level ballroom dance in American culture with an emphasis on psychological, physiological and social concepts."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "beb5475db57e38750f6d77fac1d3ac7f"
+   "fingerprint": "68b3e5c6c48a7912b5bfb9c2242d6a17"
   },
   {
    "code": "DANC G219",
@@ -3237,16 +3148,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate hip hop alignment, balance, coordination, strength, flexibility and endurance at an intermediate/advanced level.",
     "Perform selected hip hop dances at an intermediate/advanced level with appropriate hip hop musical accompaniment.",
     "Demonstrate varied styles, patterns and characteristics of hip hop dances at an intermediate/advanced level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "4d7ec1190d5756bfd0f3001d3ca03af2"
+   "fingerprint": "8ee1420269af9e6e2b3f36fd412796e0"
   },
   {
    "code": "DANC G225",
@@ -3264,16 +3174,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Relate rhythmic intricacies and syncopations to music selections at an advanced level.",
     "Improve coordination, endurance, strength, and stretch at an advanced level.",
     "Demonstrate various advanced jazz styles with appropriate control and phrasing at an advanced level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e8ccbe8ed8fb54bc336b4437754a5fba"
+   "fingerprint": "3e83e09ceca479a94a2c60c99eeaed39"
   },
   {
    "code": "DANC G231",
@@ -3291,15 +3200,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply elements of dance improvisation, movement design, choreographic structure, and concert dance production fundamentals at the intermediate/advanced level.",
     "Employ techniques of choreography, staging, and lighting at the intermediate/advanced level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "311485cb95dded75383b9075b1f462cb"
+   "fingerprint": "cffe2ca836218ba298389c7d3aad51fd"
   },
   {
    "code": "DANC G235",
@@ -3317,16 +3225,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform choreography created by instructor and/or student choreographers in concert and other campus events.",
     "Use expression, stage presence, and choreographic elements when performing in front of an audience.",
     "Practice collaboration with fellow ensemble members demonstrating teamwork, adaptability, and professionalism in rehearsals and performances."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "0901d7b67c5acd79f7c078e993c6b24a"
+   "fingerprint": "004d2f2a5818372fd3313e41b788419f"
   },
   {
    "code": "DANC G245",
@@ -3344,16 +3251,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform complete dances reflecting different dance styles.",
     "Use movement concepts including phrasing, quality, variation, focus, energy flow, and total body expression.",
     "Create a finished choreographic work from beginning to end."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1d3537424adadb2395f2c50b2983afeb"
+   "fingerprint": "33f0deb8b21d7411a40bc373b4be3f15"
   },
   {
    "code": "DANC G251",
@@ -3396,16 +3302,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply choreographic tools and techniques to communicate ideas and emotions through movement.",
     "Apply choreographic techniques developed by master choreographers of modern dance such as Martha Graham, Merce Cunningham, Alwin Nikolais, Paul Taylor, Alvin Ailey, and Twyla Tharp.",
     "Perform dance concert choreography including elements of lighting, costumes, scenic design, and music in a concert dance setting."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "99aed630b9219006e53f3f8638c26c6c"
+   "fingerprint": "2c4eb78af44d0476c4dea89822d0585f"
   },
   {
    "code": "DART G100",
@@ -3423,9 +3328,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course outcomes",
    "outcomes": [
-    "Course outcomes",
     "Use terminology needed to discuss various types, techniques, and concepts of digital art used in the operation of the computer and graphic design software.",
     "Discuss the skills needed to use graphic design tools and software in the Digital Arts field.",
     "Demonstrate the user actions needed to create, save, locate, edit, and copy files for effective file management.",
@@ -3433,7 +3337,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "51a4905eb6f65adcbe81055affde16dd"
+   "fingerprint": "956b75ee1bd77b29673cc5b3afdec12c"
   },
   {
    "code": "DART G135",
@@ -3451,9 +3355,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course outcomes",
    "outcomes": [
-    "Course outcomes",
     "Demonstrate ability to use computer drawing and paint programs in the creation of vector-based artwork.",
     "Distinguish between the different types of drawing and paint applications to increase productivity on assigned projects.",
     "3 Integrate principles of graphic design and the theory of typography within each project to create professional looking graphics.",
@@ -3461,7 +3364,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "92831baaae2357ab37e9b51d42542eea"
+   "fingerprint": "b6b5218eca5b07634d0c92dc3b7adb94"
   },
   {
    "code": "DART G152",
@@ -3479,9 +3382,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course outcomes",
    "outcomes": [
-    "Course outcomes",
     "Apply color depth by the using Adobe Photoshop to resample color, define and modify anti-aliasing, interpolate pixel-based images.",
     "Apply stock images within Adobe Photoshop for image compositing.",
     "Examine digitally acquired images on the basis of resolution, brightness/contrast, hue and saturation, and cropping.",
@@ -3490,7 +3392,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "49005bbf82d5635ff15806324652d83c"
+   "fingerprint": "d3593cef4a6c68b8039d888af56353a3"
   },
   {
    "code": "DART G170",
@@ -3508,9 +3410,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course outcomes",
    "outcomes": [
-    "Course outcomes",
     "Assess the visual needs of graphic design projects.",
     "Use graphic elements to organize a composition.",
     "Create layouts necessary to the given space requirements.",
@@ -3520,7 +3421,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f5119b2af3adb206c3a677323ef73ca1"
+   "fingerprint": "8ba83aa322aad8839789b9167f0d7331"
   },
   {
    "code": "DART G177",
@@ -3538,9 +3439,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course outcomes",
    "outcomes": [
-    "Course outcomes",
     "Analyze business structures and adopt one for their own business.",
     "Develop a business outline for a design-based company.",
     "Design a logo for their own business.",
@@ -3550,7 +3450,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e0f47e30c512ceb834c917beb5bc177a"
+   "fingerprint": "f5c49bbf88f57c61a49f79550fd34983"
   },
   {
    "code": "DART G179",
@@ -3568,9 +3468,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Create a portfolio of work.",
     "Prepare a design for output to a commercial printing press.",
     "Define spot colors vs. process colors and CMYK color mode vs. RGB color mode.",
@@ -3578,7 +3477,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d953472bf28e4bb02029360a8812def1"
+   "fingerprint": "6f651e2f34c7bf642731b61020623a5f"
   },
   {
    "code": "DART G200",
@@ -3596,9 +3495,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply eCommerce capability to website construction and management.",
     "Utilize Web connection protocols to build websites that will work with a variety of servers.",
     "Use HTML and hand coding in website development.",
@@ -3608,7 +3506,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f9479f1a6b32165f7da9233f9b9a5b84"
+   "fingerprint": "c277e3301217616cefa7fa8bcdc1248f"
   },
   {
    "code": "DART G240",
@@ -3626,9 +3524,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Employ industry standard tools and specific project deliverables in UI/UX.",
     "Define principles of User Interface/User Experience (UI/UX) Design in order to design with intention.",
     "Explain the entire life-cycle of the design process, purpose, and tools.",
@@ -3636,7 +3533,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "cf2cebd35468e8ec86e5336df96fbc68"
+   "fingerprint": "3815f5d397701e9edfe9143333dae5c8"
   },
   {
    "code": "DRAF G105",
@@ -3654,9 +3551,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Create technical drawings using CAD software.",
     "Create Multi-View Projections and Sectional View CAD technical drawings.",
     "Create assembly and working drawings.",
@@ -3664,7 +3560,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e6621255ec6fd7af2ed2925e6ecba92e"
+   "fingerprint": "bbcee53a8f100ec4860810b28538a327"
   },
   {
    "code": "DRAF G170",
@@ -3682,16 +3578,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Design a 3D solid/surface model.",
     "Evaluate a finished design to create 3D Prototypes and presentation.",
     "Assess cost-efficient use of 3D printing technology."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "93af5c58414473544a49ca1bfa41c46b"
+   "fingerprint": "9b92b0e656ef3ba23a25e6a9d072c6ce"
   },
   {
    "code": "ECON C2002",
@@ -3731,9 +3626,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Interpret data in a graph.",
     "Apply time value of money equations to savings.",
     "Calculate interest payments on loans.",
@@ -3741,7 +3635,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "3e2f7759950a480d8c96839fcda01fa6"
+   "fingerprint": "ee2d6c01851c11be10d5e8d2a5ceb8e4"
   },
   {
    "code": "ECON G115",
@@ -3785,9 +3679,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe environmental issues of natural resource allocation as a result of economic development and population growth.",
     "Analyze policies relating to environmental damage and sustainable resource use.",
     "Differentiate different pollutants and sources of pollution.",
@@ -3795,7 +3688,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d9fb2811e4b7bce1006b0ba583a8a797"
+   "fingerprint": "4274dfe23dae87091aa67da5c76cecc5"
   },
   {
    "code": "ECON G160",
@@ -3840,9 +3733,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze the banking, financial and monetary system, taking into account the role of money and credit, interest rates, and the actions of the Federal Reserve.",
     "Apply the principle of comparative advantage to international trade to evaluate the effect on economic activity and trade balances.",
     "Quantitatively analyze the economy in terms of GDP, unemployment, inflation.",
@@ -3850,7 +3742,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "56df15dde83016c3913ca608f02ae31a"
+   "fingerprint": "ded24f8ba7bf027952045d6b727b2c31"
   },
   {
    "code": "EDUC G103",
@@ -3868,16 +3760,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify, select, and use appropriate publication tools to produce classroom documents/reports, electronic correspondence, discussion groups, and manage data files/multimedia files on the Internet/Cloud by successfully completing various technology proficiency modules.",
     "Plan, design, and implement technology projects, such as word processing documents, spreadsheets, databases, and presentations by successfully utilizing Google Applications for Education.",
     "Design a lesson plan that integrates a variety of instructional technologies aligned with State Content Standards and present the lesson to the class."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "0d60dc9ab9842167923b973709d18ea4"
+   "fingerprint": "e2fb296f7b43577f8f6e71acc9c9ccf9"
   },
   {
    "code": "EDUC G200",
@@ -3895,9 +3786,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze the role of elementary teachers in terms of philosophy, theories, content standards, and professional and ethical issues in the contemporary Californian classroom.",
     "Examine the California Standards of the Teaching Profession (CSTP) and the Teacher Performance Expectations (TPEs) and assess personal growth in these standards.",
     "Evaluate the implications of family, cultural background, gender, diversity, and the needs of English learners and special populations in the diverse elementary classroom of today.",
@@ -3906,7 +3796,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ce864043bf8710aae0f7d78f83e9880d"
+   "fingerprint": "bf05beebd02ee08dd510f0270e2c2f1c"
   },
   {
    "code": "EDUC G220",
@@ -3924,9 +3814,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Examine the California Standards of the Teaching Profession (CSTP) and the Teacher Performance Expectations (TPEs) and document levels of proficiency in the specific TPEs of focus outlined in the course.",
     "Evaluate the needs of special student populations based on demographic characteristics.",
     "Develop a lesson plan that targets secondary school level academic and performance standards.",
@@ -3935,7 +3824,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "72e31280fb042023d3a43a9c38bf8328"
+   "fingerprint": "bf8aabbbed9e00167a2ee9cd21bbb910"
   },
   {
    "code": "ELL G015N",
@@ -3980,9 +3869,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply descriptive vocabulary in phrases and questions related to school, family, and work. (Listening).",
     "Incorporate clarification strategies in dialogue beyond expressing essential needs. (Speaking).",
     "Understand print materials from everyday life. (Reading).",
@@ -3990,7 +3878,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "cefd7d315ffd6e4debab01a7143a641b"
+   "fingerprint": "cecf778d9f7c0a2aec8078fd4bbc845a"
   },
   {
    "code": "ELL G026N",
@@ -4008,16 +3896,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify the main idea and some details of a brief conversation on a variety of everyday topics.",
     "Develop speech-monitoring abilities for outside classroom use.",
     "Identify basic sounds as well as its basic rhythm, stress, and intonation patterns in context."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "5bc770c6c8367e5adeaed2ff314b5a2b"
+   "fingerprint": "e55a0248bdceeeac6fa8da2a43aeeefa"
   },
   {
    "code": "ELL G028N",
@@ -4035,9 +3922,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Employ conversation strategies to improve communication.",
     "Apply new vocabulary terms in basic interviews about personal information.",
     "Repeat correctly pronounced key words in spoken answers.",
@@ -4045,7 +3931,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "bc60e67731a4d7da9f6dfb4b72809be7"
+   "fingerprint": "d77d93d950eea0f599e95bb59c41e28f"
   },
   {
    "code": "ELL G035N",
@@ -4063,16 +3949,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply the correct grammatical structure in everyday communication.",
     "Communicate subtle but key differences in attitudes and feelings.",
     "Demonstrate comfortable fluency with question words and forms."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b0c6b1b5da23d8176b21abcfa2b57572"
+   "fingerprint": "bde673080321637a026bfbda5f45d9f9"
   },
   {
    "code": "ELL G040N",
@@ -4090,16 +3975,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compose compound sentences and complex sentences.",
     "Compose sentences that focus on description, narration, personal reactions, or expressing a point of view.",
     "Compose a topic sentence and a concluding sentence."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "de1ce6f7017e80b00b950aaa685e951d"
+   "fingerprint": "5d39ff48dd56b50ba18b2a5e52466fbb"
   },
   {
    "code": "ELL G050N",
@@ -4117,9 +4001,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify key information from written documents.",
     "Compose a variety of business documents and transactions using the five-step writing process (planning, researching, outlining, drafting, and revising).",
     "Integrate both formal and informal language in writing.",
@@ -4127,7 +4010,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "536e1fa502b385823fbf799b8c426740"
+   "fingerprint": "92f58a6345626b395316ab8ae99ea803"
   },
   {
    "code": "ENGL C1000",
@@ -4189,16 +4072,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Generate critical arguments through the synthesis of material from various sources, including researched secondary sources.",
     "Evaluate the major literary genres (both fiction and related non-fiction) through comparison, analysis and interpretation.",
     "Construct arguments that employ literary terminology, that exemplify analytical control of language, that exhibit no disruptive errors in English grammar, usage, and punctuation, and that are free of formal and informal fallacies."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e9c945ce458c266c53ed3165ab173160"
+   "fingerprint": "a8507a43638c07daa603e0901a57506e"
   },
   {
    "code": "ENGL G114",
@@ -4216,9 +4098,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze a text of famous myths and/or legends from world cultures based on its literary, historical, social, and/or cultural significance",
     "Explain the stylistic, formal, thematic, and/or rhetorical elements of a text in order to reveal its artistic and/or historical contributions to literature.",
     "Apply relevant critical approaches to investigate connections between famous myths and legends from world cultures.",
@@ -4227,7 +4108,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a6bcdb7d7311f53d8f681b93dc083da7"
+   "fingerprint": "05e368aac1a56e064fd6cb691d937547"
   },
   {
    "code": "ENGL G143",
@@ -4245,9 +4126,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze a children's or young adult text based on its literary, historical, social, and/or cultural significance.",
     "Explain the stylistic, formal, thematic, and/or rhetorical elements of a children's or young adult text in order to reveal its artistic, multicultural, and/or historical contributions to children's and/or young adult literature.",
     "Explain themes of initiation, maturation, morality, fantasy, and education in children's and young adult literature.",
@@ -4256,7 +4136,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "78c662f3e0d18fd86dc5c9a9dd033b4e"
+   "fingerprint": "0948fdb67f8a80a09e72c5a3e0de3c6f"
   },
   {
    "code": "ENGL G150",
@@ -4274,9 +4154,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain and/or compare and contrast the major theories of relevant critics in this field and compile these theories in written work to create a more developed and scholarly analysis of a subject relevant to American literature through the Civil War.",
     "Examine and explain the relationship between literary works and the literary movement associated with the period before the American Civil War.",
     "Select relevant and appropriate scholarly sources and compose a paper synthesizing these sources to augment, strengthen, and complement an original analysis.",
@@ -4284,7 +4163,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "01a65ab625ef64526f13489e4c2680ec"
+   "fingerprint": "21709b86f21aef4bb5771541567e5332"
   },
   {
    "code": "ENGL G160",
@@ -4302,9 +4181,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Investigate literary, historical, social, and/or cultural significance to critically interpret texts.",
     "Evaluate artistic and/or historical contributions to literature by analyzing the stylistic, formal, thematic, and/or rhetorical elements of texts.",
     "Select relevant and appropriate scholarly sources and compose a paper synthesizing these sources to augment, strengthen, and complement an original analysis.",
@@ -4313,7 +4191,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "889798f89a3726e8aa3a0c667265b56d"
+   "fingerprint": "3a177ef967d9a4317b710bd611bfb5fa"
   },
   {
    "code": "ENGL G181",
@@ -4331,16 +4209,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compose well-argued, nuanced analytical essays that articulate a solid thesis, use several key supporting examples from primary and secondary sources, and provide a conclusion that illustrates the overall importance of the work being discussed.",
     "Demonstrate an ability to perform effective academic research of secondary sources and a mastery of MLA formatting guidelines.",
     "Demonstrate a solid understanding of Shakespeares texts."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "59018f33d52effdd766c1b8402daf0ba"
+   "fingerprint": "fdd5a1c56ec15a49a26460ab68a880f0"
   },
   {
    "code": "ENGL G205",
@@ -4380,9 +4257,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze a text based on its literary, historical, social, and/or cultural significance in Britain prior to 1800.",
     "Explain the stylistic, thematic, and/or rhetorical elements of a text in order to reveal its importance in the literary tradition in Britain prior to 1800.",
     "Analyze patterns and innovations in the major genres of English literature from the Middle Ages to the Restoration and early 18th Century.",
@@ -4391,7 +4267,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "32d092a8a7cfd7569cb2f43fe0845d3a"
+   "fingerprint": "7d6f3407a8dabcb9f6555fd0d738d649"
   },
   {
    "code": "ENGL G280",
@@ -4453,9 +4329,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve a system of linear equations with matrix methods.",
     "Use MATLAB programming to design and develop a flowchart.",
     "Use functions and files to develop a user-defined function.",
@@ -4463,7 +4338,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a557e2ad852e61c7c4fc89b8c5438c9d"
+   "fingerprint": "57e9c538af0c92680cd4800efa4fea28"
   },
   {
    "code": "ENGR G285",
@@ -4481,16 +4356,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Utilize a computer circuit analysis program to analyze DC and AC circuits.",
     "Work with electronic test equipment to analyze circuits. This will include voltmeters, ammeters, DC power supplies, function generators, and oscilloscopes.",
     "Analyze the electrical behavior of DC, AC, and switching transients circuits mathematically."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "107a39d106dcbd0ca0560231c2c66e9c"
+   "fingerprint": "bf2f4b28d79a39559496c415ac8b2da2"
   },
   {
    "code": "ESLG 087",
@@ -4530,9 +4404,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify key domestic racial/ethnic political issues and problems.",
     "Utilize appropriate investigative methods and technologies to access research and examine key political issues and policies affecting African Americans, Asians, Latinx and Native Americans.",
     "Evaluate important findings, theories and opposing viewpoints concerning political issues and policies affecting African Americans, Asians, Latinx and Native Americans.",
@@ -4540,7 +4413,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ab45fb7503b867ad0b80d65b1aa1fc04"
+   "fingerprint": "42bdb50881ba471d96e91292faa088f9"
   },
   {
    "code": "ETHS G120",
@@ -4558,16 +4431,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Examine the spatial processes of race and ethnicity as they relate to Black, Asian, Latinx, and Native American communities.",
     "Analyze racialization and racial/ethnic social relations in the United States through the application of geographic and interdisciplinary theory.",
     "Assess maps, tables, charts, graphs, and/or Geographic Information Systems (GIS) to determine the spatial patterns of race and ethnicity in the United States."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "56b1cbd710dfa8b6f2b312bfddce65d2"
+   "fingerprint": "ae05aaa474d8846c4d7b912e673a31b7"
   },
   {
    "code": "ETHS G133",
@@ -4585,16 +4457,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe critical events in the histories and cultures of historically racialized groups with a focus on Native Americans, African Americans, Latinx Americans, and Asian Americans.",
     "Analyze the intersections of race and ethnicity with gender, class, and other identities affected by hierarchy and oppression.",
     "Compare and contrast the contributions of various racial and ethnic groups to American culture."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "54f412009888e6f899b8b17bf7b1c6d4"
+   "fingerprint": "156943c1aad4554f7006458b24f1e2e8"
   },
   {
    "code": "ETHS G135",
@@ -4656,16 +4527,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe concepts such as race and racism, racialization, ethnicity, equity, ethno-centrism, eurocentrism, white supremacy, self-determination, liberation, racial reconciliation, and anti-racism.",
     "Apply psychological theory and research of oppression and racism to the lived experiences of the four core racialized groups: Native Americans, African Americans, Latinx Americans, and Asian Americans.",
     "Consider the socio-cultural effects of struggle, resistance, social justice, and liberation on majority and non majority groups as these impact both the individual and the community."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "4ae65860ea6aa7963b35ebbc1bc3a88f"
+   "fingerprint": "22d08e1cf3ca0023574fef1c7945175d"
   },
   {
    "code": "ETHS G255",
@@ -4705,16 +4575,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Graph a linear equation.",
     "Solve a system of linear equations using substitution.",
     "Solve a polynomial equation (degree one and two)."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "8570a98dee668a04d911d9060d410864"
+   "fingerprint": "bb55fdaa1df9a163a9770802bc5d2412"
   },
   {
    "code": "GED G080N",
@@ -4732,9 +4601,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze concepts within literary and nonfiction texts.",
     "Identify the main idea and supporting detail in a nonfiction text.",
     "Apply construction, sentence structure, usage, and mechanics rules.",
@@ -4742,7 +4610,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "6aff8abfdaf417ae820679165f5fd52c"
+   "fingerprint": "4fd0815c9c26e2081dcc75967ef3ab23"
   },
   {
    "code": "GEOG G120",
@@ -4760,16 +4628,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Assess maps, tables, charts, graphs, and/or Geographic Information Systems (GIS) to determine the spatial patterns of race and ethnicity in the United States.",
     "Examine the spatial processes of race and ethnicity as they relate to Black, Asian, Latinx, and Native American communities.",
     "Analyze racialization and racial/ethnic social relations in the United States through the application of geographic and interdisciplinary theory."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "3d19154a80281f2b73dbf1d5c455ed2e"
+   "fingerprint": "aa2db5e591b36416da320a77ff979cc7"
   },
   {
    "code": "GEOG G180",
@@ -4787,16 +4654,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Evaluate changes and outcomes of dynamic geographic processes.",
     "Analyze maps conveying key geographic data.",
     "Describe the relationship between Earth's physical processes and solar radiation."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "add32a03a9a8bb47077674211e11e600"
+   "fingerprint": "e791a3eb456745f882e6a8d295d3e83f"
   },
   {
    "code": "GEOG G185",
@@ -4814,16 +4680,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Assess maps, graphs, and/or Geographic Information Systems (GIS) to describe and predict human geographic phenomena.",
     "Analyze geographic concepts to evaluate historical and contemporary issues related to human geography.",
     "Evaluate the interrelationship between multiple geographic themes and generate plausible outcomes of these relations."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e135a8e730d07f7c550858cfd71a91fb"
+   "fingerprint": "95697c564f1c1b61aba74b5e20357290"
   },
   {
    "code": "GEOL G105",
@@ -4841,9 +4706,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Employ the scientific method to explain major advances of life on Earth, outlining the evolution of the planet, lifeforms and physical aspects.",
     "Explain the occurrence of matter and elements in nature with the formation of minerals and rocks.",
     "Summarize recent discoveries in plate tectonics and the geologic processes resulting in land forms, mountain building, volcanoes and earthquakes consistent with this theory.",
@@ -4851,7 +4715,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f1360aad4d7e616f7ab183028e596e10"
+   "fingerprint": "e87a9bba8140316f87774b97a87629c1"
   },
   {
    "code": "GEOL G110",
@@ -4869,9 +4733,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply the scientific method to natural processes operating on Earth both internally and external.",
     "Identify the physical properties of minerals, rocks, and sources of energy such as coal, oil and natural gas.",
     "Examine the Geological Time Scale with respect to the evolution of the Earth, the fossil record, life forms and mass extinctions.",
@@ -4880,7 +4743,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "39b18dbeb6690d3b0bf095c1c11691be"
+   "fingerprint": "5dc66f7b41f250b2f9f37507cebb6be6"
   },
   {
    "code": "GLST G100",
@@ -4898,9 +4761,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe complex global issues.",
     "Analyze major global challenges, their root causes, consequences, and potential solutions.",
     "Identify the key elements of Global Citizenship living in an interdependent, interrelated, and interconnected world.",
@@ -4908,7 +4770,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a7753e306fe700178d5c21fd138f3b25"
+   "fingerprint": "f457987a033f35c53b6daf073d2a74bd"
   },
   {
    "code": "GLST G102",
@@ -4926,16 +4788,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply major Global Studies theoretical works, concepts and arguments to global issues.",
     "Examine opposing viewpoints concerning global issues.",
     "Utilize investigative methods and provide an in-depth analysis of at least one global issue."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b9e2d2d3aa20ac39589ee161a584b9e1"
+   "fingerprint": "f56c3c84230697f5a81d869ec2a7d13e"
   },
   {
    "code": "GLST G130",
@@ -4953,9 +4814,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compare and contrast social movements, with a focus on relating American movements to global movements.",
     "Identify a social movement that impacts their communities.",
     "Evaluate the success (or failure) of a social movement involving African American, Asian American, Native American and Latinx communities.",
@@ -4964,7 +4824,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "33ebb9d6f29501f0edde6e224701555b"
+   "fingerprint": "ca9fbc88c0adad9e86fdb5c069aa0258"
   },
   {
    "code": "GLST G230",
@@ -4982,9 +4842,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify one's own leadership style in the context of global leadership.",
     "Evaluate civil and social responsibility both locally and globally.",
     "Analyze the critical role of cultural diversity involved in leadership.",
@@ -4992,7 +4851,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "88a3b0f2375316842a735fdda35d1019"
+   "fingerprint": "e2237e57053b23b028e19de77703710f"
   },
   {
    "code": "HIST C1002",
@@ -5058,16 +4917,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze concepts such as race/racism, sex/sexism, ethnicity, ethnocentrism, self-determination, and social justice in California ethnic groups through written work and/or other forms of testing consistent with college-level expectations.",
     "Present compelling and original arguments displaying historical context, cause/effect, and/or change and continuity. Analysis should draw on both primary and secondary historical sources.",
     "Examine how Native, African, Asian, and Latino/a Americans challenged and combated racial, gender, and social inequities in California History."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "980b215e09ca0a7c84b2118e37e18462"
+   "fingerprint": "8cc8dc78a2a20386a87e047dfc779619"
   },
   {
    "code": "HIST G150",
@@ -5085,16 +4943,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze primary and secondary sources in the history of Latin America.",
     "Evaluate the relevance of Latin American history from the pre-Columbian era to the present.",
     "Assess written research using historical evidence in Latin American history."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ce754e6451cd9afacb7330e986eeb926"
+   "fingerprint": "dc171ff20a3dfdb186f4721230befa06"
   },
   {
    "code": "HIST G161",
@@ -5112,16 +4969,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze primary and secondary sources in early World History.",
     "Evaluate the relevance of the global human past prior to 1500.",
     "Conduct written research using historical evidence in early World History."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "362a9b7c1679054f8c00b15852d6ce0b"
+   "fingerprint": "5ed63eaef3dad4784f96f8cb810fd341"
   },
   {
    "code": "HIST G170",
@@ -5139,16 +4995,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Exhibit knowledge and understanding of the course content by major areas through written work and/or other forms of testing consistent with college level expectations. (Application of knowledge SLO).",
     "Demonstrate proficiency in research, analytical, and communication skills necessary to present compelling and original arguments displaying a critical understanding of historical context, cause/effect, and/or change and continuity. Analysis should draw on both primary and secondary historical sources. (Critical thinking skills SLO).",
     "Appraise the value of historical knowledge for understanding more recent and/or comparable issues, events, and trends. (Relevance of History SLO)."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ef2e10ad4057652793e5d5f4cc1c47ec"
+   "fingerprint": "5359e357df11a4b9cb1cddb4fa2c8030"
   },
   {
    "code": "HIST G180",
@@ -5166,16 +5021,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze primary and secondary sources in early Western civilization.",
     "Evaluate the relevance of Western civilizations prior to 1500.",
     "Conduct written research using historical evidence in early Western civilization."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7deaab6b797640327793ba371f59aeb5"
+   "fingerprint": "ea045f6d6e9fca649fa1b53b29e08307"
   },
   {
    "code": "HLED G100",
@@ -5193,9 +5047,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze personal and family health as it relates to human sexuality, relationships, sexual orientation, and parenthood; and the ramifications and possible outcomes of irresponsible sexual behavior",
     "Examine the physiological, emotional, psychological and sexual aspects of aging.",
     "Explain stress management techniques and the role they play in mental health, disease prevention and everyday life.",
@@ -5203,7 +5056,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "072d0d77df995e0d0d479cd81faec98e"
+   "fingerprint": "8a3d8dee1de3f114540c0f314b532050"
   },
   {
    "code": "HLED G135",
@@ -5221,16 +5074,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Evaluate one's personal diet utilizing a nutritional computer database.",
     "Apply valid research principles in the interpretation and application of major nutritional theories",
     "Analyze factors such as lifestyle, weight control, disease, and life-cycle conditions such a pregnancy and aging and the influences on one's nutritional status"
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "6e5449ef514a912dabfca661abf51964"
+   "fingerprint": "07639531add05ae8bebbfec148f6e67a"
   },
   {
    "code": "INTR G100",
@@ -5248,16 +5100,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Define the communication process.",
     "Apply the Interpreters Code of Professional Conduct to several hypothetical situations demonstrating professional decision-making",
     "Explain the history of the interpreting profession and identify the key events that helped shape the profession."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "0aea040775ff51d30ff067c57e738334"
+   "fingerprint": "ad20439b3624ec92f3e4ba068f4116d5"
   },
   {
    "code": "INTR G135",
@@ -5275,9 +5126,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Produce ASL gloss translations for spoken texts at an advanced level.",
     "Produce grammatically and idiomatically correct ASL interpretations for spoken texts at an advanced level.",
     "Analyse interpretations for errors",
@@ -5285,7 +5135,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "30356704b8108322cdfa49b667205830"
+   "fingerprint": "2c92a2f5fae1bba6f5365f69b474bf7f"
   },
   {
    "code": "INTR G160",
@@ -5303,9 +5153,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Translate signed ASL into standard gloss notation at an advanced level.",
     "Produce an interpretation from signed ASL into spoken English using the simultaneous method at an advanced level.",
     "Produce an voiced interpretation from signed ASL into spoken English using the consecutive method at an advanced level.",
@@ -5313,7 +5162,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "93316425946fcc4f475f84568a0c7d08"
+   "fingerprint": "7cdc94991befcab093f595848d63e547"
   },
   {
    "code": "KIN G100",
@@ -5331,16 +5180,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the field of kinesiology as it relates to sports medicine.",
     "Describe the importance of physical activity in daily life.",
     "Examine different career pathways in kinesiology."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a21b03a629bc6365f8bc611a85245939"
+   "fingerprint": "46df196dc6b0f43775ee4754b8b30ca7"
   },
   {
    "code": "KIN G110",
@@ -5380,9 +5228,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Distinguish how information is organized.",
     "Determine the extent of information needed.",
     "Access the information needed.",
@@ -5391,7 +5238,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "8bac44bd32e57d408545f1bbf52ed98c"
+   "fingerprint": "23a647e178b467f8b95e9b0548728d9b"
   },
   {
    "code": "LIFE G050N",
@@ -5431,16 +5278,15 @@
    "title_printed": "MATH G050N: Sets of Numbers < Coast Community College District",
    "chars": 3113,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Determine which number set(s) a given number is an element of."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "256b164e610e776d82e861bd7734f72e"
+   "fingerprint": "b997179c64e020fb9f77868726130a7a"
   },
   {
    "code": "MATH G052N",
@@ -5456,16 +5302,15 @@
    "title_printed": "MATH G052N: Decimal Numbers < Coast Community College District",
    "chars": 2992,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform arithmetic operations on decimal numbers."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "38018484481d824220e9d6510ea9ee8e"
+   "fingerprint": "4c3afc16dc52dd64129e39472f5147d2"
   },
   {
    "code": "MATH G054N",
@@ -5481,16 +5326,15 @@
    "title_printed": "MATH G054N: Linear Expressions and Inequalities < Coast Community College District",
    "chars": 3417,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve linear equations and inequalities that model real-world scenarios."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1e7ed36c5f5995f18fd758129a400dc0"
+   "fingerprint": "cdd91f09c7c673877364e97c6956d068"
   },
   {
    "code": "MATH G056N",
@@ -5506,16 +5350,15 @@
    "title_printed": "MATH G056N: Linear Systems < Coast Community College District",
    "chars": 3315,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve a system of two linear equations in two variables."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b11e89973cab793c870fd1333dd84203"
+   "fingerprint": "6dddcb4290cbedc2a1e1c8b43d7d3f64"
   },
   {
    "code": "MATH G058N",
@@ -5531,16 +5374,15 @@
    "title_printed": "MATH G058N: Rational Exponents < Coast Community College District",
    "chars": 2957,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Convert a radical to a rational exponent."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "4a70f877174074735478a8cf99df9a05"
+   "fingerprint": "8bf4f9b0a54ce12d3486cb0e271a581e"
   },
   {
    "code": "MATH G060N",
@@ -5556,16 +5398,15 @@
    "title_printed": "MATH G060N: Quadratic Equations < Coast Community College District",
    "chars": 3412,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve a quadratic equation with a leading coefficient other than one."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ebbfe887d0034ae6b4a92ccc44d9937f"
+   "fingerprint": "657e162d6455e6d0731ffec1776250c0"
   },
   {
    "code": "MATH G062N",
@@ -5581,16 +5422,15 @@
    "title_printed": "MATH G062N: Rational Expressions and Equations < Coast Community College District",
    "chars": 3039,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve rational equations."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b2da348e3914fef263cba4578d0e4cce"
+   "fingerprint": "96cd0ec116daa9d8ad558c1b4ebc74b9"
   },
   {
    "code": "MATH G064N",
@@ -5628,16 +5468,15 @@
    "title_printed": "MATH G066N: Exponential Functions < Coast Community College District",
    "chars": 3350,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Determine the equation of an exponential function given two points on its graph."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c6adffb5b7eb63002950b739c008f3c8"
+   "fingerprint": "abc199db51e4f28d2200d52e4657c935"
   },
   {
    "code": "MATH G098N",
@@ -5655,16 +5494,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Find the domain of a function.",
     "Find the equation of a line given the slope and a point.",
     "Use the unit circle to solve for solutions to a trigonometric equation."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ad031e3afe40034bf63f709c5de6cfe9"
+   "fingerprint": "d04754321365f94446c168f564e974ff"
   },
   {
    "code": "MATH G100",
@@ -5682,16 +5520,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Calculate mean, median, and mode from a given set of data.",
     "Use various formulas to solve financial problems related to house mortgages.",
     "Use the U.S. customary and metric measurement systems to solve for the surface area of geometric figures."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "aabdeade023a6ff4abd22b353388563e"
+   "fingerprint": "2a37f0ef62ae10d828f580e692b8406d"
   },
   {
    "code": "MATH G104",
@@ -5709,16 +5546,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Draw a model using base ten blocks to illustrate the use of classroom manipulatives to preform arithmetic operations on whole numbers.",
     "Apply elementary number theory to find prime numbers, factorization, divisors, and multiples.",
     "Perform calculations with the base ten place value systems."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "76bc4472edc8fd24a5e580ed3e51635f"
+   "fingerprint": "1787a5a67cf78d5a7f0473fbd3e6ad9d"
   },
   {
    "code": "MATH G115S",
@@ -5758,16 +5594,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Calculate the elasticity of demand and interpret its implications for price manipulation.",
     "Use the concepts of differentiation and marginality to optimize cost, revenue, and profit functions.",
     "Use implicit differentiation and related rates concepts to solve business and economics applications."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "907103d41b8ab04a4a020ad1c8f140a9"
+   "fingerprint": "c38fbb6749f8f4f8745f0e88cbe611df"
   },
   {
    "code": "MATH G170",
@@ -5785,16 +5620,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve trigonometric equations over the set of real numbers.",
     "Solve logarithmic and exponential equations.",
     "Solve polynomial and rational inequalities."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a34d6aef403d10611ead642d82cc223c"
+   "fingerprint": "81241d4da0047ab55a49e303f4f17948"
   },
   {
    "code": "MATH G185",
@@ -5812,16 +5646,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve applications of integration including areas, volumes, work, surface areas of revolution, and arc length.",
     "Determine whether a series is convergent or divergent using an appropriate test for convergence.",
     "Apply techniques of integration to evaluate definite and indefinite integrals."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c4690b37d72cfee9d8eadaa9a95b8925"
+   "fingerprint": "254a732ffe07c73683325697e6d96c4e"
   },
   {
    "code": "MATH G285",
@@ -5839,9 +5672,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Find bases and othonormal bases associated with matrices and linear transformations to solve problems in Linear Algebra.",
     "Find the subspaces and dimensions of spaces associated with matrices and linear transformations.",
     "Find eigenvalues and eigenvectors and use them to solve systems of differential equations and in applications.",
@@ -5851,7 +5683,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b8f8acc6018866649a6eaafda875f202"
+   "fingerprint": "cd3d4a6bd43f1a781e11513902278f2f"
   },
   {
    "code": "MGMT G110",
@@ -5869,9 +5701,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Interpret the meaning of key managerial terms used in business.",
     "Describe the four primary management functions: planning, organizing, leading, and controlling.",
     "Identify human resource strategies for recruiting, hiring, training, evaluating, compensating, and retaining a quality workforce.",
@@ -5879,7 +5710,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "af3eb334175e2e7d53884a249891d9e5"
+   "fingerprint": "f579a5275bc7b56fe8bbca25e7a4673c"
   },
   {
    "code": "MGMT G115",
@@ -5897,9 +5728,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Define organizational behavior and how it affects the management process through experiential exercises and discussions.",
     "Evaluate how globalization, diversity, and technology affect an organization.",
     "Identify elements of organizational behavior such as personalities, attitudes, and perceptions, and how these elements affect motivation in the workplace.",
@@ -5909,7 +5739,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "407f11e91cb54ef21f6a42aad4422da4"
+   "fingerprint": "6edd6c42c70f49dd9b556ca18b6b9000"
   },
   {
    "code": "MGMT G140",
@@ -5949,16 +5779,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify the challenges and importance of providing outstanding customer service.",
     "Solve problems related to customer inquiries, complaints, and issues.",
     "Discuss ways of meeting and exceeding the needs and expectations of a diverse customer base to enhance customer loyalty."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d293724599c9810efd966757d1210fdb"
+   "fingerprint": "b52c39a6ceec8aa8e654ce87a43c9602"
   },
   {
    "code": "MGMT G163",
@@ -5976,16 +5805,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Prepare a profit and loss statement with accompanying monthly variance analysis.",
     "Compute start-up cost projections for a small business in accordance with the business plan.",
     "Compare cash flow statement with net income to analyze certainty of customer collections and timing of vendor payments."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "73afc891ecc9e3dcd785b5a0a83c3f07"
+   "fingerprint": "ef7724795157b429f314fb9aa9123e04"
   },
   {
    "code": "MKTG G135",
@@ -6003,16 +5831,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe retail channels and methods used in operating and managing a retail business.",
     "List types of retail segments and organizations, merchandising techniques, marketing strategies, and control methods of retailing.",
     "Explain various options and techniques for retail information systems, pricing, communications, and customer service."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "8b191234c84c0165069f2328d326bc66"
+   "fingerprint": "bc09bd9eeec0fba269c28ffa478ba342"
   },
   {
    "code": "MKTG G157",
@@ -6030,16 +5857,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe market research principles and practices to develop a go-to-market strategy for any product or service.",
     "Analyze potential and current customers through traditional and non-traditional methods of market research.",
     "Develop a cost-effective marketing plan for a target market."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "41d3bef0caa6308bef733a5cfe3ffe63"
+   "fingerprint": "e43eba76ba37319c0735749cf05c8dbb"
   },
   {
    "code": "MUS G101",
@@ -6057,16 +5883,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Aurally differentiate the various styles of classical music.",
     "Identify major eras of music history, its composers, and their compositions.",
     "Utilize music terms to examine listening examples and performances"
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7e8b309514c8ac4120f4f3f8e97716db"
+   "fingerprint": "d16b4d602b7b5978176a3bce99dfd420"
   },
   {
    "code": "MUS G105",
@@ -6084,16 +5909,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Employ diatonic notation in order to accompany oneself on the guitar.",
     "Play on beat and in correct time signature at a beginning level.",
     "Use guitar chords and keys at a beginning level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "853bb7271a80debf41b9ab4c2eb64cd0"
+   "fingerprint": "9cba54ec1e2fef79f539ea04e922a958"
   },
   {
    "code": "MUS G108",
@@ -6111,16 +5935,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Define the categories of musical theater including opera, operetta, vaudeville, minstrel shows, burlesque, musical comedy, revue, musical theater, book musicals, and concept musicals.",
     "Describe the historical, social, cultural, and aesthetic constructs that have led to the development of musical theater as a significant art form.",
     "Identify the major writers, composers, choreographers, performers, producers and designers who have contributed to the development of musical theater"
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "43685ef672a730490b8b9a182de0d733"
+   "fingerprint": "951d3ca322f5d466a126cc931e35e7e8"
   },
   {
    "code": "MUS G113",
@@ -6138,16 +5961,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Utilize DAW (Pro Tools) to record live musicians and spoken word.",
     "Identify microphone placement technique for a variety of instruments.",
     "Produce a musical project that requires basic recording skills, mixing techniques, and equipment placement."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "df8f8d38b548598f5ab36376fe80ab5d"
+   "fingerprint": "089850530aa3338524dac7684a780253"
   },
   {
    "code": "MUS G116",
@@ -6165,9 +5987,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Interpret music notation with deductive logic.",
     "Explain diatonic chord progressions with deductive logic.",
     "Identify patterns and musical function.",
@@ -6175,7 +5996,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c246e25e19a6cdb4d8e633e34fa77dac"
+   "fingerprint": "bf729671590d33b4c688740c78517f97"
   },
   {
    "code": "MUS G121",
@@ -6193,9 +6014,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Utilize aural and visual musical skills to discern quality choral and vocal literature from a variety of historical and cultural areas.",
     "Obtain the skills necessary to continue to improve vocal technique both within and outside the classroom setting, including breath control, intonation, expression and phrasing, intonantion, and articulation.",
     "Develop music reading skills on an individual and ensemble basis with note and rhythm accuracy, articulation, dynamics, and terminology.",
@@ -6203,7 +6023,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1d8b095e15854aa9649fd390739ad497"
+   "fingerprint": "28a16abf094eb6db5e95dd11ad489706"
   },
   {
    "code": "MUS G127",
@@ -6221,16 +6041,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform wind band literature with musical accuracy and precision at a beginning level.",
     "Develop musical skills in the areas of sight-reading, ensemble interaction and listening, performance practices, and individualized practice.",
     "Identify standard wind band literature, composers, and performance practices."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ac6c2b3c011dd3a345bdd211c9914fc3"
+   "fingerprint": "9811706e0a13f5360b9b9471a8b003c4"
   },
   {
    "code": "MUS G139",
@@ -6248,9 +6067,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Define music terminology for general and rock music-specific applications.",
     "Describe the history and development of rock music.",
     "Recognize distinguishing elements of rock music styles and sub-styles, including those with specific ethnic ans cultural influence.",
@@ -6260,7 +6078,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1afffcd39477e81ad76a3b9275a5f9f6"
+   "fingerprint": "10a3ad2ba7fbf21db3912bd00fae2c26"
   },
   {
    "code": "MUS G142",
@@ -6278,16 +6096,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Play in the keys of C Major, G Major and F Major.",
     "Play scales with both hands in parallel motion, two octaves, in duple rhythm at a moderate tempo.",
     "Play the I IV V7 cadence formula in C Major, G Major, and F Major with block chords or broken chord patterns with either hand."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "0479cd7ba33449de4641bf676c90399b"
+   "fingerprint": "00750e04ba4a0c75521ad61b5f0f4bf2"
   },
   {
    "code": "MUS G145",
@@ -6305,15 +6122,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Sing three memorized solos from class repertoire in a range suitable to their voice type with appropriate performance practice for each genre.",
     "Evaluate one's own performance and the performances of other students in the class using terminology learned from class."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "78b3868c758a0fa956bdd39378907497"
+   "fingerprint": "42b55bab8a9614f214ca75a5f5f82a88"
   },
   {
    "code": "MUS G147",
@@ -6331,16 +6147,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Sing three memorized solos of advanced level class repertoire in a range suitable for their voice type.",
     "Sing a variety of vocal styles with appropriate performance practice for each genre.",
     "Evaluate one's own performance and the performances of others using terminology from class."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "8effa7bcfa308f9a63eeadbd842e303d"
+   "fingerprint": "b0b33e210e17365e469fe5c01ea1eba2"
   },
   {
    "code": "MUS G216",
@@ -6358,9 +6173,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Utilize basic written modulation procedures and specific harmonic functions of compositions with chromatic harmony.",
     "Compose a musical piece which includes historically correct compositional forms and correct style consistent with prescribed rules of chromatic harmony.",
     "Analyze musical examples with stylistically and contextually corrext terms and symbols.",
@@ -6369,7 +6183,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "52e5aabc1bb5d56bbaa92708cb0220bb"
+   "fingerprint": "80697988c0abd220662c8e9b6c70d70f"
   },
   {
    "code": "MUS G241",
@@ -6387,15 +6201,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform intermediate classical, folk, or popular compositions with appropriate balance, phrasing, dynamics, and style.",
     "Play all major and most minor scales (c, g, d, a, e, f, b), hands together, followed by arpeggios in the same keys, hands separately, for two octaves."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "af4c0146235f0380e81ad8a9aeb4eb6b"
+   "fingerprint": "485fc851c9fde7449b4ce3b99a79bbad"
   },
   {
    "code": "MUS G260",
@@ -6440,9 +6253,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Develop individual musical performance skills as a solo performer.",
     "Develop individual musical performance as an ensemble performer.",
     "Evaluate progress adequately for students to critique themselves and their peers in an insightful and constructive manner.",
@@ -6451,7 +6263,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "955a9e48cd71224c6743058662d32350"
+   "fingerprint": "7a678f18f125344c952acc13f5602dfa"
   },
   {
    "code": "NURS G051N",
@@ -6469,16 +6281,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe common aged-related changes and common medical diseases that effect the elderly population.",
     "Identify normal vital signs parameter.",
     "Examine factors that promote safety in elderly patients and caregivers."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "169e9657c899db8588da54722e7b8043"
+   "fingerprint": "60ce1228eee99a70858f8c52d6358030"
   },
   {
    "code": "NURS G060N",
@@ -6522,15 +6333,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Discuss nursing as a profession including the integration of providing competent and compassionate care.",
     "Compare various nursing career opportunities and the educational pathways to achieve them."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "14cddf83647f05512995773e52e22179"
+   "fingerprint": "8e9b1ad51b637e6dd932d9f30f7fa892"
   },
   {
    "code": "NURS G131",
@@ -6548,9 +6358,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe the role of the professional nurse as a member of the healthcare team.",
     "Identify the components of the Situation Background Assessment Recommendaton (SBAR) model as a health care communication tool.",
     "Compare common healthcare settings and their regulatory process.",
@@ -6558,7 +6367,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "84f5b9021d5a9e3e1d99d2e563f73790"
+   "fingerprint": "54dc072ec894e018939f1ae98d16c861"
   },
   {
    "code": "NURS G160C",
@@ -6660,9 +6469,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Use clinical judgment, care and advocacy of scientific nursing research and evidence-based practice.",
     "Collaborate with members of interdisciplinary teams to manage the integrated care of patients.",
     "Identify clinical ethical dilemmas that influence the delivery of patient care.",
@@ -6670,7 +6478,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b4117c2ede0835babd0ae4ded444a9f7"
+   "fingerprint": "a7c424a5d7ff2d9a3a577255dda248f7"
   },
   {
    "code": "NURS G285C",
@@ -6769,9 +6577,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the basic elements of exercise physiology, psychology of sport, and sociology of sport.",
     "Assess how personal choices can affect long term physical, emotional, and psychological well being.",
     "Explain how participating in a variety of physical activity classes can help him or her develop a healthy lifestyle.",
@@ -6780,7 +6587,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1c38d1390e15a320b79ae187eb6f5d1f"
+   "fingerprint": "eea848d792345c629e6159cfa94aa339"
   },
   {
    "code": "PE G108",
@@ -6820,9 +6627,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate ability to advance swimming skills to other aquatic activities.",
     "Improve cardiorespiratory fitness, flexibility, and strength as measured by swim tests.",
     "Design swim workouts that utlize interval training skill taught.",
@@ -6830,7 +6636,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "466f915b6dbb36313653fe1c10656626"
+   "fingerprint": "5550ee692a270617a181292a7fd4d90b"
   },
   {
    "code": "PE G126",
@@ -6848,9 +6654,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Show the basic skill fundamentals needed to perform in a game setting.",
     "Demonstrate basic pickleball strategy.",
     "Apply knowledge of the etiquette, terminology and safety considerations of pickleball.",
@@ -6858,7 +6663,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "793d2ff77cb53368b820f05d99ec4370"
+   "fingerprint": "71042df6252d0fb62cf073019ed13a7f"
   },
   {
    "code": "PE G130",
@@ -6876,9 +6681,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform yoga poses at a beginning level.",
     "Demonstrate breathing techniques, balance, strength and flexibility.",
     "Strengthen and tone muscles through basic poses and learning the importance of lifelong fitness.",
@@ -6886,7 +6690,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d07c58137b678959834143a8b331853d"
+   "fingerprint": "3add41a02073395eef9cfb8087efd3c8"
   },
   {
    "code": "PE G150",
@@ -6930,16 +6734,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Recognize proper form and how to modify if needed during his or her daily workouts.",
     "Apply principles of health, nutrition, and exercise to personal goals he or she wants to achieve.",
     "Measure his or her resting and working heart rate."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "79731eeafe9e5b41df6582db4c261b39"
+   "fingerprint": "70e380d95b3a998c1dc594ebd331dd2c"
   },
   {
    "code": "PE G176",
@@ -6979,16 +6782,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Assess and demonstrate proper form at a comfortable weight level.",
     "Evaluate goals and progress and modify to increase success.",
     "Judge the effectiveness of his or her chosen exercise program."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b67d36ac66e3eab04352e3ecea5245e1"
+   "fingerprint": "2229d71001028caa29b19e911f4173e1"
   },
   {
    "code": "PE G192",
@@ -7006,16 +6808,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply fundamental soccer tactics.",
     "Demonstrate stretching, warm-up, and safety procedures to keep their experience free from injuries and preventable accidents.",
     "Apply the rules and regulations of soccer during gameplay, ensuring adherence to game standards and fair play."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "11b4fc50b9f19072b930133fa5b542ce"
+   "fingerprint": "0597160048c9ed07225ca840f277a550"
   },
   {
    "code": "PE G196",
@@ -7033,16 +6834,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compile skills necessary to participate in the sport of sand volleyball.",
     "Compare the advantages of two person, four person, and six person sand volleyball.",
     "Evaluate his or her own personal skill levels to determine strengths and weaknesses."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e301bc3b45aff77975253b23756c1a35"
+   "fingerprint": "91179120b2a84f08789a63789ba0047b"
   },
   {
    "code": "PEAC G110",
@@ -7104,9 +6904,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Employ analytical philosophical skills.",
     "Explicate philosophical texts of the Ancient Western Philosophers.",
     "Analyze primary theories and influence of the Ancient Western Philosophers with special emphasis on Plato and Aristotle.",
@@ -7114,7 +6913,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "fd4ccaef30485f30452639c93fa9e4e7"
+   "fingerprint": "2c1af6c8e74c1c2c4c4302a680826abe"
   },
   {
    "code": "PHIL G111",
@@ -7132,16 +6931,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the primary components of religious, faith, and religious practice.",
     "Assess the various arguments for and against the existence of God.",
     "Describe the different conceptions of God presented in the Western philosophical tradition."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7f7df8dd21605e8fedfd8ff565c54ff7"
+   "fingerprint": "853a6486c07d9a77e17026767f5edbf0"
   },
   {
    "code": "PHIL G120",
@@ -7159,16 +6957,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain traditions in ethics, from classical to modern philosophers, and apply them to contemporary moral problems.",
     "Distinguish philosophical approaches to ethics from other approaches (scientific, religious, etc.).",
     "Compare and contrast alternative ethical systems."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e8ab023ca6d07676ba6c39f0c1a3866a"
+   "fingerprint": "b43adbf308980f476576bbd9499e4fbe"
   },
   {
    "code": "PHIL G125",
@@ -7186,9 +6983,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compose structured analytical and argumentative prose absent disruptive errors in English grammar, usage, and punctuation, and that are free of formal and informal fallacies.",
     "Employ methodologies of deductive formal logical systems.",
     "Employ methods of inductive argumentation.",
@@ -7196,7 +6992,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "858d6ce1a569413db77f0166c240c0ff"
+   "fingerprint": "2d66355317061f65d21a61d7aa5634aa"
   },
   {
    "code": "PHIL G150",
@@ -7214,16 +7010,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Assess the relevance of political theories to contemporary issues and policies.",
     "Explain the key concepts, theories, and debates that have defined political thinking over time.",
     "Evaluate the usefulness of each body of theory in relation to political life and political institutions."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "29b4a4ce85e2a729635050886a23eb8d"
+   "fingerprint": "26fa1387ea6b07d5200e40bac908cd8e"
   },
   {
    "code": "PHOT G190",
@@ -7267,9 +7062,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify important discoveries in the fields of physics, chemistry, geology, and astronomy.",
     "Explain the underlying principles that govern the behavior of matter and energy.",
     "Demonstrate understanding of basic concepts dealing with chemical reactions.",
@@ -7277,7 +7071,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "13a0c8e3da6bf1d2dab08b9699b6e820"
+   "fingerprint": "5a6a7b50772ce00fc314486cd6282a3a"
   },
   {
    "code": "PHYS G111",
@@ -7295,16 +7089,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe various phenomena associated with motion, energy, waves, or electromagnetism.",
     "Explain observations based on current physics theory.",
     "Generate a written report describing observations."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d7e164768c5a58c1e893296423208695"
+   "fingerprint": "3c9e5828d9f9a1c5b5831a91e513b29a"
   },
   {
    "code": "PHYS G125",
@@ -7322,9 +7115,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve problems involving electromagnetic theory.",
     "Solve problems involving circuit theory.",
     "Solve problems involving nuclear physics.",
@@ -7332,7 +7124,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d4ba57bce80e39af7a2bb4b0da32d8c2"
+   "fingerprint": "77302351401ee99dae358c1ce5564110"
   },
   {
    "code": "PHYS G280",
@@ -7350,16 +7142,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Solve problems involving the laws of electromagnetism using calculus.",
     "Employ simple wiring techniques to construct electrical circuits using resistors, capacitors, and inductors for both DC and AC circuits from circuit diagrams.",
     "Use various electrical meters, including ammeters, voltmeters, ohmeters, and the oscilloscope to make measurements."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ccf955824feef09c4d56e7d2de247d85"
+   "fingerprint": "5326802bd66a90b6d9eca6d91eea3f31"
   },
   {
    "code": "POLS C1000",
@@ -7399,9 +7190,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Utilize investigative methods and technologies with which to examine key political issues and policies.",
     "Evaluate important findings, theories and opposing viewpoints concerning political issues and policies.",
     "Present possible policy solutions to political issues.",
@@ -7409,7 +7199,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "05c8f8459a13aae957079ef96369e1a7"
+   "fingerprint": "0792031ea8d4d2f6af6be4e6727b64ec"
   },
   {
    "code": "PSCI G105",
@@ -7471,16 +7261,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify international organizations and their role in the global economy.",
     "Compare different economic and political systems.",
     "Assess the effects of economic and political policies."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "4b0cbc5de35b4000602e3d695fe2c27c"
+   "fingerprint": "32cfaf0377c1ea2ef9e561b2031f0c78"
   },
   {
    "code": "PSCI G181",
@@ -7498,9 +7287,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze the role of ideology, culture and diversity in mobilizing social movements and political interest groups in the U.S.",
     "Analyze the distribution and exercise of political power in the U.S.",
     "Identify the framework and constitutional powers of the federal and state governments.",
@@ -7509,7 +7297,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1ffa9429d8e9ca73e5d98cd547a4d7a3"
+   "fingerprint": "dc1aa9b070212778647a4bb85d3d7ed1"
   },
   {
    "code": "PSCI G205",
@@ -7549,16 +7337,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the psychological theories and research regarding personal and social adjustment, and effectively apply them to real-life examples.",
     "Analyze concrete examples of personal growth and psychosocial adjustment, using the psychological research to explain different outcomes.",
     "Analyze the factors which promote or hinder personal growth and development, in order to apply knowledge to solve both intrapersonal and interpersonal problems."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "16bec3ade3c078b9a5d071f814199715"
+   "fingerprint": "c5b0b490fcb77c6aa9b3b3566874929e"
   },
   {
    "code": "PSYC G118",
@@ -7576,16 +7363,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify the importance of different research methods in psychology, including the methods of studying human development, citing strengths and limitations of each.",
     "Explain the influence of both biological (e.g. genes, brain) and environmental (e.g. culture, family) factors shaping the individual across the lifespan.",
     "Apply the major theoretical perspectives of developmental psychology (e.g. cognitive, psychosocial, humanistic, sociocultural) to real-life examples."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "abea47ff9e22902836e5f5592747d14c"
+   "fingerprint": "e5436a4df56d494dfd791b5ddccd22f7"
   },
   {
    "code": "PSYC G140",
@@ -7603,16 +7389,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate the ability to calculate key statistics such as levels of measurement, measures of central tendency and variability, frequency distributions, normal skewed curves, probability, sampling, and statistical inference, hypothesis testing, z-scores, t-tests, ANOVA, correlation, regression, and chi-square.",
     "Complete an assignment utilizing APA format with research data by accurately selecting and computing the appropriate statistical test(s) and interpret results.",
     "Use statistical software to analyze data and interpret results."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a917478d9291002d0b56b6fcde660a0c"
+   "fingerprint": "11391f223ad27d81cbccab64c4b38867"
   },
   {
    "code": "PSYC G167",
@@ -7652,16 +7437,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compare and contrast the various theoretical perspectives on etiology and implications for treatment of various psychological disorders.",
     "Summarize the major disorder classifications giving concrete examples using appropriate diagnostic terminology (i.e., DSM).",
     "Explain specific research methods and the ethical principles for the study and treatment of psychopathology."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c37d9952c60292da80539fd7201d700c"
+   "fingerprint": "ee9c0ce0143a1fc5d87d2904e91e8865"
   },
   {
    "code": "PSYC G280",
@@ -7679,16 +7463,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply research topics such as the scientific method, research designs, measurement, data collection techniques, sampling, hypothesis testing, experimental and non-experimental methods, and ethical issues in research.",
     "Evaluate relevant research topics from published empirical studies.",
     "Conduct an original research study, including quantitative data analysis, and presenting the results in an APA style presentation and paper"
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "9d836652d43b84c7d7dfc956c8cc6d3d"
+   "fingerprint": "cc536788be86731e526b6ea710c04c76"
   },
   {
    "code": "SIGN G180",
@@ -7733,9 +7516,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Compare and contrast different definitions of D/deafness from the earliest ideas Deaf people dating back to the 18th century.",
     "Assess language outcomes across Deaf experiences.",
     "Define the structure of the Deaf community.",
@@ -7743,7 +7525,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "bc7d5e1abafb39d165f229c177f3d08d"
+   "fingerprint": "bf88d504d9e6f70b0b7ef02393cdb977"
   },
   {
    "code": "SIGN G285",
@@ -7835,9 +7617,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Calculate key statistical measures using sociology and social science data.",
     "Calculate probabilities using normal and t-distributions.",
     "Construct a hypothesis test and interpret the results using sociology and social science data.",
@@ -7845,7 +7626,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a57fc6a97abbd6e169ccf5897bf5a9b9"
+   "fingerprint": "d3c597852db9f722a758d3753219cb94"
   },
   {
    "code": "SOC G134",
@@ -7863,16 +7644,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Describe critical events in the history and culture of Chicanas/os.",
     "Identify the contributions of Chicanas/os to society and the struggle for social justice.",
     "Compare and contrast the racial and ethnic characteristics of Chicana/o identity to other Latinx cultures."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "45c16ca40a9ec51a0c9fa880d6cecbeb"
+   "fingerprint": "2d3f19d89ffb3038e35484479e903452"
   },
   {
    "code": "SOC G140",
@@ -7890,16 +7670,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Discuss the impact of sex and gender on relationships in society.",
     "Compare and contrast differences in race, ethnicity, and class on gender relations.",
     "Describe the impact of social activism on gender inequality."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e120f382976f36d2012752bb19d5131a"
+   "fingerprint": "91548a3d8d559bdfa908c4da6e08e689"
   },
   {
    "code": "SOC G185",
@@ -7917,9 +7696,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Examine the role of power and ideology in the construction, consequences, and solutions of social problems.",
     "Apply sociological theories to analyze the causes, consequences, and solutions to social problems.",
     "Analyze both qualitative and quantitative data as it relates to examining social problems.",
@@ -7927,7 +7705,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "e890463d82ebd2729c5a2ff4ae694341"
+   "fingerprint": "8910b87a72b0ac93eece1dae47f8d3d2"
   },
   {
    "code": "SPAN G160",
@@ -7945,9 +7723,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Translate Spanish audio at an intermediate level.",
     "Produce spoken Spanish at an intermediate level.",
     "Interpret literature in Spanish at an intermediate level.",
@@ -7955,7 +7732,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f7a6f958be9fc03d77b121e6980a209d"
+   "fingerprint": "56ee2d17f0a864e7d98575ecfce25839"
   },
   {
    "code": "SPAN G165",
@@ -7973,9 +7750,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course outcomes",
    "outcomes": [
-    "Course outcomes",
     "Analyze Spanish audio at an advanced-intermediate level.",
     "Articulate perspectives fluently in Spanish at an advanced-intermediate level.",
     "Examine literary works of Spanish writers at an advanced-intermediate level.",
@@ -7983,7 +7759,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "c6620a1642d8cd52e1aca6d198e14aeb"
+   "fingerprint": "69eb9fddce41be3f53679859c85b366e"
   },
   {
    "code": "SPAN G185",
@@ -8001,9 +7777,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Practice vocabulary and grammar to communicate in Spanish using appropriate pronunciation at the advanced-beginning level.",
     "Apply vocabulary and grammar to interpret spoken messages in Spanish at the advanced-beginning level.",
     "Interpret vocabulary and grammar to derive meaning of written material at the advanced-beginning level.",
@@ -8011,7 +7786,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "835cc6f9a370d41742fb1d994123133e"
+   "fingerprint": "0c265573e769dee3db2d5a15e4633cbb"
   },
   {
    "code": "SPAN G280",
@@ -8029,9 +7804,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Comprehend spoken Spanish at the intermediate level.",
     "Communicate orally at the intermediate level.",
     "Interpret written material at the intermediate level.",
@@ -8039,7 +7813,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b7ea89289fef3bff4eaa4981ed29aafa"
+   "fingerprint": "b308137fdb47bf11b90922fb3c185c80"
   },
   {
    "code": "STAT C1000",
@@ -8101,16 +7875,15 @@
    "title_printed": "STAT G012N: Binomial and Normal Distributions < Coast Community College District",
    "chars": 3740,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Distinguish between discrete and continuous random variables, including the binomial and normal distributions."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ba3bacd83608b2cbda3eeb19fe683cd3"
+   "fingerprint": "7c8ca63dfc0744ea12a9cccfa7265e8f"
   },
   {
    "code": "SWHS G120",
@@ -8128,16 +7901,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Evaluate ethical standards to practical situations.",
     "Explain the importance of self-awareness, cultural sensitivity, and professional development within the helping profession framework.",
     "Identify the fundamental legal guidelines and privacy practices."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "3195d8f1c2f2bb1e12a95e2f60333423"
+   "fingerprint": "20cbf6bbf05224b5ca5bfa79536c91cd"
   },
   {
    "code": "THEA G100",
@@ -8155,9 +7927,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify the parts of the stage and theater terms.",
     "Explain the complexity of theatrical presentation, including the historical, collaborative, and technical elements.",
     "Compose literary and theatrical criticism.",
@@ -8165,7 +7936,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "1446ea501ecac357c017b15a9700d258"
+   "fingerprint": "c9088087764cc252257c9bbd02fceca8"
   },
   {
    "code": "THEA G106",
@@ -8183,16 +7954,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform the basic techniques of acting including exercises in speech, stage movement, diction, stage improvisation and techniques of memorization and rehearsal protocols to present a scene taken from published professional theatrical literature",
     "Compose a written critique of a live theatrical production.",
     "Explain the general history of the acting profession and its current trends and requirements"
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7b74956ae36a89f69f81adc44d0125a8"
+   "fingerprint": "387e3dc203fa1f7b3332b8243920e705"
   },
   {
    "code": "THEA G108",
@@ -8210,16 +7980,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Define the categories of musical theater including opera, operetta, vaudeville, minstrel shows, burlesque, musical comedy, revue, musical theater, book musicals, and concept musicals.",
     "Describe the historical, social, cultural, and aesthetic constructs that have led to the development of musical theater as a significant art form.",
     "Identify the major writers, composers, choreographers, performers, producers and designers who have contributed to the development of musical theater"
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "43685ef672a730490b8b9a182de0d733"
+   "fingerprint": "951d3ca322f5d466a126cc931e35e7e8"
   },
   {
    "code": "THEA G111",
@@ -8237,9 +8006,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Identify the historical, societal, and cultural elements of theater including dramatic structure, theater history, and the contributions of the playwright, actor, director, designer, and technician.",
     "Contrast different genres of drama and their contributions to the development of theater in general.",
     "Evaluate individual creative elements that contribute to theatrical presentations.",
@@ -8248,7 +8016,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "40c729b67d288355bc9c758b3180c9ac"
+   "fingerprint": "5802ceacc6748465b2e705f158f9cacb"
   },
   {
    "code": "THEA G115",
@@ -8264,16 +8032,15 @@
    "title_printed": "THEA G115: Theater Practicum 1 - Performance < Coast Community College District",
    "chars": 4605,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Complete an acting assignment in a live theatrical production at Golden West College at an introductory level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "8315635cc7aa38964cb8f34b618e5906"
+   "fingerprint": "d83103f44a1ac165c51321a89e8a7cad"
   },
   {
    "code": "THEA G120",
@@ -8291,16 +8058,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Define basic stagecraft terms and techniques.",
     "Explain the historical period and perspective of theater, playwrights and their plays.",
     "Analyze the artistic merits of live theatrical plays in performance."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "595bc9819934ac5ce36d3aab549038f6"
+   "fingerprint": "ab7e42bfe6f8f8811404e930f421b8f2"
   },
   {
    "code": "THEA G126",
@@ -8318,16 +8084,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Complete an acting assignment in a live theatrical production at Golden West College at a beginning level.",
     "Complete a technical theater assignment in a live theatrical production at Golden West College at a beginning level.",
     "Complete a stage management or house management assignment for a live theatrical production at Golden West College at a beginning level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "a4393720e02656fe34aaa33e5d13f1b7"
+   "fingerprint": "78bbde2fd2de2107f40ed49155b12169"
   },
   {
    "code": "THEA G146",
@@ -8345,9 +8110,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Perform three songs in varied tempi and styles using appropriate technique at an introductory level.",
     "Improve vocal limits and potential while identifying signs of performance anxiety at an introductory level.",
     "Evaluate the performances of other singers at an introductory level.",
@@ -8356,7 +8120,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "dd7eb4f98578332e4b061ab3ad8c0767"
+   "fingerprint": "f18993c6f914fbbe9bfbfdf7f8b7a0d7"
   },
   {
    "code": "THEA G161",
@@ -8374,16 +8138,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Employ basic safety and emergency procedures for rehearsals and performances.",
     "Analyze a play or musical then prepare and organize a production book for performance, including rehearsal schedules, blocking notations, scene shift organization and technical cues from audition to production.",
     "Evaluate the role of a Stage Manager in the collaborative relationship with the director, designers, actors, and crew applying management, communication and conflict resolution skills."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "27221e356f1f2af13d3e4465a54eb2b4"
+   "fingerprint": "7000f340682c2f72757af0fae9f9ac68"
   },
   {
    "code": "THEA G170",
@@ -8401,16 +8164,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Demonstrate proficiency in the skills required for a technical theater crew member",
     "Employ basic skills to address the technical demands of a theatrical production.",
     "Execute assigned responsibilities in technical rehearsals, during production run, and strike."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "2e6eea3a200869ac8ae803857c1b812a"
+   "fingerprint": "82bee721bca7db8bff9cfc5f0827f228"
   },
   {
    "code": "THEA G175",
@@ -8428,9 +8190,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the process to design, construct and/or paint scenery for a theatrical production.",
     "Construct scenery and stage props for a theatrical production.",
     "Hang/rig and operate scenery during a theatrical production.",
@@ -8438,7 +8199,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "f34b95f85ccea7fe795e3c74b4dcbf1f"
+   "fingerprint": "c5f34a34b8ace918646c0451c6d04f43"
   },
   {
    "code": "THEA G177",
@@ -8456,9 +8217,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Explain the interaction of heredity, environment, temperament, health, and age as it is manifested in facial characteristics and displayed in theaterical makeup.",
     "Analyze a play script or libretto to define and create a theatrical character through makeup.",
     "Use all theatrical makeup materials properly and safely.",
@@ -8466,7 +8226,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "b111f61fad095f34257c272f8a11acc5"
+   "fingerprint": "fb78f4a3fa64514c17c33e00eaa76511"
   },
   {
    "code": "THEA G180",
@@ -8484,16 +8244,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Employ skills required to work backstage preparing, changing, and maintaining theatrical wardrobe before, during, and after a live theatrical performance.",
     "Use appropriate fabrics (considering factors such as durability, stretch, texture, and historical accuracy), simple patterns, and basic costume hand and machine sewing techniques to complete a costume for a live theatrical production.",
     "Operate all tools and equipment employing industry standard guidelines of use and care."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ac47f1a9a39ada717a89f08b85816d9f"
+   "fingerprint": "d2409a76750d6b433b3872150e8586c7"
   },
   {
    "code": "THEA G185",
@@ -8511,16 +8270,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Examine the role of projection design as a cinematic device for theatrical storytelling and character development.",
     "Design scenery and projections for a live theatrical production",
     "Generate still and moving-image content, perform fundamental image and video editing and prepare media for projection."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "5f2721d3999925b8f72d80a50e7cbce0"
+   "fingerprint": "26e681aaf8b070f09dfd5474b5507c30"
   },
   {
    "code": "THEA G206",
@@ -8538,15 +8296,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Analyze, memorize, rehearse and present a scene taken from historic classical theatrical literature at an advanced level.",
     "Complete a written character analysis from the historical period studied emphasizing at least five specific performance techniques."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "21509edd9e81f9814ea1bc89c255e3ef"
+   "fingerprint": "8a694509e2c6cd5418344d6bd9539555"
   },
   {
    "code": "THEA G210",
@@ -8562,16 +8319,15 @@
    "title_printed": "THEA G210: Musical Theater Performance 1 < Coast Community College District",
    "chars": 5760,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcome",
    "outcomes": [
-    "Course Outcome",
     "Complete an acting assignment in a live musical theater performance at Golden West College at an introductory level."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "7859a47e62a4cfb75ac12ce9c203f2de"
+   "fingerprint": "ff52f199254e85297ebb2b1e2f70644a"
   },
   {
    "code": "VIET G180",
@@ -8589,9 +8345,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply vocabulary and grammar to interpret spoken messages in Vietnamese at the beginning level. (Listening SLO)",
     "Practice vocabulary and grammar to communicate in Vietnamese using appropriate pronunciation at the beginning level. (Speaking SLO)",
     "Intepret vocabulary and grammar to derive meaning of written material at the beginning level. (Reading SLO)",
@@ -8599,7 +8354,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "d8a3c4675344ce119058260c9e621ab3"
+   "fingerprint": "85d4068fb5d2c543e06d9bacdce51608"
   },
   {
    "code": "VIET G280",
@@ -8617,9 +8372,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Apply vocabulary and grammar to accurately recognize and comprehend spoken messages in Vietnamese at the intermediate level.",
     "Demonstrate vocabulary and grammar through writing at the intermediate level.",
     "Interpret Vietnamese language grammar and vocabulary and apply it to communicate orally at the intermediate level.",
@@ -8627,7 +8381,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ba8d949758c95b67c5675e52688e573b"
+   "fingerprint": "1b2ed7675e1e9525775bba645235e382"
   },
   {
    "code": "WORK G100",
@@ -8645,16 +8399,20 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes",
    "outcomes": [
-    "Course Outcomes",
     "Formulate learning objectives and work goals by communicating and collaborating with instructors, co-workers, and job site supervisors.",
     "Apply knowledge, attitudes, and skills needed to achieve learning objectives and work goals.",
     "Evaluate progress by a process of self-examination by making use of supervision and feedback."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "97e1bf704591a3db5b764788d35c8848"
+   "fingerprint": "345f55fe5cb0e037cd77265bc779e00f"
   }
- ]
+ ],
+ "corrected": {
+  "at": "2026-11-20T13:31:26Z",
+  "rows": 241,
+  "note": "The CourseLeaf sub-heading (\"Course Outcomes\", with or without a colon) moved from the outcomes to lead, the outcomes kept after its last copy, shape and fingerprint recomputed: the parse of CCCD_SUBHEAD as fixed in S690, so no load posts the old parse (f-golden-west-474-header-rows-s689)."
+ }
 }
