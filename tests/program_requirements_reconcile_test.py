@@ -1898,6 +1898,8 @@ check("the combined reading is quoted at Berkeley City alone",
 # 02547 (Architectural Drafting & Design A.S., major 33 of a 60) as main files it, with the page's own two lines.
 _gl = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "glendale_community", "records",
                                   "02547.json")))["record"]
+# The filed record carries the floor since reread 44783518135 posted it; the step reads the record as it stood before.
+_gl["program"].pop("degree_total_minimum", None)
 _gl_page = ("AD&D-AS - Architectural Drafting & Design - Associate of Science\nMinimum/Maximum Required Units/Hours for "
             "Major 33\nMinimum Required Units for Degree (with GE) 60\nRequired Courses\nARCH 101 3\n")
 _gl_new, _gl_notes = R.reconcile(copy.deepcopy(_gl), _gl_page, "Glendale Community College", "A.S. Degree")

@@ -46,55 +46,62 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 8,
-   "share": 0.875,
-   "missing": [
-    "ENGL1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGLC1002"
-   ],
-   "flagged": [
-    "ENGLC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     22.0,
     22.0
    ],
    "stated": [
-    60.0,
-    60.0
+    22.0,
+    22.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     22.0,
-     22.0
+     56.0,
+     56.0
     ],
     "stated": [
-     22.0,
-     22.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     4.0,
+     4.0
+    ]
    }
   },
   "repeated": {
@@ -119,7 +126,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -140,8 +147,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [],
@@ -246,5 +253,24 @@
    "ENGL 017A is marked Historical in the catalog listing."
   ]
  },
- "extracted_run": "39891604919"
+ "extracted_run": 44751547030,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "General Education (Cal-GETC) and Elective Courses (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)",
+   "statewide": "cal_getc_34",
+   "standing": "under",
+   "basis": "sheet-81",
+   "combined": "General Education (Cal-GETC) and Elective Courses / 38"
+  }
+ ],
+ "read_run": "39891604919"
 }

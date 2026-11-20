@@ -46,25 +46,26 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "CS/IS270"
-   ],
-   "unexplained": [
-    "CS/IS270"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "course_id": [
+    {
+     "printed": "CSIS270",
+     "listed": "CS/IS270",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CSIS270"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +103,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -228,5 +229,6 @@
    "No careers are named in the provided text."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "read_run": "43415972509"
 }
