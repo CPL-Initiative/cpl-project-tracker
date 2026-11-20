@@ -36,3 +36,16 @@ joins on `code`. The plain session and COBIx wire them in.
 - `north_orange_continuing_education.json`: NOCE 2026-2027, 48 subject pages, 1,089 courses (runs 44756513382 and
   44757980757; Sky, S690).
 - `southwestern.json`: Southwestern 2026-2027, 86 of 89 subject pages, 1,692 courses (run 44759854547; Sky, S690).
+- `clovis_community.json`: Clovis 2026-2027, 473 courses from the college's catalog PDF (run 44759950664).
+- `los_angeles_city.json`: Los Angeles City 2026-2027, 1,123 courses from the college's catalog PDF (run 44759950664).
+- `los_angeles_valley.json`: Los Angeles Valley 2026-2027, 939 courses from the college's catalog PDF (run 44759950664).
+- `east_los_angeles.json`: East Los Angeles 2026-2027, 1,676 courses from the college's catalog PDF (run 44762233563).
+- `los_angeles_harbor.json`: Los Angeles Harbor 2026-2027, 765 courses from the college's catalog PDF (run 44762233563; its
+  Sept 10 addendum is not in the file).
+- `los_angeles_southwest.json`: Los Angeles Southwest 2026-2027, 724 courses from the college's catalog PDF (run
+  44762233563).
+
+A PDF college's rows come from the page read's pypdf text (plan keys `pdf_unfolded`, `pdf_page_cap`). Each file names
+its heading and units patterns (`parse`) and how many units lines no heading claimed (`units_lines_unclaimed`, an upper
+bound on the courses the parse missed, since front matter prints a few such lines too). `entry_printed` keeps each entry
+as printed; `requisites` and `description` are split from it on a best-effort reading.
