@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7213,
-    "output_tokens": 2115,
+    "output_tokens": 2257,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 2115,
+  "output_tokens": 2257,
   "output_tokens_details": {
-   "thinking_tokens": 817
+   "thinking_tokens": 941
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07115,
- "ms": 24749,
- "seconds": 25.3,
+ "cost_usd": 0.07399,
+ "ms": 19110,
+ "seconds": 19.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 9,
    "listed": 9,
-   "share": 0.778,
-   "missing": [
-    "ECON220",
-    "ECON221"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON221",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON220",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -128,7 +131,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Business Administration 2.0",
+   "section_heading": "Business Administration 2.0 Associate in Science Degree for Transfer (Credit)",
    "measure": "units",
    "total_units": {
     "min": 27,
@@ -181,54 +184,54 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 27,
-     "max": 28
+     "min": null,
+     "max": null
     },
     "courses": [
      {
-      "code": "BUS109",
+      "code": "BUS 109",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS186",
+      "code": "BUS 186",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS187",
+      "code": "BUS 187",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS294",
+      "code": "BUS 294",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ECONC2002",
+      "code": "ECON C2002",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ECONC2001",
+      "code": "ECON C2001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "MATH180",
+      "code": "MATH 180",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -247,14 +250,14 @@
     },
     "courses": [
      {
-      "code": "STATC1000",
+      "code": "STAT C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "BUS240",
+      "code": "BUS 240",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -267,21 +270,22 @@
   "missing_explained": [
    {
     "code": "ECON 220",
-    "why": "not in the text; catalog prints ECONC2002 Principles of Macroeconomics instead"
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
    },
    {
     "code": "ECON 221",
-    "why": "not in the text; catalog prints ECONC2001 Principles of Microeconomics instead"
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
    }
   ],
   "notes": [
-   "The 27-28 units printed in the 'Required Courses (27-28 units)' heading covers the whole major including the nested 'one of the following (3-4 units)' choice; the seven listed required courses alone sum to 24 units. Recorded 27-28 as that block's stated total as printed.",
-   "ECONC2002 and ECONC2001 appear to be common-course-numbered replacements for closed-list ECON 220 and ECON 221; flagged as catalog additions.",
-   "Codes are recorded as printed without spaces (e.g., BUS109 = closed-list BUS 109, STATC1000 = STAT C1000).",
-   "Unit Summary also prints Double Count Units 9; Elective Units to reach 60: 7-8 recorded as degree_elective_units.",
-   "The fourth program outcome is cut off in the text ('Determine, based on the context of business situations, the gen'); it was not recorded. More outcomes may follow.",
-   "Careers list: 'underwriter' and 'under-writer' are both printed and recorded separately as printed."
+   "Catalog prints codes without spaces (e.g. BUS109, ECONC2002, STATC1000); spaces added between subject and number to match closed-list format.",
+   "The heading 'Required Courses (27-28 units)' appears to cover the whole major including the 'one of the following' choice, so it was recorded as total_units rather than as the stated total of the required block (which sums to 24).",
+   "ECON C2002 and ECON C2001 appear to be common-course-numbered replacements for closed-list ECON 220 and ECON 221; recorded as catalog additions.",
+   "Unit summary: Total Major 27-28, CalGETC 34, Double Count 9, Elective Units to reach 60: 7-8, Total Overall 60-60. Elective units recorded in degree_elective_units.",
+   "Program Outcomes list is cut off: a fourth outcome begins 'Determine, based on the context of business situations, the gen' and is truncated; it was not recorded.",
+   "Careers list includes both 'underwriter' and 'under-writer' as printed."
   ]
  },
- "extracted_run": "38979730323"
+ "extracted_run": "44687786167",
+ "catalog_year": "2026-2027"
 }
