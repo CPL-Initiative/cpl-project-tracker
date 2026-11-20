@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 251,
  "with_closed_list": 233,
- "started": "2026-11-20T06:27:13Z",
+ "started": "2026-11-20T15:18:30Z",
  "acalog": {
   "base": "https://catalog.deltacollege.edu",
   "start_status": 200,
@@ -700,7 +700,7 @@
   "yield_refused_passing": 0
  },
  "loads": 252,
- "seconds": 1523.6,
+ "seconds": 1428.0,
  "found": 203,
  "by_method": {
   "no_closed_list": 18,
@@ -1089,7 +1089,8 @@
      "content": 36690,
      "tabs": 0
     },
-    "tab_panels": []
+    "tab_panels": [],
+    "page_checks": true
    },
    "status": "Active"
   },
@@ -2463,5 +2464,5 @@
    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3427&print"
   }
  },
- "run": "44687789699"
+ "run": "44761789959"
 }
