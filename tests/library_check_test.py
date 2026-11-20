@@ -118,7 +118,7 @@ def with_proof(root, r, result, at, page_text):
 # ── E. the plan ──────────────────────────────────────────────────────────────────────────────────────────────────
 tmp = Path(tempfile.mkdtemp(prefix="libcheck-"))
 try:
-    for slug in ("flyer", "poster", "guide", "waiting-checked", "relabeled", "elsewhere", "changed", "failed-changed", "steady", "legacy"):
+    for slug in ("flyer", "poster", "guide", "waiting-checked", "relabeled", "elsewhere", "changed", "failed-changed", "steady", "legacy", "legacy-pass"):
         (tmp / "library" / slug).mkdir(parents=True)
         (tmp / "library" / slug / "index.html").write_text(PAGE, encoding="utf-8")
     recs = [rec("flyer"), rec("poster", publish_target="public", public_summary="For the public."), rec("guide", publish_target="public"),
@@ -127,8 +127,10 @@ try:
             rec("not-here", publish_target="public"),
             rec("changed", publish_target="public", public_listed=True, seen_by="public", public_summary="For the public."),
             rec("failed-changed", publish_target="public"), rec("steady"),
-            # A legacy listing: listed before the check run, with no check row at all (d-library-legacy-listings-stay-s688).
-            rec("legacy", publish_target="public", public_listed=True, seen_by="public", public_summary="For the public.")]
+            # Legacy listings: listed before the check run, with no check row at all
+            # (d-library-legacy-unlists-on-failed-first-check-s688). One fails its first check, one passes.
+            rec("legacy", publish_target="public", public_listed=True, seen_by="public", public_summary="For the public."),
+            rec("legacy-pass", publish_target="public", public_listed=True, seen_by="public", public_summary="For the public.")]
     OTHER = PAGE.replace("<h1>T</h1>", "<h1>An earlier page</h1>")
     old = [with_proof(tmp, recs[3], "fail", "2026-11-20T17:00:00+00:00", PAGE),
            with_proof(tmp, recs[4], "pass", "2026-11-20T18:00:00+00:00", PAGE),
@@ -136,7 +138,7 @@ try:
            with_proof(tmp, recs[8], "fail", "2026-11-20T17:20:00+00:00", OTHER),
            with_proof(tmp, recs[9], "pass", "2026-11-20T17:30:00+00:00", PAGE)]
     plan = lc.plan(recs, old, ["flyer"], tmp)
-    check(plan == ["changed", "failed-changed", "flyer", "guide", "legacy", "poster", "relabeled"],
+    check(plan == ["changed", "failed-changed", "flyer", "guide", "legacy", "legacy-pass", "poster", "relabeled"],
           "E ⭐ the plan: a page moved this run, a page with no check proof, a page whose content differs from its latest check's "
           "proof (listed or failed), and a relabel; never a page the checkout lacks, one at another address, a failed page whose "
           "content has not changed, or a steady page: %s" % plan)
@@ -184,7 +186,8 @@ try:
                               "relabeled": {"pass": True, "findings": 0, "lines": []}, "relabeled-dark": {"pass": True, "findings": 0, "lines": []},
                               "changed": {"pass": True, "findings": 0, "lines": []}, "changed-dark": {"pass": True, "findings": 0, "lines": []},
                               "failed-changed": {"pass": True, "findings": 0, "lines": []}, "failed-changed-dark": {"pass": True, "findings": 0, "lines": []},
-                              "legacy": {"pass": False, "findings": 4, "lines": ["contrast  2.9:1"]}, "legacy-dark": {"pass": True, "findings": 0, "lines": []}},
+                              "legacy": {"pass": False, "findings": 4, "lines": ["contrast  2.9:1"]}, "legacy-dark": {"pass": True, "findings": 0, "lines": []},
+                              "legacy-pass": {"pass": True, "findings": 0, "lines": []}, "legacy-pass-dark": {"pass": True, "findings": 0, "lines": []}},
                   "axe": {"version": "4.10.2", "tags": ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]}, "widths": [320, 1440]}
     seen = {}
 
@@ -210,7 +213,8 @@ try:
         posts = [c for c in calls if c[0] == "POST"]
         rows = posts[0][2] if posts else []
         by = {r["library_id"]: r for r in rows}
-        check(len(posts) == 1 and len(rows) == 7 and set(by) == {"id-flyer", "id-guide", "id-poster", "id-relabeled", "id-changed", "id-failed-changed", "id-legacy"},
+        check(len(posts) == 1 and len(rows) == 8 and set(by) == {"id-flyer", "id-guide", "id-poster", "id-relabeled", "id-changed", "id-failed-changed",
+                                                                 "id-legacy", "id-legacy-pass"},
               "A ⭐ one row per checked page, in one insert")
         check(not any(c[0] == "PATCH" and "public_listed" in (c[2] or {}) and c[2]["public_listed"] is True for c in calls),
               "B ⭐ --check lists nothing: the listing waits for the push of its report")
@@ -219,15 +223,20 @@ try:
               and "updated_at=eq." in unl[0][1] and unl[1][2].get("publish_target") == "public",
               "E ⭐ a listed piece whose content its latest pass never saw comes off before its new check runs, guarded, with "
               "publish_target put back to public so it relists on a pass")
-        check(by.get("id-legacy", {}).get("result") == "fail" and not any(c[0] == "PATCH" and "id=eq.id-legacy" in c[1] for c in calls)
-              and state["legacy"]["public_listed"] is True,
-              "E ⭐ a legacy listing (listed, no check row) is checked once and stays listed whatever its first check finds: no PATCH fires for it")
+        pre = [c for c in seen.get("calls_before_engine", []) if c[0] == "PATCH" and "id=eq.id-legacy" in c[1]]
+        leg = [c for c in calls if c[0] == "PATCH" and "id=eq.id-legacy&" in c[1]]
+        check(not pre and by.get("id-legacy", {}).get("result") == "fail" and len(leg) == 2
+              and state["legacy"]["public_listed"] is False and state["legacy"]["publish_target"] == "public",
+              "E ⭐ a legacy listing stays listed through the pre-check, and comes off when its first check fails, publish_target kept public")
+        check(by.get("id-legacy-pass", {}).get("result") == "pass" and not any(c[0] == "PATCH" and "id=eq.id-legacy-pass" in c[1] for c in calls)
+              and state["legacy-pass"]["public_listed"] is True,
+              "E ⭐ a legacy listing whose first check passes stays listed: no PATCH fires for it")
         rc0 = list((tmp / "kb" / "receipts" / "library_checks").glob("*.json"))
         un = json.loads(rc0[0].read_text(encoding="utf-8")).get("unlisted", []) if rc0 else []
-        check(len(un) == 1 and un[0]["slug"] == "changed" and un[0]["unlisted"] is True and un[0]["before"]["public_listed"] is True
-              and un[0].get("publish_target_restored") is True,
+        check(len(un) == 2 and [u["slug"] for u in un] == ["changed", "legacy"] and all(u["unlisted"] is True and u["before"]["public_listed"] is True
+              and u.get("publish_target_restored") is True for u in un) and "did not pass" in un[1]["why"],
               "E the unlisting's before-values, and the restore of publish_target, are in the receipt")
-        check(sorted(x["slug"] for x in cj.get("to_list", [])) == ["changed", "failed-changed", "poster", "relabeled"],
+        check(sorted(x["slug"] for x in cj.get("to_list", [])) == ["changed", "failed-changed", "legacy-pass", "poster", "relabeled"],
               "B check.json names the passing pieces waiting to be listed: %s" % cj.get("to_list"))
         f = by.get("id-flyer", {})
         check(f.get("url") == P + "flyer/" and f.get("version_key") == "version:2",
@@ -266,15 +275,16 @@ try:
         check("checked Nov 20, 2026" in page("flyer") and "report linked</a>" in page("flyer"), "C ⭐ a passing page's line is its check's")
         check("Not yet certified" in page("guide") and "report linked" not in page("guide"), "C ⭐ a failing page reads Not yet certified")
         check("Not yet certified" in page("waiting-checked"), "C ⭐ an unchecked page (its only check failed) reads Not yet certified")
-        check("Not yet certified" in page("legacy") and state["legacy"]["public_listed"] is True,
-              "C a legacy listing whose first check failed keeps its listing and reads Not yet certified")
-        check(lc.drift_unlists(dict(state["changed"], public_listed=True), old, "x") and not lc.drift_unlists(state["legacy"], old, page("legacy")),
-              "E drift_unlists: a listed piece with a pass its page no longer matches comes off; a legacy listing does not")
+        check("Not yet certified" in page("legacy") and "report linked" in page("legacy-pass"),
+              "C a legacy listing whose first check failed reads Not yet certified; one that passed carries its pass line")
+        check(lc.drift_unlists(dict(state["changed"], public_listed=True), old, "x")
+              and not lc.drift_unlists(dict(state["legacy"], public_listed=True), old, page("legacy")),
+              "E drift_unlists: a listed piece with a pass its page no longer matches comes off before its check; a legacy listing waits for its first check")
         check(all(page(s).count("cpl-library-check:") == 1 for s in ("flyer", "guide", "poster", "waiting-checked")), "C one line per page")
         rcs = sorted((tmp / "kb" / "receipts" / "library_checks").glob("*.json"))
         rc_check = [json.loads(x.read_text(encoding="utf-8")) for x in rcs if not x.name.endswith("-list.json")]
         rc_list = [json.loads(x.read_text(encoding="utf-8")) for x in rcs if x.name.endswith("-list.json")]
-        check(len(rc_check) == 1 and len(rc_check[0].get("checks", [])) == 7 and len(rc_list) == 1 and len(rc_list[0].get("listed", [])) == 3
+        check(len(rc_check) == 1 and len(rc_check[0].get("checks", [])) == 8 and len(rc_list) == 1 and len(rc_list[0].get("listed", [])) == 3
               and all(e["before"].get("public_listed") is False for e in rc_list[0]["listed"]),
               "A B a check receipt with the rows, and a listing receipt with each listing's before-values")
 

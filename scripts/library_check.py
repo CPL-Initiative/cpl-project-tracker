@@ -130,8 +130,9 @@ def latest_pass(checks, record):
 def drift_unlists(record, checks, page):
     """True when a listed piece comes off the Public Library before its new check: it has a passing check of its page
     and that pass no longer speaks for the page on disk (certified_check). A legacy listing, one with no passing check
-    at its current key and url (every listing before the check run, d-library-legacy-listings-stay-s688), stays listed
-    with its Not yet certified line whatever its first check finds; from its first pass on, this rule applies."""
+    at its current key and url (every listing before the check run), stays listed
+    until its first check: check_phase unlists it if that check fails (d-library-legacy-unlists-on-failed-first-check-s688)
+    and leaves it listed with its pass line if it passes; from its first pass on, this rule applies."""
     return bool(record and record.get("public_listed") and latest_pass(checks, record)
                 and not certified_check(record, checks, page))
 
@@ -446,6 +447,41 @@ def restore_guard(record, unlisted_row):
         "updated_by=eq." + urllib.parse.quote(BOT), "public_listed=is.false", "publish_target=eq.internal"])
 
 
+def unlist_pair(r, why, receipt, rpath, errors):
+    """Take a listed piece off the Public Library, the safe direction: the unlisting PATCH guarded on the record as read
+    (its before-values in the receipt first), then the restore of publish_target='public' guarded on the row the
+    unlisting returned and the bot as its writer, so the piece relists once a later check passes and a person's change
+    in between stands (COBIx on #3581, 7029334238 and 7029335845). Errors go to errors; the step goes red at the end."""
+    entry = {"record_id": r["id"], "slug": r["slug"], "why": why, "unlisted": "pending",
+             "before": {k: r.get(k) for k in ("public_listed", "publish_target", "updated_by", "updated_at")},
+             "update": unlist_update()}
+    receipt["unlisted"].append(entry)
+    write_receipt(rpath, receipt)
+    try:
+        ok = lp.api("cpl_library?" + unlist_guard(r), "PATCH", unlist_update())
+        entry["unlisted"] = bool(ok)
+        if ok:
+            entry["publish_target_restored"] = "pending"
+            write_receipt(rpath, receipt)
+            row0 = ok[0] if isinstance(ok, list) and ok and isinstance(ok[0], dict) else {}
+            back = lp.api(restore_guard(r, row0), "PATCH", {"publish_target": "public", "updated_by": BOT}) \
+                if row0.get("updated_at") else []
+            entry["publish_target_restored"] = bool(back)
+            if not back:
+                errors.append("%s: it came off the Public Library, but putting publish_target back to public matched no "
+                              "row (a person may have changed it in between, and their change stands), so it will not "
+                              "relist on a pass until a person presses Publish to Public Library" % r["slug"])
+    except Exception as e:  # noqa: BLE001 — the run goes on; the step goes red at the end
+        if entry.get("publish_target_restored") == "pending":
+            entry["publish_target_restored"] = "unknown: %s" % str(e)[:200]
+        else:
+            entry["unlisted"] = "unknown: %s" % str(e)[:200]
+        errors.append("%s: unlisting answered %s" % (r["slug"], str(e)[:200]))
+    finally:
+        write_receipt(rpath, receipt)
+    return entry
+
+
 def write_receipt(path, receipt):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -494,46 +530,15 @@ def check_phase(plan_path, engine=run_engine, now=None):
     receipt["unlisted"] = []
     rows, report_of, before, got, sha_of, insert_error, errors = [], {}, {}, [], {}, None, []
     # A listed piece whose page is not the page its latest passing check saw comes off the Public Library before its
-    # new check runs. The trigger on unlisting resets publish_target to internal, so a second guarded update puts
-    # 'public' back and the piece relists once its new page passes. Before-values go into the receipt first.
+    # new check runs (drift_unlists). A legacy listing, with no passing check yet, stays listed through this loop and is
+    # judged by its first check below (d-library-legacy-unlists-on-failed-first-check-s688).
+    legacy = {r["id"] for r in todo if r.get("public_listed") and not latest_pass(checks, r)}
     for r in list(todo):
         if not r.get("public_listed"):
             continue
         page = (ROOT / "library" / r["slug"] / "index.html").read_text(encoding="utf-8")
-        if not drift_unlists(r, checks, page):
-            continue
-        entry = {"record_id": r["id"], "slug": r["slug"], "unlisted": "pending",
-                 "before": {k: r.get(k) for k in ("public_listed", "publish_target", "updated_by", "updated_at")},
-                 "update": unlist_update()}
-        receipt["unlisted"].append(entry)
-        write_receipt(rpath, receipt)
-        try:
-            ok = lp.api("cpl_library?" + unlist_guard(r), "PATCH", unlist_update())
-            entry["unlisted"] = bool(ok)
-            if ok:
-                # The trigger on unlisting set publish_target to internal; put back the wish to list, and say so when
-                # it does not land, or the piece would never relist (COBIx on #3581, 7029334238).
-                entry["publish_target_restored"] = "pending"
-                write_receipt(rpath, receipt)
-                # Guarded on the row the unlisting returned (lp.api asks for return=representation): its updated_at and
-                # the bot as its writer, so a person's Remove from the Public Library in between is never overridden
-                # (COBIx on #3581, 7029335845).
-                row0 = ok[0] if isinstance(ok, list) and ok and isinstance(ok[0], dict) else {}
-                back = lp.api(restore_guard(r, row0), "PATCH", {"publish_target": "public", "updated_by": BOT}) \
-                    if row0.get("updated_at") else []
-                entry["publish_target_restored"] = bool(back)
-                if not back:
-                    errors.append("%s: it came off the Public Library, but putting publish_target back to public matched no "
-                                  "row (a person may have changed it in between, and their change stands), so it will not "
-                                  "relist on a pass until a person presses Publish to Public Library" % r["slug"])
-        except Exception as e:  # noqa: BLE001 — its check still runs; the step goes red at the end
-            if entry.get("publish_target_restored") == "pending":
-                entry["publish_target_restored"] = "unknown: %s" % str(e)[:200]
-            else:
-                entry["unlisted"] = "unknown: %s" % str(e)[:200]
-            errors.append("%s: unlisting answered %s" % (r["slug"], str(e)[:200]))
-        finally:
-            write_receipt(rpath, receipt)
+        if drift_unlists(r, checks, page):
+            unlist_pair(r, "its page changed since its last passing check", receipt, rpath, errors)
     if todo:
         try:
             # The page carries the line it will show if it passes, so the page checked is the page served.
@@ -595,6 +600,12 @@ def check_phase(plan_path, engine=run_engine, now=None):
                                "out (scripts/library_check.py content_hash). The line prints this check's pass only while "
                                "the page still has this hash." % r["slug"]}
             (ROOT / report_of[r["slug"]][:-4]).with_suffix(".json").write_text(json.dumps(proof, indent=2) + "\n", encoding="utf-8")
+    # A legacy listing whose first check failed comes off the Public Library now: nothing stays public on a failed check
+    # (Sam: "nothing lists publicly until it passes"). One whose first check passed stays listed with its pass line.
+    for g in got:
+        r = next((x for x in todo if x["id"] == g.get("library_id")), None)
+        if r and r["id"] in legacy and g.get("result") == "fail":
+            unlist_pair(r, "its first accessibility check did not pass", receipt, rpath, errors)
     # Every line from the rows actually written: a failed page reads Not yet certified at once.
     stamped = restamp(records, checks, settings)
     passed = {g.get("library_id"): g for g in got if g.get("result") == "pass"}
