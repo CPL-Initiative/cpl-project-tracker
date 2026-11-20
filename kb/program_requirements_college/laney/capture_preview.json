@@ -1,0 +1,1258 @@
+{
+ "college": "Laney College",
+ "catalog_url": "https://lan.curriqunet.com/catalog/view/iq/44232",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 175,
+ "with_closed_list": 175,
+ "started": "2026-11-20T12:38:30Z",
+ "curriqunet": {
+  "catalog": 10434,
+  "view_prefix": "https://lan.curriqunet.com/catalog/view/iq/",
+  "errors": [],
+  "sections": [
+   "Courses & Programs"
+  ],
+  "nodes_read": 65,
+  "calls": 131,
+  "entries": 161,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 161,
+  "twin_ids": {},
+  "failed_calls": 0
+ },
+ "pages_read": 161,
+ "pages_listed": 161,
+ "pages_answered": 161,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 152,
+   "hits": 147,
+   "recall": 0.967,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 4,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 0,
+  "by_result": {},
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 293,
+ "seconds": 1475.1,
+ "found": 156,
+ "by_method": {
+  "not_found": 12,
+  "page_claimed": 7,
+  "sitemap_page": 156
+ },
+ "shared_pages": {
+  "https://lan.curriqunet.com/catalog/view/iq/44166/44177/44282": [
+   "21554",
+   "38774"
+  ],
+  "https://lan.curriqunet.com/catalog/view/iq/44166/44204/44522": [
+   "44127",
+   "44128"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "01151",
+   "title": "Performance and Production for Video, Broadcast and Digital Cinematography",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "09024",
+   "title": "Video Production for Video, Broadcast and Digital Cinematography",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21544",
+   "title": "Video Production for Video, Broadcast and Digital Cinematography",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21546",
+   "title": "Performance And Production For Video, Broadcast And Digital Cinematography",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36572",
+   "title": "Commercial Music",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44217/44293",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 5,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 5 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2792,
+     "content": 2792,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36935",
+   "title": "AudioVisual Technologist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36936",
+   "title": "AR/VR: Immersive Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37932",
+   "title": "Commercial Music",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44217/44294",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 6,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 6 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2710,
+     "content": 2710,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41602",
+   "title": "Offline and Online Editing with DaVinci Resolve",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42407",
+   "title": "Virtual Production",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44095",
+   "title": "Virtual Production Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45097",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "39777",
+   "title": "Digital Fabrication Technology - Machine Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44512",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44430"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "41262",
+   "title": "Program Readiness for Multilingual Students",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44353"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "41925",
+   "title": "Quality Control",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44426",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44230/44509",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44429",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44430",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44230/44508"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "43238",
+   "title": "ESOL/Culinary Arts Pathway",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44355"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "43239",
+   "title": "ESOL/Ethnic Studies Pathway",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44355"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "43244",
+   "title": "Music Appreciation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44460",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44203/44400",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44459"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "43675",
+   "title": "ESOL/Business Pathway",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44353",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44355"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 5,
+  "1.0": 151
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/laney",
+  "kept": 124,
+  "kept_moved": 0,
+  "programs": 32,
+  "list": [
+   {
+    "control_number": "01146",
+    "title": "Banking and Finance",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44175/44261",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44175/44261",
+    "was_coverage": 0.7,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "01147",
+    "title": "Management and Supervision",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44436",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01148",
+    "title": "Marketing And Sales",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44276",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44276",
+    "was_coverage": 0.875,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "01150",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44405",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44405",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "01156",
+    "title": "Residential and Light Commercial HVAC & R",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44374",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44374",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "01182",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44196/44378",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44196/44378",
+    "was_coverage": 0.732,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "09036",
+    "title": "African American Studies",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44167/44248",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44167/44248",
+    "was_coverage": 0.95,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "09037",
+    "title": "Chicanx and Latinx Studies",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44453",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "14774",
+    "title": "Asian and Asian American Studies",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44171/44609",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44171/44609",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18734",
+    "title": "Commercial HVAC Systems",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44372",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44372",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18735",
+    "title": "Commercial HVAC Systems",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44371",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44371",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19056",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44203/44400",
+    "coverage": 0.981,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44203/44400",
+    "was_coverage": 0.925,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19059",
+    "title": "Social Sciences",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44225/44489",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44225/44489",
+    "was_coverage": 0.908,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21538",
+    "title": "Banking and Finance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44175/44260",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44175/44260",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21540",
+    "title": "Management and Supervision",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44435",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44435",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21553",
+    "title": "Residential and Light Commercial HVAC & R",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44375",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44375",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30515",
+    "title": "Building Automation Systems",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44369",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44369",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30533",
+    "title": "Building Automation Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44370",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44370",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30964",
+    "title": "Electrical Technology",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44612",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31273",
+    "title": "Industrial Maintenance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44429",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44429",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31279",
+    "title": "Electrical Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44613",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35261",
+    "title": "Computer Systems Analysis",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44306",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44306",
+    "was_coverage": 0.926,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36030",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44194/44349",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44194/44349",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36792",
+    "title": "Social Justice: Ethnic Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44196/44379",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44196/44379",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37460",
+    "title": "Social Justice: African American Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44167/44249",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44167/44249",
+    "was_coverage": 0.952,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37473",
+    "title": "Solar Photovoltaic Professionals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44614",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37484",
+    "title": "Social Justice Studies: Chicanx and Latinx Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44454",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37541",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44496",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44496",
+    "was_coverage": 0.688,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38060",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44201/44397",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44201/44397",
+    "was_coverage": 0.913,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41267",
+    "title": "Indigenous Languages and Cultures-Mam",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44495",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44495",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43002",
+    "title": "Refrigeration Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44373",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44373",
+    "was_coverage": 0.875,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "43452",
+    "title": "Building Codes and Inspections",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44311",
+    "coverage": 1.0,
+    "was_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44311",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "01145": {
+   "sha256": "318ef0a174f081e0e628bd16391de20a48b12d0df0bf35b06aade477de45de71",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44267"
+  },
+  "01146": {
+   "sha256": "9d48bb333289f6fc959d9c12ba10ad30f53e6d209d353aee3abfbb3d12a48b44",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44175/44261"
+  },
+  "01147": {
+   "sha256": "b2bfecf1c4f0e8890cab9f3f8d85612f9910c916b593543c4c246ab68221ad7e",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44436"
+  },
+  "01148": {
+   "sha256": "9d8f5cc2475dfa77675222fee8199126a5b8fea62f5b44a2a24d8c62b5727d87",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44276"
+  },
+  "01149": {
+   "sha256": "77ac1435ef333d5bdd6ab476a456807313c62c3e4a0bcc99b5f0bf98fa07b0af",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44273"
+  },
+  "01150": {
+   "sha256": "d3e234bb313b221fa5e362d319317d03f4e830d82d27e43254e40f77263bb3a6",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44405"
+  },
+  "01156": {
+   "sha256": "9aabb1fad487f40fb42dd805d4f741061cf91a8930c214e78d29d5d3e4f2d35c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44374"
+  },
+  "01158": {
+   "sha256": "002e18b8dd7766b36519eff8331e27fea26a61b4017cea55bf5d0b7c5058114d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44515"
+  },
+  "01161": {
+   "sha256": "c5f26f98302f847e90a0fc8c57e6af383817bfded131a8cd7c03432c35a24d45",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44430"
+  },
+  "01162": {
+   "sha256": "1219de63cc4185ecaf89c7725f455abd167eb05797ccc31b22fc17eeba7765a3",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44230/44508"
+  },
+  "01163": {
+   "sha256": "1b5f76bab1f7b3ed6d72f1f1ccfaa30590bc033aa2539c9924cc4f3e471e67bc",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44313"
+  },
+  "01166": {
+   "sha256": "f1cc099a09e3e24047035859a69cbf96007bbdd1a188113ed5f4ee95b48c689b",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44461"
+  },
+  "01167": {
+   "sha256": "b305701b09d5c2da7df590c6c849910c95ecb6b53ff9c788fcea750995b9a52c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44228/44504"
+  },
+  "01182": {
+   "sha256": "a1395d08411a779283c324e42174acfc83d55f37862b5866b456618d56e414b8",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44196/44378"
+  },
+  "01188": {
+   "sha256": "4b22525668909c523357f1abc686e45c3eb22303ec8764a95a26c862d055778c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44184/44318"
+  },
+  "09022": {
+   "sha256": "bdf42197e0ad9f94d93968a2ff337d5ba4d2c4823cb192ced07eb1c255627b03",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44270"
+  },
+  "09028": {
+   "sha256": "dfee83bff127b41c613deac801132a403660123078998148f6929da80b319be5",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44200/44391"
+  },
+  "09031": {
+   "sha256": "cceb0e252c7fafdd4430299495a3532bef84492a8449253da93e44c800362b91",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44169/44593"
+  },
+  "09032": {
+   "sha256": "2087e391d66aedf33d9596b58de094d3bad47509b09c45a9f26e39452aeacf40",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44170/44597"
+  },
+  "09033": {
+   "sha256": "0daa48ad53465285f605ceb6eeb66a110242da03f9975f8c923dc483754dbb0f",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44187/44331"
+  },
+  "09034": {
+   "sha256": "588ab8501bb857d358474f5e3fe12a4f667a41ee14cefd785ba0d0dab1c0babd",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44324"
+  },
+  "09036": {
+   "sha256": "dd788118ec768ae34ddcc0227307a16956f718a346a2338bb69af04d6e77e64f",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44167/44248"
+  },
+  "09037": {
+   "sha256": "b0cd429cef2824251b980ad164f318bc801ed4fdaef08c135eac5c29a1d6d9f5",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44453"
+  },
+  "14774": {
+   "sha256": "a5f19a35c1eb088d3cc34eed2a1d052abb178eecead1596bdb21f0f614f1137f",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44171/44609"
+  },
+  "15308": {
+   "sha256": "75dab81bb31f4ce30fbd4aa8bd6fab2ae7541901a7214de9b485806c1826817c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44278"
+  },
+  "18734": {
+   "sha256": "8249b735622d2dd21fcba865026294d9ddd9e20f5ae6b60b699af20a07e38d0d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44372"
+  },
+  "18735": {
+   "sha256": "50d6702d57ad7dc1f265b03763f2ab2ff2e16bdc167b9efeb19ded99b88109ce",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44371"
+  },
+  "19056": {
+   "sha256": "35520fab998f1ba818cf481b8f66f1b335299688902c0360322ddbc25a2dc30d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44203/44400"
+  },
+  "19057": {
+   "sha256": "3ccf8a0fe04fc4b2f5fbab1f0c3a0284b405df3c17192f377d585d5be4d18a4d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44181/44300"
+  },
+  "19059": {
+   "sha256": "606a6d9f0c20deda9cbbe157ae017f1df6106cde0f25c34491bedd8391b36d34",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44225/44489"
+  },
+  "21535": {
+   "sha256": "7989b77976cdcc37e8e0a549271477c7dd5a28313ce7aa16f900f9f0653c2a24",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44169/44595"
+  },
+  "21536": {
+   "sha256": "cfad3e656c5630a9234ab257c3d590ce6b106715b1e3b4c04448e3b676d647ef",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44268"
+  },
+  "21538": {
+   "sha256": "d567c465195b7aa819c456af2ee971e5d74989927ed52e491152c02fdc1ce71a",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44175/44260"
+  },
+  "21539": {
+   "sha256": "9523f9d609095c3693b6738b0cb11e60633d09c51b18f06399b2ff6141586411",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44271"
+  },
+  "21540": {
+   "sha256": "d41b5527d4435413e368da12018f5e23c388e7320c1b331040e3104bad9616bd",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44435"
+  },
+  "21541": {
+   "sha256": "4f4070b9d2559944d43a62c8b1d276fc2550449f4a46b52308898e78e281a803",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44277"
+  },
+  "21542": {
+   "sha256": "d2e91670b78c94cd6ad0b521f5817756e49cdeaa72bd9119429b50b4cf824874",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44274"
+  },
+  "21553": {
+   "sha256": "fa5b9687e46d20dcc810451c996fe94b840dd3ed373fc7d20554073405ef59a3",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44375"
+  },
+  "21554": {
+   "sha256": "4b68d76aaee221657219710f162279c40e11018c6ebc0a5da87179cd83fdbce3",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44177/44282"
+  },
+  "21555": {
+   "sha256": "02d0477cf305577c8a67df91c995a785d4d7481f3aa7ca82b5822188455ed196",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44516"
+  },
+  "21559": {
+   "sha256": "e24eb474d9250d9f510e277e3fe6e3e0a82ae8b88de98a86ce11c8e3a15726fb",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44230/44509"
+  },
+  "21561": {
+   "sha256": "d7f90bf4c520f1210a9d943d609f81d5bcdeee83a561d47a3bc080ad648bc768",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44314"
+  },
+  "21563": {
+   "sha256": "c50b76595006ebe98ed0017fcc73718a9b3cb646b0d690726bca0f0db0f8740f",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44220/44475"
+  },
+  "21564": {
+   "sha256": "95159fbb0c2de58c988b2ca4c8b7644105442cab03e4ea2e111e8b57b52d3b61",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44200/44392"
+  },
+  "21565": {
+   "sha256": "95d0a1cd781328c28afdd722845c9e4dfe37bee36d095bbf3cbb327b651480b1",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44325"
+  },
+  "21567": {
+   "sha256": "79e1362e6c2d25ece82c449f6068174263ba01332b6ddd87a605824e96079235",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44184/44983"
+  },
+  "30515": {
+   "sha256": "f252a721543be718cc67075d81f1a6d6fbe1dac5647df6935fb42ef5fee885c9",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44369"
+  },
+  "30533": {
+   "sha256": "ea1e71f49e7f2ee76ffaf437a397a535ff7a46b100665b6e0c98c5bc240a3a90",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44370"
+  },
+  "30964": {
+   "sha256": "9f465e49ca0c176eba761bb5d5a334b35ec3e648da0ed78827246bdaf07fecce",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44612"
+  },
+  "31234": {
+   "sha256": "689ed3dbcfae0a569f69742aef69b0f8fc70d8c4c9ff9f9803f1ccbeb2c965e5",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44214/44440"
+  },
+  "31273": {
+   "sha256": "e2e2c151829548fae524c66906993702caa2c44568d756c13ae5fdb7f5022d02",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44429"
+  },
+  "31279": {
+   "sha256": "31379cbb30dd78141e62ca87c4f7fa9b06e170024a1be9f372b69faa286974aa",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44613"
+  },
+  "32799": {
+   "sha256": "5428ec4e9b263cfd096069d901d75702ed99aa3cb773d4dcefad18642f42b7d4",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44222/44482"
+  },
+  "32880": {
+   "sha256": "189ffb3827901a129ace5b9b5e2877159b9de2402e3a41bd5c248071d9f1f7db",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44208/44419"
+  },
+  "32884": {
+   "sha256": "c65fa5a847dcd2972bfbda412f66c361e594744945aabb32e44f9e83ea6c2019",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44224/44492"
+  },
+  "32885": {
+   "sha256": "2004a3174581110c645a6944287733e3c26db654abb26bfaced9405587bf6c88",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44223/44485"
+  },
+  "32973": {
+   "sha256": "6064843b7152df2c30141ab4af96bfc21968909da33e74ec96cf9438da8d3a75",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44168/44252"
+  },
+  "32984": {
+   "sha256": "2f837a01499b64690a62fc60978ac1abe0ff52e16c7964fe768a950e4cabfaf0",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44170/44600"
+  },
+  "32991": {
+   "sha256": "7af86639c8d7beb960c512b5eee9f4716f4e67c976b19ea659b1ca574b87b61f",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44206/44411"
+  },
+  "33030": {
+   "sha256": "149d2638d20345929a01be8bf28a06ca4879dc4f010420c89d9b4e7c79be98b2",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44228/44505"
+  },
+  "33179": {
+   "sha256": "763e54bcd2c27833578411ea98093e8880e6cfb386e0843557ffb87c670acd15",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44406"
+  },
+  "33289": {
+   "sha256": "23614ce8ff63be5c2669ce3e380bb1e65b1ebf8dfa94894edaa9fb7b27293401",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44219/44469"
+  },
+  "33674": {
+   "sha256": "863b06f1225250c70c7a1e46d5d0de6563549a320c5f2346e8195c842c7833d1",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44462"
+  },
+  "35111": {
+   "sha256": "50cd4cabf5f8411041d35454098e27198ef15fc9b57e2a15e7e4bed1fbdfd90a",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44214/44439"
+  },
+  "35120": {
+   "sha256": "a668cb8011f089a853419ef9d396d7788d2eaf2b6beec3b5f274d54f44353732",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44302"
+  },
+  "35121": {
+   "sha256": "08fea57d0083e14340ae38775651fab93e8cd58062174981324218ef2f7ff3e6",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44303"
+  },
+  "35235": {
+   "sha256": "84533f9a2fe8975c22ebca45bbab8a0e31d4dcea7c6e07b26bdc40a1031d5906",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44305"
+  },
+  "35236": {
+   "sha256": "c6342db87e511c20956f372f909a5057517845ea7388077182ae2e0cfeddb0cf",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44304"
+  },
+  "35260": {
+   "sha256": "7d986a099c7402383cfc3d58909ed05c90bfcfed20062ec7e2d33006c0d87dcd",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44307"
+  },
+  "35261": {
+   "sha256": "224aedb4c883af1dfa797db8b836791633df835874af89e0cf08a18f95cec205",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44306"
+  },
+  "35371": {
+   "sha256": "44e4329b175c585331089119febcb02394faa73f27653e648f67f63e9b6c7210",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44269"
+  },
+  "36030": {
+   "sha256": "25e78c1c90e6751a9a7528b2c9f87cbe14c92291fda8cb7b9b57891e1d3a281a",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44194/44349"
+  },
+  "36089": {
+   "sha256": "7d5ff0357dfe6f62c1c27eb05bc9ea85ed6c50a91ce067312e620b24789ca44c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44174/44264"
+  },
+  "36149": {
+   "sha256": "31e7aa9889adc9dddc9284e3cef0c24cad8d5337af9a4c92f17093b5c43a58c3",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44225/44488"
+  },
+  "36394": {
+   "sha256": "23a043996a93d099e4585cb420fc2533374e133271602e1ba446d3992b886e99",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44352"
+  },
+  "36670": {
+   "sha256": "3e3a58df5221a4723228ee7f3d4cf72da952b5498ebba16b763d69520dbcf9a9",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44366"
+  },
+  "36792": {
+   "sha256": "fc811ae3887e9cb1fe3f40ae40fb1688473345aecf62c40ab90058979a37951e",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44196/44379"
+  },
+  "36937": {
+   "sha256": "3ffa941c884fee3410cf4e6b19e5ada0c40ea35fd53f0a742c6119d73479aa32",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44177/44281"
+  },
+  "36938": {
+   "sha256": "8d2c400c8d4d500d47130cde9c39a8cb794ed393f9b1b26c198b30e8db39783b",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44327"
+  },
+  "36939": {
+   "sha256": "eca07acd4615e476f021d2c4c6773538bd8a689c6a713a7ec951bb48c6bbe39c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44326"
+  },
+  "36940": {
+   "sha256": "7ad40932d8db9fc1fec8cf188d80f7ab4cd8d52771c5b54d8b8898bc6c948f96",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44220/44474"
+  },
+  "37371": {
+   "sha256": "354ab91d4b51f3e129d8f6c2a16efed1f96cb3390bf21fbabf2593eaf61719ec",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44191/44343"
+  },
+  "37422": {
+   "sha256": "ef77cb5972fbcfc9f5b3ea9cd91f1750370184a9b0f2a5a84810e8ceb6dee35c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44221/44479"
+  },
+  "37460": {
+   "sha256": "61c85a170c6250c1619529ca4f6bfdd7edeccdb29ff241a61863b51a7e1fb041",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44167/44249"
+  },
+  "37473": {
+   "sha256": "13614ada7e822b3c70bb27dfd8d03ab7b6be40453bc22e32734be2cd80c7e1b6",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44614"
+  },
+  "37484": {
+   "sha256": "c0fcee9b95bec7ef2c049c21f024638154285fe96616a20209f51b1650fac857",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44454"
+  },
+  "37512": {
+   "sha256": "6718703f7b2a7580670e1676996e8b3370b720f79bad5700e7595c527076c6f9",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44198/44384"
+  },
+  "37541": {
+   "sha256": "4d5fe574d3801d97cf79e058c45fc7c8b620712def408d34f353b62c0c92c33c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44496"
+  },
+  "37796": {
+   "sha256": "6fbecfebd6dc145d6a3a9396ca9eb39c9f397563ba4bc504511d20014b18e197",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44209/44422"
+  },
+  "37930": {
+   "sha256": "2ff538d61baa8af7ba3d6d73a319231f74c9e8c0730bb59c6ee6acb1a9a30d59",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44275"
+  },
+  "38060": {
+   "sha256": "0dfc8d50b2c4205115dd0a0a5906a68d9b93f80b6f8b3d3c339fba5347625ea4",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44201/44397"
+  },
+  "38114": {
+   "sha256": "4c8a65aca5b71a594be2ab248cade8641b7ac378133f86a4e6195d6a0223fcef",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44312"
+  },
+  "38115": {
+   "sha256": "3da81a866c145fd45baf93aacddbadeee090e7a9ad5b34a40c7eb01103c39260",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44460"
+  },
+  "38118": {
+   "sha256": "8dc8a5ae92b9e207f295efc7670d251faf6d781ae6e0163cc1cfff0bb3b97264",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44463"
+  },
+  "38774": {
+   "sha256": "4b68d76aaee221657219710f162279c40e11018c6ebc0a5da87179cd83fdbce3",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44177/44282"
+  },
+  "38970": {
+   "sha256": "76164da5130f3236ab6c2683db00368aec88e5e36a257ca2ab7eb3dbce774443",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44357"
+  },
+  "39365": {
+   "sha256": "9b964b6b329db72eb7f8f57f9e46d6d07a8b5c82b811ba2f1fd6fb749be78b12",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44361"
+  },
+  "39366": {
+   "sha256": "12a60b8817de98331c7bcfc3a5799c63110919b4625ab26fd32d98954e052de0",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44360"
+  },
+  "39368": {
+   "sha256": "f2b950c96f8d0487747f41c382f60cc24ed6c647c9608365d70b4e16bc858b38",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44359"
+  },
+  "39790": {
+   "sha256": "ff1f903018e8aac2b58f51a3ac2830e27a87bb74058ea92481b895a4f6f37cd6",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44512"
+  },
+  "40036": {
+   "sha256": "c95b347c6119efd5660b0de7b2e747b50eeded11a927cb3cd2be3f4ed80085b2",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44323"
+  },
+  "40539": {
+   "sha256": "a62ccdbaa2248739641e5267b8b09dc076d089c299db72e46e7e6b89fd91a13f",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44179/44289"
+  },
+  "40540": {
+   "sha256": "a989b15cc16bf0312662112199d2275451ccab8ad7d0db78dd864074dc05f93d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44179/44290"
+  },
+  "40555": {
+   "sha256": "5c7a80e97a1b50a113966059f1a8e33b29d87df3954b4734bfc37158c13de1bf",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44185/44321"
+  },
+  "40701": {
+   "sha256": "846daefbb872a1b8b3e152ad786eefa441867065296d12281bce22c39d2ccd5d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44328"
+  },
+  "41248": {
+   "sha256": "b0c7e84186c4c3d082c58933cf450bf94db67d0e0e4bea394d20c42531e74a1a",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44459"
+  },
+  "41267": {
+   "sha256": "33063441859a291f7998dd65bea939b6749996954a5dd9e3964d52a15da4870e",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44495"
+  },
+  "41311": {
+   "sha256": "08afe8090d65ff7995b1f789584fcdf007e91937b757a1d378280b6740b822d2",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44356"
+  },
+  "41333": {
+   "sha256": "7d691426eb2f7843767689625f9f703bfd154413c62719fb6da9ecd586fb0737",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44408"
+  },
+  "41334": {
+   "sha256": "7c5db59afd87edee70e2cf61d06b602c992a312d2871caf806f19e23ad9381da",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44407"
+  },
+  "41522": {
+   "sha256": "39741f4fe389a293f805c0b4a908ad6518b8972b16f134a05fe59197791a4981",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44272"
+  },
+  "41681": {
+   "sha256": "4de56f211b8b3556bb9331fbd3aac965a887a3a8bde75e637ac742d61e78e979",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44457"
+  },
+  "41682": {
+   "sha256": "a0a0d6323af4a53d8a18d2367f73c58970ad7d74431125ba99859f0caadbc822",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44458"
+  },
+  "41930": {
+   "sha256": "138c5e5b560cb4ef29d59d9ca4a62299fcfe95e2f62cf671887b25f1fb0c14ca",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44170/44598"
+  },
+  "41975": {
+   "sha256": "e5d6d1c23d7929ea44ddd501104980039695fdc4a9c66f305e5cbcd4a9378e27",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44181/44298"
+  },
+  "42391": {
+   "sha256": "d29f7f911a3aabd65c85bf312a628dac5558cbda3cc082337079cdd811439d31",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44220/44476"
+  },
+  "42415": {
+   "sha256": "ffc2ee6c5928b60162e6b6e1a9b0ae98084f43ecc06401b846fb18fc4a766686",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44220/44473"
+  },
+  "42812": {
+   "sha256": "5cff81f8139dc256c4870743d1a31333936711f494681724d5d8a748018e49e2",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44193/44345"
+  },
+  "42813": {
+   "sha256": "dfbc1f0030b99335e2774fd753627d4f337972737e853016d91527ca3881d426",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44193/44346"
+  },
+  "42814": {
+   "sha256": "4c6652d8e2caad24545520fcad81128915e37d96aed0d90630c90f33ca385f5d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44497"
+  },
+  "42956": {
+   "sha256": "4f2c891e5bd04001e6b18f6a5ecdbf03e886d7bf3886a87e5186e4377aea8694",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44425"
+  },
+  "42957": {
+   "sha256": "15e3f76a0c9782c7613ded02fad85aa58128664bc7588ef391145da4daac12b5",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44427"
+  },
+  "42958": {
+   "sha256": "1d441e7c1606375a8badb0f3cff80575118c8740b659dbc498c4c6d19ba5875f",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44431"
+  },
+  "42997": {
+   "sha256": "ddbd3faf4fa6e264abb2980e759584b6892b6573494363c6d22446c84ec0c1c5",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44353"
+  },
+  "42999": {
+   "sha256": "18ff928c5c72639956cb4937729ebbf069154637f8b2c5de0004c64d19c337b2",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44355"
+  },
+  "43002": {
+   "sha256": "175f88f3dcd4e28af3e88ffb88b282ca764c480bbab8da1f132711ed2698c14e",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44373"
+  },
+  "43003": {
+   "sha256": "2781490cf9579f9a6e50d0cb79242ba8f70f79feaf33fb6677e53065808961ca",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44426"
+  },
+  "43017": {
+   "sha256": "30be969436be12424bcb33fc473559ea64a8380477184748674ce3f85917c1af",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44354"
+  },
+  "43246": {
+   "sha256": "55f0e55b9c535518791a198e43434d44c77894cdbb2891ea9a971e7143ff99fc",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44498"
+  },
+  "43357": {
+   "sha256": "f60eaeb26834c85c38f377d2a87fdfb4184b59c79da7dd56289092b0b7dd6575",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44514"
+  },
+  "43361": {
+   "sha256": "e155d4af302724b9691c6c8fa750c7ab79c707128a060b129a9ec337f2eee888",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44513"
+  },
+  "43382": {
+   "sha256": "80883b364acd29e5e87638c8f2efd321cc37a94807891eefcf192074a559755c",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44308"
+  },
+  "43451": {
+   "sha256": "a005b12493a5ffb9743b787c233cbd1ff6913072e186f374e6a308871c41163d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44358"
+  },
+  "43452": {
+   "sha256": "80c357cfef502d2ef66e06acf6703c41701c1ef8eec0d1334376f24d5d06d310",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44311"
+  },
+  "43605": {
+   "sha256": "58bd23215cd3be1699c434f5df232dd57dc23aabb39171ebed92fde25af3b97e",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44181/44297"
+  },
+  "43614": {
+   "sha256": "b2ef80db618149d35215d7cef14de608f840cced2d2b9553de9a90dc5e05181b",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44337"
+  },
+  "43615": {
+   "sha256": "8ccf0f00aab2225e2788f8894a1cae24b4f3556da8a5ba90a2a8c041f818f203",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44334"
+  },
+  "43616": {
+   "sha256": "0cd324b2d2f2cb0170dacf2b26c827f5ec05eb98f14c10fddac2aef953f12308",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44335"
+  },
+  "43685": {
+   "sha256": "3a8dff80c6bdc77d60ff7f0f416711a7771e51595a53ebf5b897ab14440a58f9",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44336"
+  },
+  "43733": {
+   "sha256": "c2a032eede7e8d93d589359e96a17cf7851aeb11f9925c0fc7229b234a33d0ad",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44339"
+  },
+  "43807": {
+   "sha256": "31a722f286fecae3b1948fa7ae8cc00e3cd6a25b58accd8d4a7b7b298f0dbd78",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44214/44526"
+  },
+  "43831": {
+   "sha256": "2a80efb0bbc1521de90b67f15c7ce13f274762a83ce8f7467ae1f030ed752c36",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44519"
+  },
+  "43886": {
+   "sha256": "30c1b55395c7c551a0b23d04e382e969a11ab025d41acdff36c5b2d3541323ab",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44518"
+  },
+  "43980": {
+   "sha256": "1e3b7c4f8d3467e3d49c127f7c21e046c1a57e43fac701ff673163dbc2afa8d9",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44520"
+  },
+  "43981": {
+   "sha256": "a612fadbac2047e8f3a64a250528e4754d9ce98ebaf1c6157891d9732fd046c6",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44200/44521"
+  },
+  "44127": {
+   "sha256": "4b499451d24cd9ef3c4d4484b4be322326dbc4c9b03c7405c1e55cd855273de8",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44204/44522"
+  },
+  "44128": {
+   "sha256": "4b499451d24cd9ef3c4d4484b4be322326dbc4c9b03c7405c1e55cd855273de8",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44204/44522"
+  },
+  "44251": {
+   "sha256": "ce76a927ae45d400d08b72d49ac9bc819d8c77a097e9893c7415584a948c5a45",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44590"
+  },
+  "44538": {
+   "sha256": "3ce01d9eaee272b65f8b655c66508d78eeba84b35197aa332365ebf91390f2fb",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44208/44592"
+  },
+  "45327": {
+   "sha256": "347357211b9f4894ea24f2c04dde6896b842add2b96e2c4361efeaf82192c692",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44984"
+  },
+  "45412": {
+   "sha256": "5894a775b08ad6ef4bcd9d514666aa5c38c333cede426859ea5cde286ae803d8",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44855/44991"
+  },
+  "45500": {
+   "sha256": "210c36d0223a6f53151238a9e6f9d5e4ad0c87238f602fe33bafb567fde97383",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44855/44992"
+  },
+  "45501": {
+   "sha256": "a01cbbdb1b2f762229083d25fbfb5c98e18b920f75c03ca767352b2a2b34ea9d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44855/44997"
+  },
+  "45627": {
+   "sha256": "66758a270a36b35e3ed8d7afb17e665c147fcb3ff86fbda6344105a95871563d",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44849"
+  },
+  "45772": {
+   "sha256": "a856a6c80b31361d0c3f6a9262f8e91b8d07ef10a016a7f7bef1f12c4d4eea31",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44852"
+  },
+  "45981": {
+   "sha256": "a99766fe6083f05f0d603a63349fd8e41507f7045c46434ffa6c3dcee51b7624",
+   "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44177/47690"
+  }
+ },
+ "run": "44737354220"
+}
