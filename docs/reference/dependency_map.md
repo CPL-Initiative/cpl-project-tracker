@@ -81,6 +81,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_contacts_harvest` | scripts: `kb/_college_contacts_harvest.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `college_short_names` | tabs: `college-identity` · scripts: `kb/_apply_college_short_names.py` | tabs: `college-identity` |
+| `commons_handover` | modules: `commons_handover.js` · scripts: `kb/_handover_pickup.py` | — |
 | `course_outcomes` | tabs: `coci-lookup`, `commons`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_build_adopt_align.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_mid_outcomes_compare.py` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` |
 | `cpl_comms` | tabs: `letters` | — |
@@ -191,6 +192,9 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_contacts_harvest_apply` | scripts: `kb/_college_contacts_harvest.py` | — |
 | `college_geo_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
 | `college_program_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
+| `commons_handover_add` | modules: `commons_handover.js` | — |
+| `commons_handover_mark` | scripts: `kb/_handover_pickup.py` | — |
+| `commons_handover_summary` | modules: `commons_handover.js` | — |
 | `course_outcomes_load` | scripts: `kb/_course_outcomes_load.py` | — |
 | `cpl_funding_email_domains` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `cpl_funding_my_reports` | tabs: `college-briefing`, `cpl-pathways` | — |
@@ -214,7 +218,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `funding_access_status` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `funding_approvers_list` | tabs: `admin` | — |
 | `funding_approvers_set` | tabs: `admin` | — |
-| `is_allowed_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `first-light`, `implementation-funding` · `edgefn:cpl-chat` | — |
+| `is_allowed_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `first-light`, `implementation-funding` · `edgefn:cpl-chat`, `edgefn:handover-try-link` | — |
 | `is_funding_approver` | tabs: `csm-workspace` | — |
 | `is_funding_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `map_ace_catalog_cr_load` | scripts: `kb/_sync_map_custom_reports.py` | — |
@@ -264,6 +268,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `docket-process` | none found | produced by: `chatbox/supabase/functions/docket-process/index.ts` |
 | `funding-door` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | produced by: `chatbox/supabase/functions/funding-door/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
+| `handover-try-link` | modules: `commons_handover.js` | produced by: `chatbox/supabase/functions/handover-try-link/index.ts` |
 | `letter-curator` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `library-publish-now` | tabs: `library` | produced by: `chatbox/supabase/functions/library-publish-now/index.ts` |
 | `library-revise-draft` | tabs: `library` | produced by: `chatbox/supabase/functions/library-revise-draft/index.ts` |
@@ -276,6 +281,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | Dataset | Read by | Written by |
 |---|---|---|
 | `ccr-desc` | pages: `prototype/skyview.html` | — |
+| `commons-handover` | scripts: `kb/_handover_pickup.py` | — |
 | `cpl-receipts` | scripts: `kb/_receipt_store.py` | — |
 | `factsheet-images` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 
@@ -434,6 +440,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `commons_ase.js` | tabs: `commons` | — |
 | `commons_curation_eta.js` | tabs: `commons` | — |
 | `commons_data.js` | tabs: `commons` | — |
+| `commons_handover.js` | tabs: `commons` | — |
 | `commons_list.js` | tabs: `canonical-subj4`, `coci-lookup`, `cpl-pathways`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `commons_look.js` | pages: `CPL_Dashboard.html` | — |
 | `commons_page.js` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `program-requirements` | — |
@@ -609,6 +616,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_fetch_program_course_files.py` | workflows: `program-course-fetch.yml` | — |
 | `kb/_fold_unclassified.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_funding_config_edit_apply.py` | workflows: `funding-config-edit-apply.yml` | — |
+| `kb/_handover_pickup.py` | workflows: `commons-handover-pickup.yml` | — |
 | `kb/_harvest_gap_census.py` | workflows: `harvest-gap-census.yml` | — |
 | `kb/_identity_daily_check.py` | workflows: `map-users-sync.yml` | — |
 | `kb/_jev_adjudicate.py` | workflows: `typesafe-smoke.yml` | — |
@@ -1097,7 +1105,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/daily_gate.sh` | workflows: `daily-dashboard.yml` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
-| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `commons-clickthrough.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `library-publish.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-requirements-wave.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
+| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `commons-clickthrough.yml`, `commons-handover-pickup.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `library-publish.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-requirements-wave.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `scripts/k10_disclosure_check.py` | workflows: `k10-disclosure-check.yml` | — |
 | `scripts/library_check.config.js` | scripts: `scripts/library_check.py` | — |
 | `scripts/library_check.py` | workflows: `library-publish.yml` | — |
@@ -1188,6 +1196,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/commons_cost_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/commons_data_live_test.py` | workflows: `js-tests.yml` | — |
 | `tests/commons_data_status_build_test.py` | workflows: `js-tests.yml` | — |
+| `tests/commons_handover_sql_proof.py` | workflows: `js-tests.yml` | — |
 | `tests/commons_status_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_id_route_test.py` | workflows: `js-tests.yml` | — |
@@ -1262,6 +1271,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/funding_portal_applied_test.py` | workflows: `js-tests.yml` | — |
 | `tests/glyph_sweep_test.py` | workflows: `js-tests.yml` | — |
 | `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
+| `tests/handover_pickup_test.py` | workflows: `js-tests.yml` | — |
 | `tests/harvest_gap_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/harvest_ncl_lookup_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/harvest_no_closed_list_diagnosis_test.py` | workflows: `js-tests.yml` | — |
@@ -1432,7 +1442,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `api.anthropic.com` | `edgefn:alt-text-draft`, `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:library-revise-draft`, `edgefn:slide-script-draft`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
 | `api.gdeltproject.org` | `edgefn:cpl-news-harvest` |
-| `api.github.com/repos/` | modules: `kb-portal/config.js` · `edgefn:docket-process`, `edgefn:library-publish-now`, `edgefn:workplan-rebuild` |
+| `api.github.com/repos/` | modules: `kb-portal/config.js` · `edgefn:docket-process`, `edgefn:handover-try-link`, `edgefn:library-publish-now`, `edgefn:workplan-rebuild` |
 | `api.github.com/repos/cpl-initiative` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.typesafe.ai` | scripts: `kb/_typesafe_smoke.py` |
 | `api.x.ai` | scripts: `kb/_xai_smoke.py` · `edgefn:program-requirements-extract` |
@@ -1456,7 +1466,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | tabs: `first-light` · pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
-| `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `a11y.config.js`, `cpl_funding_nudge.js`, `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `chatbox/supabase/functions/library-revise-draft/cobi_data.mjs`, `chatbox/supabase/functions/library-revise-draft/reference_data.mjs`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_college_contacts_harvest.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py`, `scripts/library_publish.py`, `veteran-sprint-map/build_selfcontained.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:docket-process`, `edgefn:funding-door`, `edgefn:library-publish-now`, `edgefn:library-revise-draft`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `a11y.config.js`, `cpl_funding_nudge.js`, `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `chatbox/supabase/functions/library-revise-draft/cobi_data.mjs`, `chatbox/supabase/functions/library-revise-draft/reference_data.mjs`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_college_contacts_harvest.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py`, `scripts/library_publish.py`, `veteran-sprint-map/build_selfcontained.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:docket-process`, `edgefn:funding-door`, `edgefn:handover-try-link`, `edgefn:library-publish-now`, `edgefn:library-revise-draft`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `scripts/daily_build.sh` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `exhibits`, `implementation-funding` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `library/adopt/index.html`, `library/cpl-opportunity/index.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py`, `map/sync_landing_contacts.py`, `veteran-sprint-map/build_selfcontained.py` · `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -1647,5 +1657,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1097 file
-datasets · 197 external services · 635 consumers · 75 workflows · 41 tabs.
+Coverage: 119 Supabase tables · 68 RPCs · 16 edge functions · 1101 file
+datasets · 197 external services · 639 consumers · 76 workflows · 41 tabs.
