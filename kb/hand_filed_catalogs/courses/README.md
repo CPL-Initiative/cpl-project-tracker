@@ -55,6 +55,7 @@ joins on `code`. The plain session and COBIx wire them in.
   44762315427), whose course pages print one column. The Fall and Summer 2026 addenda are not read.
 - `monterey_peninsula.json`: Monterey Peninsula 2026-2027, 76 of 78 subject pages, 1,137 courses (run 44765198579).
 - `long_beach_city.json`: Long Beach City 2026-2027, 123 of 128 subject pages, 1,595 courses (run 44765123063).
+- `cerritos.json`: Cerritos 2026-2027, 91 of 93 subject pages, 1,656 courses (run 44767159068).
 
 Mission, Pierce, Trade-Tech and West Los Angeles were read from the colleges' own PDFs, which the program capture already reads. Sam's hand-fetched copies
 (COBIx's gists) print two columns side by side (`pdftotext -layout`), which this parse does not split.
