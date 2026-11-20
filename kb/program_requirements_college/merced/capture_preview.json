@@ -1,0 +1,2257 @@
+{
+ "college": "Merced College",
+ "catalog_url": "https://catalog.mccd.edu/",
+ "platform": "coursedog",
+ "catalog_year": "2026-2027",
+ "programs": 182,
+ "with_closed_list": 172,
+ "started": "2026-11-20T14:45:05Z",
+ "route": "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)",
+ "coursedog": {
+  "root": "https://catalog.mccd.edu",
+  "index_program_links": [
+   {
+    "text": "Accounting (AA)",
+    "href": "https://catalog.mccd.edu/programs/05000.AA"
+   },
+   {
+    "text": "Accounting (CT)",
+    "href": "https://catalog.mccd.edu/programs/05000.CT"
+   },
+   {
+    "text": "Administration in Early Childhood Education (CT)",
+    "href": "https://catalog.mccd.edu/programs/13012.CT"
+   },
+   {
+    "text": "Administration of Justice (AA)",
+    "href": "https://catalog.mccd.edu/programs/21075.1"
+   },
+   {
+    "text": "Administration of Justice (AST)",
+    "href": "https://catalog.mccd.edu/programs/21075.AST"
+   },
+   {
+    "text": "Administrative Medical Office Professional (AA)",
+    "href": "https://catalog.mccd.edu/programs/05007.AA"
+   },
+   {
+    "text": "Administrative Medical Office Professional (CN)",
+    "href": "https://catalog.mccd.edu/programs/05007.CN"
+   },
+   {
+    "text": "Administrative Office Professional (AA)",
+    "href": "https://catalog.mccd.edu/programs/05008.AA"
+   }
+  ],
+  "index_program_links_n": 191,
+  "index_program_links_marked": [
+   {
+    "text": "Accounting (AA)",
+    "href": "https://catalog.mccd.edu/programs/05000.AA"
+   },
+   {
+    "text": "Accounting (CT)",
+    "href": "https://catalog.mccd.edu/programs/05000.CT"
+   },
+   {
+    "text": "Administration in Early Childhood Education (CT)",
+    "href": "https://catalog.mccd.edu/programs/13012.CT"
+   },
+   {
+    "text": "Administration of Justice (AA)",
+    "href": "https://catalog.mccd.edu/programs/21075.1"
+   },
+   {
+    "text": "Administration of Justice (AST)",
+    "href": "https://catalog.mccd.edu/programs/21075.AST"
+   },
+   {
+    "text": "Administrative Medical Office Professional (AA)",
+    "href": "https://catalog.mccd.edu/programs/05007.AA"
+   },
+   {
+    "text": "Administrative Medical Office Professional (CN)",
+    "href": "https://catalog.mccd.edu/programs/05007.CN"
+   },
+   {
+    "text": "Administrative Office Professional (AA)",
+    "href": "https://catalog.mccd.edu/programs/05008.AA"
+   }
+  ],
+  "search": "https://app.coursedog.com/api/v1/cm/merced_colleague_ethos/programs/search/%24filters?catalogId=QTM2GIg9kimBOfyC8Dbb&skip=0&limit=250&sortBy=catalogDisplayName%2CtranscriptDescription%2ClongName%2Cname&effectiveDatesRange=2026-11-20%2C2026-11-20&columns=name%2Ctype%2CdegreeDesignation%2Ccontacts%2ClongName%2CcatalogDisplayName%2CtranscriptDescription%2CcatalogDescription%2CcatalogImageUrl%2CcipCode%2Ccampus%2Clevel",
+  "listed": 191,
+  "programs": 188,
+  "errors": [],
+  "index_hrefs_used": 188,
+  "requisites_suffix": "requisites-ojrrt",
+  "program_pages": 188,
+  "direct": 181,
+  "missed": [],
+  "challenged": [],
+  "catalog": [
+   {
+    "code": "05000.AA",
+    "name": "Accounting (AA)",
+    "control_number": "03471"
+   },
+   {
+    "code": "05000.CT",
+    "name": "Accounting (CT)",
+    "control_number": "20804"
+   },
+   {
+    "code": "13012.CT",
+    "name": "Administration in Early Childhood Education (CT)",
+    "control_number": "38916"
+   },
+   {
+    "code": "21075.AST",
+    "name": "Administration of Justice (AST)",
+    "control_number": "31120"
+   },
+   {
+    "code": "05007.AA",
+    "name": "Administrative Medical Office Professional (AA)",
+    "control_number": "03478"
+   },
+   {
+    "code": "05007.CN",
+    "name": "Administrative Medical Office Professional (CN)",
+    "control_number": "19501"
+   },
+   {
+    "code": "05008.AA",
+    "name": "Administrative Office Professional (AA)",
+    "control_number": "03476"
+   },
+   {
+    "code": "05008.CN",
+    "name": "Administrative Office Professional (CN)",
+    "control_number": "19499"
+   },
+   {
+    "code": "49190.NC",
+    "name": "Adult Literacy (NC)",
+    "control_number": "40176"
+   },
+   {
+    "code": "01120.CM",
+    "name": "Agricultural Leadership (CM)",
+    "control_number": "45766"
+   },
+   {
+    "code": "01100.AST",
+    "name": "Agriculture Animal Science (AST)",
+    "control_number": "40215"
+   },
+   {
+    "code": "01000.AS",
+    "name": "Agriculture Business (AS)",
+    "control_number": "19759"
+   },
+   {
+    "code": "01000.AST",
+    "name": "Agriculture Business (AST)",
+    "control_number": "33885"
+   },
+   {
+    "code": "01000.CN",
+    "name": "Agriculture Business (CN)",
+    "control_number": "19494"
+   },
+   {
+    "code": "01051.AS",
+    "name": "Agriculture Education (AS)",
+    "control_number": "43197"
+   },
+   {
+    "code": "01160.AST",
+    "name": "Agriculture Plant Science (AST)",
+    "control_number": "40215"
+   },
+   {
+    "code": "NC.CBE.AGT.CP",
+    "name": "Agriculture Systems (NC)",
+    "control_number": "44165"
+   },
+   {
+    "code": "01100.AS",
+    "name": "Animal Science (AS)",
+    "control_number": "03468"
+   },
+   {
+    "code": "01100.CN",
+    "name": "Animal Science (CN)",
+    "control_number": "19492"
+   },
+   {
+    "code": "22001.AAT",
+    "name": "Anthropology (AAT)",
+    "control_number": "33207"
+   },
+   {
+    "code": "07022.AS",
+    "name": "Applied AI and Cloud Computing (AS)",
+    "control_number": "42692"
+   },
+   {
+    "code": "07022.CT",
+    "name": "Applied AI and Cloud Computing (CT)",
+    "control_number": "43058"
+   },
+   {
+    "code": "07074.CM",
+    "name": "Applied Computer AI Systems Professional (CM)",
+    "control_number": "41411"
+   },
+   {
+    "code": "10110.AA",
+    "name": "Art (AA)",
+    "control_number": "03494"
+   },
+   {
+    "code": "12402.CN",
+    "name": "Athletic Training (CN)"
+   },
+   {
+    "code": "09480.CN",
+    "name": "Automotive Electric & Hybrid Systems Technician (CN)",
+    "control_number": "46060"
+   },
+   {
+    "code": "09003.AS",
+    "name": "Automotive Master Technician (AS)",
+    "control_number": "07722"
+   },
+   {
+    "code": "09008.CT",
+    "name": "Automotive Master Technician (CT)",
+    "control_number": "20812"
+   },
+   {
+    "code": "09010.CN",
+    "name": "Automotive Technology Level 1 (CN)",
+    "control_number": "10439"
+   },
+   {
+    "code": "09002.CT",
+    "name": "Automotive Technology Level 2 (CT)",
+    "control_number": "10438"
+   },
+   {
+    "code": "09250.CM",
+    "name": "Basic Electronics (CM)",
+    "control_number": "19502"
+   },
+   {
+    "code": "49160.NC",
+    "name": "Basic Skills for Adults With Disabilities (NC)",
+    "control_number": "24412"
+   },
+   {
+    "code": "04100.AST",
+    "name": "Biology (AST)",
+    "control_number": "35569"
+   },
+   {
+    "code": "04130.CN",
+    "name": "Biotechnology (CN)",
+    "control_number": "19654"
+   },
+   {
+    "code": "04137.AS",
+    "name": "Biotechnology Pre-Professional (AS)",
+    "control_number": "35038"
+   },
+   {
+    "code": "04135.AS",
+    "name": "Biotechnology-Industry (AS)",
+    "control_number": "12308"
+   },
+   {
+    "code": "05101.AST",
+    "name": "Business Administration 2.0 (AST)",
+    "control_number": "31742"
+   },
+   {
+    "code": "49011.CT",
+    "name": "Cal-GETC (CT)",
+    "control_number": "45026"
+   },
+   {
+    "code": "CVC.OEI",
+    "name": "California Virtual College (CVC)"
+   },
+   {
+    "code": "19100.AST",
+    "name": "Chemistry (AST)",
+    "control_number": "33622"
+   },
+   {
+    "code": "13010.AA",
+    "name": "Child Development (AA)"
+   },
+   {
+    "code": "49162.NC",
+    "name": "College Preparation Skills (NC)"
+   },
+   {
+    "code": "49161.NC",
+    "name": "College Success (NC)"
+   },
+   {
+    "code": "09401.AS",
+    "name": "Commercial Refrigeration Technician (AS)",
+    "control_number": "16245"
+   },
+   {
+    "code": "09401.CT",
+    "name": "Commercial Refrigeration Technician (CT)",
+    "control_number": "20811"
+   },
+   {
+    "code": "15603.AAT",
+    "name": "Communication Studies 2.0 (AAT)",
+    "control_number": "43347"
+   },
+   {
+    "code": "01453.CN",
+    "name": "Compact Power Equipment (CN)",
+    "control_number": "16653"
+   },
+   {
+    "code": "07204.CN",
+    "name": "Computer Programming (CM)"
+   },
+   {
+    "code": "07200.AST",
+    "name": "Computer Science (AST)",
+    "control_number": "31816"
+   },
+   {
+    "code": "07201.AS",
+    "name": "Computer Technology and Information Systems (AS)",
+    "control_number": "41472"
+   },
+   {
+    "code": "07020.NC",
+    "name": "Computer Technology Essentials (NC)"
+   },
+   {
+    "code": "09104.CM",
+    "name": "Computer-Aided Design & 3D Modeling (CM)",
+    "control_number": "31181"
+   },
+   {
+    "code": "21078.NC",
+    "name": "Court Interpreter (NC)",
+    "control_number": "24382"
+   },
+   {
+    "code": "21150.AA",
+    "name": "Criminal Justice (AA)",
+    "control_number": "03516"
+   },
+   {
+    "code": "21150.CT",
+    "name": "Criminal Justice (CT)",
+    "control_number": "20815"
+   },
+   {
+    "code": "01150.AS",
+    "name": "Crop Science (AS)",
+    "control_number": "03465"
+   },
+   {
+    "code": "01150.CN",
+    "name": "Crop Science (CN)",
+    "control_number": "20801"
+   },
+   {
+    "code": "01151.AS",
+    "name": "Crop Science Advanced (AS)"
+   },
+   {
+    "code": "13160.CT",
+    "name": "Culinary Management (CT)"
+   },
+   {
+    "code": "05200.CO",
+    "name": "Customer Service Academy (CO)"
+   },
+   {
+    "code": "07202.AS",
+    "name": "Cybersecurity (AS)",
+    "control_number": "42691"
+   },
+   {
+    "code": "07202.CT",
+    "name": "Cybersecurity (CT)",
+    "control_number": "43044"
+   },
+   {
+    "code": "12600.CT",
+    "name": "Dental Assisting (CT)",
+    "control_number": "45853"
+   },
+   {
+    "code": "12800.CT",
+    "name": "Diagnostic Medical Sonography (CT)",
+    "control_number": "19508"
+   },
+   {
+    "code": "12700.AS",
+    "name": "Diagnostic Radiologic Technology (AS)",
+    "control_number": "03505"
+   },
+   {
+    "code": "12700.CF",
+    "name": "Diagnostic Radiologic Technology (CF)",
+    "control_number": "19507"
+   },
+   {
+    "code": "01200.AS",
+    "name": "Diesel Equipment Technology (AS)",
+    "control_number": "03485"
+   },
+   {
+    "code": "01200.CT",
+    "name": "Diesel Equipment Technology (CT)",
+    "control_number": "19495"
+   },
+   {
+    "code": "13181.CN",
+    "name": "Dietetic Services Supervisor/Dietary Manager (CN)",
+    "control_number": "17936"
+   },
+   {
+    "code": "06100.AA",
+    "name": "Digital Arts (AA)"
+   },
+   {
+    "code": "09171.CM",
+    "name": "Drone Media (CM)"
+   },
+   {
+    "code": "09170.CM",
+    "name": "Drone Technology (CM)"
+   },
+   {
+    "code": "13010.AST",
+    "name": "Early Childhood Education (AST)",
+    "control_number": "31867"
+   },
+   {
+    "code": "13013.CM",
+    "name": "Early Childhood Educator I",
+    "control_number": "45388"
+   },
+   {
+    "code": "13014.CN",
+    "name": "Early Childhood Educator II",
+    "control_number": "45131"
+   },
+   {
+    "code": "13016.CT",
+    "name": "Early Intervention Assistant Specialization (CT)",
+    "control_number": "22932"
+   },
+   {
+    "code": "22200.AAT",
+    "name": "Economics (AAT)",
+    "control_number": "35530"
+   },
+   {
+    "code": "09250.AS",
+    "name": "Electronics Technician (AS)",
+    "control_number": "16242"
+   },
+   {
+    "code": "49811.AAT",
+    "name": "Elementary Teacher Education: Integrated Programs (AAT)",
+    "control_number": "45852"
+   },
+   {
+    "code": "12100.CE",
+    "name": "Emergency Medical Technician (CE)"
+   },
+   {
+    "code": "05250.CO",
+    "name": "Emerging Leaders Institute (CO)"
+   },
+   {
+    "code": "09300.AS",
+    "name": "Engineering (AS)",
+    "control_number": "03483"
+   },
+   {
+    "code": "09010.CT",
+    "name": "Engineering (CT)",
+    "control_number": "44678"
+   },
+   {
+    "code": "09350.AS",
+    "name": "Engineering Technology (AS)",
+    "control_number": "07718"
+   },
+   {
+    "code": "15200.AAT",
+    "name": "English (AAT)",
+    "control_number": "32211"
+   },
+   {
+    "code": "01351.AS",
+    "name": "Environmental Horticulture (AS)",
+    "control_number": "03466"
+   },
+   {
+    "code": "01350.CN",
+    "name": "Environmental Horticulture (CN)",
+    "control_number": "20802"
+   },
+   {
+    "code": "01225.AS",
+    "name": "Equine Science and Management (AS)",
+    "control_number": "07708"
+   },
+   {
+    "code": "01225.CN",
+    "name": "Equine Science and Management (CN)",
+    "control_number": "19493"
+   },
+   {
+    "code": "49195.NC",
+    "name": "ESL Advanced Skills (NC)"
+   },
+   {
+    "code": "49196.NC",
+    "name": "ESL Begining Skills Program (NC)",
+    "control_number": "31644"
+   },
+   {
+    "code": "49198.NC",
+    "name": "ESL Intermediate Skills Program (NC)",
+    "control_number": "31645"
+   },
+   {
+    "code": "49310.NC",
+    "name": "ESL Workforce Training (NC)"
+   },
+   {
+    "code": "49301.NC",
+    "name": "Essential Skills for Employment and Job Retention (NC)"
+   },
+   {
+    "code": "13021.CT",
+    "name": "Families in Crisis Specialization (CT)",
+    "control_number": "22930"
+   },
+   {
+    "code": "21400.AS",
+    "name": "Fire Technology (AS)",
+    "control_number": "03519"
+   },
+   {
+    "code": "21400.CT",
+    "name": "Fire Technology (CT)",
+    "control_number": "20817"
+   },
+   {
+    "code": "12401.CN",
+    "name": "Fitness Specialist (CN)"
+   },
+   {
+    "code": "11200.AA",
+    "name": "French (AA)",
+    "control_number": "03497"
+   },
+   {
+    "code": "09402.CE",
+    "name": "Fundamentals of Commercial and Residential Electrical (CE)"
+   },
+   {
+    "code": "01040.AS",
+    "name": "General Agriculture (AS)",
+    "control_number": "19758"
+   },
+   {
+    "code": "01050.CN",
+    "name": "General Agriculture (CN)",
+    "control_number": "19491"
+   },
+   {
+    "code": "05150.AA",
+    "name": "General Business (AA)",
+    "control_number": "03470"
+   },
+   {
+    "code": "05150.CT",
+    "name": "General Business (CT)",
+    "control_number": "19497"
+   },
+   {
+    "code": "22250.AAT",
+    "name": "Geography (AAT)",
+    "control_number": "33880"
+   },
+   {
+    "code": "19400.AST",
+    "name": "Geology (AST)",
+    "control_number": "31861"
+   },
+   {
+    "code": "22061.CN",
+    "name": "Geospatial Technology & Applications: Agriculture (CN)",
+    "control_number": "44429"
+   },
+   {
+    "code": "22062.CN",
+    "name": "Geospatial Technology & Applications: Env & Earth Sci (CN)",
+    "control_number": "44416"
+   },
+   {
+    "code": "22063.CN",
+    "name": "Geospatial Technology & Applications: Social Sci (CN)",
+    "control_number": "44431"
+   },
+   {
+    "code": "11400.AA",
+    "name": "German (AA)",
+    "control_number": "03498"
+   },
+   {
+    "code": "12300.AA",
+    "name": "Health Sciences (AA)",
+    "control_number": "07729"
+   },
+   {
+    "code": "22300.AAT",
+    "name": "History (AAT)",
+    "control_number": "32642"
+   },
+   {
+    "code": "21500.AA",
+    "name": "Human Services (AA)",
+    "control_number": "03530"
+   },
+   {
+    "code": "21500.CT",
+    "name": "Human Services (CT)",
+    "control_number": "19370"
+   },
+   {
+    "code": "09400.AS",
+    "name": "HVAC Technician (AS)",
+    "control_number": "16244"
+   },
+   {
+    "code": "09400.CN",
+    "name": "HVAC Technician (CN)",
+    "control_number": "19505"
+   },
+   {
+    "code": "09510.AS",
+    "name": "Industrial Electrical Technician (AS)",
+    "control_number": "07724"
+   },
+   {
+    "code": "09510.CT",
+    "name": "Industrial Electrical Technician (CT)",
+    "control_number": "19506"
+   },
+   {
+    "code": "09550.AS",
+    "name": "Industrial Maintenance Technology (AS)"
+   },
+   {
+    "code": "09550.CT",
+    "name": "Industrial Maintenance Technology (CT)",
+    "control_number": "20809"
+   },
+   {
+    "code": "13026.CT",
+    "name": "Infant/Toddler Care (CT)",
+    "control_number": "22926"
+   },
+   {
+    "code": "09650.AS",
+    "name": "Instrumentation and Process Control Technology (AS)",
+    "control_number": "07720"
+   },
+   {
+    "code": "09650.CT",
+    "name": "Instrumentation and Process Control Technology (CT)",
+    "control_number": "20808"
+   },
+   {
+    "code": "09786.CE",
+    "name": "Introductory Pipe Welding Technology (CE)"
+   },
+   {
+    "code": "07024.CM",
+    "name": "IT Security Foundations Certificate (CM)",
+    "control_number": "41385"
+   },
+   {
+    "code": "07082.CM",
+    "name": "IT Support Professional (CM)",
+    "control_number": "41428"
+   },
+   {
+    "code": "12400.AAT",
+    "name": "Kinesiology (AAT)"
+   },
+   {
+    "code": "07300.AS",
+    "name": "Management Information Systems (AS)",
+    "control_number": "07716"
+   },
+   {
+    "code": "05450.AA",
+    "name": "Management/Supervisory Training (AA)",
+    "control_number": "03474"
+   },
+   {
+    "code": "05450.CN",
+    "name": "Management/Supervisory Training (CN)",
+    "control_number": "20805"
+   },
+   {
+    "code": "05460.AS",
+    "name": "Marketing (AS)",
+    "control_number": "07713"
+   },
+   {
+    "code": "05460.CN",
+    "name": "Marketing (CN)",
+    "control_number": "20806"
+   },
+   {
+    "code": "17401.AST",
+    "name": "Mathematics 2.0 (AST)",
+    "control_number": "31139"
+   },
+   {
+    "code": "49166.NC",
+    "name": "Mathematics College Preparatory Basic Skills (NC)"
+   },
+   {
+    "code": "49167.NC",
+    "name": "Mathematics College Preparatory Skills II (NC)"
+   },
+   {
+    "code": "01450.AS",
+    "name": "Mechanized Agriculture Technology (AS)",
+    "control_number": "07710"
+   },
+   {
+    "code": "01450.CT",
+    "name": "Mechanized Agriculture Technology (CT)",
+    "control_number": "19496"
+   },
+   {
+    "code": "10100.NC",
+    "name": "Medical Assistant (NC)",
+    "control_number": "24015"
+   },
+   {
+    "code": "13051.CM",
+    "name": "Multi-Language Learner Specilization (CM)",
+    "control_number": "45669"
+   },
+   {
+    "code": "10400.AA",
+    "name": "Music (AA)",
+    "control_number": "19668"
+   },
+   {
+    "code": "10400.AAT",
+    "name": "Music (AAT)",
+    "control_number": "32886"
+   },
+   {
+    "code": "07023.AS",
+    "name": "Networking Technology (AS)",
+    "control_number": "16243"
+   },
+   {
+    "code": "07023.CT",
+    "name": "Networking Technology (CT)",
+    "control_number": "19503"
+   },
+   {
+    "code": "00000.9",
+    "name": "Non-Credit"
+   },
+   {
+    "code": "99999.NC",
+    "name": "Non-Credit - Undecided"
+   },
+   {
+    "code": "12150.CO",
+    "name": "Nursing Assistant (CO)"
+   },
+   {
+    "code": "12500.AS",
+    "name": "Nursing, Registered (AS)",
+    "control_number": "03501"
+   },
+   {
+    "code": "12550.AA",
+    "name": "Nursing, Vocational (AA)",
+    "control_number": "03502"
+   },
+   {
+    "code": "12550.CT",
+    "name": "Nursing, Vocational (CT)",
+    "control_number": "19373"
+   },
+   {
+    "code": "13160.AST",
+    "name": "Nutrition and Dietetics (AST)",
+    "control_number": "35572"
+   },
+   {
+    "code": "13161.AS",
+    "name": "Nutrition and Foods (AS)",
+    "control_number": "03507"
+   },
+   {
+    "code": "13161.CT",
+    "name": "Nutrition and Foods (CT)",
+    "control_number": "19368"
+   },
+   {
+    "code": "12510.AS",
+    "name": "Paramedicine: Pre-Professional (AS)"
+   },
+   {
+    "code": "12510.CT",
+    "name": "Paramedicine: Pre-Professional (CT)"
+   },
+   {
+    "code": "01052.CT",
+    "name": "Pest Control Advisor (CT)",
+    "control_number": "16654"
+   },
+   {
+    "code": "15400.AAT",
+    "name": "Philosophy (AAT)",
+    "control_number": "32312"
+   },
+   {
+    "code": "10500.AA",
+    "name": "Photography (AA)",
+    "control_number": "07728"
+   },
+   {
+    "code": "10500.CN",
+    "name": "Photography (CN)",
+    "control_number": "20814"
+   },
+   {
+    "code": "19800.AST",
+    "name": "Physics 2.0 (AST)",
+    "control_number": "31943"
+   },
+   {
+    "code": "09785.CM",
+    "name": "Pipe Welding Technology (CM)",
+    "control_number": "42573"
+   },
+   {
+    "code": "22070.AAT",
+    "name": "Political Science (AAT)",
+    "control_number": "40266"
+   },
+   {
+    "code": "09475.NC",
+    "name": "Professional Truck Driving Class A CDL Training (NC)",
+    "control_number": "40213"
+   },
+   {
+    "code": "20500.AA",
+    "name": "Psychology (AA)",
+    "control_number": "03514"
+   },
+   {
+    "code": "20500.AAT",
+    "name": "Psychology (AAT)",
+    "control_number": "30631"
+   },
+   {
+    "code": "12837.AST",
+    "name": "Public Health (AST)",
+    "control_number": "45001"
+   },
+   {
+    "code": "49199.NC",
+    "name": "Reading and Writing College Preparatory Basic Skills (NC)",
+    "control_number": "32944"
+   },
+   {
+    "code": "05600.CE",
+    "name": "Real Estate Salesperson License (CE)",
+    "control_number": "20807"
+   },
+   {
+    "code": "12500.CT",
+    "name": "Registered Nursing Lvn to Rn Option (CT)",
+    "control_number": "42642"
+   },
+   {
+    "code": "13031.CT",
+    "name": "School-Age Care Specialization (CT)",
+    "control_number": "22928"
+   },
+   {
+    "code": "09520.CE",
+    "name": "Skilled Trades Career Pathways: Pre-Apprentic Training (CE)"
+   },
+   {
+    "code": "05700.AS",
+    "name": "Small Business Entrepreneurship (AS)",
+    "control_number": "03473"
+   },
+   {
+    "code": "05700.CT",
+    "name": "Small Business Entrepreneurship (CT)",
+    "control_number": "19498"
+   },
+   {
+    "code": "22600.AA",
+    "name": "Social and Behavioral Science (AA)",
+    "control_number": "17928"
+   },
+   {
+    "code": "22010.AAT",
+    "name": "Social Justice Studies, Ethnic Studies (AAT)"
+   },
+   {
+    "code": "05725.CE",
+    "name": "Social Media (CE)"
+   },
+   {
+    "code": "22650.AAT",
+    "name": "Sociology (AAT)",
+    "control_number": "33625"
+   },
+   {
+    "code": "11600.AAT",
+    "name": "Spanish (AAT)",
+    "control_number": "32207"
+   },
+   {
+    "code": "10550.AAT",
+    "name": "Studio Arts (AAT)",
+    "control_number": "32987"
+   },
+   {
+    "code": "07021.CM",
+    "name": "System Administrator Certificate (CM)",
+    "control_number": "41427"
+   },
+   {
+    "code": "08600.CM",
+    "name": "Teaching Online Education (CM)",
+    "control_number": "44715"
+   },
+   {
+    "code": "07744.NC",
+    "name": "Technical Office Occupations (NC)",
+    "control_number": "24014"
+   },
+   {
+    "code": "10600.AA",
+    "name": "Theatre Arts (AA)",
+    "control_number": "03496"
+   },
+   {
+    "code": "10600.AAT",
+    "name": "Theatre Arts (AAT)",
+    "control_number": "32614"
+   },
+   {
+    "code": "19050.AST",
+    "name": "UCTP: Chemistry (AS-T)",
+    "control_number": "40854"
+   },
+   {
+    "code": "99999.0",
+    "name": "Undecided"
+   },
+   {
+    "code": "05800.CE",
+    "name": "Virtual Office Professional (CE)"
+   },
+   {
+    "code": "09800.AA",
+    "name": "Welding Technology (AA)",
+    "control_number": "03493"
+   },
+   {
+    "code": "09810.CN",
+    "name": "Welding Technology (CN)",
+    "control_number": "20813"
+   }
+  ]
+ },
+ "pages_read": 188,
+ "pages_listed": 191,
+ "pages_answered": 188,
+ "listing_failed": 0,
+ "child_pages": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 160,
+   "hits": 76,
+   "recall": 0.475,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 0,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": {
+    "tested": 160,
+    "on_list": 77,
+    "recall": 0.481,
+    "missed": [
+     "10438",
+     "10439",
+     "16653",
+     "16654",
+     "17936",
+     "19368",
+     "19370",
+     "19373",
+     "19491",
+     "19492",
+     "19493",
+     "19494",
+     "19495",
+     "19496",
+     "19497",
+     "19499",
+     "19501",
+     "19502",
+     "19503",
+     "19506"
+    ],
+    "files_not_listed": false
+   }
+  },
+  "programs": 10,
+  "by_result": {
+   "not_searched": 9,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "03471",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03502",
+    "title": "Nursing, Vocational",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03516",
+    "title": "Criminal Justice",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "03519",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07716",
+    "title": "Management Information Systems",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07729",
+    "title": "Health Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17878",
+    "title": "CSU General Education (CSU-GE-Breadth)",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17879",
+    "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "31181",
+    "title": "Computer-Aided Design and 3D Modeling",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 76 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45026",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 196,
+ "seconds": 1661.7,
+ "found": 160,
+ "by_method": {
+  "no_closed_list": 10,
+  "not_found": 12,
+  "sitemap_page": 160
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "03469",
+   "title": "Biological Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/21075.AST/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1904,
+     "content": 324725,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "03473",
+   "title": "Small Business Entrepreneurship",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/05700.AS/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.265,
+    "body": 0.265,
+    "content": 0.235,
+    "net": 9,
+    "listed": 34,
+    "why": "coarse net: the page's code tokens name 9 of 34 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1272,
+     "content": 324115,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "03515",
+   "title": "Child Development",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/13010.AA/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 555,
+     "content": 323423,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "17943",
+   "title": "International Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/15603.AAT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1494,
+     "content": 324327,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19498",
+   "title": "Small Business Entrepreneurship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/05700.CT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.375,
+    "body": 0.375,
+    "content": 0.333,
+    "net": 9,
+    "listed": 24,
+    "why": "coarse net: the page's code tokens name 9 of 24 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1272,
+     "content": 324115,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19505",
+   "title": "HVAC Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/09400.CN/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.286,
+    "net": 3,
+    "listed": 7,
+    "why": "coverage 0.43 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 977,
+     "content": 323830,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30638",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/15603.AAT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.2,
+    "net": 6,
+    "listed": 15,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1494,
+     "content": 324327,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "33174",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.784,
+    "body": 0.784,
+    "content": 0.73,
+    "net": 29,
+    "listed": 37,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3430,
+     "content": 326204,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40072",
+   "title": "Agriculture Animal Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/01100.AST/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.933,
+    "body": 0.933,
+    "content": 0.6,
+    "net": 14,
+    "listed": 15,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 2249,
+     "content": 325052,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40858",
+   "title": "UCTP: Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/19800.AST/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.8,
+    "body": 0.8,
+    "content": 0.7,
+    "net": 8,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1604,
+     "content": 324431,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44160",
+   "title": "Agriculture Systems – Agriculture Foundation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/NC.CBE.AGT.CP/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 952,
+     "content": 323816,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "44678",
+   "title": "Engineering",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.mccd.edu/programs/09010.CT/requisites-ojrrt",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.286,
+    "net": 7,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 7 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1265,
+     "content": 324102,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 18,
+  "0.8-1.0": 36,
+  "1.0": 106
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/merced",
+  "kept": 148,
+  "kept_moved": 0,
+  "programs": 10,
+  "list": [
+   {
+    "control_number": "03530",
+    "title": "Human Services",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mccd.edu/programs/21500.AA/requisites-ojrrt",
+    "coverage": 0.833,
+    "was_url": "https://catalog.mccd.edu/programs/21500.AA/requisites-ojrrt",
+    "was_coverage": 0.792,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "17928",
+    "title": "Social and Behavioral Science",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mccd.edu/programs/22600.AA/requisites-ojrrt",
+    "coverage": 0.743,
+    "was_url": "https://catalog.mccd.edu/programs/22600.AA/requisites-ojrrt",
+    "was_coverage": 0.657,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19368",
+    "title": "Nutrition and Foods",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mccd.edu/programs/13161.CT/requisites-ojrrt",
+    "coverage": 0.929,
+    "was_url": "https://catalog.mccd.edu/programs/13161.CT/requisites-ojrrt",
+    "was_coverage": 0.786,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19370",
+    "title": "Human Services",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mccd.edu/programs/21500.CT/requisites-ojrrt",
+    "coverage": 0.773,
+    "was_url": "https://catalog.mccd.edu/programs/21500.CT/requisites-ojrrt",
+    "was_coverage": 0.727,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32642",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mccd.edu/programs/22300.AAT/requisites-ojrrt",
+    "coverage": 0.821,
+    "was_url": "https://catalog.mccd.edu/programs/22300.AAT/requisites-ojrrt",
+    "was_coverage": 0.714,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33625",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mccd.edu/programs/22650.AAT/requisites-ojrrt",
+    "coverage": 0.783,
+    "was_url": "https://catalog.mccd.edu/programs/22650.AAT/requisites-ojrrt",
+    "was_coverage": 0.565,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40215",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mccd.edu/programs/01160.AST/requisites-ojrrt",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mccd.edu/programs/01160.AST/requisites-ojrrt",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40266",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mccd.edu/programs/22070.AAT/requisites-ojrrt",
+    "coverage": 0.857,
+    "was_url": "https://catalog.mccd.edu/programs/22070.AAT/requisites-ojrrt",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41857",
+    "title": "Social Justice Studies, Ethnic Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mccd.edu/programs/22010.AAT/requisites-ojrrt",
+    "coverage": 0.92,
+    "was_url": "https://catalog.mccd.edu/programs/22010.AAT/requisites-ojrrt",
+    "was_coverage": 0.76,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44431",
+    "title": "GeoSpatial Applications: Social Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mccd.edu/programs/22063.CN/requisites-ojrrt",
+    "coverage": 1.0,
+    "was_url": "https://catalog.mccd.edu/programs/22063.CN/requisites-ojrrt",
+    "was_coverage": 0.636,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "03476",
+    "title": "Administrative Office Professional",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mccd.edu/programs/05008.AA/requisites-ojrrt",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "19499",
+    "title": "Administrative Office Professional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mccd.edu/programs/05008.CN/requisites-ojrrt",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "03465": {
+   "sha256": "7d7f345afda7741c4c020c54a4c6ce71e867c877af12b4bed1910aae99105b4e",
+   "url": "https://catalog.mccd.edu/programs/01150.AS/requisites-ojrrt"
+  },
+  "03466": {
+   "sha256": "fc7653d32d886223e6c90a03e71d6204a8e38375f1616d2ad2b424907f0033d4",
+   "url": "https://catalog.mccd.edu/programs/01351.AS/requisites-ojrrt"
+  },
+  "03468": {
+   "sha256": "dc6bdda172438f5a79f1fc6cf144ff44218f7f4365b6760847a84d98f110cb1b",
+   "url": "https://catalog.mccd.edu/programs/01100.AS/requisites-ojrrt"
+  },
+  "03470": {
+   "sha256": "45d081fdc22f29a94a71f3ee4986fadd58ac222ccfae6a0649ef004255432eb7",
+   "url": "https://catalog.mccd.edu/programs/05150.AA/requisites-ojrrt"
+  },
+  "03474": {
+   "sha256": "fe6bedf58b882b8b147ae41201ad01770c7fd48a30587e34520049314ca4a3f2",
+   "url": "https://catalog.mccd.edu/programs/05450.AA/requisites-ojrrt"
+  },
+  "03476": {
+   "sha256": "4be24e56bcfdeb9705af66b824af76b12d01e76c818c848dff6a660a68c563c2",
+   "url": "https://catalog.mccd.edu/programs/05008.AA/requisites-ojrrt"
+  },
+  "03478": {
+   "sha256": "ccb5e92195758751c5d30c75d4bf1452f2395ced6e4a60a94daf43a7393304ac",
+   "url": "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt"
+  },
+  "03483": {
+   "sha256": "e7e455d4588c452ee3d4bab9c5c78532ed5285d341a71d53fcdfad77cf085add",
+   "url": "https://catalog.mccd.edu/programs/09300.AS/requisites-ojrrt"
+  },
+  "03485": {
+   "sha256": "467209f46c9037ef48c08d67f7d1bceb6208c73d12ac68bcb18b28f9ef19b357",
+   "url": "https://catalog.mccd.edu/programs/01200.AS/requisites-ojrrt"
+  },
+  "03493": {
+   "sha256": "a2428dfdfe6239055c0fd822a1083e1885473f3b5af2ef916f1742a42a871689",
+   "url": "https://catalog.mccd.edu/programs/09800.AA/requisites-ojrrt"
+  },
+  "03494": {
+   "sha256": "fd11329d9da6e1094eefc8f09394338aaa858d661fac304217846dccf98edb31",
+   "url": "https://catalog.mccd.edu/programs/10110.AA/requisites-ojrrt"
+  },
+  "03496": {
+   "sha256": "491361eab06f4641277e0d9e08bdb4aa3d81a0c3bde715fb515875207bd5cc73",
+   "url": "https://catalog.mccd.edu/programs/10600.AA/requisites-ojrrt"
+  },
+  "03497": {
+   "sha256": "13f8a80cdea85956be43bb55b0554c2dd57bf06b7aa6edb6e2abf4975a0d50d2",
+   "url": "https://catalog.mccd.edu/programs/11200.AA/requisites-ojrrt"
+  },
+  "03498": {
+   "sha256": "696e2ce4ef5f46fc2ab7b2603347f56c90ac81c4a634bd9975a8bd82e27c7f8f",
+   "url": "https://catalog.mccd.edu/programs/11400.AA/requisites-ojrrt"
+  },
+  "03501": {
+   "sha256": "b17c37343448c01d77dc411ab70c9e7ab07565805ace19812096bc0d877e0811",
+   "url": "https://catalog.mccd.edu/programs/12500.AS/requisites-ojrrt"
+  },
+  "03505": {
+   "sha256": "9e8e8ae1441dee6aa018592d7fa2e9bc7aa972bdcefba70a8b545d06f3291e96",
+   "url": "https://catalog.mccd.edu/programs/12700.AS/requisites-ojrrt"
+  },
+  "03507": {
+   "sha256": "184f422c5973061f72571890d7cfc61f3aeea86de7e97db90e863ff6a7e26d13",
+   "url": "https://catalog.mccd.edu/programs/13161.AS/requisites-ojrrt"
+  },
+  "03514": {
+   "sha256": "12bd9380c58492f171f419474b21b7984c1ce18108d5adcfa8516a9e818b3972",
+   "url": "https://catalog.mccd.edu/programs/20500.AA/requisites-ojrrt"
+  },
+  "03530": {
+   "sha256": "7638570f0df161702b3ede091808b1d69e539a2cd83cbe26824338711fb1a3b2",
+   "url": "https://catalog.mccd.edu/programs/21500.AA/requisites-ojrrt"
+  },
+  "07708": {
+   "sha256": "febae7f6128a651655198f8cde20cc011ca5eaa377befe7eed96cf1adf5ac793",
+   "url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt"
+  },
+  "07710": {
+   "sha256": "54ac4449e25dd5eb933a15342932b2dc5cd1c134ce9eff20c0453f9a938b8e54",
+   "url": "https://catalog.mccd.edu/programs/01450.AS/requisites-ojrrt"
+  },
+  "07713": {
+   "sha256": "815e7aec3fdecc7a923af7d34b9669c2af11771922a080611d84272dbfd911a0",
+   "url": "https://catalog.mccd.edu/programs/05460.AS/requisites-ojrrt"
+  },
+  "07718": {
+   "sha256": "e217a09f4a36a9726c44c5468d3e1f07b951e69f50602db4c2962a4419d22dca",
+   "url": "https://catalog.mccd.edu/programs/09350.AS/requisites-ojrrt"
+  },
+  "07720": {
+   "sha256": "d0d8a60551f5a10d08ee41b5483cb0691f612983864299e9b105507a71a41bea",
+   "url": "https://catalog.mccd.edu/programs/09650.AS/requisites-ojrrt"
+  },
+  "07723": {
+   "sha256": "cc11d92f82376767c3cb19612764595db6c9146734bb0fe65baa01a3cc16250e",
+   "url": "https://catalog.mccd.edu/programs/09550.AS/requisites-ojrrt"
+  },
+  "07724": {
+   "sha256": "397a68f157522ea2226fde2ffb926e87d7f44fa849180f571d0baa6a22a92984",
+   "url": "https://catalog.mccd.edu/programs/09510.AS/requisites-ojrrt"
+  },
+  "07728": {
+   "sha256": "e16ab7b03f6ce30a723d2e25d60b28d636746a830e3b7c95cdcfa90a483805a8",
+   "url": "https://catalog.mccd.edu/programs/10500.AA/requisites-ojrrt"
+  },
+  "10438": {
+   "sha256": "7fa2b2cdf1112392724d7337b96d720662b18c6ebe23caea10fb40b74a986268",
+   "url": "https://catalog.mccd.edu/programs/09002.CT/requisites-ojrrt"
+  },
+  "10439": {
+   "sha256": "be147b0a59faa5c0530fb27db5390f2da04ab239c4ec1e9cc6cae7e6b25d47eb",
+   "url": "https://catalog.mccd.edu/programs/09010.CN/requisites-ojrrt"
+  },
+  "12308": {
+   "sha256": "744419a883241dfeea86457cb502aeb2da0c673c4cbb3e8207422174f2916bc0",
+   "url": "https://catalog.mccd.edu/programs/04135.AS/requisites-ojrrt"
+  },
+  "16242": {
+   "sha256": "013e6c9a112f21a363a10cd3876696b99541ecf566793459f05aafc477835bb7",
+   "url": "https://catalog.mccd.edu/programs/09250.AS/requisites-ojrrt"
+  },
+  "16243": {
+   "sha256": "3ffc69694aa943be2755bc1bf32801f67d0684103652a8796e394a8a71b744e3",
+   "url": "https://catalog.mccd.edu/programs/07023.AS/requisites-ojrrt"
+  },
+  "16244": {
+   "sha256": "b5a0ba05e6d60594d2323179eed235ae4512d067c1c1bea668931e9295fdecd0",
+   "url": "https://catalog.mccd.edu/programs/09400.AS/requisites-ojrrt"
+  },
+  "16245": {
+   "sha256": "ba200a170a9b269561a7515a170bc21d5e4152a590cc59bcf1f7e2a12503bb9c",
+   "url": "https://catalog.mccd.edu/programs/09401.AS/requisites-ojrrt"
+  },
+  "16653": {
+   "sha256": "517924fe8d73d808f0dc369465676f7cd1bd57660a74ba57667ec814e689a960",
+   "url": "https://catalog.mccd.edu/programs/01453.CN/requisites-ojrrt"
+  },
+  "16654": {
+   "sha256": "20fdde265a937318bcca0fb1ecd5484133f00a0587e2edfd2fa8a6e8e5e3b3e1",
+   "url": "https://catalog.mccd.edu/programs/01052.CT/requisites-ojrrt"
+  },
+  "17928": {
+   "sha256": "d1bd89b466f4d2f2fab649d3874f3d35d6acca15b3840f553742e6fa8634500d",
+   "url": "https://catalog.mccd.edu/programs/22600.AA/requisites-ojrrt"
+  },
+  "17936": {
+   "sha256": "5f32b06bc95a7627007eaca16c0e8d9a021eb7e29e429e0dd5072dee00d5d95e",
+   "url": "https://catalog.mccd.edu/programs/13181.CN/requisites-ojrrt"
+  },
+  "19368": {
+   "sha256": "fbbfa17e0925ac158c564f6059bef553a740f1a96a33651f30c11a44c7e598ab",
+   "url": "https://catalog.mccd.edu/programs/13161.CT/requisites-ojrrt"
+  },
+  "19370": {
+   "sha256": "b4d4e29012cd405ac50fa3effb60257fee2045d56f045bb1e78d7a58ede40c0f",
+   "url": "https://catalog.mccd.edu/programs/21500.CT/requisites-ojrrt"
+  },
+  "19373": {
+   "sha256": "45978369adcefee839daab777f9f152a2870ffc86f5ea42350d0c6510b986577",
+   "url": "https://catalog.mccd.edu/programs/12550.CT/requisites-ojrrt"
+  },
+  "19491": {
+   "sha256": "f91215cacd4a5af26b0da6236462d636e898f0a23d5f4c9f6c59071b1537e6db",
+   "url": "https://catalog.mccd.edu/programs/01050.CN/requisites-ojrrt"
+  },
+  "19492": {
+   "sha256": "9759758669db53b0c2b0e3e5e3b2c667e4e190a8bb16ad7d725fb5bbd65f31cf",
+   "url": "https://catalog.mccd.edu/programs/01100.CN/requisites-ojrrt"
+  },
+  "19493": {
+   "sha256": "778a21b156c5687444d7385be6bbdb941ba469c978f08bf111a495071964eeff",
+   "url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt"
+  },
+  "19494": {
+   "sha256": "c4935a186238483ae9077de9c0811b0eeb676a9fc941734ddfcfd429f610d180",
+   "url": "https://catalog.mccd.edu/programs/01000.CN/requisites-ojrrt"
+  },
+  "19495": {
+   "sha256": "1d3cb88b266840c639e07ddb3c01b046921d10d8e491b1a211f45ba0133dd49d",
+   "url": "https://catalog.mccd.edu/programs/01200.CT/requisites-ojrrt"
+  },
+  "19496": {
+   "sha256": "a696dc0979abe73a87807f432ef6abadc1dfd4b0606b838b34608ac10fb0b943",
+   "url": "https://catalog.mccd.edu/programs/01450.CT/requisites-ojrrt"
+  },
+  "19497": {
+   "sha256": "659eea433f890956f598ea2d67c0fb759fabbddbd529a6d02260af83a4295e43",
+   "url": "https://catalog.mccd.edu/programs/05150.CT/requisites-ojrrt"
+  },
+  "19499": {
+   "sha256": "9d62a0013ab75e1d1fd50da8ef98b12fd194cd9ece3754a43ff01ee2525e51fd",
+   "url": "https://catalog.mccd.edu/programs/05008.CN/requisites-ojrrt"
+  },
+  "19501": {
+   "sha256": "b7d3bfd07be964d94bae61478740e46bc7c5b494c953fbdb5acceda6c834240c",
+   "url": "https://catalog.mccd.edu/programs/05007.CN/requisites-ojrrt"
+  },
+  "19502": {
+   "sha256": "1eaa82449e7b6978ad5c04d2e76b472c6f3049e8b0fe273f7665db335d910d10",
+   "url": "https://catalog.mccd.edu/programs/09250.CM/requisites-ojrrt"
+  },
+  "19503": {
+   "sha256": "5f37dc6f84a9b3b2a0d54dd6ef953405bb6a8556122f6247d7d3ff6c4e10d383",
+   "url": "https://catalog.mccd.edu/programs/07023.CT/requisites-ojrrt"
+  },
+  "19506": {
+   "sha256": "41decac7994ccf9a486f6f2646e4ecc35554632a2f4881a639c89300a10dcd97",
+   "url": "https://catalog.mccd.edu/programs/09510.CT/requisites-ojrrt"
+  },
+  "19507": {
+   "sha256": "2ee28d06acdb9f9cf154a9bf68b16f495e23c2478649a7bbddad898500533fd4",
+   "url": "https://catalog.mccd.edu/programs/12700.CF/requisites-ojrrt"
+  },
+  "19508": {
+   "sha256": "23c3c8c35477534e2d12d701d6d2e74ca9bea7bac7d8cf92c86dfd5a17f8b513",
+   "url": "https://catalog.mccd.edu/programs/12800.CT/requisites-ojrrt"
+  },
+  "19654": {
+   "sha256": "15a2f22afb2d03ac0fcfb9977292b1a8abc50270d4d5f2ec1b2370800e91afee",
+   "url": "https://catalog.mccd.edu/programs/04130.CN/requisites-ojrrt"
+  },
+  "19668": {
+   "sha256": "5d2d1540dcdcdf68578fef40ff5a569d6c11f9049961ddf8cc6823918a00d505",
+   "url": "https://catalog.mccd.edu/programs/10400.AA/requisites-ojrrt"
+  },
+  "19758": {
+   "sha256": "0a0093c5f9c4bfebfb0e55417a5991067e129b623b5bc67ee67358150f54a1a9",
+   "url": "https://catalog.mccd.edu/programs/01040.AS/requisites-ojrrt"
+  },
+  "19759": {
+   "sha256": "85cb1bc84a42e388ce8bdcd9a79413e116c87ba2f44a226c98cc1424702690f6",
+   "url": "https://catalog.mccd.edu/programs/01000.AS/requisites-ojrrt"
+  },
+  "20801": {
+   "sha256": "e54db8193aecd72a9ca43280448a5f4c994c417fa0231612ba4d607a8da76c65",
+   "url": "https://catalog.mccd.edu/programs/01150.CN/requisites-ojrrt"
+  },
+  "20802": {
+   "sha256": "718728998d3073c3e4de4423c906e54d37798dd5ade2fb3791b578df15d2bab4",
+   "url": "https://catalog.mccd.edu/programs/01350.CN/requisites-ojrrt"
+  },
+  "20804": {
+   "sha256": "76a009c9499d72dea2d8be25791028ec92a8a5279bfbb335b3703b460a042726",
+   "url": "https://catalog.mccd.edu/programs/05000.CT/requisites-ojrrt"
+  },
+  "20805": {
+   "sha256": "ddfa1956d35e3ee911bc26f8935c0dac30137f44cc1a1c322731de33fc5897e8",
+   "url": "https://catalog.mccd.edu/programs/05450.CN/requisites-ojrrt"
+  },
+  "20806": {
+   "sha256": "1a3510896dffdbcc52fda6bdf39ea5c548acacabdc45d2d6e4455f8e233d431f",
+   "url": "https://catalog.mccd.edu/programs/05460.CN/requisites-ojrrt"
+  },
+  "20808": {
+   "sha256": "a394beac0b3e82c0f1302f6e4f75aa0372d4ac9dee32be94762cc769040d8b7d",
+   "url": "https://catalog.mccd.edu/programs/09650.CT/requisites-ojrrt"
+  },
+  "20809": {
+   "sha256": "86a411ded627d5e9a953760640f9b8737fc0988c3fd15be2f4a109290ab38638",
+   "url": "https://catalog.mccd.edu/programs/09550.CT/requisites-ojrrt"
+  },
+  "20811": {
+   "sha256": "29f625fe5edd243e3f7947a9cbf41b34865d68eaac5351a3a745b5d9ae21d489",
+   "url": "https://catalog.mccd.edu/programs/09401.CT/requisites-ojrrt"
+  },
+  "20812": {
+   "sha256": "8d9b3a43407bb3e717eed21a002b8f22d0c5aed896922787762598d2a376b51b",
+   "url": "https://catalog.mccd.edu/programs/09008.CT/requisites-ojrrt"
+  },
+  "20813": {
+   "sha256": "11dbbb88a1388f924603bcbcef8bf57a0d5dff151f02eca9cf32d7dcbd88ceba",
+   "url": "https://catalog.mccd.edu/programs/09810.CN/requisites-ojrrt"
+  },
+  "20814": {
+   "sha256": "d9eabf0920b595ef963cedd9adcd3f56767b242e23801ecd353f3c0bdc5763cb",
+   "url": "https://catalog.mccd.edu/programs/10500.CN/requisites-ojrrt"
+  },
+  "20815": {
+   "sha256": "387c8de75ad8d58ba71c065a631cadaa81acc8d06e4e8406b15517a2077876dd",
+   "url": "https://catalog.mccd.edu/programs/21150.CT/requisites-ojrrt"
+  },
+  "20817": {
+   "sha256": "8cb800707a1e6918e1b8b288eee7bbfa4b0e412ac907f12e18f7618a14c7bf86",
+   "url": "https://catalog.mccd.edu/programs/21400.CT/requisites-ojrrt"
+  },
+  "22926": {
+   "sha256": "0a5ee174d8bfdc8fe57d23e492f781534db58d900522e0b820dc79515922d359",
+   "url": "https://catalog.mccd.edu/programs/13026.CT/requisites-ojrrt"
+  },
+  "22928": {
+   "sha256": "89db3df9ca327c052afd2d8d06333824218f220339d6c6c86aefa0729d39a48a",
+   "url": "https://catalog.mccd.edu/programs/13031.CT/requisites-ojrrt"
+  },
+  "22930": {
+   "sha256": "40de9f4b0836a0198e4a3a98a43f728033a21ea1596859c23379ba4b25b87126",
+   "url": "https://catalog.mccd.edu/programs/13021.CT/requisites-ojrrt"
+  },
+  "22932": {
+   "sha256": "4a7c095c38bc34c11272b02d704fbd6f6ef956702d1b4ee71342a47e092aa0a2",
+   "url": "https://catalog.mccd.edu/programs/13016.CT/requisites-ojrrt"
+  },
+  "24014": {
+   "sha256": "4fa95552848326d0fbedca9093bff67a2cce711cc6108444c1d5af316701b9e9",
+   "url": "https://catalog.mccd.edu/programs/07744.NC/requisites-ojrrt"
+  },
+  "24015": {
+   "sha256": "89b4a31736a0faed5b66ed156948ac8dabf6072da4956fb9820d6af027db8811",
+   "url": "https://catalog.mccd.edu/programs/10100.NC/requisites-ojrrt"
+  },
+  "24382": {
+   "sha256": "38d56bffd5f4d4006af095b667c8f3d41b9640d7c33823912a60e0ea263baab1",
+   "url": "https://catalog.mccd.edu/programs/21078.NC/requisites-ojrrt"
+  },
+  "24412": {
+   "sha256": "53d13961c2b6ab21b7cf8b6929d9d692b1525b09f1fe491e709b8371998e349b",
+   "url": "https://catalog.mccd.edu/programs/49160.NC/requisites-ojrrt"
+  },
+  "30631": {
+   "sha256": "ff83bcec365ea64942716e8f258c56f30ae81f2fd316d6e81ab8d905169c63cf",
+   "url": "https://catalog.mccd.edu/programs/20500.AAT/requisites-ojrrt"
+  },
+  "31120": {
+   "sha256": "c175c791ea949bf2c86b717e637454362bb00f1176a79e6d9083a1a17867a825",
+   "url": "https://catalog.mccd.edu/programs/21075.AST/requisites-ojrrt"
+  },
+  "31644": {
+   "sha256": "700473af305f3352bb0588dd188c0925151c04a4fa321f2d185e6c470f41f51d",
+   "url": "https://catalog.mccd.edu/programs/49196.NC/requisites-ojrrt"
+  },
+  "31645": {
+   "sha256": "fc8ad85040c88e4658ec486842acd4c1d8d26e686bf9959df21fb8a715d8cb3d",
+   "url": "https://catalog.mccd.edu/programs/49198.NC/requisites-ojrrt"
+  },
+  "31816": {
+   "sha256": "9d5278de3bbbe56c7987ae68a2f36f4830d5befe07f93cec4520f64b28fc098f",
+   "url": "https://catalog.mccd.edu/programs/07200.AST/requisites-ojrrt"
+  },
+  "31861": {
+   "sha256": "d9479d87968c84dcfd19ecb82a5745b85b8ec57efebadb5902135608158e1c24",
+   "url": "https://catalog.mccd.edu/programs/19400.AST/requisites-ojrrt"
+  },
+  "31867": {
+   "sha256": "d17ddb04007bf0e872aae633232ca11a6cf496810bdaf413d26afdb5abcaa625",
+   "url": "https://catalog.mccd.edu/programs/13010.AST/requisites-ojrrt"
+  },
+  "32191": {
+   "sha256": "1d100f6e8000fcea77616c7654167efffadfb00c913a6481a2d9e238808d116f",
+   "url": "https://catalog.mccd.edu/programs/12400.AAT/requisites-ojrrt"
+  },
+  "32207": {
+   "sha256": "ad4cfe3ed99f3b22d45d411460ec3a991f088fcce02819e83c87737750af0fe3",
+   "url": "https://catalog.mccd.edu/programs/11600.AAT/requisites-ojrrt"
+  },
+  "32211": {
+   "sha256": "6f8aff6ecae5ff15484c83d7c8ef073fa8f1d61ea3b1ef3ae00efcb49d703cc8",
+   "url": "https://catalog.mccd.edu/programs/15200.AAT/requisites-ojrrt"
+  },
+  "32312": {
+   "sha256": "463710e0d675e0e5d350712434606d36b6c14fc8341bfda1ec1c167938651b93",
+   "url": "https://catalog.mccd.edu/programs/15400.AAT/requisites-ojrrt"
+  },
+  "32614": {
+   "sha256": "13470589d8743192bf0a598b1d42fd19b925a187b84faf428b72169be314eeef",
+   "url": "https://catalog.mccd.edu/programs/10600.AAT/requisites-ojrrt"
+  },
+  "32642": {
+   "sha256": "4796a63434d538c03191e411bccc7af85a0f0982e558e32313794432f5eae8dd",
+   "url": "https://catalog.mccd.edu/programs/22300.AAT/requisites-ojrrt"
+  },
+  "32886": {
+   "sha256": "db95fdd784df7f6a48bd3472debb9b4df6a8e3836a980a2bd82caa7591af607d",
+   "url": "https://catalog.mccd.edu/programs/10400.AAT/requisites-ojrrt"
+  },
+  "32944": {
+   "sha256": "f471f1f576feaa8bcde0e6bdb447310ff79645475990b772f87e53f50c7ed05f",
+   "url": "https://catalog.mccd.edu/programs/49199.NC/requisites-ojrrt"
+  },
+  "32987": {
+   "sha256": "8aa605f7cecff068e30d907175e1527ff3ee026e3590cdb5684586eb4d87ff9c",
+   "url": "https://catalog.mccd.edu/programs/10550.AAT/requisites-ojrrt"
+  },
+  "33207": {
+   "sha256": "0231323e8d5c9ef505a425c7e040eb502fdecefc0826ee6d66fad8e123964049",
+   "url": "https://catalog.mccd.edu/programs/22001.AAT/requisites-ojrrt"
+  },
+  "33622": {
+   "sha256": "89c39b6aca012d7cac234f62307d1a7545f8884070728e6ba890014a980c6b6b",
+   "url": "https://catalog.mccd.edu/programs/19100.AST/requisites-ojrrt"
+  },
+  "33625": {
+   "sha256": "c873b3b0106da4aef3c005644cf8c858064da2379f0c132c0300a1a3d09ee9ee",
+   "url": "https://catalog.mccd.edu/programs/22650.AAT/requisites-ojrrt"
+  },
+  "33880": {
+   "sha256": "cf41325959a44fbfa725fd5fb59dc9fafb9669b05612b019558fbd2d5a8e55cd",
+   "url": "https://catalog.mccd.edu/programs/22250.AAT/requisites-ojrrt"
+  },
+  "33885": {
+   "sha256": "ea0d271f1f2d82308f57d87bb8fdf8d50897d0a149e13207c71ed7dc33c4f31d",
+   "url": "https://catalog.mccd.edu/programs/01000.AST/requisites-ojrrt"
+  },
+  "35038": {
+   "sha256": "ffb74e1416e87ec66adccf4677c9c089f5754dbd8c54e448a79bdb0f8a9aca14",
+   "url": "https://catalog.mccd.edu/programs/04137.AS/requisites-ojrrt"
+  },
+  "35530": {
+   "sha256": "9fc82b81fa3dac3ded2a1e7981c3f683bf7b7657bd2aabadc8706472329c7b59",
+   "url": "https://catalog.mccd.edu/programs/22200.AAT/requisites-ojrrt"
+  },
+  "35569": {
+   "sha256": "1cf56c2e3ac2b0eb59c273581a3b27ce53de3ba3d168a61d04392fbf6a7e39d2",
+   "url": "https://catalog.mccd.edu/programs/04100.AST/requisites-ojrrt"
+  },
+  "35572": {
+   "sha256": "51267406a29c6312d091c68fc8db01203c270810830e94f29b2657b1840022d0",
+   "url": "https://catalog.mccd.edu/programs/13160.AST/requisites-ojrrt"
+  },
+  "36258": {
+   "sha256": "7b42071ac1e6c56a7b0d1352f9d9369ae941eb6b8ffa874114b649a5dfa5425b",
+   "url": "https://catalog.mccd.edu/programs/09003.AS/requisites-ojrrt"
+  },
+  "36388": {
+   "sha256": "072e2979d706c68eb46f4d640d1d942ad1f00d38ce3c3a09a034dd235b54045d",
+   "url": "https://catalog.mccd.edu/programs/49166.NC/requisites-ojrrt"
+  },
+  "37204": {
+   "sha256": "6b5266a56813f5bb5bbc137fb80322b49ddd0c5f47998e268af5f27b7a2a8802",
+   "url": "https://catalog.mccd.edu/programs/06100.AA/requisites-ojrrt"
+  },
+  "37390": {
+   "sha256": "7bf3b9f6177e5a167ae600f321c1b21dcaabac8ba3fde233723e700a243ce81d",
+   "url": "https://catalog.mccd.edu/programs/49167.NC/requisites-ojrrt"
+  },
+  "38831": {
+   "sha256": "5f04aca75473a32bee81c55b834fa79ca900a4124d1ff11c7da12790ac36cc3f",
+   "url": "https://catalog.mccd.edu/programs/09170.CM/requisites-ojrrt"
+  },
+  "38916": {
+   "sha256": "7bdba399efc8965aa9f187f6016c141f9e9338fc11e7236971d2d189562913ea",
+   "url": "https://catalog.mccd.edu/programs/13012.CT/requisites-ojrrt"
+  },
+  "39148": {
+   "sha256": "dba95e20a10fe0c4a44eb4a470e4b7469e4ab5aa98d11950d889d268dc3fbb4c",
+   "url": "https://catalog.mccd.edu/programs/12401.CN/requisites-ojrrt"
+  },
+  "40176": {
+   "sha256": "2d4d308f289fc4681ac7707fe98933892422017f87f7677a6031d38010855e44",
+   "url": "https://catalog.mccd.edu/programs/49190.NC/requisites-ojrrt"
+  },
+  "40213": {
+   "sha256": "7430f58e03832cbe0f79234eca339de9a7d3a327e0f83b7842882f9ba5109dca",
+   "url": "https://catalog.mccd.edu/programs/09475.NC/requisites-ojrrt"
+  },
+  "40215": {
+   "sha256": "cdac5a1145d3e5f36cc690423dfa21cf9657a6f99eaff22cffa4536b7836bb84",
+   "url": "https://catalog.mccd.edu/programs/01160.AST/requisites-ojrrt"
+  },
+  "40228": {
+   "sha256": "3156208dd79e18b51b2d1bb56cc64f7e71702a5d7a2fe1632beba0e3d621efe4",
+   "url": "https://catalog.mccd.edu/programs/49195.NC/requisites-ojrrt"
+  },
+  "40266": {
+   "sha256": "cac6c2816d942de68f83d425b65311f8200fad322d5d4068994f8869bb844cab",
+   "url": "https://catalog.mccd.edu/programs/22070.AAT/requisites-ojrrt"
+  },
+  "40737": {
+   "sha256": "6e5717668c4a5852cdf9acc5e553937fc2ae8db76140519437b7bce7a984707f",
+   "url": "https://catalog.mccd.edu/programs/49301.NC/requisites-ojrrt"
+  },
+  "40738": {
+   "sha256": "9ec13cbc382dd1ba268cfa64af1ea6ce33ddb52da2d1082babf608bb3abfb85b",
+   "url": "https://catalog.mccd.edu/programs/49310.NC/requisites-ojrrt"
+  },
+  "40854": {
+   "sha256": "57b3470097b189b2fc7933ee7ddd87dacebd8ae3a0299aab66ac306592028d6a",
+   "url": "https://catalog.mccd.edu/programs/19050.AST/requisites-ojrrt"
+  },
+  "40896": {
+   "sha256": "f6bbe20960573192017a83b5c5f035eea38fc2f47788815075a413c0cf37c489",
+   "url": "https://catalog.mccd.edu/programs/05101.AST/requisites-ojrrt"
+  },
+  "40932": {
+   "sha256": "132d457b6fc499a56b56c34326ef043538894737bc00c47df36e53f116871df0",
+   "url": "https://catalog.mccd.edu/programs/07020.NC/requisites-ojrrt"
+  },
+  "41050": {
+   "sha256": "2a4a8c232d3e9e894dea4fda049a811bdd732f5b6880c57fad5711973f445900",
+   "url": "https://catalog.mccd.edu/programs/09171.CM/requisites-ojrrt"
+  },
+  "41384": {
+   "sha256": "b0a76fb40b835c14e939eff094e84eb76d5583adee221789dcc16fc701b0f940",
+   "url": "https://catalog.mccd.edu/programs/13160.CT/requisites-ojrrt"
+  },
+  "41385": {
+   "sha256": "39ed73ce68b4c02553e3ff51c4fc679b7615ffa29c5580528d1a00252b26b4c1",
+   "url": "https://catalog.mccd.edu/programs/07024.CM/requisites-ojrrt"
+  },
+  "41411": {
+   "sha256": "df4fafd5727d9a7b92a569c9a28bf2317fdf9fa01b5a87be37d91bb295e91b65",
+   "url": "https://catalog.mccd.edu/programs/07074.CM/requisites-ojrrt"
+  },
+  "41427": {
+   "sha256": "7793f63cc2b81bf84a0f6b7041c0e6c80510e165811ba49cfaa87a2eb91fdd83",
+   "url": "https://catalog.mccd.edu/programs/07021.CM/requisites-ojrrt"
+  },
+  "41428": {
+   "sha256": "3a33f500f83ebc31e446212d8f0f0713f2b66a881e5585e2bb2a66c6fc52445a",
+   "url": "https://catalog.mccd.edu/programs/07082.CM/requisites-ojrrt"
+  },
+  "41472": {
+   "sha256": "60f2c45ca382131c3fa14d54f484e8bea747f76217e6e35dcbf18266eb98cf25",
+   "url": "https://catalog.mccd.edu/programs/07201.AS/requisites-ojrrt"
+  },
+  "41857": {
+   "sha256": "093a74c6af598f35f68a58d90158df9e2b14f57f815ac9456e2cb93fb885862a",
+   "url": "https://catalog.mccd.edu/programs/22010.AAT/requisites-ojrrt"
+  },
+  "42460": {
+   "sha256": "b13e91409a93f99d181a27867738033b21123b115cf158092489c40f1a856a74",
+   "url": "https://catalog.mccd.edu/programs/01151.AS/requisites-ojrrt"
+  },
+  "42503": {
+   "sha256": "b1d4beaa4c6084b56751a77225e61fbff240d56b1f613f7d0bff553977eeaa7e",
+   "url": "https://catalog.mccd.edu/programs/12510.AS/requisites-ojrrt"
+  },
+  "42504": {
+   "sha256": "32c7363b670f688a1215f891201dd17f57d6a2e11230b9ec2d2f229258737b16",
+   "url": "https://catalog.mccd.edu/programs/12510.CT/requisites-ojrrt"
+  },
+  "42572": {
+   "sha256": "728111342229761de7309c6ce319dca3a0c555fa8e70ba3066a0f2ea457a6724",
+   "url": "https://catalog.mccd.edu/programs/12402.CN/requisites-ojrrt"
+  },
+  "42573": {
+   "sha256": "9e91d1309f16c12ab8c15e3fb488781d62fc10f6113cedb03cec54dcfc1a8a8c",
+   "url": "https://catalog.mccd.edu/programs/09785.CM/requisites-ojrrt"
+  },
+  "42642": {
+   "sha256": "b1ed8763ef5e8512dd0c2ca529c4a3ce3dca8a975021c7f0ea245e17897bb557",
+   "url": "https://catalog.mccd.edu/programs/12500.CT/requisites-ojrrt"
+  },
+  "42691": {
+   "sha256": "8c6f26d4a1823575cd968d70b866126e8ab7d298b7d3ec90fc34883c4b249c6b",
+   "url": "https://catalog.mccd.edu/programs/07202.AS/requisites-ojrrt"
+  },
+  "42692": {
+   "sha256": "189bbf2b9cd6dc852e651aefd5a09ddf12bb534966e29567d92f6e62f1678a52",
+   "url": "https://catalog.mccd.edu/programs/07022.AS/requisites-ojrrt"
+  },
+  "42801": {
+   "sha256": "2c2eb93bd2413c881d34b4371f14c3109631f22832241685d4e0808e2d14ddf1",
+   "url": "https://catalog.mccd.edu/programs/07204.CN/requisites-ojrrt"
+  },
+  "43044": {
+   "sha256": "6cfbde45054c29b10ff28aa2823d614ce456e480b55453ba8a6cd336a0a7c61b",
+   "url": "https://catalog.mccd.edu/programs/07202.CT/requisites-ojrrt"
+  },
+  "43058": {
+   "sha256": "96f3363fe69b9c272f7d9e509ddd90f7fc4aa943f1b739aef00865bc5c3083cc",
+   "url": "https://catalog.mccd.edu/programs/07022.CT/requisites-ojrrt"
+  },
+  "43197": {
+   "sha256": "3afe978eca77f21745dac3f1970e2d83fbbb6a57d20d7407549d50c83cf53f99",
+   "url": "https://catalog.mccd.edu/programs/01051.AS/requisites-ojrrt"
+  },
+  "43347": {
+   "sha256": "a80d46acd1cec57517e0867761ea3e93e9996ddb4c437422cb62025269cb8a05",
+   "url": "https://catalog.mccd.edu/programs/15603.AAT/requisites-ojrrt"
+  },
+  "43465": {
+   "sha256": "a231c566508d9024b1e535256b63b18459eef4c47300f6552e8e6505cd39dc49",
+   "url": "https://catalog.mccd.edu/programs/49161.NC/requisites-ojrrt"
+  },
+  "43466": {
+   "sha256": "145d9718ae4040218d3197c99ce33438811d90ce71445ddb8cc15736a117d88a",
+   "url": "https://catalog.mccd.edu/programs/49162.NC/requisites-ojrrt"
+  },
+  "44165": {
+   "sha256": "0cb2d62876db2db15ba9e29f1041d0a1378b34ca995feb0f96ab57faa51f1150",
+   "url": "https://catalog.mccd.edu/programs/NC.CBE.AGT.CP/requisites-ojrrt"
+  },
+  "44416": {
+   "sha256": "8fe4e5f2c28bba00de4ed8dc2b202391dac78ba46b4f02e77ab696cd5f262082",
+   "url": "https://catalog.mccd.edu/programs/22062.CN/requisites-ojrrt"
+  },
+  "44429": {
+   "sha256": "1e361bba6c8fdd35da41e6f776e2fa8a0f3365c1c18340951b52f2e979119298",
+   "url": "https://catalog.mccd.edu/programs/22061.CN/requisites-ojrrt"
+  },
+  "44431": {
+   "sha256": "7a0bc5a4a2a42b53455f688c06209e90269fb3ba24f5117ab93e47b9c974e17a",
+   "url": "https://catalog.mccd.edu/programs/22063.CN/requisites-ojrrt"
+  },
+  "44715": {
+   "sha256": "279e4be934154d4cb0d20a7e9dedc98711fa8871ef350c7bff52e5b85a0f43ac",
+   "url": "https://catalog.mccd.edu/programs/08600.CM/requisites-ojrrt"
+  },
+  "45001": {
+   "sha256": "5adae7b75f7d482a42f93088900cd2a1746333cac6c2f4928762aa9802342f17",
+   "url": "https://catalog.mccd.edu/programs/12837.AST/requisites-ojrrt"
+  },
+  "45131": {
+   "sha256": "881875cc23651752033f0504b3bb06cd38e1d32e06eb0bdb4955a2fbed79563f",
+   "url": "https://catalog.mccd.edu/programs/13014.CN/requisites-ojrrt"
+  },
+  "45388": {
+   "sha256": "86e14bb9fb8f85cfc60f53e3b548af85f5219346c0814e446daa5f67b292643e",
+   "url": "https://catalog.mccd.edu/programs/13013.CM/requisites-ojrrt"
+  },
+  "45669": {
+   "sha256": "9e55aa898d16c91c3cdc4add83d27b3aad85388b289a572dbc3edfa91e7e4a94",
+   "url": "https://catalog.mccd.edu/programs/13051.CM/requisites-ojrrt"
+  },
+  "45766": {
+   "sha256": "36b2a13ddc1dc42d01a88597cfc33135022d83264e9fa472cf03cc8f29aef7a3",
+   "url": "https://catalog.mccd.edu/programs/01120.CM/requisites-ojrrt"
+  },
+  "45852": {
+   "sha256": "60df2829d61ebf9dfd1b774fe6f8492e2c7fa4b7d0b87825a788a51e4bf3d751",
+   "url": "https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt"
+  },
+  "45853": {
+   "sha256": "26c6948388a0a2fddb439d21982477ee80deb70431efd1d1977dd50cb6b6626c",
+   "url": "https://catalog.mccd.edu/programs/12600.CT/requisites-ojrrt"
+  },
+  "46060": {
+   "sha256": "47d99630729270ddee1160ef2a9cb3f20091acf50ca4283ed9ea22338721c16f",
+   "url": "https://catalog.mccd.edu/programs/09480.CN/requisites-ojrrt"
+  },
+  "46489": {
+   "sha256": "77d75ab362433086b21b24f4fea3dfe7e5d03bbdaeb0cd4d180beff99fdb198f",
+   "url": "https://catalog.mccd.edu/programs/17401.AST/requisites-ojrrt"
+  },
+  "46490": {
+   "sha256": "9ea3ac67c24baa5d6d70328955679a2e94e93fd1b3697f0fe27e9f69f069871b",
+   "url": "https://catalog.mccd.edu/programs/19800.AST/requisites-ojrrt"
+  }
+ },
+ "run": "44756306001"
+}
