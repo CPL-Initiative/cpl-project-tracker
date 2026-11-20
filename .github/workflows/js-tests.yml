@@ -311,6 +311,10 @@ jobs:
       # two-signal re-check sends to a person, and the store's active discipline. Pure stdlib.
       - name: Discipline in doubt (kb/_ccr_seed_recheck_dryrun.py --doubt)
         run: python3 tests/ccr_doubt_test.py
+      # The Commons' Subjects card (S694): local subject titles from the printed catalogs beside the state list,
+      # codes compared exactly, one-sided codes kept for the curator, byte-identical reruns. Pure stdlib.
+      - name: Local subject titles (kb/_build_local_subject_titles.py)
+        run: python3 tests/local_subject_titles_test.py
       # Issue 3447: rulings fold into the overlay and stay final; a person's discipline row validates a merge target.
       - name: Rulings stick (kb/_apply_curation.py ruling fold, reseed curated guard)
         run: python3 tests/apply_curation_rulings_test.py

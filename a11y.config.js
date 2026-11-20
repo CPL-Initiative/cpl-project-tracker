@@ -1211,6 +1211,19 @@ async function seedCociList(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The CPL Commons' Subjects list (S694): opened by its address, as the Subjects card links to it.
+async function seedCommonsSubjects(page, theme) {
+  await page.evaluate(() => { if (!/^commons\/subjects/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/subjects/cerritos"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#commons-root .csb-foot", { state: "attached", timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // The CPL Commons' ASE slice (#3111): opened by its address, as the Commons' first view links to it. The keyboard and
 // reflow passes open the bare file, so the seed names the address itself.
 async function seedCommonsAse(page, theme) {
@@ -3739,6 +3752,24 @@ module.exports = {
     routes: [{ hash: "commons/ase/ASE%20A5%20%E2%80%94%20Brakes", name: "ase-a5-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsAse(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The CPL Commons' Subjects list (S694): Steps a and b, college by college ──
+     commons_subjects.js, opened from #commons/subjects; measured on one college and on the curator's list. */
+  "commons-subjects": {
+    file: "index.html",
+    title: "CPL Commons: the Subjects list",
+    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos" }, { hash: "commons/subjects/disagree", name: "subjects-disagree" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsSubjects(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-subjects-dark": {
+    file: "index.html",
+    title: "CPL Commons: the Subjects list, dark",
+    routes: [{ hash: "commons/subjects/cerritos", name: "subjects-cerritos-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsSubjects(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The Commons data dashboard, slice 1 (#3215): the statewide figures and the college list ──
