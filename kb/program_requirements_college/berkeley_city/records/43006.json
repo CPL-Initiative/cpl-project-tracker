@@ -46,58 +46,67 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 13,
    "listed": 13,
-   "share": 0.846,
-   "missing": [
-    "COMM20",
-    "ENGL1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "COMMC1004",
-    "ENGLC1002"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "ENGLC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     19.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    19.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     19.0
+     52.0,
+     53.0
     ],
     "stated": [
-     18.0,
-     19.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     7.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -122,7 +131,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,8 +152,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [],
@@ -300,5 +309,24 @@
    "Catalog text is cut off mid-sentence at the end ('A grade of “C” or \"P\" or b'); no outcomes or careers section appears in the text provided."
   ]
  },
- "extracted_run": "39891604919"
+ "extracted_run": 44751547030,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "General Education (Cal-GETC)and Elective Units (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)",
+   "statewide": "cal_getc_34",
+   "standing": "under",
+   "basis": "sheet-81",
+   "combined": "General Education (Cal-GETC)and Elective Units / 41-42"
+  }
+ ],
+ "read_run": "39891604919"
 }

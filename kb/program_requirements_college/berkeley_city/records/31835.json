@@ -46,27 +46,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 17,
-   "share": 0.765,
+   "share": 0.824,
    "missing": [
-    "ENGL1B",
     "ENGLC1001",
     "GEOG3",
     "MATH18"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 7,
    "codes": [
     "AFRAM1",
     "ASAME11",
     "EDUC18",
     "ENGL47",
-    "ENGLC1002",
     "ETHST1",
     "M/LAT33",
     "MUSIC10"
@@ -76,7 +81,6 @@
     "ASAME11",
     "EDUC18",
     "ENGL47",
-    "ENGLC1002",
     "ETHST1",
     "M/LAT33",
     "MUSIC10"
@@ -415,5 +419,6 @@
    "The catalog text is cut off mid-sentence in the Program Description ('60 units that are eligible for transfer to the Cal'); any outcomes, careers or elective wording after that point is not available. No program learning outcomes appear in the text provided."
   ]
  },
- "extracted_run": "39891604919"
+ "extracted_run": 44751547030,
+ "read_run": "39891604919"
 }
