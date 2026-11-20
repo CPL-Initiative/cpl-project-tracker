@@ -1,0 +1,78 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701): NOCE's 2026-27 course descriptions, subject by subject, with a plain page read (the census Reader: robots.txt first, 4 s between loads, the CPL Initiative user agent). The capture view prints each page line for line, so a session files every course's number, title, hours, prerequisites and description from the log. Subjects OTEC to WFPR, Photography (FOTO), and Kids College (KIDS) again whole: the first read's capture view stopped at its 1,400-line cap, so this plan raises capture_lines. No model call.",
+ "college": "North Orange Continuing Education",
+ "questions": {
+  "subjects": "The subject pages the index lists past the first read's cap of 40 links.",
+  "courses": "Each course's number, title, hours, prerequisites and description, line for line."
+ },
+ "keywords": [
+  "[Hh]ours?",
+  "Prerequisite"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/otec/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/parn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/ptec/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/foto/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/qamd/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/sign/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/solr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/wfpr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/kids/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ],
+ "capture_lines": 4000
+}
