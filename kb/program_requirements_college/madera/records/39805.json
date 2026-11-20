@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6933,
-    "output_tokens": 2255,
+    "output_tokens": 2256,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2255,
+  "output_tokens": 2256,
   "output_tokens_details": {
-   "thinking_tokens": 494
+   "thinking_tokens": 432
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07283,
- "ms": 25560,
- "seconds": 26.2,
+ "cost_usd": 0.07285,
+ "ms": 17781,
+ "seconds": 17.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 19,
-   "share": 0.947,
-   "missing": [
-    "MATH5A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -209,7 +210,7 @@
     ]
    },
    {
-    "name": "IT Support Courses (select one option): Option 1",
+    "name": "IT Support Courses (select one option) - Option 1",
     "rule": "all",
     "minimum": null,
     "option_group": "IT Support Courses",
@@ -249,7 +250,7 @@
     ]
    },
    {
-    "name": "IT Support Courses (select one option): Option 2",
+    "name": "IT Support Courses (select one option) - Option 2",
     "rule": "all",
     "minimum": null,
     "option_group": "IT Support Courses",
@@ -268,7 +269,7 @@
     ]
    },
    {
-    "name": "Networking and Security Courses (select one option): Option 1",
+    "name": "Networking and Security Courses (select one option) - Option 1",
     "rule": "all",
     "minimum": null,
     "option_group": "Networking and Security Courses",
@@ -308,7 +309,7 @@
     ]
    },
    {
-    "name": "Networking and Security Courses (select one option): Option 2",
+    "name": "Networking and Security Courses (select one option) - Option 2",
     "rule": "all",
     "minimum": null,
     "option_group": "Networking and Security Courses",
@@ -364,15 +365,17 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; catalog lists MATH C2210 Calculus I: Early Transcendentals instead"
+    "why": "not in the text; catalog lists MATH C2210 Calculus I: Early Transcendentals instead (likely renumbered)"
    }
   ],
   "notes": [
-   "Source URL is the 2025-2026 MCC catalog while the requested catalog year is 2026-2027; verify the year.",
-   "MATH C2210 (Calculus I: Early Transcendentals, 5 units) is not in the closed list and appears to replace MATH 5A (Calculus I).",
-   "The description mentions CompTIA Network+ and Security+ certifications as 'benchmarks for computer networking and security technician certification'; this was read as a certification description, not a named career, so careers is empty.",
-   "The page prints a major total (43.5-48.0) but no degree total or GE pattern."
+   "Source URL refers to the 2025-2026 MCC catalog, while the requested catalog year is 2026-2027.",
+   "The option groups print group totals (IT Support 9.5-12.0; Networking and Security 12.0); each option's own printed total is recorded in its block's stated.",
+   "MATH C2210 (Calculus I: Early Transcendentals) is not in the closed list and appears to replace MATH 5A (Calculus I).",
+   "The description mentions preparation for CompTIA Network+ and Security+ certification exams and 'computer networking and security technician certification'; this was read as a certification, not a named career, so careers is empty.",
+   "No general education pattern or degree total is printed in this section; Total 43.5-48.0 recorded as the major total."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

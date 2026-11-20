@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Liberal Arts and Sciences - Arts and Humanities",
  "award": "A.A. Degree",
- "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=121",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 15020,
+  "input_tokens": 14953,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 15020,
-    "output_tokens": 6619,
+    "input_tokens": 14953,
+    "output_tokens": 7061,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,64 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 6619,
+  "output_tokens": 7061,
   "output_tokens_details": {
-   "thinking_tokens": 1320
+   "thinking_tokens": 1230
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.19246,
- "ms": 47924,
- "seconds": 48.4,
+ "cost_usd": 0.20103,
+ "ms": 49867,
+ "seconds": 51.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 72,
+   "placed": 110,
    "listed": 111,
-   "share": 0.649,
+   "share": 0.991,
    "missing": [
-    "ARC132",
-    "ARC133",
-    "ART100",
-    "ART103",
-    "ART111",
-    "ART201",
-    "ART300",
-    "ART501",
-    "ART502",
-    "ART639",
-    "ART713",
-    "ARTHC1100",
-    "ARTHC1200",
-    "COMM104",
-    "COMM121",
-    "COMM122",
-    "COMM151",
-    "COMMC1000",
-    "COUNSEL1",
-    "COUNSEL17",
-    "COUNSEL2",
-    "COUNSEL20",
-    "COUNSEL22",
-    "COUNSEL4",
-    "COUNSEL40",
-    "COUNSEL5",
-    "COUNSEL6",
-    "DANCEST805",
-    "ENGLISH102",
-    "ENGLISH127",
-    "ENGLISH203",
-    "ENGLISH204",
-    "ENGLISH205",
-    "ENGLISH206",
-    "ENGLISH207",
-    "ENGLISH208",
-    "ENGLISH209",
-    "ENGLISH211",
     "HUMAN2"
    ],
    "unexplained": [],
@@ -95,14 +57,22 @@
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 8,
    "codes": [
+    "ASIAN20",
+    "CHICANO32",
+    "CHICANO34",
+    "CHICANO36",
     "ENGLISH212",
     "HISTORY1",
     "HISTORY2",
     "HUMAN8"
    ],
    "flagged": [
+    "ASIAN20",
+    "CHICANO32",
+    "CHICANO34",
+    "CHICANO36",
     "ENGLISH212",
     "HISTORY1",
     "HISTORY2",
@@ -115,7 +85,7 @@
    "status": "equal",
    "computed": [
     18.0,
-    18.0
+    20.0
    ],
    "stated": [
     18.0,
@@ -128,7 +98,7 @@
     "status": "equal",
     "computed": [
      36.0,
-     72.0
+     74.0
     ],
     "stated": [
      60.0,
@@ -141,22 +111,20 @@
     ],
     "why": [],
     "within": true
-   },
-   "short_high": true,
-   "rescored": "Sam's ruling of 2026-11-17, short high end"
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -171,7 +139,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Degrees and Certificates – LIBERAL ARTS AND SCIENCES",
+   "section_heading": "Academic Plan: H018706C",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -192,7 +160,14 @@
     "max": 24
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate proficiency in verbal communication.",
+    "Employ numeracy and quantitative reasoning to solve problems.",
+    "Differentiate between facts and opinions and identify biases and logical fallacies in sources of information.",
+    "Demonstrate the ability to form conclusions based on the analysis of evidence.",
+    "Describe social constructs that guide ethical decision-making.",
+    "Describe the role of human events and forms of expression in shaping society."
+   ],
    "careers": []
   },
   "blocks": [
@@ -202,10 +177,304 @@
     "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 18,
+     "max": 20
     },
     "courses": [
+     {
+      "code": "ARC 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARC 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 501",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 502",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 639",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 713",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASIAN 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHICANO 036",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 001",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 002",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 004",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 005",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 006",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 017",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 022",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUNSEL 040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCEST 805",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 208",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "ENGLISH 212",
       "units": 3,
@@ -744,170 +1013,135 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ARC 132",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ARC 133",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 100",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 103",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 111",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 201",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 300",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 501",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 502",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 639",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ART 713",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ARTHC1100",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ARTHC1200",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "COMM 104",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "COMM 121",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "COMM 122",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "COMM 151",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "COUNSEL 1",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "COUNSEL 17",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "COUNSEL 2",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "COUNSEL 20",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "COUNSEL 22",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "COUNSEL 4",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "COUNSEL 40",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "COUNSEL 5",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "COUNSEL 6",
-    "why": "not in this section's visible text; appears only in other emphases' lists"
-   },
-   {
-    "code": "DANCEST 805",
-    "why": "not in this section's visible text; appears only in Health and Fitness section"
-   },
-   {
-    "code": "ENGLISH 102",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 127",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 203",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 204",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 205",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 206",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 207",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 208",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 209",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
-    "code": "ENGLISH 211",
-    "why": "not in the text; list begins on an earlier page not provided"
-   },
-   {
     "code": "HUMAN 2",
-    "why": "not in the text; may be on an earlier page not provided"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The text begins mid-list on page 122 (catalog p.121); the Arts and Humanities section heading, description, outcomes, requirement rule and the start of the course list are on an earlier page not included. Section heading recorded is the running page header; the block name and 'choose 18 units' rule are inferred from parallel emphases (Health and Fitness, Math & Natural Sciences) and the printed 'Major 18-20'. Reviewer should verify.",
-   "The Arts and Humanities list is identified as the tail list ending before the Health and Fitness heading; its summary prints Major 18-20, Additional LACCD GE Requirements 2-24, Additional Degree-applicable Requirement 16-30, Total Units 60.",
-   "GE footnote: '*Not including 3-15 double-countable major units. Transfer Students are advised to use the Cal-GETC plan instead.'",
-   "Program learning outcomes and careers for this section are not in the provided text; the outcomes shown belong to the Health and Fitness and Math & Natural Sciences sections and were not recorded.",
-   "Catalog prints 'Creative Notification' for ENGLISH 223 (closed list: Creative Nonfiction) and 'Elementary Japanese' for JAPAN 001.",
-   "HISTORY 001, HISTORY 002, ENGLISH 212 and HUMAN 008 are not in the closed list."
+   "The excerpt begins at 'Academic Plan: H018706C'; the program title heading above it is not in the text, so the academic plan line is used as section_heading.",
+   "The PLO list is the same list printed for the other Liberal Arts & Sciences degrees (e.g., Health and Fitness); recorded as printed in this award's section.",
+   "Block stated 18-20 taken from the 'Major 18-20' line; heading says 'Choose 18 units minimum'.",
+   "ge_units 2-24 is printed as 'Additional LACCD GE Requirements*', footnoted as not including 3-15 double-countable major units; the full GE pattern size is not printed. ge_pattern recorded as LACCD GE; Cal-GETC advised for transfer students.",
+   "degree_elective_units 16-30 is the printed 'Additional Degree-applicable Requirement' line.",
+   "ART 201 is printed as 'Drawing II' while the closed list title is DRAWING I; code matched as printed.",
+   "ARTH C1100/C1200 printed as formerly ART 101/102; COMM C1000 formerly COMM 101. ARTH C1100/C1200 treated as matching closed-list ARTHC1100/ARTHC1200.",
+   "Catalog additions: ASIAN 020, CHICANO 032, 034, 036, ENGLISH 212, HISTORY 001, HISTORY 002, HUMAN 008."
   ]
  },
- "extracted_run": "39006381839"
+ "extracted_run": "44687664966",
+ "catalog_year": "2026-2027",
+ "source_sha": "0b7e8f9047b55201",
+ "source_codes": [
+  "ARC132",
+  "ARC133",
+  "ART100",
+  "ART103",
+  "ART111",
+  "ART201",
+  "ART300",
+  "ART501",
+  "ART502",
+  "ART639",
+  "ART713",
+  "ARTHC1100",
+  "ARTHC1200",
+  "COMM104",
+  "COMM121",
+  "COMM122",
+  "COMM151",
+  "COMMC1000",
+  "COUNSEL1",
+  "COUNSEL17",
+  "COUNSEL2",
+  "COUNSEL20",
+  "COUNSEL22",
+  "COUNSEL4",
+  "COUNSEL40",
+  "COUNSEL5",
+  "COUNSEL6",
+  "DANCEST805",
+  "ENGLISH102",
+  "ENGLISH127",
+  "ENGLISH203",
+  "ENGLISH204",
+  "ENGLISH205",
+  "ENGLISH206",
+  "ENGLISH207",
+  "ENGLISH208",
+  "ENGLISH209",
+  "ENGLISH211",
+  "ENGLISH213",
+  "ENGLISH214",
+  "ENGLISH215",
+  "ENGLISH218",
+  "ENGLISH219",
+  "ENGLISH223",
+  "ENGLISH234",
+  "ENGLISH239",
+  "ENGLISH240",
+  "ENGLISH251",
+  "ENGLISH260",
+  "ENGLISH265",
+  "ENGLISH270",
+  "ENGLISH271",
+  "ENGLISH272",
+  "FRENCH1",
+  "FRENCH10",
+  "FRENCH2",
+  "FRENCH26",
+  "FRENCH3",
+  "FRENCH4",
+  "FRENCH5",
+  "HISTORY43",
+  "HISTORY44",
+  "HISTORY74",
+  "HISTORY81",
+  "HISTORY82",
+  "HISTORY86",
+  "HISTORY87",
+  "HUMAN1",
+  "HUMAN17",
+  "HUMAN3",
+  "HUMAN30",
+  "HUMAN6",
+  "HUMAN60",
+  "HUMAN77",
+  "JAPAN1",
+  "LIBSCI101",
+  "MUSIC100",
+  "MUSIC101",
+  "MUSIC111",
+  "MUSIC116",
+  "MUSIC118",
+  "MUSIC141",
+  "MUSIC2161",
+  "MUSIC2162",
+  "MUSIC2163",
+  "MUSIC2164",
+  "MUSIC2171",
+  "MUSIC2172",
+  "MUSIC2173",
+  "MUSIC2174",
+  "MUSIC501",
+  "MUSIC700",
+  "PHILOS1",
+  "PHILOS20",
+  "PHILOS33",
+  "PHILOS6",
+  "SPANISH1",
+  "SPANISH12",
+  "SPANISH2",
+  "SPANISH21",
+  "SPANISH22",
+  "SPANISH3",
+  "SPANISH35",
+  "SPANISH36",
+  "SPANISH4",
+  "THEATER100",
+  "THEATER110",
+  "THEATER270",
+  "THEATER275",
+  "THEATER300"
+ ],
+ "source_coverage": 0.991
 }

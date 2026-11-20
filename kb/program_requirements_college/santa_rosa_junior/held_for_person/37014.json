@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 17125,
-    "output_tokens": 9373,
+    "output_tokens": 6066,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 9373,
+  "output_tokens": 6066,
   "output_tokens_details": {
-   "thinking_tokens": 475
+   "thinking_tokens": 289
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.25596,
- "ms": 62931,
- "seconds": 63.1,
+ "cost_usd": 0.18982,
+ "ms": 41333,
+ "seconds": 42.0,
  "parts": null,
  "error": null,
  "score": {
@@ -335,7 +335,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not present in the provided text (excerpt covers History (AA-T), Hospitality Management (AS-T), Humanities (AA))",
+   "section_heading": "",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -364,952 +364,953 @@
   "missing_explained": [
    {
     "code": "ANAT 1",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ANAT 40",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 19",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 21",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 3",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 30",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 31",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 32",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 34",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 4",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 42",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 43",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH 5",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH C1001",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ANTH C1001L",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ARCH 2.1",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ARCH 2.2",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ART 2.3",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ART 3",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ART 4",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH 1.1",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH 1.2",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH 1.3",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH 1.4",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH 1.5",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH 1.6",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH 1.7",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH 2.5",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH C1100",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ARTH C1200",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ASL 2",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ASTR 12",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ASTR 3",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ASTR 3L",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ASTR 4",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ASTR 42",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ASTR 4L",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 12",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 13",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 14",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 2.1",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 2.2",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 2.3",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 20",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 25",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 27",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIO 31",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BIOLC1000",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "BTNY 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "CDEVC1000",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "CHEM 12A",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "CHEM 12B",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "CHEM 3A",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "CHEM 3AL",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "CHEM 3B",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "CHEM 42",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "CHEM 8",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "COMM 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "COMM 7",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "COMM 9",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "COMM C1000",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "COUN 20",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "COUN 7",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "DANC 2",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ECON 12",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ECON C2001",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ECON C2002",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "EMLS 1",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "EMLS 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 10",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 11",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 12",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 14",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 2",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 22",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 25",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 27",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 3",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 30.1",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 30.2",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 31",
-    "why": "no Cal-GETC certificate section in text; appears only in other programs"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 32",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 33",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 36",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 46.1",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 46.2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 7",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL 9",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL C1000",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL C1001",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ENGL C1002",
-    "why": "no Cal-GETC certificate section in text; appears only in Humanities (AA)"
+    "why": "award section not in the text"
    },
    {
     "code": "ENVS 12",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ENVS 8",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ETHS 20",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ETHS 21",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ETHS 22",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ETHS 23",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ETHS 24",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ETHS 25",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ETHS 26",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "ETHS 27",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "FMA 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "FMA 14",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "FMA 15",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "FMA 17",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "FMA 4",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "FMA 44",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "FMA 6",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "FREN 2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "FREN 3",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "FREN 4",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "GD 15",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOG 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOG 10L",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOG 3",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOG 4",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOG 4L",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOG 7",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOL 1",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOL 11",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOL 1L",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GEOL 20",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "GERM 2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "GERM 3",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "GERM 4",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 1.1",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 1.2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 18.1",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 18.2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 20",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 21",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 22",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 26",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 30",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 33",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 4.1",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 4.2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 5",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 6",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 8.1",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST 8.2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST C1001",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HIST C1002",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 14",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 23",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 24",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 25",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 26",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 4.1",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 5",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 6",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 7",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "HUM 8",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ITAL 2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ITAL 3",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "ITAL 4",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "KIN 5",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MATH 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MATH 16",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MATH 4",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MATH 9",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MATH C2210",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MATH C2220",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MICR 5",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MTER 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MTER 10L",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MUSC 6.1",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MUSC 6.2",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MUSC 7",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MUSC 8",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "MUSC 9",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 10",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 11",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 12",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 13",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 20",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 21",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 5",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 6",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 7",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHIL 9",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "PHSC 21",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHYS 11",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHYS 20A",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHYS 20B",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHYS 40",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHYS 41",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHYS 42",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PHYZ 1",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "POLS 11",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "POLS 12",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "POLS 18",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "POLS 2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "POLS 25",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "POLS C1000",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 11",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 15",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 3",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 30",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 34",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 35",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 4",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 40",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 5",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 7",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC 8",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "PSYC C1000",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 1",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 15",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 21",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 22",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 3",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 32",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 6.66",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 7",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "RELS 8",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "SOC 10",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "SOC 15",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "SOC 2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "SOC 3",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "SOC 30",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "SOCIC1000",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "SPAN 2",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "SPAN 3",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "SPAN 4",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "SPAN 40",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "SPAN 41",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "STAT C1000",
-    "why": "no Cal-GETC certificate section in text; appears only in Hospitality Management (AS-T)"
+    "why": "award section not in the text"
    },
    {
     "code": "THAR 1",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "THAR 2",
-    "why": "no Cal-GETC certificate section in text"
+    "why": "award section not in the text"
    },
    {
     "code": "THAR 6",
-    "why": "no Cal-GETC certificate section in text; appears only in History (AA-T)"
+    "why": "award section not in the text"
    }
   ],
   "notes": [
-   "The supplied catalog text (pages 156-159) contains the end of a hemp/agriculture program, History (AA-T), Hospitality Management (AS-T) and the start of Humanities (AA); it contains no section for the Cal-GETC GE Pattern Certificate of Achievement. No blocks, totals, outcomes or careers were recorded.",
-   "The source page link (#page=156) likely points to the wrong page; the Cal-GETC certificate section should be located elsewhere in the 2026-2027 catalog and re-read.",
-   "Many closed-list courses appear in the History (AA-T) and Humanities (AA) lists, but those belong to other awards and were not used."
+   "The supplied catalog text (pp. 156-159) contains no section for the Cal-GETC GE Pattern Certificate of Achievement. It holds the end of a hemp/agriculture program, History (AA-T), Hospitality Management (AS-T), and the start of Humanities (AA). None of these sections was read as this award, so no blocks, totals, outcomes or careers are recorded.",
+   "Many closed-list courses appear in the History AA-T and Humanities AA lists, but those lists belong to other awards and were not used.",
+   "The source link likely points to the wrong page. A reviewer should find the Cal-GETC GE Pattern certificate section in the 2026-2027 SRJC catalog.",
+   "section_heading is left empty because no heading for this award appears in the text."
   ]
  },
- "extracted_run": "44477690021",
+ "extracted_run": "44701011374",
  "catalog_year": "2026-2027",
  "source_sha": "3ca75f9974ad533f",
  "source_codes": [

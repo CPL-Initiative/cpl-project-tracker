@@ -1,0 +1,396 @@
+{
+ "college": "Barstow Community College",
+ "control_number": "42759",
+ "shape": "adt",
+ "title": "Theatre Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=67",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8122,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8122,
+    "output_tokens": 2663,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2663,
+  "output_tokens_details": {
+   "thinking_tokens": 916
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08575,
+ "ms": 23187,
+ "seconds": 23.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate of Arts Degree for Transfer, Theatre Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 11,
+    "max": 11
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of and empathy for the racial, ethnic, social, and cultural diversity of U.S. and World theatre.",
+    "Describe, analyze, interpret, and evaluate dramatic literature and theatrical productions.",
+    "Demonstrate competence in the technical, design, and/or acting aspects of theatrical production."
+   ],
+   "careers": [
+    "teaching",
+    "design",
+    "technical theatre",
+    "theatre management",
+    "professional performance",
+    "stage direction",
+    "stage management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "TART 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select: (3 units maximum)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "TART 5A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "TART 5B",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 12A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "TART 12B",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 13A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "TART 13B",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 14A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "TART 14B",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select three courses (9 units)",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "TART 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 5A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "TART 5B",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 12A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "TART 12B",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 13A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "TART 13B",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "TART 14A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "TART 14B",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List A is headed 'Select three courses (9 units)', but its 9.0 subtotal also covers a sub-list 'Select from the following REQUIRED CORE courses no already used: (3 units maximum)' of production courses (TART 5A/5B, 12A/12B, 13A/13B, 14A/14B). I recorded it as one choose_units block of 9 units holding both lists. At most 3 units may come from the production courses, and those must not already be used in the first 'Select' block. Reviewer should check this reading.",
+   "The production courses are printed as 1.0-4.0 per pair. Units for the alternative courses use the low end of that range.",
+   "The 'Select: (3 units maximum)' block has a printed subtotal of 3.0, which I read as a requirement of 3 units.",
+   "The page prints Major Units Required 18.0, Cal-GETC 34.0, Transferable Electives Required 11.0 and Total Units Required 60.0. I recorded the 11 elective units as degree_elective_units.",
+   "The Technical Theatre Certificate of Achievement section on page 69 is a separate award and was not read."
+  ]
+ },
+ "extracted_run": "44687777798",
+ "catalog_year": "2026-2027",
+ "source_sha": "d58ad7a1882db19a",
+ "source_codes": [
+  "TART1",
+  "TART10",
+  "TART12A",
+  "TART12B",
+  "TART13A",
+  "TART13B",
+  "TART14A",
+  "TART14B",
+  "TART15",
+  "TART16",
+  "TART17",
+  "TART18",
+  "TART19",
+  "TART3",
+  "TART5A",
+  "TART5B",
+  "TART6"
+ ],
+ "source_coverage": 1.0
+}

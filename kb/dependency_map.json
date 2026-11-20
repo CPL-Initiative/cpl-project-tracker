@@ -4,7 +4,7 @@
   "supabase_tables": 118,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1093,
+  "file_datasets": 1094,
   "external_services": 197,
   "consumers": 635,
   "workflows": 75,
@@ -517,7 +517,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 415
+     "line": 444
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -844,7 +844,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 439
+     "line": 468
     }
    ],
    "main_committers": []
@@ -4164,7 +4164,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 462
+     "line": 491
     }
    ],
    "main_committers": []
@@ -8850,7 +8850,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6846
+     "line": 6849
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8870,7 +8870,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6922
+     "line": 6925
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9562,7 +9562,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 149
+     "line": 161
     }
    ],
    "served": false,
@@ -14999,7 +14999,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 711
+     "line": 802
     }
    ],
    "served": false,
@@ -18536,7 +18536,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7523
+     "line": 7526
     }
    ],
    "served": true,
@@ -22657,7 +22657,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7257
+     "line": 7260
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22677,7 +22677,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6286
+     "line": 6289
     }
    ],
    "served": false,
@@ -23327,7 +23327,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6884
+     "line": 6887
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24296,7 +24296,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 129
+     "line": 139
     }
    ],
    "served": false,
@@ -24336,7 +24336,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 87
     }
    ],
    "served": false,
@@ -26591,6 +26591,19 @@
    "main_committers": []
   },
   "file:tests/course_id_route_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/course_outcomes_header_fix_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31549,7 +31562,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7497
+     "line": 7500
     }
    ],
    "main_committers": []
@@ -31561,7 +31574,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7614
+     "line": 7617
     }
    ],
    "main_committers": []
@@ -37010,6 +37023,7 @@
     "tests/course_outline_index_test.py",
     "tests/ccsf_curricunet_route_test.py",
     "tests/course_outcomes_read_test.py",
+    "tests/course_outcomes_header_fix_test.py",
     "tests/mtsac_slo_read_test.py",
     "tests/exhibit_subject_fill_test.py",
     "tests/course_outcomes_load_test.py",

@@ -5867,7 +5867,10 @@ def stage_sources(college: str, src_dir: str, out_dir: str, sources_run: str, fo
     # (S689 review, finding 4: City College of San Francisco's preview 44596600042 would extract 40 such programs,
     # 28 of them on course-description pages). The account names each one.
     standing = RC.refused_standing(dest)
-    held = sorted(s["control_number"] for s in srcs if s.get("text") and s["control_number"] in standing)
+    # A page the rules themselves accepted (source.page_check, set by capture_pdf) is the program's own by rule A, so
+    # it is staged as read (COBIx on #3587, 7033948379: Santa Rosa Junior 39418 on p.298 was held).
+    held = sorted(s["control_number"] for s in srcs if s.get("text") and s["control_number"] in standing
+                  and not (s.get("source") or {}).get("page_check"))
     for s in srcs:
         if s["control_number"] in held:
             s.update(method="not_found", text="", source=None, coverage=0.0, codes_found=[],

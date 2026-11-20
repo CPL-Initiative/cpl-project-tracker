@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 266,
  "with_closed_list": 251,
- "started": "2026-10-14T12:26:36Z",
+ "started": "2026-11-20T06:26:14Z",
  "curriqunet": {
   "catalog": 1758,
   "view_prefix": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/",
@@ -17,35 +17,193 @@
   ],
   "nodes_read": 86,
   "calls": 172,
-  "entries": 301,
+  "entries": 304,
   "stopped_at_cap": false,
   "same_title_entries": 0,
-  "entries_read": 301
+  "entries_read": 304,
+  "twin_ids": {},
+  "failed_calls": 0
  },
- "pages_read": 301,
+ "pages_read": 304,
+ "pages_listed": 304,
+ "pages_answered": 304,
+ "listing_failed": 0,
  "banner_h1": null,
- "loads": 474,
- "seconds": 2202.7,
- "found": 237,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 191,
+   "hits": 166,
+   "recall": 0.869,
+   "false": 0,
+   "false_off_own": 1,
+   "false_no_claims": 1,
+   "shared": 34,
+   "false_matches": [
+    {
+     "control_number": "11027",
+     "title": "American Indian Studies",
+     "award": "A.A. Degree",
+     "page": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Indian-Studies-Programs/6496",
+     "h1": "American Indian Studies, Certificate - Major #7681"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "11027",
+     "title": "American Indian Studies",
+     "award": "A.A. Degree",
+     "page": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Indian-Studies-Programs/6496",
+     "h1": "American Indian Studies, Certificate - Major #7681"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 15,
+  "by_result": {
+   "not_searched": 14,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "17156",
+    "title": "Cisco CCNA Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30992",
+    "title": "Clerical Training",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30993",
+    "title": "Automotive Mechanics",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30994",
+    "title": "Industrial Training",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30995",
+    "title": "Automotive Collision Repair",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "31292",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32872",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32881",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38967",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40560",
+    "title": "RETA-CARO Certification Ready",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40684",
+    "title": "Residential Construction",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "41131",
+    "title": "LiUNA Laborers' Construction",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "44252",
+    "title": "Dental Hygiene",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "44573",
+    "title": "MC3 Pre-Apprenticeship",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45362",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 477,
+ "seconds": 2300.8,
+ "found": 225,
  "by_method": {
   "no_closed_list": 15,
-  "not_found": 6,
-  "page_claimed": 8,
-  "sitemap_page": 237
+  "not_found": 20,
+  "page_claimed": 6,
+  "sitemap_page": 225
  },
  "shared_pages": {
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6723": [
-   "01658",
-   "21244"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6483": [
-   "01660",
-   "21198"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6732": [
-   "01664",
-   "21201"
-  ],
   "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6554": [
    "01669",
    "21209"
@@ -54,25 +212,9 @@
    "01680",
    "21219"
   ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6518": [
-   "01687",
-   "21222"
-  ],
   "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Collision-Repair-Technology-Programs/6514": [
    "01688",
    "21223"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Drafting-and-Design-Programs/6590": [
-   "01696",
-   "21225"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6595": [
-   "01698",
-   "21226"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6791": [
-   "01699",
-   "21227"
   ],
   "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6764": [
    "01709",
@@ -82,33 +224,9 @@
    "01710",
    "21236"
   ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Medical-Assistant-Programs/6741": [
-   "01716",
-   "33532"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6579": [
-   "01723",
-   "13639"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6672": [
-   "01724",
-   "21241"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Paralegal-Programs/6761": [
-   "01726",
-   "21243"
-  ],
   "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6707": [
    "01737",
    "21245"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6782": [
-   "01740",
-   "38902"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6666": [
-   "01741",
-   "21251"
   ],
   "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6552": [
    "10985",
@@ -118,25 +236,9 @@
    "10999",
    "21228"
   ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6750": [
-   "11005",
-   "21232"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/6677": [
-   "11017",
-   "21242"
-  ],
   "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6704": [
    "11019",
    "21246"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6501": [
-   "11031",
-   "21197"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6603": [
-   "11893",
-   "21216"
   ],
   "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6736": [
    "12215",
@@ -166,25 +268,174 @@
    "37406",
    "37579"
   ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6640": [
-   "38239",
-   "39300",
-   "39301"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6523": [
-   "38351",
-   "38357"
-  ],
-  "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6688": [
-   "40409",
-   "40410"
-  ],
   "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Science-Programs/7091": [
    "44281",
    "44283"
   ]
  },
  "not_found": [
+  {
+   "control_number": "13639",
+   "title": "Child Development",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6579",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 5,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3136,
+     "content": 3136,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21216",
+   "title": "Networking/Computer Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6603",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 10,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1270,
+     "content": 1270,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21225",
+   "title": "Computer Aided Drafting and Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Drafting-and-Design-Programs/6592",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.25,
+    "net": 3,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 3 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 688,
+     "content": 688,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21227",
+   "title": "Welding Technology, Metal Fabrication Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6791",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 17,
+    "listed": 17,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1932,
+     "content": 1932,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21242",
+   "title": "Food Services Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/7063",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.4,
+    "net": 6,
+    "listed": 15,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1014,
+     "content": 1014,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21243",
+   "title": "Paralegal Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Paralegal-Programs/6761",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 24,
+    "listed": 24,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 2092,
+     "content": 2092,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
   {
    "control_number": "30874",
    "title": "Maintenance Mechanic",
@@ -204,12 +455,166 @@
     "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
     "error": null,
     "chars": {
-     "body": 1924,
-     "content": 1924,
+     "body": 1916,
+     "content": 1916,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31056",
+   "title": "Sign Language Interpreting Preparation Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/7028",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.6,
+    "body": 0.6,
+    "content": 0.6,
+    "net": 3,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1249,
+     "content": 1249,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33237",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Education-Programs/6637",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.213,
+    "body": 0.213,
+    "content": 0.213,
+    "net": 10,
+    "listed": 47,
+    "why": "coarse net: the page's code tokens name 10 of 47 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1771,
+     "content": 1771,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33532",
+   "title": "Clinical Medical Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Medical-Assistant-Programs/6741",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 7,
+    "listed": 7,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 2306,
+     "content": 2306,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "37142",
+   "title": "Global Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Chicano-Latino-Studies-Programs/6569",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3269,
+     "content": 3269,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38239",
+   "title": "Industrial Maintenance Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/7054",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1468,
+     "content": 1468,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39300",
+   "title": "Electromechanical 1",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39301",
+   "title": "Electromechanical 2",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "40558",
@@ -235,7 +640,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40559",
@@ -261,7 +667,35 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40682",
+   "title": "Office Professional - One-Person Office Emphasis",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6554",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1214,
+     "content": 1214,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "41110",
@@ -287,7 +721,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41634",
@@ -313,7 +748,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41636",
@@ -321,7 +757,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -330,43 +767,27 @@
    "title": "Liberal Arts: American Sign Language",
    "award": "A.A. Degree",
    "pages": [
-    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/6497",
-    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7111/7113"
-   ]
+    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/6497"
+   ],
+   "status": "Active"
   },
   {
    "control_number": "19076",
    "title": "Liberal Arts: American Sign Language",
    "award": "A.A. Degree",
    "pages": [
-    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/6497",
-    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7111/7113"
-   ]
+    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/6497"
+   ],
+   "status": "Active"
   },
   {
    "control_number": "19662",
    "title": "Psychology",
    "award": "A.A. Degree",
    "pages": [
-    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Liberal-Arts-Programs/6722",
-    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7111/7113"
-   ]
-  },
-  {
-   "control_number": "33237",
-   "title": "Elementary Teacher Education",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7111/7113"
-   ]
-  },
-  {
-   "control_number": "37142",
-   "title": "Global Studies",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7111/7113"
-   ]
+    "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Liberal-Arts-Programs/6722"
+   ],
+   "status": "Active"
   },
   {
    "control_number": "40497",
@@ -375,7 +796,8 @@
    "pages": [
     "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6687",
     "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6690"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "40748",
@@ -386,7 +808,8 @@
     "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6556",
     "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6553",
     "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6557"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "43404",
@@ -394,2390 +817,1075 @@
    "award": "Noncredit program",
    "pages": [
     "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/7064"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 6,
-  "0.8-1.0": 32,
-  "1.0": 199
+  "0.5-0.8": 1,
+  "0.8-1.0": 31,
+  "1.0": 193
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 237,
+  "against": "kb/program_requirements_college/fresno_city",
+  "kept": 211,
+  "kept_moved": 0,
+  "programs": 14,
   "list": [
-   {
-    "control_number": "01658",
-    "title": "Library Technology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6723",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01659",
-    "title": "Biology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Biology-Programs/6533",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01660",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6483",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01662",
-    "title": "Business Administration: Management",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration--Management-Programs/6544",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01664",
-    "title": "Marketing",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6732",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01669",
-    "title": "Legal Secretary",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6554",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01670",
-    "title": "Medical Office Specialist",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6556",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01677",
-    "title": "Industrial Technology, Manufacturing Emphasis",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Industrial-Technology-Programs/6710",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01680",
-    "title": "Electrical Systems Technology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6639",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01684",
-    "title": "HVAC Technology II",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Heating--Ventilation--and-Air-Conditioning-Programs/6700",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01687",
-    "title": "Automotive Technology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6518",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01688",
-    "title": "Automotive Collision Repair Technology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Collision-Repair-Technology-Programs/6514",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01696",
-    "title": "Computer Aided Drafting and Design",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Drafting-and-Design-Programs/6590",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01698",
-    "title": "Computer Aided Manufacturing",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6595",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01699",
-    "title": "Welding Technology, Metal Fabrication Option",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6791",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01704",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Art-Programs/6509",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01705",
-    "title": "Instrumental Music",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6744",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01707",
-    "title": "Theatre Arts",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Theatre-Arts-Programs/6787",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01709",
-    "title": "Professional Photography",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6764",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01710",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6682",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01714",
-    "title": "Nursing, Registered",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Registered-Nursing-Programs/6752",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01716",
-    "title": "Clinical Medical Assistant",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Medical-Assistant-Programs/6741",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01717",
-    "title": "Dental Hygiene",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Dental-Hygiene-Programs/6628",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01718",
-    "title": "Respiratory Care Practitioner",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Respiratory-Care-Programs/6784",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01719",
-    "title": "Health Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Health-Information-Technology-Programs/6698",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01720",
-    "title": "Radiologic Technology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Radiologic-Technology-Programs/6781",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01723",
-    "title": "Child Development",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6579",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01724",
-    "title": "Food and Nutrition",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6672",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01725",
-    "title": "Dietary Service Supervisor",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6675",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01726",
-    "title": "Paralegal Studies",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Paralegal-Programs/6761",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01737",
-    "title": "Human Services: Pre-Social Work Option",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6707",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01740",
-    "title": "Recreation Leadership",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6782",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01741",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6666",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01742",
-    "title": "Basic Fire Academy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6665",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01745",
-    "title": "African-American Studies",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---African-American-Studies-Programs/6493",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01754",
-    "title": "Women's and Gender Studies",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Women-s-Studies-Programs/6798",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01755",
-    "title": "Construction",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Construction-Programs/6608",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10980",
-    "title": "Computerized Accounting for the Workplace",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6485",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10985",
-    "title": "Office Specialist",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6552",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10992",
-    "title": "General Motors ASEP Program",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6532",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10999",
-    "title": "Welding Technology, Pipe and Structural Steel Certification",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6793",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11002",
-    "title": "Music, Vocal Majors",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6745",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11003",
-    "title": "Music, Piano Major",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6747",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11004",
-    "title": "Music, Guitar Majors",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6746",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11005",
-    "title": "Commercial Music",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6750",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11006",
-    "title": "Design/Technical Theatre Studies",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Theatre-Arts-Programs/6789",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11008",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Dance-Programs/7101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11017",
-    "title": "Food Services Management",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/6677",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11018",
-    "title": "Child Nutrition",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/6679",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11019",
-    "title": "Alcoholism and Drug Abuse Counseling Option",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6704",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11020",
-    "title": "Law Enforcement Option",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Criminology-Programs/6614",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11021",
-    "title": "Correctional Science Option",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Criminology-Programs/6613",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11026",
-    "title": "Chicano-Latino Studies",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Chicano-Latino-Studies-Programs/6568",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11027",
-    "title": "American Indian Studies",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Indian-Studies-Programs/6495",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11031",
-    "title": "Architecture",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6501",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11893",
-    "title": "Networking/Computer Technician",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6603",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12215",
-    "title": "Marketing, Retail Management",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6736",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12217",
-    "title": "Medical Office Assistant",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6562",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12413",
-    "title": "Microsoft Certified Specialist",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6602",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12575",
-    "title": "Web Developer",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6607",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12780",
-    "title": "Computer Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6597",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13639",
-    "title": "Child Development",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6579",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "13640",
-    "title": "Family Child Care",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6586",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15740",
-    "title": "Commercial Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6766",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15741",
-    "title": "Digital Photography",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6767",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15742",
-    "title": "Fine Art Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6768",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15743",
-    "title": "Documentary Media",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6769",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16507",
-    "title": "Early Intervention",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6584",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16511",
-    "title": "Electrical Systems Technology: Building Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6645",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17157",
-    "title": "Electrical Systems Technology: Low Voltage",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6646",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17158",
-    "title": "Electrical Systems Technology: Industrial Automation 1",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6647",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17162",
-    "title": "HVAC Technology I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Heating--Ventilation--and-Air-Conditioning-Programs/6701",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19083",
-    "title": "Liberal Arts: Foreign Languages",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Liberal-Arts-Programs/6721",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19191",
-    "title": "Liberal Arts Emphasis in Cultural Studies",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Liberal-Arts-Programs/6720",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19195",
-    "title": "Liberal Arts Emphasis in Social Sciences",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Liberal-Arts-Programs/6722",
-    "coverage": 0.966,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19322",
-    "title": "Welding Technology, Welding Multi-Process",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6797",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19323",
-    "title": "Welding Technology, Welding Design & Fabrication",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6796",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19798",
-    "title": "Basic Police Academy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Administration-of-Justice-Programs/6486",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19801",
-    "title": "Paramedic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6671",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19813",
-    "title": "Early Childhood Education",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6580",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19814",
-    "title": "Early Intervention Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6584",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "21197",
     "title": "Architecture",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6501",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6502",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6501",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21198",
     "title": "Accounting",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6483",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6484",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21199",
-    "title": "Business Administration: Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration--Management-Programs/6545",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21200",
-    "title": "Marketing, Retail Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6736",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6483",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21201",
     "title": "Marketing",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6732",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6733",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21205",
-    "title": "Office Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6552",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21209",
-    "title": "Legal Secretary",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6554",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21210",
-    "title": "Medical Office Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6557",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21216",
-    "title": "Networking/Computer Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6603",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21217",
-    "title": "Web Developer",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6607",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21218",
-    "title": "Education Paraprofessional",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Education-Programs/6637",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21219",
-    "title": "Electrical Systems Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6639",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6732",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21222",
     "title": "Automotive Technology",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6518",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6519",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21223",
-    "title": "Automotive Collision Repair Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Collision-Repair-Technology-Programs/6514",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21224",
-    "title": "Construction Trades II",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Construction-Programs/6609",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21225",
-    "title": "Computer Aided Drafting and Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Drafting-and-Design-Programs/6590",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6518",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21226",
     "title": "Computer Aided Manufacturing",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6595",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6596",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21227",
-    "title": "Welding Technology, Metal Fabrication Option",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6791",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21228",
-    "title": "Welding Technology, Pipe & Structural Steel Certification",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6793",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21231",
-    "title": "Art, Studio Art",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Art-Programs/6512",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6595",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21232",
     "title": "Commercial Music",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6750",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6751",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21235",
-    "title": "Professional Photography",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6764",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21236",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6682",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21240",
-    "title": "Marketing, Fashion Merchandising",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6735",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6750",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21241",
     "title": "Food and Nutrition",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6672",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6673",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21242",
-    "title": "Food Services Management",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/6677",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21243",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Paralegal-Programs/6761",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6672",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21244",
     "title": "Library Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6723",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6724",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21245",
-    "title": "Human Services: Pre-Social Work Option",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6707",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21246",
-    "title": "Alcoholism and Drug Abuse Counseling Option",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6704",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6723",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21251",
     "title": "Fire Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6666",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6667",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30212",
-    "title": "Child Welfare",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6583",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30742",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Sociology-Programs/6785",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30751",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Psychology-Programs/6780",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31056",
-    "title": "Sign Language Interpreting Preparation Program",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7111/7113",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31177",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6581",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31230",
-    "title": "Medical Coding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Health-Information-Technology-Programs/6699",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31863",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Political-Science-Programs/6772",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31872",
-    "title": "American Sign Language",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/6497",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32048",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Geology-Programs/6927",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32171",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Philosophy-Programs/6763",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32217",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---English-Programs/6657",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32383",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Journalism-Programs/6711",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32541",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---History-Programs/6702",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32870",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Criminology-Programs/6612",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32871",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Spanish-Programs/6786",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33306",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6743",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33355",
-    "title": "Chemistry",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Chemistry-Programs/6567",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33532",
-    "title": "Clinical Medical Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Medical-Assistant-Programs/6741",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35161",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Biology-Programs/6534",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35170",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6676",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35306",
-    "title": "Infant and Toddler Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6587",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35316",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Economics-Programs/6634",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35380",
-    "title": "Early Childhood Paraprofessional",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Education-Programs/6635",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35383",
-    "title": "Special Education Paraprofessional",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Education-Programs/6638",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35393",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Kinesiology-Programs/6717",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35472",
-    "title": "Field Biologist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Biology-Programs/6535",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36458",
-    "title": "Kinesiology: Physical Education",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Kinesiology-Programs/6716",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37005",
-    "title": "Biomedical Equipment Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6642",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37009",
-    "title": "Asian American Studies",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Asian-American-Studies-Programs/6513",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37049",
-    "title": "Photovoltaics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6641",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37104",
-    "title": "Pre-Allied Health",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Allied-Health-Programs/6494",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37327",
-    "title": "Alternative Fueled Vehicle (AFV)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6517",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37329",
-    "title": "Zero Emission Vehicle (ZEV)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6528",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37355",
-    "title": "Engineering: Civil",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6649",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37357",
-    "title": "Engineering: Computer",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6651",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37359",
-    "title": "Engineering: Electrical",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6653",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37406",
-    "title": "Engineering: Mechanical, Aerospace, and Manufacturing",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6655",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37439",
-    "title": "Engineering: Electrical",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6653",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37577",
-    "title": "Engineering: Computer",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6651",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37578",
-    "title": "Engineering: Civil",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6649",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37579",
-    "title": "Engineering: Mechanical, Aerospace, and Manufacturing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6655",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37908",
-    "title": "Elder Care Human Services",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6706",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37926",
-    "title": "Cybersecurity",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6599",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38239",
-    "title": "Industrial Maintenance Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6640",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6666",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "38351",
     "title": "Diesel Technology",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6523",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6524",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38357",
-    "title": "Diesel Technology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6523",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38505",
-    "title": "One-Person Office",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38579",
-    "title": "Computer Aided Drafting and Design Entrepreneurship",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Drafting-and-Design-Programs/6919",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38599",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6709",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38600",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Art-Programs/6510",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38601",
-    "title": "Social Justice Studies, General",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Cultural-Studies-Programs/6618",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38602",
-    "title": "Social Justice Studies, Chicano Studies",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Chicano-Latino-Studies-Programs/6569",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38866",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Law-Programs/6718",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6523",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "38902",
     "title": "Recreation Leadership",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6782",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6783",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39111",
-    "title": "Electricity Fundamentals 1",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6643",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39227",
-    "title": "Industrial Automation 2",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6648",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39299",
-    "title": "Electricity Fundamentals 2",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6644",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39300",
-    "title": "Electromechanical 1",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6640",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39301",
-    "title": "Electromechanical 2",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6640",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40219",
-    "title": "Honors Program",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Honors-Programs/6703",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6782",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "40409",
     "title": "Video Production",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6688",
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6689",
     "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40410",
-    "title": "Video Production",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6688",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40413",
-    "title": "Video Production",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6690",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40414",
-    "title": "Animation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6686",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40498",
-    "title": "Graphic Design",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6684",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40499",
-    "title": "Animation",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6687",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40568",
-    "title": "Employment Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Applied-Technology-Programs/6500",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40574",
-    "title": "Welding and Fabrication Entrepreneurship",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6795",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40682",
-    "title": "Office Professional - One-Person Office Emphasis",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6553",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40683",
-    "title": "Automated Welding Systems",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6790",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41105",
-    "title": "Entrepreneurship Skills",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/7013",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41205",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/6541",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41299",
-    "title": "Data Analytics and Predictive Modeling",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Decision-Science-Programs/7017",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41300",
-    "title": "Social Media Content Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/7023",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41301",
-    "title": "Company Officer",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/7022",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41433",
-    "title": "Industrial Technology - Construction Emphasis",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Industrial-Technology-Programs/7024",
-    "coverage": 0.895,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41707",
-    "title": "Human Biology",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Biology-Programs/7011",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41905",
-    "title": "Personal Training",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Physical-Education-Programs/7052",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42392",
-    "title": "Automotive - Diesel MLR (Maintenance and Light Repair Technician)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/7054",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42393",
-    "title": "Automotive - Diesel Fixed Operations Administrator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/7053",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42772",
-    "title": "ASL/English Interpreting",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/7028",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42773",
-    "title": "Community Change Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Cultural-Studies-Programs/7029",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42790",
-    "title": "Stagecraft",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Theatre-Arts-Programs/7027",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42977",
-    "title": "Dental Assisting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Dental-Assisting-Programs-Programs/7048",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42978",
-    "title": "Race, Equity, and Language in Early Education",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/7045",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43113",
-    "title": "Certified Dietary Manager",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/7063",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43168",
-    "title": "Chassis Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6520",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43180",
-    "title": "Culinary Arts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Culinary-Arts-Programs/7062",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43188",
-    "title": "Data Analytics and Predictive Modeling",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Decision-Science-Programs/7061",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43406",
-    "title": "Introduction to Digital Literacy",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/7066",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43435",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Communication-Programs/7067",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43436",
-    "title": "Essential Skills for College & Career Success",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/7064",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43657",
-    "title": "Music Teaching Program",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/7068",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43978",
-    "title": "Entrepreneurship",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/7087",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44281",
-    "title": "Computer Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Science-Programs/7091",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44283",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Science-Programs/7091",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44289",
-    "title": "Kinesiology: Sports Management",
-    "award": "A.A. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Kinesiology-Programs/7094",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44297",
-    "title": "Music Performance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/7093",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44313",
-    "title": "Paramedic",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/7109",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44514",
-    "title": "Information Literacy",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/7088",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44558",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Geology-Programs/7085",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44559",
-    "title": "Agricultural Foundations",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Agriculture-Programs/7081",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44602",
-    "title": "Drone Operations",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/7083",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44609",
-    "title": "Community Health Advocacy",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Allied-Health-Programs/7082",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44610",
-    "title": "Social Media Imaging",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6770",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44619",
-    "title": "Digital Video",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6685",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44620",
-    "title": "Agricultural Foundations",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Agriculture-Programs/7080",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44625",
-    "title": "MC3 Pre-Apprenticeship Employment Ready",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Pre-Apprenticeship-Programs/7075",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44626",
-    "title": "MC3 Pre-Apprenticeship Plus",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Pre-Apprenticeship-Programs/7076",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44661",
-    "title": "Engineering: Geomatics",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/7077",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44932",
-    "title": "Electrical Systems Technology, Electrical Safety",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/7095",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45299",
-    "title": "Adobe Applications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/7114",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45343",
-    "title": "Engineering: Chemical",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/7103",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45462",
-    "title": "Intermediate Academic and Vocational EMLS",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---English-for-Multi-Lingual-Students-Programs/7105",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45484",
-    "title": "Advanced Academic and Vocational EMLS",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---English-for-Multi-Lingual-Students-Programs/7104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45598",
-    "title": "Fine Art Photography",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/7115",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45603",
-    "title": "Photography, Commercial Photography",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/7116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45604",
-    "title": "Professional Photography",
-    "award": "Noncredit program",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/7117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45638",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.A- T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7106/7108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45738",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Allied-Health-Programs/7098",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45950",
-    "title": "Pre-Human Nutritional Science",
-    "award": "A.S. Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/7110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45953",
-    "title": "Commercial Dance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Dance-Programs/7099",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45956",
-    "title": "Automotive Collision Repair Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Collision-Repair-Technology-Programs/6516",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6688",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "46181",
     "title": "Physics 2.0",
     "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6652",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7121/7125",
+    "coverage": 1.0,
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6652",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "46239",
     "title": "Mathematics 2.0",
     "award": "A.S. T Degree",
-    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6654",
-    "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7120/7123",
+    "coverage": 1.0,
+    "was_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6654",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38563582873"
+ "fingerprints": {
+  "01658": {
+   "sha256": "84a48af02458a138dfc122ca3577090d55cd64f38433bf57ac44b57c83a166be",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6723"
+  },
+  "01659": {
+   "sha256": "1f677413fe492aa545924a63618992697bb8f07d5aea4a04c68ca0f0e6a01c8c",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Biology-Programs/6533"
+  },
+  "01660": {
+   "sha256": "4215515470d06dded8782ef1cff152627ab86f46923668eab72f46f7e263d054",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6483"
+  },
+  "01662": {
+   "sha256": "897dbbb9da4e26f0324944c4dff861d528dfd451ebbd927df284841c1cb59468",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration--Management-Programs/6544"
+  },
+  "01664": {
+   "sha256": "0f225403a01d152a8b90f4976360189c9147343983170631d0d55a3b16d285c6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6732"
+  },
+  "01669": {
+   "sha256": "5de6b9467fc1d732f57b54e3e1dc1c9fd9c844ec8663ca27ae66b31797e2463a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6554"
+  },
+  "01670": {
+   "sha256": "cd6e18d61a151f66008d25b5537f4a2137eb870cde170282dfc510a75e04ef0f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6556"
+  },
+  "01677": {
+   "sha256": "25da5b7ba8adfcc8a6f3ece0e30ce3d5fcaad8e4b71fbf3dbbaea4910e9949ee",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Industrial-Technology-Programs/6710"
+  },
+  "01680": {
+   "sha256": "c03bc4e20e5b4f258fec2d3d588e9bd21784b70a4b56f93231c456c5697ac5ca",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6639"
+  },
+  "01684": {
+   "sha256": "bba2d634d02ae8b929178271e4c8eb7b34fa73c1a6d73bf920efee4fc9bde859",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Heating--Ventilation--and-Air-Conditioning-Programs/6700"
+  },
+  "01687": {
+   "sha256": "b74fc350375b310e23473147402501557061ee4057bd669084fcda71aa88fc6e",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6518"
+  },
+  "01688": {
+   "sha256": "fe432cd897a2e4eb32d3b1c8b92597676dc728acb585be0f1755105f2909e576",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Collision-Repair-Technology-Programs/6514"
+  },
+  "01696": {
+   "sha256": "9d49b2b81d364e3b2d0b644cd0edfaf671585389ecbde3c6abde531dab4e89b4",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Drafting-and-Design-Programs/6590"
+  },
+  "01698": {
+   "sha256": "2dec546caddabe4c6c9a0bb6003e00e8af4ad8c5a41e290d110c2784745c73dd",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6595"
+  },
+  "01699": {
+   "sha256": "0eaf99d7a2e40570d7624e8d6e9824613754487258b0d4f93480b361df132827",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6791"
+  },
+  "01704": {
+   "sha256": "bca2b0d89b9c5cf24c44cb6bb44b725a1c07b6e60bac17a9cf2af59e2b6054c0",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Art-Programs/6509"
+  },
+  "01705": {
+   "sha256": "7cf0ada00a006ec7162b367d872ed595639a1f3b894834de1b6a27f62cefa082",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6744"
+  },
+  "01707": {
+   "sha256": "9391914c813bc1f853e6c73eff988fab87d956d5e34386361f2a06452b615ece",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Theatre-Arts-Programs/6787"
+  },
+  "01709": {
+   "sha256": "2d3b246ac8351d8bacd01864511f1de0b78c9ec06f2e4d4c6b7690e1f01f1956",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6764"
+  },
+  "01710": {
+   "sha256": "1cd44f4be251d7faa8142184393a54042e8c80d8b9aa45f171ac25cddd2cf4ab",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6682"
+  },
+  "01714": {
+   "sha256": "6481778f5025b4d4fe45815539ae550784ccca4eb221fc6fd23f8dd9c1ec24c9",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Registered-Nursing-Programs/6752"
+  },
+  "01716": {
+   "sha256": "27c3ca13bab693610a259506cb935dce3e469ad5cdd27c665a15bec796d57fa9",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Medical-Assistant-Programs/6741"
+  },
+  "01717": {
+   "sha256": "6b0a40c64b8a09ba607d0b48a5e173e023952a8ef8e8722dbc00eecfc040f33e",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Dental-Hygiene-Programs/6628"
+  },
+  "01718": {
+   "sha256": "b13bfa6f403b6de53900387bb14b84cdd5be1b0cc626e325c813266e48db1f64",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Respiratory-Care-Programs/6784"
+  },
+  "01719": {
+   "sha256": "9d68605faaa611b023af9bef319037534b332701dbc9473e6774d26a08123264",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Health-Information-Technology-Programs/6698"
+  },
+  "01720": {
+   "sha256": "5e0c9473992bdb8cb9c13f494a8a5f6eaeff39b9f1f012c7e826c5a73915d648",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Radiologic-Technology-Programs/6781"
+  },
+  "01723": {
+   "sha256": "2e388edb69aefea2e3c729d6587ce1376296492b9fe79f20bf350209cb8c7fc8",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6579"
+  },
+  "01724": {
+   "sha256": "9eb698095417291476f894032fba95ddd7d0a895e306d6d9e8051ae0563bd124",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6672"
+  },
+  "01725": {
+   "sha256": "bef79ec51741445b0fdf3f9c402d6791e2f0e96dd35f7d2c4e4201311572e17b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6675"
+  },
+  "01726": {
+   "sha256": "391bfac2cf0475aebfade4c6443b1403aeaf6315762f234578f57adce22d281d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Paralegal-Programs/6761"
+  },
+  "01737": {
+   "sha256": "9ec605e8d77a5d4a18e088f5b0ae85b04109602669753f6a7556b412379b8b8b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6707"
+  },
+  "01740": {
+   "sha256": "4f9f6f57a77aae5ab0489d12c2cdb7a50dcaf66e578105dc0f7b8317fc8b1625",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6782"
+  },
+  "01741": {
+   "sha256": "b441a5c7fe0f9ec6628977b43b10ec1d7ea720f9fc0dd0bcbdb90d50a2a3484d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6666"
+  },
+  "01742": {
+   "sha256": "3c88e165cc1234f354ac9de781d2815a098067c5ab98bb6268374d9ab6506fab",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6665"
+  },
+  "01745": {
+   "sha256": "ed3bbc4f0138b9342243f915f3b7b097cc846af97ab85205ae9475e2fdae9768",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---African-American-Studies-Programs/6493"
+  },
+  "01754": {
+   "sha256": "b016fb5472b5a3a0e4fb55483dcc74fb0a88d036f6263921a4bd39e8aa4b3200",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Women-s-Studies-Programs/6798"
+  },
+  "01755": {
+   "sha256": "e0edc7b364e9636c65ec57344d36a930453dafeb95ce4f194757dadc21dab42d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Construction-Programs/6608"
+  },
+  "10980": {
+   "sha256": "54247de801a4018f039156c77839db2d08e30b07def6f8786114c8cc5bc65871",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6485"
+  },
+  "10985": {
+   "sha256": "50c3b50b55588b5ef0c5a150a6cedb7e920fa732b3cc7beeee5d58239fc760b9",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6552"
+  },
+  "10992": {
+   "sha256": "50c8c4bd356e84aa615b91ddc771e5f67b79e3095b057986efee3b68931e18de",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6532"
+  },
+  "10999": {
+   "sha256": "de4ec47260f798d6fe08d0dccbd84f60054bdf69efaf4c83f3a144c666e6c21a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6793"
+  },
+  "11002": {
+   "sha256": "73c0fd59d9fbae6ff1b09bbe19989c7eb91978442ffc94bd80b5e3cd98e1781f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6745"
+  },
+  "11003": {
+   "sha256": "3bfc2f85fee4f65380aea12f078e35ab551d496e8d43b31d041966a3fbad3fb4",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6747"
+  },
+  "11004": {
+   "sha256": "6366f32082efd6052910eb3d0a6f52198eeafad00ab731565e889564131f2d17",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6746"
+  },
+  "11005": {
+   "sha256": "27b6522c78d9387d56790cd543cc0ca843b44494c6c248663a44047b7facf993",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6750"
+  },
+  "11006": {
+   "sha256": "866621ff39a6057aa817fd2d844832d86f3acf2e0a947835071c178e15c8b5cc",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Theatre-Arts-Programs/6789"
+  },
+  "11008": {
+   "sha256": "68ecd0b354e2b9b445ca45a9b2a34bb79ecc3b5c72be556735a3778e95a51ba5",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Dance-Programs/7101"
+  },
+  "11017": {
+   "sha256": "573713d84dee6bb4518529b7e88a414c965f3db5e93ca453bac1789047b4e86b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/6677"
+  },
+  "11018": {
+   "sha256": "2809ebe2217d997c60260d231dd38598f34848169fd1678c025d8edb531329c2",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/6679"
+  },
+  "11019": {
+   "sha256": "e212bd32581d3415bcfbedda8f13e1cc053971f4fb06e4dbf7f662cb96e76f8e",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6704"
+  },
+  "11020": {
+   "sha256": "e5550ef1bf1ce0e792f1a56acdaeed8501f38dd26870d40208e745bd4e0d2428",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Criminology-Programs/6614"
+  },
+  "11021": {
+   "sha256": "c05a45489fc39a6f0a032a5620bae5bcaf1701a50807234232865dae2607fc8b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Criminology-Programs/6613"
+  },
+  "11026": {
+   "sha256": "b17944cd2507a5f5b084b25f5a1938684f459fe42d13e8b42e8d44454c5cabc4",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Chicano-Latino-Studies-Programs/6568"
+  },
+  "11027": {
+   "sha256": "0d5bbcb1ff74dae33a48a14e9596caabe141bb53683d83e1918a8a1152baa6e8",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Indian-Studies-Programs/6495"
+  },
+  "11031": {
+   "sha256": "9b21a1f4ade33b8ad33b10e1e11fa0468aed81aa5984fe4a1cf038537a2bc3a0",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6501"
+  },
+  "11893": {
+   "sha256": "a0c5c128dfcdb9b20adf6230c7c4bf07ab38c77f674e910ba157dd667b964496",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6603"
+  },
+  "12215": {
+   "sha256": "3960515f971b68268edd15da1fc94de23e973898d560a22a1706b3fdd2b9410b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6736"
+  },
+  "12217": {
+   "sha256": "ffbde4f26422793ec127eca4306cc6aeabb53b3dff6e0bf892e7ef794fa98a81",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6562"
+  },
+  "12413": {
+   "sha256": "dceb8eecd2723a2b45adc353ef2370c7bcb1b09b4e9f0574d36fb35e2703bd56",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6602"
+  },
+  "12575": {
+   "sha256": "755b0188e479d01b20cd8956e09232b554d226ac947972a7d32d201eaba96043",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6607"
+  },
+  "12780": {
+   "sha256": "a8097ba871a5651a0e23d05b4913eda64eaac4be2acae4bc1f78d55b076afe72",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6597"
+  },
+  "13640": {
+   "sha256": "aa2fe6711a4267e4f25c1b70b1bb75a0f400f7d47417cdb355645d0563212b61",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6586"
+  },
+  "15740": {
+   "sha256": "ffff770434163da7c1aa31ac990ee1174ee0a61a4a15a8c4ad6d5a21dc74d876",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6766"
+  },
+  "15741": {
+   "sha256": "2db8ba53fdb44751b5bc35355734150ea3c058eedfa0b9e64e10f93d580ee193",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6767"
+  },
+  "15742": {
+   "sha256": "add80e6241dab67e7f58ddd1ed052c2f43719f21320f3050284bb88f8fd781a6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6768"
+  },
+  "15743": {
+   "sha256": "4b9f61af4c4840f9b52673b199afdb26d7c728f11d43c745bc77d82002ed66e6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6769"
+  },
+  "16507": {
+   "sha256": "ec17a1e4a8f513d6a7f768b09598904cbc617ef301490fdff1138083cd54489b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6584"
+  },
+  "16511": {
+   "sha256": "d3ec7c0675e30af208ec91ee51c2a0d34a7511853756b4ed24c73ca39e959ad6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6645"
+  },
+  "17157": {
+   "sha256": "99fda8731bd328a97f1572d0f256399a0715de634e7fd1ac65edbb77b96017a2",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6646"
+  },
+  "17158": {
+   "sha256": "c592073cfab4c7c19ba431978cdf4071f20989bb755438c466e42cfc8e8b3a0a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6647"
+  },
+  "17162": {
+   "sha256": "5b99bce0a8a66805afb7876e8aff738880e6d9e022955352b4cbbfafc2ead67f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Heating--Ventilation--and-Air-Conditioning-Programs/6701"
+  },
+  "19083": {
+   "sha256": "5995eebf144cee94a33f3b5dac1347e7003814dd1c90c617507c2b9074cbba7e",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Liberal-Arts-Programs/6721"
+  },
+  "19191": {
+   "sha256": "1de7c4bd0a98d6995297d3b240a6866adca6f5c5509f8b8ba40373a4fe0241b0",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Liberal-Arts-Programs/6720"
+  },
+  "19195": {
+   "sha256": "23411205e46fa20c78fa269f5f45f749fe5e3412b7b952f006f98a44d33125fb",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Liberal-Arts-Programs/6722"
+  },
+  "19322": {
+   "sha256": "da9a063cc762dda2d37334a21976eb5d8d6ec94efd5c7d01a774c5a0e0bf8672",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6797"
+  },
+  "19323": {
+   "sha256": "60772028739b582fe2434465b7189be1c19f490c385a13ccae1dcde33c41f752",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6796"
+  },
+  "19798": {
+   "sha256": "2fb4fa5cf8c888dc2ddd476562a7663e10d68d039f51bcb95211fccbb174d4d1",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Administration-of-Justice-Programs/6486"
+  },
+  "19801": {
+   "sha256": "b8bb3ba8c722d64a70ecb2fa368e646996e755770ed7e1a9c0bbb22029db9759",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6671"
+  },
+  "19813": {
+   "sha256": "d97eda9a23addb5ddb1a781dc1b1a3fed2203d27f7bef684e2ca3303c89b1ffb",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6580"
+  },
+  "19814": {
+   "sha256": "ec17a1e4a8f513d6a7f768b09598904cbc617ef301490fdff1138083cd54489b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6584"
+  },
+  "21197": {
+   "sha256": "8ac5e4cfb7559499bcf5f7d46791455597b8586507cdc03f5eaae68003b1b00a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6502"
+  },
+  "21198": {
+   "sha256": "4eeb5f55a8d74cbcf16146afadb1f3d95ee8649cf288bd78047078d6da118580",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6484"
+  },
+  "21199": {
+   "sha256": "4e0d616794409c2951cd0b182e67ce3c88d6e28e3cc660d7d503ab1d8f1c4bfe",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration--Management-Programs/6545"
+  },
+  "21200": {
+   "sha256": "3960515f971b68268edd15da1fc94de23e973898d560a22a1706b3fdd2b9410b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6736"
+  },
+  "21201": {
+   "sha256": "b1b66127b29ef00a73fcb03af6909160ea59a2482cdb1d1dad642cb3353384ae",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6733"
+  },
+  "21205": {
+   "sha256": "50c3b50b55588b5ef0c5a150a6cedb7e920fa732b3cc7beeee5d58239fc760b9",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6552"
+  },
+  "21209": {
+   "sha256": "5de6b9467fc1d732f57b54e3e1dc1c9fd9c844ec8663ca27ae66b31797e2463a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6554"
+  },
+  "21210": {
+   "sha256": "80094f467c619899003c4f712a67de08e72abb7bc72a8e0bf85bb0a2a3c43e14",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6557"
+  },
+  "21217": {
+   "sha256": "755b0188e479d01b20cd8956e09232b554d226ac947972a7d32d201eaba96043",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6607"
+  },
+  "21218": {
+   "sha256": "4cfa3d7c3348c2da96cee482c1ef05b355c9b23dae7a335c313f5ddceaf6559c",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Education-Programs/6637"
+  },
+  "21219": {
+   "sha256": "c03bc4e20e5b4f258fec2d3d588e9bd21784b70a4b56f93231c456c5697ac5ca",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6639"
+  },
+  "21222": {
+   "sha256": "82b0972aa813c5a91082cbededfa1a25fbad4bf433a1d25934d3c47b01806522",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6519"
+  },
+  "21223": {
+   "sha256": "fe432cd897a2e4eb32d3b1c8b92597676dc728acb585be0f1755105f2909e576",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Collision-Repair-Technology-Programs/6514"
+  },
+  "21224": {
+   "sha256": "79fcb7c9a96ae62324604b4e7de3893f5a066fa6cfe7845b63651a995debde4b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Construction-Programs/6609"
+  },
+  "21226": {
+   "sha256": "af1280879f161cf3af4f95e1d3df7d61bd2acc9b0d11da156a29aad133429299",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6596"
+  },
+  "21228": {
+   "sha256": "de4ec47260f798d6fe08d0dccbd84f60054bdf69efaf4c83f3a144c666e6c21a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6793"
+  },
+  "21231": {
+   "sha256": "702d51bec5baaf1e091f225179968107866eb7a42d0a9004aa819fa7fbccab40",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Art-Programs/6512"
+  },
+  "21232": {
+   "sha256": "17c57c1c4b6ccf1f20d13ab94c59cd7518c6617ef9bc606c03f2f358081c1e94",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6751"
+  },
+  "21235": {
+   "sha256": "2d3b246ac8351d8bacd01864511f1de0b78c9ec06f2e4d4c6b7690e1f01f1956",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6764"
+  },
+  "21236": {
+   "sha256": "1cd44f4be251d7faa8142184393a54042e8c80d8b9aa45f171ac25cddd2cf4ab",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6682"
+  },
+  "21240": {
+   "sha256": "c072843a49e14aa18869d1bc0d95a72c11982433d466d05b38a8e219ea28877a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6735"
+  },
+  "21241": {
+   "sha256": "59243804c0780048cd8195ba6d7fb21c145e5b60c716f69b38d3354c547c4d6a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6673"
+  },
+  "21244": {
+   "sha256": "b3281ef148865e7242f161e2ae69901df7b400a6b798e12dcc8c2dc1a2fbbba9",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6724"
+  },
+  "21245": {
+   "sha256": "9ec605e8d77a5d4a18e088f5b0ae85b04109602669753f6a7556b412379b8b8b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6707"
+  },
+  "21246": {
+   "sha256": "e212bd32581d3415bcfbedda8f13e1cc053971f4fb06e4dbf7f662cb96e76f8e",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6704"
+  },
+  "21251": {
+   "sha256": "9f5a02ee71e493e2a4101ed9bbec0147ccdf5efb064d547df79a6e8406803d12",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6667"
+  },
+  "30212": {
+   "sha256": "9d0956daba0f76d2492d7b3b7f323fd94d34c6f207911bb7bd1d231d0fbdfa45",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6583"
+  },
+  "30742": {
+   "sha256": "ea305af897580abe6c3a7b8aabfdb0f802a6db447b35ba44515f764355be45ff",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Sociology-Programs/6785"
+  },
+  "30751": {
+   "sha256": "0df2b41d3fac1f03fb9b16bb19332e2d49bb930196b4fc0d5f97972c1def33ef",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Psychology-Programs/6780"
+  },
+  "31177": {
+   "sha256": "61fa31f217b5e6b9b0f7c4a21cff7fbcc0c5763d3df4fcfa2f79941d231dd56d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6581"
+  },
+  "31230": {
+   "sha256": "235a10a0a6df8dbd4a3d62954d512441572ca54fab3beae492ab69fba32e3a2b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Health-Information-Technology-Programs/6699"
+  },
+  "31863": {
+   "sha256": "e8abdd91ce60c83d4f95adc4cbfef08263f4bbde831d934cfbc4b0a562d7f041",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Political-Science-Programs/6772"
+  },
+  "31872": {
+   "sha256": "32b291f20f6598bd863a8c74298c7eb66fbc35d64db5a6997d449d8836f201c6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/6497"
+  },
+  "32048": {
+   "sha256": "3aa1cbf0bc55675432ffc8c45f38e32ac93d07c19395402e69645bed3cbf58a8",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Geology-Programs/6927"
+  },
+  "32171": {
+   "sha256": "1451ef1e12acf75c2a2acb6bdfa75aa4c6d5f3ebf6328382ffe12c84b2d94f86",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Philosophy-Programs/6763"
+  },
+  "32217": {
+   "sha256": "6ac0b692a7e8d5fdb1ca1bc31b7edd3f5cad150a75cad1b7c00650403149d114",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---English-Programs/6657"
+  },
+  "32383": {
+   "sha256": "0119ad399f0501f04d27241a4b276497fca2d9a679a6cc58fd0eac19c40a0cce",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Journalism-Programs/6711"
+  },
+  "32541": {
+   "sha256": "bd30a44bc802d327ced0832e6f84c50639c5129b80f4ca41342d2ce9ef7722b6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---History-Programs/6702"
+  },
+  "32870": {
+   "sha256": "eaa56a372dd97458920c96a65a434a4f88d5224bcbb3c820768d78532aa14de1",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Criminology-Programs/6612"
+  },
+  "32871": {
+   "sha256": "de2135dd895518dc10de74e84666ece95e3f7336254a92b54670ab909347e9dd",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Spanish-Programs/6786"
+  },
+  "33306": {
+   "sha256": "32c844e4f187c7f5674288749755ef30e61a1315f2e5dbcc359ff92bed3fb172",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6743"
+  },
+  "33355": {
+   "sha256": "2f48c303686704851ba2639afe60b15f2e6fe5fc9a992a43b9dc32e44e32a930",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Chemistry-Programs/6567"
+  },
+  "35161": {
+   "sha256": "a79a1ae46a9773e250d0514af2753b35104f0d17c53ffc06569a53e1b6a50dfb",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Biology-Programs/6534"
+  },
+  "35170": {
+   "sha256": "2273f55242c9a2c81f265e75dfb424c6752d7678b7632b8354a1d59255d7d0e7",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6676"
+  },
+  "35306": {
+   "sha256": "95f33c1ccb056559446eadbfde2a2155a10c1afd4fe5045d3ccbc5a1e0439da3",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6587"
+  },
+  "35316": {
+   "sha256": "73402e5cb0ca7aea0ab7258145d03ad551e7f50f3bb3adb4e959efee13a1bd29",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Economics-Programs/6634"
+  },
+  "35380": {
+   "sha256": "a208ad5f12cb564ea481d6247e4f917e24734b03673a1f9b64e77dea3960c8ea",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Education-Programs/6635"
+  },
+  "35383": {
+   "sha256": "2fb95a3e6399ed178e914ca581aa96be7e31fc6b1e171c62d0ece2554109f234",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Education-Programs/6638"
+  },
+  "35393": {
+   "sha256": "0d518d127d76f5e4560cb058b5a71a7582df421617fc8d8736e2cd4140d3f9b6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Kinesiology-Programs/6717"
+  },
+  "35472": {
+   "sha256": "88a8d4cd90ecbb2b7a2dc777762d24e3c2c18f1f7a5fd55df02e576999f52d94",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Biology-Programs/6535"
+  },
+  "36458": {
+   "sha256": "d433dce0ff858365b5df27c8db0d38c580a3101a8819e8d01e7c344b278f3acc",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Kinesiology-Programs/6716"
+  },
+  "37005": {
+   "sha256": "a853a0625112551445bdb60975ef48e051ce93bbcd31c9f7547445a534ae121f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6642"
+  },
+  "37009": {
+   "sha256": "8de3216df16ee5a91caa03d147c5a3ab84b126f0b43d91f65bb00357f3032100",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Asian-American-Studies-Programs/6513"
+  },
+  "37049": {
+   "sha256": "e6294d2fd1fd518f8bfc6363e5a19e0e63e9c9af0c3d5a77b50fa58c12239c4a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6641"
+  },
+  "37104": {
+   "sha256": "5e353be8ba0d2af85288f4618053d0e81319ecba7fb86ac44e0a0de7e5d9bffe",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Allied-Health-Programs/6494"
+  },
+  "37327": {
+   "sha256": "c5afae5494be25fdd1275383878b466311dbe524cd7953bc603e1ec68bb7916f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6517"
+  },
+  "37329": {
+   "sha256": "e62be2872947de90a94ee05e042b92d026ca4080ff16265706d602fc6eccfe4b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6528"
+  },
+  "37355": {
+   "sha256": "094f3dbdf08c1b6a552839f618c02190106d69ba75ba18119cbfafdfe447bb0e",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6649"
+  },
+  "37357": {
+   "sha256": "194d0c25d3eca9ba5096b33bc5902c648681844a171a4901e631a6ec5ae87885",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6651"
+  },
+  "37359": {
+   "sha256": "612ff14656445e59dc26baa001cf6b53807e88a6c6ac37da1e7a7a60af024002",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6653"
+  },
+  "37406": {
+   "sha256": "35541b1828ef47a29041cac6ccc931fd449f97eaef5cd1d8a55945fb0284a312",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6655"
+  },
+  "37439": {
+   "sha256": "612ff14656445e59dc26baa001cf6b53807e88a6c6ac37da1e7a7a60af024002",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6653"
+  },
+  "37577": {
+   "sha256": "194d0c25d3eca9ba5096b33bc5902c648681844a171a4901e631a6ec5ae87885",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6651"
+  },
+  "37578": {
+   "sha256": "094f3dbdf08c1b6a552839f618c02190106d69ba75ba18119cbfafdfe447bb0e",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6649"
+  },
+  "37579": {
+   "sha256": "35541b1828ef47a29041cac6ccc931fd449f97eaef5cd1d8a55945fb0284a312",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6655"
+  },
+  "37908": {
+   "sha256": "bbb86dea00ce7c9087ad1e8b3346b71f7c741484f627e6d51f5683339eb22ae7",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6706"
+  },
+  "37926": {
+   "sha256": "c7463a7da4271dc2041e617c78b47a43125c59f6da5630541fa91b2bdb1f471d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6599"
+  },
+  "38351": {
+   "sha256": "dec0b41b2719865719400aabe6a2d235f0df7fb33ad3a691c7dd73548cf22664",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6524"
+  },
+  "38357": {
+   "sha256": "af7b4d9c7364a3dc581d62961049075d4cf68282442d231e261caa2c2fe8983a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6523"
+  },
+  "38505": {
+   "sha256": "59a558c1bff28b07da37c962066b521052e0178eac7946846b899a18be41c2a3",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6564"
+  },
+  "38579": {
+   "sha256": "e10d03a39178a89d8d785c4c36757fb57132a7a6b38d71e0a02f598992b9e0ef",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Drafting-and-Design-Programs/6919"
+  },
+  "38599": {
+   "sha256": "c26c6241a9725c5a7c6b425b8e6e3e5832328c9611674a10500fc53b22dcae5a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Human-Services-Programs/6709"
+  },
+  "38600": {
+   "sha256": "fb20fc4cf834504e63bf31cbd47c218beca5f7ecae1dacaa3aa1f0b8d297c668",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Art-Programs/6510"
+  },
+  "38601": {
+   "sha256": "8af5aee727f0af188e47291b23948a36b7584777b67d4daf276ae8531b204f10",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Cultural-Studies-Programs/6618"
+  },
+  "38602": {
+   "sha256": "deef74e56fc0a16c3a5509d26b5e7165de72276b2b9b5aeb61c4ccb7667719c5",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Chicano-Latino-Studies-Programs/6569"
+  },
+  "38866": {
+   "sha256": "33366009c41fca11dd6679b4b0d471c9aa6721d48f10849aab2b6d3dfb11d075",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Law-Programs/6718"
+  },
+  "38902": {
+   "sha256": "276ca49dbeec448d5e2c885d9e8dfbe765d77b2f8d505b791f85415a20158f31",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6783"
+  },
+  "39111": {
+   "sha256": "24a3d592e4610597d01622abd0db5efd26c59287c743398d874e5d2d9b8d5295",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6643"
+  },
+  "39227": {
+   "sha256": "0f19472595ac3947795bcda041ff8148972e5a81db4a6d2bcf471218a725015f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6648"
+  },
+  "39299": {
+   "sha256": "ff7dc2faf6105c3aae4158aae4245940997af2ff3af672de223c13727d81b096",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6644"
+  },
+  "40219": {
+   "sha256": "dc3d2c5a2a9331faa187e71f211818d868d1b802f6e0a56bc12536fe82a83d11",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Honors-Programs/6703"
+  },
+  "40409": {
+   "sha256": "33beedce36a7533324521dde1ad1ce6344044f42b1c777a0c4b54589b86a52b4",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6689"
+  },
+  "40410": {
+   "sha256": "11fd7e2d5e685b374923523e1b547aa270a23cf7bc046419b0e265f8b572efb3",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6688"
+  },
+  "40413": {
+   "sha256": "9dc15207cd0fefe3bcf6dcffa8592ebe7ba7e5875fc6c1bd929856fcaee4244d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6690"
+  },
+  "40414": {
+   "sha256": "6264c4ed5684e4131efa3f027851cd9f4844090b49b1250b6a77014ba9c0183c",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6686"
+  },
+  "40498": {
+   "sha256": "88fd7b45997c4e9be43ef9c5a29f102ebc31859aec72552a575c42efc4629673",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6684"
+  },
+  "40499": {
+   "sha256": "7738b3df856ebd8cbe6e7251cc01bbbe262a306ffb89d5e4149a8a8b6667feaf",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6687"
+  },
+  "40568": {
+   "sha256": "015f0fef1dc06b083b4ff1b981a71c1ef8d23ffcfdf8bdaffc8b6d528c81f98f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Applied-Technology-Programs/6500"
+  },
+  "40574": {
+   "sha256": "e51ced52857509cc79d9d42a9e573c4b9fa0ec6a486a87fa7f027fbb49dba52a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6795"
+  },
+  "40683": {
+   "sha256": "ea88d49c45f2cf23c482ef3f15283da96e2f2de74e45377a33a735d967a702e6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6790"
+  },
+  "41105": {
+   "sha256": "292b4db43c343c1225aadfade90939ea70aec02f5cfae73de4b82947cd3876e0",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/7013"
+  },
+  "41205": {
+   "sha256": "0728af14683faaeb195e8dd3a0ec94b1f8f5dcd25c019dc3498d514dfb195cff",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/6541"
+  },
+  "41299": {
+   "sha256": "3fb54d976990f7f8880acfd4490922833aa59697b0cc371ee7d8e022d2eefb6f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Decision-Science-Programs/7017"
+  },
+  "41300": {
+   "sha256": "298284116bafb2291f72f03cf610913ee5b49c68b7b2b9cf6bcab981e9d73e78",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/7023"
+  },
+  "41301": {
+   "sha256": "9e5768459d2a175103cd078a1401ef1c5e95c593b6ebd658d7589ada2063df05",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/7022"
+  },
+  "41433": {
+   "sha256": "f30d1b20589f0b3070a90d46796cef0b1a7d2097e83fed8e9b1d3227a8fa0544",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Industrial-Technology-Programs/7024"
+  },
+  "41707": {
+   "sha256": "ec91a772f253965470016fb609236c01d1fb1b8d38e4e5c84c4179358a2772e4",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Biology-Programs/7011"
+  },
+  "41905": {
+   "sha256": "85d79d1ddb8c1ff2eb8ddca1eb81842c9eb7c4f01dba3ee24fd8f8b9d31dde4d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Physical-Education-Programs/7052"
+  },
+  "42392": {
+   "sha256": "6829cc5c0c1c6ffd4b0e79ca10b76bc65d92957388a96557e5ab342bbc9a24d5",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/7054"
+  },
+  "42393": {
+   "sha256": "27adf346887ac6effa442dd94c93eaf859394fac2bea14cca715418c76319a3d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/7053"
+  },
+  "42772": {
+   "sha256": "f6c0e1a4d65eecd1aa7c713c91abb782466522878c88f4912957d9bf72004498",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---American-Sign-Language-Programs/7028"
+  },
+  "42773": {
+   "sha256": "98ecd541121cd0048e2f7dfb59f6fde032c0ff413fbfb31dcced15737c137596",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Cultural-Studies-Programs/7029"
+  },
+  "42790": {
+   "sha256": "5d5e551d5d19f2832c730e921dbaba7cd8c6942d4ab6e2cf74b14765d0ba13ef",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Theatre-Arts-Programs/7027"
+  },
+  "42977": {
+   "sha256": "2ed10273553d196238b57f2abc091daa0bdd047046a2610cb94c2c5ac7bde264",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Dental-Assisting-Programs-Programs/7048"
+  },
+  "42978": {
+   "sha256": "e050f83967a244c40691bec484a92ee66469a7273fdb9cc02e82de74b192b499",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/7045"
+  },
+  "43113": {
+   "sha256": "85ccabefb58661712ad4089b2a799fc60f100f22cf16e38054e34e84438577fc",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/7063"
+  },
+  "43168": {
+   "sha256": "16b97d1ced47bc5535918d7a82d5a1396e86aa6dd725c736cbdacf1f14b3d06c",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6520"
+  },
+  "43180": {
+   "sha256": "b2402a2072cbc82057833a676b0862023949fe2c36cb3b427176dd6116a91cb1",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Culinary-Arts-Programs/7062"
+  },
+  "43188": {
+   "sha256": "1978aa770c29c44eec8b40d8a3f6b49b4e8df6d67d11fc19f43ab21177484a2c",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Decision-Science-Programs/7061"
+  },
+  "43406": {
+   "sha256": "7ed8e332accf983cb50e3e6aeba50e98fa63d4ff42e9fddfb7567a8e6e8f7e50",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/7066"
+  },
+  "43435": {
+   "sha256": "e10e886a725c6fcce16ac55580a311719a19c4410dbdfdee25aad9ba7e49670d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Communication-Programs/7067"
+  },
+  "43436": {
+   "sha256": "3c6cab2168489590ddbe78685bb71fce906bcbfae709578a3c8bf2c3333089a9",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/7064"
+  },
+  "43657": {
+   "sha256": "70f6af7a634cd155b61eac130799ad70bd872a1860cfadeaab3b1c73086cf326",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/7068"
+  },
+  "43978": {
+   "sha256": "b0557414d41586a08dce927b39d74d2b27eb85943f0c9248837191925cb24fda",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/7087"
+  },
+  "44281": {
+   "sha256": "e96f451b9a5a5208c00c9623a2b1db4eb92952718ff0765b5f9053374b99c3a7",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Science-Programs/7091"
+  },
+  "44283": {
+   "sha256": "e96f451b9a5a5208c00c9623a2b1db4eb92952718ff0765b5f9053374b99c3a7",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Science-Programs/7091"
+  },
+  "44289": {
+   "sha256": "b98300cf82eb1a7a5f00d6486bef57436858898a09e4e3a3a4860a3dae1b9765",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Kinesiology-Programs/7094"
+  },
+  "44297": {
+   "sha256": "dbe3355d4c9f68f30a345d4f869bf142ba7def6ef161ee32906bca7bc92eb910",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/7093"
+  },
+  "44313": {
+   "sha256": "2eaf272dbf6fee0ee1063486372c01eed1e75f7e69fb321b547f3982015fc753",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/7109"
+  },
+  "44514": {
+   "sha256": "4ce1cb29529ff0a9a0f372a31b9c039860c54215edf591440ac28b0d0d8f0379",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/7088"
+  },
+  "44558": {
+   "sha256": "93f97eb90daa7b55919edd1c0475ae331617e02d19095b988cd03a90525b179c",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Geology-Programs/7085"
+  },
+  "44559": {
+   "sha256": "84771f982dc9768b31f8489138b5aa02c2a80ef11a8400e13b38f3f0fe42ff03",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Agriculture-Programs/7081"
+  },
+  "44602": {
+   "sha256": "ecb9f364d6818292fc0b3d596717878b927c993aa546c4ed060fd82b4ba2c1a7",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/7083"
+  },
+  "44609": {
+   "sha256": "3139e65453cb9f059876bfbe63322d29985af810eee7c84b08b9d4492aa1f21a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Allied-Health-Programs/7082"
+  },
+  "44610": {
+   "sha256": "5a6c21208a9996c95aed370b892f91828db7d42dafd973c7719d0205dc21fa7b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/6770"
+  },
+  "44619": {
+   "sha256": "f6a1c190a3fabc5275236409a804b7cf64860625c556a39f14e96dd9882da8ef",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6685"
+  },
+  "44620": {
+   "sha256": "c9320f6342ebc9522d70986ed7b50f444c1430629182bb51f0cff91f91d82bff",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Agriculture-Programs/7080"
+  },
+  "44625": {
+   "sha256": "c96c1d52e00444b45ba7b54fbe1a2305396c73ed62ec4548deffe6bc29f651a9",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Pre-Apprenticeship-Programs/7075"
+  },
+  "44626": {
+   "sha256": "c47844e2bf036d9ddd2267d5157fe8adb214b6b639197d5203b1a477a8a19e3d",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Pre-Apprenticeship-Programs/7076"
+  },
+  "44661": {
+   "sha256": "17af84e6f169dda5f50c693557d29fa4f7a379b8f43f3728f3206d94e78be906",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/7077"
+  },
+  "44932": {
+   "sha256": "631951b6bade627ac8a0bcbee5e044b12b8f86be436b4eb54f651e91f184bb45",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/7095"
+  },
+  "45299": {
+   "sha256": "1b7d31b1073e1d76dba13fc1eabb44a100abdee1d39e6fe63a0519e46e3e8ad1",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/7114"
+  },
+  "45343": {
+   "sha256": "80d2676f3dcc2fdf48250b47983e035c1c035b31f2677ba8690b357e148ccdbd",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/7103"
+  },
+  "45462": {
+   "sha256": "eae0a9ba485fa07e57c62945110f8d127ebe8fc860a4d611bb2c351f35d7940f",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---English-for-Multi-Lingual-Students-Programs/7105"
+  },
+  "45484": {
+   "sha256": "0fffce467f10bbf98a9bac7a35b616e6d545bc5555432216d65dc149688c80dc",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---English-for-Multi-Lingual-Students-Programs/7104"
+  },
+  "45598": {
+   "sha256": "c175a176c700a7e6bffd7a922fed706b614265ee8066e61aae694a59d8b978e1",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/7115"
+  },
+  "45603": {
+   "sha256": "cabdf2d097f9787d1657b4a0a64d9754bbca1c5c5597569caece8e64a713f182",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/7116"
+  },
+  "45604": {
+   "sha256": "082948130690a7c6617b4bcc118dfcea9aa814f479277db75a62dc5bcb17cd4a",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Photography-Programs/7117"
+  },
+  "45638": {
+   "sha256": "723e131aa1aa4b49f87bbc996b040861a9ff1f8417865ce67d460a6e1398efa6",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7106/7108"
+  },
+  "45738": {
+   "sha256": "a1fa76203c10eb96123bf054e9549540f9d8b6995890156dfb7174375d19aa6b",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Allied-Health-Programs/7098"
+  },
+  "45950": {
+   "sha256": "ea1a0b51e08a129f019d4854e70b0bf30c33c0f1d4ec040540e6eaa495a4c109",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/7110"
+  },
+  "45953": {
+   "sha256": "b7af9fd7807ae32d56824e5c65aeeea422bf46211e2914016dd0fa434dbd56a0",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Dance-Programs/7099"
+  },
+  "45956": {
+   "sha256": "3ecc6e3c7fbaef7325ef80297c341ad0524c484eb0be154c67eeaca4195a72ef",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Collision-Repair-Technology-Programs/6516"
+  },
+  "46181": {
+   "sha256": "4e5f5ec3b612fadb5fb567262429bcfa8c0f87e4b3937d122f2b8c9f05d70359",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7121/7125"
+  },
+  "46239": {
+   "sha256": "a1e1c2ffbc02203ade77ed23a01cc3811016cd30e8740d371182da46961a0368",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7120/7123"
+  }
+ },
+ "staged_from": {
+  "run": "44687668669",
+  "proof": "text sha256 of 225 programs",
+  "pages_loaded": 0
+ },
+ "run": "44692355661"
 }

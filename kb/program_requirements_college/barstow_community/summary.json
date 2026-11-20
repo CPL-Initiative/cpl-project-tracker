@@ -2,68 +2,111 @@
  "college": "Barstow Community College",
  "programs": 76,
  "with_closed_list": 76,
- "found": 71,
- "extracted": 71,
+ "found": 68,
+ "extracted": 68,
  "errors": 0,
- "passed_machine_checks": 54,
+ "passed_machine_checks": 66,
  "failed": {
-  "coverage": 15,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 17,
+  "arithmetic": 2,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 4.68,
- "cost_per_program": 0.0659,
- "extract_calls": null,
+ "cost_usd_run": 1.64,
+ "cost_usd_filed": 4.96,
+ "cost_per_program": 0.0729,
+ "extract_calls": 15,
  "extract_failed": [],
  "not_found": [
   {
-   "control_number": "04750",
-   "title": "Child Development Level II",
+   "control_number": "35100",
+   "title": "Industrial Maintenance Mechanic Technology, Level 3",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
-    "coverage": 0.125
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "35710",
-   "title": "Child Development Level III",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "35770",
+   "title": "Child Development Level I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
-    "coverage": 0.059
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "35769",
-   "title": "Child Development Level IV",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "39151",
+   "title": "Computer and Network Specialist (Network+)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
-    "coverage": 0.182
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "42759",
-   "title": "Theatre Arts",
+   "control_number": "39718",
+   "title": "Industrial Maintenance Electrical and Instrumentation",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40024",
+   "title": "Social Justice",
    "award": "A.A- T Degree",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=66",
-    "coverage": 0.353
-   }
+    "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
+    "rule": "A",
+    "refused_b": 1
+   },
+   "status": "Active"
   },
   {
-   "control_number": "46575",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "40066",
+   "title": "Warehousing & Logistics Level I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
-    "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=84",
-    "coverage": 0.333
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40067",
+   "title": "Industrial Maintenance Mechanic Technology, Level 2",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43659",
+   "title": "Certified Nursing Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Approved"
   }
  ],
- "run": "43691950026"
+ "run": "44687777798"
 }

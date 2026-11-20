@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Physics 2.0",
  "award": "A.S. T Degree",
- "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6652",
- "record_shape": 5,
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7121/7125",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6441,
+  "input_tokens": 6845,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6441,
-    "output_tokens": 1155,
+    "input_tokens": 6845,
+    "output_tokens": 2072,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1155,
+  "output_tokens": 2072,
   "output_tokens_details": {
-   "thinking_tokens": 312
+   "thinking_tokens": 691
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04886,
- "ms": 10546,
- "seconds": 10.8,
+ "cost_usd": 0.06882,
+ "ms": 19031,
+ "seconds": 19.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "CSCI40",
-    "MATH17",
-    "MATH26",
-    "MATH6",
-    "MATH7",
-    "MATHC2210",
-    "MATHC2220",
-    "PHYS4A",
-    "PHYS4B",
-    "PHYS4C"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    36.0,
+    38.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    36.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -102,18 +93,28 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Physics 2.0 for Transfer, Associate in Science",
    "measure": "units",
    "total_units": {
+    "min": 36,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -123,58 +124,133 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Given a set of initial conditions, apply problem-solving techniques to develop a mathematical model that describes the physical characteristics of a given system. Identify known and unknown quantities, derive appropriate equations, and analyze the results.",
+    "Given a physical system, identify the core concepts and physical laws that apply. Describe the system in terms of the core concepts and physical laws. Select appropriate conceptual model(s) and justify their application.",
+    "In the laboratory setting, demonstrate safe laboratory practices.",
+    "In the laboratory setting, determine the relationships between the physical quantities of a system. Develop mathematical models and use analytical and graphical means to predict the subsequent behavior of the system."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CSCI 40",
-    "why": "Physics A.S.-T section not in the text; appears only in the Engineering: Computer certificate section"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSCI 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MATH 17",
-    "why": "Physics A.S.-T section not in the text; appears only in the Engineering: Computer certificate section"
+    "name": "Differential Equations and Linear Algebra (MATH 17)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Differential equations and linear algebra",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 17",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MATH 26",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATH 7",
-    "why": "Physics A.S.-T section not in the text; appears only in the Engineering: Computer certificate section"
-   },
-   {
-    "code": "MATH C2210",
-    "why": "Physics A.S.-T section not in the text; appears only in the Engineering: Computer certificate section"
-   },
-   {
-    "code": "MATH C2220",
-    "why": "Physics A.S.-T section not in the text; appears only in the Engineering: Computer certificate section"
-   },
-   {
-    "code": "MATH6",
-    "why": "Physics A.S.-T section not in the text; MATH 6 appears only in the Engineering: Computer certificate section"
-   },
-   {
-    "code": "PHYS 4A",
-    "why": "Physics A.S.-T section not in the text; appears only in the Engineering: Computer certificate section"
-   },
-   {
-    "code": "PHYS 4B",
-    "why": "Physics A.S.-T section not in the text; appears only in the Engineering: Computer certificate section"
-   },
-   {
-    "code": "PHYS 4C",
-    "why": "Physics A.S.-T section not in the text; appears only in the Engineering: Computer certificate section"
+    "name": "Differential Equations and Linear Algebra (MATH 7 AND MATH 26)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Differential equations and linear algebra",
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "MATH 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied catalog text contains only the 'Engineering: Computer - Formerly Engineering: Computer, Software, Certificate of Achievement - Major #3015' section (Total 44-45), not the Physics 2.0 A.S.-T degree. No requirements, outcomes or careers were recorded because none are printed for the named award.",
-   "The source URL points to the Engineering Programs page of the 2025-2026 FCC catalog; the Physics A.S.-T section should be retrieved from the correct page for the 2026-2027 catalog year.",
-   "Closed list entry 'MATH6' likely corresponds to 'MATH 6 Mathematical Analysis III' as printed in the engineering section."
+   "The catalog prints 'MATH 6' (Mathematical Analysis III); the closed list stores it as 'MATH6' with no units. Treated as the same course (catalog_addition false).",
+   "The 'Required Courses' heading prints 36.0-38.0 and 'Total : 36- 38'; recorded as total_units. Block stated left null on the all-required block because that printed range includes the MATH 17 / MATH 7 + MATH 26 option.",
+   "The option group (MATH 17, OR MATH 7 AND MATH 26) prints a group total of 5.0-7.0; the MATH 7 + MATH 26 path prints 7.0. Within the catalog list, this choice sits between MATH 6 and PHYS 4A.",
+   "The description says students complete 'a maximum of 66 required semester units ... including the Cal-GETC requirements and 18 semester units within the major'. The 66 is a maximum, not a printed degree total, so degree_total is null; the '18 semester units within the major' conflicts with the printed 36-38 major total and should be checked.",
+   "No careers are named in the section.",
+   "Outcomes are printed under 'Learning Outcome(s)' in this award's section."
   ]
  },
- "extracted_run": "38563582873"
+ "extracted_run": "44692355661",
+ "catalog_year": "2026-2027"
 }

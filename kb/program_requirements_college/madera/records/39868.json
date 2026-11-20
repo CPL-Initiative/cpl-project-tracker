@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Information Systems, Networking and Security",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1190",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6787,
+  "input_tokens": 6423,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6787,
-    "output_tokens": 1292,
+    "input_tokens": 6423,
+    "output_tokens": 1224,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1292,
+  "output_tokens": 1224,
   "output_tokens_details": {
-   "thinking_tokens": 516
+   "thinking_tokens": 247
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05299,
- "ms": 11883,
- "seconds": 12.2,
+ "cost_usd": 0.05017,
+ "ms": 10927,
+ "seconds": 11.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "IS15",
-    "IS26A",
-    "IS40A",
-    "IS60",
-    "IS62",
-    "IS63",
-    "IS64",
-    "IS80",
-    "IS81"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    20.5,
+    24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    20.5,
+    24.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
+   "section_heading": "Information Systems, Networking and Security, Certificate of Achievement - Major #M.6972.CA",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20.5,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,55 +121,115 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Create a Web document that contains Hyperlinks, graphics, tables and forms.",
+    "Develop a well-designed relational database.",
+    "Apply structured logic in analyzing and solving problems.",
+    "Plan, design, and write stand-alone computer programs."
+   ],
+   "careers": [
+    "networking technician",
+    "technician"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "IS 15",
-    "why": "named only in the A.S. section; no certificate section in the text"
+    "name": "Group 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select One Group",
+    "stated": {
+     "min": 20.5,
+     "max": 20.5
+    },
+    "courses": [
+     {
+      "code": "IS 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 26A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 40A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 62",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 63",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "IS 26A",
-    "why": "named only in the A.S. section; no certificate section in the text"
-   },
-   {
-    "code": "IS 40A",
-    "why": "named only in the A.S. section; no certificate section in the text"
-   },
-   {
-    "code": "IS 60",
-    "why": "named only in the A.S. section; no certificate section in the text"
-   },
-   {
-    "code": "IS 62",
-    "why": "named only in the A.S. section; no certificate section in the text"
-   },
-   {
-    "code": "IS 63",
-    "why": "named only in the A.S. section; no certificate section in the text"
-   },
-   {
-    "code": "IS 64",
-    "why": "named only in the A.S. section; no certificate section in the text"
-   },
-   {
-    "code": "IS 80",
-    "why": "named only in the A.S. section; no certificate section in the text"
-   },
-   {
-    "code": "IS 81",
-    "why": "named only in the A.S. section; no certificate section in the text"
+    "name": "Group 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select One Group",
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "IS 80",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 81",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text contains only the Associate in Science section (Major #M.6972.AS, Total 43.5-48.0); no Certificate of Achievement section for this program is printed, so no blocks are recorded for the certificate. The heading recorded is the only section present, not the certificate's own.",
-   "The A.S. section prints seven learning outcomes; they are not recorded because they are printed for the A.S. degree, and the text does not show the certificate sharing them. A reviewer should check the certificate's own page for its outcomes and requirements.",
-   "The A.S. requirements include IT Support and Networking and Security option groups (IS 15/IS 60/IS 61/IS 62 or IS 80; IS 63/IS 64/IS 70/IS 71 or IS 81) that may correspond to the certificate, but the text does not state the certificate's requirements.",
-   "The source URL refers to the 2025-2026 MCC catalog, while the program record is for catalog year 2026-2027."
+   "The 'Select One Group' heading prints 20.5-24.0 and Total: 20.5-24.0; recorded as total_units 20.5-24.0, with Group 1 (20.5) and Group 2 (24.0) as alternative option blocks.",
+   "The printed learning outcomes (web documents, relational database, structured logic, stand-alone programs) read like programming/IS outcomes rather than networking outcomes; recorded as printed, but a reviewer may want to confirm they belong to this certificate.",
+   "Source URL refers to the 2025-2026 MCC catalog while the requested catalog year is 2026-2027.",
+   "Careers taken from the description: 'a career as a networking technician' and 'enter the workforce as a technician in business, government, or education'."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

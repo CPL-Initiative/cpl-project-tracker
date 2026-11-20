@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Political Science",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=193",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=192",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12171,
+  "input_tokens": 12090,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12171,
-    "output_tokens": 3308,
+    "input_tokens": 12090,
+    "output_tokens": 3559,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3308,
+  "output_tokens": 3559,
   "output_tokens_details": {
-   "thinking_tokens": 969
+   "thinking_tokens": 1289
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11484,
- "ms": 26064,
- "seconds": 26.4,
+ "cost_usd": 0.11954,
+ "ms": 27458,
+ "seconds": 27.7,
  "parts": null,
  "error": null,
  "score": {
@@ -109,7 +109,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Major Requirements",
+   "section_heading": "Political Science (AA-T)",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -120,7 +120,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -412,18 +412,44 @@
   "missing_explained": [
    {
     "code": "SOCIC1000",
-    "why": "Not printed under this code; catalog lists SOC 1 Introduction to Sociology in List B, likely the same course under a different code"
+    "why": "Not printed under this code; List B prints SOC 1 Introduction to Sociology, likely the same course under its local number (recorded as catalog addition)."
    }
   ],
   "notes": [
-   "The excerpt begins mid-section on page 193; the Political Science (AA-T) heading, description and the Associate Degree/GE paragraph for this award fall on the preceding page and are not in the text, so section_heading uses the 'Major Requirements' heading printed on page 193 and ge_pattern is left null (ADTs normally use Cal-GETC/CSU GE; verify on page 192).",
-   "The catalog prints C-ID codes as e.g. 'POLS 1000 (POLS C1000)', 'STAT 1000 (STAT C1000)', 'ECON 2002 (ECON C2002)', 'HIST 1001 (HIST C1001)'; recorded with the parenthetical C-numbered codes that match the closed list.",
-   "No per-course units are printed; only block totals (9, 6, 3) and Total Hours/Units 18.",
-   "Program note: a course used to satisfy a requirement in List A cannot be used to fulfill List B. Several courses (POLS C1000, POLS 18, POLS 2, POLS 25, POLS 11, POLS 12) appear in more than one list; presumably a course counts only once.",
-   "SOC 1 marked as catalog addition; closed list entry 'SOCIC1000' (Introduction to Sociology) appears malformed and may correspond to SOC 1 / SOCI C1000.",
-   "The 60-unit sentence on later sections is generic ADT text and is not recorded as a degree total; no careers named for this program."
+   "The top of page 192 (major requirements with LIR 10, total 19, and its outcomes) is the tail of the preceding Political Science (AA) section and was not used; only the Political Science (AA-T) section was read.",
+   "Common-course-numbered courses are printed as local number with the C-number in parentheses (e.g., 'POLS 1000 (POLS C1000)', 'STAT 1000 (STAT C1000)', 'ECON 2002 (ECON C2002)', 'HIST 1001 (HIST C1001)'); recorded under the C-number that matches the closed list.",
+   "No units are printed beside individual courses in the choose lists; only block totals (9, 6, 3) are printed.",
+   "Program Requirements Notes: a course used to satisfy a requirement in List A cannot be used to fulfill the requirements in List B. Core courses also appear in Lists A and B.",
+   "The '60 semester units' and 'minimum of 18 semester units in a major' sentences are generic ADT boilerplate, not recorded as degree_total; total_units 18 is from 'Total Hours/Units 18'.",
+   "The program student learning outcomes printed for the AA-T are identical to those printed for the Political Science (AA) section."
   ]
  },
- "extracted_run": "39006464249",
- "catalog_year": "2026-2027"
+ "extracted_run": "44701011374",
+ "catalog_year": "2026-2027",
+ "source_sha": "89f0bdaf6caa71d0",
+ "source_codes": [
+  "AJ26",
+  "ANTH2",
+  "ECONC2001",
+  "ECONC2002",
+  "GEOG7",
+  "HIST181",
+  "HIST182",
+  "HIST21",
+  "HIST41",
+  "HIST42",
+  "HISTC1001",
+  "HISTC1002",
+  "POLS10",
+  "POLS11",
+  "POLS12",
+  "POLS18",
+  "POLS2",
+  "POLS25",
+  "POLSC1000",
+  "PSYC9",
+  "SOC2",
+  "STATC1000"
+ ],
+ "source_coverage": 0.957
 }

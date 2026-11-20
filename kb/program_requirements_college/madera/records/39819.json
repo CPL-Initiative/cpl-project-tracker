@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6781,
+  "input_tokens": 6798,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6781,
-    "output_tokens": 1502,
+    "input_tokens": 6798,
+    "output_tokens": 1500,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 1502,
+  "output_tokens": 1500,
   "output_tokens_details": {
-   "thinking_tokens": 554
+   "thinking_tokens": 569
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05716,
- "ms": 22531,
- "seconds": 23.0,
+ "cost_usd": 0.05719,
+ "ms": 12490,
+ "seconds": 12.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 6,
    "listed": 6,
-   "share": 0.833,
-   "missing": [
-    "MATH5A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -109,7 +110,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Physics",
+   "section_heading": "Associate in Science in Physics for Transfer Degree",
    "measure": "units",
    "total_units": {
     "min": 26,
@@ -204,16 +205,19 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; catalog lists MATH C2210 Calculus I: Early Transcendentals instead"
+    "why": "not in the text; catalog lists MATH C2210 Calculus I: Early Transcendentals in its place"
    }
   ],
   "notes": [
-   "The catalog text begins mid-description; no section heading is printed, so 'Physics' (the program title) is used. The text names the award as 'Associate in Science in Physics for Transfer Degree'.",
-   "Source URL is the 2025-2026 MCC catalog while the requested catalog year is 2026-2027; verify the year.",
-   "The 60 semester units requirement is the standard ADT boilerplate (60 CSU-transferable units including IGETC or CSU GE-Breadth, and a minimum of 18 units in the major); it was not recorded as degree_total. The 18-unit minimum is a general rule, not this major's total; the printed major total is 26.0.",
-   "MATH C2210 is not in the closed list (the closed list has MATH 5A Calculus I); likely a common course numbering replacement.",
-   "Careers are taken from the description of options for physics graduates (bachelor's, master's, Ph.D. levels); the teaching option was printed as 'Teaching at the high school level with a bachelor's degree or at a two-year college with a master's degree' and is recorded in part."
+   "The text begins mid-description and prints no visible heading; section_heading taken from the degree name in the text ('Associate in Science in Physics for Transfer Degree').",
+   "The 60 semester unit requirement is printed as the standard ADT completion rule, not as a printed total for this award; degree_total left null.",
+   "GE pattern stated as IGETC or CSU GE-Breadth; no GE units printed.",
+   "The '18 semester units' minimum is the generic ADT major minimum, not this award's total; total_units taken from 'Total : 26.0'.",
+   "Source URL is the 2025-2026 catalog while the requested catalog year is 2026-2027; reviewer should confirm year.",
+   "Career text also mentions teaching 'at a two-year college with a master's degree'; not recorded as a separate verbatim entry because the phrase is split across the sentence.",
+   "MATH C2210 is not in the closed list and is recorded as a catalog addition; it appears to replace MATH 5A."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

@@ -1,0 +1,243 @@
+{
+ "college": "Santa Rosa Junior College",
+ "control_number": "21724",
+ "shape": "certificate",
+ "title": "Advanced Manufacturing Tech",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=221",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8448,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8448,
+    "output_tokens": 1628,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1628,
+  "output_tokens_details": {
+   "thinking_tokens": 553
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06635,
+ "ms": 14475,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MACH161"
+   ],
+   "flagged": [
+    "MACH161"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.5,
+    27.5
+   ],
+   "stated": [
+    27.5,
+    27.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Manufacturing Tech (Certificate of Achievement)",
+   "measure": "units",
+   "total_units": {
+    "min": 27.5,
+    "max": 27.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate safe operation of hand tools, power tools and specialized machine shop tools and equipment;",
+    "Demonstrate the set up and operation of manual lathes and mills;",
+    "Interpret CNC (Computer Numeric Control) programming language;",
+    "Accurately analyze and interpret blueprints and create part(s) to specifications;",
+    "Interpret blueprints and GDT (Geometric Dimensioning Tolerancing) symbols in order to verify dimensions of a machine part; and",
+    "Describe applications of design, manufacturing, and fabrication applicable to non-ferrous metals."
+   ],
+   "careers": [
+    "entry-level machinist",
+    "CNC technician",
+    "machine operator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements - Complete 27.50 Units",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27.5,
+     "max": 27.5
+    },
+    "courses": [
+     {
+      "code": "APTE 45",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APTE 46",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 51.1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 51.1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 80A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 80B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MACH 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 170",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements table follows the generic certificate policy text on page 222 (whose running header names the next program, AE: Basic Computer Ops); it belongs to the Advanced Manufacturing Technology section.",
+   "MACH 161 Metallurgy (3) is printed as required but is not in the closed list; recorded as a catalog addition.",
+   "Printed total 27.5 units matches the sum of listed courses.",
+   "The description also names areas of employment (machine shops, manufacturing industries, industrial machinery and equipment, measuring and controlling devices, beverage product manufacturers); these were read as industries/workplaces rather than careers and not recorded in careers. A reviewer may wish to include them.",
+   "Ligature characters (ﬁ) in the catalog text were normalized to 'fi' in outcomes and heading."
+  ]
+ },
+ "extracted_run": "44701011374",
+ "catalog_year": "2026-2027",
+ "source_sha": "5b5db7455a4b7d99",
+ "source_codes": [
+  "APTE45",
+  "APTE46",
+  "MACH162",
+  "MACH511A",
+  "MACH511B",
+  "MACH80A",
+  "MACH80B",
+  "WELD170"
+ ],
+ "source_coverage": 1.0
+}

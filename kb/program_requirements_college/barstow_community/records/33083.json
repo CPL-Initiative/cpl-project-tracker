@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "English",
  "award": "A.A- T Degree",
- "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=62",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7264,
+  "input_tokens": 8164,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7264,
-    "output_tokens": 1034,
+    "input_tokens": 8164,
+    "output_tokens": 2647,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,162 +30,292 @@
     "model": null
    }
   ],
-  "output_tokens": 1034,
+  "output_tokens": 2647,
   "output_tokens_details": {
-   "thinking_tokens": 201
+   "thinking_tokens": 1114
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04974,
- "ms": 10876,
- "seconds": 12.3,
+ "cost_usd": 0.0856,
+ "ms": 22525,
+ "seconds": 22.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "ENGL11",
-    "ENGL12",
-    "ENGL12B",
-    "ENGL13A",
-    "ENGL2",
-    "ENGL3",
-    "ENGL5",
-    "ENGL7",
-    "ENGLC1001",
-    "ENGLC1002"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "PSYCC1000",
+    "SOCIC1000"
+   ],
+   "flagged": [
+    "PSYCC1000",
+    "SOCIC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    19.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     66.0,
+     66.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found in text (page shows an unheaded course list, apparently from another program)",
+   "section_heading": "Associate of Arts Degree for Transfer, English",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 13,
+    "max": 13
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Students will write essays that demonstrate college-level composition skills, such as organization, a strong thesis, credible content, and appropriate citations.",
+    "Students will learn research and analytical techniques that will benefit them across many disciplines, including those needed for business and technical writing situations. In some classes, students will learn analysis of literature and writing in appropriate contexts."
+   ],
+   "careers": [
+    "teaching/education",
+    "advertising",
+    "law",
+    "public relations",
+    "work in print and electronic media"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ENGL C1001",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL C1002",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
+    "name": "List A: Choose two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 12B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL 2",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
+    "name": "List B: Choose one from the following or any course not previously used from List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "ENGL 3",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
-   },
-   {
-    "code": "ENGL 5",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
-   },
-   {
-    "code": "ENGL 7",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
-   },
-   {
-    "code": "ENGL 11",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
-   },
-   {
-    "code": "ENGL 12",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
-   },
-   {
-    "code": "ENGL 12B",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
-   },
-   {
-    "code": "ENGL 13A",
-    "why": "English AA-T section not in text; appears only in an unheaded multi-subject course list"
+    "name": "List C: Choose one from the following or any course not used from List A or B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 13A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 65, printed page number 62) contains no heading, rules, totals or description for the English A.A-T degree. It is a continuous list of ARTS, COMM, ENGL, HIST, HUMA and MUSI courses, which looks like the course list of another program (likely a Liberal Arts / Arts and Humanities area of emphasis) continued from a previous page.",
-   "No blocks were recorded because the text gives no requirement structure for the English AA-T. A reviewer should locate the actual English AA-T section, possibly on a different page of the 2026-2027 catalog.",
-   "The list includes ENGL C1000 and ENGL 4, which are not in the closed list. They were not recorded because the list is not attributable to this award."
+   "The table is garbled across the page 62/63 break: page 62 ends List B with 'Subtotal 3.0' followed by totals (Major Units Required 18.0, Cal-GETC 34.0, Transferable Electives Required 11.0-14.0, Total 60.0); page 63 then begins with 'ENGL 7 Creative Writing 3.0 Subtotal 3.0', a List C, and a second set of totals (Major Units Required 19.0, Cal-GETC 34.0, Transferable Electives Required 13.0, Total 60.0). Looks like two versions of the table overlaid.",
+   "ENGL 7 appears at the top of page 63 with no list heading; it was placed in List B as a continuation across the page break. Reviewer should verify which list it belongs to.",
+   "total_units recorded as 19 (second table, consistent with core 7 + List A 6 + List B 3 + List C 3); the first table prints 18.0, which does not match its own subtotals (7+6+3=16). degree_elective_units recorded as 13 from the second table; the first prints 11.0-14.0. Neither set of figures sums to 60 with 34 GE units.",
+   "List B also allows any course not previously used from List A; List C also allows any course not used from List A or B.",
+   "The page states a minimum of 18 units in the major as a general ADT requirement; that is not used as the award total."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": "44687777798",
+ "catalog_year": "2026-2027",
+ "source_sha": "ea3f4585cd0be3a2",
+ "source_codes": [
+  "ENGL11",
+  "ENGL12",
+  "ENGL12B",
+  "ENGL13A",
+  "ENGL2",
+  "ENGL3",
+  "ENGL5",
+  "ENGL7",
+  "ENGLC1001",
+  "ENGLC1002"
+ ],
+ "source_coverage": 1.0
 }

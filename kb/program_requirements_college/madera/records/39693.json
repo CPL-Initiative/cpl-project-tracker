@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7631,
-    "output_tokens": 2522,
+    "output_tokens": 2673,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 2522,
+  "output_tokens": 2673,
   "output_tokens_details": {
-   "thinking_tokens": 511
+   "thinking_tokens": 522
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08096,
- "ms": 18735,
- "seconds": 19.3,
+ "cost_usd": 0.08398,
+ "ms": 20093,
+ "seconds": 21.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 29,
+   "placed": 30,
    "listed": 32,
-   "share": 0.906,
+   "share": 0.938,
    "missing": [
-    "ENGL1B",
     "JOURN1",
     "JOURN3"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGLC1002"
-   ],
-   "flagged": [
-    "ENGLC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -204,7 +206,7 @@
     ]
    },
    {
-    "name": "Electives (unnamed list, 14.0 units)",
+    "name": "Electives (unnamed list, 14 units)",
     "rule": "choose_units",
     "minimum": 14,
     "option_group": null,
@@ -370,7 +372,7 @@
     ]
    },
    {
-    "name": "Linguistics (unnamed list, 3.0 units)",
+    "name": "Linguistics (unnamed list, 3 units)",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -400,7 +402,7 @@
   "missing_explained": [
    {
     "code": "ENGL 1B",
-    "why": "not in the text"
+    "why": "not in the text (replaced by ENGL C1002 in the catalog)"
    },
    {
     "code": "JOURN 1",
@@ -412,11 +414,15 @@
    }
   ],
   "notes": [
-   "The third and fourth blocks have no printed heading, only unit totals (14.0 and 3.0); names were supplied descriptively and read as 'choose units' lists. The 3+3+14+3 block totals match the printed Total : 23.0.",
-   "ENGL C1002 is not in the closed list and recorded as a catalog addition; ENGL C1002H recorded as its honors alternative.",
-   "Source URL refers to the 2025-2026 MCC catalog while the requested catalog year is 2026-2027; reviewer should confirm the year.",
-   "No general education pattern, degree total or careers are printed in this section."
+   "Source URL is the 2025-2026 MCC catalog, while the requested catalog year is 2026-2027; verify the year.",
+   "The third and fourth lists carry no printed heading; only their unit totals (14.0 and 3.0) appear. Block names are descriptive, not printed. The rules (choose 14 units; choose 3 units, i.e. one of LING 10/LING 11) are inferred from these totals and from the sum 3+3+14+3 = 23 matching 'Total : 23.0'.",
+   "Honors twins (ENGL C1002/C1002H, ENGL 2/2H, ENGL C1001/C1001H) are recorded as single entries with alternatives.",
+   "ENGL C1002 is not in the closed list (catalog_addition true); the closed list instead holds ENGL 1B, which the text does not name.",
+   "No general education pattern or degree total is printed in this section.",
+   "Outcome 2 is copied as printed, including 'and well as'.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

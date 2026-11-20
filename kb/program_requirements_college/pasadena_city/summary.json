@@ -2,19 +2,22 @@
  "college": "Pasadena City College",
  "programs": 367,
  "with_closed_list": 318,
- "found": 297,
- "extracted": 297,
+ "found": 299,
+ "extracted": 299,
  "errors": 0,
- "passed_machine_checks": 242,
+ "passed_machine_checks": 253,
  "failed": {
-  "coverage": 4,
+  "coverage": 3,
   "invented": 0,
-  "arithmetic": 55,
+  "arithmetic": 46,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 20.91,
- "cost_per_program": 0.0704,
+ "cost_usd_run": 0.22,
+ "cost_usd_filed": 21.08,
+ "cost_per_program": 0.0705,
+ "extract_calls": 3,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "16745",
@@ -35,8 +38,8 @@
     "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 9165,
-     "content": 35154,
+     "body": 9179,
+     "content": 35177,
      "tabs": 0
     },
     "tab_panels": [
@@ -49,7 +52,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "33361",
@@ -57,7 +61,8 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "33362",
@@ -78,8 +83,8 @@
     "why": "coarse net: the page's code tokens name 2 of 345 listed courses",
     "error": null,
     "chars": {
-     "body": 9883,
-     "content": 34673,
+     "body": 9897,
+     "content": 34696,
      "tabs": 0
     },
     "tab_panels": [
@@ -92,7 +97,17 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33423",
+   "title": "PRE-APPRENTICESHIP IN BUILDING TRADES AND CONSTRUCTION INDUSTRY",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "36733",
@@ -113,8 +128,8 @@
     "why": "coarse net: the page's code tokens name 29 of 91 listed courses",
     "error": null,
     "chars": {
-     "body": 9326,
-     "content": 35190,
+     "body": 9340,
+     "content": 35213,
      "tabs": 0
     },
     "tab_panels": [
@@ -127,7 +142,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "36782",
@@ -135,7 +151,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39026",
@@ -156,8 +173,8 @@
     "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
     "error": null,
     "chars": {
-     "body": 3942,
-     "content": 31013,
+     "body": 3956,
+     "content": 31036,
      "tabs": 0
     },
     "tab_panels": [
@@ -170,7 +187,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42196",
@@ -191,8 +209,8 @@
     "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 3705,
-     "content": 31075,
+     "body": 3719,
+     "content": 31098,
      "tabs": 0
     },
     "tab_panels": [
@@ -205,7 +223,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42197",
@@ -226,8 +245,8 @@
     "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
     "error": null,
     "chars": {
-     "body": 3825,
-     "content": 31201,
+     "body": 3839,
+     "content": 31224,
      "tabs": 0
     },
     "tab_panels": [
@@ -240,7 +259,8 @@
       65
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42972",
@@ -248,8 +268,9 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39758679671"
+ "run": "44688457642"
 }
