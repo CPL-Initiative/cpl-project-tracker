@@ -48,6 +48,12 @@ CI); the [`commons`](reference/lanes/commons.md) lane's confidence-scorer and Ne
 
 ## Open work, from the lanes' NEXT lines
 
+0. **library (#3560) comes first** (Sam, Nov 19, 3:49 PM PT, relayed by COBIx on #3560, comment 7025524965: *"move
+   library fix to first in line"*, ready for Ashley). Step 1 of his order, the url gap, is #3577 (merged and
+   applied). Next: **part 2**, the accessibility check when publishing, one check row per page with `url` written on
+   each row, the footer built from that record, a `publish_target = 'public'` piece listed once it passes, and the
+   tab's pre-check in `library.js` matching on url as well as the version key; then **part 4**, Add existing (Ashley's
+   flyers made outside COBI), Publish all, and redraft and republish; **part 3**, the progress bar, after those.
 1. **program-requirements-harvest:** rule D's prior-year read (`CAPTURE_PRIOR`) for College of the Desert's 8, now
    unblocked by #3579; the reread plan's third ten (Sierra, Barstow, Pasadena City, Rio Hondo, Los Angeles Harbor,
    College of San Mateo, College of the Sequoias, Fresno City, Contra Costa, Madera; $40 per college per run, one
@@ -63,17 +69,18 @@ CI); the [`commons`](reference/lanes/commons.md) lane's confidence-scorer and Ne
    `left_map_keep` rows INSERT-only); #3524 and #3522 in a plain session.
 4. **repo-size:** Part 5 waits on Sam's go; the spreadsheet export and the videos; the slimming items in a plain
    session.
-5. **library (#3560):** with #3577 merged, parts 2 to 4. Part 2 must write `url` on every check row, and the tab's
-   pre-check in `library.js` still looks at the version key alone.
-6. **common-cr-reference:** the exact match from issue #3523 against the 2026-11-18 counts, in a plain session.
+5. **common-cr-reference:** the exact match from issue #3523 against the 2026-11-18 counts, in a plain session.
 
 ## For Sam
 
-1. The conductor-model flip on the CPL Queue routine's form is yours.
-2. [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current): one card.
+Nothing waits on Sam. COBIx relayed on #3560 (comment 7025524965) that he cleared
+[Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) and switched the CPL Queue conductor to Opus.
 
 ## Decisions Sam made
 
+- **The Library comes first** (Nov 19, 3:49 PM PT, relayed by COBIx on #3560): parts 2 and 4 of #3560 lead the open
+  work. **A new version or url takes a piece off the Public Library until it passes** (3:42 PM PT, relayed there):
+  this confirms `d-library-new-page-unlists-s687`, so Sam's Nov 19 item 9 stays set aside.
 - **Session SQL needs no ask** (Sam, 2026-11-20 about 01:20Z, verbatim): *"You have sql with and don't need to ping for
   allows With Auth"*. Row `r-sql-needs-no-ask-sam-2026-11-20`, verified. Rule 10 still governs each write.
 
