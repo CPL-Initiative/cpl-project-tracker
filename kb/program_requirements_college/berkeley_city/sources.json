@@ -40,7 +40,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.92,
+  "coverage": 1.0,
   "codes_found": [
    "ART1",
    "ART119",
@@ -52,11 +52,13 @@
    "ART18",
    "ART181",
    "ART182",
+   "ART2",
    "ART20",
    "ART22",
    "ART24",
    "ART27",
    "ART29",
+   "ART3",
    "ART30",
    "ART31",
    "ART4",
@@ -217,11 +219,12 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "ENGL10A",
    "ENGL17A",
    "ENGL17B",
+   "ENGL1B",
    "ENGL20",
    "ENGL23",
    "ENGL44B",
@@ -760,19 +763,91 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+    "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "18597",
   "title": "Social Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRAM1",
+   "AFRAM31",
+   "ANTHR1",
+   "ANTHR13",
+   "ANTHR18",
+   "ANTHR2",
+   "ANTHR3",
+   "ASAME11",
+   "CHDEV51",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHST1",
+   "HIST19",
+   "HIST21",
+   "HIST2A",
+   "HIST2B",
+   "HIST31",
+   "HIST3A",
+   "HIST3B",
+   "HISTC1001",
+   "HISTC1002",
+   "LIS85",
+   "M/LAT31",
+   "M/LAT33",
+   "M/LAT34",
+   "POLSC1000",
+   "POSCI19",
+   "POSCI2",
+   "POSCI20",
+   "POSCI3",
+   "POSCI4",
+   "POSCI6",
+   "PSYCC1000",
+   "PSYCH21",
+   "PSYCH6",
+   "PSYCH61",
+   "SOC1",
+   "SOC13",
+   "SOC18",
+   "SOC2",
+   "SOC5",
+   "SOC7",
+   "SOC8",
+   "WS1"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40069",
+   "title": "Social Sciences - A.A. Degree",
+   "h1": "Social Sciences - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social sciences - a.a. degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 45,
-  "text_chars": 0
+  "text_chars": 4809
  },
  {
   "control_number": "19267",
@@ -780,12 +855,14 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.962,
+  "coverage": 1.0,
   "codes_found": [
    "ART1",
    "ART13",
    "ART16",
    "ART182",
+   "ART2",
+   "ART3",
    "ART4",
    "ENGL17A",
    "ENGL17B",
@@ -1030,10 +1107,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "ENGL17A",
    "ENGL17B",
+   "ENGL1B",
    "ENGL50",
    "ENGL85A",
    "ENGL85B",
@@ -1062,7 +1140,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.765,
+  "coverage": 0.824,
   "codes_found": [
    "ART1",
    "BIOL10",
@@ -1070,6 +1148,7 @@
    "CHEM30A",
    "COMMC1000",
    "EDUC1",
+   "ENGL1B",
    "ENGLC1000",
    "GEOL10",
    "GEOL10L",
@@ -1518,12 +1597,28 @@
   "title": "Research Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LIS511",
+   "LIS512",
+   "LIS513"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40029",
+   "title": "Research Skills - Certificate of Competency",
+   "h1": "Research Skills - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "research skills - certificate of competency",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2002
  },
  {
   "control_number": "37808",
@@ -1535,7 +1630,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40027",
+    "title": "ESOL Composition Skills - Certificate of Competency",
+    "h1": "ESOL Composition Skills - Certificate of Competency",
+    "awards": [
+     "noncredit"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "37820",
@@ -1571,12 +1680,34 @@
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART2",
+   "ART20",
+   "ART22",
+   "ART3",
+   "ART4",
+   "ART46",
+   "ART47",
+   "ART50",
+   "MMART3"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976",
+   "title": "Studio Arts - AA-T Degree",
+   "h1": "Studio Arts - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts - aa-t degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2586
  },
  {
   "control_number": "37851",
@@ -1584,13 +1715,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
    "ART13",
    "ART16",
    "ART182",
+   "ART2",
    "ART20",
    "ART22",
+   "ART3",
    "ART4",
    "ART46",
    "ART47",
@@ -1655,12 +1788,37 @@
   "title": "Video Arts Level II: Directing And Producing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MM/VI15",
+   "MM/VI17",
+   "MM/VI1A",
+   "MM/VI1B",
+   "MM/VI5",
+   "MM/VI9B",
+   "MM/VI9C",
+   "MM/VI9D",
+   "MMART122B",
+   "MMART123",
+   "MMART197",
+   "MMART468"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40057",
+   "title": "Video Arts Level II: Directing And Producing - Certificate of Achievement",
+   "h1": "Video Arts Level II: Directing And Producing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "video arts level ii: directing and producing - certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2426
  },
  {
   "control_number": "37934",
@@ -1739,7 +1897,7 @@
    }
   },
   "listed": 30,
-  "text_chars": 2792
+  "text_chars": 4071
  },
  {
   "control_number": "38228",
@@ -2085,9 +2243,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "SPAN1A",
    "SPAN1B",
+   "SPAN22A",
+   "SPAN22B",
    "SPAN2A",
    "SPAN2B",
    "SPAN38",
@@ -2095,20 +2256,20 @@
    "SPAN40"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036",
+   "title": "Spanish - AA-T Degree",
+   "h1": "Spanish - AA-T Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish - aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 4248
+  "text_chars": 2603
  },
  {
   "control_number": "41766",
@@ -2540,16 +2701,18 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHR3",
    "COMM10",
    "COMM19",
+   "COMM20",
    "COMM3",
    "COMM4",
    "COMM5",
    "COMM6",
    "COMMC1000",
+   "ENGL1B",
    "MM/VI17",
    "PSYCC1000",
    "SOC1"
@@ -2779,9 +2942,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
+   "ART3",
    "ASL50",
+   "COMM20",
    "COUN24",
    "COUN57",
    "ENGLC1000",
@@ -3058,12 +3223,48 @@
   "title": "Virtual Production",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS5",
+   "MM/AN20A",
+   "MM/AN20B",
+   "MM/AN21A",
+   "MM/AN21B",
+   "MM/AN22A",
+   "MM/AN22B",
+   "MM/AN23",
+   "MM/AN24",
+   "MM/AN30",
+   "MM/AN3A",
+   "MM/AN40A",
+   "MM/AN41A",
+   "MM/AN50",
+   "MM/AN55A",
+   "MM/VI20A",
+   "MM/VI20LA",
+   "MM/VI9A",
+   "MM/VI9B",
+   "MM/VI9C",
+   "MMART3",
+   "MMART468",
+   "MMART5A"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41941",
+   "title": "Virtual Production - A.A. Degree",
+   "h1": "Virtual Production - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "virtual production - a.a. degree",
+    "section_fit": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 3639
  },
  {
   "control_number": "46229",
@@ -3071,7 +3272,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.952,
+  "coverage": 1.0,
   "codes_found": [
    "AFRAM1",
    "ART1",
@@ -3082,6 +3283,7 @@
    "COMMC1000",
    "EDUC1",
    "EDUC18",
+   "ENGL1B",
    "ENGL47",
    "ENGLC1000",
    "ETHST1",
