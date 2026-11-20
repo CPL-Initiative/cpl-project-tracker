@@ -4917,6 +4917,20 @@ def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None,
         got = P.load(reader, step["start"], cache, False)
         # A menu link can carry the same words as the file's ("2026 - 2027" at East LA): a PDF step follows a PDF.
         pdfs = [ln for ln in got.get("links") or [] if ".pdf" in (ln.get("href") or "").lower().split("?")[0]]
+        if step.get("follow_year"):
+            # A prior-year read naming the catalog's page (S689): that year's file, and the links the page offers, so
+            # a read that finds none says where to look next.
+            href = P.year_pdf_link(pdfs, step["follow_year"])
+            report["procedure_step"] = {
+                "start": step["start"], "follow_year": step["follow_year"], "href": href,
+                "status": got.get("status"), "access": got.get("access"),
+                "links": [{"text": (ln.get("text") or "")[:80], "href": ln.get("href")}
+                          for ln in got.get("links") or []
+                          if re.search(r"catalog|archive|\.pdf", (ln.get("text") or "") + " " + (ln.get("href") or ""),
+                                       re.I)][:60]}
+            if href:
+                return href, step["timeout_s"] * 1000
+            return None, step["timeout_s"] * 1000
         href = P.follow_link(pdfs, step["follow"])
         report["procedure_step"] = {"start": step["start"], "follow": step["follow"], "href": href,
                                     "status": got.get("status"), "access": got.get("access")}
@@ -5289,8 +5303,9 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
 # start page of that year's catalog on the registry's own host (Riverside City's 2025-2026 is curriQunet archive 71,
 # Catalog/archive/71/iq/4079/4130, S663), its year, and the control numbers to read there. Only those programs are
 # read, and file_run files them beside the college's records rather than in place of them.
-# A catalog read as one PDF (College of the Desert's procedure step, S647) takes its prior year as that year's file:
-# "<the .pdf> <catalog_year> <cn,...>", on the host the registry's PDF already comes from (S689, rule D's prior read).
+# A catalog read as one PDF (College of the Desert's procedure step, S647) takes its prior year as that year's file,
+# or as a page on the same host whose PDF link names that year (year_pdf_link): "<the .pdf or the page>
+# <catalog_year> <cn,...>", on the host the registry's PDF already comes from (S689, rule D's prior read).
 PRIOR_PLATFORMS = ("curriqunet",)
 
 
@@ -5310,8 +5325,14 @@ def prior_reg(reg: dict, prior: dict) -> dict:
     if prior.get("format") == "pdf":
         proc = reg.get("procedure") if isinstance(reg.get("procedure"), dict) else {}
         step = dict(proc.get("catalog") or {}) if isinstance(proc.get("catalog"), dict) else {}
-        step.update(file=prior["start"], format="pdf", catalog_year=prior["catalog_year"])
-        step.setdefault("start", prior["start"])
+        step.update(format="pdf", catalog_year=prior["catalog_year"])
+        step.pop("file", None)
+        step.pop("follow_year", None)
+        if urllib.parse.urlparse(prior["start"]).path.lower().endswith(".pdf"):
+            step.update(file=prior["start"])
+            step.setdefault("start", prior["start"])
+        else:
+            step.update(start=prior["start"], follow=prior["catalog_year"], follow_year=prior["catalog_year"])
         out["procedure"] = dict(proc, catalog=step)
     return out
 
@@ -5331,8 +5352,6 @@ def prior_read(spec: str | None, reg: dict, programs: list[dict]) -> tuple[dict 
         return None, "a prior-year read opens on %s catalogs and PDF catalogs; this one is %s" % (
             ", ".join(PRIOR_PLATFORMS), reg.get("catalog_platform"))
     if as_pdf:
-        if not urllib.parse.urlparse(start).path.lower().endswith(".pdf"):
-            return None, "a PDF catalog's prior year is that year's file: name the .pdf"
         if not host or host not in pdf_hosts(reg):
             return None, "the prior catalog's file must be on the host the registry's PDF comes from"
     elif not host or host != (urllib.parse.urlparse(reg.get("catalog_url") or "").hostname or "").lower():
