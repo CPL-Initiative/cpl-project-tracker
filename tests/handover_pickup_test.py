@@ -183,6 +183,7 @@ def main():
 
     # ── (7) what waits for a session ──
     check("(7) pasted data waits for a session", not hp.needs_look({"kind": "paste"}))
+    check("(7) a note waits for a session, and the pickup never asks for its words", not hp.needs_look({"kind": "note"}) and "note" not in hp.COLUMNS.split(","))
     check("(7) a saved API procedure with no test waits for a session", not hp.needs_look({"kind": "api", "api": {"which": "catalog", "address": "https://a.example/b"}}))
     check("(7) an API address to test, a link and a file are looked at",
           hp.needs_look({"kind": "api", "api": {"test": True}}) and hp.needs_look({"kind": "link"}) and hp.needs_look({"kind": "file"}))

@@ -9,8 +9,12 @@
 //
 // WHAT IT DRAWS
 //   box(subject, opts)   The hand-over box, one component for every Commons dataset: a drop box (or choose a file),
-//                        a link with Try the link, the data itself (pasted, for a course), and an API procedure box
-//                        (for a college or a statewide dataset). subject = { subject_kind: "course" | "college" |
+//                        a link with Try the link, the data itself (pasted, for a course), a note (Sam, 2026-11-20:
+//                        "the hand-over panel needs a place to leave a note"; a course's note has a box of its own
+//                        for "not in the current catalog"), and an API procedure box (for a college or a statewide
+//                        dataset). Signed in, the box lists what was handed over there, each one named (Sam,
+//                        2026-11-20, after seven term reports: "it doesn't show them all listed").
+//                        subject = { subject_kind: "course" | "college" |
 //                        "dataset", dataset, college, course_code, course_title, control_number, mid_card }.
 //   panel                The side panel on the CPL Commons front page: one of the still-taught courses whose outline
 //                        needs a person, with Previous and Next, at #commons/course/<control number>. It is a
@@ -31,9 +35,11 @@
 // TRY THE LINK. The page saves the link, then asks the handover-try-link function to start the reader's pickup
 // (commons-handover-pickup.yml) for that one row. The reader visits the address from the runner under its own name
 // (CPLInitiativeCatalogCensus), stops at a bot check, and answers on the row; the page reads the answer back. Where
-// the function is not reachable, the link waits for the nightly pickup and the page says so.
+// the function does not start the reader, the link waits for the nightly pickup and the page says so, with the
+// function's own reason (not_configured, token_refused) and who fixes it.
 //
-// Guard: tests/commons_handover.test.js (the page), tests/commons_handover_sql_proof.py (the database).
+// Guard: tests/commons_handover.test.js (the page), tests/commons_handover_sql_proof.py and
+// tests/commons_handover_note_sql_proof.py (the database).
 (function () {
   "use strict";
   if (window.CPL_HANDOVER) return;
@@ -162,13 +168,63 @@
   function tryNow(id) {
     return fresh().then(function () {
       return fetch(TRY_FN, { method: "POST", headers: headers({ "Content-Type": "application/json" }), body: JSON.stringify({ id: id }) });
-    }).then(function (r) { return r.ok ? r.json().then(function (j) { return { queued: !!(j && j.queued) }; }, function () { return { queued: false }; }) : { queued: false }; },
-      function () { return { queued: false }; });
+    }).then(function (r) {
+      return r.json().then(function (j) { return { queued: !!(r.ok && j && j.queued), reason: r.ok ? "" : String(j && j.reason || "status_" + r.status) }; },
+        function () { return { queued: false, reason: r.ok ? "" : "status_" + r.status }; });
+    }, function () { return { queued: false, reason: "unreachable" }; });
+  }
+  /* Why the reader was not started now, in words (the first three Try the link presses, 2026-11-20, each answered 503
+     and the page said only that the link waits: Sam could not tell a wait from a fault). */
+  function notNow(reason) {
+    var keeper = " Ask whoever keeps the project's Edge Function secrets to ";
+    if (reason === "not_configured") return "The reader was not started now: the service that starts it has no GitHub token set (not_configured)." + keeper + "set HANDOVER_DISPATCH_TOKEN.";
+    if (reason === "token_refused") return "The reader was not started now: GitHub refused the service's token (token_refused); it may have expired or lack Actions read and write." + keeper + "renew HANDOVER_DISPATCH_TOKEN.";
+    if (reason === "not_allowed") return "The reader was not started now: the service that starts it did not accept your sign-in (not_allowed).";
+    if (reason === "dispatch_failed") return "The reader was not started now: GitHub did not take the request (dispatch_failed).";
+    return "The reader could not be started just now.";
   }
   function rowOf(id) {
     return fetch(REST + "/commons_handover?id=eq." + encodeURIComponent(id) + "&select=id,kind,status,status_note,found", { headers: headers() })
       .then(function (r) { return r.ok ? r.json() : []; }).then(function (rows) { return rows && rows[0] || null; }, function () { return null; });
   }
+  /* A reviewer's read of what was handed over for one subject, newest first: each one named, so a drop can be seen to
+     have landed (Sam, 2026-11-20, after seven term reports dropped one at a time: "it doesn't show them all listed").
+     The table's own policy gives this read to a reviewer alone; it never asks for who handed a thing over. */
+  var LISTED = 50;
+  function handed(subject) {
+    var enc = encodeURIComponent;
+    var q = "?select=id,created_at,kind,course_code,file_name,file_bytes,link_url,note,status,status_note,found&order=created_at.desc&limit=" + LISTED + "&dataset=eq." + enc(subject.dataset);
+    if (subject.subject_kind === "dataset") q += "&subject_kind=eq.dataset";
+    else {
+      q += "&college=eq." + enc(subject.college || "");
+      if (subject.subject_kind === "course") q += "&course_code=eq." + enc(subject.course_code || "");
+    }
+    return fresh().then(function () { return fetch(REST + "/commons_handover" + q, { headers: headers() }); })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) { return Array.isArray(rows) ? rows : []; }, function () { return []; });
+  }
+  function sizeOf(bytes) {
+    var b = Number(bytes || 0);
+    return b >= 1048576 ? (b / 1048576).toFixed(1) + " MB" : b >= 1024 ? Math.round(b / 1024) + " KB" : fmt(b) + " bytes";
+  }
+  /* One handed-over thing as a name and what stands: ["CourseDetails.csv, 16.7 MB", "Nov 20, 12:04 PM: to be opened by our reader"]. */
+  function listedPair(r, subject) {
+    var f = r.found || {}, n = r.note || {};
+    var name = r.kind === "file" ? (r.file_name || "A file") + (r.file_bytes ? ", " + sizeOf(r.file_bytes) : "")
+      : r.kind === "link" ? (r.link_url || "A link")
+      : r.kind === "paste" ? "Pasted entry"
+      : r.kind === "note" ? "Note" + (n.not_in_catalog ? ": not in the current catalog" : "") + (n.text ? (n.not_in_catalog ? ". " : ": ") + n.text : "")
+      : "API procedure";
+    if (subject.subject_kind === "college" && r.course_code) name = r.course_code + ": " + name;
+    var when = "";
+    try { when = new Date(r.created_at).toLocaleString("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); } catch (e) { when = String(r.created_at || "").slice(0, 10); }
+    var said = (SAID[r.status] || {})[r.kind] || String(r.status || "").replace(/_/g, " ");
+    if (r.kind === "file" && r.status === "reads" && f.rows != null) said += ", " + fmt(f.rows) + (Number(f.rows) === 1 ? " row" : " rows");
+    else if (r.kind === "file" && r.status === "reads" && f.pages != null) said += ", " + fmt(f.pages) + (Number(f.pages) === 1 ? " page" : " pages");
+    if (r.status_note && r.status !== "reads") said += ". " + r.status_note;
+    return [name, when + ": " + said];
+  }
+
   /* Everyone's read: counts only. Kept for the visit and read again after a hand-over. */
   var SUMMARY = { rows: null, at: 0, pending: null };
   function summary(force) {
@@ -189,14 +245,14 @@
       return true;   /* a college's line counts its own hand-overs and its courses' */
     });
   }
-  var NOUN = { file: ["file", "files"], link: ["link", "links"], paste: ["pasted entry", "pasted entries"], api: ["API procedure", "API procedures"] };
+  var NOUN = { file: ["file", "files"], link: ["link", "links"], paste: ["pasted entry", "pasted entries"], api: ["API procedure", "API procedures"], note: ["note", "notes"] };
   var SAID = {
-    waiting: { file: "to be opened by our reader", link: "to be tried by our reader", paste: "to be filed", api: "saved" },
-    reads: { file: "read by our reader", link: "read by our reader", paste: "read", api: "answered our reader" },
-    bot_check: { file: "stopped at a bot check", link: "answered with a bot check", paste: "stopped", api: "answered with a bot check" },
-    could_not_read: { file: "our reader could not read", link: "our reader could not read", paste: "could not be read", api: "did not answer our reader" },
-    filed: { file: "filed", link: "filed as a source", paste: "filed", api: "in use" },
-    set_aside: { file: "set aside", link: "set aside", paste: "set aside", api: "set aside" }
+    waiting: { file: "to be opened by our reader", link: "to be tried by our reader", paste: "to be filed", api: "saved", note: "to be read" },
+    reads: { file: "read by our reader", link: "read by our reader", paste: "read", api: "answered our reader", note: "read" },
+    bot_check: { file: "stopped at a bot check", link: "answered with a bot check", paste: "stopped", api: "answered with a bot check", note: "stopped" },
+    could_not_read: { file: "our reader could not read", link: "our reader could not read", paste: "could not be read", api: "did not answer our reader", note: "could not be read" },
+    filed: { file: "filed", link: "filed as a source", paste: "filed", api: "in use", note: "filed" },
+    set_aside: { file: "set aside", link: "set aside", paste: "set aside", api: "set aside", note: "set aside" }
   };
   /* What has been handed over for a subject, in words: "1 file to be opened by our reader; 1 link read by our reader". */
   function standing(rows, subject, dataset) {
@@ -241,11 +297,25 @@
       msg.className = "cho-msg" + (tone ? " cho-" + tone : "");
       if (text) msg.removeAttribute("hidden"); else msg.setAttribute("hidden", "");
     }
-    function done(what) { summary(true).then(function () { if (typeof opts.onChange === "function") opts.onChange(what); }); }
+    function done(what) { listed(); summary(true).then(function () { if (typeof opts.onChange === "function") opts.onChange(what); }); }
+    /* What has been handed over here, each one named, for the reviewer who is signed in. */
+    var listHost = el("div", { cls: "cho-listed", "data-listed": "", hidden: true });
+    function listed() {
+      if (!reviewer()) return;
+      handed(subject).then(function (rows) {
+        listHost.textContent = "";
+        if (!rows.length) { listHost.setAttribute("hidden", ""); return; }
+        var hid = nid("listed"), list = haveList(rows.map(function (r) { return listedPair(r, subject); }));
+        list.setAttribute("aria-labelledby", hid);
+        listHost.appendChild(el("p", { cls: "cho-listed-h", id: hid, text: "Handed over here: " + fmt(rows.length) + (rows.length >= LISTED ? " newest" : "") }));
+        listHost.appendChild(list);
+        listHost.removeAttribute("hidden");
+      });
+    }
     function busy(on) { root.classList.toggle("cho-busy", !!on); root.setAttribute("aria-busy", on ? "true" : "false"); }
 
     if (!reviewer()) {
-      root.appendChild(el("p", { cls: "cho-signin", text: "Sign in as a reviewer to hand over a file, a link or the data. Your name goes on what you hand over." }));
+      root.appendChild(el("p", { cls: "cho-signin", text: "Sign in as a reviewer to hand over a file, a link or the data, or to leave a note. Your name goes on what you hand over." }));
       var host = el("div", { cls: "cho-signin-mount" });
       root.appendChild(host);
       if (window.CPL_REVIEWER_SIGNIN && typeof CPL_REVIEWER_SIGNIN.mountInto === "function")
@@ -312,7 +382,7 @@
         done("link");
         return tryNow(res.id).then(function (t) {
           busy(false); link.value = "";
-          if (!t.queued) { say("Saved under your name. Our reader tries this address at its nightly run and says here what it found."); return; }
+          if (!t.queued) { say("Saved under your name. " + notNow(t.reason) + " Our reader tries this address at its nightly run and says here what it found."); return; }
           var w = "Our reader is visiting this address now, under its own name. If the site answers with a bot check, the reader stops and says so.";
           say(w + " Its answer shows here in a few minutes.");
           watch(res.id, w);
@@ -321,6 +391,8 @@
     });
     root.appendChild(linkForm);
     root.appendChild(msg);
+    root.appendChild(listHost);
+    listed();
 
     /* The data itself, for a course. */
     if (kind === "course") {
@@ -357,6 +429,38 @@
       root.appendChild(el("details", { cls: "cho-paste" }, [el("summary", { text: "Or paste the data itself" }), pasteForm]));
     }
 
+    /* A note: what the person found that is no file, link or data (Sam, 2026-11-20: "they are not in the catalog,
+       but there is no place for me to note that"). A course's note has a box for exactly that, so the
+       no-longer-offered check can read it without parsing a sentence. */
+    var nids = { gone: nid("gone"), text: nid("note"), where: nid("where") };
+    var gone = kind === "course" ? el("input", { type: "checkbox", id: nids.gone }) : null;
+    var noteText = el("textarea", { id: nids.text, rows: "3" }), where = el("input", { type: "url", id: nids.where, placeholder: "https://", autocomplete: "off" });
+    var noteForm = el("form", { cls: "cho-form", novalidate: true }, [
+      gone ? el("p", { cls: "cho-check" }, [gone, el("label", { "for": nids.gone, text: "This course is not in the current catalog" })]) : null,
+      el("label", { "for": nids.text, text: "Note (what you found, or who to ask)" }), noteText,
+      el("label", { "for": nids.where, text: "Where you looked (web address)" }), where,
+      el("p", { cls: "cho-words" }, [el("button", { type: "submit", cls: "cmn-word", text: opts.afterSave ? "Save the note and go to the next" : "Save the note" })])
+    ]);
+    noteForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var n = {}, t = noteText.value.trim(), w = where.value.trim();
+      if (t) n.text = t;
+      if (gone && gone.checked) n.not_in_catalog = true;
+      if (!Object.keys(n).length) { say(gone ? "Write the note first, or check the box." : "Write the note first.", "bad"); noteText.focus(); return; }
+      if (t.length > 3000) { say("The note is longer than 3,000 characters. Shorten it, or drop a file with the rest.", "bad"); noteText.focus(); return; }
+      if (w) { if (!isHttp(w)) { say("Give the place you looked as a full web address, or leave it empty.", "bad"); where.focus(); return; } n.source_url = w; }
+      busy(true); say("Saving the note.");
+      add(subject, { kind: "note", note: n }).then(function () {
+        busy(false);
+        noteText.value = ""; where.value = ""; if (gone) gone.checked = false;
+        var saved = "Saved your note on " + (subject.course_code || subject.college || D.name) + " under your name. A session reads it and answers here.";
+        say(saved, "good"); done("note");
+        if (typeof opts.afterSave === "function") opts.afterSave(saved);
+      }, function (er) { busy(false); say("The note was not saved: " + (er && er.message ? er.message : er) + ".", "bad"); });
+    });
+    root.appendChild(el("details", { cls: "cho-note" }, [
+      el("summary", { text: gone ? "Or leave a note (for example, the course is not in the catalog)" : "Or leave a note" }), noteForm]));
+
     /* API procedures: a box for each kind this subject takes, ready for the day an API exists. */
     var apis = opts.apis || [];
     if (apis.length) {
@@ -384,7 +488,7 @@
             }
             return tryNow(res.id).then(function (t) {
               busy(false);
-              if (!t.queued) { say("Saved. Our reader calls this address once at its nightly run and says here what came back."); return; }
+              if (!t.queued) { say("Saved. " + notNow(t.reason) + " Our reader calls this address once at its nightly run and says here what came back."); return; }
               var w = "Our reader is calling this address once, under its own name.";
               say(w + " What came back shows here in a few minutes.");
               watch(res.id, w);
@@ -581,15 +685,21 @@
     ".cho-form input[type=url], .cho-form input[type=text], .cho-form textarea { width:100%; box-sizing:border-box; min-height:36px; padding:6px 8px; font:inherit; font-size:.92rem; color:var(--cmn-ink); background:var(--cmn-surface); border:1px solid var(--cmn-muted); border-radius:6px; }",
     ".cho-form input:focus-visible, .cho-form textarea:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:1px; }",
     ".cho-words { margin:0; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 18px; }",
+    ".cho-check { margin:0; display:flex; align-items:center; gap:8px; min-height:24px; }",
+    ".cho-check input[type=checkbox] { width:24px; height:24px; margin:0; flex:none; accent-color:var(--cmn-accent); }",
+    ".cho-check input[type=checkbox]:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".cho-msg { margin:0; padding:8px 10px; border-left:4px solid var(--cmn-accent); background:var(--cmn-page); color:var(--cmn-ink); font-size:.92rem; overflow-wrap:anywhere; }",
     ".cho-msg.cho-bad { border-left-color:var(--red-alert); }",
     ".cho-muted, .cho-other, .cho-signin { margin:0; color:var(--cmn-ink-2); font-size:.9rem; }",
     ".cho-other strong { color:var(--cmn-heading); }",
-    ".cho-paste > summary, .cho-api > summary, .cho-term > summary { cursor:pointer; min-height:24px; line-height:24px; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; font-weight:600; font-size:.92rem; }",
-    ".cho-paste > summary:focus-visible, .cho-api > summary:focus-visible, .cho-term > summary:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
-    ".cho-paste[open] > summary, .cho-api[open] > summary, .cho-term[open] > summary { margin-bottom:8px; }",
+    ".cho-paste > summary, .cho-note > summary, .cho-api > summary, .cho-term > summary { cursor:pointer; min-height:24px; line-height:24px; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; font-weight:600; font-size:.92rem; }",
+    ".cho-paste > summary:focus-visible, .cho-note > summary:focus-visible, .cho-api > summary:focus-visible, .cho-term > summary:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:3px; border-radius:2px; }",
+    ".cho-paste[open] > summary, .cho-note[open] > summary, .cho-api[open] > summary, .cho-term[open] > summary { margin-bottom:8px; }",
     ".cho-apis { display:grid; gap:6px; border-top:1px solid var(--cmn-line-soft); padding-top:10px; }",
     ".cho-apis-h { margin:0; font-family:inherit; font-size:.98rem; font-weight:700; color:var(--cmn-heading); }",
+    ".cho-listed { display:grid; gap:6px; min-width:0; padding:8px 10px; border:1px solid var(--cmn-line, var(--cmn-muted)); border-radius:6px; }",
+    ".cho-listed[hidden] { display:none; }",
+    ".cho-listed-h { margin:0; font-weight:600; font-size:.9rem; color:var(--cmn-heading); }",
     ".cho-have { list-style:none; margin:0; padding:0; display:grid; gap:6px; }",
     ".cho-have li { display:grid; gap:1px; min-width:0; overflow-wrap:anywhere; }",
     ".cho-k { font-weight:600; font-size:.86rem; color:var(--cmn-heading); }",
@@ -621,6 +731,6 @@
     collegeHref: collegeHref, collegePane: collegePane, safeName: safeName, typeOf: typeOf, ensureCss: ensureCss,
     panel: { set: panelSet, open: panelOpen, close: panelClose, step: panelStep, isOpen: function () { return P.at >= 0; }, current: function () { return P.list[P.at] || null; },
       onChange: function (fn) { P.onChange = fn; } },
-    DATASETS: DATASETS, SEND: SEND, POLL: POLL, _state: { summary: SUMMARY, panel: P }
+    DATASETS: DATASETS, SEND: SEND, POLL: POLL, listedPair: listedPair, _state: { summary: SUMMARY, panel: P }
   };
 })();
