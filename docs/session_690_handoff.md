@@ -37,6 +37,16 @@ that UTC day), restarted the COBIx watcher, and wrote this split before any work
    findings and hunches, COBIx's included, go into one follow-up PR per night, after the waves, never a PR each.
    Review rounds match what the change needs: a small fix that writes no shared data needs no second round
    (`r-collection-first-sam-2026-11-20`; S689 held seven PRs open against a cap of three).
+2b. **Collection serves the M-IDs (Sam's work order, 2:28 to 3:43 AM PT on Nov 20, from his walk through the Commons,
+   relayed by COBIx on #3584, comment 7038766315):** course outlines behind a sign-in are no longer a collection
+   priority, except the 12 courses still taught (name them: the page reads "TBA until the hunt list is filed").
+   Collection has three sets, each with one simple measure and a ranked list of fixes: catalog programs (PLOs, course
+   requirements), course outlines (SLOs, objectives, COCI data) and credentials (issuing agency, skills). Curation
+   runs in order (subject code, local subject title, M-ID, common exhibit title, common credential title, credential
+   skills), and the focus now is step 3: rank collection fixes by the M-ID cards each would unblock (missing COCI
+   descriptions from catalogs, SLOs and objectives, catalog subject data, units and hours, credit or noncredit, still
+   taught, prerequisites). Today's M-ID groupings and counts are rough. His words: *"no one's getting any younger out
+   there"*; the point is *"getting credit for being you"* (`r-collect-for-mids-work-order-sam-2026-11-20`).
 3. **Merge order:** none of S689's PRs remains to merge. #3593 and #3597 carry over and fold into S690's one
    follow-up PR after the next wave (item 2a), with the minor findings of #3586, #3590 and #3594; dependabot's #3383
    waits as before.
@@ -119,6 +129,9 @@ Nov 19, relayed by COBIx on #3560) is unchanged. For his information only:
   back in the pasture first and then we can tend to their needs."* Row `r-collection-first-sam-2026-11-20`
   (verified, applied with `execute_sql` by 11:30Z); `sam_rulings.md`; the standing block, item 2a. The checkpoint at f0a2087a missed it: the
   watcher surfaced the 10:24Z comment only at 10:50Z (search lag), after the documents were written.
+- **Collection serves the M-IDs** (Nov 20, 2:28 to 3:43 AM PT, relayed by COBIx on #3584, comment 7038766315): the
+  work order in item 2b. Row `r-collect-for-mids-work-order-sam-2026-11-20` (verified, applied at sign-off);
+  `sam_rulings.md`. It reached the run at 11:48Z, after the night's waves had run.
 
 ## Decisions (the session's)
 

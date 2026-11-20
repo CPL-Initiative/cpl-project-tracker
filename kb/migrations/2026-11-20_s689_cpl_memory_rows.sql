@@ -40,3 +40,13 @@ insert into public.cpl_memory_log (memory_id, actor, action, note, after)
 select id, 'SkyTern (S689)', 'create', 'S689 (2026-11-20): Sam''s ruling relayed by COBIx', to_jsonb(m)
 from public.cpl_memory m where m.slug = 'r-collection-first-sam-2026-11-20'
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+
+-- Sam's work order, relayed by COBIx on #3584 at 11:48Z (added at sign-off).
+insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('r-collect-for-mids-work-order-sam-2026-11-20','decision','Collection serves the M-IDs: three sets, ranked by M-ID cards unblocked','Sam, 2026-11-20 2:28-3:43 AM PT, relayed by COBIx on #3584 (comment 7038766315): outlines behind a sign-in leave the collection priority except 12 still-taught courses; three collection sets, each with one measure and a ranked fix list; curation runs in order; the focus is M-IDs, so rank collection fixes by M-ID cards unblocked. "no one''s getting any younger out there."',array['conductor','collection','m-id','sam-ruling'],'verified','#3584 comment 7038766315','Sam (relayed by COBIx)',now(),'SkyTern (S689)',date '2026-11-20')
+on conflict (slug) do nothing;
+
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyTern (S689)', 'create', 'S689 (2026-11-20): Sam''s work order relayed by COBIx', to_jsonb(m)
+from public.cpl_memory m where m.slug = 'r-collect-for-mids-work-order-sam-2026-11-20'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
