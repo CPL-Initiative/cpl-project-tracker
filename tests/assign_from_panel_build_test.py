@@ -112,21 +112,43 @@ sl = dry.state_list()
 
 # Courses outside the identity file, by rule: one state-list row, no C-ID or CCN, not routed, not already re-homed.
 # Most are independent study and the like, kept out of the counts for good, so this never empties as the pile does.
-outsiders = [dict(sl[cn][0], cn=cn) for cn in sorted(sl)
-             if cn and cn not in on_file and cn not in routed and len(sl[cn]) == 1
-             and not sl[cn][0]["cid"] and not sl[cn][0]["ccn"] and ("CN:" + cn) not in overlay
-             and sl[cn][0]["subj"] and sl[cn][0]["top"]][:6]
-check("six courses outside the identity file to work with", len(outsiders), 6)
+pool = [dict(sl[cn][0], cn=cn) for cn in sorted(sl)
+        if cn and cn not in on_file and cn not in routed and len(sl[cn]) == 1
+        and not sl[cn][0]["cid"] and not sl[cn][0]["ccn"] and ("CN:" + cn) not in overlay
+        and sl[cn][0]["subj"] and sl[cn][0]["top"]][:400]
+check("courses outside the identity file to work with", len(pool) >= 8, True)
 
-# Targets no curation touches: four catalog M-IDs with three or more local courses, one stand-alone M-ID.
-cat_targets = [m for m in sorted(catalog) if isinstance(catalog[m], dict) and m not in overlay and m not in pointed_at
-               and len(memberships.get(m, [])) >= 3][:4]
+
+def take(pred=lambda c: True):
+    c = next(c for c in pool if pred(c))
+    pool.remove(c)
+    return c
+
+
+# Targets no curation touches, picked from what today's build displays (the committed rows), so the picks stand
+# whatever an official id takes in tomorrow: three catalog M-IDs that stand as their own row, one catalog M-ID an
+# official id took in, one stand-alone M-ID, and one anchor (a common_courses.json M-ID with no credit status or TOP).
+shown = {r["id"]: r for r in dry.js_payload(os.path.join(ROOT, "unified_courses_data.js"))["rows"] if isinstance(r, dict)}
+taken_in = {c for r in shown.values() for c in (r.get("consolidated_from") or [])}
+free = [m for m in sorted(catalog) if isinstance(catalog[m], dict) and m not in overlay and m not in pointed_at
+        and len(memberships.get(m, [])) >= 3]
+plain_targets = [m for m in free if m in shown and not shown[m].get("mt") and shown[m].get("id_system") == "M-ID"][:3]
+folded_target = next(m for m in free if m in taken_in)
 sg_target = next(s for s in sorted(singletons) if s not in overlay and s not in pointed_at
                  and nrm(singletons[s].get("control_number")) not in routed and singletons[s].get("top_code"))
+sg_top = str(singletons[sg_target].get("top_code") or "").partition(":")[0].strip()
+anchors = json.load(open(os.path.join(KB, "common_courses.json"), encoding="utf-8"))
+anchor_target = next(k for k, v in sorted(anchors.items()) if isinstance(v, dict) and v.get("id_system") == "M-ID"
+                     and k not in catalog and k not in singletons and k not in overlay and k not in pointed_at
+                     and not v.get("credit_status") and not v.get("top_code") and k in shown)
 MINT = "UC-CUR-EXTTEST1"
-existing = [{"cn": outsiders[i]["cn"], "target": t, "course": outsiders[i]} for i, t in enumerate(cat_targets)]
-existing.append({"cn": outsiders[4]["cn"], "target": sg_target, "course": outsiders[4]})
-mint = [{"cn": outsiders[5]["cn"], "target": MINT, "course": outsiders[5]}]
+existing = [{"cn": c["cn"], "target": t, "course": c} for t, c in ((t, take()) for t in plain_targets + [folded_target])]
+c = take(lambda c: c["top"] != sg_top)  # a different TOP, so the stand-alone's own TOP has something to hold against
+existing.append({"cn": c["cn"], "target": sg_target, "course": c})
+c = take()
+existing.append({"cn": c["cn"], "target": anchor_target, "course": c})
+c = take()
+mint = [{"cn": c["cn"], "target": MINT, "course": c}]
 
 with tempfile.TemporaryDirectory() as td:
     before, after = dry.run_exports(td, dry.overlay_with(existing, mint))
@@ -141,43 +163,51 @@ for mid, rows in ma.items():
             home.setdefault(r["cn"], []).append(mid)
 
 # 1. Catalog M-IDs that stood as their own row before the assignment (an official id may have taken one in).
-UNITS = ("units", "umin", "umax")  # the units figures follow the members a row displays, the joined course included
+# The figures that follow the members a row displays, the joined course included: its units and its course count.
+FOLLOWS = ("units", "umin", "umax", "members")
 
 
-def but_units(r):
-    return {k: v for k, v in (r or {}).items() if k not in UNITS}
+def but_counts(r):
+    return {k: v for k, v in (r or {}).items() if k not in FOLLOWS}
 
 
-plain = [a for a in existing[:4] if a["target"] in rb and not rb[a["target"]].get("mt")]
+by_target = {a["target"]: a for a in existing}
+plain = [by_target[t] for t in plain_targets if t in rb and not rb[t].get("mt")]
 check("at least two catalog M-IDs stood as their own row to test against", len(plain) >= 2, True)
 for a in plain:
     t = a["target"]
     check("%s: the joined course lists under it" % t, t in home.get(a["cn"], []), True)
-    check("%s: its row is the row it had, the units figures aside" % t, but_units(ra.get(t)), but_units(rb[t]))
-    check("%s: its members grew by the one course" % t, len(ma.get(t, [])) - len(mb.get(t, [])), 1)
+    check("%s: its row is the row it had, the units and the course count aside" % t, but_counts(ra.get(t)), but_counts(rb[t]))
+    check("%s: its member list grew by the one course" % t, len(ma.get(t, [])) - len(mb.get(t, [])), 1)
+    check("%s: its course count grew by the one course" % t, (ra.get(t) or {}).get("members"), (rb[t].get("members") or 0) + 1)
     u, r = a["course"]["units"], ra.get(t) or {}
     if isinstance(u, (int, float)) and r.get("umin") is not None:
         check("%s: its units range covers the joined course" % t, r["umin"] <= u <= r["umax"], True)
 # A catalog M-ID an official id took in displays under that id, and the joined course follows it there.
 carriers = {}
 for i, r in ra.items():
-    for t in set(r.get("consolidated_from") or []) & {a["target"] for a in existing}:
+    for t in set(r.get("consolidated_from") or []) & set(by_target):
         carriers[t] = i
-for a in existing[:4]:
-    if a not in plain:
-        t = a["target"]
-        check("%s displays under an official id" % t, t in carriers, True)
-        check("%s: the joined course follows it to %s" % (t, carriers.get(t)), carriers.get(t) in home.get(a["cn"], []), True)
+a = by_target[folded_target]
+check("%s displays under an official id" % folded_target, folded_target in carriers, True)
+check("%s: the joined course follows it to %s" % (folded_target, carriers.get(folded_target)),
+      carriers.get(folded_target) in home.get(a["cn"], []), True)
 
 # 2. A stand-alone M-ID keeps its own credit status and TOP whatever the joined course carries.
-s = existing[4]
+s = by_target[sg_target]
 row = ra.get(sg_target) or {}
 check("%s (stand-alone): the joined course lists under it" % sg_target, sg_target in home.get(s["cn"], []), True)
-check("%s (stand-alone): it keeps its own credit status and TOP" % sg_target,
-      (row.get("credit"), row.get("top")),
-      (singletons[sg_target].get("credit_status"), str(singletons[sg_target].get("top_code") or "").partition(":")[0].strip()))
+check("%s (stand-alone): it keeps its own credit status and TOP against a course with TOP %s" % (sg_target, s["course"]["top"]),
+      (row.get("credit"), row.get("top")), (singletons[sg_target].get("credit_status"), sg_top))
 check("%s (stand-alone): its subject list gains the joined course's code" % sg_target,
       s["course"]["subj"] in (row.get("subj") or []), True)
+# An anchor carries no credit status or TOP of its own, so the joined course's speak for the row.
+s = by_target[anchor_target]
+row = ra.get(anchor_target) or {}
+check("%s (anchor): the joined course lists under it" % anchor_target, anchor_target in home.get(s["cn"], []), True)
+check("%s (anchor): silent on credit status and TOP, it takes the joined course's" % anchor_target,
+      (row.get("credit"), row.get("top")),
+      ({"C": "Credit", "E": "Noncredit Enhanced", "N": "Noncredit"}.get(s["course"]["credit"]), s["course"]["top"]))
 
 # 3. A common course minted from one course carries that course's fields.
 m = mint[0]

@@ -5,8 +5,8 @@
   "not_joined": [],
   "target_missing_after": [],
   "target_field_changes": {
+   "members": 46,
    "flags": 3,
-   "members": 7,
    "mt": 2,
    "subj": 4,
    "title_variants": 2,
@@ -15,6 +15,24 @@
   },
   "target_lost_reviewed": [],
   "examples": [
+   {
+    "target": "ARAB M1009",
+    "field": "members",
+    "before": 3,
+    "after": 4
+   },
+   {
+    "target": "ARTS M1312",
+    "field": "members",
+    "before": 2,
+    "after": 3
+   },
+   {
+    "target": "ARTS M1314",
+    "field": "members",
+    "before": 1,
+    "after": 2
+   },
    {
     "target": "AUTO M1036",
     "field": "flags",
@@ -40,103 +58,46 @@
     "after": 8
    },
    {
-    "target": "EMS 104 X",
-    "field": "flags",
-    "before": {
-     "over_merged": false,
-     "credit_mixed": false,
-     "top_mixed": false,
-     "ncc_mixed": false,
-     "reviewed": false
-    },
-    "after": {
-     "over_merged": false,
-     "credit_mixed": false,
-     "top_mixed": true,
-     "ncc_mixed": false,
-     "reviewed": false
-    }
-   },
-   {
-    "target": "EMS 104 X",
+    "target": "AUTO M9004",
     "field": "members",
-    "before": 1,
-    "after": 5
-   },
-   {
-    "target": "EMS 104 X",
-    "field": "mt",
-    "before": null,
-    "after": 1
-   },
-   {
-    "target": "EMS 104 X",
-    "field": "subj",
-    "before": [
-     "EMS"
-    ],
-    "after": [
-     "EMED",
-     "EMS",
-     "EMSP",
-     "EMT",
-     "PM"
-    ]
-   },
-   {
-    "target": "EMS 104 X",
-    "field": "title_variants",
-    "before": null,
-    "after": [
-     "Paramedic Clinical Practicum"
-    ]
-   },
-   {
-    "target": "EMS 104 X",
-    "field": "umax",
-    "before": null,
-    "after": 7
-   },
-   {
-    "target": "EMS 104 X",
-    "field": "umin",
-    "before": null,
+    "before": 2,
     "after": 3
    },
    {
-    "target": "FASH M1030",
-    "field": "flags",
-    "before": {
-     "over_merged": false,
-     "credit_mixed": false,
-     "top_mixed": true,
-     "ncc_mixed": false,
-     "reviewed": false
-    },
-    "after": {
-     "over_merged": false,
-     "credit_mixed": true,
-     "top_mixed": true,
-     "ncc_mixed": false,
-     "reviewed": false
-    }
-   },
-   {
-    "target": "FASH M1030",
+    "target": "CRIM M1071",
     "field": "members",
-    "before": 3,
-    "after": 4
+    "before": 5,
+    "after": 6
    },
    {
-    "target": "FASH M1030",
-    "field": "subj",
-    "before": [
-     "FASH"
-    ],
-    "after": [
-     "AHOM",
-     "FASH"
-    ]
+    "target": "CULN M1026",
+    "field": "members",
+    "before": 2,
+    "after": 3
+   },
+   {
+    "target": "DANC M1071",
+    "field": "members",
+    "before": 36,
+    "after": 40
+   },
+   {
+    "target": "DANC M1074",
+    "field": "members",
+    "before": 33,
+    "after": 38
+   },
+   {
+    "target": "DANC M1077",
+    "field": "members",
+    "before": 26,
+    "after": 28
+   },
+   {
+    "target": "DANC M1084",
+    "field": "members",
+    "before": 22,
+    "after": 24
    }
   ],
   "member_rows_off": [
@@ -205,7 +166,9 @@
      "title": "COMMUNITY SERVICE LEARNING EXP",
      "units": 1,
      "credit": "C",
-     "top": "2203.00"
+     "top": "2203.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -231,7 +194,9 @@
      "title": "SELECTED TOPICS IN GEOG",
      "units": 0.5,
      "credit": "C",
-     "top": "2206.00"
+     "top": "2206.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -257,7 +222,9 @@
      "title": "Night Photography Field Workshop",
      "units": 0.5,
      "credit": "C",
-     "top": "1012.00"
+     "top": "1012.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -283,7 +250,9 @@
      "title": "SELECTED TOPICS IN FREN",
      "units": 0.5,
      "credit": "C",
-     "top": "1102.00"
+     "top": "1102.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -309,7 +278,9 @@
      "title": "Child Development Center Practicum",
      "units": 1,
      "credit": "C",
-     "top": "1305.00"
+     "top": "1305.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -335,7 +306,9 @@
      "title": "PRACTICUM IN LEARNING AND DEVELOPMENT",
      "units": 3,
      "credit": "C",
-     "top": "2208.00"
+     "top": "2208.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -361,7 +334,9 @@
      "title": "Legal Clinic Practicum/Ethics",
      "units": 2,
      "credit": "C",
-     "top": "1402.00"
+     "top": "1402.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -387,7 +362,9 @@
      "title": "Field Study of the Natural History of the Greater San Diego Region",
      "units": 3,
      "credit": "C",
-     "top": "2206.00"
+     "top": "2206.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -413,7 +390,9 @@
      "title": "SPECIAL TOPICS",
      "units": 1,
      "credit": "C",
-     "top": "0514.00"
+     "top": "0514.00",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -439,7 +418,9 @@
      "title": "RECREATION FIELD WORK",
      "units": 3,
      "credit": "C",
-     "top": "0836.10"
+     "top": "0836.10",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -465,7 +446,9 @@
      "title": "SELECTED TOPICS IN IDS",
      "units": 0,
      "credit": "N",
-     "top": "4930.09"
+     "top": "4930.09",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",
@@ -491,7 +474,9 @@
      "title": "Early Childhood Mental Health Seminar and Fieldwork",
      "units": 3,
      "credit": "C",
-     "top": "1305.20"
+     "top": "1305.20",
+     "cid": "",
+     "ccn": ""
     },
     "row": {
      "kind": "Unified",

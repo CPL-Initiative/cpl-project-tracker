@@ -8925,19 +8925,24 @@ def export_unified_courses():
         ad, pot = rollup(all_members)  # only M-ID members contribute articulations
 
         # A re-homed course (CN:<control number>) is one local course joining a
-        # common course. When the target is an existing identity, its own record
+        # common course. On this path (a stand-alone, an official id, an anchor,
+        # or an M-ID that also takes a merged identity) the target's own record
         # and the identities folded into it speak for the row's credit status,
         # units, TOP and confidence; the joined course adds its subject code and
         # can raise a mixed flag, and never out-votes the common course it joins
         # (measured 2026-11-20, kb/_assign_from_panel_dryrun.py: one course with a
-        # sibling TOP blanked the TOP of a 14-course M-ID). A placeholder minted
-        # from re-homed courses has only those courses to read, so there each votes.
+        # sibling TOP blanked the TOP of a 14-course M-ID). Where those records
+        # are silent on a field (an anchor carries no credit status or TOP), and
+        # in a placeholder minted from re-homed courses, the courses speak.
         value_recs = ([mv for m, mv in zip(all_members, member_recs)
                        if not (isinstance(m, str) and m.startswith("CN:"))]
                       if tgt_v else member_recs)
 
         def _agg(field):
-            return (_agg_unanimous([mv.get(field) for mv in value_recs])[0],
+            vals = [mv.get(field) for mv in value_recs]
+            if not any(x is not None for x in vals):
+                vals = [mv.get(field) for mv in member_recs]
+            return (_agg_unanimous(vals)[0],
                     _agg_unanimous([mv.get(field) for mv in member_recs])[1])
 
         c_credit, credit_mixed = _agg("credit_status")
@@ -9739,6 +9744,12 @@ def export_unified_courses():
                     mus.append(u)
         if _n_routed_here:
             r["members"] = _n_kept_here
+        # The courses a person joined to this M-ID list under it (_leaf_ids), so
+        # its count grows by each one the state list holds: the count and the
+        # member table say the same thing (second read of #3618).
+        _joined_here = sum(1 for k in joined_courses.get(r["id"], ()) if _leaf_cns(k))
+        if _joined_here and isinstance(r.get("members"), int):
+            r["members"] += _joined_here
         shown = [e["u"] for e in _row_ents(r) if isinstance(e.get("u"), (int, float))]
         lo, hi, u = _units_from_members(
             shown, mus, r.get("units"),
