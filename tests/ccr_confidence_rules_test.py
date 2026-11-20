@@ -20,6 +20,8 @@ drift with the nightly files:
      discipline.
   6. Held out, the rules add no wrong auto-accept on the cards a person decided.
   7. Reason text is plain words: no M-ID, score, issue number, or the words signal, code, model or band.
+  8. Flagged cards stay out (Sam's flag-and-hide rule, #3519): every card kb/_flags.py hidden_card_ids() names that
+     reaches scoring lands in the flagged band, carries no rule, and keeps its field.
 
 Run from repo root: python3 tests/ccr_confidence_rules_test.py
 """
@@ -137,7 +139,7 @@ by = {}
 for cid, r in rows.items():
     by.setdefault(r["band"], []).append(cid)
 check("(1) every seedless card is in one band", len(rows) == len(seed) and set(by) <= {
-    "ruled", "merged_away", "not_openable", "auto_accept", "for_sam", "waiting"}, sorted(by))
+    "ruled", "merged_away", "not_openable", "flagged", "auto_accept", "for_sam", "waiting"}, sorted(by))
 ruled = M.ruled_set(inp.cur)
 check("(2) ⭐ the six ruled cards of issue 3447 land in ruled", all(rows[m]["band"] == "ruled" for m in M.RULED_3447))
 check("(2) ⭐ no rule moves a ruled, merged or not-openable card",
@@ -174,6 +176,13 @@ check("(5) only past rulings and rule M change a discipline, each only to its pa
           for r in rows.values() if r["discipline"] != r["guess"]))
 check("(5) every rule move starts from waiting (Sam's band only loses cards to W)",
       all(r["base"] == "waiting" or (r["rule"] == "W" and r["base"] == "for_sam") for r in rows.values() if r["rule"]))
+
+early = ("ruled", "merged_away", "not_openable")
+reach = [c for c in inp.flagged if c in rows and rows[c]["base"] not in early]
+check("(8) ⭐ every flagged card that reaches scoring is in the flagged band, with no rule and its field kept",
+      reach and all(rows[c]["band"] == rows[c]["base"] == "flagged" and not rows[c]["rule"]
+                    and rows[c]["discipline"] == rows[c]["guess"] for c in reach)
+      and {c for c, r in rows.items() if r["band"] == "flagged"} == set(reach), len(reach))
 
 bad = re.compile(r"\b[A-Z]{3,5} M\d{4}\b|#\d+|\bscore|\bsignal|\bcode\b|\bmodel\b|\bband\b", re.I)
 plain = [r for r in rows.values() if bad.search(r.get("reasons", "") + " " + r.get("note", ""))]

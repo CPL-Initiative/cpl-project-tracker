@@ -29,6 +29,12 @@ A move needs its code: the apply refuses a move whose card's SUBJ4 is not the ne
 Commercial Music, MUSC), so the field's most common code stays MUSC; the moves go to a re-mint worklist. The undo
 resolves receipt ids through the alias maps applied since the apply, and reports an id it cannot find.
 
+Flags (Sam's flag-and-hide rule, #3519): a card kb/_flags.py hidden_card_ids() names (retired, inactive, not
+applicable) goes to the scorer's flagged band, so G and M never decide it and the apply refuses to stamp it; both files
+import the one reader, never a copy; a card a named person reviewed stays in and is scored; a flag file stamped before
+the latest re-mint is set aside. The undo reports cards that still hold their before-values as never stamped, on a
+line of their own.
+
 Also: nothing moves into Sam's band and nothing leaves auto-accept; G never changes a discipline and M changes only
 Music to Commercial Music; a held, ruled or merged card is never decided by G or M; the notes are plain words; the
 auditor counts the stamps as machine-decided, and a person's overlay discipline wins; and each --undo --rule
@@ -52,6 +58,7 @@ os.chdir(ROOT)
 import _ccr_confidence_score as M  # noqa: E402
 import _ccr_confidence_apply as A  # noqa: E402
 import _row_audit as RA  # noqa: E402
+import _flags as F  # noqa: E402
 import plain_words  # noqa: E402
 
 results = []
@@ -208,6 +215,57 @@ check("(recall) held out on the %d decided cards, G makes %d calls (%d wrong) an
                               m_cal.get("wrong", 0)),
       "G" in cal["per_rule"] and g_cal.get("wrong", 0) == 0 and m_cal.get("wrong", 0) == 0, json.dumps(cal))
 
+# ── flagged cards stay out (a fixture flag set over the committed data) ──
+check("(flags) ⭐ the scorer and the apply import kb/_flags.py's hidden_card_ids, never a copy",
+      M.hidden_card_ids is F.hidden_card_ids and A.hidden_card_ids is F.hidden_card_ids
+      and not [p for p in ("kb/_ccr_confidence_score.py", "kb/_ccr_confidence_apply.py")
+               if re.search(r"^def hidden_card_ids", open(os.path.join(ROOT, p)).read(), re.M)])
+check("(flags) the scorer reads the committed flags", inp.flagged == F.hidden_card_ids())
+g_ids = sorted(c for c, r in after.items() if r["rule"] == "G")
+m_ids = sorted(c for c, r in after.items() if r["rule"] == "M")
+base_ids = sorted(c for c, r in after.items() if r["base"] == "auto_accept")
+pick = {"retired": g_ids[0], "inactive": g_ids[1], "not_applicable": m_ids[0], "kept": g_ids[2],
+        "base": base_ids[0]}
+with tempfile.TemporaryDirectory() as froot:
+    os.makedirs(os.path.join(froot, "kb"))
+    era = F.current_era()
+    A.write(os.path.join(froot, "kb", "coci_curation.json"), {"curations": {
+        pick["kept"]: {"reviewed_by": "curator@example.edu", "reviewed_at": "2026-11-09T00:00:00Z"}}})
+    A.write(os.path.join(froot, "kb", "coci_retired_cards.json"), {F.ERA_KEY: era, "cards": {pick["retired"]: {}}})
+    A.write(os.path.join(froot, "kb", "coci_inactive_cards.json"),
+            {F.ERA_KEY: era, "cards": {pick["inactive"]: {}, pick["kept"]: {}, pick["base"]: {}}})
+    A.write(os.path.join(froot, "kb", "coci_not_applicable.json"),
+            {F.ERA_KEY: era, "cards": {pick["not_applicable"]: {"kind": "independent"}}, "courses": {}})
+    hidden = F.hidden_card_ids(froot)
+    check("(flags) the fixture hides four cards and keeps the one a person reviewed",
+          hidden == {pick["retired"]: "retired", pick["inactive"]: "inactive", pick["base"]: "inactive",
+                     pick["not_applicable"]: "not_applicable"}, hidden)
+    saved = inp.flagged
+    inp.flagged = hidden
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            fl = dict(M.run(inp, M.DEFAULT_RULES))
+    finally:
+        inp.flagged = saved
+    check("(flags) ⭐ a flagged card G or M would decide goes to the flagged band: never scored, never decided",
+          all(fl[pick[k]]["band"] == fl[pick[k]]["base"] == "flagged" and fl[pick[k]]["rule"] == ""
+              and fl[pick[k]]["discipline"] == fl[pick[k]]["guess"] and fl[pick[k]]["flag"] == k
+              for k in ("retired", "inactive", "not_applicable")), [fl[pick[k]] for k in ("retired", "not_applicable")])
+    check("(flags) ⭐ a flagged card the base scorer would accept is out of auto-accept too",
+          fl[pick["base"]]["band"] == "flagged" and fl[pick["base"]].get("flag") == "inactive")
+    check("(flags) ⭐ a card a person reviewed stays in the counts and G still decides it",
+          fl[pick["kept"]]["band"] == "auto_accept" and fl[pick["kept"]]["rule"] == "G")
+    check("(flags) the flagged band takes exactly the flagged cards and moves no other",
+          {c for c, r in fl.items() if r["band"] == "flagged"} == set(hidden)
+          and all((fl[c]["band"], fl[c]["rule"]) == (after[c]["band"], after[c]["rule"])
+                  for c in fl if c not in hidden and c not in saved))
+    A.write(os.path.join(froot, "kb", "coci_retired_cards.json"),
+            {F.ERA_KEY: "kb/an_older_remint/alias_map.json", "cards": {pick["retired"]: {}}})
+    with contextlib.redirect_stderr(io.StringIO()) as err:
+        stale = F.hidden_card_ids(froot)
+    check("(flags) a flag file stamped before the latest re-mint is set aside, so its card comes back",
+          pick["retired"] not in stale and pick["inactive"] in stale and "set aside" in err.getvalue())
+
 # ── the auditor ──
 g_rec = {"discipline": "Music", "discipline_source": "confidence_v1", "discipline_confidence": 0.87,
          "_confidence_from": {"rule": "G"}}
@@ -258,6 +316,9 @@ with tempfile.TemporaryDirectory() as tmp:
               == ["MUSI M8"])
         check("(apply) refuses without the expected count", A.apply("G", g_rows, 3, "S0", path, out) == 2
               and open(path, "rb").read() == pristine)
+        check("(apply) ⭐ refuses to stamp a flagged card, and writes nothing",
+              A.apply("G", g_rows, 2, "S0", path, out, hidden={"CRIM M5": "retired"}) == 2
+              and open(path, "rb").read() == pristine and not os.path.exists(out))
         check("(apply) refuses a card that changed under the run",
               A.apply("G", [row("KINE M6", "Nursing", "Nursing", "G")], 1, "S0", path, out) == 2
               and open(path, "rb").read() == pristine)
@@ -283,18 +344,20 @@ with tempfile.TemporaryDirectory() as tmp:
         n_g = A.undo("G", receipts, path)
     doc = A.read(path)["courses"]
     check("(undo) ⭐ --undo --rule G restores only its own unchanged cards",
-          n_g == (1, 1, 0) and doc["MUSI M1"] == fixture["courses"]["MUSI M1"]
+          n_g == (1, 1, 0, 0) and doc["MUSI M1"] == fixture["courses"]["MUSI M1"]
           and doc["CRIM M5"]["_confidence_from"]["run"] == "S9"
           and doc["MUSC M2"]["discipline_source"] == "music_split_v1" and doc["ARTH M4"]["discipline"] == "Art History", n_g)
     with contextlib.redirect_stdout(io.StringIO()):
         n_m = A.undo("M", receipts, path)
     doc = A.read(path)["courses"]
     check("(undo) ⭐ --undo --rule M puts the moved card back to Music and clears both cards' stamps",
-          n_m == (2, 0, 0) and doc["MUSC M2"] == fixture["courses"]["MUSC M2"] and doc["MUSI M3"] == fixture["courses"]["MUSI M3"]
+          n_m == (2, 0, 0, 0) and doc["MUSC M2"] == fixture["courses"]["MUSC M2"] and doc["MUSI M3"] == fixture["courses"]["MUSI M3"]
           and doc["ARTH M4"]["discipline_source"] == "past_rulings_v1", n_m)
-    with contextlib.redirect_stdout(io.StringIO()):
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
         again = A.undo("M", receipts, path)
-    check("(undo) a second undo restores nothing", again == (0, 2, 0), again)
+    check("(undo) a second undo restores nothing, and says the cards hold their before-values",
+          again == (0, 0, 0, 2) and "2 cards never stamped" in buf.getvalue(), (again, buf.getvalue()))
 
     # Write order (COBIx on #3513): the receipt lands before the course file, so a failed course write leaves a
     # receipt and no stamps, and the undo leaves those cards alone.
@@ -317,11 +380,17 @@ with tempfile.TemporaryDirectory() as tmp:
     finally:
         A.write = real_write
     rw = [os.path.join(out_w, d, "receipt.json") for d in os.listdir(out_w)] if os.path.isdir(out_w) else []
-    with contextlib.redirect_stdout(io.StringIO()):
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
         n_w = A.undo("G", rw, p2) if rw else None
     check("(apply) a failed course write leaves the receipt, no stamps, and an undo that touches nothing",
-          failed and len(rw) == 1 and open(p2, "rb").read() == before_w and n_w == (0, 2, 0)
+          failed and len(rw) == 1 and open(p2, "rb").read() == before_w and n_w == (0, 0, 0, 2)
           and not [f for f in os.listdir(tmp) if f.endswith(".tmp")], (failed, rw, n_w))
+    out_lines = buf.getvalue().splitlines()
+    check("(undo) ⭐ after a failed course write, the never-stamped cards get their own line, not 'changed since'",
+          out_lines[0] == "rule G: restored 0 cards, left 0 alone (changed since), 0 not found"
+          and out_lines[1].startswith("rule G: 2 cards never stamped: each still holds its before-values"),
+          out_lines)
 
     # A re-mint between the apply and the undo: MUSC M2 becomes MUSC M7 under a new alias map.
     import alias_chain as AC  # noqa: E402
@@ -337,7 +406,7 @@ with tempfile.TemporaryDirectory() as tmp:
     with contextlib.redirect_stdout(buf):
         lost = A.undo("M", receipts, path)
     check("(undo) ⭐ a card re-minted after the apply and not in the chain is reported as not found, apart from a "
-          "changed one", lost == (1, 0, 1) and A.read(path)["courses"]["MUSC M7"]["discipline"] == "Commercial Music", lost)
+          "changed one", lost == (1, 0, 1, 0) and A.read(path)["courses"]["MUSC M7"]["discipline"] == "Commercial Music", lost)
     check("(undo) a partial undo says so", buf.getvalue().startswith("PARTIAL undo, rule M: restored 1"), buf.getvalue())
     with contextlib.redirect_stdout(io.StringIO()):
         found = A.undo("M", receipts, path, chain=AC.ALIAS_MAPS + [amap])
@@ -356,6 +425,8 @@ with tempfile.TemporaryDirectory() as tmp:
         md = [(c, r) for c, r in md_all if r["discipline"] == r["guess"]]
         refused = A.apply("M", md_all, len(md_all), "test", real, out2, True) == 2
     courses0 = A.read(real)["courses"]
+    check("(real) ⭐ the scorer's G and M decisions name no flagged card",
+          not ({c for c, _r in gd + md_all} & set(F.hidden_card_ids())))
     off = A.needs_remint(md_all, courses0, A.field_codes(courses0))
     moves = [c for c, r in md_all if r["discipline"] != r["guess"]]
     check("(real) ⭐ the apply refuses rule M's moves until they are re-minted (%d of %d moves need it), and writes "
