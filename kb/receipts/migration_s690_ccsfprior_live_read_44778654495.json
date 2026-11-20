@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s690_ccsfprior_live_read.sql",
+ "name": "s690_ccsfprior_live_read",
+ "version": "20261120165930",
+ "sha256": "6805796bb144382d98bac2d887e3f1d02e1c66e046653452449fd09f609e5431",
+ "run": "44778654495",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-20T16:59:31Z\",\"chk\":{},\"sum\":{\"City College of San Francisco\":[309,309,309,0,0,0]},\"diff\":[],\"gone\":{},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

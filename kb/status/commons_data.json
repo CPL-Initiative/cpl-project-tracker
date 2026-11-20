@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T17:04:12Z",
+ "written_at": "2026-11-20T17:04:57Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16548,
-  "gap": 5787,
+  "passing": 16555,
+  "gap": 5780,
   "with_gap": 118,
   "cost_usd": 1334.53,
   "passed_at_read": 16000,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16453,
-  "gap": 5787,
+  "passing": 16460,
+  "gap": 5780,
   "collected_with_gaps": 95,
   "discontinued": 0
  },
@@ -1771,11 +1771,11 @@
    "harvested": true,
    "slug": "city_of_san_francisco",
    "programs": 417,
-   "passing": 277,
-   "gap": 140,
+   "passing": 284,
+   "gap": 133,
    "causes": {
     "no_closed_list": 46,
-    "page_not_found": 62,
+    "page_not_found": 55,
     "unknown_without_live": 32
    },
    "census_causes": {
@@ -1841,7 +1841,7 @@
    "read_seconds": 332.5,
    "run": "44474797786",
    "levers": {
-    "reader_page_search": 62,
+    "reader_page_search": 55,
     "program_course_file_check": 46,
     "reconcile_steps": 28,
     "ge_units_steps": 3,
@@ -1849,9 +1849,9 @@
    },
    "collection": {
     "program_reader": {
-     "records": 309,
+     "records": 316,
      "models": {
-      "claude-opus-5-5": 309
+      "claude-opus-5-5": 316
      },
      "run": "44474797786",
      "at": "2026-11-19T07:34:01Z",
@@ -1865,7 +1865,7 @@
      "source_kind": "course_outline",
      "file": "kb/course_outcomes/ccsf/read_44748015052_p2of2.json"
     },
-    "plo_programs": 266,
+    "plo_programs": 268,
     "ppm_member": null,
     "maps": {
      "held": 0,
