@@ -1,0 +1,518 @@
+{
+ "college": "Cerro Coso Community College",
+ "run": "44737711062",
+ "written": "2026-11-20T13:32:50Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
+ "checked": [],
+ "live_runs": {
+  "01930": "39046789844",
+  "01946": "39046789844",
+  "10976": "39046789844",
+  "10977": "39046789844",
+  "11577": "39046789844",
+  "11578": "39046789844",
+  "11579": "39046789844",
+  "15576": "39046789844",
+  "18917": "39046789844",
+  "18952": "39046789844",
+  "18953": "39046789844",
+  "20640": "39046789844",
+  "30766": "43520153161",
+  "31066": "39046789844",
+  "31159": "39046789844",
+  "31540": "43520153161",
+  "31855": "39046789844",
+  "31961": "39046789844",
+  "31962": "39046789844",
+  "32606": "39046789844",
+  "33516": "39046789844",
+  "33718": "39046789844",
+  "33776": "39046789844",
+  "33889": "39046789844",
+  "35195": "39046789844",
+  "35273": "39046789844",
+  "38665": "43520153161",
+  "40250": "39046789844",
+  "40447": "39046789844",
+  "40448": "39046789844",
+  "40449": "39046789844",
+  "40707": "39046789844",
+  "40868": "43520153161",
+  "40922": "39046789844",
+  "40972": "39046789844",
+  "41968": "39046789844",
+  "43206": "43520153161",
+  "43663": "39046789844",
+  "43671": "39046789844",
+  "44085": "39046789844",
+  "44097": "39046789844",
+  "44364": "39046789844",
+  "44450": "39046789844",
+  "44726": "39046789844",
+  "44727": "39046789844",
+  "44728": "39046789844",
+  "44884": "39046789844",
+  "44885": "39046789844",
+  "45087": "39046789844",
+  "45235": "39046789844",
+  "45236": "39046789844",
+  "45237": "39046789844"
+ },
+ "live_read_at": "2026-11-20T13:31:46Z",
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/s690-wave-reread",
+   "inputs": {
+    "college": "Cerro Coso Community College",
+    "step": "reread",
+    "force": "44737711062"
+   },
+   "posts": 10,
+   "control_numbers": [
+    "10976",
+    "11580",
+    "15576",
+    "31961",
+    "33718",
+    "38666",
+    "41740",
+    "44097",
+    "44598",
+    "44728"
+   ],
+   "not_live_at_run": [
+    "10976",
+    "15576",
+    "31961",
+    "33718",
+    "44097",
+    "44728"
+   ]
+  },
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/s690-wave-reread",
+   "inputs": {
+    "college": "Cerro Coso Community College",
+    "step": "load"
+   },
+   "posts": 4,
+   "control_numbers": [
+    "11580",
+    "38666",
+    "41740",
+    "44598"
+   ],
+   "needs_load": [
+    "11580",
+    "38666",
+    "41740",
+    "44598"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 10,
+  "kept": 9,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 0,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 1,
+  "already_live": 0,
+  "kept_on_own_page": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 0,
+  "records_after": 56,
+  "dropped_by_filing": 10,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44737711062": {
+   "base": "origin/main",
+   "base_sha": "9fc88a0729b949448d99630192c3759bb195e965",
+   "decided": "2026-11-20T13:32:50Z",
+   "counts": {
+    "reread": 10,
+    "kept": 9,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 1,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 56,
+    "dropped_by_filing": 10,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "01980",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "20632",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "30793",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "33715",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "38705",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "42678",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "44996",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "46220",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "46361",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "46375",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "10976",
+     "title": "Business",
+     "award": "A.S. Degree",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=79",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=80",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 1,
+      "listed": 1,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "39046789844",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 1,
+      "listed": 1,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "11580",
+     "title": "Child Development Site Supervisor",
+     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=85",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": false,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds passes_live and the filed record does not"
+    },
+    {
+     "control_number": "15576",
+     "title": "Paralegal Studies",
+     "award": "A.S. Degree",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=111",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=112",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.6,
+      "placed": 3,
+      "listed": 5,
+      "arithmetic": "incomplete"
+     },
+     "live_run": "39046789844",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.6,
+      "placed": 3,
+      "listed": 5,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "31961",
+     "title": "Clinical Medical Assisting",
+     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=107",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.9,
+      "placed": 9,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "live_run": "39046789844",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.9,
+      "placed": 9,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "33718",
+     "title": "Anthropology",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=77",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=78",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "unequal"
+     },
+     "live_run": "39046789844",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read's arithmetic reads unequal, the filed record's incomplete"
+    },
+    {
+     "control_number": "38666",
+     "title": "Political Science",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=113",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.812,
+      "placed": 13,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 16,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "41740",
+     "title": "Industrial Process Technician",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=94",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 5,
+      "listed": 5,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "44097",
+     "title": "Microsoft Applications Specialist",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=109",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "live_run": "39046789844",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "44598",
+     "title": "Corrections Officer",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=87",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=131",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": false,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 3,
+      "listed": 3,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 3,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds passes_live and the filed record does not"
+    },
+    {
+     "control_number": "44728",
+     "title": "Social Work and Human Services",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=115",
+     "filed_source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116",
+     "filed_run": "39046789844",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.952,
+      "placed": 20,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "live_run": "39046789844",
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.952,
+      "placed": 20,
+      "listed": 21,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    }
+   ]
+  }
+ }
+}

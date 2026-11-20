@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Microsoft Applications Specialist",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=109",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7774,
+  "input_tokens": 8361,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7774,
-    "output_tokens": 1014,
+    "input_tokens": 8361,
+    "output_tokens": 1489,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1014,
+  "output_tokens": 1489,
   "output_tokens_details": {
-   "thinking_tokens": 295
+   "thinking_tokens": 584
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05138,
- "ms": 10826,
- "seconds": 11.2,
+ "cost_usd": 0.06322,
+ "ms": 13399,
+ "seconds": 13.7,
  "parts": null,
  "error": null,
  "score": {
@@ -61,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     16.0,
     16.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Required Core: Complete all of the following courses: (Microsoft Applications Specialist section; its heading falls before the extracted page)",
+   "section_heading": "Microsoft Applications Specialist Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 16,
+    "max": 16
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,8 +121,19 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Develop and apply skills in Microsoft Office applications (Word, Excel, PowerPoint and Access) at an intermediate to advanced level.",
+    "Integrate elements of office products such as Microsoft Word documents, Microsoft Excel spreadsheets, Microsoft PowerPoint with word processing documents.",
+    "Solve common business problems using appropriate Information Technology applications and systems.",
+    "Utilize software features to ensure accessibility for end users."
+   ],
+   "careers": [
+    "computer operators",
+    "help desk technicians",
+    "office specialists",
+    "database-entry specialists",
+    "general office positions"
+   ]
   },
   "blocks": [
    {
@@ -182,11 +194,22 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted page begins mid-section. The Microsoft Applications Specialist heading, description, total units and any outcomes appear to be on the preceding page (likely page 109) and are not in this text.",
-   "The two-column layout is interleaved with the Nursing A.S. section. IT C101, C121, C123, C125 and C127 appear between Nursing outcome lines. They were read as continuing the IT 'Required Core' list that begins with IT C075.",
-   "No certificate total is printed in the extracted text, so total_units is null. The listed courses sum to 16 units, but that total was not recorded because the catalog does not print it.",
-   "The Program Learning Outcomes, careers and 79/53 unit totals on this page belong to the Nursing Associate of Science Degree, not this certificate. They were not recorded."
+   "The PDF's two-column layout interleaves this certificate's course list with the following Nursing A.S. section: IT C075 appears before the Nursing heading, and IT C101, C121, C123, C125 and C127 appear in the middle of the Nursing outcomes. They were read as the continuation of this certificate's Required Core, which matches the stated 16 units (1 + 5 x 3).",
+   "PDF ligature extraction artifacts (e.g. 'MicrosoŌ Oﬃce applicaƟons', 'UƟ lize so Ōware') were rendered as the printed words ('Microsoft Office applications', 'Utilize software') in the outcomes; reviewer may verify against the printed page.",
+   "Career entry 'general office positions' is from the phrase 'and other general office positions'.",
+   "Each course must be completed with a grade of 'C' or better."
   ]
  },
- "extracted_run": "39046789844"
+ "extracted_run": "44737711062",
+ "catalog_year": "2026-2027",
+ "source_sha": "db075b081877148a",
+ "source_codes": [
+  "ITC101",
+  "ITC121",
+  "ITC123",
+  "ITC125",
+  "ITC127",
+  "ITC75"
+ ],
+ "source_coverage": 1.0
 }

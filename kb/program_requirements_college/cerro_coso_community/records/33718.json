@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Anthropology",
  "award": "A.A- T Degree",
- "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=78",
+ "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=77",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7746,
+  "input_tokens": 9721,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7746,
-    "output_tokens": 2490,
+    "input_tokens": 9721,
+    "output_tokens": 2461,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2490,
+  "output_tokens": 2461,
   "output_tokens_details": {
-   "thinking_tokens": 1106
+   "thinking_tokens": 1037
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08078,
- "ms": 20555,
- "seconds": 20.9,
+ "cost_usd": 0.0881,
+ "ms": 19406,
+ "seconds": 37.6,
  "parts": null,
  "error": null,
  "score": {
@@ -76,16 +76,42 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     18.0,
     20.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    19.0,
+    23.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 18.0-20.0; the catalog states 19.0-23.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     55.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     35.0,
+     35.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     5.0,
+     7.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -102,15 +128,12 @@
    "pass": true
   },
   "careers": {
-   "count": 7,
+   "count": 9,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -119,8 +142,8 @@
    "section_heading": "Anthropology Associate in Arts Degree for Transfer (AA-T)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 23
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,12 +152,12 @@
    },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 35,
+    "max": 35
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -147,10 +170,12 @@
    "careers": [
     "anthropology",
     "forensics",
+    "law",
+    "business",
+    "cultural resource management",
+    "human services",
     "international affairs",
     "social services",
-    "cultural resource management",
-    "business",
     "education"
    ]
   },
@@ -195,7 +220,7 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "List A – Select a minimum of 3 units from the following courses",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -227,7 +252,7 @@
     ]
    },
    {
-    "name": "List B",
+    "name": "List B – Select one of the following courses",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -266,7 +291,7 @@
     ]
    },
    {
-    "name": "List C",
+    "name": "List C – Select one of the following courses",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -301,13 +326,40 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 78; the Anthropology AA-T heading and the opening description (likely including the 60-unit / major-unit statement) fall on the previous page and are not in the text. section_heading is inferred from the parallel Art History AA-T heading format.",
-   "No major total or degree total is printed in the visible Anthropology section, so total_units and degree_total are null; verify against the preceding page.",
-   "Outcome text had PDF ligature artifacts (e.g., 'CriƟque', 'perspecƟ ve', 'scienƟﬁc'); recorded with the ligatures read as 'ti'/'fi' as printed on the page.",
-   "Closed list stores 'ANTHC 141' (Native Peoples of North America); the catalog prints 'ANTH C141 Introduction to Native American Studies'. Treated as the same course (catalog_addition false); reviewer should confirm.",
-   "List A says 'Select a minimum of 3 units'; recorded as choose_units with minimum 3 and no printed block total.",
-   "The text following List C (Art History AA-T) belongs to a different program and was ignored."
+   "Section read starts at 'Anthropology Associate in Arts Degree for Transfer (AA-T)' on catalog page 69-70 (PDF pages 77-78); the preceding Administration of Justice section and the following Art History section were ignored.",
+   "total_units 19-23 and degree_total 60 come from the description '(60 units total, 19-23 units in the major)'.",
+   "Closed-list 'ANTHC 141 Native Peoples of North America' was matched to catalog 'ANTH C141 Introduction to Native American Studies' (apparent spacing typo and title change in the state file); reviewer should confirm.",
+   "Outcomes text had PDF ligature extraction artifacts (e.g., 'CriƟque', 'scienƟﬁc'); these were rendered as the printed words ('Critique', 'scientific').",
+   "Careers combined from two sentences in the section; duplicates (anthropology, forensics, business, cultural resource management) recorded once.",
+   "GE pattern: Cal-GETC (Option B); the catalog prints no unit figure for GE."
   ]
  },
- "extracted_run": "39046789844"
+ "extracted_run": "44737711062",
+ "catalog_year": "2026-2027",
+ "source_sha": "262db76c86d6ec78",
+ "source_codes": [
+  "ANTHC1001",
+  "ANTHC1001H",
+  "ANTHC111",
+  "ANTHC131",
+  "ANTHC141",
+  "BIOLC251",
+  "SOSCC271",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 35,
+    "max": 35
+   },
+   "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+  }
+ ]
 }

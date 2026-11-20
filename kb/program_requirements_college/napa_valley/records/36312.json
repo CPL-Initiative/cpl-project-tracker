@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7730,
-    "output_tokens": 2654,
+    "output_tokens": 2777,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,49 @@
     "model": null
    }
   ],
-  "output_tokens": 2654,
+  "output_tokens": 2777,
   "output_tokens_details": {
-   "thinking_tokens": 691
+   "thinking_tokens": 746
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.084,
- "ms": 20459,
- "seconds": 20.8,
+ "cost_usd": 0.08646,
+ "ms": 21533,
+ "seconds": 21.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 15,
    "listed": 15,
-   "share": 0.867,
-   "missing": [
-    "ARTH105",
-    "ARTH106"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ARTH105",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ARTH106",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 9,
    "codes": [
     "ARTH118",
     "ARTH130",
     "ARTH145",
     "ARTH180",
-    "ARTHC1100",
-    "ARTHC1200",
     "ARTS102",
     "ARTS150",
     "DART125",
@@ -76,8 +84,6 @@
     "ARTH130",
     "ARTH145",
     "ARTH180",
-    "ARTHC1100",
-    "ARTHC1200",
     "ARTS102",
     "ARTS150",
     "DART125",
@@ -393,20 +399,22 @@
   "missing_explained": [
    {
     "code": "ARTH 105",
-    "why": "not in the text; List A names ARTH-C1100 (Survey of Art from Prehistory to the Medieval Era) instead"
+    "why": "not in the text; List A prints ARTH-C1100 (Survey of Art from Prehistory to the Medieval Era), likely its Cal-GETC common-course renumbering"
    },
    {
     "code": "ARTH 106",
-    "why": "not in the text; List A names ARTH-C1200 (Survey of Art from the Renaissance to Contemporary) instead"
+    "why": "not in the text; List A prints ARTH-C1200 (Survey of Art from the Renaissance to Contemporary), likely its Cal-GETC common-course renumbering"
    }
   ],
   "notes": [
-   "List C heading says '(6 units)' but the instruction is 'Complete 1 of the following courses' with 3 units printed; stated recorded as 3, consistent with the 27-unit total (12+3+6+3+3).",
-   "Elective list courses have no units printed beside them; units left null.",
-   "The 60-unit sentence applies to all associate degrees and is not recorded as this award's degree total.",
-   "ARTH-C1100 and ARTH-C1200 appear to be renumbered versions of closed-list ARTH 105 and ARTH 106; reviewer should confirm.",
-   "Closed-list code 'BUSI144' matches catalog 'BUSI-144'."
+   "List C heading says '(6 units)' but the instruction says 'Complete 1 of the following courses' with 3 printed beside it; stated recorded as 3, which matches the printed Total Units 27 (12+3+6+3+3). Reviewer should confirm.",
+   "Elective list courses print no units beside them individually; only the list totals are printed.",
+   "ARTH-C1100 and ARTH-C1200 marked catalog additions; they appear to replace closed-list ARTH 105 and ARTH 106.",
+   "The 60-unit sentence is the generic associate degree requirement, not recorded as degree_total.",
+   "Program title on the page is 'Graphic Design: AA Degree' while the requested program is 'Digital Art and Graphic Design'.",
+   "No careers named on the page."
   ]
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }
