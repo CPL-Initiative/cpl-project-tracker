@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s689_srjc_live_read.sql",
+ "name": "s689_srjc_live_read",
+ "version": "20261120082732",
+ "sha256": "9a8073f44a7bb229b71eac95d71f0f1c9dde392543558e9a53964ead75667d51",
+ "run": "44702529336",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-20T08:27:32Z\",\"chk\":{},\"sum\":{\"Santa Rosa Junior College\":[234,237,234,0,0,0]},\"diff\":[],\"gone\":{\"Santa Rosa Junior College\":[\"36760\",\"37016\",\"42872\"]},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
