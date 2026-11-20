@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s693_handover_note_memory_rows.sql",
+ "name": "s693_handover_note_memory_rows",
+ "version": "20261120201503",
+ "sha256": "d61507e7278ab8528cc11f30056d68626904f5c51da58bcbc34069d7ad198e63",
+ "run": "44809393820",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-note-catalog-box-is-its-own-field-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":376},{\"slug\":\"m-first-real-hand-overs-2026-11-20\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":361},{\"slug\":\"p-try-link-503-no-reason-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":393},{\"slug\":\"r-handover-list-sam-2026-11-20\",\"kind\":\"decision\",\"status\":\"verified\",\"summary_len\":356},{\"slug\":\"r-handover-note-sam-2026-11-20\",\"kind\":\"decision\",\"status\":\"verified\",\"summary_len\":337}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
