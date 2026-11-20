@@ -100,10 +100,8 @@ with tempfile.TemporaryDirectory() as t:
     check("and current after the rebuild", sd.main(["--root", t, "--sessions-only", "--check"]) == 0)
     with open(d) as f:
         wrote = json.load(f)
-    check("--sessions-only sets updated to the day it writes the sessions key", wrote.get("updated") == "2026-11-20",
-          wrote.get("updated"))
-    check("a sessions rebuild with no day leaves updated as it stands",
-          sd.build_sessions(t, wrote).get("updated") == "2026-11-20")
+    check("--sessions-only leaves updated as it stands (only the census's full build sets it)",
+          wrote.get("updated") == first.get("updated"), wrote.get("updated"))
 
 # The committed file and its wiring.
 cur = json.load(open(os.path.join(ROOT, sd.OUT)))

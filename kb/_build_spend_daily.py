@@ -27,8 +27,10 @@ sessions check, so the checkpoint PR that adds a `Spend:` line rebuilds the key 
 stay the census job's: a collection PR rebuilding them would date its runs by the PR day and fight its siblings.
 
 WHY `updated` (S690, COBIx's brief of Nov 19 on #3358). The file's top-level `updated` said 2026-11-15 while the
-builder rewrote `sessions` every day, so a reader could not tell the measured keys were current. A write (either
-mode) sets it to the UTC day of the write. --check compares the measured keys alone, so it never fails on `updated`.
+builder rewrote `sessions` every day, so a reader could not tell the measured keys were current. The full build
+(the census job's, on main) sets it to the UTC day of the write; --sessions-only leaves it, so a checkpoint PR that
+rebuilds sessions never conflicts with main's census commit over it (second reader on #3602). --check compares the
+measured keys alone, so it never fails on `updated`.
 """
 import argparse
 import glob
@@ -151,7 +153,7 @@ def main(argv=None):
     path = os.path.join(a.root, OUT)
     cur = _load(path) or {}
     if a.sessions_only:
-        new = build_sessions(a.root, cur, None if a.check else today)
+        new = build_sessions(a.root, cur)
         if a.check:
             same = cur.get("sessions") == new["sessions"]
             print("model_spend_daily sessions are current" if same else
