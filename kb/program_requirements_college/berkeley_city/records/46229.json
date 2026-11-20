@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 20,
    "listed": 21,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.952,
+   "missing": [
+    "ENGL1B"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGLC1002",
-     "listed": "ENGL1B",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ENGLC1002"
+   ],
+   "flagged": [
+    "ENGLC1002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -388,6 +387,5 @@
    "The Career Opportunities section is cut off mid-word ('Transfer to a four-year university with a major in Elementary Teacher Educat'); career 'elementary school teachers' taken from the program description."
   ]
  },
- "extracted_run": 44751547030,
- "read_run": "39891604919"
+ "extracted_run": "39891604919"
 }

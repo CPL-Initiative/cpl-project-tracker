@@ -61,20 +61,20 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    21.0,
-    24.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-24.0; the catalog states 18.0-19.0"
-   ]
+   "why": [],
+   "short_high": true,
+   "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
    "codes": [],
@@ -98,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -274,6 +274,5 @@
    "MM/VI 009B appears in both emphases."
   ]
  },
- "extracted_run": 44751547030,
- "read_run": "39891604919"
+ "extracted_run": "39891604919"
 }
