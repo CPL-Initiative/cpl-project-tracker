@@ -24,12 +24,10 @@ status files (step 12) and every apply are the conductor's.
 2. **Merge rules:** at most 3 open PRs (plus #3511 and dependabot's), the oldest finished first (the oldest among the
    finished ones, `d-oldest-finished-among-finished-s688`), one update from `main` right before its merge, no
    dependency-map rebuild inside a PR, no full rerun when the input fingerprints match.
-3. **Merge order:** (1) **#3577**, the Library check binds the url it checked (worker branch
-   `claude/library-gate-url-s688`; COBIx's #3572 comment 7023899407). **If #3577 is merged and applied** (`git log
-   origin/main` names it, and the two migrate runs below have receipts), skip to (2). Otherwise read its thread, merge
-   on a green `test`, then apply in order `kb/migrations/2026-11-19_library_check_binds_url.sql` and
-   `kb/migrations/2026-11-19_s688_library_memory_rows.sql` (row `d-library-check-binds-url-s688`). (2) This checkpoint
-   (`claude/checkpoint-s688`). #3383 is dependabot's.
+3. **Merge order:** empty once this checkpoint (`claude/checkpoint-s688`) lands; only dependabot's #3383 is open.
+   #3577's two migrations were applying at sign-off from the trigger branch `claude/s688-library-gate-apply` (never
+   merges): the schema `library_check_binds_url` (commit f3354f83), then `s688_library_memory_rows` (commit ea5bd537,
+   row `d-library-check-binds-url-s688`). Confirm both runs' receipts on that branch before any Library work.
 
 ## What shipped (squash-merged on `main`, `test` green on each head, each thread read)
 
@@ -37,7 +35,8 @@ status files (step 12) and every apply are the conductor's.
 - **#3500 `31e039c4`** Cosumnes River pins. **#3529 `3e3bb837`** flagged cards leave the confidence scorer.
   **#3578 `f6f67759`** First Light puts back a timestamp-only report. **#3537 `258a61d4`** Mt. San Antonio's SLO
   reader (an unfiled page counts wrong). **#3579 `ef16178c`** rule D keeps an older read's mark where a newer scoped
-  read did not reach.
+  read did not reach. **#3577 `45af74fd`** (merged at sign-off, `test` green on ec29c995): a Library check binds the
+  url it checked, so a Public press after a url move no longer relists on the old url's pass (COBIx on #3572).
 
 ## Read in order
 
@@ -63,8 +62,8 @@ CI); the [`commons`](reference/lanes/commons.md) lane's confidence-scorer and Ne
    `left_map_keep` rows INSERT-only); #3524 and #3522 in a plain session.
 4. **repo-size:** Part 5 waits on Sam's go; the spreadsheet export and the videos; the slimming items in a plain
    session.
-5. **library (#3560):** parts 2 to 4. Part 2 must write `url` on every check row, and the tab's pre-check in
-   `library.js` still looks at the version key alone.
+5. **library (#3560):** with #3577 merged, parts 2 to 4. Part 2 must write `url` on every check row, and the tab's
+   pre-check in `library.js` still looks at the version key alone.
 6. **common-cr-reference:** the exact match from issue #3523 against the 2026-11-18 counts, in a plain session.
 
 ## For Sam
@@ -90,7 +89,7 @@ that push) and `p-bot-commit-leaves-head-untested-s688` (revert a timestamp-only
 
 ## Let go
 
-The conductor drops, in the sign-off turn: the PR subscription on #3577 and the COBIx watcher (re-armed every 30
+The conductor drops, in the sign-off turn: the PR subscription on #3577 (merged) and the COBIx watcher (re-armed every 30
 minutes). Check-ins: none. Artifact watches: none. The vault note is a draft PR on CPLBrain.
 
 Spend: $12.69 (Opus 5.5 $12.69); collection $4.69, infrastructure $8.00; 2026-11-19T23:40Z to 2026-11-20T01:22Z.

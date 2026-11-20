@@ -694,8 +694,8 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, as the lan
 ## S688 (SkyLinnet, Sam's session of 2026-11-19, started 23:40Z with handoff 688's opening line): the merge queue, five merged
 
 **What happened.** Sam pasted handoff 688's opening line and gave no other direction. The run applied S687's 15 memory
-rows, worked the merge queue to five squash merges on a green `test` (each thread read first), and left one PR open
-(#3577, the Library check that binds the url it checked). The COBIx watcher ran all session, re-armed every 30 minutes.
+rows, worked the merge queue to five squash merges on a green `test` (each thread read first), and merged a sixth at
+sign-off (#3577, the Library check that binds the url it checked). The COBIx watcher ran all session, re-armed every 30 minutes.
 
 **The memory apply (`m-s687-rows-applied-s688`).** supabase-migrate run 44639823760 from the trigger branch
 `claude/s688-memory-apply` (never merges) applied `kb/migrations/2026-11-19_s687_cpl_memory_rows.sql`; all 15 slugs
@@ -735,11 +735,11 @@ and the lane. The stop hook caught it and aeb4d529 added the code. S687 wrote th
 reads is right; the failure is doing the stash at all once a file is staged. Prove a test fails without the fix in a
 scratch worktree or with `git show HEAD:<file>` into a scratch path, never by stashing the working tree after `git add`.
 
-**Open at sign-off.** #3577 (worker branch `claude/library-gate-url-s688`; COBIx's #3572 comment 7023899407: after a url
-move, a Public press relisted on the old url's pass). SQL proof 69/69, `library_publishing_model` 60/60,
-`public_library` 138/138. Its migrations apply after merge, in order: `kb/migrations/2026-11-19_library_check_binds_url.sql`,
-then `kb/migrations/2026-11-19_s688_library_memory_rows.sql` (row `d-library-check-binds-url-s688`). Its lane edit is in
-that PR.
+**At sign-off.** #3577 merged at `45af74fd` (squash, `test` green on ec29c995; COBIx's #3572 comment 7023899407: after
+a url move, a Public press relisted on the old url's pass). SQL proof 69/69, `library_publishing_model` 60/60,
+`public_library` 138/138. Its two migrations were applying from the trigger branch `claude/s688-library-gate-apply`
+(never merges): `library_check_binds_url` (commit f3354f83), then `s688_library_memory_rows` (commit ea5bd537, row
+`d-library-check-binds-url-s688`). Its lane edit landed with the PR.
 
 **Lessons.**
 - **A commit-back that skips CI moves a PR head past its checked commit.** With `test` as a doctrine-level gate, that
