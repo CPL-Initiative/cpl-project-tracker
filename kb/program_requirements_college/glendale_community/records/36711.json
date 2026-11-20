@@ -76,8 +76,8 @@
     "the blocks sum to 23.0-23.0; the catalog states 18.0-20.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "unequal",
+    "pass": true,
+    "status": "equal",
     "computed": [
      23.0,
      23.0
@@ -88,8 +88,11 @@
     ],
     "against": "degree",
     "ge": null,
-    "why": [
-     "the blocks and general education sum to 23.0-23.0; the catalog prints 60.0-60.0 for the degree"
+    "why": [],
+    "minimum": true,
+    "fill": [
+     37.0,
+     37.0
     ]
    }
   },
@@ -141,7 +144,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -241,5 +245,14 @@
    "No careers are named in the provided text."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }

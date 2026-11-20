@@ -87,7 +87,7 @@
     "against": "degree",
     "ge": null,
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      36.0,
      36.0
@@ -142,7 +142,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -242,5 +243,14 @@
    "Catalog prints CHLDV 133 title as 'Observation & Documentation' while the state file lists 'OBSERVATION AND ASSESSMENT'."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }

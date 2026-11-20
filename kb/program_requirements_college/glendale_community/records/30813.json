@@ -95,6 +95,7 @@
    ],
    "against": "program",
    "why": [],
+   "short_high": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -109,13 +110,12 @@
     "against": "degree",
     "ge": null,
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      39.0,
      41.0
     ]
    },
-   "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
@@ -166,7 +166,8 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -588,5 +589,14 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": "43415972509"
+ "extracted_run": 44763682085,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Minimum Required Units for Degree (with GE)\n60"
+  }
+ ],
+ "read_run": "43415972509"
 }
