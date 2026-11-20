@@ -91,9 +91,9 @@ Read in order: this file; the NEXT of [`program-requirements-harvest`](reference
    `--apply --expect` with that dry run's own count; the #3570 gaps; the open data questions; check on the deployed tab
    that a college's `course_outcomes` rows carry its name.
 3. **common-cr-reference:** the exact match from issue #3523 against the 2026-11-18 counts, in a plain session.
-4. **library:** parts 1 and 2 are applied (S688; the lane's NEXT still names those two applies). The first real check
-   run had not come by 06:18Z (`library-publish` last ran at 02:35Z on c4e61933, before part 2 merged;
-   `cpl_library_checks` held 0 rows). Then part 4, then part 3. A plain session's; conductor runs stay on collection.
+4. **library:** parts 1 and 2 are applied (S688; the lane's NEXT still names those two applies). The first real check run came at 12:10Z (`library-publish` run
+   44733588776, success): 8 check rows, 7 pass and 1 fail, all from that run; the 21 listed pieces stay listed (Sam's
+   Nov 19 ruling). Read the failing piece's findings on its card first. Then part 4, then part 3. A plain session's; conductor runs stay on collection.
 5. **cer-procedures** (the pair apply) and **repo-size** (Part 5 waits on Sam's go; the slimming items): a plain
    session's.
 6. **For the night's one follow-up PR, beside #3593 and #3597:** `kb/_build_spend_daily.py` never sets the spend
