@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 596,
+   "count": 597,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6252,6 +6252,25 @@
      "updated": "2026-10-09"
     },
     {
+     "created": "2026-11-20",
+     "governs": [
+      "docs/reference/blocked_sources.md",
+      "kb/hand_filed_catalogs/"
+     ],
+     "path": "docs/kb-notes/methodology-check-the-saved-reads-before-calling-a-source-blocked.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "collection",
+      "college-reads",
+      "commons",
+      "course-outlines"
+     ],
+     "title": "Check the saved reads before calling a source blocked",
+     "type": "methodology",
+     "updated": "2026-11-20"
+    },
+    {
      "created": "2026-06-09",
      "governs": [
       "kb/_infer_disciplines_from_top_division.py",
@@ -7575,7 +7594,7 @@
      ],
      "title": "Methodology \u2014 Rank a cleanup queue by downstream impact, not a structural proxy",
      "type": "methodology",
-     "updated": "2026-06-09"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-10",
@@ -13934,7 +13953,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-11-14",
@@ -17316,8 +17335,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 649,
+   "count": 650,
    "docs": [
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 692,
+     "path": "docs/session_692_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 692 handoff (from SkyShrike, the plain session of 2026-11-20)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
     {
      "created": "2026-11-20",
      "governs": [],
@@ -28176,5 +28209,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1529
+ "total": 1531
 }

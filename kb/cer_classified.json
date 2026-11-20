@@ -8689,6 +8689,25 @@
    "hints": "a4e5ed51f8",
    "asked": "2026-10-31"
   },
+  "CA Specialized Training Institute First Responder Operations and Decon": {
+   "raw_title": "CA Specialized Training Institute First Responder Operations and Decon",
+   "unified_title": "Hazardous Materials First Responder Operational — Decontamination",
+   "issuing_agency": "California Specialized Training Institute (CSTI)",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "join-when-likely-one",
+    "Rule 4",
+    "Rule 6",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "Joined the existing FRO-Decontamination family; CSTI is the issuer named in the title. Kept apart from CSTI's 'First Receiver' (healthcare) course, which is a different role. A reviewer should confirm the FRO-Decon competency matches.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-20"
+  },
   "CAD Drawing and Modeling - Credit by Exam (ARCH 119 )": {
    "raw_title": "CAD Drawing and Modeling - Credit by Exam (ARCH 119 )",
    "unified_title": "CAD Drawing and Modeling",
@@ -10609,6 +10628,24 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
   },
+  "Cal Fire Basic Firefighter (219 hour) Training": {
+   "raw_title": "Cal Fire Basic Firefighter (219 hour) Training",
+   "unified_title": "CAL FIRE Basic Firefighter Training (219-hour)",
+   "issuing_agency": "California Department of Forestry and Fire Protection (CAL FIRE)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "Rule 1",
+    "Rule 6",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "New title. This is CAL FIRE's 219-hour basic firefighter training for seasonal firefighters, which is distinct from the Fire CDF Academy family; the hour count is kept because it identifies the course.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-20"
+  },
   "Cal Fire I-300 Intermediate ICS": {
    "raw_title": "Cal Fire I-300 Intermediate ICS",
    "unified_title": "ICS 300 — Intermediate Incident Command System",
@@ -12118,6 +12155,130 @@
    "rules": "e9d6bb7f8641",
    "hints": "1cb5d96de4",
    "asked": "2026-10-31"
+  },
+  "Credit by Exam CIS100-Practical PC & Career Technologies": {
+   "raw_title": "Credit by Exam CIS100-Practical PC & Career Technologies",
+   "unified_title": "Practical PC & Career Technologies",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Local course title; no CCN or C-ID was identifiable.",
+   "rules": "75e72fb99f8c",
+   "hints": "abc88342b2",
+   "asked": "2026-11-20"
+  },
+  "Credit by Exam CIS104-Microcomputer Application Software": {
+   "raw_title": "Credit by Exam CIS104-Microcomputer Application Software",
+   "unified_title": "Microcomputer Application Software",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Local course title; no CCN or C-ID was identifiable.",
+   "rules": "75e72fb99f8c",
+   "hints": "c9127de6fa",
+   "asked": "2026-11-20"
+  },
+  "Credit by Exam CIS210-Introduction to Computer Networking": {
+   "raw_title": "Credit by Exam CIS210-Introduction to Computer Networking",
+   "unified_title": "Introduction to Computer Networking",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4a31c8ce16",
+   "asked": "2026-11-20"
+  },
+  "Credit by Exam HIST001-Introduction to Western Civilization I": {
+   "raw_title": "Credit by Exam HIST001-Introduction to Western Civilization I",
+   "unified_title": "Introduction to Western Civilization 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Local course title, with the Roman numeral changed to an Arabic one.",
+   "rules": "75e72fb99f8c",
+   "hints": "4213c5209b",
+   "asked": "2026-11-20"
+  },
+  "Credit by Exam HIST002-Introduction to Western Civilization II": {
+   "raw_title": "Credit by Exam HIST002-Introduction to Western Civilization II",
+   "unified_title": "Introduction to Western Civilization 2",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Local course title, with the Roman numeral changed to an Arabic one.",
+   "rules": "75e72fb99f8c",
+   "hints": "87c457ce62",
+   "asked": "2026-11-20"
+  },
+  "Credit by Exam HISTC1001-United States History Since 1877": {
+   "raw_title": "Credit by Exam HISTC1001-United States History Since 1877",
+   "unified_title": "United States History to 1877",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Title anchored to CCN HIST C1001 (United States History to 1877). The raw title's 'Since 1877' looks like an entry error; review it.",
+   "rules": "75e72fb99f8c",
+   "hints": "683be5eb6f",
+   "asked": "2026-11-20"
+  },
+  "Credit by Exam HISTC1002-United States History Since 1865": {
+   "raw_title": "Credit by Exam HISTC1002-United States History Since 1865",
+   "unified_title": "United States History since 1865",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Title anchored to CCN HIST C1002.",
+   "rules": "75e72fb99f8c",
+   "hints": "6b6befdc6c",
+   "asked": "2026-11-20"
   },
   "Credit by Exam for ADJUS 21 Introduction to Administration of Justice": {
    "raw_title": "Credit by Exam for ADJUS 21 Introduction to Administration of Justice",
@@ -16671,6 +16832,229 @@
    "hints": "8d9eaa4dc0",
    "asked": "2026-11-19"
   },
+  "High School Articulation (Livermore)- Developmental Psychology of Children II": {
+   "raw_title": "High School Articulation (Livermore)- Developmental Psychology of Children II",
+   "unified_title": "Developmental Psychology of Children 2",
+   "issuing_agency": "Livermore High School",
+   "training_agency": "Livermore High School",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The cx hint was set aside because it kept the school and articulation phrasing in the title. Livermore High School is named, so it is the issuer and trainer. The title pairs with the existing 'Developmental Psychology of Children 1'; the aligned Las Positas course was not verified.",
+   "rules": "75e72fb99f8c",
+   "hints": "2ea396a8d2",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Livermore)- Emergency Medical Response": {
+   "raw_title": "High School Articulation (Livermore)- Emergency Medical Response",
+   "unified_title": "Emergency Medical Responder",
+   "issuing_agency": "Livermore High School",
+   "training_agency": "Livermore High School",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "Joined the existing multi-high-school 'Emergency Medical Responder' family, with Livermore HS as the issuer that discriminates; the cx hint was set aside.",
+   "rules": "75e72fb99f8c",
+   "hints": "6a99b7139e",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Livermore)- Introduction to Athletic Training": {
+   "raw_title": "High School Articulation (Livermore)- Introduction to Athletic Training",
+   "unified_title": "Introduction to Athletic Training",
+   "issuing_agency": "Livermore High School",
+   "training_agency": "Livermore High School",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Joined the existing title, with Livermore HS as issuer and trainer; the cx hint was set aside. The aligned college course was not verified.",
+   "rules": "75e72fb99f8c",
+   "hints": "024bdf8542",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Livermore)- Introduction to Health Careers": {
+   "raw_title": "High School Articulation (Livermore)- Introduction to Health Careers",
+   "unified_title": "Introduction to Health Careers",
+   "issuing_agency": "Livermore High School",
+   "training_agency": "Livermore High School",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "New title made of the course name with the school stripped; the aligned Las Positas course was not verified, and the cx hint was set aside.",
+   "rules": "75e72fb99f8c",
+   "hints": "698d2aa9b4",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Livermore)- Medical Occupations": {
+   "raw_title": "High School Articulation (Livermore)- Medical Occupations",
+   "unified_title": "Medical Occupations",
+   "issuing_agency": "Livermore High School",
+   "training_agency": "Livermore High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "New title made of the course name with the school stripped; the aligned college course is unknown, and the cx hint was set aside.",
+   "rules": "75e72fb99f8c",
+   "hints": "e6047654a4",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Livermore)- Nursing Careers": {
+   "raw_title": "High School Articulation (Livermore)- Nursing Careers",
+   "unified_title": "Nursing Careers",
+   "issuing_agency": "Livermore High School",
+   "training_agency": "Livermore High School",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Joined the existing 'Nursing Careers' title (Emerald HS), with Livermore HS as the issuer that discriminates; the cx hint was set aside.",
+   "rules": "75e72fb99f8c",
+   "hints": "b45b2783ee",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Livermore)- Principles of Engineering": {
+   "raw_title": "High School Articulation (Livermore)- Principles of Engineering",
+   "unified_title": "Principles of Engineering",
+   "issuing_agency": "Livermore High School",
+   "training_agency": "Livermore High School",
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "join-when-likely-one",
+    "Rule 5f"
+   ],
+   "_notes": "I set aside the cx hint, which kept the raw title and the CCC issuer. 'Livermore' is read as Livermore High School, so the school issues and trains. The title joins the existing Principles of Engineering family. This may be a PLTW course; if so, PLTW should issue it.",
+   "rules": "75e72fb99f8c",
+   "hints": "b9290ba6e4",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Mission Valley ROP)- Emergency Medical Responder": {
+   "raw_title": "High School Articulation (Mission Valley ROP)- Emergency Medical Responder",
+   "unified_title": "Emergency Medical Responder",
+   "issuing_agency": "Mission Valley Regional Occupational Program (ROP)",
+   "training_agency": "Mission Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "join-when-likely-one",
+    "Rule 5f"
+   ],
+   "_notes": "The ROP name is stripped from the title and becomes the issuer and trainer. The title joins the multi-issuer Emergency Medical Responder family.",
+   "rules": "75e72fb99f8c",
+   "hints": "315d6f04a4",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Mission Valley ROP)- Fire Technology 1": {
+   "raw_title": "High School Articulation (Mission Valley ROP)- Fire Technology 1",
+   "unified_title": "Fire Technology",
+   "issuing_agency": "Mission Valley Regional Occupational Program (ROP)",
+   "training_agency": "Mission Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "join-when-likely-one",
+    "Rule 5f"
+   ],
+   "_notes": "The ROP is stripped and becomes the agency. The title joins the existing Fire Technology family, which another ROP also uses. The trailing '1' may mark a course level, so a reviewer should check whether it should be kept.",
+   "rules": "75e72fb99f8c",
+   "hints": "d93c876ee6",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Mission Valley ROP)- Medical Occupations": {
+   "raw_title": "High School Articulation (Mission Valley ROP)- Medical Occupations",
+   "unified_title": "Medical Occupations",
+   "issuing_agency": "Mission Valley Regional Occupational Program (ROP)",
+   "training_agency": "Mission Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The ROP is stripped and becomes the agency. No house family or aligned college course was identified, so this is a new title held for review.",
+   "rules": "75e72fb99f8c",
+   "hints": "2246d632c9",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Mission Valley ROP)- Principles of Engineering": {
+   "raw_title": "High School Articulation (Mission Valley ROP)- Principles of Engineering",
+   "unified_title": "Principles of Engineering",
+   "issuing_agency": "Mission Valley Regional Occupational Program (ROP)",
+   "training_agency": "Mission Valley Regional Occupational Program (ROP)",
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "join-when-likely-one",
+    "Rule 5f"
+   ],
+   "_notes": "The ROP is stripped and becomes the agency. The title is the same as the Livermore row, with the issuer as the discriminator. It may be a PLTW course.",
+   "rules": "75e72fb99f8c",
+   "hints": "4eb3dc8bfc",
+   "asked": "2026-11-20"
+  },
+  "High School Articulation (Tracy)- Fire Service": {
+   "raw_title": "High School Articulation (Tracy)- Fire Service",
+   "unified_title": "Fire Service",
+   "issuing_agency": "Tracy High School",
+   "training_agency": "Tracy High School",
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.55,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "join-when-likely-one",
+    "Rule 5f"
+   ],
+   "_notes": "The title joins the existing Fire Service family. 'Tracy' is ambiguous: it could be Tracy High School or Tracy Unified School District, so the issuer needs review.",
+   "rules": "75e72fb99f8c",
+   "hints": "cb794090d1",
+   "asked": "2026-11-20"
+  },
   "High School Articulation- Criminal Justice/Crime Scene Investigation": {
    "raw_title": "High School Articulation- Criminal Justice/Crime Scene Investigation",
    "unified_title": "Crime Scene Investigation",
@@ -18707,6 +19091,40 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "ISACA Certified Info Security Manager (CISM)": {
+   "raw_title": "ISACA Certified Info Security Manager (CISM)",
+   "unified_title": "Certified Information Security Manager (CISM)",
+   "issuing_agency": "Information Systems Audit and Control Association (ISACA)",
+   "training_agency": null,
+   "confidence_title": 0.96,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "Rule 6",
+    "issuer-issues-the-card"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "e3e0ea050b",
+   "asked": "2026-11-20"
+  },
+  "ISACA Certified Info Systems Auditor (CISA)": {
+   "raw_title": "ISACA Certified Info Systems Auditor (CISA)",
+   "unified_title": "Certified Information Systems Auditor (CISA)",
+   "issuing_agency": "Information Systems Audit and Control Association (ISACA)",
+   "training_agency": null,
+   "confidence_title": 0.96,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "Rule 6",
+    "issuer-issues-the-card"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "20b920bf43",
+   "asked": "2026-11-20"
   },
   "ISC2 CISSP Certificate": {
    "raw_title": "ISC2 CISSP Certificate",
@@ -22775,6 +23193,40 @@
    "rules": "575c290d755b",
    "hints": "4f53cda18c",
    "asked": "2026-10-29"
+  },
+  "Microsoft Office Specialist (MOS) Associate": {
+   "raw_title": "Microsoft Office Specialist (MOS) Associate",
+   "unified_title": "Microsoft Office Specialist — Associate",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 4"
+   ],
+   "_notes": "The MOS Associate level is a distinct credential, so it stays split from the generic and Expert titles and uses the house dash form.",
+   "rules": "75e72fb99f8c",
+   "hints": "1fa89f926d",
+   "asked": "2026-11-20"
+  },
+  "Microsoft Office Specialist (MOS) Expert": {
+   "raw_title": "Microsoft Office Specialist (MOS) Expert",
+   "unified_title": "Microsoft Office Specialist — Expert",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 4"
+   ],
+   "_notes": "The MOS Expert level is a distinct credential, kept separate from Associate and from the per-app Expert titles.",
+   "rules": "75e72fb99f8c",
+   "hints": "799d20dfbd",
+   "asked": "2026-11-20"
   },
   "Microsoft Office Specialist (MOS): Access Expert (Office 2019)": {
    "raw_title": "Microsoft Office Specialist (MOS): Access Expert (Office 2019)",
@@ -28284,6 +28736,76 @@
    "rules": "575c290d755b",
    "hints": "6bb0ce3474",
    "asked": "2026-10-18"
+  },
+  "Portfolio Review CIS100-Practical PC & Career Technologies": {
+   "raw_title": "Portfolio Review CIS100-Practical PC & Career Technologies",
+   "unified_title": "Practical PC and Career Technologies",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The mechanism and course code are stripped, leaving the college's own course title.",
+   "rules": "75e72fb99f8c",
+   "hints": "abc88342b2",
+   "asked": "2026-11-20"
+  },
+  "Portfolio Review CIS101-Introduction to Computers and Their Uses": {
+   "raw_title": "Portfolio Review CIS101-Introduction to Computers and Their Uses",
+   "unified_title": "Introduction to Computers and Their Uses",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "join-when-likely-one",
+    "Rule 5c"
+   ],
+   "_notes": "The title joins the existing family, which is held by a high school issuer. This college portfolio row is issued by California Community Colleges, with the issuer as the discriminator.",
+   "rules": "75e72fb99f8c",
+   "hints": "dba2572356",
+   "asked": "2026-11-20"
+  },
+  "Portfolio Review CIS104-Microcomputer Application Software": {
+   "raw_title": "Portfolio Review CIS104-Microcomputer Application Software",
+   "unified_title": "Microcomputer Application Software",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The mechanism and course code are stripped, leaving the local course title.",
+   "rules": "75e72fb99f8c",
+   "hints": "c9127de6fa",
+   "asked": "2026-11-20"
+  },
+  "Portfolio Review JOURNAL101-Journalism 101: Collecting & Writing News": {
+   "raw_title": "Portfolio Review JOURNAL101-Journalism 101: Collecting & Writing News",
+   "unified_title": "Collecting and Writing News",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The mechanism, course code and 'Journalism 101' prefix are stripped. The course may align to C-ID JOUR 110 (newswriting and reporting); if so, the title should be re-keyed.",
+   "rules": "75e72fb99f8c",
+   "hints": "5b713fc21c",
+   "asked": "2026-11-20"
   },
   "Portfolio for ARTS 12A": {
    "raw_title": "Portfolio for ARTS 12A",

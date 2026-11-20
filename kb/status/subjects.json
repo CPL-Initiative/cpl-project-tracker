@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 612,
-  "moniker": "SkySunflower",
+  "session": 691,
+  "moniker": "SkyShrike",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_613_handoff.md",
+  "handoff": "docs/session_692_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -30,13 +30,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-08T22:50:39Z",
+  "written_at": "2026-11-20T17:00:19Z",
   "project": "subjects",
   "next_step": {
-    "title": "The Common Course Reference, one discipline at a time",
-    "text": "The anchor re-key is applied; the three hospitality anchor entries and the 93 stray codes stay with the curator, and the Common Course Reference's Kinesiology waits on Sheet 174."
+    "title": "Draft each college's local subject titles",
+    "text": "The Courses bot owns curation step b: it drafts each local subject title from the state subject code and the catalog's subject heading, and a curator settles the ones that disagree. No view builds this step yet."
   },
   "changes": [
+    {
+      "at": "2026-11-20T17:00:00Z",
+      "text": "Curation step b, the local subject title, has an owner: the Courses bot drafts each title and a curator settles the ones that disagree. Sam left the call to the session on Nov 20."
+    },
     {
       "at": "2026-11-08T21:42:00Z",
       "text": "The anchor re-key applied: 20 curated anchor entries onto their Common SUBJ, 15 keeping their number and 5 on the lowest free number of DIES or PARA; the three hospitality entries stay with the curator (#2938)."

@@ -224,7 +224,12 @@ const count = (hay, needle) => hay.split(needle).length - 1;
     "cr-reference/names": /FILTERS = \[[^\]]*"names"/.test(fs.readFileSync("cr_reference.js", "utf8"))
   };
   const links = Array.from(f.d.querySelectorAll("#cmf-needs a")).filter((l) => /^#/.test(l.getAttribute("href")));
-  check("(B) Needs you carries in-site links only, none off-site", Array.from(f.d.querySelectorAll("#cmf-needs a")).every((l) => /^#/.test(l.getAttribute("href"))));
+  /* Sam, 2026-11-20 (his work order): the catalog addresses in Course Outline and Catalog Fixes Needed are links that
+     open in a new tab. They are the one exception (a.cmf-out inside #cmf-need-rows, guarded in
+     tests/commons_outline_fixes.test.js); every other Needs you link stays in the site. */
+  const offSite = (l) => l.classList.contains("cmf-out") && l.closest("#cmf-need-rows") && l.getAttribute("target") === "_blank" && /noopener/.test(l.getAttribute("rel") || "");
+  check("(B) Needs you carries in-site links only, but for the outline fixes' catalog addresses, which open in a new tab",
+    Array.from(f.d.querySelectorAll("#cmf-needs a")).every((l) => /^#/.test(l.getAttribute("href")) || offSite(l)));
   for (const l of links) {
     const href = l.getAttribute("href"), h = href.slice(1), tab = h.split("/")[0];
     if (/^#?(commons\/?|commons\/needs-you)?$/.test(href)) continue;
@@ -293,7 +298,7 @@ const count = (hay, needle) => hay.split(needle).length - 1;
 
   // ── the plain words ──
   const page = txt(f.d.querySelector(".cmf"));
-  check("plain words: no discipline-in-doubt file on main, no Backfill fix, no off-site link on Needs you", !/discipline-in-doubt file|on main|Backfill fix/.test(txt(needs)) && !needs.querySelector('a[href^="http"]'));
+  check("plain words: no discipline-in-doubt file on main, no Backfill fix, no off-site link on Needs you but the outline fixes' catalog addresses", !/discipline-in-doubt file|on main|Backfill fix/.test(txt(needs)) && Array.from(needs.querySelectorAll('a[href^="http"]')).every(offSite));
   check("no glyph on Needs you", !/[\u2190-\u21FF\u2600-\u27BF\u{1F300}-\u{1FAFF}]/u.test(txt(needs)));
   check("American spelling", !/\b(colour|behaviour|organisation|analyse|centre|catalogue|whilst|amongst)\b/i.test(FRONT + PRG));
   check("the back link's CSS uses tokens only", !/#[0-9a-fA-F]{3,8}\b/.test(FRONT.slice(FRONT.indexOf("var BACK_CSS"), FRONT.indexOf("function ensureBackCss"))));
