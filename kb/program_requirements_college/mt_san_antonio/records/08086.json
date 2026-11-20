@@ -5,11 +5,11 @@
  "title": "Nursing- Licensed Vocational Nurse (LVN) to Registered Nurse (RN) Option",
  "award": "A.S. Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/nursing/licensed-vocational-nurse-lvn-to-registered-nurse-rn-option-degree/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8902,
+  "input_tokens": 10515,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8902,
-    "output_tokens": 3207,
+    "input_tokens": 10515,
+    "output_tokens": 3062,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,37 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 3207,
+  "output_tokens": 3062,
   "output_tokens_details": {
-   "thinking_tokens": 1191
+   "thinking_tokens": 1166
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09975,
- "ms": 26334,
- "seconds": 27.5,
+ "cost_usd": 0.1033,
+ "ms": 26017,
+ "seconds": 27.0,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 27,
    "listed": 27,
-   "share": 0.963,
-   "missing": [
-    "NURS11"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "NURS212",
+     "listed": "NURS11",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "NURS212"
-   ],
-   "flagged": [
-    "NURS212"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -74,6 +78,7 @@
     49.5,
     52.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -90,6 +95,17 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -101,20 +117,36 @@
     "max": 52.5
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Successfully complete the Role Transition course to be accepted into the Nursing Program in the second semester."
+   ],
+   "careers": [
+    "Registered Nurse"
    ]
   },
   "blocks": [
    {
-    "name": "Select one of the following sequences: (ANAT 10A and ANAT 10B)",
+    "name": "Select one of the following sequences: (ANAT 10A, ANAT 10B)",
     "rule": "all",
     "minimum": null,
     "option_group": "Anatomy/Physiology sequence",
     "stated": {
-     "min": 8,
-     "max": 10
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -134,13 +166,13 @@
     ]
    },
    {
-    "name": "Select one of the following sequences: (ANAT 35 and ANAT 36)",
+    "name": "Select one of the following sequences: (ANAT 35, ANAT 36)",
     "rule": "all",
     "minimum": null,
     "option_group": "Anatomy/Physiology sequence",
     "stated": {
-     "min": 8,
-     "max": 10
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -320,19 +352,19 @@
   "missing_explained": [
    {
     "code": "NURS 11",
-    "why": "not in the text; the Required Courses list prints NURS 212 Preceptorship in Nursing (2 units), same title and units"
+    "why": "not in the text; catalog prints NURS 212 Preceptorship in Nursing (2 units) instead, likely the same course under a different code"
    }
   ],
   "notes": [
-   "Records the Required Courses list of the AS Degree S0957 section; the Prerequisite Courses and ADN General Education Requirements lists repeat these courses and were not recorded as separate blocks.",
-   "The 'Select one of the following sequences: 8-10' heading prints 'ANAT 10A or ANAT 35' and 'ANAT 10B or ANAT 36'; read as two sequences (ANAT 10A+10B or ANAT 35+36). The printed 8-10 total is recorded on both sequence blocks. No units are printed beside the ANAT courses in this list (the prerequisite list prints 4-5 per row; the state file stores 4 for ANAT 10A/10B and 5 for ANAT 35/36).",
-   "Units for 'or' alternatives are left null because the catalog prints units only on the first line of each choice row.",
-   "MICR 1 is printed with a space; the closed list stores it as 'MICR1' (Medical Microbiology); treated as the same course, not a catalog addition.",
-   "NURS 212 Preceptorship in Nursing is not in the closed list, which instead names NURS 11 Preceptorship in Nursing (2 units); possible renumbering for reviewer to check.",
-   "No GE pattern is named; the page lists additional associate degree GE areas and graduation requirements (Math, Arts and Humanities, History/Political Science, Ethnic Studies, Physical Well-Being, Reading Competency). CHLD/PSYC 14, COMM, ENGL and PSYC C1000 appear in the Required Courses list and count toward the 49.5-52.5 total, so they are recorded.",
-   "NURS 200 Role Transition is a non-course entrance requirement and is not placed in any block (not in the closed list).",
-   "The single program learning outcome is from the page's Outcomes tab for this program; the tab also links to SLOs not included in the text."
+   "The anatomy/physiology selection prints 'Select one of the following sequences: 8-10' with rows 'ANAT 10A or ANAT 35' and 'ANAT 10B or ANAT 36'; recorded as two sequence blocks (ANAT 10A+10B, ANAT 35+36) in one option_group. The 8-10 total covers the choice as a whole and was not assigned to either block; no units are printed beside these courses in the Required Courses list (the Prerequisite list prints 4-5 per row).",
+   "Closed list stores 'MICR1'; catalog prints 'MICR 1' - treated as the same course (catalog_addition false).",
+   "NURS 212 Preceptorship in Nursing is not in the closed list (closed list has NURS 11 with the same title and units); reviewer should check the code.",
+   "The Prerequisite Courses and ADN General Education Requirements lists repeat courses that also appear in Required Courses; they were recorded only once, from the Required Courses list, which the Total Units 49.5-52.5 covers.",
+   "The page lists additional general education areas required for the associate degree but names no GE pattern by title and prints no GE units or degree total; ge_pattern left null.",
+   "NURS 200 Role Transition is required (credit grade) before entrance as a non-course/admission requirement and is not part of the Required Courses list or total.",
+   "The program learning outcome is from the page's outcomes tab for this program."
   ]
  },
- "extracted_run": "38064250199"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

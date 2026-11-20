@@ -121,7 +121,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03001",
@@ -167,7 +171,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03005",
@@ -179,7 +187,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03006",
@@ -261,7 +273,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03014",
@@ -484,7 +500,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03034",
@@ -566,7 +586,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.968,
+  "coverage": 1.0,
   "codes_found": [
    "AMLA1A",
    "ANAT10A",
@@ -587,6 +607,7 @@
    "NURS100",
    "NURS101",
    "NURS102",
+   "NURS11",
    "NURS113",
    "NURS114",
    "NURS115",
@@ -1218,7 +1239,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08050",
@@ -1230,7 +1255,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08051",
@@ -1335,7 +1364,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08062",
@@ -1407,7 +1440,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08069",
@@ -1543,7 +1580,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08081",
@@ -1580,7 +1621,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.963,
+  "coverage": 1.0,
   "codes_found": [
    "AMLA1A",
    "ANAT10A",
@@ -1598,6 +1639,7 @@
    "ENGLC1000H",
    "MICR1",
    "MICR22",
+   "NURS11",
    "NURS114",
    "NURS115",
    "NURS206",
@@ -1631,7 +1673,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.962,
+  "coverage": 1.0,
   "codes_found": [
    "AMLA1A",
    "ANAT10A",
@@ -1649,6 +1691,7 @@
    "ENGLC1000H",
    "MICR1",
    "MICR22",
+   "NURS11",
    "NURS113",
    "NURS114",
    "NURS206",
@@ -1979,7 +2022,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.903,
+  "coverage": 0.989,
   "codes_found": [
    "AGAG1",
    "ANTH1",
@@ -1998,6 +2041,10 @@
    "BIOL5",
    "BIOL6",
    "BIOL6L",
+   "BUSC1A",
+   "BUSC1AH",
+   "BUSC1B",
+   "BUSC1BH",
    "BUSM50",
    "CHLD1",
    "CHLD10",
@@ -2026,6 +2073,10 @@
    "HIST4",
    "HIST40",
    "HIST4H",
+   "HIST7",
+   "HIST7H",
+   "HIST8",
+   "HIST8H",
    "LIBR1",
    "POLS10",
    "POLS2",
@@ -2080,7 +2131,7 @@
    }
   },
   "listed": 94,
-  "text_chars": 7602
+  "text_chars": 7622
  },
  {
   "control_number": "11095",
@@ -2206,7 +2257,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11594",
@@ -2218,7 +2273,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11595",
@@ -2230,7 +2289,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11596",
@@ -2242,7 +2305,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11894",
@@ -2290,7 +2357,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "12009",
@@ -3062,20 +3133,12 @@
   "title": "Electronic Systems Technology - Level II",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 0.5,
-  "codes_found": [
-   "TECH60"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/programsaz/computer-networking-technology/computer-networking-technology-certificate/",
-   "title": "Computer and Networking Technology (Certificate T0960) < Mt. San Antonio College",
-   "h1": "Computer and Networking Technology (Certificate T0960)",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 3326
+  "text_chars": 0
  },
  {
   "control_number": "14115",
@@ -3534,7 +3597,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18234",
@@ -3596,8 +3663,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.957,
+  "coverage": 0.986,
   "codes_found": [
+   "AHIS4",
+   "AHIS5",
    "ANIM101A",
    "ANIM101B",
    "ANIM101C",
@@ -3687,8 +3756,19 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.81,
+  "coverage": 0.988,
   "codes_found": [
+   "AHIS11",
+   "AHIS12",
+   "AHIS12H",
+   "AHIS13",
+   "AHIS14",
+   "AHIS15",
+   "AHIS3",
+   "AHIS5",
+   "AHIS6",
+   "AHIS8",
+   "AHIS9",
    "ARAB2",
    "ARTH10",
    "ARTH11H",
@@ -3716,6 +3796,10 @@
    "HIST40",
    "HIST44",
    "HIST4H",
+   "HIST7",
+   "HIST7H",
+   "HIST8",
+   "HIST8H",
    "HUMA1",
    "HUMA1H",
    "ITAL2",
@@ -3772,7 +3856,7 @@
    }
   },
   "listed": 84,
-  "text_chars": 7497
+  "text_chars": 7545
  },
  {
   "control_number": "18237",
@@ -4007,7 +4091,7 @@
    }
   },
   "listed": 161,
-  "text_chars": 9901
+  "text_chars": 10104
  },
  {
   "control_number": "18239",
@@ -4015,7 +4099,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.965,
+  "coverage": 0.988,
   "codes_found": [
    "ANTH6",
    "ARAB1",
@@ -4030,6 +4114,8 @@
    "COMM4",
    "COMMC1000",
    "COMMC1000H",
+   "ENGL1B",
+   "ENGL1BH",
    "ENGL8A",
    "ENGL8B",
    "ENGL8E",
@@ -4115,7 +4201,7 @@
    }
   },
   "listed": 86,
-  "text_chars": 6066
+  "text_chars": 6089
  },
  {
   "control_number": "18240",
@@ -4259,7 +4345,7 @@
    }
   },
   "listed": 73,
-  "text_chars": 6303
+  "text_chars": 6318
  },
  {
   "control_number": "18744",
@@ -4271,7 +4357,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19250",
@@ -4338,7 +4428,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22147",
@@ -4587,7 +4681,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22157",
@@ -5392,9 +5490,9 @@
    "label": {
     "award": 1,
     "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "basic skills certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5437,7 +5535,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24074",
@@ -5529,7 +5631,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24107",
@@ -5748,7 +5854,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24178",
@@ -5760,7 +5870,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24180",
@@ -5772,7 +5886,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24209",
@@ -5857,7 +5975,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24235",
@@ -6034,7 +6156,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24284",
@@ -6058,7 +6184,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24288",
@@ -6070,7 +6200,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24320",
@@ -6178,7 +6312,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24373",
@@ -6232,7 +6370,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24380",
@@ -6244,7 +6386,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24383",
@@ -6295,7 +6441,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24406",
@@ -6307,7 +6457,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24418",
@@ -6638,7 +6792,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.939,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH5",
    "ANTH5H",
@@ -6663,6 +6817,8 @@
    "COMM9",
    "COMMC1000",
    "COMMC1000H",
+   "ENGL1B",
+   "ENGL1BH",
    "ENGLC1001",
    "ENGLC1001H",
    "JOUR100",
@@ -6698,7 +6854,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30868",
@@ -6864,38 +7024,12 @@
   "title": "Adult High School Diploma",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "BSHSALG1",
-   "BSHSALG2",
-   "BSHSECON",
-   "BSHSENG1",
-   "BSHSENG2",
-   "BSHSENG3",
-   "BSHSENG4",
-   "BSHSGEOM",
-   "BSHSPREA",
-   "BSHSPSY",
-   "BSHSSOC",
-   "BSHSUSH",
-   "BSHSWHS"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/high-school-programs/",
-   "title": "High School Programs < Mt. San Antonio College",
-   "h1": "High School Programs",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 3339
+  "text_chars": 0
  },
  {
   "control_number": "31604",
@@ -6903,11 +7037,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.931,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH6",
    "BUSO25",
    "COMM4",
+   "ENGL1B",
+   "ENGL1BH",
    "ENGL8A",
    "ENGL8B",
    "ENGL8E",
@@ -6955,8 +7091,21 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.711,
+  "coverage": 1.0,
   "codes_found": [
+   "AHIS11",
+   "AHIS12",
+   "AHIS12H",
+   "AHIS13",
+   "AHIS14",
+   "AHIS15",
+   "AHIS3",
+   "AHIS4",
+   "AHIS5",
+   "AHIS6",
+   "AHIS7",
+   "AHIS8",
+   "AHIS9",
    "ANIM108",
    "ANIM115",
    "ANIM130",
@@ -7048,7 +7197,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
    "HIST1",
    "HIST10",
@@ -7069,6 +7218,10 @@
    "HIST40",
    "HIST44",
    "HIST4H",
+   "HIST7",
+   "HIST7H",
+   "HIST8",
+   "HIST8H",
    "HIST9",
    "HUMA1",
    "HUMA1H"
@@ -7134,7 +7287,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.871,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH5",
    "ANTH5H",
@@ -7146,6 +7299,10 @@
    "HIST1",
    "HIST4",
    "HIST4H",
+   "HIST7",
+   "HIST7H",
+   "HIST8",
+   "HIST8H",
    "POLS10",
    "POLS2",
    "POLS25",
@@ -7276,7 +7433,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH5",
    "ANTH5H",
@@ -7285,6 +7442,8 @@
    "BIOL4",
    "BIOL4H",
    "BIOL6",
+   "BUSC1B",
+   "BUSC1BH",
    "CHEM10",
    "ECON17",
    "GEOG1",
@@ -7508,8 +7667,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.708,
+  "coverage": 1.0,
   "codes_found": [
+   "AHIS11",
+   "AHIS12",
+   "AHIS12H",
+   "AHIS4",
+   "AHIS5",
+   "AHIS6",
+   "AHIS9",
    "ARTD15A",
    "ARTD15B",
    "ARTD17A",
@@ -7591,8 +7757,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.825,
+  "coverage": 1.0,
   "codes_found": [
+   "BUSC1A",
+   "BUSC1AH",
+   "BUSC1B",
+   "BUSC1BH",
    "COMM20",
    "COMM20H",
    "COMM26",
@@ -7600,6 +7770,8 @@
    "COMM30",
    "COMM30H",
    "ECON17",
+   "ENGL1B",
+   "ENGL1BH",
    "ENGLC1001",
    "ENGLC1001H",
    "ENGR1C",
@@ -7609,6 +7781,10 @@
    "HIST36",
    "HIST40",
    "HIST44",
+   "HIST7",
+   "HIST7H",
+   "HIST8",
+   "HIST8H",
    "HIST9",
    "JOUR100",
    "JOUR101",
@@ -7700,7 +7876,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 0.982,
   "codes_found": [
    "ANTH5",
    "ANTH5H",
@@ -7714,6 +7890,10 @@
    "BIOL6",
    "BIOL6L",
    "BTNY3",
+   "BUSC1A",
+   "BUSC1AH",
+   "BUSC1B",
+   "BUSC1BH",
    "CHEM10",
    "CHEM40",
    "CHEM50",
@@ -7767,7 +7947,7 @@
    }
   },
   "listed": 55,
-  "text_chars": 5513
+  "text_chars": 5539
  },
  {
   "control_number": "35351",
@@ -7867,7 +8047,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 1.0,
   "codes_found": [
    "AGOR1",
    "AGOR2",
@@ -7875,6 +8055,8 @@
    "AGOR30",
    "AGOR50",
    "AGOR51",
+   "BUSC1B",
+   "BUSC1BH",
    "CHEM20",
    "CHEM40",
    "CHEM50",
@@ -8076,8 +8258,13 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
+   "AHIS12",
+   "AHIS12H",
+   "AHIS14",
+   "AHIS15",
+   "AHIS9",
    "ARAB1",
    "ARAB2",
    "ARCH250",
@@ -8224,27 +8411,23 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36115",
   "title": "Financial and Database Management",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "BSABE5"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
-   "title": "< Mt. San Antonio College",
-   "h1": "",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 12391
+  "text_chars": 0
  },
  {
   "control_number": "36278",
@@ -8608,7 +8791,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36874",
@@ -8620,7 +8807,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36926",
@@ -8663,7 +8854,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 3779
+  "text_chars": 3991
  },
  {
   "control_number": "36931",
@@ -8928,7 +9119,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "37437",
@@ -9144,10 +9339,14 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.826,
+  "coverage": 1.0,
   "codes_found": [
    "BUSA7",
    "BUSA8",
+   "BUSC1A",
+   "BUSC1AH",
+   "BUSC1B",
+   "BUSC1BH",
    "BUSL18",
    "CUL102",
    "CUL114",
@@ -9432,9 +9631,9 @@
    "label": {
     "award": 1,
     "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl - beginning level certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -9664,9 +9863,9 @@
    "label": {
     "award": 1,
     "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl - advanced level certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -9754,9 +9953,9 @@
    "label": {
     "award": 1,
     "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl - intermediate level certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -10418,7 +10617,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4194
+  "text_chars": 4255
  },
  {
   "control_number": "39842",
@@ -10426,8 +10625,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.87,
+  "coverage": 1.0,
   "codes_found": [
+   "AHIS11",
+   "AHIS12",
+   "AHIS12H",
    "ANAT10A",
    "ANTH1",
    "ANTH15",
@@ -10442,6 +10644,8 @@
    "ANTH5H",
    "ANTH6",
    "ARTH11H",
+   "BUSC1A",
+   "BUSC1AH",
    "COMM7",
    "COMM7H",
    "ECON17",
@@ -10470,6 +10674,10 @@
    "HIST40",
    "HIST44",
    "HIST4H",
+   "HIST7",
+   "HIST7H",
+   "HIST8",
+   "HIST8H",
    "HIST9",
    "MUS14A",
    "MUS14B",
@@ -10511,9 +10719,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.913,
+  "coverage": 1.0,
   "codes_found": [
    "AABS1",
+   "AHIS11",
+   "AHIS12",
+   "AHIS12H",
+   "AHIS9",
    "ANTH30",
    "ANTH5",
    "ANTH5H",
@@ -10541,6 +10753,10 @@
    "HIST40",
    "HIST44",
    "HIST4H",
+   "HIST7",
+   "HIST7H",
+   "HIST8",
+   "HIST8H",
    "HIST9",
    "JAPN1",
    "JAPN3",
@@ -11626,7 +11842,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "41413",
@@ -11638,7 +11858,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "41543",
@@ -11771,9 +11995,9 @@
    "VOCEL56"
   ],
   "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-computer-engineering/",
-   "title": "Electronics and Computer Engineering Technology < Mt. San Antonio College",
-   "h1": "Electronics and Computer Engineering Technology",
+   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/vocational-programs/voc-electronics/electronics-technology-level-1/",
+   "title": "Electronics Technology - Level 1 < Mt. San Antonio College",
+   "h1": "Electronics Technology - Level 1",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -11784,7 +12008,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 4097
+  "text_chars": 3094
  },
  {
   "control_number": "41570",
@@ -12746,7 +12970,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.953,
+  "coverage": 1.0,
   "codes_found": [
    "ANAT10A",
    "ANAT10B",
@@ -12765,6 +12989,10 @@
    "BIOL5",
    "BIOL6",
    "BIOL8",
+   "BUSC1A",
+   "BUSC1AH",
+   "BUSC1B",
+   "BUSC1BH",
    "CHEM40",
    "CHEM50",
    "CHEM50H",
@@ -13391,7 +13619,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ASCI1",
    "ASCI14",
@@ -13402,6 +13630,8 @@
    "ASCI30",
    "ASCI96",
    "ASCI96L",
+   "BUSC1B",
+   "BUSC1BH",
    "CHEM20",
    "CHEM40",
    "CHEM50",
@@ -13434,10 +13664,14 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "BUSA7",
    "BUSA8",
+   "BUSC1A",
+   "BUSC1AH",
+   "BUSC1B",
+   "BUSC1BH",
    "BUSL18",
    "BUSM20",
    "BUSO25",
@@ -13470,42 +13704,24 @@
   "title": "ESL Written Communication - Advanced Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLREADC",
-   "ESLWRTC"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
-   "title": "English as Second Language < Mt. San Antonio College",
-   "h1": "English as Second Language",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4025
+  "text_chars": 0
  },
  {
   "control_number": "42727",
   "title": "ESL Written Communication - Intermediate Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLREADB",
-   "ESLWRTB"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
-   "title": "English as Second Language < Mt. San Antonio College",
-   "h1": "English as Second Language",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4025
+  "text_chars": 0
  },
  {
   "control_number": "42732",
@@ -13561,105 +13777,60 @@
   "title": "ESL Oral Communication - Advanced Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLPRONC",
-   "ESLSPKC"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
-   "title": "English as Second Language < Mt. San Antonio College",
-   "h1": "English as Second Language",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4077
+  "text_chars": 0
  },
  {
   "control_number": "42755",
   "title": "ESL Written Communication - Beginning Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLREADA",
-   "ESLWRTA"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
-   "title": "English as Second Language < Mt. San Antonio College",
-   "h1": "English as Second Language",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4025
+  "text_chars": 0
  },
  {
   "control_number": "42756",
   "title": "ESL Oral Communication - Beginning Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLPRONA",
-   "ESLSPKA"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
-   "title": "English as Second Language < Mt. San Antonio College",
-   "h1": "English as Second Language",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4077
+  "text_chars": 0
  },
  {
   "control_number": "42757",
   "title": "ESL Oral Communication - Intermediate Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLPRONB",
-   "ESLSPKB"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
-   "title": "English as Second Language < Mt. San Antonio College",
-   "h1": "English as Second Language",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4077
+  "text_chars": 0
  },
  {
   "control_number": "42758",
   "title": "ESL Written Communication - Literacy Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLREADP",
-   "ESLWRTP1"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/esl/",
-   "title": "English as Second Language < Mt. San Antonio College",
-   "h1": "English as Second Language",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 4048
+  "text_chars": 0
  },
  {
   "control_number": "42788",
@@ -13699,12 +13870,16 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
    "ARCH142",
    "ARCH145",
    "BUSA7",
    "BUSA8",
+   "BUSC1A",
+   "BUSC1AH",
+   "BUSC1B",
+   "BUSC1BH",
    "CMGT121",
    "CMGT130",
    "CMGT140",
@@ -14618,21 +14793,12 @@
   "title": "Engineering Topics",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "link_search",
-  "coverage": 1.0,
-  "codes_found": [
-   "BSCNSL4",
-   "BSTE"
-  ],
-  "source": {
-   "url": "https://catalog.mtsac.edu/programs/noncredit-programs/programsaz/adult-basic-education/",
-   "title": "< Mt. San Antonio College",
-   "h1": "",
-   "text_from": "innerText+tabs",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 12275
+  "text_chars": 0
  },
  {
   "control_number": "43747",
@@ -14664,9 +14830,9 @@
    "label": {
     "award": 1,
     "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl - literacy level certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -14948,9 +15114,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "services. upon completion of this program, students will earn a certificate of completion in food services.",
+    "section_fit": 0.25
    }
   },
   "listed": 2,
@@ -15336,7 +15502,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 231 of 341 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45109",
@@ -15371,7 +15541,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.919,
+  "coverage": 0.973,
   "codes_found": [
    "ANTH5",
    "ANTH5H",
@@ -15397,6 +15567,8 @@
    "COMM9",
    "COMMC1000",
    "COMMC1000H",
+   "ENGL1B",
+   "ENGL1BH",
    "ENGLC1001H",
    "JOUR100",
    "JOUR101",
@@ -15619,7 +15791,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3516
+  "text_chars": 3719
  },
  {
   "control_number": "46341",
@@ -15733,8 +15905,14 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
+   "AHIS11",
+   "AHIS13",
+   "AHIS5",
+   "AHIS6",
+   "AHIS7",
+   "AHIS9",
    "ARTC100",
    "ARTG20",
    "ARTG21",
