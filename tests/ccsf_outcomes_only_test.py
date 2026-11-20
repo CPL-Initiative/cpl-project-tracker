@@ -83,6 +83,22 @@ check("2 GUARD: no staff name anywhere in the row (the page's title stays out)",
       STAFF not in json.dumps(row) and "Originator" not in json.dumps(row))
 check("2 the row says whether either cap cut the page",
       row["text_cut"] is False and row["html_cut"] is False and row["html_chars"] == len(HTML))
+big = HTML.replace("<body>", "<body><script>" + "x" * read.READER_HTML_CAP + "</script>")
+whole = read.read_one(_Reader(html=big), COURSE)
+check("2 a page past the Reader's HTML cap is parsed from the whole page, so it is not cut (trial 44738175152)",
+      whole["html_cut"] is False and whole["html_chars"] == len(big) and whole["outcomes"] == row["outcomes"],
+      (whole["html_cut"], whole["html_chars"]))
+
+
+class _NoContent(_Reader):
+    def __init__(self, html):
+        super().__init__(html=html)
+        self.page.content = lambda: (_ for _ in ()).throw(RuntimeError("closed"))
+
+
+cut = read.read_one(_NoContent(big), COURSE)
+check("2 GUARD: when only the Reader's cut copy was parsed, the row says html_cut",
+      cut["html_cut"] is True and cut["html_chars"] == read.READER_HTML_CAP, (cut["html_cut"], cut["html_chars"]))
 other = read.read_one(_Reader(), {**COURSE, "report": "https://example.edu/outline/1"})
 check("2 another host's row is unchanged: it keeps its page title", "title_printed" in other
       and "section_heads" not in other)
