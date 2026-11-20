@@ -942,12 +942,12 @@
    "estimate_usd": 288.0
   },
   "2026-11-20": {
-   "usd": 315.24,
+   "usd": 323.89,
    "sessions": 3,
    "not_available": 0,
    "tags": {
     "collection": 182.95,
-    "infrastructure": 132.29
+    "infrastructure": 140.94
    },
    "untagged_usd": 0.0
   }

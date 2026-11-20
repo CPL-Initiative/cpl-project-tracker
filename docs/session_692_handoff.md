@@ -109,6 +109,8 @@ collection by the cards that carry credit.
 
 The session holds no PR subscription, check-in or artifact watch it names here; it drops any at sign-off.
 
-Spend: $42.69 (Fable 5.2 $42.69); infrastructure $42.69; 2026-11-20T12:17Z to 2026-11-20T17:10Z.
+Spend: $51.34 (Fable 5.2 $51.34); infrastructure $51.34; 2026-11-20T12:17Z to 2026-11-20T17:05Z.
+
+**At sign-off.** Both memory receipts are applied and read back: the four rows of `kb/migrations/2026-11-20_commons_outline_fixes_memory_rows.sql` and the nine of `kb/migrations/2026-11-20_plain_session_checkpoint_memory_rows.sql`. The vault's session note and the mock's source are on samueltlee/CPLBrain#831. Let go: the watch on #3605 (merged), the scheduled check on it (deleted), and the watches on this checkpoint's PR and on CPLBrain#831 once each merges. The mock's own artifact watch stays registered with the session that published it; no tool here drops it.
 
 Opening line: *Greetings, you are SkyGannet (Session 692), see SkyShrike's handoff — `docs/session_692_handoff.md` — let's keep rolling with our queue.*
