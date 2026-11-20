@@ -1,7 +1,7 @@
 {
- "_what": "Sam's blocked-catalog hunt (Sam, 2026-11-17: \"Make sure those blocked catalogs and cors are on my cdc to do\"; \"To do should be on both cdc and commons\"). Six colleges whose sites serve a bot challenge or refuse robots.txt, so the course outline reader cannot read them. One to-do, read by kb/_blocked_catalogs.py for both the College Data Collection page and the Commons' Waiting on a person list. A college clears when a person files its catalog or course outlines as kb/hand_filed_catalogs/outlines/<slug>.json (the README there says how).",
- "source": "COBIx's ask on #3464 (comment 6962137371), from the courses bot's step3_fetch_plan.csv route E and step1_targets.json; the course-by-course list was not posted, so the courses are TBA here until it is filed",
- "title": "Find catalogs or course outlines for the colleges whose sites block automated reading",
+ "_what": "Sam's blocked-catalog hunt (Sam, 2026-11-17: \"Make sure those blocked catalogs and cors are on my cdc to do\"; \"To do should be on both cdc and commons\"). Six colleges whose course outline sites the outline reader cannot read. Sam, 2026-11-20 (his work order, relayed by COBIx on #3584): blocked course outlines are no longer a priority, except the courses still taught, and those are named on the page. One to-do, read by kb/_blocked_catalogs.py for both the College Data Collection page and the Commons' Needs you. A college is on the to-do while it has a still-taught course here and no file under kb/hand_filed_catalogs/outlines/<slug>.json (the README there says how); a college with no still-taught course is set aside.",
+ "source": "COBIx's ask on #3464 (comment 6962137371), from the courses bot's step3_fetch_plan.csv route E and step1_targets.json. The 12 still-taught courses: COBIx on #3584 (comment 7039460536, 2026-11-20), route E, taught in Fall 2025. Local titles are the state course list's (kb/reference/coci_course_list.xlsx), and the one control number cut off in his read (Ohlone BRDC 127A) is from the same list. All 12 control numbers are in kb/reference/cb_course_basic_fall2025.csv.",
+ "title": "Course Outline and Catalog Fixes Needed",
  "hunt": "Hunt only the courses still taught (in the Fall 2025 state course list); Sam, 2026-11-17: \"Why do we need the retired courses\".",
  "colleges": [
   {"slug": "north_orange_continuing_education", "college": "North Orange Continuing Education", "reason": "bot challenge or robots.txt refusal", "local_courses": 207},
@@ -12,5 +12,19 @@
   {"slug": "fullerton", "college": "Fullerton College", "reason": "bot challenge or robots.txt refusal", "local_courses": 10}
  ],
  "still_taught_total": 12,
- "courses": null
+ "courses": [
+  {"slug": "north_orange_continuing_education", "course": "HLTH 167", "control_number": "CCC000400628", "title": "Staying Mentally Sharp for OA", "mid_card_at_filing": "HLTH M9065"},
+  {"slug": "north_orange_continuing_education", "course": "PARN 170", "control_number": "CCC000394743", "title": "Parenting Adult/Children W/Dis", "mid_card_at_filing": "PARN M9036"},
+  {"slug": "southwestern", "course": "CI 65", "control_number": "CCC000169779", "title": "BUILDING CODES II", "mid_card_at_filing": "ARCH M1081"},
+  {"slug": "southwestern", "course": "CIS 10A", "control_number": "CCC000186047", "title": "MICROCOMPUTER REPAIR AND SERVICE", "mid_card_at_filing": "ITIS M1457"},
+  {"slug": "southwestern", "course": "ELEC 10A", "control_number": "CCC000311867", "title": "MICROCOMPUTER REPAIR AND SERVICE", "mid_card_at_filing": "ITIS M1457"},
+  {"slug": "southwestern", "course": "DANC 123", "control_number": "CCC000210897", "title": "DANCE CHOREOGRAPHY III", "mid_card_at_filing": "DANC M1128"},
+  {"slug": "southwestern", "course": "ST 10A", "control_number": "CCC000307625", "title": "CENTRAL SERVICE TECHNOLOGY", "mid_card_at_filing": "HLTH M1195"},
+  {"slug": "ohlone", "course": "BRDC 127A", "control_number": "CCC000337481", "title": "Radio Broadcast Lab", "mid_card_at_filing": "BRDC M1058"},
+  {"slug": "ohlone", "course": "BRDC 127B", "control_number": "CCC000141070", "title": "Radio Broadcast Lab", "mid_card_at_filing": "BRDC M1058"},
+  {"slug": "ohlone", "course": "BRDC 127C", "control_number": "CCC000191156", "title": "Radio Broadcast Lab", "mid_card_at_filing": "BRDC M1058"},
+  {"slug": "ohlone", "course": "BRDC 127D", "control_number": "CCC000020999", "title": "Radio Broadcast Lab", "mid_card_at_filing": "BRDC M1058"},
+  {"slug": "grossmont", "course": "OT 110", "control_number": "CCC000049230", "title": "Orthopedic Anatomy and Physiology", "mid_card_at_filing": "BIOL M1264"}
+ ],
+ "_courses_note": "mid_card_at_filing is the M-ID card COBIx named on 2026-11-20. It is a stored id: resolve it through kb/alias_chain.py before comparing it to the live set, and prefer the control number, which a re-mint never changes."
 }

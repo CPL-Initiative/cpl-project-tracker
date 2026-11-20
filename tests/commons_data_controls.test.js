@@ -117,10 +117,13 @@ function audit(x, where, bad, seen) {
       const h = e.getAttribute("href") || "";
       if (!h) bad.push(name + " (a link with no href)");
       else if (e.getAttribute("target") === "_blank" || /^https?:/i.test(h)) {
-        /* S649: the one link that leaves the page is the panel's "Open in a new tab". */
-        if (!e.classList.contains("cdd-newtab") || !e.closest("#cdd-panel")) bad.push(name + " (a link out of the page that is not the panel's new-tab control)");
+        /* S649: the one link that leaves the page is the panel's "Open in a new tab". Sam, 2026-11-20 (his work order):
+           an outline or catalog address in the outline-fixes to-do is a link that opens in a new tab, and its words are
+           the address. That is the one exception; anything else that leaves the page still fails here. */
+        const todoOut = e.classList.contains("cdd-todo-out") && e.closest("#cdd-blocked");
+        if (!todoOut && (!e.classList.contains("cdd-newtab") || !e.closest("#cdd-panel"))) bad.push(name + " (a link out of the page that is not the panel's new-tab control)");
         else if (e.getAttribute("target") !== "_blank" || !/noopener/.test(e.getAttribute("rel") || "")) bad.push(name + " (a new tab without rel=noopener)");
-        else if (txt(e) !== "Open in a new tab") bad.push(name + " (the new-tab control says something else)");
+        else if (todoOut ? txt(e) !== h : txt(e) !== "Open in a new tab") bad.push(name + (todoOut ? " (the address link's words are not its address)" : " (the new-tab control says something else)"));
       } else if (!/^#/.test(h)) bad.push(name + " (an href that is neither a page address nor http(s): " + h + ")");
     } else bad.push(name + " (styled as a control but neither a button nor a link)");
   });
