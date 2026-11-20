@@ -4,7 +4,7 @@
   "supabase_tables": 118,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1094,
+  "file_datasets": 1095,
   "external_services": 197,
   "consumers": 635,
   "workflows": 75,
@@ -465,7 +465,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2639
+     "line": 2657
     }
    ],
    "main_committers": []
@@ -524,7 +524,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2595
+     "line": 2613
     }
    ],
    "main_committers": []
@@ -543,7 +543,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 7678
+     "line": 7680
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -720,7 +720,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2532
+     "line": 2550
     }
    ],
    "main_committers": []
@@ -3072,7 +3072,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2125
+     "line": 2143
     },
     {
      "id": "workflow:program-requirements-college.yml",
@@ -3133,7 +3133,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2513,
+     "line": 2514,
      "tabs": [
       "library"
      ]
@@ -6806,7 +6806,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3833,
+     "line": 3834,
      "tabs": [
       "library"
      ]
@@ -8850,7 +8850,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6849
+     "line": 6906
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8870,7 +8870,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6925
+     "line": 6982
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9601,7 +9601,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3124,
+     "line": 3125,
      "tabs": [
       "library"
      ]
@@ -9617,7 +9617,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2506,
+     "line": 2507,
      "tabs": [
       "library"
      ]
@@ -14957,6 +14957,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/course_outcomes/mtsac_recall.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 493
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/course_outcomes/queue.json": {
    "consumers": [
     {
@@ -18523,7 +18536,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3483
+     "line": 3501
     }
    ],
    "served": true,
@@ -18536,7 +18549,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7526
+     "line": 7585
     }
    ],
    "served": true,
@@ -22657,7 +22670,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7260
+     "line": 7317
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22677,7 +22690,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6289
+     "line": 6346
     }
    ],
    "served": false,
@@ -23012,7 +23025,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2742,
+     "line": 2743,
      "tabs": [
       "library"
      ]
@@ -23327,7 +23340,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6887
+     "line": 6944
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -25180,7 +25193,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4531,
+     "line": 4532,
      "tabs": [
       "library"
      ]
@@ -25214,7 +25227,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 228
+     "line": 231
     },
     {
      "id": "page:library/adopt/index.html",
@@ -25228,7 +25241,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 222
+     "line": 225
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",
@@ -25242,14 +25255,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 321
+     "line": 324
     },
     {
      "id": "page:library/cpl-initiative-overview/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 331
+     "line": 334
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
@@ -25263,7 +25276,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 605
+     "line": 608
     },
     {
      "id": "page:library/ell-healthcare-pathways-cpl-starting-points/index.html",
@@ -25277,7 +25290,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 791
+     "line": 794
     },
     {
      "id": "page:library/index.html",
@@ -25291,14 +25304,14 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 226
+     "line": 229
     },
     {
      "id": "page:library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 298
+     "line": 301
     }
    ],
    "served": true,
@@ -31011,7 +31024,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6575
+     "line": 6577
     },
     {
      "id": "module:admin.js",
@@ -31520,7 +31533,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 7240
+     "line": 7242
     }
    ],
    "main_committers": []
@@ -31562,7 +31575,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7500
+     "line": 7559
     }
    ],
    "main_committers": []
@@ -31574,7 +31587,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7617
+     "line": 7676
     }
    ],
    "main_committers": []
@@ -32034,7 +32047,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7951
+     "line": 7953
     },
     {
      "id": "module:sierra_training.js",
@@ -32599,7 +32612,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6762
+     "line": 6764
     }
    ],
    "main_committers": []
@@ -32623,7 +32636,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6826
+     "line": 6828
     },
     {
      "id": "module:college_briefing.js",
@@ -35383,7 +35396,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6911
+     "line": 6913
     },
     {
      "id": "module:sierra_training.js",

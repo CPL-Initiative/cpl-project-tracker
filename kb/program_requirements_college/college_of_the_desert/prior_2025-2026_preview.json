@@ -1,0 +1,140 @@
+{
+ "college": "College of the Desert",
+ "catalog_url": "https://catalog.collegeofthedesert.edu/archive/2025-2026/",
+ "platform": "courseleaf",
+ "catalog_year": "2025-2026",
+ "programs": 8,
+ "with_closed_list": 8,
+ "started": "2026-11-20T09:34:32Z",
+ "prior": {
+  "start": "https://catalog.collegeofthedesert.edu/archive/2025-2026/",
+  "catalog_year": "2025-2026",
+  "only": [
+   "31538",
+   "35969",
+   "36308",
+   "36768",
+   "36769",
+   "38979",
+   "38980",
+   "40197"
+  ],
+  "format": "pdf"
+ },
+ "procedure_step": {
+  "start": "https://catalog.collegeofthedesert.edu/archive/2025-2026/",
+  "follow_year": "2025-2026",
+  "href": null,
+  "status": null,
+  "access": "robots_disallow",
+  "links": []
+ },
+ "pdf": {
+  "url": null,
+  "access": "no_address",
+  "status": null,
+  "bytes": null,
+  "pages_total": 0,
+  "error": null,
+  "chars_total": 0,
+  "pypdf_accepted": 0,
+  "sample": [],
+  "extractor": null,
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "unproven": []
+ },
+ "loads": 0,
+ "pages_listed": 1,
+ "pages_answered": 0,
+ "seconds": 5.5,
+ "found": 0,
+ "by_method": {
+  "not_found": 8
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "31538",
+   "title": "Reserve Police Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "35969",
+   "title": "Advanced First Aid and Safety, CPR/AED",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36308",
+   "title": "Family Child Care",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36768",
+   "title": "Business Information Worker - Office Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36769",
+   "title": "Business Information Worker - Office Manager",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "38979",
+   "title": "Basic Peace Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "38980",
+   "title": "Automotive Introductions",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "40197",
+   "title": "Emergency Medical Responder Intermediate",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 0
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/college_of_the_desert",
+  "kept": 0,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {},
+ "run": "44711759115"
+}

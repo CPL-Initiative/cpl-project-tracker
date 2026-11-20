@@ -1,0 +1,10 @@
+{
+  "check_id": "8d0f9c30-b2ee-4c4a-88b1-2d42ec3a0f6a",
+  "library_id": "5e29e1d3-b1fc-4340-a3d7-9378e2e4d8b9",
+  "version_key": "version:1",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/",
+  "result": "pass",
+  "sha256": "49c148c00ef1ebdf165a0460d9aafbbe4a6e5575cb92393968d62bfc3734853e",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/accessibility/20261120-121133Z.txt",
+  "_about": "The page this check saw: sha256 of library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}

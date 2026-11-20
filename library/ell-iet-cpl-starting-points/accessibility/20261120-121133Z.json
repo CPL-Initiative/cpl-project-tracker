@@ -1,0 +1,10 @@
+{
+  "check_id": "acb27c57-c55a-49bd-add0-a5c5659e88be",
+  "library_id": "915ff7d5-80ce-45ad-bb95-d75510318ee0",
+  "version_key": "version:5",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/",
+  "result": "pass",
+  "sha256": "317cc41bc424c4e059f397caf255b6da1b4e1cf741e02d62a003778f42536e19",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet-cpl-starting-points/accessibility/20261120-121133Z.txt",
+  "_about": "The page this check saw: sha256 of library/ell-iet-cpl-starting-points/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}

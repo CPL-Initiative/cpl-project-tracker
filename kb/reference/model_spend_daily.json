@@ -86,7 +86,8 @@
   "2026-11-13": 96.85,
   "2026-11-16": 0.34,
   "2026-11-17": 7.87,
-  "2026-11-19": 63.24
+  "2026-11-19": 63.24,
+  "2026-11-20": 12.54
  },
  "runner_runs": {
   "38322747831": {
@@ -848,6 +849,61 @@
    "college": "imperial_valley",
    "usd": 0.47,
    "day": "2026-11-19"
+  },
+  "44687646623": {
+   "college": "sierra",
+   "usd": 0.09,
+   "day": "2026-11-20"
+  },
+  "44687664966": {
+   "college": "los_angeles_harbor",
+   "usd": 1.24,
+   "day": "2026-11-20"
+  },
+  "44687777798": {
+   "college": "barstow_community",
+   "usd": 1.64,
+   "day": "2026-11-20"
+  },
+  "44687781989": {
+   "college": "college_of_san_mateo",
+   "usd": 0.0,
+   "day": "2026-11-20"
+  },
+  "44687786167": {
+   "college": "contra_costa",
+   "usd": 1.54,
+   "day": "2026-11-20"
+  },
+  "44688217584": {
+   "college": "college_of_the_sequoias",
+   "usd": 0.81,
+   "day": "2026-11-20"
+  },
+  "44688457642": {
+   "college": "pasadena_city",
+   "usd": 0.22,
+   "day": "2026-11-20"
+  },
+  "44688858512": {
+   "college": "rio_hondo",
+   "usd": 0.05,
+   "day": "2026-11-20"
+  },
+  "44692355661": {
+   "college": "fresno_city",
+   "usd": 0.76,
+   "day": "2026-11-20"
+  },
+  "44692816081": {
+   "college": "madera",
+   "usd": 1.97,
+   "day": "2026-11-20"
+  },
+  "44701011374": {
+   "college": "santa_rosa_junior",
+   "usd": 4.22,
+   "day": "2026-11-20"
   }
  },
  "runner_since": "2026-11-17",
@@ -878,9 +934,9 @@
    "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 136.0,
+    "collection": 256.0,
     "infrastructure": 109.9,
-    "collection": 256.0
+    "curation": 136.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0

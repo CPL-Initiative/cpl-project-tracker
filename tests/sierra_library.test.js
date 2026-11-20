@@ -123,6 +123,11 @@ const slugs = (q, colleges) => L.matchLibrary(q, PIECES, colleges || []).map((p)
   check("(5) without its head, styles, scripts or the public header: its links, its logo and its theme words",
     !/<|\{|localStorage|Find your college|data:image/.test(text) && !/cplh/.test(text) && !/^Theme$|^Light$|^Dark$|Light Dark/m.test(text));
   check("(5) entities become characters", /EDD's ELL IET Fund grantees/.test(text) && !/&#x27;|&amp;/.test(text));
+  // The Library check stamps one accessibility line on every page (scripts/library_check.py, 653864b7 on
+  // 2026-11-20). It is about the page, not the piece, and on the ELL IET page it took the text past the cap.
+  check("(5) ⭐ the page's accessibility check line, between its markers, is not part of its reading text",
+    /<!-- cpl-library-check:/.test(html) && !/WCAG 2\.1 AA and Section 508|Not yet certified/.test(text) &&
+    L.libraryPageText("<p>Piece</p><!-- cpl-library-check: x -->\n<div class=\"cpl-check-line\"><p>Accessibility: checked</p></div>\n<!-- /cpl-library-check --><p>Next steps</p>") === "Piece\nNext steps");
   const long = L.libraryPageText("<p>START " + "a ".repeat(30000) + "</p><p>Practical next steps END</p>");
   check("(5) a longer page is capped by losing its middle: its opening and its next steps stay",
     long.length <= L.LIBRARY_TEXT_MAX + 4 && /^START/.test(long) && /Practical next steps END$/.test(long) && / …\n/.test(long));
