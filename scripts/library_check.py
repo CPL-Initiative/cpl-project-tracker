@@ -9,22 +9,25 @@ check record, and no approval from Sam.
 
 library-publish.yml runs this after --finish has moved the records it published:
 
-  --plan  --finished F --out P   which pages to check, written to P: every page --finish moved (F) and every piece
-                                 published to the Public Library that waits with no check of its page since the page
-                                 last changed; P also names the pages whose version label no check record can carry.
-                                 Prints the count for the workflow.
-  --check --plan-file P          for each page in P: writes the footer the page will carry if it passes, runs the
-                                 one engine (scripts/a11y.js with scripts/library_check.config.js, Light and Dark),
-                                 writes a plain-words report beside the page (library/<slug>/accessibility/), and
-                                 inserts ONE row per page into cpl_library_checks with the service key: the record's
-                                 version key, its current url, the division's standard and tool, pass or fail, the
-                                 findings count, the report's Pages address, and the run that made it. The receipt
-                                 (kb/receipts/library_checks/) is written at once, then every Library page's line is
-                                 rewritten from the rows actually written, and only then does it list each piece whose
-                                 publish_target is 'public', whose check passed and which holds a public summary a
-                                 person typed, adding each listing's before-values to the receipt before its update
-                                 (guarded on the record as read, Rule 10). So whatever is on disk when a step fails is
-                                 what the receipt proves.
+  --plan  --finished F --out P   which pages to check, written to P: every page --finish moved (F), and every
+                                 Library page whose content on disk differs from the sha its latest check's committed
+                                 proof recorded, or that has no such proof (never checked, checked before proofs, or
+                                 changed by hand at the same url and version); P also names the pages whose version
+                                 label no check record can carry. Prints the count for the workflow.
+  --check --plan-file P          for each page in P: a listed piece whose content no longer matches its latest passing
+                                 check comes off the Public Library first (a guarded update, before-values in the
+                                 receipt, publish_target kept 'public'); then it writes the line the page will carry if
+                                 it passes, runs the one engine (scripts/a11y.js with scripts/library_check.config.js,
+                                 Light and Dark), writes a plain-words report beside the page, and inserts ONE row per
+                                 page into cpl_library_checks with the service key. The receipt (kb/receipts/
+                                 library_checks/) is written at once, every Library page's line is rewritten from the
+                                 rows actually written, and the output names each passing piece waiting to be listed.
+                                 It lists nothing.
+  --list  --check-file C         run only after the commit carrying the reports and lines is pushed: lists each piece C
+                                 names whose publish_target is 'public', that holds a public summary a person typed,
+                                 and whose latest check passed with a committed proof matching its page, with an update
+                                 guarded on the record as read (Rule 10); each listing's before-values go into its own
+                                 receipt before its update.
 
 The line binds to the page's content (the S688 conductor, third round on #3581): each check records the sha256 of the
 page it checked, the accessibility line taken out (content_hash), in a small JSON beside its report with the check
@@ -237,18 +240,27 @@ def row_problem(record):
     return ""
 
 
+def drifted(record, checks, root=None):
+    """True when the page on disk is not the page its latest check saw: no latest check (current key and url, no earlier
+    than page_changed_at), no committed proof for it, or a proof whose sha differs from the page's content_hash now. A
+    failed check whose page has not changed is not drift, so a failed page waits for new content."""
+    c = latest_check(checks, record)
+    pr = proof_of(c, root) if c else None
+    if not pr or pr.get("check_id") != c.get("id"):
+        return True
+    page = (Path(root or ROOT) / "library" / record["slug"] / "index.html").read_text(encoding="utf-8")
+    return pr.get("sha256") != content_hash(page)
+
+
 def plan(records, checks, moved, root=None):
-    """The slugs to check: every page --finish moved this run, then every piece waiting on the Public Library whose
-    page has no check since it last changed (a failed one waits for a new page, never a second look at the same one).
-    Only a page this checkout holds, at the address its record names, and whose version label a check record can
-    carry. Pure but for the file test."""
+    """The slugs to check: every page --finish moved this run, then every Library page whose content drifted from its
+    latest check's proof (drifted). Only a page this checkout holds, at the address its record names, and whose version
+    label a check record can carry."""
     moved, out = set(moved or []), []
     for r in sorted(records or [], key=lambda x: x.get("slug") or ""):
         if r.get("retired_at") or not on_pages(r, root) or row_problem(r):
             continue
-        if r["slug"] in moved:
-            out.append(r["slug"])
-        elif waits_to_list(r) and not latest_check(checks, r):
+        if r["slug"] in moved or drifted(r, checks, root):
             out.append(r["slug"])
     return out
 
@@ -260,7 +272,7 @@ def skipped(records, moved, root=None):
         if r.get("retired_at") or not on_pages(r, root):
             continue
         why = row_problem(r)
-        if why and (r["slug"] in moved or waits_to_list(r)):
+        if why and (r["slug"] in moved or waits_to_list(r) or r.get("public_listed")):
             out.append({"slug": r["slug"], "why": why})
     return out
 
@@ -401,6 +413,16 @@ def landed(created_by, rows):
     return [g for g in got if (g.get("library_id"), g.get("report_url")) in sent]
 
 
+def unlist_update():
+    """A listed piece whose content its latest passing check never saw comes off the Public Library. Pure."""
+    return {"public_listed": False, "updated_by": BOT}
+
+
+def unlist_guard(record):
+    return "&".join(["id=eq." + urllib.parse.quote(record["id"]), "updated_at=eq." + urllib.parse.quote(record["updated_at"]),
+                     "public_listed=is.true"])
+
+
 def write_receipt(path, receipt):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -446,7 +468,33 @@ def check_phase(plan_path, engine=run_engine, now=None):
                          "delete a check).",
                "at": now.isoformat(), "created_by": created_by, "checks": [], "listed": []}
     rpath = RECEIPTS / ("%s-%s.json" % (now.strftime("%Y-%m-%d-%H%M%S"), re.sub(r"[^a-z0-9]+", "-", created_by.lower()).strip("-")))
-    rows, report_of, before, got, sha_of, insert_error = [], {}, {}, [], {}, None
+    receipt["unlisted"] = []
+    rows, report_of, before, got, sha_of, insert_error, errors = [], {}, {}, [], {}, None, []
+    # A listed piece whose page is not the page its latest passing check saw comes off the Public Library before its
+    # new check runs. The trigger on unlisting resets publish_target to internal, so a second guarded update puts
+    # 'public' back and the piece relists once its new page passes. Before-values go into the receipt first.
+    for r in list(todo):
+        if not r.get("public_listed"):
+            continue
+        page = (ROOT / "library" / r["slug"] / "index.html").read_text(encoding="utf-8")
+        if certified_check(r, checks, page):
+            continue
+        entry = {"record_id": r["id"], "slug": r["slug"], "unlisted": "pending",
+                 "before": {k: r.get(k) for k in ("public_listed", "publish_target", "updated_by", "updated_at")},
+                 "update": unlist_update()}
+        receipt["unlisted"].append(entry)
+        write_receipt(rpath, receipt)
+        try:
+            ok = lp.api("cpl_library?" + unlist_guard(r), "PATCH", unlist_update())
+            if ok:
+                lp.api("cpl_library?id=eq.%s&public_listed=is.false&publish_target=eq.internal" % urllib.parse.quote(r["id"]),
+                       "PATCH", {"publish_target": "public", "updated_by": BOT})
+            entry["unlisted"] = bool(ok)
+        except Exception as e:  # noqa: BLE001 — its check still runs; the step goes red at the end
+            entry["unlisted"] = "unknown: %s" % str(e)[:200]
+            errors.append("%s: unlisting answered %s" % (r["slug"], str(e)[:200]))
+        finally:
+            write_receipt(rpath, receipt)
     if todo:
         try:
             # The page carries the line it will show if it passes, so the page checked is the page served.
@@ -508,49 +556,72 @@ def check_phase(plan_path, engine=run_engine, now=None):
                                "out (scripts/library_check.py content_hash). The line prints this check's pass only while "
                                "the page still has this hash." % r["slug"]}
             (ROOT / report_of[r["slug"]][:-4]).with_suffix(".json").write_text(json.dumps(proof, indent=2) + "\n", encoding="utf-8")
-    # Every line from the rows actually written, before any listing: a failed page reads Not yet certified at once.
+    # Every line from the rows actually written: a failed page reads Not yet certified at once.
     stamped = restamp(records, checks, settings)
-    listed, waiting, errors = [], [], []
-    try:
-        for row in receipt["checks"]:
-            r0 = next((r for r in todo if r["id"] == row["library_id"]), None)
-            if not r0 or row.get("result") != "pass":
-                continue
-            try:
-                fresh = (lp.api("cpl_library?select=*&id=eq." + urllib.parse.quote(r0["id"])) or [None])[0]
-            except Exception as e:  # noqa: BLE001 — nothing was written for it; the next piece still runs
-                errors.append("%s: %s" % (r0["slug"], str(e)[:200]))
-                continue
-            if fresh and waits_to_list(fresh) and not has_public_summary(fresh):
-                waiting.append({"slug": fresh["slug"], "why": "it needs a public summary"})
-                continue
-            if not fresh or not should_list(fresh, row):
-                continue
-            up = list_update(fresh, datetime.now(timezone.utc).isoformat())
-            entry = {"record_id": fresh["id"], "slug": fresh["slug"], "listed": "pending",
-                     "before": {k: fresh.get(k) for k in sorted(set(up) | {"updated_at"})}, "update": up}
-            receipt["listed"].append(entry)
-            write_receipt(rpath, receipt)
-            try:
-                ok = lp.api("cpl_library?" + list_guard(fresh), "PATCH", up)
-                entry["listed"] = bool(ok)
-            except Exception as e:  # noqa: BLE001 — the next listing still runs; the step fails at the end
-                entry["listed"] = "unknown: %s" % str(e)[:200]
-                errors.append("%s: %s" % (fresh["slug"], str(e)[:200]))
-                continue
-            finally:
-                write_receipt(rpath, receipt)
-            if ok:
-                listed.append(fresh["slug"])
-    finally:
-        print(json.dumps({"checked": [{"slug": g.get("library_id") and next((r["slug"] for r in todo if r["id"] == g["library_id"]), ""),
-                                       "result": g.get("result"), "findings": g.get("findings")} for g in got],
-                          "listed": listed, "waiting": waiting, "skipped": skip,
-                          "stamped": stamped, "errors": errors}))
+    passed = {g.get("library_id"): g for g in got if g.get("result") == "pass"}
+    to_list = [{"slug": r["slug"], "record_id": r["id"], "check_id": passed[r["id"]].get("id")}
+               for r in todo if r["id"] in passed and (r.get("publish_target") == "public" or r.get("public_listed"))]
     if insert_error is not None:
         errors.append("the insert answered %s; the rows that landed were read back by created_by" % str(insert_error)[:200])
+    print(json.dumps({"checked": [{"slug": next((r["slug"] for r in todo if r["id"] == g.get("library_id")), ""),
+                                   "result": g.get("result"), "findings": g.get("findings")} for g in got],
+                      "to_list": to_list, "unlisted": [u["slug"] for u in receipt["unlisted"] if u["unlisted"] is True],
+                      "skipped": skip, "stamped": stamped, "errors": errors}))
     if errors:
-        # The rows, lines, reports and receipt on disk are consistent; the step goes red so a person sees the listing.
+        # The rows, lines, reports and receipt on disk are consistent; the step goes red so a person sees it.
+        raise RuntimeError("the check run met errors: " + "; ".join(errors))
+    return 0
+
+
+def list_phase(check_file, now=None):
+    """List on a pass, after the push of the reports and lines (library-publish.yml runs it only then): each piece
+    --check named, fresh-read, listed when it holds a typed public summary and its latest check passed with a committed
+    proof matching its page now."""
+    now = now or datetime.now(timezone.utc)
+    names = _read_json(check_file).get("to_list") or []
+    _, records, checks = read_state()
+    created_by, _ = run_label()
+    receipt = {"_about": "Library listing receipt (scripts/library_check.py --list): each listing's before-values, written "
+                         "before its update. Roll back a listing by writing its before-values with the service key, or "
+                         "with Remove from the Public Library.", "at": now.isoformat(), "created_by": created_by, "listed": []}
+    rpath = RECEIPTS / ("%s-%s-list.json" % (now.strftime("%Y-%m-%d-%H%M%S"), re.sub(r"[^a-z0-9]+", "-", created_by.lower()).strip("-")))
+    listed, waiting, errors = [], [], []
+    for n in names:
+        try:
+            fresh = (lp.api("cpl_library?select=*&id=eq." + urllib.parse.quote(n["record_id"])) or [None])[0]
+        except Exception as e:  # noqa: BLE001 — nothing was written for it; the next piece still runs
+            errors.append("%s: %s" % (n.get("slug"), str(e)[:200]))
+            continue
+        if not fresh or not on_pages(fresh):
+            continue
+        page = (ROOT / "library" / fresh["slug"] / "index.html").read_text(encoding="utf-8")
+        c = certified_check(fresh, checks, page)
+        if not c or c.get("id") != n.get("check_id"):
+            waiting.append({"slug": fresh["slug"], "why": "its page is not the page this run's check saw"})
+            continue
+        if waits_to_list(fresh) and not has_public_summary(fresh):
+            waiting.append({"slug": fresh["slug"], "why": "it needs a public summary"})
+            continue
+        if not should_list(fresh, c):
+            continue
+        up = list_update(fresh, datetime.now(timezone.utc).isoformat())
+        entry = {"record_id": fresh["id"], "slug": fresh["slug"], "check_id": c.get("id"), "listed": "pending",
+                 "before": {k: fresh.get(k) for k in sorted(set(up) | {"updated_at"})}, "update": up}
+        receipt["listed"].append(entry)
+        write_receipt(rpath, receipt)
+        try:
+            ok = lp.api("cpl_library?" + list_guard(fresh), "PATCH", up)
+            entry["listed"] = bool(ok)
+        except Exception as e:  # noqa: BLE001 — the next listing still runs; the step fails at the end
+            entry["listed"] = "unknown: %s" % str(e)[:200]
+            errors.append("%s: %s" % (fresh["slug"], str(e)[:200]))
+            continue
+        finally:
+            write_receipt(rpath, receipt)
+        if ok:
+            listed.append(fresh["slug"])
+    print(json.dumps({"listed": listed, "waiting": waiting, "errors": errors}))
+    if errors:
         raise RuntimeError("listing failed for " + "; ".join(errors))
     return 0
 
@@ -562,6 +633,8 @@ def main(argv=None):
     ap.add_argument("--finished")
     ap.add_argument("--out", default="check_plan.json")
     ap.add_argument("--plan-file", default="check_plan.json")
+    ap.add_argument("--list", action="store_true")
+    ap.add_argument("--check-file", default="check.json")
     ap.add_argument("--summary", help="print the commit message's list from --check's output")
     a = ap.parse_args(argv)
     if a.summary:
@@ -577,7 +650,9 @@ def main(argv=None):
         return plan_phase(a.finished, a.out)
     if a.check:
         return check_phase(a.plan_file)
-    ap.error("--plan or --check")
+    if a.list:
+        return list_phase(a.check_file)
+    ap.error("--plan, --check or --list")
 
 
 if __name__ == "__main__":

@@ -60,14 +60,13 @@ the tab publishes to the Internal Library and Public says the check record is no
 - DECIDED (S687, `d-library-3560-in-four-prs-s687`): #3560 lands in four PRs, one after another, since its asks share
   `library.js`: 1 the two publish buttons, Template and the check gate (#3572); 2 the check run and the footer; 3 the
   progress bar; 4 Publish all, Add existing, redraft and republish. Memory rows: run 44624406317.
-- Known limit (S688 part 2): the page's line binds to its content (`d-library-footer-binds-page-hash-s688`), but the
-  database does not: a check row names a version key, a url and a time, not the page's bytes. So the tab's pre-check
-  and `cpl_library_set_public()` cannot see content that changes at the same url and version (a session's
-  `scripts/library_page.py` rebuild, a hand commit, a page `--finish` left for the next run), and a team press of Public
-  can list such a page on the earlier page's pass while its line reads Not yet certified. The check run's own listing
-  is safe: it lists only in the run that checked the page. A content hash on the check row, matched against the served
-  page, closes it later. A session that rebuilds a listed page bumps its version so the record moves and the run
-  checks it.
+- Known limit (S688 part 2): what is left is the tab's and `cpl_library_set_public()`'s view between runs. A check
+  row names a version key, a url and a time, not the page's bytes, so from a content change at the same url and version
+  (a session's `scripts/library_page.py` rebuild, a hand commit, a page `--finish` left for the next run) until the next
+  run, a team press of Public can list the page on the earlier page's pass while its line reads Not yet certified. The
+  next run closes it: `--plan` sees the drift, `--check` takes a listed piece off before its new check, and only a pass
+  of the new content relists it. A content hash on the check row, matched against the served page, would close the gap
+  between runs.
 - DECIDED (S688 conductor, COBIx on #3572, 7023899407; `d-library-check-binds-url-s688`): a check binds to the url it
   checked (`cpl_library_checks.url`). `cpl_library_set_public()` counts a pass only at the record's current url and
   key, so the old url's pass never relists a moved piece. Old rows keep a null url, which
@@ -86,9 +85,13 @@ and AA rules; `--json` gives one result per target), a plain-words report lands 
 `library/<slug>/accessibility/<time>.txt`, and one `cpl_library_checks` row per page goes in with the service key
 (record's current url and key, the division's standard and tool, pass or fail, findings, the report's Pages address,
 `created_by` = `library-publish.yml run <id> attempt <n>`, `checked_at` the database's). The receipt
-(`kb/receipts/library_checks/`) is written as soon as the rows are in; every Library page's line is rewritten from the
-rows written before any listing; each listing's before-values join the receipt before its update, and one failed
-listing never stops the next (the step goes red at the end). A page whose version label the table's key check refuses
+(`kb/receipts/library_checks/`) is written as soon as the rows are in, and every Library page's line is rewritten from
+the rows written. `--plan` also plans any page whose content on disk differs from its latest check's committed sha (or
+has no proof), and `--check` first takes a listed one off the Public Library (guarded, before-values in the receipt,
+`publish_target` put back to `public`). `--check` lists nothing: `--list` is its own step, after the checks commit is
+pushed and only when that push succeeded, reading the waiting passes from `check.json`; each listing's before-values
+join a listing receipt before its update, which a last commit carries, and one failed listing never stops the next (the
+step goes red at the end). A page whose version label the table's key check refuses
 is skipped with its reason in `check.json` and on the card, and the rest of the batch goes in. A second commit carries
 lines, reports and the receipt: whatever is on disk is what the receipt proves. Both push loops fail their step after
 three failed pushes, and Pages deploys though a check step failed. Schema
@@ -96,8 +99,8 @@ three failed pushes, and Pages deploys though a check step failed. Schema
 `tests/library_check_test.py`, `tests/library_check_footer.test.js`, `tests/library_publishing_model.test.js` (I),
 `tests/library_publishing_sql_proof.py`.
 - DECIDED (S688, `d-library-check-run-on-publish-s688`): the run checks every page it published and every piece waiting
-  on the Public Library with no check since its page changed; a page whose check failed waits for a new version, and the
-  run never checks the same page twice. Only a page at its own Pages address (`library/<slug>/`) is checked; a piece
+  on the Public Library, and every Library page whose content differs from its latest check's committed sha or has no
+  proof; a page whose check failed waits for new content, and the run never checks the same content twice. Only a page at its own Pages address (`library/<slug>/`) is checked; a piece
   elsewhere (claude.ai, SharePoint) reads Not yet certified until it has a Pages copy.
 - DECIDED (S688, `d-library-run-lists-by-guarded-update-s688`): the run lists a passing piece whose `publish_target` is
   `public` by writing the columns `cpl_library_set_public()` writes, as the service role (the guard trigger admits it),

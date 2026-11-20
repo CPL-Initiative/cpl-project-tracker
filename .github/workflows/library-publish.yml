@@ -112,17 +112,19 @@ jobs:
           bash scripts/install_browser.sh node
 
       # Runs whenever the plan ran: with nothing to check it still rewrites each page's footer line from its latest
-      # check, so the line follows the record.
-      - name: Check, list on a pass, and write the footers
+      # check, so the line follows the page. It lists nothing: a listed piece whose page changed comes off first, and
+      # the passing pieces waiting to be listed are named in check.json for the listing step below.
+      - name: Check and write the footers
+        id: check
         if: ${{ !cancelled() && steps.plan.outcome == 'success' }}
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python3 scripts/library_check.py --check --plan-file check_plan.json | tee check.json
         shell: bash -o pipefail {0}
 
-      # It commits only what the receipt proves: --check writes the receipt as soon as the rows are in, rewrites every
-      # line from the rows written before any listing, and on an engine or insert failure puts every page back and
-      # removes its reports. So it runs though the check step failed on a listing, and the receipt rides with the lines.
+      # It commits only what the receipt proves: --check writes the receipt as soon as the rows are in (and before any
+      # unlisting), rewrites every line from the rows written, and on an engine or insert failure puts every page back
+      # and removes its reports. So it runs though the check step went red, and the receipt rides with the lines.
       - name: Commit and push the checks
         id: checkpush
         if: ${{ !cancelled() && steps.plan.outcome == 'success' }}
@@ -155,3 +157,31 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run pages.yml --ref main
+
+      # List on a pass, only once the commit carrying each piece's report and line is on main: a listing never
+      # precedes the push of its own report. It reads the waiting passes from check.json.
+      - name: List on a pass
+        id: list
+        if: ${{ !cancelled() && steps.checkpush.outcome == 'success' }}
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 scripts/library_check.py --list --check-file check.json | tee list.json
+        shell: bash -o pipefail {0}
+
+      # The listing receipt (each listing's before-values, written before its update) rides its own commit.
+      - name: Commit and push the listing receipt
+        if: ${{ !cancelled() && steps.list.outcome != 'skipped' }}
+        run: |
+          git add kb/receipts/library_checks/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing listed."
+            exit 0
+          fi
+          git commit -m "Library: listing receipt ($(python3 -c "import json;print(', '.join(json.load(open('list.json')).get('listed') or []) or 'no listing')" 2>/dev/null || echo 'see the run'))"
+          pushed=0
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then pushed=1; break; fi
+            git fetch origin main && git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((i * 5))
+          done
+          [ "$pushed" = 1 ] || { echo "::error::Three pushes to main failed; the listing receipt is in this run's log (list.json) only."; exit 1; }
