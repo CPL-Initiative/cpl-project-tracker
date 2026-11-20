@@ -1,0 +1,9614 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "mtsac",
+ "load_run": "44729553938",
+ "reads": [
+  "kb/course_outcomes/mtsac/read_44710704435_p1of5.json",
+  "kb/course_outcomes/mtsac/read_44710704435_p2of5.json",
+  "kb/course_outcomes/mtsac/read_44710704435_p3of5.json",
+  "kb/course_outcomes/mtsac/read_44710704435_p4of5.json",
+  "kb/course_outcomes/mtsac/read_44710704435_p5of5.json"
+ ],
+ "kind": "all",
+ "held_back": 0,
+ "posted": 1073,
+ "inserted": 1073,
+ "kept": 0,
+ "skipped": 630,
+ "skipped_rows": [
+  {
+   "course_code": "AABS 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ADJU 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGAG 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGHE 90D",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 24",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 39",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 53",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 82",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 02",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 32",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AMLA 93",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 314",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 5H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AR 121",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTC 230",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTD 26B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 11H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 6",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH C1100",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 70",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 76",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 59",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 74",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 97",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BA 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BA 76",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 52",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 66",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BS 36",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSA 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSM 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSR 52",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSS 34",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CC 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CI 11L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CISN 34",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CISP 61L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CMGT 140",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 52",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 64",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 26H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CPBC 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSB 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSB 51",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CUL 125",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "DNCE 31",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON C2001H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EDT 89",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 54A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENG 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESD 03",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESD 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EST 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EST 64",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FDB 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 25",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 66",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOL 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HBB 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 10H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST C1002H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTH 06",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 308",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 390",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 440",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ID 68",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INMA 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN 86",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINF 20A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINF 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINI 34B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINI 50C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINS 11A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINS 16B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIBT 110",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LING 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LRN 01",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LVL 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 120",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 180",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 261B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 45B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 207",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHIL 16H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHLB 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHO 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 17",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHSC 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PUBH 27",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SIGN 247",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPAN 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPNS 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "THTR 26",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 01",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 09",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 11B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 19A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 23",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 32",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 42",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 100",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 124",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 70B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 90B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WF 104",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WL 70A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WRIT 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ABE 01",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ADJU 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ADJU 59",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AERO 170",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 29",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 40",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 73",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 83",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 25",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AIRC 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 17",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 316",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 6",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AR 122",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTC 90",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTG 23",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 6H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH C1100H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 17",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 71",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 97",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 17",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 2L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 70",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 76",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BA 68",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BCPP 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 53",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BO 25",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BS 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSA 75",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSM 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSM 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSR 68",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSS 35",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CC 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CIO 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CMGT 150",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 66",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CPBE 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSB 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSE 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON C2002",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 50A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 54B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 74",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENG 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 8B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGR 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESD 07",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESD 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EST 52",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ET 90A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 17",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 57",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GD 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOG 13",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOL 31",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HBB 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HT 25",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTH 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 312",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 404",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ID 58",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINF 20B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINS 11B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINS 22A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIBT 111",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LING 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIT 11A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIT 46",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LRN 06",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LVL 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 130",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 181",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MF 140",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 181",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 31B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 51",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 55",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 70",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NF 28L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 113",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 210",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHIL 312",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHO 09",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHO 18",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 18",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHSC 9",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYC 14H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYC 1BH",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PTEC 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PUBH 23",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SIGN 214",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SIGN 259",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC 160",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPAN 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPAN 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPNS 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 02",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 14",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 19B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 24",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 35",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 96A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 101",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 130",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 51",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 70C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WF 105",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WL 70B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WRTP 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ABE 02",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AD 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ADJU 38",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ADJU 6",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AERO 180",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGHE 90A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 13",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 5",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 63",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 75",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 90",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 26",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 64",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AIRC 52",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AIRC 95",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "APIS 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTC 286",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTD 19A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTD 42A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTG 24",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 12H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 16H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 7",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH C1200",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 18",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 18",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 71",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 94",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASVB 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BA 70",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BCPP 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BO 26",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSA 7",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSM 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSS 36",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CIO 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CISW 21",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CMGT 160",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNSL 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 56",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CPBE 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSB 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSE 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON C2002H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 50B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 55",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 76",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENG 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 8E",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGT 10A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESD 08",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESL 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EST 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FCS 70",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 08",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 21",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 59",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GD 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOG 14",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOL 32",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HCM 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 11H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST C1001",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTH 01",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 300",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 320",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 406",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINF 20C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINI 41A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINS 22B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINS 26B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINX 89",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LATN 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIBT 100",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIBT 112",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LING 5",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIT 11B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIT 47",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LRN 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LVL 5",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 140",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MF 150",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 161A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 172J",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 185",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 33",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 51B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 56",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 100",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 114",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 211",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHO 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHO 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 46",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PTEC 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SIGN 206",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SIGN 251",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC 40H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPKP 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ST 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 03",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 100",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 25",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 36",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 96B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 132",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 53A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 80",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WF 101",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WF 87",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WL 70C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ZOOL 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ABE 05",
+   "status": null,
+   "shape": "none"
+  },
+  {
+   "course_code": "AD 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AERO 190",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGHE 90B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 32",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 64",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 80",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 27",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AHIS 7",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AIRC 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ALG 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AR 101",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTC 210",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTD 25B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTG 21",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 13",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 8",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH C1200H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 02",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 73",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 19",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 34",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 96",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASVB 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BA 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BS 33",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSA 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSA 70",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSM 51",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSM 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSS 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CISN 31",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CISW 21L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CMGT 121",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNSL 5",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 20H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 300",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 7H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CPBC 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CPBE 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSB 21",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSN 71",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON 17",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 51",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 56",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EMT 90",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 1B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 8F",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1002",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGR 40T",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGR 50B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGT 10B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESD 09",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EST 56",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 23",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOG 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOL 33",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GERM 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST C1001H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HRM 53",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTH 04",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 301",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 322",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 410",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ID 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INMA 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ITAL 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINA 22A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINI 41B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINS 12B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LANG 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIBT 101",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LING 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LING 6",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIT 14",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LVL 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LVL 6",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 150",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 280",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MF 155",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 161B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 173",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 207",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 29B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 44B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 52",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 57",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NF 81",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 101",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 115",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 212",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PH 11A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHIL 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHO 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 68",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHYS 6A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PLGL 49",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYC 17",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PTEC 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PUBH 25",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PUBH 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SIGN 208",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC 300",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPAN 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPN 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ST 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SURV 1C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "THTR 31",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TRAD 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 05",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 101",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 17",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 21",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 28",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 41A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 96C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 120",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 134",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 81",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WF 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WL 40",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WLD 01",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AD 85",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ADJU 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AERO 98",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGHE 90C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 35",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 51",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 71",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGOR 81",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 01",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AGR 29",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ALG 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANIM 167",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AR 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTC 298",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTD 26A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 14",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 3H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH 9",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 14",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 34",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASC 74",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 14",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 51",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 73",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASCI 96L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BA 07",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BA 75",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 51",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BM 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BS 34",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSM 52",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUSM 66",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CC 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CI 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CISP 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CMGT 130",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 30H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CPBC 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CS 41",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CSB 31",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CUL 121",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON C2001",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 53",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EL 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENG 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 1BH",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1002H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGR 1D",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESD 02",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESD 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESL 81",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "EST 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 24",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FSH 63",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOG 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOG 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GVRP 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST C1002",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTH 05",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 302",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 330",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HTL 432",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ID 62",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "INMA 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "JAPN 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN 65",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINI 34",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINI 47",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KINS 16A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LANG 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LCAS 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LIBT 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LING 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LVL 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 100",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 160",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 285",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MF 160",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MR 01",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 173J",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 261A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 49B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 53",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NF 82",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 102",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NURS 206",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PH 11B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHIL 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHLB 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHO 14",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 11A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHOT 28",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHYS 6B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PLGL 42",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PLVL 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPAN 53",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPN 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TCH 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TRAD 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 06",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 11A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 18",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 22",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 29",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 41B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "TV 99",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VN 122",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 70A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WELD 90A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WF 103",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WL 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WRIT 1",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 40696,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 10"
+  },
+  {
+   "id": 40697,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 3"
+  },
+  {
+   "id": 40698,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 9"
+  },
+  {
+   "id": 40699,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ADJU 50"
+  },
+  {
+   "id": 40700,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 100"
+  },
+  {
+   "id": 40701,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 160"
+  },
+  {
+   "id": 40702,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 202"
+  },
+  {
+   "id": 40703,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 62B"
+  },
+  {
+   "id": 40704,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 85"
+  },
+  {
+   "id": 40705,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 12H"
+  },
+  {
+   "id": 40706,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 4"
+  },
+  {
+   "id": 40707,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 9"
+  },
+  {
+   "id": 40708,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 25"
+  },
+  {
+   "id": 40709,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 34"
+  },
+  {
+   "id": 40710,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 65"
+  },
+  {
+   "id": 40711,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 66A"
+  },
+  {
+   "id": 40712,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 72"
+  },
+  {
+   "id": 40713,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 91A"
+  },
+  {
+   "id": 40714,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 93B"
+  },
+  {
+   "id": 40715,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 97A"
+  },
+  {
+   "id": 40716,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRT 201"
+  },
+  {
+   "id": 40717,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 1A"
+  },
+  {
+   "id": 40718,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 83"
+  },
+  {
+   "id": 40719,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANAT 35"
+  },
+  {
+   "id": 40720,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 100"
+  },
+  {
+   "id": 40721,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 107"
+  },
+  {
+   "id": 40722,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 122"
+  },
+  {
+   "id": 40723,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 141"
+  },
+  {
+   "id": 40724,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 172"
+  },
+  {
+   "id": 40725,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 102"
+  },
+  {
+   "id": 40726,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 145"
+  },
+  {
+   "id": 40727,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 202"
+  },
+  {
+   "id": 40728,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 280"
+  },
+  {
+   "id": 40729,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 120"
+  },
+  {
+   "id": 40730,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 167"
+  },
+  {
+   "id": 40731,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 299"
+  },
+  {
+   "id": 40732,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 17A"
+  },
+  {
+   "id": 40733,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 23A"
+  },
+  {
+   "id": 40734,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 44A"
+  },
+  {
+   "id": 40735,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 48A"
+  },
+  {
+   "id": 40736,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTG 22A"
+  },
+  {
+   "id": 40737,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 30A"
+  },
+  {
+   "id": 40738,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 40A"
+  },
+  {
+   "id": 40739,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 42"
+  },
+  {
+   "id": 40740,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ASTR 7"
+  },
+  {
+   "id": 40741,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 15"
+  },
+  {
+   "id": 40742,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 21"
+  },
+  {
+   "id": 40743,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 4"
+  },
+  {
+   "id": 40744,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 8"
+  },
+  {
+   "id": 40745,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 52"
+  },
+  {
+   "id": 40746,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 63"
+  },
+  {
+   "id": 40747,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSC 1AH"
+  },
+  {
+   "id": 40748,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSM 53"
+  },
+  {
+   "id": 40749,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSO 25"
+  },
+  {
+   "id": 40750,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 62"
+  },
+  {
+   "id": 40751,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 50"
+  },
+  {
+   "id": 40752,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 80"
+  },
+  {
+   "id": 40753,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHIN 3"
+  },
+  {
+   "id": 40754,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 11"
+  },
+  {
+   "id": 40755,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 61"
+  },
+  {
+   "id": 40756,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 66L"
+  },
+  {
+   "id": 40757,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 71A"
+  },
+  {
+   "id": 40758,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 75"
+  },
+  {
+   "id": 40759,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 85"
+  },
+  {
+   "id": 40760,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 15"
+  },
+  {
+   "id": 40761,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 60"
+  },
+  {
+   "id": 40762,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 21L"
+  },
+  {
+   "id": 40763,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 42"
+  },
+  {
+   "id": 40764,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 21"
+  },
+  {
+   "id": 40765,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 72A"
+  },
+  {
+   "id": 40766,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 21L"
+  },
+  {
+   "id": 40767,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 34"
+  },
+  {
+   "id": 40768,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 11"
+  },
+  {
+   "id": 40769,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 23"
+  },
+  {
+   "id": 40770,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 29"
+  },
+  {
+   "id": 40771,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISW 24L"
+  },
+  {
+   "id": 40772,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 54"
+  },
+  {
+   "id": 40773,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 64"
+  },
+  {
+   "id": 40774,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 18"
+  },
+  {
+   "id": 40775,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 4"
+  },
+  {
+   "id": 40776,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 8H"
+  },
+  {
+   "id": 40777,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COUN 1"
+  },
+  {
+   "id": 40778,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CSCI 190"
+  },
+  {
+   "id": 40779,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 102"
+  },
+  {
+   "id": 40780,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 107"
+  },
+  {
+   "id": 40781,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 114"
+  },
+  {
+   "id": 40782,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 11B"
+  },
+  {
+   "id": 40783,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 14B"
+  },
+  {
+   "id": 40784,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 19"
+  },
+  {
+   "id": 40785,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 29"
+  },
+  {
+   "id": 40786,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 36"
+  },
+  {
+   "id": 40787,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 42"
+  },
+  {
+   "id": 40788,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ECT 26"
+  },
+  {
+   "id": 40789,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 12"
+  },
+  {
+   "id": 40790,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 54A"
+  },
+  {
+   "id": 40791,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 62"
+  },
+  {
+   "id": 40792,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "EMS 50"
+  },
+  {
+   "id": 40793,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGL 8A"
+  },
+  {
+   "id": 40794,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGL C1000H"
+  },
+  {
+   "id": 40795,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 1"
+  },
+  {
+   "id": 40796,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 24"
+  },
+  {
+   "id": 40797,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 42"
+  },
+  {
+   "id": 40798,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 7"
+  },
+  {
+   "id": 40799,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 14"
+  },
+  {
+   "id": 40800,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 23"
+  },
+  {
+   "id": 40801,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 62"
+  },
+  {
+   "id": 40802,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FCS 51"
+  },
+  {
+   "id": 40803,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 13"
+  },
+  {
+   "id": 40804,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 6"
+  },
+  {
+   "id": 40805,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FRCH 1"
+  },
+  {
+   "id": 40806,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FRCH 54"
+  },
+  {
+   "id": 40807,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 12"
+  },
+  {
+   "id": 40808,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 1H"
+  },
+  {
+   "id": 40809,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 30"
+  },
+  {
+   "id": 40810,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 10"
+  },
+  {
+   "id": 40811,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 8"
+  },
+  {
+   "id": 40812,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GERM 1"
+  },
+  {
+   "id": 40813,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 19"
+  },
+  {
+   "id": 40814,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 36"
+  },
+  {
+   "id": 40815,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 44"
+  },
+  {
+   "id": 40816,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 8H"
+  },
+  {
+   "id": 40817,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 57"
+  },
+  {
+   "id": 40818,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 66"
+  },
+  {
+   "id": 40819,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HT 10"
+  },
+  {
+   "id": 40820,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HT 2"
+  },
+  {
+   "id": 40821,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 12"
+  },
+  {
+   "id": 40822,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 23"
+  },
+  {
+   "id": 40823,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 31"
+  },
+  {
+   "id": 40824,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 39"
+  },
+  {
+   "id": 40825,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 56"
+  },
+  {
+   "id": 40826,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 150"
+  },
+  {
+   "id": 40827,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 230"
+  },
+  {
+   "id": 40828,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ITAL 53"
+  },
+  {
+   "id": 40829,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JAPN 2"
+  },
+  {
+   "id": 40830,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JAPN 53"
+  },
+  {
+   "id": 40831,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 106"
+  },
+  {
+   "id": 40832,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 115"
+  },
+  {
+   "id": 40833,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 24"
+  },
+  {
+   "id": 40834,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 40"
+  },
+  {
+   "id": 40835,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINA 8B"
+  },
+  {
+   "id": 40836,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 34B"
+  },
+  {
+   "id": 40837,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 51A"
+  },
+  {
+   "id": 40838,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 27A"
+  },
+  {
+   "id": 40839,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 31A"
+  },
+  {
+   "id": 40840,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 40B"
+  },
+  {
+   "id": 40841,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 4A"
+  },
+  {
+   "id": 40842,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 24C"
+  },
+  {
+   "id": 40843,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINX 19"
+  },
+  {
+   "id": 40844,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KORE 3"
+  },
+  {
+   "id": 40845,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LATN 1"
+  },
+  {
+   "id": 40846,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIBR 1"
+  },
+  {
+   "id": 40847,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 10"
+  },
+  {
+   "id": 40848,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 2"
+  },
+  {
+   "id": 40849,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 40"
+  },
+  {
+   "id": 40850,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MATH 290"
+  },
+  {
+   "id": 40851,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 58D"
+  },
+  {
+   "id": 40852,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 72L"
+  },
+  {
+   "id": 40853,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "METO 3L"
+  },
+  {
+   "id": 40854,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 110"
+  },
+  {
+   "id": 40855,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 155"
+  },
+  {
+   "id": 40856,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 260"
+  },
+  {
+   "id": 40857,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 100"
+  },
+  {
+   "id": 40858,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 103H"
+  },
+  {
+   "id": 40859,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 120"
+  },
+  {
+   "id": 40860,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 145"
+  },
+  {
+   "id": 40861,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 15H"
+  },
+  {
+   "id": 40862,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 171"
+  },
+  {
+   "id": 40863,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 180"
+  },
+  {
+   "id": 40864,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 31"
+  },
+  {
+   "id": 40865,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 38"
+  },
+  {
+   "id": 40866,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 50"
+  },
+  {
+   "id": 40867,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 130"
+  },
+  {
+   "id": 40868,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 220"
+  },
+  {
+   "id": 40869,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 10"
+  },
+  {
+   "id": 40870,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 28"
+  },
+  {
+   "id": 40871,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 83"
+  },
+  {
+   "id": 40872,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NURS 11"
+  },
+  {
+   "id": 40873,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "OCEA 10H"
+  },
+  {
+   "id": 40874,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 12"
+  },
+  {
+   "id": 40875,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 3"
+  },
+  {
+   "id": 40876,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 5H"
+  },
+  {
+   "id": 40877,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 11B"
+  },
+  {
+   "id": 40878,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 1D"
+  },
+  {
+   "id": 40879,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 29"
+  },
+  {
+   "id": 40880,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 55"
+  },
+  {
+   "id": 40881,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHYS 4A"
+  },
+  {
+   "id": 40882,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 100"
+  },
+  {
+   "id": 40883,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 31"
+  },
+  {
+   "id": 40884,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 37"
+  },
+  {
+   "id": 40885,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 43"
+  },
+  {
+   "id": 40886,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS 10"
+  },
+  {
+   "id": 40887,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS 7"
+  },
+  {
+   "id": 40888,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 14"
+  },
+  {
+   "id": 40889,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 1B"
+  },
+  {
+   "id": 40890,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 3"
+  },
+  {
+   "id": 40891,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC C1000H"
+  },
+  {
+   "id": 40892,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PUBH 22"
+  },
+  {
+   "id": 40893,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 1B"
+  },
+  {
+   "id": 40894,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 32"
+  },
+  {
+   "id": 40895,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 4"
+  },
+  {
+   "id": 40896,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 62A"
+  },
+  {
+   "id": 40897,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 70"
+  },
+  {
+   "id": 40898,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 91"
+  },
+  {
+   "id": 40899,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 108"
+  },
+  {
+   "id": 40900,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 200A"
+  },
+  {
+   "id": 40901,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 204"
+  },
+  {
+   "id": 40902,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 102"
+  },
+  {
+   "id": 40903,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 201"
+  },
+  {
+   "id": 40904,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 213"
+  },
+  {
+   "id": 40905,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 232"
+  },
+  {
+   "id": 40906,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 257"
+  },
+  {
+   "id": 40907,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 110"
+  },
+  {
+   "id": 40908,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 15"
+  },
+  {
+   "id": 40909,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 20H"
+  },
+  {
+   "id": 40910,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 4"
+  },
+  {
+   "id": 40911,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 7"
+  },
+  {
+   "id": 40912,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SPAN 3"
+  },
+  {
+   "id": 40913,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "STAT C1000H"
+  },
+  {
+   "id": 40914,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "TECH 60"
+  },
+  {
+   "id": 40915,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 14"
+  },
+  {
+   "id": 40916,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 19"
+  },
+  {
+   "id": 40917,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 60B"
+  },
+  {
+   "id": 40918,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "WELD 50"
+  },
+  {
+   "id": 40919,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 11"
+  },
+  {
+   "id": 40920,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 4"
+  },
+  {
+   "id": 40921,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ADJU 3"
+  },
+  {
+   "id": 40922,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 102"
+  },
+  {
+   "id": 40923,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 210"
+  },
+  {
+   "id": 40924,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 54"
+  },
+  {
+   "id": 40925,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 64"
+  },
+  {
+   "id": 40926,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 86"
+  },
+  {
+   "id": 40927,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 13"
+  },
+  {
+   "id": 40928,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 5"
+  },
+  {
+   "id": 40929,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 10"
+  },
+  {
+   "id": 40930,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 26"
+  },
+  {
+   "id": 40931,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 67"
+  },
+  {
+   "id": 40932,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 66B"
+  },
+  {
+   "id": 40933,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 74"
+  },
+  {
+   "id": 40934,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 91B"
+  },
+  {
+   "id": 40935,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 95A"
+  },
+  {
+   "id": 40936,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 97B"
+  },
+  {
+   "id": 40937,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRT 203"
+  },
+  {
+   "id": 40938,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 72"
+  },
+  {
+   "id": 40939,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 87"
+  },
+  {
+   "id": 40940,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 97"
+  },
+  {
+   "id": 40941,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANAT 36"
+  },
+  {
+   "id": 40942,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 101A"
+  },
+  {
+   "id": 40943,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 108"
+  },
+  {
+   "id": 40944,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 130"
+  },
+  {
+   "id": 40945,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 146"
+  },
+  {
+   "id": 40946,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 175"
+  },
+  {
+   "id": 40947,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 121"
+  },
+  {
+   "id": 40948,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 146"
+  },
+  {
+   "id": 40949,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 221"
+  },
+  {
+   "id": 40950,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 140"
+  },
+  {
+   "id": 40951,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 169"
+  },
+  {
+   "id": 40952,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 272"
+  },
+  {
+   "id": 40953,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 17B"
+  },
+  {
+   "id": 40954,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 23B"
+  },
+  {
+   "id": 40955,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 27"
+  },
+  {
+   "id": 40956,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 45A"
+  },
+  {
+   "id": 40957,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 75"
+  },
+  {
+   "id": 40958,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 30B"
+  },
+  {
+   "id": 40959,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 40B"
+  },
+  {
+   "id": 40960,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 46A"
+  },
+  {
+   "id": 40961,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ASTR 11"
+  },
+  {
+   "id": 40962,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ASTR 8"
+  },
+  {
+   "id": 40963,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 15H"
+  },
+  {
+   "id": 40964,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 25"
+  },
+  {
+   "id": 40965,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 4H"
+  },
+  {
+   "id": 40966,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 52B"
+  },
+  {
+   "id": 40967,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 64"
+  },
+  {
+   "id": 40968,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSC 1B"
+  },
+  {
+   "id": 40969,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSO 26"
+  },
+  {
+   "id": 40970,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 53"
+  },
+  {
+   "id": 40971,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 50H"
+  },
+  {
+   "id": 40972,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 81"
+  },
+  {
+   "id": 40973,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHIN 4"
+  },
+  {
+   "id": 40974,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 5"
+  },
+  {
+   "id": 40975,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 62"
+  },
+  {
+   "id": 40976,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 67"
+  },
+  {
+   "id": 40977,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 71B"
+  },
+  {
+   "id": 40978,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 79"
+  },
+  {
+   "id": 40979,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 86"
+  },
+  {
+   "id": 40980,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 16"
+  },
+  {
+   "id": 40981,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 63"
+  },
+  {
+   "id": 40982,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 31"
+  },
+  {
+   "id": 40983,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 43"
+  },
+  {
+   "id": 40984,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 24"
+  },
+  {
+   "id": 40985,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 34L"
+  },
+  {
+   "id": 40986,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 73A"
+  },
+  {
+   "id": 40987,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 24"
+  },
+  {
+   "id": 40988,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 34L"
+  },
+  {
+   "id": 40989,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 71"
+  },
+  {
+   "id": 40990,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 13"
+  },
+  {
+   "id": 40991,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 23L"
+  },
+  {
+   "id": 40992,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISW 17"
+  },
+  {
+   "id": 40993,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISW 31"
+  },
+  {
+   "id": 40994,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 56"
+  },
+  {
+   "id": 40995,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 66"
+  },
+  {
+   "id": 40996,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 2"
+  },
+  {
+   "id": 40997,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 3"
+  },
+  {
+   "id": 40998,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 6"
+  },
+  {
+   "id": 40999,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 9"
+  },
+  {
+   "id": 41000,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COUN 2"
+  },
+  {
+   "id": 41001,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CSCI 110"
+  },
+  {
+   "id": 41002,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 103"
+  },
+  {
+   "id": 41003,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 108"
+  },
+  {
+   "id": 41004,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 115"
+  },
+  {
+   "id": 41005,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 91"
+  },
+  {
+   "id": 41006,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 12A"
+  },
+  {
+   "id": 41007,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 15"
+  },
+  {
+   "id": 41008,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 22"
+  },
+  {
+   "id": 41009,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 2A"
+  },
+  {
+   "id": 41010,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 32"
+  },
+  {
+   "id": 41011,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 39"
+  },
+  {
+   "id": 41012,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 43"
+  },
+  {
+   "id": 41013,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ECT 67"
+  },
+  {
+   "id": 41014,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "EDUC 10"
+  },
+  {
+   "id": 41015,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 50A"
+  },
+  {
+   "id": 41016,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 54B"
+  },
+  {
+   "id": 41017,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 74"
+  },
+  {
+   "id": 41018,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "EMS 70"
+  },
+  {
+   "id": 41019,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 41020,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 285"
+  },
+  {
+   "id": 41021,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 44"
+  },
+  {
+   "id": 41022,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 8"
+  },
+  {
+   "id": 41023,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 16"
+  },
+  {
+   "id": 41024,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 24"
+  },
+  {
+   "id": 41025,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 63"
+  },
+  {
+   "id": 41026,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FCS 61"
+  },
+  {
+   "id": 41027,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 1"
+  },
+  {
+   "id": 41028,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 2"
+  },
+  {
+   "id": 41029,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 7"
+  },
+  {
+   "id": 41030,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FRCH 2"
+  },
+  {
+   "id": 41031,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FRCH 60"
+  },
+  {
+   "id": 41032,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 1L"
+  },
+  {
+   "id": 41033,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 5"
+  },
+  {
+   "id": 41034,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 2"
+  },
+  {
+   "id": 41035,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 8H"
+  },
+  {
+   "id": 41036,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GERM 2"
+  },
+  {
+   "id": 41037,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 11"
+  },
+  {
+   "id": 41038,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 3"
+  },
+  {
+   "id": 41039,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 39"
+  },
+  {
+   "id": 41040,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 4H"
+  },
+  {
+   "id": 41041,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 9"
+  },
+  {
+   "id": 41042,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 51"
+  },
+  {
+   "id": 41043,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 59"
+  },
+  {
+   "id": 41044,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 70"
+  },
+  {
+   "id": 41045,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HT 12"
+  },
+  {
+   "id": 41046,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HUMA 1"
+  },
+  {
+   "id": 41047,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 14"
+  },
+  {
+   "id": 41048,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 25"
+  },
+  {
+   "id": 41049,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 32"
+  },
+  {
+   "id": 41050,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 40"
+  },
+  {
+   "id": 41051,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 99"
+  },
+  {
+   "id": 41052,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 160"
+  },
+  {
+   "id": 41053,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 250"
+  },
+  {
+   "id": 41054,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ITAL 1"
+  },
+  {
+   "id": 41055,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ITAL 54"
+  },
+  {
+   "id": 41056,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JAPN 3"
+  },
+  {
+   "id": 41057,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JAPN 62"
+  },
+  {
+   "id": 41058,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 107"
+  },
+  {
+   "id": 41059,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 116"
+  },
+  {
+   "id": 41060,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 3"
+  },
+  {
+   "id": 41061,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 44"
+  },
+  {
+   "id": 41062,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINA 14"
+  },
+  {
+   "id": 41063,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINA 8C"
+  },
+  {
+   "id": 41064,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 36A"
+  },
+  {
+   "id": 41065,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 51B"
+  },
+  {
+   "id": 41066,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 18A"
+  },
+  {
+   "id": 41067,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 27B"
+  },
+  {
+   "id": 41068,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 31B"
+  },
+  {
+   "id": 41069,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 37A"
+  },
+  {
+   "id": 41070,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 40C"
+  },
+  {
+   "id": 41071,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 4B"
+  },
+  {
+   "id": 41072,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINL 18"
+  },
+  {
+   "id": 41073,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 26A"
+  },
+  {
+   "id": 41074,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINX 88"
+  },
+  {
+   "id": 41075,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KORE 4"
+  },
+  {
+   "id": 41076,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LATN 1H"
+  },
+  {
+   "id": 41077,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIBR 1A"
+  },
+  {
+   "id": 41078,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 20"
+  },
+  {
+   "id": 41079,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MEDI 90"
+  },
+  {
+   "id": 41080,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 58L"
+  },
+  {
+   "id": 41081,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 73L"
+  },
+  {
+   "id": 41082,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 120"
+  },
+  {
+   "id": 41083,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 160"
+  },
+  {
+   "id": 41084,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MICR 1"
+  },
+  {
+   "id": 41085,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 100H"
+  },
+  {
+   "id": 41086,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 105"
+  },
+  {
+   "id": 41087,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 125"
+  },
+  {
+   "id": 41088,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 14A"
+  },
+  {
+   "id": 41089,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 160"
+  },
+  {
+   "id": 41090,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 172"
+  },
+  {
+   "id": 41091,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 27"
+  },
+  {
+   "id": 41092,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 39"
+  },
+  {
+   "id": 41093,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 47"
+  },
+  {
+   "id": 41094,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 150"
+  },
+  {
+   "id": 41095,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 230"
+  },
+  {
+   "id": 41096,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 12"
+  },
+  {
+   "id": 41097,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 91"
+  },
+  {
+   "id": 41098,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "OCEA 10L"
+  },
+  {
+   "id": 41099,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 12H"
+  },
+  {
+   "id": 41100,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 20A"
+  },
+  {
+   "id": 41101,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 8"
+  },
+  {
+   "id": 41102,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 56"
+  },
+  {
+   "id": 41103,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHYS 4B"
+  },
+  {
+   "id": 41104,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 101"
+  },
+  {
+   "id": 41105,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 32"
+  },
+  {
+   "id": 41106,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 38"
+  },
+  {
+   "id": 41107,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 44"
+  },
+  {
+   "id": 41108,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS 2"
+  },
+  {
+   "id": 41109,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS 9"
+  },
+  {
+   "id": 41110,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 33"
+  },
+  {
+   "id": 41111,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PUBH 28"
+  },
+  {
+   "id": 41112,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 2A"
+  },
+  {
+   "id": 41113,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 33"
+  },
+  {
+   "id": 41114,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 50"
+  },
+  {
+   "id": 41115,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 62B"
+  },
+  {
+   "id": 41116,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 71"
+  },
+  {
+   "id": 41117,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "READ 100"
+  },
+  {
+   "id": 41118,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 110"
+  },
+  {
+   "id": 41119,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 200B"
+  },
+  {
+   "id": 41120,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 206"
+  },
+  {
+   "id": 41121,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 103"
+  },
+  {
+   "id": 41122,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 202"
+  },
+  {
+   "id": 41123,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 239"
+  },
+  {
+   "id": 41124,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 249"
+  },
+  {
+   "id": 41125,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 12"
+  },
+  {
+   "id": 41126,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 23"
+  },
+  {
+   "id": 41127,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 40"
+  },
+  {
+   "id": 41128,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SPAN 1"
+  },
+  {
+   "id": 41129,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SURV 1A"
+  },
+  {
+   "id": 41130,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 10"
+  },
+  {
+   "id": 41131,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 15"
+  },
+  {
+   "id": 41132,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 20"
+  },
+  {
+   "id": 41133,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 27"
+  },
+  {
+   "id": 41134,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 60C"
+  },
+  {
+   "id": 41135,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "WELD 91"
+  },
+  {
+   "id": 41136,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 6"
+  },
+  {
+   "id": 41137,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ADJU 10"
+  },
+  {
+   "id": 41138,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 104"
+  },
+  {
+   "id": 41139,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 250"
+  },
+  {
+   "id": 41140,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 60"
+  },
+  {
+   "id": 41141,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 65"
+  },
+  {
+   "id": 41142,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 14"
+  },
+  {
+   "id": 41143,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 6"
+  },
+  {
+   "id": 41144,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 11"
+  },
+  {
+   "id": 41145,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 30"
+  },
+  {
+   "id": 41146,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 70A"
+  },
+  {
+   "id": 41147,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 80"
+  },
+  {
+   "id": 41148,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 92A"
+  },
+  {
+   "id": 41149,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 95B"
+  },
+  {
+   "id": 41150,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 98A"
+  },
+  {
+   "id": 41151,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRT 251"
+  },
+  {
+   "id": 41152,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 80"
+  },
+  {
+   "id": 41153,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 90"
+  },
+  {
+   "id": 41154,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 98"
+  },
+  {
+   "id": 41155,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANAT 38"
+  },
+  {
+   "id": 41156,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 101B"
+  },
+  {
+   "id": 41157,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 110"
+  },
+  {
+   "id": 41158,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 131"
+  },
+  {
+   "id": 41159,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 148"
+  },
+  {
+   "id": 41160,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 210"
+  },
+  {
+   "id": 41161,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANTH 1H"
+  },
+  {
+   "id": 41162,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARAB 1"
+  },
+  {
+   "id": 41163,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 122"
+  },
+  {
+   "id": 41164,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 147"
+  },
+  {
+   "id": 41165,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 222"
+  },
+  {
+   "id": 41166,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 160"
+  },
+  {
+   "id": 41167,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 200"
+  },
+  {
+   "id": 41168,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 15A"
+  },
+  {
+   "id": 41169,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 25A"
+  },
+  {
+   "id": 41170,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 45B"
+  },
+  {
+   "id": 41171,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTG 20"
+  },
+  {
+   "id": 41172,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 31"
+  },
+  {
+   "id": 41173,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 40C"
+  },
+  {
+   "id": 41174,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 46B"
+  },
+  {
+   "id": 41175,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ASTR 5"
+  },
+  {
+   "id": 41176,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 17"
+  },
+  {
+   "id": 41177,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 3"
+  },
+  {
+   "id": 41178,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 5"
+  },
+  {
+   "id": 41179,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BTNY 3"
+  },
+  {
+   "id": 41180,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 58"
+  },
+  {
+   "id": 41181,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 76"
+  },
+  {
+   "id": 41182,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSC 1BH"
+  },
+  {
+   "id": 41183,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSM 50"
+  },
+  {
+   "id": 41184,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 40"
+  },
+  {
+   "id": 41185,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 55"
+  },
+  {
+   "id": 41186,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 76"
+  },
+  {
+   "id": 41187,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 10"
+  },
+  {
+   "id": 41188,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 51"
+  },
+  {
+   "id": 41189,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 9"
+  },
+  {
+   "id": 41190,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 1"
+  },
+  {
+   "id": 41191,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 50"
+  },
+  {
+   "id": 41192,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 63"
+  },
+  {
+   "id": 41193,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 67L"
+  },
+  {
+   "id": 41194,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 72"
+  },
+  {
+   "id": 41195,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 80"
+  },
+  {
+   "id": 41196,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 87"
+  },
+  {
+   "id": 41197,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 21"
+  },
+  {
+   "id": 41198,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 11"
+  },
+  {
+   "id": 41199,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 31L"
+  },
+  {
+   "id": 41200,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISM 11"
+  },
+  {
+   "id": 41201,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 24L"
+  },
+  {
+   "id": 41202,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 51"
+  },
+  {
+   "id": 41203,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 74A"
+  },
+  {
+   "id": 41204,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 24L"
+  },
+  {
+   "id": 41205,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 41"
+  },
+  {
+   "id": 41206,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 71L"
+  },
+  {
+   "id": 41207,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 15"
+  },
+  {
+   "id": 41208,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 25"
+  },
+  {
+   "id": 41209,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISW 31L"
+  },
+  {
+   "id": 41210,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 58"
+  },
+  {
+   "id": 41211,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 15"
+  },
+  {
+   "id": 41212,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 20"
+  },
+  {
+   "id": 41213,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 30"
+  },
+  {
+   "id": 41214,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 7"
+  },
+  {
+   "id": 41215,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 99"
+  },
+  {
+   "id": 41216,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COUN 5"
+  },
+  {
+   "id": 41217,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CSCI 140"
+  },
+  {
+   "id": 41218,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 104"
+  },
+  {
+   "id": 41219,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 111"
+  },
+  {
+   "id": 41220,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 117"
+  },
+  {
+   "id": 41221,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 1"
+  },
+  {
+   "id": 41222,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 12B"
+  },
+  {
+   "id": 41223,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 17"
+  },
+  {
+   "id": 41224,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 24"
+  },
+  {
+   "id": 41225,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 2B"
+  },
+  {
+   "id": 41226,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 33"
+  },
+  {
+   "id": 41227,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 4"
+  },
+  {
+   "id": 41228,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 8"
+  },
+  {
+   "id": 41229,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ECT 70"
+  },
+  {
+   "id": 41230,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "EDUC 16"
+  },
+  {
+   "id": 41231,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 50B"
+  },
+  {
+   "id": 41232,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 55"
+  },
+  {
+   "id": 41233,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 76"
+  },
+  {
+   "id": 41234,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "EMS 80"
+  },
+  {
+   "id": 41235,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGL C1001H"
+  },
+  {
+   "id": 41236,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 18"
+  },
+  {
+   "id": 41237,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 40"
+  },
+  {
+   "id": 41238,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 50A"
+  },
+  {
+   "id": 41239,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 17"
+  },
+  {
+   "id": 41240,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 25"
+  },
+  {
+   "id": 41241,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 8"
+  },
+  {
+   "id": 41242,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 10"
+  },
+  {
+   "id": 41243,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 3"
+  },
+  {
+   "id": 41244,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 8"
+  },
+  {
+   "id": 41245,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FRCH 3"
+  },
+  {
+   "id": 41246,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 1LH"
+  },
+  {
+   "id": 41247,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 8"
+  },
+  {
+   "id": 41248,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 24"
+  },
+  {
+   "id": 41249,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 8L"
+  },
+  {
+   "id": 41250,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GERM 3"
+  },
+  {
+   "id": 41251,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 30"
+  },
+  {
+   "id": 41252,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 3H"
+  },
+  {
+   "id": 41253,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 7"
+  },
+  {
+   "id": 41254,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 52"
+  },
+  {
+   "id": 41255,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 61"
+  },
+  {
+   "id": 41256,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 74"
+  },
+  {
+   "id": 41257,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HT 14"
+  },
+  {
+   "id": 41258,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HUMA 1H"
+  },
+  {
+   "id": 41259,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 20"
+  },
+  {
+   "id": 41260,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 26"
+  },
+  {
+   "id": 41261,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 34"
+  },
+  {
+   "id": 41262,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 41"
+  },
+  {
+   "id": 41263,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 59"
+  },
+  {
+   "id": 41264,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 110"
+  },
+  {
+   "id": 41265,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 170"
+  },
+  {
+   "id": 41266,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 270"
+  },
+  {
+   "id": 41267,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ITAL 2"
+  },
+  {
+   "id": 41268,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ITAL 60"
+  },
+  {
+   "id": 41269,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JAPN 4"
+  },
+  {
+   "id": 41270,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 100"
+  },
+  {
+   "id": 41271,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 108"
+  },
+  {
+   "id": 41272,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 13"
+  },
+  {
+   "id": 41273,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 34"
+  },
+  {
+   "id": 41274,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 5"
+  },
+  {
+   "id": 41275,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINA 20"
+  },
+  {
+   "id": 41276,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 10A"
+  },
+  {
+   "id": 41277,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 36B"
+  },
+  {
+   "id": 41278,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 52A"
+  },
+  {
+   "id": 41279,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 18B"
+  },
+  {
+   "id": 41280,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 29"
+  },
+  {
+   "id": 41281,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 33A"
+  },
+  {
+   "id": 41282,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 37B"
+  },
+  {
+   "id": 41283,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 4C"
+  },
+  {
+   "id": 41284,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINL 2"
+  },
+  {
+   "id": 41285,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 12A"
+  },
+  {
+   "id": 41286,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KORE 60"
+  },
+  {
+   "id": 41287,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 25"
+  },
+  {
+   "id": 41288,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MATH 260"
+  },
+  {
+   "id": 41289,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 40"
+  },
+  {
+   "id": 41290,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 70"
+  },
+  {
+   "id": 41291,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 73T"
+  },
+  {
+   "id": 41292,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 130"
+  },
+  {
+   "id": 41293,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 210"
+  },
+  {
+   "id": 41294,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MICR 22"
+  },
+  {
+   "id": 41295,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 101"
+  },
+  {
+   "id": 41296,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 106"
+  },
+  {
+   "id": 41297,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 130"
+  },
+  {
+   "id": 41298,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 14B"
+  },
+  {
+   "id": 41299,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 29"
+  },
+  {
+   "id": 41300,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 44"
+  },
+  {
+   "id": 41301,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 48"
+  },
+  {
+   "id": 41302,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 100"
+  },
+  {
+   "id": 41303,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 160"
+  },
+  {
+   "id": 41304,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 250"
+  },
+  {
+   "id": 41305,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 20"
+  },
+  {
+   "id": 41306,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 30"
+  },
+  {
+   "id": 41307,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "OCEA 20"
+  },
+  {
+   "id": 41308,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 15"
+  },
+  {
+   "id": 41309,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 20AH"
+  },
+  {
+   "id": 41310,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 3H"
+  },
+  {
+   "id": 41311,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 9"
+  },
+  {
+   "id": 41312,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 14"
+  },
+  {
+   "id": 41313,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 1A"
+  },
+  {
+   "id": 41314,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 24"
+  },
+  {
+   "id": 41315,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 58"
+  },
+  {
+   "id": 41316,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHYS 1"
+  },
+  {
+   "id": 41317,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHYS 4C"
+  },
+  {
+   "id": 41318,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 102"
+  },
+  {
+   "id": 41319,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 33"
+  },
+  {
+   "id": 41320,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 39"
+  },
+  {
+   "id": 41321,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 48"
+  },
+  {
+   "id": 41322,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS 25"
+  },
+  {
+   "id": 41323,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 41324,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 15"
+  },
+  {
+   "id": 41325,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 20"
+  },
+  {
+   "id": 41326,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 3H"
+  },
+  {
+   "id": 41327,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PUBH 24"
+  },
+  {
+   "id": 41328,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PUBH 29"
+  },
+  {
+   "id": 41329,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 2B"
+  },
+  {
+   "id": 41330,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 3A"
+  },
+  {
+   "id": 41331,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 61A"
+  },
+  {
+   "id": 41332,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 62C"
+  },
+  {
+   "id": 41333,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 72"
+  },
+  {
+   "id": 41334,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 102"
+  },
+  {
+   "id": 41335,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 112"
+  },
+  {
+   "id": 41336,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 200C"
+  },
+  {
+   "id": 41337,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 208"
+  },
+  {
+   "id": 41338,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 104"
+  },
+  {
+   "id": 41339,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 223"
+  },
+  {
+   "id": 41340,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 241"
+  },
+  {
+   "id": 41341,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 261"
+  },
+  {
+   "id": 41342,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 130"
+  },
+  {
+   "id": 41343,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 1H"
+  },
+  {
+   "id": 41344,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 2H"
+  },
+  {
+   "id": 41345,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SPAN 1S"
+  },
+  {
+   "id": 41346,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SPAN 4"
+  },
+  {
+   "id": 41347,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SURV 1B"
+  },
+  {
+   "id": 41348,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 11"
+  },
+  {
+   "id": 41349,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 16"
+  },
+  {
+   "id": 41350,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 21"
+  },
+  {
+   "id": 41351,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 28"
+  },
+  {
+   "id": 41352,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 9"
+  },
+  {
+   "id": 41353,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 8"
+  },
+  {
+   "id": 41354,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ADJU 13"
+  },
+  {
+   "id": 41355,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ADJU 4"
+  },
+  {
+   "id": 41356,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ADJU 68"
+  },
+  {
+   "id": 41357,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 150"
+  },
+  {
+   "id": 41358,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 252"
+  },
+  {
+   "id": 41359,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 61"
+  },
+  {
+   "id": 41360,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 79"
+  },
+  {
+   "id": 41361,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGOR 91"
+  },
+  {
+   "id": 41362,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 11"
+  },
+  {
+   "id": 41363,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 15"
+  },
+  {
+   "id": 41364,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 12"
+  },
+  {
+   "id": 41365,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 31"
+  },
+  {
+   "id": 41366,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 65A"
+  },
+  {
+   "id": 41367,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 70B"
+  },
+  {
+   "id": 41368,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 90A"
+  },
+  {
+   "id": 41369,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 92B"
+  },
+  {
+   "id": 41370,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 96A"
+  },
+  {
+   "id": 41371,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 98B"
+  },
+  {
+   "id": 41372,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 81"
+  },
+  {
+   "id": 41373,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 91"
+  },
+  {
+   "id": 41374,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANAT 10A"
+  },
+  {
+   "id": 41375,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANAT 40A"
+  },
+  {
+   "id": 41376,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 101C"
+  },
+  {
+   "id": 41377,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 115"
+  },
+  {
+   "id": 41378,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 132"
+  },
+  {
+   "id": 41379,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 151"
+  },
+  {
+   "id": 41380,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANTH 1"
+  },
+  {
+   "id": 41381,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANTH 1L"
+  },
+  {
+   "id": 41382,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANTH 5"
+  },
+  {
+   "id": 41383,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARAB 2"
+  },
+  {
+   "id": 41384,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 141"
+  },
+  {
+   "id": 41385,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 180"
+  },
+  {
+   "id": 41386,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 250"
+  },
+  {
+   "id": 41387,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTB 14"
+  },
+  {
+   "id": 41388,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 163"
+  },
+  {
+   "id": 41389,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 290"
+  },
+  {
+   "id": 41390,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 15B"
+  },
+  {
+   "id": 41391,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 20"
+  },
+  {
+   "id": 41392,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 43A"
+  },
+  {
+   "id": 41393,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 46A"
+  },
+  {
+   "id": 41394,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 33"
+  },
+  {
+   "id": 41395,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 41A"
+  },
+  {
+   "id": 41396,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ASTR 5H"
+  },
+  {
+   "id": 41397,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 1"
+  },
+  {
+   "id": 41398,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 2"
+  },
+  {
+   "id": 41399,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 34"
+  },
+  {
+   "id": 41400,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 6"
+  },
+  {
+   "id": 41401,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 61"
+  },
+  {
+   "id": 41402,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 8"
+  },
+  {
+   "id": 41403,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSL 18"
+  },
+  {
+   "id": 41404,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 50"
+  },
+  {
+   "id": 41405,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 59"
+  },
+  {
+   "id": 41406,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 81"
+  },
+  {
+   "id": 41407,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 20"
+  },
+  {
+   "id": 41408,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 51H"
+  },
+  {
+   "id": 41409,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHIN 1"
+  },
+  {
+   "id": 41410,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 10"
+  },
+  {
+   "id": 41411,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 51"
+  },
+  {
+   "id": 41412,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 64"
+  },
+  {
+   "id": 41413,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 68"
+  },
+  {
+   "id": 41414,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 73"
+  },
+  {
+   "id": 41415,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 83"
+  },
+  {
+   "id": 41416,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 91"
+  },
+  {
+   "id": 41417,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 10"
+  },
+  {
+   "id": 41418,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 31"
+  },
+  {
+   "id": 41419,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 11L"
+  },
+  {
+   "id": 41420,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 40"
+  },
+  {
+   "id": 41421,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 11"
+  },
+  {
+   "id": 41422,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 51L"
+  },
+  {
+   "id": 41423,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 10"
+  },
+  {
+   "id": 41424,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 31"
+  },
+  {
+   "id": 41425,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 41L"
+  },
+  {
+   "id": 41426,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 74"
+  },
+  {
+   "id": 41427,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 21"
+  },
+  {
+   "id": 41428,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 25L"
+  },
+  {
+   "id": 41429,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 50"
+  },
+  {
+   "id": 41430,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 60"
+  },
+  {
+   "id": 41431,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 41432,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CSCI 145"
+  },
+  {
+   "id": 41433,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 105"
+  },
+  {
+   "id": 41434,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 112"
+  },
+  {
+   "id": 41435,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 118"
+  },
+  {
+   "id": 41436,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 10"
+  },
+  {
+   "id": 41437,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 13"
+  },
+  {
+   "id": 41438,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 18A"
+  },
+  {
+   "id": 41439,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 25"
+  },
+  {
+   "id": 41440,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 3"
+  },
+  {
+   "id": 41441,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 34"
+  },
+  {
+   "id": 41442,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 40"
+  },
+  {
+   "id": 41443,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ECT 16"
+  },
+  {
+   "id": 41444,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ECT 71"
+  },
+  {
+   "id": 41445,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 10"
+  },
+  {
+   "id": 41446,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 51"
+  },
+  {
+   "id": 41447,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 56"
+  },
+  {
+   "id": 41448,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "EMS 10"
+  },
+  {
+   "id": 41449,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 1C"
+  },
+  {
+   "id": 41450,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ESL 80"
+  },
+  {
+   "id": 41451,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 10"
+  },
+  {
+   "id": 41452,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 21"
+  },
+  {
+   "id": 41453,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 57"
+  },
+  {
+   "id": 41454,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 9"
+  },
+  {
+   "id": 41455,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FCS 80"
+  },
+  {
+   "id": 41456,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 11"
+  },
+  {
+   "id": 41457,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 4"
+  },
+  {
+   "id": 41458,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 86"
+  },
+  {
+   "id": 41459,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FRCH 4"
+  },
+  {
+   "id": 41460,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 1"
+  },
+  {
+   "id": 41461,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 2"
+  },
+  {
+   "id": 41462,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 9"
+  },
+  {
+   "id": 41463,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 25"
+  },
+  {
+   "id": 41464,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 9"
+  },
+  {
+   "id": 41465,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 1"
+  },
+  {
+   "id": 41466,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 16"
+  },
+  {
+   "id": 41467,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 31"
+  },
+  {
+   "id": 41468,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 4"
+  },
+  {
+   "id": 41469,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 7H"
+  },
+  {
+   "id": 41470,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 62"
+  },
+  {
+   "id": 41471,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 91"
+  },
+  {
+   "id": 41472,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HT 16"
+  },
+  {
+   "id": 41473,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 10"
+  },
+  {
+   "id": 41474,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 21"
+  },
+  {
+   "id": 41475,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 27"
+  },
+  {
+   "id": 41476,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 36"
+  },
+  {
+   "id": 41477,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 48"
+  },
+  {
+   "id": 41478,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 120"
+  },
+  {
+   "id": 41479,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 210"
+  },
+  {
+   "id": 41480,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ITAL 3"
+  },
+  {
+   "id": 41481,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JAPN 5"
+  },
+  {
+   "id": 41482,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 101"
+  },
+  {
+   "id": 41483,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 111"
+  },
+  {
+   "id": 41484,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 17"
+  },
+  {
+   "id": 41485,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 38"
+  },
+  {
+   "id": 41486,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 10B"
+  },
+  {
+   "id": 41487,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 25"
+  },
+  {
+   "id": 41488,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 38A"
+  },
+  {
+   "id": 41489,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 52B"
+  },
+  {
+   "id": 41490,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 18C"
+  },
+  {
+   "id": 41491,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 30A"
+  },
+  {
+   "id": 41492,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 33B"
+  },
+  {
+   "id": 41493,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 37C"
+  },
+  {
+   "id": 41494,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 50A"
+  },
+  {
+   "id": 41495,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 10A"
+  },
+  {
+   "id": 41496,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 24A"
+  },
+  {
+   "id": 41497,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 2A"
+  },
+  {
+   "id": 41498,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KORE 1"
+  },
+  {
+   "id": 41499,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LATN 2H"
+  },
+  {
+   "id": 41500,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 3"
+  },
+  {
+   "id": 41501,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 6A"
+  },
+  {
+   "id": 41502,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 56"
+  },
+  {
+   "id": 41503,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 70L"
+  },
+  {
+   "id": 41504,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 82"
+  },
+  {
+   "id": 41505,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 140"
+  },
+  {
+   "id": 41506,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 220"
+  },
+  {
+   "id": 41507,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MICR 26"
+  },
+  {
+   "id": 41508,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 110A"
+  },
+  {
+   "id": 41509,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 135"
+  },
+  {
+   "id": 41510,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 14BH"
+  },
+  {
+   "id": 41511,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 34"
+  },
+  {
+   "id": 41512,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 49"
+  },
+  {
+   "id": 41513,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 110"
+  },
+  {
+   "id": 41514,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 200"
+  },
+  {
+   "id": 41515,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 299"
+  },
+  {
+   "id": 41516,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 25"
+  },
+  {
+   "id": 41517,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 15H"
+  },
+  {
+   "id": 41518,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 20B"
+  },
+  {
+   "id": 41519,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 9H"
+  },
+  {
+   "id": 41520,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 1B"
+  },
+  {
+   "id": 41521,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 26"
+  },
+  {
+   "id": 41522,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 50"
+  },
+  {
+   "id": 41523,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHYS 2AG"
+  },
+  {
+   "id": 41524,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 103"
+  },
+  {
+   "id": 41525,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 34"
+  },
+  {
+   "id": 41526,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 41"
+  },
+  {
+   "id": 41527,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS 35"
+  },
+  {
+   "id": 41528,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS C1000H"
+  },
+  {
+   "id": 41529,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 25"
+  },
+  {
+   "id": 41530,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 5"
+  },
+  {
+   "id": 41531,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 30"
+  },
+  {
+   "id": 41532,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 3B"
+  },
+  {
+   "id": 41533,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 61B"
+  },
+  {
+   "id": 41534,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 63"
+  },
+  {
+   "id": 41535,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 7A"
+  },
+  {
+   "id": 41536,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 104"
+  },
+  {
+   "id": 41537,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 114"
+  },
+  {
+   "id": 41538,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 200D"
+  },
+  {
+   "id": 41539,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 101"
+  },
+  {
+   "id": 41540,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 105"
+  },
+  {
+   "id": 41541,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 227"
+  },
+  {
+   "id": 41542,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 243"
+  },
+  {
+   "id": 41543,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 253"
+  },
+  {
+   "id": 41544,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 299"
+  },
+  {
+   "id": 41545,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 14"
+  },
+  {
+   "id": 41546,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 2"
+  },
+  {
+   "id": 41547,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 5"
+  },
+  {
+   "id": 41548,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SPAN 2"
+  },
+  {
+   "id": 41549,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 12"
+  },
+  {
+   "id": 41550,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 17"
+  },
+  {
+   "id": 41551,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 22"
+  },
+  {
+   "id": 41552,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 1"
+  },
+  {
+   "id": 41553,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AD 2"
+  },
+  {
+   "id": 41554,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ADJU 5"
+  },
+  {
+   "id": 41555,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ADJU 9"
+  },
+  {
+   "id": 41556,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 152"
+  },
+  {
+   "id": 41557,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AERO 200"
+  },
+  {
+   "id": 41558,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 62A"
+  },
+  {
+   "id": 41559,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AGHE 84B"
+  },
+  {
+   "id": 41560,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 12"
+  },
+  {
+   "id": 41561,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 3"
+  },
+  {
+   "id": 41562,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AHIS 8"
+  },
+  {
+   "id": 41563,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 20"
+  },
+  {
+   "id": 41564,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 32A"
+  },
+  {
+   "id": 41565,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRC 61"
+  },
+  {
+   "id": 41566,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 65B"
+  },
+  {
+   "id": 41567,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 71"
+  },
+  {
+   "id": 41568,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 90B"
+  },
+  {
+   "id": 41569,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 93A"
+  },
+  {
+   "id": 41570,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRM 96B"
+  },
+  {
+   "id": 41571,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AIRT 151"
+  },
+  {
+   "id": 41572,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 82"
+  },
+  {
+   "id": 41573,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "AMLA 92"
+  },
+  {
+   "id": 41574,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANAT 10B"
+  },
+  {
+   "id": 41575,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANAT 40B"
+  },
+  {
+   "id": 41576,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 104"
+  },
+  {
+   "id": 41577,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 116"
+  },
+  {
+   "id": 41578,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANIM 140"
+  },
+  {
+   "id": 41579,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ANTH 30"
+  },
+  {
+   "id": 41580,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 101"
+  },
+  {
+   "id": 41581,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 142"
+  },
+  {
+   "id": 41582,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 201"
+  },
+  {
+   "id": 41583,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARCH 251"
+  },
+  {
+   "id": 41584,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 100"
+  },
+  {
+   "id": 41585,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 165"
+  },
+  {
+   "id": 41586,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTC 220"
+  },
+  {
+   "id": 41587,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 16"
+  },
+  {
+   "id": 41588,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 21"
+  },
+  {
+   "id": 41589,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 43B"
+  },
+  {
+   "id": 41590,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTD 47A"
+  },
+  {
+   "id": 41591,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTG 21B"
+  },
+  {
+   "id": 41592,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 22"
+  },
+  {
+   "id": 41593,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 34"
+  },
+  {
+   "id": 41594,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ARTS 41B"
+  },
+  {
+   "id": 41595,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ASTR 5L"
+  },
+  {
+   "id": 41596,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 13"
+  },
+  {
+   "id": 41597,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 20"
+  },
+  {
+   "id": 41598,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 34L"
+  },
+  {
+   "id": 41599,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BIOL 6L"
+  },
+  {
+   "id": 41600,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 21"
+  },
+  {
+   "id": 41601,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 62"
+  },
+  {
+   "id": 41602,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSA 71"
+  },
+  {
+   "id": 41603,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSC 1A"
+  },
+  {
+   "id": 41604,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSL 19"
+  },
+  {
+   "id": 41605,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 51"
+  },
+  {
+   "id": 41606,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSR 60"
+  },
+  {
+   "id": 41607,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "BUSS 33"
+  },
+  {
+   "id": 41608,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 40"
+  },
+  {
+   "id": 41609,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHEM 55"
+  },
+  {
+   "id": 41610,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHIN 2"
+  },
+  {
+   "id": 41611,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 10H"
+  },
+  {
+   "id": 41612,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 6"
+  },
+  {
+   "id": 41613,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 66"
+  },
+  {
+   "id": 41614,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 69"
+  },
+  {
+   "id": 41615,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 74"
+  },
+  {
+   "id": 41616,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CHLD 84"
+  },
+  {
+   "id": 41617,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 11"
+  },
+  {
+   "id": 41618,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISB 51"
+  },
+  {
+   "id": 41619,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 21"
+  },
+  {
+   "id": 41620,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISD 41"
+  },
+  {
+   "id": 41621,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 11L"
+  },
+  {
+   "id": 41622,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 31L"
+  },
+  {
+   "id": 41623,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISN 71"
+  },
+  {
+   "id": 41624,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 21"
+  },
+  {
+   "id": 41625,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 31L"
+  },
+  {
+   "id": 41626,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISP 74L"
+  },
+  {
+   "id": 41627,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 21L"
+  },
+  {
+   "id": 41628,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISS 27"
+  },
+  {
+   "id": 41629,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CISW 24"
+  },
+  {
+   "id": 41630,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 52"
+  },
+  {
+   "id": 41631,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CNET 62"
+  },
+  {
+   "id": 41632,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 17"
+  },
+  {
+   "id": 41633,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 26"
+  },
+  {
+   "id": 41634,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM 8"
+  },
+  {
+   "id": 41635,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "COMM C1000H"
+  },
+  {
+   "id": 41636,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CSCI 150"
+  },
+  {
+   "id": 41637,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 101"
+  },
+  {
+   "id": 41638,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 106"
+  },
+  {
+   "id": 41639,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "CUL 113"
+  },
+  {
+   "id": 41640,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 11A"
+  },
+  {
+   "id": 41641,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 14A"
+  },
+  {
+   "id": 41642,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 18B"
+  },
+  {
+   "id": 41643,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 28"
+  },
+  {
+   "id": 41644,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 30"
+  },
+  {
+   "id": 41645,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 35"
+  },
+  {
+   "id": 41646,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "DNCE 41"
+  },
+  {
+   "id": 41647,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ECT 17"
+  },
+  {
+   "id": 41648,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ECT 87"
+  },
+  {
+   "id": 41649,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 11"
+  },
+  {
+   "id": 41650,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 53"
+  },
+  {
+   "id": 41651,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ELEC 61"
+  },
+  {
+   "id": 41652,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "EMS 40"
+  },
+  {
+   "id": 41653,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 41654,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 41"
+  },
+  {
+   "id": 41655,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ENGR 6"
+  },
+  {
+   "id": 41656,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 12"
+  },
+  {
+   "id": 41657,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 22"
+  },
+  {
+   "id": 41658,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FASH 59"
+  },
+  {
+   "id": 41659,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FCS 41"
+  },
+  {
+   "id": 41660,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FCS 91"
+  },
+  {
+   "id": 41661,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 12"
+  },
+  {
+   "id": 41662,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 5"
+  },
+  {
+   "id": 41663,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FIRE 9"
+  },
+  {
+   "id": 41664,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "FRCH 53"
+  },
+  {
+   "id": 41665,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOG 2H"
+  },
+  {
+   "id": 41666,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 1"
+  },
+  {
+   "id": 41667,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 29"
+  },
+  {
+   "id": 41668,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 7"
+  },
+  {
+   "id": 41669,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "GEOL 9L"
+  },
+  {
+   "id": 41670,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 10"
+  },
+  {
+   "id": 41671,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 18"
+  },
+  {
+   "id": 41672,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 35"
+  },
+  {
+   "id": 41673,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 40"
+  },
+  {
+   "id": 41674,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HIST 8"
+  },
+  {
+   "id": 41675,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 56"
+  },
+  {
+   "id": 41676,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HRM 64"
+  },
+  {
+   "id": 41677,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HT 1"
+  },
+  {
+   "id": 41678,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "HT 17"
+  },
+  {
+   "id": 41679,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 10L"
+  },
+  {
+   "id": 41680,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 22"
+  },
+  {
+   "id": 41681,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 29"
+  },
+  {
+   "id": 41682,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 37"
+  },
+  {
+   "id": 41683,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ID 54"
+  },
+  {
+   "id": 41684,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 130"
+  },
+  {
+   "id": 41685,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "IDE 220"
+  },
+  {
+   "id": 41686,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "ITAL 4"
+  },
+  {
+   "id": 41687,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JAPN 1"
+  },
+  {
+   "id": 41688,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 102"
+  },
+  {
+   "id": 41689,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "JOUR 114"
+  },
+  {
+   "id": 41690,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 19"
+  },
+  {
+   "id": 41691,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KIN 39"
+  },
+  {
+   "id": 41692,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINA 8A"
+  },
+  {
+   "id": 41693,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 19"
+  },
+  {
+   "id": 41694,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 34A"
+  },
+  {
+   "id": 41695,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 38B"
+  },
+  {
+   "id": 41696,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINF 53"
+  },
+  {
+   "id": 41697,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 25"
+  },
+  {
+   "id": 41698,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 30B"
+  },
+  {
+   "id": 41699,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 40A"
+  },
+  {
+   "id": 41700,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINI 50B"
+  },
+  {
+   "id": 41701,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 10B"
+  },
+  {
+   "id": 41702,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 24B"
+  },
+  {
+   "id": 41703,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KINS 2B"
+  },
+  {
+   "id": 41704,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "KORE 2"
+  },
+  {
+   "id": 41705,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 1"
+  },
+  {
+   "id": 41706,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 15"
+  },
+  {
+   "id": 41707,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 36"
+  },
+  {
+   "id": 41708,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "LIT 6B"
+  },
+  {
+   "id": 41709,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 56L"
+  },
+  {
+   "id": 41710,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MENT 72"
+  },
+  {
+   "id": 41711,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "METO 3"
+  },
+  {
+   "id": 41712,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 150"
+  },
+  {
+   "id": 41713,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MFG 250"
+  },
+  {
+   "id": 41714,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 103"
+  },
+  {
+   "id": 41715,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 12"
+  },
+  {
+   "id": 41716,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 140"
+  },
+  {
+   "id": 41717,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 15"
+  },
+  {
+   "id": 41718,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 170"
+  },
+  {
+   "id": 41719,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 30"
+  },
+  {
+   "id": 41720,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 36"
+  },
+  {
+   "id": 41721,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUS 45"
+  },
+  {
+   "id": 41722,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 120"
+  },
+  {
+   "id": 41723,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "MUSA 210"
+  },
+  {
+   "id": 41724,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 1"
+  },
+  {
+   "id": 41725,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "NF 25H"
+  },
+  {
+   "id": 41726,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "OCEA 10"
+  },
+  {
+   "id": 41727,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 20BH"
+  },
+  {
+   "id": 41728,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHIL 5"
+  },
+  {
+   "id": 41729,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 1C"
+  },
+  {
+   "id": 41730,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 51"
+  },
+  {
+   "id": 41731,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHOT 9"
+  },
+  {
+   "id": 41732,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PHYS 2BG"
+  },
+  {
+   "id": 41733,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 30"
+  },
+  {
+   "id": 41734,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PLGL 35"
+  },
+  {
+   "id": 41735,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "POLS 5"
+  },
+  {
+   "id": 41736,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 10"
+  },
+  {
+   "id": 41737,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 19"
+  },
+  {
+   "id": 41738,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC 26"
+  },
+  {
+   "id": 41739,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 41740,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PUBH 20"
+  },
+  {
+   "id": 41741,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "PUBH 26"
+  },
+  {
+   "id": 41742,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 1A"
+  },
+  {
+   "id": 41743,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 31"
+  },
+  {
+   "id": 41744,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 3C"
+  },
+  {
+   "id": 41745,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 61C"
+  },
+  {
+   "id": 41746,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 64"
+  },
+  {
+   "id": 41747,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RAD 7B"
+  },
+  {
+   "id": 41748,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 106"
+  },
+  {
+   "id": 41749,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 116"
+  },
+  {
+   "id": 41750,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "RESD 202"
+  },
+  {
+   "id": 41751,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 101H"
+  },
+  {
+   "id": 41752,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 108"
+  },
+  {
+   "id": 41753,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 212"
+  },
+  {
+   "id": 41754,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 231"
+  },
+  {
+   "id": 41755,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 245"
+  },
+  {
+   "id": 41756,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SIGN 255"
+  },
+  {
+   "id": 41757,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 1"
+  },
+  {
+   "id": 41758,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 14H"
+  },
+  {
+   "id": 41759,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 20"
+  },
+  {
+   "id": 41760,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 36"
+  },
+  {
+   "id": 41761,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SOC 5H"
+  },
+  {
+   "id": 41762,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "SPAN 2S"
+  },
+  {
+   "id": 41763,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 41764,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 13"
+  },
+  {
+   "id": 41765,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 18"
+  },
+  {
+   "id": 41766,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 25"
+  },
+  {
+   "id": 41767,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "THTR 60A"
+  },
+  {
+   "id": 41768,
+   "kind": "slo",
+   "college": "Mt. San Antonio College",
+   "course_code": "WELD 40"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (40696, 40697, 40698, 40699, 40700, 40701, 40702, 40703, 40704, 40705, 40706, 40707, 40708, 40709, 40710, 40711, 40712, 40713, 40714, 40715, 40716, 40717, 40718, 40719, 40720, 40721, 40722, 40723, 40724, 40725, 40726, 40727, 40728, 40729, 40730, 40731, 40732, 40733, 40734, 40735, 40736, 40737, 40738, 40739, 40740, 40741, 40742, 40743, 40744, 40745, 40746, 40747, 40748, 40749, 40750, 40751, 40752, 40753, 40754, 40755, 40756, 40757, 40758, 40759, 40760, 40761, 40762, 40763, 40764, 40765, 40766, 40767, 40768, 40769, 40770, 40771, 40772, 40773, 40774, 40775, 40776, 40777, 40778, 40779, 40780, 40781, 40782, 40783, 40784, 40785, 40786, 40787, 40788, 40789, 40790, 40791, 40792, 40793, 40794, 40795, 40796, 40797, 40798, 40799, 40800, 40801, 40802, 40803, 40804, 40805, 40806, 40807, 40808, 40809, 40810, 40811, 40812, 40813, 40814, 40815, 40816, 40817, 40818, 40819, 40820, 40821, 40822, 40823, 40824, 40825, 40826, 40827, 40828, 40829, 40830, 40831, 40832, 40833, 40834, 40835, 40836, 40837, 40838, 40839, 40840, 40841, 40842, 40843, 40844, 40845, 40846, 40847, 40848, 40849, 40850, 40851, 40852, 40853, 40854, 40855, 40856, 40857, 40858, 40859, 40860, 40861, 40862, 40863, 40864, 40865, 40866, 40867, 40868, 40869, 40870, 40871, 40872, 40873, 40874, 40875, 40876, 40877, 40878, 40879, 40880, 40881, 40882, 40883, 40884, 40885, 40886, 40887, 40888, 40889, 40890, 40891, 40892, 40893, 40894, 40895, 40896, 40897, 40898, 40899, 40900, 40901, 40902, 40903, 40904, 40905, 40906, 40907, 40908, 40909, 40910, 40911, 40912, 40913, 40914, 40915, 40916, 40917, 40918, 40919, 40920, 40921, 40922, 40923, 40924, 40925, 40926, 40927, 40928, 40929, 40930, 40931, 40932, 40933, 40934, 40935, 40936, 40937, 40938, 40939, 40940, 40941, 40942, 40943, 40944, 40945, 40946, 40947, 40948, 40949, 40950, 40951, 40952, 40953, 40954, 40955, 40956, 40957, 40958, 40959, 40960, 40961, 40962, 40963, 40964, 40965, 40966, 40967, 40968, 40969, 40970, 40971, 40972, 40973, 40974, 40975, 40976, 40977, 40978, 40979, 40980, 40981, 40982, 40983, 40984, 40985, 40986, 40987, 40988, 40989, 40990, 40991, 40992, 40993, 40994, 40995, 40996, 40997, 40998, 40999, 41000, 41001, 41002, 41003, 41004, 41005, 41006, 41007, 41008, 41009, 41010, 41011, 41012, 41013, 41014, 41015, 41016, 41017, 41018, 41019, 41020, 41021, 41022, 41023, 41024, 41025, 41026, 41027, 41028, 41029, 41030, 41031, 41032, 41033, 41034, 41035, 41036, 41037, 41038, 41039, 41040, 41041, 41042, 41043, 41044, 41045, 41046, 41047, 41048, 41049, 41050, 41051, 41052, 41053, 41054, 41055, 41056, 41057, 41058, 41059, 41060, 41061, 41062, 41063, 41064, 41065, 41066, 41067, 41068, 41069, 41070, 41071, 41072, 41073, 41074, 41075, 41076, 41077, 41078, 41079, 41080, 41081, 41082, 41083, 41084, 41085, 41086, 41087, 41088, 41089, 41090, 41091, 41092, 41093, 41094, 41095, 41096, 41097, 41098, 41099, 41100, 41101, 41102, 41103, 41104, 41105, 41106, 41107, 41108, 41109, 41110, 41111, 41112, 41113, 41114, 41115, 41116, 41117, 41118, 41119, 41120, 41121, 41122, 41123, 41124, 41125, 41126, 41127, 41128, 41129, 41130, 41131, 41132, 41133, 41134, 41135, 41136, 41137, 41138, 41139, 41140, 41141, 41142, 41143, 41144, 41145, 41146, 41147, 41148, 41149, 41150, 41151, 41152, 41153, 41154, 41155, 41156, 41157, 41158, 41159, 41160, 41161, 41162, 41163, 41164, 41165, 41166, 41167, 41168, 41169, 41170, 41171, 41172, 41173, 41174, 41175, 41176, 41177, 41178, 41179, 41180, 41181, 41182, 41183, 41184, 41185, 41186, 41187, 41188, 41189, 41190, 41191, 41192, 41193, 41194, 41195, 41196, 41197, 41198, 41199, 41200, 41201, 41202, 41203, 41204, 41205, 41206, 41207, 41208, 41209, 41210, 41211, 41212, 41213, 41214, 41215, 41216, 41217, 41218, 41219, 41220, 41221, 41222, 41223, 41224, 41225, 41226, 41227, 41228, 41229, 41230, 41231, 41232, 41233, 41234, 41235, 41236, 41237, 41238, 41239, 41240, 41241, 41242, 41243, 41244, 41245, 41246, 41247, 41248, 41249, 41250, 41251, 41252, 41253, 41254, 41255, 41256, 41257, 41258, 41259, 41260, 41261, 41262, 41263, 41264, 41265, 41266, 41267, 41268, 41269, 41270, 41271, 41272, 41273, 41274, 41275, 41276, 41277, 41278, 41279, 41280, 41281, 41282, 41283, 41284, 41285, 41286, 41287, 41288, 41289, 41290, 41291, 41292, 41293, 41294, 41295, 41296, 41297, 41298, 41299, 41300, 41301, 41302, 41303, 41304, 41305, 41306, 41307, 41308, 41309, 41310, 41311, 41312, 41313, 41314, 41315, 41316, 41317, 41318, 41319, 41320, 41321, 41322, 41323, 41324, 41325, 41326, 41327, 41328, 41329, 41330, 41331, 41332, 41333, 41334, 41335, 41336, 41337, 41338, 41339, 41340, 41341, 41342, 41343, 41344, 41345, 41346, 41347, 41348, 41349, 41350, 41351, 41352, 41353, 41354, 41355, 41356, 41357, 41358, 41359, 41360, 41361, 41362, 41363, 41364, 41365, 41366, 41367, 41368, 41369, 41370, 41371, 41372, 41373, 41374, 41375, 41376, 41377, 41378, 41379, 41380, 41381, 41382, 41383, 41384, 41385, 41386, 41387, 41388, 41389, 41390, 41391, 41392, 41393, 41394, 41395, 41396, 41397, 41398, 41399, 41400, 41401, 41402, 41403, 41404, 41405, 41406, 41407, 41408, 41409, 41410, 41411, 41412, 41413, 41414, 41415, 41416, 41417, 41418, 41419, 41420, 41421, 41422, 41423, 41424, 41425, 41426, 41427, 41428, 41429, 41430, 41431, 41432, 41433, 41434, 41435, 41436, 41437, 41438, 41439, 41440, 41441, 41442, 41443, 41444, 41445, 41446, 41447, 41448, 41449, 41450, 41451, 41452, 41453, 41454, 41455, 41456, 41457, 41458, 41459, 41460, 41461, 41462, 41463, 41464, 41465, 41466, 41467, 41468, 41469, 41470, 41471, 41472, 41473, 41474, 41475, 41476, 41477, 41478, 41479, 41480, 41481, 41482, 41483, 41484, 41485, 41486, 41487, 41488, 41489, 41490, 41491, 41492, 41493, 41494, 41495, 41496, 41497, 41498, 41499, 41500, 41501, 41502, 41503, 41504, 41505, 41506, 41507, 41508, 41509, 41510, 41511, 41512, 41513, 41514, 41515, 41516, 41517, 41518, 41519, 41520, 41521, 41522, 41523, 41524, 41525, 41526, 41527, 41528, 41529, 41530, 41531, 41532, 41533, 41534, 41535, 41536, 41537, 41538, 41539, 41540, 41541, 41542, 41543, 41544, 41545, 41546, 41547, 41548, 41549, 41550, 41551, 41552, 41553, 41554, 41555, 41556, 41557, 41558, 41559, 41560, 41561, 41562, 41563, 41564, 41565, 41566, 41567, 41568, 41569, 41570, 41571, 41572, 41573, 41574, 41575, 41576, 41577, 41578, 41579, 41580, 41581, 41582, 41583, 41584, 41585, 41586, 41587, 41588, 41589, 41590, 41591, 41592, 41593, 41594, 41595, 41596, 41597, 41598, 41599, 41600, 41601, 41602, 41603, 41604, 41605, 41606, 41607, 41608, 41609, 41610, 41611, 41612, 41613, 41614, 41615, 41616, 41617, 41618, 41619, 41620, 41621, 41622, 41623, 41624, 41625, 41626, 41627, 41628, 41629, 41630, 41631, 41632, 41633, 41634, 41635, 41636, 41637, 41638, 41639, 41640, 41641, 41642, 41643, 41644, 41645, 41646, 41647, 41648, 41649, 41650, 41651, 41652, 41653, 41654, 41655, 41656, 41657, 41658, 41659, 41660, 41661, 41662, 41663, 41664, 41665, 41666, 41667, 41668, 41669, 41670, 41671, 41672, 41673, 41674, 41675, 41676, 41677, 41678, 41679, 41680, 41681, 41682, 41683, 41684, 41685, 41686, 41687, 41688, 41689, 41690, 41691, 41692, 41693, 41694, 41695, 41696, 41697, 41698, 41699, 41700, 41701, 41702, 41703, 41704, 41705, 41706, 41707, 41708, 41709, 41710, 41711, 41712, 41713, 41714, 41715, 41716, 41717, 41718, 41719, 41720, 41721, 41722, 41723, 41724, 41725, 41726, 41727, 41728, 41729, 41730, 41731, 41732, 41733, 41734, 41735, 41736, 41737, 41738, 41739, 41740, 41741, 41742, 41743, 41744, 41745, 41746, 41747, 41748, 41749, 41750, 41751, 41752, 41753, 41754, 41755, 41756, 41757, 41758, 41759, 41760, 41761, 41762, 41763, 41764, 41765, 41766, 41767, 41768);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}
