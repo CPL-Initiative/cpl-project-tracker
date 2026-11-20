@@ -52,7 +52,38 @@ for spec, label in [
     got, why = C.prior_read(spec, REG, PROGS)
     check(got is None and why, "refuses %s: %r" % (label, why))
 got, why = C.prior_read("%s 2025-2026 30578" % START, dict(REG, catalog_platform="courseleaf"), PROGS)
-check(got is None and "curriqunet" in (why or ""), "opens on curriQunet catalogs only: %r" % why)
+check(got is None and "curriqunet" in (why or ""), "opens on curriQunet catalogs and PDF catalogs only: %r" % why)
+
+# A catalog read as one PDF (College of the Desert's procedure step, S647; rule D's prior read, S689): its prior year
+# is that year's file on the host the registry's PDF already comes from, and the capture reads that file in place of
+# following the step's link, keeping the step's ranged read and its wait.
+DESERT = {"catalog_platform": "courseleaf", "catalog_year": None, "catalog_url": "https://catalog.collegeofthedesert.edu/",
+          "procedure": {"catalog": {"start": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
+                                    "follow": "2026-27 PDF Catalog", "format": "pdf", "resume": True,
+                                    "timeout_s": 1200, "catalog_year": "2026-2027"}}}
+FILE = "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2025-2026-catalog.pdf"
+got, why = C.prior_read("%s 2025-2026 30578,32692" % FILE, DESERT, PROGS)
+check(why is None and got == {"start": FILE, "catalog_year": "2025-2026", "only": ["30578", "32692"], "format": "pdf"},
+      "Desert's read from its 2025-2026 file: %r %r" % (got, why))
+for spec, label in [
+        ("https://collegeofthedesert.edu/students/catalog-schedule/default.php 2025-2026 30578", "a page, not the year's file"),
+        ("https://catalog.example.edu/2025-2026-catalog.pdf 2025-2026 30578", "a file off the host the PDF comes from"),
+        ("%s 2026-2027 30578" % FILE, "the procedure step's own year, the registry naming none")]:
+    got, why = C.prior_read(spec, DESERT, PROGS)
+    check(got is None and why, "a PDF catalog refuses %s: %r" % (label, why))
+got, _ = C.prior_read("%s 2025-2026 30578" % FILE, DESERT, PROGS)
+reg = C.prior_reg(DESERT, got)
+step = C.P.procedure_catalog(reg["procedure"])
+check(step and step["file"] == FILE and step.get("resume") is True and step["timeout_s"] == 1200
+      and step.get("catalog_year") == "2025-2026" and reg["catalog_year"] == "2025-2026" and C.reads_as_pdf(reg),
+      "the prior registry row names that year's file and keeps the ranged read and its wait: %r" % step)
+check(DESERT["procedure"]["catalog"].get("file") is None, "the registry row itself is left as it was")
+started = {}
+check(C.pdf_start(None, reg, {}, started)[0] == FILE and started.get("procedure_step", {}).get("file") == FILE,
+      "pdf_start reads the named file and loads no page")
+got, _ = C.prior_read("%s 2025-2026 30578,32692,32745,33829" % START, REG, PROGS)
+check(C.prior_reg(REG, got) == dict(REG, catalog_url=START, catalog_year="2025-2026"),
+      "a curriQunet prior read changes only the start page and year")
 
 
 def write(path, obj):
@@ -125,6 +156,18 @@ with tempfile.TemporaryDirectory() as tmp:
           and os.path.isfile(os.path.join(dest, "prior_2025-2026_preview.json"))
           and read(os.path.join(dest, "prior_2025-2026.json"))["filed"] == ["30578"],
           "a capture-only prior read files prior_<year>_preview.json and keeps the account of the read that filed")
+    # A PDF prior read files a record whose source is a page of that year's file.
+    pdest, pout = os.path.join(tmp, "pdf_college"), os.path.join(tmp, "pdf_out")
+    preport = {"catalog_year": "2025-2026", "run": "3", "prior": {"start": FILE, "catalog_year": "2025-2026",
+                                                                 "only": ["30578", "32692"], "format": "pdf"}}
+    write(os.path.join(pout, "records", "30578.json"),
+          {"control_number": "30578", "record": {"blocks": [1]}, "extracted_run": "3", "source_url": FILE + "#page=218"})
+    write(os.path.join(pout, "records", "32692.json"),
+          {"control_number": "32692", "record": {"blocks": [1]}, "extracted_run": "3",
+           "source_url": FILE.replace("2025-2026", "2026-2027") + "#page=96"})
+    check(C.file_prior(pdest, pout, preport) == 0
+          and read(os.path.join(pdest, "prior_2025-2026.json"))["filed"] == ["30578"],
+          "a PDF prior read files the record read from that year's file and keeps one from another file")
     # file_run sends a prior read to file_prior rather than replacing the folder.
     with open(os.path.join(ROOT, "kb", "_program_requirements_college.py"), encoding="utf-8") as fh:
         src = fh.read()
