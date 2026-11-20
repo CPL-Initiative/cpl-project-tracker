@@ -132,6 +132,25 @@ Add `pasted` or `note` to the read when the work is to file them. Leave `handed_
 session's read unless the work needs them. A file is fetched on a runner
 with the service key, never into a session.
 
+## Filing a hand-over by hand (until the steps below exist)
+
+S693 filed Sam's first hand-overs this way, and the next session can follow it:
+
+1. Read what waits, with `pasted` and `note` (the query above).
+2. File each pasted entry and each note in
+   [`kb/hand_filed_catalogs/handed_over/courses.json`](../../kb/hand_filed_catalogs/handed_over/courses.json) (its
+   README says what a row holds). Where the runner has filed the college's catalog rows, record whether the two
+   descriptions agree.
+3. For a still-taught course of the hunt, add `answered` (who, when, how, what) to its row in
+   `kb/reference/blocked_catalog_hunt.json` and rebuild `kb/status/commons_data.json`
+   (`python3 kb/_build_commons_data_status.py --quiet`). The course leaves the to-do and stays listed as answered,
+   with its panel (`d-answered-course-leaves-the-to-do-2026-11-20`).
+4. Answer each row `filed` through `commons_handover_mark()` on the migrate runner, guarded on the status the read
+   saw, with the values it replaced in the receipt. The worked file:
+   `kb/migrations/2026-11-20_s693_handover_mark_filed.sql`; its proof: `tests/handover_mark_filed_sql_proof.py`.
+
+A pasted entry with outcomes (SLOs or objectives) waits for step 1 below: the outcomes table has its own loader.
+
 ## What slice 1 does not do yet
 
 Slice 1 is the front door (`d-handover-slice-1-is-the-front-door-2026-11-20`): a person can hand something over, the

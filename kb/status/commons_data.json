@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T17:46:25Z",
+ "written_at": "2026-11-20T20:17:40Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -19438,19 +19438,28 @@
     "local_courses": 207,
     "filed": false,
     "filed_file": null,
-    "still_taught": [
+    "still_taught": [],
+    "answered": [
      {
       "course": "HLTH 167",
       "control_number": "CCC000400628",
-      "title": "Staying Mentally Sharp for OA"
+      "title": "Staying Mentally Sharp for OA",
+      "what": "Catalog description and units or hours filed",
+      "how": "paste",
+      "by": "Sam",
+      "on": "2026-11-20"
      },
      {
       "course": "PARN 170",
       "control_number": "CCC000394743",
-      "title": "Parenting Adult/Children W/Dis"
+      "title": "Parenting Adult/Children W/Dis",
+      "what": "Catalog description and units or hours filed",
+      "how": "paste",
+      "by": "Sam",
+      "on": "2026-11-20"
      }
     ],
-    "hunted": true
+    "hunted": false
    },
    {
     "slug": "grossmont",
@@ -19460,14 +19469,19 @@
     "local_courses": 42,
     "filed": false,
     "filed_file": null,
-    "still_taught": [
+    "still_taught": [],
+    "answered": [
      {
       "course": "OT 110",
       "control_number": "CCC000049230",
-      "title": "Orthopedic Anatomy and Physiology"
+      "title": "Orthopedic Anatomy and Physiology",
+      "what": "Catalog description and units or hours filed",
+      "how": "paste",
+      "by": "Sam",
+      "on": "2026-11-20"
      }
     ],
-    "hunted": true
+    "hunted": false
    },
    {
     "slug": "southwestern",
@@ -19477,34 +19491,55 @@
     "local_courses": 34,
     "filed": false,
     "filed_file": null,
-    "still_taught": [
+    "still_taught": [],
+    "answered": [
      {
       "course": "CI 65",
       "control_number": "CCC000169779",
-      "title": "BUILDING CODES II"
+      "title": "BUILDING CODES II",
+      "what": "Catalog description and units or hours filed",
+      "how": "paste",
+      "by": "Sam",
+      "on": "2026-11-20"
      },
      {
       "course": "CIS 10A",
       "control_number": "CCC000186047",
-      "title": "MICROCOMPUTER REPAIR AND SERVICE"
+      "title": "MICROCOMPUTER REPAIR AND SERVICE",
+      "what": "Catalog description and units or hours filed",
+      "how": "paste",
+      "by": "Sam",
+      "on": "2026-11-20"
      },
      {
       "course": "ELEC 10A",
       "control_number": "CCC000311867",
-      "title": "MICROCOMPUTER REPAIR AND SERVICE"
+      "title": "MICROCOMPUTER REPAIR AND SERVICE",
+      "what": "Catalog description and units or hours filed",
+      "how": "paste",
+      "by": "Sam",
+      "on": "2026-11-20"
      },
      {
       "course": "DANC 123",
       "control_number": "CCC000210897",
-      "title": "DANCE CHOREOGRAPHY III"
+      "title": "DANCE CHOREOGRAPHY III",
+      "what": "Catalog description and units or hours filed",
+      "how": "paste",
+      "by": "Sam",
+      "on": "2026-11-20"
      },
      {
       "course": "ST 10A",
       "control_number": "CCC000307625",
-      "title": "CENTRAL SERVICE TECHNOLOGY"
+      "title": "CENTRAL SERVICE TECHNOLOGY",
+      "what": "Catalog description and units or hours filed",
+      "how": "paste",
+      "by": "Sam",
+      "on": "2026-11-20"
      }
     ],
-    "hunted": true
+    "hunted": false
    },
    {
     "slug": "ohlone",
@@ -19514,29 +19549,46 @@
     "local_courses": 32,
     "filed": false,
     "filed_file": null,
-    "still_taught": [
+    "still_taught": [],
+    "answered": [
      {
       "course": "BRDC 127A",
       "control_number": "CCC000337481",
-      "title": "Radio Broadcast Lab"
+      "title": "Radio Broadcast Lab",
+      "what": "Noted as not in the 2026-2027 catalog",
+      "how": "note",
+      "by": "Sam",
+      "on": "2026-11-20"
      },
      {
       "course": "BRDC 127B",
       "control_number": "CCC000141070",
-      "title": "Radio Broadcast Lab"
+      "title": "Radio Broadcast Lab",
+      "what": "Noted as not in the 2026-2027 catalog",
+      "how": "note",
+      "by": "Sam",
+      "on": "2026-11-20"
      },
      {
       "course": "BRDC 127C",
       "control_number": "CCC000191156",
-      "title": "Radio Broadcast Lab"
+      "title": "Radio Broadcast Lab",
+      "what": "Noted as not in the 2026-2027 catalog",
+      "how": "note",
+      "by": "Sam",
+      "on": "2026-11-20"
      },
      {
       "course": "BRDC 127D",
       "control_number": "CCC000020999",
-      "title": "Radio Broadcast Lab"
+      "title": "Radio Broadcast Lab",
+      "what": "Noted as not in the 2026-2027 catalog",
+      "how": "note",
+      "by": "Sam",
+      "on": "2026-11-20"
      }
     ],
-    "hunted": true
+    "hunted": false
    },
    {
     "slug": "el_camino",
@@ -19547,6 +19599,7 @@
     "filed": false,
     "filed_file": null,
     "still_taught": [],
+    "answered": [],
     "hunted": false
    },
    {
@@ -19558,101 +19611,195 @@
     "filed": false,
     "filed_file": null,
     "still_taught": [],
+    "answered": [],
     "hunted": false
    }
   ],
-  "open": 4,
-  "done": 0,
-  "hunted": 4,
+  "open": 0,
+  "done": 4,
+  "hunted": 0,
   "set_aside": 2,
   "local_courses": 345,
-  "local_courses_open": 315,
+  "local_courses_open": 0,
   "still_taught_total": 12,
-  "still_taught_open": 12,
+  "still_taught_open": 0,
+  "still_taught_answered": 12,
   "courses": [
    {
     "slug": "north_orange_continuing_education",
     "course": "HLTH 167",
     "control_number": "CCC000400628",
     "title": "Staying Mentally Sharp for OA",
-    "mid_card_at_filing": "HLTH M9065"
+    "mid_card_at_filing": "HLTH M9065",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "paste",
+     "what": "Catalog description and units or hours filed",
+     "handover": "7a7d90f1",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "north_orange_continuing_education",
     "course": "PARN 170",
     "control_number": "CCC000394743",
     "title": "Parenting Adult/Children W/Dis",
-    "mid_card_at_filing": "PARN M9036"
+    "mid_card_at_filing": "PARN M9036",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "paste",
+     "what": "Catalog description and units or hours filed",
+     "handover": "4f00e0ac",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "southwestern",
     "course": "CI 65",
     "control_number": "CCC000169779",
     "title": "BUILDING CODES II",
-    "mid_card_at_filing": "ARCH M1081"
+    "mid_card_at_filing": "ARCH M1081",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "paste",
+     "what": "Catalog description and units or hours filed",
+     "handover": "634e94f2",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "southwestern",
     "course": "CIS 10A",
     "control_number": "CCC000186047",
     "title": "MICROCOMPUTER REPAIR AND SERVICE",
-    "mid_card_at_filing": "ITIS M1457"
+    "mid_card_at_filing": "ITIS M1457",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "paste",
+     "what": "Catalog description and units or hours filed",
+     "handover": "ec6bdeb3",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "southwestern",
     "course": "ELEC 10A",
     "control_number": "CCC000311867",
     "title": "MICROCOMPUTER REPAIR AND SERVICE",
-    "mid_card_at_filing": "ITIS M1457"
+    "mid_card_at_filing": "ITIS M1457",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "paste",
+     "what": "Catalog description and units or hours filed",
+     "handover": "6868a247",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "southwestern",
     "course": "DANC 123",
     "control_number": "CCC000210897",
     "title": "DANCE CHOREOGRAPHY III",
-    "mid_card_at_filing": "DANC M1128"
+    "mid_card_at_filing": "DANC M1128",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "paste",
+     "what": "Catalog description and units or hours filed",
+     "handover": "69d0502f",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "southwestern",
     "course": "ST 10A",
     "control_number": "CCC000307625",
     "title": "CENTRAL SERVICE TECHNOLOGY",
-    "mid_card_at_filing": "HLTH M1195"
+    "mid_card_at_filing": "HLTH M1195",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "paste",
+     "what": "Catalog description and units or hours filed",
+     "handover": "38b4d0ff",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "ohlone",
     "course": "BRDC 127A",
     "control_number": "CCC000337481",
     "title": "Radio Broadcast Lab",
-    "mid_card_at_filing": "BRDC M1058"
+    "mid_card_at_filing": "BRDC M1058",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "note",
+     "what": "Noted as not in the 2026-2027 catalog",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "ohlone",
     "course": "BRDC 127B",
     "control_number": "CCC000141070",
     "title": "Radio Broadcast Lab",
-    "mid_card_at_filing": "BRDC M1058"
+    "mid_card_at_filing": "BRDC M1058",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "note",
+     "what": "Noted as not in the 2026-2027 catalog",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "ohlone",
     "course": "BRDC 127C",
     "control_number": "CCC000191156",
     "title": "Radio Broadcast Lab",
-    "mid_card_at_filing": "BRDC M1058"
+    "mid_card_at_filing": "BRDC M1058",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "note",
+     "what": "Noted as not in the 2026-2027 catalog",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "ohlone",
     "course": "BRDC 127D",
     "control_number": "CCC000020999",
     "title": "Radio Broadcast Lab",
-    "mid_card_at_filing": "BRDC M1058"
+    "mid_card_at_filing": "BRDC M1058",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "note",
+     "what": "Noted as not in the 2026-2027 catalog",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    },
    {
     "slug": "grossmont",
     "course": "OT 110",
     "control_number": "CCC000049230",
     "title": "Orthopedic Anatomy and Physiology",
-    "mid_card_at_filing": "BIOL M1264"
+    "mid_card_at_filing": "BIOL M1264",
+    "answered": {
+     "by": "Sam",
+     "on": "2026-11-20",
+     "how": "paste",
+     "what": "Catalog description and units or hours filed",
+     "handover": "09686b38",
+     "filed": "kb/hand_filed_catalogs/handed_over/courses.json"
+    }
    }
   ],
   "file_in": "kb/hand_filed_catalogs/outlines",
