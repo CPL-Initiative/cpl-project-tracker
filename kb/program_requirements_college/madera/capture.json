@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 111,
  "with_closed_list": 111,
- "started": "2026-10-16T16:52:10Z",
+ "started": "2026-11-20T07:12:26Z",
  "curriqunet": {
   "catalog": 6,
   "view_prefix": "https://madera.curriqunet.com/catalog/iq/",
@@ -18,15 +18,45 @@
   ],
   "nodes_read": 37,
   "calls": 74,
-  "entries": 114,
+  "entries": 115,
   "stopped_at_cap": false,
   "same_title_entries": 0,
-  "entries_read": 114
+  "entries_read": 115,
+  "twin_ids": {},
+  "failed_calls": 0
  },
- "pages_read": 114,
+ "pages_read": 115,
+ "pages_listed": 115,
+ "pages_answered": 115,
+ "listing_failed": 0,
  "banner_h1": null,
- "loads": 189,
- "seconds": 925.4,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 99,
+   "hits": 0,
+   "recall": 0.0,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 6,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 0,
+  "by_result": {},
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 190,
+ "seconds": 911.6,
  "found": 106,
  "by_method": {
   "not_found": 4,
@@ -34,30 +64,6 @@
   "sitemap_page": 106
  },
  "shared_pages": {
-  "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1153": [
-   "39691",
-   "39825"
-  ],
-  "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212": [
-   "39707",
-   "39897"
-  ],
-  "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123": [
-   "39715",
-   "46525"
-  ],
-  "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1149": [
-   "39743",
-   "39864"
-  ],
-  "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1158": [
-   "39744",
-   "39865"
-  ],
-  "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1202": [
-   "39772",
-   "39874"
-  ],
   "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1220": [
    "39779",
    "39877"
@@ -66,17 +72,9 @@
    "39780",
    "39894"
   ],
-  "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160": [
-   "39793",
-   "39866"
-  ],
   "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1095/1177": [
    "39794",
    "39858"
-  ],
-  "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189": [
-   "39805",
-   "39868"
   ]
  },
  "not_found": [
@@ -86,15 +84,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45293",
-   "title": "Modern Policing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45353",
@@ -102,7 +93,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45445",
@@ -110,7 +102,35 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46525",
+   "title": "Agriculture Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 5,
+    "listed": 5,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3233,
+     "content": 3233,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -123,1080 +143,744 @@
     "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1216",
     "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1215",
     "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1079"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 3,
-  "0.8-1.0": 47,
-  "1.0": 56
+  "0.5-0.8": 1,
+  "0.8-1.0": 36,
+  "1.0": 69
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 106,
+  "against": "kb/program_requirements_college/madera",
+  "kept": 77,
+  "kept_moved": 0,
+  "programs": 29,
   "list": [
-   {
-    "control_number": "39484",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1063",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "39520",
     "title": "Economics",
     "award": "A.A- T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1073",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39521",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1082",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39528",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1083",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39529",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1085",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39530",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1071",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39690",
-    "title": "Biological Science",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1115/1131",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39691",
-    "title": "Communication Studies",
-    "award": "A.A. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1153",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1073",
+    "was_coverage": 0.933,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39693",
     "title": "English",
     "award": "A.A. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1093/1170",
-    "coverage": 0.906,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39694",
-    "title": "American Sign Language",
-    "award": "A.A. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1117/1126",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.938,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1093/1170",
+    "was_coverage": 0.906,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39704",
     "title": "Liberal Arts & Sciences: Arts & Humanities",
     "award": "A.A. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1194",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39705",
-    "title": "Liberal Arts & Sciences: Natural Sciences",
-    "award": "A.A. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1195",
-    "coverage": 0.951,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39706",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1119/1324",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39707",
-    "title": "Agricultural Mechanics",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39715",
-    "title": "Agriculture Business, Option A",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123",
-    "coverage": 0.958,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39721",
-    "title": "Agriculture Education",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1124",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39722",
-    "title": "Art: Two Dimensional",
-    "award": "A.A. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1116/1129",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39723",
-    "title": "Business Administration: Entrepreneur",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1134",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39724",
-    "title": "Business Administration:General Business",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1135",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39725",
-    "title": "Business Administration: Management",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1137",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39726",
-    "title": "Business Administration: Marketing",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1138",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39742",
-    "title": "Business Administration: Information Systems Management",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1136",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39743",
-    "title": "Child Development",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1149",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39744",
-    "title": "Criminology-Corrections",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1158",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1194",
+    "was_coverage": 0.963,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39768",
     "title": "Administrative Assistant",
     "award": "A.S. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1225",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39771",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1092/1167",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39772",
-    "title": "Industrial Maintenance Technician",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1202",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1225",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39773",
     "title": "Liberal Studies",
     "award": "A.A. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1101/1197",
-    "coverage": 0.893,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39779",
-    "title": "Licensed Vocational Nursing",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1220",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39780",
-    "title": "LVN-RN",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1222",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39781",
-    "title": "Machine Tool Technology",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1204",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.929,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1101/1197",
+    "was_coverage": 0.893,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39782",
     "title": "Mathematics",
     "award": "A.S. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1104/1210",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.9,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1104/1210",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39783",
     "title": "Medical Administrative Assistant",
     "award": "A.S. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1227",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1227",
+    "was_coverage": 0.812,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39784",
     "title": "Physical Science",
     "award": "A.S. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1109/1231",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39785",
-    "title": "Plant and Soil Science",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1110/1233",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39786",
-    "title": "Social Science",
-    "award": "A.A. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1111/1237",
-    "coverage": 0.897,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39788",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1208",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1109/1231",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39791",
     "title": "Computer Science",
     "award": "A.S. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1089/1156",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39793",
-    "title": "Criminology- Law Enforcement",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39794",
-    "title": "Environmental Horticulture",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1095/1177",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1089/1156",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39803",
     "title": "Agriculture Business",
     "award": "A.S. T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1064",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39804",
-    "title": "Information Systems, Information Technology Support Option",
-    "award": "A.S. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1188",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1064",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39805",
     "title": "Information Systems, Networking and Security",
     "award": "A.S. Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
+    "was_coverage": 0.947,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39809",
     "title": "Biology",
     "award": "A.S. T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1068",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1068",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39810",
     "title": "Elementary Teacher Education",
     "award": "A.A- T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1074",
-    "coverage": 0.808,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39811",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1066",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.846,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1074",
+    "was_coverage": 0.808,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39812",
     "title": "English",
     "award": "A.A- T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1075",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39813",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1077",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.944,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1075",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39814",
     "title": "Philosphy",
     "award": "A.A- T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1080",
-    "coverage": 0.975,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39815",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1086",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39817",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1065",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1080",
+    "was_coverage": 0.975,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39818",
     "title": "Mathematics",
     "award": "A.S. T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1078",
-    "coverage": 0.7,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.8,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1078",
+    "was_coverage": 0.7,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39819",
     "title": "Physics",
     "award": "A.S. T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1081",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39820",
-    "title": "American Sign Language Conversational Proficiency",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1117/1127",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39822",
-    "title": "Business Foundations",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1139",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1081",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39825",
     "title": "Communication Studies",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1153",
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1154",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39831",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1076",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39857",
-    "title": "Associate Teacher",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1148",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39858",
-    "title": "Environmental Horticulture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1095/1177",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39859",
-    "title": "Manufacturing 1",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1206",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39860",
-    "title": "Speech Aide",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1112/1239",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39861",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1119/1121",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1153",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39862",
     "title": "Administrative Assistant",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1226",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39863",
-    "title": "Entry Level Business Skills",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1140",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1226",
+    "was_coverage": 0.944,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39864",
     "title": "Child Development",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1149",
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1150",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1149",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39865",
     "title": "Criminology- Corrections",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1158",
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1159",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1158",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39866",
     "title": "Criminology-Law Enforcement",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160",
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1161",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39867",
-    "title": "Information Systems",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1187",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39868",
     "title": "Information Systems, Networking and Security",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1190",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39869",
-    "title": "Machinist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1205",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39870",
-    "title": "Managerial Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1146",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39871",
     "title": "Medical Administrative Assistant",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1228",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1228",
+    "was_coverage": 0.812,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39872",
     "title": "Office Assistant",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1229",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39873",
-    "title": "Welder",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1207",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1229",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39874",
     "title": "Industrial Maintenance Technician",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1202",
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1203",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39875",
-    "title": "Human Services",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1098/1184",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39876",
-    "title": "Early Intervention Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1151",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39877",
-    "title": "Licensed Vocational Nursing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1220",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39894",
-    "title": "LVN-RN",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1222",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1202",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39897",
     "title": "Agricultural Mechanics",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1213",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39914",
-    "title": "Information Technology Support Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1191",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39981",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1067",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40163",
-    "title": "21st Century Job Skills",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40333",
-    "title": "Academic and Vocational English as a Second Language",
-    "award": "Noncredit program",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1172",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40338",
-    "title": "Intermediate Academic and Vocational English as a Second Language",
-    "award": "Noncredit program",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1174",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40339",
-    "title": "Basic English as a Second Language",
-    "award": "Noncredit program",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1173",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40400",
-    "title": "Basics of Computers",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1186",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40893",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1084",
-    "coverage": 0.939,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41309",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1069",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42309",
-    "title": "Crime Scene Investigation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "43396",
     "title": "Communication Studies 2.0",
     "award": "A.A- T Degree",
     "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1072",
-    "coverage": 0.765,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.824,
+    "was_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1072",
+    "was_coverage": 0.765,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "43459",
-    "title": "Foundations of Hospitality",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1143",
-    "coverage": 1.0,
+    "control_number": "45293",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1326",
+    "coverage": 0.958,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43474",
-    "title": "Drafting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1201",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43485",
-    "title": "Fundamental Skills of Management in Hospitality",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1144",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43665",
-    "title": "Vocational English as a Second Language",
-    "award": "Noncredit program",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43673",
-    "title": "General Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1216",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43674",
-    "title": "Music Theory",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1217",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43677",
-    "title": "Vocal Performance",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1218",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43705",
-    "title": "Pest Control Advisor",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1110/1234",
-    "coverage": 0.905,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44516",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1070",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44518",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1079",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44523",
-    "title": "Food and Beverage Management Level 2",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1142",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44524",
-    "title": "Food and Beverage Management Level I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1141",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44721",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1215",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46140",
-    "title": "Social Justice Studies: General",
-    "award": "A.A- T Degree",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1327",
-    "coverage": 0.92,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46525",
-    "title": "Agriculture Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38935148408"
+ "fingerprints": {
+  "39484": {
+   "sha256": "0dcaeb0393662b7d3f40c61e280eae69b787f097f487aefa937eaa0510540100",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1063"
+  },
+  "39520": {
+   "sha256": "1108267f2265f2077e8b895db2792a5dd4309f4c70d8a3579b524c310637d76b",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1073"
+  },
+  "39521": {
+   "sha256": "7ba717bc0975a7d7c4802f701fbd9e34fac3e8e96f6a63f0624f853bebd39a13",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1082"
+  },
+  "39528": {
+   "sha256": "dcd8fc0c8d8221f165e54518f8960d46a4e444ee1657d21ebd2d818cb30d3363",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1083"
+  },
+  "39529": {
+   "sha256": "e967dbdcb990c4f9743878835e21665cb2c5253fda41356c83fcb0ee43b140c2",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1085"
+  },
+  "39530": {
+   "sha256": "b37c7f14a8ac565b3ae5fd3dbf15e7319e7af3a3c7913508f049fc4ae1aed48a",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1071"
+  },
+  "39690": {
+   "sha256": "270b7b6eaf819a521e09ca60c052f0b083f1d1fb1eb422ffa9aba0d33f1aaa3d",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1115/1131"
+  },
+  "39691": {
+   "sha256": "6031bdbe6304a2f776299883b6cd8f5cca3f6ff14e6be0a2799a280051a52bc6",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1153"
+  },
+  "39693": {
+   "sha256": "ab160a3a4bb2283e7ca7d4d9f8e3616fb737437f3084b0c4c852f453f5876057",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1093/1170"
+  },
+  "39694": {
+   "sha256": "95e9e937daf84d03839d4e8cf1ff85c5fa0d7ee5aa0d0b7b740477bc8bc07d63",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1117/1126"
+  },
+  "39704": {
+   "sha256": "f13b580070f62e0247f9a17cf0357a382778c43dd6d2e6728faeb018090e4ef4",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1194"
+  },
+  "39705": {
+   "sha256": "4841e9d8372ca8472e339f543a1d32df289a7654a5e952d244e5c18715cdbd90",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1195"
+  },
+  "39706": {
+   "sha256": "fc219a02a37df3458fa13cc49dcf4ffe6ed49388e54101786fe08865c0e1dea1",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1119/1324"
+  },
+  "39707": {
+   "sha256": "1ec3e917ef21f0b0af69ce71e8ccf7f3b36cfa16825d0be757e16b797af3f8c4",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212"
+  },
+  "39715": {
+   "sha256": "c7c8a3e556de50765a9804fe10901b00e266730471437830bf16273902f7ad97",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123"
+  },
+  "39721": {
+   "sha256": "7b4a9e79e61a517d5d216303a617d8188ccfbd258e434401d6c0abe4bdcbacc2",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1124"
+  },
+  "39722": {
+   "sha256": "1480c1bb7c2d1cddff093c29de1dc6774d80bb67ec75d13a6dfd42ea7c77402d",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1116/1129"
+  },
+  "39723": {
+   "sha256": "28dea51d89e86e7715e06c07641604d6b9d05b0520ed39424c8e3b413e85f46c",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1134"
+  },
+  "39724": {
+   "sha256": "df8c1df15eb1e2fd84ddda6e0e1c0f4577cee14757e3c1796ce50e9a017f24ab",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1135"
+  },
+  "39725": {
+   "sha256": "7747c185b9042ce46b82b167b94e830c5f5c36f384f6bc106fe725ac3658c7cc",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1137"
+  },
+  "39726": {
+   "sha256": "44c80eb1a4f28001d079b55c9950779cf46be71f2a30345b461feb393a640c0b",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1138"
+  },
+  "39742": {
+   "sha256": "dbb57df3548efa9f3e1537642867c6c07a72e601f6db6138191bc638312b373f",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1136"
+  },
+  "39743": {
+   "sha256": "02bbbdc8a2d4794288fc2cfd9696771e1aa3f4dcb953324d6903b1b6c3996329",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1149"
+  },
+  "39744": {
+   "sha256": "65b0d6a9af9997bb273a42d2e266e5b86c22b6e7e1582ec47c5021d424398a7c",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1158"
+  },
+  "39768": {
+   "sha256": "e6696e4807e20edd5b9820e9e1e593a89c0613446a0f852f3f9cd3f784ba8741",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1225"
+  },
+  "39771": {
+   "sha256": "a9e20de706970b6414dbf21e8e68a403df9b9079688e6c0ababfdacf9a3fe195",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1092/1167"
+  },
+  "39772": {
+   "sha256": "86ca984c2cfd104e6f8cc5781fa1a7d301afd0a216242bad2b4e43a771173f26",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1202"
+  },
+  "39773": {
+   "sha256": "05c850764c2ca7e3d8668b447859e98ccf9256cc79ee00d330ae032cd6f7de2e",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1101/1197"
+  },
+  "39779": {
+   "sha256": "5ec09cbb76b453b9c4f25428c49bc056af15d032974254b0fe715e8834e1087b",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1220"
+  },
+  "39780": {
+   "sha256": "35e9ba8369155e4bacacae827cefd5b7286ec4c9712b2c3325de04f5c23c519e",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1222"
+  },
+  "39781": {
+   "sha256": "04b401dc2751ed20a9ee0e986269d3ee877d85854d7b3213bc0e65fa5859d5c0",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1204"
+  },
+  "39782": {
+   "sha256": "571d24a08509129f0c5650a358e41767138bbf3bca20e205508fd2a177997837",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1104/1210"
+  },
+  "39783": {
+   "sha256": "5e311de65a542f0cfc523af4d2790f3509c89032e35eb606bb6dd45bd24e6f2e",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1227"
+  },
+  "39784": {
+   "sha256": "b01583240590ffb76a66bedeb250f166513f120f767d0e4e428b783269d9c604",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1109/1231"
+  },
+  "39785": {
+   "sha256": "dafb53acde9252302e7af446b15ceb22b9c67580bda38830fbd085bc708ef99f",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1110/1233"
+  },
+  "39786": {
+   "sha256": "50e8063b372032f9e9059cc6e06b781dc6256f4ba569983a68d6fab4ccd7913d",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1111/1237"
+  },
+  "39788": {
+   "sha256": "4dcefd812702f70146aaa744e6b7457cef5c462ae234cc304fbae2a7a7337ac3",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1208"
+  },
+  "39791": {
+   "sha256": "1eabe49da6fc1c1af9871bca8e39c7d95e5ce95e8c6955cdad6d804b7f6c18d8",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1089/1156"
+  },
+  "39793": {
+   "sha256": "cd260ddc9381cd2db9fdfb6b13c16fcf6e215ba8915a3cb9a69384fa8eb07bf7",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160"
+  },
+  "39794": {
+   "sha256": "49ab358ea57aba09d2d6c7d288d9876ffecc11e662b17ad0b6dc5aa14e2ad321",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1095/1177"
+  },
+  "39803": {
+   "sha256": "1013150d8f96bce29805656076f905e4c207697a11d603062dbcca4561db10b1",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1064"
+  },
+  "39804": {
+   "sha256": "1bd49d7560608ef7e8670c8e5f1d544746a842efd66afd77ea848664312ef668",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1188"
+  },
+  "39805": {
+   "sha256": "c4d4d4733b68f6963a85cb1001f4748bb404421d1661bca6b5adaa0ee981d8e0",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189"
+  },
+  "39809": {
+   "sha256": "8479fba8cd06d4696df789215eeaa8a4a5fde4fb6e10bd8f07db77a6b35a170b",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1068"
+  },
+  "39810": {
+   "sha256": "40d6255b54445fa72bd48730bccf0754f1a28d242a96d7109855cb2a1907741a",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1074"
+  },
+  "39811": {
+   "sha256": "1d4d1a88df28593c857398997d496dd01352c4ded222321bf7c46d5088751cb1",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1066"
+  },
+  "39812": {
+   "sha256": "f3fc1667720561dbc8a86344d57d571b6c0372fda01a62234d5965a465eec647",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1075"
+  },
+  "39813": {
+   "sha256": "6698d4f9728d9d3c2a12e17a4f015792f680b4753db27013c588f028640cfa2c",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1077"
+  },
+  "39814": {
+   "sha256": "2bce78ec950a3dd409e9f0af3a5e8a711c57d1ea8ad4eef88c2ce55c21872537",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1080"
+  },
+  "39815": {
+   "sha256": "01b36d6a406830b4b1b39aab1dcd3cdfa4f8e6c42277c5af6937b8b819a31448",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1086"
+  },
+  "39817": {
+   "sha256": "ff02a29321f6d8842e88318325ed3fc81e96954d8711914d522c4f2ba6d383dd",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1065"
+  },
+  "39818": {
+   "sha256": "59b48224caf06e4c77a7ef58d91a506a3f71cc6efc628deec396ba3038cdb393",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1078"
+  },
+  "39819": {
+   "sha256": "529b93dedf0b4d24acd037fad5299c6d49cf2e5601f7aae4130213f24101de98",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1081"
+  },
+  "39820": {
+   "sha256": "e3a8f5d834c53216540cf5f71664446c516f70f3b5aeca0d9532a3c917fd17c8",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1117/1127"
+  },
+  "39822": {
+   "sha256": "7ea6409b1d610594063a18f1de60be3be3cd4fdd382fe53fb9e5f5be2c97ef43",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1139"
+  },
+  "39825": {
+   "sha256": "81d8ee867da74e929e731cdedc46cd028bd1afe33687b4de8233c23e4210ccd9",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1154"
+  },
+  "39831": {
+   "sha256": "d1a2da23761157cdf4851111c40cac75447a13806fe28355de75559218de0cdb",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1076"
+  },
+  "39857": {
+   "sha256": "a06dfb4c41807613fcf9b7525abc16cd761d8888c86312435fb9439b79b7557f",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1148"
+  },
+  "39858": {
+   "sha256": "d70d7588dd41f7fa7052344cbf931aea8acddf8a5e82820dae6c79da4fc6c579",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1095/1177"
+  },
+  "39859": {
+   "sha256": "d092fa9b82f69c422668cbd4bc40520af421520e478993376b9f9eb2acecf754",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1206"
+  },
+  "39860": {
+   "sha256": "e7484e89493195298b298c16d0652c7783bbfcd8992c559cca390486a85b61af",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1112/1239"
+  },
+  "39861": {
+   "sha256": "8398df08816dc60e0197605830811bb0cdbca0ac5c447ce6b10507ac37f25434",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1119/1121"
+  },
+  "39862": {
+   "sha256": "df1e34b287c51eeb50bbb51dc762ce4ac8e75eac0732959837f0d162e16f745b",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1226"
+  },
+  "39863": {
+   "sha256": "b11ef4ebcb7cd36f450d010787cc979546a9da3db96c1cddcafedbbe739df648",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1140"
+  },
+  "39864": {
+   "sha256": "e66efa14375a0550e363876a80926522154b50a345b617b5056392d07e3385c0",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1150"
+  },
+  "39865": {
+   "sha256": "8284d3e8144dfb21f99071c8455491204df10d9bcec9b019995c997268a7e0b3",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1159"
+  },
+  "39866": {
+   "sha256": "cc1afb10f94f9a7082c4c30e29a9cab96c51c7d9b5fccd40c98d0879383b3dd1",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1161"
+  },
+  "39867": {
+   "sha256": "d8c4585be108c627cb8cadf32b71409c81b6edf25891e3fc969787a50ee2140a",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1187"
+  },
+  "39868": {
+   "sha256": "b21d09170436891a414aac258f9f8b6824850d826bab5a92275362cbc6bf70b1",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1190"
+  },
+  "39869": {
+   "sha256": "4d424c0b708f170f96a26b4eae7731f4cb434ffd0db907c1c72bb61cc09c01e9",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1205"
+  },
+  "39870": {
+   "sha256": "8612acc94b85d3b7665fd22423158f1b71fb84adcc9c8e0de28c70a8c3d1556e",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1146"
+  },
+  "39871": {
+   "sha256": "4fa122721fcae56b3fc60fede33778e38028d76a67e78564f50e240692117339",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1228"
+  },
+  "39872": {
+   "sha256": "ead976b936e88ac95a43ad9e710994454787ef3407021e2c21563a72d662970c",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1229"
+  },
+  "39873": {
+   "sha256": "b69f7d09b1c6708a2c9cbd5f56bf1dfc30be8bacff9436bb5a6a3b1fed332192",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1207"
+  },
+  "39874": {
+   "sha256": "26c24b48a355abc54d611b4e4dd54a307a2da97b9d04a58b94b1eeadbb7eb4cc",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1203"
+  },
+  "39875": {
+   "sha256": "cf63c8acfce43cbafe97b86a637964cd037c21725cf37a74f4c9d67a163680b1",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1098/1184"
+  },
+  "39876": {
+   "sha256": "5382763072a085809ffa5992aa0e12315df05050f305820900de43347f0e0549",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1151"
+  },
+  "39877": {
+   "sha256": "5ec09cbb76b453b9c4f25428c49bc056af15d032974254b0fe715e8834e1087b",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1220"
+  },
+  "39894": {
+   "sha256": "35e9ba8369155e4bacacae827cefd5b7286ec4c9712b2c3325de04f5c23c519e",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1222"
+  },
+  "39897": {
+   "sha256": "2cfbf9e8e84b385e2a1cb1f2d1ae429d07144436a1506ff1f9e469ecbe03d8c0",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1213"
+  },
+  "39914": {
+   "sha256": "acb496c775fed49d1c7614425d1e783bc4f2e03e893565872c2b63517b8ff511",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1191"
+  },
+  "39981": {
+   "sha256": "10a6cd8373a6fe81661a7cdf7f61bae8eb8748afcda9c8daf2ed4db5a60f2fe9",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1067"
+  },
+  "40163": {
+   "sha256": "0b0824d04c11c19fbd61182795082824ae1b3f7b1b1c3da80d0ec74ef4b625c8",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1133"
+  },
+  "40333": {
+   "sha256": "1d2c2728f1f8cc8509b617b8d22e525de9416155a88703806327e0905bd21449",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1172"
+  },
+  "40338": {
+   "sha256": "e84c5b0c65a77e7d2c253ab8e361ce9a8159244fc23b39dd516570c9cf6ecae3",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1174"
+  },
+  "40339": {
+   "sha256": "2552b70e9a7707d1a508944881900590e054760af18381826d99099c3b0db84d",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1173"
+  },
+  "40400": {
+   "sha256": "44b8bd5945c7aa5bbb032bc0f9706e8a53aa753d2529cd3a32e2523ba6ea12d4",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1186"
+  },
+  "40893": {
+   "sha256": "2c78b2daf75dbc52b93094dde37dbbdd210b30424013bfc61867e0d41b106388",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1084"
+  },
+  "41309": {
+   "sha256": "8bf8871108a308a081ea16f8957c6f592da46e513cdeb7b843bb73746819039e",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1069"
+  },
+  "42309": {
+   "sha256": "27a7a8f76dfa8f9b878247061ef6a3093ad8cb3b7fd61963c75ac3e9b8fbfd59",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1162"
+  },
+  "43396": {
+   "sha256": "51166ec164e7089c07556174187573645521e012eb35530680136a7218f73835",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1072"
+  },
+  "43459": {
+   "sha256": "c7d2b1d303769d283498c4efe1df683f255a53326b8fa5b9f54b86a196deab36",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1143"
+  },
+  "43474": {
+   "sha256": "ae3c9944eb827a8f9ecece1585c39a3a55e86dcb8bfa0de52a21fe0b5be04028",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1201"
+  },
+  "43485": {
+   "sha256": "e4174b78d287ce5f3fa38fc94d8b9a01576176d220ff179613c86ef7974c21d6",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1144"
+  },
+  "43665": {
+   "sha256": "1a98bf9074b198d60d49acf8bd6c1ca5104373230c1fcd9a595c47ce31307ad3",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1175"
+  },
+  "43673": {
+   "sha256": "3db3b361692c9fecb68edf2e6919e783a95d7f94080361fcf86e519b8a1ba036",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1216"
+  },
+  "43674": {
+   "sha256": "0396ce24faa9dda93f558e53507a75e3e08d8c42b22bd7de90b5a5961e875a2d",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1217"
+  },
+  "43677": {
+   "sha256": "2c27e0db20b7d4eb9601d416bb5886f0f81fc3f0f04290c27d1dcf85f66705d6",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1218"
+  },
+  "43705": {
+   "sha256": "033772ec180d428868eb2f1aa32df3934afb6bde08ba0d09325f19007d739be2",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1110/1234"
+  },
+  "44516": {
+   "sha256": "1e69a1ae7a8b11e86028daa182a5839ab0f1fd2056d82e0f39ab7f465cd7e1c3",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1070"
+  },
+  "44518": {
+   "sha256": "6dd2e2b8c7bbfa4ef648874fd452798ae972a1d32803dd5e6a3213bb78da61c3",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1079"
+  },
+  "44523": {
+   "sha256": "c3acf12e48a5d42f68c63847a76f3d0701664a3f4b3053131cc3ce1da81ab0a5",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1142"
+  },
+  "44524": {
+   "sha256": "cbc5a97ec359502f27f28eb577d6bce866cce29fb3a80d040031a026fe573232",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1141"
+  },
+  "44721": {
+   "sha256": "57d57436d7d2bd3ad9833d8789f3e1c608c0a5d6b4f6bb8e8154add5331e7632",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1215"
+  },
+  "45293": {
+   "sha256": "29f0467d3c175b78ef905e045d743a688f6b4d4b7749022bc89711f9ac8cc23c",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1326"
+  },
+  "46140": {
+   "sha256": "224274e04259ddfef5cd2d8dc26e38da4e19d18ef6988f0167d9396f85f6bc51",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1327"
+  }
+ },
+ "run": "44692816081"
 }

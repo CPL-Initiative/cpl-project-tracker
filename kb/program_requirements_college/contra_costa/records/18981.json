@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 14740,
-    "output_tokens": 8870,
+    "output_tokens": 9431,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 8870,
+  "output_tokens": 9431,
   "output_tokens_details": {
-   "thinking_tokens": 1620
+   "thinking_tokens": 1759
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.23636,
- "ms": 60615,
- "seconds": 61.2,
+ "cost_usd": 0.24758,
+ "ms": 64609,
+ "seconds": 65.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 158,
+   "placed": 160,
    "listed": 167,
-   "share": 0.946,
+   "share": 0.958,
    "missing": [
-    "ART190",
-    "ART191",
     "MEDIA165",
     "MUSIC102",
     "MUSIC109",
@@ -62,19 +60,27 @@
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART190",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART191",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
-    "ARTHC1100",
-    "ARTHC1200",
     "ENGL225",
     "LARAZ165"
    ],
    "flagged": [
-    "ARTHC1100",
-    "ARTHC1200",
     "ENGL225",
     "LARAZ165"
    ],
@@ -138,7 +144,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Liberal Arts: Arts & Humanities",
+   "section_heading": "Liberal Arts: Arts & Humanities - A.A. Degree",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -1318,11 +1324,11 @@
   "missing_explained": [
    {
     "code": "ART 190",
-    "why": "not in the text; list prints ARTHC1100 (Survey of Art from Prehistory to the Medieval Era) instead"
+    "why": "not in the text; list prints ARTHC1100 instead"
    },
    {
     "code": "ART 191",
-    "why": "not in the text; list prints ARTHC1200 (Survey of Art from the Renaissance to Contemporary) instead"
+    "why": "not in the text; list prints ARTHC1200 instead"
    },
    {
     "code": "MEDIA 165",
@@ -1351,13 +1357,17 @@
    {
     "code": "MUSIC 191B",
     "why": "not in the text"
-   },
-   {
-    "code": "MUSIC 159",
-    "why": "duplicate closed-list entry of MUSIC159, which is placed once in the block"
    }
   ],
-  "notes": []
+  "notes": [
+   "Major is a single list: select a minimum of 18 units from all listed Arts and Humanities courses, with courses in at least two disciplines (Communications & Journalism, Drama, English, Ethnic Studies, Foreign Language, Fine & Media Arts, History & Anthropology, Humanities & Philosophy, Music). Discipline headings recorded as one choose_units block; the two-discipline breadth rule is not captured structurally.",
+   "total_units 18 from '18 Credits' and Unit Summary 'Total Major Units 18 / 18'; degree_total 60 from 'Total Overall Units 60 / 60'. General Education Units and Elective Units to reach 60 printed as 'None'; no GE pattern named.",
+   "Catalog additions: ENGL225 (Memoir Writing), LARAZ165 (cross-list of DRAMA165), ARTHC1100 and ARTHC1200 (appear to replace closed-list ART 190 and ART 191).",
+   "Cross-listed pairs printed separately and kept as separate entries: AFRAM112/DRAMA110, AFRAM113/HUMAN113, AFRAM122/HIST122, AFRAM123/HIST123, AFRAM210/HIST110, LARAZ127/HIST127, LARAZ165/DRAMA165.",
+   "Program Outcomes printed under heading 'Liberal Arts: Arts & Humanities' for the program; recorded as this award's outcomes.",
+   "Potential Careers section prints 'None'; careers left empty."
+  ]
  },
- "extracted_run": "38979730323"
+ "extracted_run": "44687786167",
+ "catalog_year": "2026-2027"
 }

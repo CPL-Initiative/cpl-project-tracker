@@ -1,0 +1,35 @@
+{
+ "college": "Sierra College",
+ "reread_run": "44698552094",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44687646623",
+ "at": "2026-11-20T07:56:20Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "21524",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21526",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 1,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "31260"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": null,
+ "before": []
+}

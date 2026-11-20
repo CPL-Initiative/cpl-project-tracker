@@ -5,35 +5,62 @@
  "catalog_year": "2026-2027",
  "programs": 137,
  "with_closed_list": 137,
- "started": "2026-10-15T14:10:10Z",
+ "started": "2026-11-20T06:55:02Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.cos.edu/sitemap.xml",
   "status": 200,
-  "listed": 355,
+  "listed": 356,
   "nested": 0,
-  "program_pages": 166,
+  "program_pages": 168,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null,
+  "challenged": null
  },
- "pages_read": 166,
+ "listing_failed": 0,
+ "pages_read": 168,
+ "pages_listed": 168,
+ "pages_answered": 168,
  "child_pages": 0,
  "banner_h1": "2026-2027 Academic Catalog",
- "loads": 177,
- "seconds": 879.9,
- "found": 125,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 120,
+   "hits": 118,
+   "recall": 0.983,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 0,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 0,
+  "by_result": {},
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 184,
+ "seconds": 916.0,
+ "found": 126,
  "by_method": {
-  "link_search": 1,
-  "not_found": 5,
-  "page_claimed": 7,
-  "sitemap_page": 124
+  "link_search": 6,
+  "not_found": 3,
+  "page_claimed": 8,
+  "sitemap_page": 120
  },
  "shared_pages": {
-  "https://catalog.cos.edu//transfer-information-requirements/": [
+  "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/": [
    "35434",
-   "36805",
-   "38674",
-   "44216",
    "45818"
   ]
  },
@@ -62,49 +89,35 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
-   "control_number": "10064",
-   "title": "Administration of Justice-Corrections",
-   "award": "A.S. Degree",
+   "control_number": "20064",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18585",
-   "title": "Administration of Justice: Law Enforcement",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32649",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-administration-transfer-as-t/",
+    "url": "https://catalog.cos.edu//areas-study/graphic-design/certificate-achievement-graphic-design/",
     "label": {
      "award": 1,
-     "title": 0.5
+     "title": 1.0
     },
     "field": "innerText",
-    "coverage": 0.05,
-    "body": 0.05,
-    "content": 0.05,
-    "net": 1,
-    "listed": 20,
-    "why": "coarse net: the page's code tokens name 1 of 20 listed courses",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
     "error": null,
     "chars": {
-     "body": 4609,
-     "content": 6697,
+     "body": 3225,
+     "content": 5333,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42925",
@@ -130,17 +143,37 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
+  {
+   "control_number": "10064",
+   "title": "Administration of Justice-Corrections",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cos.edu//areas-study/administration-justice/associate-science-administration-justice-transfer-as-t/"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "18585",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cos.edu//areas-study/administration-justice/associate-science-administration-justice-transfer-as-t/"
+   ],
+   "status": "Active"
+  },
   {
    "control_number": "37463",
    "title": "Industrial Automation",
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.cos.edu//areas-study/industrial-maintenance/certificate-achievement-industrial-automation/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "39336",
@@ -149,7 +182,8 @@
    "pages": [
     "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-culinary-arts-fundamentals/",
     "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-beginning-culinary-skills/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "42410",
@@ -157,7 +191,8 @@
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.cos.edu//areas-study/electrician-training/certificate-achievement-nccer-electrical-theory/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "44392",
@@ -168,7 +203,8 @@
     "https://catalog.cos.edu//areas-study/animal-science/certificate-achievement-animal-science/",
     "https://catalog.cos.edu//areas-study/agricultural-business-management/associate-science-agricultural-business-management-not-for-transfer-as/",
     "https://catalog.cos.edu//areas-study/animal-science/associate-science-animal-science-not-for-transfer-as/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "44493",
@@ -176,7 +212,8 @@
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.cos.edu//areas-study/paramedic/certificate-achievement-paramedicine/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "45497",
@@ -184,1280 +221,624 @@
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.cos.edu//areas-study/equipment-technician/certificate-achievement-agriculture-technology/"
-   ]
-  },
-  {
-   "control_number": "45498",
-   "title": "Modern Policing",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.cos.edu//associate-degree-requirements/",
-    "https://catalog.cos.edu//areas-study/counseling/certificate-achievement-cal-getc/",
-    "https://catalog.cos.edu//transfer-information-requirements/"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 10,
-  "0.8-1.0": 32,
-  "1.0": 83
+  "0.5-0.8": 7,
+  "0.8-1.0": 34,
+  "1.0": 85
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 125,
+  "against": "kb/program_requirements_college/college_of_the_sequoias",
+  "kept": 117,
+  "kept_moved": 0,
+  "programs": 9,
   "list": [
    {
-    "control_number": "06715",
-    "title": "Plant Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/plant-science/associate-science-plant-science-not-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06717",
-    "title": "Agricultural Business Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/associate-science-agricultural-business-management-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06718",
-    "title": "Architecture",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/architecture/associate-science-architecture-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06720",
-    "title": "Business",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06721",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/accounting/associate-science-accounting-not-for-transfer-as/",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06728",
-    "title": "Computer Programming & Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/computer/associate-science-computer-programming-information-systems-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06732",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/engineering/associate-science-engineering-transfer-as/",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06735",
-    "title": "Environmental Control Technology (HVAC)",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/environment-control-technology/associate-science-environmental-control-technology-hvac-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06736",
-    "title": "Automotive Technology (Basic)",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/automotive-technology/associate-science-automotive-technology-basic-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06738",
-    "title": "Drafting Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/drafting/associate-science-drafting-technology-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06740",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/art/associate-arts-art-transfer-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06742",
-    "title": "Dramatic Arts - Acting",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-dramatic-arts-acting-not-for-transfer-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06748",
-    "title": "Registered Nursing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/nursing/associate-science-registered-nursing-not-for-transfer-as/",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06751",
-    "title": "Paralegal",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/paralegal/associate-science-paralegal-not-for-transfer-as/",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06762",
-    "title": "Child Development",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/child-development/associate-science-child-development-not-for-transfer-as/",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06764",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/fire-technology/associate-science-fire-technology-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "06770",
-    "title": "Sports Medicine/Athletic Training/Exercise Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/sports-medicine/associate-science-sports-medicine-athletic-trainer-transfer-as/",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10022",
-    "title": "Animal Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/animal-science/associate-science-animal-science-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10027",
-    "title": "Ornamental Horticulture",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/associate-science-ornamental-horticulture-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10028",
-    "title": "Landscape Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/associate-science-landscape-management-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10039",
-    "title": "Industrial Maintenance Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/associate-science-industrial-maintenance-technology-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10040",
-    "title": "Construction Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/construction-technology/associate-science-construction-technology-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10043",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/welding/associate-science-welding-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10045",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/dance/associate-arts-dance-not-for-transfer-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10062",
-    "title": "Human Services (Social Work)",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/human-services/associate-science-human-services-social-work-not-for-transfer-as/",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "10063",
-    "title": "POST Certified Police Academy",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/police-science/certificate-achievement-post-certified-basic-police-academy/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11572",
-    "title": "Dramatic Arts - Technical",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-dramatic-arts-technical-not-for-transfer-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11883",
-    "title": "Computer Applications",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/computer/certificate-achievement-computer-applications/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18441",
-    "title": "Liberal Arts - Pathway to Public Health and Physical Education",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-area-emphasis-health-physical-education-not-for-transfer-aa/",
-    "coverage": 0.98,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18443",
-    "title": "Liberal Arts - Pathway to Social Behavioral Science",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-area-emphasis-social-behavioral-science-not-for-transfer-aa/",
-    "coverage": 0.931,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19404",
-    "title": "Environmental Control Technology (HVAC)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/environment-control-technology/certificate-achievement-environmental-control-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19405",
-    "title": "Mechanical Drafting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-mechanical-drafting/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19755",
-    "title": "Physical Therapist Assistant",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/physical-therapist-assistant/associate-science-physical-therapist-assistant-not-for-transfer-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20021",
-    "title": "Animal Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/animal-science/certificate-achievement-animal-science/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20024",
-    "title": "Ornamental Horticulture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-ornamental-horticulture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20025",
-    "title": "Landscape Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-landscape-management/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20029",
-    "title": "Agricultural Business Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/certificate-achievement-agricultural-business-management/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20059",
-    "title": "Cosmetology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/cosmetology/certificate-achievement-cosmetology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20060",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/fire-technology/certificate-achievement-fire-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20061",
-    "title": "Human Services (Social Work)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/human-services/certificate-achievement-human-services-social-work/",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20063",
-    "title": "Child Development-Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-child-development-teacher/",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20064",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu/areas-study/graphic-design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20066",
-    "title": "Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/welding/certificate-achievement-welding/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20067",
-    "title": "Construction Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/construction-technology/certificate-achievement-construction-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20068",
-    "title": "Industrial Maintenance Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/certificate-achievement-industrial-maintenance-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20070",
-    "title": "Computer Programming & Information Systems",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/computer/certificate-achievement-computer-programming-information-systems/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20073",
-    "title": "Equipment Technician Level 2",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/equipment-technician/certificate-achievement-agriculture-technology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20074",
-    "title": "Architecture",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architecture/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20075",
-    "title": "Business",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/business/certificate-achievement-business/",
-    "coverage": 0.955,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20076",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/accounting/certificate-achievement-accounting/",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "22941",
-    "title": "Business Financial Recordkeeping",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/business/certificate-achievement-business-financial-recordkeeping/",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24184",
-    "title": "ESL Advanced Level",
-    "award": "Noncredit program",
-    "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-advanced-level-noncredit/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24226",
-    "title": "ESL Beginning Level (Noncredit)",
-    "award": "Noncredit program",
-    "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-beginning-level-noncredit/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24256",
-    "title": "ESL Intermediate Level (Noncredit)",
-    "award": "Noncredit program",
-    "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-intermediate-level-noncredit/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30703",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/psychology/associate-arts-psychology-transfer-aa-t/",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30707",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/sociology/associate-arts-sociology-transfer-aa-t/",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32175",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/english/associate-arts-english-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32176",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/spanish/associate-arts-spanish-transfer-aa-t/",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32245",
-    "title": "Architectural Drafting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-drafting/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32246",
-    "title": "Autodesk AutoCAD for Drafting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-autodesk-autocad-drafting/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32247",
-    "title": "Dassault Systemes SolidWorks",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-dassault-systemes-solidworks/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32323",
-    "title": "Architectural Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32443",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/art/associate-arts-art-history-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32457",
-    "title": "Geology",
+    "control_number": "32649",
+    "title": "Administration of Justice",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/geology/associate-science-geology-transfer-as-t/",
-    "coverage": 0.667,
+    "url": "https://catalog.cos.edu//areas-study/administration-justice/associate-science-administration-justice-transfer-as-t/",
+    "coverage": 0.95,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32710",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/music/associate-arts-music-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32874",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/mathematics/associate-science-mathematics-transfer-as-t/",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32906",
-    "title": "Interpreter (Spanish)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/spanish/certificate-achievement-interpreter-spanish/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32955",
-    "title": "Writing Consultancy",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/english/certificate-achievement-writing-consultancy/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32958",
-    "title": "NCCER Electrical Applications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/electrician-training/certificate-achievement-nccer-electrical-applications/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33177",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/art/associate-arts-studio-arts-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33183",
-    "title": "Equine Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/animal-science/certificate-achievement-equine-science/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33238",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/child-development/associate-science-early-childhood-education-transfer-as-t/",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33251",
-    "title": "Architectural Visual Communication",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-visual-communication/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33259",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/physics/associate-science-physics-transfer-as-t/",
-    "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33264",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/journalism/associate-arts-journalism-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33344",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/economics/associate-arts-economics-transfer-aa-t/",
-    "coverage": 0.714,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33396",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/anthropology/associate-arts-anthropology-transfer-aa-t/",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33662",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/music/associate-arts-music-transfer-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33712",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/history/associate-arts-history-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33777",
-    "title": "Landscape Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-landscape-design/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35163",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/philosophy/associate-arts-philosophy-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35304",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-theatre-arts-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35305",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/biology/associate-science-biology-transfer-as-t/",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "35415",
     "title": "University Studies - Pathway to Math and Science",
     "award": "A.A. Degree",
     "url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.881,
+    "was_url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "35434",
     "title": "Elementary Teacher Education",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "coverage": 0.579,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/",
+    "coverage": 0.895,
+    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "was_coverage": 0.579,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "35456",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//associate-degree-requirements/",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35527",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/chemistry/associate-science-chemistry-transfer-as-t/",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35553",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/plant-science/associate-science-agriculture-plant-science-as-t/",
+    "url": "https://catalog.cos.edu/areas-study/physical-education/kinesiology/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35763",
-    "title": "Agriculture Business",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/associate-science-agricultural-business-as-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35764",
-    "title": "Animal Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/animal-science/associate-science-animal-science-as-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36073",
-    "title": "American Sign Language",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/american-sign-language/associate-arts-american-sign-language-not-for-transfer-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36152",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/political-science/associate-arts-political-science-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36486",
-    "title": "NCCER Electrical Theory",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/electrician-training/certificate-achievement-nccer-electrical-theory/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36532",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/consumer-family-studies/child-adolescent-development-for-transfer-aa-t/",
-    "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36561",
-    "title": "Fashion Merchandising and Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/fashion/certificate-achievement-fashion-merchandising/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36660",
-    "title": "Information Communication Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/information-communications-technology/associate-science-information-communication-technology-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cos.edu//associate-degree-requirements/",
+    "was_coverage": 0.944,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36805",
     "title": "Social Justice Studies - Chicano Studies",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "url": "https://catalog.cos.edu/areas-study/ethnic-studies/associate-arts-social-justice-chicano-studies/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37092",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/political-science/associate-arts-law-public-policy-society-transfer-aa-t/",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37430",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/computer-science/associate-science-computer-science-transfer-as-t/",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37457",
-    "title": "Industrial Automation",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/certificate-achievement-industrial-automation/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37613",
-    "title": "Fashion Merchandising and Design",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/fashion/associate-science-fashion-merchandising-design-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37743",
-    "title": "Rehabilitation Aide",
-    "award": "Noncredit program",
-    "url": "https://catalog.cos.edu//areas-study/health/certificate-completion-rehabilitation-aide/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37744",
-    "title": "Entry-Level Pharmacy Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/pharmacy-technician/certificate-achievement-pharmacy-technician/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "38674",
     "title": "Nutrition and Dietetics",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38742",
-    "title": "Issues in Family Violence",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/human-services/certificate-achievement-issues-family-violence/",
+    "url": "https://catalog.cos.edu/areas-study/culinary-nutrition/associate-science-nutrition-dietetics/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39298",
-    "title": "Beginning Culinary Skills",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-beginning-culinary-skills/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39302",
-    "title": "Veterinary Assisting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/veterinary-assisting/certificate-achievement-veterinary-assisting/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39328",
-    "title": "Culinary Arts Fundamentals",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-culinary-arts-fundamentals/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39329",
-    "title": "CISCO CCNA Academy",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/information-communications-technology/certificate-achievement-cisco-ccna-academy/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39330",
-    "title": "Computer and Network Support",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/information-communications-technology/certificate-achievement-computer-network-support/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39537",
-    "title": "Commercial Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/music/certificate-achievement-commercial-music/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41521",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-administration-transfer-as-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41641",
-    "title": "Special Education",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-special-education/",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41719",
-    "title": "Liberal Arts – Pathway to Educational Occupations",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-transfer-studies-area-emphasis-elementary-teaching-preparation-transfer-aa/",
-    "coverage": 0.967,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42254",
-    "title": "Liberal Arts - Pathway to Health Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-pathway-health-science/",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43500",
-    "title": "Transitional Kindergarten",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-transitional-kindergarten/",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43520",
-    "title": "Infant Toddler Specialization",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-infant-toddler-specialization/",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43921",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/communication/associate-arts-communication-studies-transfer-aa-t/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "44216",
     "title": "Public Health",
     "award": "A.S. T Degree",
-    "url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "coverage": 0.533,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cos.edu/areas-study/physical-education/public-health/",
+    "coverage": 0.933,
+    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "was_coverage": 0.533,
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "44314",
-    "title": "Sanitary Welding Applications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cos.edu//areas-study/welding/certificate-achievement-sanitary-welding/",
+    "control_number": "45498",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cos.edu//areas-study/administration-justice/associate-science-modern-policing-as/",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44617",
-    "title": "Paramedicine",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/paramedic/certificate-achievement-paramedicine/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44801",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//areas-study/human-services/associate-science-social-work-human-services-as-t/",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45030",
-    "title": "Cal-GETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/counseling/certificate-achievement-cal-getc/",
-    "coverage": 0.945,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45379",
-    "title": "Plant Health",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cos.edu//areas-study/plant-science/certificate-achievement-plant-health/",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "45818",
     "title": "Elementary Teacher Education: Integrated Programs",
     "award": "A.A- T Degree",
-    "url": "https://catalog.cos.edu//transfer-information-requirements/",
-    "coverage": 0.579,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/",
+    "coverage": 0.895,
+    "was_url": "https://catalog.cos.edu//transfer-information-requirements/",
+    "was_coverage": 0.579,
+    "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38748848139"
+ "fingerprints": {
+  "06715": {
+   "sha256": "748a8309afc72fcd765003bfacc2cd5e68793c792ae212e2b7386867e23f6f0d",
+   "url": "https://catalog.cos.edu//areas-study/plant-science/associate-science-plant-science-not-transfer-as/"
+  },
+  "06717": {
+   "sha256": "04bfb6904678c9946e745fc44dd2d5f3d0d7da0c0504a7124f80f6be0176e644",
+   "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/associate-science-agricultural-business-management-not-for-transfer-as/"
+  },
+  "06718": {
+   "sha256": "e47ee3ef369c486a36638c99d3570ba1dba29c6ca140c4c74fd7f0f3a8da27fd",
+   "url": "https://catalog.cos.edu//areas-study/architecture/associate-science-architecture-not-for-transfer-as/"
+  },
+  "06720": {
+   "sha256": "374ac45bfd1b11fc1396fb7e25f60642e99e07ff6e455f178e5e5efd7b43be63",
+   "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-not-for-transfer-as/"
+  },
+  "06721": {
+   "sha256": "6eee64274b231c64516ff429d1ffdd025cb41bf8babb55dcf4bdb404e196023c",
+   "url": "https://catalog.cos.edu//areas-study/accounting/associate-science-accounting-not-for-transfer-as/"
+  },
+  "06728": {
+   "sha256": "fd866420b384806ca683ef8f02e56507bcb3ab8374287bdb88a3a1355d0ab1c6",
+   "url": "https://catalog.cos.edu//areas-study/computer/associate-science-computer-programming-information-systems-not-for-transfer-as/"
+  },
+  "06732": {
+   "sha256": "f57a76985d2f14ef68d252fc1b24e170059fa303a521e89233e7341d5977738d",
+   "url": "https://catalog.cos.edu//areas-study/engineering/associate-science-engineering-transfer-as/"
+  },
+  "06735": {
+   "sha256": "914b285fa84e181536f4b46a2b0c0f02f948b68776ae561264887016945d70a8",
+   "url": "https://catalog.cos.edu//areas-study/environment-control-technology/associate-science-environmental-control-technology-hvac-not-for-transfer-as/"
+  },
+  "06736": {
+   "sha256": "95b786db4778cf3892aded2c2401af09412b8cc1d789eec26770e34f7fb042f4",
+   "url": "https://catalog.cos.edu//areas-study/automotive-technology/associate-science-automotive-technology-basic-not-for-transfer-as/"
+  },
+  "06738": {
+   "sha256": "b56c6eb0b38df1534d955d732d95c5455a664d1ea070f0a6c08b34b7fee74294",
+   "url": "https://catalog.cos.edu//areas-study/drafting/associate-science-drafting-technology-not-for-transfer-as/"
+  },
+  "06740": {
+   "sha256": "dd68b1c8a4cf33c580314df7eb484bcd7d30a34c8f59b17901dce67b487c5be2",
+   "url": "https://catalog.cos.edu//areas-study/art/associate-arts-art-transfer-aa/"
+  },
+  "06742": {
+   "sha256": "5cc9ad2fe260bffae64d9765881d8cb626dd2c1460be569276289a6ca13dd444",
+   "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-dramatic-arts-acting-not-for-transfer-aa/"
+  },
+  "06748": {
+   "sha256": "4f0f47a9637b699f8c67bad0bfe2701c8295ff9cf0d1d9360844badc978bf96c",
+   "url": "https://catalog.cos.edu//areas-study/nursing/associate-science-registered-nursing-not-for-transfer-as/"
+  },
+  "06751": {
+   "sha256": "3894e046c0639d08550bd545c116bc07f1ff93755a077dc2d60f283023200351",
+   "url": "https://catalog.cos.edu//areas-study/paralegal/associate-science-paralegal-not-for-transfer-as/"
+  },
+  "06762": {
+   "sha256": "f8b932ca6e5d3369b16b5e09d26c407fd672c7418fa65b40325f0cacddb96eec",
+   "url": "https://catalog.cos.edu//areas-study/child-development/associate-science-child-development-not-for-transfer-as/"
+  },
+  "06764": {
+   "sha256": "afbf8c373888f6a6f7c3f2784b25f1425ee0d58cd3f869cc5bf2439f6e3b1bf5",
+   "url": "https://catalog.cos.edu//areas-study/fire-technology/associate-science-fire-technology-not-for-transfer-as/"
+  },
+  "06770": {
+   "sha256": "df2a6b505b4f57805ae421c0839f27978da14b044c2dbe895a27440f7707650c",
+   "url": "https://catalog.cos.edu//areas-study/sports-medicine/associate-science-sports-medicine-athletic-trainer-transfer-as/"
+  },
+  "10022": {
+   "sha256": "2bfa45ab289e3100e23fdec78eab22b03635fd598752dc92108e11663c0a46c4",
+   "url": "https://catalog.cos.edu//areas-study/animal-science/associate-science-animal-science-not-for-transfer-as/"
+  },
+  "10027": {
+   "sha256": "fe16b592126d49ecfa79c1fdcb0ac93963da1102006446300900d303bd8aad45",
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/associate-science-ornamental-horticulture-not-for-transfer-as/"
+  },
+  "10028": {
+   "sha256": "7370a21ded160980c64a8a1fe48904a3f03f1d220e947f3e5238994ec346abbe",
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/associate-science-landscape-management-not-for-transfer-as/"
+  },
+  "10039": {
+   "sha256": "017b9daae53b57a9c2335e9d5c85806fc3af02605427875197386f34118fb6b8",
+   "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/associate-science-industrial-maintenance-technology-not-for-transfer-as/"
+  },
+  "10040": {
+   "sha256": "8dc7fc7b7d090a45791cd343e257682f02af8eed9e98f41f85382f4dcb775a12",
+   "url": "https://catalog.cos.edu//areas-study/construction-technology/associate-science-construction-technology-not-for-transfer-as/"
+  },
+  "10043": {
+   "sha256": "53a6d3b91b200ad8d15726d7d474167adcbe6e4aacb4f40e12633a14c8ec8f86",
+   "url": "https://catalog.cos.edu//areas-study/welding/associate-science-welding-not-for-transfer-as/"
+  },
+  "10045": {
+   "sha256": "3f311ad20b392c945c382d90c11423c7ba13d300e9e3b4de05222337595925e0",
+   "url": "https://catalog.cos.edu//areas-study/dance/associate-arts-dance-not-for-transfer-aa/"
+  },
+  "10062": {
+   "sha256": "a7ebc5ae91c7ef7ea287d0f9ff2f9bafda4c959386a5a5793e7c434b38152e46",
+   "url": "https://catalog.cos.edu//areas-study/human-services/associate-science-human-services-social-work-not-for-transfer-as/"
+  },
+  "10063": {
+   "sha256": "c544ae0f2f92d7ebaa9cf1af355f3a8d3a05e077202a8479ff2f1464d2ada570",
+   "url": "https://catalog.cos.edu//areas-study/police-science/certificate-achievement-post-certified-basic-police-academy/"
+  },
+  "11572": {
+   "sha256": "2bcc947820529c3c649b7bdc0e6edf3f27e3848aff116986546f3f44fb191944",
+   "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-dramatic-arts-technical-not-for-transfer-aa/"
+  },
+  "11883": {
+   "sha256": "94eff00961121a6927748300a1d4047d64f590de02c6194392ba5206713171e0",
+   "url": "https://catalog.cos.edu//areas-study/computer/certificate-achievement-computer-applications/"
+  },
+  "18441": {
+   "sha256": "84dc55b9cdf21eff03c9e090b34d4ca51162418cb23ce9b781a173baff139572",
+   "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-area-emphasis-health-physical-education-not-for-transfer-aa/"
+  },
+  "18443": {
+   "sha256": "035e9eaedbee90b684a0e454f5d5610edf0fe73a24c86a607bd3cfecf227275a",
+   "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-area-emphasis-social-behavioral-science-not-for-transfer-aa/"
+  },
+  "19404": {
+   "sha256": "0ae6589b84fba81fb34ec5f73232bc30a175f7b676677e2431cdbc9453fcc7fe",
+   "url": "https://catalog.cos.edu//areas-study/environment-control-technology/certificate-achievement-environmental-control-technology/"
+  },
+  "19405": {
+   "sha256": "42b3836b62c49eea3c44f18fd140f17e83252c119535ea87d0dc5acb00ad958c",
+   "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-mechanical-drafting/"
+  },
+  "19755": {
+   "sha256": "3f184576bf8ad29cf95ac5061a3f451f5f0415abd133fa1ea5cd9263fa3ffdae",
+   "url": "https://catalog.cos.edu//areas-study/physical-therapist-assistant/associate-science-physical-therapist-assistant-not-for-transfer-as/"
+  },
+  "20021": {
+   "sha256": "d9de0ba6898be9b05d938ccc472dc14c91083a1354c93f2045db1b18b3cff595",
+   "url": "https://catalog.cos.edu//areas-study/animal-science/certificate-achievement-animal-science/"
+  },
+  "20024": {
+   "sha256": "0cc38570b71bf8bce7b6be169e59f3ad6f5223633b53ac2997aa62fcd1d153c7",
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-ornamental-horticulture/"
+  },
+  "20025": {
+   "sha256": "689c510c6f690cae29e8fafc3544f48eb64bc22fe0660f8dc47892646b308cce",
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-landscape-management/"
+  },
+  "20029": {
+   "sha256": "2b1274d52acc5371862e97729b4ac74f9435773fbc55831d8607879b2fba174e",
+   "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/certificate-achievement-agricultural-business-management/"
+  },
+  "20059": {
+   "sha256": "2ab5fb6314bfe99a4e4ebbbf5743c6e1edcb0f4497afd8ed0e99f8a49056cb4d",
+   "url": "https://catalog.cos.edu//areas-study/cosmetology/certificate-achievement-cosmetology/"
+  },
+  "20060": {
+   "sha256": "26102a7c6543ad74032e91c8fcd9ec5d0d3254ee854df572cc9ee5c73df54d04",
+   "url": "https://catalog.cos.edu//areas-study/fire-technology/certificate-achievement-fire-technology/"
+  },
+  "20061": {
+   "sha256": "8b989fa7027a677d61ae4697040689ad29617f9678ef17723e91bd47f6c0f898",
+   "url": "https://catalog.cos.edu//areas-study/human-services/certificate-achievement-human-services-social-work/"
+  },
+  "20063": {
+   "sha256": "43b9cd7e3bef0a0371606075054100714cafaaabda366047627e4a9ee8ff299a",
+   "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-child-development-teacher/"
+  },
+  "20066": {
+   "sha256": "55356e6a4cf39ea696f29883dcfa4b495b30c5692bdd62723122d1623caa5a6d",
+   "url": "https://catalog.cos.edu//areas-study/welding/certificate-achievement-welding/"
+  },
+  "20067": {
+   "sha256": "c9017c0eb9f21f16d3f8f2803b438a4a1388d28171e9cad211f9af4ed7b9194f",
+   "url": "https://catalog.cos.edu//areas-study/construction-technology/certificate-achievement-construction-technology/"
+  },
+  "20068": {
+   "sha256": "737a9fcd9ae2f6fe8fcd65a046c2922003540b58904c9df3f32442fe5091e908",
+   "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/certificate-achievement-industrial-maintenance-technology/"
+  },
+  "20070": {
+   "sha256": "678b7f7f22e352f6031671fbdf3bb19a27609709b8380186186058b82e90e620",
+   "url": "https://catalog.cos.edu//areas-study/computer/certificate-achievement-computer-programming-information-systems/"
+  },
+  "20073": {
+   "sha256": "ee454b2a889278ae1d47e5b20bece11c26b735b2bfd0be97ec151a0419a4186b",
+   "url": "https://catalog.cos.edu//areas-study/equipment-technician/certificate-achievement-agriculture-technology/"
+  },
+  "20074": {
+   "sha256": "135b7f59dc22a1940548d8be104ad5e2375049fe5323299260ecf096bf62b25a",
+   "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architecture/"
+  },
+  "20075": {
+   "sha256": "d506d3073e44ff1489700b3354c046ea422b6566399adf695613fe3210ab3615",
+   "url": "https://catalog.cos.edu//areas-study/business/certificate-achievement-business/"
+  },
+  "20076": {
+   "sha256": "d65ef65eb24fbb5a56c1b1c3059fcad9472ee5fe901671a0faed9ca0332e8e67",
+   "url": "https://catalog.cos.edu//areas-study/accounting/certificate-achievement-accounting/"
+  },
+  "22941": {
+   "sha256": "5f6d77b7712e67801d566b5e215460bc72e4e0074f5e1bf65fa1ed1c834eb48d",
+   "url": "https://catalog.cos.edu//areas-study/business/certificate-achievement-business-financial-recordkeeping/"
+  },
+  "24184": {
+   "sha256": "e1c16c421ee0f7d143d972daec00c9e337a47faf01c442d08d02917095c50f04",
+   "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-advanced-level-noncredit/"
+  },
+  "24226": {
+   "sha256": "6f89297f8afab688da45a667c807868f2d28f50d864344706b90ce554ef8f7fa",
+   "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-beginning-level-noncredit/"
+  },
+  "24256": {
+   "sha256": "586fb8eeca998b1e72de5bb26cb3a451ae7a058528a74d243c4b335fe6b3724a",
+   "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-intermediate-level-noncredit/"
+  },
+  "30703": {
+   "sha256": "fddb8113ad00c2ae2392440db234dd57f07b1d6a41470b5a7946d95edb552745",
+   "url": "https://catalog.cos.edu//areas-study/psychology/associate-arts-psychology-transfer-aa-t/"
+  },
+  "30707": {
+   "sha256": "59fe83037e1b643a91ad74b3c7a5e477b0e874796be904a4eb1a6151bb82103a",
+   "url": "https://catalog.cos.edu//areas-study/sociology/associate-arts-sociology-transfer-aa-t/"
+  },
+  "32175": {
+   "sha256": "c9bf012da011e3c23dc48750b26f7fbcf1442f029142f1c6ac47fe2ec0ca6f72",
+   "url": "https://catalog.cos.edu//areas-study/english/associate-arts-english-transfer-aa-t/"
+  },
+  "32176": {
+   "sha256": "b29fd80fc8999ac6d1dcf01d6208e7b007d3675bbe7b25176a38bf7e6442a9f3",
+   "url": "https://catalog.cos.edu//areas-study/spanish/associate-arts-spanish-transfer-aa-t/"
+  },
+  "32245": {
+   "sha256": "f19d5ae7cf556a9e44be5074fb23d610e8ce19ebb84f484e9be4e3905184009c",
+   "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-drafting/"
+  },
+  "32246": {
+   "sha256": "b23802d377acd0f2bbd1176d357b9df5eae84bf1b351b337a229e7bedd58ffbb",
+   "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-autodesk-autocad-drafting/"
+  },
+  "32247": {
+   "sha256": "f0615e7c81d92dca1d6c9118d26a6752d9c6030c97d3dac7be3eabeb1ac3ebaf",
+   "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-dassault-systemes-solidworks/"
+  },
+  "32323": {
+   "sha256": "3454c2cc335f910e0faf4062d788011f2b41a9b00a98a44f3d6ce0ab157794c0",
+   "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-design/"
+  },
+  "32443": {
+   "sha256": "0c078819183c6c0b29328fe7120b71ef53dd253ee0a24bb56163e9f6ff0ba9ad",
+   "url": "https://catalog.cos.edu//areas-study/art/associate-arts-art-history-transfer-aa-t/"
+  },
+  "32457": {
+   "sha256": "bb5f33a1b36eec670f61856608cb38712df45f28237a1b34e92d4b60db5225be",
+   "url": "https://catalog.cos.edu//areas-study/geology/associate-science-geology-transfer-as-t/"
+  },
+  "32649": {
+   "sha256": "d9c39657ff4bef041b739d3ad24369c98efc0c77d7e285b7ae300571294f146f",
+   "url": "https://catalog.cos.edu//areas-study/administration-justice/associate-science-administration-justice-transfer-as-t/"
+  },
+  "32710": {
+   "sha256": "74d0754bf03796509e20717f9bc77a59708ce67786b37426f96707738cc382d4",
+   "url": "https://catalog.cos.edu//areas-study/music/associate-arts-music-transfer-aa-t/"
+  },
+  "32874": {
+   "sha256": "dbab98e21bf87eafa7befd533305404d577af06b0a03b54c944c72651bbd82a7",
+   "url": "https://catalog.cos.edu//areas-study/mathematics/associate-science-mathematics-transfer-as-t/"
+  },
+  "32906": {
+   "sha256": "97071562041ba4b4b17f22a2e835af53fb3e6e7b949c086fc2649113233cfc9e",
+   "url": "https://catalog.cos.edu//areas-study/spanish/certificate-achievement-interpreter-spanish/"
+  },
+  "32955": {
+   "sha256": "150912f8c5c4754887039adefc7adb94d6c09d1bdadd8bd5cd54b6c13e8321ef",
+   "url": "https://catalog.cos.edu//areas-study/english/certificate-achievement-writing-consultancy/"
+  },
+  "32958": {
+   "sha256": "e6dced76267f32c0b2a61352b20d8bf00429a6b0f3f91831d8686ab8a8d23821",
+   "url": "https://catalog.cos.edu//areas-study/electrician-training/certificate-achievement-nccer-electrical-applications/"
+  },
+  "33177": {
+   "sha256": "a3cbdfbfeb81439d5473ec5af93b5363425dfa0df29b2725d39f879cc3b5dac1",
+   "url": "https://catalog.cos.edu//areas-study/art/associate-arts-studio-arts-transfer-aa-t/"
+  },
+  "33183": {
+   "sha256": "bdf4cce1c0046a8f589d2b037a1b6b7c001997652c012e45c6f9952e1fd30602",
+   "url": "https://catalog.cos.edu//areas-study/animal-science/certificate-achievement-equine-science/"
+  },
+  "33238": {
+   "sha256": "9e5b942a1c1b2c5667439c532b7a34a89c73410ddba8920bd1f75e22c3445ec1",
+   "url": "https://catalog.cos.edu//areas-study/child-development/associate-science-early-childhood-education-transfer-as-t/"
+  },
+  "33251": {
+   "sha256": "2aeb3e54d5fdab1bedc8846a084feb7eaea246053b9695bbd05cb0c4ad40fa2f",
+   "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-visual-communication/"
+  },
+  "33259": {
+   "sha256": "446c9f8855f13d9dfd982874f04f611e50fb24483752854e04e413bf272165f4",
+   "url": "https://catalog.cos.edu//areas-study/physics/associate-science-physics-transfer-as-t/"
+  },
+  "33264": {
+   "sha256": "6ffaa57afcaeee28ba5091a942a1e23a32942c3976b8a16504e7851ee3cb29e9",
+   "url": "https://catalog.cos.edu//areas-study/journalism/associate-arts-journalism-transfer-aa-t/"
+  },
+  "33344": {
+   "sha256": "9edbfa16bf283e79512c7e11b95bda8020a8d05f519db1eee1b934602abde644",
+   "url": "https://catalog.cos.edu//areas-study/economics/associate-arts-economics-transfer-aa-t/"
+  },
+  "33396": {
+   "sha256": "910522a9ba3aa52c05707e7f7e7392da00fb6f625313a78ce4265109636dad04",
+   "url": "https://catalog.cos.edu//areas-study/anthropology/associate-arts-anthropology-transfer-aa-t/"
+  },
+  "33662": {
+   "sha256": "8e81d3d8256c059d428bb4dd7ca0c01d51a79e715dcbc1557508c20ddb773ff9",
+   "url": "https://catalog.cos.edu//areas-study/music/associate-arts-music-transfer-aa/"
+  },
+  "33712": {
+   "sha256": "2c6d7d6f8f29b360b106c42a80b987261d4ff831d5ab74a84432b7b0882fa500",
+   "url": "https://catalog.cos.edu//areas-study/history/associate-arts-history-transfer-aa-t/"
+  },
+  "33777": {
+   "sha256": "295748ebf982f98835b9afa922315f13e95a0fc2aa7d50ebc67419c2cf7e65f3",
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-landscape-design/"
+  },
+  "35163": {
+   "sha256": "1b6e96f207e9f0a5c178cea569596264f41130f582b866854ceef19925d9ec9e",
+   "url": "https://catalog.cos.edu//areas-study/philosophy/associate-arts-philosophy-transfer-aa-t/"
+  },
+  "35304": {
+   "sha256": "020b40f2805ca8dcfaf83989e224a86029334036b4c07a24e5fd50ea6e7f8d62",
+   "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-theatre-arts-transfer-aa-t/"
+  },
+  "35305": {
+   "sha256": "5b3b902c74d00c2a5187ec58940c90d81c8f34e1b1b07a9fb11824e0c7bf0ccb",
+   "url": "https://catalog.cos.edu//areas-study/biology/associate-science-biology-transfer-as-t/"
+  },
+  "35415": {
+   "sha256": "e9e8838a25af2a6a37bf1aa5c370bb7208b00a59f7e206f83926f1028798d5a9",
+   "url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/"
+  },
+  "35434": {
+   "sha256": "cd2fde36a88d70366f6f09e8bab0ee66fe0852ec7eee126c26911dddde5b019e",
+   "url": "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/"
+  },
+  "35456": {
+   "sha256": "7244ab4d0338e75768d932515cdcf960f8c866fbc601032fcf26a2e59aaa9675",
+   "url": "https://catalog.cos.edu/areas-study/physical-education/kinesiology/"
+  },
+  "35527": {
+   "sha256": "c11926633f6f79a738be1892a2c51a665c7eeb28b4782df751a9fdc1196da79a",
+   "url": "https://catalog.cos.edu//areas-study/chemistry/associate-science-chemistry-transfer-as-t/"
+  },
+  "35553": {
+   "sha256": "9b90788cb6bf4bb65bf4d41c72aa40318d63460f2d6e08808c5f9c9317b62f6f",
+   "url": "https://catalog.cos.edu//areas-study/plant-science/associate-science-agriculture-plant-science-as-t/"
+  },
+  "35763": {
+   "sha256": "cfcbf04700e571b1383018eaf38a9c66fad50ba455d6d9f577094b1c2841b01a",
+   "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/associate-science-agricultural-business-as-t/"
+  },
+  "35764": {
+   "sha256": "f3b444a04b84c06c7a400217e75c9733b1e1dbf9cbd572f673442ae32339694d",
+   "url": "https://catalog.cos.edu//areas-study/animal-science/associate-science-animal-science-as-t/"
+  },
+  "36073": {
+   "sha256": "2395c54ccaa8cf83eb28c4401379861867b2140e2887a861644354c4485c676d",
+   "url": "https://catalog.cos.edu//areas-study/american-sign-language/associate-arts-american-sign-language-not-for-transfer-aa/"
+  },
+  "36152": {
+   "sha256": "196ccbb21117a59c1144d3ffa8f4ec202f85bb8d0f79bd1a5d57664cd591681e",
+   "url": "https://catalog.cos.edu//areas-study/political-science/associate-arts-political-science-transfer-aa-t/"
+  },
+  "36486": {
+   "sha256": "7fe77fcd2e9d48e044af67a254609ab3f45876f95553592889693a03eaf55e1b",
+   "url": "https://catalog.cos.edu//areas-study/electrician-training/certificate-achievement-nccer-electrical-theory/"
+  },
+  "36532": {
+   "sha256": "5cd2a0c56601a2aa1b6f99cdc8db8fc1439a9f70287b8e45aca0197ee9162ea8",
+   "url": "https://catalog.cos.edu//areas-study/consumer-family-studies/child-adolescent-development-for-transfer-aa-t/"
+  },
+  "36561": {
+   "sha256": "cf03f94b137af8f03249104ab96c9b724f47df02d461c20ffce4ea57cd7d33ec",
+   "url": "https://catalog.cos.edu//areas-study/fashion/certificate-achievement-fashion-merchandising/"
+  },
+  "36660": {
+   "sha256": "0cfb9fcf6a9d02499cbf7f67d4bad84c0c29d142f80d953d86b137d5944c4b5e",
+   "url": "https://catalog.cos.edu//areas-study/information-communications-technology/associate-science-information-communication-technology-as/"
+  },
+  "36805": {
+   "sha256": "6750d5e8de45c4885431540a02b6437e4027e3f1adae66e4ec31afc72094d190",
+   "url": "https://catalog.cos.edu/areas-study/ethnic-studies/associate-arts-social-justice-chicano-studies/"
+  },
+  "37092": {
+   "sha256": "bd139a9e17ef05501d1f56fff68d6fedaca263040b96bd7f7b0ca01227947bb3",
+   "url": "https://catalog.cos.edu//areas-study/political-science/associate-arts-law-public-policy-society-transfer-aa-t/"
+  },
+  "37430": {
+   "sha256": "4933e988767dc6a39b766f3bc5b797752a67177c84b95eebdbc6cb8b0e8afe2d",
+   "url": "https://catalog.cos.edu//areas-study/computer-science/associate-science-computer-science-transfer-as-t/"
+  },
+  "37457": {
+   "sha256": "7938f10cd39fa7b804c7da39ab49697532f66f8e00c1db5cddb10bcbec5e7f4a",
+   "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/certificate-achievement-industrial-automation/"
+  },
+  "37613": {
+   "sha256": "ed19953ab24564477fecf1ff0ce5fcd8b8cc1cababdf5b189c26d6c7481c1f98",
+   "url": "https://catalog.cos.edu//areas-study/fashion/associate-science-fashion-merchandising-design-as/"
+  },
+  "37743": {
+   "sha256": "e3db8842f5bd357844e21eb9da4d2903dd9bb2f437952769cbc415885a9da336",
+   "url": "https://catalog.cos.edu//areas-study/health/certificate-completion-rehabilitation-aide/"
+  },
+  "37744": {
+   "sha256": "c569f62e68d5a1ca389c22d5587625a3dc0c16a47128b10f11f9938fb124b781",
+   "url": "https://catalog.cos.edu//areas-study/pharmacy-technician/certificate-achievement-pharmacy-technician/"
+  },
+  "38674": {
+   "sha256": "ec8a3e1dcbb8ed6e33b569de007c6809aed3c30c9a62755c47c719bc0ea36356",
+   "url": "https://catalog.cos.edu/areas-study/culinary-nutrition/associate-science-nutrition-dietetics/"
+  },
+  "38742": {
+   "sha256": "f5f3bf4ba5c2f04ea58cce6061e0ec942ff27926906fec585b83682f097b0f77",
+   "url": "https://catalog.cos.edu//areas-study/human-services/certificate-achievement-issues-family-violence/"
+  },
+  "39298": {
+   "sha256": "4cb0c3a15579a1a18fb1598e89d7ed48b9be880a107096672639fa4c0ee5268e",
+   "url": "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-beginning-culinary-skills/"
+  },
+  "39302": {
+   "sha256": "e54433ce6d8700f7688dcd1311a67707a7c6b56594979c9c850a6e534057e437",
+   "url": "https://catalog.cos.edu//areas-study/veterinary-assisting/certificate-achievement-veterinary-assisting/"
+  },
+  "39328": {
+   "sha256": "9a918af0ba31a010581322bf0462d5fb8f87130562cd424ba1df84b772b56a34",
+   "url": "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-culinary-arts-fundamentals/"
+  },
+  "39329": {
+   "sha256": "19b07620c6f06269fc489665fd387fd1c992de573c85e321fcd67c1367e27e21",
+   "url": "https://catalog.cos.edu//areas-study/information-communications-technology/certificate-achievement-cisco-ccna-academy/"
+  },
+  "39330": {
+   "sha256": "6ab00f888a01fa609b4bd8cc1b50cda9bb05b2ec04d7ebf339d040d19508bc89",
+   "url": "https://catalog.cos.edu//areas-study/information-communications-technology/certificate-achievement-computer-network-support/"
+  },
+  "39537": {
+   "sha256": "a132cb6056785cc3c31e61151908f11076349570b5d23b022bfc69fba66be8a5",
+   "url": "https://catalog.cos.edu//areas-study/music/certificate-achievement-commercial-music/"
+  },
+  "41521": {
+   "sha256": "926711a33e86a317c4475f9d05543577d4d63fc6b6191fe2dedca488ec7bcb4a",
+   "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-administration-transfer-as-t/"
+  },
+  "41641": {
+   "sha256": "a1676c403a8cb120f1238c2095ea78435de14b56343d0cf5914f59704dd0aee3",
+   "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-special-education/"
+  },
+  "41719": {
+   "sha256": "7b644bab83fef499d9e67a3d66340472bc8e25cc835b72feedd31a888f0f3e15",
+   "url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-transfer-studies-area-emphasis-elementary-teaching-preparation-transfer-aa/"
+  },
+  "42254": {
+   "sha256": "c440396c641dd4537d897c30221050ea81de5dadc84eabf53b558bb91158f745",
+   "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-pathway-health-science/"
+  },
+  "43500": {
+   "sha256": "707f0f8a83790fed9cc7e9408d31f68fb265eaa3797e6c4df0301ec244b20f32",
+   "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-transitional-kindergarten/"
+  },
+  "43520": {
+   "sha256": "aa43c5fc91619ed5198c699333eaca80a563917f03f00565fe91f0443f149b15",
+   "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-infant-toddler-specialization/"
+  },
+  "43921": {
+   "sha256": "96cd822c0df8c60cb6c0624d55894b06c6efee42af2609cedab356309b09160b",
+   "url": "https://catalog.cos.edu//areas-study/communication/associate-arts-communication-studies-transfer-aa-t/"
+  },
+  "44216": {
+   "sha256": "b92cdbc950114f27ef10372346a69256d8196a8ce6b6b23aff890caa6123b3eb",
+   "url": "https://catalog.cos.edu/areas-study/physical-education/public-health/"
+  },
+  "44314": {
+   "sha256": "aea7b41c59aa2d458291d9de1724ce5a7db72cbdaf071a1e1d2461829bf708d8",
+   "url": "https://catalog.cos.edu//areas-study/welding/certificate-achievement-sanitary-welding/"
+  },
+  "44617": {
+   "sha256": "5904fc59cdb1603d4c8f9a3a91f24a81a24f4c840a7e25102dab4c1b058bfa7d",
+   "url": "https://catalog.cos.edu//areas-study/paramedic/certificate-achievement-paramedicine/"
+  },
+  "44801": {
+   "sha256": "8d80c7695b7fecb4637cd954c3f12bbc7006bbdb730a28d6e389d508f165c1c5",
+   "url": "https://catalog.cos.edu//areas-study/human-services/associate-science-social-work-human-services-as-t/"
+  },
+  "45030": {
+   "sha256": "313e5b25d35ffe3c811487cf63533b418b6b1bd63be12c867d06cad24d8f2831",
+   "url": "https://catalog.cos.edu//areas-study/counseling/certificate-achievement-cal-getc/"
+  },
+  "45379": {
+   "sha256": "9880e4fd81a85cd99239f7637d374c7bbf4b51b3bc3b0804c944a52a1d9fe755",
+   "url": "https://catalog.cos.edu//areas-study/plant-science/certificate-achievement-plant-health/"
+  },
+  "45498": {
+   "sha256": "28989cc4d6f0a37481b9a5692621def2a1b088b0efdbd86b55c45b6cacb5bab7",
+   "url": "https://catalog.cos.edu//areas-study/administration-justice/associate-science-modern-policing-as/"
+  },
+  "45818": {
+   "sha256": "cd2fde36a88d70366f6f09e8bab0ee66fe0852ec7eee126c26911dddde5b019e",
+   "url": "https://catalog.cos.edu/areas-study/education/elementary-teacher-education/"
+  }
+ },
+ "run": "44688217584"
 }

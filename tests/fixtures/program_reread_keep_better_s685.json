@@ -1185,8 +1185,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-ca-fall-2025",
    "award_tail": "-ca",
-   "own_address": false,
-   "note": "the certificate on its own page shows nothing by the address either: slug_awards cannot read -ca (a false negative; the capture's title or h1 can still show the page)"
+   "own_address": true,
+   "note": "the certificate on its own page: slug_awards reads -ca as a Certificate of Achievement since S689 (it was a false negative under #3557), so the address shows it"
   },
   {
    "slug": "college_of_the_redwoods",
@@ -1215,8 +1215,8 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/",
    "award_tail": "-aa-t-degree",
-   "own_address": false,
-   "note": "the AA-T on its own page: slug_awards cannot read -aa-t-degree, so the address shows nothing (a false negative); the S685 replay keeps 39404 on its page title"
+   "own_address": true,
+   "note": "the AA-T on its own page: slug_awards reads -aa-t-degree as a transfer degree since S689 (it was a false negative under #3557), so the address shows it"
   },
   {
    "slug": "ventura",

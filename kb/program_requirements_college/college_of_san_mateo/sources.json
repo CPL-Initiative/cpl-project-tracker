@@ -544,8 +544,8 @@
    },
    "yield_held": {
     "holder": "31255",
-    "held": "unjudged",
-    "why": "its filed record was read from another page"
+    "held": "refused_passing",
+    "why": "its filed record passes live"
    }
   }
  },
@@ -1259,29 +1259,12 @@
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.571,
-  "codes_found": [
-   "MATH253",
-   "MATH270",
-   "MATHC2210",
-   "MATHC2220"
-  ],
-  "source": {
-   "url": "http://catalog.collegeofsanmateo.edu/current/programs/economics-aa-t.php",
-   "title": "Economics Associate in Arts Degree for Transfer",
-   "h1": " Economics Associate in Arts Degree for Transfer",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 3760
+  "text_chars": 0
  },
  {
   "control_number": "31224",
@@ -2362,23 +2345,12 @@
   "title": "Business Analytics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
-  "coverage": 0.571,
-  "codes_found": [
-   "BUS123",
-   "BUS207",
-   "BUS401",
-   "CIS110"
-  ],
-  "source": {
-   "url": "https://catalog.collegeofsanmateo.edu/current/programs/business-analytics-as.php",
-   "title": "Business Analytics Associate in Science Degree Program",
-   "h1": " Business Analytics Associate in Science Degree Program",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 3261
+  "text_chars": 0
  },
  {
   "control_number": "42139",
