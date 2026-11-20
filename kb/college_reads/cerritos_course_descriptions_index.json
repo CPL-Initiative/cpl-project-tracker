@@ -10,11 +10,11 @@
  "capture_lines": 4000,
  "pages": [
   {
-   "url": "https://cerritos-public.courseleaf.com/course-descriptions/",
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/course-descriptions/",
    "answers": [
     "subjects"
    ],
-   "links": "/course-descriptions/[a-z0-9_-]+/",
+   "links": "/degrees-certificates-courses/course-descriptions/[a-z0-9_-]+/",
    "capture_view": true
   }
  ]
