@@ -1,3 +1,2 @@
-file=kb/migrations/2026-11-20_commons_handover.sql
-name=commons_handover
-# S692, 2026-11-20: hand it over in place, slice 1 (the private bucket, the table and its three functions).
+file=kb/migrations/2026-11-20_s692_handover_memory_rows.sql
+name=s692_handover_memory_rows
