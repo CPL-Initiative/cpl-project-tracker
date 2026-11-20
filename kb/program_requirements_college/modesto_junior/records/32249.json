@@ -5,11 +5,11 @@
  "title": "English",
  "award": "A.A- T Degree",
  "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-transfer-degree-mjc-fall-2026",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6809,
+  "input_tokens": 7992,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6809,
-    "output_tokens": 2533,
+    "input_tokens": 7992,
+    "output_tokens": 2814,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2533,
+  "output_tokens": 2814,
   "output_tokens_details": {
-   "thinking_tokens": 544
+   "thinking_tokens": 753
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0779,
- "ms": 21823,
- "seconds": 22.2,
+ "cost_usd": 0.08825,
+ "ms": 22218,
+ "seconds": 22.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 27,
    "listed": 27,
-   "share": 0.963,
-   "missing": [
-    "ENGL102"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGLC1002"
-   ],
-   "flagged": [
-    "ENGLC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -76,7 +78,27 @@
     18.0,
     18.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     66.0,
+     66.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -97,18 +119,34 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "ENGLISH, AA-T *",
+   "section_heading": "ENGLISH, AA-T",
    "measure": "units",
    "total_units": {
     "min": 18,
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 14,
+    "max": 14
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Create professional-looking written work that shows careful editing and properly documents sources.",
     "Demonstrate an appreciation of literature by reading and analyzing works from various genres, periods, and cultures.",
@@ -360,17 +398,17 @@
   "missing_explained": [
    {
     "code": "ENGL 102",
-    "why": "not in the text; the core lists ENGLC1002 - Introduction to Literature instead"
+    "why": "not in the text; the core lists ENGLC1002 - Introduction to Literature instead (likely its C-ID common-course replacement)"
    }
   ],
   "notes": [
-   "Codes are printed without a space (e.g., ENGLC1001); ENGLC1001 matched to closed-list ENGL C1001.",
-   "ENGLC1002 - Introduction to Literature is not on the closed list; recorded as a catalog addition. It appears to replace ENGL 102 on the closed list.",
-   "List B also permits 'ANY LIST A COURSE NOT ALREADY USED' (3 units); List C also permits 'ANY LIST A OR LIST B COURSE NOT ALREADY USED' (3 units). These rows are not course codes and were not recorded as entries.",
-   "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears twice; the outcomes appear only under the Program Learning Outcomes heading.",
-   "The degree requires 60 units total, including Cal-GETC (34 units) and 14 CSU-transferable elective units; these are degree-level units, not part of the 18-unit major, so open_elective_units is null.",
-   "Up to 6 units may be double-counted between GE and the major, per the catalog."
+   "Codes are written as the catalog prints them without a space (e.g., ENGLC1001 = closed-list ENGL C1001, ENGL131 = ENGL 131).",
+   "ENGLC1002 (Introduction to Literature) is not in the closed list and is marked catalog_addition; closed-list ENGL 102 (Advanced Composition & Introduction to Literature) appears to be its predecessor.",
+   "List B also allows 'ANY LIST A COURSE NOT ALREADY USED' (3 units), and List C allows 'ANY LIST A OR LIST B COURSE NOT ALREADY USED' (3 units); these are not course codes and were not recorded as entries.",
+   "Page prints major total 18, Cal-GETC 34, CSU-transferable electives 14, and degree total 60; it also states 6 units may be double-counted between GE and the major.",
+   "The catalog text begins mid-sentence and also shows a stray outcomes lead-in before the section heading; the outcomes list under 'Program Learning Outcomes' was recorded."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": "44540818388",
+ "catalog_year": "2026-2027"
 }

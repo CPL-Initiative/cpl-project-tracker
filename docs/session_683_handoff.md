@@ -130,7 +130,7 @@ session Sam starts by hand works the queue itself.
 
 Subscriptions: none held. Check-ins: none. No artifact watch.
 
-Spend: not available; 2026-11-18T14:13Z to 2026-11-18T15:35Z.
+Spend: $26 (estimate from token counts at list prices); curation $17; 2026-11-18T14:13Z to 2026-11-18T15:35Z.
 
 This firing had no cost readout (`get_session` was not among its tools). Token counts from the session's transcripts
 at 15:18Z, a few calls before the end: the conductor (served by the routine's configured conductor model throughout)

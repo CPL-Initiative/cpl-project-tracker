@@ -40,7 +40,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
 | [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-11-18 |
 | [Letters, Memos & Reports / the communications register — lane state](../reference/lanes/communications.md) | lanes | `communications.md` | 2026-10-23 | 2026-10-24 |
-| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-14 |
+| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-20 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-11-07 |
 | [MAP Custom Reports (3 new) / ITPI automation — lane state](../reference/lanes/map-custom-reports.md) | lanes | `map-custom-reports.md` | 2026-08-28 | 2026-11-14 |
 | [MAP Users / student contact — lane state](../reference/lanes/map-users-student-contact.md) | lanes | `map-users-student-contact.md` | 2026-08-28 | 2026-08-28 |
@@ -51,7 +51,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Noncredit CIP categories — lane state](../reference/lanes/noncredit-cip-categories.md) | lanes | `noncredit-cip-categories.md` | 2026-08-28 | 2026-08-28 |
 | [Org & phrase scope / auth model — lane state](../reference/lanes/org-phrase-scope-auth.md) | lanes | `org-phrase-scope-auth.md` | 2026-08-28 | 2026-11-07 |
 | [Partner crosswalks — lane state](../reference/lanes/partner-crosswalks.md) | lanes | `partner-crosswalks.md` | 2026-08-28 | 2026-10-05 |
-| [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-11-19 |
+| [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-11-20 |
 | [Public/private repo split — lane state](../reference/lanes/public-private-repo-split.md) | lanes | `public-private-repo-split.md` | 2026-08-28 | 2026-08-28 |
 | [Repo size — what lives in the tree, what lives in the bucket, and the limits — lane state](../reference/lanes/repo-size.md) | lanes | `repo-size.md` | 2026-11-18 | 2026-11-19 |
 | [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-11-10 |
@@ -61,7 +61,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Sierra's page redesign (after america.gov) — lane state](../reference/lanes/sierra-page-redesign.md) | lanes | `sierra-page-redesign.md` | 2026-10-08 | 2026-11-18 |
 | [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-11-12 |
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-29 |
-| [The Commons — one tracking system for the common references, and a Commons dash — lane state](../reference/lanes/commons.md) | lanes | `commons.md` | 2026-10-18 | 2026-11-18 |
+| [The Commons — one tracking system for the common references, and a Commons dash — lane state](../reference/lanes/commons.md) | lanes | `commons.md` | 2026-10-18 | 2026-11-20 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |
 | [Primary-source statutory and regulatory text](../reference/statute/README.md) | statute | `README.md` |  |  |
 | [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-11-14 |
@@ -87,7 +87,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-11-05 |
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [ROEP display gaps from structured fields — design](../reference/roep_display_structured_fields_design.md) | — | `roep_display_structured_fields_design.md` | 2026-11-14 | 2026-11-14 |
-| [Sam's rulings — one place to look up what he has ruled, in his words](../reference/sam_rulings.md) | — | `sam_rulings.md` | 2026-11-14 | 2026-11-19 |
+| [Sam's rulings — one place to look up what he has ruled, in his words](../reference/sam_rulings.md) | — | `sam_rulings.md` | 2026-11-14 | 2026-11-20 |
 | [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-19 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
 | [Stack scouting: one line per tool trial](../reference/stack_scouting.md) | — | `stack_scouting.md` | 2026-11-14 | 2026-11-14 |

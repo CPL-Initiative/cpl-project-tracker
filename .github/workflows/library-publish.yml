@@ -7,8 +7,15 @@ name: Library — publish approved drafts
 # commits both to main, and then moves the record (scripts/library_publish.py). Pages deploys the
 # page from main as it does every commit.
 #
+# Then the accessibility check (#3560 part 2; Sam's go of Nov 19, 2026, via COBIx): every page this run
+# published, and every piece published to the Public Library that waits on a check, is checked by the one
+# engine (scripts/a11y.js, through scripts/library_check.py); one cpl_library_checks row per page, the
+# footer line on every Library page from its own latest check, and a piece published to the Public
+# Library listed once its check passes. A second commit carries the footers and the reports.
+#
 # Governance: kb/governance_surface_map.json, workflow:library-publish.yml. It writes only the
-# pages of records a person approved, their receipts, and those records' version fields.
+# pages of records a person approved, their receipts, those records' version fields, the check
+# records of the pages it checked, and the listing of a piece a person published to the Public Library.
 #
 # concurrency: daily-dashboard, so it never pushes to main beside the daily cron (Rule 6).
 
@@ -42,6 +49,7 @@ jobs:
           python-version: '3.11'
 
       - name: Write approved drafts
+        id: write
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
@@ -64,24 +72,116 @@ jobs:
             exit 0
           fi
           git commit -m "Library: publish approved drafts from the card ($(python3 -c "import json;print(', '.join(json.load(open('publish.json'))['published']))"))"
+          pushed=0
           for i in 1 2 3; do
-            if git push origin HEAD:main; then break; fi
+            if git push origin HEAD:main; then pushed=1; break; fi
             git fetch origin main && git rebase origin/main || { git rebase --abort; exit 1; }
             sleep $((i * 5))
           done
+          [ "$pushed" = 1 ] || { echo "::error::Three pushes to main failed; the pages are not on main, so nothing moves."; exit 1; }
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Move the records
         if: steps.push.outputs.sha != ''
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 scripts/library_publish.py --finish --commit "${{ steps.push.outputs.sha }}"
+        run: python3 scripts/library_publish.py --finish --commit "${{ steps.push.outputs.sha }}" | tee finish.json
+
+      # The pages to check: the ones just moved, and any piece waiting on the Public Library with no check of its
+      # page since it last changed. Most runs check nothing and skip the browser.
+      - name: Plan the accessibility checks
+        id: plan
+        # Only after a clean write and push: a page the write step left on disk uncommitted never rides the second commit.
+        if: ${{ !cancelled() && steps.write.outcome == 'success' && steps.push.outcome == 'success' }}
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          n=$(python3 scripts/library_check.py --plan --finished finish.json --out check_plan.json)
+          echo "pages=$n" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Node
+        if: ${{ !cancelled() && steps.plan.outcome == 'success' && steps.plan.outputs.pages != '0' }}
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+
+      - name: Install the check engine
+        if: ${{ !cancelled() && steps.plan.outcome == 'success' && steps.plan.outputs.pages != '0' }}
+        run: |
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1 npm install --no-audit --no-fund
+          bash scripts/install_browser.sh node
+
+      # Runs whenever the plan ran: with nothing to check it still rewrites each page's footer line from its latest
+      # check, so the line follows the page. It lists nothing: a listed piece whose page changed comes off first, and
+      # the passing pieces waiting to be listed are named in check.json for the listing step below.
+      - name: Check and write the footers
+        id: check
+        if: ${{ !cancelled() && steps.plan.outcome == 'success' }}
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 scripts/library_check.py --check --plan-file check_plan.json | tee check.json
+        shell: bash -o pipefail {0}
+
+      # It commits only what the receipt proves: --check writes the receipt as soon as the rows are in (and before any
+      # unlisting), rewrites every line from the rows written, and on an engine or insert failure puts every page back
+      # and removes its reports. So it runs though the check step went red, and the receipt rides with the lines.
+      - name: Commit and push the checks
+        id: checkpush
+        if: ${{ !cancelled() && steps.plan.outcome == 'success' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add library/*/index.html kb/receipts/library_checks/ 2>/dev/null || true
+          git add -A library/*/accessibility/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No check and no footer line changed."
+            echo "sha=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Library: accessibility checks and footer lines ($(python3 scripts/library_check.py --summary check.json))"
+          pushed=0
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then pushed=1; break; fi
+            git fetch origin main && git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((i * 5))
+          done
+          [ "$pushed" = 1 ] || { echo "::error::Three pushes to main failed; the check reports are not on main, so their links do not answer yet."; exit 1; }
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       # A push made with GITHUB_TOKEN starts no other workflow, so Pages would serve the old page until the next
       # deploy (2026-11-05: Sam replaced ELL IET Version 3 and the public page stayed Version 2). A dispatch made with
-      # it does start one, and only when this run committed a page.
+      # it does start one, and only when this run committed a page or a footer line. It runs though a check step
+      # failed, so a published page never waits on its check to be served.
       - name: Deploy Pages
-        if: steps.push.outputs.sha != ''
+        if: ${{ !cancelled() && (steps.push.outputs.sha != '' || steps.checkpush.outputs.sha != '') }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run pages.yml --ref main
+
+      # List on a pass, only once the commit carrying each piece's report and line is on main: a listing never
+      # precedes the push of its own report. It reads the waiting passes from check.json.
+      - name: List on a pass
+        id: list
+        if: ${{ !cancelled() && steps.checkpush.outcome == 'success' }}
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 scripts/library_check.py --list --check-file check.json | tee list.json
+        shell: bash -o pipefail {0}
+
+      # The listing receipt (each listing's before-values, written before its update) rides its own commit.
+      - name: Commit and push the listing receipt
+        if: ${{ !cancelled() && steps.list.outcome != 'skipped' }}
+        run: |
+          git add kb/receipts/library_checks/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing listed."
+            exit 0
+          fi
+          git commit -m "Library: listing receipt ($(python3 -c "import json;print(', '.join(json.load(open('list.json')).get('listed') or []) or 'no listing')" 2>/dev/null || echo 'see the run'))"
+          pushed=0
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then pushed=1; break; fi
+            git fetch origin main && git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((i * 5))
+          done
+          [ "$pushed" = 1 ] || { echo "::error::Three pushes to main failed; the listing receipt is in this run's log (list.json) only."; exit 1; }

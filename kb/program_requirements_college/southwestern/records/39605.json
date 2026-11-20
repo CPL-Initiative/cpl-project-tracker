@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Cyber-Forensic",
  "award": "A.S. Degree",
- "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/",
- "record_shape": 5,
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/administration-justice/cyber-forensic-as/",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11943,
+  "input_tokens": 7206,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11943,
-    "output_tokens": 677,
+    "input_tokens": 7206,
+    "output_tokens": 743,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 677,
+  "output_tokens": 743,
   "output_tokens_details": {
-   "thinking_tokens": 202
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06131,
- "ms": 6996,
- "seconds": 7.5,
+ "cost_usd": 0.04368,
+ "ms": 6516,
+ "seconds": 6.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "AJ156",
-    "AJ166",
-    "AJ288",
-    "CIS160",
-    "CIS169",
-    "CIS177",
-    "CIS178",
-    "CIS179",
-    "CIS182",
-    "CIS290"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    30.0,
+    32.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -102,17 +93,27 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(no Cyber-Forensic A.S. Degree section in the provided text; only Computer Information Systems course descriptions)",
+   "section_heading": "Cyber-Forensic",
    "measure": "units",
    "total_units": {
+    "min": 30,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
    "ge_pattern": null,
    "degree_total": {
     "min": null,
@@ -126,51 +127,99 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AJ 156",
-    "why": "not in the text"
-   },
-   {
-    "code": "AJ 166",
-    "why": "not in the text"
-   },
-   {
-    "code": "AJ 288",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 160",
-    "why": "appears only as a course description; no program requirements in the text"
-   },
-   {
-    "code": "CIS 169",
-    "why": "appears only as a course description; no program requirements in the text"
-   },
-   {
-    "code": "CIS 177",
-    "why": "appears only as a course description; no program requirements in the text"
-   },
-   {
-    "code": "CIS 178",
-    "why": "appears only as a course description; no program requirements in the text"
-   },
-   {
-    "code": "CIS 179",
-    "why": "appears only as a course description; no program requirements in the text"
-   },
-   {
-    "code": "CIS 182",
-    "why": "appears only as a course description; no program requirements in the text"
-   },
-   {
-    "code": "CIS 290",
-    "why": "appears only as a course description; no program requirements in the text"
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "CIS 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 178",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 166",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 156",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 169",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 179",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 288",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 290",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "'Total Units 30-32' is printed as the Course List total; recorded as both total_units and the block's stated total.",
+   "The page says additional general education and graduation requirements must be completed but names no GE pattern or degree total.",
+   "Breadcrumb shows 'Criminal Justice' while the source URL path says 'administration-justice'.",
+   "No program learning outcomes or named careers are printed; the Gainful Employment section names no specific occupation."
+  ]
  },
- "extracted_run": "38563578596"
+ "extracted_run": "44529722751",
+ "catalog_year": "2026-2027"
 }

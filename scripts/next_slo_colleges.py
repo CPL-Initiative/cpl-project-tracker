@@ -12,8 +12,9 @@ It reads committed files only, so it runs offline in a session:
                                        credentials whose `a` names it
   kb/program_requirements_college/     each college's slug, catalog host and loaded records
                                        (the read takes its course codes from the records)
-  kb/course_outline_census/            the newest census: each college's outline system,
-                                       access and what one outline printed
+  kb/course_outline_census/            each college's row from the newest census that holds
+                                       one: its outline system, access and what one outline
+                                       printed
   kb/course_outline_index/index_*.json curriQunet course indexes, by host
   kb/course_outcomes/                  filed reads and trials; queue.json, the verdicts the
                                        nightly step records (a host that prints none)
@@ -96,10 +97,18 @@ def colleges(root=KB):
 
 
 def census(root=KB):
+    """College name -> its row in the newest census file that holds one, and the newest file.
+
+    A recheck census covers a few colleges (S683's had 6 of 118), so a later file replaces only
+    the rows it holds; a college it leaves out keeps its row from the earlier census. Reading the
+    newest file alone dropped every other college to "the census has no row for it" (S685)."""
     paths = sorted(glob.glob(os.path.join(root, "course_outline_census", "census_*.json")), key=_run_of)
     if not paths:
         return {}, None
-    return {r["college"]: r for r in _json(paths[-1])["rows"]}, os.path.relpath(paths[-1], os.path.dirname(root))
+    rows = {}
+    for path in paths:
+        rows.update({r["college"]: r for r in _json(path)["rows"]})
+    return rows, os.path.relpath(paths[-1], os.path.dirname(root))
 
 
 def loaded(root=KB):
@@ -114,9 +123,19 @@ def loaded(root=KB):
     return names, hosts
 
 
+def never_load(root=KB):
+    """Run id -> why, for each filed read queue.json says never loads (a read whose filed rows a reader fix cannot
+    reach: a full read files no pages, so it cannot be reparsed)."""
+    path = os.path.join(root, "course_outcomes", "queue.json")
+    return (_json(path).get("never_load") or {}) if os.path.exists(path) else {}
+
+
 def filed(root=KB):
-    """Reads (by slug: run -> parts) and trials (by slug: newest trial) filed under kb/course_outcomes/."""
+    """Reads (by slug: run -> parts) and trials (by slug: newest trial) filed under kb/course_outcomes/. A full read
+    queue.json's never_load names is passed over, so the queue never names it for a load (S689: Feather River's read
+    44535960153 filed the "Learning Outcomes" header as 336 SLOs and no page to reparse)."""
     reads, trials = {}, {}
+    void = {str(k) for k in never_load(root)}
     for path in glob.glob(os.path.join(root, "course_outcomes", "*", "read*.json")):
         d = _json(path)
         slugs = [s for s in str(d.get("slugs") or "").split(",") if s]
@@ -125,6 +144,8 @@ def filed(root=KB):
                 if s not in trials or int(d.get("run") or 0) > int(trials[s].get("run") or 0):
                     trials[s] = {k: d.get(k) for k in ("run", "index", "summary", "complete", "wanted")}
                     trials[s]["rows"] = [{"status": r.get("status"), "shape": r.get("shape")} for r in d.get("rows") or []]
+            continue
+        if str(d.get("run")) in void:
             continue
         for s in slugs:
             run = reads.setdefault(s, {}).setdefault(str(d.get("run")), {"of": d.get("of"), "complete": set(),

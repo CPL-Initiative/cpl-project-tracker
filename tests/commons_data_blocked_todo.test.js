@@ -12,7 +12,7 @@ function txt(e) { return (e && e.textContent || "").replace(/\s+/g, " ").trim();
 const REAL = JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8"));
 
 function page(data) {
-  const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: "https://example.org/#commons/data", runScripts: "dangerously" });
+  const dom = new JSDOM('<!doctype html><html><body><div id="root"></div></body></html>', { url: "https://example.org/#collect", runScripts: "dangerously" });
   const w = dom.window;
   w.fetch = function () { return Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } }); };
   const s = w.document.createElement("script"); s.textContent = fs.readFileSync("commons_data.js", "utf8"); w.document.body.appendChild(s);

@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 593,
+   "count": 595,
    "docs": [
     {
      "created": "2026-08-14",
@@ -302,6 +302,27 @@
      "title": "Level-collapsing consolidation \u2014 over-merge beats under-merge for CPL",
      "type": "adr",
      "updated": "2026-06-16"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [
+      "kb/credentials.json",
+      "kb/unified_titles.json",
+      "kb/exhibit_cert_links.json"
+     ],
+     "path": "docs/kb-notes/adr-one-credential-list-exhibits-are-its-children.md",
+     "status": "published",
+     "tags": [
+      "adr",
+      "credentials",
+      "exhibits",
+      "ctdl",
+      "commons",
+      "identity"
+     ],
+     "title": "One credential list, with exhibits as its children",
+     "type": "adr",
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-19",
@@ -962,6 +983,26 @@
      "title": "A conditional key breaks a bulk upsert, and it fails positionally",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [
+      "kb/_program_requirements_display_apply.py",
+      "tests/program_requirements_display_apply_test.py",
+      "tests/display_receipt_store_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-confirming-read-pages-by-key-never-by-offset.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "postgrest",
+      "display",
+      "program-requirements"
+     ],
+     "title": "A confirming read pages by key, never by offset",
+     "type": "methodology",
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -10705,7 +10746,8 @@
       "tools/art_categories.json",
       "tools/art_extra_files.json",
       "tools/source_cpl_stories.mjs",
-      ".github/workflows/cpl-stories.yml"
+      ".github/workflows/cpl-stories.yml",
+      "tools/first_light_verify.json"
      ],
      "path": "docs/kb-notes/playbook-runner-as-external-api-proxy.md",
      "status": "published",
@@ -10718,7 +10760,7 @@
      ],
      "title": "Runner-as-proxy for an external API the agent sandbox can't reach",
      "type": "playbook",
-     "updated": "2026-06-28"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-10-04",
@@ -13873,7 +13915,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-17"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-11-14",
@@ -16444,7 +16486,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-28",
@@ -16587,7 +16629,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-28",
@@ -16729,7 +16771,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-08-28",
@@ -17124,7 +17166,7 @@
      ],
      "title": "Sam's rulings \u2014 one place to look up what he has ruled, in his words",
      "type": null,
-     "updated": "2026-11-19"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-10-04",
@@ -17255,8 +17297,78 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 643,
+   "count": 648,
    "docs": [
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 689,
+     "path": "docs/session_689_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 689 handoff (from SkyLinnet, S688)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 688,
+     "path": "docs/session_688_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 688 handoff (from SkyPipit, S687)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 687,
+     "path": "docs/session_687_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 687 handoff (from SkyBushtit, S686)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 686,
+     "path": "docs/session_686_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 686 handoff (from SkyTowhee, S685)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 685,
+     "path": "docs/session_685_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 685 handoff (from SkyVerdin, S684)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
     {
      "created": "2026-11-19",
      "governs": [],
@@ -28031,5 +28143,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1520
+ "total": 1527
 }

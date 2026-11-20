@@ -1,8 +1,8 @@
 {
  "college": "Evergreen Valley College",
  "run": "44519542333",
- "written": "2026-11-19T12:19:23Z",
- "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); first of all, a checked live row restores, or is held where the base files none, and a supplied live run other than the filed record's is held for a person (d-reread-keep-the-better-s683; COBIx on #3544)",
+ "written": "2026-11-19T14:23:05Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
  "checked": [],
  "live_runs": {
   "06154": "38748875071",
@@ -10,9 +10,8 @@
   "06159": "38748875071",
   "06160": "38748875071",
   "06165": "38748875071",
-  "06175": "38748875071",
+  "06175": "44519542333",
   "06181": "38748875071",
-  "07516": "38748875071",
   "10051": "38748875071",
   "10385": "38748875071",
   "10387": "38748875071",
@@ -25,31 +24,30 @@
   "18695": "38748875071",
   "18696": "38748875071",
   "18991": "38748875071",
-  "19957": "38748875071",
+  "19957": "44519542333",
   "21185": "38748875071",
-  "21189": "38748875071",
+  "21189": "44519542333",
   "21190": "38748875071",
   "21191": "38748875071",
-  "30351": "38748875071",
+  "30351": "44519542333",
   "30571": "38748875071",
   "30668": "38748875071",
   "30854": "38748875071",
-  "30919": "38748875071",
   "30946": "38748875071",
   "30980": "38748875071",
-  "31559": "38748875071",
+  "31559": "44519542333",
   "31718": "38748875071",
-  "32715": "38748875071",
+  "32715": "44519542333",
   "33062": "38748875071",
   "35478": "38748875071",
-  "35621": "38748875071",
+  "35621": "44519542333",
   "35854": "38748875071",
   "35890": "38748875071",
   "36067": "38748875071",
   "36204": "38748875071",
   "36932": "38748875071",
   "36954": "38748875071",
-  "38331": "38748875071",
+  "38331": "44519542333",
   "38958": "38748875071",
   "39129": "38748875071",
   "39155": "38748875071",
@@ -63,21 +61,20 @@
   "40373": "38748875071",
   "40692": "38748875071",
   "40755": "38748875071",
-  "40843": "38748875071",
+  "40843": "44519542333",
   "40874": "38748875071",
   "41063": "38748875071",
   "41146": "38748875071",
-  "41627": "38748875071",
+  "41627": "44519542333",
   "42282": "38748875071",
   "43161": "38748875071",
   "43162": "38748875071",
-  "43163": "38748875071",
+  "43163": "44519542333",
   "43641": "38748875071",
   "43678": "38748875071",
   "43796": "38748875071",
   "43797": "38748875071",
-  "44496": "38748875071",
-  "45025": "38748875071",
+  "45025": "44519542333",
   "45225": "38748875071",
   "45226": "38748875071",
   "45227": "38748875071",
@@ -85,24 +82,59 @@
   "45232": "38748875071",
   "45233": "38748875071",
   "45496": "38748875071",
-  "46137": "38748875071",
-  "46171": "38748875071",
-  "46218": "38748875071",
-  "46219": "38748875071",
-  "46262": "38748875071",
+  "45783": "44519542333",
+  "45784": "44519542333",
+  "46137": "44519542333",
+  "46171": "44519542333",
+  "46218": "44519542333",
+  "46219": "44519542333",
+  "46250": "44519542333",
   "46457": "38748875071"
  },
  "dispatch": [
   {
    "workflow": "program-requirements-college.yml",
-   "ref": "claude/reread-wave-s684",
+   "ref": "claude/second-pass-s685",
    "inputs": {
     "college": "Evergreen Valley College",
     "step": "reread",
     "force": "44519542333"
    },
-   "posts": 20,
+   "posts": 14,
    "control_numbers": [
+    "06154",
+    "10385",
+    "30919",
+    "30946",
+    "31718",
+    "33062",
+    "35854",
+    "36067",
+    "36954",
+    "40353",
+    "43161",
+    "43796",
+    "44496",
+    "46262"
+   ],
+   "not_live_at_run": [
+    "06154",
+    "10385",
+    "30919",
+    "30946",
+    "31718",
+    "33062",
+    "35854",
+    "36067",
+    "36954",
+    "40353",
+    "43161",
+    "43796",
+    "44496",
+    "46262"
+   ],
+   "receipt_on_branch": true,
+   "already_live": [
     "06175",
     "19957",
     "21189",
@@ -111,7 +143,6 @@
     "32715",
     "35621",
     "38331",
-    "40353",
     "40843",
     "41627",
     "43163",
@@ -129,60 +160,52 @@
  "carried_runs": {},
  "counts": {
   "reread": 33,
-  "kept": 16,
-  "restored": 13,
-  "restored_filed_pass": 7,
-  "restored_not_own_program": 13,
+  "kept": 14,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
   "held_for_person": 0,
   "held_checked": 0,
   "held_live_run": 0,
-  "new": 4,
+  "new": 0,
+  "already_live": 19,
+  "kept_on_own_page": 13,
   "plain_reread_would_lose_pass": 0,
   "kept_by_extraction_guard": 0,
-  "run_places_none_after": 4,
-  "folder_places_none_after": 4,
+  "run_places_none_after": 1,
+  "folder_places_none_after": 1,
   "records_after": 89,
-  "dropped_by_filing": 1,
+  "dropped_by_filing": 0,
   "dropped_filed_passes": 0
  },
  "runs": {
   "44519542333": {
-   "base": "origin/main",
-   "base_sha": "94a0249987a5ef9046e0a5a7013c989d39179ece",
-   "decided": "2026-11-19T12:19:23Z",
+   "base": "471c74d6",
+   "base_sha": "471c74d6399e4f9aa957b7f2a560d3f57b6ba357",
+   "decided": "2026-11-19T14:23:05Z",
    "counts": {
     "reread": 33,
-    "kept": 16,
-    "restored": 13,
-    "restored_filed_pass": 7,
-    "restored_not_own_program": 13,
+    "kept": 14,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
     "held_for_person": 0,
     "held_checked": 0,
     "held_live_run": 0,
-    "new": 4,
+    "new": 0,
+    "already_live": 19,
+    "kept_on_own_page": 13,
     "plain_reread_would_lose_pass": 0,
     "kept_by_extraction_guard": 0,
-    "run_places_none_after": 4,
-    "folder_places_none_after": 4,
+    "run_places_none_after": 1,
+    "folder_places_none_after": 1,
     "records_after": 89,
-    "dropped_by_filing": 1,
+    "dropped_by_filing": 0,
     "dropped_filed_passes": 0
    },
    "kept_by_extraction_guard": {},
-   "next_read_pays": [
-    "10385",
-    "30919",
-    "35854",
-    "43796",
-    "44496",
-    "46262"
-   ],
-   "dropped_by_filing": [
-    {
-     "control_number": "07516",
-     "filed_passes_live": false
-    }
-   ],
+   "next_read_pays": [],
+   "dropped_by_filing": [],
    "programs": [
     {
      "control_number": "06154",
@@ -201,6 +224,7 @@
       "listed": 11,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'business-administration-associate-arts' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": true,
@@ -213,18 +237,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Business Administration'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.727)"
     },
     {
      "control_number": "06175",
      "title": "Administration of Justice",
      "award": "A.A. Degree",
      "source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-arts/",
-     "filed_source_url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
-     "filed_run": "38748875071",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-arts/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -235,20 +257,20 @@
       "listed": 38,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 38,
       "listed": 38,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "10385",
@@ -267,6 +289,7 @@
       "listed": 23,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'office-administration-management-associate-science' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": false,
@@ -279,10 +302,8 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Office Administration: Management'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "19957",
@@ -290,7 +311,7 @@
      "award": "A.A. Degree",
      "source_url": "https://catalog.evc.edu/degrees-certificates/womens-studies/general-studies-associate-arts-emphasis-women-gender-studies-associate-arts/",
      "filed_source_url": "https://catalog.evc.edu/degrees-certificates/womens-studies/general-studies-associate-arts-emphasis-women-gender-studies-associate-arts/",
-     "filed_run": "38748875071",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -301,28 +322,28 @@
       "listed": 11,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.909,
-      "placed": 10,
+      "share": 1.0,
+      "placed": 11,
       "listed": 11,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.909)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "21189",
      "title": "Office Assistant",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/bis-business-information-specialist-certificate-achievement/",
-     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/",
-     "filed_run": "38748875071",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/bis-business-information-specialist-certificate-achievement/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -333,28 +354,28 @@
       "listed": 10,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
       "listed": 10,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "30351",
      "title": "Administration of Justice",
      "award": "A.S. Degree",
      "source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-science/",
-     "filed_source_url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
-     "filed_run": "38748875071",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/administration-justice-associate-science/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -365,20 +386,20 @@
       "listed": 30,
       "arithmetic": "unequal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
       "pass": false,
       "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 30,
       "listed": 30,
-      "arithmetic": "incomplete"
+      "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.coverage.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "30919",
@@ -397,7 +418,8 @@
       "listed": 14,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "own_page": "the address's last segment 'administration-justice-associate-science-transfer' names the program",
+     "live_run": null,
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -409,10 +431,8 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Administration of Justice'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "30946",
@@ -431,6 +451,7 @@
       "listed": 17,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'history-associate-arts-transfer' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": true,
@@ -443,10 +464,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'History'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.824)"
     },
     {
      "control_number": "31559",
@@ -454,7 +473,7 @@
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/business/entrepreneurship---certificate-of-achievement/",
      "filed_source_url": "https://catalog.evc.edu/degrees-certificates/business/entrepreneurship---certificate-of-achievement/",
-     "filed_run": "38748875071",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -465,20 +484,20 @@
       "listed": 10,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.9,
-      "placed": 9,
+      "share": 1.0,
+      "placed": 10,
       "listed": 10,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.9)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "31718",
@@ -497,6 +516,7 @@
       "listed": 18,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'psychology-associate-arts-transfer' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": true,
@@ -509,18 +529,16 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Psychology'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.833)"
     },
     {
      "control_number": "32715",
      "title": "Physics",
      "award": "A.S. T Degree",
      "source_url": "https://catalog.evc.edu/degrees-certificates/physics/physics-2.0-associate-science-transfer/",
-     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/physics/physics-associate-science-transfer/",
-     "filed_run": "38748875071",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/physics/physics-2.0-associate-science-transfer/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -531,20 +549,20 @@
       "listed": 8,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
-      "pass": false,
-      "passes_live": false,
+      "pass": true,
+      "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
       "share": 1.0,
       "placed": 8,
       "listed": 8,
-      "arithmetic": "unequal"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "33062",
@@ -563,6 +581,7 @@
       "listed": 17,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'english-associate-arts-transfer' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": true,
@@ -575,10 +594,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'English'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.941)"
     },
     {
      "control_number": "35621",
@@ -586,7 +603,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://catalog.evc.edu/degrees-certificates/music/music-associate-arts-transfer/",
      "filed_source_url": "https://catalog.evc.edu/degrees-certificates/music/music-associate-arts-transfer/",
-     "filed_run": "38748875071",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -597,7 +614,7 @@
       "listed": 15,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
       "pass": true,
       "passes_live": true,
@@ -609,8 +626,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "equal on every step: the re-read is the current catalog text"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "35854",
@@ -629,6 +646,7 @@
       "listed": 15,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'economics-associate-in-arts-for-transfer' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": false,
@@ -641,10 +659,8 @@
       "arithmetic": "unequal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Economics'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "36067",
@@ -663,6 +679,7 @@
       "listed": 17,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'studio-arts-associate-in-arts-for-transfer' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": true,
@@ -675,10 +692,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Studio Arts'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.882)"
     },
     {
      "control_number": "36954",
@@ -697,6 +712,7 @@
       "listed": 32,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'studio-arts-associate-in-arts' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": true,
@@ -709,10 +725,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Studio Arts'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 0.969 against 0.938)"
     },
     {
      "control_number": "38331",
@@ -720,7 +734,7 @@
      "award": "A.S. T Degree",
      "source_url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/",
      "filed_source_url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/",
-     "filed_run": "38748875071",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -731,28 +745,28 @@
       "listed": 17,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.882,
-      "placed": 15,
+      "share": 1.0,
+      "placed": 17,
       "listed": 17,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.882)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "40353",
      "title": "Community Service Officer",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/community-service-officer-certificate-achievement/",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/community-service-officer-certificate-achievement/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -764,27 +778,6 @@
       "arithmetic": "incomplete"
      },
      "live_run": null,
-     "outcome": "new",
-     "why": "no filed record on origin/main"
-    },
-    {
-     "control_number": "40843",
-     "title": "Advanced Taxation",
-     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-     "source_url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/",
-     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/",
-     "filed_run": "38748875071",
-     "reread": {
-      "pass": true,
-      "passes_live": true,
-      "coverage_pass": true,
-      "none_placed": false,
-      "share": 1.0,
-      "placed": 4,
-      "listed": 4,
-      "arithmetic": "equal"
-     },
-     "live_run": "38748875071",
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -797,7 +790,39 @@
      },
      "plain_reread_loses_pass": false,
      "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "40843",
+     "title": "Advanced Taxation",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "source_url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/",
+     "filed_run": "44519542333",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "live_run": "44519542333",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 4,
+      "listed": 4,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "41627",
@@ -805,7 +830,7 @@
      "award": "A.S. T Degree",
      "source_url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
      "filed_source_url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
-     "filed_run": "38748875071",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -816,20 +841,20 @@
       "listed": 12,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
-      "pass": false,
-      "passes_live": false,
+      "pass": true,
+      "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.75,
-      "placed": 9,
+      "share": 1.0,
+      "placed": 12,
       "listed": 12,
-      "arithmetic": "unequal"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "43161",
@@ -848,6 +873,7 @@
       "listed": 12,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'communication-studies-2.0-associate-arts-transfer' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": true,
@@ -860,10 +886,8 @@
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Communication Studies 2.0'",
-     "not_own_program": true,
-     "next_read_held": "held_no_gain"
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.917)"
     },
     {
      "control_number": "43163",
@@ -871,7 +895,7 @@
      "award": "A.A- T Degree",
      "source_url": "https://catalog.evc.edu/degrees-certificates/philosophy/philosophy-associate-arts-transfer/",
      "filed_source_url": "https://catalog.evc.edu/degrees-certificates/philosophy/philosophy-associate-arts-transfer/",
-     "filed_run": "38748875071",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -882,20 +906,20 @@
       "listed": 14,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
       "pass": true,
       "passes_live": true,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.929,
-      "placed": 13,
+      "share": 1.0,
+      "placed": 14,
       "listed": 14,
       "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 1.0 against 0.929)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "43796",
@@ -914,6 +938,7 @@
       "listed": 15,
       "arithmetic": "equal"
      },
+     "own_page": "the address's last segment 'political-science-associate-arts-transfer' names the program",
      "live_run": "38748875071",
      "filed": {
       "pass": false,
@@ -926,10 +951,8 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Political Science'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "44496",
@@ -948,7 +971,8 @@
       "listed": 33,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "own_page": "the address's last segment 'law-public-policy-society-associate-arts-transfer' names the program",
+     "live_run": null,
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -960,10 +984,8 @@
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Major Requirements' shares no word with the title 'Law, Public Policy, and Society'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     },
     {
      "control_number": "45025",
@@ -971,7 +993,7 @@
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
      "filed_source_url": "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
-     "filed_run": "38748875071",
+     "filed_run": "44519542333",
      "reread": {
       "pass": false,
       "passes_live": false,
@@ -982,28 +1004,28 @@
       "listed": 151,
       "arithmetic": "incomplete"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
       "pass": false,
       "passes_live": false,
       "coverage_pass": true,
       "none_placed": false,
-      "share": 0.94,
-      "placed": 142,
+      "share": 0.993,
+      "placed": 150,
       "listed": 151,
       "arithmetic": "incomplete"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read covers more (share 0.993 against 0.94)"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "45783",
      "title": "Generative AI Entrepreneurship Program",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/artificial-intelligence/generative-ai-entrepreneurship-program-certificate-achievement/",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/artificial-intelligence/generative-ai-entrepreneurship-program-certificate-achievement/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1014,17 +1036,28 @@
       "listed": 8,
       "arithmetic": "equal"
      },
-     "live_run": null,
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44519542333",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "45784",
      "title": "Generative AI Application Development Program",
      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/artificial-intelligence/generative-ai-application-development-certificate-achievement/",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/artificial-intelligence/generative-ai-application-development-certificate-achievement/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1035,17 +1068,28 @@
       "listed": 7,
       "arithmetic": "equal"
      },
-     "live_run": null,
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44519542333",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
+      "listed": 7,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "46137",
      "title": "LGBTQ+ Studies",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/womens-studies/lgbtq-studies-certificate-achievement/",
-     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/",
-     "filed_run": "38748875071",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/womens-studies/lgbtq-studies-certificate-achievement/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1056,28 +1100,28 @@
       "listed": 16,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 16,
       "listed": 16,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "46171",
      "title": "Professional and Workplace Communication",
      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/communication-studies/professional-workplace-communication-certification-achievement/",
-     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/communication-studies/",
-     "filed_run": "38748875071",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/communication-studies/professional-workplace-communication-certification-achievement/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1088,28 +1132,28 @@
       "listed": 6,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
       "listed": 6,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "46218",
      "title": "Biomedical and Biological Engineering",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/engineering/biomedical-and-biological-engineering-certificate-achievement/",
-     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-associate-arts/",
-     "filed_run": "38748875071",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/engineering/biomedical-and-biological-engineering-certificate-achievement/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1120,28 +1164,28 @@
       "listed": 7,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 7,
       "listed": 7,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "46219",
      "title": "Chemical and Materials Engineering",
      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
      "source_url": "https://catalog.evc.edu/degrees-certificates/engineering/chemical-and-materials-engineering-certificate-achievement/",
-     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/engineering/",
-     "filed_run": "38748875071",
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/engineering/chemical-and-materials-engineering-certificate-achievement/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": true,
@@ -1152,28 +1196,28 @@
       "listed": 19,
       "arithmetic": "equal"
      },
-     "live_run": "38748875071",
+     "live_run": "44519542333",
      "filed": {
-      "pass": false,
-      "passes_live": false,
-      "coverage_pass": false,
-      "none_placed": true,
-      "share": 0.0,
-      "placed": 0,
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 19,
       "listed": 19,
-      "arithmetic": "incomplete"
+      "arithmetic": "equal"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "kept",
-     "why": "the re-read holds score.pass and the filed record does not"
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "46250",
      "title": "Pathway to Citizenship",
      "award": "Noncredit program",
      "source_url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/pathway-to-citizenship-certificate-competency/",
-     "filed_source_url": null,
-     "filed_run": null,
+     "filed_source_url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/pathway-to-citizenship-certificate-competency/",
+     "filed_run": "44519542333",
      "reread": {
       "pass": true,
       "passes_live": false,
@@ -1184,9 +1228,20 @@
       "listed": 2,
       "arithmetic": "unstated_pass"
      },
-     "live_run": null,
-     "outcome": "new",
-     "why": "no filed record on origin/main"
+     "live_run": "44519542333",
+     "filed": {
+      "pass": true,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 2,
+      "listed": 2,
+      "arithmetic": "unstated_pass"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "posted",
+     "why": "the live row already holds run 44519542333: a reread posted it"
     },
     {
      "control_number": "46262",
@@ -1205,7 +1260,8 @@
       "listed": 4,
       "arithmetic": "unstated_pass"
      },
-     "live_run": "38748875071",
+     "own_page": "the address's last segment 'adult-education-certificate-completion' names the program",
+     "live_run": null,
      "filed": {
       "pass": false,
       "passes_live": false,
@@ -1217,10 +1273,8 @@
       "arithmetic": "unstated_fail"
      },
      "plain_reread_loses_pass": false,
-     "outcome": "restored",
-     "why": "the re-read's heading 'Requirements' shares no word with the title 'Adult Education'",
-     "not_own_program": true,
-     "next_read_held": null
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
     }
    ]
   }

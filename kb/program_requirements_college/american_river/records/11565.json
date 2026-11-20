@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11846,
-    "output_tokens": 2981,
+    "output_tokens": 3335,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2981,
+  "output_tokens": 3335,
   "output_tokens_details": {
-   "thinking_tokens": 919
+   "thinking_tokens": 1370
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.107,
- "ms": 22608,
- "seconds": 23.0,
+ "cost_usd": 0.11408,
+ "ms": 24318,
+ "seconds": 24.7,
  "parts": null,
  "error": null,
  "score": {
@@ -326,7 +326,7 @@
   "missing_explained": [
    {
     "code": "COMM 321",
-    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication (same title) instead"
+    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication instead"
    },
    {
     "code": "HSER 300",
@@ -334,21 +334,42 @@
    },
    {
     "code": "HSER 310",
-    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights (same title) instead"
+    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights instead"
    },
    {
     "code": "HSER 330",
-    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations (same title) as an alternative instead"
+    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations instead"
    }
   ],
   "notes": [
-   "COMM C1004 and SWCD 300/310/330 appear to be renumberings of closed-list COMM 321 and HSER 300/310/330 (matching titles); recorded as catalog additions.",
-   "The 9-unit block prints HEED 300 or KINES 300 or NUTRI 324 or RECR 310 as one 'or' choice, followed by RECR 300 and RECR 320; recorded with alternatives as printed.",
-   "The page says the degree requires the program plus GE and sufficient electives 'for a total of at least 60 units'; treated as general degree wording, so degree_total left null and electives_fill_degree set true. Reviewer may consider 60 as degree_total.",
-   "Outcomes are recorded from the A.A. section's Student Learning Outcomes list, which continues onto page 636.",
-   "Career Information names settings (skilled nursing facilities, adult day health centers, etc.) as workplaces rather than careers; only the position description was recorded."
+   "COMM C1004 appears to be the renumbered COMM 321 (same title); SWCD 300/310/330 appear to replace HSER 300/310/330 (same titles for 310 and 330). Recorded as catalog additions.",
+   "In the 9-unit block, HEED 300, KINES 300, NUTRI 324 and RECR 310 are printed as one 'or' row; RECR 300 and RECR 320 are separate rows. Recorded as printed.",
+   "The 60-unit figure is a general statement ('sufficient electives for a total of at least 60 units'), so degree_total is left null and electives_fill_degree set true.",
+   "Student Learning Outcomes list continues across the page break from page 635 to 636."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "8ab15747558abdf4",
+ "source_codes": [
+  "COMM321",
+  "COMM325",
+  "GERON303",
+  "GERON305",
+  "GERON306",
+  "GERON490",
+  "GERON498",
+  "HEED300",
+  "HSER300",
+  "HSER310",
+  "HSER330",
+  "KINES300",
+  "NUTRI324",
+  "PSYC365",
+  "PSYC375",
+  "RECR300",
+  "RECR310",
+  "RECR320"
+ ],
+ "source_coverage": 1.0
 }

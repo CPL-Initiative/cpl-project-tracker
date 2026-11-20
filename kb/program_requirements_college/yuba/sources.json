@@ -24,8 +24,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -33,7 +33,9 @@
     58,
     59
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "123e0de5cb96f50b"
   },
   "listed": 14,
   "text_chars": 16000
@@ -66,18 +68,20 @@
    "VETT9"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=172",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=170",
+   "title": "(A.S.) Degree in Veterinary Technology. Yuba College also offers a",
+   "h1": "(A.S.) Degree in Veterinary Technology. Yuba College also offers a",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    170,
+    171,
     172,
-    173,
-    174,
-    175
+    173
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "49ffdea18bb424e4"
   },
   "listed": 18,
   "text_chars": 16000
@@ -104,18 +108,20 @@
    "GNBUS51"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=77",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    77,
     78,
     79,
-    80,
-    81
+    80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5aa517a62d1c9415"
   },
   "listed": 12,
   "text_chars": 16000
@@ -140,8 +146,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "The AS Degree in Computer Science supports students transferring to",
+   "h1": "The AS Degree in Computer Science supports students transferring to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -149,10 +155,12 @@
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "aa5a9f1827e192c1"
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 12764
  },
  {
   "control_number": "07023",
@@ -175,8 +183,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -185,7 +193,9 @@
     70,
     71
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e10c22051c6b9099"
   },
   "listed": 10,
   "text_chars": 16000
@@ -213,8 +223,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -222,7 +232,9 @@
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5bb5bda81982f8bd"
   },
   "listed": 13,
   "text_chars": 16000
@@ -264,8 +276,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -274,7 +286,9 @@
     62,
     63
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "d5ec91cc5682bc91"
   },
   "listed": 26,
   "text_chars": 16000
@@ -314,18 +328,20 @@
    "MUSIC8B"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=137",
+   "title": "The Associate in Arts in Music for Transfer degree prepares students",
+   "h1": "The Associate in Arts in Music for Transfer degree prepares students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    137,
     138,
     139,
-    140,
-    141
+    140
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2cad29c7c8431d33"
   },
   "listed": 25,
   "text_chars": 16000
@@ -360,17 +376,19 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "d0151f5f25a125e5"
   },
   "listed": 7,
-  "text_chars": 5715
+  "text_chars": 5697
  },
  {
   "control_number": "07035",
@@ -391,18 +409,21 @@
    "NURS14C"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=145",
+   "title": "ASSOCIATE IN SCIENCE",
+   "h1": "ASSOCIATE IN SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    145,
     146
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "54e1a8ab6c1ac9cc"
   },
   "listed": 9,
-  "text_chars": 6983
+  "text_chars": 12672
  },
  {
   "control_number": "07043",
@@ -429,8 +450,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in English for Transfer degree gives students",
+   "h1": "The Associate in Arts in English for Transfer degree gives students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -438,7 +459,9 @@
     101,
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "13e33357218be00f"
   },
   "listed": 14,
   "text_chars": 16000
@@ -463,25 +486,34 @@
   "method": "pdf_pages",
   "coverage": 0.833,
   "codes_found": [
+   "MATH10",
    "MATH1A",
    "MATH1B",
    "MATH1C",
-   "MATH3",
-   "STATC1000"
+   "MATH3"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=134",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    98
+    134,
+    135,
+    136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 134,
+    "share": 0.833
+   },
+   "text_sha": "54bd43a6c7cd5608"
   },
   "listed": 6,
-  "text_chars": 6652
+  "text_chars": 15818
  },
  {
   "control_number": "07053",
@@ -504,19 +536,22 @@
    "SPECH7"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    158,
     159,
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "95d3e64894004dde"
   },
   "listed": 11,
-  "text_chars": 12031
+  "text_chars": 16000
  },
  {
   "control_number": "07054",
@@ -540,8 +575,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -549,7 +584,9 @@
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "c367328fa4d1e160"
   },
   "listed": 11,
   "text_chars": 16000
@@ -593,8 +630,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -603,7 +640,9 @@
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b666ec76ec534bd2"
   },
   "listed": 28,
   "text_chars": 16000
@@ -644,18 +683,20 @@
    "SOCIL1"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=121",
+   "title": "The Associate in Arts in History for Transfer degree provides students",
+   "h1": "The Associate in Arts in History for Transfer degree provides students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    121,
     122,
     123,
-    124,
-    125
+    124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "201736d196431dd8"
   },
   "listed": 14,
   "text_chars": 16000
@@ -679,18 +720,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "dfbebbff4bc56f6e"
   },
   "listed": 8,
-  "text_chars": 11557
+  "text_chars": 11530
  },
  {
   "control_number": "07147",
@@ -711,18 +754,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "dfbebbff4bc56f6e"
   },
   "listed": 8,
-  "text_chars": 11557
+  "text_chars": 11530
  },
  {
   "control_number": "07151",
@@ -762,8 +807,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Science in Early Childhood Education (ECE) is",
+   "h1": "The Associate in Science in Early Childhood Education (ECE) is",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -772,7 +817,9 @@
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f154eb087f50fa65"
   },
   "listed": 15,
   "text_chars": 16000
@@ -822,18 +869,20 @@
    "FIRTC77"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=111",
+   "title": "and admission. Graduates of the Fire Fighter Academy Certificate of",
+   "h1": "and admission. Graduates of the Fire Fighter Academy Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    110,
     111,
     112,
-    113
+    113,
+    114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b783968ae7d5fe50"
   },
   "listed": 23,
   "text_chars": 16000
@@ -863,8 +912,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -873,7 +922,9 @@
     80,
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "213e8e7d564915c7"
   },
   "listed": 14,
   "text_chars": 16000
@@ -903,8 +954,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -913,7 +964,9 @@
     70,
     71
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e10c22051c6b9099"
   },
   "listed": 14,
   "text_chars": 16000
@@ -936,8 +989,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -946,7 +999,9 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b37199c71c4a557e"
   },
   "listed": 7,
   "text_chars": 16000
@@ -974,8 +1029,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -984,7 +1039,9 @@
     94,
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "3fb0912a4b2a33c2"
   },
   "listed": 12,
   "text_chars": 16000
@@ -1007,18 +1064,25 @@
    "ECE46A"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
+   "title": "INFANT AND TODDLER",
+   "h1": "INFANT AND TODDLER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    90,
-    91,
     92,
-    93
+    93,
+    94,
+    95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 92,
+    "share": 1.0
+   },
+   "text_sha": "32868f67be2c6029"
   },
   "listed": 8,
   "text_chars": 16000
@@ -1045,8 +1109,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1055,7 +1119,9 @@
     126,
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "7475a88e211e5fbc"
   },
   "listed": 11,
   "text_chars": 16000
@@ -1078,7 +1144,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "FTVE14",
    "FTVE15",
@@ -1087,12 +1153,13 @@
    "FTVE4",
    "FTVE5",
    "FTVE6",
-   "FTVE8"
+   "FTVE8",
+   "MCOMM17"
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1100,7 +1167,9 @@
     108,
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "61c65c034e238eb0"
   },
   "listed": 9,
   "text_chars": 16000
@@ -1124,8 +1193,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "TOTAL UNITS REQUIRED FOR CERTIFICATE 28.5",
+   "h1": "TOTAL UNITS REQUIRED FOR CERTIFICATE 28.5",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1134,7 +1203,9 @@
     82,
     83
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "46c45c305f78b846"
   },
   "listed": 8,
   "text_chars": 16000
@@ -1159,18 +1230,20 @@
    "GNBUS56"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
+   "title": "The Accounting certificate provides occupational training for students",
+   "h1": "The Accounting certificate provides occupational training for students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    78,
     79,
     80,
-    81
+    81,
+    82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b4ca6b8a5df64f6e"
   },
   "listed": 10,
   "text_chars": 16000
@@ -1197,18 +1270,20 @@
    "GNBUS7"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    78,
     79,
     80,
-    81,
-    82
+    81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "213e8e7d564915c7"
   },
   "listed": 12,
   "text_chars": 16000
@@ -1225,18 +1300,19 @@
    "AJ52"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=51",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    51,
-    52,
     53,
-    54
+    54,
+    55
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "df663562dacf8d0d"
   },
   "listed": 2,
   "text_chars": 16000
@@ -1278,8 +1354,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=51",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1288,7 +1364,9 @@
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "48bd1e05ae0192b4"
   },
   "listed": 2,
   "text_chars": 16000
@@ -1314,8 +1392,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=172",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1324,7 +1402,9 @@
     174,
     175
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "2686244074703aa6"
   },
   "listed": 10,
   "text_chars": 16000
@@ -1340,19 +1420,20 @@
    "AJ51"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=53",
+   "title": "TOTAL UNITS REQUIRED FOR CERTIFICATE 16.5",
+   "h1": "TOTAL UNITS REQUIRED FOR CERTIFICATE 16.5",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    52,
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cb6472259c48179d"
   },
   "listed": 1,
-  "text_chars": 13734
+  "text_chars": 5216
  },
  {
   "control_number": "20164",
@@ -1390,8 +1471,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "The Fire Technology Certificate of Achievement program prepares",
+   "h1": "The Fire Technology Certificate of Achievement program prepares",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1400,7 +1481,9 @@
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "fd4beb806905acda"
   },
   "listed": 25,
   "text_chars": 16000
@@ -1411,10 +1494,8 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.714,
   "codes_found": [
-   "HUSEV10",
-   "HUSEV11",
    "HUSEV20",
    "HUSEV21",
    "HUSEV22",
@@ -1424,25 +1505,24 @@
    "HUSEV28",
    "HUSEV40",
    "HUSEV41",
-   "HUSEV44R",
-   "PSYCC1000",
-   "SOCIL1"
+   "HUSEV44R"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=125",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=126",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    125,
     126,
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6ef8a9f75097909c"
   },
   "listed": 14,
-  "text_chars": 16000
+  "text_chars": 11156
  },
  {
   "control_number": "20180",
@@ -1470,8 +1550,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1479,7 +1559,9 @@
     157,
     158
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "a89410e078b0b71e"
   },
   "listed": 15,
   "text_chars": 16000
@@ -1501,18 +1583,21 @@
    "PHOTO36C"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=64",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    61
+    64,
+    65
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "831c36ed45639733"
   },
   "listed": 7,
-  "text_chars": 5715
+  "text_chars": 7751
  },
  {
   "control_number": "20196",
@@ -1533,8 +1618,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1542,7 +1627,9 @@
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5bb5bda81982f8bd"
   },
   "listed": 8,
   "text_chars": 16000
@@ -1567,18 +1654,25 @@
    "AUTO95"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    68,
     69,
     70,
-    71
+    71,
+    72
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 69,
+    "share": 1.0
+   },
+   "text_sha": "d01ec78bc4f84257"
   },
   "listed": 10,
   "text_chars": 16000
@@ -1601,8 +1695,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-   "title": null,
-   "h1": null,
+   "title": "The Automotive Drive Trains certificate is designed to prepare",
+   "h1": "The Automotive Drive Trains certificate is designed to prepare",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1611,7 +1705,9 @@
     70,
     71
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8b0cb31df61fd9de"
   },
   "listed": 7,
   "text_chars": 16000
@@ -1640,18 +1736,20 @@
    "AUTO5333"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
+   "title": "TOTAL UNITS REQUIRED FOR CERTIFICATE 20",
+   "h1": "TOTAL UNITS REQUIRED FOR CERTIFICATE 20",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    68,
     69,
     70,
-    71
+    71,
+    72
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1ff20cb2cccf66f5"
   },
   "listed": 14,
   "text_chars": 16000
@@ -1675,8 +1773,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1684,7 +1782,9 @@
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e3f6aa19196a1c65"
   },
   "listed": 8,
   "text_chars": 16000
@@ -1694,12 +1794,30 @@
   "title": "Film, Television, and Electronic Media",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.571,
+  "codes_found": [
+   "FTVE5",
+   "FTVE6",
+   "MCOMM17",
+   "PHOTO13"
+  ],
+  "source": {
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=107",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ae21c7bcef410d8a"
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 13696
  },
  {
   "control_number": "20214",
@@ -1724,8 +1842,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1734,7 +1852,9 @@
     82,
     83
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b2d5ba3162ebe5d3"
   },
   "listed": 12,
   "text_chars": 16000
@@ -1767,8 +1887,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1777,7 +1897,9 @@
     81,
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "8c55c02cc128ba4f"
   },
   "listed": 17,
   "text_chars": 16000
@@ -1794,18 +1916,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     52,
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2cbd3d9f5290a0a1"
   },
   "listed": 1,
-  "text_chars": 13734
+  "text_chars": 13724
  },
  {
   "control_number": "30716",
@@ -1833,8 +1957,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1843,7 +1967,9 @@
     166,
     167
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "2587c1050168863b"
   },
   "listed": 15,
   "text_chars": 16000
@@ -1865,18 +1991,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Science in Mathematics for Transfer is designed for",
+   "h1": "The Associate in Science in Mathematics for Transfer is designed for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     134,
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1b4b50a0e54aa4bb"
   },
   "listed": 6,
-  "text_chars": 10985
+  "text_chars": 9741
  },
  {
   "control_number": "31044",
@@ -1912,8 +2040,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1922,7 +2050,9 @@
     112,
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "42cf5d5cc067b0cf"
   },
   "listed": 23,
   "text_chars": 16000
@@ -1949,19 +2079,22 @@
    "PHYS4B"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=84",
+   "title": "The Associate in Science in Chemistry for Transfer is designed for",
+   "h1": "The Associate in Science in Chemistry for Transfer is designed for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    84,
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ad060aafb6eee458"
   },
   "listed": 12,
-  "text_chars": 13505
+  "text_chars": 16000
  },
  {
   "control_number": "31743",
@@ -1981,15 +2114,17 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "title": "The Associate of Science Degree in Biology is designed to prepare",
+   "h1": "The Associate of Science Degree in Biology is designed to prepare",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     74,
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "665afa83e51eb6eb"
   },
   "listed": 7,
   "text_chars": 16000
@@ -2010,18 +2145,20 @@
    "ECE31"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=89",
+   "title": "The Associate in Science in Early Childhood Education for Transfer",
+   "h1": "The Associate in Science in Early Childhood Education for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    89,
     90,
     91,
-    92,
-    93
+    92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "efc8d190f31ad4dc"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2056,8 +2193,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=158",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in Psychology for Transfer degree is designed",
+   "h1": "The Associate in Arts in Psychology for Transfer degree is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2065,7 +2202,9 @@
     159,
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b793f87331ed7df8"
   },
   "listed": 19,
   "text_chars": 16000
@@ -2106,18 +2245,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=127",
+   "title": "The Associate in Arts in Kinesiology for Transfer degree is designed",
+   "h1": "The Associate in Arts in Kinesiology for Transfer degree is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    127,
     128,
     129,
-    130,
-    131
+    130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "86d79e1ac8cde124"
   },
   "listed": 26,
   "text_chars": 16000
@@ -2159,8 +2300,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=50",
-   "title": null,
-   "h1": null,
+   "title": "The Associate of Science in Administration of Justice for Transfer",
+   "h1": "The Associate of Science in Administration of Justice for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2169,7 +2310,9 @@
     52,
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "132f50d4103435bb"
   },
   "listed": 14,
   "text_chars": 16000
@@ -2201,8 +2344,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in English for Transfer degree gives students",
+   "h1": "The Associate in Arts in English for Transfer degree gives students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2210,7 +2353,9 @@
     101,
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "13e33357218be00f"
   },
   "listed": 16,
   "text_chars": 16000
@@ -2237,17 +2382,19 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=155",
-   "title": null,
-   "h1": null,
+   "title": "The Associates in Arts in Political Science for Transfer degree is",
+   "h1": "The Associates in Arts in Political Science for Transfer degree is",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     155
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "4861700c6a1143df"
   },
   "listed": 11,
-  "text_chars": 6622
+  "text_chars": 6510
  },
  {
   "control_number": "33129",
@@ -2280,8 +2427,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=137",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in Music for Transfer degree prepares students",
+   "h1": "The Associate in Arts in Music for Transfer degree prepares students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2290,7 +2437,9 @@
     139,
     140
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2cad29c7c8431d33"
   },
   "listed": 20,
   "text_chars": 16000
@@ -2322,8 +2471,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=59",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in Studio Arts for Transfer Degree provides",
+   "h1": "The Associate in Arts in Studio Arts for Transfer Degree provides",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2332,7 +2481,9 @@
     61,
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e75189bcfe0c8236"
   },
   "listed": 16,
   "text_chars": 16000
@@ -2359,8 +2510,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=73",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Science in Biology for Transfer is designed to prepare",
+   "h1": "The Associate in Science in Biology for Transfer is designed to prepare",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2368,7 +2519,9 @@
     74,
     75
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a77e25e1d9fbf17e"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2392,8 +2545,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Science in Chemistry for Transfer is designed for",
+   "h1": "The Associate in Science in Chemistry for Transfer is designed for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2401,7 +2554,9 @@
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ad060aafb6eee458"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2426,8 +2581,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "title": "The Computer Science AS-T degree curriculum focuses on computer",
+   "h1": "The Computer Science AS-T degree curriculum focuses on computer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2435,7 +2590,9 @@
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "31e5a75f0b7c556a"
   },
   "listed": 9,
   "text_chars": 16000
@@ -2462,8 +2619,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2472,7 +2629,9 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b37199c71c4a557e"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2496,8 +2655,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2506,7 +2665,9 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b37199c71c4a557e"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2528,18 +2689,20 @@
    "ECE31"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    93,
     94,
     95,
-    96,
-    97
+    96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e69d2d4a857991d2"
   },
   "listed": 7,
   "text_chars": 16000
@@ -2567,8 +2730,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "TOTAL UNITS REQUIRED FOR CERTIFICATE 30",
+   "h1": "TOTAL UNITS REQUIRED FOR CERTIFICATE 30",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2577,7 +2740,9 @@
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "38bd305ec7e45305"
   },
   "listed": 12,
   "text_chars": 16000
@@ -2611,8 +2776,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2620,7 +2785,9 @@
     162,
     163
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "cb6e4032af70bf69"
   },
   "listed": 18,
   "text_chars": 16000
@@ -2638,8 +2805,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2647,10 +2814,12 @@
     104,
     105
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "a5ac8dce012fac08"
   },
   "listed": 2,
-  "text_chars": 15818
+  "text_chars": 15795
  },
  {
   "control_number": "37069",
@@ -2698,18 +2867,20 @@
    "KINES9"
   ],
   "source": {
-   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=127",
+   "title": "The Associate in Arts in Kinesiology for Transfer degree is designed",
+   "h1": "The Associate in Arts in Kinesiology for Transfer degree is designed",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    127,
     128,
     129,
-    130,
-    131
+    130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "86d79e1ac8cde124"
   },
   "listed": 36,
   "text_chars": 16000
@@ -2731,17 +2902,19 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "44f65529235e0d61"
   },
   "listed": 6,
-  "text_chars": 5828
+  "text_chars": 5818
  },
  {
   "control_number": "37447",
@@ -2762,8 +2935,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "an opportunity to earn an AA transfer degree in Theatre. Courses",
+   "h1": "an opportunity to earn an AA transfer degree in Theatre. Courses",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2772,7 +2945,9 @@
     169,
     170
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d68a819a55419bff"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2800,8 +2975,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2810,7 +2985,9 @@
     94,
     95
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "3fb0912a4b2a33c2"
   },
   "listed": 12,
   "text_chars": 16000
@@ -2832,8 +3009,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2842,7 +3019,9 @@
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e69d2d4a857991d2"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2882,8 +3061,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2891,7 +3070,9 @@
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "6d3d0036b195af68"
   },
   "listed": 26,
   "text_chars": 16000
@@ -2912,17 +3093,24 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=146",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     146
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 146,
+    "share": 1.0
+   },
+   "text_sha": "ccca9fb5d3988ca8"
   },
   "listed": 5,
-  "text_chars": 6983
+  "text_chars": 6978
  },
  {
   "control_number": "38009",
@@ -2941,18 +3129,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     148,
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "51e1073c3b0624cf"
   },
   "listed": 6,
-  "text_chars": 14073
+  "text_chars": 14062
  },
  {
   "control_number": "38100",
@@ -2968,8 +3158,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Competency in Interpersonal Communication",
+   "h1": "The Certificate of Competency in Interpersonal Communication",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2978,7 +3168,9 @@
     105,
     106
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "19a6b671ac4f09db"
   },
   "listed": 3,
   "text_chars": 16000
@@ -2996,17 +3188,19 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "The Certificate of Competency in Life Skills prepares students with",
+   "h1": "The Certificate of Competency in Life Skills prepares students with",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0be4df1973110e88"
   },
   "listed": 2,
-  "text_chars": 5903
+  "text_chars": 2037
  },
  {
   "control_number": "38877",
@@ -3023,8 +3217,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3032,7 +3226,9 @@
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5bb5bda81982f8bd"
   },
   "listed": 4,
   "text_chars": 16000
@@ -3053,8 +3249,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=70",
-   "title": null,
-   "h1": null,
+   "title": "The Transportation Engine Repair and Machining certificate prepares",
+   "h1": "The Transportation Engine Repair and Machining certificate prepares",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3063,7 +3259,9 @@
     72,
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "aeb547105ad24472"
   },
   "listed": 5,
   "text_chars": 16000
@@ -3088,8 +3286,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=175",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3097,7 +3295,9 @@
     176,
     177
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "5bb5bda81982f8bd"
   },
   "listed": 9,
   "text_chars": 16000
@@ -3123,8 +3323,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3133,7 +3333,9 @@
     71,
     72
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "d01ec78bc4f84257"
   },
   "listed": 10,
   "text_chars": 16000
@@ -3154,8 +3356,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3164,7 +3366,9 @@
     70,
     71
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "e10c22051c6b9099"
   },
   "listed": 5,
   "text_chars": 16000
@@ -3201,8 +3405,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3210,7 +3414,9 @@
     58,
     59
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "123e0de5cb96f50b"
   },
   "listed": 9,
   "text_chars": 16000
@@ -3237,8 +3443,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3247,7 +3453,9 @@
     80,
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "213e8e7d564915c7"
   },
   "listed": 11,
   "text_chars": 16000
@@ -3270,8 +3478,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=57",
-   "title": null,
-   "h1": null,
+   "title": "The agricultural technician certificate provides current students",
+   "h1": "The agricultural technician certificate provides current students",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3279,10 +3487,12 @@
     58,
     59
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f3278de0f90b29cf"
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 12282
  },
  {
   "control_number": "41568",
@@ -3304,8 +3514,8 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Science in Business Administration 2.0 for Transfer",
+   "h1": "The Associate in Science in Business Administration 2.0 for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3314,7 +3524,9 @@
     79,
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "84258951a9e71555"
   },
   "listed": 9,
   "text_chars": 16000
@@ -3345,18 +3557,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Science degree in Environmental Science for Transfer",
+   "h1": "The Associate in Science degree in Environmental Science for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97,
     98
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9da3df43159e9414"
   },
   "listed": 15,
-  "text_chars": 13090
+  "text_chars": 10322
  },
  {
   "control_number": "42493",
@@ -3385,18 +3599,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Arts in Economics for Transfer is designed to prepare",
+   "h1": "The Associate in Arts in Economics for Transfer is designed to prepare",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98,
     99
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c71585005909c5af"
   },
   "listed": 16,
-  "text_chars": 11060
+  "text_chars": 8945
  },
  {
   "control_number": "42762",
@@ -3419,18 +3635,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=165",
-   "title": null,
-   "h1": null,
+   "title": "in Arts in Communication Studies for Transfer 2.0 degree provides",
+   "h1": "in Arts in Communication Studies for Transfer 2.0 degree provides",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     165,
     166
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "84be48d3e1dc8c97"
   },
   "listed": 10,
-  "text_chars": 12481
+  "text_chars": 10136
  },
  {
   "control_number": "43555",
@@ -3453,18 +3671,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     144,
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "98af1e163426407b"
   },
   "listed": 10,
-  "text_chars": 14736
+  "text_chars": 14708
  },
  {
   "control_number": "43557",
@@ -3484,18 +3704,20 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "YUBA COLLEGE CATALOG 2026/2027",
+   "h1": "YUBA COLLEGE CATALOG 2026/2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "4aa4f2dbebda8e11"
   },
   "listed": 7,
-  "text_chars": 12682
+  "text_chars": 12658
  },
  {
   "control_number": "43558",
@@ -3518,17 +3740,19 @@
   ],
   "source": {
    "url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "title": "The Soil Conservation Technician certificate provides students with the",
+   "h1": "The Soil Conservation Technician certificate provides students with the",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     144,
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6c73fa467c207169"
   },
   "listed": 10,
-  "text_chars": 14736
+  "text_chars": 12378
  }
 ]

@@ -257,13 +257,17 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the Names tile reads 5,030 of 5,480 with its meter", /Names5,030 of 5,480/.test(tiles[0]) && t.d.querySelector('.exh-bar[aria-label="91.8 percent"]'));
   check("the Aligned course tile reads 209 of 468", /209 of 468/.test(tiles[1]));
   check("signed out, the Students tile says reviewers only and asks for a sign-in", /Reviewers only/.test(tiles[2]) && /Sign in as a reviewer to see them/.test(tiles[2]));
-  check("the stamps read as a date and a time", /Procedures run 2026-10-31 07:47Z · queue built 2026-10-31 08:00Z/.test(txt(t.d.querySelector(".exh-titlebar"))));
+  /* #3566 item 6: the stamps read in Pacific time and words, never a UTC code. */
+  check("the stamps read in Pacific time, in words", /The nightly procedures ran at 12:47 AM PT on October 31, and the queue was built at 1:00 AM PT on October 31\./.test(txt(t.d.querySelector(".exh-titlebar")))
+    && !/\d\d:\d\dZ/.test(txt(t.d.querySelector(".exh-titlebar"))));
   check("signed out, no students request is sent", !t.calls.some(function (c) { return /exhibit_title_students/.test(c.url); }));
   check("signed out, no student count is on the page", !/\b(442|398|840)\b/.test(txt(t.root)));
   check("All held is pressed with the whole queue's count", stepTile(t.d, "All held").getAttribute("aria-pressed") === "true" && txt(stepTile(t.d, "All held").querySelector(".exh-sn")) === "4");
   check("each step tile carries its plain hover", /keep, change or edit it/.test(stepTile(t.d, "Proposed").getAttribute("data-tip"))
     && /Proposed, 1\./.test(stepTile(t.d, "Proposed").getAttribute("aria-label")));
-  check("Saved, not folded shows and cannot filter", stepTile(t.d, "Saved, not folded").disabled === true);
+  /* #3566: the step reads in plain words, as saved and waiting for the fold, never as work. */
+  check("Saved, waiting for the nightly fold shows and cannot filter", stepTile(t.d, "Saved, waiting for the nightly fold").disabled === true
+    && /no one needs to act/.test(stepTile(t.d, "Saved, waiting for the nightly fold").getAttribute("data-tip")));
   check("without students the builder's order stands", current(t.d) === JUV);
   check("the footer says most colleges first", /1 of 4 · most colleges first/.test(txt(t.d.querySelector(".exh-foot"))));
   check("the CER step chip names the step, with its hover", /CER step: Conflict with the reference/.test(txt(t.d.querySelector(".exh-chip")))

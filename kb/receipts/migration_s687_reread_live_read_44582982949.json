@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s687_reread_live_read.sql",
+ "name": "s687_reread_live_read",
+ "version": "20261119180032",
+ "sha256": "e32788c221387cb71af51bf4ae0363cb080e42fe9d4f7c70fdd16f9704d4a97d",
+ "run": "44582982949",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-19T18:00:33Z\",\"chk\":{\"Cabrillo College\":[\"06326\"],\"Cerritos College\":[\"02201\",\"02202\",\"02203\",\"02213\",\"02226\",\"20520\",\"24026\",\"31608\",\"36675\",\"41982\",\"42158\",\"45549\"],\"Irvine Valley College\":[\"10265\"],\"Riverside City College\":[\"22804\",\"31456\",\"39033\",\"40061\"],\"Mt. San Antonio College\":[\"03086\",\"08086\",\"31650\",\"33876\",\"42916\",\"43670\"],\"West Los Angeles College\":[\"17111\",\"37050\",\"37839\",\"39618\"],\"San Diego Miramar College\":[\"05100\",\"18207\",\"35030\",\"41496\"]},\"sum\":{\"Yuba College\":[89,93,89,0,0,0],\"Cerritos College\":[302,305,293,0,9,0],\"Grossmont College\":[140,144,140,0,0,0],\"MiraCosta College\":[125,142,119,0,6,0],\"Southwestern College\":[190,220,190,0,0,0],\"American River College\":[335,368,335,0,0,0],\"Modesto Junior College\":[185,189,185,0,0,0],\"Imperial Valley College\":[125,131,123,0,2,0],\"Woodland Community College\":[64,65,64,0,0,0]},\"diff\":[[\"Cerritos College\",\"02201\",\"37961137169\",\"38656800189\"],[\"Cerritos College\",\"02203\",\"37961137169\",\"38656800189\"],[\"Cerritos College\",\"02213\",\"37966828676\",\"38656800189\"],[\"Cerritos College\",\"20504\",\"37961137169\",\"38064252862\"],[\"Cerritos College\",\"36675\",\"37171952080\",\"37961137169\"],[\"Cerritos College\",\"41982\",\"37171952080\",\"37961137169\"],[\"Cerritos College\",\"42158\",\"37171952080\",\"37961137169\"],[\"Cerritos College\",\"44984\",\"37961137169\",\"38064252862\"],[\"Cerritos College\",\"45549\",\"37171952080\",\"37961137169\"],[\"Imperial Valley College\",\"21473\",\"38935136329\",\"39691376155\"],[\"Imperial Valley College\",\"33272\",\"38935136329\",\"39691376155\"],[\"MiraCosta College\",\"07879\",\"38748842603\",\"39726634443\"],[\"MiraCosta College\",\"15310\",\"38748842603\",\"39726634443\"],[\"MiraCosta College\",\"16232\",\"38748842603\",\"39726634443\"],[\"MiraCosta College\",\"18974\",\"38748842603\",\"39726634443\"],[\"MiraCosta College\",\"21976\",\"38748842603\",\"39726634443\"],[\"MiraCosta College\",\"21978\",\"38748842603\",\"39726634443\"]],\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

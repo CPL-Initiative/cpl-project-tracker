@@ -1,0 +1,597 @@
+{
+ "_doc": "Sam Lee's college wording rule, 2026-11-19 12:42 PM PT (\"Forward all your recommendations and yes on the 36\", relayed by COBIx on #3566 comment 7021717277). The 36 groups of kb/cr_reference_worklist.json on main with official_id set and title_divergent true, each written as one confirmed cr_reference_decisions row keeping its canonical (the colleges' wording); the official link is flagged in the note, never applied. INSERT-only ON CONFLICT DO NOTHING; rollback kb/migrations/2026-11-19_s687_cr_wording_rule_rollback.sql (delete by updated_by prefix cr-wording-s687@bot).",
+ "pre_read": {
+  "at": "2026-11-19Tabout 20:52Z (Supabase MCP, read-only)",
+  "table_rows": 30,
+  "rows_for_these_keys": 0
+ },
+ "counts": {
+  "groups": 36,
+  "wordings": 42,
+  "map_rows": 712
+ },
+ "rows": [
+  {
+   "group_key": "2d design",
+   "decision": "confirmed",
+   "canonical": "3 hours in 2D Design",
+   "members": [
+    "3 hours in 2D Design"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ARTS 100 (2-D Foundations) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ARTS 100",
+   "official_title": "2-D Foundations",
+   "wordings": 1,
+   "rows": 5,
+   "colleges": 5
+  },
+  {
+   "group_key": "3d design",
+   "decision": "confirmed",
+   "canonical": "3 hours in 3D Design",
+   "members": [
+    "3 hours in 3D Design"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ARTS 101 (3-D Foundations) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ARTS 101",
+   "official_title": "3-D Foundations",
+   "wordings": 1,
+   "rows": 3,
+   "colleges": 3
+  },
+  {
+   "group_key": "3d design concepts theory practice",
+   "decision": "confirmed",
+   "canonical": "4 hours in 3D Design: Concepts, Theory, and Practice",
+   "members": [
+    "4 hours in 3D Design: Concepts, Theory, and Practice"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ARTS 101 (3-D Foundations) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ARTS 101",
+   "official_title": "3-D Foundations",
+   "wordings": 1,
+   "rows": 3,
+   "colleges": 3
+  },
+  {
+   "group_key": "academic reading writing",
+   "decision": "confirmed",
+   "canonical": "Academic Reading and Writing (3–4 units)",
+   "members": [
+    "4 hours in Academic Reading and Writing",
+    "3 hours in Academic Reading and Writing"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ENGL 100 (College Composition) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ENGL 100",
+   "official_title": "College Composition",
+   "wordings": 2,
+   "rows": 46,
+   "colleges": 14
+  },
+  {
+   "group_key": "academic reading writing honors",
+   "decision": "confirmed",
+   "canonical": "4 hours in Academic Reading and Writing - Honors",
+   "members": [
+    "4 hours in Academic Reading and Writing - Honors"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ENGL 100 (College Composition) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ENGL 100",
+   "official_title": "College Composition",
+   "wordings": 1,
+   "rows": 9,
+   "colleges": 9
+  },
+  {
+   "group_key": "arts",
+   "decision": "confirmed",
+   "canonical": "3 hours in Arts",
+   "members": [
+    "3 hours in Arts"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID THTR 111 (Introduction to Theatre) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID THTR 111",
+   "official_title": "Introduction to Theatre",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "assembler language programming",
+   "decision": "confirmed",
+   "canonical": "3 hours in Assembler Language Programming",
+   "members": [
+    "3 hours in Assembler Language Programming"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID COMP 142 (Computer Architecture and Organization) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID COMP 142",
+   "official_title": "Computer Architecture and Organization",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "assembly language programming",
+   "decision": "confirmed",
+   "canonical": "3 hours in Assembly Language Programming",
+   "members": [
+    "3 hours in Assembly Language Programming"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID COMP 142 (Computer Architecture and Organization) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID COMP 142",
+   "official_title": "Computer Architecture and Organization",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "basic life support healthcare provider",
+   "decision": "confirmed",
+   "canonical": "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER",
+   "members": [
+    "0.5 hours in BASIC LIFE SUPPORT FOR THE HEALTHCARE PROVIDER"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID KIN 101 (First Aid, CPR and AED) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID KIN 101",
+   "official_title": "First Aid, CPR and AED",
+   "wordings": 1,
+   "rows": 12,
+   "colleges": 4
+  },
+  {
+   "group_key": "beginning basic design",
+   "decision": "confirmed",
+   "canonical": "3 hours in Beginning Basic Design",
+   "members": [
+    "3 hours in Beginning Basic Design"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ARTS 100 (2-D Foundations) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ARTS 100",
+   "official_title": "2-D Foundations",
+   "wordings": 1,
+   "rows": 5,
+   "colleges": 5
+  },
+  {
+   "group_key": "beginning two dimensional design",
+   "decision": "confirmed",
+   "canonical": "3 hours in Beginning Two-Dimensional Design",
+   "members": [
+    "3 hours in Beginning Two-Dimensional Design"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ARTS 100 (2-D Foundations) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ARTS 100",
+   "official_title": "2-D Foundations",
+   "wordings": 1,
+   "rows": 7,
+   "colleges": 6
+  },
+  {
+   "group_key": "biological principles",
+   "decision": "confirmed",
+   "canonical": "4 hours in Biological Principles",
+   "members": [
+    "4 hours in Biological Principles"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID BIOL 190 (Cell and Molecular Biology) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID BIOL 190",
+   "official_title": "Cell and Molecular Biology",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "crime scene management forensic evidence",
+   "decision": "confirmed",
+   "canonical": "3 hours in Crime Scene Management and Forensic Evidence",
+   "members": [
+    "3 hours in Crime Scene Management and Forensic Evidence"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID AJ 150 (Introduction to Forensics) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID AJ 150",
+   "official_title": "Introduction to Forensics",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "csu ge e lifelong understanding self development",
+   "decision": "confirmed",
+   "canonical": "3 hours in CSU GE E – Lifelong Understanding and Self-Development",
+   "members": [
+    "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID AJ 110 (Introduction to Criminal Justice) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID AJ 110",
+   "official_title": "Introduction to Criminal Justice",
+   "wordings": 1,
+   "rows": 137,
+   "colleges": 18
+  },
+  {
+   "group_key": "economic geography",
+   "decision": "confirmed",
+   "canonical": "3 hours in Economic Geography",
+   "members": [
+    "3 hours in Economic Geography"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID GLST 102 (Global Issues) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID GLST 102",
+   "official_title": "Global Issues",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "electricity magnetism optics atomic nuclear structure",
+   "decision": "confirmed",
+   "canonical": "4 hours in Electricity, Magnetism, Optics, Atomic and Nuclear Structure",
+   "members": [
+    "4 hours in Electricity, Magnetism, Optics, Atomic and Nuclear Structure"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID PHYS 100 S (Algebra/Trigonometry-Based Physics: AB) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID PHYS 100 S",
+   "official_title": "Algebra/Trigonometry-Based Physics: AB",
+   "wordings": 1,
+   "rows": 2,
+   "colleges": 1
+  },
+  {
+   "group_key": "electromagnetism",
+   "decision": "confirmed",
+   "canonical": "4 hours in Electromagnetism",
+   "members": [
+    "4 hours in Electromagnetism"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID PHYS 210 (Calculus-Based Physics for Scientists and Engineers: B) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID PHYS 210",
+   "official_title": "Calculus-Based Physics for Scientists and Engineers: B",
+   "wordings": 1,
+   "rows": 3,
+   "colleges": 3
+  },
+  {
+   "group_key": "elementary economics macro",
+   "decision": "confirmed",
+   "canonical": "3 hours in Elementary Economics-Macro",
+   "members": [
+    "3 hours in Elementary Economics-Macro"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ECON 202 (Principles of Macroeconomics) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ECON 202",
+   "official_title": "Principles of Macroeconomics",
+   "wordings": 1,
+   "rows": 8,
+   "colleges": 8
+  },
+  {
+   "group_key": "elementary economics micro",
+   "decision": "confirmed",
+   "canonical": "3 hours in Elementary Economics-Micro",
+   "members": [
+    "3 hours in Elementary Economics-Micro"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ECON 201 (Principles of Microeconomics) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ECON 201",
+   "official_title": "Principles of Microeconomics",
+   "wordings": 1,
+   "rows": 8,
+   "colleges": 8
+  },
+  {
+   "group_key": "fire protection organization",
+   "decision": "confirmed",
+   "canonical": "3 hours in Fire Protection Organization",
+   "members": [
+    "3 hours in Fire Protection Organization"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID FIRE 100 X (Principles of Emergency Services) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID FIRE 100 X",
+   "official_title": "Principles of Emergency Services",
+   "wordings": 1,
+   "rows": 35,
+   "colleges": 8
+  },
+  {
+   "group_key": "fire protection organizations",
+   "decision": "confirmed",
+   "canonical": "3 hours in Fire Protection Organizations",
+   "members": [
+    "3 hours in Fire Protection Organizations"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID FIRE 100 X (Principles of Emergency Services) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID FIRE 100 X",
+   "official_title": "Principles of Emergency Services",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "food preparation essentials",
+   "decision": "confirmed",
+   "canonical": "3 hours in FOOD PREPARATION ESSENTIALS",
+   "members": [
+    "3 hours in FOOD PREPARATION ESSENTIALS"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID NUTR 120 (Principles of Foods with Lab) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID NUTR 120",
+   "official_title": "Principles of Foods with Lab",
+   "wordings": 1,
+   "rows": 4,
+   "colleges": 2
+  },
+  {
+   "group_key": "forensic scientific aspects evidence",
+   "decision": "confirmed",
+   "canonical": "3 hours in Forensic and Scientific Aspects of Evidence",
+   "members": [
+    "3 hours in Forensic and Scientific Aspects of Evidence"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID AJ 150 (Introduction to Forensics) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID AJ 150",
+   "official_title": "Introduction to Forensics",
+   "wordings": 1,
+   "rows": 2,
+   "colleges": 1
+  },
+  {
+   "group_key": "fundamental recording techniques i",
+   "decision": "confirmed",
+   "canonical": "1.5 hours in Fundamental Recording Techniques I",
+   "members": [
+    "1.5 hours in Fundamental Recording Techniques I"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID FTVE 120 (Beginning Audio Production) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID FTVE 120",
+   "official_title": "Beginning Audio Production",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "healthful living",
+   "decision": "confirmed",
+   "canonical": "3 hours in Healthful Living",
+   "members": [
+    "3 hours in Healthful Living"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID PH 100 (Personal Health and Wellness) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID PH 100",
+   "official_title": "Personal Health and Wellness",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "intensive reading writing reasoning english language learners",
+   "decision": "confirmed",
+   "canonical": "5 hours in Intensive Reading, Writing, and Reasoning for English Language Learners",
+   "members": [
+    "5 hours in Intensive Reading, Writing, and Reasoning for English Language Learners"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ENGL 100 (College Composition) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ENGL 100",
+   "official_title": "College Composition",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "introduction computers windows",
+   "decision": "confirmed",
+   "canonical": "1 hour in Introduction to Computers and Windows",
+   "members": [
+    "1 hour in Introduction to Computers and Windows"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID BSOT 105 X (Computer Literacy) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID BSOT 105 X",
+   "official_title": "Computer Literacy",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "mechanics",
+   "decision": "confirmed",
+   "canonical": "4 hours in Mechanics",
+   "members": [
+    "4 hours in Mechanics"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID PHYS 205 (Calculus-Based Physics for Scientists and Engineers: A) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID PHYS 205",
+   "official_title": "Calculus-Based Physics for Scientists and Engineers: A",
+   "wordings": 1,
+   "rows": 6,
+   "colleges": 6
+  },
+  {
+   "group_key": "mechanics heat waves",
+   "decision": "confirmed",
+   "canonical": "4 hours in Mechanics, Heat, & Waves",
+   "members": [
+    "4 hours in Mechanics, Heat, & Waves"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID PHYS 100 S (Algebra/Trigonometry-Based Physics: AB) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID PHYS 100 S",
+   "official_title": "Algebra/Trigonometry-Based Physics: AB",
+   "wordings": 1,
+   "rows": 2,
+   "colleges": 1
+  },
+  {
+   "group_key": "networking essentials",
+   "decision": "confirmed",
+   "canonical": "4 hours in Networking Essentials",
+   "members": [
+    "4 hours in Networking Essentials"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ITIS 150 (Computer Network Fundamentals) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ITIS 150",
+   "official_title": "Computer Network Fundamentals",
+   "wordings": 1,
+   "rows": 2,
+   "colleges": 1
+  },
+  {
+   "group_key": "physical training health education",
+   "decision": "confirmed",
+   "canonical": "3 hours in Physical Training and Health Education (CSU GE Area E)",
+   "members": [
+    "3 hours in Physical Training and Health Education (CSU GE Area E)"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID AJ 110 (Introduction to Criminal Justice) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID AJ 110",
+   "official_title": "Introduction to Criminal Justice",
+   "wordings": 1,
+   "rows": 139,
+   "colleges": 19
+  },
+  {
+   "group_key": "principles procedures justice system",
+   "decision": "confirmed",
+   "canonical": "3.0 hours in Principles and Procedures of the Justice System",
+   "members": [
+    "3.0 hours in Principles and Procedures of the Justice System",
+    "3 hours in Principles and Procedures of the Justice System",
+    "3 hours in Principles & Procedures of the Justice System",
+    "3 hours in PRINCIPLES AND PROCEDURES OF THE JUSTICE SYSTEM",
+    "3 hours in Principles/Procedures of Justice System"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID AJ 122 (Criminal Court Process) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID AJ 122",
+   "official_title": "Criminal Court Process",
+   "wordings": 5,
+   "rows": 129,
+   "colleges": 16
+  },
+  {
+   "group_key": "racial issues police",
+   "decision": "confirmed",
+   "canonical": "3 hours in Racial Issues and the Police",
+   "members": [
+    "3 hours in Racial Issues and the Police"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID AJ 160 (Community and the Justice System) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID AJ 160",
+   "official_title": "Community and the Justice System",
+   "wordings": 1,
+   "rows": 119,
+   "colleges": 17
+  },
+  {
+   "group_key": "soils fertilizers",
+   "decision": "confirmed",
+   "canonical": "3 hours in SOILS AND FERTILIZERS",
+   "members": [
+    "3 hours in SOILS AND FERTILIZERS"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID AG-PS 128 128 L (Introduction to Soil Science) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID AG-PS 128 128 L",
+   "official_title": "Introduction to Soil Science",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "tour ensemble",
+   "decision": "confirmed",
+   "canonical": "3 hours in Tour Ensemble",
+   "members": [
+    "3 hours in Tour Ensemble"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID THTR 191 (Rehearsal and Performance in Production) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID THTR 191",
+   "official_title": "Rehearsal and Performance in Production",
+   "wordings": 1,
+   "rows": 1,
+   "colleges": 1
+  },
+  {
+   "group_key": "two dimensional design",
+   "decision": "confirmed",
+   "canonical": "3 hours in Two Dimensional Design",
+   "members": [
+    "3 hours in Two Dimensional Design",
+    "3 hours in Two-Dimensional Design"
+   ],
+   "excluded": [],
+   "note": "Sam Lee, 2026-11-19 12:42 PM PT, in his words: \"Forward all your recommendations and yes on the 36\" (relayed by COBIx on #3566, comment 7021717277). The college wording rule: the colleges' wording stays this group's name. C-ID ARTS 100 (2-D Foundations) reaches the group but its title shares no word with the wordings: the link is flagged for a check and never applied. Recorded by SkyPipit (S687); rollback by updated_by prefix cr-wording-s687@bot.",
+   "updated_by": "cr-wording-s687@bot · Sam Lee ruling 2026-11-19 12:42 PM PT (COBIx on #3566)",
+   "official": "C-ID ARTS 100",
+   "official_title": "2-D Foundations",
+   "wordings": 2,
+   "rows": 13,
+   "colleges": 9
+  }
+ ]
+}

@@ -107,6 +107,27 @@ except SystemExit:
     check(True, "a page mixing builds is refused")
 
 
+def keyset(expr):
+    """(college, control_number) from or=(college.gt."C",and(college.eq."C",control_number.gt."N")), reading
+    PostgREST's double-quoted values with their backslash escapes."""
+    vals, i = [], 0
+    while True:
+        i = expr.find('"', i)
+        if i < 0:
+            break
+        j, v = i + 1, ""
+        while expr[j] != '"':
+            if expr[j] == "\\":
+                j += 1
+            v += expr[j]
+            j += 1
+        vals.append(v)
+        i = j + 1
+    assert len(vals) == 3 and vals[0] == vals[1], expr
+    assert expr.startswith("(college.gt.") and ",and(college.eq." in expr and ",control_number.gt." in expr, expr
+    return vals[0], vals[2]
+
+
 class Table:
     """program_requirement_records as PostgREST serves it: pages of at most
     `cap` rows by limit and offset, a one-key GET, a one-key PATCH of display.
@@ -132,12 +153,19 @@ class Table:
         if method == "GET" and "limit" in q:
             if self.page_fail:
                 raise self.page_fail.pop(0)
-            keys = sorted(k for k in self.rows if k not in self.hide)
+            keys = sorted((k for k in self.rows if k not in self.hide), key=lambda k: tuple(k.split("|")))
             if "college" in q:
                 keys = [k for k in keys if k.split("|")[0] == q["college"][3:]]
-            off, lim = int(q["offset"]), min(int(q["limit"]), self.cap)
+            if "offset" in q:
+                raise AssertionError("an offset page read: %s" % path_qs)
+            if "control_number" in q:                     # keyset within one college
+                keys = [k for k in keys if k.split("|")[1] > q["control_number"][3:]]
+            if "or" in q:                                 # keyset across colleges
+                c, n = keyset(q["or"])
+                keys = [k for k in keys if tuple(k.split("|")) > (c, n)]
+            lim = min(int(q["limit"]), self.cap)
             return [{"college": k.split("|")[0], "control_number": k.split("|")[1],
-                     "build": (self.rows[k] or {}).get("build")} for k in keys[off:off + lim]]
+                     "build": (self.rows[k] or {}).get("build")} for k in keys[:lim]]
         k = "%s|%s" % (q["college"][3:], q["control_number"][3:])
         if method == "GET":
             if k in self.get_fail:
@@ -478,5 +506,36 @@ try:
             os.environ["SUPABASE_SERVICE_KEY"] = saved[3]
 finally:
     shutil.rmtree(tmp)
+
+# Keyset pages (S687, f-display-confirm-read-unpaged-s685): the whole build's confirming read answered HTTP 500
+# at offset pages over 18,323 rows; each page now starts after the last key read. Names with a comma, a period, a
+# parenthesis, a double quote and a backslash, and a page edge inside one college, must each read exactly once.
+odd = ["College of the Canyons", 'Coll, "Odd" (Two).', "Back\\slash College", "Zeta"]
+held = {"%s|%05d" % (c, n): BUILD for c in odd for n in range(3)}
+t = Table(held, cap=2)
+got = A.read_builds(t, sleep=lambda s: None)
+check(got == held, "keyset pages read every row of the whole table once, odd names included")
+pages = [c for c in t.calls if c[0] == "GET"]
+check(len(pages) == len(held) // 2 + 1, "keyset pages: one read a page and one empty page (%d)" % len(pages))
+check(not any("offset=" in c[1] for c in pages), "no page read carries an offset")
+t = Table(held, cap=2)
+got = A.read_builds(t, odd[1], sleep=lambda s: None)
+check(got == {k: v for k, v in held.items() if k.startswith(odd[1] + "|")}, "one college's keyset pages read it whole")
+check(all("or=" not in c[1] for c in t.calls), "one college's pages key on the control number alone")
+
+_stuck = None
+try:
+    A.read_builds(lambda m, q, b=None: [{"college": "A", "control_number": "00001", "build": BUILD}], sleep=lambda s: None)
+except RuntimeError as e:
+    _stuck = str(e)
+check(_stuck is not None and "did not advance" in _stuck, "a server that ignores the keyset filter stops the read, never loops")
+
+# COBIx on #3564: the server's collation orders the pages, so a later page may hold a key Python sorts lower
+# (a space or an accent). The read takes it; only a page with no new key stops it.
+_pages = iter([[{"college": "Zeta College", "control_number": "00001", "build": BUILD}],
+               [{"college": "Ñandu College", "control_number": "00001", "build": BUILD},
+                {"college": "Alpha College", "control_number": "00002", "build": BUILD}], []])
+_got = A.read_builds(lambda m, q, b=None: next(_pages), sleep=lambda s: None)
+check(len(_got) == 3, "a page the server orders by its own collation reads whole, whatever Python's order says")
 
 print("ok: program requirements display apply pass (%d checks)" % passed)

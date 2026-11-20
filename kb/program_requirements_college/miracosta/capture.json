@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 187,
  "with_closed_list": 161,
- "started": "2026-10-22T08:18:02Z",
+ "started": "2026-11-19T13:04:36Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.miracosta.edu/sitemap.xml",
@@ -14,19 +14,262 @@
   "nested": 0,
   "program_pages": 359,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null,
+  "challenged": null
  },
+ "listing_failed": 0,
  "pages_read": 121,
+ "pages_listed": 359,
+ "pages_answered": 121,
  "child_pages": 0,
  "banner_h1": null,
- "loads": 367,
- "seconds": 1735.1,
- "found": 142,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 14,
+   "hits": 0,
+   "recall": 0.0,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 40,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 26,
+  "by_result": {
+   "not_searched": 25,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "05120",
+    "title": "Automotive Technology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "05137",
+    "title": "Law Enforcement",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07865",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07867",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11824",
+    "title": "Child Development Site Supervisor",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11835",
+    "title": "Management",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "14076",
+    "title": "California Smog Check Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "15546",
+    "title": "Medical Office Professional",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "16844",
+    "title": "Early Intervention & Inclusion",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21981",
+    "title": "Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21983",
+    "title": "Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21986",
+    "title": "Marketing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "21993",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22007",
+    "title": "Child Development Site Supervisor",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22008",
+    "title": "Law Enforcement",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30004",
+    "title": "Liberal Arts: Creative and Applied Arts",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30005",
+    "title": "Liberal Arts: Mathematics and Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30006",
+    "title": "Liberal Arts: Multicultural Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30007",
+    "title": "Liberal Arts: Arts and Humanities",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30008",
+    "title": "Liberal Arts: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30273",
+    "title": "CSU General Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30274",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "31769",
+    "title": "Social Media for Business",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "36273",
+    "title": "Beginning Noncredit ESL",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38963",
+    "title": "Basic Computer Skills",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "41617",
+    "title": "Horticulture Basics",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 0 of 14 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 374,
+ "seconds": 1751.7,
+ "found": 137,
  "by_method": {
+  "link_search": 1,
   "no_closed_list": 26,
-  "not_found": 11,
+  "not_found": 16,
   "page_claimed": 8,
-  "sitemap_page": 142
+  "sitemap_page": 136
  },
  "shared_pages": {
   "https://catalog.miracosta.edu/disciplines/horticulture/": [
@@ -139,6 +382,7 @@
   "https://catalog.miracosta.edu/disciplines/art/": [
    "18986",
    "18987",
+   "31936",
    "35028",
    "38727"
   ],
@@ -170,11 +414,6 @@
   "https://catalog.miracosta.edu/continuingeducation/noncreditesl/": [
    "36097",
    "36272"
-  ],
-  "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/": [
-   "36100",
-   "39489",
-   "39491"
   ],
   "https://catalog.miracosta.edu/disciplines/spanish/": [
    "36121",
@@ -247,7 +486,8 @@
       98
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "31596",
@@ -255,7 +495,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Approved"
   },
   {
    "control_number": "35842",
@@ -263,7 +504,83 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36100",
+   "title": "Basic Education for Academic or Workforce Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "37386",
+   "title": "Social Justice Studies: Gender Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "37408",
+   "title": "Social Justice Studies: LGBTQ Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "38751",
+   "title": "Social Justice Studies: Chicana and Chicano Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/disciplines/ccs/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.154,
+    "body": 0.0,
+    "content": 0.154,
+    "net": 2,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 2 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4580,
+     "content": 19836,
+     "tabs": 1879
+    },
+    "tab_panels": [
+     [
+      "COURSES",
+      1864
+     ],
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   },
+   "status": "Approved"
   },
   {
    "control_number": "39490",
@@ -271,7 +588,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39492",
@@ -279,7 +597,17 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40264",
+   "title": "Liberal Arts: Elementary Subject Matter Education",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "41292",
@@ -287,7 +615,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41611",
@@ -295,7 +624,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41612",
@@ -303,7 +633,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41613",
@@ -311,7 +642,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41618",
@@ -319,7 +651,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42864",
@@ -327,7 +660,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -337,7 +671,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://catalog.miracosta.edu/disciplines/kinesiology/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "17409",
@@ -345,9 +680,9 @@
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.miracosta.edu/disciplines/nursing/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
-   ]
+    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
+   ],
+   "status": "Approved"
   },
   {
    "control_number": "19095",
@@ -355,7 +690,8 @@
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.miracosta.edu/disciplines/nursing/"
-   ]
+   ],
+   "status": "Approved"
   },
   {
    "control_number": "31741",
@@ -363,12 +699,12 @@
    "award": "A.S. T Degree",
    "pages": [
     "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
     "https://catalog.miracosta.edu/disciplines/psychology/",
     "https://catalog.miracosta.edu/disciplines/sociology/",
     "https://catalog.miracosta.edu/disciplines/swhs/",
     "https://catalog.miracosta.edu/disciplines/healtheducation/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "34012",
@@ -376,7 +712,8 @@
    "award": "Baccalaureate of Science (B.S.) Degree.",
    "pages": [
     "https://catalog.miracosta.edu/disciplines/biotechnology/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "36442",
@@ -384,7 +721,8 @@
    "award": "A.S. Degree",
    "pages": [
     "https://catalog.miracosta.edu/disciplines/biotechnology/"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "42105",
@@ -394,9 +732,9 @@
     "https://catalog.miracosta.edu/disciplines/liberalartsmulticulturalstudies/",
     "https://catalog.miracosta.edu/disciplines/liberalartssocialandbehavioralsciences/",
     "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/",
-    "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/",
     "https://catalog.miracosta.edu/disciplines/sociology/"
-   ]
+   ],
+   "status": "Approved"
   },
   {
    "control_number": "44614",
@@ -407,260 +745,608 @@
     "https://catalog.miracosta.edu/disciplines/mathematics/",
     "https://catalog.miracosta.edu/disciplines/liberalartsmathematicsandsciences/",
     "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/plana/"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 7,
-  "0.8-1.0": 13,
-  "1.0": 122
+  "0.5-0.8": 1,
+  "0.8-1.0": 12,
+  "1.0": 124
  },
  "would_extract": {
   "against": "kb/program_requirements_college/miracosta",
-  "kept": 118,
-  "programs": 24,
+  "kept": 134,
+  "kept_moved": 0,
+  "programs": 3,
   "list": [
    {
-    "control_number": "05113",
-    "title": "Bookkeeping",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/accounting/",
+    "control_number": "31821",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.miracosta.edu/disciplines/history/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "15183",
-    "title": "Child Development Teacher",
-    "award": "A.A. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://catalog.miracosta.edu/transferinfo/csu/",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31936",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
-    "coverage": 0.762,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "31937",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/psychology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "32467",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/",
+    "url": "https://catalog.miracosta.edu/disciplines/art/",
     "coverage": 1.0,
     "was_url": "https://catalog.miracosta.edu/disciplines/liberalartscreativeandappliedarts/",
-    "was_coverage": 0.917,
+    "was_coverage": 0.762,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "35580",
-    "title": "Early Childhood Education for Transfer",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+    "control_number": "39491",
+    "title": "High School Equivalency Preparation",
+    "award": "Noncredit program",
+    "url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36144",
-    "title": "Tech Support",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36145",
-    "title": "Internet and E-Commerce",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36146",
-    "title": "Management Information Systems (MIS)",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36154",
-    "title": "Executive Administrative Professional",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36168",
-    "title": "Cyber Security",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36169",
-    "title": "Systems Administration",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36174",
-    "title": "Cyber Security",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36253",
-    "title": "Computer Applications",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36305",
-    "title": "Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37409",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "38727",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/art/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "38729",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerscience/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "38730",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/politicalscience/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "40577",
-    "title": "Spanish",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/spanish/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41547",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/hospitality/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41895",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/businessadministration/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "43613",
-    "title": "Global Health",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.miracosta.edu/disciplines/anthropology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "43719",
-    "title": "Artificial Intelligence",
-    "award": "A.S. Degree",
-    "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
+    "was_url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
+    "was_coverage": 0.519,
+    "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39746427354"
+ "fingerprints": {
+  "05110": {
+   "sha256": "6628ceb103e3b320128bea56b10b1ad5eb6949b7e74a6f8061b2f9d53e87e348",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "05113": {
+   "sha256": "9a17b7336937d97bce64a94a8e6bcea76e17e58def803961c848de93e042b913",
+   "url": "https://catalog.miracosta.edu/disciplines/accounting/"
+  },
+  "05130": {
+   "sha256": "eee5b020600202174792b61ed13742b5212d019512304bf253323b291b44738a",
+   "url": "https://catalog.miracosta.edu/disciplines/nursing/"
+  },
+  "05136": {
+   "sha256": "24ddd80a120fde0bfdb23587d46e4874acbb4b1f40acefbe38dcbdad56af0a50",
+   "url": "https://catalog.miracosta.edu/disciplines/psychology/"
+  },
+  "05143": {
+   "sha256": "a3976e406422ab0601061dbc10a66a78409f2b71664807389b1ac568c1c91fce",
+   "url": "https://catalog.miracosta.edu/disciplines/musictechnology/"
+  },
+  "07077": {
+   "sha256": "bc57e6bc5aa145a19d2c43d301678a1ab2d59586999981b57f901973380d03b4",
+   "url": "https://catalog.miracosta.edu/disciplines/mediaarts/"
+  },
+  "07862": {
+   "sha256": "6628ceb103e3b320128bea56b10b1ad5eb6949b7e74a6f8061b2f9d53e87e348",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "07863": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "07866": {
+   "sha256": "f0b88a2500310cd9e1f49b67c0a63a1b423c9a188180e843271bcfd21bff58e4",
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/"
+  },
+  "07872": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "07876": {
+   "sha256": "ffc2a949b357eebc004702e9f78d750082c824fdb1c054463b39d0fd7ed62a04",
+   "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/"
+  },
+  "07877": {
+   "sha256": "5a5343f3fbe8a2871552271bf5eb145dbaa2ce8eadd3064fce947169369ea83f",
+   "url": "https://catalog.miracosta.edu/disciplines/dance/"
+  },
+  "07879": {
+   "sha256": "2b098f8d1e61a78cc3ea2e2ca383abafc06f018bbdbe81833a51c3d20597e8df",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  },
+  "07881": {
+   "sha256": "9d984e19a859f98083a97c1add7add6d5f54a42772c4192197be5fa21570e99f",
+   "url": "https://catalog.miracosta.edu/disciplines/hospitality/"
+  },
+  "11747": {
+   "sha256": "bc57e6bc5aa145a19d2c43d301678a1ab2d59586999981b57f901973380d03b4",
+   "url": "https://catalog.miracosta.edu/disciplines/mediaarts/"
+  },
+  "11750": {
+   "sha256": "3810d9f659ab4b57066231b025e5ee461f6e0d017bd1221231b9ae8652477f61",
+   "url": "https://catalog.miracosta.edu/disciplines/computerscience/"
+  },
+  "12111": {
+   "sha256": "9d984e19a859f98083a97c1add7add6d5f54a42772c4192197be5fa21570e99f",
+   "url": "https://catalog.miracosta.edu/disciplines/hospitality/"
+  },
+  "12306": {
+   "sha256": "f0b88a2500310cd9e1f49b67c0a63a1b423c9a188180e843271bcfd21bff58e4",
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/"
+  },
+  "12880": {
+   "sha256": "228bd033cb3e6f86c17906071708028cc49ba129e57cbb91602b18ed5c003f95",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "15183": {
+   "sha256": "ad773a5634689262032c78728d33dad706cb1cdb4bf0c914b28bb99e1f7fa60d",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  },
+  "15309": {
+   "sha256": "d674b1e9213248ae798140906d0e5d553227fd69099e14238d4b09e9e06d9ba8",
+   "url": "https://catalog.miracosta.edu/disciplines/biotechnology/"
+  },
+  "15310": {
+   "sha256": "2b098f8d1e61a78cc3ea2e2ca383abafc06f018bbdbe81833a51c3d20597e8df",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  },
+  "16232": {
+   "sha256": "470202e2248bbb933399608600eb8e64507a410cb7fd88f0b973da90c2da0fca",
+   "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/"
+  },
+  "17628": {
+   "sha256": "bc57e6bc5aa145a19d2c43d301678a1ab2d59586999981b57f901973380d03b4",
+   "url": "https://catalog.miracosta.edu/disciplines/mediaarts/"
+  },
+  "17752": {
+   "sha256": "1ec8a3fc0686c2f3694781ce76bd36c82d19a6117e9f455c38cbff804a00dbde",
+   "url": "https://catalog.miracosta.edu/disciplines/musictechnology/"
+  },
+  "18311": {
+   "sha256": "1b00123b9b5552d6b9175678467873461afa87c27dd9b7472c45bdb846aed106",
+   "url": "https://catalog.miracosta.edu/disciplines/gerontology/"
+  },
+  "18313": {
+   "sha256": "24ddd80a120fde0bfdb23587d46e4874acbb4b1f40acefbe38dcbdad56af0a50",
+   "url": "https://catalog.miracosta.edu/disciplines/psychology/"
+  },
+  "18340": {
+   "sha256": "ffc2a949b357eebc004702e9f78d750082c824fdb1c054463b39d0fd7ed62a04",
+   "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/"
+  },
+  "18345": {
+   "sha256": "0238a69895d420a8d7b7ecc4999df22e34d79c82e9c7f7e4e6de71a01d0e1198",
+   "url": "https://catalog.miracosta.edu/disciplines/music/"
+  },
+  "18844": {
+   "sha256": "012b73d1ad2acda47530667e01e56db643751ae324d52b87f59e3de37130b8f6",
+   "url": "https://catalog.miracosta.edu/disciplines/kinesiology/"
+  },
+  "18974": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "18975": {
+   "sha256": "3810d9f659ab4b57066231b025e5ee461f6e0d017bd1221231b9ae8652477f61",
+   "url": "https://catalog.miracosta.edu/disciplines/computerscience/"
+  },
+  "18986": {
+   "sha256": "d58220de1adf58da2db453cd4dcc6d88ce4748a94583670bd152a1ea54a56964",
+   "url": "https://catalog.miracosta.edu/disciplines/art/"
+  },
+  "18987": {
+   "sha256": "d58220de1adf58da2db453cd4dcc6d88ce4748a94583670bd152a1ea54a56964",
+   "url": "https://catalog.miracosta.edu/disciplines/art/"
+  },
+  "19039": {
+   "sha256": "802266c6c518e969ee85ae4b26b3735acb58cc3a57958b08193ab7621edc14e3",
+   "url": "https://catalog.miracosta.edu/disciplines/dance/"
+  },
+  "20765": {
+   "sha256": "9d984e19a859f98083a97c1add7add6d5f54a42772c4192197be5fa21570e99f",
+   "url": "https://catalog.miracosta.edu/disciplines/hospitality/"
+  },
+  "20767": {
+   "sha256": "9d984e19a859f98083a97c1add7add6d5f54a42772c4192197be5fa21570e99f",
+   "url": "https://catalog.miracosta.edu/disciplines/hospitality/"
+  },
+  "21974": {
+   "sha256": "6628ceb103e3b320128bea56b10b1ad5eb6949b7e74a6f8061b2f9d53e87e348",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "21976": {
+   "sha256": "6628ceb103e3b320128bea56b10b1ad5eb6949b7e74a6f8061b2f9d53e87e348",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "21978": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "21979": {
+   "sha256": "228bd033cb3e6f86c17906071708028cc49ba129e57cbb91602b18ed5c003f95",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "21980": {
+   "sha256": "8bbd1e8338594001fde2a409ebeb420ae266c0021fb2efd585d4bbc2cf7aced4",
+   "url": "https://catalog.miracosta.edu/disciplines/biotechnology/"
+  },
+  "21982": {
+   "sha256": "9a17b7336937d97bce64a94a8e6bcea76e17e58def803961c848de93e042b913",
+   "url": "https://catalog.miracosta.edu/disciplines/accounting/"
+  },
+  "21984": {
+   "sha256": "f0b88a2500310cd9e1f49b67c0a63a1b423c9a188180e843271bcfd21bff58e4",
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/"
+  },
+  "21985": {
+   "sha256": "f0b88a2500310cd9e1f49b67c0a63a1b423c9a188180e843271bcfd21bff58e4",
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/"
+  },
+  "21991": {
+   "sha256": "bc57e6bc5aa145a19d2c43d301678a1ab2d59586999981b57f901973380d03b4",
+   "url": "https://catalog.miracosta.edu/disciplines/mediaarts/"
+  },
+  "21992": {
+   "sha256": "bc57e6bc5aa145a19d2c43d301678a1ab2d59586999981b57f901973380d03b4",
+   "url": "https://catalog.miracosta.edu/disciplines/mediaarts/"
+  },
+  "21995": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "21996": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "21998": {
+   "sha256": "a76a2644a13caffafbd0763a542a8a77b8876bf8db5fef0648752cdf4d0d9247",
+   "url": "https://catalog.miracosta.edu/disciplines/musictechnology/"
+  },
+  "21999": {
+   "sha256": "ffc2a949b357eebc004702e9f78d750082c824fdb1c054463b39d0fd7ed62a04",
+   "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/"
+  },
+  "22000": {
+   "sha256": "c76f5c06d0c26bf33e912c3e44261473b3ba90049e9e2592b1b6a2191ffc1185",
+   "url": "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/"
+  },
+  "22002": {
+   "sha256": "eee5b020600202174792b61ed13742b5212d019512304bf253323b291b44738a",
+   "url": "https://catalog.miracosta.edu/disciplines/nursing/"
+  },
+  "22003": {
+   "sha256": "2b098f8d1e61a78cc3ea2e2ca383abafc06f018bbdbe81833a51c3d20597e8df",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  },
+  "22005": {
+   "sha256": "2b098f8d1e61a78cc3ea2e2ca383abafc06f018bbdbe81833a51c3d20597e8df",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  },
+  "22006": {
+   "sha256": "ad773a5634689262032c78728d33dad706cb1cdb4bf0c914b28bb99e1f7fa60d",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  },
+  "30238": {
+   "sha256": "98f0043c8b3b20fca3995669bc459a085d43ead4bf69ac426eabc01333e69a9b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "30674": {
+   "sha256": "1ae698d10e99bbe404963e3663fa056921f045f6a0ba52687af459fd6f4e470c",
+   "url": "https://catalog.miracosta.edu/disciplines/mathematics/"
+  },
+  "30724": {
+   "sha256": "dfd23fc594cceda2851f13e5346bbae743d5bd5f73ae2cb7a0531f0ab4a9525e",
+   "url": "https://catalog.miracosta.edu/disciplines/liberalartsmathematicsandsciences/"
+  },
+  "31734": {
+   "sha256": "4583db235f388d8a28345587f53df1b7a567aeb39a931aeb12a257dd90fa2d5e",
+   "url": "https://catalog.miracosta.edu/disciplines/sociology/"
+  },
+  "31821": {
+   "sha256": "223fc742047544e2ac386df750e5e6c6fbe41ee0fc9f2d2166c934facfd5634c",
+   "url": "https://catalog.miracosta.edu/disciplines/history/"
+  },
+  "31936": {
+   "sha256": "11e5415a4bea1508b459f5085751d9c55bf19fdd176c655fd323fb62fac37bf7",
+   "url": "https://catalog.miracosta.edu/disciplines/art/"
+  },
+  "31937": {
+   "sha256": "24ddd80a120fde0bfdb23587d46e4874acbb4b1f40acefbe38dcbdad56af0a50",
+   "url": "https://catalog.miracosta.edu/disciplines/psychology/"
+  },
+  "32467": {
+   "sha256": "ffc2a949b357eebc004702e9f78d750082c824fdb1c054463b39d0fd7ed62a04",
+   "url": "https://catalog.miracosta.edu/disciplines/dramaticarts/"
+  },
+  "33310": {
+   "sha256": "e8513c5103f974c228b8d2192b391f191042e3c31c07c144a4ac14fb8f556a10",
+   "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/"
+  },
+  "35028": {
+   "sha256": "84577227a89e265f42c3c9d713b1f41237112f419f2eed2cb1d3cb29b5a26fe8",
+   "url": "https://catalog.miracosta.edu/disciplines/art/"
+  },
+  "35549": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "35580": {
+   "sha256": "2b098f8d1e61a78cc3ea2e2ca383abafc06f018bbdbe81833a51c3d20597e8df",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  },
+  "35650": {
+   "sha256": "c05bca4b55ecf4b15b991bad0e28a86be79fa3b55093a2c9580da9d5a708e81b",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "35669": {
+   "sha256": "c05bca4b55ecf4b15b991bad0e28a86be79fa3b55093a2c9580da9d5a708e81b",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "35670": {
+   "sha256": "c05bca4b55ecf4b15b991bad0e28a86be79fa3b55093a2c9580da9d5a708e81b",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "35671": {
+   "sha256": "c05bca4b55ecf4b15b991bad0e28a86be79fa3b55093a2c9580da9d5a708e81b",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "35677": {
+   "sha256": "c05bca4b55ecf4b15b991bad0e28a86be79fa3b55093a2c9580da9d5a708e81b",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "35678": {
+   "sha256": "c05bca4b55ecf4b15b991bad0e28a86be79fa3b55093a2c9580da9d5a708e81b",
+   "url": "https://catalog.miracosta.edu/disciplines/horticulture/"
+  },
+  "35767": {
+   "sha256": "8bbd1e8338594001fde2a409ebeb420ae266c0021fb2efd585d4bbc2cf7aced4",
+   "url": "https://catalog.miracosta.edu/disciplines/biotechnology/"
+  },
+  "35768": {
+   "sha256": "8bbd1e8338594001fde2a409ebeb420ae266c0021fb2efd585d4bbc2cf7aced4",
+   "url": "https://catalog.miracosta.edu/disciplines/biotechnology/"
+  },
+  "36097": {
+   "sha256": "7f4e3c5dde495a7cceb20dcb360fc607a570f86298a958f4cd2651c825d93f7b",
+   "url": "https://catalog.miracosta.edu/continuingeducation/noncreditesl/"
+  },
+  "36121": {
+   "sha256": "208aeca18efce6d1c94ce8d51dde1b2a29799c71517662f52c3ec5bc238a177c",
+   "url": "https://catalog.miracosta.edu/disciplines/spanish/"
+  },
+  "36143": {
+   "sha256": "53cb198169e7496e643398e1570bcecfaae066d3ac6d910fc531cb714cfa8b8b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36144": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36145": {
+   "sha256": "98f0043c8b3b20fca3995669bc459a085d43ead4bf69ac426eabc01333e69a9b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36146": {
+   "sha256": "53cb198169e7496e643398e1570bcecfaae066d3ac6d910fc531cb714cfa8b8b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36147": {
+   "sha256": "1e34009ebd566a90e23ecb9f687e24454d146060d64f3c58e1bd41edb916096f",
+   "url": "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/"
+  },
+  "36148": {
+   "sha256": "25e4cc1cb21d2ee501b74fff953464cafaf0bdf9d02c1a95f30e6bf27a38b6b5",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36150": {
+   "sha256": "522b25ed06e979845b05cf3233fa288dcadb7ce1ebd61f7473196459ac52b016",
+   "url": "https://catalog.miracosta.edu/disciplines/nutrition/"
+  },
+  "36153": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "36154": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36160": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36162": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "36168": {
+   "sha256": "25e4cc1cb21d2ee501b74fff953464cafaf0bdf9d02c1a95f30e6bf27a38b6b5",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36169": {
+   "sha256": "25e4cc1cb21d2ee501b74fff953464cafaf0bdf9d02c1a95f30e6bf27a38b6b5",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36170": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "36171": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36174": {
+   "sha256": "25e4cc1cb21d2ee501b74fff953464cafaf0bdf9d02c1a95f30e6bf27a38b6b5",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36253": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36272": {
+   "sha256": "352738bbb155eb27fda857423b75fd5f805e187588538189607996121fc6ce50",
+   "url": "https://catalog.miracosta.edu/continuingeducation/noncreditesl/"
+  },
+  "36305": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36315": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "36413": {
+   "sha256": "fa47abe393f125e9665974c8ca0f0f882fa169c1985e4a673dd6b0cc34fb6bf3",
+   "url": "https://catalog.miracosta.edu/disciplines/english/"
+  },
+  "36417": {
+   "sha256": "c7422c8397b023711998e9603d3abf94218d89bb14755704f1ccda9457931288",
+   "url": "https://catalog.miracosta.edu/disciplines/french/"
+  },
+  "36418": {
+   "sha256": "5e908c0c623ec75dcae3f8a07b8f412ffa885a762e701c625e56b49433d8a52c",
+   "url": "https://catalog.miracosta.edu/disciplines/design/"
+  },
+  "36422": {
+   "sha256": "ba542864d190c55b28ad0ffe145074b8e5a497075b85bb83b0c960f6492447ae",
+   "url": "https://catalog.miracosta.edu/disciplines/italian/"
+  },
+  "36427": {
+   "sha256": "9fb9b10d7347753142ccb32ffa567e740132381b99255d59febebeb6f9389eed",
+   "url": "https://catalog.miracosta.edu/disciplines/interdisciplinarystudies/"
+  },
+  "36545": {
+   "sha256": "6025044e0de605a8a2cfde05d248f519880c6323457fdf6734b066baaa5cb193",
+   "url": "https://catalog.miracosta.edu/disciplines/film/"
+  },
+  "37240": {
+   "sha256": "ad933ab6c199a45689cd84d3a3e887bcefa9d88a8bc5326667743a0f066e302b",
+   "url": "https://catalog.miracosta.edu/disciplines/biology/"
+  },
+  "37407": {
+   "sha256": "c2fd19c0a53d8d42b148b96ab417a33e69f646e346dfa71ca2c3d49e4fce34b1",
+   "url": "https://catalog.miracosta.edu/disciplines/anthropology/"
+  },
+  "37409": {
+   "sha256": "2b098f8d1e61a78cc3ea2e2ca383abafc06f018bbdbe81833a51c3d20597e8df",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  },
+  "38711": {
+   "sha256": "57322dd1bab49a041a077ab3f97f7f5fcda5e1548724da0cf1c46cb36da8a353",
+   "url": "https://catalog.miracosta.edu/disciplines/japanese/"
+  },
+  "38712": {
+   "sha256": "57322dd1bab49a041a077ab3f97f7f5fcda5e1548724da0cf1c46cb36da8a353",
+   "url": "https://catalog.miracosta.edu/disciplines/japanese/"
+  },
+  "38727": {
+   "sha256": "11e5415a4bea1508b459f5085751d9c55bf19fdd176c655fd323fb62fac37bf7",
+   "url": "https://catalog.miracosta.edu/disciplines/art/"
+  },
+  "38729": {
+   "sha256": "3810d9f659ab4b57066231b025e5ee461f6e0d017bd1221231b9ae8652477f61",
+   "url": "https://catalog.miracosta.edu/disciplines/computerscience/"
+  },
+  "38730": {
+   "sha256": "8f5812400958bfc63e2ca688c9476b5b588df7a506d1bc8cd129c211a4c2f913",
+   "url": "https://catalog.miracosta.edu/disciplines/politicalscience/"
+  },
+  "39140": {
+   "sha256": "e8513c5103f974c228b8d2192b391f191042e3c31c07c144a4ac14fb8f556a10",
+   "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/"
+  },
+  "39489": {
+   "sha256": "4e9b3e9d3354f7e7369e23009fbff503ea38ec93cb5571b5b0a8a9a20174cf85",
+   "url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/"
+  },
+  "39491": {
+   "sha256": "bc0484c068a62f7ca26701fb06a5e70f9f53e1a7f19429409a0b455151a2583e",
+   "url": "https://catalog.miracosta.edu/continuingeducation/adulthighschooldiploma/"
+  },
+  "39582": {
+   "sha256": "e633ae97ccd8595ed5798bc536cf94a4b41f6341f03a2ae2ad0097ae0a60d0d7",
+   "url": "https://catalog.miracosta.edu/disciplines/swhs/"
+  },
+  "40327": {
+   "sha256": "8f5812400958bfc63e2ca688c9476b5b588df7a506d1bc8cd129c211a4c2f913",
+   "url": "https://catalog.miracosta.edu/disciplines/politicalscience/"
+  },
+  "40575": {
+   "sha256": "c7422c8397b023711998e9603d3abf94218d89bb14755704f1ccda9457931288",
+   "url": "https://catalog.miracosta.edu/disciplines/french/"
+  },
+  "40576": {
+   "sha256": "ba542864d190c55b28ad0ffe145074b8e5a497075b85bb83b0c960f6492447ae",
+   "url": "https://catalog.miracosta.edu/disciplines/italian/"
+  },
+  "40577": {
+   "sha256": "208aeca18efce6d1c94ce8d51dde1b2a29799c71517662f52c3ec5bc238a177c",
+   "url": "https://catalog.miracosta.edu/disciplines/spanish/"
+  },
+  "40670": {
+   "sha256": "8bbd1e8338594001fde2a409ebeb420ae266c0021fb2efd585d4bbc2cf7aced4",
+   "url": "https://catalog.miracosta.edu/disciplines/biotechnology/"
+  },
+  "41547": {
+   "sha256": "b1fb903203e7505a62e2aeea66d3224916feee570c046a4694f6c288607a1d91",
+   "url": "https://catalog.miracosta.edu/disciplines/hospitality/"
+  },
+  "41652": {
+   "sha256": "f0b88a2500310cd9e1f49b67c0a63a1b423c9a188180e843271bcfd21bff58e4",
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/"
+  },
+  "41653": {
+   "sha256": "f0b88a2500310cd9e1f49b67c0a63a1b423c9a188180e843271bcfd21bff58e4",
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/"
+  },
+  "41672": {
+   "sha256": "470202e2248bbb933399608600eb8e64507a410cb7fd88f0b973da90c2da0fca",
+   "url": "https://catalog.miracosta.edu/disciplines/automotivetechnology/"
+  },
+  "41718": {
+   "sha256": "918da94113a584c7c0d93ce23f976354dc8240d31ba4198a7904e99794e49b34",
+   "url": "https://catalog.miracosta.edu/disciplines/medicaladministrativeprofessional/"
+  },
+  "41723": {
+   "sha256": "9a17b7336937d97bce64a94a8e6bcea76e17e58def803961c848de93e042b913",
+   "url": "https://catalog.miracosta.edu/disciplines/accounting/"
+  },
+  "41895": {
+   "sha256": "f0b88a2500310cd9e1f49b67c0a63a1b423c9a188180e843271bcfd21bff58e4",
+   "url": "https://catalog.miracosta.edu/disciplines/businessadministration/"
+  },
+  "42705": {
+   "sha256": "9cd72e1efe999f59c5c9285bdb88ff164e619c535ac7b534195c343bbf3bfcf2",
+   "url": "https://catalog.miracosta.edu/disciplines/physicalscience/"
+  },
+  "42807": {
+   "sha256": "093c01d3c51a7e0e8b8732af7d52202cd03f535896f4f01d1f59077c72dc0cde",
+   "url": "https://catalog.miracosta.edu/disciplines/communication/"
+  },
+  "43613": {
+   "sha256": "c2fd19c0a53d8d42b148b96ab417a33e69f646e346dfa71ca2c3d49e4fce34b1",
+   "url": "https://catalog.miracosta.edu/disciplines/anthropology/"
+  },
+  "43719": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "43720": {
+   "sha256": "c10d0cf150a0aa8b6903bd22d1ff976f12ebb0166789d4f4e61c75d80d96080b",
+   "url": "https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"
+  },
+  "43788": {
+   "sha256": "10c9e04146f52468c567863919a5c6d577471c46ee0fa2c5b813a2d1f2805101",
+   "url": "https://catalog.miracosta.edu/disciplines/geography/"
+  },
+  "44000": {
+   "sha256": "45c4afb52756f425aac7349d1717306921c417cfe32b8c56a2f581e5eb5d155a",
+   "url": "https://catalog.miracosta.edu/disciplines/healtheducation/"
+  },
+  "45045": {
+   "sha256": "67664cd256f5b21fbde3e34db3d3b79f6b9eff88d2e02804451382b5e542bc1b",
+   "url": "https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/"
+  },
+  "46055": {
+   "sha256": "2b098f8d1e61a78cc3ea2e2ca383abafc06f018bbdbe81833a51c3d20597e8df",
+   "url": "https://catalog.miracosta.edu/disciplines/childdevelopment/"
+  }
+ },
+ "run": "44529741837"
 }

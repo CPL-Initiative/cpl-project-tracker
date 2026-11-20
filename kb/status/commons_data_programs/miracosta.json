@@ -1,4 +1,4 @@
-{"schema":1,"college":"MiraCosta College","slug":"miracosta","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
+{"schema":1,"college":"MiraCosta College","slug":"miracosta","basis":"live","census_at":"2026-11-19 23:51Z","correction_rules":false,"programs":[
 {"cn":"07865","title":"Accounting","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"21981","title":"Accounting","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"05120","title":"Automotive Technology","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -36,6 +36,7 @@
 {"cn":"39490","title":"English Fundamentals: Reading and Writing for Career Preparation","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"41612","title":"Google Apps","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"30725","title":"Liberal Arts: Business and Technology","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"40264","title":"Liberal Arts: Elementary Subject Matter Education","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"41611","title":"Office Clerk","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"17363","title":"Personal Fitness Trainer","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"36442","title":"Research and Development","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
@@ -43,8 +44,6 @@
 {"cn":"07863","title":"Architectural Design","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/design/"},
 {"cn":"15183","title":"Child Development Teacher","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/childdevelopment/"},
 {"cn":"22006","title":"Child Development Teacher","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/childdevelopment/"},
-{"cn":"31821","title":"History","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/transferinfo/csu/"},
-{"cn":"40264","title":"Liberal Arts: Elementary Subject Matter Education","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/liberalartsartsandhumanities/"},
 {"cn":"36144","title":"Tech Support","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"},
 {"cn":"36171","title":"Tech Support","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.miracosta.edu/disciplines/computerstudiesandinformationtechnology/"},
 {"cn":"45045","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/","units":{"sum":[35.0,46.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}},

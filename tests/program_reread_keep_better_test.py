@@ -22,6 +22,31 @@ so the reread leaves that row alone. This test guards the failure mode: a filed 
     differs from the filed record's (or names any run where the base files none) holds the row for a person with
     both runs in its why and main's file restored, while an absent live_runs, or one equal to main's runs, leaves
     every outcome as before and the account says "not supplied".
+  * S685, a generic heading (REQUIREMENTS, Course List, Major Requirements, Requirements: the scorer's
+    heading_content_words reads none as naming a program) is kept and dispatched on the program's own page, shown by
+    the address's last segment or the capture's sources.json entry (heading_named, page title); it is set aside with
+    no such evidence, on another program's or another award's address, on a directory alone, or on an entry for
+    another page; a heading naming another program is set aside even on the program's address; a blank heading
+    still fails. Real cases: Ventura 31298, 45831, 35207 (its own page, lost on coverage), 45355 (the C-ID page) and
+    Evergreen Valley 06154, 46262 (tests/fixtures/program_reread_keep_better_s685.json);
+  * S685 round 1: the address holds exactly the title's words (five committed addresses of a longer title's program
+    show nothing; a term suffix is stripped); 2.0 is a word of its own (Moorpark 31614 restored, Citrus 41679 kept
+    on its page title); a capture title or h1 naming another award shows nothing, heading_named beside it included
+    (Santa Rosa Junior 16986, the AA-T's window for the A.A.);
+  * S685, the order (COBIx on #3547): the checked list wins over everything; a re-read that is not its own
+    program's is held where the live row already holds this run (a wrong record live, the run in the why), and
+    restored where the live run is a third one; a live run equal to this run is already posted: kept on the branch,
+    named by no dispatch, a second pass after the post changes no file; a live run other than the filed one is held;
+  * S685's second pass: with live_runs, a run whose reread receipt is on the branch is named again when a kept
+    record is not live at it, and a run whose kept and new records are all live at it is not (a carried run too);
+    without live_runs the receipt retires the run as before; a held program whose re-read is back in records/ is
+    listed once;
+  * COBIx on #3553: an award ending stripped from the address shows nothing unless the reader's slug_awards reads it
+    as the program's kind (College of the Redwoods 01821, the A.S. on the certificate's -ca page; an A.A. on an
+    -aa-t-degree page), an ending naming the program's kind still passes, an address with no ending reads as on
+    main, and the decision row carries the stripped ending as award_tail;
+  * with live_runs absent, the every-branch fixture's outcomes, files and dispatch equal main's script at 94a02499
+    (tests/fixtures/program_reread_keep_better_main_snapshot.json).
 
 Run from repo root: python3 tests/program_reread_keep_better_test.py
 """
@@ -386,9 +411,422 @@ def test_ascii_runs(tmp):
                 out=lambda *_: None), "keep_better took a run in Arabic-Indic digits")
 
 
+# ---- S685: a generic heading on the program's own page, a second pass, the order of the checks -----------------
+
+CL_URL = "https://catalog.x.edu/programs-courses/business/business-administration-as/"   # a CourseLeaf address
+OTHER_URL = "https://catalog.x.edu/programs-courses/business/accounting-as/"
+SNAPSHOT = os.path.join(ROOT, "tests", "fixtures", "program_reread_keep_better_main_snapshot.json")
+REAL = os.path.join(ROOT, "tests", "fixtures", "program_reread_keep_better_s685.json")
+WORSE = score(False, False, 1, 10, "incomplete")
+
+
+def source_entry(cn, url, title="", h1="2026-2027\nAcademic Catalog", heading_named=None):
+    src = {"url": url, "title": title, "h1": h1}
+    if heading_named is not None:
+        src["heading_named"] = heading_named
+    return {"control_number": cn, "title": TITLE, "award": AWARD, "source": src}
+
+
+def generic_folder(tmp, cases, sources=()):
+    """cases: cn -> (filed score or None, re-read score, heading, source_url). The base files each filed score."""
+    new_repo(tmp)
+    folder = os.path.join(tmp, "kb", "program_requirements_college", "fixture")
+    rdir = os.path.join(folder, "records")
+    for cn, (filed, _, _, _) in cases.items():
+        if filed is not None:
+            write(os.path.join(rdir, cn + ".json"), rec(cn, filed, OLD), indent=1)
+    write(os.path.join(folder, "capture.json"), {"run": str(OLD)})
+    git(tmp, "add", "-A")
+    git(tmp, "commit", "-qm", "base")
+    git(tmp, "tag", "base")
+    for cn, (_, new, heading, url) in cases.items():
+        write(os.path.join(rdir, cn + ".json"), rec(cn, new, NEW, heading=heading, url=url))
+    write(os.path.join(folder, "capture.json"), {"run": str(NEW)})
+    write(os.path.join(folder, "sources.json"), list(sources))
+    return folder, rdir
+
+
+def outcomes(acct):
+    return {r["control_number"]: r["outcome"] for r in acct["runs"][str(NEW)]["programs"]}
+
+
+def test_generic_heading_scorer(tmp):
+    """The four headings a CourseLeaf page prints name no program by the scorer's own reading (S684's 17)."""
+    from _program_requirements_score import heading_content_words
+    for h in ("REQUIREMENTS", "Course List", "Major Requirements", "Requirements"):
+        check(heading_content_words(h) == [], "the scorer reads %r as naming a program: %r" % (h, heading_content_words(h)))
+    check(heading_content_words("Accounting, A.S.") == ["accounting"], "another program's heading reads silent")
+
+
+def test_generic_heading(tmp):
+    """S685, item (b): a generic heading passes only on a page the committed files show is the program's own."""
+    cases = {
+        "50001": (WORSE, PASS, "REQUIREMENTS", CL_URL),                          # by the address
+        "50002": (WORSE, PASS, "Major Requirements", "https://x.edu/p.php?id=9"),  # by the capture's page title
+        "50003": (WORSE, PASS, "Course List", "https://x.edu/cat.pdf#page=4"),     # by the capture's heading_named
+        "50004": (WORSE, PASS, "Requirements", "https://x.edu/p.php?id=7"),        # no evidence at all
+        "50005": (WORSE, PASS, "Accounting, A.S.", CL_URL),                      # another program's heading
+        "50006": (WORSE, PASS, "REQUIREMENTS", OTHER_URL),                       # the address names another program
+        "50007": (WORSE, PASS, "Requirements",                                   # the directory names it, the page not
+                  "https://catalog.x.edu/business-administration/office-assistant/"),
+        "50008": (WORSE, PASS, "REQUIREMENTS",                                   # the address names another award
+                  "https://catalog.x.edu/programs-courses/business/business-administration-ast/"),
+        "50009": (WORSE, PASS, "Requirements", "https://x.edu/p.php?id=11"),       # the entry is for another page
+        "50010": (None, PASS, "REQUIREMENTS", CL_URL),                           # new, on its own page
+        "50011": (None, PASS, "REQUIREMENTS", OTHER_URL),                        # new, on another's page
+        "50012": (WORSE, PASS, "", CL_URL),                                      # a blank heading still fails
+        "50013": (WORSE, PASS, "Requirements",                                   # the reader's slug_awards: a COA
+                  "https://catalog.x.edu/programs-courses/business/business-administration-coa/"),
+    }
+    sources = [
+        source_entry("50002", "https://x.edu/p.php?id=9",
+                     title="Business Administration - Associate in Science | Fixture College Catalog"),
+        source_entry("50003", "https://x.edu/cat.pdf", heading_named=True),
+        source_entry("50004", "https://x.edu/p.php?id=7", title="Program Search | Fixture College Catalog"),
+        source_entry("50009", "https://x.edu/p.php?id=12",
+                     title="Business Administration - Associate in Science | Fixture College Catalog"),
+    ]
+    folder, rdir = generic_folder(tmp, cases, sources)
+    acct = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    got = {r["control_number"]: r for r in acct["runs"][str(NEW)]["programs"]}
+    want = {"50001": "kept", "50002": "kept", "50003": "kept", "50004": "restored", "50005": "restored",
+            "50006": "restored", "50007": "restored", "50008": "restored", "50009": "restored", "50010": "new",
+            "50011": "held", "50012": "restored", "50013": "restored"}
+    check({k: v["outcome"] for k, v in got.items()} == want,
+          "generic headings: %r" % {k: (v["outcome"], v["why"][:70]) for k, v in got.items() if v["outcome"] != want[k]})
+    for cn in ("50001", "50002", "50003", "50010"):
+        check(bool(got[cn].get("own_page")), "%s: the account names no page evidence" % cn)
+        check(json.loads(read_bytes(os.path.join(rdir, cn + ".json")))["extracted_run"] == NEW, "%s: re-read not kept" % cn)
+    check(dispatched(acct) == {"50001", "50002", "50003", "50010"}, "dispatch %r" % (acct["dispatch"],))
+    for cn in ("50004", "50006", "50007", "50008", "50009", "50013"):
+        check("generic" in got[cn]["why"] and "own" in got[cn]["why"], "%s: the why %r" % (cn, got[cn]["why"]))
+        check(read_bytes(os.path.join(rdir, cn + ".json")) == read_bytes_base(tmp, cn), "%s: not restored" % cn)
+    check("shares no word" in got["50005"]["why"], "50005: %r" % got["50005"]["why"])
+    check("no heading" in got["50012"]["why"], "50012: %r" % got["50012"]["why"])
+    check(acct["counts"]["kept_on_own_page"] == 4, "kept on its own page %r" % acct["counts"]["kept_on_own_page"])
+    # No sources.json at all: the address alone still shows the page.
+    os.remove(os.path.join(folder, "sources.json"))
+    check(K.own_program(rec("50001", PASS, NEW, heading="REQUIREMENTS", url=CL_URL)) is None,
+          "the address alone does not pass a generic heading")
+
+
+def test_order(tmp):
+    """S685, item (a), COBIx on #3547: checked, own program, a live run equal to this run, a live run that differs."""
+    cases = {
+        "51001": (WORSE, PASS, OWN, CL_URL),             # live holds this run: already posted, kept, no dispatch
+        "51002": (WORSE, PASS, "Accounting, A.S.", CL_URL),   # live holds this run, not its own program: held
+        "51003": (None, PASS, "Accounting, A.S.", CL_URL),    # the same with no filed record
+        "51004": (WORSE, PASS, OWN, CL_URL),             # checked, and live holds this run: the check wins
+        "51005": (WORSE, PASS, "Accounting, A.S.", CL_URL),   # checked, not its own: the check wins
+        "51006": (WORSE, PASS, OWN, CL_URL),             # live holds a third run: held
+        "51007": (WORSE, PASS, "Accounting, A.S.", CL_URL),   # live holds a third run, not its own: restored
+        "51008": (WORSE, PASS, OWN, CL_URL),             # live equals the filed run: better decides, kept
+        "51009": (None, PASS, OWN, CL_URL),              # live holds this run, no filed record: posted
+    }
+    folder, rdir = generic_folder(tmp, cases)
+    lr = {"51001": str(NEW), "51002": str(NEW), "51003": str(NEW), "51004": str(NEW), "51005": str(NEW),
+          "51006": "999", "51007": "999", "51008": str(OLD), "51009": str(NEW)}
+    acct = K.keep_better(folder, base="base", checked={"51004", "51005"}, live_runs=lr, out=lambda *_: None)
+    got = {r["control_number"]: r for r in acct["runs"][str(NEW)]["programs"]}
+    want = {"51001": "posted", "51002": "held", "51003": "held", "51004": "restored", "51005": "restored",
+            "51006": "held", "51007": "restored", "51008": "kept", "51009": "posted"}
+    check({k: v["outcome"] for k, v in got.items()} == want,
+          "the order: %r" % {k: (v["outcome"], v["why"][:70]) for k, v in got.items() if v["outcome"] != want[k]})
+    for cn in ("51001", "51009"):
+        check(json.loads(read_bytes(os.path.join(rdir, cn + ".json")))["extracted_run"] == NEW,
+              "%s: an already-posted record left the branch" % cn)
+        check(not os.path.exists(os.path.join(folder, K.HELD_DIR, cn + ".json")), "%s: an already-posted record is held" % cn)
+    for cn in ("51002", "51003"):
+        why = got[cn]["why"]
+        check(str(NEW) in why and "wrong record" in why, "%s: the why does not name the live run: %r" % (cn, why))
+        check(os.path.isfile(os.path.join(folder, K.HELD_DIR, cn + ".json")), "%s: not in held_for_person/" % cn)
+    check(read_bytes(os.path.join(rdir, "51002.json")) == read_bytes_base(tmp, "51002"), "51002: main's file not back")
+    check(not os.path.exists(os.path.join(rdir, "51003.json")), "51003: still in records/")
+    for cn in ("51004", "51005"):
+        check("checked" in got[cn]["why"], "%s: the check did not decide: %r" % (cn, got[cn]["why"]))
+    check("999" in got["51006"]["why"] and str(OLD) in got["51006"]["why"], "51006: %r" % got["51006"]["why"])
+    check(dispatched(acct) == {"51008"}, "dispatch %r" % (acct["dispatch"],))
+    check(acct["dispatch"][0].get("already_live") == ["51001", "51009"],
+          "the dispatch does not name the records riding along: %r" % (acct["dispatch"],))
+    check(acct["counts"]["already_live"] == 2, "already live %r" % acct["counts"]["already_live"])
+
+
+def test_second_pass(tmp):
+    """S685, item (a): after the reread posts, a second pass with a refreshed live read keeps the branch's records
+    and adds the run to no dispatch."""
+    folder, rdir = generic_folder(tmp, {"52001": (WORSE, PASS, OWN, CL_URL), "52002": (None, PASS, OWN, CL_URL),
+                                        "52003": (PASS, WORSE, OWN, CL_URL)})
+    first = K.keep_better(folder, base="base", checked=set(), live_runs={"52001": str(OLD), "52003": str(OLD)},
+                          out=lambda *_: None)
+    check(outcomes(first) == {"52001": "kept", "52002": "new", "52003": "restored"}, "first pass %r" % outcomes(first))
+    check(dispatched(first) == {"52001", "52002"}, "first dispatch %r" % (first["dispatch"],))
+    before = {cn: read_bytes(os.path.join(rdir, cn + ".json")) for cn in ("52001", "52002", "52003")}
+    # The reread posted run NEW on a branch whose receipt this checkout does not hold: the live read now says so.
+    again = K.keep_better(folder, base="base", checked=set(),
+                          live_runs={"52001": str(NEW), "52002": str(NEW), "52003": str(OLD)}, out=lambda *_: None)
+    check(outcomes(again) == {"52001": "posted", "52002": "posted", "52003": "restored"},
+          "second pass %r" % outcomes(again))
+    check(all(read_bytes(os.path.join(rdir, cn + ".json")) == b for cn, b in before.items()),
+          "a second pass changed the branch's records")
+    check(not os.path.isdir(os.path.join(folder, K.HELD_DIR)), "a second pass held a record")
+    check(isinstance(again["dispatch"], str) and again["dispatch"].startswith("no dispatch"),
+          "a second pass dispatched again: %r" % (again["dispatch"],))
+
+
+def receipt(tmp, run):
+    write(os.path.join(tmp, "kb", "receipts", "program_requirement_records_college_reread_fixture_%s.json" % run),
+          {"college": COLLEGE, "extracted_run": str(run), "error": None})
+
+
+def test_second_pass_after_receipt(tmp):
+    """S685's second pass: a run whose reread receipt is on the branch gains a kept record that is not live at it
+    (a re-read set aside before, restored to records/). With live_runs the live read names the run; a run whose kept
+    and new records are all live at it stays out; without live_runs the receipt retires the run as on main."""
+    folder, rdir = generic_folder(tmp, {"54001": (WORSE, PASS, OWN, CL_URL), "54002": (WORSE, PASS, OWN, CL_URL),
+                                        "54003": (PASS, WORSE, OWN, CL_URL)})
+    receipt(tmp, NEW)   # the first reread posted run NEW (54001); 54002 was set aside then and is back now
+    plain = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None)
+    check(isinstance(plain["dispatch"], str), "without live_runs a receipt no longer retires the run: %r"
+          % (plain["dispatch"],))
+    lr = {"54001": str(NEW), "54002": str(OLD), "54003": str(OLD)}
+    acct = K.keep_better(folder, base="base", checked=set(), live_runs=lr, out=lambda *_: None)
+    check(outcomes(acct) == {"54001": "posted", "54002": "kept", "54003": "restored"}, "outcomes %r" % outcomes(acct))
+    d = acct["dispatch"]
+    check(isinstance(d, list) and len(d) == 1 and d[0]["inputs"]["force"] == str(NEW)
+          and d[0]["control_numbers"] == ["54002"] and d[0].get("not_live_at_run") == ["54002"]
+          and d[0].get("receipt_on_branch") is True and d[0].get("already_live") == ["54001"],
+          "a kept record not live at a posted run is not named: %r" % (d,))
+    # Every kept record live at the run: nothing to post, whatever the receipts say.
+    every = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                          live_runs={"54001": str(NEW), "54002": str(NEW), "54003": str(OLD)})
+    check(isinstance(every["dispatch"], str), "a run live at every record is named: %r" % (every["dispatch"],))
+    # A later extraction carries run NEW's kept 54002: named again only while it is not live at NEW.
+    write(os.path.join(rdir, "54003.json"), rec("54003", PASS, LATER, url=CL_URL))
+    write(os.path.join(os.path.dirname(rdir), "capture.json"), {"run": str(LATER)})
+    runs_named = lambda live: sorted(x["inputs"]["force"] for x in K.keep_better(  # noqa: E731
+        folder, base="base", checked=set(), dry_run=True, out=lambda *_: None, live_runs=live)["dispatch"]
+        if not isinstance(x, str))
+    check(runs_named({"54001": str(NEW), "54002": str(NEW), "54003": str(OLD)}) == [str(LATER)],
+          "a carried run live at its kept records is named")
+    check(runs_named({"54001": str(NEW), "54002": str(OLD), "54003": str(OLD)}) == [str(NEW), str(LATER)],
+          "a carried run with a kept record not live at it is not named")
+
+
+def test_no_duplicate_row(tmp):
+    """A program held for a person (no filed record) whose re-read is back in records/ at the run is decided again
+    and listed once, never beside its earlier held entry."""
+    folder, rdir = generic_folder(tmp, {"55001": (None, PASS, "Accounting, A.S.", CL_URL),
+                                        "55002": (None, PASS, OWN, CL_URL)})
+    first = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    check(outcomes(first) == {"55001": "held", "55002": "new"}, "first pass %r" % outcomes(first))
+    os.remove(os.path.join(folder, K.HELD_DIR, "55001.json"))
+    write(os.path.join(rdir, "55001.json"), rec("55001", PASS, NEW, heading=OWN, url=CL_URL))
+    again = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    listed = [r["control_number"] for r in again["runs"][str(NEW)]["programs"]]
+    check(sorted(listed) == ["55001", "55002"], "the account lists %r" % listed)
+    check(outcomes(again) == {"55001": "new", "55002": "new"} and again["counts"]["held_for_person"] == 0,
+          "again %r %r" % (outcomes(again), again["counts"]["held_for_person"]))
+    check(dispatched(again) == {"55001", "55002"}, "dispatch %r" % (again["dispatch"],))
+    # A held program whose record stays in held_for_person/ is still listed as held.
+    write(os.path.join(rdir, "55003.json"), rec("55003", PASS, NEW, heading="Accounting, A.S.", url=CL_URL))
+    third = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    fourth = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    check(outcomes(third).get("55003") == "held" and outcomes(fourth).get("55003") == "held"
+          and [r["control_number"] for r in fourth["runs"][str(NEW)]["programs"]].count("55003") == 1,
+          "a held program kept in held_for_person/: %r" % outcomes(fourth))
+
+
+def every_branch_snapshot(tmp, module) -> dict:
+    """The every-branch fixture of test_folder run through `module`: outcomes, each record file's bytes as sha256,
+    and the dispatch (without its ref), so main's script and this one can be compared."""
+    import hashlib
+    global K
+    saved, K = K, module
+    try:
+        new_repo(tmp)
+        folder = os.path.join(tmp, "kb", "program_requirements_college", "fixture")
+        rdir = os.path.join(folder, "records")
+        for cn, (filed, _, _, _) in CASES.items():
+            if filed is not None:
+                write(os.path.join(rdir, cn + ".json"), rec(cn, filed, OLD), indent=1)
+        write(os.path.join(folder, "capture.json"), {"run": str(OLD)})
+        git(tmp, "add", "-A")
+        git(tmp, "commit", "-qm", "base")
+        git(tmp, "tag", "base")
+        for cn, (_, new, _, heading) in CASES.items():
+            write(os.path.join(rdir, cn + ".json"), rec(cn, new, NEW, heading=heading, url="https://x.edu/cat.pdf#page=2"))
+        write(os.path.join(folder, "capture.json"), {"run": str(NEW)})
+        acct = module.keep_better(folder, base="base", checked={"10015"}, out=lambda *_: None)
+    finally:
+        K = saved
+    files = {}
+    for sub in ("records", "held_for_person"):
+        d = os.path.join(folder, sub)
+        for name in sorted(os.listdir(d)) if os.path.isdir(d) else []:
+            files["%s/%s" % (sub, name)] = hashlib.sha256(read_bytes(os.path.join(d, name))).hexdigest()
+    return {"outcomes": {r["control_number"]: r["outcome"] for r in acct["runs"][str(NEW)]["programs"]},
+            "files": files, "dispatch": [{k: v for k, v in x.items() if k != "ref"} for x in acct["dispatch"]]}
+
+
+def test_matches_main(tmp):
+    """With live_runs absent, the every-branch fixture's outcomes, files and dispatch are main's script's at
+    94a02499 (#3547), pinned in tests/fixtures/program_reread_keep_better_main_snapshot.json."""
+    with open(SNAPSHOT) as fh:
+        want = json.load(fh)["snapshot"]
+    got = every_branch_snapshot(tmp, K)
+    for key in ("outcomes", "files", "dispatch"):
+        check(got[key] == want[key], "the every-branch fixture's %s moved from main's: %r" % (key, {
+            k: (got[key].get(k), want[key].get(k)) for k in set(got[key]) | set(want[key])
+            if got[key].get(k) != want[key].get(k)} if isinstance(want[key], dict) else got[key]))
+
+
+def test_real_cases(tmp):
+    """Real S684 re-reads set aside on the word test alone (Ventura, Evergreen Valley), and Ventura's C-ID page."""
+    with open(REAL) as fh:
+        cases = json.load(fh)["cases"]
+    want = {"31298": "kept", "45831": "kept", "06154": "kept", "46262": "kept",
+            "35207": "restored",   # its own page, and the filed record holds coverage.pass: better decides
+            "45355": "held",       # Cal-GETC read from the C-ID page: no filed record, and nothing shows the page
+            # S685 round 1: heading_named on a PDF window whose first line names the AA-T, for the A.A.
+            "16986": "restored",
+            # Communication Studies on the Communication Studies 2.0 page: 2.0 is a word of its own
+            "31614": "restored",
+            # Business Administration 2.0 on business-administration-adt: the address lacks 2.0, the page title has it
+            "41679": "kept"}
+    for case in cases:
+        sub = os.path.join(tmp, case["control_number"])
+        os.makedirs(sub, exist_ok=True)
+        new_repo(sub)
+        folder = os.path.join(sub, "kb", "program_requirements_college", case["slug"])
+        rdir = os.path.join(folder, "records")
+        cn = case["control_number"]
+        base = {"college": case["college"], "control_number": cn, "title": case["title"], "award": case["award"]}
+        if case["filed"]:
+            write(os.path.join(rdir, cn + ".json"), dict(base, **case["filed"], record={"program": {}}), indent=1)
+        write(os.path.join(folder, "capture.json"), {"run": "1"})
+        git(sub, "add", "-A")
+        git(sub, "commit", "-qm", "base", "--allow-empty")
+        git(sub, "tag", "base")
+        write(os.path.join(rdir, cn + ".json"),
+              dict(base, source_url=case["source_url"], extracted_run=int(case["run"]), score=case["reread_score"],
+                   record={"program": {"section_heading": case["heading"]}, "blocks": []}))
+        write(os.path.join(folder, "capture.json"), {"run": case["run"]})
+        write(os.path.join(folder, "sources.json"), [case["sources_entry"]])
+        lr = {cn: case["live_run"]} if case["live_run"] else {}
+        acct = K.keep_better(folder, base="base", checked=set(), live_runs=lr, out=lambda *_: None)
+        row = acct["runs"][case["run"]]["programs"][0]
+        check(row["outcome"] == want[cn], "%s %s: %s (%s), expected %s"
+              % (case["college"], cn, row["outcome"], row["why"][:90], want[cn]))
+        if want[cn] == "kept":
+            check(dispatched(acct) == {cn}, "%s: dispatch %r" % (cn, acct["dispatch"]))
+            check(bool(row.get("own_page")), "%s: no page evidence named" % cn)
+        elif cn == "35207":
+            check(row.get("own_page") and "coverage.pass" in row["why"], "35207: %r" % row["why"][:120])
+        else:
+            check("generic" in row["why"], "%s: set aside for another reason: %r" % (cn, row["why"][:120]))
+    check({c["control_number"] for c in cases} == set(want), "the real cases are not the ones expected")
+    check("page title" in (K.page_is_own(dict(next(c for c in cases if c["control_number"] == "41679"),
+                                                record={}),
+                                           next(c for c in cases if c["control_number"] == "41679")["sources_entry"])
+                           or ""), "41679 passes on something other than its page title")
+
+
+def test_address_cases(tmp):
+    """S685 round 1, finding 2: the address names the title and nothing else. Five committed addresses of a longer
+    title's program (Ventura, Antelope Valley) show nothing for the shorter title; the programs' own addresses,
+    a term suffix (-fall-2026) included, still do."""
+    with open(REAL) as fh:
+        cases = json.load(fh)["address_cases"]
+    check(sum(not c["own_address"] for c in cases) == 5, "the five addresses are not all in the fixture")
+    for c in cases:
+        got = K.page_is_own({"control_number": c["control_number"], "title": c["title"], "award": c["award"],
+                             "source_url": c["source_url"]})
+        if c["own_address"]:
+            check(got is not None and "address" in got, "%s %s on its own address %s: %r"
+                  % (c["control_number"], c["title"], c["source_url"], got))
+        else:
+            check(got is None, "%s %s passes on %s: %r" % (c["control_number"], c["title"], c["source_url"], got))
+    words = K.page_words
+    check(words("communication-2-studies") == words("Communication Studies 2.0") != words("Communication Studies"),
+          "2 and 2.0 are not one version word")
+
+
+def test_capture_names_another_award(tmp):
+    """S685 round 1, findings 1 and 4: a page title, or the window line beside heading_named, naming another award
+    shows nothing, though it names every title word."""
+    url = "https://x.edu/p.php?id=9"
+    r = {"control_number": "53001", "title": TITLE, "award": AWARD, "source_url": url}
+    aat = "Business Administration - Associate in Arts for Transfer | Fixture College Catalog"
+    own = "Business Administration - Associate in Science | Fixture College Catalog"
+    check(K.page_is_own(r, source_entry("53001", url, title=own)) is not None, "the program's own page title fails")
+    check(K.page_is_own(r, source_entry("53001", url, title=aat)) is None, "a page title naming the AA-T passes")
+    check(K.page_is_own(r, source_entry("53001", url, title="", h1=aat)) is None, "an h1 naming the AA-T passes")
+    line = "Students completing the Associate in Arts for Transfer in Business Administration at"
+    check(K.page_is_own(r, source_entry("53001", url, title=line, h1=line, heading_named=True)) is None,
+          "heading_named passes beside a window line naming the AA-T")
+    check(K.page_is_own(r, source_entry("53001", url, title="Business Administration", heading_named=True))
+          is not None, "heading_named fails beside a line naming no award")
+
+
+def test_award_ending(tmp):
+    """COBIx on #3553, finding 1: an award ending stripped from the address must be one the reader's slug_awards reads
+    as the program's kind, or the address shows nothing. Real addresses: College of the Redwoods 01821 (the A.S. on
+    the certificate's welding-technology-ca-fall-2025), an A.A. on San Bernardino Valley's studio-arts-aa-t-degree;
+    an ending naming the program's own kind still passes, and an address with no ending reads as on main. Finding 2:
+    the stripped ending is on the decision row as award_tail, "" when none."""
+    with open(REAL) as fh:
+        cases = json.load(fh)["award_ending_cases"]
+    check(sum(not c["own_address"] and c["award_tail"] in ("-ca", "-aa-t-degree") for c in cases) >= 2 and
+          any(c["own_address"] and c["award_tail"] for c in cases) and
+          any(c["own_address"] and not c["award_tail"] for c in cases), "the award-ending cases are not all there")
+    for c in cases:
+        note = {}
+        got = K.page_is_own({"control_number": c["control_number"], "title": c["title"], "award": c["award"],
+                             "source_url": c["source_url"]}, None, note)
+        check((got is not None) == c["own_address"], "%s %s (%s) on %s: %r"
+              % (c["control_number"], c["title"], c["award"][:20], c["source_url"], got))
+        check(note.get("award_tail") == c["award_tail"], "%s: award_tail %r, expected %r"
+              % (c["control_number"], note.get("award_tail"), c["award_tail"]))
+    # Through keep_better, with the fixture's Business Administration A.S.
+    base = "https://catalog.x.edu/programs-courses/business/"
+    folder_cases = {
+        "54001": (WORSE, PASS, "REQUIREMENTS", base + "business-administration-ca-fall-2025/"),  # the certificate's
+        "54002": (WORSE, PASS, "Course List", base + "business-administration-aa-t-degree/"),    # the AA-T's
+        "54003": (WORSE, PASS, "REQUIREMENTS", CL_URL),                                          # -as: its own kind
+        "54004": (WORSE, PASS, "Requirements", base + "business-administration/"),               # no ending
+        "54005": (WORSE, PASS, "Requirements", "https://x.edu/business-administration-ca"),     # the page title shows it
+        "54006": (WORSE, PASS, OWN, base + "business-administration-ca/"),                       # a heading naming it
+    }
+    sources = [source_entry("54005", "https://x.edu/business-administration-ca",
+                            title="Business Administration - Associate in Science | Fixture College Catalog")]
+    folder, rdir = generic_folder(tmp, folder_cases, sources)
+    acct = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None)
+    got = {r["control_number"]: r for r in acct["runs"][str(NEW)]["programs"]}
+    want = {"54001": ("restored", "-ca"), "54002": ("restored", "-aa-t-degree"), "54003": ("kept", "-as"),
+            "54004": ("kept", ""), "54005": ("kept", "-ca"), "54006": ("kept", None)}
+    for cn, (outcome, tail) in want.items():
+        check(got[cn]["outcome"] == outcome, "%s: %s (%s), expected %s" % (cn, got[cn]["outcome"],
+                                                                           got[cn]["why"][:90], outcome))
+        check(got[cn].get("award_tail") == tail, "%s: award_tail %r, expected %r"
+              % (cn, got[cn].get("award_tail"), tail))
+    for cn in ("54001", "54002"):
+        check("generic" in got[cn]["why"], "%s: set aside for another reason: %r" % (cn, got[cn]["why"][:120]))
+        check(read_bytes(os.path.join(rdir, cn + ".json")) == read_bytes_base(tmp, cn), "%s: not restored" % cn)
+    check("address" in got["54003"].get("own_page", "") and "address" in got["54004"].get("own_page", ""),
+          "54003/54004 kept on something other than the address")
+    check("page title" in got["54005"].get("own_page", ""), "54005: %r" % got["54005"].get("own_page"))
+    # The listing finding 2 asks for: rows kept on address evidence whose address carried an award ending.
+    listed = {cn for cn, r in got.items() if r["outcome"] == "kept" and r.get("award_tail")
+              and r.get("own_page", "").startswith("the address")}
+    check(listed == {"54003"}, "kept on an address with an award ending: %r" % sorted(listed))
+
+
 def main():
     for fn in (test_checked_list, test_folder, test_all_restored, test_checked_unfiled, test_live_runs,
-               test_live_runs_file, test_control_number_shape, test_ascii_runs):
+               test_live_runs_file, test_control_number_shape, test_ascii_runs, test_generic_heading_scorer,
+               test_generic_heading, test_order, test_second_pass, test_matches_main, test_real_cases,
+               test_address_cases, test_capture_names_another_award, test_second_pass_after_receipt,
+               test_no_duplicate_row, test_award_ending):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)

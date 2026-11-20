@@ -1,4 +1,4 @@
-// College Data Collection (commons_data.js, #commons/data): the catalog link the page displays is split from the
+// College Data Collection (commons_data.js, #collect): the catalog link the page displays is split from the
 // capture root the readers use (S650; COBIx's correction on #3229, comment 6867640358: only Copper Mountain's link is
 // broken, and a 500 from Pingora with an empty body reads "unreachable from here", never as a dead link).
 //
@@ -62,12 +62,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 async function settle() { for (let i = 0; i < 30; i++) await tick(); }
 
 (async function () {
-  const a = load("#commons/data/college/ridge-college/catalog");
+  const a = load("#collect/college/ridge-college/catalog");
   await a.M.boot(); await settle();
   const pa = a.d.querySelector("#cdd-panel");
   const nt = a.d.querySelector("#cdd-panel a.cdd-newtab");
   const body = txt(pa);
-  check("setup: the Ridge catalog pane opened at its address", pa && !pa.hidden && a.w.location.hash === "#commons/data/college/ridge-college/catalog", a.w.location.hash);
+  check("setup: the Ridge catalog pane opened at its address", pa && !pa.hidden && a.w.location.hash === "#collect/college/ridge-college/catalog", a.w.location.hash);
   check("(1) ⭐ the new tab goes to the displayed catalog page, never the capture's file", nt && nt.getAttribute("href") === PAGE, nt && nt.getAttribute("href"));
   check("(1) the pane is titled as the college's catalog and names the file the capture read and the file the page links to now",
     txt(a.d.querySelector("#cdd-panel-h")) === "The college's catalog" && body.indexOf("The file the capture read") >= 0 && body.indexOf(OLD) >= 0
@@ -77,7 +77,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
     && /catalog-10\.pdf; answered when checked/.test(body), body.slice(0, 600));
   check("(3) ⭐ an unreachable-from-here check never reads as not found on the displayed link", !/academic-catalogs\/; not found/.test(body));
 
-  const b = load("#commons/data/college/hill-college/catalog");
+  const b = load("#collect/college/hill-college/catalog");
   await b.M.boot(); await settle();
   const pb = txt(b.d.querySelector("#cdd-panel"));
   check("(2) a college with one link keeps the pane as it was: one address, no capture-file line",

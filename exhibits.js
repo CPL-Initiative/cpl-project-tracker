@@ -223,7 +223,7 @@
     "Proposed": "A rule or the classifier suggested a title, but not surely enough to save it. It waits for a person to keep, change or edit it.",
     "Wording check": "The suggested title is likely right, but a word in it failed a quality check: a leftover course code, a dangling word or a method word. A person confirms it.",
     "Two issuers": "The suggested title would join this exhibit to a credential the reference gives another issuer. A person decides whether they are one credential or two.",
-    "Saved, not folded": "A person or a rule saved a title. The nightly run adds it to the reference.",
+    "Saved, not folded": "A person or a rule saved the title. The nightly run adds it to the reference, and no one needs to act.",
     "In the reference": "Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.",
     "Conflict with the reference": "The title saved for this exhibit disagrees with one a person already approved. The nightly run never overwrites a person's decision, so it waits for you.",
     "Rename batch": "Titles in the reference that are not named the way certifications now are: the official name first, the code in parentheses. Nothing is renamed until you approve the batch.",
@@ -284,6 +284,15 @@
   function stamp(v) {
     var m = /^(\d{4}-\d\d-\d\d)T(\d\d:\d\d)/.exec(v || "");
     return m ? m[1] + " " + m[2] + "Z" : (v || "");
+  }
+  /* A stamp a reader sees, in Pacific time and words: "8:53 AM PT on November 19" (#3566 item 6: the UTC stamp). */
+  function ptStamp(v) {
+    var d = new Date(v || "");
+    if (!v || isNaN(d.getTime())) return "";
+    try {
+      return d.toLocaleTimeString("en-US", { timeZone: "America/Los_Angeles", hour: "numeric", minute: "2-digit" }) + " PT on "
+        + d.toLocaleDateString("en-US", { timeZone: "America/Los_Angeles", month: "long", day: "numeric" });
+    } catch (e) { return stamp(v); }
   }
   function pct(n, of) { return of ? Math.round(1000 * n / of) / 10 : 0; }
   function college(i) { return ((state.data && state.data.colleges) || [])[i] || ""; }
@@ -5508,13 +5517,13 @@
       return;
     }
     var d = state.data, src = d.sources || {};
-    head.appendChild(el("span", { cls: "exh-muted exh-small", text: "Procedures run " + (stamp(src.procedures_run) || "not read")
-      + " · queue built " + stamp(d.written_at) }));
+    head.appendChild(el("span", { cls: "exh-muted exh-small", text: "The nightly procedures ran at " + (ptStamp(src.procedures_run) || "a time the file does not give")
+      + ", and the queue was built at " + (ptStamp(d.written_at) || "a time the file does not give") + "." }));
 
     var group = el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "What is it called?" })]);
     var t = d.tiles || {}, al = alignedNow(d), named = namesNow(t);
     group.appendChild(el("div", { cls: "exh-dash", role: "list", "aria-label": "What is it called" }, [
-      tile("Names", named && named.n, named && named.of, "MAP titles under a canonical credential",
+      tile("Names", named && named.n, named && named.of, "MAP titles that carry the reference's shared credential name",
         named ? fmt(named.waiting) + " wait for a title" : ""),
       tile("Aligned course", al.n, al.of,
         "held titles articulated to a course that names them", "The course names the proposal"),
@@ -5522,7 +5531,7 @@
     var rlBox = reviewListBox(d);
     if (rlBox) group.appendChild(rlBox);
     var steps = el("div", { cls: "exh-steps", role: "group", "aria-label": "Filter the review queue by CER step" },
-      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, not folded"), sweepTile(), renameTile()]));
+      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, waiting for the nightly fold"), sweepTile(), renameTile()]));
     group.appendChild(steps);
     wrap.appendChild(group);
 

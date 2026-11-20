@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-11-18
+updated: 2026-11-20
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -47,25 +47,32 @@ together and places them in some order of priority and completion and known issu
 
 ## Status
 
+**LIVE (#3554, `5a7a6f24`; #3533, Sam's go Nov 19): the CPL Commons front page.** `commons_front.js` draws the bare `#commons`: the header and Sam's lede, the Projected Completion Date
+widget (Program records done from the 7-day pace; Curation done reads Not dated yet), 30 daily bars rebuilt from the live files, Needs you, eight cards in Collect / Curate / Connect (fold keys
+in `cplCommons.fold.v1`), the Building, More collection detail and scorecard lines. College Data Collection moved to
+`#collect` (`tabs.js` folds it into this tab and rewrites every old `#commons/data...` address); the earlier first view
+stays at `#commons/details` under `cplCommons.detailsOrder.v1` / `detailsFold.v1`.
+Figures with no source on main sit in `ASKED`, each named. **NEXT:** the open data questions
+on the ask (the 6-college status file against 0 blocked, the kinesiology rulings, the readable-course count, a COCI-only
+recount); the generators' `#commons/data` links to `#collect`. Guard `tests/commons_front.test.js`. **DECIDED** `d-commons-front-page-routes-3554`, `d-commons-front-card-layout-3554`.
+
+**LIVE: Needs you, one path per item, a way back, live saves (#3570 `c2ef4ce1`; issue #3566, Sam's requirement of Nov 19, 10:36 AM PT; built by an S687 worker).** One decisions list (`CPL_COMMONS.decisions`, the run logs' calls after the done marks) feeds Needs you, the details band and the decision record at `#commons/details/decisions`; `#commons/needs-you` opens the front page scrolled to Needs you, and every view a Needs you link opens carries one Back to Needs you link (nothing is stored). The slash-titles ruling (Sam, Nov 18) shows once, as decided. The 36 held exhibit titles read `kb_curation` live (Range-paged, read-only; the status file is the fallback) and read as Sam's own saves waiting for the nightly fold. The program-records figure is computed once, in `commons_program_records.js`, so `#collect` shows December 20 and 14,996 of 20,282, as the front page does. `callHref` uses `program_requirements.js`'s href check; a sign-in line shows when the done marks were not read. Guard `tests/commons_needs_you.test.js` (55 of 55). **DECIDED** `d-commons-needs-you-ranking-s687`: COBIx's ranking; the conductor flip and the Malone ask stay off the page.
+
+**The college wording rule (Sam, Nov 19, 12:42 PM PT, relayed by COBIx on #3566: *"Forward all your recommendations and yes on the 36."*):** a yes for the 36 C-ID credit-recommendation groups at `#cr-reference/names`. A second S687 session (session_01Rvwe2VZ63LPZQQaXGnRoo6) holds its write into `cr_reference_decisions`, the `sam_rulings.md` row and its memory row (**DECIDED** `d-wording-rule-write-to-second-session-s687`: one writer per file); until that lands, the page still lists the call as waiting.
+
+**Still on a snapshot:** the exhibit card's title figures, the ASKED figures (blocked outlines included), the Unblock catalogs chip (Nov 13) and `commons.json`. **NEXT (the #3570 gaps):** "Noncredit Course for MUS 15" into the review file's held list; a view that lists the five ruled cards (M1524, M1553, M1568, M1762, M1847), so Fixes owed has a link; "2 Rename batch" moves to curator work, off Sam's list.
 
 
 **College Data Collection reaches the words (#3412, S669, #3422):** the paragraph as it stood, [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/commons.md (S683 daytime checkpoint)*. **NEXT:** on the deployed tab, check that a college's `course_outcomes` rows carry its college name.
 
 **The first view opens on one batch, and the batch is capped (S604, #2921, #2923; Exhibits queue-first, S611, #2933; the panel's trail, #2934):** moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S648 checkpoint)*. All stand. **NEXT (#2921):** the CCR (below); Subjects' 93 stray codes stay with the curator. Sam's path still waits on his reaction to the mock.
 
-**LIVE: the Docket, steps 1 to 3 (#2963, #2966, #2968, #2969, 2026-11-09).** Batches close in place and offer the next; a case in `kb/docket/cases.json` is ruled in place; `kb/_docket_process.py` carries rulings out nightly or from *Process my rulings now*. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
-
-**Malone's look on the first view and the *CPL Commons* menu label (Sheet 158 cards 2 and 3) the one queue (S573), and the S574 rulings (a count opens its job filtered; the queue in process order; TOP waits on no one; the Courses List first, SkyView beside it; the look on every Commons view)** moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S647 afternoon)*. Both stand.
-
-**LIVE: the first view (S552, #2697) and the opened page's one renderer (S556 to S559, `commons_page.js`):** moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S651 checkpoint)*.
-
-**LIVE: a stalled routine becomes a queue item (S624).** `kb/status/commons.json` `queue.stalled`; the record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S639, 2026-11-11)*.
+**Older records, all standing:** the Docket (S624), Malone's look and the menu label (S573, S574), the first view and its one renderer (S552 to S559), a stalled routine as a queue item (S624), the Courses List's filter words (S622, S623), the confidence count (S573, S624; `kb/status/commons.json` `confidence`), the tab's first build (S417), steps 1 and 2 (S419, S423), what the tab left for the build, Fable's advice and step 3, and the agreeing figures (S560, S561): the paragraphs as they stood, [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S687 checkpoint)*, each pointing on to its record.
 
 **DECIDED: every credential gets a Common SUBJ (SkyTamarind, S638)** moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S648 checkpoint)*; it stands (`kb/_exhibit_subject_fill.py`, nightly in `cer-procedures.yml`, cohort `exhibit-subject-s638@bot`, a stored subject always wins).
 
 **BUILT: the ASE slice (S641, #3152):** `commons_ase.js`, read-only, at `#commons/ase` and `#commons/ase/<title>`; the paragraph as it stood: `docs/commons_lessons.md`, *Moved from the lane (S649 checkpoint)*. Guard `tests/commons_ase.test.js`.
 
-**LIVE: College Data Collection at `#commons/data` (S647, #3215) and its live read (#3232, job `live-counts`):** the two paragraphs as they stood: lessons, *Moved from the lane (S662 checkpoint)*. Guard `tests/commons_data.test.js`.
 **DECIDED** `d-commons-data-coming-next-s647` (a feature with no source sits under Coming next; #3219 open, Sam approves the PR; #3217 parked until Sam lifts it, build and pull nothing from CVC): lessons, *Moved from the lane (S662 checkpoint)*.
 **DECIDED** `d-data-collection-two-bases-s648` (every card names its base: the captures count Active, Teachout and Approved, passing and completeness count Active) and `d-course-key-normalized-s648` (a course is one college and code key, uppercased, spaces and hyphens removed; an SLO matches on it). The paragraphs as they stood: lessons, *Moved from the lane (S650 checkpoint)*.
 **DECIDED** `d-data-collection-links-open-in-panel-s649`: on Sam's ask 2, every link opens in the side panel at an address of its own, with *Open in a new tab* the panel's one link out; this reverses #3257's new-tab links.
@@ -73,9 +80,7 @@ together and places them in some order of priority and completion and known issu
 **LIVE: three cards on a college's panel (#3316, S654) and the non-modal side panel (S653, #3310):** the two paragraphs: lessons, *Moved from the lane (S662 checkpoint)*.
 **The CDC's four PRs and its classes (S653, S654):** **DECIDED** `d-cdc-four-prs-and-classes-s653`, `d-cdc-held-means-not-shared-s654` and `d-cdc-restricted-class-s654` all stand (held means left out of an outside share; the restricted class the site never serves). The paragraph: lessons, *Moved from the lane (S661 checkpoint)*.
 **DECIDED** `d-data-collection-one-base-per-card-s649`, the wording and order, and catalog links: the paragraphs: lessons, *Moved from the lane (S662 checkpoint)*.
-**The strategic plan (S651):** **DECIDED** `d-strategic-plan-generated-in-commons-builder-s651`, not built. The paragraph: lessons, *Moved from the lane (S653 checkpoint)*.
 
-**LIVE (S661, #3375): the Commons Curation ETA tops the CPL Commons tab** (`commons_curation_eta.js`; pace is the net fall of remaining work; **DECIDED** `d-curation-eta-net-pace-s661`, `d-exhibit-universe-includes-map-backlog-s662`; guard `tests/commons_curation_eta.test.js`). **LIVE (S662): the ETA cost feed** reads `kb/reference/model_spend_daily.json` (Sam's billing paste, by hand) and `kb/status/session_spend.json`, built at deploy from each handoff's `Spend:` line (**DECIDED** `d-eta-cost-feed-two-files-s662`; COBIx's two leftovers done in #3381). The runner and session parts are measured since #3465 (below). Both paragraphs as they stood: lessons, *Moved from the lane (S666 checkpoint)*.
 
 **Plain words in a Commons decision (S666).** **#3398 (draft):** Sam's Sheet 195 card 4 CVMA answer is written to `kb/status/exhibit.json` (the fix was already carried out), and a Commons decision batch now reads *We went with this: <default>. It stands unless you change it.* with a *Change it* link, the ask test's shape (`d-person-saved-never-returns-s666` and the [governance lane](governance-team-enablement.md)). **#3400 (draft):** `tests/plain_words_for_sam_test.py` (lints job) refuses COBIx's insider terms in open calls and Commons strings unless the sentence defines them; the Commons *receipt* lines are reworded. **NEXT:** gate and merge both on a green `test`; one writer of `kb/status/exhibit.json` is #3398.
 
@@ -92,7 +97,6 @@ together and places them in some order of priority and completion and known issu
 **S683 daytime (SkyDipper, 2026-11-18): #3517 (`main` 8dac1870)** writes the Commons and College Data Collection date estimates in plain words, lands each link on its tab, names each count's units, takes a ruled card out of *in doubt*, and adds a nightly Playwright click-through (`commons-clickthrough.yml`, 04:37 UTC, `scripts/commons_clickthrough.js`); the CR counts card says decisions are saved through Sep 20. **NEXT:** (a) `kb/status/cr_decisions_live.json` written by a read-only job (columns `group_key`, `decision`, `members`, `excluded`, `updated_at` only; the reader refuses any other); (b) `kb_curation` `ccr_procedure_request` rulings synced into `coci_curation` `ruling`; (c) the Programs click-through figures recorded after the first 04:37 UTC run; (d) the retired note on the 11 courses on retired cards; (e) the fetch-plan builders import `kb/_flags.py` `hidden_card_ids()`.
 
 
-
 **NEXT:** (1) the ASE slice's public copy on the Credential Catalog; then CompTIA, the American Welding Society, NCCER, military. (2) From the path mock (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9): Teach a rule on every reference; the confidence count for the Course auditor, which needs a receipt of what the auditor scored before a person changed the card (none is committed today); the other references' paths; then every Commons view on the `--cmn` tokens. Data sources: [`data_sources`](../data_sources.md). When a Progress card reads *Could not be read*, check the `coci_college_programs` read first (it once answered 500).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List from a spec the tab hands it. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
@@ -105,27 +109,11 @@ together and places them in some order of priority and completion and known issu
 
 **NEXT:** (1) Reader's minors after the apply: `kb/coci_curation.json` grows by 341 `honors_of`-only entries at the next daily run; `unified_courses.js` `fetchHonorsOf` stops after six hops. Then *Before the mints* (base plus H on the CCN pattern); HUMA M10OI into M1110; `kb/coci_minted_courses.json` still lists LIBR M10CJ under LIBR M1040. (2) FIRE 130 X's row-audit card. (3) Price the model pass (to Sam first). (4) A potential-CPL column. (5) The Leadership outlines. (6) The #3298 and #3302 follow-ups: lessons, *Moved from the lane (S653 checkpoint)*.
 
-**LIVE: rules G and M last in the confidence scorer, and their apply (S683, #3513; #3480 Sources 14 and 15).** S678's rebuild (#3467) stands with W and D off by default. `kb/_ccr_confidence_apply.py` dry runs by default; `--apply --expect` stamps `kb/coci_minted_courses.json` with before-values in `kb/ccr_confidence_out/<date>/receipt.json`, and `--undo --rule G|M` restores that rule's unchanged cards through `kb/alias_chain.py`. **DECIDED** `d-rule-g-two-mapped-colleges-s683`: G accepts a card only when two mapped colleges carry it, 166 accepts with `--fill-members` (105 without). M: 47 moves (MUSI to MUSC) and 5 keeps; FPR: 38 moves; every move is refused until a re-mint under [`coursecontrolnumber_remint`](../../coursecontrolnumber_remint.md) (`--worklist` writes them), since 47 MUSI moves would flip Commercial Music's most common code. **OPEN #3529:** flagged cards leave the scorer and its apply (waiting pile 6,426 to 6,419), the re-mint playbook's ordering step, and the undo's *never stamped* line. **NEXT:** `python3 kb/_ccr_confidence_apply.py --rule G --fill-members` (dry run), then `--apply --expect <the dry run's count> --run <the session label>`, committing `kb/coci_minted_courses.json` with the receipt.
+**LIVE: rules G and M last in the confidence scorer, and their apply (S683, #3513; #3480 Sources 14 and 15).** S678's rebuild (#3467) stands with W and D off by default. `kb/_ccr_confidence_apply.py` dry runs by default; `--apply --expect` stamps `kb/coci_minted_courses.json` with before-values in `kb/ccr_confidence_out/<date>/receipt.json`, and `--undo --rule G|M` restores that rule's unchanged cards through `kb/alias_chain.py`. **DECIDED** `d-rule-g-two-mapped-colleges-s683`: G accepts a card only when two mapped colleges carry it, 166 accepts with `--fill-members` (105 without). M: 47 moves (MUSI to MUSC) and 5 keeps; FPR: 38 moves; every move is refused until a re-mint under [`coursecontrolnumber_remint`](../../coursecontrolnumber_remint.md) (`--worklist` writes them), since 47 MUSI moves would flip Commercial Music's most common code. **#3529 merged (S688, `3e3bb837`):** flagged cards (retired, inactive, not applicable; `kb/_flags.py` `hidden_card_ids()`) leave the scorer and its apply (waiting pile 6,426 to 6,419), the re-mint playbook registers the alias map before `kb/_post_apply_chain.py`, and the undo reports a *never stamped* line. **NEXT:** `python3 kb/_ccr_confidence_apply.py --rule G --fill-members` (dry run), then `--apply --expect <the dry run's own count> --run <the session label>`, committing `kb/coci_minted_courses.json` with the receipt; take `--expect` from that dry run, never the 2859 the PR body printed (COBIx's point 4 on #3529).
 
 **The CCR, next (ruling 4):** the seed re-check by descriptions and TOP is applied on Sam's rulings (Sheets 174, 175, 180); each discipline's receipt under `kb/ccr_seed_confirm_out/` reverses alone with `--undo`. The paragraph as it stood: lessons, *Moved from the lane (S652 final refresh)*.
 
-**The Courses List's filter words in two groups (S622, #2998) and its kept row (S623, #2995)** moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S642)*.
-
 **LIVE: Discipline in doubt, a ruling that teaches the procedure (S614, 2026-11-09; #3025 adds a second discipline beside the home).** The Courses List's *Discipline in doubt* filter (`#coci-lookup/list/doubt`) carries the cards; a ruling with its reason marked for similar cards becomes a procedure. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
-
-**LIVE: the confidence count (S573; the CR rule rungs joined it S624, #3027).** `kb/status/commons.json`'s `confidence` says what a person did with each procedure's work afterward (kept, renamed, widened or moved); the tab shows it as *How far to trust the procedures*. The paragraph with its 2026-11-04 and 2026-11-10 counts: [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S644)*.
 
 **RULED: every Commons view in Malone's look, and the path (Sam, S573, 2026-11-04):** *"Use the new UI format rather than first light on this and all commons views."* The mock is the path (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9); the paragraph as it stood: `docs/commons_lessons.md`, *Moved from the lane (S649 checkpoint)*. NEXT: his reaction, then the other references' paths, then the port onto the `--cmn` tokens.
 
-
-**The Commons tab's first build (S417, 2026-10-18)**, its machine side, session side and the Course row's SkyView-alone ruling (since reversed: the Courses List first, S574), moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-04, SkyJujube*).
-
-**Steps 1 and 2 (S419 #2237, S423): the shared Progress module `commons_progress.js` and the five run logs under `kb/status/`.** The record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*).
-
-**What the tab leaves for the build** (2026-10-18) moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-04*): a count now opens its job's filtered list.
-
-**Fable's advice, the Sheet 95 ruling and step 3's Progress views (2026-10-18 to 2026-10-25)** moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, SkyBeacon, 2026-11-06*).
-
-Each reference's Progress view now draws the opened page; Course's landed last (S559, above).
-
-**The figures agree across every Commons tab** (Sam, S490, 2026-10-26; done S560 and S561): the record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-09, SkyCigar*).

@@ -1,4 +1,4 @@
-/* commons_data_cards.js: three cards on a college's side panel in College Data Collection (#commons/data).
+/* commons_data_cards.js: three cards on a college's side panel in College Data Collection (#collect).
 //
 // Sam's asks of 2026-11-14 (#3310, item 2 and item 5's college line), looking at Columbia College's cards. He will
 // show this page to the Chancellor's Office research and data staff, so every line says what a committed file

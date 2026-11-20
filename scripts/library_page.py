@@ -106,7 +106,15 @@ def main(argv):
         raise SystemExit(f"library_page: {slug!r} is not a Library slug (lower case, digits and hyphens)")
     out = ROOT / "library" / slug / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(build(slug, source.read_text(encoding="utf-8")), encoding="utf-8")
+    page = build(slug, source.read_text(encoding="utf-8"))
+    # The accessibility line binds to the page's content (#3560 part 2; scripts/library_check.py certified_check), and
+    # this script cannot read a check record, so every page it writes reads Not yet certified. The check run's next
+    # restamp prints the pass again only when the latest check's committed proof matches this content (an unchanged
+    # rebuild); a changed page waits for its own check.
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import library_check as lc
+    page = lc.stamp(page, lc.footer_block(None, lc.DEFAULT_SETTINGS))
+    out.write_text(page, encoding="utf-8")
     print(f"wrote {out.relative_to(ROOT)}: https://cpl-initiative.github.io/cpl-project-tracker/library/{slug}/")
 
 

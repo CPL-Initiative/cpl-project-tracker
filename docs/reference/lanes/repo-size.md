@@ -80,6 +80,11 @@ that fails when `main` grew more than 50 MB compressed in 7 days. Tests: `tests/
 - The table's prior build was `f0f1ee88c04f` (18,204 keys; 5 null), not `cdd185495ce4`; both receipts are in the bucket
   index, so the rollback (`step=display force="<receipt name> [<applied record>]"`) is reachable.
 
+**The base is the merge commit's first parent (#3559, `cf7f6ca0`, S686).** An older PR's event `base.sha` can sit a day
+behind `main` (#3511 measured from `afc29292` under a merge onto `5a7a6f24`: 1,490 files and 36.6 MB, the daily bot's
+6.8 MB row audit among them, read as the PR's own). Both guard steps now read the base from `HEAD`'s first parent, with
+the event value as the fallback, and log both.
+
 ## NEXT, in order
 
 1. **Part 5, the history rewrite: Sam's go.** Rule 5's one permitted main-history rewrite needs the cron paused, his

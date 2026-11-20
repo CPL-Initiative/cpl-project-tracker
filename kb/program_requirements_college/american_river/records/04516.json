@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11592,
-    "output_tokens": 3143,
+    "output_tokens": 3309,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3143,
+  "output_tokens": 3309,
   "output_tokens_details": {
-   "thinking_tokens": 1107
+   "thinking_tokens": 1258
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10923,
- "ms": 25609,
- "seconds": 26.0,
+ "cost_usd": 0.11255,
+ "ms": 25840,
+ "seconds": 26.7,
  "parts": null,
  "error": null,
  "score": {
@@ -285,7 +285,7 @@
     ]
    },
    {
-    "name": "A minimum of 3 units from the following",
+    "name": "A minimum of 3 units from the following:",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -360,7 +360,7 @@
     ]
    },
    {
-    "name": "A minimum of 1 unit from the following",
+    "name": "A minimum of 1 unit from the following:",
     "rule": "choose_units",
     "minimum": 1,
     "option_group": null,
@@ -383,21 +383,48 @@
   "missing_explained": [
    {
     "code": "ARTH 302",
-    "why": "not in the text; the catalog lists ARTH C1100 (Survey of Art from Prehistory to the Medieval Era) in its place"
+    "why": "not in the text; catalog lists ARTH C1100 (Survey of Art from Prehistory to the Medieval Era) in its place"
    },
    {
     "code": "WEXP 298",
-    "why": "not in the text; the catalog lists WEXP 498 Work Experience in (Subject) instead"
+    "why": "not in the text; catalog lists WEXP 498 Work Experience in (Subject) instead"
    }
   ],
   "notes": [
-   "IDES 110 appears after a repeated table header following the 3-unit choice list, with its units in parentheses like the other list options; it is read as part of the 'minimum of 3 units' list. This matches the printed Total Units: 40 (36 required + 3 + 1); if IDES 110 were required the total would be 43.",
-   "The degree text says the required program plus Local GE or Cal-GETC plus sufficient electives for at least 60 units; recorded as electives_fill_degree, with no degree_total or GE units printed.",
-   "ARTH C1100 and WEXP 498 are not on the closed list (which has ARTH 302 and WEXP 298); likely renumbered courses.",
-   "In the fourth outcome, 'Universal/' and 'Barrier-Free' are split by a line break; it is recorded as 'Universal/Barrier-Free' without a space.",
-   "Career entries include specialties (Universal Design, Green/Sustainable, smart-home, home office, home theater design) that the catalog names as residential design career options."
+   "IDES 110 is printed after a repeated table header ('Course Code Course Title Units') following FASHN 320 with a parenthesized unit value (3), so it was read as the last option in the 'minimum of 3 units' list rather than a required course; the stated 40-unit total (36 core + 3 + 1) is consistent with this reading.",
+   "The degree text says the A.A. is obtained by completing the required program plus the Local GE Pattern or Cal-GETC, 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree true with degree_total left null since no explicit total line for the whole award is printed.",
+   "ARTH C1100 and WEXP 498 appear in the catalog but not in the closed list (closed list has ARTH 302 and WEXP 298), likely course renumbering.",
+   "Careers include residential-design specialties (Universal Design, Green/Sustainable, smart-home, home office, home theater design) named in the Career Information paragraph; reviewer may wish to confirm whether specialties should count as career fields."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "7a05d3cb474a991f",
+ "source_codes": [
+  "ART300",
+  "ART320",
+  "ART323",
+  "ARTH302",
+  "ARTH308",
+  "ARTH310",
+  "ARTH322",
+  "DESGN301",
+  "DESGN320",
+  "FASHN320",
+  "IDES110",
+  "IDES300",
+  "IDES310",
+  "IDES312",
+  "IDES322",
+  "IDES324",
+  "IDES326",
+  "IDES330",
+  "IDES332",
+  "IDES334",
+  "IDES340",
+  "IDES341",
+  "IDES350",
+  "IDES351"
+ ],
+ "source_coverage": 0.96
 }

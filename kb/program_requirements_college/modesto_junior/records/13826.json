@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Machine Tool Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2",
- "record_shape": 4,
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5688,
+  "input_tokens": 6921,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5688,
-    "output_tokens": 1450,
+    "input_tokens": 6921,
+    "output_tokens": 1943,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,72 +30,66 @@
     "model": null
    }
   ],
-  "output_tokens": 1450,
+  "output_tokens": 1943,
   "output_tokens_details": {
-   "thinking_tokens": 636
+   "thinking_tokens": 593
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05175,
- "ms": 13522,
- "seconds": 13.8,
+ "cost_usd": 0.06654,
+ "ms": 15911,
+ "seconds": 19.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 12,
    "listed": 12,
-   "share": 0.0,
-   "missing": [
-    "MACH200D",
-    "MACH200E",
-    "MACH201",
-    "MACH202",
-    "MACH205",
-    "MACH206",
-    "MACH208",
-    "MACH209",
-    "MACH357",
-    "MACH395",
-    "WELD200",
-    "WELD206"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "MACH207"
+   ],
+   "flagged": [
+    "MACH207"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    29.0,
+    30.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    29.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -103,80 +97,191 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Machine Tool Technology",
+   "section_heading": "MACHINE TOOL TECHNOLOGY, CERTIFICATE",
    "measure": "units",
    "total_units": {
+    "min": 29,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate compliance with current machine shop safety and environmental regulations.",
+    "Demonstrate effective operation of manual and CNC equipment in accordance with industry recognized and accepted practices."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "MACH 200D",
-    "why": "named only in the A.S. section"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "MACH357",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH205",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MACH208",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MACH 200E",
-    "why": "named only in the A.S. section"
+    "name": "REQUIRED COURSES CONTINUED - TAKE MACH 200D OR MACH 200E BUT NOT BOTH",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MACH200D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MACH200E",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MACH 201",
-    "why": "named only in the A.S. section"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "MACH201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH395",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MACH 202",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "MACH 205",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "MACH 206",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "MACH 208",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "MACH 209",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "MACH 357",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "MACH 395",
-    "why": "not in the text"
-   },
-   {
-    "code": "WELD 200",
-    "why": "named only in the A.S. section"
-   },
-   {
-    "code": "WELD 206",
-    "why": "named only in the A.S. section"
+    "name": "ELECTIVE COURSES - COMPLETE 3 UNITS",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MACH209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text holds only one section, labeled 'A.S. Degree' ('MACHINE TOOL TECHNOLOGY, AS'), with instructions to earn an Associate in Science degree. No Certificate of Achievement section is printed, so no blocks, total, outcomes or careers are recorded for the certificate. A reviewer should find the certificate's own catalog page.",
-   "For reference, the A.S. section states 28.0-29.0 major units. It has four parts. Required (15 units): MACH 357 (2), MACH 205 (2), MACH 206 (3), MACH 207 (3), MACH 208 (2), WELD 200 (3). Choose 4-5 units: MACH 200D (4) or MACH 200E (5). Required (6 units): MACH 201 (3), MACH 202 (3). Electives (3 units): WELD 206 (3) or MACH 209 (3).",
-   "MACH 207 (CNC Mill Programming, 3 units) appears in the A.S. section but is not in the closed list.",
-   "The A.S. section prints two Program Learning Outcomes. They are not recorded because they belong to the A.S. degree section, not to the certificate.",
-   "MACH 395 does not appear anywhere in the text."
+   "Award Instructions say students must complete '29-33 required units', but the unit requirements and program total print 29.0 - 30.0 Units; total_units recorded as 29-30.",
+   "The first three required sub-blocks are grouped under 'REQUIRED COURSES – COMPLETE A MINIMUM OF 26-27 UNITS (Total 26 - 27)'; that parent grouping is not recorded as a separate block.",
+   "MACH207 (CNC Mill Programming, 3 units) is printed as required but is not in the closed list; recorded as a catalog addition.",
+   "MACH 200D and MACH 200E are recorded as one choice with MACH200E as the alternative, per 'TAKE MACH 200D OR MACH 200E BUT NOT BOTH'.",
+   "Codes recorded as printed without a space (e.g., MACH357).",
+   "A lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears in the description with no outcomes after it; outcomes taken from the Program Learning Outcomes heading."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": "44540818388",
+ "catalog_year": "2026-2027"
 }

@@ -503,8 +503,10 @@ builder run before that would read every re-keyed card as empty. The daily build
 runs the three builders after the List file and before the auditor
 (`scripts/daily_build.sh`), so the dispatched daily run that lands a re-mint
 heals them. Each file carries `_ids_current_through`, the last map in
-`ALIAS_MAPS` when it was built. Once the re-mint's map is registered there,
-`kb/_flags.py` sets aside the card flags of any file with an older stamp, prints
+`ALIAS_MAPS` when it was built. **Order: the re-mint registers its alias map in
+`kb/alias_chain.py` `ALIAS_MAPS` before `kb/_post_apply_chain.py` runs** (COBIx
+on #3519; the playbook's *Register the alias map before the post-apply chain*).
+Once the re-mint's map is registered there, `kb/_flags.py` sets aside the card flags of any file with an older stamp, prints
 why, and the auditor lists the kinds under `stats.flag_files_set_aside`: between
 the apply and the daily run, those flagged cards return to the counts, and no
 live card is hidden by an id the re-mint reassigned. The not-applicable file's

@@ -6,8 +6,9 @@ harvest").
 The failures this guards: a loaded college read again; a college whose host prints no SLOs
 queued every night; an unproven host read in full before a 12-page trial; a trial that found
 nothing taken as a pass; a curriQunet index that read a different report from the one the
-census found SLOs on; a filed read left unloaded; the queue out of articulation order; and a
-verdict in queue.json that names no college or no reason.
+census found SLOs on; a filed read left unloaded; the queue out of articulation order; a
+narrow recheck census hiding the wide census before it; and a verdict in queue.json that
+names no college or no reason.
 
 Run from repo root: python3 tests/next_slo_colleges_test.py
 """
@@ -137,6 +138,20 @@ with tempfile.TemporaryDirectory() as root:
           by["Done Read"]["state"] == "load" and by["Done Read"]["trigger"] == ("kb/course_outcomes/.load", ["host=eld"]),
           by["Done Read"])
 
+    # S689 (the second reader on #3586): a full read queue.json's never_load names is never the load, with no verdict
+    # row holding the college, even when it filed complete; a newer read beside it still is.
+    write(root, "course_outcomes/queue.json", {"colleges": {
+        "quiet": {"state": "none", "on": "2026-11-01", "by": "S0", "source": "trial 1", "why": "prints none"}},
+        "never_load": {"22": "filed the table header as SLOs and no page to reparse"}})
+    void = {r["college"]: r for r in M.queue(root)[0]}["Done Read"]
+    check("GUARD: a read never_load names is never the load; the college goes back to its trial",
+          void["state"] != "load" and "22" not in (M.filed(root)[0].get("done_read") or {}), void)
+    write(root, "course_outcomes/eld/read_24_p1of1.json", {"run": "24", "slugs": "done_read", "part": 1, "of": 1,
+                                                          "complete": True, "rows": []})
+    fresh = {r["college"]: r for r in M.queue(root)[0]}["Done Read"]
+    check("a fresh full read beside a never_load read is the load", fresh["state"] == "load" and "24" in fresh["why"],
+          fresh)
+
     # The reindex resolves once the index reads the census's report.
     write(root, "course_outline_index/index_6.json", {
         "url": "https://cqs.curriqunet.com/", "coverage": {"cq_swap": {"courses": 20, "with_outline": 20}},
@@ -146,6 +161,32 @@ with tempfile.TemporaryDirectory() as root:
           swap["state"] == "trial" and swap["trigger"][1][0].endswith("/course_outline_index/index_6.json")
           and swap["trigger"][1][1:] == ["slugs=cq_swap", "trial=12"],
           swap)
+
+# A narrow recheck census never hides the wide census before it (S685: S683's 6-row recheck
+# hid the 118-row census, and 75 colleges fell to "the census has no row for it").
+with tempfile.TemporaryDirectory() as root:
+    names = ["Old Only", "Both", "Neither"]
+    write(root, "exhibits_adoption.json", {"colleges": names, "credentials": {
+        "Cred %d" % k: {"a": {str(i): [1.0, []] for i in range(3) if k < 3 - i}} for k in range(3)}})
+    college(root, "old_only", "Old Only", "https://ool.example.edu/", codes(10))
+    college(root, "both", "Both", "https://bth.example.edu/", codes(10))
+    college(root, "neither", "Neither", "https://nei.example.edu/", codes(10))
+    public = {"cor_system": "curriqunet", "cor_access": "public", "cor_outline": "list_only"}
+    write(root, "course_outline_census/census_100.json", {"rows": [
+        dict(public, college="Old Only", cor_url="https://ool.curriqunet.com/"),
+        dict(public, college="Both", cor_url="https://bth.curriqunet.com/")]})
+    write(root, "course_outline_census/census_200.json", {"rows": [
+        {"college": "Both", "cor_system": "none_found", "cor_access": "not_found", "cor_outline": "none_found"}]})
+    rows, census_file = M.queue(root)
+    by = {r["college"]: r for r in rows}
+    check("a college only in the older census is routed from its row",
+          by["Old Only"]["state"] == "index" and "index=https://ool.curriqunet.com/" in by["Old Only"]["trigger"][1],
+          by["Old Only"])
+    check("a college in both censuses takes the newer row",
+          by["Both"]["state"] == "skip" and by["Both"]["why"] == "the census found no course outline system", by["Both"])
+    check("the no-census-row skips are the colleges in neither census",
+          [r["college"] for r in rows if r["why"] == "the census has no row for it"] == ["Neither"], rows)
+    check("the census named is the newest file", census_file.endswith("census_200.json"), census_file)
 
 # --college prints one college's block; an unknown slug fails.
 import contextlib  # noqa: E402
@@ -172,6 +213,10 @@ for slug, v in ledger.items():
           os.path.isdir(os.path.join(ROOT, "kb", "program_requirements_college", slug)))
     check("queue.json %s has a known state and its reason" % slug,
           v.get("state") in M.VERDICTS and all(v.get(k) for k in ("on", "by", "why", "source")), v)
+void = M.never_load()
+check("GUARD: Feather River's read 44535960153 never loads, its reason named, and the queue never names it (S689)",
+      "44535960153" in void and all(void.values())
+      and "44535960153" not in (M.filed()[0].get("feather_river") or {}), sorted(void))
 rows, census_file = M.queue()
 check("the repo's queue reads a census", bool(census_file))
 check("every college course_outcomes holds is done, never queued",

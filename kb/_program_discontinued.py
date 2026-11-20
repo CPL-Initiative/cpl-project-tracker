@@ -27,7 +27,9 @@ RULE D (S683; the reader's page checks, kb/_reader_page_checks.py, #3480 Source 
 CPL_RULE_D_NOT_PRINTED=1 files a program whose title no line of the current PDF catalog prints with the gap "not
 printed in the <year> catalog" (sources/<cn>.json "gap"). Not printing it is half of prior_year_only, so such a
 program is listed under not_printed for this check, never flagged: a prior-year read (CAPTURE_PRIOR) that finds it
-flags it, and one that does not clears it. The list appears only when a capture is read.
+flags it, and one that does not clears it. The list reads the committed capture files' not_found entries that
+carry rule D's mark (committed_not_printed, S687: a capture-only preview with rule_d=1 is enough), and a runner
+capture's sources when one is handed over.
 
 Writes kb/status/program_discontinued.json. kb/_harvest_gap_census.py reads it and lists each flagged
 program beside the gap, out of it. Writes no table: git revert undoes the flag.
@@ -181,6 +183,56 @@ def capture_not_printed(capture_dir: str) -> list[dict]:
     return out
 
 
+def read_covers(d: dict) -> set[str]:
+    """The control numbers a capture or preview read: those whose text it fingerprinted, plus those it filed under
+    not_found, page_claimed or page_challenged. A program in none of them was outside the read's scope."""
+    out = {str(k) for k in (d.get("fingerprints") or {})}
+    for key in ("not_found", "page_claimed", "page_challenged"):
+        out |= {str(r.get("control_number")) for r in d.get(key) or [] if r.get("control_number") is not None}
+    return out
+
+
+def committed_not_printed(base: str = COLLEGE_DIR) -> list[dict]:
+    """The programs a read with rule D on filed as not printed, from the committed capture files (S687): a capture or
+    a capture-only preview lists each program it reached no page for under not_found, and rule D's own mark rides in
+    its near_miss (rule "D"). A preview is enough: rule D needs no extraction, and the runner's artifact is out of a
+    session's reach. Candidates for the prior-year read, never flags."""
+    out, seen = [], set()
+    for folder in sorted(glob.glob(os.path.join(base, "*"))):
+        # The newest read speaks for each program it read (COBIx on #3569): a later capture that finds a page for a
+        # program an older preview marked clears the mark, and a newer preview's mark stands over an older capture's
+        # silence. A read can be scoped (the workflow's `limit` reads the first N programs, `force` names some), so an
+        # older read's mark stands for a program no newer read covered (COBIx's third point on #3569, S688).
+        reads = []
+        for name in ("capture.json", "capture_preview.json"):
+            path = os.path.join(folder, name)
+            if os.path.isfile(path):
+                with open(path, encoding="utf-8") as fh:
+                    d = json.load(fh) or {}
+                run = str(d.get("run") or "")
+                reads.append((int(run) if run.isdigit() else -1, name, d))
+        covered: set[str] = set()
+        for _, name, d in sorted(reads, key=lambda x: x[0], reverse=True):
+            for r in d.get("not_found") or []:
+                if ((r.get("near_miss") or {}).get("rule")) != "D" or str(r.get("control_number")) in covered:
+                    continue
+                key = (d.get("college"), str(r.get("control_number")))
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append({"college": key[0], "control_number": key[1], "title": r.get("title"),
+                            "award": r.get("award"),
+                            "gap": "not printed in the %s catalog" % (d.get("catalog_year") or "current"),
+                            "read": "%s run %s" % (name, d.get("run")),
+                            "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"})
+            if "fingerprints" not in d:
+                # A read filed before fingerprints (S647) names no per-program coverage: take it as the whole
+                # college, so no older read speaks past it.
+                break
+            covered |= read_covers(d)
+    return out
+
+
 def build(captures: list[str] = (), skip: tuple[str, ...] = (), base: str = COLLEGE_DIR) -> dict:
     flags, left_out = {}, 0
     for f in prior_year_flags(base) + [x for c in captures for x in capture_flags(c)]:
@@ -198,10 +250,14 @@ def build(captures: list[str] = (), skip: tuple[str, ...] = (), base: str = COLL
            "left_out_held": left_out, "flagged": len(rows), "by_how": by_how, "by_college": by_college,
            "page_text": "capture" if captures else "none committed: catalog_mark needs a runner capture (--capture)",
            "flags": rows}
-    if captures:
-        seen = set(flags)
-        out["not_printed"] = [r for c in captures for r in capture_not_printed(c)
-                              if not held(r.get("college"), skip) and (r["college"], r["control_number"]) not in seen]
+    seen, listed = set(flags), set()
+    out["not_printed"] = []
+    for r in committed_not_printed(base) + [r for c in captures for r in capture_not_printed(c)]:
+        k = (r["college"], r["control_number"])
+        if held(r.get("college"), skip) or k in seen or k in listed:
+            continue
+        listed.add(k)
+        out["not_printed"].append(r)
     return out
 
 
