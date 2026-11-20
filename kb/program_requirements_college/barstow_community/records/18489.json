@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Child Development",
  "award": "A.S. Degree",
- "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=134",
+ "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12588,
+  "input_tokens": 9863,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12588,
-    "output_tokens": 1552,
+    "input_tokens": 9863,
+    "output_tokens": 5436,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,121 @@
     "model": null
    }
   ],
-  "output_tokens": 1552,
+  "output_tokens": 5436,
   "output_tokens_details": {
-   "thinking_tokens": 255
+   "thinking_tokens": 1464
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08139,
- "ms": 12788,
- "seconds": 13.3,
+ "cost_usd": 0.14817,
+ "ms": 40333,
+ "seconds": 41.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 21,
    "listed": 21,
-   "share": 0.0,
-   "missing": [
-    "CDEVC1000",
-    "CHLD11A",
-    "CHLD12A",
-    "CHLD14",
-    "CHLD15",
-    "CHLD15A",
-    "CHLD17",
-    "CHLD17A",
-    "CHLD19A",
-    "CHLD19B",
-    "CHLD19C",
-    "CHLD20",
-    "CHLD25",
-    "CHLD30",
-    "CHLD30A",
-    "CHLD35",
-    "CHLD35A",
-    "CHLD49",
-    "CHLD6",
-    "CHLD61",
-    "CHLD9"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEV11A",
+     "listed": "CHLD11A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV12A",
+     "listed": "CHLD12A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV14",
+     "listed": "CHLD14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV15",
+     "listed": "CHLD15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV15A",
+     "listed": "CHLD15A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV17",
+     "listed": "CHLD17",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV19A",
+     "listed": "CHLD19A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV19C",
+     "listed": "CHLD19C",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV20",
+     "listed": "CHLD20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV25",
+     "listed": "CHLD25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV30",
+     "listed": "CHLD30",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV30A",
+     "listed": "CHLD30A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV35",
+     "listed": "CHLD35",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV35A",
+     "listed": "CHLD35A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV49",
+     "listed": "CHLD49",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV6",
+     "listed": "CHLD6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV61",
+     "listed": "CHLD61",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV9",
+     "listed": "CHLD9",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -83,29 +153,49 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    34.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    34.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     38.0,
+     94.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     20.0,
+     39.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -115,132 +205,615 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No program section in text (course descriptions for CDEV/CHLD only)",
+   "section_heading": "Associate of Science Degree, Child Development",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 34
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 0,
+    "max": 21
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 39
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Apply research theories, social interrelationships and developmentally age appropriate activities, teaching strategies, and develop a curriculum based on their observations and assessment that contribute toward the development of the young child.",
+    "Advocate, identify and implement policies, principles, and laws which support infants and toddlers, or preschool age children or children with special needs, or after-school aged children.",
+    "Demonstrate skills learned to create a high qualify learning environment that facilitates the emotional, cognitive, language and social domains of the child."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CDEVC1000",
-    "why": "Requirements not in the text; only a course description (CDEV C1000) appears"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHLD 11A",
-    "why": "Not in the text; requirements section absent"
+    "name": "Track 1: Family Day Care",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CDEV 12A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHLD 12A",
-    "why": "Not in the text; requirements section absent"
+    "name": "Track 2: Associate Teacher",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CDEV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 12A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHLD 14",
-    "why": "Requirements not in the text; only the tail of the CDEV 14 description appears"
+    "name": "Track 3: Teacher",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "CDEV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHLD 15",
-    "why": "Requirements not in the text; only a course description (CDEV 15, formerly CHLD 15)"
+    "name": "Track 4: Master Teacher: Infant and Toddler Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CDEV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 15A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 19C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHLD 15A",
-    "why": "Requirements not in the text; only a course description (CDEV 15A, formerly CHLD 15A)"
+    "name": "Track 5: Master Teacher: School-Age Children Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CDEV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 17A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 19C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHLD 17",
-    "why": "Requirements not in the text; only a course description (CDEV 17, formerly CHLD 17)"
+    "name": "Track 6: Master Teacher: Language and Literacy Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CDEV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 30A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 19C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHLD 17A",
-    "why": "Requirements not in the text; only a course description"
+    "name": "Track 7: Master Teacher: Children with Special Needs Specialization",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CDEV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 35A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 19C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHLD 19A",
-    "why": "Requirements not in the text; only a course description (CDEV 19A, formerly CHLD 19A)"
-   },
-   {
-    "code": "CHLD 19B",
-    "why": "Requirements not in the text; only a course description"
-   },
-   {
-    "code": "CHLD 19C",
-    "why": "Requirements not in the text; only a course description (CDEV 19C, formerly CHLD 19C)"
-   },
-   {
-    "code": "CHLD 20",
-    "why": "Requirements not in the text; only a course description (CDEV 20, formerly CHLD 20)"
-   },
-   {
-    "code": "CHLD 25",
-    "why": "Requirements not in the text; only a course description (CDEV 25, formerly CHLD 25)"
-   },
-   {
-    "code": "CHLD 30",
-    "why": "Requirements not in the text; only a course description (CDEV 30, formerly CHLD 30)"
-   },
-   {
-    "code": "CHLD 30A",
-    "why": "Requirements not in the text; only a course description (CDEV 30A, formerly CHLD 30A)"
-   },
-   {
-    "code": "CHLD 35",
-    "why": "Requirements not in the text; only a course description (CDEV 35, formerly CHLD 35)"
-   },
-   {
-    "code": "CHLD 35A",
-    "why": "Requirements not in the text; only a course description (CDEV 35A, formerly CHLD 35A)"
-   },
-   {
-    "code": "CHLD 49",
-    "why": "Requirements not in the text; only a course description (CDEV 49, formerly CHLD 49)"
-   },
-   {
-    "code": "CHLD 6",
-    "why": "Requirements not in the text; only a course description (CDEV 6, formerly CHLD 6)"
-   },
-   {
-    "code": "CHLD 61",
-    "why": "Requirements not in the text; only a course description (CDEV 61, formerly CHLD 61)"
-   },
-   {
-    "code": "CHLD 9",
-    "why": "Requirements not in the text; only a course description (CDEV 9, formerly CHLD 9)"
+    "name": "Track 8: Site Supervisor",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Track",
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CDEV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 11A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 19A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 19B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 19C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog pages 134-137) contains only course descriptions for CDEV/CHLD courses, not the Child Development A.S. degree requirements; the program section is likely on a different page of the catalog and should be retrieved.",
-   "Most CHLD courses have been renumbered as CDEV (e.g., CDEV 15 'formerly offered as CHLD 15'); CDEV C1000 was formerly CHLD 4. A reviewer should map closed-list codes to the new CDEV codes once the requirements section is found.",
-   "No program outcomes, careers, totals, or GE pattern appear in the text."
+   "The catalog prints most courses with the subject CDEV, while the closed list stores them as CHLD with the same number and title (e.g., CDEV 9 = CHLD 9 Introduction to Early Childhood Curriculum). These were treated as matches (catalog_addition false); a reviewer should confirm the CHLD-to-CDEV prefix change. CDEV C1000 was matched to closed-list CDEVC1000. CHLD 17A and CHLD 19B are printed with the CHLD prefix in the catalog.",
+   "The section reads 'Select 1 Track for Specialization'; the eight tracks are recorded as blocks in option_group 'Track'.",
+   "Track 8 prints its total as '28.0' without the word 'Subtotal'; recorded as stated 28.",
+   "Major Units Required 18.0-34.0 recorded as total_units; Total Units Required 60.0 as degree_total; General Education Coursework 20.0-39.0 as ge_units; Electives Required 0-21.0 as degree_elective_units.",
+   "The page prints 'General Education Coursework' without naming a pattern, so ge_pattern is null.",
+   "The track names (Family Day Care, Associate Teacher, Teacher, Master Teacher, Site Supervisor) may correspond to job titles or permit levels. The text presents them as tracks, not as named careers, so careers is left empty; a reviewer may wish to check this.",
+   "The outcomes are copied as printed, including 'high qualify learning environment'.",
+   "The page also prints an AS-T in Early Childhood Education section and a Cal-GETC certificate section; these were not used for this record."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": "44687777798",
+ "catalog_year": "2026-2027",
+ "source_sha": "a8e0052243e0c881",
+ "source_codes": [
+  "CDEVC1000",
+  "CHLD11A",
+  "CHLD12A",
+  "CHLD14",
+  "CHLD15",
+  "CHLD15A",
+  "CHLD17",
+  "CHLD17A",
+  "CHLD19A",
+  "CHLD19B",
+  "CHLD19C",
+  "CHLD20",
+  "CHLD25",
+  "CHLD30",
+  "CHLD30A",
+  "CHLD35",
+  "CHLD35A",
+  "CHLD49",
+  "CHLD6",
+  "CHLD61",
+  "CHLD9"
+ ],
+ "source_coverage": 1.0
 }
