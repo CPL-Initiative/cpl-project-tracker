@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-20_s690_pages_live_read.sql
-name=s690_pages_live_read
+file=kb/migrations/2026-11-20_s690_pages_live_read_b.sql
+name=s690_pages_live_read_b
