@@ -1,0 +1,93 @@
+{
+ "run": "44695851118",
+ "at": "2026-11-20T07:35:25Z",
+ "loads": 7,
+ "summary": {
+  "colleges": 1,
+  "by_system": {
+   "curricunet": 1
+  },
+  "by_access": {
+   "public": 1
+  },
+  "by_outline": {
+   "outline_with_slos": 1
+  },
+  "prints_slos": 1
+ },
+ "rows": [
+  {
+   "college": "City College of San Francisco",
+   "cor_system": "curricunet",
+   "cor_url": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+   "cor_access": "public",
+   "cor_outline": "outline_with_slos",
+   "cor_outline_url": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+   "cor_prints_slos": true,
+   "cor_slo": "motivation, and cultural competencies. STUDENT LEARNING OUTCOMES Upon completion of this course, a student will be able to: Identify and evaluate academic and student support services related to educational needs and societal goals. Analyze the behavior of diverse groups and individuals in the conte",
+   "slo_pages": [
+    {
+     "url": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+     "snippet": "erstanding topics such as communication, motivation, and cultural competencies.\nSTUDENT LEARNING OUTCOMES\nUpon completion of this course, a student will be able to:\nIdentify and evaluate academic and student support services related to educational needs and societa"
+    }
+   ],
+   "hosts": [
+    {
+     "system": "curricunet",
+     "url": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+     "from": "COBIx on #3533, comment 7015803401",
+     "host": "ccsf.curricunet.com",
+     "status": 200,
+     "final_url": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+     "title": "Course Outline",
+     "access": "public",
+     "outline_words": true,
+     "slos": true,
+     "outline": {
+      "verdict": "outline_with_slos",
+      "start": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+      "url": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+      "slo": "motivation, and cultural competencies. STUDENT LEARNING OUTCOMES Upon completion of this course, a student will be able to: Identify and evaluate academic and student support services related to educational needs and societal goals. Analyze the behavior of diverse groups and individuals in the conte"
+     }
+    }
+   ],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.ccsf.edu/",
+     "final_url": "https://www.ccsf.edu/",
+     "status": 403,
+     "title": "Attention Required! | Cloudflare"
+    },
+    {
+     "why": "catalog",
+     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
+     "final_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
+     "status": 200,
+     "title": ""
+    },
+    {
+     "why": "curriculum page",
+     "url": "https://www.ccsf.edu/academics/career-education/career-education-curriculum-resources",
+     "final_url": "https://www.ccsf.edu/academics/career-education/career-education-curriculum-resources",
+     "status": 403,
+     "title": "Attention Required! | Cloudflare"
+    },
+    {
+     "why": "curriculum page",
+     "url": "https://www.ccsf.edu/about-ccsf/administration/academic-institutional-affairs/office-instruction/curriculum-committee",
+     "final_url": "https://www.ccsf.edu/about-ccsf/administration/academic-institutional-affairs/office-instruction/curriculum-committee",
+     "status": 403,
+     "title": "Attention Required! | Cloudflare"
+    },
+    {
+     "why": "system: curricunet",
+     "url": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+     "final_url": "https://ccsf.curricunet.com/DynamicReports/AllFieldsReportByEntity/15634?entityType=Course&reportId=28",
+     "status": 200,
+     "title": "Course Outline"
+    }
+   ]
+  }
+ ]
+}

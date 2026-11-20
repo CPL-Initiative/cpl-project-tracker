@@ -1,0 +1,23 @@
+Accessibility check of a CPL Library page
+
+Piece: Adding CPL Coordinator & Noncredit Lead to MAP
+Page: https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/
+Version: version:2
+Standard: WCAG 2.1 AA and Section 508
+Reviewer or tool: axe-core automated check
+Engine: scripts/a11y.js, the same check npm run a11y runs: contrast of every painted pair, target size, headings, focus, reduced motion and sideways scroll at 320, 360, 390, 430, 560, 561, 768, 1024, 1440 px in Light and at 390 and 1280 px in Dark; and axe-core 4.10.2 with the rules tagged wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa.
+Checked: 2026-11-20 12:11 UTC
+Result: Did not pass
+Findings: 8
+Run: https://github.com/CPL-Initiative/cpl-project-tracker/actions/runs/44733588776/attempts/1
+
+What the check found:
+  Light: 390px  page scrolls sideways by 1px
+  Light: 390px  3 element(s) escape the viewport: li right=391 | a right=391 | span right=391
+  Light: 360px  page scrolls sideways by 30px
+  Light: 360px  3 element(s) escape the viewport: li right=390 | a right=390 | span right=390
+  Light: 320px  page scrolls sideways by 68px
+  Light: 320px  3 element(s) escape the viewport: li right=388 | a right=388 | span right=388
+  Dark: 390px  page scrolls sideways by 1px
+  Dark: 390px  3 element(s) escape the viewport: li right=391 | a right=391 | span right=391
+Page content sha256 (the accessibility line taken out): 58815a7e1fe78b0b991e20fbcf576e238c44b43105a7be97a18c68fc5ade6314

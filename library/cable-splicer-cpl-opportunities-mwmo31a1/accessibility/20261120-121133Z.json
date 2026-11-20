@@ -1,0 +1,10 @@
+{
+  "check_id": "b46cae01-cf52-47c7-b653-08dce7fa140a",
+  "library_id": "b6af6367-0f49-499d-9851-a82cc3e50608",
+  "version_key": "version:1",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/cable-splicer-cpl-opportunities-mwmo31a1/",
+  "result": "pass",
+  "sha256": "17804807771cf5713180b99011e3afb43545fcc78c906602be04af449a9464d3",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/cable-splicer-cpl-opportunities-mwmo31a1/accessibility/20261120-121133Z.txt",
+  "_about": "The page this check saw: sha256 of library/cable-splicer-cpl-opportunities-mwmo31a1/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}

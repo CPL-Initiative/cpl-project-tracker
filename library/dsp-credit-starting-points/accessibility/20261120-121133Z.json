@@ -1,0 +1,10 @@
+{
+  "check_id": "4cbe2b99-02d2-4d6c-a410-c8b9e9271f4c",
+  "library_id": "b5c7659f-b711-4eb0-9916-4daa3e0123db",
+  "version_key": "version:3",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/dsp-credit-starting-points/",
+  "result": "pass",
+  "sha256": "701a47a4e660f45fb751fc19c9486013b80fa038345c4cafb0c7b960602e1d44",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/dsp-credit-starting-points/accessibility/20261120-121133Z.txt",
+  "_about": "The page this check saw: sha256 of library/dsp-credit-starting-points/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}

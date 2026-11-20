@@ -1,0 +1,13 @@
+Accessibility check of a CPL Library page
+
+Piece: JST How To Obtain and Upload to MAP
+Page: https://cpl-initiative.github.io/cpl-project-tracker/library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/
+Version: version:1
+Standard: WCAG 2.1 AA and Section 508
+Reviewer or tool: axe-core automated check
+Engine: scripts/a11y.js, the same check npm run a11y runs: contrast of every painted pair, target size, headings, focus, reduced motion and sideways scroll at 320, 360, 390, 430, 560, 561, 768, 1024, 1440 px in Light and at 390 and 1280 px in Dark; and axe-core 4.10.2 with the rules tagged wcag2a, wcag2aa, wcag21a, wcag21aa, wcag22aa.
+Checked: 2026-11-20 12:11 UTC
+Result: Passed
+Findings: 0
+Run: https://github.com/CPL-Initiative/cpl-project-tracker/actions/runs/44733588776/attempts/1
+Page content sha256 (the accessibility line taken out): 116ae99f0ab58fb89933901c891a8c24cd255c049e664970da4dbd714d1a5cf5

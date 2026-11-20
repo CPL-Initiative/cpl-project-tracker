@@ -703,6 +703,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/course_crosswalk.json` | scripts: `kb/_anchor_rekey_apply.py`, `kb/_curation_01.py`, `kb/_esl_package_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_anchor_rekey_apply.py`, `kb/_seed_cx_common_courses.py` |
 | `kb/course_outcomes` | none found | committed by: `course-outcomes-read.yml` |
 | `kb/course_outcomes/*/read_*.json` | scripts: `kb/_build_commons_status.py` | — |
+| `kb/course_outcomes/mtsac_recall.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outcomes/queue.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/course_outline_census` | none found | committed by: `course-outline-census.yml` |
 | `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
@@ -1644,5 +1645,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1094 file
+Coverage: 118 Supabase tables · 65 RPCs · 15 edge functions · 1095 file
 datasets · 197 external services · 635 consumers · 75 workflows · 41 tabs.

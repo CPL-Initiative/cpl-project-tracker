@@ -1,0 +1,10 @@
+{
+  "check_id": "d89b6059-a9f9-4fc4-b050-1ea798b6035e",
+  "library_id": "71931018-3c80-4879-a531-ede7cd62c837",
+  "version_key": "version:2",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/",
+  "result": "fail",
+  "sha256": "58815a7e1fe78b0b991e20fbcf576e238c44b43105a7be97a18c68fc5ade6314",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/accessibility/20261120-121133Z.txt",
+  "_about": "The page this check saw: sha256 of library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}

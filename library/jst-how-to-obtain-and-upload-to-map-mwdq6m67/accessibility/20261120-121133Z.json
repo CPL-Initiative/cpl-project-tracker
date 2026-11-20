@@ -1,0 +1,10 @@
+{
+  "check_id": "3a1a6b5b-cc45-47bf-b85f-34c050a8b27a",
+  "library_id": "7ca43e3c-3188-468e-946a-802101e4fbe7",
+  "version_key": "version:1",
+  "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/",
+  "result": "pass",
+  "sha256": "116ae99f0ab58fb89933901c891a8c24cd255c049e664970da4dbd714d1a5cf5",
+  "report": "https://cpl-initiative.github.io/cpl-project-tracker/library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/accessibility/20261120-121133Z.txt",
+  "_about": "The page this check saw: sha256 of library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/index.html with the accessibility line taken out (scripts/library_check.py content_hash). The line prints this check's pass only while the page still has this hash."
+}
