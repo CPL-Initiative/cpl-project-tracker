@@ -155,6 +155,14 @@ for key, why in rec.items():
             if read._OBJ_RECORD.report_key(row.get("report")) != key:
                 continue
             txt = os.path.join(folder, re.sub(r"[^A-Za-z0-9]+", "_", row["code"]) + ".txt")
+            if read.outcomes_only(row.get("report")):
+                # An outcomes-only host files no page (S690): its rows' section headings are what was read.
+                if row.get("status") != 200 or row.get("section_heads") is None:
+                    continue
+                read_pages[key] = read_pages.get(key, 0) + 1
+                if any(read.OBJ_TITLE.match(h) for h in row["section_heads"]):
+                    heads.append((trial, row["code"]))
+                continue
             if not os.path.exists(txt):
                 continue
             read_pages[key] = read_pages.get(key, 0) + 1

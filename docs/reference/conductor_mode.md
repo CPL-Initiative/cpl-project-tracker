@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-19
+updated: 2026-11-20
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -26,6 +26,14 @@ obsidian-folder: cpl-project-tracker/reference
 > the conductor; workers run on the worker model Sam's cost rules name. A session Sam starts by hand still works the queue itself. S680 (2026-11-18,
 > 06:12Z) was the first such night and the first of a two-night conductor comparison (`cpl_memory`
 > `sam-conductor-back-for-collection-only-2026-11-17`).
+
+> **Collection comes first (Sam, 2026-11-20, 2:24 AM PT, relayed by COBIx on #3584, comment 7037137301).** *"get all
+> the cows back in the pasture first and then we can tend to their needs."* Data waves go first; a fix goes ahead of the
+> next wave only if it blocks that wave or would file bad data (wrong rows reaching the live tables). Minor findings and
+> hunches, COBIx's included, go into one follow-up PR per night, after the waves, never a PR each. Review rounds match
+> what the change needs: a small fix that writes no shared data needs no second round. By 2:24 AM PT S689 had opened
+> 13 PRs, two of them carrying data (#3591, #3595), and held seven open against a cap of three
+> (`r-collection-first-sam-2026-11-20`).
 
 Session 638 (SkyTamarind) ran this way first. A session Sam names the conductor runs from this page; it restates no
 doctrine, so each step names the doc that holds the rule.
@@ -188,6 +196,45 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S689, and what worked
+
+The CPL Queue routine's 06:12Z firing of 2026-11-20 (SkyTern, started 06:13Z), collection only under Sam's routine
+prompt of 2026-11-17, following the COBIx brief on #3358 as updated 2026-11-20T02:38Z. The routine's form set the
+conductor to Opus 5.5 (Sam's switch of Nov 19, relayed by COBIx): the first Opus night of the comparison. No session was
+live at the start; it declared with draft #3584 at 06:22Z.
+
+- **A daily run turned `main` red on data** (`d-issuer-tags-four-high-schools-s689`). The 06:24Z daily brought four high
+  schools into `kb/credentials.json` with no issuer tag, so `tests/issuer_tags.test.js` failed every PR's `test` (11 of
+  12). #3589 registered them with empty lists, as S684 did for five issuers, and merged at 07:27Z.
+- **Two review rounds, then ship the verified part, twice** (`d-reader-pages-ship-after-two-rounds-s689`). #3587's second
+  reader found four MAJORs in round one (false refusals that never clear, the stand-in glyphs, half the dropped
+  refusals left unmarked, `stage_sources` re-paying refused pages); round two left one open and found one new. The
+  verified part merged at 08:19Z, COBIx confirmed the open items, and #3590 closed them at 09:37Z with a replay of 0
+  flips against `main`. #3586's second round said merge; its three points went to COBIx (comment 7035679771).
+- **A replay's scope was read as its result.** The second reader replayed 4,705 filed PDF windows at 31 colleges and
+  found 203 refusals the fold accepts, none wrong; the ledger carried it as a lever "at those 31 colleges". On `main`'s
+  files after #3590 the ligature text sits at four: Cañada, College of the Desert, Santa Rosa Junior and Solano. Say
+  where the hits are, not only where the replay looked.
+- **A trial passed while the full read failed** (`p-reader-cap-hides-mtsac-results-s689`). Mt. San Antonio's trial parsed
+  whole filed pages; the full read, cut at the Reader's 400,000 characters, never reached the results block past
+  671,000. It was canceled after 2 of 5 parts and `never_load` names it. A trial should parse what the full read sees.
+- **Seven pull requests open at once** against the rule's three (`sam_rulings`, 2026-11-18): at 10:02Z #3584 and six
+  drafts, five of them the cheap-piles worker's. A worker that opens PRs carries the cap in its brief.
+- **A staff-data hold avoided by choice** (`d-ccsf-outline-trial-no-staff-names-s689`). The second reader found that City
+  College of San Francisco's report 28 names curriculum staff and that 37 trial pages on `main` already file originator
+  names. The CCSF trial waits until it files parsed outcomes only; whether the committed pages stay goes to a plain
+  session with COBIx (`q-trial-pages-file-staff-names-s689`).
+- **A recall the second reader could not reproduce** (#3593): the worker's statewide-34 gate measured 320 right and 10
+  wrong; the reader's run of the plain gate filled 696, 61 of them wrong, over 977 (none at Berkeley City). The PR waits
+  for its `--calgetc-review` before it merges.
+- **Free first, then pay only where the page is found.** Six free captures chose one paid read (Santa Rosa Junior,
+  $4.22, 22 of 34 refusals found their own page); the third ten cost $8.32 for 93 rows.
+- **The display build in four steps went through the first time** (`m-display-build-live-s689`): one college (Barstow,
+  68 of 68), the gate, the whole build (18,391 written, 68 current, no errors) and the closing count (18,459 at
+  `4c57fd250cce`), then the census on `main` (5,069 left, from 5,145).
+- **One wave PR for every branch's files** (#3591, 10:13Z): the ten colleges, Santa Rosa Junior, the free captures and
+  the live reads, with no `kb/migrations/.apply` change and no dependency map.
 
 ## What went wrong in S685, and what worked
 

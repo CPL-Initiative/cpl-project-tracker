@@ -121,6 +121,9 @@ export function buildNewPage(starter, slug, ans) {
   html = html.replace(/<title>[\s\S]*?<\/title>/i, () => "<title>" + esc(ans.title) + "</title>");
   html = html.replace(/<meta name="description" content="[^"]*">/i, () => '<meta name="description" content="' + esc(ans.description || ans.title) + '">');
   html = html.split(STARTER_SLUG).join(slug);
+  // The starter's accessibility check line (scripts/library_check.py stamps one on every Library page, bound to that
+  // page's own content) is the starter's, not the new piece's: a new piece carries none until its own check runs.
+  html = html.replace(/<!-- cpl-library-check:[\s\S]*?<!-- \/cpl-library-check -->\n?/g, "");
   // The starter's own note at the top of its body names its brief and its source; a new piece has neither.
   html = html.replace(/(<body[^>]*>\s*)<!--[\s\S]*?-->\s*/i, (_m, b) => b +
     "<!-- " + esc(ans.title).replace(/--/g, "-") + ": drafted on its Library card by library-revise-draft (new-piece mode) from the starter page " +

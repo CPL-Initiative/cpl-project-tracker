@@ -31,6 +31,9 @@ REPORTS_WITHOUT_OBJECTIVES = {
                               "Content/Topics, Student Learning Outcomes, Methods of Evaluation) on 12 of 12 pages of "
                               "trial 44534888428, and no objectives. Read 44535960153's one objectives hit, ENVR 041, "
                               "was 167 lines of its Lecture Topic Outline under a line reading Course Objectives.",
+    "ccsf.curricunet.com/28": "City College of San Francisco's All Fields report prints STUDENT LEARNING OUTCOMES "
+                              "then CONTENTS, and no objectives heading, on 12 of 12 pages of trial 44739067555 "
+                              "(S690).",
 }
 
 
