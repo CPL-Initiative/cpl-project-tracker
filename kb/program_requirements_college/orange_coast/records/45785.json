@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9078,
+  "input_tokens": 9100,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9078,
-    "output_tokens": 4528,
+    "input_tokens": 9100,
+    "output_tokens": 4307,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,49 +30,67 @@
     "model": null
    }
   ],
-  "output_tokens": 4528,
+  "output_tokens": 4307,
   "output_tokens_details": {
-   "thinking_tokens": 1929
+   "thinking_tokens": 1811
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.12687,
- "ms": 36147,
- "seconds": 36.5,
+ "cost_usd": 0.12254,
+ "ms": 34364,
+ "seconds": 35.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 31,
    "listed": 33,
-   "share": 0.788,
+   "share": 0.939,
    "missing": [
     "ARTA100",
-    "ARTA100H",
-    "ENGLA101H",
-    "ENGLA140",
-    "ENGLA140H",
-    "HISTA170",
-    "HISTA170H"
+    "ARTA100H"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGLA140",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002H",
+     "listed": "ENGLA140H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1003H",
+     "listed": "ENGLA101H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HISTA170",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HISTA170H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 5,
    "codes": [
     "ARTHC1100",
     "ARTHC1100H",
     "CHEMA110",
     "CHEMA130",
-    "ENGLC1002",
-    "ENGLC1002H",
-    "ENGLC1003H",
-    "HISTC1001",
-    "HISTC1001H",
     "PHYSA112"
    ],
    "flagged": [
@@ -80,11 +98,6 @@
     "ARTHC1100H",
     "CHEMA110",
     "CHEMA130",
-    "ENGLC1002",
-    "ENGLC1002H",
-    "ENGLC1003H",
-    "HISTC1001",
-    "HISTC1001H",
     "PHYSA112"
    ],
    "pass": true
@@ -149,7 +162,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Elementary Teacher Education: Integrated Programs, AA-T (REQUIREMENTS tab)",
+   "section_heading": "Elementary Teacher Education: Integrated Programs, AA-T",
    "measure": "units",
    "total_units": {
     "min": 35,
@@ -336,18 +349,18 @@
       "catalog_addition": true
      },
      {
-      "code": "PHYS A110",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "CHEM A130",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     },
+     {
+      "code": "PHYS A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
@@ -471,7 +484,7 @@
    },
    {
     "code": "ENGL A101H",
-    "why": "named only in a Program Sequence footnote (as A101H), not in requirements"
+    "why": "named only in a plan-of-study footnote about GE Area 1B, not a major requirement"
    },
    {
     "code": "ENGL A140",
@@ -491,20 +504,20 @@
    }
   ],
   "notes": [
-   "No section heading is printed in the excerpt; heading recorded from the program title and the REQUIREMENTS tab.",
-   "ENGL C1000 matched to closed-list entry 'ENGLC1000' (no space), treated as the same course.",
-   "Alternatives carry no printed units of their own; recorded as null.",
-   "List A pairs: 'CHEM A110 & PHYS A110' printed as one option totaling 8 units, and 'CHEM A130 & PHYS A110' as one option totaling 7 units. Recorded as separate codes with null units; PHYS A110 is listed once though it appears in both pairs. The List A stated range 4-7 conflicts with the 8-unit pair.",
-   "List C begins with 'Any course not selected above', so courses from Lists A and B not already used may also satisfy List C.",
-   "Cal-GETC printed as 'up to 34' units; not a firm figure, so ge_units left null. Footnote: some major units may also meet GE requirements.",
-   "Transferable electives printed as 'Varies' to reach 60 units; electives_fill_degree set true.",
-   "Degree total 60 taken from 'Total Degree Units 60' in the requirements table. The generic statement '18-semester units in the major' is not used as the major total.",
-   "Program Sequence tab differs from requirements: it includes GEOG A100/A100H and GEOL A105/A105L/A105H/A105M, places PHYS A112 plus another List A course, and totals 60-63. Only the REQUIREMENTS tab was used for blocks.",
-   "One program learning outcome printed under 'Program Learning Outcomes'. No careers named, beyond a teaching credential for elementary classrooms.",
-   "Catalog text begins mid-sentence (truncated at the start)."
+   "Section heading is not printed in the excerpt; recorded from the program title and award named in the description.",
+   "ENGL C1000 is treated as the closed-list entry 'ENGLC1000' (missing space), so catalog_addition is false.",
+   "List A options 'CHEM A110 & PHYS A110' (8 units) and 'CHEM A130 & PHYS A110' (7 units) are paired options; CHEM A110 or CHEM A130 must be taken together with PHYS A110. PHYS A110 is listed once; individual units for these courses are not printed, only pair totals. The printed List A range 4-7 conflicts with the 8-unit CHEM A110 & PHYS A110 option.",
+   "List C also allows 'Any course not selected above' (any course from the other lists not already used).",
+   "Alternative courses' units are printed only on the first row of each 'or' group, so alternatives carry null units.",
+   "Cal-GETC is printed as 'up to 34' units; ge_units left null since no fixed figure is printed.",
+   "Transferable electives 'as needed to satisfy unit requirement' with units 'Varies'; electives_fill_degree set true.",
+   "Total Degree Units printed as 60; the Plan of Study prints Total Units 60-63.",
+   "The Plan of Study lists GEOG A100 and GEOL A105/A105L options not in the requirements; they were not recorded as major courses.",
+   "The single Program Learning Outcome is printed for the degree as a whole."
   ]
  },
- "extracted_run": 43136182950,
+ "extracted_run": "44747523200",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "ge_units",
@@ -518,6 +531,5 @@
    },
    "words": "California General Education Transfer Curriculum (Cal-GETC)  1\tup to 34 (https://catalog.cccd.edu/orange-coast/pathways/language-communication/journalism/journalism-associate-arts-degree-transfer-aat/: Journalism AA-T 32179, REQUIREMENTS tab: 'California General Education Transfer Curriculum (Cal-GETC) 1 up to 34' and footnote 1 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json))"
   }
- ],
- "read_run": "38670927724"
+ ]
 }

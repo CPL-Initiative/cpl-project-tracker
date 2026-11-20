@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7203,
+  "input_tokens": 8963,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7203,
-    "output_tokens": 1415,
+    "input_tokens": 8963,
+    "output_tokens": 2013,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,45 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1415,
+  "output_tokens": 2013,
   "output_tokens_details": {
-   "thinking_tokens": 320
+   "thinking_tokens": 675
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05711,
- "ms": 11392,
- "seconds": 11.7,
+ "cost_usd": 0.07611,
+ "ms": 16626,
+ "seconds": 17.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 16,
    "listed": 16,
-   "share": 0.0,
-   "missing": [
-    "CMSTA105",
-    "CMSTA109",
-    "CMSTA120",
-    "CMSTA150",
-    "CMSTA155",
-    "CMSTA165",
-    "CMSTA170",
-    "CMSTA180",
-    "CMSTA220",
-    "CMSTA236",
-    "CMSTA240",
-    "CMSTA260",
-    "COMMC1000",
-    "COMMC1004",
-    "GNDRA165",
-    "JOURA110"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -77,17 +61,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -109,20 +116,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Communications Studies 2.0, Associate in Arts Degree for Transfer (AA-T)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,95 +135,195 @@
    },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Provide students with communication skills that they can apply in personal, professional, and global contexts.",
     "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools."
    ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CMST A105",
-    "why": "not in the text; Requirements tab content not captured"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CMST A109",
-    "why": "not in the text; Requirements tab content not captured"
+    "name": "List A - Select three courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CMST A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CMST A120",
-    "why": "not in the text; Requirements tab content not captured"
-   },
-   {
-    "code": "CMST A150",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "CMST A155",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "CMST A165",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "CMST A170",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "CMST A180",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "CMST A220",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "CMST A236",
-    "why": "not in the text; Requirements tab content not captured"
-   },
-   {
-    "code": "CMST A240",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "CMST A260",
-    "why": "not in the text; Requirements tab content not captured"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "COMM C1004",
-    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
-   },
-   {
-    "code": "GNDR A165",
-    "why": "not in the text; Requirements tab content not captured"
-   },
-   {
-    "code": "JOUR A110",
-    "why": "not in the text; Requirements tab content not captured"
+    "name": "List B - Select one of the following (or any List A course not already used):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CMST A165",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GNDR A165",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST A236",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The captured text contains only the Overview tab; the REQUIREMENTS and PROGRAM SEQUENCE - CAL-GETC tabs are named but their content is absent, so no blocks, totals or units could be recorded. A reviewer should fetch the Requirements tab.",
-   "The overview lists courses in which skills are developed (COMM C1004, COMM C1000, CMST A150, A155, A165, A170, A180, A220, A240); these are not stated as requirements and were not placed in blocks.",
-   "ge_pattern 'Cal-GETC' is inferred from the tab label 'PROGRAM SEQUENCE - CAL-GETC'; no GE units are printed.",
-   "The '60 units of upper-division coursework' sentence refers to the bachelor's degree, not this award's total.",
-   "The overview text says 'AS-T degree' once although the award is an AA-T."
+   "The requirements table prints no units beside the List A and List B courses, only block totals (List A 9, List B 3-4); course units are left null.",
+   "List B may also be satisfied by any List A course not already used.",
+   "Cal-GETC is printed as 'up to 34' units; ge_units left null because no definite figure is printed.",
+   "Total Degree Units printed as 60; transferable electives 'as needed to satisfy unit requirement' with units 'Varies', so electives_fill_degree is true.",
+   "Overview text refers to the 'Communication Studies 2.0 AS-T degree' although the award is an AA-T; likely a catalog typo.",
+   "The Program Sequence plan of study (total 60-62) is an advisory map and was not used for requirements.",
+   "CMST A150 is 1 unit in the state file, while List B's printed range is 3-4; students choosing it may need more units."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": "44747523200",
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 34
+   },
+   "words": "California General Education Transfer Curriculum (Cal-GETC) 1\tup to 34 (https://catalog.cccd.edu/orange-coast/pathways/language-communication/journalism/journalism-associate-arts-degree-transfer-aat/: Journalism AA-T 32179, REQUIREMENTS tab: 'California General Education Transfer Curriculum (Cal-GETC) 1 up to 34' and footnote 1 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json))"
+  }
+ ]
 }

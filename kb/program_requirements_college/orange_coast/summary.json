@@ -2,20 +2,60 @@
  "college": "Orange Coast College",
  "programs": 328,
  "with_closed_list": 301,
- "found": 274,
- "extracted": 274,
+ "found": 271,
+ "extracted": 271,
  "errors": 0,
- "passed_machine_checks": 216,
+ "passed_machine_checks": 221,
  "failed": {
-  "coverage": 19,
+  "coverage": 12,
   "invented": 3,
-  "arithmetic": 46,
+  "arithmetic": 39,
   "repeated": 0,
   "outcomes": 8
  },
- "cost_usd": 19.44,
- "cost_per_program": 0.071,
+ "cost_usd_run": 2.56,
+ "cost_usd_filed": 19.77,
+ "cost_per_program": 0.073,
+ "extract_calls": 21,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "08643",
+   "title": "Music: Music Entertainer-Vocal",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/business-employee-associate-arts-degree/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.286,
+    "body": 0.0,
+    "content": 0.286,
+    "net": 6,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 6 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2491,
+     "content": 8093,
+     "tabs": 3138
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1094
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1998
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
   {
    "control_number": "08661",
    "title": "Early Childhood Administration",
@@ -36,20 +76,95 @@
     "error": null,
     "chars": {
      "body": 3464,
-     "content": 9921,
-     "tabs": 3982
+     "content": 9898,
+     "tabs": 3959
     },
     "tab_panels": [
      [
       "REQUIREMENTS",
-      1506
+      1505
      ],
      [
       "PROGRAM SEQUENCE - CAL-GETC",
-      2419
+      2397
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18197",
+   "title": "Electronics Technology: Electronics Engineering Technician",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/embedded-systems-technician-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 0.8
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.286,
+    "body": 0.0,
+    "content": 0.286,
+    "net": 2,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 2 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3531,
+     "content": 7908,
+     "tabs": 1872
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      737
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1089
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18998",
+   "title": "Professional Mariner",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/professional-mariner/professional-mariner-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.189,
+    "body": 0.0,
+    "content": 0.038,
+    "net": 10,
+    "listed": 53,
+    "why": "coarse net: the page's code tokens name 10 of 53 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2330,
+     "content": 6479,
+     "tabs": 1742
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      970
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      726
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "22424",
@@ -71,20 +186,58 @@
     "error": null,
     "chars": {
      "body": 3464,
-     "content": 9921,
-     "tabs": 3982
+     "content": 9898,
+     "tabs": 3959
     },
     "tab_panels": [
      [
       "REQUIREMENTS",
-      1506
+      1505
      ],
      [
       "PROGRAM SEQUENCE - CAL-GETC",
-      2419
+      2397
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30921",
+   "title": "Hospitality, Travel & Tourism - Meeting & Event Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/airline-travel-management-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.368,
+    "body": 0.0,
+    "content": 0.368,
+    "net": 7,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 7 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3020,
+     "content": 7664,
+     "tabs": 2204
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      962
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1196
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active"
   },
   {
    "control_number": "38181",
@@ -92,7 +245,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38587",
@@ -100,7 +254,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38598",
@@ -108,8 +263,9 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   }
  ],
- "run": "43136182950"
+ "run": "44747523200"
 }
