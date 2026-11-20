@@ -296,7 +296,19 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
       /order by c\.checked_at desc/.test(fnBody) && /if v_result is distinct from 'pass' then\s*raise exception/.test(fnBody));
     check("G it keeps its grants and its revoke from PUBLIC", /revoke execute on function public\.cpl_library_set_public\(text, boolean, text, text\[\], text\) from public;\s*grant execute on function public\.cpl_library_set_public\(text, boolean, text, text\[\], text\) to anon, authenticated, service_role;/.test(SQL));
     const CANON = fs.readFileSync("kb/supabase_cpl_library_public.sql", "utf8");
-    check("G the canonical source carries the same body, so a re-run keeps the gate", CANON.indexOf(fnBody) >= 0);
+    // The newest migration that writes the function (COBIx on #3572, 7023899407): a pass counts only at the record's
+    // current url, in set_public and in the trigger's version branch. The canonical source carries its bodies.
+    const BINDS = fs.readFileSync("kb/migrations/2026-11-19_library_check_binds_url.sql", "utf8");
+    const BINDS_RB = "kb/migrations/2026-11-19_library_check_binds_url_rollback.sql";
+    const lastBody = (/create or replace function public\.cpl_library_set_public\([\s\S]*?end \$\$;/.exec(BINDS) || [""])[0];
+    const lastTrig = (/create or replace function public\.cpl_library_unlist_on_new_page\(\)[\s\S]*?end \$\$;/.exec(BINDS) || [""])[0];
+    check("G ⭐ a pass counts only at the url the record names now, in set_public and in the trigger's version branch",
+      /and c\.url = l\.url/.test(lastBody) && /and c\.url = new\.url/.test(lastTrig) && lastBody.replace(/\n\s*and c\.url = l\.url/, "") === fnBody);
+    check("G the canonical source carries the newest bodies, so a re-run keeps the gate",
+      !!lastBody && CANON.indexOf(lastBody) >= 0 && !!lastTrig && CANON.indexOf(lastTrig) >= 0);
+    check("G the url-binding migration names its rollback, which restores the bodies without the url match",
+      BINDS.indexOf(BINDS_RB) > 0 && fs.existsSync(BINDS_RB) && fs.readFileSync(BINDS_RB, "utf8").indexOf(fnBody) >= 0 &&
+      !/c\.url = /.test(fs.readFileSync(BINDS_RB, "utf8")));
     const RBT = fs.readFileSync(RB, "utf8");
     check("G the rollback refuses while check records exist, then restores the body without the gate",
       /raise exception 'cpl_library_checks holds % check record\(s\)/.test(RBT) && /create or replace function public\.cpl_library_set_public\(/.test(RBT) &&

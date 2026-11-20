@@ -22,6 +22,10 @@ against stubs of Supabase's auth.role(), auth.jwt(), team_pass_ok() and is_allow
   * kb/migrations/2026-11-19_library_unlist_on_url_change.sql (COBIx on #3572, 7023361983 and 7023581179): any url
     change of a listed row unlists it whatever checks exist, and its guarded UPDATE corrects the S687 memory row; its
     rollback restores the second migration's body and the row's summary exactly, and leaves a person's edit alone;
+  * kb/migrations/2026-11-19_library_check_binds_url.sql (COBIx on #3572, 7023899407): a pass lists a piece only at the
+    url it checked, so a pass with a null url, or one at another url, is refused, a url move while unlisted cannot
+    relist on the old url's pass, and a listed version change unlists unless the new key passed at the current url;
+    its rollback refuses while a check carries a url, then restores the third migration's bodies and drops the column;
   * the rollback refuses while a check exists (naming the count), and once they are gone restores the ungated
     function and drops the tables and columns.
 
@@ -51,6 +55,12 @@ RELIST_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_library_relist_on_new_v
 URLMOVE = os.path.join(ROOT, "kb/migrations/2026-11-19_library_unlist_on_url_change.sql")
 URLMOVE_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_library_unlist_on_url_change_rollback.sql")
 MEMORY = os.path.join(ROOT, "kb/migrations/2026-11-19_s687_library_memory_rows.sql")
+# The fourth (COBIx on #3572, 7023899407): a check names the url it checked, and a pass counts only at the record's
+# current url, so a url move while unlisted cannot relist on the old url's pass.
+BINDS = os.path.join(ROOT, "kb/migrations/2026-11-19_library_check_binds_url.sql")
+BINDS_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_library_check_binds_url_rollback.sql")
+MEMORY_S688 = os.path.join(ROOT, "kb/migrations/2026-11-19_s688_library_memory_rows.sql")
+MEMORY_S688_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_s688_library_memory_rows_rollback.sql")
 
 # The Supabase pieces the files call, and cpl_library with the columns they read (kb/supabase_cpl_library.sql).
 STUBS = """
@@ -277,6 +287,94 @@ def main():
         listing(c, "sheet")
         c.psql("update public.cpl_library set title = 'Sheet, retitled' where slug = 'sheet';")
         check("a change that leaves the page alone keeps it listed", row("sheet").startswith("true"))
+
+        # ── A check binds to the url it checked (2026-11-19_library_check_binds_url.sql) ──
+        ok, _, err = c.psql(open(BINDS).read())
+        check("the url-binding migration loads", ok, err)
+        ok, _, err = c.psql(open(BINDS).read())
+        check("the url-binding migration is re-runnable", ok, err)
+        check("existing check rows keep a null url",
+              c.psql("select count(*) filter (where url is not null) || '|' || count(*) from public.cpl_library_checks;")[1].startswith("0|"))
+
+        def add_at(lid, key, result, at, url):
+            return c.psql("insert into public.cpl_library_checks (library_id, version_key, standard, checked_at, tool_or_reviewer, result, created_by, url) "
+                          "values ('%s', '%s', 'WCAG 2.1 AA and Section 508', '%s', 'axe-core automated check', '%s', 'library-proof@bot', %s);"
+                          % (lid, key, at, result, "'%s'" % url if url else "null"))
+
+        poster = piece("poster", None)
+        P1, P2 = "https://example.org/poster/", "https://example.org/poster-moved/"
+        check("a check url must be https", not add_at(poster, "page", "pass", "2026-11-19T16:00:00Z", "http://example.org/poster/")[0])
+        add_at(poster, "page", "pass", "2026-11-19T16:01:00Z", None)
+        check("a pass with a null url does not list the page", not listing(c, "poster")[0] and row("poster").startswith("false"))
+        add_at(poster, "page", "pass", "2026-11-19T16:02:00Z", "https://example.org/elsewhere/")
+        check("a pass at another url does not list the page", not listing(c, "poster")[0])
+        add_at(poster, "page", "pass", "2026-11-19T16:03:00Z", P1)
+        ok, out, err = listing(c, "poster")
+        check("a pass at the page's own url lists it", ok and out == "t", err)
+        listing(c, "poster", "false")
+        c.psql("update public.cpl_library set url = '%s' where slug = 'poster';" % P2)
+        ok, _, err = listing(c, "poster")
+        check("a url move while unlisted, then the team phrase presses Public: refused, the old url's pass does not count",
+              not ok and "passing accessibility check record" in err and row("poster").startswith("false"), err)
+        ok, out, err = c.psql("select public_listed from public.cpl_library_set_public('poster', true, 'A public summary');",
+                              "set test.role = 'authenticated'; set test.team_pass = 'on';")
+        check("and the same for any caller but the service role", not ok, err)
+        add_at(poster, "page", "pass", "2026-11-19T16:04:00Z", P2)
+        ok, out, err = listing(c, "poster")
+        check("a pass at the new url lists it", ok and out == "t", err)
+        add_at(poster, "version:2", "pass", "2026-11-19T16:05:00Z", P1)
+        c.psql("update public.cpl_library set version = '2' where slug = 'poster';")
+        check("a listed version change with a pass for the new key at another url unlists it and keeps publish_target public",
+              row("poster") == "false|public", row("poster"))
+        add_at(poster, "version:2", "pass", "2026-11-19T16:06:00Z", P2)
+        listing(c, "poster")
+        add_at(poster, "version:3", "pass", "2026-11-19T16:07:00Z", P2)
+        c.psql("update public.cpl_library set version = '3' where slug = 'poster';")
+        check("a listed version change with a pass for the new key at the current url stays listed", row("poster").startswith("true"), row("poster"))
+        c.psql("update public.cpl_library set url = '%s' where slug = 'poster';" % P1, "set test.role = 'service_role';")
+        check("a url change still always unlists, though the new url and key hold a pass", row("poster") == "false|public", row("poster"))
+        ok, out, _ = c.psql("select string_agg(case when a.grantee = 0 then 'PUBLIC' else r.rolname end, ',' order by 1) "
+                            "from pg_proc p, aclexplode(p.proacl) a left join pg_roles r on r.oid = a.grantee "
+                            "where p.proname = 'cpl_library_set_public' and a.privilege_type = 'EXECUTE';")
+        granted = set(out.split(","))
+        check("set_public keeps EXECUTE for anon, authenticated and service_role, never PUBLIC",
+              {"anon", "authenticated", "service_role"} <= granted and "PUBLIC" not in granted, out)
+        ok, out, _ = c.psql("select coalesce(string_agg(case when a.grantee = 0 then 'PUBLIC' else r.rolname end, ','), '') "
+                            "from pg_proc p, aclexplode(p.proacl) a left join pg_roles r on r.oid = a.grantee "
+                            "where p.proname = 'cpl_library_unlist_on_new_page' and a.privilege_type = 'EXECUTE';")
+        check("the trigger function stays closed to PUBLIC, anon and authenticated",
+              not ({"PUBLIC", "anon", "authenticated"} & set(filter(None, out.split(",")))), out)
+
+        n_url = c.psql("select count(*) from public.cpl_library_checks where url is not null;")[1]
+        ok, _, err = c.psql(open(BINDS_RB).read())
+        check("the url-binding rollback refuses while a check carries a url, and names the count",
+              not ok and ("holds %s check record(s) with a url" % n_url) in err, err)
+        check("a refused url-binding rollback drops nothing",
+              c.psql("select count(*) from information_schema.columns where table_name = 'cpl_library_checks' and column_name = 'url';")[1] == "1")
+        c.psql("delete from public.cpl_library_checks where url is not null;")
+        ok, _, err = c.psql(open(BINDS_RB).read())
+        check("with no url on any check the url-binding rollback runs", ok, err)
+        defs = c.psql("select pg_get_functiondef('public.cpl_library_set_public(text, boolean, text, text[], text)'::regprocedure) "
+                      "|| pg_get_functiondef('public.cpl_library_unlist_on_new_page()'::regprocedure);")[1]
+        check("it drops the column and restores both bodies without the url match",
+              c.psql("select count(*) from information_schema.columns where table_name = 'cpl_library_checks' and column_name = 'url';")[1] == "0"
+              and "c.url" not in defs and "c.version_key" in defs, defs[:200])
+        add_for(poster, "version:3", "pass", "2026-11-19T16:08:00Z")
+        ok, out, err = listing(c, "poster")
+        check("after it, a pass for the key alone lists again, as before the migration", ok and out == "t", err)
+        c.psql("update public.cpl_library set url = '%s' where slug = 'poster';" % P2)
+        check("and a url change still always unlists (the url-change migration's body)", row("poster") == "false|public", row("poster"))
+        ok, _, err = c.psql(open(MEMORY_S688).read() + open(MEMORY_S688).read())
+        s688 = c.psql("select count(*) || '|' || max(char_length(summary)) || '|' || max(status) from public.cpl_memory "
+                      "where slug = 'd-library-check-binds-url-s688';")[1].split("|")
+        check("the S688 memory row loads once, proposed, in 400 characters or fewer, and is re-runnable",
+              ok and s688[0] == "1" and int(s688[1]) <= 400 and s688[2] == "proposed", err or s688)
+        c.psql(open(MEMORY_S688_RB).read())
+        check("its rollback removes it", c.psql("select count(*) from public.cpl_memory where slug = 'd-library-check-binds-url-s688';")[1] == "0")
+        ok, _, err = c.psql(open(BINDS).read())
+        check("the url-binding migration applies again after its rollback", ok, err)
+        ok, _, err = c.psql(open(BINDS_RB).read())
+        check("and rolls back again, every old row keeping a null url", ok, err)
 
         ok, _, err = c.psql(open(URLMOVE_RB).read())
         check("the url-change rollback runs", ok, err)

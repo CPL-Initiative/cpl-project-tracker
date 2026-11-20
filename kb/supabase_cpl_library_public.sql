@@ -82,9 +82,10 @@ create trigger cpl_library_guard_public_trg before update on public.cpl_library
 -- listing declares. Returns the row's public fields so the caller can show them.
 -- The one gate on the Public Library (#3560; Sam, Nov 19, 2026, via COBIx: "The only gate on the Public Library is
 -- the passing accessibility check record"): listing needs the latest check of the page the record names now
--- (version_key 'version:<version>', or 'page' with no version number) to be a pass. A draft's check never lists a page.
--- Unlisting takes no check, and the service role is exempt. The check table and this body ride
--- kb/migrations/2026-11-19_library_publishing_model.sql; its rollback restores the body without the gate.
+-- (version_key 'version:<version>', or 'page' with no version number, at the record's current url) to be a pass. A
+-- check with no url, or one run at another url, never lists a page (COBIx on #3572, 7023899407). A draft's check never
+-- lists a page. Unlisting takes no check, and the service role is exempt. The url binding rides
+-- kb/migrations/2026-11-19_library_check_binds_url.sql; its rollback restores the body that matches the key alone.
 create or replace function public.cpl_library_set_public(
   p_slug text, p_listed boolean, p_summary text default null,
   p_topics text[] default null, p_by text default null)
@@ -101,6 +102,7 @@ begin
       from public.cpl_library l
       join public.cpl_library_checks c on c.library_id = l.id
        and c.version_key = case when nullif(l.version, '') is not null then 'version:' || l.version else 'page' end
+       and c.url = l.url
      where l.slug = p_slug and l.retired_at is null
      order by c.checked_at desc, c.created_at desc
      limit 1;
@@ -130,12 +132,12 @@ revoke execute on function public.cpl_library_set_public(text, boolean, text, te
 grant execute on function public.cpl_library_set_public(text, boolean, text, text[], text) to anon, authenticated, service_role;
 
 -- A listed piece whose page changes leaves the Public Library until the new page is checked (#3560; COBIx on #3572,
--- comments 7022946691, 7023361983 and 7023581179; decided by the S687 conductor). cpl_library_set_public() gates the
--- listing itself; this trigger covers a listed page that changes afterward. Any writer may cause it, the service role
--- included: unlisting is the safe direction. The wish to list stays (publish_target 'public'), so the check run
--- checks the new page and lists it again.
---   A url change always unlists: no check is keyed on a url, so no earlier pass can speak for a page at a new address.
---   A version change unlists unless the latest check for the new version key is a pass.
+-- comments 7022946691, 7023361983, 7023581179 and 7023899407; decided by the S687 and S688 conductors).
+-- cpl_library_set_public() gates the listing itself; this trigger covers a listed page that changes afterward. Any
+-- writer may cause it, the service role included: unlisting is the safe direction. The wish to list stays
+-- (publish_target 'public'), so the check run checks the new page and lists it again.
+--   A url change always unlists: the new address has had no check at the moment it moves.
+--   A version change unlists unless the latest check for the new version key, at the row's current url, is a pass.
 -- A draft never unlists anything: only a published new version or a new url does.
 -- Fires after cpl_library_guard_public_trg and cpl_library_publish_target_trg (name order), so that trigger's reset
 -- of publish_target on an unlisting does not see this one.
@@ -160,6 +162,7 @@ begin
       from public.cpl_library_checks c
      where c.library_id = new.id
        and c.version_key = case when nullif(new.version, '') is not null then 'version:' || new.version else 'page' end
+       and c.url = new.url
      order by c.checked_at desc, c.created_at desc
      limit 1;
     if v_result is distinct from 'pass' then
