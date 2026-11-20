@@ -1480,6 +1480,12 @@ jobs:
       # Pure-stdlib python.
       - name: Course outcomes read (outcomes as printed, slices, pages only)
         run: python3 tests/course_outcomes_read_test.py
+      # Feather River's, Palomar's and Mt. San Antonio's readers (S689): a table's
+      # column header is never an SLO, Palomar's Specific Course Objectives are
+      # objectives, a report that prints no objectives files none, and Mt. San
+      # Antonio's course results block is its SLOs. Pure-stdlib python.
+      - name: Course outcomes read (column headers, objectives headings, Mt. San Antonio)
+        run: python3 tests/course_outcomes_header_fix_test.py
       # Mt. San Antonio's SLO pages (S683, #3533 ask 5): no full read before the
       # self-recall count on hand-read filed pages passes. Pure-stdlib python.
       - name: Mt. San Antonio SLO reader (self-recall gate)
