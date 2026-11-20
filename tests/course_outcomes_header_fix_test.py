@@ -24,6 +24,7 @@ import json
 import os
 import re
 import sys
+import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = importlib.util.spec_from_file_location("course_outcomes_read", os.path.join(ROOT, "kb", "_course_outcomes_read.py"))
@@ -222,6 +223,59 @@ check("6 Mt. San Antonio: an empty course results block files no SLOs, never the
       got["outcomes"] == [] and got["shape"] == "none" and got["objectives"] == [], got["outcomes"][:2])
 check("6 a page with no course results block goes to the readers it went to before",
       read.mtsac_outcomes_from_html("<html><body><h3>Student Learning Outcomes</h3></body></html>") is None)
+
+
+# 7. Full read 44695707506 (S689): the Reader cut each Mt. San Antonio page's HTML at 400,000 characters, before its
+# course results block at about 671,000, so the text reader filed the course listing as every page's SLOs.
+class _CutPage:
+    def __init__(self, whole):
+        self.whole = whole
+
+    def evaluate(self, js, arg=None):
+        return LISTING
+
+    def content(self):
+        return self.whole
+
+
+class _CutReader:
+    def __init__(self, whole):
+        self.page = _CutPage(whole)
+
+    def load(self, url):
+        return {"url": url, "final_url": url, "status": 200, "title": "Student Learning Outcomes",
+                "body": LISTING, "html": self.page.whole[:read.READER_HTML_CAP], "links": []}
+
+
+SLO_URL = read.MTSAC_SLO % "BUSR%2040"
+whole = BUSR_40.replace("<html><body>", "<html><body>" + "<!-- padding -->" * 50000, 1)
+row = read.read_one(_CutReader(whole), {"code": "BUSR 40", "report": SLO_URL})
+check("7 a page whose HTML the Reader cut at 400,000 characters is parsed from the browser's whole page",
+      len(whole) > read.READER_HTML_CAP and len(row["outcomes"]) == 2 and row["parsed_from"] == "html", row["outcomes"][:1])
+got = read.parse_page("<html><body>" + "x" * 100 + "</body></html>", LISTING, "other", SLO_URL)
+check("7 GUARD: a Mt. San Antonio SLO page with no course results block in its HTML files no SLOs, never the listing",
+      got["outcomes"] == [] and got["shape"] == "none", got["outcomes"][:2])
+check("7 another host's page with no block still goes to the text reader",
+      read.parse_page("", ADMJ_102, "curriqunet", FRC % 1325)["outcomes"][0] == "Explain the process of adjudication.")
+
+spec_l = importlib.util.spec_from_file_location("course_outcomes_load", os.path.join(ROOT, "kb", "_course_outcomes_load.py"))
+load = importlib.util.module_from_spec(spec_l)
+spec_l.loader.exec_module(load)
+committed = json.load(open(os.path.join(ROOT, "kb", "course_outcomes", "queue.json"))).get("never_load") or {}
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "mtsac"))
+    for run in ("44695707506", "44695707507"):
+        json.dump({"run": run, "slugs": "mt_san_antonio", "part": 1, "of": 5, "complete": True, "rows": []},
+                  open(os.path.join(tmp, "mtsac", "read_%s_p1of5.json" % run), "w"))
+    json.dump({"colleges": {}, "never_load": {"44695707506": "x", "44695707507": "x"}},
+              open(os.path.join(tmp, "queue.json"), "w"))
+    load.OUT_DIR = tmp
+    none_left = load.read_files("mtsac")
+    json.dump({"colleges": {}, "never_load": {"44695707506": "x"}}, open(os.path.join(tmp, "queue.json"), "w"))
+    newer = load.read_files("mtsac")
+check("7 GUARD: the load never takes a read queue.json's never_load names, and a newer read still loads",
+      none_left == [] and [os.path.basename(x) for x in newer] == ["read_44695707507_p1of5.json"]
+      and {"44695707506", "44535960153"} <= set(committed), (none_left, newer, sorted(committed)))
 
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
