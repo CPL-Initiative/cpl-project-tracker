@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Criminology-Law Enforcement",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1161",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6767,
+  "input_tokens": 6477,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6767,
-    "output_tokens": 1374,
+    "input_tokens": 6477,
+    "output_tokens": 1193,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1374,
+  "output_tokens": 1193,
   "output_tokens_details": {
-   "thinking_tokens": 500
+   "thinking_tokens": 358
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05455,
- "ms": 12125,
- "seconds": 12.5,
+ "cost_usd": 0.04977,
+ "ms": 10834,
+ "seconds": 11.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "CRIM1",
-    "CRIM12",
-    "CRIM13",
-    "CRIM15",
-    "CRIM3",
-    "CRIM6",
-    "CRIM7",
-    "CRIM8"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -70,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 7,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Criminology-Law Enforcement, Associate in Science - Major #M.888A.AS",
+   "section_heading": "Criminology-Law Enforcement, Certificate of Achievement - Major #M.888A.CA",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,52 +121,99 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Recognize the functions of the Criminal Justice System.",
+    "Be able to calculate how to work within a Constitutional framework."
+   ],
+   "careers": [
+    "criminology",
+    "law enforcement",
+    "the courts",
+    "corrections",
+    "probation and parole",
+    "juvenile procedures",
+    "private and industrial security"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CRIM 1",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CRIM 3",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CRIM 6",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CRIM 7",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CRIM 8",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CRIM 12",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CRIM 13",
-    "why": "certificate section not in the text; named only in the A.S. section"
-   },
-   {
-    "code": "CRIM 15",
-    "why": "certificate section not in the text; named only in the A.S. section"
+    "name": "Select 18 units from the following",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CRIM 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text contains only the Criminology-Law Enforcement Associate in Science section (Major #M.888A.AS, Total 30.0 units). No section for the Certificate of Achievement (16 to fewer than 30 semester units) is printed, so no blocks, total, outcomes or careers were recorded for the certificate.",
-   "The heading in section_heading is the only heading in the text and belongs to the A.S. degree, not to the requested certificate.",
-   "The A.S. section is 30 units: 'Select 27-30 units' from CRIM 1, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 15 and 19, then 'Select 0-3 units' from CRIM 20, 23, 24 and 28 to reach 30 units. Its 30-unit total does not fit the certificate's 'fewer than 30 units' range.",
-   "The A.S. section prints two learning outcomes: 'Recognize the functions of the Criminal Justice System as they relate to law enforcement.' and 'Be able to work within a Constitutional framework in law enforcement.' These were not recorded because it is unconfirmed that the certificate shares them.",
-   "The source URL is for the 2025-2026 catalog, while the requested catalog year is 2026-2027. A reviewer should locate the certificate's own page."
+   "Source URL names the 2025-2026 MCC catalog while the program record is for catalog year 2026-2027; reviewer should confirm the section applies to 2026-2027.",
+   "Careers are read from the description's list of criminal justice system areas for employment ('criminology, law enforcement, the courts, corrections, probation and parole, juvenile procedures and private and industrial security'); these are career fields rather than job titles, so reviewer may wish to confirm.",
+   "The description mentions 'recommended electives' but the section lists no recommended courses.",
+   "Text contains a character-encoding artifact around 'bad character'."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

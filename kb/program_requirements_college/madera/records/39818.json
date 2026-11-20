@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6742,
-    "output_tokens": 1606,
+    "output_tokens": 1658,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 1606,
+  "output_tokens": 1658,
   "output_tokens_details": {
-   "thinking_tokens": 511
+   "thinking_tokens": 528
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05909,
- "ms": 22131,
- "seconds": 22.6,
+ "cost_usd": 0.06013,
+ "ms": 14674,
+ "seconds": 14.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 10,
-   "share": 0.7,
+   "share": 0.8,
    "missing": [
     "BA23",
-    "MATH5A",
     "STATC1000"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -102,10 +104,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -128,8 +127,8 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -226,25 +225,26 @@
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "MATH 5A",
+    "why": "not in the text; catalog lists MATH C2210 (Calculus I: Early Transcendentals) instead"
+   },
+   {
     "code": "BA 23",
     "why": "not in the text"
    },
    {
     "code": "STAT C1000",
     "why": "not in the text"
-   },
-   {
-    "code": "MATH 5A",
-    "why": "not in the text; catalog lists MATH C2210 Calculus I: Early Transcendentals instead"
    }
   ],
   "notes": [
-   "The 60-unit and Cal-GETC minimum 34-unit statements are generic ADT boilerplate ('Completion of 60 semester units... Cal-GETC for a minimum of 34 units'), not a printed total for this award; degree_total and ge_units left null. Reviewer may wish to check.",
-   "Total : 23.0 recorded as the major total.",
-   "MATH C2210 is not in the closed list (closed list has MATH 5A Calculus I); recorded as catalog addition.",
-   "The description names fields of study ('mathematics education, engineering, information technology, statistical analysis, physical science, and advanced mathematics') rather than careers; careers left empty.",
-   "Source URL references the 2025-2026 catalog while the requested catalog year is 2026-2027."
+   "Total : 23.0 is the major total (Required Core 19 + List A 4); recorded as total_units.",
+   "The 60 semester units and the Cal-GETC 'minimum of 34 units' appear in the generic ADT requirements statement; no degree total is printed for this award, so degree_total is null. ge_units 34 is taken from that generic statement; reviewer may prefer null.",
+   "MATH C2210 is not on the closed list (closed list has MATH 5A Calculus I); recorded as catalog addition.",
+   "Description names fields of study (mathematics education, engineering, information technology, statistical analysis, physical science, advanced mathematics) as areas students may 'pursue studies in', not careers; careers left empty.",
+   "Source URL references the 2025-2026 catalog while the requested catalog year is 2026-2027; verify the section applies."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

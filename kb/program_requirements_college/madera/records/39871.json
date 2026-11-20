@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6854,
-    "output_tokens": 1811,
+    "output_tokens": 1830,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,51 @@
     "model": null
    }
   ],
-  "output_tokens": 1811,
+  "output_tokens": 1830,
   "output_tokens_details": {
-   "thinking_tokens": 511
+   "thinking_tokens": 565
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06364,
- "ms": 14108,
- "seconds": 14.5,
+ "cost_usd": 0.06402,
+ "ms": 14709,
+ "seconds": 14.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 16,
    "listed": 16,
-   "share": 0.812,
-   "missing": [
-    "OT41",
-    "OT42",
-    "OT44"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BT11",
+     "listed": "OT41",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BT147",
+     "listed": "OT42",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BT6",
+     "listed": "OT44",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "BT11",
-    "BT147",
-    "BT6"
-   ],
-   "flagged": [
-    "BT11",
-    "BT147",
-    "BT6"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -294,13 +299,13 @@
    }
   ],
   "notes": [
-   "Source URL refers to the 2025-2026 MCC catalog while the requested catalog year is 2026-2027; verify the section matches the intended year.",
-   "Closed list writes BT106, BT107, BT108 and BT34 without a space; matched to catalog codes BT 106, BT 107, BT 108 and BT 34.",
-   "BT 12 is printed at 2.0 units in the catalog but stored as 1.5 units in the state file.",
-   "BT 11, BT 147 and BT 6 appear in the required courses but are not on the closed list (catalog additions).",
-   "OT 41, OT 42 and OT 44 from the closed list do not appear in this catalog section; the program may have been revised to use BT courses instead.",
-   "Required Courses block sums to the printed 27.0 units; with the English choice (2-4) the total matches the printed 29.0-31.0."
+   "Source URL is the 2025-2026 MCC catalog while the requested catalog year is 2026-2027; verify the section matches the intended year.",
+   "Closed list writes BT106, BT107, BT108 and BT34 without a space; catalog prints BT 106, BT 107, BT 108, BT 34. Treated as the same courses (catalog_addition false).",
+   "Catalog prints BT 12 at 2.0 units while the closed list stores 1.5 units; recorded the catalog's 2.0.",
+   "BT 11, BT 147 and BT 6 appear in the catalog's Required Courses but are not in the closed list; marked as catalog additions.",
+   "The description paragraph lists job tasks but names no specific career or job title, so careers is empty."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }
