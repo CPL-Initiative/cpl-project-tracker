@@ -109,6 +109,25 @@ the pickup by hand when the page's button failed.
 - Never add a read policy to the `commons-handover` bucket; a course outline can name faculty.
 - The migrate runner's receipt commit starts no CI: push a commit of your own after the last receipt, then gate on `test`.
 
+## Arrived after the documents were written (S693, about 21:05Z to 21:40Z)
+
+- **Three levels, and Propose a new M-ID** (COBIx's note, relayed by Sam): shipped in #3614. Strong match was right
+  for 2,266 of 2,438 known courses (93%), Possible match for 805 of 1,872 (43%), No strong match for 297 of 1,687
+  (18%). On the pile: 82, 287 and 2,139. The level names are the session's; Sam may rename them.
+- **Sort the pile by exhibits unlocked** (COBIx, relayed by Sam: *"so Group Communication, with 67 links, comes
+  first"*): not built. It needs the count of course-based exhibit links per course; no committed file holds it by
+  control number. It is NEXT (0) in the commons lane's Closest M-ID paragraph.
+- **Sam's question on exhibit titles** (*"a set of exhibit titles that got renamed to older names with I II and
+  course numbers in them"*): the session found no revert in `kb_curation`. The 13 saves at 8:27 AM PT were the CER
+  procedures run (44772850637) naming 13 new raw titles, insert only; none is among the 16 held; since November 10 no
+  saved title carries a Roman numeral or a course number except four of Sam's own. The session asked him for one
+  example title. Open until he names one.
+- **CI caught one thing on #3613:** the College Data Collection page writes every date in words, and the answered
+  list printed an ISO date (`tests/cdc_plain_words.test.js`). Run the tests that read a page after the last page
+  change, not before it.
+- **This checkpoint ended near the emergency line** (about 60,000 tokens left): the commons lane was not compacted
+  (26 KB against 20 KB; do it first), and the Open Asks sheet was not rebuilt.
+
 ## Ledger and let go
 
 | PR or branch | State | Next |
@@ -116,13 +135,13 @@ the pickup by hand when the page's button failed.
 | #3610 | merged (`e0b90801`) | none |
 | #3612 | merged (`ad5ce4e6`) | none |
 | #3613 | open, draft | apply its write, gate on `test`, merge |
-| #3614 (Closest M-ID) | open, draft | gate on `test`, merge |
+| #3614 (Closest M-ID, three levels) | merged (`18ef351a`) | none |
 | this checkpoint (`claude/s693-checkpoint`) | open, draft | merge at sign-off if `test` is green |
 
 The session updates this table at sign-off. It drops its PR watches at sign-off; no scheduled check-in and no
 artifact watch is held. The COBIx watcher ends with the session (restarted once after the 30-minute background limit;
 no COBIx comment arrived).
 
-Spend: not available; 2026-11-20T19:50Z to 2026-11-20T21:05Z.
+Spend: not available; 2026-11-20T19:50Z to 2026-11-20T21:45Z.
 
 Opening line: *Greetings, you are SkyPetrel (Session 694), see SkyKittiwake's handoff — `docs/session_694_handoff.md` — let's keep rolling with our queue.*
