@@ -564,6 +564,22 @@ check(getattr(C, "slug_awards", lambda u: set())(GRO_LE["url"]) == {"as", "coa"}
       and C.slug_awards(GRO + "arabic-aa-certificate-achievement/") == {"aa", "coa"}
       and C.slug_awards(GRO + "pastry-cook-cert-achievement/") == set() and C.slug_awards(GRO + "x-certificate-achievement/") == {"coa"},
       "a degree-and-certificate address names both awards; a certificate's address names the certificate")
+# S689 (lane NEXT (4)): the endings the committed addresses print that SLUG_AWARD missed, measured on the passing
+# records' addresses (897 newly named the program's own award, 1 another).
+check(C.slug_awards("https://x.edu/p/studio-arts-aa-t-degree/") == {"adt"}
+      and C.slug_awards("https://x.edu/p/psychology-for-transfer") == {"adt"}
+      and C.slug_awards("https://x.edu/p/history-adt") == {"adt"}
+      and C.slug_awards("https://x.edu/p/welding-technology-ca") == {"coa"}
+      and C.slug_awards("https://x.edu/p/welding-as-ca/") == {"as", "coa"}
+      and C.slug_awards("https://x.edu/p/accounting-certificate") == {"coa", "noncredit"}
+      and C.slug_awards("https://x.edu/p/accounting-cert") == {"coa", "noncredit"},
+      "-aa-t-degree, -for-transfer and -adt name a transfer degree, -ca a Certificate of Achievement, -as-ca both, "
+      "and -certificate or -cert a certificate of either kind")
+check(C.slug_awards("https://x.edu/p/welding-technology-ca-fall-2025") == set()
+      and C.slug_awards("https://x.edu/p/accounting-as-fall-2026") == set()
+      and C.slug_awards("https://x.edu/p/business-degree") == set()
+      and C.slug_awards("https://x.edu/p/x-certificate-of-specialization") == {"other"},
+      "a term after the ending, and a bare -degree, still name nothing (Antelope Valley pairs; 137 -degree addresses)")
 gro = C.assign([le_as, le_coa, co_as, co_coa], [GRO_LE, GRO_CO])
 check(all(gro[cn]["best"] is not None for cn in ("05029", "21410", "05030", "21407"))
       and gro["05029"]["best"]["url"] == GRO_LE["url"] and gro["05030"]["best"]["url"] == GRO_CO["url"],

@@ -452,7 +452,16 @@ SLUG_AWARD = [
     ("as", re.compile(r"associate-(?:in-|of-)?science-degree/?$")),
     ("aa", re.compile(r"associate-(?:in-|of-)?arts-degree/?$")),
     ("other", re.compile(r"certif\w*-(?:of-)?specialization/?$")),
+    # Endings the committed addresses print that the rows above miss (S689; lane NEXT (4), measured on the passing
+    # records' addresses: -for-transfer 16, -as-t-degree and -aa-t-degree 27, -adt 30, -ca 204, each naming the
+    # program's own award on every one).
+    ("adt", re.compile(r"-for-transfer/?$|-a[as]-?t-degree/?$|-adt/?$")),
+    ("coa", re.compile(r"-ca/?$")),
 ]
+# "-certificate" and "-cert" name a certificate and not which: Certificate of Achievement on 549 passing records'
+# addresses, a noncredit certificate on 7 (S689). Such an address names both kinds, so it rules out a degree and
+# leaves the certificate's kind to the page's other words.
+SLUG_CERTIFICATE = re.compile(r"-cert(?:ificates?)?/?$")
 
 
 # Grossmont addresses a degree and its certificate on one page as
@@ -462,23 +471,32 @@ SLUG_AWARD = [
 # (page read 39750446541, S446). SLUG_AWARD read the certificate alone, so the A.S. scored no
 # award on its own page and lost it to the certificate: 6 of Grossmont's 15 page-claimed. Such
 # an address names both awards.
-SLUG_DEGREE_CERT = re.compile(r"-(a[as])-cert\w*-(?:of-)?achievement/?$")
+SLUG_DEGREE_CERT = re.compile(r"-(a[as])-(?:cert\w*-(?:of-)?achievement|ca)/?$")
 
 
 def slug_awards(url: str) -> set[str]:
     """Every award an address names: both for a degree-and-certificate address
     (SLUG_DEGREE_CERT), else slug_award()'s one, else none."""
-    path = urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
+    path = _slug_path(url)
     m = SLUG_DEGREE_CERT.search(path)
     if m:
         return {m.group(1), "coa"}
     one = slug_award(url)
-    return {one} if one else set()
+    if one:
+        return {one}
+    return {"coa", "noncredit"} if SLUG_CERTIFICATE.search(path) else set()
+
+
+def _slug_path(url: str) -> str:
+    """An address's path, lowercased. A term or year after the award stays (Antelope Valley's eLumen addresses,
+    "-as-fall-2026" over a certificate's list and "-cert-fall-2026" over a degree's, would read the wrong award on
+    38 passing records; S689), so keep-the-better's TERM_TAIL alone sets it aside."""
+    return urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
 
 
 def slug_award(url: str) -> str | None:
     """The award an address names in its last segment, or None."""
-    path = urllib.parse.unquote(urllib.parse.urlparse(url or "").path).lower()
+    path = _slug_path(url)
     for kind, pat in SLUG_AWARD:
         if pat.search(path):
             return kind

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T09:51:55Z",
+ "written_at": "2026-11-20T10:37:32Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -174,8 +174,8 @@
   "cost_usd": 1335.24,
   "passed_at_read": 15926,
   "cost_receipts": 118,
-  "spent_usd": 1196.76,
-  "spent_runs": 152,
+  "spent_usd": 1209.3,
+  "spent_runs": 163,
   "spent_since": "2026-11-17",
   "slo_waiting": 13,
   "scouted": 11,
@@ -196,11 +196,11 @@
  },
  "census_live": {
   "basis": "live",
-  "at": "2026-11-19 23:51Z",
+  "at": "2026-11-20 10:36Z",
   "colleges": 118,
   "programs": 20282,
-  "passing": 15137,
-  "gap": 5145
+  "passing": 15213,
+  "gap": 5069
  },
  "unmatched": [],
  "colleges": [
@@ -237,7 +237,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/allan_hancock.json",
    "outcomes_file": "kb/status/commons_data_programs/allan_hancock.outcomes.json",
@@ -348,7 +348,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/american_river.json",
    "outcomes_file": "kb/status/commons_data_programs/american_river.outcomes.json",
@@ -458,7 +458,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/antelope_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/antelope_valley.outcomes.json",
@@ -565,7 +565,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/bakersfield.json",
    "outcomes_file": "kb/status/commons_data_programs/bakersfield.outcomes.json",
@@ -657,16 +657,14 @@
     "unknown_without_live": 1
    },
    "census_causes": {
-    "page_not_found": 4,
-    "places_none": 13
+    "page_not_found": 7
    },
    "census_levers": {
-    "reader_page_assignment": 13,
-    "reader_page_search": 4
+    "reader_page_search": 7
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/barstow_community.json",
    "outcomes_file": "kb/status/commons_data_programs/barstow_community.outcomes.json",
@@ -730,8 +728,8 @@
     }
    },
    "census_programs": 66,
-   "census_gap": 17,
-   "census_passing": 49
+   "census_gap": 7,
+   "census_passing": 59
   },
   {
    "id": 21,
@@ -765,7 +763,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/berkeley_city.json",
    "outcomes_file": "kb/status/commons_data_programs/berkeley_city.outcomes.json",
@@ -869,7 +867,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/butte.json",
    "outcomes_file": "kb/status/commons_data_programs/butte.outcomes.json",
@@ -966,7 +964,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/cabrillo.json",
    "outcomes_file": "kb/status/commons_data_programs/cabrillo.outcomes.json",
@@ -1068,7 +1066,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/calbright_credit.json",
    "outcomes_file": null,
@@ -1164,7 +1162,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/ca_ada.json",
    "outcomes_file": "kb/status/commons_data_programs/ca_ada.outcomes.json",
@@ -1268,7 +1266,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/cerritos.json",
    "outcomes_file": "kb/status/commons_data_programs/cerritos.outcomes.json",
@@ -1377,7 +1375,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/cerro_coso_community.json",
    "outcomes_file": "kb/status/commons_data_programs/cerro_coso_community.outcomes.json",
@@ -1476,7 +1474,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/chabot.json",
    "outcomes_file": "kb/status/commons_data_programs/chabot.outcomes.json",
@@ -1588,7 +1586,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/chaffey.json",
    "outcomes_file": "kb/status/commons_data_programs/chaffey.outcomes.json",
@@ -1697,7 +1695,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/citrus.json",
    "outcomes_file": "kb/status/commons_data_programs/citrus.outcomes.json",
@@ -1798,7 +1796,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/city_of_san_francisco.json",
    "outcomes_file": "kb/status/commons_data_programs/city_of_san_francisco.outcomes.json",
@@ -1909,7 +1907,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/clovis_community.json",
    "outcomes_file": "kb/status/commons_data_programs/clovis_community.outcomes.json",
@@ -2006,7 +2004,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/coalinga.json",
    "outcomes_file": "kb/status/commons_data_programs/coalinga.outcomes.json",
@@ -2119,7 +2117,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/coastline_community.json",
    "outcomes_file": "kb/status/commons_data_programs/coastline_community.outcomes.json",
@@ -2231,7 +2229,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/college_of_alameda.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_alameda.outcomes.json",
@@ -2330,7 +2328,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/college_of_marin.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_marin.outcomes.json",
@@ -2420,19 +2418,17 @@
    },
    "census_causes": {
     "no_closed_list": 34,
-    "page_not_found": 4,
-    "places_none": 2,
+    "page_not_found": 6,
     "units_unequal": 3
    },
    "census_levers": {
     "program_course_file_refresh": 34,
-    "reader_page_search": 4,
-    "reconcile_steps": 3,
-    "reader_page_assignment": 2
+    "reader_page_search": 6,
+    "reconcile_steps": 3
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/college_of_san_mateo.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_san_mateo.outcomes.json",
@@ -2536,7 +2532,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/college_of_the_canyons.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_canyons.outcomes.json",
@@ -2650,7 +2646,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/college_of_the_desert.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_desert.outcomes.json",
@@ -2761,7 +2757,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/college_of_the_redwoods.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_redwoods.outcomes.json",
@@ -2854,18 +2850,16 @@
     "unknown_without_live": 22
    },
    "census_causes": {
-    "page_not_found": 12,
-    "places_none": 7,
+    "page_not_found": 11,
     "units_unequal": 22
    },
    "census_levers": {
     "reconcile_steps": 22,
-    "reader_page_search": 12,
-    "reader_page_assignment": 7
+    "reader_page_search": 11
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/college_of_the_sequoias.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_sequoias.outcomes.json",
@@ -2929,8 +2923,8 @@
     }
    },
    "census_programs": 137,
-   "census_gap": 41,
-   "census_passing": 96
+   "census_gap": 33,
+   "census_passing": 104
   },
   {
    "id": 39,
@@ -2961,7 +2955,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/college_of_the_siskiyous.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_siskiyous.outcomes.json",
@@ -3062,7 +3056,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/columbia.json",
    "outcomes_file": "kb/status/commons_data_programs/columbia.outcomes.json",
@@ -3165,7 +3159,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/compton.json",
    "outcomes_file": "kb/status/commons_data_programs/compton.outcomes.json",
@@ -3254,20 +3248,18 @@
    },
    "census_causes": {
     "no_closed_list": 23,
-    "page_not_found": 1,
-    "places_none": 8,
+    "page_not_found": 2,
     "units_incomplete": 2,
-    "units_unequal": 18
+    "units_unequal": 20
    },
    "census_levers": {
     "program_course_file_refresh": 23,
-    "reconcile_steps": 20,
-    "reader_page_assignment": 8,
-    "reader_page_search": 1
+    "reconcile_steps": 22,
+    "reader_page_search": 2
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/contra_costa.json",
    "outcomes_file": "kb/status/commons_data_programs/contra_costa.outcomes.json",
@@ -3344,8 +3336,8 @@
     }
    },
    "census_programs": 109,
-   "census_gap": 52,
-   "census_passing": 57
+   "census_gap": 47,
+   "census_passing": 62
   },
   {
    "id": 12,
@@ -3375,7 +3367,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/copper_mountain.json",
    "outcomes_file": "kb/status/commons_data_programs/copper_mountain.outcomes.json",
@@ -3498,7 +3490,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/cosumnes_river.json",
    "outcomes_file": "kb/status/commons_data_programs/cosumnes_river.outcomes.json",
@@ -3604,7 +3596,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/crafton_hills.json",
    "outcomes_file": "kb/status/commons_data_programs/crafton_hills.outcomes.json",
@@ -3712,7 +3704,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/cuesta.json",
    "outcomes_file": "kb/status/commons_data_programs/cuesta.outcomes.json",
@@ -3823,7 +3815,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/cuyamaca.json",
    "outcomes_file": "kb/status/commons_data_programs/cuyamaca.outcomes.json",
@@ -3922,7 +3914,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/cypress.json",
    "outcomes_file": "kb/status/commons_data_programs/cypress.outcomes.json",
@@ -4028,7 +4020,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/de_anza.json",
    "outcomes_file": "kb/status/commons_data_programs/de_anza.outcomes.json",
@@ -4138,7 +4130,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/diablo_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/diablo_valley.outcomes.json",
@@ -4260,7 +4252,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/east_los_angeles.json",
    "outcomes_file": "kb/status/commons_data_programs/east_los_angeles.outcomes.json",
@@ -4376,7 +4368,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/el_camino.json",
    "outcomes_file": null,
@@ -4475,7 +4467,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/evergreen_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/evergreen_valley.outcomes.json",
@@ -4574,7 +4566,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/feather_river.json",
    "outcomes_file": null,
@@ -4675,7 +4667,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/folsom_lake.json",
    "outcomes_file": "kb/status/commons_data_programs/folsom_lake.outcomes.json",
@@ -4774,7 +4766,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/foothill.json",
    "outcomes_file": "kb/status/commons_data_programs/foothill.outcomes.json",
@@ -4863,20 +4855,18 @@
    },
    "census_causes": {
     "no_closed_list": 15,
-    "page_not_found": 14,
-    "places_none": 26,
+    "page_not_found": 26,
     "units_unequal": 6
    },
    "census_levers": {
-    "reader_page_assignment": 26,
+    "reader_page_search": 26,
     "program_course_file_refresh": 15,
-    "reader_page_search": 14,
     "reconcile_steps": 5,
     "scorer_noncredit_hours": 1
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/fresno_city.json",
    "outcomes_file": "kb/status/commons_data_programs/fresno_city.outcomes.json",
@@ -4950,8 +4940,8 @@
     }
    },
    "census_programs": 266,
-   "census_gap": 61,
-   "census_passing": 205
+   "census_gap": 47,
+   "census_passing": 219
   },
   {
    "id": 56,
@@ -4986,7 +4976,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/fullerton.json",
    "outcomes_file": "kb/status/commons_data_programs/fullerton.outcomes.json",
@@ -5090,7 +5080,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/gavilan.json",
    "outcomes_file": "kb/status/commons_data_programs/gavilan.outcomes.json",
@@ -5194,7 +5184,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/glendale_community.json",
    "outcomes_file": "kb/status/commons_data_programs/glendale_community.outcomes.json",
@@ -5307,7 +5297,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/golden_west.json",
    "outcomes_file": "kb/status/commons_data_programs/golden_west.outcomes.json",
@@ -5421,7 +5411,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/grossmont.json",
    "outcomes_file": "kb/status/commons_data_programs/grossmont.outcomes.json",
@@ -5534,7 +5524,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/hartnell.json",
    "outcomes_file": "kb/status/commons_data_programs/hartnell.outcomes.json",
@@ -5635,7 +5625,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/imperial_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/imperial_valley.outcomes.json",
@@ -5735,7 +5725,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/irvine_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/irvine_valley.outcomes.json",
@@ -5834,7 +5824,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/lake_tahoe_community.json",
    "outcomes_file": "kb/status/commons_data_programs/lake_tahoe_community.outcomes.json",
@@ -5939,7 +5929,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/laney.json",
    "outcomes_file": "kb/status/commons_data_programs/laney.outcomes.json",
@@ -6042,7 +6032,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/las_positas.json",
    "outcomes_file": "kb/status/commons_data_programs/las_positas.outcomes.json",
@@ -6155,7 +6145,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/lassen.json",
    "outcomes_file": "kb/status/commons_data_programs/lassen.outcomes.json",
@@ -6252,7 +6242,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/lemoore.json",
    "outcomes_file": "kb/status/commons_data_programs/lemoore.outcomes.json",
@@ -6358,7 +6348,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/long_beach_city.json",
    "outcomes_file": "kb/status/commons_data_programs/long_beach_city.outcomes.json",
@@ -6465,7 +6455,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/los_angeles_city.json",
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_city.outcomes.json",
@@ -6557,21 +6547,22 @@
    },
    "census_causes": {
     "coverage_fails": 4,
+    "found_not_extracted": 1,
     "no_closed_list": 3,
-    "page_not_found": 3,
-    "places_none": 11,
-    "units_incomplete": 1,
-    "units_unequal": 9
+    "page_not_found": 10,
+    "places_none": 1,
+    "units_unequal": 8
    },
    "census_levers": {
-    "reconcile_steps": 14,
-    "reader_page_assignment": 11,
+    "reconcile_steps": 12,
+    "reader_page_search": 10,
     "program_course_file_refresh": 3,
-    "reader_page_search": 3
+    "paid_read": 1,
+    "reader_page_assignment": 1
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/los_angeles_harbor.json",
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_harbor.outcomes.json",
@@ -6641,8 +6632,8 @@
     }
    },
    "census_programs": 121,
-   "census_gap": 31,
-   "census_passing": 90
+   "census_gap": 27,
+   "census_passing": 94
   },
   {
    "id": 71,
@@ -6676,7 +6667,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/los_angeles_mission.json",
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_mission.outcomes.json",
@@ -6782,7 +6773,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/los_angeles_pierce.json",
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_pierce.outcomes.json",
@@ -6889,7 +6880,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/los_angeles_southwest.json",
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_southwest.outcomes.json",
@@ -6994,7 +6985,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/los_angeles_trade_technical.json",
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_trade_technical.outcomes.json",
@@ -7087,7 +7078,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/los_angeles_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_valley.outcomes.json",
@@ -7177,7 +7168,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/los_medanos.json",
    "outcomes_file": "kb/status/commons_data_programs/los_medanos.outcomes.json",
@@ -7268,19 +7259,17 @@
    "census_causes": {
     "coverage_fails": 5,
     "page_not_found": 5,
-    "places_none": 8,
     "units_incomplete": 1,
     "units_unequal": 7
    },
    "census_levers": {
     "reconcile_steps": 12,
-    "reader_page_assignment": 8,
     "reader_page_search": 5,
     "ge_units_steps": 1
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/madera.json",
    "outcomes_file": "kb/status/commons_data_programs/madera.outcomes.json",
@@ -7348,8 +7337,8 @@
     }
    },
    "census_programs": 111,
-   "census_gap": 26,
-   "census_passing": 85
+   "census_gap": 18,
+   "census_passing": 93
   },
   {
    "id": 78,
@@ -7385,7 +7374,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/mendocino.json",
    "outcomes_file": "kb/status/commons_data_programs/mendocino.outcomes.json",
@@ -7488,7 +7477,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/merced.json",
    "outcomes_file": null,
@@ -7584,7 +7573,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/merritt.json",
    "outcomes_file": "kb/status/commons_data_programs/merritt.outcomes.json",
@@ -7682,7 +7671,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/miracosta.json",
    "outcomes_file": "kb/status/commons_data_programs/miracosta.outcomes.json",
@@ -7784,7 +7773,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/mission.json",
    "outcomes_file": "kb/status/commons_data_programs/mission.outcomes.json",
@@ -7896,7 +7885,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/modesto_junior.json",
    "outcomes_file": "kb/status/commons_data_programs/modesto_junior.outcomes.json",
@@ -7997,7 +7986,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/monterey_peninsula.json",
    "outcomes_file": "kb/status/commons_data_programs/monterey_peninsula.outcomes.json",
@@ -8095,7 +8084,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/moorpark.json",
    "outcomes_file": "kb/status/commons_data_programs/moorpark.outcomes.json",
@@ -8198,7 +8187,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/moreno_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/moreno_valley.outcomes.json",
@@ -8306,7 +8295,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/mt_san_antonio.json",
    "outcomes_file": "kb/status/commons_data_programs/mt_san_antonio.outcomes.json",
@@ -8411,7 +8400,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/mt_san_jacinto.json",
    "outcomes_file": "kb/status/commons_data_programs/mt_san_jacinto.outcomes.json",
@@ -8511,7 +8500,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/napa_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/napa_valley.outcomes.json",
@@ -8612,7 +8601,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/norco.json",
    "outcomes_file": "kb/status/commons_data_programs/norco.outcomes.json",
@@ -8719,7 +8708,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/north_orange_continuing_education.json",
    "outcomes_file": null,
@@ -8821,7 +8810,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/ohlone.json",
    "outcomes_file": "kb/status/commons_data_programs/ohlone.outcomes.json",
@@ -8926,7 +8915,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/orange_coast.json",
    "outcomes_file": "kb/status/commons_data_programs/orange_coast.outcomes.json",
@@ -9037,7 +9026,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/oxnard.json",
    "outcomes_file": "kb/status/commons_data_programs/oxnard.outcomes.json",
@@ -9136,7 +9125,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/palo_verde.json",
    "outcomes_file": "kb/status/commons_data_programs/palo_verde.outcomes.json",
@@ -9238,7 +9227,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/palomar.json",
    "outcomes_file": "kb/status/commons_data_programs/palomar.outcomes.json",
@@ -9332,22 +9321,22 @@
    },
    "census_causes": {
     "no_closed_list": 48,
-    "page_not_found": 20,
-    "places_none": 4,
+    "page_not_found": 18,
+    "places_none": 3,
     "units_incomplete": 9,
     "units_unequal": 11
    },
    "census_levers": {
     "program_course_file_refresh": 48,
-    "reader_page_search": 20,
+    "reader_page_search": 18,
     "reconcile_steps": 13,
     "scorer_noncredit_hours": 5,
-    "reader_page_assignment": 4,
+    "reader_page_assignment": 3,
     "ge_units_steps": 2
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/pasadena_city.json",
    "outcomes_file": "kb/status/commons_data_programs/pasadena_city.outcomes.json",
@@ -9418,8 +9407,8 @@
     }
    },
    "census_programs": 357,
-   "census_gap": 92,
-   "census_passing": 265
+   "census_gap": 89,
+   "census_passing": 268
   },
   {
    "id": 92,
@@ -9452,7 +9441,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/porterville.json",
    "outcomes_file": "kb/status/commons_data_programs/porterville.outcomes.json",
@@ -9557,7 +9546,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/reedley.json",
    "outcomes_file": "kb/status/commons_data_programs/reedley.outcomes.json",
@@ -9648,21 +9637,19 @@
    "census_causes": {
     "coverage_fails": 1,
     "no_closed_list": 20,
-    "page_not_found": 9,
-    "places_none": 4,
+    "page_not_found": 13,
     "units_incomplete": 1,
     "units_unequal": 9
    },
    "census_levers": {
     "program_course_file_refresh": 20,
+    "reader_page_search": 13,
     "reconcile_steps": 10,
-    "reader_page_search": 9,
-    "reader_page_assignment": 4,
     "ge_units_steps": 1
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/rio_hondo.json",
    "outcomes_file": null,
@@ -9762,7 +9749,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/riverside_city.json",
    "outcomes_file": "kb/status/commons_data_programs/riverside_city.outcomes.json",
@@ -9872,7 +9859,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/sacramento_city.json",
    "outcomes_file": "kb/status/commons_data_programs/sacramento_city.outcomes.json",
@@ -9973,7 +9960,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/saddleback.json",
    "outcomes_file": "kb/status/commons_data_programs/saddleback.outcomes.json",
@@ -10082,7 +10069,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/san_bernardino_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/san_bernardino_valley.outcomes.json",
@@ -10193,7 +10180,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/san_diego_city.json",
    "outcomes_file": "kb/status/commons_data_programs/san_diego_city.outcomes.json",
@@ -10297,7 +10284,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/san_diego_of_continuing_education.json",
    "outcomes_file": null,
@@ -10399,7 +10386,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/san_diego_mesa.json",
    "outcomes_file": "kb/status/commons_data_programs/san_diego_mesa.outcomes.json",
@@ -10503,7 +10490,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/san_diego_miramar.json",
    "outcomes_file": "kb/status/commons_data_programs/san_diego_miramar.outcomes.json",
@@ -10613,7 +10600,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/san_joaquin_delta.json",
    "outcomes_file": "kb/status/commons_data_programs/san_joaquin_delta.outcomes.json",
@@ -10718,7 +10705,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/san_jose_city.json",
    "outcomes_file": "kb/status/commons_data_programs/san_jose_city.outcomes.json",
@@ -10833,7 +10820,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/santa_ana.json",
    "outcomes_file": "kb/status/commons_data_programs/santa_ana.outcomes.json",
@@ -10941,7 +10928,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/santa_barbara_city.json",
    "outcomes_file": "kb/status/commons_data_programs/santa_barbara_city.outcomes.json",
@@ -11048,7 +11035,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/santa_monica.json",
    "outcomes_file": "kb/status/commons_data_programs/santa_monica.outcomes.json",
@@ -11142,21 +11129,19 @@
     "extraction_error": 1,
     "found_not_extracted": 1,
     "no_closed_list": 4,
-    "page_not_found": 41,
-    "places_none": 1,
+    "page_not_found": 19,
     "units_incomplete": 9,
     "units_unequal": 9
    },
    "census_levers": {
-    "reader_page_search": 41,
     "reconcile_steps": 27,
+    "reader_page_search": 19,
     "program_course_file_refresh": 4,
-    "paid_read": 2,
-    "reader_page_assignment": 1
+    "paid_read": 2
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/santa_rosa_junior.json",
    "outcomes_file": "kb/status/commons_data_programs/santa_rosa_junior.outcomes.json",
@@ -11233,8 +11218,8 @@
     }
    },
    "census_programs": 280,
-   "census_gap": 75,
-   "census_passing": 205
+   "census_gap": 52,
+   "census_passing": 228
   },
   {
    "id": 105,
@@ -11269,7 +11254,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/santiago_canyon.json",
    "outcomes_file": "kb/status/commons_data_programs/santiago_canyon.outcomes.json",
@@ -11393,7 +11378,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/shasta.json",
    "outcomes_file": "kb/status/commons_data_programs/shasta.outcomes.json",
@@ -11491,21 +11476,21 @@
    "census_causes": {
     "coverage_fails": 2,
     "no_closed_list": 65,
-    "page_not_found": 14,
-    "places_none": 9,
+    "page_not_found": 20,
+    "places_none": 2,
     "units_incomplete": 6,
     "units_unequal": 7
    },
    "census_levers": {
     "program_course_file_refresh": 65,
-    "reader_page_search": 14,
+    "reader_page_search": 20,
     "reconcile_steps": 12,
-    "reader_page_assignment": 9,
-    "ge_units_steps": 3
+    "ge_units_steps": 3,
+    "reader_page_assignment": 2
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/sierra.json",
    "outcomes_file": "kb/status/commons_data_programs/sierra.outcomes.json",
@@ -11583,8 +11568,8 @@
     }
    },
    "census_programs": 190,
-   "census_gap": 103,
-   "census_passing": 87
+   "census_gap": 102,
+   "census_passing": 88
   },
   {
    "id": 108,
@@ -11616,7 +11601,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/skyline.json",
    "outcomes_file": "kb/status/commons_data_programs/skyline.outcomes.json",
@@ -11727,7 +11712,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/solano_community.json",
    "outcomes_file": "kb/status/commons_data_programs/solano_community.outcomes.json",
@@ -11838,7 +11823,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/southwestern.json",
    "outcomes_file": "kb/status/commons_data_programs/southwestern.outcomes.json",
@@ -11950,7 +11935,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/taft.json",
    "outcomes_file": "kb/status/commons_data_programs/taft.outcomes.json",
@@ -12055,7 +12040,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/ventura.json",
    "outcomes_file": "kb/status/commons_data_programs/ventura.outcomes.json",
@@ -12164,7 +12149,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/victor_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/victor_valley.outcomes.json",
@@ -12268,7 +12253,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/west_los_angeles.json",
    "outcomes_file": "kb/status/commons_data_programs/west_los_angeles.outcomes.json",
@@ -12375,7 +12360,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/west_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/west_valley.outcomes.json",
@@ -12472,7 +12457,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/woodland_community.json",
    "outcomes_file": "kb/status/commons_data_programs/woodland_community.outcomes.json",
@@ -12567,7 +12552,7 @@
    },
    "census_basis": {
     "basis": "live",
-    "at": "2026-11-19 23:51Z"
+    "at": "2026-11-20 10:36Z"
    },
    "programs_file": "kb/status/commons_data_programs/yuba.json",
    "outcomes_file": "kb/status/commons_data_programs/yuba.outcomes.json",
@@ -12639,8 +12624,8 @@
  "live": {
   "basis": "live",
   "state": "read",
-  "read_at": "2026-11-19T20:05:14Z",
-  "run_id": "44604899544",
+  "read_at": "2026-11-20T10:32:23Z",
+  "run_id": "44719996895",
   "source": "kb/_commons_data_live.py in the live-counts job of harvest-gap-census.yml (the live-counts environment)",
   "tables": {
    "programs": "coci_college_programs (status Active, Active - Teachout Only, Approved; distinct control numbers)",
@@ -12657,7 +12642,7 @@
   },
   "reads": {
    "counts": 1909,
-   "pages": 377
+   "pages": 380
   },
   "statewide": {
    "colleges": 118,
@@ -12667,27 +12652,27 @@
     "approved": 1423
    },
    "records": {
-    "total": 18411,
+    "total": 18490,
     "checked": 32,
-    "active": 16903,
-    "active_passing": 15044,
-    "active_with_plos": 14110,
-    "teachout": 209,
-    "teachout_passing": 166,
+    "active": 16979,
+    "active_passing": 15120,
+    "active_with_plos": 14185,
+    "teachout": 210,
+    "teachout_passing": 167,
     "teachout_with_plos": 180,
-    "approved": 1299,
-    "approved_passing": 1127,
-    "approved_with_plos": 1015
+    "approved": 1301,
+    "approved_passing": 1128,
+    "approved_with_plos": 1017
    },
    "program_courses": {
     "rows": 313710,
     "active_courses": 88736
    },
    "outcomes": {
-    "slo_courses": 19582,
-    "slo_courses_on_active": 17246,
-    "objective_courses": 14163,
-    "objective_courses_on_active": 12723
+    "slo_courses": 21026,
+    "slo_courses_on_active": 18309,
+    "objective_courses": 15269,
+    "objective_courses_on_active": 13513
    },
    "registry": {
     "row": 118,
@@ -13003,17 +12988,17 @@
      "approved": 8
     },
     "records": {
-     "total": 56,
+     "total": 68,
      "checked": 0,
-     "active": 49,
-     "active_passing": 48,
-     "active_with_plos": 47,
+     "active": 59,
+     "active_passing": 58,
+     "active_with_plos": 58,
      "teachout": 2,
      "teachout_passing": 2,
      "teachout_with_plos": 2,
-     "approved": 5,
-     "approved_passing": 5,
-     "approved_with_plos": 4
+     "approved": 7,
+     "approved_passing": 6,
+     "approved_with_plos": 6
     },
     "program_courses": {
      "rows": 1036,
@@ -13230,12 +13215,12 @@
      "active_courses": 1093
     },
     "outcomes": {
-     "slo_courses": 0,
-     "slo_courses_on_active": 0,
-     "slo_loaded_at": null,
-     "objective_courses": 0,
-     "objective_courses_on_active": 0,
-     "objective_loaded_at": null
+     "slo_courses": 1108,
+     "slo_courses_on_active": 791,
+     "slo_loaded_at": "2026-11-20T09:11:52.375601+00:00",
+     "objective_courses": 1106,
+     "objective_courses_on_active": 790,
+     "objective_loaded_at": "2026-11-20T09:11:52.375601+00:00"
     },
     "registry": {
      "row": true,
@@ -14179,11 +14164,11 @@
      "approved": 0
     },
     "records": {
-     "total": 118,
+     "total": 126,
      "checked": 0,
-     "active": 118,
-     "active_passing": 92,
-     "active_with_plos": 118,
+     "active": 126,
+     "active_passing": 100,
+     "active_with_plos": 126,
      "teachout": 0,
      "teachout_passing": 0,
      "teachout_with_plos": 0,
@@ -14347,13 +14332,13 @@
      "approved": 12
     },
     "records": {
-     "total": 88,
+     "total": 96,
      "checked": 0,
-     "active": 77,
-     "active_passing": 56,
-     "active_with_plos": 29,
-     "teachout": 0,
-     "teachout_passing": 0,
+     "active": 84,
+     "active_passing": 61,
+     "active_with_plos": 31,
+     "teachout": 1,
+     "teachout_passing": 1,
      "teachout_with_plos": 0,
      "approved": 11,
      "approved_passing": 6,
@@ -14784,9 +14769,9 @@
      "active_courses": 317
     },
     "outcomes": {
-     "slo_courses": 0,
-     "slo_courses_on_active": 0,
-     "slo_loaded_at": null,
+     "slo_courses": 336,
+     "slo_courses_on_active": 272,
+     "slo_loaded_at": "2026-11-20T08:14:40.478146+00:00",
      "objective_courses": 0,
      "objective_courses_on_active": 0,
      "objective_loaded_at": null
@@ -14893,11 +14878,11 @@
      "approved": 0
     },
     "records": {
-     "total": 211,
+     "total": 225,
      "checked": 0,
-     "active": 211,
-     "active_passing": 205,
-     "active_with_plos": 209,
+     "active": 225,
+     "active_passing": 219,
+     "active_with_plos": 223,
      "teachout": 0,
      "teachout_passing": 0,
      "teachout_with_plos": 0,
@@ -15523,11 +15508,11 @@
      "approved": 3
     },
     "records": {
-     "total": 107,
+     "total": 109,
      "checked": 0,
-     "active": 104,
-     "active_passing": 90,
-     "active_with_plos": 99,
+     "active": 106,
+     "active_passing": 94,
+     "active_with_plos": 105,
      "approved": 3,
      "approved_passing": 3,
      "approved_with_plos": 3,
@@ -15817,11 +15802,11 @@
      "approved": 0
     },
     "records": {
-     "total": 98,
+     "total": 106,
      "checked": 0,
-     "active": 98,
-     "active_passing": 85,
-     "active_with_plos": 98,
+     "active": 106,
+     "active_passing": 93,
+     "active_with_plos": 106,
      "teachout": 0,
      "teachout_passing": 0,
      "teachout_with_plos": 0,
@@ -16405,11 +16390,11 @@
      "approved": 4
     },
     "records": {
-     "total": 293,
+     "total": 296,
      "checked": 0,
-     "active": 285,
-     "active_passing": 244,
-     "active_with_plos": 279,
+     "active": 288,
+     "active_passing": 247,
+     "active_with_plos": 282,
      "teachout": 4,
      "teachout_passing": 4,
      "teachout_with_plos": 4,
@@ -16951,11 +16936,11 @@
      "approved": 1
     },
     "records": {
-     "total": 234,
+     "total": 257,
      "checked": 0,
-     "active": 232,
-     "active_passing": 204,
-     "active_with_plos": 224,
+     "active": 255,
+     "active_passing": 227,
+     "active_with_plos": 246,
      "teachout": 1,
      "teachout_passing": 1,
      "teachout_with_plos": 1,
@@ -17077,11 +17062,11 @@
      "approved": 0
     },
     "records": {
-     "total": 102,
+     "total": 103,
      "checked": 0,
-     "active": 102,
-     "active_passing": 87,
-     "active_with_plos": 93,
+     "active": 103,
+     "active_passing": 88,
+     "active_with_plos": 94,
      "teachout": 0,
      "teachout_passing": 0,
      "teachout_with_plos": 0,
@@ -17673,10 +17658,10 @@
     "2026-11-16": 776,
     "2026-11-17": 522,
     "2026-11-18": 4722,
-    "2026-11-19": 3515
+    "2026-11-19": 3515,
+    "2026-11-20": 2550
    },
    "program_records": {
-    "2026-10-15": 2512,
     "2026-10-16": 3015,
     "2026-10-17": 6176,
     "2026-10-18": 428,
@@ -17693,28 +17678,30 @@
     "2026-11-13": 622,
     "2026-11-16": 3,
     "2026-11-17": 5,
-    "2026-11-19": 171
+    "2026-11-19": 171,
+    "2026-11-20": 79
    }
   },
   "override": null,
   "last_attempt": {
-   "at": "2026-11-19T23:49:07Z",
-   "run_id": "44640695589",
-   "ok": false,
-   "error_class": "upstream 5xx",
-   "http_status": 500,
-   "counts": null
+   "at": "2026-11-20T10:32:23Z",
+   "run_id": "44719996895",
+   "ok": true,
+   "error_class": null,
+   "http_status": null,
+   "counts": null,
+   "accepted_by_override": false
   },
   "flag": "internal"
  },
  "overall": {
   "basis": "live",
   "state": "read",
-  "read_at": "2026-11-19T20:05:14Z",
+  "read_at": "2026-11-20T10:32:23Z",
   "rule": "the average of three parts: catalog source, program requirements passing, and the mean of course student learning outcomes (SLOs) and program learning outcomes (PLOs), from the nightly database count; a part not read yet counts as zero",
   "flag": "shareable",
   "statewide": {
-   "mean": 0.6461,
+   "mean": 0.6505,
    "colleges": 118
   },
   "colleges": {
@@ -17782,12 +17769,12 @@
     }
    },
    "10": {
-    "value": 0.5833,
+    "value": 0.6616,
     "parts": {
      "catalog": 0.6667,
-     "requirements": 0.7273,
+     "requirements": 0.8788,
      "slos": 0.0,
-     "plos": 0.7121
+     "plos": 0.8788
     }
    },
    "11": {
@@ -17827,11 +17814,11 @@
     }
    },
    "15": {
-    "value": 0.7753,
+    "value": 0.8959,
     "parts": {
      "catalog": 1.0,
      "requirements": 0.8988,
-     "slos": 0.0,
+     "slos": 0.7237,
      "plos": 0.8543
     }
    },
@@ -18034,12 +18021,12 @@
     }
    },
    "38": {
-    "value": 0.5896,
+    "value": 0.6188,
     "parts": {
      "catalog": 0.6667,
-     "requirements": 0.6715,
+     "requirements": 0.7299,
      "slos": 0.0,
-     "plos": 0.8613
+     "plos": 0.9197
     }
    },
    "39": {
@@ -18070,12 +18057,12 @@
     }
    },
    "42": {
-    "value": 0.7066,
+    "value": 0.7249,
     "parts": {
      "catalog": 1.0,
-     "requirements": 0.5138,
+     "requirements": 0.5596,
      "slos": 0.9458,
-     "plos": 0.2661
+     "plos": 0.2844
     }
    },
    "43": {
@@ -18160,11 +18147,11 @@
     }
    },
    "52": {
-    "value": 0.5385,
+    "value": 0.6815,
     "parts": {
      "catalog": 1.0,
      "requirements": 0.6154,
-     "slos": 0.0,
+     "slos": 0.858,
      "plos": 0.0
     }
    },
@@ -18187,12 +18174,12 @@
     }
    },
    "55": {
-    "value": 0.7212,
+    "value": 0.7475,
     "parts": {
      "catalog": 1.0,
-     "requirements": 0.7707,
+     "requirements": 0.8233,
      "slos": 0.0,
-     "plos": 0.7857
+     "plos": 0.8383
     }
    },
    "56": {
@@ -18322,12 +18309,12 @@
     }
    },
    "70": {
-    "value": 0.6065,
+    "value": 0.6258,
     "parts": {
      "catalog": 0.6667,
-     "requirements": 0.7438,
+     "requirements": 0.7769,
      "slos": 0.0,
-     "plos": 0.8182
+     "plos": 0.8678
     }
    },
    "71": {
@@ -18385,12 +18372,12 @@
     }
    },
    "77": {
-    "value": 0.7358,
+    "value": 0.7718,
     "parts": {
      "catalog": 1.0,
-     "requirements": 0.7658,
+     "requirements": 0.8378,
      "slos": 0.0,
-     "plos": 0.8829
+     "plos": 0.955
     }
    },
    "78": {
@@ -18511,12 +18498,12 @@
     }
    },
    "91": {
-    "value": 0.5803,
+    "value": 0.5845,
     "parts": {
      "catalog": 0.6667,
-     "requirements": 0.6835,
+     "requirements": 0.6919,
      "slos": 0.0,
-     "plos": 0.7815
+     "plos": 0.7899
     }
    },
    "92": {
@@ -18628,12 +18615,12 @@
     }
    },
    "104": {
-    "value": 0.5984,
+    "value": 0.6389,
     "parts": {
      "catalog": 0.6667,
-     "requirements": 0.7286,
+     "requirements": 0.8107,
      "slos": 0.0,
-     "plos": 0.8
+     "plos": 0.8786
     }
    },
    "105": {
@@ -18655,12 +18642,12 @@
     }
    },
    "107": {
-    "value": 0.4565,
+    "value": 0.4591,
     "parts": {
      "catalog": 0.6667,
-     "requirements": 0.4579,
+     "requirements": 0.4632,
      "slos": 0.0,
-     "plos": 0.4895
+     "plos": 0.4947
     }
    },
    "108": {
