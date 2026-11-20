@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_library_check_binds_url.sql",
+ "name": "library_check_binds_url",
+ "version": "20261120012457",
+ "sha256": "6fa79c93023f568faeeaf64753d7fdbb50fe3358e4da16cd968821edb2edbf22",
+ "run": "44653210148",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"cpl_library_checks\":{\"checks\":0,\"checks_with_url\":0}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
