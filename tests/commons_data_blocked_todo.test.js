@@ -2,7 +2,8 @@
 // "Make sure those blocked catalogs and cors are on my cdc to do"; "To do should be on both cdc and commons".
 // Guards: the page draws the block from the committed file's blocked_hunt (the one source the Commons' Waiting on a
 // person item also reads; tests/blocked_catalogs_test.py proves that side), lists each open college with its catalog
-// link, drops a filed college, draws nothing once all are filed, and says the course list is TBA while it is not filed.
+// link (a new tab, Sam's exception of 2026-11-20), names the still-taught courses, drops a filed college, draws nothing
+// once all are filed, and says the course list is TBA only while the hunt file holds none.
 // Run from repo root: node tests/commons_data_blocked_todo.test.js
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -22,19 +23,36 @@ function page(data) {
   return root;
 }
 const r1 = page(REAL), b1 = r1.querySelector("#cdd-blocked");
-check("⭐ the page draws the to-do from the committed file", b1 && /^To do: Find catalogs or course outlines/.test(txt(b1.querySelector("h3"))), txt(b1));
-check("it says how many colleges and courses, that only still-taught courses are hunted, and where to file",
-  b1 && /6 of 6 colleges still to find, 345 local courses in all; 12 of them are still taught/.test(txt(b1)) && /kb\/hand_filed_catalogs\/outlines/.test(txt(b1)), txt(b1));
-check("each open college is a row with its catalog address, as words (the page's one outbound link is the panel's new-tab control)",
-  b1 && b1.querySelectorAll("[data-todo-college]").length === 6 && !b1.querySelector("a") && [...b1.querySelectorAll("[data-todo-college]")].every((li) => /Its catalog: https?:\/\//.test(txt(li))));
-check("the course list says TBA, never a number it does not hold", b1 && /course-by-course list, still-taught courses first: TBA/.test(txt(b1)));
+const H = REAL.blocked_hunt, hunted = H.colleges.filter((c) => c.hunted && !c.filed);
+check("⭐ the page draws the to-do from the committed file, named for its work", b1 && /^To do: Course Outline and Catalog Fixes Needed/.test(txt(b1.querySelector("h3"))), txt(b1));
+check("⭐ it counts the still-taught courses and their colleges from the hunt file (Sam's work order, 2026-11-20), and says the one line a person needs",
+  b1 && new RegExp("^" + H.still_taught_open + " courses still taught at " + hunted.length + " colleges need their course outline\\.").test(txt(b1.querySelector("p")))
+  && /Send the PDF to COBIx in your Grok Bot chat\./.test(txt(b1)), txt(b1));
+check("the folder a session files into is for the team, never the person's instruction", (function () {
+  const f = b1 && b1.querySelector("[data-team-files]"); return f && /kb\/hand_filed_catalogs\/outlines/.test(txt(f)) && /^For the team:/.test(txt(f.querySelector("summary")));
+})());
+check("⭐ each hunted college is a row whose catalog address is a link that opens in a new tab with rel=noopener, its words the address (Sam's exception to the links-in-the-panel rule)",
+  b1 && b1.querySelectorAll("[data-todo-college]").length === hunted.length && [...b1.querySelectorAll("[data-todo-college]")].every((li) => {
+    const a = li.querySelector("a.cdd-todo-out"); return a && a.getAttribute("target") === "_blank" && /noopener/.test(a.getAttribute("rel") || "") && txt(a) === a.getAttribute("href") && /^https?:\/\//.test(txt(a));
+  }), txt(b1));
+check("⭐ the 12 courses are named, each under its college, where the page said TBA", b1 && b1.querySelectorAll("[data-todo-course]").length === 12 && !/TBA/.test(txt(b1))
+  && hunted.every((c) => c.still_taught.every((x) => txt(b1.querySelector('[data-todo-college="' + c.slug + '"]')).indexOf(x.course + ", " + x.title) >= 0)), txt(b1));
+check("a college with no still-taught course is set aside in one line, off the list", (function () {
+  const a = b1 && b1.querySelector("[data-todo-aside]"); return a && /^No still-taught course waits at El Camino College or Fullerton College\.$/.test(txt(a))
+    && !b1.querySelector('[data-todo-college="el_camino"]') && !b1.querySelector('[data-todo-college="fullerton"]');
+})());
 const one = JSON.parse(JSON.stringify(REAL));
-one.blocked_hunt.colleges[1].filed = true; one.blocked_hunt.open = 5; one.blocked_hunt.local_courses_open = 303;
+one.blocked_hunt.colleges.filter((c) => c.slug === "grossmont")[0].filed = true; one.blocked_hunt.open -= 1; one.blocked_hunt.still_taught_open -= 1;
 const b2 = page(one).querySelector("#cdd-blocked");
-check("⭐ a filed college leaves the page's list", b2 && b2.querySelectorAll("[data-todo-college]").length === 5 && !b2.querySelector('[data-todo-college="grossmont"]') && /5 of 6 colleges/.test(txt(b2)));
+check("⭐ a filed college leaves the page's list and the count", b2 && b2.querySelectorAll("[data-todo-college]").length === hunted.length - 1 && !b2.querySelector('[data-todo-college="grossmont"]')
+  && new RegExp("^" + (H.still_taught_open - 1) + " courses still taught at " + (hunted.length - 1) + " colleges").test(txt(b2.querySelector("p"))), txt(b2));
 const all = JSON.parse(JSON.stringify(REAL));
 all.blocked_hunt.colleges.forEach((c) => { c.filed = true; }); all.blocked_hunt.open = 0;
 check("⭐ all filed: no to-do block at all", !page(all).querySelector("#cdd-blocked"));
+const bare = JSON.parse(JSON.stringify(REAL));
+bare.blocked_hunt.courses = null; bare.blocked_hunt.open = 6; bare.blocked_hunt.colleges.forEach((c) => { c.hunted = true; c.still_taught = null; });
+const b4 = page(bare).querySelector("#cdd-blocked");
+check("a hunt file with no course list still says the list is TBA, never a number it does not hold", b4 && /course-by-course list, still-taught courses first: TBA/.test(txt(b4)) && b4.querySelectorAll("[data-todo-college]").length === 6);
 check("no glyph and no raw hex in the block's code", (function () { const src = fs.readFileSync("commons_data.js", "utf8"); const i = src.indexOf("function blockedTodo"), j = src.indexOf("function section(", i);
   const part = src.slice(i, j); return !/#[0-9a-fA-F]{3,6}\b/.test(part) && !/[←-⇿☀-➿\u{1F300}-\u{1FAFF}]/u.test(part); })());
 results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])));

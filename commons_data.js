@@ -1381,23 +1381,44 @@
   function blockedTodo(M) {
     var b = M.blocked;
     if (!b || !Array.isArray(b.colleges) || !b.open) return null;
-    var open = b.colleges.filter(function (c) { return !c.filed; });
+    /* Sam, 2026-11-20 (his work order): blocked outlines are a priority only for the courses still taught, and those
+       are named here. Once the hunt file lists its courses, a college is on the to-do only while it has one. */
+    var listed = Array.isArray(b.courses);
+    var open = b.colleges.filter(function (c) { return !c.filed && (!listed || c.hunted); });
+    var aside = listed ? b.colleges.filter(function (c) { return !c.hunted; }) : [];
     var sec = el("section", { cls: "cdd-psec cdd-todo", id: "cdd-blocked", "aria-labelledby": "cdd-blocked-h", "data-todo": "blocked-catalogs" });
-    sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: "To do: " + (b.title || "Find catalogs or course outlines for the colleges whose sites block automated reading") }));
-    sec.appendChild(el("p", { cls: "cdd-src", text: fmt(open.length) + " of " + fmt(b.colleges.length) + " colleges still to find, " + fmt(b.local_courses_open)
-      + " local courses in all; " + (b.still_taught_total != null ? fmt(b.still_taught_total) + " of them are still taught, and only those are hunted. " : "")
-      + "File a catalog or the course outlines in the hand-filed catalogs folder, and the college clears here and on the Commons." }));
-    sec.appendChild(teamFiles("Where to file it", b.file_in || "kb/hand_filed_catalogs/outlines"));
+    sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: "To do: " + (b.title || "Course Outline and Catalog Fixes Needed") }));
+    if (listed) {
+      sec.appendChild(el("p", { cls: "cdd-src", text: fmt(b.still_taught_open) + (b.still_taught_open === 1 ? " course still taught at " : " courses still taught at ")
+        + fmt(open.length) + (open.length === 1 ? " college needs its course outline. " : " colleges need their course outline. ")
+        + "The outline reader cannot reach these colleges' outlines, so a person fetches each one. Blocked outlines for courses no longer taught are set aside." }));
+      sec.appendChild(el("p", { cls: "cdd-src cdd-todo-send", text: "Send the PDF to COBIx in your Grok Bot chat." }));
+    } else {
+      sec.appendChild(el("p", { cls: "cdd-src", text: fmt(open.length) + " of " + fmt(b.colleges.length) + " colleges still to find, " + fmt(b.local_courses_open)
+        + " local courses in all; " + (b.still_taught_total != null ? fmt(b.still_taught_total) + " of them are still taught, and only those are hunted. " : "")
+        + "Send the PDF to COBIx in your Grok Bot chat." }));
+    }
+    sec.appendChild(teamFiles("Where a session files it", b.file_in || "kb/hand_filed_catalogs/outlines"));
     var ul = el("ul", { cls: "cdd-todo-list" });
     open.forEach(function (c) {
-      ul.appendChild(el("li", { "data-todo-college": c.slug }, [c.college + ": " + fmt(c.local_courses) + " local courses, " + (c.reason || "the site blocks automated reading") + ". ",
-        /* The address as words: this page keeps every link out of it to the panel's one new-tab control. */
-        "Its catalog: " + (c.catalog_url || "TBA")]));
+      /* Sam, 2026-11-20: an outline or catalog address here is a link that opens in a new tab. It is his exception to
+         this page's rule that a link opens in the side panel (d-data-collection-links-open-in-panel-s649); the link's
+         words are the address itself, so it says where it goes. */
+      var kids = [el("strong", { text: c.college }), ". Its catalog, in a new tab: ",
+        c.catalog_url ? el("a", { cls: "cdd-todo-out", href: c.catalog_url, target: "_blank", rel: "noopener", text: c.catalog_url }) : "TBA"];
+      if (listed) kids.push(el("ul", { cls: "cdd-todo-courses" }, (c.still_taught || []).map(function (x) {
+        return el("li", { "data-todo-course": x.control_number || null }, [x.course + ", " + x.title]);
+      })));
+      else kids.push(" " + fmt(c.local_courses) + " local courses, " + (c.reason || "the site blocks automated reading") + ".");
+      ul.appendChild(el("li", { "data-todo-college": c.slug }, kids));
     });
     sec.appendChild(ul);
-    sec.appendChild(el("p", { cls: "cdd-src", text: Array.isArray(b.courses) && b.courses.length ? "" : "The course-by-course list, still-taught courses first: TBA until the hunt list is filed with the courses." }));
+    if (aside.length) sec.appendChild(el("p", { cls: "cdd-src", "data-todo-aside": "", text: "No still-taught course waits at "
+      + aside.map(function (c) { return c.college; }).join(aside.length === 2 ? " or " : ", ") + "." }));
+    if (!listed) sec.appendChild(el("p", { cls: "cdd-src", text: "The course-by-course list, still-taught courses first: TBA until the hunt list is filed with the courses." }));
     return sec;
   }
+
   function section(h, kids) { return el("section", { cls: "cdd-psec" }, [el("h3", { text: h })].concat(kids)); }
   /* The panel's further cards, each module its own file (#3310: How it's collected, Program pathway maps, Data
      sources in commons_data_cards.js). A module loads the first time a panel draws, then the panel draws again; it
@@ -1653,7 +1674,7 @@
         : S.view === "slos" ? "The colleges whose course SLOs or objectives the database count holds: how many courses, how many sit on Active programs, and when each was loaded."
         : S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
         : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
-        : S.view === "outlines-blocked" ? "The colleges whose sites block automated reading of their catalog or course outlines. Send any outline or catalog PDF to COBIx, who prepares it and hands Sky one ask."
+        : S.view === "outlines-blocked" ? "The courses still taught whose outline needs a person, by college. Send the PDF to COBIx in your Grok Bot chat."
         : S.view ? exts().map(function (x) { return (x.ledes || {})[S.view]; }).filter(Boolean)[0] || ""
         : "Every college and continuing-education campus: what we have collected for it, how complete it is, how confident we are in it, and what is in the way." })
     ]));
@@ -2118,6 +2139,10 @@
     ".cmn-wrap.cdd { grid-template-columns:minmax(0, 1fr); }",
     /* The blocked to-do names each catalog address as words; a long one breaks rather than widening a phone's page (issue 3533). */
     ".cdd-todo, .cdd-todo * { min-width:0; overflow-wrap:anywhere; }",
+    ".cdd-todo-courses { margin:4px 0 0; padding-left:18px; }",
+    ".cdd-todo-send { font-weight:700; color:var(--cmn-heading); }",
+    ".cdd-todo-out { color:var(--cmn-link); text-underline-offset:3px; display:inline-block; min-height:24px; line-height:24px; }",
+    ".cdd-todo-out:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:2px; }",
     ".cdd > * { min-width:0; }",
     ".cdd .cdd-trail { margin:0; color:var(--cmn-muted); font-size:.92rem; }",
     ".cdd .cdd-trail a { display:inline-block; min-height:24px; line-height:24px; }",
