@@ -40,7 +40,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The CPL merge lens — the student-repeat test (anchored to Title 5 §55050's "similar" standard)](../kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 |
 | [\"Not signed in\" and \"only these people\" cannot both hold](../kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A ban is only as wide as the files it opens](../kb-notes/methodology-a-ban-is-only-as-wide-as-the-files-it-opens.md) | methodology | published | 2026-09-15 | 2026-09-24 |
-| [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-11-20 |
 | [A bot wall answers each network on its own, so the reader's own capture is the record of access](../kb-notes/methodology-a-bot-wall-answers-each-network-on-its-own.md) | methodology | published | 2026-11-20 | 2026-11-20 |
 | [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |

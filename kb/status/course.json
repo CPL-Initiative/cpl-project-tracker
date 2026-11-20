@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 691,
-  "moniker": "SkyShrike",
+  "session": 692,
+  "moniker": "SkyGannet",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_692_handoff.md",
+  "handoff": "docs/session_693_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-20T17:00:19Z",
+  "written_at": "2026-11-20T18:49:53Z",
   "project": "course",
   "next_step": {
-    "title": "Count the course cards on one base",
-    "text": "A committed census of the course cards, built on the published local courses, so the Commons and its rankings read one count. The first pass counts 15,720 cards against the Commons' 15,911, and 10,412 of them have no outcomes from any local course. Six of the eight cards with the most credit links have no published list of local courses, so that fix comes first."
+    "title": "File the first handed-over outline",
+    "text": "A signed-in reviewer can now hand over a course outline, a link or the data itself on the CPL Commons. Read what was handed over, see the upload and the reader's pickup work end to end, and file the first one into its course by hand. Then count the course cards on one base, so the Commons and its rankings read one count."
   },
   "changes": [
+    {
+      "at": "2026-11-20T18:44:00Z",
+      "text": "Hand it over in place, slice 1: each of the 12 still-taught courses on the CPL Commons opens a panel that takes a dropped outline, a link to try or the pasted data, under a reviewer's own sign-in. The file is private, and the page shows counts of what was handed over."
+    },
     {
       "at": "2026-11-20T17:00:00Z",
       "text": "Sam set two rules for the course cards. Courses and programs a college no longer offers will be set aside, strictly at first, once term reports from Spring 2026 back to Fall 2024 and a catalog check exist; nothing is set aside yet. And a course or a college will open in a side panel where a person can drop a file, try a link or paste the data. A one-college course card counts as done, flagged."

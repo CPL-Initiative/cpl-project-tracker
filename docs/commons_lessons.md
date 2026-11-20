@@ -464,3 +464,49 @@ Orange Coast), so the registry is stale for those three.
   a script before applying.
 - **Unverified:** the Data Mart did not open from the session (a certificate error, then HTTP 503), and
   `kb/_fetch_program_course_files.py` has never succeeded, so whether it holds past term course files is unknown.
+
+## S692 (SkyGannet, Sam's plain session, 2026-11-20): hand it over in place, slice 1
+
+**What shipped (#3608, `5507826e`).** Sam's locked mock asked for a place to act on every name. `commons_handover.js`
+draws one box for every Commons dataset (a drop box, Try the link, pasted data, an API procedure); each still-taught
+course in Needs you opens a panel beside the front page at `#commons/course/<control number>`; each college opens
+College Data Collection's own panel on a new `handover` pane; *Term Reports Needed* carries the box. The schema
+(`kb/migrations/2026-11-20_commons_handover.sql`, runs 44789876384 and 44790191281) is a private bucket, a
+reviewer-read table and three functions; the reader's pickup (`kb/_handover_pickup.py`) answers each row. The whole
+description: [`reference-commons-hand-over`](kb-notes/reference-commons-hand-over.md).
+
+**The calls, each recorded (`d-handover-*-2026-11-20`).** A reviewer's own sign-in, never the team phrase, because
+Storage cannot check the phrase and a hand-over is filed under a name. Try the link starts the runner's reader
+through a function that fetches nothing, so one reader visits a college's site and its rules (robots.txt first, stop
+at a bot check) hold in one place. Slice 1 is the front door: filing a hand-over into `course_outcomes` or the
+registry is left to guarded steps, since each touches a shared reader or a table with one writer. A college's name
+goes to College Data Collection's panel rather than opening over the front page.
+
+**What the tests caught before a person could.**
+
+- The database proof (46 checks on a throwaway Postgres, with the live project's default privileges stood in) is what
+  shows the anon key shut out; the page test cannot.
+- The pickup's own test caught a header name read case-sensitively (`Content-Type` against `content-type`), which
+  would have dropped the content type from every API answer.
+- `npm run a11y` on a seeded signed-in view found a heading level skipped in the college's pane (h2 to h4). jsdom
+  has no opinion on that.
+
+**What CI taught, in the order it cost time.**
+
+1. A new script the page loads needs a `publish` line in `.github/pages_allowlist.txt`, or the deployed site never
+   serves it and the page draws without the feature.
+2. A workflow installs its browser through `scripts/install_browser.sh`, never its own line.
+3. `lints` stops at its first failure, so the second item hid behind the first for a full cycle. After a failure, run
+   the later steps locally as real scripts
+   ([`methodology-a-blocked-path-hides-the-defects-behind-it`](kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md)).
+4. The migrate runner's receipt commit moves the PR's head and starts no CI (a push by the built-in token never
+   does). The head a session merges needs a commit of its own after the last receipt; here that was the note of the
+   two applies beside their rollbacks.
+
+**What was denied.** An ad-hoc browser script that stood in a reviewer session and answered Supabase calls was
+refused by the permission check. The sanctioned route is a seed in `a11y.config.js` (`seedHandover`, after
+`seedFundingCurator`) run with `npm run a11y -- <target> --shots DIR`
+(`p-fake-session-browser-script-denied-2026-11-20`).
+
+**Not yet shown.** No test here can show Supabase Storage taking a reviewer's upload on an INSERT policy alone; the
+local proof stands in for Storage. Sam's first real drop is the check, and it is first in the lane's NEXT.

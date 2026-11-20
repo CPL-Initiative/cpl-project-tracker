@@ -526,7 +526,7 @@
      ],
      "title": "A blocked path hides every defect behind it \u2014 budget for a chain, not a fix",
      "type": "methodology",
-     "updated": "2026-08-24"
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-11-20",
@@ -17386,8 +17386,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 651,
+   "count": 652,
    "docs": [
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 693,
+     "path": "docs/session_693_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 693 handoff (from SkyGannet, the plain session of 2026-11-20 that built the hand-over)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
     {
      "created": "2026-11-20",
      "governs": [],
@@ -28274,5 +28288,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1535
+ "total": 1536
 }
