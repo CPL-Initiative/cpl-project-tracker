@@ -81,6 +81,14 @@ with tempfile.TemporaryDirectory() as tmp:
     eye["pages"]["BIOL 1"]["objective"] += 1
     json.dump(eye, open(path, "w"))
     one_off = read.mtsac_recall(path, tmp)
+    eye["pages"]["CHEM 10"] = {"slo": 2, "objective": 0, "by": "fixture"}
+    json.dump(eye, open(path, "w"))
+    try:
+        unfiled = read.mtsac_recall(path, tmp)
+    except FileNotFoundError as exc:
+        unfiled = {"wrong": [], "raised": str(exc)}
+check("3 a hand count for a page the trial never filed counts wrong as 'page not filed', not a crash",
+      ("CHEM 10", {"slo": 2, "objective": 0}, "page not filed") in unfiled["wrong"], unfiled)
 check("3 a page counts right when both its SLO and objective counts match by eye",
       all_right["right"] == 2 and not all_right["wrong"], all_right)
 check("3 a page whose objectives miss by one counts wrong, even with its SLOs right",

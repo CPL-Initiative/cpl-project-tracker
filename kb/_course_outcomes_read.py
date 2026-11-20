@@ -487,8 +487,13 @@ def mtsac_recall(path: str = MTSAC_RECALL, out_dir: str = OUT_DIR) -> dict:
     right, wrong = 0, []
     for code, eye in sorted(want["pages"].items()):
         stem = re.sub(r"[^A-Za-z0-9]+", "_", code)
-        got = parse_page(gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read(),
-                         open(os.path.join(folder, stem + ".txt")).read(), "other")
+        html, txt = os.path.join(folder, stem + ".html.gz"), os.path.join(folder, stem + ".txt")
+        if not (os.path.exists(html) and os.path.exists(txt)):
+            # A hand count for a page the trial never filed counts as wrong, so the gate's
+            # message names it rather than stopping on a missing file (COBIx on #3537).
+            wrong.append((code, {"slo": eye["slo"], "objective": eye["objective"]}, "page not filed"))
+            continue
+        got = parse_page(gzip.open(html, "rt").read(), open(txt).read(), "other")
         seen = {"slo": len(got.get("outcomes") or []), "objective": len(got.get("objectives") or [])}
         if seen == {"slo": eye["slo"], "objective": eye["objective"]}:
             right += 1
