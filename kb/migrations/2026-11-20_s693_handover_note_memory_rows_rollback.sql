@@ -1,0 +1,4 @@
+-- Rollback of 2026-11-20_s693_handover_note_memory_rows.sql. Deletes only this file's create log rows and rows (by slug).
+delete from public.cpl_memory_log where action = 'create' and memory_id in (select id from public.cpl_memory where slug in ('r-handover-note-sam-2026-11-20','r-handover-list-sam-2026-11-20','d-note-catalog-box-is-its-own-field-2026-11-20','p-try-link-503-no-reason-2026-11-20','m-first-real-hand-overs-2026-11-20'));
+delete from public.cpl_memory where slug in ('r-handover-note-sam-2026-11-20','r-handover-list-sam-2026-11-20','d-note-catalog-box-is-its-own-field-2026-11-20','p-try-link-503-no-reason-2026-11-20','m-first-real-hand-overs-2026-11-20');
+select count(*) as rows_left from public.cpl_memory where slug in ('r-handover-note-sam-2026-11-20','r-handover-list-sam-2026-11-20','d-note-catalog-box-is-its-own-field-2026-11-20','p-try-link-503-no-reason-2026-11-20','m-first-real-hand-overs-2026-11-20');

@@ -1298,8 +1298,8 @@ async function seedHandover(page, theme, what, signedIn) {
       window.dispatchEvent(new Event("cpl-session-changed"));
     });
     await page.waitForSelector(panel + " .cho-drop", { state: "attached", timeout: 60000 });
-    // Every part of the box open, so each field is measured: the pasted data, and each API procedure box.
-    await page.evaluate(() => { document.querySelectorAll("details.cho-paste, details.cho-api").forEach((d) => { d.open = true; }); });
+    // Every part of the box open, so each field is measured: the pasted data, the note, and each API procedure box.
+    await page.evaluate(() => { document.querySelectorAll("details.cho-paste, details.cho-note, details.cho-api").forEach((d) => { d.open = true; }); });
   }
   await page.waitForTimeout(300);
 }

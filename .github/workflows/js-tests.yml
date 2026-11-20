@@ -286,6 +286,12 @@ jobs:
       # stamped by the database, no API role reads a file back, and the rollback keeps handed-over rows.
       - name: Commons hand-over against Postgres (the sign-in rule and the private store hold in the database)
         run: python3 tests/commons_handover_sql_proof.py
+      # The hand-over's note (Sam, 2026-11-20: "there is no place for me to note that"): a fifth kind added over a
+      # table that holds rows. The note reaches the table only through commons_handover_add() under the reviewer's
+      # name, the four kinds are untouched, the public summary still has no column for its words, and the rollback
+      # keeps every note written.
+      - name: Commons hand-over note against Postgres (a fifth kind, guarded in the database)
+        run: python3 tests/commons_handover_note_sql_proof.py
       # The reader's pickup for hand-overs (kb/_handover_pickup.py): a bot check is filed as one and the reader loads
       # nothing more from that host, and what it found is counts and heading words, never a page's text or a name.
       # pypdf reads the dropped PDFs the test builds.

@@ -44,6 +44,10 @@ function cors(origin: string | null): Record<string, string> {
 }
 
 function reply(origin: string | null, status: number, body: unknown): Response {
+  // A refusal names its reason in the function's log: the edge log keeps the status alone, and on 2026-11-20 three
+  // 503s could not be told apart (no token set, or a token GitHub refused). The reason holds no address and no name.
+  const b = body as { ok?: boolean; reason?: string; status?: number };
+  if (b && b.ok === false) console.error("handover-try-link refused: " + (b.reason || "unknown") + (b.status ? " (" + b.status + ")" : ""));
   return new Response(JSON.stringify(body), {
     status,
     headers: { ...cors(origin), "Content-Type": "application/json" },
@@ -111,7 +115,7 @@ Deno.serve(async (req) => {
       const j = await r.json();
       if ((j.total_count || 0) > 0) return reply(origin, 200, { ok: true, queued: true, already: true, by: who });
     } else if (r.status === 401 || r.status === 403) {
-      return reply(origin, 503, { ok: false, reason: "token_refused" });
+      return reply(origin, 503, { ok: false, reason: "token_refused", status: r.status });
     }
   }
 

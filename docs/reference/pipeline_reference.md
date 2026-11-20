@@ -975,7 +975,8 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   extract, NOT a daily-cron artifact. Schema applied live via the Supabase MCP.
 - **`commons_handover`** + the **`commons-handover`** Storage bucket (added 2026-11-20, S692; governance DR-35):
   hand it over in place. One row per thing a signed-in reviewer handed over for a Commons dataset: a file, a link,
-  pasted data or an API procedure (`commons_handover.js`). **Written only by `commons_handover_add(jsonb)`**
+  pasted data, an API procedure or a note (`commons_handover.js`; the note, with its `not_in_catalog` box for a
+  course, came with `kb/migrations/2026-11-20_commons_handover_note.sql`, Sam's ask of 2026-11-20). **Written only by `commons_handover_add(jsonb)`**
   (SECURITY DEFINER; a reviewer's own sign-in, never the team phrase; it stamps `handed_by` from the JWT and refuses
   a payload the page would never make). **Answered only by `commons_handover_mark(...)`**, the service role alone
   (the reader's pickup, `kb/_handover_pickup.py`). SELECT gated `is_allowed_reviewer()`; no API role inserts, updates
@@ -983,8 +984,9 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   kind and status, with no person, file name, address or text. The bucket is **private**: one policy, a reviewer's
   INSERT; no API role reads a file back (a course outline can name faculty), 50 MB cap, document MIME types only.
   ⚠ Never add a read policy to the bucket or widen the table's SELECT to the team phrase. Schema of record:
-  `kb/migrations/2026-11-20_commons_handover.sql` (its rollback keeps a table that holds rows); proof
-  `tests/commons_handover_sql_proof.py`.
+  `kb/migrations/2026-11-20_commons_handover.sql` (its rollback keeps a table that holds rows) and
+  `kb/migrations/2026-11-20_commons_handover_note.sql` (its rollback keeps every note written); proofs
+  `tests/commons_handover_sql_proof.py` and `tests/commons_handover_note_sql_proof.py`.
 - **`cpl_funding_participation`** (added 2026-07-06, Session 3): the funding
   tab's **baseline-eligibility opt-in registry** — one row per college that has
   requested to participate by the deadline (absence = not opted in; no PII).

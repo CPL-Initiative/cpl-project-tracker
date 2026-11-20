@@ -24,7 +24,8 @@ the title check. Both pages clear the college on their next build.
 ## The other way in: hand it over on the page (2026-11-20)
 
 A signed-in reviewer can hand an outline over without a session: each still-taught course in the Commons' Needs you
-opens a panel with a drop box, Try the link and a place to paste the data, and each college's College Data
-Collection panel has the same box (`commons_handover.js`). The file goes to the private bucket `commons-handover`
+opens a panel with a drop box, Try the link, a place to paste the data and a place to leave a note (a course that
+is not in the catalog is noted there), and each college's College Data Collection panel has the same box
+(`commons_handover.js`). The file goes to the private bucket `commons-handover`
 and a row in `commons_handover`; nothing is filed in this folder by that route. The lane names the steps that carry a
 hand-over into the outcomes table: [`docs/reference/lanes/commons.md`](../../../docs/reference/lanes/commons.md).

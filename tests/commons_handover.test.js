@@ -12,8 +12,8 @@
 //       through rpc/commons_handover_add, and the page never sends who handed it over (the database stamps it);
 //   (5) a file the store does not take, or one over 50 MB, is refused before any request;
 //   (6) Try the link: a bad address sends nothing; a good one saves the row, asks the reader to look now, and reads the
-//       reader's answer back (reads, or a bot check, in plain words); with the reader unreachable it says the link
-//       waits for the nightly run, never that it was read;
+//       reader's answer back (reads, or a bot check, in plain words); with the reader not started it says the link
+//       waits for the nightly run and why (the function's own reason), never that it was read;
 //   (7) pasted data: nothing typed sends nothing; outcomes go one per line; in the panel a save steps to the next
 //       course and carries the saved words;
 //   (8) the API procedure box: no address sends nothing; Save sends the procedure under the right dataset, and no key
@@ -23,7 +23,13 @@
 //       hand-over pane, the address round-trips, and each college on the to-do carries the word that opens it;
 //  (11) a direct arrival at a course's address opens its panel, and the tab reports that address for a sign-in link;
 //  (12) Term Reports Needed sits in Needs you with the same box under the term-reports dataset;
-//  (13) the module's CSS holds no raw hex color.
+//  (13) the module's CSS holds no raw hex color;
+//  (14) ⭐ a finding with nowhere to go (Sam, 2026-11-20: "they are not in the catalog, but there is no place for me to
+//       note that"): every box takes a note; a course's has a box for "not in the current catalog"; nothing written
+//       sends nothing; the note goes as its own kind and never names the person; in the panel a save steps on;
+//  (15) ⭐ a drop nobody can see landed (Sam, 2026-11-20, after seven term reports: "it doesn't show them all
+//       listed"): signed in, the box lists each thing handed over by name; signed out it lists nothing and never
+//       asks the table.
 //
 // Run from repo root: `npm test` (or `node tests/commons_handover.test.js`).
 const fs = require("fs");
@@ -73,7 +79,8 @@ function load(hash, opts) {
   SCRIPTS.forEach((s) => { const t = w.document.createElement("script"); t.textContent = s; w.document.body.appendChild(t); });
   w.CPL_HANDOVER.POLL.every = 0;
   return { w, d: w.document, M: w.CPL_COMMONS, H: w.CPL_HANDOVER, calls, address: () => (reported ? reported() : null),
-    writes: () => calls.filter((c) => !/commons_handover_summary/.test(c.url) && /commons_handover|storage\/v1|functions\/v1\/handover/.test(c.url)) };
+    writes: () => calls.filter((c) => !/commons_handover_summary|commons_handover\?select=id,created_at/.test(c.url) && /commons_handover|storage\/v1|functions\/v1\/handover/.test(c.url)),
+    listReads: () => calls.filter((c) => /rest\/v1\/commons_handover\?select=id,created_at/.test(c.url)) };
 }
 const tick = () => new Promise((r) => setTimeout(r, 0));
 async function settle(n) { for (let i = 0; i < (n || 30); i++) await tick(); }
@@ -141,7 +148,7 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   press(x.w, x.d.querySelector('a[data-course="' + COURSES[0].control_number + '"]')); await settle();
   panel = x.d.querySelector("#cho-panel");
   const fileInput = panel.querySelector(".cho-drop input[type=file]");
-  check("(4) signed in, the box shows the drop box, the link and the pasted data", !!fileInput && !!panel.querySelector(".cho-drop label[for='" + fileInput.id + "']") && panel.querySelectorAll("form").length === 2 && !!panel.querySelector(".cho-paste"));
+  check("(4) signed in, the box shows the drop box, the link, the pasted data and the note", !!fileInput && !!panel.querySelector(".cho-drop label[for='" + fileInput.id + "']") && panel.querySelectorAll("form").length === 3 && !!panel.querySelector(".cho-paste") && !!panel.querySelector(".cho-note"));
   choose(x.w, fileInput, new x.w.File(["%PDF-1.4 outline"], "HLTH 167 outline (final).pdf", { type: "application/pdf" }));
   await settle();
   let up = x.writes().filter((c) => /storage\/v1\/object\/commons-handover\//.test(c.url))[0];
@@ -219,8 +226,8 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   press(x.w, x.d.querySelector('a[data-course="' + COURSES[0].control_number + '"]')); await settle();
   panel = x.d.querySelector("#cho-panel"); lf = panel.querySelectorAll("form")[0];
   lf.querySelector("input[type=url]").value = "https://outlines.example.edu/hlth167"; submit(x.w, lf); await settle(60);
-  check("(6) ⭐ with the reader unreachable the link waits for the nightly run, and nothing says it was read",
-    /Saved under your name\. Our reader tries this address at its nightly run/.test(txt(panel.querySelector(".cho-msg"))) && !/with no challenge/.test(txt(panel.querySelector(".cho-msg")))
+  check("(6) ⭐ with the reader not started the link waits for the nightly run, the page says why, and nothing says it was read",
+    /Saved under your name\. The reader was not started now: the service that starts it has no GitHub token set \(not_configured\)\. Ask whoever keeps the project's Edge Function secrets to set HANDOVER_DISPATCH_TOKEN\. Our reader tries this address at its nightly run/.test(txt(panel.querySelector(".cho-msg"))) && !/with no challenge/.test(txt(panel.querySelector(".cho-msg")))
       && !x.writes().some((c) => /rest\/v1\/commons_handover\?id=/.test(c.url)), txt(panel.querySelector(".cho-msg")));
 
   // ── (7) pasted data ──
@@ -242,6 +249,96 @@ const STORED = { "storage/v1/object/commons-handover": () => ({ status: 200, bod
   check("(7) in the panel a save steps to the next course and carries the saved words",
     txt(panel.querySelector("#cho-panel-h")).indexOf(COURSES[1].course) === 0 && /Saved HLTH 167 under your name\. A person's entry wins over a later machine read\./.test(txt(panel.querySelector("[data-carried]"))),
     txt(panel.querySelector("#cho-panel-h")) + " | " + txt(panel.querySelector("[data-carried]")));
+
+  // ── (14) a note (Sam, 2026-11-20: "they are not in the catalog, but there is no place for me to note that") ──
+  x = load("#commons", { signedIn: true, answers: Object.assign({}, ADDED, { "functions/v1/handover-try-link": () => ({ status: 503, body: { ok: false, reason: "token_refused", status: 401 } }) }) });
+  await x.M.boot(); await settle();
+  press(x.w, x.d.querySelector('a[data-course="' + COURSES[0].control_number + '"]')); await settle();
+  panel = x.d.querySelector("#cho-panel"); lf = panel.querySelectorAll("form")[0];
+  lf.querySelector("input[type=url]").value = "https://outlines.example.edu/hlth167"; submit(x.w, lf); await settle(60);
+  check("(6) a token GitHub refused is named as that, with who renews it",
+    /Saved under your name\. The reader was not started now: GitHub refused the service's token \(token_refused\).*renew HANDOVER_DISPATCH_TOKEN\. Our reader tries this address at its nightly run/.test(txt(panel.querySelector(".cho-msg"))), txt(panel.querySelector(".cho-msg")));
+  let noteBox = panel.querySelector("details.cho-note"), noteForm = noteBox && noteBox.querySelector("form"), gone = noteForm && noteForm.querySelector("input[type=checkbox]");
+  check("(14) ⭐ a course's box has a place to leave a note, with a box for not in the catalog",
+    !!noteForm && /^Or leave a note/.test(txt(noteBox.querySelector("summary"))) && !!gone && txt(noteForm.querySelector("label[for='" + gone.id + "']")) === "This course is not in the current catalog",
+    noteBox ? txt(noteBox) : "no note box");
+  check("(14) every note field has a label", Array.from(noteForm.querySelectorAll("textarea, input")).every((f) => !!noteForm.querySelector("label[for='" + f.id + "']")));
+  before = x.writes().length;
+  submit(x.w, noteForm); await settle();
+  check("(14) nothing written and no box checked sends nothing", x.writes().length === before && /Write the note first, or check the box\./.test(txt(panel.querySelector(".cho-msg"))), txt(panel.querySelector(".cho-msg")));
+  noteForm.querySelector("textarea").value = "Looked in chapter 7."; noteForm.querySelector("input[type=url]").value = "chapter 7 of the catalog";
+  submit(x.w, noteForm); await settle();
+  check("(14) a place that is no web address sends nothing", x.writes().length === before && /Give the place you looked as a full web address, or leave it empty\./.test(txt(panel.querySelector(".cho-msg"))), txt(panel.querySelector(".cho-msg")));
+  noteForm.querySelector("textarea").value = "  Not printed in chapter 7 of the 2026-2027 catalog.  ";
+  noteForm.querySelector("input[type=url]").value = "https://www.example.edu/catalog/chapter_7.pdf"; gone.checked = true;
+  submit(x.w, noteForm); await settle();
+  let noteCall = x.writes().slice(before).filter((c) => /rpc\/commons_handover_add/.test(c.url))[0], noted = noteCall ? JSON.parse(noteCall.body).p : {};
+  check("(14) ⭐ the note goes as its own kind with the box, the words and the place, and never names the person",
+    noted.kind === "note" && JSON.stringify(noted.note) === JSON.stringify({ text: "Not printed in chapter 7 of the 2026-2027 catalog.", not_in_catalog: true, source_url: "https://www.example.edu/catalog/chapter_7.pdf" })
+      && noted.course_code === COURSES[0].course && noted.control_number === COURSES[0].control_number && noted.subject_kind === "course"
+      && !("pasted" in noted) && !("link_url" in noted) && !/handed_by|reviewer@/.test(noteCall.body), JSON.stringify(noted));
+  check("(14) a note starts no reader", !x.writes().slice(before).some((c) => /handover-try-link/.test(c.url)));
+  panel = x.d.querySelector("#cho-panel");
+  check("(14) in the panel a saved note steps to the next course and carries the saved words",
+    txt(panel.querySelector("#cho-panel-h")).indexOf(COURSES[1].course) === 0 && new RegExp("Saved your note on " + COURSES[0].course + " under your name\\. A session reads it and answers here\\.").test(txt(panel.querySelector("[data-carried]"))),
+    txt(panel.querySelector("#cho-panel-h")) + " | " + txt(panel.querySelector("[data-carried]")));
+  noteForm = panel.querySelector("details.cho-note form"); before = x.writes().length;
+  noteForm.querySelector("input[type=checkbox]").checked = true;
+  submit(x.w, noteForm); await settle();
+  noteCall = x.writes().slice(before).filter((c) => /rpc\/commons_handover_add/.test(c.url))[0]; noted = noteCall ? JSON.parse(noteCall.body).p : {};
+  check("(14) the box alone is a note", noted.kind === "note" && JSON.stringify(noted.note) === '{"not_in_catalog":true}' && noted.course_code === COURSES[1].course, JSON.stringify(noted));
+  const ohloneBox = x.H.box({ subject_kind: "college", dataset: "course_outlines", college: "Ohlone College" }, {});
+  check("(14) a college's box takes a note and has no catalog box",
+    !!ohloneBox.querySelector("details.cho-note form textarea") && !ohloneBox.querySelector("details.cho-note input[type=checkbox]") && txt(ohloneBox.querySelector("details.cho-note summary")) === "Or leave a note",
+    txt(ohloneBox.querySelector("details.cho-note")));
+  const datasetBox = x.H.box({ subject_kind: "dataset", dataset: "term_reports" }, {});
+  check("(14) a statewide dataset's box takes a note too", !!datasetBox.querySelector("details.cho-note form textarea") && !datasetBox.querySelector("details.cho-note input[type=checkbox]"));
+  check("(14) a note reads as words in the public counts",
+    x.H.standing([{ dataset: "course_outlines", subject_kind: "course", college: "Ohlone College", course_code: "BRDC 127A", kind: "note", status: "waiting", n: 1 },
+      { dataset: "course_outlines", subject_kind: "course", college: "Ohlone College", course_code: "BRDC 127A", kind: "note", status: "filed", n: 2 }],
+      { subject_kind: "course", college: "Ohlone College", course_code: "BRDC 127A" }).join("; ") === "1 note to be read; 2 notes filed");
+  x = load("#commons");
+  await x.M.boot(); await settle();
+  press(x.w, x.d.querySelector('a[data-course="' + COURSES[0].control_number + '"]')); await settle();
+  check("(14) signed out, no note can be written", !x.d.querySelector("#cho-panel details.cho-note") && /or to leave a note/.test(txt(x.d.querySelector("#cho-panel .cho-signin"))));
+
+  // ── (15) what was handed over, each one named (Sam, 2026-11-20: "it doesn't show them all listed") ──
+  const DROPPED = [
+    { id: "a", created_at: "2026-11-20T20:04:15Z", kind: "file", course_code: null, file_name: "CourseDetails.csv", file_bytes: 16651659, link_url: null, note: null, status: "waiting", status_note: null, found: null },
+    { id: "b", created_at: "2026-11-20T20:04:04Z", kind: "file", course_code: null, file_name: "CourseDetails (1).csv", file_bytes: 5622190, link_url: null, note: null, status: "reads", status_note: null, found: { rows: 41250, columns: ["College"] } },
+    { id: "c", created_at: "2026-11-20T20:03:56Z", kind: "file", course_code: null, file_name: "CourseDetails (2).csv", file_bytes: 49043264, link_url: null, note: null, status: "could_not_read", status_note: "The CSV holds no rows.", found: null },
+    { id: "d", created_at: "2026-11-20T20:03:00Z", kind: "note", course_code: null, file_name: null, file_bytes: null, link_url: null, note: { text: "Spring 2026 posts in March." }, status: "waiting", status_note: null, found: null }
+  ];
+  x = load("#commons", { signedIn: true, answers: Object.assign({}, ADDED, { "rest/v1/commons_handover?select=id,created_at": () => ({ status: 200, body: DROPPED }) }) });
+  await x.M.boot(); await settle();
+  const listBox = x.H.box({ subject_kind: "dataset", dataset: "term_reports" }, {});
+  x.d.body.appendChild(listBox); await settle();
+  const listedRows = Array.from(listBox.querySelectorAll("[data-listed] li")).map((li) => txt(li.querySelector(".cho-k")) + " | " + txt(li.querySelector(".cho-v")).replace(/^[^:]+:\d\d [AP]M: /, ""));
+  check("(15) ⭐ a reviewer sees each thing handed over, by name and size, so seven drops read as seven",
+    listedRows.length === 4 && listedRows[0] === "CourseDetails.csv, 15.9 MB | to be opened by our reader" && listedRows[1] === "CourseDetails (1).csv, 5.4 MB | read by our reader, 41,250 rows"
+      && listedRows[2] === "CourseDetails (2).csv, 46.8 MB | our reader could not read. The CSV holds no rows." && listedRows[3] === "Note: Spring 2026 posts in March. | to be read",
+    JSON.stringify(listedRows));
+  check("(15) the list has a heading that counts it, and the list is named by it",
+    txt(listBox.querySelector(".cho-listed-h")) === "Handed over here: 4" && listBox.querySelector("[data-listed] ul").getAttribute("aria-labelledby") === listBox.querySelector(".cho-listed-h").id);
+  const listCall = x.listReads().slice(-1)[0];
+  check("(15) the read asks for this dataset alone, under the reviewer's own token, and never for who handed it over",
+    !!listCall && /dataset=eq\.term_reports/.test(listCall.url) && /subject_kind=eq\.dataset/.test(listCall.url) && !/handed_by/.test(listCall.url)
+      && listCall.headers.Authorization === "Bearer " + REVIEWER.access_token, listCall && listCall.url);
+  const courseBox = x.H.box({ subject_kind: "course", dataset: "course_outlines", college: "Ohlone College", course_code: "BRDC 127A" }, {});
+  x.d.body.appendChild(courseBox); await settle();
+  check("(15) a course's list asks for that college and course", /college=eq\.Ohlone%20College/.test(x.listReads().slice(-1)[0].url) && /course_code=eq\.BRDC%20127A/.test(x.listReads().slice(-1)[0].url), x.listReads().slice(-1)[0].url);
+  check("(15) a note that says not in the catalog reads as that",
+    x.H.listedPair({ kind: "note", created_at: "2026-11-20T20:00:00Z", status: "filed", note: { not_in_catalog: true, text: "Chapter 7 skips 127." } }, { subject_kind: "course" })[0] === "Note: not in the current catalog. Chapter 7 skips 127.");
+  x = load("#commons", { answers: { "rest/v1/commons_handover?select=id,created_at": () => ({ status: 200, body: DROPPED }) } });
+  await x.M.boot(); await settle();
+  const outBox = x.H.box({ subject_kind: "dataset", dataset: "term_reports" }, {});
+  x.d.body.appendChild(outBox); await settle();
+  check("(15) ⭐ signed out, nothing is listed and the table is never asked", !outBox.querySelector("[data-listed]") && x.listReads().length === 0, String(x.listReads().length));
+  x = load("#commons", { signedIn: true, answers: Object.assign({}, ADDED) });
+  await x.M.boot(); await settle();
+  const emptyBox = x.H.box({ subject_kind: "dataset", dataset: "term_reports" }, {});
+  x.d.body.appendChild(emptyBox); await settle();
+  check("(15) with nothing handed over, or a read that fails, no list shows", emptyBox.querySelector("[data-listed]").hasAttribute("hidden"));
 
   // ── (9) the public counts as words ──
   const SUMMARY = [
