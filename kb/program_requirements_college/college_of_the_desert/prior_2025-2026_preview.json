@@ -1,13 +1,13 @@
 {
  "college": "College of the Desert",
- "catalog_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2025-2026-catalog.pdf",
+ "catalog_url": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
  "platform": "courseleaf",
  "catalog_year": "2025-2026",
  "programs": 8,
  "with_closed_list": 8,
- "started": "2026-11-20T09:23:59Z",
+ "started": "2026-11-20T09:29:02Z",
  "prior": {
-  "start": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2025-2026-catalog.pdf",
+  "start": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
   "catalog_year": "2025-2026",
   "only": [
    "31538",
@@ -23,27 +23,99 @@
  },
  "procedure_step": {
   "start": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
-  "file": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2025-2026-catalog.pdf"
+  "follow_year": "2025-2026",
+  "href": null,
+  "status": 200,
+  "access": "ok",
+  "links": [
+   {
+    "text": "Catalogs & Schedules",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/default.php"
+   },
+   {
+    "text": "Catalog and Schedules",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/"
+   },
+   {
+    "text": "View Important Section Dates",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/important-dates.php"
+   },
+   {
+    "text": "review information about Hyflex Courses",
+    "href": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/admissions/cod-poster-hyflex.pdf"
+   },
+   {
+    "text": "review information about Short-Term courses",
+    "href": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/admissions/taking-short-term-courses-accessible.pdf"
+   },
+   {
+    "text": "Learn More about Common Course Numbering",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/common-course-numbering.php"
+   },
+   {
+    "text": "View the Winter/Spring Class Schedule\nWinter/Spring 2027\n\nRegistration Begins\nNo",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/winter-spring-schedule.php"
+   },
+   {
+    "text": "View the Summer Class Schedule\nSummer 2026\n\nRegistration Begins\nMarch 16",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/summer-schedule.php"
+   },
+   {
+    "text": "View the Fall Class Schedule\nFall 2026\n\nRegistration Begins\nMarch 16",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/fall-schedule.php"
+   },
+   {
+    "text": "",
+    "href": "https://catalog.collegeofthedesert.edu/"
+   },
+   {
+    "text": "2026-27 COD Catalog (Online)",
+    "href": "https://catalog.collegeofthedesert.edu/"
+   },
+   {
+    "text": "2026-27 PDF Catalog",
+    "href": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf"
+   },
+   {
+    "text": "Catalog Archive >>",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/archive.php"
+   },
+   {
+    "text": "Schedule Archive >>",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/archived-schedules.php"
+   },
+   {
+    "text": "Course Outline of Record >>",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/course-outlines.php"
+   },
+   {
+    "text": "View Important Section Dates",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/important-dates.php"
+   },
+   {
+    "text": "",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/default.php#"
+   },
+   {
+    "text": "",
+    "href": "https://a.cms.omniupdate.com/11/?skin=collegeofthedesert&account=collegeofthedesert&site=www&action=de&path=/students/catalog-schedule/default.pcf"
+   },
+   {
+    "text": "Catalogs & Schedules",
+    "href": "https://collegeofthedesert.edu/students/catalog-schedule/default.php"
+   }
+  ]
  },
  "pdf": {
-  "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2025-2026-catalog.pdf",
-  "access": "unreachable",
-  "status": 404,
+  "url": null,
+  "access": "no_address",
+  "status": null,
   "bytes": null,
   "pages_total": 0,
   "error": null,
   "chars_total": 0,
   "pypdf_accepted": 0,
   "sample": [],
-  "ranges": {
-   "asked": 1,
-   "failed": 0,
-   "honored": false,
-   "range_bytes": 4194304,
-   "total": null,
-   "validator": null,
-   "sha256": null
-  },
   "extractor": null,
   "numbers_after": {
    "after": 0,
@@ -57,7 +129,7 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 0,
- "seconds": 11.1,
+ "seconds": 10.9,
  "found": 0,
  "by_method": {
   "not_found": 8
@@ -141,5 +213,5 @@
   "forced_unbound": []
  },
  "fingerprints": {},
- "run": "44710248023"
+ "run": "44710824364"
 }
