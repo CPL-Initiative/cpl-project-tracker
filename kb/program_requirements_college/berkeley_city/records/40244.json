@@ -65,7 +65,7 @@
    "status": "incomplete",
    "computed": [
     23.0,
-    29.0
+    23.0
    ],
    "stated": [
     60.0,
@@ -81,15 +81,14 @@
     "status": "equal",
     "computed": [
      23.0,
-     29.0
+     23.0
     ],
     "stated": [
      23.0,
      23.0
     ],
     "against": "program",
-    "why": [],
-    "meets": true
+    "why": []
    }
   },
   "repeated": {
@@ -268,6 +267,5 @@
    "Text is cut off at the end ('A minimum grade'); no program learning outcomes appear in the provided text."
   ]
  },
- "extracted_run": 44719698056,
- "read_run": "39891604919"
+ "extracted_run": "39891604919"
 }

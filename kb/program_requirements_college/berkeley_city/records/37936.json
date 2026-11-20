@@ -104,21 +104,44 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
-   "heading_printed": true,
+   "not_verbatim": [
+    "Demonstrate entry-level skills in video arts via completed portfolio projects.",
+    "Describe, plan and evaluate design principles, aesthetic forms, historical context and social relevance of multimedia works.",
+    "Delegate responsibilities according to various crew roles and applying collaborative communication skills in a professional setting."
+   ],
+   "why": [
+    "not in the catalog text as printed: Demonstrate entry-level skills in video arts via completed portfolio projects.",
+    "not in the catalog text as printed: Describe, plan and evaluate design principles, aesthetic forms, historical conte",
+    "not in the catalog text as printed: Delegate responsibilities according to various crew roles and applying collabora"
+   ],
+   "heading_printed": false,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 14,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "video producers",
+    "video editors",
+    "motion graphics designers",
+    "on-location or studio recordists",
+    "sound designers for radio and motion picture",
+    "cinematographers",
+    "camera operators",
+    "gaffers",
+    "grips",
+    "documentaries and nonfiction producers",
+    "video directors",
+    "social media content producers",
+    "social media producers",
+    "project managers"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -457,7 +480,7 @@
    "Career list taken from the Career Opportunities section; 'transfer to education programs at four-year institutions' is a transfer goal and not recorded as a career."
   ]
  },
- "extracted_run": 44719698056,
+ "extracted_run": 43141644775,
  "reconciled": [
   {
    "field": "ge_units",
@@ -478,5 +501,5 @@
    "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
   }
  ],
- "read_run": 43141644775
+ "read_run": "39891604919"
 }

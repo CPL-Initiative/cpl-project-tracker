@@ -46,30 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 14,
    "listed": 16,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.875,
+   "missing": [
+    "ART3",
+    "COMM20"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ARTHC1200",
-     "listed": "ART3",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "COMMC1004",
-     "listed": "COMM20",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ARTHC1200",
+    "COMMC1004"
+   ],
+   "flagged": [
+    "ARTHC1200",
+    "COMMC1004"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -323,6 +320,5 @@
    "Single learning outcome printed for the certificate."
   ]
  },
- "extracted_run": 44719698056,
- "read_run": "39891604919"
+ "extracted_run": "39891604919"
 }

@@ -46,32 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 11,
    "listed": 13,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.846,
+   "missing": [
+    "ART2",
+    "ART3"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ARTHC1100",
-     "listed": "ART2",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ARTHC1200",
-     "listed": "ART3",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 3,
    "codes": [
+    "ARTHC1100",
+    "ARTHC1200",
     "HUMAN182"
    ],
    "flagged": [
+    "ARTHC1100",
+    "ARTHC1200",
     "HUMAN182"
    ],
    "pass": true
@@ -312,6 +307,5 @@
    "The page prints no program learning outcomes and names no careers."
   ]
  },
- "extracted_run": 44719698056,
- "read_run": "39891604919"
+ "extracted_run": "39891604919"
 }

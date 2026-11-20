@@ -46,32 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 25,
+   "placed": 23,
    "listed": 25,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.92,
+   "missing": [
+    "ART2",
+    "ART3"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ARTHC1100",
-     "listed": "ART2",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ARTHC1200",
-     "listed": "ART3",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
+   "count": 3,
    "codes": [
+    "ARTHC1100",
+    "ARTHC1200",
     "HUMAN182"
    ],
    "flagged": [
+    "ARTHC1100",
+    "ARTHC1200",
     "HUMAN182"
    ],
    "pass": true
@@ -408,7 +403,7 @@
    "Career Opportunities also mentions transfer to a 4-year university with a major in Art or a related field (not a career)."
   ]
  },
- "extracted_run": 44719698056,
+ "extracted_run": 43141644775,
  "reconciled": [
   {
    "field": "ge_units",
@@ -429,5 +424,5 @@
    "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
   }
  ],
- "read_run": 43141644775
+ "read_run": "39891604919"
 }

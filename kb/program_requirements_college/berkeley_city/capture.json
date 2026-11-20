@@ -5,11 +5,34 @@
  "catalog_year": "2026-2027",
  "programs": 99,
  "with_closed_list": 97,
- "started": "2026-11-20T10:30:37Z",
+ "started": "2026-11-12T02:30:35Z",
  "curriqunet": {
   "catalog": 10327,
   "view_prefix": "https://bcc.curriqunet.com/catalog/view//iq/",
-  "errors": [],
+  "errors": [
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40765: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=39975: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40911: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40071: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40072: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40029: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40069: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40074: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40797: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40070: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40073: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40036: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=39976: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40022: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40023: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40056: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40057: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40058: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=41941: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=41162: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=41011: HTTP 503",
+   "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=41092: HTTP 503"
+  ],
   "sections": [
    "Degree and Certificate Requirements",
    "Degree and Certificate Programs"
@@ -19,362 +42,31 @@
   "entries": 188,
   "stopped_at_cap": false,
   "same_title_entries": 92,
-  "entries_read": 96,
-  "twin_ids": {
-   "39989": [
-    40713
-   ],
-   "39978": [
-    40699
-   ],
-   "39979": [
-    40700
-   ],
-   "39981": [
-    40701
-   ],
-   "39980": [
-    40702
-   ],
-   "41176": [
-    41175
-   ],
-   "39977": [
-    40697
-   ],
-   "40987": [
-    40992
-   ],
-   "40060": [
-    40780
-   ],
-   "40059": [
-    40781
-   ],
-   "40037": [
-    40942
-   ],
-   "40038": [
-    40943
-   ],
-   "40065": [
-    40786
-   ],
-   "39969": [
-    40688
-   ],
-   "39970": [
-    40689
-   ],
-   "39974": [
-    40693
-   ],
-   "40061": [
-    40782
-   ],
-   "40062": [
-    40783
-   ],
-   "40063": [
-    40784
-   ],
-   "40064": [
-    40785
-   ],
-   "39984": [
-    40705
-   ],
-   "41855": [
-    40711
-   ],
-   "40039": [
-    40947
-   ],
-   "40015": [
-    41021
-   ],
-   "39972": [
-    40691
-   ],
-   "40066": [
-    40787
-   ],
-   "40016": [
-    40715
-   ],
-   "40017": [
-    40716
-   ],
-   "40018": [
-    40717
-   ],
-   "41925": [
-    41945
-   ],
-   "40050": [
-    41040
-   ],
-   "40045": [
-    41043
-   ],
-   "40046": [
-    41042
-   ],
-   "40051": [
-    41037
-   ],
-   "40048": [
-    41039
-   ],
-   "39985": [
-    40706
-   ],
-   "40019": [
-    41023
-   ],
-   "40014": [
-    40714
-   ],
-   "40024": [
-    40721
-   ],
-   "40025": [
-    40722
-   ],
-   "40020": [
-    40718
-   ],
-   "40026": [
-    40723
-   ],
-   "40027": [
-    40724
-   ],
-   "40028": [
-    40725
-   ],
-   "40917": [
-    40916
-   ],
-   "41189": [
-    41169
-   ],
-   "41198": [
-    41170
-   ],
-   "41207": [
-    41171
-   ],
-   "41216": [
-    41172
-   ],
-   "41225": [
-    41173
-   ],
-   "41234": [
-    41174
-   ],
-   "41244": [
-    41239
-   ],
-   "40052": [
-    41089
-   ],
-   "41937": [
-    41954
-   ],
-   "40040": [
-    40944
-   ],
-   "40041": [
-    40945
-   ],
-   "39973": [
-    40692
-   ],
-   "39987": [
-    40707
-   ],
-   "39986": [
-    40708
-   ],
-   "40067": [
-    40788
-   ],
-   "40068": [
-    40789
-   ],
-   "40042": [
-    40948
-   ],
-   "40031": [
-    40949
-   ],
-   "40053": [
-    41090
-   ],
-   "40931": [
-    40926
-   ],
-   "40021": [
-    41020
-   ],
-   "39988": [
-    40709
-   ],
-   "40030": [
-    40730
-   ],
-   "40032": [
-    41074
-   ],
-   "40033": [
-    41075
-   ],
-   "40043": [
-    41958
-   ],
-   "40044": [
-    40941
-   ],
-   "40035": [
-    41073
-   ],
-   "39975": [
-    40694
-   ],
-   "40911": [
-    40906
-   ],
-   "40071": [
-    40792
-   ],
-   "40072": [
-    40793
-   ],
-   "40029": [
-    40729
-   ],
-   "40069": [
-    40790
-   ],
-   "40074": [
-    40794
-   ],
-   "40797": [
-    40796
-   ],
-   "40070": [
-    40791
-   ],
-   "40073": [
-    40795
-   ],
-   "40036": [
-    40776
-   ],
-   "39976": [
-    40695
-   ],
-   "40022": [
-    41022
-   ],
-   "40023": [
-    40719
-   ],
-   "40056": [
-    41093
-   ],
-   "40057": [
-    41094
-   ],
-   "40058": [
-    41095
-   ],
-   "41941": [
-    41963
-   ],
-   "41162": [
-    41168
-   ]
-  },
-  "failed_calls": 0
+  "entries_read": 96
  },
- "pages_read": 96,
- "pages_listed": 96,
- "pages_answered": 96,
- "listing_failed": 0,
+ "pages_read": 75,
  "banner_h1": null,
- "catalog_lookup": {
-  "self_test": {
-   "tested": 85,
-   "hits": 83,
-   "recall": 0.976,
-   "false": 0,
-   "false_off_own": 0,
-   "false_no_claims": 1,
-   "shared": 4,
-   "false_matches": [],
-   "no_claims_matches": [
-    {
-     "control_number": "37936",
-     "title": "Multimedia Arts--Video Arts",
-     "award": "A.A. Degree",
-     "page": "https://bcc.curriqunet.com/catalog/view//iq/39711/39967/41007/40939/41092",
-     "h1": "Multimedia Arts-Video Arts - AA Degree"
-    }
-   ],
-   "searches": true,
-   "catalog_list": null
-  },
-  "programs": 2,
-  "by_result": {
-   "found": 2
-  },
-  "found": 2,
-  "found_active": 1,
-  "found_pages": 2,
-  "found_programs": [
-   {
-    "control_number": "18333",
-    "title": "California General Education Transfer Curriculum (Cal-GETC)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "status": "Approved",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-    "page_title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-    "awards": [
-     "coa"
-    ]
-   },
-   {
-    "control_number": "37808",
-    "title": "ESOL Composition Skills",
-    "award": "Noncredit program",
-    "status": "Active",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40027",
-    "h1": "ESOL Composition Skills - Certificate of Competency",
-    "page_title": "ESOL Composition Skills - Certificate of Competency",
-    "awards": [
-     "noncredit"
-    ]
-   }
-  ],
-  "other_programs": [],
-  "yields": [],
-  "yield_unjudged": 0,
-  "yield_refused_passing": 0
- },
- "loads": 428,
- "seconds": 1893.0,
- "found": 89,
+ "loads": 365,
+ "seconds": 2013.2,
+ "found": 78,
  "by_method": {
   "no_closed_list": 2,
-  "not_found": 2,
-  "page_claimed": 6,
-  "sitemap_page": 89
+  "not_found": 4,
+  "page_claimed": 15,
+  "sitemap_page": 78
  },
  "shared_pages": {
+  "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855": [
+   "19976",
+   "31984",
+   "39386",
+   "40244",
+   "41777",
+   "41795",
+   "41876",
+   "42381",
+   "42838"
+  ],
   "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010": [
    "31835",
    "46229"
@@ -409,18 +101,49 @@
      "tabs": 0
     },
     "tab_panels": []
-   },
-   "status": "Active"
+   }
   },
   {
-   "control_number": "19976",
-   "title": "Spanish Language for Heritage Speakers",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "control_number": "37797",
+   "title": "Research Skills",
+   "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program",
-    "page_checks": true
-   },
-   "status": "Active"
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39989",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1732,
+     "content": 1732,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41867",
+   "title": "Social and Human Service Work Readiness",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41868",
+   "title": "Tutor Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   }
  ],
  "page_claimed": [
@@ -430,8 +153,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39969"
-   ],
-   "status": "Active"
+   ]
   },
   {
    "control_number": "09071",
@@ -439,8 +161,15 @@
    "award": "A.S. Degree",
    "pages": [
     "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39978"
-   ],
-   "status": "Active"
+   ]
+  },
+  {
+   "control_number": "18597",
+   "title": "Social Sciences",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855"
+   ]
   },
   {
    "control_number": "19971",
@@ -448,18 +177,68 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
     "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39978"
-   ],
-   "status": "Active"
+   ]
+  },
+  {
+   "control_number": "33181",
+   "title": "Teacher's Aide",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40021",
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010"
+   ]
+  },
+  {
+   "control_number": "35267",
+   "title": "Multimedia Arts Core",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40044",
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40035",
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054"
+   ]
+  },
+  {
+   "control_number": "37850",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39970",
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39969"
+   ]
+  },
+  {
+   "control_number": "37921",
+   "title": "Video Arts Level II: Directing And Producing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054"
+   ]
+  },
+  {
+   "control_number": "37934",
+   "title": "Video Arts Level I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054",
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40052"
+   ]
+  },
+  {
+   "control_number": "37935",
+   "title": "Video Arts Level II: Editing and Post-Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054"
+   ]
   },
   {
    "control_number": "38245",
    "title": "Social Media Storytelling",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
-    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054",
-    "https://bcc.curriqunet.com/catalog/view//iq/39711/39967/41007/40939/41092"
-   ],
-   "status": "Active"
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054"
+   ]
   },
   {
    "control_number": "39254",
@@ -467,8 +246,25 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "pages": [
     "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40051"
-   ],
-   "status": "Active"
+   ]
+  },
+  {
+   "control_number": "43424",
+   "title": "Virtual Production Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41176",
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40044",
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054"
+   ]
+  },
+  {
+   "control_number": "46221",
+   "title": "Virtual Production",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41176"
+   ]
   },
   {
    "control_number": "46474",
@@ -476,676 +272,100 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40051"
-   ],
-   "status": "Approved"
+   ]
   }
  ],
- "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 1,
-  "0.8-1.0": 5,
-  "1.0": 83
+  "0.5-0.8": 5,
+  "0.8-1.0": 15,
+  "1.0": 58
  },
  "would_extract": {
   "against": "kb/program_requirements_college/berkeley_city",
-  "kept": 60,
-  "kept_moved": 0,
-  "programs": 29,
+  "kept": 70,
+  "programs": 8,
   "list": [
-   {
-    "control_number": "01102",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39969",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39969",
-    "was_coverage": 0.92,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "09065",
-    "title": "English Literature/Writing",
-    "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40020",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40020",
-    "was_coverage": 0.944,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18597",
-    "title": "Social Sciences",
-    "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40069",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "19267",
-    "title": "Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39974",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39974",
-    "was_coverage": 0.962,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31138",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014",
-    "was_coverage": 0.875,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31835",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010",
-    "coverage": 0.824,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010",
-    "was_coverage": 0.765,
-    "was_method": "sitemap_page"
-   },
    {
     "control_number": "31984",
     "title": "Political Science",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
     "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33181",
-    "title": "Teacher's Aide",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40022",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35267",
-    "title": "Multimedia Arts Core",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39967/41007/40939/41092",
-    "coverage": 0.824,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37797",
-    "title": "Research Skills",
-    "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40029",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "37850",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37851",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39970",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39970",
-    "was_coverage": 0.846,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37921",
-    "title": "Video Arts Level II: Directing And Producing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40057",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37934",
-    "title": "Video Arts Level I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40056",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "37935",
-    "title": "Video Arts Level II: Editing and Post-Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40058",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
    },
    {
     "control_number": "39386",
     "title": "Sociology",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.917,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.917,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "40244",
     "title": "Spanish",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.667,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.667,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "41777",
     "title": "Philosophy",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.889,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.889,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "41795",
     "title": "Psychology",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.875,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.875,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41867",
-    "title": "Social and Human Service Work Readiness",
-    "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40074",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "41868",
-    "title": "Tutor Training",
-    "award": "Noncredit program",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40023",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
    },
    {
     "control_number": "41876",
     "title": "Social Work and Human Services",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40070",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.571,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.571,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40070",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "42381",
     "title": "Social Work and Human Services",
     "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40797",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
-    "was_coverage": 0.842,
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "coverage": 0.842,
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40797",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
     "control_number": "42838",
     "title": "Physics",
     "award": "A.S. T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40911",
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
     "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40911",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43006",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39972",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39972",
-    "was_coverage": 0.846,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43424",
-    "title": "Virtual Production Fundamentals",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "43932",
-    "title": "ESOL Pathway to Humanities",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41198",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41198",
-    "was_coverage": 0.875,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46221",
-    "title": "Virtual Production",
-    "award": "A.A. Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41941",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "46229",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010",
-    "was_coverage": 0.952,
-    "was_method": "sitemap_page"
    }
-  ],
-  "held_worse_window": [],
-  "held_no_gain": [],
-  "held_opens_on_list": [],
-  "refused_passing": [],
-  "forced_unbound": []
+  ]
  },
- "fingerprints": {
-  "01101": {
-   "sha256": "7c5aaf294e102587b1cf95b862ff9539dbce4b8e6e987ece99c068e70244645b",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39977"
-  },
-  "01102": {
-   "sha256": "d8d181783a44b52c754a5f9bebba421c62216500fa1e3ba45588418f8fe9dd6d",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39969"
-  },
-  "09056": {
-   "sha256": "2da7a2b1cc315ee1ff7e8853488bc6272a131a74ef045546efb9d81542894689",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40062"
-  },
-  "09057": {
-   "sha256": "7821e26b04dab1d380fb048eb7246170041c3f7cff4136dd2fb887808297c53f",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39987"
-  },
-  "09058": {
-   "sha256": "76169e32adc04e8d0057a0bf44784fcf3e33ccccc5b29247ddf0ed730447f8dc",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39978"
-  },
-  "09065": {
-   "sha256": "8e41cb99407a5db46aa0c4c9cfc0a2b4441cd9218c3fb335e85fc62778eba643",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40020"
-  },
-  "09073": {
-   "sha256": "8e614f700ef9207579427bd1db43aac9dea7436a99b30035ff38c81d68ceb82a",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40051"
-  },
-  "11676": {
-   "sha256": "287fd86d667754c7aa1dce19ef2902d455676788f079356ec8bfc34445415057",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40016"
-  },
-  "11677": {
-   "sha256": "411e1674fdacc9a6df97c8ad73d8afd093d228a1ab6930190b04d515882c6f53",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40018"
-  },
-  "11745": {
-   "sha256": "4779c5f5648da37091ad82ecc5f3e7516f4aaacc7e4d7ac4a2ada328b08e0f82",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40050"
-  },
-  "11960": {
-   "sha256": "05d249236a42c0898e1e438fe00cd68a05418f3b28c0bbb95369e9c47ef88a14",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40035"
-  },
-  "11961": {
-   "sha256": "fb2c425815ec199fccd6c3388af9ba6ff06cb7bb67984f71bd6c0cc09ddab6f1",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40032"
-  },
-  "11962": {
-   "sha256": "ace748d442dbaab5f8cf876c7d3b0786b094b0593ca1cf2699f440b6be5fd739",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40033"
-  },
-  "15570": {
-   "sha256": "91dcbd9a54765e1f70abca95945653b3f66cc063e06834feec15662da1110992",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39981"
-  },
-  "16645": {
-   "sha256": "e221aafa1d624b0681ff5f459fcf8afb44370fe541fdbdf7260836c9c94dd7b2",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40044"
-  },
-  "16646": {
-   "sha256": "a41e806dc5438fae3bf5e811cf7587bd651d9576d041905f77b8c77301336a34",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40037"
-  },
-  "16647": {
-   "sha256": "638cca608a96aef21f958f7578d784774bb6d6e6338a5dee521ee99760f229c7",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40038"
-  },
-  "18597": {
-   "sha256": "a82bfbf79996abdd40accab08e6792986cf0d98482b74bf2c78d06addfd04594",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40069"
-  },
-  "19267": {
-   "sha256": "fb486ac6122d7ebbf48d0b7b20b1e8cfb9fd9546e0c6743c18104fe5c0bf0dff",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39974"
-  },
-  "19969": {
-   "sha256": "60474c4d997f978d3720bac10c4a8d4107633dd98a433c60b4c84f44ddedda16",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40064"
-  },
-  "19970": {
-   "sha256": "1aef9d1744a56b2d95695280ee5669d0d1be7fd717a82fa1a5eec8f423eeff89",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39986"
-  },
-  "19972": {
-   "sha256": "c0fe725acd87d732e3762332ffc0abb6e3c0da58fd71ce72c8fe90fa9afbf9c6",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39980"
-  },
-  "19975": {
-   "sha256": "4bfbf0734ad1f5467e13e2738968a7cfd202746ecbba4f99e9ab93d96f26d8ad",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40987"
-  },
-  "31138": {
-   "sha256": "7ebcc9677bafa8437327fa674a288817c7d0f3822006ad4696a940a27c797e16",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014"
-  },
-  "31835": {
-   "sha256": "52aea5a1633170fa13b328c463543e4284f874293105a3245ed61fbeb842d7b7",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010"
-  },
-  "31984": {
-   "sha256": "98751e6e5ae96d0af38acbcdb09de3c3063700b67402f42cb5ac3c548851d4f7",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071"
-  },
-  "33181": {
-   "sha256": "3d1f9fdd8dc1e9348f6282a88d840a79432e5041f5d314fb17343f7ed1b2efe1",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40022"
-  },
-  "33548": {
-   "sha256": "dab7b0950cbb249214c5c0f2df72f4cb1f03467b8b200da769c6d5508941c939",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39985"
-  },
-  "33774": {
-   "sha256": "93d6e5a2b2eb14e185bc4ee34b94df92a0098223c4fc13f80fc1a9c7fcc05b90",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40059"
-  },
-  "33788": {
-   "sha256": "a0117ff9ce8a5758f72509c24c50ec625e4016f0dba2ff261c903240c13b0cfc",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40060"
-  },
-  "35046": {
-   "sha256": "68643e6018f93983b34252c00f69a013f810505f910d62a90793323152a141b4",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40040"
-  },
-  "35070": {
-   "sha256": "437f1895e328be6aa0ad9abc5d243149bf1e3113e2d8cd4e6d9bc62eab147d59",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40041"
-  },
-  "35267": {
-   "sha256": "a40351f8fe84c1fb3484995a5805e0750e4b1ce657831801cf032c4f2265c414",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39967/41007/40939/41092"
-  },
-  "35507": {
-   "sha256": "b1416adeb6671f7f934a66f71ab1b01f79f4f6deb3a543a3af582ddbf654540c",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39989"
-  },
-  "36612": {
-   "sha256": "a4c6352f42c37d2a1f8b974942d10745e74b8a8b551e1626321bc9dab97c72cb",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40045"
-  },
-  "36966": {
-   "sha256": "3acb172496a1c1a039849409415af6565250b2f657bdd8edb01e853fb9d98669",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40042"
-  },
-  "37668": {
-   "sha256": "68e3b65e9a60a5b8012ce0a9b60089f8522b4c33773e7eebbba10bdfa04293e4",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39973"
-  },
-  "37789": {
-   "sha256": "b027e0a52b15091014b54f0a2dedf504c601f49e75bc1ee8f06ddf2732d27b1a",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40026"
-  },
-  "37790": {
-   "sha256": "156505c57c9d89e756d33c7f71ca9d44226722121e89c8b373a576e052a53ad6",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40028"
-  },
-  "37797": {
-   "sha256": "ae144c8be7a9cdb34457f29abf56578e6f3534317ab20acb98aa68e7b27019c0",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40029"
-  },
-  "37820": {
-   "sha256": "dda630079f2dbb6b0a5072a9670ceb5b35be86d6ce59572323161e77f24276dc",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40031"
-  },
-  "37850": {
-   "sha256": "0a23a0902b73a49bfe5d64cb7570890919bb6b9a002d71df0d845f7b3a454ad3",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976"
-  },
-  "37851": {
-   "sha256": "e19897160da0c9426b329155dded3017dc347aa01a2354c0b37ce89e24397cef",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39970"
-  },
-  "37877": {
-   "sha256": "869f0913e0234d81976651c51a038df4dcc34186a466a2071e3c1a32d0ce4678",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40052"
-  },
-  "37921": {
-   "sha256": "cb74c127c17591ba2d2de5420481a5b52ea6898ef6020fe5521674e4b6f9c498",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40057"
-  },
-  "37934": {
-   "sha256": "27036cbac4c1ddddb652df060bc999ba86527df3dc8b0c3a59dec3a84cd696fb",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40056"
-  },
-  "37935": {
-   "sha256": "ea5612a2af219c5b1561e20fad55a5992f340e9e6e92a2edf1877295d4ee51a9",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40058"
-  },
-  "37936": {
-   "sha256": "25cca14e67d5415331c322e9d4782a9dedec1b987fe4a9804fe560dd031f0863",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40054"
-  },
-  "38228": {
-   "sha256": "c460984c9f00cff3a51f9caab22682e413f714160974b9e1e9c2506ee8703a29",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40063"
-  },
-  "38243": {
-   "sha256": "adcdb5067bb59e28c84cb86c45bd6bdd5e864ff88ff4308624eade68cc92d035",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40048"
-  },
-  "39163": {
-   "sha256": "64cfa975acc0746ebafda060585d5213d1036eed02b1b6121f6b6621a1e9e974",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39988"
-  },
-  "39287": {
-   "sha256": "94f30e58b5ec964e5bce5a71cd3a19b79efda6d535967ed11e568c05f21b7f5a",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40046"
-  },
-  "39315": {
-   "sha256": "7c8e528600ad3ce9dc5af0ac3aec800bd256e553fad9dc4c18b0b2fb7343c5d4",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40053"
-  },
-  "39333": {
-   "sha256": "144139097da77661b8b406a14ca7a761d0eab6f73731fc7d92bf8f64558eb339",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40043"
-  },
-  "39347": {
-   "sha256": "86a8cd0483b136babb3897584f35d39d199e7f15872e8b203b62e3ff35be0db5",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40021"
-  },
-  "39386": {
-   "sha256": "144ec55acbe6385e2c78dfc347f51c5e5bee870a928adfbeb368e1426d2e97d3",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073"
-  },
-  "39856": {
-   "sha256": "af6cec198ac8be0353b18437e85dae4b45f3da97faf475d539215ea8fa50f306",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40065"
-  },
-  "40244": {
-   "sha256": "43d3e6eb839466fb24434e023b9304c50eede9684d5859f3b62371dd9c1403cd",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036"
-  },
-  "41766": {
-   "sha256": "9980d9b1159ebe275277f615373bfc5e59bace698ec8e5cbab4b65bf5ed73720",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39984"
-  },
-  "41777": {
-   "sha256": "f5045170dad3ecaf537a0e81660555816f31e440ffb7f122f6f0b2672ed54fb3",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975"
-  },
-  "41778": {
-   "sha256": "ff37947dbe53f8cbbb0a962b87e7365de1642563cb9a64cea580595e95d9813d",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40030"
-  },
-  "41794": {
-   "sha256": "9194e5bcdd7b99bcfe5a481554102ba1e69e24000dc324cdbb72dc07554c575a",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40068"
-  },
-  "41795": {
-   "sha256": "08f2fb53b2d6ef84c357534bb6449453995d1fd7c656389cf5604e79ddfc6ab9",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072"
-  },
-  "41796": {
-   "sha256": "3d466b53a973dced4949c13c7c010689dc3207edb6248defd4ec33055b427d75",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40067"
-  },
-  "41834": {
-   "sha256": "6edf03a85419fca9a6ee838cbd75602051fb77e20977175621b093da0391c854",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40015"
-  },
-  "41867": {
-   "sha256": "7a706bac2ed58870308d34cddb42b4e434abffd09e0e73ec5307b93121406223",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40074"
-  },
-  "41868": {
-   "sha256": "7fc7daa002548a398f1596a4c59aab4411e0e6d8e2515776061ef9205c593456",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40023"
-  },
-  "41869": {
-   "sha256": "67cd15483f93756b1ea082c8dc703344cdb46fdb08067a0e6e126fd7c268cdc3",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40066"
-  },
-  "41876": {
-   "sha256": "639921306124f928bbd8ed60dac7b7c9db43d80e0b68c777b95d2443ce535534",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40070"
-  },
-  "41902": {
-   "sha256": "4d43de73cf1384deeb81390ac1937f8c1981bfe75c5f498aa59866c20882f6e3",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40061"
-  },
-  "42381": {
-   "sha256": "7f9ec111e2d14dc70c009093fcdeafdefec4f9ee7e1f8d5dd171cda35ac7793b",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40797"
-  },
-  "42838": {
-   "sha256": "015b439e2dfac21acb9c22e615096234c3e79c0dce518c95268789cb3ebf28e0",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40911"
-  },
-  "43006": {
-   "sha256": "269fc13c3fb41e16c61fa46d4b324b04de353fb2b2d76366bb5d8bb06db114db",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39972"
-  },
-  "43023": {
-   "sha256": "c780bea4186ab37d8f6d356cea36bace1e9a91313c38b29ada8f86591459f015",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40917"
-  },
-  "43097": {
-   "sha256": "bd239c7522e6bae9cf2d62b2fe8e8e3f2ca4d5a27a2ef9e54e8ff20fcc063551",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40931"
-  },
-  "43214": {
-   "sha256": "70ba641e34f8e6dfdbf3a21338651397061d1500a4c4feddf7b692a7f8c6bc14",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41244"
-  },
-  "43424": {
-   "sha256": "7c9af22a95fa062f11cbcc46c9d1b5fd1738d293ff5fd54cd272a98b554f4517",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41162"
-  },
-  "43827": {
-   "sha256": "aee1a53ede6c0b8f9b9894f2020b888888b29c8d6491f85554ba1c9b4b3c7824",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41176"
-  },
-  "43931": {
-   "sha256": "4ae9e66009fbe2ef400a60805f6742fbd54f10d6e6c67eab1cb12d5130401b4d",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41189"
-  },
-  "43932": {
-   "sha256": "40eb9b9e2eb0431853a499829e9894e974862ed210806d1e488102b6fe606881",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41198"
-  },
-  "43933": {
-   "sha256": "70f7502033cf4797df74459e1ab7a47a7e71950b870ae6e87af325b0aab0ae16",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41207"
-  },
-  "43934": {
-   "sha256": "64925c71c16d8f7436ac7d27594fb572d0666912556a3227a85214b6b60e84cb",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41216"
-  },
-  "43935": {
-   "sha256": "4681c1b907d8ea22496bbd6d7588904385e517b2e6b1ad6e6422904445fcd52f",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41225"
-  },
-  "43936": {
-   "sha256": "a3ec4c7eee63af68c934c6950e4c24dc4af81de0d73607d44e0b0ed27fee65c8",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41234"
-  },
-  "45941": {
-   "sha256": "7685afcdd3ba5a4b1d3a176c36babe00cb351728c92773e6b4adb106ab5b4939",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41937"
-  },
-  "46177": {
-   "sha256": "0e3dec89e8e4531ba1711b1f7e853beaf278c3fb2b1e3dbe13f9182c76ca1ede",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41925"
-  },
-  "46221": {
-   "sha256": "69664c88db7e714b93b05fe9d946109507ca48611deac8e0ca6f46b58399ced6",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41941"
-  },
-  "46229": {
-   "sha256": "c349c741a04fe057da0af5cdc68ac8695de939f2518a6548ec080e5548c32df4",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41010"
-  },
-  "46230": {
-   "sha256": "0a54de3a93782bda941179bf7ddf2ee1d9c305dc45bd36a9af4197a2c428ef80",
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40030"
-  }
- },
- "run": "44719698056"
+ "run": "43141644775"
 }

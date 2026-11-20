@@ -46,30 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 7,
    "listed": 9,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.778,
+   "missing": [
+    "ART2",
+    "ART3"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ARTHC1100",
-     "listed": "ART2",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ARTHC1200",
-     "listed": "ART3",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -262,6 +259,5 @@
    "The catalog text is cut off mid-sentence ('The California General Education Transfer Curricul'). No program outcomes or careers appear in the supplied text; any outcomes after the cutoff were not captured."
   ]
  },
- "extracted_run": 44719698056,
- "read_run": "39891604919"
+ "extracted_run": "39891604919"
 }
