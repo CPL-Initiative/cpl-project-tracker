@@ -432,7 +432,10 @@ def calgetc_apply_plan(records: list[dict], college: str, commit: str | None = N
     steps = R.load_steps() if steps is None else steps
     conf = steps.get(college) or {}
     mine = [f for f in records if f["college"] == college]
-    own = [st for st in conf.get("steps") or [] if st.get("kind") == "set" and st.get("field") == "ge_units"]
+    # A set step for local degrees only (Berkeley City's 18, S639) is no Cal-GETC route: its transfer degrees take
+    # the statewide step where the config carries one (S689).
+    own = [st for st in conf.get("steps") or [] if st.get("kind") == "set" and st.get("field") == "ge_units"
+           and not str(st.get("awards") or "").startswith("local")]
     rows = []
     if own:
         route = "college set step"

@@ -291,6 +291,37 @@ DOUBLE_COUNT = re.compile(r"double[\s-]+count|count(?:ed|s)?\s+(?:toward|towards
                           r"(?:general\s+education|Cal-?GETC)", re.I)
 
 
+# One line for general education and electives together, after the major (Berkeley City's transfer degrees, S689:
+# "Major Requirements 22" / "General Education (Cal-GETC) and Elective Courses 38" / "Total Units 60"; College of
+# Alameda's "G.E. (Cal-GETC) and elective units 35.00"). Its figure is the degree's remainder after the major, which
+# no Cal-GETC figure rests on (S639 at Berkeley City: "the line is general education and electives together").
+COMBINED_GE_ELECTIVES = re.compile(
+    r"(?:\bgeneral\s+education\b|\bG\.\s*E\.|\bGE\b)[^\n]{0,40}?\band\s+electives?\b[^\n]*?"
+    r"(?<![\w.])(?P<n>\d{1,2}(?:\.\d{1,2})?)(?:\s*[-\u2013]\s*(?P<m>\d{1,2}(?:\.\d{1,2})?))?(?![\w.]*\d)", re.I)
+
+
+def calgetc_combined(sec: str, prog: dict) -> tuple[str, list[str]]:
+    """The section without each combined general education and electives line whose figure is the degree's
+    remainder after the record's major (a single figure: major plus it is the degree total; a range: it mirrors the
+    major's, 18-19 beside 41-42 under 60, so each end of one meets the other's at the total) and whose low end is at
+    least the statewide 34, and those lines' words. A line that fails a test stays in the section, so the figure
+    gates still read it and hold."""
+    maj, total = _lo_hi(prog.get("total_units")), _lo_hi(prog.get("degree_total"))
+    if maj[0] is None or total[0] is None or total[0] != total[1]:
+        return sec, []
+    kept, dropped = [], []
+    for ln in sec.split("\n"):
+        m = COMBINED_GE_ELECTIVES.search(ln)
+        lo = float(m.group("n")) if m else None
+        hi = float(m.group("m")) if m and m.group("m") else lo
+        if m and abs(maj[0] + hi - total[0]) <= 0.01 and abs(maj[1] + lo - total[0]) <= 0.01 \
+                and lo >= CAL_GETC_UNITS["min"]:
+            dropped.append(ln.strip())
+            continue
+        kept.append(ln)
+    return "\n".join(kept), dropped
+
+
 def _alnum_find(text: str, heading: str | None, frm: int = 0) -> tuple[int, int] | None:
     """(start, end) of a heading in text at or after frm, letters and digits only, case kept (as _heading_end)."""
     want = "".join(ch for ch in (heading or "") if ch.isalnum())
@@ -479,7 +510,10 @@ def calgetc_hold(record, text: str | None, award: str | None, title: str | None 
         return "the section does not name Cal-GETC", {}
     if any(PARTIAL_LINE.search(ln) for ln in named):
         return "a Cal-GETC line asks part of it (an Area, one course, for STEM)", {"words": named[0].strip()}
-    fig = calgetc_figure(sec) or calgetc_broad_figure(sec)
+    # Only where the college's step says its pages print the combined line ("combined_line": its words), so the
+    # reading is off at every other college (a new matcher ships off; S689).
+    bare, combined = calgetc_combined(sec, prog) if step.get("combined_line") else (sec, [])
+    fig = calgetc_figure(bare) or calgetc_broad_figure(bare)
     if fig:
         return "the page prints a figure for it: %s" % fig[:120], {"words": fig}
     other = OTHER_GE_PATTERN.search(sec)
@@ -487,6 +521,8 @@ def calgetc_hold(record, text: str | None, award: str | None, title: str | None 
         return "the section names another pattern: %s" % other.group(0), {}
     stand = calgetc_standing(prog, award)
     read = {"words": named[0].strip()[:160], "standing": stand}
+    if combined:
+        read["combined"] = combined[0][:160]
     if stand["standing"] == "overlap":
         dc = DOUBLE_COUNT.search(sec)
         if not dc:
@@ -535,6 +571,9 @@ def statewide_cal_getc(record, text: str | None, award: str | None, title: str |
             "statewide": "cal_getc_34", "standing": read["standing"]["standing"]}
     if read["standing"].get("basis"):
         note["basis"] = read["standing"]["basis"]
+    if read.get("combined"):
+        # The page's one figure for general education and electives together, the degree's remainder (S689).
+        note["combined"] = read["combined"]
     if read.get("double_count"):
         note["double_count"] = read["double_count"]
     return out, [note]
