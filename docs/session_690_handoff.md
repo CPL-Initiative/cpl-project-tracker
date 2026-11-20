@@ -42,8 +42,11 @@ that UTC day), restarted the COBIx watcher, and wrote this split before any work
    priority, except the 12 courses still taught (name them: the page reads "TBA until the hunt list is filed").
    Collection has three sets, each with one simple measure and a ranked list of fixes: catalog programs (PLOs, course
    requirements), course outlines (SLOs, objectives, COCI data) and credentials (issuing agency, skills). Curation
-   runs in order (subject code, local subject title, M-ID, common exhibit title, common credential title, credential
-   skills), and the focus now is step 3: rank collection fixes by the M-ID cards each would unblock (missing COCI
+   runs in order (subject code, local subject title, M-ID, common exhibit title, credit recommendations, common
+   credential title, credential skills; Sam added the credit recommendations in session: *"yes, add in crs...forgot
+   about them and they are important and rely on the common course references (cid, ccn, mid)"*, relayed by the plain
+   session on #3584, comment 7039921626, which placed them; `r-curation-order-adds-crs-sam-2026-11-20`), and the
+   focus now is step 3: rank collection fixes by the M-ID cards each would unblock (missing COCI
    descriptions from catalogs, SLOs and objectives, catalog subject data, units and hours, credit or noncredit, still
    taught, prerequisites). Today's M-ID groupings and counts are rough. His words: *"no one's getting any younger out
    there"*; the point is *"getting credit for being you"* (`r-collect-for-mids-work-order-sam-2026-11-20`).

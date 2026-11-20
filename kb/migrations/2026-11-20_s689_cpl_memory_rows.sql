@@ -50,3 +50,13 @@ insert into public.cpl_memory_log (memory_id, actor, action, note, after)
 select id, 'SkyTern (S689)', 'create', 'S689 (2026-11-20): Sam''s work order relayed by COBIx', to_jsonb(m)
 from public.cpl_memory m where m.slug = 'r-collect-for-mids-work-order-sam-2026-11-20'
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+
+-- Sam's credit-recommendation step, in a plain session, relayed on #3584 at 12:47Z (added at sign-off).
+insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('r-curation-order-adds-crs-sam-2026-11-20','decision','Credit recommendations join the curation order','Sam, 2026-11-20, in a plain session after his Commons walkthrough, relayed on #3584 (comment 7039921626): "yes, add in crs...forgot about them and they are important and rely on the common course references (cid, ccn, mid)". Credit recommendations join the curation order after the common exhibit title (the plain session''s placement, his to move).',array['curation-order','cr','m-id','sam-ruling'],'verified','#3584 comment 7039921626','Sam (in session, relayed by the plain session)',now(),'SkyTern (S689)',date '2026-11-20')
+on conflict (slug) do nothing;
+
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyTern (S689)', 'create', 'S689 (2026-11-20): Sam''s credit-recommendation step', to_jsonb(m)
+from public.cpl_memory m where m.slug = 'r-curation-order-adds-crs-sam-2026-11-20'
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
