@@ -443,6 +443,21 @@ def network_read(got: list, find: tuple = ()) -> list[dict]:
 # fold() drops the blank line that parts them. MiraCosta's discipline pages kept one
 # claimant each (page_claimed 82, S444) and the capture keeps none of the text it read.
 CAPTURE_LINES = 1400     # lines of one page's capture view printed
+# A filing read prints every course a page holds (S690: NOCE's Kids College page runs past 1,400 lines), so a plan
+# may raise the capture view's line cap ("capture_lines") and the PDF page cap ("pdf_page_cap"), never lower them and
+# never past these ceilings. A session downloads the whole log (`gh run view --log`), which the MCP's 5,000-line window
+# would otherwise cut.
+CAPTURE_LINES_MAX = 20000
+PDF_PAGE_CAP_MAX = 1000
+
+
+def plan_cap(plan: dict | None, key: str, default: int, ceiling: int) -> int:
+    """The plan's own cap for key, between the default and the ceiling; the default when it names none."""
+    try:
+        own = int((plan or {}).get(key) or 0)
+    except (TypeError, ValueError):
+        own = 0
+    return min(max(default, own), ceiling)
 
 
 def capture_text(got: dict) -> str:
@@ -658,12 +673,15 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
     text = rec.get("text") or ""
     if rec.get("kind") == "pdf" and rec.get("pages"):
         plan = plan or {}
-        idx = pdf_pages_to_print(rec["pages"], pattern, span=plan.get("pdf_span"), after=plan.get("pdf_after") or 0)
+        idx = pdf_pages_to_print(rec["pages"], pattern, cap=plan_cap(plan, "pdf_page_cap", PDF_PAGE_CAP, PDF_PAGE_CAP_MAX),
+                                 span=plan.get("pdf_span"), after=plan.get("pdf_after") or 0)
         print("--- %d of %d PDF pages (those naming a keyword%s) ---" % (
             len(idx), len(rec["pages"]), ", and the page after each" if plan.get("pdf_after") else ""))
         for i in idx:
             print("[pdf page %d]" % (i + 1))
-            print(fold(rec["pages"][i]))
+            # A filing read keeps each line as the extractor split it ("pdf_unfolded"), so a course heading
+            # shorter than FOLD_UNDER is not joined to the lines around it (S690).
+            print(unfolded(rec["pages"][i], cap=CAPTURE_LINES_MAX) if plan.get("pdf_unfolded") else fold(rec["pages"][i]))
         return
     if not text:
         return
@@ -692,7 +710,7 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
         for label, n in rec.get("tab_panels") or []:
             print("- %s: %d" % (label or "(no label)", n))
         print("--- the capture's text, innerText+tabs, line for line ---")
-        print(unfolded(text))
+        print(unfolded(text, cap=plan_cap(plan, "capture_lines", CAPTURE_LINES, CAPTURE_LINES_MAX)))
         for label, body in rec.get("dropped_panels") or []:
             print("--- a tab panel the capture leaves out: %s ---" % (label or "(no label)"))
             print(unfolded(body))
