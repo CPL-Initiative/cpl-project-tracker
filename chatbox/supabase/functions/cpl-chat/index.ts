@@ -6511,14 +6511,16 @@ function libraryCut(text: string, max: number): string {
 }
 
 const LIBRARY_ENTITIES: Record<string, string> = { amp: "&", lt: "<", gt: ">", quot: "\"", apos: "'", nbsp: " ", middot: "·", ndash: "–", mdash: "—", rsquo: "’", lsquo: "‘", rdquo: "”", ldquo: "“", hellip: "…" };
-// A page's reading text: no head, script, style, svg or nav, and no public header (its
-// logo and links out, between its markers or as header.cplh); the page's own header,
-// which carries its title, stays. Tags to spaces, entities to characters, whitespace
-// folded, capped.
+// A page's reading text: no head, script, style, svg or nav, no public header (its
+// logo and links out, between its markers or as header.cplh) and no accessibility
+// check line (scripts/library_check.py stamps it between its markers on every page);
+// the page's own header, which carries its title, stays. Tags to spaces, entities to
+// characters, whitespace folded, capped.
 function libraryPageText(html: string): string {
   const body = String(html || "")
     .replace(/<!-- cpl-public-header:start[\s\S]*?<!-- cpl-public-header:end -->/g, " ")
     .replace(/<header\b[^>]*\bclass="cplh"[\s\S]*?<\/header>/gi, " ")
+    .replace(/<!-- cpl-library-check:[\s\S]*?<!-- \/cpl-library-check -->/g, " ")
     .replace(/<(head|script|style|svg|nav|noscript|template)\b[\s\S]*?<\/\1>/gi, " ")
     .replace(/<!--[\s\S]*?-->/g, " ")
     .replace(/<\/(p|div|li|h[1-6]|tr|section|article|td|th)>/gi, "$& \n")
