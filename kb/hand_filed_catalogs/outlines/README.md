@@ -20,3 +20,14 @@ To clear a college from the to-do on the College Data Collection page and the Co
 
 The file itself goes beside it, or as a link in `url`. The outline reader reads it the way it reads routes A and B, with
 the title check. Both pages clear the college on their next build.
+
+## A catalog's course descriptions, one row per course (S690)
+
+A college read from its HTML course-description pages files `<slug>_courses.json` beside its record, named in the
+record's `file`. Each row is one printed course: `college`, `catalog_year`, `subject`, `subject_name`, `code`, `title`,
+`hours`, `units` or `credits` as the page prints them, `requisites` (each printed Prerequisite, Corequisite, Advisory or
+Recommended Preparation line), `description`, `source_url`, `read_at` and the `run` whose log holds the page. Every
+course the page prints is kept, offered or not, so a set-aside of courses no longer offered is a join on `code`. The
+file's header says how the pages were read and parsed. North Orange Continuing Education was the first:
+`north_orange_continuing_education_courses.json`, read through `college-page-read.yml` (plans
+`kb/college_reads/noce_course_descriptions_*.json`), where the runner answers 200 and the session sandbox 202.
