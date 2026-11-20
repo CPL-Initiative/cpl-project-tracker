@@ -17,8 +17,6 @@
               "why": "its eLumen 26-27 course pages print units, transfer, requisites and hours, and no SLOs (0 of 12)"},
   "long_beach_city": {"state": "none", "on": "2026-10-14", "by": "S387", "source": "#2101",
                       "why": "its CourseLeaf course entries print no SLOs"},
-  "mt_san_antonio": {"state": "parser", "on": "2026-11-20", "by": "S689", "source": "trial 44687943107 on its SLO pages (#3537), kb/course_outcomes/mtsac_recall.json, the reader in #3586",
-                     "why": "its CourseLeaf course entries print no SLOs (S387); its SLO site prints a course's SLOs in a course results block, which #3586's reader parses 12 of 12 on the hand count (24 SLOs on 6 pages, 6 print the block empty). Read 44695707506 never loads (never_load); full read 44710704435 on the merged reader is running, and its load waits on it and the standing test"},
   "palo_verde": {"state": "held", "on": "2026-10-23", "by": "S451", "source": "cpl_memory palo-verde-acalog-catalog-2026-2027-2026-10-22",
                  "why": "its 2026-27 catalog moved to Acalog, where the read has no course page parser; its 2025-26 eLumen pages printed SLOs"},
   "san_diego_of_continuing_education": {"state": "held", "on": "2026-11-19", "by": "S685", "source": "index runs 44531933532 and 44536348461 (report=^All Fields$)",

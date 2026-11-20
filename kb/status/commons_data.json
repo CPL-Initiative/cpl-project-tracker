@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T09:54:11Z",
+ "written_at": "2026-11-20T11:44:43Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,7 +158,7 @@
   "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 21 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "slo": "Course SLO reads are committed for 22 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
   "objectives": "Course objectives are committed for 14 hosts (ccc, cccd, chabot, craftonhills, cuesta, hancockcollege, laspositas, palomar, rccd, redwoods, sac, sdccd, shasta, siskiyous) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
@@ -177,7 +177,7 @@
   "spent_usd": 1196.76,
   "spent_runs": 152,
   "spent_since": "2026-11-17",
-  "slo_waiting": 11,
+  "slo_waiting": 10,
   "scouted": 11,
   "scout_barrier": 1,
   "spot_checked": 8,
@@ -8320,17 +8320,15 @@
    },
    "programs_file": "kb/status/commons_data_programs/mt_san_antonio.json",
    "outcomes_file": "kb/status/commons_data_programs/mt_san_antonio.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "other"
+   ],
    "objectives_printed": null,
    "read_at": "2026-10-23T02:51:00Z",
    "read_kind": "capture",
    "cost_usd": 22.47,
    "passed_at_read": 359,
-   "slo_queue": {
-    "state": "parser",
-    "why": "its CourseLeaf course entries print no SLOs (S387); its SLO site prints a course's SLOs in a course results block, which #3586's reader parses 12 of 12 on the hand count (24 SLOs on 6 pages, 6 print the block empty). Read 44695707506 never loads (never_load); full read 44710704435 on the merged reader is running, and its load waits on it and the standing test",
-    "on": "2026-11-20"
-   },
+   "slo_queue": null,
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -8373,7 +8371,13 @@
      "cost_usd": 22.47,
      "platform": "courseleaf"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44710704435",
+     "at": "2026-11-20T11:37:28Z",
+     "system": "other",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/mtsac/read_44710704435_p5of5.json"
+    },
     "plo_programs": 263,
     "ppm_member": null,
     "maps": {
