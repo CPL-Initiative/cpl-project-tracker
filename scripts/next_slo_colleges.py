@@ -123,9 +123,19 @@ def loaded(root=KB):
     return names, hosts
 
 
+def never_load(root=KB):
+    """Run id -> why, for each filed read queue.json says never loads (a read whose filed rows a reader fix cannot
+    reach: a full read files no pages, so it cannot be reparsed)."""
+    path = os.path.join(root, "course_outcomes", "queue.json")
+    return (_json(path).get("never_load") or {}) if os.path.exists(path) else {}
+
+
 def filed(root=KB):
-    """Reads (by slug: run -> parts) and trials (by slug: newest trial) filed under kb/course_outcomes/."""
+    """Reads (by slug: run -> parts) and trials (by slug: newest trial) filed under kb/course_outcomes/. A full read
+    queue.json's never_load names is passed over, so the queue never names it for a load (S689: Feather River's read
+    44535960153 filed the "Learning Outcomes" header as 336 SLOs and no page to reparse)."""
     reads, trials = {}, {}
+    void = {str(k) for k in never_load(root)}
     for path in glob.glob(os.path.join(root, "course_outcomes", "*", "read*.json")):
         d = _json(path)
         slugs = [s for s in str(d.get("slugs") or "").split(",") if s]
@@ -134,6 +144,8 @@ def filed(root=KB):
                 if s not in trials or int(d.get("run") or 0) > int(trials[s].get("run") or 0):
                     trials[s] = {k: d.get(k) for k in ("run", "index", "summary", "complete", "wanted")}
                     trials[s]["rows"] = [{"status": r.get("status"), "shape": r.get("shape")} for r in d.get("rows") or []]
+            continue
+        if str(d.get("run")) in void:
             continue
         for s in slugs:
             run = reads.setdefault(s, {}).setdefault(str(d.get("run")), {"of": d.get("of"), "complete": set(),
@@ -172,8 +184,9 @@ def trial_verdict(trial):
 
 def route_of(name, folder, cen):
     """How the read reaches a college's course pages: ("catalog", host folder) for a catalog
-    that addresses each course by code (eLumen, the Coast district), ("index", curriQunet host)
-    for a curriQunet dashboard, else (None, the reason)."""
+    that addresses each course by code (eLumen, the Coast district), ("index", host) for a
+    curriQunet dashboard or a CurricUNET host whose search answers anonymous requests (City College
+    of San Francisco's ccsf.curricunet.com, S689), else (None, the reason)."""
     host = (folder or {}).get("catalog_host") or ""
     if host == CCCD:
         return "catalog", "cccd"
@@ -181,14 +194,15 @@ def route_of(name, folder, cen):
         return "catalog", host.split(".")[0].lower()
     row = cen.get(name) or {}
     system, access, outline = row.get("cor_system"), row.get("cor_access"), row.get("cor_outline")
-    cq = urllib.parse.urlparse(row.get("cor_url") or "").netloc
-    if cq.endswith(".curriqunet.com") and access == "public" and outline in ("outline_with_slos", "list_only"):
+    cq = urllib.parse.urlparse(row.get("cor_url") or "").netloc.lower()
+    governet = cq.endswith(".curriqunet.com") or cq.endswith(".curricunet.com")
+    if governet and access == "public" and outline in ("outline_with_slos", "list_only"):
         return "index", cq
     if not row:
         return None, "the census has no row for it"
     if system == "none_found":
         return None, "the census found no course outline system"
-    if cq.endswith(".curriqunet.com") and outline == "outline":
+    if governet and outline == "outline":
         return None, "the census's %s outline printed no SLO heading" % cq
     if system == "elumen":
         return None, "its eLumen catalog is not the catalog its harvest capture names"

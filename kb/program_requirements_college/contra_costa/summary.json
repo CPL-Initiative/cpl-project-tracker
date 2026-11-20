@@ -5,16 +5,19 @@
  "found": 97,
  "extracted": 97,
  "errors": 0,
- "passed_machine_checks": 57,
+ "passed_machine_checks": 68,
  "failed": {
-  "coverage": 9,
+  "coverage": 1,
   "invented": 0,
-  "arithmetic": 40,
+  "arithmetic": 29,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 6.44,
- "cost_per_program": 0.0664,
+ "cost_usd_run": 1.54,
+ "cost_usd_filed": 6.48,
+ "cost_per_program": 0.0669,
+ "extract_calls": 19,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "07607",
@@ -22,7 +25,35 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "31021",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/administration-of-justice-correctional-specialist-fall-2020",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.364,
+    "body": 0.364,
+    "content": 0.364,
+    "net": 4,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 4 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4169,
+     "content": 4169,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "38491",
@@ -30,7 +61,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "38492",
@@ -38,8 +70,36 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42617",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/physics-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.6,
+    "body": 0.6,
+    "content": 0.6,
+    "net": 6,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 2479,
+     "content": 2479,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
   }
  ],
- "run": "38979730323"
+ "run": "44687786167"
 }

@@ -2,19 +2,22 @@
  "college": "College of the Sequoias",
  "programs": 137,
  "with_closed_list": 137,
- "found": 125,
- "extracted": 125,
+ "found": 126,
+ "extracted": 126,
  "errors": 0,
- "passed_machine_checks": 85,
+ "passed_machine_checks": 100,
  "failed": {
-  "coverage": 7,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 40,
+  "arithmetic": 26,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 8.75,
- "cost_per_program": 0.07,
+ "cost_usd_run": 0.81,
+ "cost_usd_filed": 8.94,
+ "cost_per_program": 0.071,
+ "extract_calls": 9,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "10048",
@@ -40,49 +43,35 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
-   "control_number": "10064",
-   "title": "Administration of Justice-Corrections",
-   "award": "A.S. Degree",
+   "control_number": "20064",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18585",
-   "title": "Administration of Justice: Law Enforcement",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32649",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-administration-transfer-as-t/",
+    "url": "https://catalog.cos.edu//areas-study/graphic-design/certificate-achievement-graphic-design/",
     "label": {
      "award": 1,
-     "title": 0.5
+     "title": 1.0
     },
     "field": "innerText",
-    "coverage": 0.05,
-    "body": 0.05,
-    "content": 0.05,
-    "net": 1,
-    "listed": 20,
-    "why": "coarse net: the page's code tokens name 1 of 20 listed courses",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
     "error": null,
     "chars": {
-     "body": 4609,
-     "content": 6697,
+     "body": 3225,
+     "content": 5333,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42925",
@@ -108,8 +97,9 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38748848139"
+ "run": "44688217584"
 }

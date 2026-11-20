@@ -29,7 +29,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice for transfer, associate in science - major #m.8880.as-t",
+    "section_fit": 0.4
    }
   },
   "listed": 14,
@@ -41,7 +44,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG4A",
    "ACCTG4B",
@@ -54,6 +57,7 @@
    "IS15",
    "IS47",
    "MATH17",
+   "MATH5A",
    "MATH6",
    "MATHC2220",
    "STATC1000"
@@ -65,7 +69,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics for transfer, associate in arts - major #m.7200.aa-t",
+    "section_fit": 0.25
    }
   },
   "listed": 15,
@@ -105,7 +112,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science for transfer, associate in arts - major #m.7450.aa-t",
+    "section_fit": 0.4
    }
   },
   "listed": 20,
@@ -142,7 +152,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology for transfer, associate in arts - major #m.7550.aa-t",
+    "section_fit": 0.25
    }
   },
   "listed": 17,
@@ -179,7 +192,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology for transfer, associate in arts - major #m.7611.aa-t",
+    "section_fit": 0.25
    }
   },
   "listed": 16,
@@ -209,7 +225,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education for transfer, associate in science - major #m.5609.as-t",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -247,7 +266,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological science, associate in science - major #m.6100.as",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -279,7 +301,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "communication studies, associate in arts - major #m.5343.aa",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -291,13 +316,14 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.906,
+  "coverage": 0.938,
   "codes_found": [
    "ENGL15A",
    "ENGL15B",
    "ENGL15E",
    "ENGL15F",
    "ENGL17",
+   "ENGL1B",
    "ENGL2",
    "ENGL2H",
    "ENGL36",
@@ -330,7 +356,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "english, associate in arts - major #m.5300.aa",
+    "section_fit": 0.333
    }
   },
   "listed": 32,
@@ -358,7 +387,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language, associate in arts - major #m.5505.aa",
+    "section_fit": 0.6
    }
   },
   "listed": 6,
@@ -370,11 +402,12 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.963,
+  "coverage": 1.0,
   "codes_found": [
    "ARTH2",
    "ARTHC1200",
    "ARTHC1200H",
+   "ENGL1B",
    "ENGL41",
    "ENGL43A",
    "ENGL43B",
@@ -406,7 +439,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts & sciences: arts & humanities, associate in arts - major #m.5120.aa",
+    "section_fit": 0.667
    }
   },
   "listed": 27,
@@ -467,7 +503,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts & sciences: natural sciences, associate in arts - major #m.5130.aa",
+    "section_fit": 0.667
    }
   },
   "listed": 41,
@@ -504,7 +543,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting, associate in science - major #m.2010.as",
+    "section_fit": 0.333
    }
   },
   "listed": 17,
@@ -534,7 +576,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agricultural mechanics, associate in science - major #m.8280.as",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -579,7 +624,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture business, option a, associate in science - major #m.102a.as",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
@@ -631,7 +679,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture education, associate in science - major #m.0112.as",
+    "section_fit": 0.5
    }
   },
   "listed": 30,
@@ -673,7 +724,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art: two-dimensional, associate in arts - major #m.520a.aa",
+    "section_fit": 0.6
    }
   },
   "listed": 22,
@@ -710,7 +764,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration, entrepreneur, associate in science - major #m.205b.as",
+    "section_fit": 0.6
    }
   },
   "listed": 16,
@@ -756,7 +813,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: general business, associate in science - major #m.p205c.as",
+    "section_fit": 0.6
    }
   },
   "listed": 25,
@@ -793,7 +853,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: management, associate in science - major #m.p205f.as",
+    "section_fit": 0.6
    }
   },
   "listed": 16,
@@ -829,7 +892,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: marketing, associate in science - major #m.205g.as",
+    "section_fit": 0.6
    }
   },
   "listed": 15,
@@ -866,7 +932,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration - information systems management, associate in science - major #m.p205d.as",
+    "section_fit": 0.714
    }
   },
   "listed": 16,
@@ -908,7 +977,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development, associate in science - major #m.5610.as",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
@@ -946,7 +1018,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "criminology-corrections, associate in science - major #m.p888a.as",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -958,7 +1033,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG40",
    "BT105",
@@ -975,7 +1050,8 @@
    "BT28",
    "BT29",
    "BT3",
-   "BT5"
+   "BT5",
+   "OT44"
   ],
   "source": {
    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1225",
@@ -984,7 +1060,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administrative assistant, associate of science - major #m.226b.as",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -1021,7 +1100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering, associate in science - major #m.3010.as",
+    "section_fit": 0.333
    }
   },
   "listed": 15,
@@ -1052,7 +1134,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "industrial maintenance technician, associate in science - major #m.3040.as",
+    "section_fit": 0.6
    }
   },
   "listed": 9,
@@ -1064,7 +1149,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.893,
+  "coverage": 0.929,
   "codes_found": [
    "ARTH2",
    "ARTHC1200",
@@ -1072,6 +1157,7 @@
    "CDEVC1000",
    "COMM25",
    "EDUC10",
+   "ENGL1B",
    "ENGL2",
    "ENGL2H",
    "ENGLC1001",
@@ -1099,7 +1185,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal studies, associate in arts - major #m.5890.aa",
+    "section_fit": 0.5
    }
   },
   "listed": 28,
@@ -1128,7 +1217,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "licensed vocational nursing, associate in science - major #m.4530.as",
+    "section_fit": 0.6
    }
   },
   "listed": 7,
@@ -1160,7 +1252,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "lvn-rn, associate in science - major #m.4520.as",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -1190,7 +1285,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "machine tool technology, associate in science - major #m.838a.as",
+    "section_fit": 0.6
    }
   },
   "listed": 8,
@@ -1202,12 +1300,13 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 0.9,
   "codes_found": [
    "BA23",
    "CSCI40",
    "ENGR40",
    "MATH17",
+   "MATH5A",
    "MATH6",
    "MATHC2220",
    "PHYS2A",
@@ -1220,7 +1319,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mathematics, associate in science - major #m.6200.as",
+    "section_fit": 0.333
    }
   },
   "listed": 10,
@@ -1232,7 +1334,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.812,
+  "coverage": 1.0,
   "codes_found": [
    "BT106",
    "BT107",
@@ -1246,7 +1348,10 @@
    "BT26",
    "BT28",
    "BT29",
-   "BT3"
+   "BT3",
+   "OT41",
+   "OT42",
+   "OT44"
   ],
   "source": {
    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1227",
@@ -1255,7 +1360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical administrative assistant, associate in science - major #m.2023.as",
+    "section_fit": 0.6
    }
   },
   "listed": 16,
@@ -1267,12 +1375,13 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "CHEM1A",
    "CHEM1B",
    "CHEM3A",
    "CHEM8",
+   "MATH5A",
    "MATHC2220",
    "PHYS2A",
    "PHYS2B",
@@ -1287,7 +1396,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "physical science, associate in science - major #m.6300.as",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -1340,7 +1452,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "plant and soil science, associate in science - major#m.1074.as",
+    "section_fit": 0.6
    }
   },
   "listed": 31,
@@ -1388,7 +1503,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social science, associate in arts - major #m.7410.aa",
+    "section_fit": 0.5
    }
   },
   "listed": 29,
@@ -1431,7 +1549,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding technology, associate in science - major #m.37a.as",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -1443,13 +1564,14 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "CSCI26",
    "CSCI40",
    "CSCI41",
    "CSCI45",
    "CSCI5",
+   "MATH5A",
    "MATHC2220",
    "PHYS2A",
    "PHYS2B",
@@ -1463,7 +1585,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer science, associate in science - major #m.6920.as",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -1501,7 +1626,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "criminology-law enforcement, associate in science - major #m.888a.as",
+    "section_fit": 0.6
    }
   },
   "listed": 17,
@@ -1539,7 +1667,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "environmental horticulture, associate in science - major #m.1061.as",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -1551,7 +1682,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "AGBS1",
    "AGBS2",
@@ -1563,6 +1694,7 @@
    "BA39",
    "CHEM3A",
    "ECONC2002",
+   "MATH5A",
    "PLS2",
    "PLS2L",
    "STATC1000"
@@ -1574,7 +1706,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture business for transfer, associate in science - major #m.1021.as-t",
+    "section_fit": 0.4
    }
   },
   "listed": 14,
@@ -1609,7 +1744,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "information systems, information technology support option, associate in science - major #m.6950.as",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -1621,7 +1759,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
    "BA10",
    "BA23",
@@ -1640,7 +1778,8 @@
    "IS70",
    "IS71",
    "IS80",
-   "IS81"
+   "IS81",
+   "MATH5A"
   ],
   "source": {
    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
@@ -1649,7 +1788,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "information systems, networking and security, associate in science - major #m.6972.as",
+    "section_fit": 0.667
    }
   },
   "listed": 19,
@@ -1661,12 +1803,13 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL11A",
    "BIOL11B",
    "CHEM1A",
    "CHEM1B",
+   "MATH5A",
    "PHYS2A",
    "PHYS2B",
    "PHYS4A",
@@ -1679,7 +1822,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology for transfer, associate in science - major #m.6110.as-t",
+    "section_fit": 0.25
    }
   },
   "listed": 9,
@@ -1691,13 +1837,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.808,
+  "coverage": 0.846,
   "codes_found": [
    "ARTH2",
    "CDEVC1000",
    "COMMC1000",
    "COMMC1000H",
    "EDUC10",
+   "ENGL1B",
    "ENGL2",
    "ENGL2H",
    "ENGLC1000",
@@ -1722,7 +1869,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education for transfer, associate in arts - major #m.5891.aa-t",
+    "section_fit": 0.5
    }
   },
   "listed": 26,
@@ -1770,7 +1920,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history for transfer, associate in arts - major #m.5204.aa-t",
+    "section_fit": 0.4
    }
   },
   "listed": 27,
@@ -1782,7 +1935,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 0.944,
   "codes_found": [
    "ASL1",
    "ASL2",
@@ -1794,6 +1947,7 @@
    "ENGL15E",
    "ENGL15F",
    "ENGL17",
+   "ENGL1B",
    "ENGL2",
    "ENGL2H",
    "ENGL36",
@@ -1825,7 +1979,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english for transfer, associate in arts - major #m.5301.aa-t",
+    "section_fit": 0.25
    }
   },
   "listed": 36,
@@ -1871,7 +2028,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology for transfer, associate in arts - major #m.1270.aa-t",
+    "section_fit": 0.25
    }
   },
   "listed": 24,
@@ -1883,12 +2043,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.975,
+  "coverage": 1.0,
   "codes_found": [
    "ASL1",
    "ASL2",
    "ASL3",
    "ASL4",
+   "ENGL1B",
    "ENGL43A",
    "ENGL43B",
    "ENGL44A",
@@ -1932,7 +2093,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 40,
@@ -1969,7 +2133,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish for transfer, associate in arts major - #m.5550.aa-t",
+    "section_fit": 0.25
    }
   },
   "listed": 15,
@@ -2008,7 +2175,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture plant science for transfer, associate in science - major #m1078.as-t",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -2020,12 +2190,13 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.7,
+  "coverage": 0.8,
   "codes_found": [
    "CSCI26",
    "CSCI40",
    "ENGR40",
    "MATH17",
+   "MATH5A",
    "MATH6",
    "MATHC2220",
    "PHYS4A"
@@ -2037,7 +2208,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics for transfer, associate in science - major #m.6201.as-t",
+    "section_fit": 0.25
    }
   },
   "listed": 10,
@@ -2049,8 +2223,9 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "MATH5A",
    "MATH6",
    "MATHC2220",
    "PHYS4A",
@@ -2064,11 +2239,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics for transfer, associate in science - major #m.6334.as-t",
+    "section_fit": 0.25
    }
   },
   "listed": 6,
-  "text_chars": 2802
+  "text_chars": 2862
  },
  {
   "control_number": "39820",
@@ -2092,7 +2270,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "american sign language conversational proficiency, certificate of achievement - major #m.5505.ca",
+    "section_fit": 0.625
    }
   },
   "listed": 6,
@@ -2123,7 +2304,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business foundations, certificate of achievement - major #m.2031.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 9,
@@ -2148,17 +2332,20 @@
    "COMMC1004"
   ],
   "source": {
-   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1153",
-   "title": "Communication Studies, Associate in Arts - Major #M.5343.AA",
-   "h1": "Communication Studies, Associate in Arts - Major #M.5343.AA",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1154",
+   "title": "Communication Studies, Certificate of Achievement - Major #M.5343.CA",
+   "h1": "Communication Studies, Certificate of Achievement - Major #M.5343.CA",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "communication studies, certificate of achievement - major #m.5343.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 9,
-  "text_chars": 1377
+  "text_chars": 1579
  },
  {
   "control_number": "39831",
@@ -2213,7 +2400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history for transfer, associate in arts - major #m.7380.aa-t",
+    "section_fit": 0.25
    }
   },
   "listed": 37,
@@ -2240,7 +2430,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "associate teacher, certificate of achievement - major #m.561q.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 5,
@@ -2266,7 +2459,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2294,7 +2490,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "manufacturing 1, certificate of achievement - major #m.835a.ca",
+    "section_fit": 0.25
    }
   },
   "listed": 6,
@@ -2321,7 +2520,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "speech aide, certificate of achievement - major #m.1220.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 6,
@@ -2349,7 +2551,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting, certificate of achievement - major #m.2010.ca",
+    "section_fit": 0.25
    }
   },
   "listed": 8,
@@ -2361,7 +2566,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG40",
    "BT105",
@@ -2379,7 +2584,8 @@
    "BT29",
    "BT3",
    "ENGL150",
-   "ENGLC1000"
+   "ENGLC1000",
+   "OT44"
   ],
   "source": {
    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1226",
@@ -2388,7 +2594,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administrative assistant, certificate of achievement - major #m.226b.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 18,
@@ -2416,7 +2625,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entry level business skills, certificate of achievement - major #m.2041.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -2440,17 +2652,20 @@
    "CDEVC1000"
   ],
   "source": {
-   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1149",
-   "title": "Child Development, Associate in Science - Major #M.5610.AS",
-   "h1": "Child Development, Associate in Science - Major #M.5610.AS",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1150",
+   "title": "Child Development, Certificate of Achievement - Major #M5610.CA",
+   "h1": "Child Development, Certificate of Achievement - Major #M5610.CA",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development, certificate of achievement - major #m5610.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
-  "text_chars": 2954
+  "text_chars": 1662
  },
  {
   "control_number": "39865",
@@ -2470,17 +2685,20 @@
    "CRIM6"
   ],
   "source": {
-   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1158",
-   "title": "Criminology-Corrections, Associate in Science - Major #M.P888A.AS",
-   "h1": "Criminology-Corrections, Associate in Science - Major #M.P888A.AS",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1159",
+   "title": "Criminology-Corrections, Certificate of Achievement - Major #M.888B.CA",
+   "h1": "Criminology-Corrections, Certificate of Achievement - Major #M.888B.CA",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "criminology-corrections, certificate of achievement - major #m.888b.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
-  "text_chars": 2101
+  "text_chars": 1509
  },
  {
   "control_number": "39866",
@@ -2500,17 +2718,20 @@
    "CRIM8"
   ],
   "source": {
-   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160",
-   "title": "Criminology-Law Enforcement, Associate in Science - Major #M.888A.AS",
-   "h1": "Criminology-Law Enforcement, Associate in Science - Major #M.888A.AS",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1161",
+   "title": "Criminology-Law Enforcement, Certificate of Achievement - Major #M.888A.CA",
+   "h1": "Criminology-Law Enforcement, Certificate of Achievement - Major #M.888A.CA",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "criminology-law enforcement, certificate of achievement - major #m.888a.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
-  "text_chars": 2126
+  "text_chars": 1503
  },
  {
   "control_number": "39867",
@@ -2538,7 +2759,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information systems, certificate of achievement - major #m.6930.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 10,
@@ -2563,17 +2787,20 @@
    "IS81"
   ],
   "source": {
-   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
-   "title": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
-   "h1": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1190",
+   "title": "Information Systems, Networking and Security, Certificate of Achievement - Major #M.6972.CA",
+   "h1": "Information Systems, Networking and Security, Certificate of Achievement - Major #M.6972.CA",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information systems, networking and security, certificate of achievement - major #m.6972.ca",
+    "section_fit": 0.571
    }
   },
   "listed": 9,
-  "text_chars": 2077
+  "text_chars": 1307
  },
  {
   "control_number": "39869",
@@ -2599,7 +2826,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "machinist, certificate of achievement - major #m.838a.ca",
+    "section_fit": 0.25
    }
   },
   "listed": 8,
@@ -2627,7 +2857,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "managerial assistant, certificate of achievement - major #m.2180.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 7,
@@ -2639,7 +2872,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.812,
+  "coverage": 1.0,
   "codes_found": [
    "BT106",
    "BT107",
@@ -2653,7 +2886,10 @@
    "BT3",
    "BT34",
    "ENGL150",
-   "ENGLC1000"
+   "ENGLC1000",
+   "OT41",
+   "OT42",
+   "OT44"
   ],
   "source": {
    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1228",
@@ -2662,7 +2898,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical administrative assistant, certificate of achievement - major #m.2023.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -2674,7 +2913,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "BT105",
    "BT106",
@@ -2686,7 +2925,8 @@
    "BT28",
    "BT29",
    "BT3",
-   "BT5"
+   "BT5",
+   "OT44"
   ],
   "source": {
    "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1229",
@@ -2695,7 +2935,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "office assistant, certificate of achievement - major #m.2021.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 12,
@@ -2726,7 +2969,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welder, certificate of achievement - major #m.837a.ca",
+    "section_fit": 0.25
    }
   },
   "listed": 10,
@@ -2751,17 +2997,20 @@
    "IT61"
   ],
   "source": {
-   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1202",
-   "title": "Industrial Maintenance Technician, Associate in Science - Major #M.3040.AS",
-   "h1": "Industrial Maintenance Technician, Associate in Science - Major #M.3040.AS",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1203",
+   "title": "Industrial Maintenance Technician, Certificate of Achievement - Major #M.3040.CA",
+   "h1": "Industrial Maintenance Technician, Certificate of Achievement - Major #M.3040.CA",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial maintenance technician, certificate of achievement - major #m.3040.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
-  "text_chars": 2045
+  "text_chars": 1486
  },
  {
   "control_number": "39875",
@@ -2786,7 +3035,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "human services, certificate of achievement - major #m.7420.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 7,
@@ -2818,7 +3070,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early intervention assistant, certificate of achievement - major #m.561r.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -2847,7 +3102,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2878,7 +3136,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2902,17 +3163,20 @@
    "PLS11"
   ],
   "source": {
-   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
-   "title": "Agricultural Mechanics, Associate in Science - Major #M.8280.AS",
-   "h1": "Agricultural Mechanics, Associate in Science - Major #M.8280.AS",
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1213",
+   "title": "Agricultural Mechanics, Certificate of Achievement - Major #M.8280.CA",
+   "h1": "Agricultural Mechanics, Certificate of Achievement - Major #M.8280.CA",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agricultural mechanics, certificate of achievement - major #m.8280.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
-  "text_chars": 1829
+  "text_chars": 1730
  },
  {
   "control_number": "39914",
@@ -2937,7 +3201,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information technology support technician, certificate of achievement - major #m.6931.ca",
+    "section_fit": 0.571
    }
   },
   "listed": 7,
@@ -2968,7 +3235,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts for transfer, associate in arts - major #m.5203.aa-t",
+    "section_fit": 0.4
    }
   },
   "listed": 10,
@@ -2993,7 +3263,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "21st century job skills, certificate of achievement - major #m.2040.ca",
+    "section_fit": 0.571
    }
   },
   "listed": 3,
@@ -3021,7 +3294,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "academic and vocational english as a second language, certificate of competency - major #m.3031.cc",
+    "section_fit": 0.625
    }
   },
   "listed": 6,
@@ -3048,7 +3324,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "intermediate academic and vocational english as a second language, certificate of competency - major #m.3033.cc",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -3071,7 +3350,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "basic english as a second language, certificate of competency - major #m.3011.cc",
+    "section_fit": 0.571
    }
   },
   "listed": 1,
@@ -3097,7 +3379,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basics of computers, certificate of achievement - major #m.2085.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 4,
@@ -3150,7 +3435,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social work and human services for transfer, associate in arts - major #m.7701.aa-t",
+    "section_fit": 0.571
    }
   },
   "listed": 33,
@@ -3182,7 +3470,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 for transfer, associate in science - major #m.2051.as-t",
+    "section_fit": 0.4
    }
   },
   "listed": 10,
@@ -3210,7 +3501,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "crime scene investigation, certificate of achievement - major #m.8881.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -3222,7 +3516,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.765,
+  "coverage": 0.824,
   "codes_found": [
    "COMM10",
    "COMM12",
@@ -3233,6 +3527,7 @@
    "COMMC1000",
    "COMMC1000H",
    "COMMC1004",
+   "ENGL1B",
    "ENGLC1002H",
    "PSYCC1000",
    "PSYCC1000H",
@@ -3245,7 +3540,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 for transfer, associate in arts - major #m.5346.aa-t",
+    "section_fit": 0.4
    }
   },
   "listed": 17,
@@ -3275,7 +3573,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "foundations of hospitality, certificate of achievement - major #m.3000.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
@@ -3301,7 +3602,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drafting, certificate of achievement - major #m.8393.ca",
+    "section_fit": 0.25
    }
   },
   "listed": 4,
@@ -3331,7 +3635,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fundamental skills of management in hospitality, certificate of achievement - major #m.3001.ca",
+    "section_fit": 0.571
    }
   },
   "listed": 10,
@@ -3355,7 +3662,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "vocational english as a second language, certificate of competency - major #m.3034.cc",
+    "section_fit": 0.571
    }
   },
   "listed": 2,
@@ -3402,7 +3712,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "general music, certificate of achievement - major #m.5810.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 25,
@@ -3428,7 +3741,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music theory, certificate of achievement - major #m.5811.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 4,
@@ -3462,7 +3778,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "vocal performance, certificate of achievement - major #m.5813.ca",
+    "section_fit": 0.4
    }
   },
   "listed": 12,
@@ -3503,7 +3822,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pest control advisor, certificate of achievement - major #m.8281.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 21,
@@ -3534,7 +3856,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "hospitality management for transfer, associate in science - major #m.3002.as-t",
+    "section_fit": 0.4
    }
   },
   "listed": 9,
@@ -3572,7 +3897,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music for transfer, associate in arts - major #m.5812.aa-t",
+    "section_fit": 0.25
    }
   },
   "listed": 16,
@@ -3600,7 +3928,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "food and beverage management level 2, certificate of achievement - major #m.3003.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -3629,7 +3960,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "food and beverage management level 1, certificate of achievement - major #m.3002.ca",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -3676,7 +4010,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music, associate in arts - major #m.5813.aa",
+    "section_fit": 0.333
    }
   },
   "listed": 25,
@@ -3687,12 +4024,48 @@
   "title": "Modern Policing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.958,
+  "codes_found": [
+   "CDEV30",
+   "COMM10",
+   "COMMC1000",
+   "COMMC1000H",
+   "CRIM1",
+   "CRIM11",
+   "CRIM15",
+   "CRIM17",
+   "CRIM3",
+   "CRIM4",
+   "CRIM5",
+   "CRIM6",
+   "CRIM8",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "PHIL1C",
+   "PSYC42",
+   "PSYC5",
+   "SOCI17",
+   "SOCI3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1326",
+   "title": "Modern Policing, Associate in Science -Major #M.8882.AS",
+   "h1": "Modern Policing, Associate in Science -Major #M.8882.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "modern policing, associate in science -major #m.8882.as",
+    "section_fit": 0.5
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 2301
  },
  {
   "control_number": "45353",
@@ -3769,7 +4142,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies: general - major #m.7210.aa-t",
+    "section_fit": 0.667
    }
   },
   "listed": 25,
@@ -3780,26 +4156,11 @@
   "title": "Agriculture Business",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "AGBS1",
-   "AGBS2",
-   "AGBS3",
-   "AGBS4",
-   "AGBS5"
-  ],
-  "source": {
-   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123",
-   "title": "Agriculture Business, Option A, Associate in Science - Major #M.102A.AS",
-   "h1": "Agriculture Business, Option A, Associate in Science - Major #M.102A.AS",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 3233
+  "text_chars": 0
  }
 ]

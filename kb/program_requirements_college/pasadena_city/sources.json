@@ -9,7 +9,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03105",
@@ -42,7 +46,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 3841
+  "text_chars": 3855
  },
  {
   "control_number": "03106",
@@ -75,7 +79,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3737
+  "text_chars": 3751
  },
  {
   "control_number": "03108",
@@ -107,7 +111,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3804
+  "text_chars": 3818
  },
  {
   "control_number": "03109",
@@ -144,7 +148,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4152
+  "text_chars": 4166
  },
  {
   "control_number": "03110",
@@ -178,7 +182,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 4058
+  "text_chars": 4072
  },
  {
   "control_number": "03111",
@@ -211,7 +215,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4433
+  "text_chars": 4447
  },
  {
   "control_number": "03112",
@@ -248,7 +252,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 4309
+  "text_chars": 4323
  },
  {
   "control_number": "03121",
@@ -283,7 +287,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4019
+  "text_chars": 4033
  },
  {
   "control_number": "03123",
@@ -329,7 +333,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 4191
+  "text_chars": 4205
  },
  {
   "control_number": "03139",
@@ -371,7 +375,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8941
+  "text_chars": 8955
  },
  {
   "control_number": "03140",
@@ -383,7 +387,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03142",
@@ -418,7 +426,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 6051
+  "text_chars": 6065
  },
  {
   "control_number": "03143",
@@ -448,7 +456,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 4390
+  "text_chars": 4404
  },
  {
   "control_number": "03144",
@@ -494,7 +502,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4599
+  "text_chars": 4613
  },
  {
   "control_number": "03145",
@@ -541,7 +549,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4664
+  "text_chars": 4678
  },
  {
   "control_number": "03146",
@@ -586,7 +594,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 4498
+  "text_chars": 4512
  },
  {
   "control_number": "03148",
@@ -598,7 +606,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03150",
@@ -610,19 +622,42 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03160",
   "title": "Administration of Justice",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "AJ10",
+   "AJ12",
+   "AJ18",
+   "ENGL100",
+   "ENGLC1000",
+   "ENGLC1000H"
+  ],
+  "source": {
+   "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/",
+   "title": "Administration of Justice – Associate in Science Degree, Certificate of Achievement | Pasadena City College Academic Catalog",
+   "h1": "2026-2027 ACADEMIC CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administration of justice – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3999
  },
  {
   "control_number": "03161",
@@ -662,7 +697,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 8294
+  "text_chars": 8308
  },
  {
   "control_number": "03163",
@@ -686,7 +721,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "09324",
@@ -717,7 +756,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3617
+  "text_chars": 3631
  },
  {
   "control_number": "09325",
@@ -745,7 +784,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 3726
+  "text_chars": 3740
  },
  {
   "control_number": "09326",
@@ -781,7 +820,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 3980
+  "text_chars": 3994
  },
  {
   "control_number": "09332",
@@ -815,7 +854,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3842
+  "text_chars": 3856
  },
  {
   "control_number": "09333",
@@ -841,7 +880,7 @@
    }
   },
   "listed": 1,
-  "text_chars": 3486
+  "text_chars": 3500
  },
  {
   "control_number": "09334",
@@ -872,7 +911,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 4101
+  "text_chars": 4115
  },
  {
   "control_number": "09337",
@@ -907,7 +946,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4001
+  "text_chars": 4015
  },
  {
   "control_number": "09338",
@@ -972,7 +1011,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4426
+  "text_chars": 4440
  },
  {
   "control_number": "09342",
@@ -1002,7 +1041,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3638
+  "text_chars": 3652
  },
  {
   "control_number": "09343",
@@ -1032,7 +1071,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3671
+  "text_chars": 3685
  },
  {
   "control_number": "09345",
@@ -1044,7 +1083,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "09352",
@@ -1092,7 +1135,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4050
+  "text_chars": 4064
  },
  {
   "control_number": "09356",
@@ -1174,7 +1217,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "09362",
@@ -1186,7 +1233,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "10335",
@@ -1198,7 +1249,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "10562",
@@ -1247,7 +1302,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 11374
+  "text_chars": 11388
  },
  {
   "control_number": "11539",
@@ -1289,7 +1344,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8383
+  "text_chars": 8397
  },
  {
   "control_number": "11542",
@@ -1331,7 +1386,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8294
+  "text_chars": 8308
  },
  {
   "control_number": "11543",
@@ -1373,7 +1428,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8341
+  "text_chars": 8355
  },
  {
   "control_number": "11544",
@@ -1385,7 +1440,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "11727",
@@ -1424,7 +1483,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 4491
+  "text_chars": 4505
  },
  {
   "control_number": "11760",
@@ -1457,7 +1516,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4109
+  "text_chars": 4123
  },
  {
   "control_number": "11761",
@@ -1489,7 +1548,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 4052
+  "text_chars": 4066
  },
  {
   "control_number": "12205",
@@ -1522,7 +1581,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3876
+  "text_chars": 3890
  },
  {
   "control_number": "12214",
@@ -1555,7 +1614,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4061
+  "text_chars": 4075
  },
  {
   "control_number": "14689",
@@ -1567,7 +1626,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "14690",
@@ -1596,7 +1659,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 3595
+  "text_chars": 3609
  },
  {
   "control_number": "14692",
@@ -1626,7 +1689,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3625
+  "text_chars": 3639
  },
  {
   "control_number": "15431",
@@ -1638,7 +1701,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "15432",
@@ -1650,7 +1717,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16371",
@@ -1662,7 +1733,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "16605",
@@ -1701,7 +1776,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 4284
+  "text_chars": 4298
  },
  {
   "control_number": "16745",
@@ -1746,7 +1821,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3263
+  "text_chars": 3277
  },
  {
   "control_number": "16985",
@@ -1791,7 +1866,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 4381
+  "text_chars": 4395
  },
  {
   "control_number": "19239",
@@ -1835,7 +1910,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 4301
+  "text_chars": 4315
  },
  {
   "control_number": "19240",
@@ -1847,7 +1922,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19241",
@@ -1859,7 +1938,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19242",
@@ -1928,7 +2011,7 @@
    }
   },
   "listed": 51,
-  "text_chars": 5796
+  "text_chars": 5810
  },
  {
   "control_number": "19243",
@@ -1940,7 +2023,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19244",
@@ -2127,7 +2214,7 @@
    }
   },
   "listed": 169,
-  "text_chars": 10810
+  "text_chars": 10824
  },
  {
   "control_number": "19245",
@@ -2139,7 +2226,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19246",
@@ -2233,7 +2324,7 @@
    }
   },
   "listed": 72,
-  "text_chars": 6992
+  "text_chars": 7006
  },
  {
   "control_number": "19247",
@@ -2345,7 +2436,7 @@
    }
   },
   "listed": 89,
-  "text_chars": 7149
+  "text_chars": 7163
  },
  {
   "control_number": "19248",
@@ -2377,7 +2468,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4006
+  "text_chars": 4020
  },
  {
   "control_number": "19257",
@@ -2521,7 +2612,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 3050
+  "text_chars": 3064
  },
  {
   "control_number": "19959",
@@ -2598,7 +2689,7 @@
    }
   },
   "listed": 52,
-  "text_chars": 6371
+  "text_chars": 6385
  },
  {
   "control_number": "19960",
@@ -2638,7 +2729,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 4177
+  "text_chars": 4191
  },
  {
   "control_number": "19961",
@@ -2679,7 +2770,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4017
+  "text_chars": 4031
  },
  {
   "control_number": "19962",
@@ -2717,7 +2808,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 3960
+  "text_chars": 3974
  },
  {
   "control_number": "19963",
@@ -2754,7 +2845,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3960
+  "text_chars": 3974
  },
  {
   "control_number": "19964",
@@ -2790,7 +2881,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4010
+  "text_chars": 4024
  },
  {
   "control_number": "19965",
@@ -2820,7 +2911,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3610
+  "text_chars": 3624
  },
  {
   "control_number": "19966",
@@ -2866,7 +2957,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 4448
+  "text_chars": 4462
  },
  {
   "control_number": "22579",
@@ -2878,7 +2969,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22580",
@@ -2914,7 +3009,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 3841
+  "text_chars": 3855
  },
  {
   "control_number": "22581",
@@ -2947,7 +3042,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3737
+  "text_chars": 3751
  },
  {
   "control_number": "22582",
@@ -2978,7 +3073,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3617
+  "text_chars": 3631
  },
  {
   "control_number": "22583",
@@ -3006,7 +3101,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 3726
+  "text_chars": 3740
  },
  {
   "control_number": "22584",
@@ -3042,7 +3137,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 3980
+  "text_chars": 3994
  },
  {
   "control_number": "22585",
@@ -3074,7 +3169,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3804
+  "text_chars": 3818
  },
  {
   "control_number": "22586",
@@ -3111,7 +3206,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4152
+  "text_chars": 4166
  },
  {
   "control_number": "22587",
@@ -3145,7 +3240,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3842
+  "text_chars": 3856
  },
  {
   "control_number": "22588",
@@ -3172,7 +3267,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 3527
+  "text_chars": 3541
  },
  {
   "control_number": "22590",
@@ -3203,7 +3298,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 4101
+  "text_chars": 4115
  },
  {
   "control_number": "22591",
@@ -3232,7 +3327,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 3975
+  "text_chars": 3989
  },
  {
   "control_number": "22592",
@@ -3267,7 +3362,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4426
+  "text_chars": 4440
  },
  {
   "control_number": "22594",
@@ -3302,7 +3397,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4001
+  "text_chars": 4015
  },
  {
   "control_number": "22595",
@@ -3314,7 +3409,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22597",
@@ -3347,7 +3446,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4433
+  "text_chars": 4447
  },
  {
   "control_number": "22601",
@@ -3377,7 +3476,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3671
+  "text_chars": 3685
  },
  {
   "control_number": "22603",
@@ -3414,7 +3513,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 4309
+  "text_chars": 4323
  },
  {
   "control_number": "22604",
@@ -3426,7 +3525,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22611",
@@ -3460,7 +3563,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3968
+  "text_chars": 3982
  },
  {
   "control_number": "22612",
@@ -3489,7 +3592,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 3625
+  "text_chars": 3639
  },
  {
   "control_number": "22613",
@@ -3517,7 +3620,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 3661
+  "text_chars": 3675
  },
  {
   "control_number": "22614",
@@ -3546,7 +3649,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 3595
+  "text_chars": 3609
  },
  {
   "control_number": "22617",
@@ -3587,7 +3690,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4330
+  "text_chars": 4344
  },
  {
   "control_number": "22619",
@@ -3599,7 +3702,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22620",
@@ -3611,7 +3718,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22622",
@@ -3641,7 +3752,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 3082
+  "text_chars": 3096
  },
  {
   "control_number": "22624",
@@ -3677,7 +3788,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4050
+  "text_chars": 4064
  },
  {
   "control_number": "22626",
@@ -3711,7 +3822,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 4191
+  "text_chars": 4205
  },
  {
   "control_number": "22627",
@@ -3779,7 +3890,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 4052
+  "text_chars": 4066
  },
  {
   "control_number": "22629",
@@ -3812,7 +3923,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4109
+  "text_chars": 4123
  },
  {
   "control_number": "22630",
@@ -3881,7 +3992,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 6051
+  "text_chars": 6065
  },
  {
   "control_number": "22632",
@@ -3893,7 +4004,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22633",
@@ -3952,7 +4067,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4498
+  "text_chars": 4512
  },
  {
   "control_number": "22635",
@@ -3995,7 +4110,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 8951
+  "text_chars": 8965
  },
  {
   "control_number": "22636",
@@ -4007,7 +4122,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22637",
@@ -4037,7 +4156,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 4390
+  "text_chars": 4404
  },
  {
   "control_number": "22638",
@@ -4083,7 +4202,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4599
+  "text_chars": 4613
  },
  {
   "control_number": "22639",
@@ -4130,7 +4249,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4664
+  "text_chars": 4678
  },
  {
   "control_number": "22640",
@@ -4142,7 +4261,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22641",
@@ -4183,7 +4306,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8222
+  "text_chars": 8236
  },
  {
   "control_number": "22642",
@@ -4223,7 +4346,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 8294
+  "text_chars": 8308
  },
  {
   "control_number": "22643",
@@ -4265,7 +4388,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8341
+  "text_chars": 8355
  },
  {
   "control_number": "22644",
@@ -4277,7 +4400,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22646",
@@ -4319,7 +4446,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8294
+  "text_chars": 8308
  },
  {
   "control_number": "22647",
@@ -4361,7 +4488,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8383
+  "text_chars": 8397
  },
  {
   "control_number": "22649",
@@ -4394,7 +4521,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4061
+  "text_chars": 4075
  },
  {
   "control_number": "22650",
@@ -4406,19 +4533,45 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22651",
   "title": "Administration of Justice",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ10",
+   "AJ12",
+   "AJ14",
+   "AJ16",
+   "AJ18",
+   "AJ19",
+   "ENGL100",
+   "ENGLC1000",
+   "ENGLC1000H"
+  ],
+  "source": {
+   "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-as-cert-achievement/",
+   "title": "Administration of Justice – Associate in Science Degree, Certificate of Achievement | Pasadena City College Academic Catalog",
+   "h1": "2026-2027 ACADEMIC CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice – associate in science degree, certificate of achievement",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3999
  },
  {
   "control_number": "22652",
@@ -4442,7 +4595,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "24043",
@@ -4454,7 +4611,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30214",
@@ -4483,7 +4644,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3893
+  "text_chars": 3907
  },
  {
   "control_number": "30215",
@@ -4512,7 +4673,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3893
+  "text_chars": 3907
  },
  {
   "control_number": "30795",
@@ -4563,7 +4724,7 @@
    }
   },
   "listed": 26,
-  "text_chars": 4719
+  "text_chars": 4733
  },
  {
   "control_number": "30796",
@@ -4612,7 +4773,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 4762
+  "text_chars": 4776
  },
  {
   "control_number": "30903",
@@ -4656,7 +4817,7 @@
    }
   },
   "listed": 25,
-  "text_chars": 4563
+  "text_chars": 4577
  },
  {
   "control_number": "30915",
@@ -4696,7 +4857,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 4379
+  "text_chars": 4393
  },
  {
   "control_number": "31101",
@@ -4723,13 +4884,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "business office systems – certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 3117
+  "text_chars": 3131
  },
  {
   "control_number": "31102",
@@ -4775,7 +4936,7 @@
    }
   },
   "listed": 23,
-  "text_chars": 4836
+  "text_chars": 4850
  },
  {
   "control_number": "31103",
@@ -4813,7 +4974,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 4381
+  "text_chars": 4395
  },
  {
   "control_number": "31134",
@@ -4972,7 +5133,7 @@
    }
   },
   "listed": 145,
-  "text_chars": 10276
+  "text_chars": 10290
  },
  {
   "control_number": "31135",
@@ -5005,7 +5166,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4075
+  "text_chars": 4089
  },
  {
   "control_number": "31136",
@@ -5149,19 +5310,46 @@
    }
   },
   "listed": 125,
-  "text_chars": 8978
+  "text_chars": 8992
  },
  {
   "control_number": "31143",
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "AJ10",
+   "AJ12",
+   "AJ14",
+   "AJ16",
+   "AJ18",
+   "AJ19",
+   "AJ22",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://curriculum.pasadena.edu/academic-programs/legal-studies/administration-justice-ast/",
+   "title": "Administration of Justice – Associate in Science Degree for Transfer | Pasadena City College Academic Catalog",
+   "h1": "2026-2027 ACADEMIC CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice – associate in science degree for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4320
  },
  {
   "control_number": "31426",
@@ -5195,7 +5383,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 4376
+  "text_chars": 4390
  },
  {
   "control_number": "31427",
@@ -5229,7 +5417,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 4092
+  "text_chars": 4106
  },
  {
   "control_number": "31428",
@@ -5324,7 +5512,7 @@
    }
   },
   "listed": 71,
-  "text_chars": 6966
+  "text_chars": 6980
  },
  {
   "control_number": "31586",
@@ -5336,7 +5524,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "31599",
@@ -5386,9 +5578,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "noncredit courses/ adult high school diploma (ahsd)",
+    "section_fit": 0.571
    }
   },
   "listed": 31,
@@ -5404,7 +5596,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32505",
@@ -5455,7 +5651,7 @@
    }
   },
   "listed": 26,
-  "text_chars": 4810
+  "text_chars": 4824
  },
  {
   "control_number": "32515",
@@ -5497,7 +5693,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4476
+  "text_chars": 4490
  },
  {
   "control_number": "32543",
@@ -5532,7 +5728,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4064
+  "text_chars": 4078
  },
  {
   "control_number": "32764",
@@ -5544,7 +5740,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32971",
@@ -5664,7 +5864,7 @@
    }
   },
   "listed": 95,
-  "text_chars": 7420
+  "text_chars": 7434
  },
  {
   "control_number": "33139",
@@ -5685,13 +5885,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esln literacy - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2776
+  "text_chars": 2790
  },
  {
   "control_number": "33140",
@@ -5712,9 +5912,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl noncredit (esln)",
+    "section_fit": 0.333
    }
   },
   "listed": 2,
@@ -5739,9 +5939,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl noncredit (esln)",
+    "section_fit": 0.333
    }
   },
   "listed": 2,
@@ -5766,9 +5966,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl noncredit (esln)",
+    "section_fit": 0.333
    }
   },
   "listed": 2,
@@ -5793,9 +5993,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl noncredit (esln)",
+    "section_fit": 0.333
    }
   },
   "listed": 2,
@@ -5821,9 +6021,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl noncredit (esln)",
+    "section_fit": 0.333
    }
   },
   "listed": 3,
@@ -5872,13 +6072,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "noncredit courses/ adult basic education (abe)",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
-  "text_chars": 2656
+  "text_chars": 2670
  },
  {
   "control_number": "33405",
@@ -5899,13 +6099,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "basic graphic design – certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2746
+  "text_chars": 2760
  },
  {
   "control_number": "33406",
@@ -5917,7 +6117,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33408",
@@ -5929,7 +6133,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33409",
@@ -5941,7 +6149,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33410",
@@ -5953,7 +6165,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33411",
@@ -5965,7 +6181,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33413",
@@ -5988,13 +6208,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "medical front office clerk – certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 3147
+  "text_chars": 3161
  },
  {
   "control_number": "33414",
@@ -6006,7 +6226,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33415",
@@ -6018,7 +6242,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33416",
@@ -6039,13 +6267,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "vesl child care provider – certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2752
+  "text_chars": 2766
  },
  {
   "control_number": "33418",
@@ -6066,13 +6294,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "vesl health care – certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2736
+  "text_chars": 2750
  },
  {
   "control_number": "33419",
@@ -6084,35 +6312,23 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33423",
   "title": "PRE-APPRENTICESHIP IN BUILDING TRADES AND CONSTRUCTION INDUSTRY",
   "award": null,
   "shape": "other",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "BLDN2302",
-   "BLDN2303",
-   "BLDN2304"
-  ],
-  "source": {
-   "url": "https://curriculum.pasadena.edu/noncredit-courses/bldn/",
-   "title": "BUILDING CONSTRUCTION NONCREDIT | Pasadena City College Academic Catalog",
-   "h1": "2026-2027 ACADEMIC CATALOG",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.333,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 4815
+  "text_chars": 0
  },
  {
   "control_number": "33544",
@@ -6155,7 +6371,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 4503
+  "text_chars": 4517
  },
  {
   "control_number": "33558",
@@ -6167,7 +6383,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33559",
@@ -6179,7 +6399,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33624",
@@ -6237,7 +6461,7 @@
    }
   },
   "listed": 34,
-  "text_chars": 4956
+  "text_chars": 4970
  },
  {
   "control_number": "33695",
@@ -6249,7 +6473,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33696",
@@ -6261,7 +6489,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33697",
@@ -6287,7 +6519,7 @@
    }
   },
   "listed": 1,
-  "text_chars": 2954
+  "text_chars": 2968
  },
  {
   "control_number": "33699",
@@ -6314,7 +6546,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 2947
+  "text_chars": 2961
  },
  {
   "control_number": "33738",
@@ -6326,7 +6558,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33740",
@@ -6338,7 +6574,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33744",
@@ -6368,7 +6608,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3677
+  "text_chars": 3691
  },
  {
   "control_number": "33806",
@@ -6398,7 +6638,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3677
+  "text_chars": 3691
  },
  {
   "control_number": "33908",
@@ -6454,7 +6694,7 @@
    }
   },
   "listed": 34,
-  "text_chars": 4844
+  "text_chars": 4858
  },
  {
   "control_number": "35002",
@@ -6481,7 +6721,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 3651
+  "text_chars": 3665
  },
  {
   "control_number": "35003",
@@ -6508,7 +6748,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 3651
+  "text_chars": 3665
  },
  {
   "control_number": "35080",
@@ -6564,7 +6804,7 @@
    }
   },
   "listed": 34,
-  "text_chars": 4844
+  "text_chars": 4858
  },
  {
   "control_number": "35094",
@@ -6601,7 +6841,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3971
+  "text_chars": 3985
  },
  {
   "control_number": "35095",
@@ -6637,7 +6877,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 3971
+  "text_chars": 3985
  },
  {
   "control_number": "35544",
@@ -6675,7 +6915,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 4491
+  "text_chars": 4505
  },
  {
   "control_number": "35578",
@@ -6722,7 +6962,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 6897
+  "text_chars": 6911
  },
  {
   "control_number": "35813",
@@ -6755,7 +6995,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3784
+  "text_chars": 3798
  },
  {
   "control_number": "35814",
@@ -6788,7 +7028,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3784
+  "text_chars": 3798
  },
  {
   "control_number": "35858",
@@ -6809,13 +7049,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "vesl work readiness and communication skills – certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2792
+  "text_chars": 2806
  },
  {
   "control_number": "35859",
@@ -6836,13 +7076,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esln advanced oral communication skills - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2727
+  "text_chars": 2741
  },
  {
   "control_number": "35860",
@@ -6854,7 +7094,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35861",
@@ -6876,13 +7120,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esln intermediate written communication skills - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 2786
+  "text_chars": 2800
  },
  {
   "control_number": "35862",
@@ -6904,13 +7148,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esln advanced written communication skills - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 2765
+  "text_chars": 2779
  },
  {
   "control_number": "36082",
@@ -6946,7 +7190,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4105
+  "text_chars": 4119
  },
  {
   "control_number": "36083",
@@ -6983,7 +7227,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4105
+  "text_chars": 4119
  },
  {
   "control_number": "36084",
@@ -7019,7 +7263,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4128
+  "text_chars": 4142
  },
  {
   "control_number": "36085",
@@ -7056,7 +7300,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4185
+  "text_chars": 4199
  },
  {
   "control_number": "36086",
@@ -7086,7 +7330,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3754
+  "text_chars": 3768
  },
  {
   "control_number": "36087",
@@ -7116,7 +7360,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3754
+  "text_chars": 3768
  },
  {
   "control_number": "36194",
@@ -7128,7 +7372,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 105 of 118 closed-list programs on their own page, 0 on another program's and 4 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "36203",
@@ -7165,7 +7413,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4197
+  "text_chars": 4211
  },
  {
   "control_number": "36343",
@@ -7210,7 +7458,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 4914
+  "text_chars": 4928
  },
  {
   "control_number": "36352",
@@ -7255,7 +7503,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 4914
+  "text_chars": 4928
  },
  {
   "control_number": "36353",
@@ -7288,7 +7536,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3876
+  "text_chars": 3890
  },
  {
   "control_number": "36364",
@@ -7330,7 +7578,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4352
+  "text_chars": 4366
  },
  {
   "control_number": "36365",
@@ -7367,7 +7615,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 4133
+  "text_chars": 4147
  },
  {
   "control_number": "36367",
@@ -7407,7 +7655,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4325
+  "text_chars": 4339
  },
  {
   "control_number": "36435",
@@ -7448,7 +7696,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 8173
+  "text_chars": 8187
  },
  {
   "control_number": "36436",
@@ -7492,7 +7740,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 8398
+  "text_chars": 8412
  },
  {
   "control_number": "36437",
@@ -7536,7 +7784,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 8398
+  "text_chars": 8412
  },
  {
   "control_number": "36438",
@@ -7578,7 +7826,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8178
+  "text_chars": 8192
  },
  {
   "control_number": "36439",
@@ -7619,7 +7867,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 8173
+  "text_chars": 8187
  },
  {
   "control_number": "36440",
@@ -7661,7 +7909,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8178
+  "text_chars": 8192
  },
  {
   "control_number": "36462",
@@ -7691,7 +7939,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3134
+  "text_chars": 3148
  },
  {
   "control_number": "36463",
@@ -7816,7 +8064,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4887
+  "text_chars": 4901
  },
  {
   "control_number": "36652",
@@ -7858,7 +8106,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4887
+  "text_chars": 4901
  },
  {
   "control_number": "36654",
@@ -7961,7 +8209,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3638
+  "text_chars": 3652
  },
  {
   "control_number": "36733",
@@ -8011,7 +8259,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 4274
+  "text_chars": 4288
  },
  {
   "control_number": "36774",
@@ -8052,7 +8300,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 8222
+  "text_chars": 8236
  },
  {
   "control_number": "36777",
@@ -8106,7 +8354,7 @@
    }
   },
   "listed": 29,
-  "text_chars": 4992
+  "text_chars": 5006
  },
  {
   "control_number": "36782",
@@ -8147,7 +8395,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3902
+  "text_chars": 3916
  },
  {
   "control_number": "36784",
@@ -8195,7 +8443,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 4351
+  "text_chars": 4365
  },
  {
   "control_number": "37424",
@@ -8236,7 +8484,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4589
+  "text_chars": 4603
  },
  {
   "control_number": "37425",
@@ -8271,7 +8519,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4202
+  "text_chars": 4216
  },
  {
   "control_number": "37684",
@@ -8330,7 +8578,7 @@
    }
   },
   "listed": 34,
-  "text_chars": 5331
+  "text_chars": 5345
  },
  {
   "control_number": "37771",
@@ -8434,7 +8682,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3985
+  "text_chars": 3999
  },
  {
   "control_number": "37858",
@@ -8493,7 +8741,7 @@
    }
   },
   "listed": 35,
-  "text_chars": 4238
+  "text_chars": 4252
  },
  {
   "control_number": "37861",
@@ -8525,7 +8773,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3985
+  "text_chars": 3999
  },
  {
   "control_number": "37954",
@@ -8595,7 +8843,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 4295
+  "text_chars": 4309
  },
  {
   "control_number": "38193",
@@ -8679,7 +8927,7 @@
    }
   },
   "listed": 59,
-  "text_chars": 7650
+  "text_chars": 7664
  },
  {
   "control_number": "38204",
@@ -8700,13 +8948,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "basic bookkeeping assistant – certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3144
+  "text_chars": 3158
  },
  {
   "control_number": "38481",
@@ -8760,7 +9008,7 @@
    }
   },
   "listed": 29,
-  "text_chars": 5065
+  "text_chars": 5079
  },
  {
   "control_number": "38855",
@@ -8810,7 +9058,7 @@
    }
   },
   "listed": 34,
-  "text_chars": 5001
+  "text_chars": 5015
  },
  {
   "control_number": "38863",
@@ -8840,7 +9088,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3575
+  "text_chars": 3589
  },
  {
   "control_number": "38868",
@@ -8882,7 +9130,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 3312
+  "text_chars": 3326
  },
  {
   "control_number": "38871",
@@ -8977,7 +9225,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3683
+  "text_chars": 3697
  },
  {
   "control_number": "38925",
@@ -9010,7 +9258,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 3683
+  "text_chars": 3697
  },
  {
   "control_number": "38926",
@@ -9042,7 +9290,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3661
+  "text_chars": 3675
  },
  {
   "control_number": "38927",
@@ -9074,7 +9322,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3661
+  "text_chars": 3675
  },
  {
   "control_number": "39026",
@@ -9116,7 +9364,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3575
+  "text_chars": 3589
  },
  {
   "control_number": "39567",
@@ -9183,7 +9431,7 @@
    }
   },
   "listed": 51,
-  "text_chars": 6389
+  "text_chars": 6403
  },
  {
   "control_number": "39713",
@@ -9215,7 +9463,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3675
+  "text_chars": 3689
  },
  {
   "control_number": "39714",
@@ -9244,7 +9492,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 2919
+  "text_chars": 2933
  },
  {
   "control_number": "39717",
@@ -9276,7 +9524,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3675
+  "text_chars": 3689
  },
  {
   "control_number": "40759",
@@ -9313,7 +9561,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3223
+  "text_chars": 3237
  },
  {
   "control_number": "40995",
@@ -9345,7 +9593,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3119
+  "text_chars": 3133
  },
  {
   "control_number": "41023",
@@ -9376,7 +9624,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3645
+  "text_chars": 3659
  },
  {
   "control_number": "41027",
@@ -9403,7 +9651,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 3815
+  "text_chars": 3829
  },
  {
   "control_number": "41034",
@@ -9446,7 +9694,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3643
+  "text_chars": 3657
  },
  {
   "control_number": "41036",
@@ -9477,7 +9725,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3815
+  "text_chars": 3829
  },
  {
   "control_number": "41037",
@@ -9508,7 +9756,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3815
+  "text_chars": 3829
  },
  {
   "control_number": "41120",
@@ -9536,7 +9784,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 2848
+  "text_chars": 2862
  },
  {
   "control_number": "41121",
@@ -9567,7 +9815,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3645
+  "text_chars": 3659
  },
  {
   "control_number": "41122",
@@ -9598,7 +9846,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3643
+  "text_chars": 3657
  },
  {
   "control_number": "41367",
@@ -9629,7 +9877,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3595
+  "text_chars": 3609
  },
  {
   "control_number": "41517",
@@ -9666,7 +9914,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4376
+  "text_chars": 4390
  },
  {
   "control_number": "41583",
@@ -9705,7 +9953,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4430
+  "text_chars": 4444
  },
  {
   "control_number": "41804",
@@ -9732,7 +9980,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 2860
+  "text_chars": 2874
  },
  {
   "control_number": "41809",
@@ -9760,7 +10008,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3797
+  "text_chars": 3811
  },
  {
   "control_number": "41810",
@@ -9788,7 +10036,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3797
+  "text_chars": 3811
  },
  {
   "control_number": "41817",
@@ -9816,7 +10064,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 2958
+  "text_chars": 2972
  },
  {
   "control_number": "41844",
@@ -9847,7 +10095,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3752
+  "text_chars": 3766
  },
  {
   "control_number": "41845",
@@ -9878,7 +10126,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3752
+  "text_chars": 3766
  },
  {
   "control_number": "41846",
@@ -9907,7 +10155,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 2997
+  "text_chars": 3011
  },
  {
   "control_number": "41939",
@@ -9928,13 +10176,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "legal translation and interpretation – certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3612
+  "text_chars": 3626
  },
  {
   "control_number": "41953",
@@ -9955,13 +10203,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "medical translation and interpretation – certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3700
+  "text_chars": 3714
  },
  {
   "control_number": "41965",
@@ -9988,7 +10236,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 2786
+  "text_chars": 2800
  },
  {
   "control_number": "41989",
@@ -10010,13 +10258,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "health professions – basic certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 2803
+  "text_chars": 2817
  },
  {
   "control_number": "42039",
@@ -10048,7 +10296,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3701
+  "text_chars": 3715
  },
  {
   "control_number": "42107",
@@ -10078,7 +10326,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 2992
+  "text_chars": 3006
  },
  {
   "control_number": "42108",
@@ -10110,7 +10358,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3701
+  "text_chars": 3715
  },
  {
   "control_number": "42138",
@@ -10140,7 +10388,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3661
+  "text_chars": 3675
  },
  {
   "control_number": "42140",
@@ -10171,7 +10419,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3659
+  "text_chars": 3673
  },
  {
   "control_number": "42141",
@@ -10201,7 +10449,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3082
+  "text_chars": 3096
  },
  {
   "control_number": "42149",
@@ -10231,7 +10479,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3661
+  "text_chars": 3675
  },
  {
   "control_number": "42179",
@@ -10262,7 +10510,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3659
+  "text_chars": 3673
  },
  {
   "control_number": "42194",
@@ -10293,7 +10541,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3595
+  "text_chars": 3609
  },
  {
   "control_number": "42195",
@@ -10314,13 +10562,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "career exploration and planning for students with developmental differences – certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2717
+  "text_chars": 2731
  },
  {
   "control_number": "42196",
@@ -10366,13 +10614,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "job search and application process for students with developmental differences workplace employability skills for students with developmental differences – certificate of completion",
+    "section_fit": 0.7
    }
   },
   "listed": 3,
-  "text_chars": 2771
+  "text_chars": 2785
  },
  {
   "control_number": "42199",
@@ -10393,13 +10641,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "workplace employability skills for students with developmental differences – certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 2737
+  "text_chars": 2751
  },
  {
   "control_number": "42397",
@@ -10428,7 +10676,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 2875
+  "text_chars": 2889
  },
  {
   "control_number": "42442",
@@ -10458,7 +10706,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 2949
+  "text_chars": 2963
  },
  {
   "control_number": "42498",
@@ -10493,7 +10741,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 3171
+  "text_chars": 3185
  },
  {
   "control_number": "42827",
@@ -10539,7 +10787,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 4781
+  "text_chars": 4795
  },
  {
   "control_number": "42971",
@@ -10566,7 +10814,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 4214
+  "text_chars": 4228
  },
  {
   "control_number": "42972",
@@ -10607,7 +10855,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 2912
+  "text_chars": 2926
  },
  {
   "control_number": "42979",
@@ -10635,7 +10883,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 2967
+  "text_chars": 2981
  },
  {
   "control_number": "42980",
@@ -10663,7 +10911,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 2990
+  "text_chars": 3004
  },
  {
   "control_number": "42981",
@@ -10693,7 +10941,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 2987
+  "text_chars": 3001
  },
  {
   "control_number": "42998",
@@ -10724,7 +10972,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3613
+  "text_chars": 3627
  },
  {
   "control_number": "43056",
@@ -10760,7 +11008,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 3899
+  "text_chars": 3913
  },
  {
   "control_number": "43064",
@@ -10796,7 +11044,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 3899
+  "text_chars": 3913
  },
  {
   "control_number": "43069",
@@ -10827,7 +11075,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3613
+  "text_chars": 3627
  },
  {
   "control_number": "43087",
@@ -10863,7 +11111,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4036
+  "text_chars": 4050
  },
  {
   "control_number": "43088",
@@ -10911,7 +11159,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4256
+  "text_chars": 4270
  },
  {
   "control_number": "43542",
@@ -10947,7 +11195,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4256
+  "text_chars": 4270
  },
  {
   "control_number": "43761",
@@ -11018,7 +11266,7 @@
    }
   },
   "listed": 50,
-  "text_chars": 6495
+  "text_chars": 6509
  },
  {
   "control_number": "43898",
@@ -11064,7 +11312,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 4563
+  "text_chars": 4577
  },
  {
   "control_number": "43905",
@@ -11107,7 +11355,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 4351
+  "text_chars": 4365
  },
  {
   "control_number": "43944",
@@ -11143,7 +11391,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 3895
+  "text_chars": 3909
  },
  {
   "control_number": "43945",
@@ -11180,7 +11428,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3991
+  "text_chars": 4005
  },
  {
   "control_number": "43946",
@@ -11217,7 +11465,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3991
+  "text_chars": 4005
  },
  {
   "control_number": "43984",
@@ -11262,7 +11510,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 4381
+  "text_chars": 4395
  },
  {
   "control_number": "44015",
@@ -11285,13 +11533,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "algebraic foundations -​ certificate of competency high school equivalency preparation",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
-  "text_chars": 2751
+  "text_chars": 2765
  },
  {
   "control_number": "44323",
@@ -11314,13 +11562,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "algebraic foundations - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 2844
+  "text_chars": 2858
  },
  {
   "control_number": "44434",
@@ -11350,7 +11598,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3700
+  "text_chars": 3714
  },
  {
   "control_number": "44543",
@@ -11374,13 +11622,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "electric vehicle charging station technician - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 3366
+  "text_chars": 3380
  },
  {
   "control_number": "44670",
@@ -11428,7 +11676,7 @@
    }
   },
   "listed": 23,
-  "text_chars": 4563
+  "text_chars": 4577
  },
  {
   "control_number": "44671",
@@ -11476,7 +11724,7 @@
    }
   },
   "listed": 23,
-  "text_chars": 4563
+  "text_chars": 4577
  },
  {
   "control_number": "44723",
@@ -11515,7 +11763,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 4186
+  "text_chars": 4200
  },
  {
   "control_number": "44873",
@@ -11552,7 +11800,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3415
+  "text_chars": 3429
  },
  {
   "control_number": "44896",
@@ -11573,13 +11821,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esln beginning condensed (levels literacy - 1) - certificate of competency",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
-  "text_chars": 2777
+  "text_chars": 2791
  },
  {
   "control_number": "44897",
@@ -11599,13 +11847,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esln intermediate condensed (levels 2-3) - certificate of competency",
+    "section_fit": 0.75
    }
   },
   "listed": 1,
-  "text_chars": 2776
+  "text_chars": 2790
  },
  {
   "control_number": "44936",
@@ -11635,7 +11883,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3579
+  "text_chars": 3593
  },
  {
   "control_number": "44954",
@@ -11666,7 +11914,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3579
+  "text_chars": 3593
  },
  {
   "control_number": "44955",
@@ -11694,7 +11942,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 2900
+  "text_chars": 2914
  },
  {
   "control_number": "44956",
@@ -11720,7 +11968,7 @@
    }
   },
   "listed": 2,
-  "text_chars": 2790
+  "text_chars": 2804
  },
  {
   "control_number": "44957",
@@ -11751,7 +11999,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3002
+  "text_chars": 3016
  },
  {
   "control_number": "44958",
@@ -11791,7 +12039,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 4163
+  "text_chars": 4177
  },
  {
   "control_number": "45510",
@@ -11848,7 +12096,7 @@
    }
   },
   "listed": 32,
-  "text_chars": 5306
+  "text_chars": 5320
  },
  {
   "control_number": "45823",
@@ -11878,7 +12126,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3565
+  "text_chars": 3579
  },
  {
   "control_number": "45842",
@@ -11908,7 +12156,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 3565
+  "text_chars": 3579
  },
  {
   "control_number": "45887",
@@ -11930,13 +12178,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "construction trades readiness - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 2899
+  "text_chars": 2913
  },
  {
   "control_number": "46043",
@@ -11961,13 +12209,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "central sterile processing technician - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 2945
+  "text_chars": 2959
  },
  {
   "control_number": "46266",
@@ -11990,13 +12238,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "carpentry fundamentals - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 2916
+  "text_chars": 2930
  },
  {
   "control_number": "46377",
@@ -12026,7 +12274,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 5135
+  "text_chars": 5149
  },
  {
   "control_number": "46462",
@@ -12058,7 +12306,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3700
+  "text_chars": 3714
  },
  {
   "control_number": "46463",
@@ -12105,7 +12353,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4444
+  "text_chars": 4458
  },
  {
   "control_number": "46492",
@@ -12137,7 +12385,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 3700
+  "text_chars": 3714
  },
  {
   "control_number": "46493",
@@ -12184,6 +12432,6 @@
    }
   },
   "listed": 22,
-  "text_chars": 4444
+  "text_chars": 4458
  }
 ]

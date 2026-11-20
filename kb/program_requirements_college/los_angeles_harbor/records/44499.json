@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Law, Public Policy, and Society",
  "award": "A.A- T Degree",
- "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=120",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=119",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13896,
+  "input_tokens": 13394,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13896,
-    "output_tokens": 4463,
+    "input_tokens": 13394,
+    "output_tokens": 5126,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,76 +30,67 @@
     "model": null
    }
   ],
-  "output_tokens": 4463,
+  "output_tokens": 5126,
   "output_tokens_details": {
-   "thinking_tokens": 1641
+   "thinking_tokens": 1675
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14484,
- "ms": 35968,
- "seconds": 36.4,
+ "cost_usd": 0.1561,
+ "ms": 39152,
+ "seconds": 39.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 33,
+   "placed": 45,
    "listed": 45,
-   "share": 0.733,
-   "missing": [
-    "COMM104",
-    "COMM151",
-    "COMMC1000",
-    "ECON1",
-    "ECON2",
-    "ENGLC1000",
-    "ENGLC1000E",
-    "ENGLC1001",
-    "ESL110",
-    "PHILOS20",
-    "PHILOS6",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    16.0
+    30.0,
+    32.0
    ],
    "stated": [
     30.0,
     32.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-16.0; the catalog states 30.0-32.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     40.0,
-     49.0
+     73.0,
+     80.0
     ],
     "stated": [
      60.0,
@@ -107,15 +98,11 @@
     ],
     "against": "degree",
     "ge": [
-     16.0,
-     19.0
+     34.0,
+     34.0
     ],
     "why": [],
-    "transfer": true,
-    "fill": [
-     11.0,
-     20.0
-    ]
+    "overlap": true
    }
   },
   "repeated": {
@@ -123,13 +110,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -140,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -161,16 +148,21 @@
     "max": 60
    },
    "ge_units": {
-    "min": 16,
-    "max": 19
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Describe the American legal system including its development, structure, and history.",
+    "Articulate their views on legal and political issues",
+    "Evaluate diverse viewpoints",
+    "Demonstrate a working knowledge of research methods and identify research questions, hypothesize and analyze, critique, and integrate source materials."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Statistics course (heading on previous page, not in text)",
+    "name": "Complete one Law course",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -179,6 +171,171 @@
      "max": null
     },
     "courses": [
+     {
+      "code": "ADM JUS 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM JUS 037",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one Ethics course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHILOS 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one Oral Communications course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one Composition course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E.S.L. 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one course in Critical Thinking",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one Statistics course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "STAT C1000E",
       "units": 4,
@@ -241,7 +398,7 @@
     ]
    },
    {
-    "name": "COMPLETE A TOTAL OF TWO COURSES (NOT ALREADY USED FROM ABOVE) FROM TWO OF THE AREAS LISTED BELOW.",
+    "name": "Complete a total of two courses (not already used from above) from two of the areas listed below",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -466,63 +623,74 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "COMM 104",
-    "why": "not in text (likely on page 119, before the excerpt)"
-   },
-   {
-    "code": "COMM 151",
-    "why": "not in text (likely on page 119, before the excerpt)"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "not in text (likely on page 119, before the excerpt)"
-   },
-   {
-    "code": "E.S.L. 110",
-    "why": "not in text (likely on page 119, before the excerpt)"
-   },
-   {
-    "code": "ENGL C1000",
-    "why": "not in text (likely on page 119, before the excerpt)"
-   },
-   {
-    "code": "ENGL C1000E",
-    "why": "not in text (likely on page 119, before the excerpt)"
-   },
-   {
-    "code": "ENGL C1001",
-    "why": "not in text (likely on page 119, before the excerpt)"
-   },
-   {
-    "code": "PHILOS 20",
-    "why": "not in this section's text; named only in the Liberal Arts section"
-   },
-   {
-    "code": "PHILOS 6",
-    "why": "not in this section's text; named only in the Liberal Arts section"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "not in text (statistics list starts on page 119, before the excerpt)"
-   },
-   {
     "code": "ECON 1",
-    "why": "printed as ECON C2001 (formerly ECON 001)"
+    "why": "printed only as the former number of ECON C2001 (Area 3)"
    },
    {
     "code": "ECON 2",
-    "why": "printed as ECON C2002 (formerly ECON 002)"
+    "why": "printed only as the former number of ECON C2002 (Area 3)"
    }
   ],
   "notes": [
-   "The excerpt starts on page 120 mid-section; the section's title, description, program learning outcomes, careers and the start of the major requirements (including the heading and first entries of the statistics list, likely STAT C1000) are on page 119 and not in the text. Section heading taken from the page header.",
-   "Statistics block name and 'choose 1' rule are inferred; the heading is cut off.",
-   "The 'two courses from two of the areas' rule was recorded as a single block of 2 courses; the constraint that the two courses come from two different Areas (1 Criminal Justice, 2 Business, 3 Economics, 4 Political Science, 5 Public Policy, 6 Diversity, 7 College Success, 8 Internship) is not captured structurally.",
-   "Area 6 also allows 'Any course that emphasizes under-represented groups approved as Cal-GETC Area 4'; listed examples were recorded.",
-   "ECON C2001/C2002 are marked catalog additions because the closed list stores the former codes ECON 1/ECON 2.",
-   "ge_units 16-19 is the printed 'Additional Cal-GETC Requirements', which excludes 15-18 double-countable major units; degree_elective_units is 'Additional CSU-Transferable Units: 9-14'.",
-   "Students with catalog rights before Fall 2025 may follow CSU GE Breadth or IGETC instead of Cal-GETC."
+   "The program's title heading is not in the excerpt (text begins at 'Academic Plan: H044499G'); section_heading uses the running page header.",
+   "Catalog prints 'REQUIRED CORE COURSES (24-26 UNITS)' covering the eight core blocks together; no per-block totals are printed.",
+   "*COMM 104 counts for either the Oral Communication or Critical Thinking course, not both.",
+   "Area courses must come from two different areas (Area 1 Administrative Justice/Criminal Justice/Criminology, Area 2 Business, Area 3 Economics, Area 4 Political Science, Area 5 Public Policy, Area 6 Diversity incl. courses emphasizing under-represented groups approved as Cal-GETC Area 4, Area 7 College Success, Area 8 Internship/Fieldwork) and must not already be used above; recorded as one choose-2 block.",
+   "ge_units records the 34 semester units printed for Cal-GETC; the totals table also prints 'Additional Cal-GETC Requirements* 16-19' (not including 15-18 double-countable major units).",
+   "degree_elective_units records 'Additional CSU-Transferable Units: 9-14'.",
+   "ECON C2001/C2002 are not in the closed list; the closed list carries their former numbers ECON 1/ECON 2.",
+   "Codes printed with leading zeros (e.g., ADM JUS 001) were matched to closed-list codes without them.",
+   "Students with catalog rights prior to Fall 2025 may continue CSU GE Breadth or IGETC instead of Cal-GETC."
   ]
  },
- "extracted_run": "39006381839"
+ "extracted_run": "44687664966",
+ "catalog_year": "2026-2027",
+ "source_sha": "cf1dc313893578dc",
+ "source_codes": [
+  "ADMJUS1",
+  "ADMJUS2",
+  "ADMJUS3",
+  "ADMJUS37",
+  "ADMJUS67",
+  "ADMJUS75",
+  "ADMJUS8",
+  "AFROAM4",
+  "AFROAM5",
+  "ANTHRO102",
+  "ANTHRO132",
+  "BUS5",
+  "COMM104",
+  "COMM122",
+  "COMM151",
+  "COMMC1000",
+  "COOPED395",
+  "COUNSEL40",
+  "ECON1",
+  "ECON2",
+  "ENGLC1000",
+  "ENGLC1000E",
+  "ENGLC1001",
+  "HISTC1001",
+  "HISTC1002",
+  "HISTORY43",
+  "HISTORY44",
+  "HISTORY52",
+  "HISTORY58",
+  "PHILOS20",
+  "PHILOS6",
+  "POLSC1000",
+  "POLSCI2",
+  "POLSCI3",
+  "POLSCI5",
+  "POLSCI50",
+  "POLSCI7",
+  "SOC11",
+  "SOC2",
+  "SOC3",
+  "SOC31",
+  "STAT1",
+  "STATC1000",
+  "STATC1000E"
+ ],
+ "source_coverage": 0.978
 }

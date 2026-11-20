@@ -5187,6 +5187,11 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             # any failing record read as not_found (keep_no_read keeps passing ones only), and the source names why.
             rec = source_record(college, prog, reg, None, "not_found")
             rec["near_miss"] = {"why": rule["why"], "rule": rule["rule"], "refused_b": rule["refused_b"]}
+            # The plain picker's own named heading at an accepted share (S689 review, finding 1): the refusal is
+            # filed beside it, and RC.refused_filed() leaves such a refusal out, so the next read gives the picker back.
+            plain = before_checks.get(prog["control_number"])
+            if plain and plain.get("named"):
+                rec["near_miss"]["plain_named"] = True
             if rule.get("gap"):
                 rec["gap"] = rule["gap"]
         elif prog["control_number"] in pinned and not pinned[prog["control_number"]]:
@@ -5360,7 +5365,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             reg = dict(reg, catalog_year=hf["meta"]["catalog_year"])
             report["catalog_year"] = reg["catalog_year"]
         recs = capture_pdf(college, out_dir, programs, reg, report, hf)
-        return finish_capture(college, out_dir, recs, report, t0)
+        return finish_capture(college, out_dir, recs, report, t0, marked_set(programs))
     if prefer_site(platform, os.environ.get("CAPTURE_ROUTE")) and start:
         report["route"] = "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)"
         if is_reread(os.environ.get("CAPTURE_ROUTE")):
@@ -5385,7 +5390,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             reg = dict(reg, catalog_year=year)
             report.update(catalog_year=year, catalog_year_from="the procedure record's catalog step")
         recs = capture_pdf(college, out_dir, programs, reg, report)
-        return finish_capture(college, out_dir, recs, report, t0)
+        return finish_capture(college, out_dir, recs, report, t0, marked_set(programs))
     # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its
     # sitemap, or its front page's program indexes, then each page's children.
     if (report.get("reread") or report.get("slow")) and platform != "coursedog":
@@ -5589,7 +5594,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         browser.close()
         pw.stop()
     report["loads"] = reader.loads
-    return finish_capture(college, out_dir, recs, report, t0)
+    return finish_capture(college, out_dir, recs, report, t0, marked_set(programs))
 
 
 GONE = (404, 410)   # the host's answer that a page is not there, never a lost page
@@ -5649,8 +5654,22 @@ def pages_account(report: dict, platform: str | None, queue_len: int) -> tuple[i
     return 0, answered, 0
 
 
-def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t0: float) -> int:
-    """The run's account, written as capture.json, whichever reader found the pages."""
+def marked_set(programs: list[dict]) -> set[str]:
+    """The control numbers the page checks read this run (RC.MARK)."""
+    return {p["control_number"] for p in programs if p.get(RC.MARK)}
+
+
+def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t0: float,
+                   marked: set[str] | None = None) -> int:
+    """The run's account, written as capture.json, whichever reader found the pages. Each not_found of a program the
+    page checks read (marked) carries page_checks in its near_miss, whichever branch filed it (the low-coverage miss,
+    a site capture), so RC.refused_filed() keeps it under the rules (S689 review, finding 3)."""
+    marked = marked or set()
+
+    def near(r: dict):
+        if r["control_number"] not in marked:
+            return r.get("near_miss")
+        return dict(r.get("near_miss") or {}, page_checks=True)
     urls_used: dict[str, list[str]] = {}
     for r in recs:
         if r.get("source"):
@@ -5664,7 +5683,7 @@ def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t
         # The state's status rides with each program the read reached no page for, so a later refile
         # (refile-kept) can tell a teach-out program from an offered one without a live read (S647).
         not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
-                    "near_miss": r.get("near_miss"), "status": r.get("status")}
+                    "near_miss": near(r), "status": r.get("status")}
                    for r in recs if r["method"] in NO_READ],
         page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                        "pages": r.get("lost_pages"), "status": r.get("status")}
@@ -5787,10 +5806,30 @@ def stage_sources(college: str, src_dir: str, out_dir: str, sources_run: str, fo
         then = {s["control_number"] for s in srcs if s.get("method") == "page_challenged"}
         if now != then:
             return refuse("the current code reads refused pages differently: %s" % sorted(now ^ then)[:8])
+    # A program the rules refused, and no record has placed since (RC.refused_standing), had its page from a read that
+    # left it unmarked: its staged text is the page the rules refused, so it is staged as not_found and never extracted
+    # (S689 review, finding 4: City College of San Francisco's preview 44596600042 would extract 40 such programs,
+    # 28 of them on course-description pages). The account names each one.
+    standing = RC.refused_standing(dest)
+    # A page the rules themselves accepted (source.page_check, set by capture_pdf) is the program's own by rule A, so
+    # it is staged as read (COBIx on #3587, 7033948379: Santa Rosa Junior 39418 on p.298 was held).
+    held = sorted(s["control_number"] for s in srcs if s.get("text") and s["control_number"] in standing
+                  and not (s.get("source") or {}).get("page_check"))
+    for s in srcs:
+        if s["control_number"] in held:
+            s.update(method="not_found", text="", source=None, coverage=0.0, codes_found=[],
+                     near_miss={"why": "staged text for a program the rules refused (refused_standing); not extracted",
+                                "page_checks": True})
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     for s in srcs:
         _write(os.path.join(out_dir, "sources", s["control_number"] + ".json"), s)
     report = {k: v for k, v in staged.items() if k != "run"}
+    if held:
+        report["refused_staged"] = held
+        report["found"] = sum(1 for s in srcs if s.get("source"))
+        if fps is not None:
+            fps = {k: v for k, v in fps.items() if k not in set(held)}
+            report["fingerprints"] = fps
     report["would_extract"] = would_extract(college, srcs, folder=dest)
     if fps is None:
         report["fingerprints"] = {s["control_number"]: {"sha256": text_sha256(s.get("text")),

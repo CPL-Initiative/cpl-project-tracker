@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8404,
-    "output_tokens": 2335,
+    "output_tokens": 2197,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 2335,
+  "output_tokens": 2197,
   "output_tokens_details": {
-   "thinking_tokens": 876
+   "thinking_tokens": 722
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08032,
- "ms": 20045,
- "seconds": 20.6,
+ "cost_usd": 0.07756,
+ "ms": 18156,
+ "seconds": 18.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 15,
    "listed": 15,
-   "share": 0.867,
-   "missing": [
-    "ART190",
-    "ART191"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ART190",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ART191",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
-   "flagged": [
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -323,21 +326,22 @@
   "missing_explained": [
    {
     "code": "ART 190",
-    "why": "not in the text; catalog lists ARTHC1100 (Survey of Art from Prehistory to the Medieval Era), likely its common-course-numbered replacement"
+    "why": "not in the text; the catalog lists ARTHC1100 (Survey of Art from Prehistory to the Medieval Era), likely its common-course-numbered replacement"
    },
    {
     "code": "ART 191",
-    "why": "not in the text; catalog lists ARTHC1200 (Survey of Art from the Renaissance to Contemporary), likely its common-course-numbered replacement"
+    "why": "not in the text; the catalog lists ARTHC1200 (Survey of Art from the Renaissance to Contemporary), likely its common-course-numbered replacement"
    }
   ],
   "notes": [
-   "The 'Required Core Courses (9 units)' heading covers ART108, ART174 and the nested 'one of the following' choice of ARTHC1100 or ARTHC1200 together; the 9-unit figure is not recorded on either block alone.",
-   "List C also allows 'any LIST A or B course not already used'; those courses are not repeated in the List C block.",
-   "Degree total 60-60, CalGETC 34, electives 14-14 and double counted 6-6 come from the 'Program: Unit Summary' table; major total 18-18 also matches the '18 Credits' header.",
-   "ARTHC1100 and ARTHC1200 are not in the closed list (likely CCN versions of ART 190/ART 191); codes written without spaces as printed.",
-   "Recommended Sequence sections were not used as requirements.",
-   "No program learning outcomes or careers are printed in the text."
+   "The catalog prints 'Required Core Courses (9 units)' covering ART108, ART174 and one of ARTHC1100/ARTHC1200; the 9 units are not recorded as stated on either sub-block because the core is split into a required block and a choose-one block.",
+   "List C also allows 'any LIST A or B course not already used' as the selection.",
+   "Unit summary: Major 18-18, CalGETC 34, Double Counted 6-6, Electives (needed to reach 60 unit degree minimum) 14-14, Total Program 60-60. Electives recorded as degree_elective_units.",
+   "ARTHC1100 and ARTHC1200 are not in the closed list (catalog additions); they appear to replace ART 190 and ART 191 under common course numbering.",
+   "Recommended Sequence section lists course paths by term; not recorded as requirements.",
+   "No program learning outcomes or careers printed in the text."
   ]
  },
- "extracted_run": "38979730323"
+ "extracted_run": "44687786167",
+ "catalog_year": "2026-2027"
 }

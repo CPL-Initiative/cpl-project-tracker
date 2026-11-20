@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6510,
-    "output_tokens": 1589,
+    "output_tokens": 1486,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 1589,
+  "output_tokens": 1486,
   "output_tokens_details": {
-   "thinking_tokens": 492
+   "thinking_tokens": 416
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05782,
- "ms": 14298,
- "seconds": 14.6,
+ "cost_usd": 0.05576,
+ "ms": 13137,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 11,
    "listed": 11,
-   "share": 0.909,
-   "missing": [
-    "MATH5A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -260,11 +261,12 @@
    }
   ],
   "notes": [
-   "The 'Required Courses 24.0-31.0' figure covers the whole major including the physics sequence choice, so it is recorded as total_units rather than as the stated total of the first block.",
-   "CHEM 1A OR CHEM 3A and CHEM 1B OR CHEM 8 are read as two independent 'or' choices; they are not under a sequence heading. Reviewer may check whether the catalog intends paired sequences (CHEM 1A+1B or CHEM 3A+8); the printed 24-31 range is consistent with either reading.",
-   "Source URL refers to the 2025-2026 catalog while the requested catalog year is 2026-2027.",
+   "The catalog prints '24.0- 31.0' beside the 'Required Courses' heading, which spans the math, chemistry and physics sequence choice; it matches 'Total : 24.0- 31.0' and is recorded as total_units rather than as the stated total of the Required Courses block alone.",
+   "MATH C2210 is not in the closed list (closed list has MATH 5A Calculus I); recorded as a catalog addition.",
+   "Source URL refers to the 2025-2026 catalog while the program record is for 2026-2027; reviewer should confirm the catalog year.",
    "No general education pattern or degree total is printed on this page."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6485,
-    "output_tokens": 1392,
+    "output_tokens": 1409,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 1392,
+  "output_tokens": 1409,
   "output_tokens_details": {
-   "thinking_tokens": 316
+   "thinking_tokens": 270
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05378,
- "ms": 11854,
- "seconds": 12.4,
+ "cost_usd": 0.05412,
+ "ms": 12372,
+ "seconds": 12.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "MATH5A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -242,15 +243,17 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; the catalog lists MATH C2210 Calculus I: Early Transcendentals in its place"
+    "why": "not in the text; catalog lists MATH C2210 Calculus I: Early Transcendentals instead (likely common course numbering replacement)"
    }
   ],
   "notes": [
-   "Source URL refers to the 2025-2026 MCC catalog, while the requested catalog year is 2026-2027; verify the section matches the intended year.",
-   "Total : 33.0 is recorded as total_units (major total: 25 required + 8 physics sequence); no general education pattern or degree total is printed.",
-   "MATH C2210 is not in the closed list (likely the common course numbering replacement for MATH 5A); recorded as a catalog addition.",
-   "The text mentions pre-medicine, pre-dentistry and pre-veterinarian students as preparation paths; these were not recorded as careers since the text names them as student tracks rather than careers."
+   "Source URL refers to the 2025-2026 MCC catalog while the requested catalog year is 2026-2027; verify the year.",
+   "MATH C2210 is not on the closed list and is recorded as a catalog addition; it appears to replace MATH 5A under common course numbering.",
+   "The physics choice is recorded as two option blocks (PHYS 2A/2B or PHYS 4A/4B), each printed with 8.0 units; the 'Select one physics sequence' heading also prints 8.0.",
+   "No general education pattern or degree total (60 units) is printed; total_units 33 is the major total printed as 'Total : 33.0'.",
+   "The description mentions pre-medicine, pre-dentistry and pre-veterinarian students; these were read as academic tracks rather than named careers, so careers is empty."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }

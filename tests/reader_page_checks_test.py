@@ -21,7 +21,9 @@ its evidence (the committed files keep no catalog text, and today's session fetc
     every tab (rule C);
   * scope: only a program whose filed record places none is marked; a general-education pattern program never is;
     an unmarked program reads exactly as before, and CPL_READER_PAGE_CHECKS=0 turns the rules off;
-  * the discontinued-program check lists rule D's programs as candidates, never as flags.
+  * the discontinued-program check lists rule D's programs as candidates, never as flags;
+  * S689: rule A reads a heading printed with the fi ligature (Santa Rosa Junior's certificates), and a program a
+    committed capture refused by a rule stays marked until a committed record places its courses.
 
 Run from repo root: python3 tests/reader_page_checks_test.py
 """
@@ -358,6 +360,296 @@ check(re.search(r"\n      rule_d:\n        description: .*\n        required: fa
       "workflow: program-requirements-college.yml takes a rule_d input, empty by default")
 check("CPL_RULE_D_NOT_PRINTED: ${{ github.event.inputs.rule_d || vars.CPL_RULE_D_NOT_PRINTED || '0' }}" in wf,
       "workflow: the capture reads rule_d first, then the repository variable, else off")
+
+# ── S689: the fi ligature. Santa Rosa Junior's pypdf text prints "Certiﬁcate" (U+FB01) in every certificate heading ─
+# The heading line and the page openings are the filed text of capture-only run 44687780496 (capture_preview.json,
+# picks for pages 137 and 298); the course codes are the fixture's. On 2026-11-19 rule A refused CS Web and Mobile
+# Full-Stack 39418 ("no page prints the program's title with its award", run 44477690021) while page 298 printed it.
+# Only the heading line is real. Page 298's body below it is made up: the session cannot reach the page text (the
+# run artifact's host is blocked from its container), and the filed opening collapses the page's lines. The line is
+# also SRJC's running header ("172  Mchtroncs:IndustrlMntnncTchncn (AS)" heads p.172 while that page lists Mathematics
+# for Transfer), so this fixture proves the fold, not that p.298 is 39418's own page: phase 2's capture checks that.
+SRJC_HEAD = "298 CS Web and Mobile Full-Stack (Certiﬁcate of Achievement)"
+FS = ["CS 50.11", "CS 50.12", "CS 50.13", "CS 50.14", "CS 55.11", "CS 55.13"]
+SRJC = ["SRJC 2026-2027 Catalog %d\n" % (i + 1) for i in range(300)]
+SRJC[136] += ("1. The California Intersegmental General Education Transfer Curriculum (Cal-GETC) Requirements.\n"
+              "2. A minimum of 18 semester units in a major or area of emphasis, as determined by the department.\n"
+              + "".join("%s Course %d 3\n" % (c, k) for k, c in enumerate(FS)))
+SRJC[297] = (SRJC_HEAD + "\nProgram Description\nThe Computer Studies: Web and Mobile Full-Stack Certiﬁcate of "
+             "Achievement prepares students to build web applications.\nRequired Courses\n"
+             + "".join("%s Course %d 3\n" % (c, k) for k, c in enumerate(FS)) + "Total Units 18\n")
+fs = prog("39418", "CS Web and Mobile Full-Stack",
+          "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", FS)
+check("ﬁ" in SRJC_HEAD and RC.heading_line([SRJC_HEAD], fs["title"], fs["award"]) == 0,
+      "ligature: rule A reads the certificate heading SRJC prints with the fi ligature")
+check(RC.heading_line(["298 CS Web and Mobile Full-Stack (Certiﬁcate of Completion)"], fs["title"],
+                      fs["award"]) < 0,
+      "ligature: a folded noncredit 'Certificate of Completion' still never stands for a certificate of achievement")
+rule, best = run_pdf(fs, SRJC)
+check(rule["heading"] and rule["page_number"] == 298, "ligature: Full-Stack reads page 298, its own heading, got %r" % rule)
+check(best and best["pages"][0] == 298 and best["text"].split("\n")[1] == SRJC_HEAD and best["coverage"] == 1.0,
+      "ligature: the window opens on the heading line, as the page prints it, got %r" % (best and best["text"][:80]))
+check(RC.heading_line(["172  Mchtroncs:IndustrlMntnncTchncn (Certi\ufb01cate of Achievement)", "MATH\xa02 Calculus"],
+                      "Mchtroncs:IndustrlMntnncTchncn", fs["award"]) == 0,
+      "ligature: SRJC's header line as pypdf prints it (two spaces after the page number; run 44687780496 sample p172)")
+nc = prog("37254", "Adult Ed: Student Success Worker", "Noncredit program", FS)
+check(RC.heading_line(["223 Adult Ed: Student Success Worker (Certiﬁcate of Completion)"], nc["title"],
+                      nc["award"]) == 0, "ligature: a noncredit certificate heading reads through the fold")
+os.environ["CPL_RULE_D_NOT_PRINTED"] = "1"
+cna = prog("45001", "Certified Nursing Assistant", "Certificate of Achievement", ["NURS 1"])
+check(RC.title_printed(["Certiﬁed Nursing Assistant Program\n"], cna["title"]),
+      "ligature: rule D reads a title printed with a ligature as printed")
+os.environ.pop("CPL_RULE_D_NOT_PRINTED", None)
+
+# ── S689: a refusal stands. A refused program keeps the rules until a committed record places its courses ──────────
+# City College of San Francisco's 40 programs rule A refused on 2026-11-19 lost their failing records in that filing,
+# so the next capture (run 44687776552) left them unmarked and handed Microsoft Office Specialist 24263 and 17 more
+# the course descriptions on page 564 again. refused_filed() reads the refusal from the committed capture.
+tmp = tempfile.mkdtemp()
+try:
+    os.makedirs(os.path.join(tmp, "records"))
+    with open(os.path.join(tmp, "capture.json"), "w") as fh:
+        json.dump({"college": "City College of San Francisco", "run": "44474797786", "not_found": [
+            {"control_number": "24263", "near_miss": {"why": "rule B then A", "rule": "A", "refused_b": 1}},
+            {"control_number": "05440", "near_miss": {"url": "x.pdf#page=132", "coverage": 0.2}},
+            {"control_number": "19445", "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0}},
+            {"control_number": "17952", "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0}},
+            {"control_number": "18118", "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0}}]}, fh)
+    with open(os.path.join(tmp, "capture_preview.json"), "w") as fh:
+        json.dump({"college": "City College of San Francisco", "run": "44600000000", "not_found": [
+            {"control_number": "09001", "near_miss": {"why": "rule D", "rule": "D", "refused_b": 0}}]}, fh)
+
+    def rec2(cn, placed):
+        with open(os.path.join(tmp, "records", cn + ".json"), "w") as fh:
+            json.dump({"control_number": cn, "score": {"coverage": {"listed": 4, "placed": placed}}}, fh)
+    rec2("19445", 3)     # refused once, then a record placed its courses: the plain picker keeps it
+    rec2("17952", 0)     # refused, and its record places none: marked either way
+    check(RC.refused_filed(tmp) == {"24263", "19445", "17952", "18118", "09001"},
+          "refusal: refused_filed reads rules A and D from the capture and the preview, got %r" % RC.refused_filed(tmp))
+    ps = [prog("24263", "Microsoft Office Specialist", "Noncredit program", BUS, None),
+          prog("05440", "Finance", "A.S. Degree", BUS, None),
+          prog("19445", "Databases for Developers", "Certificate of Achievement", BUS, None),
+          prog("17952", "Liberal Arts and Sciences Emphasis in Arts and Humanities", "A.A. Degree", BUS, None),
+          prog("18118", "IGETC", "Certificate of Achievement", BUS, None),
+          prog("09001", "Computer Accounting", "Certificate of Achievement", BUS, None),
+          prog("24264", "Office Receptionist", "Noncredit program", [], None)]
+    n = RC.mark(ps, tmp)
+    check([p[RC.MARK] for p in ps] == [True, False, False, True, False, True, False] and n == 3,
+          "refusal: a refused program with no record stays marked (24263, 09001); a low-coverage miss, a refused program "
+          "whose record now places courses, a GE pattern and a program with no closed list are not, got %r"
+          % [p[RC.MARK] for p in ps])
+    os.remove(os.path.join(tmp, "capture.json"))
+    os.remove(os.path.join(tmp, "capture_preview.json"))
+    ps = [prog("24263", "Microsoft Office Specialist", "Noncredit program", BUS, None)]
+    check(RC.mark(ps, tmp) == 0, "refusal: with no committed capture, mark() reads the records alone, as before")
+finally:
+    shutil.rmtree(tmp)
+
+# ── S689 review, finding 2: Solano prints the scorer's stand-in glyphs, each with a space after it ────────────────────
+# The line is Solano's filed opening of p.107 (capture.json pick 06510), cut before "Program DescripƟ on".
+SOLANO = "106 AccounƟ ng CerƟ ﬁ cate o f Achievement and Associate in Science"
+COA = "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+check(RC.fold(SOLANO) == "106 Accounting Certificate o f Achievement and Associate in Science",
+      "glyphs: the fold spells Ɵ as ti and ﬁ as fi, and drops the space the PDF prints after each, got %r"
+      % RC.fold(SOLANO))
+check(RC.heading_line([SOLANO], "Accounting", COA) == 0, "glyphs: rule A reads Solano's Accounting certificate heading")
+import _program_requirements_score as S  # noqa: E402
+check(all(g in S._LIGATURES for g in "ƟƩŌﬁﬂ") and not hasattr(RC, "LIGATURES"),
+      "glyphs: rule A folds with the scorer's own table (imported), and keeps no copy of it")
+
+# ── S689 review, findings 1, 3 and 5 on the committed files ─────────────────────────────────────────────────────────
+# Finding 3: SRJC 13898 CS Computer Science A.S. was dropped by the filing of run 44477690021 (its keep-the-better
+# file lists it) and filed as a low-coverage not_found with no rule, so the first version of refused_filed missed it
+# and the next capture gave it p.435, course descriptions. The committed file is read as it stands.
+srjc = os.path.join(ROOT, "kb", "program_requirements_college", "santa_rosa_junior")
+check("13898" in RC.refused_filed(srjc) and "13898" in RC.refused_standing(srjc),
+      "dropped: SRJC 13898, dropped by a filing while it failed, stays under the rules")
+tmp = tempfile.mkdtemp()
+try:
+    os.makedirs(os.path.join(tmp, "records"))
+    with open(os.path.join(tmp, "capture.json"), "w") as fh:
+        json.dump({"college": "Ohlone College", "run": "44515665022", "not_found": [
+            # Finding 1: Ohlone 33319 Information Technology, refused while the plain pick opened on its own heading
+            # at p.46, coverage 1.0 (run 44687785539): filed with plain_named, the refusal is left out.
+            {"control_number": "33319", "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0, "plain_named": True}},
+            # Finding 3: a marked program's low-coverage miss and a site capture's miss carry page_checks.
+            {"control_number": "13898", "near_miss": {"url": "x.pdf#page=132", "coverage": 0.375, "page_checks": True}},
+            {"control_number": "70001", "near_miss": {"why": "coarse net: 0 of 4", "page_checks": True}},
+            {"control_number": "70002", "near_miss": {"why": "coarse net: 0 of 4"}},
+            # Finding 5: an error record never clears a refusal.
+            {"control_number": "24263", "near_miss": {"why": "rule A", "rule": "A", "refused_b": 1}}]}, fh)
+    with open(os.path.join(tmp, "records", "24263.json"), "w") as fh:
+        json.dump({"control_number": "24263", "error": "HTTP 503", "score": None}, fh)
+    with open(os.path.join(tmp, "reread_keep_better.json"), "w") as fh:
+        json.dump({"runs": {"44477690021": {"dropped_by_filing": [
+            {"control_number": "06623", "filed_passes_live": False},
+            {"control_number": "06624", "filed_passes_live": True}]}}}, fh)
+    got = RC.refused_standing(tmp)
+    check(got == {"13898", "70001", "24263", "06623"},
+          "standing: page_checks misses and failing dropped records stand; a plain_named refusal, an unmarked miss and a "
+          "dropped record that passed do not; an error record clears nothing, got %r" % sorted(got))
+    ps = [prog("24263", "Microsoft Office Specialist", "Noncredit program", BUS, None),
+          prog("33319", "Information Technology", COA, BUS, None)]
+    check(RC.mark(ps, tmp) == 1 and ps[0][RC.MARK] and not ps[1][RC.MARK],
+          "mark: the error record's program stays marked; the plain_named refusal is not, got %r" % [p[RC.MARK] for p in ps])
+finally:
+    shutil.rmtree(tmp)
+
+# ── finding 1 in the capture: a refusal beside the plain picker's own named heading is filed as such ─────────────────
+# Ohlone's filed opening of p.46 (run 44687785539): pypdf runs the heading into the paragraph after it, so rule A's
+# line runs past HEADING_SLACK and refuses, while the picker reads the line's opening and names the program.
+OHLONE_46 = ("Certificate of Achievement in Information Technology INTEREST AREA: SCIENCE, TECHNOLOGY, ENGINEERING, AND "
+             "MATHEMATICS (STEM) The Certificate of Achievement in Information Technology prepares students to ei")
+IT = ["CS 101", "CS 102", "CNET 101", "CNET 102"]
+it = prog("33319", "Information Technology", COA, IT)
+OH = ["2026-2027 OHLONE COLLEGE CATALOG\n" for _ in range(60)]
+OH[45] += OHLONE_46 + "\n" + "".join("%s Course %d 3\n" % (c, k) for k, c in enumerate(IT))
+check(RC.pdf_page(OH, it)["heading"] is None, "plain_named: rule A refuses the run-on line (fixture as filed)")
+out = tempfile.mkdtemp()
+saved = (C.read_hand_filed, C.P.pdfminer_pages)
+import _program_requirements_reconcile as R  # noqa: E402
+saved_steps = R.load_steps
+try:
+    os.makedirs(os.path.join(out, "sources"))
+    C.read_hand_filed = lambda hf: {"url": "https://x.edu/c.pdf", "access": "hand_filed", "pages": OH, "extractor": "pypdf"}
+    C.P.pdfminer_pages = lambda pdf: {"pages": [], "extractor": "pdfminer"}
+    R.load_steps = lambda path=R.STEPS: {}
+    recs = C.capture_pdf("Ohlone College", out, [dict(it, load_id="1")], {"catalog_url": "https://x.edu/c.pdf"}, {},
+                         {"meta": {"url": "https://x.edu/c.pdf", "fetched_by": "test", "fetched_at": "2026-11-20",
+                                   "sha256": "0"}})
+    r = recs[0]
+    check(r["method"] == "not_found" and (r.get("near_miss") or {}).get("rule") == "A"
+          and (r.get("near_miss") or {}).get("plain_named") is True,
+          "plain_named: the refusal is filed with the plain pick's named heading, got %r" % r.get("near_miss"))
+    rep = {}
+    import contextlib as _ctx  # noqa: E402
+    import io as _io  # noqa: E402
+    with _ctx.redirect_stdout(_io.StringIO()):
+        C.finish_capture("Ohlone College", out, recs, rep, 0.0, {"33319"})
+    nm = rep["not_found"][0]["near_miss"]
+    check(nm.get("plain_named") and nm.get("page_checks"), "finish_capture: a marked miss carries page_checks, got %r" % nm)
+finally:
+    C.read_hand_filed, C.P.pdfminer_pages = saved
+    R.load_steps = saved_steps
+    shutil.rmtree(out)
+
+# ── finding 4: staged text for a refused program is never extracted ──────────────────────────────────────────────────
+# City College of San Francisco's preview on main (run 44596600042) handed Microsoft Office Specialist 24263 p.564,
+# course descriptions (its filed opening below); the filed capture (run 44474797786) holds rule A's refusal of it.
+CCSF_564 = ("CCSF Catalog - 2026/27 COMP 9900 - Microsoft Excel for Business I (0.0) Noncredit Hours: 45 Grading: Letter "
+            "or Pass/No Pass or Satisfactory")
+td = tempfile.mkdtemp()
+try:
+    dest, art = os.path.join(td, "filed"), os.path.join(td, "artifact")
+    for d in (os.path.join(dest, "records"), os.path.join(art, "sources")):
+        os.makedirs(d)
+    s1 = {"control_number": "24263", "title": "Microsoft Office Specialist", "award": "Noncredit program",
+          "closed_list": [{"code": "COMP 9900"}], "text": CCSF_564, "coverage": 1.0, "codes_found": ["COMP9900"],
+          "method": "pdf_pages", "source": {"url": "https://www.ccsf.edu/c.pdf#page=564"}}
+    s2 = dict(s1, control_number="24300", title="Accounting Clerk", source={"url": "https://www.ccsf.edu/c.pdf#page=120"},
+              text="Accounting Clerk - Certificate of Achievement\nCOMP 9900 3")
+    for s in (s1, s2):
+        json.dump(s, open(os.path.join(art, "sources", s["control_number"] + ".json"), "w"))
+    acct = {"college": "City College of San Francisco", "catalog_year": "2026-2027", "programs": 2, "with_closed_list": 2,
+            "found": 2, "pages_listed": 1, "pages_answered": 1, "pages_read": None, "platform": "pdf",
+            "by_method": {"pdf_pages": 2},
+            "fingerprints": {s["control_number"]: {"sha256": C.text_sha256(s["text"]), "url": s["source"]["url"]}
+                             for s in (s1, s2)}}
+    json.dump(dict(acct, run="44596600042"), open(os.path.join(dest, "capture_preview.json"), "w"))
+    json.dump({"college": acct["college"], "run": "44474797786", "not_found": [
+        {"control_number": "24263", "near_miss": {"why": "rule B then A", "rule": "A", "refused_b": 1}}]},
+        open(os.path.join(dest, "capture.json"), "w"))
+    json.dump(acct, open(os.path.join(art, "capture.json"), "w"))
+    sout = os.path.join(td, "out")
+    with _ctx.redirect_stdout(_io.StringIO()):
+        rc = C.stage_sources(acct["college"], art, sout, "44596600042", folder=dest)
+    staged = json.load(open(os.path.join(sout, "capture.json"))) if rc == 0 else {}
+    held = json.load(open(os.path.join(sout, "sources", "24263.json"))) if rc == 0 else {}
+    listed = [r["control_number"] for r in (staged.get("would_extract") or {}).get("list") or []]
+    check(rc == 0 and staged.get("refused_staged") == ["24263"] and held.get("method") == "not_found"
+          and not held.get("text") and "24263" not in listed and "24263" not in staged.get("fingerprints", {}),
+          "staging: the refused program's staged text is held back and never priced or extracted, got rc %r, %r, %r"
+          % (rc, staged.get("refused_staged"), listed))
+finally:
+    shutil.rmtree(td)
+
+# ── #3587 follow-up 1: plain_named leaves keep-the-better's dropped list too (COBIx, 7033947220) ─────────────────────
+# Ohlone's committed capture.json and reread_keep_better.json, copied as they stand: 33319 and 46035 are refused by
+# rule A there and listed as dropped by run 44515665022's filing. A newer preview files each refusal beside the plain
+# picker's own named heading (p.46 and p.96, run 44687785539), and both come out unmarked.
+ohlone = os.path.join(ROOT, "kb", "program_requirements_college", "ohlone")
+td = tempfile.mkdtemp()
+try:
+    for name in ("capture.json", "reread_keep_better.json"):
+        shutil.copy(os.path.join(ohlone, name), os.path.join(td, name))
+    os.makedirs(os.path.join(td, "records"))
+    before = RC.refused_standing(td)
+    check({"33319", "46035"} <= before, "follow-up 1: as committed, Ohlone 33319 and 46035 are marked")
+    with open(os.path.join(td, "capture_preview.json"), "w") as fh:
+        json.dump({"college": "Ohlone College", "run": "44687785539", "not_found": [
+            {"control_number": cn, "near_miss": {"why": "rule A: no page prints the program's title with its award",
+                                                 "rule": "A", "refused_b": 0, "plain_named": True}}
+            for cn in ("33319", "46035")]}, fh)
+    after = RC.refused_standing(td)
+    check(not ({"33319", "46035"} & after) and before - after == {"33319", "46035"},
+          "follow-up 1: with plain_named filed, both leave the dropped list's marks too, and nothing else moves, got %r"
+          % sorted(before - after))
+finally:
+    shutil.rmtree(td)
+
+# ── #3587 follow-up 2: stage_sources holds only pages the rules did not accept (COBIx, 7033948379) ───────────────────
+# Santa Rosa Junior 39418's page p.298 is the rules' own (source.page_check, run 44699694768), so it is staged; a
+# CCSF-shaped page read with no page check (24263 on p.564's descriptions) is still held.
+td = tempfile.mkdtemp()
+try:
+    dest, art = os.path.join(td, "filed"), os.path.join(td, "artifact")
+    for d in (os.path.join(dest, "records"), os.path.join(art, "sources")):
+        os.makedirs(d)
+    ok = {"control_number": "39418", "title": "CS Web and Mobile Full-Stack", "award": COA,
+          "closed_list": [{"code": c} for c in FS], "text": SRJC[297], "coverage": 1.0, "codes_found": FS,
+          "method": "pdf_pages", "source": {"url": "https://catalog.santarosa.edu/c.pdf#page=298",
+                                            "page_check": {"rule": "A", "page": 298, "share": 1.0}}}
+    bad = {"control_number": "24263", "title": "Microsoft Office Specialist", "award": "Noncredit program",
+           "closed_list": [{"code": "COMP 9900"}], "text": CCSF_564, "coverage": 1.0, "codes_found": ["COMP9900"],
+           "method": "pdf_pages", "source": {"url": "https://www.ccsf.edu/c.pdf#page=564"}}
+    for s in (ok, bad):
+        json.dump(s, open(os.path.join(art, "sources", s["control_number"] + ".json"), "w"))
+    acct = {"college": "Fixture College", "catalog_year": "2026-2027", "programs": 2, "with_closed_list": 2,
+            "found": 2, "pages_listed": 1, "pages_answered": 1, "pages_read": None, "platform": "pdf",
+            "by_method": {"pdf_pages": 2},
+            "fingerprints": {s["control_number"]: {"sha256": C.text_sha256(s["text"]), "url": s["source"]["url"]}
+                             for s in (ok, bad)}}
+    json.dump(dict(acct, run="300"), open(os.path.join(dest, "capture_preview.json"), "w"))
+    json.dump({"college": acct["college"], "run": "200", "not_found": [
+        {"control_number": cn, "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0}} for cn in ("39418", "24263")]},
+        open(os.path.join(dest, "capture.json"), "w"))
+    json.dump(acct, open(os.path.join(art, "capture.json"), "w"))
+    sout = os.path.join(td, "out")
+    with _ctx.redirect_stdout(_io.StringIO()):
+        rc = C.stage_sources(acct["college"], art, sout, "300", folder=dest)
+    staged = json.load(open(os.path.join(sout, "capture.json"))) if rc == 0 else {}
+    kept = json.load(open(os.path.join(sout, "sources", "39418.json"))) if rc == 0 else {}
+    check(rc == 0 and staged.get("refused_staged") == ["24263"] and kept.get("text") == SRJC[297]
+          and kept.get("method") == "pdf_pages",
+          "follow-up 2: the rules' own page is staged and the unchecked page held, got rc %r, %r"
+          % (rc, staged.get("refused_staged")))
+finally:
+    shutil.rmtree(td)
+
+# ── #3587 follow-up 3: the fold drops a glyph's space only in the stand-in font's text ───────────────────────────────
+check(RC.fold("Staﬀ Development Certificate") == "Staff Development Certificate",
+      "fold: a real ligature keeps the space after it outside the stand-in font, got %r"
+      % RC.fold("Staﬀ Development Certificate"))
+check(RC.fold("Ōmega Leadership Certificate") == "Ōmega Leadership Certificate",
+      "fold: Ō stays a letter outside the stand-in font")
+check(RC.fold("Oﬃ ce Technolog y CerƟ ﬁ cate") == "Office Technolog y Certificate"
+      and RC.fold("soŌ ware") == "software",
+      "fold: in the stand-in font's text every glyph's space drops, real ligatures too (Solano's 'Oﬃ ce')")
+check(RC.heading_line(["182 Business - Oﬃ ce Technolog y", "AdministraƟ ve Assistant CerƟ ﬁ cate"],
+                      "Administrative Assistant", COA) >= 0,
+      "fold: the stand-in style is read over the lines heading_line gets, so a line with no Ɵ of its own folds too")
+check(all(g in S._LIGATURES for g in RC.STAND_INS + RC.STAND_IN_LETTER),
+      "fold: the stand-in glyphs are keys of the scorer's table, which stays the one table")
 
 for f in failures:
     print("FAIL:", f)

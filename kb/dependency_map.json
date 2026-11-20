@@ -4,8 +4,8 @@
   "supabase_tables": 118,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1092,
-  "external_services": 196,
+  "file_datasets": 1094,
+  "external_services": 197,
   "consumers": 635,
   "workflows": 75,
   "data_js_files": 71,
@@ -517,7 +517,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 415
+     "line": 444
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -844,7 +844,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 439
+     "line": 468
     }
    ],
    "main_committers": []
@@ -857,6 +857,18 @@
      "direction": "read",
      "how": "url",
      "line": 665
+    }
+   ],
+   "main_committers": []
+  },
+  "external:ccsf.curricunet.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 88
     }
    ],
    "main_committers": []
@@ -895,7 +907,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 273
+     "line": 286
     }
    ],
    "main_committers": []
@@ -1781,7 +1793,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 274
+     "line": 287
     }
    ],
    "main_committers": []
@@ -2341,7 +2353,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 283
+     "line": 296
     }
    ],
    "main_committers": []
@@ -2444,7 +2456,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 278
+     "line": 291
     }
    ],
    "main_committers": []
@@ -3046,7 +3058,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 269
+     "line": 282
     },
     {
      "id": "script:kb/_course_outline_index.py",
@@ -3153,7 +3165,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 271
+     "line": 284
     }
    ],
    "main_committers": []
@@ -3205,7 +3217,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 281
+     "line": 294
     }
    ],
    "main_committers": []
@@ -3249,7 +3261,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 276
+     "line": 289
     }
    ],
    "main_committers": []
@@ -3355,7 +3367,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 277
+     "line": 290
     }
    ],
    "main_committers": []
@@ -4152,7 +4164,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 462
+     "line": 491
     }
    ],
    "main_committers": []
@@ -8838,7 +8850,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6810
+     "line": 6849
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8858,7 +8870,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6886
+     "line": 6925
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9550,7 +9562,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 149
+     "line": 161
     }
    ],
    "served": false,
@@ -14987,7 +14999,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 711
+     "line": 802
     }
    ],
    "served": false,
@@ -18524,7 +18536,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7487
+     "line": 7526
     }
    ],
    "served": true,
@@ -22645,7 +22657,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7221
+     "line": 7260
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22665,7 +22677,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6250
+     "line": 6289
     }
    ],
    "served": false,
@@ -23315,7 +23327,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6848
+     "line": 6887
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24284,7 +24296,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 129
+     "line": 139
     }
    ],
    "served": false,
@@ -24324,7 +24336,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 87
     }
    ],
    "served": false,
@@ -26220,6 +26232,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/ccsf_curricunet_route_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/cdc_sharing_build_test.py": {
    "consumers": [
     {
@@ -26566,6 +26591,19 @@
    "main_committers": []
   },
   "file:tests/course_id_route_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/course_outcomes_header_fix_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31524,7 +31562,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7461
+     "line": 7500
     }
    ],
    "main_committers": []
@@ -31536,7 +31574,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7578
+     "line": 7617
     }
    ],
    "main_committers": []
@@ -35089,7 +35127,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 440
+     "line": 458
     },
     {
      "id": "script:kb/_program_requirements_pilot.py",
@@ -36983,7 +37021,9 @@
     "tests/kpi_history_no_gaps_test.py",
     "tests/course_outline_registry_fill_test.py",
     "tests/course_outline_index_test.py",
+    "tests/ccsf_curricunet_route_test.py",
     "tests/course_outcomes_read_test.py",
+    "tests/course_outcomes_header_fix_test.py",
     "tests/mtsac_slo_read_test.py",
     "tests/exhibit_subject_fill_test.py",
     "tests/course_outcomes_load_test.py",

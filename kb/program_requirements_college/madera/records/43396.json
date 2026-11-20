@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7057,
-    "output_tokens": 2298,
+    "output_tokens": 2225,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,45 @@
     "model": null
    }
   ],
-  "output_tokens": 2298,
+  "output_tokens": 2225,
   "output_tokens_details": {
-   "thinking_tokens": 873
+   "thinking_tokens": 817
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07419,
- "ms": 27559,
- "seconds": 27.9,
+ "cost_usd": 0.07273,
+ "ms": 18874,
+ "seconds": 19.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 17,
-   "share": 0.765,
+   "share": 0.824,
    "missing": [
-    "ENGL1B",
     "ENGLC1001",
     "ENGLC1001H",
     "JOURN1"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGLC1002"
-   ],
-   "flagged": [
-    "ENGLC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -295,14 +297,15 @@
    }
   ],
   "notes": [
-   "Core Courses header prints '3.0' beside it, which appears to be the units of the first choice (COMM C1000 or C1000H) rather than the block total (core is two required courses); stated left null.",
-   "List B also allows any List A course not already used toward List A; those courses are not repeated in the List B block.",
-   "ENGL C1002H and PSYC C1000H are printed as separate rows in List B; recorded as honors alternatives of ENGL C1002 and PSYC C1000.",
-   "SOCI C1000 in the catalog matches closed-list entry 'SOCIC1000' (missing space); treated as the same course.",
-   "ENGL C1002 (non-honors) is not in the closed list; flagged as catalog addition.",
-   "The 60-unit and 37-39 GE unit figures are the generic AA-T requirement statement; degree_total left null, GE units recorded as printed. The '(minimum of 18 units)' sentence is generic; total_units taken from 'Total : 18.0'.",
-   "Source URL references the 2025-2026 catalog while the requested catalog year is 2026-2027; reviewer should verify year."
+   "The catalog prints '3.0' directly after the 'Core Courses' heading, which does not match the two required 3-unit courses (6 units); read as the first row's units, so stated is left null for the Core block.",
+   "LIST B also allows any List A course not already used; those courses are not repeated in the List B block.",
+   "ENGL C1002 and ENGL C1002H are listed as separate rows in List B; recorded as honors twins (one entry with an alternative). Same for PSYC C1000/PSYC C1000H.",
+   "SOCI C1000 matched to closed-list entry 'SOCIC1000' (missing space in the state file).",
+   "The 60 semester units requirement is the standard ADT boilerplate statement, not recorded as degree_total. GE units 37-39 are printed as the minimum for IGETC or CSU GE-Breadth.",
+   "Source URL refers to the 2025-2026 catalog while the requested catalog year is 2026-2027; reviewer should verify.",
+   "ENGL C1002 is not on the closed list (only ENGL C1002H is)."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "44692816081",
+ "catalog_year": "2026-2027"
 }
