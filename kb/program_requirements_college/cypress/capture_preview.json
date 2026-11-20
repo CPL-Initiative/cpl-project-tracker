@@ -1,0 +1,1454 @@
+{
+ "college": "Cypress College",
+ "catalog_url": "https://catalog.nocccd.edu/cypress-college/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 282,
+ "with_closed_list": 282,
+ "started": "2026-11-20T14:22:46Z",
+ "scope": "/cypress-college/",
+ "sitemap": {
+  "url": "https://catalog.nocccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1347,
+  "nested": 0,
+  "program_pages": 383,
+  "refused": null,
+  "errors": null,
+  "failed": null,
+  "challenged": null
+ },
+ "listing_failed": 0,
+ "pages_read": 383,
+ "pages_listed": 386,
+ "pages_answered": 383,
+ "child_pages": 3,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 255,
+   "hits": 221,
+   "recall": 0.867,
+   "false": 1,
+   "false_off_own": 2,
+   "false_no_claims": 3,
+   "shared": 4,
+   "false_matches": [
+    {
+     "control_number": "21106",
+     "title": "Computer Programming",
+     "page": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/computer-programing-certificate/"
+    },
+    {
+     "control_number": "21106",
+     "title": "Computer Programming",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/computer-programing-certificate/",
+     "h1": "Computer Programming Certificate"
+    },
+    {
+     "control_number": "43813",
+     "title": "Honors Program",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "page": "https://catalog.nocccd.edu/cypress-college/special-programs/honors-program/",
+     "h1": "Honors Program"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "21106",
+     "title": "Computer Programming",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/computer-programing-certificate/",
+     "h1": "Computer Programming Certificate"
+    },
+    {
+     "control_number": "37219",
+     "title": "Film, Television, and Electronic Media",
+     "award": "A.S. T Degree",
+     "page": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/associate-in-science-in-film-television-and-electronic-media-for-transfer-degree/",
+     "h1": "2D Animation Certificate"
+    },
+    {
+     "control_number": "43813",
+     "title": "Honors Program",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "page": "https://catalog.nocccd.edu/cypress-college/special-programs/honors-program/",
+     "h1": "Honors Program"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 0,
+  "by_result": {},
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 394,
+ "seconds": 1911.9,
+ "found": 270,
+ "by_method": {
+  "link_search": 11,
+  "not_found": 8,
+  "page_claimed": 4,
+  "sitemap_page": 259
+ },
+ "shared_pages": {
+  "https://catalog.nocccd.edu/cypress-college/degrees-certificates/communication-studies/communication-studies-2-associate-in-arts-degree-for-transfer-aa-t/": [
+   "31002",
+   "43849"
+  ],
+  "https://catalog.nocccd.edu/cypress-college/degrees-certificates/public-health-science/public-health-science-associate-in-science-degree-for-transfer/": [
+   "37128",
+   "46294"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30290",
+   "title": "Digital Cinema Arts and Industry",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/digital-cinema-production-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.083,
+    "net": 3,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 3 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4182,
+     "content": 7178,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      435
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "33913",
+   "title": "Solar Energy",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35041",
+   "title": "Sustainability",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35056",
+   "title": "CSU General Education (CSU GE Breadth)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/cypress-college/programs-study/transfer-programs/general-education-certification-ge-transfer-of-credit/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 330,
+    "why": "coarse net: the page's code tokens name 0 of 330 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2593,
+     "content": 3514,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35090",
+   "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/cypress-college/programs-study/transfer-programs/california-general-education-transfer-curriculum/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "textContent",
+    "coverage": 0.008,
+    "body": 0.0,
+    "content": 0.008,
+    "net": 2,
+    "listed": 264,
+    "why": "coarse net: the page's code tokens name 2 of 264 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3717,
+     "content": 34117,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      28824
+     ]
+    ]
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "35421",
+   "title": "UAV/UAS Drone Photography and Video",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program",
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42390",
+   "title": "Automotive Collision I-CAR Gold",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-advanced-technician-associate-in-science-degree/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 3,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 3 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4859,
+     "content": 7939,
+     "tabs": 583
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      542
+     ]
+    ],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "45943",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/cypress-college/programs-study/transfer-programs/california-general-education-transfer-curriculum/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.007,
+    "body": 0.0,
+    "content": 0.007,
+    "net": 2,
+    "listed": 285,
+    "why": "coarse net: the page's code tokens name 2 of 285 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3717,
+     "content": 34117,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      28824
+     ]
+    ]
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "03768",
+   "title": "Computer Programming",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "30328",
+   "title": "Computer Forensics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/system-administration-and-technical-support-certificate/",
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42351",
+   "title": "Auto Collision I-CAR Gold",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/collision-repair-i-car-gold-certificate/",
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-repair-fundamentals-associate-in-science-degree/",
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "43079",
+   "title": "UCTP Physics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/physics/physics-2-0-associate-in-science-degree-for-transfer-as-t/",
+    "https://catalog.nocccd.edu/cypress-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-uc-transfer/"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 11,
+  "0.8-1.0": 37,
+  "1.0": 222
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/cypress",
+  "kept": 269,
+  "kept_moved": 0,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "07845",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/addiction-studies-certificate/",
+    "coverage": 1.0,
+    "was_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/addiction-studies-certificate/",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "03761": {
+   "sha256": "fe08a6d47be2f94f42ca8bccb16381d1e33583c8477c43adcc03554c3f2ed0f9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/accounting/associate-science-degree-accounting/"
+  },
+  "03762": {
+   "sha256": "bad3ab74e5ec72469a4db5f8c9d5a568e00c5d08213b21ce21e6d5f4c189910c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/management/business-management-associate-in-science-degree/"
+  },
+  "03763": {
+   "sha256": "e424ea7d333cdeead6c8973ef113e0bba4856ba15298e1adde16a4628c185f8d",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/hospitality-management-associate-in-science-degree/"
+  },
+  "03764": {
+   "sha256": "cdb6fe46d33550cf537b9457d30fc810fa5da337366fad425c6daa5b9528cca8",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/marketing/marketing-associate-in-science-degree/"
+  },
+  "03767": {
+   "sha256": "d211f4e4f2a6ab6324b7b11bac1d73c86fc7d3b43c30a6464e7f0e9a1ce93654",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/computer-information-systems-associate-in-science-degree/"
+  },
+  "03769": {
+   "sha256": "28b64dd365b16811e688094e5032199f3227f39d7adbb0a1e1d480e4a49bfe89",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/kinesiology-associate-in-arts-degree/"
+  },
+  "03770": {
+   "sha256": "3152ce5acc75e9701afae9c94e8d952c9361a913c170e2a366dbf8a9c8b699a7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/engineering/associate-science-degree-pre-engineering/"
+  },
+  "03771": {
+   "sha256": "7bb06e9dec34fadc60ee574ab068cd536e131b9ea53c6cdc7d83d1cbe163f7e9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/associate-science-degree-automotive-technology/"
+  },
+  "03772": {
+   "sha256": "f4545c79ac4495e3b3a4753427f1373ae377ab22a455db473ba0d777bbd406aa",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/aviation-management-associate-in-science-degree/"
+  },
+  "03773": {
+   "sha256": "cc87a405283af1251a85974dfceb438fbb1e947b6257c11ac13f6625a683ac34",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/commercial-pilot-associate-in-science-degree/"
+  },
+  "03774": {
+   "sha256": "5e8dac55df732783730e64e11a729384e1d94a424ae523ed9302636c68d760ad",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-and-refrigeration-associate-in-science-degree/"
+  },
+  "03776": {
+   "sha256": "813e9c95ccc2b2c8af0f7e7c0545a114b24c1ae6b5b90c7357b5619f87a98dd2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/art/associate-arts-degree-art/"
+  },
+  "03777": {
+   "sha256": "43953e319616f77e9c93567b5f7d43394dd8baac78ee395f10afb8e5bccf259d",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/music/associate-arts-degree-music/"
+  },
+  "03779": {
+   "sha256": "b345c45021f0a18086722c40d4d002f30aad1115a8eb2bbf08dc12f2b104195c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/associate-arts-degree-theater-arts/"
+  },
+  "03781": {
+   "sha256": "0d3e814b2484537906e893d409bdd48449dab17d4a8a609f6ec46f0d49d45564",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dance/dance-associate-in-arts-degree/"
+  },
+  "03782": {
+   "sha256": "f420c2a892b6dba11e5e3757e5710555f27d44d9a68f89fd63ebcb613744aabe",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/photography/associate-arts-degree-photography/"
+  },
+  "03785": {
+   "sha256": "aa2aa6bb03ff32a593fa2ca15629c1b76a8e1aa3a8cd50ddc199c258ab4740d4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/nursing-program/associate-science-degree-program-registered-nursing/"
+  },
+  "03786": {
+   "sha256": "fa8d0e9e7a3dbe56d3dea68939b4903b90e55ba798fe417eedca6b5936318817",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-assisting/dental-assisting-associate-in-science-degree/"
+  },
+  "03787": {
+   "sha256": "22097d860dc7156c8f29f1558e2f6f3fb4e6ca66ad27220e8ab44c04b485b0dc",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/dental-hygiene-associate-in-science-degree/"
+  },
+  "03788": {
+   "sha256": "4f0ee4afd5e3a4dfc1e4aae2c7e9fab3ffb8dc4c140895fa97e4f85606c48833",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/health-information-technology/health-information-technology-associate-in-science-degree/"
+  },
+  "03789": {
+   "sha256": "e23c67b9c6c8fb61c10e68991ceaaff28ac090e7fda65a838b2b65a1da1332ec",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/radiologic-technology/radiologic-technology-associate-in-science-degree/"
+  },
+  "03790": {
+   "sha256": "5c217d36fe89de1993f97a8658ff27003ca83c74902aa4a9eda62a4d676f671a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/psychiatric-technology/associate-science-degree-psychiatric-technology/"
+  },
+  "03791": {
+   "sha256": "fed8e1f5580ca69ed83defefa91a68b0f01c17ef3ee09edf64df5b735eb6ca62",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/mortuary-science/associate-science-degree-mortuary-science/"
+  },
+  "03803": {
+   "sha256": "7ac98dc44dd4a67e96223eb3132e5bbc0cff2b3aa968db14de147a48723d284b",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/associate-arts-degree-human-services/"
+  },
+  "03807": {
+   "sha256": "cd602945082e6af13f0b9e31e7b38d3e0eef257958a021e2841764c40a998a08",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ethnic-studies/ethnic-studies-associate-in-arts-degree/"
+  },
+  "03813": {
+   "sha256": "a5c74acbf515b9bed0fb6e576dd3a92d1a155d96e5799126d7410fb1b1348d42",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/culinary-management-associate-in-science-degree/"
+  },
+  "03814": {
+   "sha256": "4030058f02a9dbf636fd52ea84dec37aa480ecc1cb842de10b066ccb1478a63e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/flight-attendant-associate-in-science-degree/"
+  },
+  "03815": {
+   "sha256": "63010fefeb0c59a176ad93137506f8a7c81b8e19151efc8c5ee35d708f4be761",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/graphic-design-certificate/"
+  },
+  "07814": {
+   "sha256": "8972c9a91bd0893a96cbf1bf24fd51b653811b8ec3805d397b20408c7d227b73",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/merchandising/merchandising-associate-in-science-degree/"
+  },
+  "07819": {
+   "sha256": "0f1fd6b5892f7300571e9046efbde063ddccb47e31e8e50cbc2bf6e3a7e7a9a9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/court-reporting-associate-in-science-degree/"
+  },
+  "07820": {
+   "sha256": "cf346d34d12791ea3ac9bb639f2a20eb0a05336c7dbd8f3ee8eeafd4965a677a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/computer-editor-scopist-certificate/"
+  },
+  "07821": {
+   "sha256": "9c232d95e61f3db79c49b7d29eeb3ec1e442d5b2cab24016cc3ba45ffef774f2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/cart-communication-access-realtime-translation/"
+  },
+  "07825": {
+   "sha256": "2115df484c97e3f24a9fe83c47fc9bc44f27d8b297acc0f1fee85d509d39a0f4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/geography/geographic-information-systems-certificate/"
+  },
+  "07828": {
+   "sha256": "592b9e29be73e733b37f6fe06dcca526a520fad2cfd283a56240d43f647032a2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/fitness-specialist-certificate/"
+  },
+  "07829": {
+   "sha256": "edc8049c8da548afd10879497c96e166a1290426510266d8aacd5a3feb5dc932",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/aquatics-specialist-certificate/"
+  },
+  "07830": {
+   "sha256": "09122c58979037696f043e4e9faf25383c4eea8ae2f61e263acae5c831139e28",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/athletic-coach-certificate/"
+  },
+  "07832": {
+   "sha256": "e711e71ae6674e66ab4d9ae8bf88b0adccb969d6d392bd30cbe293fe05fb96a8",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-repair-fundamentals-associate-in-science-degree/"
+  },
+  "07840": {
+   "sha256": "99858e146467e2ab3d1a25c7efc6c66c4ac737d7d278ed27de89d0f88428fca9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/diagnostic-medical-sonography/associate-science-degree-diagnostic-medical-sonography/"
+  },
+  "07842": {
+   "sha256": "fd541201bf1c941ae7112487ed91af77659797b7a4364a27fa21d99901a1f212",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/gerontology-certificate/"
+  },
+  "07845": {
+   "sha256": "51e0f511eb8389db90c15a3242e6e59a7338c2003c4712f55c9eb6ac5a49bd5d",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/addiction-studies-certificate/"
+  },
+  "07847": {
+   "sha256": "f3890d1e4bc54cb72ebf2095553cab809b40f2c957e7093264a4ea475b10e798",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/victimology-certificate/"
+  },
+  "07848": {
+   "sha256": "b95bd5e3f6298242a5dd2e50a16c844cec89bf11d50c47083dbd0f4264769bec",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/food-beverage-management-associate-in-science-degree/"
+  },
+  "07859": {
+   "sha256": "9f4433bb35297ad41e46ec42cd4042853761814693f8d97898c65fa690f78188",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/associate-science-degree-travel-tourism/"
+  },
+  "10448": {
+   "sha256": "c88009ba01ce66a1c3ce694751d60c2b72d9c45951b48d88afe79c0f54c906fe",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/graphic-design-associate-in-arts-degree/"
+  },
+  "10449": {
+   "sha256": "3e54988d727e567c01055aef8d7572de5b5806c6790cc3590b266e68f6337c3c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/radiologic-technology/imaging-technologist-assistant-certificate/"
+  },
+  "10452": {
+   "sha256": "3753692051bc172e5d70d87ab9e881699eda782ae7282449ab205eda1b99a3f0",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/family-studies-certificate/"
+  },
+  "12113": {
+   "sha256": "05036e25812a5912a6dd593e965795a25ec593e9dbc192f04b291dd14186529e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/criminal-justice-certificate/"
+  },
+  "12296": {
+   "sha256": "91aef4f524d2b7710cc029831119837646bda42cd1c68271164479328829d607",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/management/small-business-management-associate-in-science-degree/"
+  },
+  "12358": {
+   "sha256": "c81c817a229fd25486f96317b61f09a3d0d06774ff2344253e8774b7654ddf0f",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/digital-illustration-certificate/"
+  },
+  "12937": {
+   "sha256": "3526d968d6c0955f7ccffcd2dd2ff021557b886961fa207532ae00a6aa5f1448",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/cisco-networking-certificate/"
+  },
+  "12955": {
+   "sha256": "3d9ec8248e27760a08f867be4d220f1ad39dc2ee62aad8657ad53ed2eccfaaa4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/costume-and-makeup-design-certificate/"
+  },
+  "12956": {
+   "sha256": "29d846ea2fbde66991c6eccaaef8bcfd927adb4fe333f4b9444c628f67c8af9a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/lighting-and-sound-design-certificate/"
+  },
+  "12958": {
+   "sha256": "01b5d6d8fbfc6de181618625b10b470e4b3c2e3238287ceed40b5b3260101fbf",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/music/recording-arts-certificate/"
+  },
+  "12959": {
+   "sha256": "f97bb0d8bd31800f02eba96e7085c3691c5ee75da77a3671d65059bddf7b3506",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dance/dance-teaching-certificate/"
+  },
+  "12962": {
+   "sha256": "c9cc3a741dddb5d948a20a2409d1e83357df01a6237c2fdee36c5be14c4536c7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/technical-theater-certificate/"
+  },
+  "12968": {
+   "sha256": "edc41100eef3c4d29f06f5950d9f063e464d34036288983107eecf13ceb0e47c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/baking-fundamentals-certificate/"
+  },
+  "12969": {
+   "sha256": "1741a497c3dcf3c764915d340a073732cc29fb2e2ee8e353de31687fdc077258",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/culinary-fundamentals-certificate/"
+  },
+  "12972": {
+   "sha256": "0a8a06e38b3250b4df6e52aa1d35cb5e72b878a17948e9471b815f3e72d295e7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/brake-alignment-specialist-certificate/"
+  },
+  "12973": {
+   "sha256": "02751e2674d97a6579e3787d8cbcfb1ba7a32b69bec85fa9a97ae9381dbad1d7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-technology-emission-control-specialist-certificate/"
+  },
+  "12974": {
+   "sha256": "2014335d7cb2bd5d9438d2ed2bddb6f3909b3b9c2af483dea8e1217613e372af",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/engine-specialist-certificate/"
+  },
+  "12975": {
+   "sha256": "64b4b09fbef70275e99f51459478817ecc2e23efefc5c43dc80cfd48d23c3383",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/performance-driveability-certificate/"
+  },
+  "12976": {
+   "sha256": "eaed3d3222c9246b54674e6811d049c103a8526420381684033e7c70d425a623",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-technology-transmission-specialist-certificate/"
+  },
+  "12978": {
+   "sha256": "ce87b3766fb6c3c944c40b8a85ff932931188aff3a314d475b09bd8668ee68cd",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/photography/digital-photography-certificate/"
+  },
+  "12979": {
+   "sha256": "f0d0ab73dbc0a337e18e4f6f9b4fd2581f8de8a460cd325e091233b813a12a3e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/food-service-fundamentals-certificate/"
+  },
+  "12980": {
+   "sha256": "4f98108c2c8630ce49022b1cca47408a25b7db3b63cb9896618c39ae3884d9bd",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/hotel-fundamentals-certificate/"
+  },
+  "12984": {
+   "sha256": "f9c288e57e8a760ff6de614f85e2b0e4afa8856427566357fd8e6670f674904a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/photography/portrait-wedding-photography-certificate/"
+  },
+  "14040": {
+   "sha256": "b6464aeac9175149616cc4c229013c7cd3a0b3f7df123e80c815b68f835c6af8",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/airline-customer-services-associate-in-science-degree/"
+  },
+  "14403": {
+   "sha256": "c3373f14a0cb208055548e5a7287da4bf4989283d46fe11c03f98a6e02d51602",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/airline-customer-services-basic-certificate/"
+  },
+  "14404": {
+   "sha256": "4a595a0d2f96e1590e7030868169c794d8785a6a108cb75d6ad98395df9b000a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/flight-attendant-basic-certificate/"
+  },
+  "14405": {
+   "sha256": "d2a916f16fd05b5a07b92b67649b767d4da0d2ea5dfe2e3a0b71b76a276f8813",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/travel-tourism-basic-certificate/"
+  },
+  "15688": {
+   "sha256": "0c64639a931ac68505ba9fe3fb972e4a847fb8bf3888ffb90bd2d593351d46ea",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-sales-and-service-certificate/"
+  },
+  "15691": {
+   "sha256": "cc764c74bf9e380932fe832f08bc7ec3c39f4018ecd4f7dad7f3f01b8a7415d9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/photography/creative-photo-arts-certificate/"
+  },
+  "15693": {
+   "sha256": "ffc8efe8553fb2378ffe00f4ac24518975400d0585cdea0a59c8563970fe6c1e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/associate-in-science-in-film-television-and-electronic-media-for-transfer-degree/"
+  },
+  "15694": {
+   "sha256": "a3b6d487c0a29059b0e17c4536ae557f9503c5fda8f52faab7eb43b6276de1f0",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/3d-certificate/"
+  },
+  "16881": {
+   "sha256": "b6e2a2224904e8f4f892b784ba085875a6c427a5b288cb5203f7e073fe2689f2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/philosophy-religious-studies/associate-arts-degree-philosophy/"
+  },
+  "17140": {
+   "sha256": "f54e44634434f94eceac5f0997a53e06884657d586b56765900d631c3c0c68ec",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/special-event-management-certificate/"
+  },
+  "17141": {
+   "sha256": "512a5a07fa37e364a5daf328cf5ff54978e68ebc354dbf1409f44a56996e60e7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/conflict-resolution-certificate/"
+  },
+  "17168": {
+   "sha256": "544edf147bb75d6aebb7bdb2ea8004c88da4859ef9fc281ecd311d6adaebc5a6",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/basic-tourism-conference-management-certificate/"
+  },
+  "17169": {
+   "sha256": "06b77cc0e7814f2a9b056e670289c8a92adbf0fd50c2bc409891349d84cd8e25",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/homeland-transportation-security-certificate/"
+  },
+  "17172": {
+   "sha256": "911fd62f0cba000174fee23fceed8759be4700adafce0af87002718144906dcd",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/management/business-economics-certificate/"
+  },
+  "18368": {
+   "sha256": "881182a57a1ddcd8621eb9e27592a2322bc678fdaf468ea9c8dbe7bf544475ae",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/anthropology/associate-arts-degree-anthropology/"
+  },
+  "18521": {
+   "sha256": "074c882a43fe87b74e48c44e16dfc3a836cbe5a594aa1a343d042482760f8a2b",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/counseling-student-development/liberal-arts-aa-degree-arts-and-humanities-emphasis/"
+  },
+  "18522": {
+   "sha256": "a7c7c4badfa0dd1e1cb4b7d2892eb30bcd5432b4864cf06584c1017ff837b260",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/counseling-student-development/liberal-arts-aa-degree-human-communication-emphasis/"
+  },
+  "18523": {
+   "sha256": "398c93ec021044308313a765a663baca821834a0cdd6b02fb8b36ea51fbd32b1",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/counseling-student-development/liberal-arts-aa-degree-social-and-behavioral-sciences-emphasis/"
+  },
+  "18524": {
+   "sha256": "718dadb707e00cd0b3c74b5cc6d9d73d67d6a283860ecd254baae971212e29aa",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/counseling-student-development/liberal-arts-aa-degree-math-and-science-emphasis/"
+  },
+  "19606": {
+   "sha256": "6953f3a58c044814b73c039c2e41a865ee29391edcd31dd56a5c2da756545449",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ethnic-studies/chicana-o-x-studies-associate-in-arts-degree/"
+  },
+  "19681": {
+   "sha256": "d87c40e9252dfdeaa763ad093b49f26066903d33cbbf52a575360225922da9f4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/geography/associate-arts-degree-geography/"
+  },
+  "19682": {
+   "sha256": "d7e25d0a9c8fd1db91473c0e18142551ab00752ff24b491b8d7b03ef5ccda4e6",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ethnic-studies/african-american-studies-associate-in-arts-degree/"
+  },
+  "21094": {
+   "sha256": "cb4e6f97fe5c3c6f7c1dcde9ec8e1a0707a99044cd60d587d67c6c833d13e6c6",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/accounting/accounting-certificate/"
+  },
+  "21095": {
+   "sha256": "ca60fb5ed196f59083add94a39b9ce08a3fb6b25120b5b5d94f64e650c98613e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/management/business-management-certificate/"
+  },
+  "21096": {
+   "sha256": "9ec87e73995e26af8093d75cb0af10c96fb7da73ab145e7dee0674a10312ea1e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/management/small-business-management-certificate/"
+  },
+  "21098": {
+   "sha256": "d33b9ba4eb4f9cf0a971342ae76fea334b33ae700d5021871328b0359eec060a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/marketing/marketing-certificate/"
+  },
+  "21099": {
+   "sha256": "621e99dc2753c85de2af132c67a86b9637fde9a557dd90e9f1bdbc9e9ada7475",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/merchandising/merchandising-certificate/"
+  },
+  "21103": {
+   "sha256": "1e8e2b3f3c8676ea419f8ac24d16fa87e99aa7918101c9268b1ad594f5b8c958",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/court-reporting-certificate/"
+  },
+  "21106": {
+   "sha256": "cce1ee91d183560372ae5bf1286398cc08ff8b8f0a6200dbfce8344ea6f5bab7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/"
+  },
+  "21109": {
+   "sha256": "58c9ba940b78ad58f362cee02db74ec8c9f8cc10001e92cab15345374e3b1b03",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-technology-certificate/"
+  },
+  "21111": {
+   "sha256": "c14af821ea43933cfa798e58fb2867f695664b0022fee19f0980b8e262786166",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/photography/photography-certificate/"
+  },
+  "21114": {
+   "sha256": "d20678560c1fe9d02dc407206ea158cafb75c58333e024eaeb7d9cd9a064f448",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/radiologic-technology/radiologic-technology-certificate/"
+  },
+  "21115": {
+   "sha256": "4934f7a75596e3616dfe63bd9c9bb07f07bae234c12e36e7c09091b680404aa9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/diagnostic-medical-sonography/diagnostic-medical-sonography-certificate/"
+  },
+  "21116": {
+   "sha256": "bf3be426fa8f2f5ca9ea619b39a35c3f51185d29a725540d5a5d5998e33b4982",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/psychiatric-technology/psychiatric-technology-certificate/"
+  },
+  "21117": {
+   "sha256": "49ac03f26e548cc6cb176da87c1067ac1bf420dd528444b4ecd69f396e016945",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-assisting/dental-assisting-certificate/"
+  },
+  "21119": {
+   "sha256": "6db8e3490f8555758337e4cda3002e48b65d129096555ef0aceb8ceee100c1aa",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/culinary-management-certificate/"
+  },
+  "21120": {
+   "sha256": "a9c80104733c45ca1fbdfa4046abef8a600a130be2e663ba0c138f308964aac7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/food-beverage-management-certificate/"
+  },
+  "21121": {
+   "sha256": "a75f5f2ee57d3e6a4e31c6e7e9a7d51f1135d39546533a3acfeaac9c60f07daf",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/hospitality-management-certificate/"
+  },
+  "21122": {
+   "sha256": "fcf65881988f5dcfd5b82bc723b42eb8b1d503e07c69881f537e99ac3bf4d53a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/human-services/human-services-generalist-certificate/"
+  },
+  "21123": {
+   "sha256": "bcf7b65ef1e65c8b4cca063676eaef364a2dc31ec3a4ea2bbc85e7e30ffca811",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/travel-tourism-advanced-certificate/"
+  },
+  "21124": {
+   "sha256": "d1d849434ac2694bc07137cb5ff1b7e201412ecda7b03eb0659c7b17a506d74e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/airline-customer-services-advanced-certificate/"
+  },
+  "21126": {
+   "sha256": "40b369dd8f525536cb1ecf25c75d2316748bffd47f3df3fbe59330a67d8e28b9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/flight-attendant-advanced-certificate/"
+  },
+  "22916": {
+   "sha256": "63a1bad1e4223383499344fc640392f506567ddc219b392d92d5dad05a50f157",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/aviation-i-private-pilot-certificate/"
+  },
+  "22917": {
+   "sha256": "8a1402cb47d39467874f00caa5a50e732b6f556ede084bd00ef4c4ef3b160c08",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/aviation-ii-instrument-pilot-certificate/"
+  },
+  "22918": {
+   "sha256": "8b6a04c3f99078bf1e803cc99c33383801b64e4a796c463b8e3e48e2659d9a2a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/aviation-iii-commercial-pilot-certificate/"
+  },
+  "22919": {
+   "sha256": "1399d8bf52afb01e4f89eb52cc3c6189db2b8c8634f419f0718855107e3db751",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/aviation-iv-advanced-pilot-certificate/"
+  },
+  "30289": {
+   "sha256": "ef043af775f308c16e42ec4cf17b5dec336f4ca9326fd0cc2e79db506c3d9708",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/digital-cinema-production-certificate/"
+  },
+  "30325": {
+   "sha256": "43efe159aeff9994592c88990f34e828fd6bdd62f16eeaf1a44f402836781ec2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-technology-electrical-diagnostic-specialist-certificate/"
+  },
+  "30326": {
+   "sha256": "eda4310759d23dbefa58cd6f58b6b5919d44113dd5b12b09927b6826ae0565f0",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-technology-maintenance-technician-certificate/"
+  },
+  "30330": {
+   "sha256": "6cd94205611497f8545976d79dd763f454a8156fade0927bda433ec6a0866809",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/system-administration-and-technical-support-certificate/"
+  },
+  "30333": {
+   "sha256": "ffece61ad1c270c34ce6a111610869f87b91e19e8e2c3a90bb7b04a163c421bd",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/court-agency-services-certificate/"
+  },
+  "30458": {
+   "sha256": "d6deea44cc9b73e6edc77ea3d3fe2171db954042157ab916fb1c08dbdcae110a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/cruise-line-sales-operations-basic-certificate/"
+  },
+  "30459": {
+   "sha256": "d92bd18f516c29f6debc6596f16fcbdcbada249265d039e7dbd5bb15425c420b",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/legal-administrative-assistant-certificate/"
+  },
+  "31002": {
+   "sha256": "175411a0069b3b67856a23a0ad08f46436cafa126e54646861c59591a9decc5c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/communication-studies/communication-studies-2-associate-in-arts-degree-for-transfer-aa-t/"
+  },
+  "31003": {
+   "sha256": "773d34ce88cbb869a8d9cf4914486a1f88216a596f2bb57ae3ec9dbf913a6871",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/sociology/associate-arts-sociology-transfer-degree-aa-t/"
+  },
+  "31106": {
+   "sha256": "3b8302fbbe35da14e2207c48cce9f99d2146fa10a0e82d38dd43772c9f1b0f3e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/hvac-codes-and-estimating-certificate/"
+  },
+  "31170": {
+   "sha256": "269507fdff514975d75b6b063befd980965b96c5c17e794a755ba67a8919fc01",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/baking-and-pastry-arts-associate-in-science-degree/"
+  },
+  "31171": {
+   "sha256": "a9a6b564c3c9608425f88bd3062698674addc164e9ce6a58fb6c7a4ab72c19b9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/commercial-refrigeration-certificate/"
+  },
+  "31172": {
+   "sha256": "e7577f60011bbba65f2fb2a2a20613e4f7e7144d2b44ef2272e88aa03a206260",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/baking-pastry-arts-certificate/"
+  },
+  "31173": {
+   "sha256": "29f33c0d1280174a325f24f44e74d94a2554ede0e56cd16c0819fb593ee28524",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-refrigeration-certificate/"
+  },
+  "31185": {
+   "sha256": "45909e5f931381a2afda3d9d08b60cc1f218296ed546b91e341bf0c4c6eb695a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/hvac-building-commissioning-certificate/"
+  },
+  "31186": {
+   "sha256": "30cb302010ebcdeebbaf8842f52ebefb32ecbc20c4e54a0a1742738623e7ecb9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/commercial-air-conditioning-certificate/"
+  },
+  "31187": {
+   "sha256": "e8bb68accd00cbb241368b1a0d4da0eaf19e669d236a66a85ebd2610df96e635",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/aviation-management-certificate/"
+  },
+  "31188": {
+   "sha256": "73b34b2c5c29b4cb3e61d92dee2c9d122cec6805056423673ff64f604f93ee43",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-customer-service-certificate/"
+  },
+  "31189": {
+   "sha256": "1517fc4f83f4e72b1279233eed3dcbb5ac95d1cb6022853e3fe1e96ea5c1c9cf",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/automated_building_controls_certificate/"
+  },
+  "31192": {
+   "sha256": "da50c68ff79664e04083ddacaf1ef62ad9e36bdb4f39638641f497d9eeafb033",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/heat-pump-certificate/"
+  },
+  "31193": {
+   "sha256": "9ee210541a955a61bab9d7d8870ae9a481a83f2dc3c28dc9156d88df0618f9f7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/computer-office-applications-certificate/"
+  },
+  "31200": {
+   "sha256": "fca50cdd93e09e084500f9937f055e3f12f42e454d801d3f9619017502d75ce2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/post-production-basics-cinema-video-certificate/"
+  },
+  "31229": {
+   "sha256": "c4ddc35fdfa74b77a391c75d9b6b96ace79b75678a3f0b766f4a881b8e66ebef",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/digital-cinema-techniques-technologies-certificate/"
+  },
+  "31266": {
+   "sha256": "006963983da61f2b3fa0ccb56488d7a60ec0e3d89543a1ca101f5c2f22a9a9a3",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/history/associate-arts-history-transfer-degree-aa-t/"
+  },
+  "31329": {
+   "sha256": "3ad9cfbb9ebefe06c5a17f3dec5d2d802a4f3b87afc7379eb3413db50d5e193f",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/virtualization-and-cloud-computing-certificate/"
+  },
+  "31330": {
+   "sha256": "494d40d690e26d37578755dc1db7cb58a9a7e694d3513fed1885a3ddfcb712c1",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/captioning-certificate/"
+  },
+  "31331": {
+   "sha256": "7a93dc8a877227fd73ff23bcdaee159f11d9332f055875e555adfb20004aa27e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/proofreading-certificate/"
+  },
+  "31346": {
+   "sha256": "2a10bd1c831d436885f2995811ae70b995a6be2f8b64c0dfbf7ce3005d375ba1",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/collision-repair-i-car-gold-certificate/"
+  },
+  "31353": {
+   "sha256": "b3c5d0ab2442b7d105cb3f24d658091be9b32f6b895e5f498db149ebdf1f49cd",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/psychology/associate-arts-psychology-transfer-degree-aa-t/"
+  },
+  "31868": {
+   "sha256": "b919771f2c6ddcdfe2b6df9ecbe78eea3cfba03f8fe784a35d67233f09394dd2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/physics/physics-2-0-associate-in-science-degree-for-transfer-as-t/"
+  },
+  "31986": {
+   "sha256": "09a0237020fae5cb667f93b511736e7abd9e1c9407de8f37e154735b913f0959",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/art/associate-arts-art-history-transfer-degree-aa-t/"
+  },
+  "32000": {
+   "sha256": "4946da168533d50f746c6bc64f45bb4bf75faf6ccf1b12afb3fe94e73e7c7854",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english/associate-arts-english-transfer-degree-aa-t/"
+  },
+  "32028": {
+   "sha256": "37e02a28c9b941a1a2d8723f00a03078594c38d81a3d80f840c76bb4a3b5138a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/geography/associate-arts-geography-transfer-degree-aa-t/"
+  },
+  "32097": {
+   "sha256": "ebc7ebf691e07c2021aaf8c846203e2cc009e45ea02b551d4c9f129ec9c8b9f4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/art/associate-arts-studio-arts-transfer-degree-aa-t/"
+  },
+  "32103": {
+   "sha256": "1a3fca4f8754d3ab106648c6e015aaf512658459d3045f410d6f600a28d9c9f5",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/mathematics/mathematics-2-0-associate-in-science-degree-for-transfer-as-t/"
+  },
+  "32134": {
+   "sha256": "d623a06006880bdb68a73847de077bbb7f08589e23c2b59aec8b4ac45cff5fa3",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/music/associate-arts-music-transfer-degree-aa-t/"
+  },
+  "32135": {
+   "sha256": "fee0509167913f12cc8c47babb8bddea95f35f66f9cedc09937652a444de2bbd",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/kinesiology-associate-in-arts-degree-for-transfer/"
+  },
+  "32138": {
+   "sha256": "c6e022cee6cab126ef5c87d341a6323c56ae793f13b3a367a38b09d0b0f8ab77",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/education/associate-arts-elementary-teacher-education-transfer-degree-aa-t/"
+  },
+  "32187": {
+   "sha256": "ac8a216b30ca4f4ed8caffd7f2914bca9b8db968098e7e10c5e5462d969355ef",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/associate-arts-theater-arts-transfer-degree-aa-t/"
+  },
+  "32251": {
+   "sha256": "87b13e8e7ab5f1a4ebab4d279297061c66c9a94dd4845459ca630af154943ee6",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/political-science/associate-arts-political-science-transfer-degree-aa-t/"
+  },
+  "32699": {
+   "sha256": "e52639dc0fcb6afeb45c3a6b244dca80883e181a1a533cad7e8e043869b13780",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/anthropology/associate-arts-anthropology-transfer-degree-aa-t/"
+  },
+  "32966": {
+   "sha256": "62b7e3f4d369f59121a8c097ab4eddc7ccb2d2be8d3f3fdec812740a54a2f8fb",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/law-office-administration-associate-in-science-degree/"
+  },
+  "33368": {
+   "sha256": "e86b0ace194d7b8f3760dd248e555d6139effc1b51354a092d08560c77b332f2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/hearing-reporter-certificate/"
+  },
+  "33734": {
+   "sha256": "fb78e520b6e8253d30ea8e6bbb13064edbf958740c950e1cb8de0a552697892e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/airport-operations-basic-certificate/"
+  },
+  "33780": {
+   "sha256": "5befabd3bc1d662ad0046db71ff54d0f0061f204d369ee3e7baa61abb4aaa2d4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/cyber-security-certificate/"
+  },
+  "33954": {
+   "sha256": "940280cef16d04f954cbf0209bf00697d6d458b3bb0bc51ca6f5d718fc5c342b",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/chemistry/associate-science-degree-chemistry-transfer-degree-as-t/"
+  },
+  "33962": {
+   "sha256": "986c8510ebaf09507366494ac601fb7385b904d6bafa1fda41bc72e681e7bf0a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/acting-for-stage-and-screen-certificate/"
+  },
+  "35020": {
+   "sha256": "e0db5fb7aadd258b3772919a4de5b1dfd4e61b9bc97430e4e9f521b28f964029",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/musical-theatre-performance-certificate/"
+  },
+  "35300": {
+   "sha256": "238ae8122421a1d28974fa69a399e47b06265f22e55ef260aab0a6d123a153cf",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/journalism-communications/associate-in-arts-in-journalism-for-transfer/"
+  },
+  "35301": {
+   "sha256": "a8999645069a10ab94a42ccee7c92dc8d97b212bc3e19b2b87661ac348082f3a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/economics/associate-in-arts-in-economics-for-transfer-degree/"
+  },
+  "35422": {
+   "sha256": "d473ccfaaebab108e4f1e15e32049025917ea73c9455a4d35830f55048a35717",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/uas-remote-pilot-basic-certificate/"
+  },
+  "35423": {
+   "sha256": "0c234703976004d08d063c7fd17fd2a7596304993c470369696c6575f21fe96a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/uas-remote-pilot-advanced-certificate/"
+  },
+  "35448": {
+   "sha256": "d612aabeab70079446e24649848eb04944ba7e6dc621e61303f10ba722f4b4fe",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/uas-remote-pilot-associate-in-science-degree/"
+  },
+  "37048": {
+   "sha256": "5dfc5b8f6293c570623a47eb029bc232e06e5b19840200923aea8331179ebbd9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/associate-in-science-in-administration-of-justice-for-transfer-degree-as-t/"
+  },
+  "37064": {
+   "sha256": "f3abea6311b16dfcea23778312925d4461b344ac90908f9d43b8e2839195fade",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-t-ten-engine-and-driveline-specialist-certificate/"
+  },
+  "37074": {
+   "sha256": "171ec99d2dc6f1bc619518dde2edf3cb4fa9bcdcb6fdbce1cffa686f7f307cd8",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-t-ten-brake-and-alignment-specialist-certificate/"
+  },
+  "37105": {
+   "sha256": "85198ebcd3461a4dcdd5b2c4c1add9757f03e692c57282ed7e91b05dd4155d30",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-t-ten-performance-and-driveability-specialist-certificate/"
+  },
+  "37110": {
+   "sha256": "b0a79dc6c050b6820a19cd51a81fe53fa592e8cfa216a98d9621281d70cf60f4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-t-ten-toyota-and-lexus-specialist-certificate/"
+  },
+  "37115": {
+   "sha256": "b753f67f840d4e59945335c748d8efd765cbb0fb7ab1fc411febb570d6dd73c5",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-t-ten-air-conditioning-specialist-certificate/"
+  },
+  "37117": {
+   "sha256": "420ba9d0f1551b34d3e9259d8ee10c88fd8ed1ee35d0e44e96a59eb171d50eff",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-t-ten-electrical-certificate/"
+  },
+  "37128": {
+   "sha256": "45a4f09b03238a88e3502279d123894554b30ce45c75ddb1aa127a3a4dfcaae5",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/public-health-science/public-health-science-associate-in-science-degree-for-transfer/"
+  },
+  "37188": {
+   "sha256": "dcca6a6bc01b6edf2f129e3c33f6af93a91acb69986637bbab49b1a375eb6151",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/career-technical-education-aviation-associate-in-science-degree/"
+  },
+  "37190": {
+   "sha256": "642bf933c1be4ad6dd4634fe567d4cd087cf0b796f46bd0270853f2e06ef6f6f",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/aviation-travel-careers/associate-in-science-degree-career-technical-education-tourism/"
+  },
+  "37193": {
+   "sha256": "710aff9882a0df7e43147cc89779f7084b97e0fbd9e1d8fbd4187ca3d19edc07",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/theatre-design-associate-in-science-degree/"
+  },
+  "37194": {
+   "sha256": "c2cb569db246c2fa6d7eb24bfb4c57db8b8d0840150a89451a3f4e1f79412b44",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/recreation/recreation-assistant-certificate/"
+  },
+  "37208": {
+   "sha256": "ce4862e4be4907ef7e8852c0fdb79b3e0637bc6abbac48386594aa3f7905e9e5",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/air-conditioning-and-refrigeration-project-management-certificate/"
+  },
+  "37218": {
+   "sha256": "9734edfb8cce413784f4636f3b019bff8e04c54b666741f4f47f52a9d3c9aaad",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/career-technical-education-homeland-security-associate-in-science-degree/"
+  },
+  "37219": {
+   "sha256": "c99cb799a5ab37acdee0d9c2e89cd8b6a0ac3c5e49dbbd0cff0f88d805b01f64",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/associate-in-science-in-film-television-and-electronic-media-for-transfer-degree-as-t/"
+  },
+  "37246": {
+   "sha256": "50e6b0c7e296ca3304cad215da35f164b05cd15b892abf4cb0bd2b0bcea10b6c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/cyber-defense-associate-in-science-degree/"
+  },
+  "37247": {
+   "sha256": "cd20d89e2b81fd2fb5576ef954f414c88d2f1199b77edd1b8d047a53e4534df1",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/cyber-defense-certificate/"
+  },
+  "37312": {
+   "sha256": "3acd9163ad649dd8df05405b1104fa844480eaa426906d5bade443a04d323901",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/spanish/associate-in-arts-in-spanish-for-transfer/"
+  },
+  "37539": {
+   "sha256": "6b7f2f24befe75bfecf9ce28affd3589f36faa688b786525e3cd1d5576574fa9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/associate-in-science-in-hospitality-management-for-transfer-degree-as-t/"
+  },
+  "37540": {
+   "sha256": "faf57d4d4ac104d1775bf84d46eff96f7e6264695aa8ccd7b371f50c3ce98176",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/associate-in-science-in-nutrition-and-dietetics-for-transfer-degree-as-t/"
+  },
+  "37580": {
+   "sha256": "c138a02729b59733a1844c62a8ab91e984159eb0f9fe38efdf60d16e3c740732",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ethnic-studies/aa-t-in-social-justice-african-american-studies/"
+  },
+  "37630": {
+   "sha256": "b1e94365b4b3c9f2775f892b02c056471243aaf817c263274a589b9540ceeb16",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ethnic-studies/associate-in-arts-in-social-justice-studies-chicana-o-studies-for-transfer-degree-aa-t/"
+  },
+  "37698": {
+   "sha256": "fdc91c9539aadcac4704f5ff0442d358af40bd7755b9c1f8f2d796b02596c97a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-aviation-and-travel-careers/"
+  },
+  "37702": {
+   "sha256": "e847ddd48141304c6cdf3c4a4eb6717338363592080306ccce52efe8c9a7999d",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-transfer-language-arts-written-communication/"
+  },
+  "37703": {
+   "sha256": "19e0de7fd0c4c4c16351d5881be8138b49f0c6e9fc28670e51c6c93ccd627d64",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-transfer-social-sciences/"
+  },
+  "37704": {
+   "sha256": "7ce4e53cf4fa58238d8712082a0cdbe9e2127381b7bc174d5d6dec82cd5e6bd8",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-business-and-cis/"
+  },
+  "37705": {
+   "sha256": "1283323a19e1856be399e823117fa5c65018138330ccadfba2c51856e60ac43a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-dms-hit-or-radt/"
+  },
+  "37707": {
+   "sha256": "d7de38da4282224a066cbdc7e493e65a8464a68150d08a6ecb040eea6d85b9a5",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-dental-hygiene-nursing-psychiatric-technology/"
+  },
+  "37708": {
+   "sha256": "35da2e657ca865737f30e63af9f5945d040256f027563b43b94290c880269b7a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-kinesiology-and-public-health/"
+  },
+  "37720": {
+   "sha256": "9ff504d7cdee7e0c31f62a7e32e402421b548b6552f113bc134117fbf6c3982a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-sem/"
+  },
+  "37736": {
+   "sha256": "9d4f463382d8812dfd43cc16cc4b15d735be4abe865cb2d793e992e9126f51ad",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-transfer-language-arts-oral-communication/"
+  },
+  "37748": {
+   "sha256": "baa68a892ecf7927b32a98c0bb25d31375758bb1b2183aed7f1507455876fe6b",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english/creative-writing-certificate/"
+  },
+  "37958": {
+   "sha256": "2707a0570b3495bc3af9e2f25584c74db8a71ba8e031b8ebbaf2dddbc6b20251",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/storyboarding-certificate/"
+  },
+  "37959": {
+   "sha256": "7577bbd16f30d7bbde0547d3ed316a5f9cf6d3b6fd07d4a06163ec0475e142fd",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/character-and-background-design-for-animation-and-game-art/"
+  },
+  "37961": {
+   "sha256": "2edd069519e0fbcebb0a8d91522825d191417a44a21cb8b437f1cdf0f1f70ad9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/advertising-and-emerging-technologies-certificate/"
+  },
+  "37971": {
+   "sha256": "5bbbf1ad790261e5fc842ca0ffecdde11003c7503f647df1742d62e3cc0179a6",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/motion-design/"
+  },
+  "38265": {
+   "sha256": "e13162e60048d2bb747d2df68aecebf66f8b6d4ba85d60edac6a2cda74c52a68",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/health-science/health-sciences-general-studies-associate-in-arts-degree/"
+  },
+  "38578": {
+   "sha256": "b04d8cdc22c545be76379f2659fa87ca01598a4cd7cc671553d1acb40602829c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/public-health-science/community-worker-certificate/"
+  },
+  "39156": {
+   "sha256": "1acf474ed79068d61359b160e01debaa81a42d456806a2ee6e73747f2bb6bb4c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/interdisciplinary-studies/global-citizenship-studies-certificate/"
+  },
+  "39164": {
+   "sha256": "4da8bef6febca8cbb32c50ff45279897e711ba16a0c47a23c9dba988547c3706",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/communication-studies/communication-certificate/"
+  },
+  "39278": {
+   "sha256": "8a645b45a08448f54bb21421a283451978ba79c743f827dd556047db3fe360ae",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/administration-of-justice-certificate/"
+  },
+  "39449": {
+   "sha256": "120c449de50bc965435d8c49fb6a29e208100aaccfb97ddd4c116389223ad771",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/interdisciplinary-studies/global-studies-associate-in-arts-degree/"
+  },
+  "39650": {
+   "sha256": "57bb04355c2a753a676b0deba2670697fae542082fe385892db49adb3e0014df",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/law-public-policy-and-society-associate-in-arts-degree-for-transfer/"
+  },
+  "39652": {
+   "sha256": "0edeac34b361f26235d9f25fb96feacefb7e7920f89b8b956da79432619ffa9e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ethnic-studies/social-justice-studies-asian-pacific-american-studies-associate-in-arts-degree-for-transfer/"
+  },
+  "39653": {
+   "sha256": "5c2edfbac66fb5747832ad4251f35386ceaadc9b769ccab3bf9a8a981eca139c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/interdisciplinary-studies/global-studies-associate-in-arts-degree-for-transfer/"
+  },
+  "39697": {
+   "sha256": "efb2e8be8ec6049ce62dfe4c0dd7ee6e221513c5abd43ad395058f5b96c7ce71",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/anthropology/archaeology-technician-certificate/"
+  },
+  "39887": {
+   "sha256": "397dd2a259511beed1367a3994b15eb56541e902cbdac3c9360c35bab3d64107",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/geology/environmental-science-associate-in-science-degree-for-transfer/"
+  },
+  "39923": {
+   "sha256": "59087ab56e078998e945d178e74080b2738a5145ad42ca02ae86c5dd10e27604",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-science/computer-science-associate-in-science-degree-for-transfer/"
+  },
+  "40220": {
+   "sha256": "38f6ebea827ece90b757fe65277cf763ec79744b3230d6d89c8ab6ffc0aa395c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/t-ten-certified-technician-associate-in-science-degree/"
+  },
+  "40221": {
+   "sha256": "b7e7351abe63d12cc6c2437b356b3ce255216ab4a95fd55f7a2d602b1e33730d",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/t-ten-certified-technician-certificate/"
+  },
+  "40222": {
+   "sha256": "21cc7d71aa0d25c434ac259bb0027044a8ed30c988917620bfc65dd76007c042",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/t-ten-maintenance-technician-certificate/"
+  },
+  "40238": {
+   "sha256": "f9ea9fea692aacda349d0bf72e66c77de19c190e4ce1571417c305ae49119087",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/t-ten-maintenance-technician-associate-in-science-degree/"
+  },
+  "40484": {
+   "sha256": "78412f9e498b9e3346f8c8df42d37ce0bbed9eeeef02d32191c526bdb5c0f8d6",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/dental-hygiene-pit-and-fissure-sealant-certificate/"
+  },
+  "40488": {
+   "sha256": "7292efe91992bcd3afa18cfa3592b93a509a62c0ded95c29d69cb4e1924abc04",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/radiation-safety-certificate/"
+  },
+  "40489": {
+   "sha256": "2464264829d408c060707f2f9edab6de244420e727351e7dbae660f567e71f01",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/ultrasonic-scaling-and-coronal-polishing-certificate/"
+  },
+  "40507": {
+   "sha256": "6a360cbee5b3193d5b688c7520ddbcbee7b0e69b7a059d5976dfe8e74b915492",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/devseops-development-security-and-operations-certificate/"
+  },
+  "40508": {
+   "sha256": "055be635eb54e404a2a29fefa7f8ffbf9eb5773f832dca7c9fb3a4fbf0c1bb8a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/data-analytics-certificate/"
+  },
+  "40708": {
+   "sha256": "402b830486b8c83c13e0abfa43fd3cfa8172cea7a397aed25c463469a6c6dc1c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/administration-of-local-anesthesia-nitrous-oxide-oxygen-analgesia-and-periodontal-soft-tissue-curettage-certificate/"
+  },
+  "40744": {
+   "sha256": "cbcfffc196e02b20e7ad807a921d443eb0b0eb3a7f5351da28b3890913ecc6df",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/music/music-teacher-technology/"
+  },
+  "40978": {
+   "sha256": "b46f1fb6a79ae8e6ecf57ae9313e554b218d951c86e17efd0cd23d51743c76c1",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/business-information-worker-certificate/"
+  },
+  "40985": {
+   "sha256": "00af3aa6a59f058b09b0bf418ae60bc45583cf8a9f473a4517980ff8d4a8c171",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/data-management-certificate/"
+  },
+  "40986": {
+   "sha256": "38a17dc330c019e98c483512b93dff632c088b4fb65f5ef37d61e0fdf1afa8d4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/hotel-restaurant-culinary-arts/food-science-fundamentals-certificate/"
+  },
+  "41003": {
+   "sha256": "cfa19ee44f72cf03a7c47272c8889311fdaeea1a59bfb63c4b5da595428c823b",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/yoga-teacher-training-200-hour-certificate/"
+  },
+  "41024": {
+   "sha256": "95eb18e0346fbedfd949c81aedcefab06a1be1deecd309642ff3b00807ee137d",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/public-health-science/integrative-health-and-wellness-studies-associate-in-science-degree/"
+  },
+  "41264": {
+   "sha256": "e37f5fd8dbcaf339c3107b93d6da8631384a1e56867f884bf5e84c4868ba78cd",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ethnic-studies/social-justice-studies-native-american-studies-associate-in-arts-degree-for-transfer/"
+  },
+  "41528": {
+   "sha256": "e693b400502152746eae1127cd7b921943d7751ef046dbb69afe9276a40b271e",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/foreign-language/foreign-language-elementary-level-certificate/"
+  },
+  "41545": {
+   "sha256": "a08f690f5034ba5b25976bac514f827e6a6984f38f5b6694da647cafa91198c8",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/foreign-language/foreign-language-intermediate-level-certificate/"
+  },
+  "41721": {
+   "sha256": "08d228f8ec1f8fa04716230fb748cc0e02a50f8fbf7233123463be44eaba13e5",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/air-conditioning-refrigeration/automated_building_controls_associate_in_science_degree/"
+  },
+  "42145": {
+   "sha256": "849fdeab4cd1b77bd422fcd49a0209dadfd0dbfc0da099b0d8a969c93e0c5fcf",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-1-detail-technician-certificate/"
+  },
+  "42146": {
+   "sha256": "32b5b3645d0ad8bee1826885b44b3cc70ce9eb28903b8915af5cad75e333832c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-3-structural-certificate/"
+  },
+  "42147": {
+   "sha256": "b3a3551e5bc4e7236d52ec299890dbbcd16264189ec54a197d46ad3f83a1088f",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-2-paint-and-refinishing-certificate/"
+  },
+  "42159": {
+   "sha256": "9b1ca27f419982e2095cc62eb9f75b1ba82a2419c534fe718478fb9bdb97e0f2",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ce/ce-instructor-training-certificate/"
+  },
+  "42160": {
+   "sha256": "6eb849f9b66d7dae250b708dde1fabe016ebb46a0a42ea2d51795a70ef8bbe5a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ce/associate-science-degree-instructor-training-associate-in-science-degree/"
+  },
+  "42221": {
+   "sha256": "0067f556c81eabdded7d8b3162439cceaec0a816a48f2821ca5fbecc40b9bdb9",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/csr-rpr-skills-certificate/"
+  },
+  "42222": {
+   "sha256": "46c0e6a0a3f8a0eff2a8423db94df8eb3139c6ca2ff15f33f583dc7a56e726cb",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/practicum-in-intermediate-machine-shorthand-certificate/"
+  },
+  "42223": {
+   "sha256": "93f44073a6a39625e437c13e4c5133aa358012aa356599e04c79ec1fa707dcb8",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/practicum-in-beginning-machine-shorthand-certificate/"
+  },
+  "42259": {
+   "sha256": "cecb5ced389b7cb34c26b1c8b6c542de18fdc6765173112a2972917518b39d00",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/business-administration/business-administration-20-associate-in-science-degree-for-transfer-as-t/"
+  },
+  "42342": {
+   "sha256": "8d2588bb974f16b31660c45e74c48b4be3ff316631a7d5f44bd8a58a7841e0c1",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-4-appraisal--management-certificate/"
+  },
+  "42345": {
+   "sha256": "86f3481dcbe21388d6a8d429edbcf48dd0687a827fe258b872e7ea683bbd6045",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-collision-repair/auto-collision-advanced-technician-associate-in-science-degree/"
+  },
+  "42425": {
+   "sha256": "1e136e0238bc81a231ca4ec2368e5d8a80503d491da7ea04b529d65b21867056",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/sport-management-certificate/"
+  },
+  "42675": {
+   "sha256": "607d930143ce04b0531b7a2dd351ec5b107537c010378340de8d64cee493100a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/english-second-language-esl/esl-milestone-certificate-pathway-to-culinary-arts-and-hospitality-management/"
+  },
+  "42811": {
+   "sha256": "aa1f9a7de563eb987847cce5363e937cf9651330d0c00fb2b3c1a32c6ff2da7d",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/nursing-program/30-unit-n0n-degree-option-career-mobility-licensed-vocational-nurse-to-non-degree-certificate/"
+  },
+  "43007": {
+   "sha256": "51850ac214f057ecc12a17b32332662819c3a9bf73710953e96d3046247e6f13",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/legal-videographer-certificate/"
+  },
+  "43112": {
+   "sha256": "faa792ce6a3e2f57a76de12d41417aa4b02f01d32306ee48ce8ae1552349db2a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/chemistry/chemistry-associate-in-science-degree-for-uc-transfer/"
+  },
+  "43369": {
+   "sha256": "520d822b2748938f36a11f95d24b59eaf20df221269b0573dce9935134b37a29",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/engineering/mechatronics-robotics-and-automation-associate-science-degree/"
+  },
+  "43440": {
+   "sha256": "6cc05c4079ba25569d403b96836e4393e3b402c9bc1b2bbd45057f9a1f9e9cce",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/scenic-design-certificate/"
+  },
+  "43441": {
+   "sha256": "b7284ec704c8a7998ec35485f8be70c84f0b3860fb10b668427670bd92066c93",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/theater-arts/stage-management-certificate/"
+  },
+  "43496": {
+   "sha256": "e7cde3890d2d1ba04af29c3c601f16b4298624d63ce53eb9b569c71923e4b8a6",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/engineering/robotics-technician-certificate/"
+  },
+  "43497": {
+   "sha256": "711d51576bf62fa4e54ebe4f5063e6fa523f96c3fd7d196b60419e714c19d80a",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/engineering/mechatronics-and-industrial-automation-certificate/"
+  },
+  "43696": {
+   "sha256": "fd80b06f6a4408c6d11766edc7d5979838a38bd699cef8b61e6510f2da55e685",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/engineering/mechatronics-and-automation-components-certificate/"
+  },
+  "43723": {
+   "sha256": "e9b5a512b5a0f0e6bc31b9ba6b2c00d523f45c525b50887d1db2424df4b4fb74",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/engineering/mechatronics-and-automation-fundamentals-certificate/"
+  },
+  "43813": {
+   "sha256": "d8221f6354ff28f7592afae8aa37ce25aabc275c281ff5b365926d23fc4612f3",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/counseling-student-development/honors-program-certificate/"
+  },
+  "43849": {
+   "sha256": "175411a0069b3b67856a23a0ad08f46436cafa126e54646861c59591a9decc5c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/communication-studies/communication-studies-2-associate-in-arts-degree-for-transfer-aa-t/"
+  },
+  "44074": {
+   "sha256": "14a2b249dd063982305f1221788753c39143dcc9f90c4e9a1faaf3d0ce1bab3c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/yoga-therapy-300-hr-certificate/"
+  },
+  "44261": {
+   "sha256": "80fbff13976e9ad0f9ce1f2ef97c3cd8d1a5b2277bea2fd9476859592c4ef80f",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/administration-justice/law-public-policy-and-society-certificate/"
+  },
+  "44370": {
+   "sha256": "9e1c480e33851b06956a3ff7b05108b87f05999d5445b603e0f85f2c0e0673b4",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/psychiatric-technology/psychiatric-technician-aide-certificate/"
+  },
+  "44530": {
+   "sha256": "2e19d512e25011d62218b0d7b8ceb88961adc07fb34f53852a6a9de517e0a168",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/court-reporting-technology-certificate/"
+  },
+  "44698": {
+   "sha256": "045ebc7bca2ebbd69cd8ab87ec05de23edcfdc03d2161cd1c7a6055f0a4d26cb",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/foreign-language/foreign-language-for-professionals-in-aviation-and-travel-careers-certificate/"
+  },
+  "44699": {
+   "sha256": "e893a0b59366a99b36a4f4123939af1fcba09abe2edcc349ddc59e1f47d5801f",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/foreign-language/foreign-language-for-professionals-in-culinary-arts-and-hospitality-careers-certificate/"
+  },
+  "44702": {
+   "sha256": "2690d214f3183654a2a86d2cb36f8c6596e5e1c40f1f2406e7ac6917ae4aed7c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/foreign-language/foreign-language-for-professionals-in-health-science-careers-certificate/"
+  },
+  "45156": {
+   "sha256": "1a78eff309c95ac087c28985e9a67e823e737109eba0da97938e8db60a0366b7",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/philosophy-religious-studies/religious-studies-associate-in-arts-degree/"
+  },
+  "45788": {
+   "sha256": "5d178cb7fe9770095c5894cbf8d7d147fb3f8a51be2e463859f40aeaed59871c",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/cybersecurity-essentials-certificate/"
+  },
+  "46294": {
+   "sha256": "45a4f09b03238a88e3502279d123894554b30ce45c75ddb1aa127a3a4dfcaae5",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/public-health-science/public-health-science-associate-in-science-degree-for-transfer/"
+  },
+  "46454": {
+   "sha256": "4bb5a75c1de88c3ba9c210f8e4587c6c5348cbe43e27aee02858e2b0ffc1bc1d",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/geology/oceanography-associate-in-science-degree/"
+  },
+  "46460": {
+   "sha256": "e2c18287c0af52d502942dcce72e4b32946be824673429567f943d2ace11ab10",
+   "url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/movement-and-therapy-certificate/"
+  }
+ },
+ "run": "44752733629"
+}
