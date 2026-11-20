@@ -1863,6 +1863,15 @@ check("a Berkeley City local degree still takes the local 18, never the statewid
 _plan = RM2.calgetc_apply_plan([], "Berkeley City College")
 check("the apply plan takes Berkeley City's statewide step, never its local-only set step, as the Cal-GETC route",
       _plan["route"] == "statewide step")
+check("a combined range whose high end overshoots holds (18-19 beside 41-43: 18 + 43 is 61)",
+      R.calgetc_combined("General Education (Cal-GETC) and Elective Courses 41-43",
+                         {"total_units": {"min": 18, "max": 19}, "degree_total": {"min": 60, "max": 60}})[1] == [])
+for _c in ("Los Angeles City College", "Los Angeles Pierce College"):
+    check("%s's Cal-GETC plan keeps its college set step route (the local-only filter is Berkeley City's)" % _c,
+          RM2.calgetc_apply_plan([], _c)["route"] == "college set step")
+check("the combined reading is quoted at Berkeley City alone",
+      sorted(c for c, v in R.load_steps().items() if isinstance(v, dict)
+             and (R.calgetc_step(v) or {}).get("combined_line")) == ["Berkeley City College"])
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
