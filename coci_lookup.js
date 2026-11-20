@@ -319,20 +319,28 @@
     CLOSEST.loading = true;
     fetch("kb/coci_closest_mid.json", { cache: "no-store" })
       .then(function (r) { if (!r.ok) throw new Error("kb/coci_closest_mid.json answered " + r.status); return r.json(); })
-      .then(function (F) { CLOSEST.f = { rows: F.rows || {}, bands: (F.measure && F.measure.bands) || [], at: F.identity_file || "" }; },
+      .then(function (F) { CLOSEST.f = { rows: F.rows || {}, levels: (F.measure && F.measure.levels) || [], at: F.identity_file || "" }; },
         function (e) { CLOSEST.error = String(e && e.message || e); })
       .then(function () { CLOSEST.loading = false; LIST.memo = null; if (state.view === "courses" && CLOSEST.f) mountList(); });
   }
-  /* A pile row's recommendation: { mid, conf (0 to 1 or null), band, top: [[mid, score, same, of, catalog]] }, or null. */
+  /* A pile row's recommendation: { mid, level (the file's level: strong, possible or none), top: [[mid, score, same, of,
+     catalog]] }, or null for a row outside the pile. Three levels in words, never a raw score, and a course with no
+     strong match is offered a new M-ID (COBIx's note, relayed by Sam, 2026-11-20). A pile course with no candidate at
+     all sits at the last level with no closest course. */
   function closestOf(row) {
     if (!CLOSEST.f || row.mid || row.cid || row.ccn || row.kept) return null;
-    var e = CLOSEST.f.rows[row.ctrl];
-    return e && e[2] && e[2].length ? { mid: e[2][0][0], conf: e[0], band: e[1], top: e[2] } : null;
+    var e = CLOSEST.f.rows[row.ctrl], L = CLOSEST.f.levels, none = L[L.length - 1] || null;
+    if (!e || !e[2] || !e[2].length) return none ? { mid: "", level: none, top: [] } : null;
+    var lv = L.filter(function (x) { return (x.bands || []).indexOf(e[1]) >= 0; })[0] || none;
+    return lv ? { mid: e[2][0][0], level: lv, top: e[2] } : null;
   }
   function pct(x) { return x == null ? "" : Math.round(x * 100) + "%"; }
+  function closestWords(rec) {
+    return rec.level.key === "none" ? "Propose a new M-ID" : rec.mid + ", " + (rec.level.key === "strong" ? "strong match" : "possible match");
+  }
   function closestCell(r, mk) {
-    return r.rec ? [mk("span", { cls: "cplcoci-chip rec", title: "The closest common course, with the share right among courses with a known M-ID that scored the same" },
-      [r.rec.mid + ", " + pct(r.rec.conf)])] : null;
+    return r.rec ? [mk("span", { cls: "cplcoci-chip rec", title: "The closest common course and how sure the match is, measured on courses whose M-ID is known" },
+      [closestWords(r.rec)])] : null;
   }
   /* The note a course carries when a flag keeps it out of the counts, and whether it is kept; "" when none. */
   function keptNote(college, ctrl, mid) {
@@ -444,8 +452,8 @@
       { h: "Transfer", w: 5, v: function (r) { return r.cid ? "Yes" : "No"; } },
       { h: "TOP", w: 9, v: function (r) { return r.top; } },
       { h: "Identities (M-ID, C-ID, CCN)", w: 14, v: function (r) { return r.ids; }, cell: idChips },
-      // Sorts by the confidence, so the surest recommendations come first.
-      { h: "Closest M-ID", w: 9, n: true, suffix: "%", v: function (r) { return r.rec && r.rec.conf != null ? Math.round(r.rec.conf * 100) : null; }, cell: closestCell },
+      // Sorts by the level's measured share right, so the strong matches come first.
+      { h: "Closest M-ID", w: 9, n: true, suffix: "%", v: function (r) { return r.rec && r.rec.level.share != null ? Math.round(r.rec.level.share * 100) : null; }, cell: closestCell },
       { h: "Control number", w: 7, v: function (r) { return r.ctrl; } }
     ]);
   }
@@ -1157,22 +1165,22 @@
     var rec = r.rec, out = [];
     if (!rec) {
       if (CLOSEST.error) out.push(el("p", { "class": "cplcoci-meta" }, ["The closest common courses did not load (" + CLOSEST.error + ")."]));
-      else if (CLOSEST.f) out.push(el("p", { "class": "cplcoci-meta" }, ["No common course shares a word of this title, so none is recommended. It most likely needs a new M-ID."]));
       return out;
     }
-    var b = (CLOSEST.f.bands || [])[rec.band] || null;
+    var lv = rec.level, measured = lv.n ? " Of " + fmt(lv.n) + " courses with a known M-ID that scored at this level when taken out of their own common course, "
+      + fmt(lv.right) + " (" + pct(lv.share) + ") had their own M-ID come first." : "";
     out.push(h.heading("Closest common courses"));
-    out.push(el("ol", { "class": "ccl-rec-list" }, rec.top.map(function (t, i) {
+    out.push(el("p", { "class": "cplcoci-meta", "data-rec-level": lv.key }, [
+      el("strong", null, [lv.key === "none" ? "No strong match. Propose a new M-ID." : lv.label + ": " + rec.mid + "."]),
+      (lv.key === "possible" ? " Check it before joining; a new M-ID may fit better." : lv.key === "none" && rec.top.length ? " The closest are listed for reference." : "") + measured]));
+    if (rec.top.length) out.push(el("ol", { "class": "ccl-rec-list" }, rec.top.map(function (t) {
       var why = [];
       if (t[2]) why.push(fmt(t[2]) + " of its " + fmt(t[3]) + (t[3] === 1 ? " local course carries" : " local courses carry") + " this same title");
       else why.push("none of its " + fmt(t[3]) + (t[3] === 1 ? " local course" : " local courses") + " carries this same title");
       if (t[4] != null) why.push("catalog descriptions overlap " + pct(t[4]));
-      return el("li", { "data-rec": t[0] }, [el("strong", null, [t[0]]), ": score " + Number(t[1]).toFixed(2) + (i ? "" : ", confidence " + pct(rec.conf)) + ". " + why.join("; ") + ". ",
-        skyLink(t[0], "Open " + t[0] + " in SkyView")]);
+      return el("li", { "data-rec": t[0] }, [el("strong", null, [t[0]]), ": " + why.join("; ") + ". ", skyLink(t[0], "Open " + t[0] + " in SkyView")]);
     })));
-    if (b && b.n) out.push(el("p", { "class": "cplcoci-meta" }, ["How the confidence was measured: " + fmt(b.n) + " courses that hold an M-ID scored in this band when taken out of their own common course, and the first recommendation was their own M-ID for "
-      + fmt(b.right) + " of them (" + pct(rec.conf) + ")." + (rec.conf != null && rec.conf < 0.6 ? " A confidence this low most often means no common course fits and the course needs a new M-ID." : "")]));
-    out.push(el("p", { "class": "cplcoci-meta" }, ["A recommendation saves nothing. Assigning from this panel is being built; today a course joins a common course in SkyView."]));
+    out.push(el("p", { "class": "cplcoci-meta" }, ["A recommendation saves nothing. Assigning a course or proposing a new M-ID from this panel is being built; today a course joins a common course in SkyView."]));
     return out;
   }
   function listPanelBody(r, h) {

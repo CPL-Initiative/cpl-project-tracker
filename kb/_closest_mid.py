@@ -227,6 +227,15 @@ def main(argv=None) -> int:
             b["right_in_3"] += 1
     for b in bands:
         b["confidence"] = round(b["right"] / b["n"], 3) if b["n"] else None
+    # Three levels, in words, in place of a raw score (COBIx's note, relayed by Sam, 2026-11-20: "use your 3-level
+    # confidence instead of a raw score" and offer "Propose new M-ID" when a course has no strong match). Each level
+    # is a run of score bands, and its share right is measured the same way.
+    levels = []
+    for key, label, idx in (("strong", "Strong match", [5, 6]), ("possible", "Possible match", [3, 4]), ("none", "No strong match", [0, 1, 2])):
+        n = sum(bands[i]["n"] for i in idx)
+        right = sum(bands[i]["right"] for i in idx)
+        levels.append({"key": key, "label": label, "bands": idx, "from": bands[idx[0]]["from"], "n": n, "right": right,
+                       "share": round(right / n, 3) if n else None})
 
     # The pile.
     # The pile is the Courses List's Needs an M-ID: no M-ID, no C-ID, no CCN, and not kept out of the counts
@@ -243,11 +252,13 @@ def main(argv=None) -> int:
         # title, the common course's local courses, catalog overlap or null], ...]].
         rows[c["ctrl"]] = [b["confidence"], band_of(top[0]["score"]),
                            [[x["mid"], round(x["score"], 2), x["same"], x["n"], None if x["catalog"] is None else round(x["catalog"], 2)] for x in top]]
+    for lv in levels:  # a pile course with no candidate at all sits at the last level
+        lv["pile"] = sum(1 for r in rows.values() if r[1] in lv["bands"]) + (len(pile) - len(rows) if lv["key"] == "none" else 0)
     out = {
         "_what": "The closest common course (M-ID) for each local course that needs one, with a measured confidence. Built by kb/_closest_mid.py from committed files; display only. A person curates from the course's panel.",
         "identity_file": M.get("generated_at"), "course_list": L.get("_built_at"),
         "weights": W, "seed": a.seed,
-        "measure": {"sampled": len(sample), "no_candidate": none, "bands": bands,
+        "measure": {"sampled": len(sample), "no_candidate": none, "bands": bands, "levels": levels,
                     "how": "Each sampled course is taken out of its own common course, then ranked. Right means the first recommendation is its own M-ID. A course that was its common course's only local course counts wrong whatever is recommended (only_course)."},
         "pile": len(pile), "recommended": len(rows),
         "row_shape": "control number: [confidence, band, [[M-ID, score, courses with the same title, the common course's local courses, catalog overlap or null], up to three]]",
@@ -260,6 +271,8 @@ def main(argv=None) -> int:
     for b in bands:
         print("  score %.2f to %.2f: n %5d  right %5d  in top 3 %5d  only course %4d  confidence %s"
               % (b["from"], b["to"], b["n"], b["right"], b["right_in_3"], b["only_course"], b["confidence"]))
+    for lv in levels:
+        print("  %-16s right %5d of %5d (%s); on the pile %d" % (lv["label"], lv["right"], lv["n"], lv["share"], lv["pile"]))
     dist = Counter(r[1] for r in rows.values())
     print("  the pile by band:", [dist.get(i, 0) for i in range(len(bands))])
     return 0

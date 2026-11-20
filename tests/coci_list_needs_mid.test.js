@@ -12,9 +12,10 @@
 //   (5) ⭐ each title is the way into the side panel and reads as a link: a button underlined at rest (the tlink
 //       class and its rule), whose press opens the panel;
 //   (6) ⭐ the closest M-ID (Sam, same day: "a new column with your recommended closest mid ... to get a confidence
-//       score ... with a link to open a sidebar to curate"): the column shows it with a confidence the builder
-//       measured, the panel says why and how it was measured, a course with a C-ID or CCN never gets one, a low
-//       confidence says a new M-ID is the likely answer, and nothing in the panel saves.
+//       score ... with a link to open a sidebar to curate"; and COBIx's note he relayed: three levels in place of a raw
+//       score, and "Propose new M-ID" when a course has no strong match): the column shows the M-ID with its level in
+//       words, the panel says how the level was measured and why each of the closest is close, a course with a C-ID
+//       or CCN never gets one, and nothing in the panel saves.
 // Run from repo root: `npm test` (or `node tests/coci_list_needs_mid.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -39,9 +40,12 @@ const LOOKUP = {
 const MEMBERS = { generated_at: "2026-11-20 06:20", colleges: ["Citrus College", "Hartnell College", "Woodland Community College"],
   members: { "WELD M1109": [{ c: 0, cn: "CCC5" }] } };
 
-// kb/coci_closest_mid.json in its filed shape: control number -> [confidence, band, [[M-ID, score, same title, of, catalog]]].
-const CLOSEST = { identity_file: "2026-11-20 06:20", measure: { bands: [{ n: 168, right: 3 }, { n: 557, right: 69 }, { n: 962, right: 225 }, { n: 1052, right: 399 }, { n: 820, right: 406 },
-  { n: 645, right: 610 }, { n: 1793, right: 1656 }] },
+// kb/coci_closest_mid.json in its filed shape: control number -> [confidence, band, [[M-ID, score, same title, of, catalog]]],
+// and the three levels the builder measured (each a run of score bands).
+const CLOSEST = { identity_file: "2026-11-20 06:20", measure: { levels: [
+  { key: "strong", label: "Strong match", bands: [5, 6], n: 2438, right: 2266, share: 0.929 },
+  { key: "possible", label: "Possible match", bands: [3, 4], n: 1872, right: 805, share: 0.43 },
+  { key: "none", label: "No strong match", bands: [0, 1, 2], n: 1687, right: 297, share: 0.176 }] },
   rows: { CCC3: [0.924, 6, [["ELEC M1300", 0.91, 4, 6, 0.42], ["ELEC M1301", 0.6, 0, 3, null]]], CCC4: [0.124, 1, [["LRNA M9001", 0.41, 0, 1, null]]],
     CCC1: [0.946, 5, [["ENGL M1001", 0.8, 9, 9, 0.5]]] } };
 function tab(hash, opts) {
@@ -121,22 +125,23 @@ function panel(d) { return d.getElementById(P + "panel"); }
   function closestCol(tr) { return tr.children[heads(d).findIndex((h) => h.indexOf("Closest M-ID") === 0) + 1]; }
   const byTitle = {}; dataRows(d).forEach((tr) => { byTitle[txt(titleCell(tr, d))] = tr; });
   const appr = byTitle["4th Year Commercial Electrical Apprenticeship I"], tutor = byTitle["Academic Assistance and Tutoring"];
-  check("(6) ⭐ a course in the pile shows its closest M-ID with the measured confidence",
-    txt(closestCol(appr)) === "ELEC M1300, 92%" && txt(closestCol(tutor)) === "LRNA M9001, 12%", txt(closestCol(appr)) + " | " + txt(closestCol(tutor)));
+  check("(6) ⭐ a strong match shows its M-ID and the level in words; no strong match offers a new M-ID; no raw score shows",
+    txt(closestCol(appr)) === "ELEC M1300, strong match" && txt(closestCol(tutor)) === "Propose a new M-ID" && !/0\.\d\d|\d%/.test(txt(closestCol(appr)) + txt(closestCol(tutor))),
+    txt(closestCol(appr)) + " | " + txt(closestCol(tutor)));
   check("(6) the recommendation is drawn as a dashed chip, never as an identity the course holds",
     !!closestCol(appr).querySelector(".cplcoci-chip.rec") && !closestCol(appr).querySelector(".cplcoci-chip.mid") && /\.cplcoci-chip\.rec \{[^}]*border-style: dashed/.test(SRC));
   titleCell(appr, d).querySelector("button").click(); await sleep(20);
   const pn = txt(panel(d));
-  check("(6) ⭐ the panel lists the closest common courses with why, and how the confidence was measured",
-    /Closest common courses/.test(pn) && /ELEC M1300: score 0\.91, confidence 92%\. 4 of its 6 local courses carry this same title; catalog descriptions overlap 42%\./.test(pn)
-      && /ELEC M1301: score 0\.60\. none of its 3 local courses carries this same title\./.test(pn)
-      && /1,793 courses that hold an M-ID scored in this band when taken out of their own common course, and the first recommendation was their own M-ID for 1,656 of them \(92%\)\./.test(pn), pn.slice(0, 700));
-  check("(6) each recommended common course is one word from SkyView, and the panel says nothing is saved",
+  check("(6) ⭐ the panel names the level, how it was measured, and why each of the closest is close",
+    /Closest common courses/.test(pn) && /Strong match: ELEC M1300\. Of 2,438 courses with a known M-ID that scored at this level when taken out of their own common course, 2,266 \(93%\) had their own M-ID come first\./.test(pn)
+      && /ELEC M1300: 4 of its 6 local courses carry this same title; catalog descriptions overlap 42%\./.test(pn) && /ELEC M1301: none of its 3 local courses carries this same title\./.test(pn)
+      && panel(d).querySelector("[data-rec-level]").getAttribute("data-rec-level") === "strong", pn.slice(0, 700));
+  check("(6) each of the closest is one word from SkyView, and the panel says nothing is saved",
     panel(d).querySelectorAll(".ccl-rec-list li a[href*='skyview.html#outline/']").length === 2 && /A recommendation saves nothing\./.test(pn));
-  check("(6) no control in the panel assigns the course (the save waits on the build change)", !Array.from(panel(d).querySelectorAll("button")).some((b) => /assign/i.test(txt(b))));
+  check("(6) no control in the panel assigns the course or mints an M-ID (the save waits on the build change)", !Array.from(panel(d).querySelectorAll("button")).some((b) => /assign|propose/i.test(txt(b))));
   titleCell(tutor, d).querySelector("button").click(); await sleep(20);
-  check("(6) ⭐ a low confidence says in words that the course most likely needs a new M-ID",
-    /LRNA M9001: score 0\.41, confidence 12%/.test(txt(panel(d))) && /A confidence this low most often means no common course fits and the course needs a new M-ID\./.test(txt(panel(d))), txt(panel(d)).slice(0, 500));
+  check("(6) ⭐ no strong match says so, offers a new M-ID, and still lists the closest for reference",
+    /No strong match\. Propose a new M-ID\. The closest are listed for reference\. Of 1,687 courses .* 297 \(18%\) had their own M-ID come first\./.test(txt(panel(d))) && /LRNA M9001: none of its 1 local course carries this same title\./.test(txt(panel(d))), txt(panel(d)).slice(0, 600));
   word(d, /^All \(5\)$/).click(); await sleep(20);
   const all = {}; dataRows(d).forEach((tr) => { all[txt(titleCell(tr, d))] = tr; });
   check("(6) ⭐ a course that carries a CCN gets no recommendation, even when the file holds one for it",
@@ -147,6 +152,10 @@ function panel(d) { return d.getElementById(P + "panel"); }
   // the committed file: its shape, and a confidence that is a measured band's
   const F = JSON.parse(fs.readFileSync("kb/coci_closest_mid.json", "utf8"));
   const fr = Object.keys(F.rows);
+  check("(6) the committed file names three levels that cover every band once, each with its measured share and its count on the pile",
+    F.measure.levels.length === 3 && F.measure.levels.map((l) => l.key).join() === "strong,possible,none" && [].concat(...F.measure.levels.map((l) => l.bands)).sort().join() === "0,1,2,3,4,5,6"
+      && F.measure.levels.every((l) => l.right <= l.n && l.share === Math.round(l.right / l.n * 1000) / 1000) && F.measure.levels.reduce((n, l) => n + l.pile, 0) === F.pile
+      && F.measure.levels[0].share >= 0.9 && F.measure.levels[2].share < 0.3, JSON.stringify(F.measure.levels));
   check("(6) the committed file holds one row per recommended course, each with a band the measure names",
     fr.length === F.recommended && fr.length > 0 && fr.every((k) => Array.isArray(F.rows[k]) && F.rows[k][2].length >= 1 && F.rows[k][2].length <= 3 && F.measure.bands[F.rows[k][1]] && F.rows[k][0] === F.measure.bands[F.rows[k][1]].confidence),
     fr.length + " rows");
