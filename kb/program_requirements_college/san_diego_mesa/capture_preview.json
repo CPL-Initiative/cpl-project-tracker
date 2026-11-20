@@ -1,0 +1,1096 @@
+{
+ "college": "San Diego Mesa College",
+ "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/mesa26-27",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 202,
+ "with_closed_list": 184,
+ "started": "2026-11-20T15:56:35Z",
+ "curriqunet": {
+  "catalog": 70,
+  "view_prefix": "https://sdccd.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degree Curricula and Certificate Programs"
+  ],
+  "nodes_read": 3,
+  "calls": 7,
+  "entries": 199,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 199,
+  "twin_ids": {},
+  "failed_calls": 0
+ },
+ "pages_read": 199,
+ "pages_listed": 199,
+ "pages_answered": 199,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 160,
+   "hits": 4,
+   "recall": 0.025,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 14,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 18,
+  "by_result": {
+   "not_searched": 17,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "05335",
+    "title": "French",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "05367",
+    "title": "Black Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "09425",
+    "title": "CSU General Education Breadth",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "13504",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18268",
+    "title": "Liberal Arts & Sciences: Math & Pre-Engineering-Mathematics",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18269",
+    "title": "Liberal Arts & Sciences: Math & Pre-Engineering-Computer Sci",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18271",
+    "title": "Liberal Arts & Sciences: Science Studies-Biological Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18272",
+    "title": "Liberal Arts & Sciences: Science Studies-Chemistry",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18273",
+    "title": "Liberal Arts & Sciences: Science Studies-Physics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18277",
+    "title": "Liberal Arts & Sciences: Science Studies-Psychology",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18281",
+    "title": "Liberal Arts & Sciences: Soc & Beh Sciences-Human Developmen",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18283",
+    "title": "Liberal Arts & Sciences: Soc & Beh Sciences-Political Scienc",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18284",
+    "title": "Liberal Arts & Sciences: Soc & Beh Sciences-Psychology",
+    "award": "A.A. Degree",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18285",
+    "title": "Liberal Arts & Sciences: Soc & Beh Sciences-Social Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22295",
+    "title": "Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "22322",
+    "title": "Chemistry",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32894",
+    "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 4 of 160 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "44739",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 1016,
+ "seconds": 5058.7,
+ "found": 175,
+ "by_method": {
+  "no_closed_list": 18,
+  "not_found": 2,
+  "page_claimed": 7,
+  "sitemap_page": 175
+ },
+ "shared_pages": {
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22323": [
+   "05327",
+   "09401"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17654": [
+   "05338",
+   "18265"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17706": [
+   "05360",
+   "30738"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17549": [
+   "05366",
+   "31851"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17697": [
+   "09420",
+   "33570"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17673": [
+   "12098",
+   "12099"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17639": [
+   "31160",
+   "31797"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "18270",
+   "title": "Liberal Arts & Sciences: Math & Pre-Engineering-Engineering",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22317",
+    "label": {
+     "award": 1,
+     "title": 0.857
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 19,
+    "listed": 19,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 55436,
+     "content": 55436,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "31695",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17551",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.533,
+    "body": 0.533,
+    "content": 0.533,
+    "net": 8,
+    "listed": 15,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 19873,
+     "content": 19873,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "11726",
+   "title": "Architecture: University Track",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17554",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22323",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17564"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "18263",
+   "title": "Liberal Arts & Sciences: Lang Arts & Humanities - Philosophy",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22276",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17697",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17630"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "18286",
+   "title": "Liberal Arts & Sciences: Soc & Beh Sciences-Sociology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17663",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17716",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17717"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "22320",
+   "title": "Physical Sciences",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17699",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17691"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "33567",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17630"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "42103",
+   "title": "3D Modeling and Animation",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17730",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17542",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17635"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "45826",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17670",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17630"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 2,
+  "0.8-1.0": 5,
+  "1.0": 168
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/san_diego_mesa",
+  "kept": 175,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "05301": {
+   "sha256": "9c7dd1b9283485a5ff2dfe4f4aa3dac4dbd72f97a8fdb69747d7f83cd96f998d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17727"
+  },
+  "05302": {
+   "sha256": "6cf4707b6c3c9a616894aef23c4f53729e819684446af61ea1d389dac34aa240",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17554"
+  },
+  "05303": {
+   "sha256": "131a3aa367739f07d48a7097c56729ccd3329266a0478ba80d7223d4f2604919",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/19747"
+  },
+  "05304": {
+   "sha256": "4a52092985e12d0b196be80d54c09190fdce5f0c2c69723e2b4a446a2c0790a5",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17565"
+  },
+  "05305": {
+   "sha256": "9cd1e8cfc9a78673e0443ba5182a27378d132ea86936f37d219a5da1fed1e842",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17543"
+  },
+  "05306": {
+   "sha256": "b5af6d3576fda2375f63c4c1287657193350c879b66cae2602c0ea9ab8d4afe9",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17568"
+  },
+  "05308": {
+   "sha256": "7a5f6bab2038a420ad3b39be9e97883f0f7d9f7fd0f2a911d1d5061f04fdbe7c",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17671"
+  },
+  "05309": {
+   "sha256": "bb24f5fedeb54bffb9286894b6d37480ec67aa274acbf04f7209f32fe431798a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17710"
+  },
+  "05313": {
+   "sha256": "3c02be223f0505c9968a809d0c4c6ea88591bcefb71de2201b8ab754fb0df907",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17579"
+  },
+  "05314": {
+   "sha256": "46124d5dc0e935e4ceca20b496482b665e5008d0df4cbfab95e239645295d4f1",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17557"
+  },
+  "05315": {
+   "sha256": "7813dc9b3636e5c27453a4cdd3027634255dae7f5463045a9ea3f9ce06eb4996",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17643"
+  },
+  "05327": {
+   "sha256": "e2fd8e8f2e571875ff276a4f84dfde69af1177f47dffc2f3804780767a2bb499",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22323"
+  },
+  "05331": {
+   "sha256": "4e6d2e2d96496570e657188431193dd88de76c275963659463599aaf4765674a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17608"
+  },
+  "05332": {
+   "sha256": "8b68824617c8c9f9a667ea15b3a1e625577c656df73b05bb40149eb56a39614a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17682"
+  },
+  "05333": {
+   "sha256": "5b49c63382c9dbc18f019cea404d74f9f1e4340abf18adff5e3e98b906d9e335",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17593"
+  },
+  "05338": {
+   "sha256": "62e0f15214f95a1efbc7ef8f43ce089a50d22d7088d4d832f2a26fae53951586",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17654"
+  },
+  "05343": {
+   "sha256": "d88bf3fcd6fb5a1ad03b624bd02e2142b22d7a860ad417068ed914916e36d745",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17677"
+  },
+  "05344": {
+   "sha256": "56e6b296d870ff9eac7f7f05c4de3dedcae4c350ab3247965f289fe43334fb38",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17589"
+  },
+  "05347": {
+   "sha256": "4ae9e2f27adebc7c555ef8a9adeb3dd40920eb19481be45a1acfb2080e9499eb",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17700"
+  },
+  "05348": {
+   "sha256": "550188db8d281a58e9357a4b977194562a5b38dc53bca79a456688565b6e68ea",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17626"
+  },
+  "05349": {
+   "sha256": "e16b62298f7e18bccda7cf48c142fdb5b6b543848ecb5e67ed598c9d45b0b48e",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17708"
+  },
+  "05350": {
+   "sha256": "3ff8e163e465a5769da2b68a12befdc085520865df0f38e7c66318f3acfdb275",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17636"
+  },
+  "05352": {
+   "sha256": "f3a119802f9ea2bfe4fa98e9c1f0310b5154d17717db24c13fa92bec88b51557",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17573"
+  },
+  "05354": {
+   "sha256": "7379d557ab76c837bf94c8f9b5ca00d4cd7605c127ddea5ce1ab6edb6af9d05b",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17599"
+  },
+  "05355": {
+   "sha256": "641de628d4b569a3707dab3ec6d40f521d9bbc7c5adcf8ea1f0cf75486477942",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17578"
+  },
+  "05356": {
+   "sha256": "6178ed089a676c593ee8a0af531a5364bc39c23127fccf7f8b2ed16127fe6e87",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17675"
+  },
+  "05357": {
+   "sha256": "64a9a52d7a491cd01f12ad0c37e8e4b34257ca076163d11fcbb7b5b0190e19b3",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17699"
+  },
+  "05358": {
+   "sha256": "ed09fbd9f0fdad001fd0f8e71fd950501c84ab1a27de51a4b7f8c3028b913ee7",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17702"
+  },
+  "05359": {
+   "sha256": "afe1c49ad97237d365d620d68977f8cb3a748a822913b37faf56bb45d6da27af",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17570"
+  },
+  "05360": {
+   "sha256": "e0bd006dd25d07dad21c866685c4b14c16c37a43265abcd7a171c4d6b4799d2c",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17706"
+  },
+  "05365": {
+   "sha256": "580ebec54fb20ee1c2b0e052660d31d23ee3e307250bd1c3a11a0487fbc168c5",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17715"
+  },
+  "05366": {
+   "sha256": "97287bc00e1959cffac758924620c63c612c595c46a08e9e39548f1e7815d88c",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17549"
+  },
+  "05368": {
+   "sha256": "78f150ec8baca36b903b4f740de4a67bdc0f68444d176d66aafa969e9bc142d9",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17717"
+  },
+  "07071": {
+   "sha256": "1b2ecc0afb1f3610254210b6b28013fa05e26cb957380303418d2484b66c334d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17696"
+  },
+  "09382": {
+   "sha256": "fb22db8ff35eec59b58a0c1aa7dae543170ccfe3b5df7902ea97ada059c5f617",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17553"
+  },
+  "09394": {
+   "sha256": "f70dcf36732a5f9c836a2e792177df05e40e59274f8ff989e0102af979ba1c62",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17596"
+  },
+  "09401": {
+   "sha256": "95fd6016156e0795e41b520de6e95f2d49f11a55f14943dcf29e8f7f386e0aa8",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22323"
+  },
+  "09405": {
+   "sha256": "3b10ef5d562ed1d04a66570234445fc96d2291ac4e88fea0e3eec28ac66eb506",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17611"
+  },
+  "09409": {
+   "sha256": "8269b95d7fd9e4ee42158c6428391ed67644636db116730aaf95dd3f383ca912",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17614"
+  },
+  "09410": {
+   "sha256": "4e8c92bd41e710bed23e9862f0187d21c80b12bdb7e099779e8065b79f822543",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17613"
+  },
+  "09411": {
+   "sha256": "20954351571d2a9dc3faa857afd7b8a731d396911891fe8ba5eb6908825e306a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17609"
+  },
+  "09414": {
+   "sha256": "f64b878c346582e6768013fbae5cba909cdfdefae71255450b0cb2d0e34d1142",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17600"
+  },
+  "09415": {
+   "sha256": "693c90c293f18e94ab14b1ee3d2f1dbfe5210c3134a158c1680e751b2e19f203",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17602"
+  },
+  "09416": {
+   "sha256": "47305a5fc781107f24fe7e54ae2c88f806132d7b900ef327502553f4ba352559",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17689"
+  },
+  "09418": {
+   "sha256": "5cdb64264d8d78f457c0a93df79051ad310ac30b5767fa681a6386b95945c4a0",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17692"
+  },
+  "09419": {
+   "sha256": "fa27a25176456837600e812e0a65992ecbfc228133740b3e5d43bb661286b272",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17551"
+  },
+  "09420": {
+   "sha256": "5d3c59602907bc2b867bbdf4a87f60f52775c14dcc4da24ea56b445e707df639",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17697"
+  },
+  "09421": {
+   "sha256": "e9ae585b1d8f56d88b703714647abb1160b7dbb7d6660a90c0fe65b249f544fc",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17572"
+  },
+  "09422": {
+   "sha256": "304c90990f03aa93ed1bfe6b3405bb919482a7feac238140e00bf82e358f054d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17628"
+  },
+  "09423": {
+   "sha256": "28f37db357868f63fd506ab4b73c4b2f03b6ef8cc81ada3c7e49b3cca9a8344d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17621"
+  },
+  "09424": {
+   "sha256": "7d29fba6e5562a58855b4d3d1be0ac14c2c6828f9c5e4ca5a74533f9b4b5283f",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17705"
+  },
+  "10652": {
+   "sha256": "ffdf9d50b1a2895158b59276301cf76b32cfce3d5d227096c04d698f107d1fa1",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17635"
+  },
+  "10653": {
+   "sha256": "e5acd3e5d449ad49d1c60e9194c081b4cb5752816a8f560cc8bcdf3cfcad80b5",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17542"
+  },
+  "10656": {
+   "sha256": "1f175bd06169ba8be58df84cfb3039f3e795c9202e2550ee0c0a3717d7c6bbf2",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17730"
+  },
+  "11370": {
+   "sha256": "82bc2dba808693a18ce01b404c941bdd7043430bedced643dbf8233af2a0c8d0",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17546"
+  },
+  "12097": {
+   "sha256": "6d02a4243e08efff3b5d00d390b2bdf48886ddff4ffa490a88937a9e11b755d4",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17559"
+  },
+  "12098": {
+   "sha256": "7aff090028b806d758a448261e71ece301f2f64897c8a7e5df59dab288bfa80d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17673"
+  },
+  "12099": {
+   "sha256": "7aff090028b806d758a448261e71ece301f2f64897c8a7e5df59dab288bfa80d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17673"
+  },
+  "12200": {
+   "sha256": "86122d6820b485f4e84c96483b4f24f2756f45c783cbf2e875a559c25d9c6a13",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17618"
+  },
+  "16872": {
+   "sha256": "8287dfefb33f85cb298860d1628f3c333c55c1813756d852d66d7898914f5d8b",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17587"
+  },
+  "16873": {
+   "sha256": "cec88f1cf58c7eeed8e953f72e9009d415d78c9679dc6cfa49215571555b8407",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17631"
+  },
+  "18031": {
+   "sha256": "48ec02ed7a19a2bd34048832b7f6d790822ce4fe2701d3ffcc77fddbd7ae0422",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17670"
+  },
+  "18250": {
+   "sha256": "c927bcf0d778a69f3e4c8e98cdca04c86f714614ac9a952c4fb5f41809638c73",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17646"
+  },
+  "18254": {
+   "sha256": "fc353761cc768bef9636f4ba382c727b719a144915f1807678c4b13c834a2516",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17647"
+  },
+  "18255": {
+   "sha256": "9eb8310209c22496dec41b45fd313f936b0893fa27562e556f8ee4168a8b1985",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17648"
+  },
+  "18258": {
+   "sha256": "89ff20d8914a6d0b465a807539cfe62cf9d05f374c1c470db462e3abb6ca1d8d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17649"
+  },
+  "18259": {
+   "sha256": "c2eab26792c0a8307aee0274ff1b0f4b44492aae438092092c05661191970357",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17650"
+  },
+  "18260": {
+   "sha256": "e624fb762a4c144f6aaec6fbff9cd0c34146608127ff9f48229d98a5bc900dd5",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17651"
+  },
+  "18261": {
+   "sha256": "8cfc958f164a91e6ec5c7080abb668c6de76dc9bc4e5261581f9171a9746e4f1",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17652"
+  },
+  "18264": {
+   "sha256": "79394275c9d9ffdf37fedda76c38c9e5c9e326a8eefa323ca7fdf52f69617d5f",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17653"
+  },
+  "18265": {
+   "sha256": "55087c0904f5787e3f5aa3f7aa8b4b80f601abb2f57f6a4b604647f9f4cefc2e",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17654"
+  },
+  "18267": {
+   "sha256": "6f3999d09f96e04319e912f135074c6b05bbdee9141d2c960e3132e2aa5cdb2e",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17655"
+  },
+  "18275": {
+   "sha256": "4d63d40086651b74debe3c2e79209715581141c4242267555e5e784eb14742ce",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17662"
+  },
+  "18276": {
+   "sha256": "ecfdd15a87f9732285ed0e67c08022cbf383b4001040d1f41cd9be60890912bb",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17644"
+  },
+  "18278": {
+   "sha256": "cb07d93c3be07b089c0870243603719bbe62cbe1c934e741c543b9479f8cfccc",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17663"
+  },
+  "18279": {
+   "sha256": "439ccfb06c0caefb5749c32ba2482e894a91bb5a947686c33a1509cb4ae5c8ec",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17664"
+  },
+  "18280": {
+   "sha256": "b907d7f873e28aad6224a631813f55924dad3ec931d176ace7b64d4b90e2f16b",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17645"
+  },
+  "18282": {
+   "sha256": "542029db5065c89d3522224974d3e4228763eef10d4e1d32fe20243957e23947",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17665"
+  },
+  "18287": {
+   "sha256": "cb66b5c1dbfc3736e2bbd89f14bfc4995a18767128d056eb2567bd821c10945a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17669"
+  },
+  "19626": {
+   "sha256": "3024843a06d4fb273e5eed6d9573b67cc7f199908fea1cb09e28d0f49db2b208",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17581"
+  },
+  "19627": {
+   "sha256": "dcb00ed3e9e3808c12f7ffbb8a3afe58dc16bfbbbc1b5aeb80ead8480cb0e2bc",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/fash-tech-design-cs"
+  },
+  "19628": {
+   "sha256": "e8df0cff8a4b5ff8a2cc6b351d822d48e2dbed60efa423b7e68d6a4fa547e782",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17603"
+  },
+  "19629": {
+   "sha256": "9a381a7b5d1b038610796e15dc361c10837c7b1d26500ff34e2c58c8b09531bf",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17601"
+  },
+  "19630": {
+   "sha256": "e90a17b264fd0d9cd446bfbe28c2732123b77cf347365b8a69375add0c924d65",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17637"
+  },
+  "19632": {
+   "sha256": "52f862c6cd12578dbbbb3b1157f71f60e2efb6b47cbd49e8911bb81403e36f07",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17604"
+  },
+  "22296": {
+   "sha256": "078361dc55c0295bd54ba0fdb264743c16db6ccf57f1c4c6516d736686758aac",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17566"
+  },
+  "22297": {
+   "sha256": "bb4d18fa44f0f9dfc467415d66836f963e8cfd6306bcf590ea3bb3e271edda13",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17569"
+  },
+  "22298": {
+   "sha256": "edbda601a57f02c38c8de013f899f6c3e9cdb314d774efc9c33be5ca15f206c9",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17672"
+  },
+  "22306": {
+   "sha256": "2067d598361b41fd15d041b4fc399cc25d19e9b73194773a4a1f50918acb8597",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17580"
+  },
+  "22307": {
+   "sha256": "7eca6a6a5c06b7ebc85f3ecf3f4de8c0819a808c3b53277753bfd6cc3191cca2",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17558"
+  },
+  "22308": {
+   "sha256": "7afbc13f398645c445d62819f902d62dd851228a7906d247c7214e00895d3ee6",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17597"
+  },
+  "22311": {
+   "sha256": "e1c4379994255990411d8a94e111989d83bdcad1bf8d087b8ce2f33cc2aea9e6",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17564"
+  },
+  "22312": {
+   "sha256": "de49d268696e0cceb42d92c370a97bef2ff978444c7503d78a2dd6f47e399884",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17678"
+  },
+  "22313": {
+   "sha256": "294c02345c84725747f78016a5e9dadba966cf1e867f71baccd690589619e3f7",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17709"
+  },
+  "22314": {
+   "sha256": "d8a19dbdf9aeb94c539209efcc2407a396fd24833f1e1a0ecab55a0fca7d530d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17590"
+  },
+  "22316": {
+   "sha256": "3d9dd2adb7c44fbed1ae0283f4c2d5e48615643245655396d01d6814fba20c0f",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17690"
+  },
+  "22317": {
+   "sha256": "bcaff4e1b3975414b9d1a10777fa1f87558c951865c3b016e82fa0b5bf03a90e",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17693"
+  },
+  "22318": {
+   "sha256": "3d3935901cb20e357934ab68b0484c757da9c3180777729dc40f0c7e62f99060",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/19662"
+  },
+  "22319": {
+   "sha256": "6b70271e1eb839f43a01cd4fa4fafb9c145218e2960a03e92bb75254721c2100",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17632"
+  },
+  "22321": {
+   "sha256": "fdcf53cb5b0d7934473933b15abc2c3cf3fb1b5a3cf30d5302404213d61396ab",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17703"
+  },
+  "23059": {
+   "sha256": "8bee60a93b03687248455255c89ce107b6906eb82d8afe0b7d3350a4d5f00111",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17731"
+  },
+  "23060": {
+   "sha256": "842bc5f46af7f4175ae7bd8cb3a9d6829e2872c0910b3433eb2cc2b311747bf4",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17732"
+  },
+  "30639": {
+   "sha256": "43bb8996a01f5456aebb5007f2f7ed24cd2dcffe8a2d692ffa3af26ba822cd40",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17612"
+  },
+  "30685": {
+   "sha256": "da0d95a2232574b0636afc7ec7c06627b733f847623b2295eb0588a7ca963fc3",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17547"
+  },
+  "30686": {
+   "sha256": "2f3116a1959acc9c18e697ebae8f9cf63e57fe658007ab60d5e51cb381c30ff0",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17548"
+  },
+  "30688": {
+   "sha256": "e9b31a9a667135dffb0f932ce40af759a570f8a6b44316c268e10d33c17c03e6",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17610"
+  },
+  "30738": {
+   "sha256": "e0bd006dd25d07dad21c866685c4b14c16c37a43265abcd7a171c4d6b4799d2c",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17706"
+  },
+  "30739": {
+   "sha256": "12b8897fe62330f972b7333e5f0d338c508982fc9d3ae927da5b58c7fe19f8be",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17716"
+  },
+  "31157": {
+   "sha256": "ab8acacd385a9337654d89c7e551b5f2b86edf312b940e518f1cc6b95c8bd738",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17641"
+  },
+  "31160": {
+   "sha256": "bc63437305aebf821a17a1a122a9558b19226d821788600d63660611e77effae",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17639"
+  },
+  "31696": {
+   "sha256": "e0c7a8fd5b768a0dd5e2cc38c460d2bd8b935dff7659639c3e4c49e5a5cb8ab1",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/phys2-adt"
+  },
+  "31698": {
+   "sha256": "9e621488740b8a6610d3c440bdebb956a34a79b500023c1b75546bd223e010ed",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17627"
+  },
+  "31699": {
+   "sha256": "1ab281fe63d3a4b4f1c4a5d520f5216fe2ebafe13d6a9449b9ccf7581e460358",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17726"
+  },
+  "31711": {
+   "sha256": "0d5561778953463b55101ef94a4534b1dec444606c1463deacc7c2768dc457ab",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17704"
+  },
+  "31712": {
+   "sha256": "9b22c08ebee99867770955aa2c8f7305fae08748c3976ec251cb4f843b72d2e5",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17556"
+  },
+  "31797": {
+   "sha256": "bc63437305aebf821a17a1a122a9558b19226d821788600d63660611e77effae",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17639"
+  },
+  "31803": {
+   "sha256": "534943f9d3ac39027f8b14fbe5775d7b3840d4dbe67adbbb0974277b77558bdf",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17620"
+  },
+  "31843": {
+   "sha256": "f3b754a43ba0055549c0dc60524b83cb38d5c82beacac7ce4bbbcdc0dd64c001",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17642"
+  },
+  "31851": {
+   "sha256": "97287bc00e1959cffac758924620c63c612c595c46a08e9e39548f1e7815d88c",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17549"
+  },
+  "32149": {
+   "sha256": "4580bf69ddb80e228188197bc58b0987c0d2be77c7afa0f62c246fbcb1996a04",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17630"
+  },
+  "32901": {
+   "sha256": "a26aabdd309176c537439cfd9e91d925820dcaf8c52ec287560448a6fe661887",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17598"
+  },
+  "32993": {
+   "sha256": "994b080832772c085fc0e3bf5b9dd8cd41bea538dad859ad933451fc937f661e",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17722"
+  },
+  "33296": {
+   "sha256": "dd354c754184702eba3fe789a4d810c51fc3e91a751ee2890b0ed103f5c3c6e7",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17622"
+  },
+  "33304": {
+   "sha256": "ae78036e827ca07c522cd41894ac554107daef33cdad59d9068d08ef0e8f80d2",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17719"
+  },
+  "33570": {
+   "sha256": "5d3c59602907bc2b867bbdf4a87f60f52775c14dcc4da24ea56b445e707df639",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17697"
+  },
+  "33617": {
+   "sha256": "b679e920b1a8f626019946e679ad376a02e6f8412fb0c49eea2151fb61693253",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17594"
+  },
+  "35656": {
+   "sha256": "7507368543347b8e60ed35615c9e8badcc4ca16434305cdd1454d31d79c87157",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17691"
+  },
+  "35947": {
+   "sha256": "ce1306f51b6c8ca02b5c743d1cd03960127b8c5599060a2f319425ba06d30175",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17576"
+  },
+  "35954": {
+   "sha256": "83869ca977353e87f5217a49ac9a508d9ab2c810571e1755f9e70522480f3c23",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17574"
+  },
+  "36048": {
+   "sha256": "854fb57ec7e412e0fc791bcdcca2e92b534d230df88e2db416bca98ce409a021",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17588"
+  },
+  "36310": {
+   "sha256": "7c7aa9ef80cd396bdbffaf913045f5573b56d12404751ae99ba2f6be66400f20",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17711"
+  },
+  "36324": {
+   "sha256": "18586514d9b03fe0aac79127d008a7b813832c9e89019ab71db8d90820c34c00",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17713"
+  },
+  "36325": {
+   "sha256": "fd620d55a978f1b7098b01a8c9ca3e65199649b02a8443d24ba9a889899db32a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17714"
+  },
+  "36495": {
+   "sha256": "7456eb22c97c69cb530619ea2c14a2e89b0bbb7dc536ced9e7df5f13974267e2",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17545"
+  },
+  "36544": {
+   "sha256": "b80b60ad9711ae5a9e7b6b64575af025474761f06063345f45ad91822ada8044",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17633"
+  },
+  "36546": {
+   "sha256": "1fc1913a6fb1d567e604aad9fb3183d71836bd2a446d0fe97566b282df9bbbce",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17723"
+  },
+  "36565": {
+   "sha256": "636587c0784cb8158dd7bc0ea055c9e31635de14e6ff53b4b99f801edb62fd1a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17619"
+  },
+  "36699": {
+   "sha256": "e20165eec737ff8d838bfbc2d7b4726138104b8a7b9f61a877fa1e39d9290b6e",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17586"
+  },
+  "37395": {
+   "sha256": "03a031de6f0be8d884d2762dcc1539401786217ad5cffee1844b55be488899a0",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17728"
+  },
+  "37397": {
+   "sha256": "d91b6b33a52186dd80bf05355ae41ee6ce668979e249c425fe2391a03295f2cf",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17729"
+  },
+  "37548": {
+   "sha256": "5bae441492a955e61042f510b847e29fb10d0bc18031f40df480ed6c3900c673",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17605"
+  },
+  "37568": {
+   "sha256": "82c5b267719637b9f661b7b12d07f42a24aaf610ce0b8b4452d521b3e743db08",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17575"
+  },
+  "38011": {
+   "sha256": "931bf0f80b257b5a8a40086e3f061134a6b5cf4ecee045793ad8d8d7e7b0df7d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17606"
+  },
+  "38490": {
+   "sha256": "15a0294cef34e8eb42d0347b85101585e8fe50ec8bc2bf5b2b5abb733a8cc6fc",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17584"
+  },
+  "38642": {
+   "sha256": "6cb1de1b1fcd100fc673720dbf7c8132ab32588bb34a8c87cf489b2914b53f9d",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17687"
+  },
+  "38643": {
+   "sha256": "629fea11a297b12ad858e65ed2aca9dd54de11743d5be07a64b045fe2730d3c7",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17688"
+  },
+  "38658": {
+   "sha256": "9cee389f79b7ecb34ae777da95c3f69b7e26fa517087a8719ab3b9e1c74ffeaf",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17561"
+  },
+  "38960": {
+   "sha256": "6bc459fa6a7514b63a79da3f955cb8f6f664a49e29ba012ecdcdb7185ca12762",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17681"
+  },
+  "38961": {
+   "sha256": "8b0b6773ab6c8e441b3ddf49d644a9f10c27e9fb8e78c42efe0b749050644e7c",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17685"
+  },
+  "38962": {
+   "sha256": "20c0156d39688ed81befa4173c8eaf6a42d7c5abdf146636971f36c55eff1a55",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17686"
+  },
+  "39060": {
+   "sha256": "f1c00e0845c5d976db675d34355798964a6402ae73312411eb3f596a378065db",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17724"
+  },
+  "39331": {
+   "sha256": "8a32e95cce9abd3992e82845beb48c4316d4c7b75bfc6c47d8846b9bcc59ac83",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17684"
+  },
+  "39332": {
+   "sha256": "23776c276fc8351ec65d9ee83a6c68e608636e72f531069fb809778fd739f798",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17683"
+  },
+  "39468": {
+   "sha256": "24d53aee39c78227385ba595b89c2bae68b051d18c3bc8614a3d2963b5b4c642",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17624"
+  },
+  "40230": {
+   "sha256": "d192d65c9bdaeb5dc498e5d49d6a77268f5646e1c90e654f633bbd262fae400b",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17721"
+  },
+  "40267": {
+   "sha256": "6ef1ea506b71b30e741912dad6412ba7eeb6f1dc8b940f2807a20318d97c41bc",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17616"
+  },
+  "40268": {
+   "sha256": "4d40f306d6fd5a8d060d7496fa4fd5a6fe6754646e246c2a2ec833bbb47bcf4f",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17552"
+  },
+  "40839": {
+   "sha256": "32f4d5fdc886473e89876af40024ddb7e45486233115834e48c3c75e28606a2f",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17591"
+  },
+  "40928": {
+   "sha256": "c3a70607f289d351fb105e32dcc0cd69f7a53b13e91a4d36f3234342714ae157",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17560"
+  },
+  "41338": {
+   "sha256": "e7edfc52ebd577f921e06142d9b19694c931b0ba2d2bf959d6283eee57b67e9e",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17694"
+  },
+  "41406": {
+   "sha256": "866c8b2b4db735605752d5b602db80771e3b9305571220df92193d4cae13cdba",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17680"
+  },
+  "41477": {
+   "sha256": "d08aca0fda8e1c62ae2b0e639c5ab0906a976b690efb566c5cd3f44d760c893f",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17567"
+  },
+  "41971": {
+   "sha256": "8d0960b395ef2c5046c3d3570a87c275fb810da4315aad26129f925501a5f9a1",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17695"
+  },
+  "42102": {
+   "sha256": "f10d46e8ab52403d9b039e09f33abe8441e3598d1ffd79ac38d7b3385aa72ea7",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17676"
+  },
+  "42167": {
+   "sha256": "6c8354d60cf02a1ffd0f7dc58f9c02d4d23857dadf8145b559454e4d068fa14a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17718"
+  },
+  "42676": {
+   "sha256": "41c56b164f9d6d12c2651506713b39ef30d083361628fd8ffc03df92213628ae",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17615"
+  },
+  "43263": {
+   "sha256": "cc8a2bd7aeaa6bac2a396cae2fa57494e780b8d13813c957ee9680cb2a8ffdc4",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17592"
+  },
+  "43346": {
+   "sha256": "048a2a491602b799f2ee7e13bead8a96c75213a2e8fd7509a9c034b3fc1a1212",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/19656"
+  },
+  "43742": {
+   "sha256": "c35ef222e4ee367eed9309fb0e74cc6870a68c3f11c7becb86948c4a9494335a",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17577"
+  },
+  "44063": {
+   "sha256": "4bc4cc7776219395ddc08d89fa6dc02c725cea788e9665f07b37aa46d5fb8909",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/19693"
+  },
+  "44430": {
+   "sha256": "ee591abddb49420f1fc64d0468007cde3d4d0961754d6f09a555826a6be07623",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/19742"
+  },
+  "44967": {
+   "sha256": "dd87e47a72968a09cae8bb57e6411ba93e56637721d4acf764ee8bbb4a3a6bdc",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/19752"
+  },
+  "45451": {
+   "sha256": "151a473fb9433930abc40f406b51e8a5047be5e44e04ba117e2a25d2f0e5a039",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22276"
+  },
+  "45553": {
+   "sha256": "301cf384a8a17c69c0ef7859e618db4e515c6fd1091851a16d9fd8382fc1063b",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22317"
+  },
+  "45835": {
+   "sha256": "8d5bd2e8d9bbf5f3a0147ffcff1d3d945e2504eb2de7da7132bde3438752a1bd",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17583"
+  }
+ },
+ "run": "44768147866"
+}
