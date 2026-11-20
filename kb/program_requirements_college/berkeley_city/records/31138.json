@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 8,
    "listed": 8,
-   "share": 0.875,
-   "missing": [
-    "ENGL1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGLC1002"
-   ],
-   "flagged": [
-    "ENGLC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -246,5 +247,6 @@
    "ENGL 017A is marked Historical in the catalog listing."
   ]
  },
- "extracted_run": "39891604919"
+ "extracted_run": 44719698056,
+ "read_run": "39891604919"
 }
