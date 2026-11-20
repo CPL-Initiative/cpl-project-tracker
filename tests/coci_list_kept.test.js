@@ -3,7 +3,7 @@
 // Guards:
 //   (1) a not-applicable course with no common course stays on the List and is found by search;
 //   (2) its panel shows the exact note kb/coci_not_applicable.json writes, and so does a course on a not-applicable card;
-//   (3) "No M-ID" and "No identity" leave not-applicable courses out of their counts and their rows; a real gap stays;
+//   (3) "Needs an M-ID" leaves not-applicable courses out of its count and its rows; a real gap stays;
 //   (4) "Kept, not counted" shows every flagged course, and a card a person ruled on is not among them: its note says
 //       the ruling stands;
 //   (5) a card a course flag takes out (nc) leaves every to-do job, though it carries the job's tag.
@@ -90,13 +90,13 @@ function panel(d) { return d.getElementById(P + "panel"); }
   const t = tab();
   await until(() => words(t.d).some((x) => /^Kept, not counted \(\d+\)$/.test(x)) && dataRows(t.d).length);
   const fw = words(t.d);
-  check("(3) ⭐ No M-ID leaves the not-applicable course out of its count; the real gap stays", fw.indexOf("No M-ID (1)") >= 0, fw.join(" | "));
-  check("(3) No identity does too", fw.indexOf("No identity (1)") >= 0, fw.join(" | "));
+  check("(3) ⭐ Needs an M-ID leaves the not-applicable course out of its count; the real gap stays", fw.indexOf("Needs an M-ID (1)") >= 0, fw.join(" | "));
+  check("(3) the one gap pile is the only one: no No identity chip", !fw.some((x) => /^No identity|^No M-ID/.test(x)), fw.join(" | "));
   check("(4) ⭐ Kept, not counted counts the no-card course and the course on a flagged card, never the person-ruled one",
     fw.indexOf("Kept, not counted (2)") >= 0, fw.join(" | "));
   check("(1) All still counts every course", fw.indexOf("All (7)") >= 0, fw.join(" | "));
-  word(t.d, /^No M-ID \(1\)$/).click(); await sleep(20);
-  check("(3) No M-ID lists the real gap alone", titles(t.d).join("|") === "French 1", titles(t.d).join("|"));
+  word(t.d, /^Needs an M-ID \(1\)$/).click(); await sleep(20);
+  check("(3) Needs an M-ID lists the real gap alone", titles(t.d).join("|") === "French 1", titles(t.d).join("|"));
   word(t.d, /^Kept, not counted \(2\)$/).click(); await sleep(20);
   check("(4) Kept, not counted lists both flagged courses", titles(t.d).slice().sort().join("|") === "Directed Study in Art|Independent Study in Art", titles(t.d).join("|"));
   word(t.d, /^All \(7\)$/).click(); await sleep(20);
@@ -130,7 +130,7 @@ function panel(d) { return d.getElementById(P + "panel"); }
   await until(() => dataRows(bad.d).length);
   await sleep(30);
   const bw = words(bad.d);
-  check("a failed read counts as before, and Kept, not counted counts nothing", bw.indexOf("No M-ID (2)") >= 0 && bw.indexOf("All (7)") >= 0, bw.join(" | "));
+  check("a failed read counts as before, and Kept, not counted counts nothing", bw.indexOf("Needs an M-ID (2)") >= 0 && bw.indexOf("All (7)") >= 0, bw.join(" | "));
 
   let pass = 0;
   results.forEach(([n, ok]) => { console.log((ok ? "  ✓ " : "  ✗ ") + n); if (ok) pass++; });
