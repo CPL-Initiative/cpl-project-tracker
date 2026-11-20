@@ -1,0 +1,383 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-20T16-27-02Z",
+ "run_id": "44772850637",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "75e72fb99f8c",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-high-school-rop@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS100-Practical PC & Career Technologies",
+   "field": "unified_title_assignment",
+   "value": "Practical PC & Career Technologies",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS100-Practical PC & Career Technologies",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS104-Microcomputer Application Software",
+   "field": "unified_title_assignment",
+   "value": "Microcomputer Application Software",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS104-Microcomputer Application Software",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS210-Introduction to Computer Networking",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Computer Networking",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS210-Introduction to Computer Networking",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HIST001-Introduction to Western Civilization I",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HIST001-Introduction to Western Civilization I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HIST002-Introduction to Western Civilization II",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Western Civilization 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HIST002-Introduction to Western Civilization II",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HISTC1002-United States History Since 1865",
+   "field": "unified_title_assignment",
+   "value": "United States History since 1865",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HISTC1002-United States History Since 1865",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Tracy)- Fire Service",
+   "field": "unified_title_assignment",
+   "value": "Fire Service Conditioning & Physical Agility Development",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Tracy)- Fire Service",
+   "field": "issuing_agency_assignment",
+   "value": "Tracy High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ISACA Certified Info Security Manager (CISM)",
+   "field": "unified_title_assignment",
+   "value": "Certified Information Security Manager (CISM)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ISACA Certified Info Security Manager (CISM)",
+   "field": "issuing_agency_assignment",
+   "value": "Information Systems Audit and Control Association (ISACA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ISACA Certified Info Systems Auditor (CISA)",
+   "field": "unified_title_assignment",
+   "value": "Certified Information Systems Auditor (CISA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ISACA Certified Info Systems Auditor (CISA)",
+   "field": "issuing_agency_assignment",
+   "value": "Information Systems Audit and Control Association (ISACA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MOS) Associate",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Associate",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MOS) Associate",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MOS) Expert",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Expert",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MOS) Expert",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Review CIS100-Practical PC & Career Technologies",
+   "field": "unified_title_assignment",
+   "value": "Practical PC and Career Technologies",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Review CIS100-Practical PC & Career Technologies",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Review CIS104-Microcomputer Application Software",
+   "field": "unified_title_assignment",
+   "value": "Microcomputer Application Software",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Review CIS104-Microcomputer Application Software",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS100-Practical PC & Career Technologies",
+   "field": "unified_title_assignment",
+   "value": "Practical PC & Career Technologies",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS100-Practical PC & Career Technologies",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS104-Microcomputer Application Software",
+   "field": "unified_title_assignment",
+   "value": "Microcomputer Application Software",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS104-Microcomputer Application Software",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS210-Introduction to Computer Networking",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Computer Networking",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam CIS210-Introduction to Computer Networking",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HIST001-Introduction to Western Civilization I",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Western Civilization 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HIST001-Introduction to Western Civilization I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HIST002-Introduction to Western Civilization II",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Western Civilization 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HIST002-Introduction to Western Civilization II",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HISTC1002-United States History Since 1865",
+   "field": "unified_title_assignment",
+   "value": "United States History since 1865",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam HISTC1002-United States History Since 1865",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Tracy)- Fire Service",
+   "field": "unified_title_assignment",
+   "value": "Fire Service Conditioning & Physical Agility Development",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Tracy)- Fire Service",
+   "field": "issuing_agency_assignment",
+   "value": "Tracy High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ISACA Certified Info Security Manager (CISM)",
+   "field": "unified_title_assignment",
+   "value": "Certified Information Security Manager (CISM)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ISACA Certified Info Security Manager (CISM)",
+   "field": "issuing_agency_assignment",
+   "value": "Information Systems Audit and Control Association (ISACA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ISACA Certified Info Systems Auditor (CISA)",
+   "field": "unified_title_assignment",
+   "value": "Certified Information Systems Auditor (CISA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ISACA Certified Info Systems Auditor (CISA)",
+   "field": "issuing_agency_assignment",
+   "value": "Information Systems Audit and Control Association (ISACA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MOS) Associate",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Associate",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MOS) Associate",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MOS) Expert",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Expert",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MOS) Expert",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Review CIS100-Practical PC & Career Technologies",
+   "field": "unified_title_assignment",
+   "value": "Practical PC and Career Technologies",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Review CIS100-Practical PC & Career Technologies",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Review CIS104-Microcomputer Application Software",
+   "field": "unified_title_assignment",
+   "value": "Microcomputer Application Software",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Review CIS104-Microcomputer Application Software",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

@@ -1,118 +1,133 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-19T16:53:07Z",
- "_queue_count": 44,
+ "_generated_at": "2026-11-20T16:27:00Z",
+ "_queue_count": 29,
  "_counts": {
-  "staged": 39,
-  "needs_you": 36,
+  "staged": 29,
+  "needs_you": 16,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
-  "High School Articulation (Emerald)- Developmental Psychology of Children I": {
-   "title": "Developmental Psychology of Children 1",
-   "issuer": "Emerald High School",
+  "CA Specialized Training Institute First Responder Operations and Decon": {
+   "title": "Hazardous Materials First Responder Operational — Decontamination",
+   "issuer": "California Specialized Training Institute (CSTI)",
    "via": "classifier",
-   "confidence": 0.65,
-   "note": "The school is stripped and becomes the agency, and Roman I becomes 1. The aligned Las Positas course is unverified.",
+   "confidence": 0.7,
+   "note": "Joined the existing FRO-Decontamination family; CSTI is the issuer named in the title. Kept apart from CSTI's 'First Receiver' (healthcare) course, which is a different role. A reviewer should confirm the FRO-Decon competency matches.",
    "procedure": "classifier",
    "rests_on": [
-    "high-school-rop",
-    "local-trainer-is-agency",
-    "Rule 5f",
+    "join-when-likely-one",
+    "Rule 4",
+    "Rule 6",
+    "issuer-issues-the-card"
+   ]
+  },
+  "Cal Fire Basic Firefighter (219 hour) Training": {
+   "title": "CAL FIRE Basic Firefighter Training (219-hour)",
+   "issuer": "California Department of Forestry and Fire Protection (CAL FIRE)",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "New title. This is CAL FIRE's 219-hour basic firefighter training for seasonal firefighters, which is distinct from the Fire CDF Academy family; the hour count is kept because it identifies the course.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "Rule 6",
+    "issuer-issues-the-card"
+   ]
+  },
+  "Credit by Exam CIS100-Practical PC & Career Technologies": {
+   "title": "Practical PC & Career Technologies",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Local course title; no CCN or C-ID was identifiable.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Credit by Exam CIS104-Microcomputer Application Software": {
+   "title": "Microcomputer Application Software",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Local course title; no CCN or C-ID was identifiable.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Credit by Exam CIS210-Introduction to Computer Networking": {
+   "title": "Introduction to Computer Networking",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
+  "Credit by Exam HIST001-Introduction to Western Civilization I": {
+   "title": "Introduction to Western Civilization 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Local course title, with the Roman numeral changed to an Arabic one.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
     "arabic-level-numerals"
-   ],
-   "trainer": "Emerald High School"
-  },
-  "High School Articulation (Emerald)- Developmental Psychology of Children II": {
-   "title": "Principles & Practices of Teaching Young Children",
-   "issuer": "Emerald High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
    ]
   },
-  "High School Articulation (Emerald)- Introduction to Health Careers": {
-   "title": "Orientation to Health Care",
-   "issuer": "Emerald High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Emerald)- Medical Occupations": {
-   "title": "Medical Terminology",
-   "issuer": "Emerald High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Emerald)- Nursing Careers": {
-   "title": "Nursing Careers",
-   "issuer": "Emerald High School",
+  "Credit by Exam HIST002-Introduction to Western Civilization II": {
+   "title": "Introduction to Western Civilization 2",
+   "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.65,
-   "note": "The school name was stripped and Emerald High School is the issuer. The aligned Las Positas course title is unverified.",
+   "confidence": 0.85,
+   "note": "Local course title, with the Roman numeral changed to an Arabic one.",
    "procedure": "classifier",
    "rests_on": [
-    "high-school-rop",
-    "local-trainer-is-agency",
-    "Rule 5f"
-   ],
-   "trainer": "Emerald High School"
-  },
-  "High School Articulation (Foothill)-  Criminal Justice/ Crime Scene Investigation": {
-   "title": "Introduction to Criminal Justice",
-   "issuer": "Foothill High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
+    "course-identity",
+    "Rule 5c",
+    "arabic-level-numerals"
    ]
   },
-  "High School Articulation (Foothill)- Criminal Justice/ CSI": {
-   "title": "Criminal Investigation",
-   "issuer": "Foothill High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (AJ 63 at Las Positas College) names it, C-ID AJ 140; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Foothill)- Developmental Psychology of Children I": {
-   "title": "Developmental Psychology of Children 1",
-   "issuer": "Foothill High School",
+  "Credit by Exam HISTC1001-United States History Since 1877": {
+   "title": "United States History to 1877",
+   "issuer": "California Community Colleges",
    "via": "classifier",
    "confidence": 0.75,
-   "note": "This joins the existing Amador Valley title, with the issuer as discriminator. The Roman numeral becomes Arabic.",
+   "note": "Title anchored to CCN HIST C1001 (United States History to 1877). The raw title's 'Since 1877' looks like an entry error; review it.",
    "procedure": "classifier",
    "rests_on": [
-    "high-school-rop",
-    "local-trainer-is-agency",
-    "Rule 5f",
-    "arabic-level-numerals",
-    "brand-family",
-    "Rule 4"
-   ],
-   "trainer": "Foothill High School"
+    "course-identity",
+    "Rule 5c"
+   ]
   },
-  "High School Articulation (Foothill)- Developmental Psychology of Children II": {
+  "Credit by Exam HISTC1002-United States History Since 1865": {
+   "title": "United States History since 1865",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Title anchored to CCN HIST C1002.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c"
+   ]
+  },
+  "High School Articulation (Livermore)- Developmental Psychology of Children II": {
    "title": "Principles & Practices of Teaching Young Children",
-   "issuer": "Foothill High School",
+   "issuer": "Livermore High School",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it.",
@@ -121,9 +136,9 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Foothill)- Emergency Medical Response": {
+  "High School Articulation (Livermore)- Emergency Medical Response": {
    "title": "Emergency Medical Responder",
-   "issuer": "Foothill High School",
+   "issuer": "Livermore High School",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it.",
@@ -132,9 +147,9 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Foothill)- Introduction to Athletic Training": {
+  "High School Articulation (Livermore)- Introduction to Athletic Training": {
    "title": "Introduction to Athletic Training and Sports Medicine",
-   "issuer": "Foothill High School",
+   "issuer": "Livermore High School",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it.",
@@ -143,9 +158,9 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Foothill)- Introduction to Health Careers": {
+  "High School Articulation (Livermore)- Introduction to Health Careers": {
    "title": "Orientation to Health Care",
-   "issuer": "Foothill High School",
+   "issuer": "Livermore High School",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it.",
@@ -154,9 +169,9 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Foothill)- Medical Occupations": {
+  "High School Articulation (Livermore)- Medical Occupations": {
    "title": "Medical Terminology",
-   "issuer": "Foothill High School",
+   "issuer": "Livermore High School",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it.",
@@ -165,23 +180,23 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Foothill)- Nursing Careers": {
+  "High School Articulation (Livermore)- Nursing Careers": {
    "title": "Nursing Careers",
-   "issuer": "Foothill High School",
+   "issuer": "Livermore High School",
    "via": "classifier",
-   "confidence": 0.75,
-   "note": "The cx hint was set aside because it kept the school wrapper and gave the issuer as CCC. Foothill High School (Pleasanton, Las Positas service area) is named, so it is both issuer and trainer. The aligned Las Positas course is unverified, so the HS course name stands.",
+   "confidence": 0.8,
+   "note": "Joined the existing 'Nursing Careers' title (Emerald HS), with Livermore HS as the issuer that discriminates; the cx hint was set aside.",
    "procedure": "classifier",
    "rests_on": [
     "high-school-rop",
     "local-trainer-is-agency",
     "Rule 5f"
    ],
-   "trainer": "Foothill High School"
+   "trainer": "Livermore High School"
   },
-  "High School Articulation (Foothill)- Principles of Engineering": {
+  "High School Articulation (Livermore)- Principles of Engineering": {
    "title": "Introduction to Engineering",
-   "issuer": "Foothill High School",
+   "issuer": "Livermore High School",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it.",
@@ -190,58 +205,9 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Granada)-  Medical Occuptations": {
-   "title": "Medical Terminology",
-   "issuer": "Granada High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Granada)- Criminal Justice/ Crime Scene Investigation": {
-   "title": "Introduction to Criminal Justice",
-   "issuer": "Granada High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Granada)- Developmental Psychology of Children I": {
-   "title": "Developmental Psychology of Children 1",
-   "issuer": "Granada High School",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Joins the existing Developmental Psychology of Children 1 family (also Amador Valley HS). The issuer, Granada HS, is the discriminator.",
-   "procedure": "classifier",
-   "rests_on": [
-    "high-school-rop",
-    "local-trainer-is-agency",
-    "Rule 5f",
-    "arabic-level-numerals",
-    "brand-family"
-   ],
-   "trainer": "Granada High School"
-  },
-  "High School Articulation (Granada)- Developmental Psychology of Children II": {
-   "title": "Principles & Practices of Teaching Young Children",
-   "issuer": "Granada High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Granada)- Emergency Medical Response": {
+  "High School Articulation (Mission Valley ROP)- Emergency Medical Responder": {
    "title": "Emergency Medical Responder",
-   "issuer": "Granada High School",
+   "issuer": "Mission Valley Regional Occupational Program",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it.",
@@ -250,151 +216,111 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation (Granada)- Introduction to Athletic Training": {
-   "title": "Introduction to Athletic Training and Sports Medicine",
-   "issuer": "Granada High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it.",
-   "procedure": "high-school-rop",
+  "High School Articulation (Mission Valley ROP)- Fire Technology 1": {
+   "title": "Fire Technology",
+   "issuer": "Mission Valley Regional Occupational Program (ROP)",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "The ROP is stripped and becomes the agency. The title joins the existing Fire Technology family, which another ROP also uses. The trailing '1' may mark a course level, so a reviewer should check whether it should be kept.",
+   "procedure": "classifier",
    "rests_on": [
-    "high-school-rop"
-   ]
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "join-when-likely-one",
+    "Rule 5f"
+   ],
+   "trainer": "Mission Valley Regional Occupational Program (ROP)"
   },
-  "High School Articulation (Granada)- Introduction to Health Careers": {
-   "title": "Orientation to Health Care",
-   "issuer": "Granada High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "High School Articulation (Granada)- Nursing Careers": {
-   "title": "Nursing Careers",
-   "issuer": "Granada High School",
+  "High School Articulation (Mission Valley ROP)- Medical Occupations": {
+   "title": "Medical Occupations",
+   "issuer": "Mission Valley Regional Occupational Program (ROP)",
    "via": "classifier",
    "confidence": 0.75,
-   "note": "Same title as the Foothill HS row; issuer is the discriminator (Rule 5f item 4).",
+   "note": "The ROP is stripped and becomes the agency. No house family or aligned college course was identified, so this is a new title held for review.",
    "procedure": "classifier",
    "rests_on": [
     "high-school-rop",
     "local-trainer-is-agency",
     "Rule 5f"
    ],
-   "trainer": "Granada High School"
+   "trainer": "Mission Valley Regional Occupational Program (ROP)"
   },
-  "High School Articulation (Kimball)- Fundamentals of Criminal Justice": {
-   "title": "Introduction to Criminal Justice",
-   "issuer": "Kimball High School",
+  "High School Articulation (Mission Valley ROP)- Principles of Engineering": {
+   "title": "Introduction to Engineering",
+   "issuer": "Mission Valley Regional Occupational Program",
    "via": "school",
    "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it.",
+   "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it.",
    "procedure": "high-school-rop",
    "rests_on": [
     "high-school-rop"
    ]
   },
-  "High School Articulation (Livermore)- Criminal Justice/ Crime Scene Investigation": {
-   "title": "Introduction to Criminal Justice",
-   "issuer": "Livermore High School",
+  "High School Articulation (Tracy)- Fire Service": {
+   "title": "Fire Service Conditioning & Physical Agility Development",
+   "issuer": "Tracy High School",
    "via": "school",
    "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it.",
+   "note": "Sheet 147 card 2: the aligned course (FST 7 at Las Positas College) names it, M-ID KINE M1466; the school issues it.",
    "procedure": "high-school-rop",
    "rests_on": [
     "high-school-rop"
    ]
   },
-  "High School Articulation (Livermore)- Developmental Psychology of Children I": {
-   "title": "Developmental Psychology of Children 1",
-   "issuer": "Livermore High School",
+  "ISACA Certified Info Security Manager (CISM)": {
+   "title": "Certified Information Security Manager (CISM)",
+   "issuer": "Information Systems Audit and Control Association (ISACA)",
    "via": "classifier",
-   "confidence": 0.8,
-   "note": "Joins the existing Developmental Psychology of Children 1 family; Livermore HS is issuer and trainer.",
+   "confidence": 0.93,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
-    "high-school-rop",
-    "local-trainer-is-agency",
-    "Rule 5f",
-    "arabic-level-numerals",
-    "brand-family"
-   ],
-   "trainer": "Livermore High School"
-  },
-  "Industry Training Evidence for CNT 7402": {
-   "title": "Computer Networking Technology (CNT 7402)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.35,
-   "note": "This is a code-only, industry-training evidence exhibit. The Las Positas COCI lookup for CNT 7402 is needed to name the course and the industry credential/issuer behind it. The discipline 'Computer Networking Technology' is a guess.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 9"
+    "Rule 6",
+    "issuer-issues-the-card"
    ]
   },
-  "Industry Training Evidence for CNT 7501": {
-   "title": "Computer Networking Technology (CNT 7501)",
-   "issuer": "",
+  "ISACA Certified Info Systems Auditor (CISA)": {
+   "title": "Certified Information Systems Auditor (CISA)",
+   "issuer": "Information Systems Audit and Control Association (ISACA)",
    "via": "classifier",
-   "confidence": 0.35,
-   "note": "This is a code-only, industry-training evidence exhibit. The Las Positas COCI lookup for CNT 7501 is needed to name the course and the industry credential/issuer behind it. The discipline is a guess.",
+   "confidence": 0.93,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 9"
+    "Rule 6",
+    "issuer-issues-the-card"
    ]
   },
-  "Industry Training Evidence for CNT 8002": {
-   "title": "Computer Networking Technology (CNT 8002)",
-   "issuer": "",
+  "Microsoft Office Specialist (MOS) Associate": {
+   "title": "Microsoft Office Specialist — Associate",
+   "issuer": "Microsoft",
    "via": "classifier",
-   "confidence": 0.45,
-   "note": "Course-coded industry-training exhibit with no hint or catalog title. The fallback is discipline plus local code. The outside industry credential is not named, so the issuer is left open; a COCI lookup is needed.",
+   "confidence": 0.88,
+   "note": "The MOS Associate level is a distinct credential, so it stays split from the generic and Expert titles and uses the house dash form.",
    "procedure": "classifier",
    "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 9"
+    "brand-family",
+    "Rule 4"
    ]
   },
-  "Industry Training Evidence for CNT 8003": {
-   "title": "Computer Networking Technology (CNT 8003)",
-   "issuer": "",
+  "Microsoft Office Specialist (MOS) Expert": {
+   "title": "Microsoft Office Specialist — Expert",
+   "issuer": "Microsoft",
    "via": "classifier",
-   "confidence": 0.45,
-   "note": "Course-coded industry-training exhibit with no hint or catalog title. The fallback is discipline plus local code. The outside industry credential is not named, so the issuer is left open; a COCI lookup is needed.",
+   "confidence": 0.88,
+   "note": "The MOS Expert level is a distinct credential, kept separate from Associate and from the per-app Expert titles.",
    "procedure": "classifier",
    "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 9"
+    "brand-family",
+    "Rule 4"
    ]
   },
-  "Industry Training Evidence for CS 3": {
-   "title": "Computer Science (CS 3)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Course-coded industry-training exhibit with no catalog title supplied. The fallback is discipline plus local code. The industry credential is unnamed, so the issuer is left open; a Las Positas COCI lookup is needed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 9"
-   ]
-  },
-  "Noncredit Course for MUS 15": {
-   "title": "Jazz Ensemble",
+  "Portfolio Review CIS100-Practical PC & Career Technologies": {
+   "title": "Practical PC and Career Technologies",
    "issuer": "California Community Colleges",
    "via": "classifier",
    "confidence": 0.85,
-   "note": "The cx hint kept the mechanism phrasing, so I used the catalog title for MUS 15 instead. The noncredit course is the college's own and names no outside trainer, so the issuer is CCC.",
+   "note": "The mechanism and course code are stripped, leaving the college's own course title.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
@@ -402,87 +328,37 @@
     "mechanism-collapses"
    ]
   },
-  "Portfolio Evidence for PHTO 50": {
-   "title": "Introduction to Photography",
+  "Portfolio Review CIS101-Introduction to Computers and Their Uses": {
+   "title": "Introduction to Computers and Their Uses",
    "issuer": "California Community Colleges",
    "via": "classifier",
    "confidence": 0.9,
-   "note": "Catalog title for PHTO 50, which joins the existing CCC family.",
+   "note": "The title joins the existing family, which is held by a high school issuer. This college portfolio row is issued by California Community Colleges, with the issuer as the discriminator.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c",
-    "brand-family"
+    "join-when-likely-one",
+    "Rule 5c"
    ]
   },
-  "Portfolio Evidence for PHTO 56": {
-   "title": "Introduction to Digital Photography",
+  "Portfolio Review CIS104-Microcomputer Application Software": {
+   "title": "Microcomputer Application Software",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.9,
-   "note": "Catalog title for PHTO 56, which joins the existing family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "brand-family"
-   ]
-  },
-  "Portfolio Evidence for PHTO 57": {
-   "title": "Digital Photography Intermediate",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.87,
-   "note": "Catalog title 'Intermediate Digital Photography', restyled so the level word comes last.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "level-words-last"
-   ]
-  },
-  "Portfolio Evidence for PHTO 58": {
-   "title": "Introduction to Videography",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "",
+   "confidence": 0.85,
+   "note": "The mechanism and course code are stripped, leaving the local course title.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c"
    ]
   },
-  "Portfolio Evidence for PHTO 64A": {
-   "title": "Artificial Light Photography",
+  "Portfolio Review JOURNAL101-Journalism 101: Collecting & Writing News": {
+   "title": "Collecting and Writing News",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.88,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c"
-   ]
-  },
-  "Portfolio Evidence for PHTO 66": {
-   "title": "Digital Imaging",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c"
-   ]
-  },
-  "Portfolio Evidence for PHTO 68": {
-   "title": "Color Field Photography",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "",
+   "confidence": 0.72,
+   "note": "The mechanism, course code and 'Journalism 101' prefix are stripped. The course may align to C-ID JOUR 110 (newswriting and reporting); if so, the title should be re-keyed.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
