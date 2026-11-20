@@ -1,0 +1,87 @@
+Skip to main content
+This website uses cookies to ensure you get the best experience on our website. Learn more
+Got it!
+Listen
+Map
+ Campus Map
+Directory
+ Directory
+Search
+ Sign In 
+Student Learning Outcomes
+
+Warning: include(/srv/hosting/mtsac//_menu.inc): Failed to open stream: No such file or directory in /srv/hosting/mtsac/slo/index.html on line 241
+
+Warning: include(): Failed opening '/srv/hosting/mtsac//_menu.inc' for inclusion (include_path='.:/usr/share/php') in /srv/hosting/mtsac/slo/index.html on line 241
+
+Search Program/Discipline
+Search Course
+Search Courses
+Co-Occurring Disorders (AD 6)
+Abnormal Psychology (PSYC 19)
+Addiction: Prevention, Intervention, and Recovery (AD 3)
+Alcohol and Drug Dependency (AD 1)
+Case Management and Documentation (AD 10)
+Child Development (SOC 15)
+Child Growth and Lifespan Development (CHLD 10)
+Child Growth and Lifespan Development- Honors (CHLD 10H)
+Family Counseling (AD 9)
+Group Process and Leadership (AD 8)
+1
+2
+3
+...
+Student Learning Outcomes
+Course Name: Elementary Spanish
+Course Number: SPAN 1
+Outcomes:
+Students will correctly conjugate the present tense of regular verbs
+Students will correctly conjugate the present tense of regular verbs
+ENROLL
+Admissions
+Assessment
+Counseling
+Financial Aid
+School of Continuing Education
+EXPLORE
+Academic Catalog
+Employment
+Finding Events
+Foundation
+Library
+Schedule of Classes
+Why Mt. SAC
+VISIT
+Athletics
+Box Office
+Campus Map
+Parking
+Planetarium
+Tours
+TRANSPARENCY
+Accreditation
+Accessibility
+Board of Trustees Agenda
+Construction
+Discrimination Complaints
+Doing Business with Mt. SAC
+Institutional Planning
+Privacy
+HELP
+A-to-Z Site Index
+Acronyms
+Contact Mt. SAC
+Directory
+Police & Campus Safety
+Web Feedback
+
+1100 N. Grand Ave., Walnut, CA 91789
+
+Phone
+(909) 274-7500
+
+Campus Police
+(909) 274-4555
+
+Text-A-Tip
+(909) 610-9139

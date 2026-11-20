@@ -1,0 +1,18 @@
+{
+ "_about": "The self-recall count for Mt. San Antonio's SLO pages (kb/_course_outcomes_read.py mtsac_recall): each filed page of trial 44687943107 read by eye. A page prints its SLOs as the list under Outcomes: in its course results block (id slo_course_results), each item as printed; 6 of the 12 pages print that block empty. No page prints course objectives.",
+ "trial": "44687943107",
+ "pages": {
+  "AABS 1": {"slo": 0, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "ANAT 10A": {"slo": 9, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "ASCI 1": {"slo": 0, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "BUSR 40": {"slo": 2, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "CMGT 121": {"slo": 0, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "ECON 17": {"slo": 0, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "ET 90A": {"slo": 0, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "HIST 1": {"slo": 4, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "KINI 18A": {"slo": 5, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "MEDI 90": {"slo": 2, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "PHO 09": {"slo": 0, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"},
+  "SPAN 1": {"slo": 2, "objective": 0, "by": "S689 outlines worker, by eye on the filed HTML, 2026-11-20"}
+ }
+}
