@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6633,
-    "output_tokens": 1305,
+    "output_tokens": 1468,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1305,
+  "output_tokens": 1468,
   "output_tokens_details": {
-   "thinking_tokens": 293
+   "thinking_tokens": 422
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05263,
- "ms": 11085,
- "seconds": 11.4,
+ "cost_usd": 0.05589,
+ "ms": 11752,
+ "seconds": 12.1,
  "parts": null,
  "error": null,
  "score": {
@@ -242,13 +242,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with zero-padding (BUS 005, M/SVN 060, etc.); matched to closed-list codes BUS 5, BUS 56, BUS 38, M/SVN 60, M/SVN 61, M/SVN 82.",
-   "M/SVN 064 Organization and Management is in the core but not in the closed list; recorded as catalog addition.",
-   "General Education Requirements printed as 21 units with reference to the Associate Degree Requirements tab; no named GE pattern, so ge_pattern left null.",
-   "'Electives to meet 60 units' printed with no units; electives_fill_degree set true.",
-   "All courses are marked '( Historical )' in the catalog text; reviewer may want to confirm they are current for 2026-2027.",
-   "Career Opportunities text: 'Entry level managerial positions or administrative services managers.' The description also mentions 'entry or mid-level positions', not recorded as a separate career."
+   "The catalog prints codes with leading zeros (BUS 005, BUS 056, M/SVN 060, M/SVN 061, M/SVN 082, BUS 038); these were matched to the closed list's BUS 5, BUS 56, M/SVN 60, M/SVN 61, M/SVN 82, BUS 38.",
+   "M/SVN 064 Organization and Management is in the core but not in the closed list; recorded as a catalog addition.",
+   "All courses carry a '( Historical )' label in the catalog; reviewer may want to confirm the course list is current for 2026-2027.",
+   "General Education Requirements are printed as 21.00 units without naming a pattern ('Refer to Associate Degree Requirements tab'); ge_pattern left null.",
+   "'Electives to meet 60 units' is printed with no units; electives_fill_degree set true. Total Units 60.00 recorded as degree_total; Total Major Units 22.00 recorded as total_units.",
+   "The catalog text includes stray CSS styling code, which was ignored."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7005,
-    "output_tokens": 2166,
+    "output_tokens": 1992,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2166,
+  "output_tokens": 1992,
   "output_tokens_details": {
-   "thinking_tokens": 829
+   "thinking_tokens": 711
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07134,
- "ms": 17263,
- "seconds": 17.4,
+ "cost_usd": 0.06786,
+ "ms": 16968,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
@@ -270,19 +270,18 @@
   "missing_explained": [
    {
     "code": "ECON 221",
-    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics in its place (likely common course numbering renumber)"
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics in its place (common course numbering)"
    }
   ],
   "notes": [
-   "Catalog text begins mid-sentence; the start of the program description is cut off.",
-   "Codes are printed run together on the page (e.g., HOSP100, STATC1000); recorded with a space between subject and number.",
-   "The program learning outcomes listed are largely culinary/food service oriented; reviewer should confirm they belong to this A.S.-T award rather than another hospitality/culinary program. They are recorded as printed for this program page.",
-   "'Complete 60 CSU-transferable units' and 'Complete a minimum of 18 units in the major' appear as generic ADT requirement bullets, not as a printed degree total; degree_total left null. Major total taken from 'Hospitality Management (Total 18 - 19)'.",
-   "Cal-GETC is named as the GE pattern but no GE units are printed.",
-   "Careers recorded from 'prepare them for jobs with local and global hotels, restaurants, airlines, cruise lines, sports arenas, entertainment, and amusement parks'; these are industries/employers rather than job titles.",
-   "NUTRI 160 and ECON C2001 are not on the closed list and are marked as catalog additions."
+   "Catalog prints codes without spaces (e.g. HOSP100, ECONC2001, STATC1000); recorded with a space between subject and number.",
+   "Major total printed as 'Hospitality Management (Total 18 - 19)'; the 60 CSU-transferable units and 'minimum of 18 units in the major' are generic degree requirements, so degree_total left null.",
+   "Text begins mid-sentence (cut off at the start of the program description).",
+   "The program learning outcomes printed are largely culinary/food-service oriented (cooking methods, serving food, menu planning) and may be shared with other hospitality awards; recorded as printed for this page.",
+   "Careers recorded from 'jobs with local and global hotels, restaurants, airlines, cruise lines, sports arenas, entertainment, and amusement parks' as career fields/industries; reviewer may judge whether these count as careers.",
+   "General Education Patterns heading printed with no units; Cal-GETC named in degree requirements."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": "43379378196"
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

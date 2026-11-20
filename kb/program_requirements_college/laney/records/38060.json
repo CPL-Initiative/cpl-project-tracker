@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7940,
-    "output_tokens": 3017,
+    "output_tokens": 3403,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3017,
+  "output_tokens": 3403,
   "output_tokens_details": {
-   "thinking_tokens": 697
+   "thinking_tokens": 952
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0921,
- "ms": 23081,
- "seconds": 23.4,
+ "cost_usd": 0.09982,
+ "ms": 26651,
+ "seconds": 26.9,
  "parts": null,
  "error": null,
  "score": {
@@ -166,7 +166,7 @@
   },
   "blocks": [
    {
-    "name": "Core Courses",
+    "name": "Core Courses (6 units)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -204,7 +204,7 @@
     ]
    },
    {
-    "name": "List A: Select two courses",
+    "name": "List A: Select two courses (6 units)",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -242,7 +242,7 @@
     ]
    },
    {
-    "name": "List B: Area 1: Diversity Select one course",
+    "name": "List B: Area 1: Diversity Select one course (3 units)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -345,7 +345,7 @@
     ]
    },
    {
-    "name": "List B: Area 2: Breadth Select one course",
+    "name": "List B: Area 2: Breadth Select one course (3 units)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -443,14 +443,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog text begins mid-sentence; section heading taken from the program name printed in the description.",
-   "Catalog prints codes with leading zeros (HIST 019, AFRAM 001, GEOG 002, POSCI 002, SOCSC 019, etc.); these were matched to the closed-list codes without leading zeros (HIST 19, AFRAM 1, GEOG 2, POSCI 2, SOCSC 19) and not flagged as additions.",
-   "List A prints 'Select two courses' over two OR pairs (HIST 002A or HIST 003A; HIST 002B or HIST 003B); read as one course from each pair. Reviewer should confirm whether any two of the four may be chosen.",
-   "Area 1 note: 'Including HIST 3A or HIST 3B if not used in List A'; Area 2 note: 'Including any List A course if not already used'. A course may count only once.",
-   "HIST 007A, HIST 007B and POSCI 1 are printed as 'or' alternatives with no units beside them; recorded with units null as catalog additions.",
-   "Total Major Units 18; Cal-GETC Pattern 34; 'Electives to meet 60 units' with no units printed; Total Units 60.",
-   "The sentence 'A minimum of 18 semester units ... in a major' is the generic ADT requirement; total_units 18 is taken from the printed 'Total Major Units: 18.00'."
+   "The excerpt begins mid-description and prints no clear section heading; section_heading is taken from the description's name for the degree, 'Associate in Arts Degree in History for Transfer (AA-T HIST)'.",
+   "Catalog prints zero-padded codes (HIST 019, AFRAM 001, ETHST 014, GEOG 002, M/LAT 019, NATAM 001, POSCI 002, SOCSC 019, etc.); these were treated as the same courses as the closed-list codes without padding (HIST 19, AFRAM 1, ...), so catalog_addition is false.",
+   "HIST 007A, HIST 007B and POSCI 1 are printed only as 'or' options without units; recorded as alternatives with catalog_addition true and units null.",
+   "List A says 'Select two courses' but prints two OR pairs (HIST 002A or HIST 003A; HIST 002B or HIST 003B); read as one course from each pair, recorded as choose 2 with each pair as one entry with an alternative.",
+   "Area 1 notes 'Including HIST 3A or HIST 3B if not used in List A'; Area 2 notes 'Including any List A course if not already used'. A course may not be counted twice across List A and List B.",
+   "HIST 019 (History of California), AFRAM 030, AFRAM 031, GEOG 002, SOCSC 019 and SOCSC 020 are marked '( Historical )' in the catalog listing; reviewer may check whether they are still offered.",
+   "Page prints 'Total Major Units: 18.00', 'Cal-GETC Pattern: 34.00', 'Electives to meet 60 units' and 'Total Units 60.00'; electives units are not printed, so electives_fill_degree is true."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7555,
-    "output_tokens": 2641,
+    "output_tokens": 2697,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 2641,
+  "output_tokens": 2697,
   "output_tokens_details": {
-   "thinking_tokens": 1070
+   "thinking_tokens": 1149
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08304,
- "ms": 20161,
- "seconds": 20.7,
+ "cost_usd": 0.08416,
+ "ms": 22302,
+ "seconds": 23.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 11,
    "listed": 11,
-   "share": 0.818,
-   "missing": [
-    "ARTH105",
-    "ARTH106"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ARTH105",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "ARTH106",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "ARTHC1100",
-    "ARTHC1200",
     "PHOT180"
    ],
    "flagged": [
-    "ARTHC1100",
-    "ARTHC1200",
     "PHOT180"
    ],
    "pass": true
@@ -124,7 +130,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "NVC General Education pattern",
+   "ge_pattern": "NVC General Education",
    "degree_total": {
     "min": null,
     "max": null
@@ -294,20 +300,22 @@
   "missing_explained": [
    {
     "code": "ARTH 105",
-    "why": "not in the text; catalog prints ARTH-C1100 (Survey of Art from Prehistory to the Medieval Era) in its place"
+    "why": "not in the text; catalog lists ARTH-C1100 (common course numbering, same title area) instead"
    },
    {
     "code": "ARTH 106",
-    "why": "not in the text; catalog prints ARTH-C1200 (Survey of Art from the Renaissance to Contemporary) in its place"
+    "why": "not in the text; catalog lists ARTH-C1200 (common course numbering, same title area) instead"
    }
   ],
   "notes": [
-   "ARTH-C1100 and ARTH-C1200 appear to be Cal-Course renumberings of ARTH 105 and ARTH 106; recorded as catalog additions since their codes are not in the closed list.",
-   "Units are printed only as a 9-unit block total for the Required Electives list; individual course units are not printed beside those courses, so they are null.",
-   "ARTH-130 and ARTH-145 appear in both blocks; footnote 1 says ARTH-130 (and by implication ARTH-145) counts as an elective only 'If not already completed from required core courses.'",
-   "The 60-unit sentence is a generic associate degree requirement, not printed as this award's total, so degree_total is null.",
-   "Career entries are split from the run-together CAREER OPPORTUNITIES paragraph at its '--' and comma boundaries; reviewer may wish to check the segmentation."
+   "ARTH-C1100 and ARTH-C1200 appear to be the Cal common course numbered replacements for closed-list ARTH 105 and ARTH 106; recorded as catalog additions.",
+   "Required Electives list prints no units beside individual courses; only the block total of 9 units is printed, so course units are null.",
+   "ARTH-130 in the elective list carries footnote 1: 'If not already completed from required core courses.'",
+   "The 60-unit sentence is a generic associate degree requirement, not recorded as degree_total; GE pattern named is the NVC General Education pattern with no units printed.",
+   "Health, Wellness and Self Development graduation requirement also applies (not a major block).",
+   "Careers taken from the description sentence and the Career Opportunities paragraph; the paragraph runs category headings and items together, so splitting at '--' and commas is an interpretation a reviewer may check."
   ]
  },
- "extracted_run": "38748853261"
+ "extracted_run": "44739981651",
+ "catalog_year": "2026-2027"
 }

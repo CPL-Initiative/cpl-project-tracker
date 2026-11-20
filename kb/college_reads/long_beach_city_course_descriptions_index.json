@@ -1,0 +1,21 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): the subject pages of the 2026-27 course descriptions, so a second read files every printed course. The host answered the runner's plain robots.txt request with 200 (run 44757980757), and its robots.txt allows /course-descriptions/. No model call.",
+ "college": "Long Beach City College",
+ "questions": {
+  "subjects": "Which subject pages the course-descriptions index lists, with their addresses."
+ },
+ "keywords": [
+  "\\([A-Z]{2,6}\\)"
+ ],
+ "capture_lines": 4000,
+ "pages": [
+  {
+   "url": "https://lbcc-public.courseleaf.com/course-descriptions/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/course-descriptions/[a-z0-9_-]+/",
+   "capture_view": true
+  }
+ ]
+}

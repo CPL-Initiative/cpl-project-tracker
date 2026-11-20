@@ -1,0 +1,301 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701): NOCE's 2026-27 course descriptions, subject by subject, with a plain page read (the census Reader: robots.txt first, 4 s between loads, the CPL Initiative user agent). The capture view prints each page line for line, so a session files every course's number, title, hours, prerequisites and description from the log. Subjects ABE to MUSC; the index again for the rest. No model call.",
+ "college": "North Orange Continuing Education",
+ "questions": {
+  "subjects": "The subject pages the index lists past the first read's cap of 40 links.",
+  "courses": "Each course's number, title, hours, prerequisites and description, line for line."
+ },
+ "keywords": [
+  "[Hh]ours?",
+  "Prerequisite"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/",
+   "answers": [
+    "subjects"
+   ],
+   "links": "/noce/course-descriptions/(m[u-z]|[n-z])[a-z0-9_-]*/"
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/abe/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/abed/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/aebg/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/artc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/busn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/busa/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/bmgr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/cc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/comp/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/cist/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/cned/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/fn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/crae/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/dan/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/dig/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/dsps/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/dsss/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/eced/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/eden/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/elet/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/emer/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/enco/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/entr/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/esla/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/eslw/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/eslm/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/finc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/fitn/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/fsrv/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/hlth/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/hosm/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/hrma/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/ihss/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/kids/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/lang/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/meda/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/medo/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/meoc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/ms/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.nocccd.edu/noce/course-descriptions/musc/",
+   "answers": [
+    "courses"
+   ],
+   "capture_view": true
+  }
+ ]
+}

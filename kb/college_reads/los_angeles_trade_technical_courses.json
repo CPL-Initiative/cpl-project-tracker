@@ -1,0 +1,22 @@
+{
+ "_readme": "S690 catalogs worker, 2026-11-20, under Sam's go of 2026-11-20 6:26 AM PT (relayed by COBIx on #3584, comment 7042043701) and the plain session's ask (#3584, comment 7042398748): every course the 2026-27 catalog prints, for kb/hand_filed_catalogs/courses/. The college's own catalog PDF, which the program capture read from this address (run 44475507447, access ok); Sam's hand-fetched copy (COBIx's gist, the same page count) is printed by pdftotext -layout in two columns side by side, so this read takes the college's file through pypdf instead. Every page that names units or hours, line for line. No model call.",
+ "college": "Los Angeles Trade-Technical College",
+ "questions": {
+  "courses": "Each course's code, title, units or hours, requisites and description."
+ },
+ "keywords": [
+  "\\bUnits?\\b",
+  "\\bUNITS?\\b",
+  "\\bHours?\\b"
+ ],
+ "pdf_page_cap": 1000,
+ "pdf_unfolded": true,
+ "pages": [
+  {
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf",
+   "answers": [
+    "courses"
+   ]
+  }
+ ]
+}

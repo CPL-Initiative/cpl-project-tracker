@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7323,
-    "output_tokens": 1778,
+    "output_tokens": 1649,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1778,
+  "output_tokens": 1649,
   "output_tokens_details": {
-   "thinking_tokens": 351
+   "thinking_tokens": 251
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06485,
- "ms": 13692,
- "seconds": 14.1,
+ "cost_usd": 0.06227,
+ "ms": 12828,
+ "seconds": 13.1,
  "parts": null,
  "error": null,
  "score": {
@@ -305,11 +305,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints ECT codes with leading zeros (e.g., ECT 012, ECT 013); these were matched to closed-list codes without zeros (ECT 12, ECT 13, etc.) and not flagged as catalog additions.",
-   "WELD 215A is printed at 0.75 units; the state file stores 0.8 (likely rounding).",
-   "Requirements are presented as a four-semester sequence; each semester was recorded as an 'all' block with its printed semester total. The semester totals sum to the printed Total Units of 36.25.",
-   "Careers are named in both the description and the Career Opportunities heading; each is listed once."
+   "Catalog prints ECT codes zero-padded (e.g., ECT 012, ECT 013); these were matched to closed-list codes without padding (ECT 12, ECT 13, etc.) and marked catalog_addition false.",
+   "WELD 215A printed as 0.75 units in the catalog; state file stores 0.8.",
+   "Catalog text included page CSS between the outcomes and the course table; ignored.",
+   "Total Units 36.25 equals the sum of the four semester blocks (10 + 9 + 9 + 8.25)."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "44744386009",
+ "catalog_year": "2026-2027"
 }

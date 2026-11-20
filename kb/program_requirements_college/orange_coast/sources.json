@@ -146,7 +146,7 @@
    }
   },
   "listed": 30,
-  "text_chars": 5638
+  "text_chars": 5733
  },
  {
   "control_number": "03960",
@@ -198,7 +198,7 @@
    }
   },
   "listed": 27,
-  "text_chars": 5363
+  "text_chars": 5370
  },
  {
   "control_number": "03961",
@@ -236,7 +236,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 5756
+  "text_chars": 5708
  },
  {
   "control_number": "03962",
@@ -248,7 +248,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03963",
@@ -294,7 +298,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 5057
+  "text_chars": 5045
  },
  {
   "control_number": "03967",
@@ -362,7 +366,7 @@
    }
   },
   "listed": 45,
-  "text_chars": 6778
+  "text_chars": 6812
  },
  {
   "control_number": "03968",
@@ -404,7 +408,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 5257
+  "text_chars": 5305
  },
  {
   "control_number": "03970",
@@ -524,7 +528,7 @@
    }
   },
   "listed": 38,
-  "text_chars": 6063
+  "text_chars": 6171
  },
  {
   "control_number": "03975",
@@ -619,7 +623,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.846,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTA101",
    "ACCTA101H",
@@ -642,7 +646,11 @@
    "APTA145",
    "APTA146",
    "APTA180",
-   "APTA192"
+   "APTA192",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aviation-science-associate-science-degree/",
@@ -658,7 +666,7 @@
    }
   },
   "listed": 26,
-  "text_chars": 6499
+  "text_chars": 6503
  },
  {
   "control_number": "03979",
@@ -670,7 +678,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03981",
@@ -752,7 +764,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03990",
@@ -808,7 +824,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03993",
@@ -893,7 +913,7 @@
    }
   },
   "listed": 60,
-  "text_chars": 6876
+  "text_chars": 6979
  },
  {
   "control_number": "03995",
@@ -905,7 +925,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "03997",
@@ -955,7 +979,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "04005",
@@ -987,7 +1015,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 5033
+  "text_chars": 5031
  },
  {
   "control_number": "04006",
@@ -1186,7 +1214,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "BIOLA180",
    "BIOLA210",
@@ -1195,6 +1223,7 @@
    "CHEMA220",
    "CHEMA220L",
    "ENGLC1000",
+   "ENGLC1003",
    "FNA195",
    "FNA286",
    "STATC1000"
@@ -1213,7 +1242,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4196
+  "text_chars": 4149
  },
  {
   "control_number": "04015",
@@ -1291,8 +1320,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.976,
+  "coverage": 1.0,
   "codes_found": [
+   "ENGLA101H",
    "ENGLA117",
    "ENGLA119",
    "ENGLA121",
@@ -1381,7 +1411,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 4813
+  "text_chars": 4778
  },
  {
   "control_number": "04026",
@@ -1393,7 +1423,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "04030",
@@ -1405,7 +1439,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "04032",
@@ -1413,7 +1451,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.679,
+  "coverage": 0.786,
   "codes_found": [
    "ANTHA100",
    "ANTHA100H",
@@ -1423,6 +1461,9 @@
    "ANTHA190",
    "ANTHA220",
    "ANTHA280",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "ANTHC1001L",
    "GEOGA100",
    "GEOGA180",
    "GEOGA180L",
@@ -1449,7 +1490,7 @@
    }
   },
   "listed": 28,
-  "text_chars": 5113
+  "text_chars": 5123
  },
  {
   "control_number": "04035",
@@ -1473,7 +1514,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "04043",
@@ -1517,7 +1562,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 6787
+  "text_chars": 6786
  },
  {
   "control_number": "08617",
@@ -1587,7 +1632,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4520
+  "text_chars": 4616
  },
  {
   "control_number": "08625",
@@ -1805,7 +1850,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08635",
@@ -1817,7 +1866,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08641",
@@ -1829,7 +1882,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08642",
@@ -1848,46 +1905,12 @@
   "title": "Music: Music Entertainer-Vocal",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MUSA116",
-   "MUSA120",
-   "MUSA127",
-   "MUSA129",
-   "MUSA132",
-   "MUSA133",
-   "MUSA141",
-   "MUSA143",
-   "MUSA144",
-   "MUSA150",
-   "MUSA180",
-   "MUSA181",
-   "MUSA187",
-   "MUSA230",
-   "MUSA233",
-   "MUSA234",
-   "MUSA240",
-   "MUSA247",
-   "MUSA261",
-   "MUSA262",
-   "MUSA290"
-  ],
-  "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/music/",
-   "title": "Music < Orange Coast College",
-   "h1": "Academic Catalogs",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 21,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "08645",
@@ -1968,7 +1991,7 @@
    }
   },
   "listed": 44,
-  "text_chars": 6465
+  "text_chars": 6484
  },
  {
   "control_number": "08648",
@@ -1980,7 +2003,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08649",
@@ -2167,7 +2194,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 5566
+  "text_chars": 5564
  },
  {
   "control_number": "08659",
@@ -2211,7 +2238,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 5864
+  "text_chars": 5832
  },
  {
   "control_number": "08661",
@@ -2235,7 +2262,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "08663",
@@ -2265,7 +2296,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 5187
+  "text_chars": 5211
  },
  {
   "control_number": "08664",
@@ -2308,7 +2339,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 5907
+  "text_chars": 5931
  },
  {
   "control_number": "08667",
@@ -2389,7 +2420,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4846
+  "text_chars": 4845
  },
  {
   "control_number": "08670",
@@ -2431,7 +2462,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 5109
+  "text_chars": 5101
  },
  {
   "control_number": "08673",
@@ -2564,7 +2595,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 5945
+  "text_chars": 5913
  },
  {
   "control_number": "11635",
@@ -2607,7 +2638,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 5448
+  "text_chars": 5416
  },
  {
   "control_number": "11641",
@@ -2619,7 +2650,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "12159",
@@ -2675,7 +2710,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "14411",
@@ -2687,7 +2726,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "14412",
@@ -2807,7 +2850,7 @@
    }
   },
   "listed": 95,
-  "text_chars": 7337
+  "text_chars": 7301
  },
  {
   "control_number": "16229",
@@ -2854,11 +2897,13 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTA100",
    "ACCTA101",
    "BUSA110",
+   "ECONC2001",
+   "ECONC2002",
    "REA110",
    "REA120",
    "REA130",
@@ -2879,7 +2924,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4717
+  "text_chars": 4721
  },
  {
   "control_number": "16634",
@@ -3091,7 +3136,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 6011
+  "text_chars": 5979
  },
  {
   "control_number": "16910",
@@ -3099,7 +3144,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.615,
+  "coverage": 0.769,
   "codes_found": [
    "ACCTA101",
    "ACCTA102",
@@ -3107,6 +3152,8 @@
    "BUSA110",
    "BUSA139",
    "CISA111",
+   "ECONC2001",
+   "ECONC2002",
    "PSYCA160",
    "STATC1000"
   ],
@@ -3124,7 +3171,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 4989
+  "text_chars": 4954
  },
  {
   "control_number": "17033",
@@ -3175,7 +3222,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 5283
+  "text_chars": 5267
  },
  {
   "control_number": "17649",
@@ -3226,7 +3273,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 5254
+  "text_chars": 5238
  },
  {
   "control_number": "17711",
@@ -3267,7 +3314,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4499
+  "text_chars": 4483
  },
  {
   "control_number": "18193",
@@ -3309,7 +3356,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4373
+  "text_chars": 4469
  },
  {
   "control_number": "18194",
@@ -3356,7 +3403,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 5339
+  "text_chars": 5307
  },
  {
   "control_number": "18196",
@@ -3375,32 +3422,12 @@
   "title": "Electronics Technology: Electronics Engineering Technician",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ELECA102",
-   "ELECA111",
-   "ELECA112",
-   "ELECA135",
-   "ELECA172",
-   "ELECA173",
-   "ELECA260"
-  ],
-  "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/electronics/",
-   "title": "Electronics < Orange Coast College",
-   "h1": "Academic Catalogs",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.6,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "18198",
@@ -3447,7 +3474,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 5303
+  "text_chars": 5271
  },
  {
   "control_number": "18199",
@@ -3490,7 +3517,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 4928
+  "text_chars": 4896
  },
  {
   "control_number": "18200",
@@ -3531,7 +3558,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4611
+  "text_chars": 4595
  },
  {
   "control_number": "18201",
@@ -3570,7 +3597,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 4558
+  "text_chars": 4542
  },
  {
   "control_number": "18202",
@@ -3741,7 +3768,7 @@
    }
   },
   "listed": 35,
-  "text_chars": 5013
+  "text_chars": 5062
  },
  {
   "control_number": "18436",
@@ -3798,56 +3825,12 @@
   "title": "Professional Mariner",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.585,
-  "codes_found": [
-   "CHINA185",
-   "FRENA180",
-   "FRENA180H",
-   "FRENA185",
-   "FRENA185H",
-   "FRENA190",
-   "FRENA280",
-   "FRENA285",
-   "GRMNA180",
-   "GRMNA185",
-   "GRMNA280",
-   "GRMNA285",
-   "ITALA180",
-   "ITALA185",
-   "ITALA280",
-   "ITALA285",
-   "JAPNA180",
-   "JAPNA180H",
-   "JAPNA185",
-   "JAPNA185H",
-   "JAPNA280",
-   "JAPNA285",
-   "SPANA180",
-   "SPANA180H",
-   "SPANA185",
-   "SPANA185H",
-   "SPANA280",
-   "SPANA280H",
-   "SPANA285",
-   "VIETA180",
-   "VIETA185"
-  ],
-  "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/foreign-languages/",
-   "title": "Foreign Languages < Orange Coast College",
-   "h1": "Academic Catalogs",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 53,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "19472",
@@ -4322,7 +4305,7 @@
    }
   },
   "listed": 25,
-  "text_chars": 4947
+  "text_chars": 4902
  },
  {
   "control_number": "22368",
@@ -4518,7 +4501,7 @@
    }
   },
   "listed": 27,
-  "text_chars": 4482
+  "text_chars": 4489
  },
  {
   "control_number": "22372",
@@ -4555,7 +4538,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4469
+  "text_chars": 4565
  },
  {
   "control_number": "22373",
@@ -4593,7 +4576,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 4927
+  "text_chars": 4879
  },
  {
   "control_number": "22374",
@@ -4678,7 +4661,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22379",
@@ -4702,7 +4689,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22383",
@@ -4771,7 +4762,7 @@
    }
   },
   "listed": 46,
-  "text_chars": 5224
+  "text_chars": 5258
  },
  {
   "control_number": "22384",
@@ -4884,7 +4875,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3931
+  "text_chars": 4127
  },
  {
   "control_number": "22389",
@@ -5076,7 +5067,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22396",
@@ -5088,7 +5083,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22400",
@@ -5289,7 +5288,7 @@
    }
   },
   "listed": 27,
-  "text_chars": 4836
+  "text_chars": 4842
  },
  {
   "control_number": "22408",
@@ -5339,7 +5338,7 @@
    }
   },
   "listed": 37,
-  "text_chars": 6018
+  "text_chars": 5976
  },
  {
   "control_number": "22409",
@@ -5466,7 +5465,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 4750
+  "text_chars": 4752
  },
  {
   "control_number": "22421",
@@ -5498,7 +5497,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4780
+  "text_chars": 4748
  },
  {
   "control_number": "22423",
@@ -5510,7 +5509,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22424",
@@ -5534,7 +5537,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22428",
@@ -5610,7 +5617,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 4438
+  "text_chars": 4430
  },
  {
   "control_number": "22431",
@@ -5693,7 +5700,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "22434",
@@ -5713,7 +5724,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTA101",
    "ACCTA101H",
@@ -5732,7 +5743,10 @@
    "APTA140",
    "APTA145",
    "APTA146",
-   "APTA192"
+   "APTA192",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/aviation-science-certificate-achievement/",
@@ -5748,7 +5762,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 5364
+  "text_chars": 5368
  },
  {
   "control_number": "30591",
@@ -5790,7 +5804,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 5734
+  "text_chars": 5736
  },
  {
   "control_number": "30596",
@@ -5828,7 +5842,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 5461
+  "text_chars": 5395
  },
  {
   "control_number": "30642",
@@ -5836,8 +5850,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 0.917,
   "codes_found": [
+   "CMSTA105",
+   "CMSTA120",
    "CMSTA150",
    "CMSTA155",
    "CMSTA165",
@@ -5845,13 +5861,14 @@
    "CMSTA180",
    "CMSTA220",
    "COMMC1000",
-   "COMMC1004"
+   "COMMC1004",
+   "GNDRA165"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/communications-studies-2-aat/",
    "title": "Communications Studies 2.0, Associate in Arts Degree for Transfer (AA-T) < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -5861,49 +5878,19 @@
    }
   },
   "listed": 12,
-  "text_chars": 3177
+  "text_chars": 7172
  },
  {
   "control_number": "30921",
   "title": "Hospitality, Travel & Tourism - Meeting & Event Management",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.895,
-  "codes_found": [
-   "HTTA105",
-   "HTTA138",
-   "HTTA158",
-   "HTTA185",
-   "HTTA199",
-   "HTTA221",
-   "HTTA265",
-   "HTTA266",
-   "HTTA267",
-   "HTTA269",
-   "HTTA270",
-   "HTTA273",
-   "HTTA275",
-   "HTTA276",
-   "HTTA278",
-   "HTTA284",
-   "HTTA299"
-  ],
-  "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/",
-   "title": "Hospitality, Travel, and Tourism < Orange Coast College",
-   "h1": "Academic Catalogs",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "31075",
@@ -5949,7 +5936,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 5667
+  "text_chars": 5644
  },
  {
   "control_number": "31334",
@@ -6016,7 +6003,7 @@
    }
   },
   "listed": 45,
-  "text_chars": 7107
+  "text_chars": 7109
  },
  {
   "control_number": "31439",
@@ -6024,13 +6011,17 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "ECONC2001",
    "ECONC2001H",
    "ECONC2002",
    "ECONC2002H",
    "GNDRA130",
+   "HISTA170",
+   "HISTA170H",
+   "HISTA175",
+   "HISTA175H",
    "POLSC1000",
    "POLSC1000H",
    "PSCIA101",
@@ -6057,7 +6048,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 6117
+  "text_chars": 6121
  },
  {
   "control_number": "31516",
@@ -6182,7 +6173,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 5061
+  "text_chars": 5063
  },
  {
   "control_number": "32081",
@@ -6255,7 +6246,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 5635
+  "text_chars": 5637
  },
  {
   "control_number": "32179",
@@ -6263,7 +6254,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "BUSA185",
    "CMSTA180",
@@ -6278,6 +6269,10 @@
    "ENGLC1001",
    "ENGLC1001H",
    "ETHSA100",
+   "HISTA170",
+   "HISTA170H",
+   "HISTA175",
+   "HISTA175H",
    "JOURA110",
    "JOURA115",
    "JOURA116",
@@ -6308,7 +6303,7 @@
    }
   },
   "listed": 32,
-  "text_chars": 6602
+  "text_chars": 6630
  },
  {
   "control_number": "32189",
@@ -6316,14 +6311,17 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.939,
+  "coverage": 1.0,
   "codes_found": [
+   "ENGLA101H",
    "ENGLA109",
    "ENGLA119",
    "ENGLA121",
    "ENGLA122",
    "ENGLA126",
    "ENGLA127",
+   "ENGLA140",
+   "ENGLA140H",
    "ENGLA141",
    "ENGLA141H",
    "ENGLA143",
@@ -6379,7 +6377,7 @@
    }
   },
   "listed": 49,
-  "text_chars": 8956
+  "text_chars": 8960
  },
  {
   "control_number": "32202",
@@ -6387,7 +6385,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.63,
+  "coverage": 0.704,
   "codes_found": [
    "BIOLA100",
    "CHEMA110",
@@ -6399,6 +6397,8 @@
    "GEOLA105M",
    "HISTA161",
    "HISTA161H",
+   "HISTA170",
+   "HISTA170H",
    "HUMA100",
    "MATHA104",
    "MUSA100",
@@ -6421,7 +6421,7 @@
    }
   },
   "listed": 27,
-  "text_chars": 6505
+  "text_chars": 6555
  },
  {
   "control_number": "32205",
@@ -6473,7 +6473,7 @@
    }
   },
   "listed": 27,
-  "text_chars": 6700
+  "text_chars": 6776
  },
  {
   "control_number": "32218",
@@ -6481,7 +6481,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.826,
+  "coverage": 1.0,
   "codes_found": [
    "ETHSA150",
    "GNDRA187",
@@ -6494,6 +6494,10 @@
    "HISTA161H",
    "HISTA162",
    "HISTA162H",
+   "HISTA170",
+   "HISTA170H",
+   "HISTA175",
+   "HISTA175H",
    "HISTA176",
    "HISTA180",
    "HISTA180H",
@@ -6517,7 +6521,7 @@
    }
   },
   "listed": 23,
-  "text_chars": 5924
+  "text_chars": 6167
  },
  {
   "control_number": "32231",
@@ -6561,7 +6565,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 5920
+  "text_chars": 5903
  },
  {
   "control_number": "32235",
@@ -6569,26 +6573,24 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 0.571,
   "codes_found": [
    "MATHA230",
    "MATHA235",
    "MATHA287",
-   "PHYSA185",
-   "PSYCA160",
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/",
-   "title": "Associate Degree California General Education Transfer Curriculum (Cal-GETC) 2026-2027 < Orange Coast College",
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/mathematics/",
+   "title": "Mathematics < Orange Coast College",
    "h1": "Academic Catalogs",
    "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "award": 0,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics mathematics 2.0, associate in science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -6639,7 +6641,7 @@
    }
   },
   "listed": 23,
-  "text_chars": 6473
+  "text_chars": 6475
  },
  {
   "control_number": "32532",
@@ -6647,7 +6649,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.906,
+  "coverage": 0.962,
   "codes_found": [
    "ANTHA100",
    "ANTHA100H",
@@ -6688,6 +6690,9 @@
    "HISTA101",
    "HISTA150",
    "HISTA170",
+   "HISTA170H",
+   "HISTA175",
+   "HISTA175H",
    "HUMA100",
    "MUSA100",
    "PHILA100",
@@ -6712,7 +6717,7 @@
    }
   },
   "listed": 53,
-  "text_chars": 7539
+  "text_chars": 7541
  },
  {
   "control_number": "32536",
@@ -6763,7 +6768,7 @@
    }
   },
   "listed": 28,
-  "text_chars": 6466
+  "text_chars": 6468
  },
  {
   "control_number": "32737",
@@ -6836,7 +6841,7 @@
    }
   },
   "listed": 48,
-  "text_chars": 7386
+  "text_chars": 7390
  },
  {
   "control_number": "32789",
@@ -6855,12 +6860,297 @@
   "title": "Cal-GETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.975,
+  "codes_found": [
+   "ANTHA100",
+   "ANTHA100H",
+   "ANTHA102",
+   "ANTHA187",
+   "ANTHA190",
+   "ANTHA220",
+   "ANTHA280",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "ANTHC1001L",
+   "ARCHA290",
+   "ARCHA290H",
+   "ARCHA296",
+   "ARCHA296H",
+   "ARTA102",
+   "ARTA103",
+   "ARTA107",
+   "ARTA108",
+   "ARTA109",
+   "ARTA114",
+   "ARTA115",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "ASTRA100",
+   "ASTRA100H",
+   "ASTRA100L",
+   "ASTRA100M",
+   "ASTRA101",
+   "ASTRA102",
+   "ASTRA103",
+   "ASTRA104",
+   "ASTRA200",
+   "ASTRA200H",
+   "BIOLA100",
+   "BIOLA100H",
+   "BIOLA125",
+   "BIOLA180",
+   "BIOLA182",
+   "BIOLA182H",
+   "BIOLA182L",
+   "BIOLA183",
+   "BIOLA185",
+   "BIOLA210",
+   "BIOLA220",
+   "BIOLA221",
+   "BIOLA225",
+   "BIOLA283",
+   "CDEA180",
+   "CHEMA100",
+   "CHEMA110",
+   "CHEMA130",
+   "CHEMA180",
+   "CHEMA185",
+   "CHEMA220",
+   "CHEMA220L",
+   "CHEMA225",
+   "CHEMA225L",
+   "CHINA185",
+   "CMSTA155",
+   "CMSTA180",
+   "COMMC1000",
+   "DANCA200",
+   "DANCA230",
+   "ECONA100",
+   "ECONC2001",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "ENGLA101H",
+   "ENGLA109",
+   "ENGLA140",
+   "ENGLA140H",
+   "ENGLA141",
+   "ENGLA141H",
+   "ENGLA143",
+   "ENGLA143H",
+   "ENGLA147",
+   "ENGLA147H",
+   "ENGLA148",
+   "ENGLA148H",
+   "ENGLA150",
+   "ENGLA150H",
+   "ENGLA151",
+   "ENGLA151H",
+   "ENGLA152",
+   "ENGLA152H",
+   "ENGLA156",
+   "ENGLA156H",
+   "ENGLA160",
+   "ENGLA161",
+   "ENGLA161H",
+   "ENGLA168",
+   "ENGLA170",
+   "ENGLA170H",
+   "ENGLA173",
+   "ENGLA173H",
+   "ENGLA176",
+   "ENGLA176H",
+   "ENGLA179",
+   "ENGLA179H",
+   "ENGLA181",
+   "ENGLA181H",
+   "ENGLA187",
+   "ENGLA187H",
+   "ENGLA270",
+   "ENGLA270H",
+   "ENGLA275",
+   "ENGLA275H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ESECA100",
+   "ESECA100H",
+   "ESLA100",
+   "ETHSA100",
+   "ETHSA110",
+   "ETHSA115",
+   "ETHSA150",
+   "ETHSA190",
+   "FILMA100",
+   "FILMA100H",
+   "FILMA109",
+   "FILMA109H",
+   "FRENA185",
+   "FRENA185H",
+   "FRENA280",
+   "FRENA285",
+   "GEOGA100",
+   "GEOGA100H",
+   "GEOGA150",
+   "GEOGA180",
+   "GEOGA180H",
+   "GEOGA180L",
+   "GEOGA185",
+   "GEOLA105",
+   "GEOLA105H",
+   "GEOLA105L",
+   "GEOLA105M",
+   "GEOLA110",
+   "GEOLA160",
+   "GEOLA185",
+   "GLSTA101",
+   "GLSTA102",
+   "GNDRA100",
+   "GNDRA130",
+   "GNDRA187",
+   "GRMNA185",
+   "GRMNA280",
+   "GRMNA285",
+   "HISTA101",
+   "HISTA140",
+   "HISTA144",
+   "HISTA145",
+   "HISTA150",
+   "HISTA151",
+   "HISTA152",
+   "HISTA161",
+   "HISTA161H",
+   "HISTA162",
+   "HISTA162H",
+   "HISTA170",
+   "HISTA170H",
+   "HISTA175",
+   "HISTA175H",
+   "HISTA176",
+   "HISTA180",
+   "HISTA180H",
+   "HISTA185",
+   "HISTA185H",
+   "HISTA187",
+   "HISTA195",
+   "HUMA100",
+   "HUMA101H",
+   "ITALA185",
+   "ITALA280",
+   "ITALA285",
+   "JAPNA185",
+   "JAPNA185H",
+   "JAPNA280",
+   "JAPNA285",
+   "MATHA100",
+   "MATHA115",
+   "MATHA140",
+   "MATHA170",
+   "MATHA180",
+   "MATHA180H",
+   "MATHA185",
+   "MATHA185H",
+   "MATHA230",
+   "MATHA235",
+   "MATHA280",
+   "MATHA280H",
+   "MATHA285",
+   "MATHA285H",
+   "MRSCA100",
+   "MRSCA100H",
+   "MRSCA100L",
+   "MRSCA100M",
+   "MRSCA180",
+   "MRSCA185",
+   "MUSA100",
+   "MUSA105",
+   "MUSA115",
+   "MUSA139",
+   "MUSA143",
+   "MUSA180",
+   "PHILA100",
+   "PHILA115",
+   "PHILA118",
+   "PHILA120",
+   "PHILA125",
+   "PHILA140",
+   "PHILA150",
+   "PHILA165",
+   "PHOTA101",
+   "PHOTA110",
+   "PHOTA123",
+   "PHOTA130",
+   "PHOTA230",
+   "PHYSA110",
+   "PHYSA111",
+   "PHYSA120",
+   "PHYSA130",
+   "PHYSA185",
+   "PHYSA280",
+   "PHYSA285",
+   "POLSC1000",
+   "POLSC1000H",
+   "PORTA185",
+   "PSCIA101",
+   "PSCIA110",
+   "PSCIA185",
+   "PSCIA188",
+   "PSYCA110",
+   "PSYCA130",
+   "PSYCA160",
+   "PSYCA165",
+   "PSYCA185",
+   "PSYCA190",
+   "PSYCA190H",
+   "PSYCA220",
+   "PSYCA250",
+   "PSYCA255",
+   "PSYCA260",
+   "PSYCA270",
+   "PSYCA280",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "PUBHA203",
+   "RLSTA100",
+   "RLSTA110",
+   "RLSTA115",
+   "RLSTA150",
+   "RLSTA151",
+   "SJSA101",
+   "SJSA102",
+   "SOCA100",
+   "SOCA100H",
+   "SOCA110",
+   "SOCA150",
+   "SOCA185",
+   "SOCA185H",
+   "SPANA185",
+   "SPANA185H",
+   "SPANA280",
+   "SPANA280H",
+   "SPANA285",
+   "STATC1000",
+   "THEAA100",
+   "THEAA101",
+   "THEAA105",
+   "VIETA185"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/",
+   "title": "Associate Degree California General Education Transfer Curriculum (Cal-GETC) 2026-2027 < Orange Coast College",
+   "h1": "Academic Catalogs",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 281,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "32791",
@@ -6897,7 +7187,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4097
+  "text_chars": 4087
  },
  {
   "control_number": "32804",
@@ -6905,8 +7195,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.955,
+  "coverage": 1.0,
   "codes_found": [
+   "ENGLA101H",
    "ENGLC1001",
    "ENGLC1001H",
    "ENGLC1003",
@@ -6943,7 +7234,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 6141
+  "text_chars": 6143
  },
  {
   "control_number": "33283",
@@ -6986,7 +7277,7 @@
    }
   },
   "listed": 18,
-  "text_chars": 6263
+  "text_chars": 6361
  },
  {
   "control_number": "33363",
@@ -7028,7 +7319,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4078
+  "text_chars": 4381
  },
  {
   "control_number": "33518",
@@ -7036,7 +7327,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 0.955,
   "codes_found": [
    "ANTHA100",
    "ANTHA100H",
@@ -7093,6 +7384,7 @@
    "ECONA100",
    "ECONC2001",
    "ECONC2002",
+   "ENGLA101H",
    "ENGLC1003",
    "ETHSA100",
    "ETHSA150",
@@ -7108,6 +7400,10 @@
    "HISTA150",
    "HISTA161",
    "HISTA161H",
+   "HISTA170",
+   "HISTA170H",
+   "HISTA175",
+   "HISTA175H",
    "HISTA180",
    "HISTA180H",
    "HORTA100",
@@ -7174,7 +7470,7 @@
    }
   },
   "listed": 132,
-  "text_chars": 9203
+  "text_chars": 9273
  },
  {
   "control_number": "33569",
@@ -7206,7 +7502,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 4916
+  "text_chars": 4993
  },
  {
   "control_number": "33763",
@@ -7246,7 +7542,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 3974
+  "text_chars": 3975
  },
  {
   "control_number": "33902",
@@ -7275,7 +7571,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 4549
+  "text_chars": 4557
  },
  {
   "control_number": "35182",
@@ -7317,7 +7613,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 5581
+  "text_chars": 5756
  },
  {
   "control_number": "35498",
@@ -7391,7 +7687,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4304
+  "text_chars": 4328
  },
  {
   "control_number": "35524",
@@ -7427,7 +7723,7 @@
    }
   },
   "listed": 11,
-  "text_chars": 6253
+  "text_chars": 6175
  },
  {
   "control_number": "35918",
@@ -7465,7 +7761,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 6038
+  "text_chars": 6067
  },
  {
   "control_number": "35944",
@@ -7477,7 +7773,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "35945",
@@ -7568,7 +7868,7 @@
    }
   },
   "listed": 38,
-  "text_chars": 6629
+  "text_chars": 6633
  },
  {
   "control_number": "36374",
@@ -7654,7 +7954,7 @@
    }
   },
   "listed": 34,
-  "text_chars": 5967
+  "text_chars": 5950
  },
  {
   "control_number": "36732",
@@ -7734,7 +8034,7 @@
    }
   },
   "listed": 3,
-  "text_chars": 2775
+  "text_chars": 2733
  },
  {
   "control_number": "36847",
@@ -7950,7 +8250,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 3150
+  "text_chars": 3133
  },
  {
   "control_number": "37713",
@@ -8019,7 +8319,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "37986",
@@ -8241,7 +8545,7 @@
    }
   },
   "listed": 1,
-  "text_chars": 3495
+  "text_chars": 3490
  },
  {
   "control_number": "38242",
@@ -8273,7 +8577,7 @@
    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-second-language/esl-support-freshman-composition-certificate-competency/",
    "title": "ESL Support for Freshman Composition, Certificate of Competency < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -8283,7 +8587,7 @@
    }
   },
   "listed": 5,
-  "text_chars": 2174
+  "text_chars": 3030
  },
  {
   "control_number": "38321",
@@ -8400,7 +8704,7 @@
    }
   },
   "listed": 23,
-  "text_chars": 4896
+  "text_chars": 4879
  },
  {
   "control_number": "38587",
@@ -8472,7 +8776,7 @@
    }
   },
   "listed": 23,
-  "text_chars": 5640
+  "text_chars": 5623
  },
  {
   "control_number": "38798",
@@ -8543,7 +8847,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4008
+  "text_chars": 4039
  },
  {
   "control_number": "39359",
@@ -8592,7 +8896,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 4531
+  "text_chars": 4514
  },
  {
   "control_number": "39515",
@@ -8637,7 +8941,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 4754
+  "text_chars": 4755
  },
  {
   "control_number": "39639",
@@ -8698,7 +9002,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3825
+  "text_chars": 3913
  },
  {
   "control_number": "39979",
@@ -8916,7 +9220,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 4312
+  "text_chars": 4302
  },
  {
   "control_number": "40741",
@@ -9428,7 +9732,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 5635
+  "text_chars": 5637
  },
  {
   "control_number": "41397",
@@ -9864,7 +10168,7 @@
    }
   },
   "listed": 19,
-  "text_chars": 5392
+  "text_chars": 5364
  },
  {
   "control_number": "41964",
@@ -9959,7 +10263,7 @@
    }
   },
   "listed": 43,
-  "text_chars": 8660
+  "text_chars": 8904
  },
  {
   "control_number": "42000",
@@ -10090,7 +10394,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3813
+  "text_chars": 3811
  },
  {
   "control_number": "42109",
@@ -10316,7 +10620,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 3430
+  "text_chars": 3428
  },
  {
   "control_number": "42131",
@@ -10351,7 +10655,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4035
+  "text_chars": 4033
  },
  {
   "control_number": "42132",
@@ -10386,7 +10690,7 @@
    }
   },
   "listed": 10,
-  "text_chars": 4958
+  "text_chars": 4956
  },
  {
   "control_number": "42134",
@@ -10544,7 +10848,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3393
+  "text_chars": 3407
  },
  {
   "control_number": "42955",
@@ -10678,7 +10982,7 @@
    }
   },
   "listed": 23,
-  "text_chars": 3418
+  "text_chars": 3497
  },
  {
   "control_number": "43124",
@@ -10709,7 +11013,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 3845
+  "text_chars": 3849
  },
  {
   "control_number": "43173",
@@ -10743,7 +11047,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 3789
+  "text_chars": 3805
  },
  {
   "control_number": "43182",
@@ -10771,7 +11075,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 3299
+  "text_chars": 3275
  },
  {
   "control_number": "43205",
@@ -10839,7 +11143,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 5187
+  "text_chars": 5211
  },
  {
   "control_number": "43370",
@@ -10885,7 +11189,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 4106
+  "text_chars": 4111
  },
  {
   "control_number": "43378",
@@ -10999,7 +11303,7 @@
    }
   },
   "listed": 12,
-  "text_chars": 3874
+  "text_chars": 3876
  },
  {
   "control_number": "43567",
@@ -11154,23 +11458,30 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.562,
+  "coverage": 1.0,
   "codes_found": [
+   "CMSTA105",
+   "CMSTA109",
+   "CMSTA120",
    "CMSTA150",
    "CMSTA155",
    "CMSTA165",
    "CMSTA170",
    "CMSTA180",
    "CMSTA220",
+   "CMSTA236",
    "CMSTA240",
+   "CMSTA260",
    "COMMC1000",
-   "COMMC1004"
+   "COMMC1004",
+   "GNDRA165",
+   "JOURA110"
   ],
   "source": {
    "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/communications-studies-2-aat/",
    "title": "Communications Studies 2.0, Associate in Arts Degree for Transfer (AA-T) < Orange Coast College",
    "h1": "Academic Catalogs",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -11180,7 +11491,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 3177
+  "text_chars": 7172
  },
  {
   "control_number": "44117",
@@ -11225,7 +11536,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 5045
+  "text_chars": 5013
  },
  {
   "control_number": "44118",
@@ -11298,7 +11609,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 5760
+  "text_chars": 5728
  },
  {
   "control_number": "44120",
@@ -11343,7 +11654,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 5061
+  "text_chars": 5029
  },
  {
   "control_number": "44121",
@@ -11388,7 +11699,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 5618
+  "text_chars": 5586
  },
  {
   "control_number": "44129",
@@ -11400,7 +11711,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 235 of 253 closed-list programs on their own page, 1 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "44130",
@@ -11523,7 +11838,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.788,
+  "coverage": 0.939,
   "codes_found": [
    "ARTA103",
    "ARTA115",
@@ -11533,6 +11848,9 @@
    "CDEA180",
    "COMMC1000",
    "DANCA200",
+   "ENGLA101H",
+   "ENGLA140",
+   "ENGLA140H",
    "ENGLA143",
    "ENGLA143H",
    "ENGLC1000",
@@ -11541,6 +11859,8 @@
    "GEOLA106",
    "HISTA161",
    "HISTA161H",
+   "HISTA170",
+   "HISTA170H",
    "HUMA100",
    "HUMA101H",
    "MATHA104",
@@ -11566,6 +11886,6 @@
    }
   },
   "listed": 33,
-  "text_chars": 6505
+  "text_chars": 6555
  }
 ]

@@ -5,11 +5,11 @@
  "title": "Communication Studies",
  "award": "A.A- T Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/communication/communication-studies2-transfer/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7080,
+  "input_tokens": 8693,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7080,
-    "output_tokens": 2591,
+    "input_tokens": 8693,
+    "output_tokens": 2620,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,52 @@
     "model": null
    }
   ],
-  "output_tokens": 2591,
+  "output_tokens": 2620,
   "output_tokens_details": {
-   "thinking_tokens": 585
+   "thinking_tokens": 588
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08014,
- "ms": 18612,
- "seconds": 19.1,
+ "cost_usd": 0.08717,
+ "ms": 19412,
+ "seconds": 19.7,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 33,
    "listed": 33,
-   "share": 0.939,
-   "missing": [
-    "ENGL1B",
-    "ENGL1BH"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002H",
+     "listed": "ENGL1BH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "BUSO25",
-    "ENGLC1002",
-    "ENGLC1002H",
     "PHOT10",
     "POLSC1000",
     "POLSC1000H"
    ],
    "flagged": [
     "BUSO25",
-    "ENGLC1002",
-    "ENGLC1002H",
     "PHOT10",
     "POLSC1000",
     "POLSC1000H"
@@ -85,7 +93,31 @@
     19.0,
     21.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     55.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     5.0,
+     7.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -101,6 +133,14 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -112,8 +152,22 @@
     "max": 21
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
-   "outcomes": []
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -404,21 +458,22 @@
   "missing_explained": [
    {
     "code": "ENGL 1B",
-    "why": "not in the text; List B names ENGL C1002 instead"
+    "why": "not in the text (catalog lists ENGL C1002 instead)"
    },
    {
     "code": "ENGL 1BH",
-    "why": "not in the text; List B names ENGL C1002H instead"
+    "why": "not in the text (catalog lists ENGL C1002H instead)"
    }
   ],
   "notes": [
-   "The catalog text prints no units beside individual courses (the Units column is empty for course rows), so all course units are null; only block totals (6-7, 9-10, 3-4) and the major total (19-21) are printed.",
-   "List B also allows 'any course not already used from List A'; only the courses printed under List B are recorded in that block.",
-   "Footnote: COMM 15 is a 2-unit repeatable course that must be taken twice to count in List A or List B; if taken, students must still select two additional List A courses; it may be used in List A or List B but will not double count for both.",
-   "Courses may be double-counted for the major and Cal-GETC (34 GE units; 60 total degree units).",
-   "No program learning outcomes list is printed; the descriptive paragraph about what the degree requires students to do was not recorded as outcomes.",
-   "BUSO 25, PHOT 10, POLS C1000/C1000H, and ENGL C1002/C1002H are not in the closed list and are marked as catalog additions."
+   "The catalog prints no units beside individual courses; only block totals (Core 6-7, List A 9-10, List B 3-4) are printed, so course units are null.",
+   "List B also allows 'any course not already used from List A'.",
+   "Footnote: COMM 15 is a 2-unit repeatable course that must be taken twice to be used in List A or List B; if COMM 15 is taken, students must still select two additional List A courses; it may not double count for both lists.",
+   "Degree requires 60 CSU-transferable units with Cal-GETC (34) and major (19-21); the page prints no explicit elective units or electives-fill statement.",
+   "The descriptive paragraph about what the degree requires students to do is not labeled as program learning outcomes, so no outcomes were recorded.",
+   "Footnote 1: courses may be double-counted for the major and Cal-GETC."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

@@ -5,11 +5,11 @@
  "title": "Journalism",
  "award": "A.A- T Degree",
  "source_url": "https://catalog.mtsac.edu/programs/programsaz/communication/as-journalism-transfer/",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7897,
+  "input_tokens": 9510,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7897,
-    "output_tokens": 3887,
+    "input_tokens": 9510,
+    "output_tokens": 4151,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,64 +30,86 @@
     "model": null
    }
   ],
-  "output_tokens": 3887,
+  "output_tokens": 4151,
   "output_tokens_details": {
-   "thinking_tokens": 773
+   "thinking_tokens": 888
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.10933,
- "ms": 28362,
- "seconds": 28.7,
+ "cost_usd": 0.12106,
+ "ms": 31002,
+ "seconds": 31.3,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 47,
+   "placed": 57,
    "listed": 57,
-   "share": 0.825,
-   "missing": [
-    "BUSC1A",
-    "BUSC1AH",
-    "BUSC1B",
-    "BUSC1BH",
-    "ENGL1B",
-    "ENGL1BH",
-    "HIST7",
-    "HIST7H",
-    "HIST8",
-    "HIST8H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "BUSC1B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001H",
+     "listed": "BUSC1BH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "BUSC1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002H",
+     "listed": "BUSC1AH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002H",
+     "listed": "ENGL1BH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST7H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HIST8H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
-   "codes": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H",
-    "ENGLC1002",
-    "ENGLC1002H",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ECONC2002",
-    "ECONC2002H",
-    "ENGLC1002",
-    "ENGLC1002H",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -101,7 +123,31 @@
     18.0,
     20.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     54.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     6.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -117,6 +163,14 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -128,11 +182,25 @@
     "max": 20
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Critically and ethically evaluate and apply functions of the mass media.",
     "Create and/or analyze content in diverse settings."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -540,54 +608,55 @@
   "missing_explained": [
    {
     "code": "BUSC 1A",
-    "why": "not in the text; catalog lists ECON C2002 instead"
+    "why": "not in the text; catalog lists ECON C2001/C2002 economics courses instead"
    },
    {
     "code": "BUSC 1AH",
-    "why": "not in the text; catalog lists ECON C2002H instead"
+    "why": "not in the text; catalog lists ECON C2001/C2002 economics courses instead"
    },
    {
     "code": "BUSC 1B",
-    "why": "not in the text; catalog lists ECON C2001 instead"
+    "why": "not in the text; catalog lists ECON C2001/C2002 economics courses instead"
    },
    {
     "code": "BUSC 1BH",
-    "why": "not in the text; catalog lists ECON C2001H instead"
+    "why": "not in the text; catalog lists ECON C2001/C2002 economics courses instead"
    },
    {
     "code": "ENGL 1B",
-    "why": "not in the text; catalog lists ENGL C1002 instead"
+    "why": "not in the text; catalog lists ENGL C1002/C1002H instead"
    },
    {
     "code": "ENGL 1BH",
-    "why": "not in the text; catalog lists ENGL C1002H instead"
+    "why": "not in the text; catalog lists ENGL C1002/C1002H instead"
    },
    {
     "code": "HIST 7",
-    "why": "not in the text; catalog lists HIST C1001 instead"
+    "why": "not in the text; catalog lists HIST C1001/C1001H instead"
    },
    {
     "code": "HIST 7H",
-    "why": "not in the text; catalog lists HIST C1001H instead"
+    "why": "not in the text; catalog lists HIST C1001/C1001H instead"
    },
    {
     "code": "HIST 8",
-    "why": "not in the text; catalog lists HIST C1002 instead"
+    "why": "not in the text; catalog lists HIST C1002/C1002H instead"
    },
    {
     "code": "HIST 8H",
-    "why": "not in the text; catalog lists HIST C1002H instead"
+    "why": "not in the text; catalog lists HIST C1002/C1002H instead"
    }
   ],
   "notes": [
-   "The catalog prints no units beside individual courses, only block totals (Core 9, List A 3, List B 6-8); course units are left null.",
-   "ECON 17 matched to closed-list entry 'ECON17' and HIST 30 to 'HIST30' (spacing differs); marked as not additions.",
-   "R-TV 02 and R-TV 19A matched to closed-list 'R TV 2' and 'R TV 19A' (prefix punctuation and leading zero differ); marked as not additions.",
-   "ECON C2001/C2001H/C2002/C2002H, ENGL C1002/C1002H, HIST C1001/C1001H, HIST C1002/C1002H appear to be common-course-numbered replacements for BUSC 1B/1BH/1A/1AH, ENGL 1B/1BH, HIST 7/7H, HIST 8/8H in the closed list; recorded as catalog additions.",
-   "List B 'or' rows were read as one choice per row group (e.g., ECON C2001 or C2001H or C2002 or C2002H counts as one course choice).",
-   "Program Learning Outcomes are printed on the page's outcomes tab for this program; recorded for this AA-T.",
-   "Total Units for Major 18-20; Cal-GETC 34; degree total 60. Courses may be double-counted for the major and Cal-GETC."
+   "The catalog prints units only for each list (Core 9, List A 3, List B 6-8), not beside individual courses, so course units are null.",
+   "Closed-list codes ECON17, HIST30, R TV 2 and R TV 19A are matched to the catalog's ECON 17, HIST 30, R-TV 02 and R-TV 19A (same titles); reviewer may confirm R-TV 02 = R TV 2.",
+   "Catalog uses Cal-GETC-era course numbers (ECON C2001/C2002, ENGL C1002, HIST C1001/C1002) not in the closed list; these are recorded as catalog additions, while older closed-list equivalents (BUSC 1A/1B, ENGL 1B, HIST 7/8) are unplaced.",
+   "In List B the 'or' rows group alternatives that count as one choice; e.g. ECON C2001 or C2001H or C2002 or C2002H is recorded as one choice per the catalog's layout.",
+   "Degree total 60 and Cal-GETC 34 are printed as this award's totals; major total 18-20 printed separately. Footnote: courses may be double-counted for the major and Cal-GETC.",
+   "Program learning outcomes come from the page's Outcomes tab for this program; the page also says 'Review Student Learning Outcomes (SLOs) for this program' without listing more.",
+   "The description mentions entering the local job market but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": "38059865531"
+ "extracted_run": "44744647809",
+ "catalog_year": "2026-2027"
 }

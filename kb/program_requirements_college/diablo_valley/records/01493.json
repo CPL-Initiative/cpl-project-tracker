@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9133,
-    "output_tokens": 4352,
+    "output_tokens": 4088,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4352,
+  "output_tokens": 4088,
   "output_tokens_details": {
-   "thinking_tokens": 1192
+   "thinking_tokens": 937
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12357,
- "ms": 54710,
- "seconds": 55.5,
+ "cost_usd": 0.11829,
+ "ms": 29556,
+ "seconds": 30.2,
  "parts": null,
  "error": null,
  "score": {
@@ -140,7 +140,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "DVC GE Area III",
+   "ge_pattern": "DVC GE",
    "degree_total": {
     "min": null,
     "max": null
@@ -530,33 +530,31 @@
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "BIOSC 119",
+    "why": "not in the text under this code; catalog prints BIOL119 Fundamentals of Microbiology (likely same course, subject renamed)"
+   },
+   {
     "code": "BIOSC 139",
-    "why": "catalog prints Human Anatomy as BIOL139 instead"
+    "why": "not in the text under this code; catalog prints BIOL139 Human Anatomy (likely same course, subject renamed)"
    },
    {
     "code": "BIOSC 140",
-    "why": "catalog prints Human Physiology as BIOL140 instead"
-   },
-   {
-    "code": "BIOSC 119",
-    "why": "catalog prints Fundamentals of Microbiology as BIOL119 instead"
+    "why": "not in the text under this code; catalog prints BIOL140 Human Physiology (likely same course, subject renamed)"
    },
    {
     "code": "BIOSC 146",
-    "why": "catalog prints Principles of Microbiology as BIOL146 instead"
+    "why": "not in the text under this code; catalog prints BIOL146 Principles of Microbiology (likely same course, subject renamed)"
    }
   ],
   "notes": [
-   "Catalog prints biology courses with subject BIOL (BIOL139, BIOL140, BIOL119, BIOL146) while the closed list uses BIOSC with the same numbers and titles; recorded as printed with catalog_addition true. Reviewer should confirm these are the same courses.",
-   "NUTRI160 Nutrition: Science and Applications is not in the closed list; recorded as a catalog addition.",
-   "total_units 101-102 is the program plus program prerequisites total ('total minimum required units program and program prerequisites 101'); the Program Requirements block alone is 60. GE (DVC GE Area III) is required in addition and no degree total with GE is printed.",
-   "AP note under the first block refers to an 'ENGL-122 requirement', apparently a stale reference to the course now listed as ENGLC1000.",
-   "Math block note: any 3-unit or higher math course satisfying Cal-GETC Area 2, CSU GE B4, or IGETC Area 2 is accepted without substitution; not recorded as courses.",
-   "Several DENHY titles differ from the closed list: DENHY131 'Pain Management for the Dental Hygienist' (list: Expanded Functions), DENHY133 'Dental Hygiene Leadership' (list: Behavioral Foundations and Communications Skills), DENHY219 'General and Maxillofacial Pathology' (list: Pathology), DENHY290 'Transition to Dental Hygiene Professional'.",
-   "DENHY121A (3) and DENHY223 (2.5) have no units stored in the closed list; units taken from the catalog.",
-   "Program learning outcomes are printed for the program as a whole; recorded for this A.S. degree."
+   "Catalog prints biology courses with subject BIOL (BIOL119, BIOL139, BIOL140, BIOL146) while the closed list uses BIOSC; recorded as catalog additions and BIOSC codes listed as missing. Reviewer should confirm these are the same courses.",
+   "NUTRI160 Nutrition: Science and Applications is not in the closed list; recorded as catalog addition.",
+   "Total 101-102 covers the major requirements and program prerequisites (41-42) plus the 60-unit DENHY program block; 'DVC GE Area III must also be completed' is outside this total. No degree total including GE is printed.",
+   "Several DENHY titles differ from the closed list: DENHY131 'Pain Management for the Dental Hygienist' (list: Expanded Functions), DENHY133 'Dental Hygiene Leadership' (list: Behavioral Foundations and Communications Skills), DENHY219 'General and Maxillofacial Pathology', DENHY290 'Transition to Dental Hygiene Professional'.",
+   "Note under prerequisites refers to an 'ENGL-122 requirement' though the listed course is ENGLC1000; AP scores may also satisfy English and the math requirement, and any 3+ unit math course meeting Cal-GETC Area 2 / CSUGE B4 / IGETC Area 2 satisfies the math choice.",
+   "Program learning outcomes are printed once for the program and recorded for this award."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }
