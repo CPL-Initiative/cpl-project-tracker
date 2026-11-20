@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Technical Theatre",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=201",
+ "source_url": "https://catalog.smc.edu/current/catalog.pdf#page=200",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8024,
+  "input_tokens": 8895,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8024,
-    "output_tokens": 776,
+    "input_tokens": 8895,
+    "output_tokens": 2478,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,77 +30,88 @@
     "model": null
    }
   ],
-  "output_tokens": 776,
+  "output_tokens": 2478,
   "output_tokens_details": {
-   "thinking_tokens": 235
+   "thinking_tokens": 958
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04762,
- "ms": 8706,
- "seconds": 9.0,
+ "cost_usd": 0.08514,
+ "ms": 19615,
+ "seconds": 24.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "THART2",
-    "THART20",
-    "THART21",
-    "THART23",
-    "THART25",
-    "THART28B",
-    "THART31",
-    "THART32",
-    "THART5"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 6,
+   "codes": [
+    "THART18A",
+    "THART18B",
+    "THART18C",
+    "THART22",
+    "THART26",
+    "THART28A"
+   ],
+   "flagged": [
+    "THART18A",
+    "THART18B",
+    "THART18C",
+    "THART22",
+    "THART26",
+    "THART28A"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    19.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
-   "not_verbatim": [],
-   "why": [],
+   "count": 1,
+   "not_verbatim": [
+    "evaluate and appreciate a theatrical performance by recognizing the inherent components that go into creating theatre, including the research involved, the collaboration among designers and directors, the rehearsal process, and the technical skills involved in making a play come to life. In addition, students will hone design and technical skills leading to performance in the capacity of at least one of the following: Stage Manager, Set/Light/Sound/Costume/Make-Up Designer, Stage Technician."
+   ],
+   "why": [
+    "not in the catalog text as printed: evaluate and appreciate a theatrical performance by recognizing the inherent com"
+   ],
    "heading_printed": true,
-   "heading_without_outcomes": true,
-   "pass": true
+   "heading_without_outcomes": false,
+   "pass": false
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 3,
+   "not_verbatim": [
+    "Set/Light/Sound/Costume/Make-Up Designer"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -109,11 +120,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not found: no Technical Theatre Certificate of Achievement section in the provided text",
+   "section_heading": "Technical Theatre, Associate Degree or Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,50 +141,193 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "evaluate and appreciate a theatrical performance by recognizing the inherent components that go into creating theatre, including the research involved, the collaboration among designers and directors, the rehearsal process, and the technical skills involved in making a play come to life. In addition, students will hone design and technical skills leading to performance in the capacity of at least one of the following: Stage Manager, Set/Light/Sound/Costume/Make-Up Designer, Stage Technician."
+   ],
+   "careers": [
+    "Stage Manager",
+    "Set/Light/Sound/Costume/Make-Up Designer",
+    "Stage Technician"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "TH ART 2",
-    "why": "not in the text; Technical Theatre Certificate of Achievement section absent"
+    "name": "Required Introduction/History Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "TH ART 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH ART 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "TH ART 20",
-    "why": "appears only in Theatre A.A. and Scenic Design department certificate sections; target section absent"
+    "name": "Required Stagecraft Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "TH ART 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "TH ART 21",
-    "why": "appears only in Theatre A.A. and Scenic Design department certificate sections; target section absent"
+    "name": "Required Production Workshop Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "TH ART 18A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TH ART 18B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TH ART 18C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "TH ART 23",
-    "why": "appears only in Theatre A.A. and Stage Lighting, Sound and Projection certificate sections; target section absent"
-   },
-   {
-    "code": "TH ART 25",
-    "why": "appears only in Theatre A.A. and Stage Lighting, Sound and Projection certificate sections; target section absent"
-   },
-   {
-    "code": "TH ART 28B",
-    "why": "not in the text; target section absent"
-   },
-   {
-    "code": "TH ART 31",
-    "why": "appears only in Theatre A.A. section; target section absent"
-   },
-   {
-    "code": "TH ART 32",
-    "why": "appears only in Scenic Design department certificate section; target section absent"
-   },
-   {
-    "code": "TH ART 5",
-    "why": "appears only in Theatre A.A. section; target section absent"
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "TH ART 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH ART 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TH ART 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH ART 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH ART 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TH ART 28A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "TH ART 28B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH ART 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TH ART 32",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section is shared by the Associate Degree and the Certificate of Achievement in Technical Theatre; the single requirements list, the 19-unit Area of Emphasis total and the outcomes paragraph are recorded for the certificate. No GE pattern or degree total is printed.",
+   "The outcomes paragraph is printed as one running paragraph whose lead-in ('Upon completion of the program, students will be able to') is part of the sentence; it is recorded as one entry with the lead-in removed. A reviewer may prefer to split it at 'In addition'.",
+   "The catalog prints TH ART 25 under Elective Courses with the title 'Projection and Lighting Design' (same as TH ART 23); the state file and the Theatre degree section title it 'Introduction to Theatrical Sound'. Likely a catalog typo.",
+   "'Set/Light/Sound/Costume/Make-Up Designer' is broken across a line after 'Set/Light/' in the text; it is joined without a space.",
+   "Block sums 3+3+3+10 match the stated 19 units."
+  ]
  },
- "extracted_run": "39567439681"
+ "extracted_run": "44739378155",
+ "catalog_year": "2026-2027",
+ "source_sha": "99b0333443d72ac3",
+ "source_codes": [
+  "THART2",
+  "THART20",
+  "THART21",
+  "THART23",
+  "THART25",
+  "THART28B",
+  "THART31",
+  "THART32",
+  "THART5"
+ ],
+ "source_coverage": 1.0
 }
