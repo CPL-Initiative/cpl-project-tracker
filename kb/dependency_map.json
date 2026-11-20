@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1102,
+  "file_datasets": 1103,
   "external_services": 197,
-  "consumers": 639,
+  "consumers": 640,
   "workflows": 76,
   "data_js_files": 71,
   "tabs": 41
@@ -6102,6 +6102,13 @@
      "line": 38
     },
     {
+     "id": "script:kb/_closest_mid.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 191
+    },
+    {
      "id": "script:kb/_csr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -6164,6 +6171,13 @@
      "direction": "read",
      "how": "literal",
      "line": 43
+    },
+    {
+     "id": "script:kb/_closest_mid.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 194
     }
    ],
    "served": false,
@@ -6176,7 +6190,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 190,
+     "line": 194,
      "tabs": [
       "coci-lookup"
      ]
@@ -6287,7 +6301,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1532,
+     "line": 1602,
      "tabs": [
       "coci-lookup"
      ]
@@ -6814,7 +6828,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1320,
+     "line": 1390,
      "tabs": [
       "coci-lookup"
      ]
@@ -6917,7 +6931,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1408,
+     "line": 1478,
      "tabs": [
       "coci-lookup"
      ]
@@ -12468,6 +12482,29 @@
     "workflow:phase-1e-apply.yml"
    ]
   },
+  "file:kb/coci_closest_mid.json": {
+   "consumers": [
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 320,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
+    {
+     "id": "script:kb/_closest_mid.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 46
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/coci_curation.json": {
    "consumers": [
     {
@@ -14474,7 +14511,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 298,
+     "line": 302,
      "tabs": [
       "coci-lookup"
      ]
@@ -14485,6 +14522,13 @@
      "direction": "read",
      "how": "literal",
      "line": 31
+    },
+    {
+     "id": "script:kb/_closest_mid.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 243
     },
     {
      "id": "script:kb/_flags.py",
@@ -21070,7 +21114,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 989,
+     "line": 1031,
      "tabs": [
       "coci-lookup"
      ]
@@ -29824,7 +29868,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 747,
+     "line": 789,
      "tabs": [
       "coci-lookup"
      ]
@@ -30254,7 +30298,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1321,
+     "line": 1391,
      "tabs": [
       "coci-lookup"
      ]
@@ -30373,6 +30417,13 @@
      "direction": "read",
      "how": "literal",
      "line": 144
+    },
+    {
+     "id": "script:kb/_closest_mid.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 192
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
@@ -32604,7 +32655,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 219,
+     "line": 223,
      "tabs": [
       "coci-lookup"
      ]
@@ -33911,7 +33962,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 441,
+     "line": 483,
      "tabs": [
       "coci-lookup"
      ]
@@ -33921,7 +33972,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 627,
+     "line": 669,
      "tabs": [
       "coci-lookup"
      ]
