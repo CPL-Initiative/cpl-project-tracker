@@ -1,0 +1,288 @@
+{
+ "college": "City College of San Francisco",
+ "catalog_url": "https://www.ccsf.edu/sites/default/files/2025/document/ccsf-catalog-2025-26.pdf",
+ "platform": "pdf",
+ "catalog_year": "2025-2026",
+ "programs": 27,
+ "with_closed_list": 27,
+ "started": "2026-11-20T12:47:38Z",
+ "prior": {
+  "start": "https://www.ccsf.edu/sites/default/files/2025/document/ccsf-catalog-2025-26.pdf",
+  "catalog_year": "2025-2026",
+  "only": [
+   "09175",
+   "11817",
+   "19445",
+   "24259",
+   "24260",
+   "24299",
+   "24304",
+   "24331",
+   "24393",
+   "30539",
+   "30687",
+   "31074",
+   "31413",
+   "31414",
+   "35709",
+   "36284",
+   "36672",
+   "36980",
+   "37561",
+   "37601",
+   "40168",
+   "40171",
+   "40177",
+   "40407",
+   "40705",
+   "40706",
+   "41353"
+  ],
+  "format": "pdf"
+ },
+ "procedure_step": {
+  "start": "https://www.ccsf.edu/sites/default/files/2025/document/ccsf-catalog-2025-26.pdf",
+  "file": "https://www.ccsf.edu/sites/default/files/2025/document/ccsf-catalog-2025-26.pdf"
+ },
+ "pdf": {
+  "url": "https://www.ccsf.edu/sites/default/files/2025/document/ccsf-catalog-2025-26.pdf",
+  "access": "unreachable",
+  "status": 404,
+  "bytes": null,
+  "pages_total": 0,
+  "error": null,
+  "chars_total": 0,
+  "pypdf_accepted": 0,
+  "sample": [],
+  "extractor": null,
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "unproven": []
+ },
+ "loads": 1,
+ "pages_listed": 1,
+ "pages_answered": 0,
+ "seconds": 10.6,
+ "found": 0,
+ "by_method": {
+  "not_found": 27
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "09175",
+   "title": "Computer Accounting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "11817",
+   "title": "Multimedia Studies: Performance Arts",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "19445",
+   "title": "Databases for Developers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24259",
+   "title": "Construction Administrative Assistant",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24260",
+   "title": "Business Information Worker (BIW)",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24299",
+   "title": "Clerical Accounting",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24304",
+   "title": "Clerical Support Specialist",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24331",
+   "title": "Beginning VESL for Janitorial Workers",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "24393",
+   "title": "Computerized Accounting",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "30539",
+   "title": "Business Office Support Skills, Phase II",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "30687",
+   "title": "Introduction to Child Development Careers",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "31074",
+   "title": "Digital Literacy and Core Skills",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "31413",
+   "title": "PowerPoint Specialist",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "31414",
+   "title": "Office Receptionist",
+   "award": null,
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "35709",
+   "title": "Broadcast Motion Graphics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36284",
+   "title": "Cloud-Based Electronic Communication",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36672",
+   "title": "QuickBooks & Spreadsheets for Accounting",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "36980",
+   "title": "Medisoft for Business",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "37561",
+   "title": "Accounting Assistant & Core Skills",
+   "award": "Noncredit program",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "37601",
+   "title": "iPhone App Programming",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "40168",
+   "title": "Entrepreneurship and Innovation in Broadcast Media",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "40171",
+   "title": "Technical Theater Production - Costume and Makeup",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "40177",
+   "title": "Entrepreneurship in Visual Media Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "40407",
+   "title": "Technical Theater Production - Stagecraft",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "40705",
+   "title": "Build Automation for DevOps & QA",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "40706",
+   "title": "Database Administration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "41353",
+   "title": "Entrepreneurship and Innovation in Journalism",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null,
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 0
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/city_of_san_francisco",
+  "kept": 0,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {},
+ "run": "44738618128"
+}
