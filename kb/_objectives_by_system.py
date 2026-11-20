@@ -22,3 +22,27 @@ OBJECTIVES_BY_SYSTEM = {
                            "Marin's trial pages printed neither SLOs nor objectives. De Anza: one trial page answered "
                            "and it printed both (trial 43168229927)."},
 }
+
+# A report whose template prints no Course Objectives section, though other reports of its system do. Keyed by the
+# report's host and reportId (report_key) and read by the SLO reader, which files no objectives from such a report: a
+# line inside another field that reads "Course Objectives" is that field's content, never the section (S689).
+REPORTS_WITHOUT_OBJECTIVES = {
+    "frc.curriqunet.com/485": "Feather River's All Fields report prints five sections (Cover, Grading Method, Course "
+                              "Content/Topics, Student Learning Outcomes, Methods of Evaluation) on 12 of 12 pages of "
+                              "trial 44534888428, and no objectives. Read 44535960153's one objectives hit, ENVR 041, "
+                              "was 167 lines of its Lecture Topic Outline under a line reading Course Objectives.",
+}
+
+
+def report_key(url):
+    """A report's host and reportId (frc.curriqunet.com/485), or None when the address names no reportId."""
+    import re
+    import urllib.parse
+    u = urllib.parse.urlparse(url or "")
+    m = re.search(r"(?:^|&)reportId=(\d+)", u.query)
+    return "%s/%s" % (u.netloc.lower(), m.group(1)) if m else None
+
+
+def prints_objectives(url) -> bool:
+    """False for a report REPORTS_WITHOUT_OBJECTIVES names; True otherwise, and the system's own record decides."""
+    return report_key(url) not in REPORTS_WITHOUT_OBJECTIVES

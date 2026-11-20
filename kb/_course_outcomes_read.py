@@ -64,7 +64,7 @@ FULL_BODY_JS = cor.FULL_BODY_JS
 
 # The outline's own section headings: the outcomes end where the next one starts.
 STOP = re.compile(
-    r"^[ \t]*(course content|content|lecture content|lab(oratory)? content|course objectives|objectives|"
+    r"^[ \t]*(course content|content|lecture content|lab(oratory)? content|(specific )?course objectives|objectives|"
     r"methods? of (instruction|evaluation)|instructional methods|assignments|out[- ]of[- ]class|"
     r"(representative |required )?text(book)?s?|instructional materials|other materials|supplies|"
     r"course description|catalog description|schedule description|requisites?|prerequisites?|corequisites?|"
@@ -87,6 +87,14 @@ MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25
 # course, the student should be able to:" (S664: 505 live SLO rows had filed it as their first outcome).
 LEAD = re.compile(r"(upon (the )?(successful )?completion|at the conclusion of|students? (will|should) be able|by the end of)[^\n]*",
                   re.I)
+# The column header a report's SLO table prints above its rows, a line of its own that is never an outcome (S689).
+# Feather River's report 485 prints "Learning Outcomes" under its Student Learning Outcomes heading (read 44535960153
+# filed it as 336 of its 2,072 SLOs, one per page); Palomar's report 99 prints "Outcome" (trial 44536105509, 12 of 12).
+SLO_COLUMN_HEAD = re.compile(r"^(?:(?:student|course) )?(?:learning )?outcomes?:?$", re.I)
+# How a lead-in line ends: a colon, or "able to" / "the following" with no outcome after it. A line that LEAD starts
+# and that goes on to state the outcome is the first outcome (Feather River's PHSC 120 prints "Students will be able
+# to explain in general terms the evolution and life cycles of stars..." as its first SLO, trial 44534888428).
+LEAD_ENDS = re.compile(r"(?::|\b(?:able to|the following))[ \t]*$", re.I)
 # The colleges an RCCD integrated outline names as offering the course.
 OFFERED = re.compile(r"^College:[ \t]*\n((?:[ \t]*[A-Z]{3}[ \t]*\n)+)", re.M)
 
@@ -266,11 +274,22 @@ def groups_from_html(page_html: str) -> list[dict] | None:
     return None
 
 
+def _heads_section(text: str, m) -> bool:
+    """Whether an SLO_TITLE match heads the section: the line ends at the heading, goes on after a colon, or goes on
+    with a lead-in. A line that goes on with other words names something else: Feather River's ENVR 241 prints
+    "Student Learning Outcome Pre-test;" in its course content, above the section (read 44535960153, S689)."""
+    end = text.find("\n", m.end())
+    rest = text[m.end():end if end >= 0 else len(text)].strip()
+    rest = re.sub(r"^\(s\)", "", rest).strip()
+    return not rest or rest.startswith(":") or bool(LEAD.match(rest))
+
+
 def outcomes_of(text: str) -> dict:
     """The outcomes block as printed in the page's text, when the HTML reader finds
     no SLO area: the SLO heading proper first, the lead-in alone only on a page with
     no SLO heading and no objectives section before it."""
-    m = SLO_TITLE.search(text or "")
+    found = list(SLO_TITLE.finditer(text or ""))
+    m = next((x for x in found if _heads_section(text, x)), found[0] if found else None)
     if not m:
         m = cor.SLO_HEADING.search(text or "")
         before = (text or "")[:m.start()] if m else ""
@@ -293,7 +312,9 @@ def outcomes_of(text: str) -> dict:
             continue
         if STOP.match(s) or (SLO_TITLE.match(s) and items):
             break
-        if lead is None and not items and LEAD.match(s):
+        if SLO_COLUMN_HEAD.match(s):
+            continue
+        if lead is None and not items and LEAD.match(s) and LEAD_ENDS.search(s):
             lead = s
             continue
         items.append(MARKER.sub("", s, count=1).strip())
@@ -307,9 +328,10 @@ def outcomes_of(text: str) -> dict:
 # richer descriptions of course content than any other element of the COR"). The heading as each host prints it:
 # RCCD and Las Positas "Course Objectives:", Santa Ana and the Coast district "Course Objectives", SDCCD's outline
 # report "STUDENT LEARNING OBJECTIVES:" and its All Fields report "Student Learning Objectives" with a field label
-# "Objective Text" before each item. Chabot's All Fields report (347) prints "Measurable Objectives:" (S681).
-OBJ_TITLE = re.compile(r"^[ \t]*(course|student learning|learning|performance|measurable)? ?objectives[ \t]*:?[ \t]*$",
-                       re.I)
+# "Objective Text" before each item. Chabot's All Fields report (347) prints "Measurable Objectives:" (S681). Palomar's
+# report 99 prints "Specific Course Objectives" right after its SLOs, then an "Objective" column header (S689).
+OBJ_TITLE = re.compile(r"^[ \t]*(course|specific course|student learning|learning|performance|measurable)? ?objectives"
+                       r"[ \t]*:?[ \t]*$", re.I)
 # A field label a report prints before each item, never an objective itself.
 OBJ_LABEL = re.compile(r"^(objective text|objective)$", re.I)
 # The same label printed inline, before the objective on its own line (Cuesta).
@@ -325,7 +347,11 @@ OBJ_STOP = re.compile(r"^(section [ivx\d]+|disciplines?|minimum qualifications?|
 COR_COLLECTS = ("slo", "objective")
 # Whether each outline system's public page prints a Course Objectives section: kb/_objectives_by_system.py holds it,
 # the one source the College Data Collection builder reads too (S650, COBIx on #3286). Never a copy here.
-OBJECTIVES_BY_SYSTEM = _load("objectives_by_system", "_objectives_by_system.py").OBJECTIVES_BY_SYSTEM
+_OBJ_RECORD = _load("objectives_by_system", "_objectives_by_system.py")
+OBJECTIVES_BY_SYSTEM = _OBJ_RECORD.OBJECTIVES_BY_SYSTEM
+# A report whose template prints no objectives section (Feather River's 485): the same one source, never a copy.
+prints_objectives = _OBJ_RECORD.prints_objectives
+NO_OBJECTIVES = {"objectives": [], "objectives_heading": None, "objectives_lead": None, "objectives_fingerprint": None}
 
 
 def _obj_ends(s: str) -> bool:
@@ -382,9 +408,12 @@ def objectives_from_html(page_html: str) -> list[str] | None:
     return out or None
 
 
-def objectives_block(page_html: str, text: str) -> dict:
+def objectives_block(page_html: str, text: str, report: str | None = None) -> dict:
     """The objectives as parse_page files them: the text reader's heading and lead-in, with the All Fields
-    report's own fields as the items where it prints them."""
+    report's own fields as the items where it prints them. None from a report whose template prints no
+    objectives section (REPORTS_WITHOUT_OBJECTIVES)."""
+    if not prints_objectives(report):
+        return dict(NO_OBJECTIVES)
     got = objectives_of(text)
     fields = objectives_from_html(page_html)
     if fields:
@@ -617,9 +646,9 @@ def cccd_outcomes_from_html(page_html: str) -> dict | None:
     return None
 
 
-def parse_page(page_html: str, text: str, system: str | None = None) -> dict:
+def parse_page(page_html: str, text: str, system: str | None = None, report: str | None = None) -> dict:
     """The outcomes a page prints (_parse_outcomes) and, beside them, its course objectives (Sam, 2026-11-02)."""
-    return {**_parse_outcomes(page_html, text, system), **objectives_block(page_html, text)}
+    return {**_parse_outcomes(page_html, text, system), **objectives_block(page_html, text, report)}
 
 
 def _parse_outcomes(page_html: str, text: str, system: str | None = None) -> dict:
@@ -643,7 +672,7 @@ def _parse_outcomes(page_html: str, text: str, system: str | None = None) -> dic
 def read_one(reader, course: dict) -> dict:
     page = cor.load_full(reader, course["report"])
     body = page.get("body") or ""
-    got = parse_page(page.get("html") or "", body, page_system(course["report"]))
+    got = parse_page(page.get("html") or "", body, page_system(course["report"]), course["report"])
     return {**course, "status": page.get("status"), "final_url": page.get("final_url"),
             "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
             "chars": len(body), "offered_at": offered_at(body), **got}
@@ -695,7 +724,8 @@ def reparse(folder: str) -> int:
         page_html = gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read()
         text = open(os.path.join(folder, stem + ".txt")).read()
         row.pop("groups", None)
-        row.update(parse_page(page_html, text, page_system(row.get("report") or "")), offered_at=offered_at(text))
+        row.update(parse_page(page_html, text, page_system(row.get("report") or ""), row.get("report")),
+                   offered_at=offered_at(text))
     d["summary"] = summarize(d["rows"])
     d["reparsed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     d["reparsed_note"] = ("The filed pages parsed again by parse_page, the read's own parser at the time of the "
