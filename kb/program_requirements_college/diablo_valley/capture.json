@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 267,
  "with_closed_list": 244,
- "started": "2026-11-13T06:35:26Z",
+ "started": "2026-11-20T12:38:11Z",
  "elumen": {
   "catalog": "DVC2026-2027Catalog",
   "read": "publish/content",
@@ -35,8 +35,302 @@
  "pages_answered": 262,
  "listing_failed": 0,
  "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 203,
+   "hits": 195,
+   "recall": 0.961,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 10,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 23,
+  "by_result": {
+   "found": 20,
+   "not_matched": 3
+  },
+  "found": 20,
+  "found_active": 20,
+  "found_pages": 20,
+  "found_programs": [
+   {
+    "control_number": "01503",
+    "title": "Library Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-library-technology-fall-2026",
+    "h1": "A.S. in Library Technology",
+    "page_title": "A.S. in Library Technology",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "01512",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-administration-of-justice-fall-2020",
+    "h1": "A.S. in Administration of Justice",
+    "page_title": "A.S. in Administration of Justice",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "08011",
+    "title": "Early Childhood Education: Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-early-childhood-education-teacher-spring-2020",
+    "h1": "Certificate of Achievement in Early Childhood Education - Teacher",
+    "page_title": "Certificate of Achievement in Early Childhood Education - Teacher",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "12315",
+    "title": "Early Childhood Education: Master Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-early-childhood-education-master-teacher-fall-2026",
+    "h1": "Certificate of Achievement in Early Childhood Education - Master Teacher",
+    "page_title": "Certificate of Achievement in Early Childhood Education - Master Teacher",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "15711",
+    "title": "German",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-german-spring-2021",
+    "h1": "Certificate of Achievement in German",
+    "page_title": "Certificate of Achievement in German",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "15712",
+    "title": "Italian",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-italian-spring-2021",
+    "h1": "Certificate of Achievement in Italian",
+    "page_title": "Certificate of Achievement in Italian",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "15713",
+    "title": "Japanese",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-japanese-spring-2021",
+    "h1": "Certificate of Achievement in Japanese",
+    "page_title": "Certificate of Achievement in Japanese",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "15714",
+    "title": "Mandarin Chinese",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-mandarin-chinese-spring-2020",
+    "h1": "Certificate of Achievement in Mandarin Chinese",
+    "page_title": "Certificate of Achievement in Mandarin Chinese",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "15715",
+    "title": "Russian",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-russian-spring-2021",
+    "h1": "Certificate of Achievement in Russian",
+    "page_title": "Certificate of Achievement in Russian",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "18943",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-administration-of-justice-fall-2020",
+    "h1": "Certificate of Achievement in Administration of Justice",
+    "page_title": "Certificate of Achievement in Administration of Justice",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "18944",
+    "title": "Early Childhood Education: Basic",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-early-childhood-education-basic-spring-2020",
+    "h1": "Certificate of Achievement in Early Childhood Education - Basic",
+    "page_title": "Certificate of Achievement in Early Childhood Education - Basic",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "19707",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-communication-studies-fall-2025",
+    "h1": "Certificate of Achievement in Communication Studies",
+    "page_title": "Certificate of Achievement in Communication Studies",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "19767",
+    "title": "General Business",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-general-business-spring-2020",
+    "h1": "Certificate of Achievement in General Business",
+    "page_title": "Certificate of Achievement in General Business",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "20925",
+    "title": "Library Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-library-technology-fall-2026",
+    "h1": "Certificate of Achievement in Library Technology",
+    "page_title": "Certificate of Achievement in Library Technology",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "30201",
+    "title": "Life Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-life-science-fall-2026",
+    "h1": "A.S. in Life Science",
+    "page_title": "A.S. in Life Science",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "30218",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-biology-fall-2026",
+    "h1": "A.S. in Biology",
+    "page_title": "A.S. in Biology",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "30611",
+    "title": "Computer Science - Program Design",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-science-program-design-spring-2020",
+    "h1": "Certificate of Achievement in Computer Science - Program Design",
+    "page_title": "Certificate of Achievement in Computer Science - Program Design",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "30614",
+    "title": "Computer Science- Advanced C++ Programming",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-science-advanced-c-programming-spring-2020",
+    "h1": "Certificate of Achievement in Computer Science - Advanced C++ Programming",
+    "page_title": "Certificate of Achievement in Computer Science - Advanced C++ Programming",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "31758",
+    "title": "Italian",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-italian-fall-2026",
+    "h1": "A.A. in Italian",
+    "page_title": "A.A. in Italian",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "31760",
+    "title": "French",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-french-fall-2026",
+    "h1": "A.A. in French",
+    "page_title": "A.A. in French",
+    "awards": [
+     "aa"
+    ]
+   }
+  ],
+  "other_programs": [
+   {
+    "control_number": "18370",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active - Teachout Only",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "19704",
+    "title": "Wealth Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "38349",
+    "title": "Workforce Preparation for People with Barriers to Employment",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 347,
- "seconds": 1567.3,
+ "seconds": 1552.6,
  "found": 214,
  "by_method": {
   "no_closed_list": 23,
@@ -68,12 +362,41 @@
  },
  "not_found": [
   {
+   "control_number": "08013",
+   "title": "Restaurant Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-management-and-leadership-studies-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2007,
+     "content": 2007,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
    "control_number": "18369",
    "title": "CSU General Education Breadth",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "31489",
@@ -81,7 +404,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "31507",
@@ -89,33 +413,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35567",
-   "title": "Elementary Teacher Education",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-art-in-elementary-teacher-education-integrated-programs-for-transfer-fall-2026",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.458,
-    "body": 0.458,
-    "content": 0.458,
-    "net": 11,
-    "listed": 24,
-    "why": "coverage 0.46 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 4199,
-     "content": 4199,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38506",
@@ -123,7 +422,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39371",
@@ -131,7 +431,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39730",
@@ -139,7 +440,8 @@
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43481",
@@ -147,7 +449,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43757",
@@ -173,7 +476,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45039",
@@ -181,7 +485,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46431",
@@ -189,7 +494,8 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -203,7 +509,8 @@
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-arboriculture-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-natural-science-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-agriculture-plant-science-for-transfer-fall-2026"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "07995",
@@ -213,7 +520,8 @@
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-information-and-communication-technology-fall-2025",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-technology-fundamentals-spring-2020",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-information-and-communication-technology-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "12143",
@@ -221,7 +529,8 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-media-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "12144",
@@ -234,7 +543,8 @@
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-studio-arts-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-graphic-design-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-interaction-design-for-web-and-mobile-platforms-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "12145",
@@ -242,7 +552,8 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-media-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "15055",
@@ -252,7 +563,8 @@
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-information-and-communication-technology-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-information-and-communication-technology-fall-2025",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-technology-fundamentals-spring-2020"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "15541",
@@ -261,7 +573,8 @@
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "18846",
@@ -270,7 +583,8 @@
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-electrical-electronics-technology-fall-2023",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-electrical-electronics-technology-fall-2023"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "18847",
@@ -279,7 +593,8 @@
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-electrical-electronics-technology-fall-2023",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-electrical-electronics-technology-fall-2023"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "18918",
@@ -287,7 +602,8 @@
    "award": "A.A. Degree",
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-media-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "19771",
@@ -297,7 +613,8 @@
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-accomplishment-in-small-business-management-entrepreneurship-fall-2026"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "21143",
@@ -307,7 +624,8 @@
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-information-and-communication-technology-fall-2025",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-technology-fundamentals-spring-2020",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-information-and-communication-technology-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "21147",
@@ -316,7 +634,8 @@
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "31151",
@@ -324,7 +643,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-plumbing-fall-2026"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "31526",
@@ -332,7 +652,8 @@
    "award": "A.A. Degree",
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-dance-performance-skills-fall-2024"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "33891",
@@ -340,7 +661,8 @@
    "award": "A.S. Degree",
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-pre-apprenticeship-fall-2025"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "36243",
@@ -348,7 +670,8 @@
    "award": "A.S. T Degree",
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "39430",
@@ -356,7 +679,8 @@
    "award": "A.A. Degree",
    "pages": [
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-photography-spring-2022"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "41237",
@@ -369,20 +693,323 @@
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-accomplishment-in-small-business-management-entrepreneurship-fall-2026",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-personal-training-entrepreneurship-fall-2025",
     "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-master-grower-fall-2023"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 15,
-  "0.8-1.0": 35,
-  "1.0": 164
+  "0.5-0.8": 5,
+  "0.8-1.0": 21,
+  "1.0": 188
  },
  "would_extract": {
   "against": "kb/program_requirements_college/diablo_valley",
-  "kept": 214,
+  "kept": 184,
   "kept_moved": 0,
-  "programs": 0,
-  "list": [],
+  "programs": 30,
+  "list": [
+   {
+    "control_number": "01493",
+    "title": "Dental Hygiene",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-dental-hygiene-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-dental-hygiene-fall-2026",
+    "was_coverage": 0.902,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "14592",
+    "title": "Fitness Instruction",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-fitness-instruction-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-fitness-instruction-fall-2026",
+    "was_coverage": 0.759,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "14697",
+    "title": "Geographic Information Systems,Global Positioning Systems",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-geographic-information-systems-global-positioning-system-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-geographic-information-systems-global-positioning-system-fall-2026",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "15302",
+    "title": "Sports Medicine/Athletic Training",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sports-medicine-athletic-training-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sports-medicine-athletic-training-fall-2026",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18885",
+    "title": "Public Health",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+    "was_coverage": 0.7,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "18891",
+    "title": "Physical Geography",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-physical-geography-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-physical-geography-fall-2026",
+    "was_coverage": 0.909,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21141",
+    "title": "Business - Transfer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-business-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-business-transfer-fall-2026",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21155",
+    "title": "Geographic Information Systems, Global Positioning Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-geographic-information-systems-global-positioning-system-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-geographic-information-systems-global-positioning-system-fall-2026",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30220",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-environmental-science-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-environmental-science-fall-2026",
+    "was_coverage": 0.85,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30221",
+    "title": "Allied Health Fundamentals",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-allied-health-fundamentals-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-allied-health-fundamentals-fall-2026",
+    "was_coverage": 0.571,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30222",
+    "title": "Allied Health",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-allied-health-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-allied-health-fall-2026",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30223",
+    "title": "Allied Health",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-allied-health-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-allied-health-fall-2026",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30737",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-psychology-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-psychology-for-transfer-fall-2026",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30966",
+    "title": "Natural Science",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-natural-science-fall-2026",
+    "coverage": 0.982,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-natural-science-fall-2026",
+    "was_coverage": 0.691,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31799",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-history-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-history-for-transfer-fall-2026",
+    "was_coverage": 0.882,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31818",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-journalism-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-journalism-for-transfer-fall-2026",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "31914",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-political-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-political-science-for-transfer-fall-2026",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32287",
+    "title": "Sports and Recreation Management",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
+    "was_coverage": 0.962,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33292",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-economics-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-economics-for-transfer-fall-2026",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33651",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026",
+    "was_coverage": 0.959,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33770",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-nutrition-and-dietetics-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-nutrition-and-dietetics-for-transfer-fall-2026",
+    "was_coverage": 0.692,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33771",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-biology-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-biology-for-transfer-fall-2026",
+    "was_coverage": 0.733,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35567",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-art-in-elementary-teacher-education-integrated-programs-for-transfer-fall-2026",
+    "coverage": 0.542,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37558",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-environmental-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-environmental-science-for-transfer-fall-2026",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38419",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-hospitality-management-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-hospitality-management-for-transfer-fall-2026",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38488",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-agriculture-plant-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-agriculture-plant-science-for-transfer-fall-2026",
+    "was_coverage": 0.889,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39775",
+    "title": "Drone Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-drone-technology-fall-2026",
+    "coverage": 0.846,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-drone-technology-fall-2026",
+    "was_coverage": 0.769,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41577",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-business-administration-for-transfer-2-0-fall-2026",
+    "coverage": 1.0,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-business-administration-for-transfer-2-0-fall-2026",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44445",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+    "coverage": 0.923,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+    "was_coverage": 0.692,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45512",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-law-public-policy-and-society-for-transfer-fall-2026",
+    "coverage": 0.977,
+    "was_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-law-public-policy-and-society-for-transfer-fall-2026",
+    "was_coverage": 0.884,
+    "was_method": "sitemap_page"
+   }
+  ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
@@ -453,10 +1080,6 @@
   "07999": {
    "sha256": "618c908070d7d18aed4ca96a1a21ed338be397758c7466134099d82f807dc7f3",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-construction-and-supervision-superintendency-fall-2025"
-  },
-  "08013": {
-   "sha256": "600cc626ccd30e3020659e1c406d29395521d0b4d77070eeb0277d63a9477b16",
-   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-accomplishment-in-small-business-management-entrepreneurship-fall-2026"
   },
   "08014": {
    "sha256": "ad5b387386a0e8d3f89d8cf00b3364b5d68c1bac1d0e84e1cb36dc279600ac9a",
@@ -543,7 +1166,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-english-fall-2026"
   },
   "18885": {
-   "sha256": "346da13fbf5166de4e77871b2b0900725f9686070b0da0f2d1c688a96e48383a",
+   "sha256": "951386dfecbe8f24245b21e5ec07688e3429322560ac05753ac8918d8b84d5ed",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026"
   },
   "18887": {
@@ -663,7 +1286,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-studio-arts-fall-2026"
   },
   "30220": {
-   "sha256": "ea1430da2c593253ac33ec5ef47c95fdce027bc259d5cf2583e3b52e87dfa4cd",
+   "sha256": "243992b5e7e997c06272184227a217182ac5218ef2da68b57aef983837e9d1f0",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-environmental-science-fall-2026"
   },
   "30221": {
@@ -671,7 +1294,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-allied-health-fundamentals-fall-2026"
   },
   "30222": {
-   "sha256": "2b5f0cad51ce1ead3dedf509813fef5956d123ae8539b988c78501182d472a01",
+   "sha256": "d5cfc94886ae485de04b4069aa63b9acfdf3ca145282f78ca00380deacdd7f68",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-allied-health-fall-2026"
   },
   "30223": {
@@ -727,7 +1350,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-nursery-and-greenhouse-fall-2026"
   },
   "30966": {
-   "sha256": "79adf0bc817628f778cd675f8bfd2eee6fd91284aa5e947da364af82d09c6cac",
+   "sha256": "77b42d7e119c717ff31eef4a1d32e52dc76d3d36a3ece7d3c4bb069c9c7756b1",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-natural-science-fall-2026"
   },
   "31112": {
@@ -871,7 +1494,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-spanish-for-transfer-fall-2026"
   },
   "33292": {
-   "sha256": "51e862bf1f566734c0a5941d9795fbf1212066e351caf234cf9598708626335d",
+   "sha256": "491f7a945c5f9eed4d38b5f5df3be89098f2b751d6fe20cf290d079a4e1e3e53",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-economics-for-transfer-fall-2026"
   },
   "33531": {
@@ -879,7 +1502,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-game-design-fall-2020"
   },
   "33651": {
-   "sha256": "81ac9933b02cd8e6715e2c0169482524908fbecc435339c287fb8e99264f5783",
+   "sha256": "4b7233b6277851eee1145a09839461be6abc477e880ddf2445e8e2cd8c83f38f",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026"
   },
   "33764": {
@@ -891,7 +1514,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-nutrition-and-dietetics-for-transfer-fall-2026"
   },
   "33771": {
-   "sha256": "81336ad95c514a07b8ae94de82d72e6651bb39a442faa536ab77e6500d29f404",
+   "sha256": "2cd6bec4b4494418d4073d98cf66666f4d2d9a79932274d9cb025c08e98fd5a1",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-biology-for-transfer-fall-2026"
   },
   "33799": {
@@ -921,6 +1544,10 @@
   "35272": {
    "sha256": "07603d012b262d20204266541a70bf09fe0e4bc8e6828eb51d83189d8a7b08c7",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-information-and-communication-technology-fall-2026"
+  },
+  "35567": {
+   "sha256": "4f92f8555d5a08ac085bb6955f2d05d1b7b83aec1a1aab0b5e8fa4a690a4bd68",
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-art-in-elementary-teacher-education-integrated-programs-for-transfer-fall-2026"
   },
   "35679": {
    "sha256": "1c586b797f83a866e9d903ba0cd12346abea775821bb2432fc88befa31c35a25",
@@ -955,7 +1582,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-audio-visual-technology-fall-2026"
   },
   "37558": {
-   "sha256": "2e02f99c097e6ca02f1dee13b53102e5b647dfaae4dfae54075868660f2e3b72",
+   "sha256": "d6f96c09ac8da166c87a27c8f1cdeba9789db45b574ccd172019bd90ca67a04b",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-environmental-science-for-transfer-fall-2026"
   },
   "37637": {
@@ -1203,7 +1830,7 @@
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-industrial-engineering-technician-fall-2025"
   },
   "44445": {
-   "sha256": "346da13fbf5166de4e77871b2b0900725f9686070b0da0f2d1c688a96e48383a",
+   "sha256": "951386dfecbe8f24245b21e5ec07688e3429322560ac05753ac8918d8b84d5ed",
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026"
   },
   "44554": {
@@ -1248,9 +1875,9 @@
   }
  },
  "staged_from": {
-  "run": "43609976980",
+  "run": "44737349116",
   "proof": "text sha256 of 214 programs",
   "pages_loaded": 0
  },
- "run": "43691943622"
+ "run": "44745889555"
 }

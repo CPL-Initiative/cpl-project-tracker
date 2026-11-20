@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7571,
-    "output_tokens": 2888,
+    "output_tokens": 2833,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2888,
+  "output_tokens": 2833,
   "output_tokens_details": {
-   "thinking_tokens": 740
+   "thinking_tokens": 747
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08804,
- "ms": 21708,
- "seconds": 22.0,
+ "cost_usd": 0.08694,
+ "ms": 21330,
+ "seconds": 21.9,
  "parts": null,
  "error": null,
  "score": {
@@ -115,7 +115,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "A.A. Degree for Transfer – Psychology for Transfer",
+   "section_heading": "Psychology for Transfer",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -150,7 +150,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "Required Core:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -176,7 +176,7 @@
     ]
    },
    {
-    "name": "at least 3 units from",
+    "name": "at least 3 units from:",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -242,7 +242,7 @@
     ]
    },
    {
-    "name": "LIST B (3 units) - Any LIST A course not already used or one of the following",
+    "name": "LIST B (3 units) - Any LIST A course not already used or one of the following:",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -275,7 +275,7 @@
     ]
    },
    {
-    "name": "LIST C (3 units) - Any LIST A or LIST B course not already used or one of the following",
+    "name": "LIST C (3 units) - Any LIST A or LIST B course not already used or one of the following:",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -354,23 +354,22 @@
   "missing_explained": [
    {
     "code": "BIOSC 102",
-    "why": "not in the text; catalog lists BIOL C1000 (Introduction to Biology with Lab) in List A instead, likely a renumbering"
+    "why": "not in the text; List A prints BIOL C1000 Introduction to Biology with Lab instead (possible renumbering)"
    },
    {
     "code": "BIOSC 117",
-    "why": "not in the text; catalog lists BIOL 117 (Human Biology with Laboratory) in List A instead, likely a renumbering"
+    "why": "not in the text; List A prints BIOL 117 Human Biology with Laboratory instead (possible renumbering)"
    }
   ],
   "notes": [
-   "Catalog text begins mid-sentence ('GETC) pattern'); GE pattern read as Cal-GETC from the later reference to 'Cal-GETC general education requirements'. No GE units or degree total printed for this award; the 60-unit associate degree requirement is generic.",
-   "Codes printed without spaces (e.g., 'PSYCC1000', 'PSYC215') were recorded with a space between subject and number to match the closed list.",
-   "List B may also be satisfied by any List A course not already used; List C by any List A or List B course not already used. Those courses are recorded only in their own lists.",
-   "List A is headed 'Select one (3-4 units)' with 'Complete the following number of credits: 3-4'; recorded as choose one course with stated 3-4.",
-   "Requirements bullet states 'Complete a minimum of 18 units in the major'; major total printed as 18-19.",
-   "BIOL C1000 and BIOL 117 are not in the closed list and are marked as catalog additions; they appear to correspond to closed-list BIOSC 102 and BIOSC 117.",
-   "Program learning outcomes are printed for the program page as a whole and recorded for this award; outcomes copied verbatim including 'effective user'."
+   "The catalog prints codes without a space between subject and number (e.g., 'PSYCC1000', 'PSYC215'); recorded with a space to match the closed list.",
+   "List B also accepts any List A course not already used; List C accepts any List A or List B course not already used. Those courses are listed only in their own blocks.",
+   "BIOL C1000 and BIOL 117 are not on the closed list, which instead has BIOSC 102 and BIOSC 117 with matching titles/units; reviewer should check whether these are subject renumberings.",
+   "The text begins mid-sentence ('GETC) pattern'); the GE pattern is read as Cal-GETC from the later mention. The 60-unit associate degree requirement is generic and not recorded as degree_total; no GE units are printed.",
+   "'Complete a minimum of 18 units in the major' and the printed 'Total 18 - 19' for Psychology for Transfer; total_units recorded as 18-19.",
+   "The program learning outcomes are printed for the program page as a whole and are recorded for this award; outcomes copied as printed, including 'effective user'."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }

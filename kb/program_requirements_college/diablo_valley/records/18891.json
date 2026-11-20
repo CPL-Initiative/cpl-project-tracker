@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6906,
-    "output_tokens": 1747,
+    "output_tokens": 1845,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1747,
+  "output_tokens": 1845,
   "output_tokens_details": {
-   "thinking_tokens": 560
+   "thinking_tokens": 696
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06256,
- "ms": 14550,
- "seconds": 14.9,
+ "cost_usd": 0.06452,
+ "ms": 16166,
+ "seconds": 19.1,
  "parts": null,
  "error": null,
  "score": {
@@ -121,7 +121,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Cal-GETC (advised for transfer) or DVC General Education",
+   "ge_pattern": "Cal-GETC (advised for transfer students); DVC General Education",
    "degree_total": {
     "min": null,
     "max": null
@@ -248,17 +248,16 @@
   "missing_explained": [
    {
     "code": "BIOSC 126",
-    "why": "not in the text; catalog prints BIOL126 Ecology and Field Biology (same title and units), likely a subject renaming"
+    "why": "not in the text under this code; catalog prints BIOL126 Ecology and Field Biology (same title, 4 units), likely the same course under a different subject code"
    }
   ],
   "notes": [
-   "The catalog prints the total as 18 units (header and '(Total 18)'), but the description says the major 'consists of 24 units of study'; total_units records the printed requirement total of 18.",
-   "The catalog prints BIOL126 Ecology and Field Biology, while the closed list has BIOSC 126 with the same title and units; BIOL 126 is recorded as a catalog addition. A reviewer should check whether these are the same course.",
-   "Codes are printed without a space in the catalog (e.g. GEOG120); they are recorded with a space between subject and number.",
-   "The degree requires completing general education 'as listed in the catalog'; transfer students are advised to select Cal-GETC, and DVC General Education is 'not generally advised'. No GE units or degree total are printed.",
-   "The outcomes are from the Program Learning Outcomes list printed in this A.S. section."
+   "The catalog prints 'Units: 18.0' and '(Total 18)' for the program requirements (14 core + 4 elective units), but the description says the major 'consists of 24 units of study'. total_units recorded as 18 from the requirements table; reviewer should check the discrepancy.",
+   "Catalog prints codes without a space (e.g., GEOG120); recorded with a space between subject and number.",
+   "BIOL126 (Ecology and Field Biology) is marked catalog_addition because the closed list names BIOSC 126 with the same title; likely a subject-code difference.",
+   "GE: description advises Cal-GETC for transfer students and says DVC General Education is not generally advised; no GE units or degree total printed."
   ]
  },
- "extracted_run": 43691943622,
- "read_run": 43609976980
+ "extracted_run": "44745889555",
+ "catalog_year": "2026-2027"
 }
