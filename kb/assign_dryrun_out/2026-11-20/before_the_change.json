@@ -1,0 +1,573 @@
+{
+ "existing": {
+  "assigned": 82,
+  "joined_target": 70,
+  "not_joined": [
+   {
+    "cn": "CCC000616710",
+    "target": "MATH M9024",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000627670",
+    "target": "CRIM M1071",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000631291",
+    "target": "FASH M9012",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000631531",
+    "target": "FASH M9021",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000631550",
+    "target": "FASH M1030",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000631774",
+    "target": "FASH M9019",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000646493",
+    "target": "ELEC M9031",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000647129",
+    "target": "AUTO M1036",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000647262",
+    "target": "AUTO M9004",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000652031",
+    "target": "IDST M9298",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000652034",
+    "target": "IDST M9067",
+    "homes_after": []
+   },
+   {
+    "cn": "CCC000653623",
+    "target": "CULN M1026",
+    "homes_after": []
+   }
+  ],
+  "target_missing_after": [],
+  "target_field_changes": {
+   "conf": 39,
+   "dconf": 20,
+   "dsrc": 20,
+   "flags": 42,
+   "members": 33,
+   "mt": 41,
+   "title_variants": 41,
+   "top": 10,
+   "umax": 4,
+   "umin": 1,
+   "subj": 1
+  },
+  "target_lost_reviewed": [],
+  "examples": [
+   {
+    "target": "ARAB M1009",
+    "field": "conf",
+    "before": 0.85,
+    "after": 1.0
+   },
+   {
+    "target": "ARAB M1009",
+    "field": "dconf",
+    "before": 0.8,
+    "after": null
+   },
+   {
+    "target": "ARAB M1009",
+    "field": "dsrc",
+    "before": "subject_map",
+    "after": null
+   },
+   {
+    "target": "ARAB M1009",
+    "field": "flags",
+    "before": {
+     "over_merged": false,
+     "credit_mixed": false,
+     "crnc_mirror": "",
+     "top_mixed": false,
+     "ncc_mixed": false,
+     "reviewed": false
+    },
+    "after": {
+     "over_merged": false,
+     "credit_mixed": false,
+     "top_mixed": false,
+     "ncc_mixed": false,
+     "reviewed": false
+    }
+   },
+   {
+    "target": "ARAB M1009",
+    "field": "members",
+    "before": 3,
+    "after": 2
+   },
+   {
+    "target": "ARAB M1009",
+    "field": "mt",
+    "before": null,
+    "after": 1
+   },
+   {
+    "target": "ARAB M1009",
+    "field": "title_variants",
+    "before": null,
+    "after": [
+     "Arabic 3"
+    ]
+   },
+   {
+    "target": "ARTS M1312",
+    "field": "conf",
+    "before": 0.85,
+    "after": 1.0
+   },
+   {
+    "target": "ARTS M1312",
+    "field": "flags",
+    "before": {
+     "over_merged": false,
+     "credit_mixed": false,
+     "crnc_mirror": "",
+     "top_mixed": true,
+     "ncc_mixed": false,
+     "reviewed": false
+    },
+    "after": {
+     "over_merged": false,
+     "credit_mixed": false,
+     "top_mixed": false,
+     "ncc_mixed": false,
+     "reviewed": false
+    }
+   },
+   {
+    "target": "ARTS M1312",
+    "field": "mt",
+    "before": null,
+    "after": 1
+   },
+   {
+    "target": "ARTS M1312",
+    "field": "title_variants",
+    "before": null,
+    "after": [
+     "Design 1"
+    ]
+   },
+   {
+    "target": "ARTS M1314",
+    "field": "conf",
+    "before": 0.85,
+    "after": 1.0
+   }
+  ],
+  "member_rows_off": [
+   {
+    "target": "AUTO M1036",
+    "gained": 0
+   },
+   {
+    "target": "AUTO M9004",
+    "gained": 0
+   },
+   {
+    "target": "CRIM M1071",
+    "gained": 0
+   },
+   {
+    "target": "CULN M1026",
+    "gained": 0
+   },
+   {
+    "target": "ELEC M9031",
+    "gained": 0
+   },
+   {
+    "target": "FASH M1030",
+    "gained": 0
+   },
+   {
+    "target": "FASH M9012",
+    "gained": 0
+   },
+   {
+    "target": "FASH M9019",
+    "gained": 0
+   },
+   {
+    "target": "FASH M9021",
+    "gained": 0
+   },
+   {
+    "target": "IDST M9067",
+    "gained": 0
+   },
+   {
+    "target": "IDST M9298",
+    "gained": 0
+   },
+   {
+    "target": "MATH M9024",
+    "gained": 0
+   }
+  ],
+  "targets": 46
+ },
+ "mint": {
+  "assigned": 12,
+  "row_present": 12,
+  "course_joined": 12,
+  "rows": [
+   {
+    "cn": "CCC000000780",
+    "course": {
+     "college": "Grossmont College",
+     "subj": "CCS",
+     "num": "194",
+     "title": "COMMUNITY SERVICE LEARNING EXP",
+     "units": 1,
+     "credit": "C",
+     "top": "2203.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "COMMUNITY SERVICE LEARNING EXP",
+     "disc": null,
+     "credit": null,
+     "units": 1,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000002020",
+    "course": {
+     "college": "Grossmont College",
+     "subj": "GEOG",
+     "num": "299",
+     "title": "SELECTED TOPICS IN GEOG",
+     "units": 0.5,
+     "credit": "C",
+     "top": "2206.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "SELECTED TOPICS IN GEOG",
+     "disc": null,
+     "credit": null,
+     "units": 0.5,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000007701",
+    "course": {
+     "college": "Sierra College",
+     "subj": "PHOT",
+     "num": "0090I",
+     "title": "Night Photography Field Workshop",
+     "units": 0.5,
+     "credit": "C",
+     "top": "1012.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "Night Photography Field Workshop",
+     "disc": null,
+     "credit": null,
+     "units": 0.5,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000007821",
+    "course": {
+     "college": "Grossmont College",
+     "subj": "FREN",
+     "num": "299",
+     "title": "SELECTED TOPICS IN FREN",
+     "units": 0.5,
+     "credit": "C",
+     "top": "1102.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "SELECTED TOPICS IN FREN",
+     "disc": null,
+     "credit": null,
+     "units": 0.5,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000009615",
+    "course": {
+     "college": "San Diego City College",
+     "subj": "CHIL",
+     "num": "291C",
+     "title": "Child Development Center Practicum",
+     "units": 1,
+     "credit": "C",
+     "top": "1305.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "Child Development Center Practicum",
+     "disc": null,
+     "credit": null,
+     "units": 1,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000010600",
+    "course": {
+     "college": "Southwestern College",
+     "subj": "SOC",
+     "num": "201B",
+     "title": "PRACTICUM IN LEARNING AND DEVELOPMENT",
+     "units": 3,
+     "credit": "C",
+     "top": "2208.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "PRACTICUM IN LEARNING AND DEVELOPMENT",
+     "disc": null,
+     "credit": null,
+     "units": 3,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000011026",
+    "course": {
+     "college": "Coastline Community College",
+     "subj": "LAW",
+     "num": "C290",
+     "title": "Legal Clinic Practicum/Ethics",
+     "units": 2,
+     "credit": "C",
+     "top": "1402.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "Legal Clinic Practicum/Ethics",
+     "disc": null,
+     "credit": null,
+     "units": 2,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000015822",
+    "course": {
+     "college": "Grossmont College",
+     "subj": "GEOG",
+     "num": "150",
+     "title": "Field Study of the Natural History of the Greater San Diego Region",
+     "units": 3,
+     "credit": "C",
+     "top": "2206.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "Field Study of the Natural History of the Greater San Diego Region",
+     "disc": null,
+     "credit": null,
+     "units": 3,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000019873",
+    "course": {
+     "college": "Victor Valley College",
+     "subj": "BET",
+     "num": "148",
+     "title": "SPECIAL TOPICS",
+     "units": 1,
+     "credit": "C",
+     "top": "0514.00",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "SPECIAL TOPICS",
+     "disc": null,
+     "credit": null,
+     "units": 1,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000020133",
+    "course": {
+     "college": "Grossmont College",
+     "subj": "RECR",
+     "num": "140",
+     "title": "RECREATION FIELD WORK",
+     "units": 3,
+     "credit": "C",
+     "top": "0836.10",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "RECREATION FIELD WORK",
+     "disc": null,
+     "credit": null,
+     "units": 3,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000022521",
+    "course": {
+     "college": "Grossmont College",
+     "subj": "IDS",
+     "num": "299",
+     "title": "SELECTED TOPICS IN IDS",
+     "units": 0,
+     "credit": "N",
+     "top": "4930.09",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "SELECTED TOPICS IN IDS",
+     "disc": null,
+     "credit": null,
+     "units": 0,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   },
+   {
+    "cn": "CCC000022666",
+    "course": {
+     "college": "De Anza College",
+     "subj": "C D",
+     "num": "74",
+     "title": "Early Childhood Mental Health Seminar and Fieldwork",
+     "units": 3,
+     "credit": "C",
+     "top": "1305.20",
+     "cid": "",
+     "ccn": ""
+    },
+    "row": {
+     "kind": "Unified",
+     "id_system": "Unified",
+     "title": "Early Childhood Mental Health Seminar and Fieldwork",
+     "disc": null,
+     "credit": null,
+     "units": 3,
+     "top": null,
+     "subj": []
+    },
+    "members": 1,
+    "course_joined": true
+   }
+  ]
+ },
+ "outside_the_targets": {
+  "rows_changed": 0,
+  "first": [],
+  "other_courses_moved": 0,
+  "first_moved": []
+ },
+ "rows": {
+  "before": 49806,
+  "after": 49818
+ },
+ "_what": "Simulated, not applied: export_unified_courses() run twice through its UC_KB_DIR / UC_OUT_DIR seam, on today's curation overlay and on a copy with sample assignments from the Needs an M-ID pile.",
+ "closest_mid_file": {
+  "identity_file": "2026-11-20 06:20",
+  "pile": 2508
+ },
+ "left_out_shared_control_number": 18
+}
