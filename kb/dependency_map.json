@@ -4,7 +4,7 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1101,
+  "file_datasets": 1102,
   "external_services": 197,
   "consumers": 639,
   "workflows": 76,
@@ -211,7 +211,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 42
+     "line": 48
     }
    ],
    "producers": [
@@ -646,7 +646,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 74
+     "line": 78
     },
     {
      "id": "edgefn:library-publish-now",
@@ -26671,6 +26671,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/commons_handover_note_sql_proof.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/commons_handover_sql_proof.py": {
    "consumers": [
     {
@@ -31026,7 +31039,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 151
+     "line": 157
     }
    ],
    "main_committers": []
@@ -31050,7 +31063,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 177
+     "line": 233
     }
    ],
    "main_committers": []
@@ -31452,7 +31465,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 62
+     "line": 66
     },
     {
      "id": "module:cpl_funding.js",
@@ -32572,7 +32585,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 169
+     "line": 187
     },
     {
      "id": "script:kb/_handover_pickup.py",
@@ -37042,6 +37055,7 @@
     "tests/supabase_table_grants_test.py",
     "tests/library_publishing_sql_proof.py",
     "tests/commons_handover_sql_proof.py",
+    "tests/commons_handover_note_sql_proof.py",
     "tests/handover_pickup_test.py",
     "tests/ccr_doubt_test.py",
     "tests/apply_curation_rulings_test.py",
