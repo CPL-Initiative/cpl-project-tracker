@@ -1,0 +1,3943 @@
+{
+ "college": "Madera College",
+ "reread_run": "44696232580",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44692816081",
+ "at": "2026-11-20T07:37:11Z",
+ "posted": 27,
+ "batches": 2,
+ "skipped": [],
+ "error": null,
+ "replaced": 19,
+ "absent": 8,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "39520",
+  "39693",
+  "39704",
+  "39768",
+  "39782",
+  "39783",
+  "39784",
+  "39791",
+  "39803",
+  "39805",
+  "39809",
+  "39810",
+  "39812",
+  "39818",
+  "39819",
+  "39862",
+  "39871",
+  "39872",
+  "43396"
+ ],
+ "absent_keys": [
+  "39825",
+  "39864",
+  "39865",
+  "39866",
+  "39868",
+  "39874",
+  "39897",
+  "45293"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 24,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Madera College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44692816081;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 15,
+       "min": 15
+      },
+      "courses": [
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BA 23",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: Select one course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ACCTG 4A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 4B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BA 18",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BA 39",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 47",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 17",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B: Select one course. May select a course from List A that was not already used (3 units minimum).",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MATH 6",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Understand and apply basic economic methodology to describe, analyze and explain human behavior and societal challenges.",
+      "Apply principle microeconomic and macroeconomic concepts, theories and models to describe, analyze and explain relevant economic issues."
+     ],
+     "ge_pattern": "IGETC or CSU GE-Breadth",
+     "total_units": {
+      "max": 25,
+      "min": 21
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Economics for Transfer, Associate in Arts - Major #M.7200.AA-T",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 21,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1073",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Economics",
+   "control_number": "39520"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 32,
+    "placed": 29,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one course from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL 2H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Electives (unnamed list, 14.0 units)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 14,
+       "min": 14
+      },
+      "courses": [
+       {
+        "code": "ENGL 15A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 15B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 15E",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 15F",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 17",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 41",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 43A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 43B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 44A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 44B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 46A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 46B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 36",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 47",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 49",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 72",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 72A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FILM 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FILM 2A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FILM 2B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LIBSKL 1",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LIBSKL 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 14,
+      "option_group": null
+     },
+     {
+      "name": "Linguistics (unnamed list, 3.0 units)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "LING 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LING 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Write logical and coherent expository and argumentative papers, essays, summaries, and paraphrases correctly using the standard conventions of written English.",
+      "Demonstrate an understanding of and an ability to describe ways in which literature reflects historical, intellectual, and cultural contexts, and well as aesthetic tastes.",
+      "Evaluate literature and expository and argumentative papers and essays through application of critical thinking techniques."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 23,
+      "min": 23
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English, Associate in Arts - Major #M.5300.AA",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 23,
+   "total_min": 23,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1093/1170",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "English",
+   "control_number": "39693"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 27,
+    "placed": 26,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Select one art course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTH 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH C1200H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one English course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 41",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 43A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 43B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 44A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 44B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 46A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 46B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 47",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 49",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one history course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "HIST 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST C1002H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one music course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MUS 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MUS 12H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 16",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one philoso course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PHIL 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 1C",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHIL 1CH",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 1D",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select 3 additional units from above disciplines",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Critically evaluate the central themes and concepts explored in art, literature, history, music, and philosophy."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Liberal Arts & Sciences: Arts & Humanities, Associate in Arts - Major #M.5120.AA",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1194",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Liberal Arts & Sciences: Arts & Humanities",
+   "control_number": "39704"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 28.5,
+       "min": 28
+      },
+      "courses": [
+       {
+        "code": "BT 3",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 105",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 12",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 28",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 29",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 24",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 18",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 26",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 120",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 119",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 6",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 106",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 107",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 108",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BT 131",
+          "units": 3.5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use application software to create and edit word processing documents.",
+      "Use application software to create and edit spreadsheets.",
+      "Manage a records system."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 28.5,
+      "min": 28
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Administrative Assistant, Associate of Science - Major #M.226B.AS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 28.5,
+   "total_min": 28,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1225",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Administrative Assistant",
+   "control_number": "39768"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Math Core",
+      "rule": "all",
+      "stated": {
+       "max": 19,
+       "min": 19
+      },
+      "courses": [
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 6",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 17",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Unnamed list (4.0 units)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "CSCI 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 2A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 2B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BA 23",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "systems analysts",
+      "computer programmers"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Communicate mathematics with understanding (read, write, listen, speak).",
+      "Use critical thinking and mathematical reasoning to solve a variety of problems.",
+      "Apply mathematical models to real-world situations.",
+      "Use technology, when appropriate, to enhance their mathematical understanding, critical thinking, and problem-solving skills.",
+      "Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 23,
+      "min": 23
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Mathematics, Associate in Science - Major #M.6200.AS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 23,
+   "total_min": 23,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1104/1210",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Mathematics",
+   "control_number": "39782"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Major Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 32,
+       "min": 32
+      },
+      "courses": [
+       {
+        "code": "BT 3",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 12",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 120",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 119",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 147",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 6",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 108",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 107",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 106",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 26",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 18",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 24",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 28",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 29",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use application software to create and edit word processing documents.",
+      "Use application software to create and edit spreadsheets.",
+      "Manage a records system."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 32,
+      "min": 32
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Medical Administrative Assistant, Associate in Science - Major #M.2023.AS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 32,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1227",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Medical Administrative Assistant",
+   "control_number": "39783"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM 3A",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM 8",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Sequence 1",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "PHYS 2A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 2B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Select One Sequence"
+     },
+     {
+      "name": "Sequence 2",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "PHYS 4A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 4B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 4C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Select One Sequence"
+     }
+    ],
+    "program": {
+     "careers": [
+      "physical science technicians",
+      "engineering aides"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Recognize and utilize correctly the terminology of math, statistics and/or science.",
+      "Analyze and interpret data using quantitative and qualitative methods."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 31,
+      "min": 24
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Physical Science, Associate in Science - Major #M.6300.AS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 31,
+   "total_min": 24,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1109/1231",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Physical Science",
+   "control_number": "39784"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Computer Science Core",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "CSCI 26",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 41",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select additional 8 units from the following courses:",
+      "rule": "choose_units",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "CSCI 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 45",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 2A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 2B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 4A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 4B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 8,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Understand the social impact of computers on human society",
+      "Carry out computer related tasks with professional ethics.",
+      "Write programs using procedural programming language.",
+      "Write programs using object-oriented programming language.",
+      "Analyze and solve application problems in science and engineering.",
+      "Write programs using advanced programming concepts."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 20,
+      "min": 20
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Computer Science, Associate in Science - Major #M.6920.AS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 20,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1089/1156",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Computer Science",
+   "control_number": "39791"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 14,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AGBS 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 4 units from the following physical science courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "CHEM 3A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLS 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLS 2L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     },
+     {
+      "name": "Select 4 units from the following statistical courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "BA 23",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     },
+     {
+      "name": "Select 5 courses from the following (15-18 units)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 18,
+       "min": 15
+      },
+      "courses": [
+       {
+        "code": "AGBS 1",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGBS 3",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGBS 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGBS 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BA 18",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BA 39",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH C2210",
+          "units": 5,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 5,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe the strength, diversity, economic dynamics and opportunities of the California, U.S. and global agriculture economies.",
+      "Communicate effectively, including use of proper presentation and promotion skills, to individuals and to groups, using oral, print and digital media.",
+      "Utilize and apply digital/electronic technology as found in the agriculture business industry.",
+      "Record, organize, and analyze financial and production data related to agriculture businesses.",
+      "Determine agriculture business inputs, with an understanding of the interaction among those components, leading to accurate business planning and decision making.",
+      "Demonstrate a breadth of knowledge of the agriculture industry that provides a base for decision making and credibility in personal interactions and career decisions."
+     ],
+     "ge_pattern": "IGETC or CSU GE-Breadth",
+     "total_units": {
+      "max": 32,
+      "min": 29
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Agriculture Business for Transfer, Associate in Science - Major #M.1021.AS-T",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 29,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1064",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Agriculture Business",
+   "control_number": "39803"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 19,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Business Department Core",
+      "rule": "all",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "BA 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BA 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Information Systems Core",
+      "rule": "all",
+      "stated": {
+       "max": 13,
+       "min": 13
+      },
+      "courses": [
+       {
+        "code": "IS 26A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 40A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 40B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "IT Support Courses (select one option): Option 1",
+      "rule": "all",
+      "stated": {
+       "max": 9.5,
+       "min": 9.5
+      },
+      "courses": [
+       {
+        "code": "IS 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 60",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 61",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 62",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "IT Support Courses"
+     },
+     {
+      "name": "IT Support Courses (select one option): Option 2",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "IS 80",
+        "units": 12,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "IT Support Courses"
+     },
+     {
+      "name": "Networking and Security Courses (select one option): Option 1",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "IS 63",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 64",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 70",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 71",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Networking and Security Courses"
+     },
+     {
+      "name": "Networking and Security Courses (select one option): Option 2",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "IS 81",
+        "units": 12,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Networking and Security Courses"
+     },
+     {
+      "name": "Select One Math Course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "BA 39",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BA 23",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Operate commonly used computer hardware and office software.",
+      "Identify the categories of software by their purpose and provide examples of each category.",
+      "Plan, design, and write stand-alone computer programs.",
+      "Apply structured logic in analyzing and solving problems.",
+      "Develop a well-designed relational database.",
+      "Create a web document that contains hyperlinks, graphics, tables, and forms.",
+      "Demonstrate a breadth of knowledge of networking and its uses in the business environment."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 48,
+      "min": 43.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 48,
+   "total_min": 43.5,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Information Systems, Networking and Security",
+   "control_number": "39805"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 9,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 25
+      },
+      "courses": [
+       {
+        "code": "BIOL 11A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 11B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 1B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one physics sequence: PHYS 2A and PHYS 2B",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "PHYS 2A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 2B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Physics sequence"
+     },
+     {
+      "name": "Select one physics sequence: PHYS 4A and PHYS 4B",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "PHYS 4A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 4B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Physics sequence"
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate basic knowledge of comparative anatomy and comparative physiology.",
+      "Demonstrate basic microscopic techniques required for all Biology fields.",
+      "Critically evaluate scientific research."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 33,
+      "min": 33
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Biology for Transfer, Associate in Science - Major #M.6110.AS-T",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 33,
+   "total_min": 33,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1068",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Biology",
+   "control_number": "39809"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 26,
+    "placed": 21,
+    "coverage": false,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses (41-47 units)",
+      "rule": "all",
+      "stated": {
+       "max": 39.5,
+       "min": 39.5
+      },
+      "courses": [
+       {
+        "code": "BIOL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIOL C1001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CDEV C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1000H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "EDUC 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1000H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 9",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 20",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 10A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SCI 1A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: Select one critical thinking course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL 2H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B: Select one course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTH 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List C",
+      "rule": "all",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "LING 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "teaching in the Kindergarten through eighth (K-8) grades"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate effective written and oral communication skills to the common core courses in the sciences, math, arts, and humanities.",
+      "Discuss historical influences and current trends in education, as well as teaching strategies and approaches appropriate for students of diverse needs, abilities and backgrounds."
+     ],
+     "ge_pattern": "IGETC or CSU GE-Breadth",
+     "total_units": {
+      "max": 48.5,
+      "min": 48.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Elementary Teacher Education for Transfer, Associate in Arts - Major #M.5891.AA-T",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 48.5,
+   "total_min": 48.5,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1074",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Elementary Teacher Education",
+   "control_number": "39810"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 36,
+    "placed": 33,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Select once course",
+      "rule": "all",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select once course",
+      "rule": "all",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: Choose Two Courses",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ENGL 43A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 43B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 44A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 44B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 46A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 46B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "Option 1-Select one course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGL 2",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL 2H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 15E",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": "List B"
+     },
+     {
+      "name": "Option 2 -Select both classes",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ENGL 15A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 15B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "List B"
+     },
+     {
+      "name": "List C: Choose one course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ASL 1",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASL 2",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASL 3",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASL 4",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 15F",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 17",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 36",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 41",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 47",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 49",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LING 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LING 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 1",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 2",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 3",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 3NS",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 4",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 4NS",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "adult education",
+      "remedial education",
+      "literacy",
+      "GED teaching",
+      "counseling",
+      "editing",
+      "interpreting",
+      "translation",
+      "K-12 teaching",
+      "legal profession",
+      "lawyers",
+      "paralegals",
+      "judges",
+      "clerks"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 39,
+      "min": 37
+     },
+     "outcomes": [
+      "Write logical and coherent expository and argumentative papers, essays, summaries, and paraphrases using the standard conventions of written English correctly.",
+      "Write a passing documented thesis/argument-based research paper, free of intentional or unintentional plagiarism with annotated bibliography.",
+      "Demonstrate an understanding of and an ability to describe ways in which literature reflects historical, intellectual, and cultural contexts, and well as aesthetic tastes",
+      "Evaluate literature and expository and argumentative papers and essays through application of critical thinking techniques."
+     ],
+     "ge_pattern": "IGETC or CSU GE-Breadth",
+     "total_units": {
+      "max": 23,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "English for Transfer, Associate in Arts - Major #M.5301.AA-T",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 23,
+   "total_min": 18,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1075",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "English",
+   "control_number": "39812"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 19,
+       "min": 19
+      },
+      "courses": [
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 6",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 17",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: Select one course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "PHYS 4A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CSCI 26",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Communicate mathematics with understanding (read, write, listen, speak).",
+      "Use critical thinking and mathematical reasoning to solve a variety of problems.",
+      "Apply mathematical models to real world situations.",
+      "Use technology, when appropriate, to enhance their mathematical understanding, critical thinking, and problem-solving skills.",
+      "Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 23,
+      "min": 23
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Mathematics for Transfer, Associate in Science - Major #M.6201.AS-T",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 23,
+   "total_min": 23,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1078",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Mathematics",
+   "control_number": "39818"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 6,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 26,
+       "min": 26
+      },
+      "courses": [
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 6",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 4A",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 4B",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 4C",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "technical positions with government or industry",
+      "law",
+      "business",
+      "medicine",
+      "Teaching at the high school level",
+      "experimental or theoretical research",
+      "teaching at the university level",
+      "basic research in government or industry"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Apply algebra, trigonometry, and/or first-year calculus to solve physical problems within the topics covered in class."
+     ],
+     "ge_pattern": "IGETC or CSU GE-Breadth",
+     "total_units": {
+      "max": 26,
+      "min": 26
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Physics",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 26,
+   "total_min": 26,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1081",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Physics",
+   "control_number": "39819"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 18,
+    "placed": 17,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 24,
+       "min": 23.5
+      },
+      "courses": [
+       {
+        "code": "BT 3",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 105",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 12",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 28",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 29",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 24",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 18",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 26",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 120",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 119",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 6",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ACCTG 40",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BT 131",
+          "units": 3.5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "*Typing Courses/Certification",
+      "rule": "all",
+      "stated": {
+       "max": 4.5,
+       "min": 0
+      },
+      "courses": [
+       {
+        "code": "BT 106",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 107",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 108",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one course",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "ENGL 150",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use application software to create and edit word processing documents.",
+      "Use application software to create and edit spreadsheets.",
+      "Manage a records system."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 32.5,
+      "min": 25.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Administrative Assistant, Certificate of Achievement - Major #M.226B.CA",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32.5,
+   "total_min": 25.5,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1226",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Administrative Assistant",
+   "control_number": "39862"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 16,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 27,
+       "min": 27
+      },
+      "courses": [
+       {
+        "code": "BT 3",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 28",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 29",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 106",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 107",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 108",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 120",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 119",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 147",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 6",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 12",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one English course from the following list",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "ENGL 150",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use application software to create and edit word processing documents.",
+      "Use application software to create and edit spreadsheets.",
+      "Manage a records system."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 31,
+      "min": 29
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Medical Administrative Assistant, Certificate of Achievement - Major #M.2023.CA",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 31,
+   "total_min": 29,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1228",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Medical Administrative Assistant",
+   "control_number": "39871"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 12,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 20.5,
+       "min": 20.5
+      },
+      "courses": [
+       {
+        "code": "BT 3",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 105",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 12",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 28",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 29",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 24",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 120",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 119",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 6",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BT 5",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 106",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 107",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BT 108",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use application software to create and edit word processing documents.",
+      "Use application software to create and edit spreadsheets.",
+      "Manage a records system."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 20.5,
+      "min": 20.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Office Assistant, Certificate of Achievement - Major #M.2021.CA",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 20.5,
+   "total_min": 20.5,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1229",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Office Assistant",
+   "control_number": "39872"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1000H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "LIST A - Select three courses",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "COMM 4",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 10",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 12",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 25",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "LIST B, 3 units from any list A course not used",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "COMM 15",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "college professor in Communication Studies",
+      "public relations",
+      "mass communications",
+      "radio",
+      "television"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 39,
+      "min": 37
+     },
+     "outcomes": [
+      "Construct and deliver presentations with communicative competence and confidence.",
+      "Demonstrate the dynamics of effective communication in a variety of settings and contexts."
+     ],
+     "ge_pattern": "IGETC or CSU GE-Breadth",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Communication Studies 2.0 for Transfer, Associate in Arts - Major #M.5346.AA-T",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1072",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38935148408,
+   "program_title": "Communication Studies 2.0",
+   "control_number": "43396"
+  }
+ ]
+}
