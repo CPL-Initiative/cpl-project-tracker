@@ -1,0 +1,590 @@
+{
+ "college": "Barstow Community College",
+ "run": "44687777798",
+ "written": "2026-11-20T07:54:50Z",
+ "rule": "a checked live row restores, or is held where the base files none; then own program (a heading sharing a title word, or a generic heading on a page the address or the capture shows is the program's own; then heading_award_check), where a failing re-read is restored, or held where the base files none or the live row already holds this run; then a live row holding this run keeps its record and names no dispatch; then a supplied live run other than the filed record's is held for a person; then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one (d-reread-keep-the-better-s683; COBIx on #3544 and #3547)",
+ "checked": [],
+ "live_runs": {
+  "04736": "39006332820",
+  "17763": "39006332820",
+  "18206": "39006332820",
+  "18482": "39006332820",
+  "18483": "39006332820",
+  "18487": "39006332820",
+  "18488": "39006332820",
+  "18490": "39006332820",
+  "18491": "39006332820",
+  "18494": "39006332820",
+  "18500": "39006332820",
+  "18501": "39006332820",
+  "18503": "39006332820",
+  "18588": "39006332820",
+  "18589": "39006332820",
+  "19967": "39006332820",
+  "30562": "39006332820",
+  "30733": "39006332820",
+  "31034": "39006332820",
+  "31051": "39006332820",
+  "33066": "43691950026",
+  "33070": "39006332820",
+  "33071": "39006332820",
+  "33076": "39006332820",
+  "35346": "39006332820",
+  "39150": "39006332820",
+  "39360": "39006332820",
+  "39436": "43691950026",
+  "39522": "39006332820",
+  "39655": "39006332820",
+  "39670": "39006332820",
+  "39719": "39006332820",
+  "39906": "39006332820",
+  "40021": "39006332820",
+  "40065": "39006332820",
+  "40088": "39006332820",
+  "40097": "39006332820",
+  "40101": "39006332820",
+  "40102": "39006332820",
+  "40103": "39006332820",
+  "40633": "39006332820",
+  "40827": "39006332820",
+  "40830": "39006332820",
+  "41033": "43691950026",
+  "41079": "39006332820",
+  "41081": "39006332820",
+  "41251": "43691950026",
+  "41261": "39006332820",
+  "41556": "39006332820",
+  "42255": "39006332820",
+  "43165": "39006332820",
+  "43495": "39006332820",
+  "43650": "39006332820",
+  "44290": "39006332820",
+  "44292": "39006332820",
+  "45801": "39006332820"
+ },
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/reread-wave-s689",
+   "inputs": {
+    "college": "Barstow Community College",
+    "step": "reread",
+    "force": "44687777798"
+   },
+   "posts": 14,
+   "control_numbers": [
+    "04750",
+    "09688",
+    "18489",
+    "18503",
+    "33065",
+    "33066",
+    "33067",
+    "33083",
+    "35710",
+    "35769",
+    "39136",
+    "39588",
+    "42759",
+    "46575"
+   ],
+   "not_live_at_run": [
+    "04750",
+    "09688",
+    "18489",
+    "18503",
+    "33065",
+    "33066",
+    "33067",
+    "33083",
+    "35710",
+    "35769",
+    "39136",
+    "39588",
+    "42759",
+    "46575"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 14,
+  "kept": 9,
+  "restored": 0,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 0,
+  "held_for_person": 0,
+  "held_checked": 0,
+  "held_live_run": 0,
+  "new": 5,
+  "already_live": 0,
+  "kept_on_own_page": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 1,
+  "run_places_none_after": 0,
+  "folder_places_none_after": 0,
+  "records_after": 68,
+  "dropped_by_filing": 8,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44687777798": {
+   "base": "origin/main",
+   "base_sha": "3a73ff717742feb4745552fe127262f912674fea",
+   "decided": "2026-11-20T07:54:50Z",
+   "counts": {
+    "reread": 14,
+    "kept": 9,
+    "restored": 0,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 0,
+    "held_for_person": 0,
+    "held_checked": 0,
+    "held_live_run": 0,
+    "new": 5,
+    "already_live": 0,
+    "kept_on_own_page": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 1,
+    "run_places_none_after": 0,
+    "folder_places_none_after": 0,
+    "records_after": 68,
+    "dropped_by_filing": 8,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {
+    "41251": "passes_less"
+   },
+   "next_read_pays": [],
+   "dropped_by_filing": [
+    {
+     "control_number": "35100",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "35770",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39151",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "39718",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40024",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40066",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "40067",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "43659",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "04750",
+     "title": "Child Development Level II",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=85",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "09688",
+     "title": "Family Daycare",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=87",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=133",
+     "filed_run": "39006332820",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "18489",
+     "title": "Child Development",
+     "award": "A.S. Degree",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=134",
+     "filed_run": "39006332820",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 21,
+      "listed": 21,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 21,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "18503",
+     "title": "Humanities",
+     "award": "A.A. Degree",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=64",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
+     "filed_run": "39006332820",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 84,
+      "listed": 84,
+      "arithmetic": "equal"
+     },
+     "live_run": "39006332820",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.881,
+      "placed": 74,
+      "listed": 84,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read covers more (share 1.0 against 0.881)"
+    },
+    {
+     "control_number": "33065",
+     "title": "Early Childhood Education",
+     "award": "A.S. T Degree",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=79",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=136",
+     "filed_run": "39006332820",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 8,
+      "listed": 8,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 8,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "33066",
+     "title": "Political Science",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=105",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=105",
+     "filed_run": 43691950026,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "live_run": "43691950026",
+     "filed": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "equal on every step: the re-read is the current catalog text"
+    },
+    {
+     "control_number": "33067",
+     "title": "History",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=103",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=83",
+     "filed_run": "39006332820",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 12,
+      "listed": 12,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 12,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "33083",
+     "title": "English",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=62",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=65",
+     "filed_run": "39006332820",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 10,
+      "listed": 10,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 10,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "35710",
+     "title": "Child Development Level III",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 17,
+      "listed": 17,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "35769",
+     "title": "Child Development Level IV",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=86",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 11,
+      "listed": 11,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "39136",
+     "title": "Corrections",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=111",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=102",
+     "filed_run": "39006332820",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 6,
+      "listed": 6,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 6,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "39588",
+     "title": "Philosophy",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=63",
+     "filed_source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=101",
+     "filed_run": "39006332820",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.875,
+      "placed": 14,
+      "listed": 16,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 16,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "42759",
+     "title": "Theatre Arts",
+     "award": "A.A- T Degree",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=67",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 17,
+      "listed": 17,
+      "arithmetic": "equal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    },
+    {
+     "control_number": "46575",
+     "title": "Cal-GETC",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf#page=81",
+     "filed_source_url": null,
+     "filed_run": null,
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 0.979,
+      "placed": 94,
+      "listed": 96,
+      "arithmetic": "unequal"
+     },
+     "live_run": null,
+     "outcome": "new",
+     "why": "no filed record on origin/main"
+    }
+   ]
+  }
+ }
+}

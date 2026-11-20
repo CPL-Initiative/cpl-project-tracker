@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics 2.0",
  "award": "A.S. T Degree",
- "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6654",
- "record_shape": 5,
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7120/7123",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6396,
+  "input_tokens": 6687,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6396,
-    "output_tokens": 1081,
+    "input_tokens": 6687,
+    "output_tokens": 1867,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1081,
+  "output_tokens": 1867,
   "output_tokens_details": {
-   "thinking_tokens": 475
+   "thinking_tokens": 649
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0472,
- "ms": 16182,
- "seconds": 16.5,
+ "cost_usd": 0.06409,
+ "ms": 16804,
+ "seconds": 17.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "CIT66",
-    "CSCI40",
-    "MATH17",
-    "MATH26",
-    "MATH6",
-    "MATH7",
-    "MATHC2210",
-    "MATHC2220",
-    "PHYS4A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -70,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    26.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    24.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -101,18 +93,28 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(not found: the text prints only 'Engineering: Electrical, Certificate of Achievement - Major #3013')",
+   "section_heading": "Mathematics 2.0 for Transfer, Associate in Science",
    "measure": "units",
    "total_units": {
+    "min": 24,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -122,50 +124,136 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students will solve application problems in the natural sciences, management sciences, and social services using sound mathematical principles.",
+    "Students will demonstrate algebraic proficiency when using the concepts taught in each course to solve multi-step problems.",
+    "Students will use limits, derivatives, and integrals to calculate rates of change and infinite sums."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CIT 66",
-    "why": "not in the text; Mathematics A.S.-T section absent"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CSCI 40",
-    "why": "named only in the Engineering: Electrical certificate section; Mathematics A.S.-T section absent"
+    "name": "Required Core Courses: MATH 17",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Differential equations and linear algebra",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 17",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MATH 17",
-    "why": "named only in the Engineering: Electrical certificate section; Mathematics A.S.-T section absent"
+    "name": "Required Core Courses: MATH 7 and MATH 26",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Differential equations and linear algebra",
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "MATH 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "MATH 26",
-    "why": "not in the text; Mathematics A.S.-T section absent"
-   },
-   {
-    "code": "MATH 7",
-    "why": "named only in the Engineering: Electrical certificate section; Mathematics A.S.-T section absent"
-   },
-   {
-    "code": "MATH C2210",
-    "why": "named only in the Engineering: Electrical certificate section; Mathematics A.S.-T section absent"
-   },
-   {
-    "code": "MATH C2220",
-    "why": "named only in the Engineering: Electrical certificate section; Mathematics A.S.-T section absent"
-   },
-   {
-    "code": "MATH6",
-    "why": "printed as MATH 6 only in the Engineering: Electrical certificate section; Mathematics A.S.-T section absent"
-   },
-   {
-    "code": "PHYS 4A",
-    "why": "named only in the Engineering: Electrical certificate section; Mathematics A.S.-T section absent"
+    "name": "List A: Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CIT 66",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list prints 'MATH6' (Mathematical Analysis III, units not stored); the catalog prints 'MATH 6' with the same title, 5 units. Recorded as the same closed-list course, not a catalog addition.",
+   "The 'Required Core Courses' total of 20-22 units covers MATH C2210, MATH C2220, MATH 6 plus the choice of MATH 17 or MATH 7 and MATH 26; it was recorded on the first core block, which alone holds 15 units.",
+   "The catalog prints '5.0-7.0' over the choice between MATH 17 (5 units) and the sequence MATH 7 and MATH 26 (printed total 7). These are recorded as two option blocks in one option_group.",
+   "The sentence that students must complete 60 CSU-transferable units, Cal-GETC and 24-26 units in the major is read as the general transfer degree requirement. It is not recorded as a printed degree total, and no units are printed for Cal-GETC.",
+   "The text names no careers."
+  ]
  },
- "extracted_run": "38563582873"
+ "extracted_run": "44692355661",
+ "catalog_year": "2026-2027"
 }

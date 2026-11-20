@@ -25,7 +25,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "library technology, associate of science - major #5171",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -64,7 +67,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biology - formerly life science degree, associate of science - major #6082",
+    "section_fit": 0.167
    }
   },
   "listed": 17,
@@ -100,7 +106,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting, associate of science - major #2010",
+    "section_fit": 0.333
    }
   },
   "listed": 14,
@@ -141,7 +150,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration, management, associate of science - major #2181",
+    "section_fit": 0.6
    }
   },
   "listed": 19,
@@ -169,11 +181,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marketing, associate of science - major #2110",
+    "section_fit": 0.333
    }
   },
   "listed": 6,
-  "text_chars": 891
+  "text_chars": 883
  },
  {
   "control_number": "01669",
@@ -199,11 +214,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 1222
+  "text_chars": 1214
  },
  {
   "control_number": "01670",
@@ -229,11 +247,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 1443
+  "text_chars": 1435
  },
  {
   "control_number": "01677",
@@ -267,11 +288,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
-  "text_chars": 1591
+  "text_chars": 1583
  },
  {
   "control_number": "01680",
@@ -317,7 +341,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "electrical systems technology - formerly electronic technology, associate of science - major #8171",
+    "section_fit": 0.429
    }
   },
   "listed": 28,
@@ -343,11 +370,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "hvac technology ii - formerly hvac technology iii and air conditioning, associate of science - major #8042",
+    "section_fit": 0.333
    }
   },
   "listed": 5,
-  "text_chars": 1315
+  "text_chars": 1311
  },
  {
   "control_number": "01687",
@@ -382,7 +412,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technology, associate of science - major #8051",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -410,7 +443,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive collision repair technology - formerly body and fender mechanic, associate of science - major #8071",
+    "section_fit": 0.4
    }
   },
   "listed": 6,
@@ -444,7 +480,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer aided drafting and design - formerly drafting, associate of science - major #3051",
+    "section_fit": 0.571
    }
   },
   "listed": 12,
@@ -473,7 +512,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer aided manufacturing - formerly manufacturing technology & machinist, associate of science - major #8271",
+    "section_fit": 0.375
    }
   },
   "listed": 7,
@@ -512,7 +554,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -570,7 +615,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art - formerly two-dimensional art, associate of arts - major #5205",
+    "section_fit": 0.167
    }
   },
   "listed": 36,
@@ -613,7 +661,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "instrumental music, associate of arts - major #5810",
+    "section_fit": 0.5
    }
   },
   "listed": 21,
@@ -651,7 +702,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts, associate of arts - major #5440",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -682,7 +736,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "professional photography - formerly photography, associate of science - major #5221",
+    "section_fit": 0.4
    }
   },
   "listed": 9,
@@ -717,11 +774,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "graphic design - formerly graphic design option, associate of arts - major #8507",
+    "section_fit": 0.4
    }
   },
   "listed": 14,
-  "text_chars": 1318
+  "text_chars": 1282
  },
  {
   "control_number": "01714",
@@ -756,11 +816,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing, registered, associate of science - major #4520",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
-  "text_chars": 4360
+  "text_chars": 4344
  },
  {
   "control_number": "01716",
@@ -787,7 +850,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "clinical medical assistant - formerly medical assistant-clinician, associate of science - major #2122",
+    "section_fit": 0.429
    }
   },
   "listed": 9,
@@ -831,7 +897,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dental hygiene, associate of science - major #4580",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
@@ -875,7 +944,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "respiratory care practitioner, associate of science - major #4610",
+    "section_fit": 0.6
    }
   },
   "listed": 22,
@@ -913,11 +985,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
-  "text_chars": 2921
+  "text_chars": 2893
  },
  {
   "control_number": "01720",
@@ -951,7 +1026,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "radiologic technology, associate of science - major #4570",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -997,7 +1075,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development, associate of science - major #5615",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
@@ -1031,11 +1112,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "food and nutrition, associate of science - major #5682",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
-  "text_chars": 1377
+  "text_chars": 1369
  },
  {
   "control_number": "01725",
@@ -1059,7 +1143,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dietary service supervisor, certificate of achievement - major #5681",
+    "section_fit": 0.6
    }
   },
   "listed": 6,
@@ -1105,7 +1192,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "paralegal studies - formerly paralegal, associate of science - major #2553",
+    "section_fit": 0.4
    }
   },
   "listed": 24,
@@ -1186,7 +1276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 59,
@@ -1231,7 +1324,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "recreation leadership, associate of arts - major #4300",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
@@ -1259,11 +1355,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire technology, associate of science - major #883a",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
-  "text_chars": 1038
+  "text_chars": 1034
  },
  {
   "control_number": "01742",
@@ -1284,7 +1383,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic fire academy, certificate of achievement - major #883b",
+    "section_fit": 0.6
    }
   },
   "listed": 3,
@@ -1319,7 +1421,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "african-american studies, associate of arts - major #7640",
+    "section_fit": 0.6
    }
   },
   "listed": 13,
@@ -1361,7 +1466,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "women's and gender studies - formerly women's studies, associate in arts - major #7611",
+    "section_fit": 0.5
    }
   },
   "listed": 20,
@@ -1394,7 +1502,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "construction, associate of science - major #8091",
+    "section_fit": 0.333
    }
   },
   "listed": 13,
@@ -1422,7 +1533,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computerized accounting for the workplace - formerly computerized accounting, certificate of achievement - major #2056",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -1454,7 +1568,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -1492,11 +1609,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "general motors asep program, associate of science - major #805g",
+    "section_fit": 0.6
    }
   },
   "listed": 16,
-  "text_chars": 2085
+  "text_chars": 2081
  },
  {
   "control_number": "10999",
@@ -1529,7 +1649,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1570,7 +1693,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -1629,7 +1755,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 37,
@@ -1682,7 +1811,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -1746,7 +1878,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "commercial music, associate of science - major #5850",
+    "section_fit": 0.5
    }
   },
   "listed": 42,
@@ -1781,7 +1916,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -1832,7 +1970,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance, associate of arts - major #5390",
+    "section_fit": 0.333
    }
   },
   "listed": 29,
@@ -1869,11 +2010,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
-  "text_chars": 1257
+  "text_chars": 1237
  },
  {
   "control_number": "11018",
@@ -1903,7 +2047,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child nutrition, certificate of achievement - major #5692",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -1959,7 +2106,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "alcoholism and drug abuse counseling option, associate of science - major #7951",
+    "section_fit": 0.667
    }
   },
   "listed": 34,
@@ -2005,7 +2155,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "law enforcement option, associate of science - major #8872",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
@@ -2066,7 +2219,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "correctional science option, associate of science - major #7731",
+    "section_fit": 0.5
    }
   },
   "listed": 39,
@@ -2108,7 +2264,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chicano-latino studies - formerly cultural studies, la raza, associate of arts - major #7661",
+    "section_fit": 0.333
    }
   },
   "listed": 20,
@@ -2143,7 +2302,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american indian studies, associate of arts - major #7680",
+    "section_fit": 0.6
    }
   },
   "listed": 13,
@@ -2180,7 +2342,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "architecture, associate of science - major #6810",
+    "section_fit": 0.333
    }
   },
   "listed": 15,
@@ -2212,7 +2377,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "network security/computer technician - formerly networking/computer technician, associate of science - major #2721",
+    "section_fit": 0.375
    }
   },
   "listed": 10,
@@ -2246,11 +2414,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marketing, retail management, associate of science - major #2055",
+    "section_fit": 0.6
    }
   },
   "listed": 12,
-  "text_chars": 1741
+  "text_chars": 1725
  },
  {
   "control_number": "12217",
@@ -2273,7 +2444,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical office assistant - formerly medical billing assistant, certificate of achievement - major #2243",
+    "section_fit": 0.429
    }
   },
   "listed": 5,
@@ -2298,11 +2472,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "microsoft certified specialist - formerly mctc networking, certificate of achievement - major #2724",
+    "section_fit": 0.375
    }
   },
   "listed": 3,
-  "text_chars": 2291
+  "text_chars": 2287
  },
  {
   "control_number": "12575",
@@ -2328,7 +2505,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "web developer - formerly webmaster, associate of science - major #2742",
+    "section_fit": 0.333
    }
   },
   "listed": 8,
@@ -2365,7 +2545,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems, associate of science - major #2701",
+    "section_fit": 0.6
    }
   },
   "listed": 15,
@@ -2376,27 +2559,12 @@
   "title": "Child Development",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CDEV1",
-   "CDEV3",
-   "CDEV30",
-   "CDEV6",
-   "CDEVC1000"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Child-Development-Programs/6579",
-   "title": "Child Development, Associate of Science - Major #5615",
-   "h1": "Child Development, Associate of Science - Major #5615",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 3136
+  "text_chars": 0
  },
  {
   "control_number": "13640",
@@ -2419,7 +2587,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "family child care, certificate of achievement - major #5571",
+    "section_fit": 0.6
    }
   },
   "listed": 5,
@@ -2451,7 +2622,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "commercial photography, certificate of achievement - major #5222",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -2478,7 +2652,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital photography, certificate of achievement - major #5223",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -2506,7 +2683,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fine art photography, certificate of achievement - major #5224",
+    "section_fit": 0.6
    }
   },
   "listed": 6,
@@ -2532,7 +2712,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "documentary media - formerly photojournalism, certificate of achievement - major #5228",
+    "section_fit": 0.333
    }
   },
   "listed": 4,
@@ -2564,7 +2747,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "early intervention - formerly early intervention assistant, associate of science - major #5621",
+    "section_fit": 0.333
    }
   },
   "listed": 10,
@@ -2591,7 +2777,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2607,7 +2796,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "17157",
@@ -2631,7 +2824,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2658,7 +2854,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2684,11 +2883,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
-  "text_chars": 1100
+  "text_chars": 1096
  },
  {
   "control_number": "19075",
@@ -2758,11 +2960,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts with an emphasis in foreign languages, associate of arts - major #5134",
+    "section_fit": 0.571
    }
   },
   "listed": 28,
-  "text_chars": 2771
+  "text_chars": 2663
  },
  {
   "control_number": "19191",
@@ -2817,7 +3022,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts emphasis in ethnic studies - formerly liberal arts emphasis in cultural studies, associate of arts - major #5121",
+    "section_fit": 0.556
    }
   },
   "listed": 37,
@@ -2895,7 +3103,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts emphasis in social sciences, associate of arts - major #5176",
+    "section_fit": 0.714
    }
   },
   "listed": 58,
@@ -2922,7 +3133,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2948,7 +3162,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2984,7 +3201,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic police academy, certificate of achievement - major #8921",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
@@ -3007,7 +3227,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "paramedic - formerly prehospital paramedic care, certificate of achievement - major #8846",
+    "section_fit": 0.167
    }
   },
   "listed": 1,
@@ -3036,7 +3259,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education - formerly child development, certificate of achievement - major #5616",
+    "section_fit": 0.375
    }
   },
   "listed": 7,
@@ -3068,7 +3294,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -3099,17 +3328,20 @@
    "ARCH42"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6501",
-   "title": "Architecture, Associate of Science - Major #6810",
-   "h1": "Architecture, Associate of Science - Major #6810",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6502",
+   "title": "Architecture, Certificate of Achievement - Major #6810",
+   "h1": "Architecture, Certificate of Achievement - Major #6810",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architecture, certificate of achievement - major #6810",
+    "section_fit": 0.333
    }
   },
   "listed": 15,
-  "text_chars": 2131
+  "text_chars": 1983
  },
  {
   "control_number": "21198",
@@ -3135,17 +3367,20 @@
    "CIT23"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6483",
-   "title": "Accounting, Associate of Science - Major #2010",
-   "h1": "Accounting, Associate of Science - Major #2010",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6484",
+   "title": "Accounting, Certificate of Achievement - Major #2010",
+   "h1": "Accounting, Certificate of Achievement - Major #2010",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting, certificate of achievement - major #2010",
+    "section_fit": 0.333
    }
   },
   "listed": 14,
-  "text_chars": 1414
+  "text_chars": 1252
  },
  {
   "control_number": "21199",
@@ -3183,7 +3418,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration, management, certificate of achievement - major #2181",
+    "section_fit": 0.6
    }
   },
   "listed": 20,
@@ -3217,11 +3455,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
-  "text_chars": 1741
+  "text_chars": 1725
  },
  {
   "control_number": "21201",
@@ -3239,17 +3480,20 @@
    "MKTG21"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6732",
-   "title": "Marketing, Associate of Science - Major #2110",
-   "h1": "Marketing, Associate of Science - Major #2110",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Marketing-Programs/6733",
+   "title": "Marketing, Certificate of Achievement - Major #2110",
+   "h1": "Marketing, Certificate of Achievement - Major #2110",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "marketing, certificate of achievement - major #2110",
+    "section_fit": 0.333
    }
   },
   "listed": 6,
-  "text_chars": 891
+  "text_chars": 881
  },
  {
   "control_number": "21205",
@@ -3276,7 +3520,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3306,11 +3553,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 1222
+  "text_chars": 1214
  },
  {
   "control_number": "21210",
@@ -3337,43 +3587,26 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 1339
+  "text_chars": 1331
  },
  {
   "control_number": "21216",
   "title": "Networking/Computer Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CIT15",
-   "CIT40",
-   "CIT45",
-   "CIT48B",
-   "CIT49",
-   "CIT50",
-   "CIT57",
-   "CIT58B",
-   "CIT58C",
-   "CIT58F"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Information-Technology-Programs/6603",
-   "title": "Network Security/Computer Technician - Formerly Networking/Computer Technician, Associate of Science - Major #2721",
-   "h1": "Network Security/Computer Technician - Formerly Networking/Computer Technician, Associate of Science - Major #2721",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 1270
+  "text_chars": 0
  },
  {
   "control_number": "21217",
@@ -3399,7 +3632,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -3433,7 +3669,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "education paraprofessional - formerly teacher aide: general, certificate of achievement - major #5911",
+    "section_fit": 0.25
    }
   },
   "listed": 12,
@@ -3483,7 +3722,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 28,
@@ -3516,17 +3758,20 @@
    "WELD1"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6518",
-   "title": "Automotive Technology, Associate of Science - Major #8051",
-   "h1": "Automotive Technology, Associate of Science - Major #8051",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6519",
+   "title": "Automotive Technology, Certificate of Achievement - Major #8051",
+   "h1": "Automotive Technology, Certificate of Achievement - Major #8051",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive technology, certificate of achievement - major #8051",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
-  "text_chars": 1982
+  "text_chars": 1984
  },
  {
   "control_number": "21223",
@@ -3550,7 +3795,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3584,7 +3832,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "construction trades ii - formerly construction, certificate of achievement - major #8095",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -3595,34 +3846,12 @@
   "title": "Computer Aided Drafting and Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "AT10",
-   "CADD10",
-   "CADD14",
-   "CADD16",
-   "CADD20",
-   "CADD22",
-   "CADD23",
-   "CADD24",
-   "CADD28",
-   "CADD32",
-   "CADD42",
-   "DRAFT12"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Drafting-and-Design-Programs/6590",
-   "title": "Computer Aided Drafting and Design - Formerly Drafting, Associate of Science - Major #3051",
-   "h1": "Computer Aided Drafting and Design - Formerly Drafting, Associate of Science - Major #3051",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 1816
+  "text_chars": 0
  },
  {
   "control_number": "21226",
@@ -3640,56 +3869,32 @@
    "CAM5"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6595",
-   "title": "Computer Aided Manufacturing - Formerly Manufacturing Technology & Machinist, Associate of Science - Major #8271",
-   "h1": "Computer Aided Manufacturing - Formerly Manufacturing Technology & Machinist, Associate of Science - Major #8271",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Computer-Aided-Manufacturing-Programs/6596",
+   "title": "Computer Aided Manufacturing, Certificate of Achievement - Major #8271",
+   "h1": "Computer Aided Manufacturing, Certificate of Achievement - Major #8271",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer aided manufacturing, certificate of achievement - major #8271",
+    "section_fit": 0.6
    }
   },
   "listed": 6,
-  "text_chars": 1388
+  "text_chars": 1141
  },
  {
   "control_number": "21227",
   "title": "Welding Technology, Metal Fabrication Option",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "AT10",
-   "AT130",
-   "AT21",
-   "AT40",
-   "CADD22",
-   "CAM10",
-   "DRAFT12",
-   "ENGR10",
-   "ENGR11",
-   "WELD10",
-   "WELD130",
-   "WELD2A",
-   "WELD2B",
-   "WELD3A",
-   "WELD3B",
-   "WELD3C",
-   "WELD56"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Welding-Technology-Programs/6791",
-   "title": "Metal Fabrication Option, Associate of Science - Major #8371",
-   "h1": "Metal Fabrication Option, Associate of Science - Major #8371",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 1932
+  "text_chars": 0
  },
  {
   "control_number": "21228",
@@ -3722,7 +3927,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -3769,7 +3977,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "studio art - formerly three-dimensional art, certificate of achievement - major #5210",
+    "section_fit": 0.286
    }
   },
   "listed": 25,
@@ -3797,17 +4008,20 @@
    "MUS93"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6750",
-   "title": "Commercial Music, Associate of Science - Major #5850",
-   "h1": "Commercial Music, Associate of Science - Major #5850",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Music-Programs/6751",
+   "title": "Commercial Music, Certificate of Achievement - Major #5850",
+   "h1": "Commercial Music, Certificate of Achievement - Major #5850",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "commercial music, certificate of achievement - major #5850",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
-  "text_chars": 2914
+  "text_chars": 1465
  },
  {
   "control_number": "21235",
@@ -3834,7 +4048,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -3869,11 +4086,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
-  "text_chars": 1318
+  "text_chars": 1282
  },
  {
   "control_number": "21240",
@@ -3901,11 +4121,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "marketing, fashion merchandising, certificate of achievement - major #2152",
+    "section_fit": 0.6
    }
   },
   "listed": 10,
-  "text_chars": 864
+  "text_chars": 856
  },
  {
   "control_number": "21241",
@@ -3931,100 +4154,44 @@
    "FSM38"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6672",
-   "title": "Food and Nutrition, Associate of Science - Major #5682",
-   "h1": "Food and Nutrition, Associate of Science - Major #5682",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6673",
+   "title": "Food and Nutrition, Certificate of Achievement - Major #5682",
+   "h1": "Food and Nutrition, Certificate of Achievement - Major #5682",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "food and nutrition, certificate of achievement - major #5682",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
-  "text_chars": 1377
+  "text_chars": 1362
  },
  {
   "control_number": "21242",
   "title": "Food Services Management",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ACCTG4A",
-   "BA10",
-   "BT131",
-   "ECON25",
-   "FN1",
-   "FN2",
-   "FN35",
-   "FN40",
-   "FSM11",
-   "FSM15",
-   "FSM19",
-   "FSM25",
-   "FSM35",
-   "FSM38",
-   "MKTG10"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-Service-Management-Programs/6677",
-   "title": "Food Service Management, Associate of Science - Major #5691",
-   "h1": "Food Service Management, Associate of Science - Major #5691",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.667
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 1257
+  "text_chars": 0
  },
  {
   "control_number": "21243",
   "title": "Paralegal Studies",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "BA20",
-   "BT140",
-   "BT28",
-   "BT29",
-   "PLEGAL1",
-   "PLEGAL10",
-   "PLEGAL11",
-   "PLEGAL12",
-   "PLEGAL14",
-   "PLEGAL15",
-   "PLEGAL156",
-   "PLEGAL17",
-   "PLEGAL18",
-   "PLEGAL19",
-   "PLEGAL20",
-   "PLEGAL2A",
-   "PLEGAL2B",
-   "PLEGAL3",
-   "PLEGAL4",
-   "PLEGAL5",
-   "PLEGAL6A",
-   "PLEGAL6B",
-   "PLEGAL7",
-   "PLEGAL8"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Paralegal-Programs/6761",
-   "title": "Paralegal Studies - Formerly Paralegal, Associate of Science - Major #2553",
-   "h1": "Paralegal Studies - Formerly Paralegal, Associate of Science - Major #2553",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 24,
-  "text_chars": 2092
+  "text_chars": 0
  },
  {
   "control_number": "21244",
@@ -4046,13 +4213,16 @@
    "LITEC63"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6723",
-   "title": "Library Technology, Associate of Science - Major #5171",
-   "h1": "Library Technology, Associate of Science - Major #5171",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6724",
+   "title": "Library Technology, Certificate of Achievement - Major #5171",
+   "h1": "Library Technology, Certificate of Achievement - Major #5171",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "library technology, certificate of achievement - major #5171",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -4132,7 +4302,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 58,
@@ -4188,7 +4361,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 34,
@@ -4210,17 +4386,20 @@
    "FIRET5"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6666",
-   "title": "Fire Technology, Associate of Science - Major #883A",
-   "h1": "Fire Technology, Associate of Science - Major #883A",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Fire-Technology-Programs/6667",
+   "title": "Fire Technology, Certificate of Achievement - Major #883A",
+   "h1": "Fire Technology, Certificate of Achievement - Major #883A",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire technology, certificate of achievement - major #883a",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
-  "text_chars": 1038
+  "text_chars": 1040
  },
  {
   "control_number": "30212",
@@ -4244,7 +4423,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child welfare - formerly foster care, certificate of achievement - major #5581",
+    "section_fit": 0.286
    }
   },
   "listed": 6,
@@ -4287,7 +4469,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -4322,7 +4507,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4350,7 +4538,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30993",
@@ -4362,7 +4554,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30994",
@@ -4374,7 +4570,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30995",
@@ -4386,32 +4586,23 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "31056",
   "title": "Sign Language Interpreting Preparation Program",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.6,
-  "codes_found": [
-   "ASL4",
-   "ASL7",
-   "ASL8"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7111/7113",
-   "title": "Cal-GETC, Certificate of Achievement - Major #5040",
-   "h1": "Cal-GETC, Certificate of Achievement - Major #5040",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 4124
+  "text_chars": 0
  },
  {
   "control_number": "31177",
@@ -4437,7 +4628,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -4471,11 +4665,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical coding, certificate of achievement - major #4627",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
-  "text_chars": 1903
+  "text_chars": 1887
  },
  {
   "control_number": "31292",
@@ -4487,7 +4684,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "31863",
@@ -4519,7 +4720,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4552,7 +4756,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language - formerly american sign language studies, associate of arts - major #5506",
+    "section_fit": 0.429
    }
   },
   "listed": 11,
@@ -4579,7 +4786,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4615,7 +4825,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4662,7 +4875,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -4707,7 +4923,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -4749,7 +4968,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -4787,7 +5009,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -4821,7 +5046,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -4837,7 +5065,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32881",
@@ -4849,14 +5081,18 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33237",
   "title": "Elementary Teacher Education",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -4905,7 +5141,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 26,
@@ -4934,7 +5173,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chemistry, certificate of achievement - major #6320",
+    "section_fit": 0.333
    }
   },
   "listed": 7,
@@ -4945,29 +5187,12 @@
   "title": "Clinical Medical Assistant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "AHLTH11",
-   "AHLTH12",
-   "MA19",
-   "MA4",
-   "MA5",
-   "MA6A",
-   "MA6B"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Medical-Assistant-Programs/6741",
-   "title": "Clinical Medical Assistant - Formerly Medical Assistant-Clinician, Associate of Science - Major #2122",
-   "h1": "Clinical Medical Assistant - Formerly Medical Assistant-Clinician, Associate of Science - Major #2122",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 2306
+  "text_chars": 0
  },
  {
   "control_number": "35161",
@@ -4994,7 +5219,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -5032,7 +5260,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -5062,7 +5293,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "infant and toddler specialist, certificate of achievement - major #5619",
+    "section_fit": 0.6
    }
   },
   "listed": 8,
@@ -5101,7 +5335,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -5136,7 +5373,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood paraprofessional, certificate of achievement - major #5912",
+    "section_fit": 0.6
    }
   },
   "listed": 13,
@@ -5167,7 +5407,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "special education paraprofessional, certificate of achievement - major #5913",
+    "section_fit": 0.6
    }
   },
   "listed": 9,
@@ -5229,7 +5472,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 42,
@@ -5264,7 +5510,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "field biologist, certificate of achievement - major #6083",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -5348,7 +5597,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "kinesiology: physical education - formerly kinesiology degree, associate of science - major #4557",
+    "section_fit": 0.5
    }
   },
   "listed": 62,
@@ -5377,7 +5629,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -5416,7 +5671,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "asian american studies, associate of arts - major #7695",
+    "section_fit": 0.6
    }
   },
   "listed": 17,
@@ -5444,7 +5702,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photovoltaics - formerly advanced photovoltaic technician, certificate of achievement - major #8196",
+    "section_fit": 0.143
    }
   },
   "listed": 6,
@@ -5481,7 +5742,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "pre-allied health - formerly pre-allied health registered nursing option, associate of science - major #4526",
+    "section_fit": 0.375
    }
   },
   "listed": 15,
@@ -5492,7 +5756,7 @@
   "title": "Global Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -5526,7 +5790,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "alternative fueled vehicle (afv), certificate of achievement - major #8078",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -5559,7 +5826,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "zero emission vehicle (zev) - formerly hybrid electric vehicle (hev), certificate of achievement - major #8081",
+    "section_fit": 0.3
    }
   },
   "listed": 11,
@@ -5597,7 +5867,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering: civil, associate of science - major #3011",
+    "section_fit": 0.5
    }
   },
   "listed": 16,
@@ -5632,7 +5905,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering: computer - formerly engineering: computer, software, associate of science - major #3015",
+    "section_fit": 0.333
    }
   },
   "listed": 14,
@@ -5667,7 +5943,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering: electrical, associate of science - major #3013",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -5704,7 +5983,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering: mechanical, aerospace, and manufacturing, associate of science - major #3014",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
@@ -5739,7 +6021,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -5774,7 +6059,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -5812,7 +6100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -5849,7 +6140,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -5878,7 +6172,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "elder care human services, certificate of achievement - major #7634",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -5908,7 +6205,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity, certificate of achievement - major #2750",
+    "section_fit": 0.333
    }
   },
   "listed": 8,
@@ -5919,26 +6219,12 @@
   "title": "Industrial Maintenance Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "EST51",
-   "EST53",
-   "EST56B",
-   "EST58"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6640",
-   "title": "Electrical Systems Technology - Formerly Electronic Technology, Certificate of Achievement - Major #8171",
-   "h1": "Electrical Systems Technology - Formerly Electronic Technology, Certificate of Achievement - Major #8171",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 2414
+  "text_chars": 0
  },
  {
   "control_number": "38351",
@@ -5965,17 +6251,20 @@
    "WELD1"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6523",
-   "title": "Diesel Technology, Associate of Science - Major #8059",
-   "h1": "Diesel Technology, Associate of Science - Major #8059",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Automotive-Technology-Programs/6524",
+   "title": "Diesel Technology, Certificate of Achievement - Major #8059",
+   "h1": "Diesel Technology, Certificate of Achievement - Major #8059",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "diesel technology, certificate of achievement - major #8059",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
-  "text_chars": 1726
+  "text_chars": 1724
  },
  {
   "control_number": "38357",
@@ -6008,7 +6297,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "diesel technology, associate of science - major #8059",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
@@ -6034,7 +6326,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "one-person office, certificate of achievement - major #2063",
+    "section_fit": 0.6
    }
   },
   "listed": 4,
@@ -6063,7 +6358,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer aided drafting and design entrepreneurship, certificate of achievement - major #3056",
+    "section_fit": 0.714
    }
   },
   "listed": 7,
@@ -6116,7 +6414,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 31,
@@ -6178,7 +6479,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 40,
@@ -6232,7 +6536,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 32,
@@ -6263,7 +6570,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -6306,7 +6616,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -6327,17 +6640,20 @@
    "REC23"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6782",
-   "title": "Recreation Leadership, Associate of Arts - Major #4300",
-   "h1": "Recreation Leadership, Associate of Arts - Major #4300",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Recreation-Leadership-Programs/6783",
+   "title": "Recreation Leadership, Certificate of Achievement - Major #4300",
+   "h1": "Recreation Leadership, Certificate of Achievement - Major #4300",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "recreation leadership, certificate of achievement - major #4300",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
-  "text_chars": 2532
+  "text_chars": 1628
  },
  {
   "control_number": "38967",
@@ -6349,7 +6665,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "39111",
@@ -6373,7 +6693,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electricity fundamentals 1, certificate of achievement - major #8191",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -6401,11 +6724,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial automation 2, certificate of achievement - major #8195",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
-  "text_chars": 1150
+  "text_chars": 1121
  },
  {
   "control_number": "39299",
@@ -6428,7 +6754,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electricity fundamentals 2, certificate of achievement - major #8192",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -6439,51 +6768,24 @@
   "title": "Electromechanical 1",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "EST56B",
-   "EST61"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6640",
-   "title": "Electrical Systems Technology - Formerly Electronic Technology, Certificate of Achievement - Major #8171",
-   "h1": "Electrical Systems Technology - Formerly Electronic Technology, Certificate of Achievement - Major #8171",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 2414
+  "text_chars": 0
  },
  {
   "control_number": "39301",
   "title": "Electromechanical 2",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "EST56C",
-   "EST58",
-   "EST59",
-   "EST83A",
-   "EST83B"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Electrical-Systems-Technology-Programs/6640",
-   "title": "Electrical Systems Technology - Formerly Electronic Technology, Certificate of Achievement - Major #8171",
-   "h1": "Electrical Systems Technology - Formerly Electronic Technology, Certificate of Achievement - Major #8171",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 2414
+  "text_chars": 0
  },
  {
   "control_number": "40219",
@@ -6520,11 +6822,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "leon s. peters honors program, certificate of achievement - major #5331",
+    "section_fit": 0.2
    }
   },
   "listed": 19,
-  "text_chars": 2316
+  "text_chars": 2288
  },
  {
   "control_number": "40409",
@@ -6551,17 +6856,20 @@
    "PHOTO67"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6688",
-   "title": "Video Production, Associate of Science - Major #8511",
-   "h1": "Video Production, Associate of Science - Major #8511",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6689",
+   "title": "Video Production, Certificate of Achievement - Major #8511",
+   "h1": "Video Production, Certificate of Achievement - Major #8511",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "video production, certificate of achievement - major #8511",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
-  "text_chars": 1644
+  "text_chars": 1650
  },
  {
   "control_number": "40410",
@@ -6594,7 +6902,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "video production, associate of science - major #8511",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -6625,7 +6936,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "video production, certificate of completion - major #8511",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -6653,7 +6967,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "animation - formerly motion graphics, certificate of achievement - major #8514",
+    "section_fit": 0.167
    }
   },
   "listed": 7,
@@ -6698,7 +7015,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "graphic design, certificate of completion - major #8507",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -6727,7 +7047,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "animation - formerly motion graphics, certificate of completion - major #8514",
+    "section_fit": 0.167
    }
   },
   "listed": 7,
@@ -6767,7 +7090,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "40568",
@@ -6790,7 +7117,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "employment essentials, certificate of achievement - major #6810",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -6818,7 +7148,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding and fabrication entrepreneurship, certificate of achievement - major #8376",
+    "section_fit": 0.6
    }
   },
   "listed": 6,
@@ -6829,28 +7162,12 @@
   "title": "Office Professional - One-Person Office Emphasis",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "BT1",
-   "BT112",
-   "BT131",
-   "BT23",
-   "BT5",
-   "BT9"
-  ],
-  "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6553",
-   "title": "Office Specialist - Formerly Office Professional - Executive Assistant Emphasis, Office Professional II and Administrative Assistant Emphasis, Certificate of Achievement - Major #2216",
-   "h1": "Office Specialist - Formerly Office Professional - Executive Assistant Emphasis, Office Professional II and Administrative Assistant Emphasis, Certificate of Achievement - Major #2216",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.667
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 1327
+  "text_chars": 0
  },
  {
   "control_number": "40683",
@@ -6872,7 +7189,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automated welding systems, certificate of achievement - major #8377",
+    "section_fit": 0.6
    }
   },
   "listed": 4,
@@ -6888,7 +7208,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "40748",
@@ -6920,7 +7244,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "entrepreneurship skills, certificate of completion - major #2042",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -6948,7 +7275,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "41205",
@@ -6976,7 +7307,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -7011,7 +7345,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data analytics and predictive modeling, certificate of achievement - major #2800",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -7040,7 +7377,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "social media content design, certificate of achievement - major #8513",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -7073,7 +7413,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "company officer, associate of science - major #8836",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -7112,7 +7455,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "industrial technology, construction emphasis, associate of science - major #8993",
+    "section_fit": 0.667
    }
   },
   "listed": 19,
@@ -7164,7 +7510,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "human biology, associate of science - major #6084",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -7193,7 +7542,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "personal training - formerly personal training entrepreneurship, certificate of achievement - major #4332",
+    "section_fit": 0.333
    }
   },
   "listed": 7,
@@ -7226,7 +7578,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive-diesel mlr (maintenance and light repair technician), certificate of achievement - major #8058",
+    "section_fit": 0.333
    }
   },
   "listed": 11,
@@ -7261,7 +7616,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive-diesel fixed operations administrator, certificate of achievement -  major #8057",
+    "section_fit": 0.714
    }
   },
   "listed": 13,
@@ -7290,7 +7648,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "asl/english interpreting, associate of arts - major #5507",
+    "section_fit": 0.6
    }
   },
   "listed": 7,
@@ -7331,7 +7692,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community change studies, certificate of achievement - major #7663",
+    "section_fit": 0.6
    }
   },
   "listed": 19,
@@ -7363,7 +7727,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "stagecraft, certificate of achievement - major #5483",
+    "section_fit": 0.333
    }
   },
   "listed": 10,
@@ -7391,7 +7758,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental assisting, certificate of achievement - major #4581",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -7418,7 +7788,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "race, equity, and language in early education, certificate of achievement - major #5622",
+    "section_fit": 0.714
    }
   },
   "listed": 5,
@@ -7447,7 +7820,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certified dietary manager, certificate of achievement - major #5683",
+    "section_fit": 0.6
    }
   },
   "listed": 7,
@@ -7475,7 +7851,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chassis technician, certificate of achievement - major #8053",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -7509,7 +7888,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary arts, certificate of achievement - major #5687",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -7542,7 +7924,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "data analytics and predictive modeling, associate in science - major #2800",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -7578,7 +7963,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "introduction to digital literacy, certificate of completion - major #2330",
+    "section_fit": 0.6
    }
   },
   "listed": 2,
@@ -7608,7 +7996,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -7632,7 +8023,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "essential skills for college & career success, certificate of completion - major #2473",
+    "section_fit": 0.714
    }
   },
   "listed": 2,
@@ -7661,7 +8055,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music teaching program, certificate of achievement - major #5801",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -7698,7 +8095,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurship, certificate of achievement - major #2043",
+    "section_fit": 0.333
    }
   },
   "listed": 15,
@@ -7714,7 +8114,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "44281",
@@ -7741,7 +8145,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -7773,7 +8180,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer science, associate of science - major #2790",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -7856,7 +8266,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology: sports management, associate of arts - major #4556",
+    "section_fit": 0.6
    }
   },
   "listed": 61,
@@ -7920,7 +8333,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music performance, certificate of achievement - major #5802",
+    "section_fit": 0.5
    }
   },
   "listed": 42,
@@ -7944,7 +8360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "paramedic, associate of science - major #8846",
+    "section_fit": 0.333
    }
   },
   "listed": 2,
@@ -7968,7 +8387,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "information literacy, certificate of completion - major #2331",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -8003,7 +8425,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -8030,7 +8455,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "agricultural foundations, certificate of completion - major #1021",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -8046,7 +8474,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 166 of 191 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "44602",
@@ -8068,7 +8500,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drone operations, certificate of achievement - major #5229",
+    "section_fit": 0.5
    }
   },
   "listed": 4,
@@ -8094,7 +8529,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community health advocacy - formerly community outreach, social justice, and health advocacy, certificate of achievement - major #8401",
+    "section_fit": 0.333
    }
   },
   "listed": 4,
@@ -8120,7 +8558,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "social media imaging, certificate of achievement - major #5226",
+    "section_fit": 0.6
    }
   },
   "listed": 4,
@@ -8147,7 +8588,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital video - formerly digital video option, certificate of achievement - major #8509",
+    "section_fit": 0.4
    }
   },
   "listed": 6,
@@ -8174,7 +8618,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agricultural foundations, certificate of achievement - major #1021",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -8197,7 +8644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mc3 pre-apprenticeship employment ready, certificate of achievement - major #9244",
+    "section_fit": 0.714
    }
   },
   "listed": 1,
@@ -8220,7 +8670,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mc3 pre-apprenticeship plus, certificate of achievement - major #9243",
+    "section_fit": 0.667
    }
   },
   "listed": 1,
@@ -8253,7 +8706,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering: geomatics, associate of science - major #3016",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -8282,7 +8738,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrical systems technology, electrical safety, certificate of achievement - major #8198",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -8311,7 +8770,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "adobe applications, certificate of achievement - major #8515",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -8347,7 +8809,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering: chemical, associate of science - major #3017",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
@@ -8363,7 +8828,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "45462",
@@ -8384,11 +8853,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "intermediate academic and vocational emls, certificate of competency - major #5303",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
-  "text_chars": 1327
+  "text_chars": 1311
  },
  {
   "control_number": "45484",
@@ -8413,7 +8885,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "advanced academic and vocational emls, certificate of competency - major #5302",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -8442,7 +8917,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "fine art photography, certificate of completion - major #5234",
+    "section_fit": 0.6
    }
   },
   "listed": 7,
@@ -8474,7 +8952,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "commercial photography, certificate of completion - major #5232",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -8506,7 +8987,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "professional photography, certificate of completion - major #5231",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -8542,7 +9026,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -8581,7 +9068,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -8620,7 +9110,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "pre-human nutritional science, associate of science - major #5688",
+    "section_fit": 0.667
    }
   },
   "listed": 17,
@@ -8653,7 +9146,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "commercial dance, certificate of achievement - major #5391",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -8679,7 +9175,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive collision repair technology, certificate of achievement - major #8072",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -8691,10 +9190,11 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "CSCI40",
    "MATH17",
+   "MATH26",
    "MATH6",
    "MATH7",
    "MATHC2210",
@@ -8704,17 +9204,20 @@
    "PHYS4C"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6652",
-   "title": "Engineering: Computer - Formerly Engineering: Computer, Software, Certificate of Achievement - Major #3015",
-   "h1": "Engineering: Computer - Formerly Engineering: Computer, Software, Certificate of Achievement - Major #3015",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7121/7125",
+   "title": "Physics 2.0 for Transfer, Associate in Science",
+   "h1": "Physics 2.0 for Transfer, Associate in Science",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
-  "text_chars": 1955
+  "text_chars": 2446
  },
  {
   "control_number": "46239",
@@ -8722,10 +9225,12 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
+   "CIT66",
    "CSCI40",
    "MATH17",
+   "MATH26",
    "MATH6",
    "MATH7",
    "MATHC2210",
@@ -8733,16 +9238,19 @@
    "PHYS4A"
   ],
   "source": {
-   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Engineering-Programs/6654",
-   "title": "Engineering: Electrical, Certificate of Achievement - Major #3013",
-   "h1": "Engineering: Electrical, Certificate of Achievement - Major #3013",
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7120/7123",
+   "title": "Mathematics 2.0 for Transfer, Associate in Science",
+   "h1": "Mathematics 2.0 for Transfer, Associate in Science",
    "text_from": "innerText",
    "label": {
-    "award": 0,
-    "title": 0.0
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 1904
+  "text_chars": 2097
  }
 ]

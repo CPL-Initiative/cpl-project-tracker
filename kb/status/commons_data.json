@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-19T23:53:04Z",
+ "written_at": "2026-11-20T09:22:44Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16434,
-  "gap": 5901,
+  "passing": 16512,
+  "gap": 5823,
   "with_gap": 118,
-  "cost_usd": 1334.46,
-  "passed_at_read": 15813,
+  "cost_usd": 1335.24,
+  "passed_at_read": 15926,
   "cost_receipts": 118,
   "spent_usd": 1196.76,
   "spent_runs": 152,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16339,
-  "gap": 5901,
+  "passing": 16417,
+  "gap": 5823,
   "collected_with_gaps": 95,
   "discontinued": 0
  },
@@ -650,11 +650,11 @@
    "harvested": true,
    "slug": "barstow_community",
    "programs": 76,
-   "passing": 56,
-   "gap": 20,
+   "passing": 67,
+   "gap": 9,
    "causes": {
-    "page_not_found": 5,
-    "places_none": 15
+    "page_not_found": 8,
+    "unknown_without_live": 1
    },
    "census_causes": {
     "page_not_found": 4,
@@ -672,10 +672,10 @@
    "outcomes_file": "kb/status/commons_data_programs/barstow_community.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T05:28:38Z",
+   "read_at": "2026-11-20T06:32:05Z",
    "read_kind": "capture",
-   "cost_usd": 4.68,
-   "passed_at_read": 54,
+   "cost_usd": 4.96,
+   "passed_at_read": 66,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -684,13 +684,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 76,
-   "found": 71,
-   "extracted": 71,
+   "found": 68,
+   "extracted": 68,
    "errors": 0,
    "failed_checks": {
-    "coverage": 15,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 17,
+    "arithmetic": 2,
     "repeated": 0,
     "outcomes": 0
    },
@@ -700,25 +700,25 @@
    "capture_root": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 26.7,
-   "run": "43691950026",
+   "read_seconds": 47.7,
+   "run": "44687777798",
    "levers": {
-    "reader_page_assignment": 15,
-    "reader_page_search": 5
+    "reader_page_search": 8,
+    "reconcile_steps": 1
    },
    "collection": {
     "program_reader": {
-     "records": 71,
+     "records": 68,
      "models": {
-      "claude-opus-5-5": 71
+      "claude-opus-5-5": 68
      },
-     "run": "43691950026",
-     "at": "2026-10-17T05:28:38Z",
-     "cost_usd": 4.68,
+     "run": "44687777798",
+     "at": "2026-11-20T06:32:05Z",
+     "cost_usd": 4.96,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 53,
+    "plo_programs": 66,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -2415,8 +2415,7 @@
    "gap": 43,
    "causes": {
     "no_closed_list": 34,
-    "page_not_found": 4,
-    "places_none": 2,
+    "page_not_found": 6,
     "unknown_without_live": 3
    },
    "census_causes": {
@@ -2439,9 +2438,9 @@
    "outcomes_file": "kb/status/commons_data_programs/college_of_san_mateo.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-17T13:16:50Z",
+   "read_at": "2026-11-20T06:30:17Z",
    "read_kind": "capture",
-   "cost_usd": 4.96,
+   "cost_usd": 4.87,
    "passed_at_read": 55,
    "slo_queue": null,
    "scout": null,
@@ -2451,13 +2450,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 64,
-   "found": 60,
-   "extracted": 60,
+   "found": 58,
+   "extracted": 58,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 5,
+    "arithmetic": 3,
     "repeated": 0,
     "outcomes": 0
    },
@@ -2467,23 +2466,22 @@
    "capture_root": "https://catalog.collegeofsanmateo.edu/current/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1425.5,
-   "run": "44090902577",
+   "read_seconds": 1397.0,
+   "run": "44687781989",
    "levers": {
     "program_course_file_check": 34,
-    "reader_page_search": 4,
-    "reconcile_steps": 3,
-    "reader_page_assignment": 2
+    "reader_page_search": 6,
+    "reconcile_steps": 3
    },
    "collection": {
     "program_reader": {
-     "records": 60,
+     "records": 58,
      "models": {
-      "claude-opus-5-5": 60
+      "claude-opus-5-5": 58
      },
-     "run": "44090902577",
-     "at": "2026-11-17T13:16:50Z",
-     "cost_usd": 4.96,
+     "run": "44687781989",
+     "at": "2026-11-20T06:30:17Z",
+     "cost_usd": 4.87,
      "platform": "custom_html"
     },
     "slo_read": null,
@@ -2849,11 +2847,10 @@
    "harvested": true,
    "slug": "college_of_the_sequoias",
    "programs": 137,
-   "passing": 96,
-   "gap": 41,
+   "passing": 104,
+   "gap": 33,
    "causes": {
-    "page_not_found": 12,
-    "places_none": 7,
+    "page_not_found": 11,
     "unknown_without_live": 22
    },
    "census_causes": {
@@ -2874,10 +2871,10 @@
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_sequoias.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-15T14:10:10Z",
+   "read_at": "2026-11-20T06:55:02Z",
    "read_kind": "capture",
-   "cost_usd": 8.75,
-   "passed_at_read": 85,
+   "cost_usd": 8.94,
+   "passed_at_read": 100,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -2886,13 +2883,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 137,
-   "found": 125,
-   "extracted": 125,
+   "found": 126,
+   "extracted": 126,
    "errors": 0,
    "failed_checks": {
-    "coverage": 7,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 40,
+    "arithmetic": 26,
     "repeated": 0,
     "outcomes": 0
    },
@@ -2902,26 +2899,25 @@
    "capture_root": "https://catalog.cos.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 879.9,
-   "run": "38748848139",
+   "read_seconds": 916.0,
+   "run": "44688217584",
    "levers": {
     "reconcile_steps": 22,
-    "reader_page_search": 12,
-    "reader_page_assignment": 7
+    "reader_page_search": 11
    },
    "collection": {
     "program_reader": {
-     "records": 125,
+     "records": 126,
      "models": {
-      "claude-opus-5-5": 125
+      "claude-opus-5-5": 126
      },
-     "run": "38748848139",
-     "at": "2026-10-15T14:10:10Z",
-     "cost_usd": 8.75,
+     "run": "44688217584",
+     "at": "2026-11-20T06:55:02Z",
+     "cost_usd": 8.94,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 118,
+    "plo_programs": 126,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -3248,13 +3244,13 @@
    "harvested": true,
    "slug": "contra_costa",
    "programs": 131,
-   "passing": 63,
-   "gap": 68,
+   "passing": 69,
+   "gap": 62,
    "causes": {
     "no_closed_list": 26,
     "page_not_found": 8,
-    "places_none": 9,
-    "unknown_without_live": 25
+    "places_none": 1,
+    "unknown_without_live": 27
    },
    "census_causes": {
     "no_closed_list": 23,
@@ -3279,10 +3275,10 @@
     "elumen"
    ],
    "objectives_printed": null,
-   "read_at": "2026-10-16T23:09:38Z",
+   "read_at": "2026-11-20T07:05:25Z",
    "read_kind": "capture",
-   "cost_usd": 6.44,
-   "passed_at_read": 57,
+   "cost_usd": 6.48,
+   "passed_at_read": 68,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -3295,9 +3291,9 @@
    "extracted": 97,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
+    "coverage": 1,
     "invented": 0,
-    "arithmetic": 40,
+    "arithmetic": 29,
     "repeated": 0,
     "outcomes": 0
    },
@@ -3307,13 +3303,13 @@
    "capture_root": "https://ccc.elumenapp.com/catalog/ccc-2026-27/home",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 785.0,
-   "run": "38979730323",
+   "read_seconds": 791.8,
+   "run": "44687786167",
    "levers": {
+    "reconcile_steps": 27,
     "program_course_file_check": 26,
-    "reconcile_steps": 25,
-    "reader_page_assignment": 9,
-    "reader_page_search": 8
+    "reader_page_search": 8,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
@@ -3321,9 +3317,9 @@
      "models": {
       "claude-opus-5-5": 97
      },
-     "run": "38979730323",
-     "at": "2026-10-16T23:09:38Z",
-     "cost_usd": 6.44,
+     "run": "44687786167",
+     "at": "2026-11-20T07:05:25Z",
+     "cost_usd": 6.48,
      "platform": "elumen"
     },
     "slo_read": {
@@ -3333,7 +3329,7 @@
      "source_kind": "catalog",
      "file": "kb/course_outcomes/ccc/read_42434894498_p2of2.json"
     },
-    "plo_programs": 38,
+    "plo_programs": 40,
     "ppm_member": {
      "host": "mypath.contracosta.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -4858,12 +4854,11 @@
    "harvested": true,
    "slug": "fresno_city",
    "programs": 266,
-   "passing": 205,
-   "gap": 61,
+   "passing": 219,
+   "gap": 47,
    "causes": {
     "no_closed_list": 15,
-    "page_not_found": 14,
-    "places_none": 26,
+    "page_not_found": 26,
     "unknown_without_live": 6
    },
    "census_causes": {
@@ -4887,10 +4882,10 @@
    "outcomes_file": "kb/status/commons_data_programs/fresno_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-14T12:26:36Z",
+   "read_at": "2026-11-20T06:26:14Z",
    "read_kind": "capture",
-   "cost_usd": 14.1,
-   "passed_at_read": 203,
+   "cost_usd": 13.55,
+   "passed_at_read": 219,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -4907,13 +4902,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 251,
-   "found": 237,
-   "extracted": 237,
+   "found": 225,
+   "extracted": 225,
    "errors": 0,
    "failed_checks": {
-    "coverage": 26,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 33,
+    "arithmetic": 6,
     "repeated": 0,
     "outcomes": 0
    },
@@ -4923,28 +4918,27 @@
    "capture_root": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2202.7,
-   "run": "38563582873",
+   "read_seconds": 2300.8,
+   "run": "44692355661",
    "levers": {
-    "reader_page_assignment": 26,
+    "reader_page_search": 26,
     "program_course_file_check": 15,
-    "reader_page_search": 14,
     "reconcile_steps": 5,
     "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
-     "records": 237,
+     "records": 225,
      "models": {
-      "claude-opus-5-5": 237
+      "claude-opus-5-5": 225
      },
-     "run": "38563582873",
-     "at": "2026-10-14T12:26:36Z",
-     "cost_usd": 14.1,
+     "run": "44692355661",
+     "at": "2026-11-20T06:26:14Z",
+     "cost_usd": 13.55,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 209,
+    "plo_programs": 223,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -6552,13 +6546,14 @@
    "harvested": true,
    "slug": "los_angeles_harbor",
    "programs": 124,
-   "passing": 93,
-   "gap": 31,
+   "passing": 97,
+   "gap": 27,
    "causes": {
+    "found_not_extracted": 1,
     "no_closed_list": 3,
-    "page_not_found": 3,
-    "places_none": 11,
-    "unknown_without_live": 14
+    "page_not_found": 10,
+    "places_none": 1,
+    "unknown_without_live": 12
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -6582,10 +6577,10 @@
    "outcomes_file": "kb/status/commons_data_programs/los_angeles_harbor.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T05:29:31Z",
+   "read_at": "2026-11-20T06:26:12Z",
    "read_kind": "capture",
-   "cost_usd": 8.94,
-   "passed_at_read": 86,
+   "cost_usd": 8.87,
+   "passed_at_read": 96,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6594,13 +6589,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 121,
-   "found": 118,
-   "extracted": 118,
+   "found": 111,
+   "extracted": 111,
    "errors": 0,
    "failed_checks": {
-    "coverage": 15,
+    "coverage": 6,
     "invented": 4,
-    "arithmetic": 29,
+    "arithmetic": 10,
     "repeated": 0,
     "outcomes": 1
    },
@@ -6610,27 +6605,28 @@
    "capture_root": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 63.9,
-   "run": "39006381839",
+   "read_seconds": 113.3,
+   "run": "44687664966",
    "levers": {
-    "reconcile_steps": 14,
-    "reader_page_assignment": 11,
+    "reconcile_steps": 12,
+    "reader_page_search": 10,
     "program_course_file_check": 3,
-    "reader_page_search": 3
+    "paid_read": 1,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 118,
+     "records": 110,
      "models": {
-      "claude-opus-5-5": 118
+      "claude-opus-5-5": 110
      },
-     "run": "39006381839",
-     "at": "2026-10-17T05:29:31Z",
-     "cost_usd": 8.94,
+     "run": "44687664966",
+     "at": "2026-11-20T06:26:12Z",
+     "cost_usd": 8.87,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 102,
+    "plo_programs": 108,
     "ppm_member": {
      "host": "programmapper.lahc.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -7263,11 +7259,10 @@
    "harvested": true,
    "slug": "madera",
    "programs": 111,
-   "passing": 85,
-   "gap": 26,
+   "passing": 93,
+   "gap": 18,
    "causes": {
     "page_not_found": 5,
-    "places_none": 8,
     "unknown_without_live": 13
    },
    "census_causes": {
@@ -7291,10 +7286,10 @@
    "outcomes_file": "kb/status/commons_data_programs/madera.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-16T16:52:10Z",
+   "read_at": "2026-11-20T07:12:26Z",
    "read_kind": "capture",
    "cost_usd": 6.89,
-   "passed_at_read": 81,
+   "passed_at_read": 93,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7307,9 +7302,9 @@
    "extracted": 106,
    "errors": 0,
    "failed_checks": {
-    "coverage": 13,
+    "coverage": 5,
     "invented": 4,
-    "arithmetic": 23,
+    "arithmetic": 10,
     "repeated": 0,
     "outcomes": 0
    },
@@ -7319,11 +7314,10 @@
    "capture_root": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 925.4,
-   "run": "38935148408",
+   "read_seconds": 911.6,
+   "run": "44692816081",
    "levers": {
     "reconcile_steps": 12,
-    "reader_page_assignment": 8,
     "reader_page_search": 5,
     "ge_units_steps": 1
    },
@@ -7333,13 +7327,13 @@
      "models": {
       "claude-opus-5-5": 106
      },
-     "run": "38935148408",
-     "at": "2026-10-16T16:52:10Z",
+     "run": "44692816081",
+     "at": "2026-11-20T07:12:26Z",
      "cost_usd": 6.89,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 98,
+    "plo_programs": 106,
     "ppm_member": {
      "host": "programmap.maderacollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -9328,12 +9322,12 @@
    "harvested": true,
    "slug": "pasadena_city",
    "programs": 367,
-   "passing": 271,
-   "gap": 96,
+   "passing": 274,
+   "gap": 93,
    "causes": {
     "no_closed_list": 49,
-    "page_not_found": 21,
-    "places_none": 4,
+    "page_not_found": 19,
+    "places_none": 3,
     "unknown_without_live": 22
    },
    "census_causes": {
@@ -9359,10 +9353,10 @@
    "outcomes_file": "kb/status/commons_data_programs/pasadena_city.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-22T09:54:20Z",
+   "read_at": "2026-11-20T06:35:51Z",
    "read_kind": "capture",
-   "cost_usd": 20.91,
-   "passed_at_read": 242,
+   "cost_usd": 21.08,
+   "passed_at_read": 253,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -9371,13 +9365,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 318,
-   "found": 297,
-   "extracted": 297,
+   "found": 299,
+   "extracted": 299,
    "errors": 0,
    "failed_checks": {
-    "coverage": 4,
+    "coverage": 3,
     "invented": 0,
-    "arithmetic": 55,
+    "arithmetic": 46,
     "repeated": 0,
     "outcomes": 0
    },
@@ -9387,29 +9381,29 @@
    "capture_root": "https://curriculum.pasadena.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1981.2,
-   "run": "39758679671",
+   "read_seconds": 1926.2,
+   "run": "44688457642",
    "levers": {
     "program_course_file_check": 49,
-    "reader_page_search": 21,
+    "reader_page_search": 19,
     "reconcile_steps": 15,
     "scorer_noncredit_hours": 5,
-    "reader_page_assignment": 4,
+    "reader_page_assignment": 3,
     "ge_units_steps": 2
    },
    "collection": {
     "program_reader": {
-     "records": 297,
+     "records": 299,
      "models": {
-      "claude-opus-5-5": 297
+      "claude-opus-5-5": 299
      },
-     "run": "39758679671",
-     "at": "2026-10-22T09:54:20Z",
-     "cost_usd": 20.91,
+     "run": "44688457642",
+     "at": "2026-11-20T06:35:51Z",
+     "cost_usd": 21.08,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 287,
+    "plo_programs": 290,
     "ppm_member": {
      "host": "pasadena-city.programmapper.ws",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -9648,8 +9642,7 @@
    "gap": 44,
    "causes": {
     "no_closed_list": 20,
-    "page_not_found": 9,
-    "places_none": 4,
+    "page_not_found": 13,
     "unknown_without_live": 11
    },
    "census_causes": {
@@ -9675,9 +9668,9 @@
    "outcomes_file": null,
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-12T04:22:11Z",
+   "read_at": "2026-11-20T07:09:20Z",
    "read_kind": "capture",
-   "cost_usd": 18.94,
+   "cost_usd": 18.55,
    "passed_at_read": 276,
    "slo_queue": null,
    "scout": null,
@@ -9688,12 +9681,12 @@
    },
    "listed_closed": 301,
    "found": 288,
-   "extracted": 292,
+   "extracted": 288,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 1,
     "invented": 0,
-    "arithmetic": 15,
+    "arithmetic": 11,
     "repeated": 0,
     "outcomes": 0
    },
@@ -9703,24 +9696,23 @@
    "capture_root": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 7535.4,
-   "run": "43154073220",
+   "read_seconds": 7420.4,
+   "run": "44688858512",
    "levers": {
     "program_course_file_check": 20,
+    "reader_page_search": 13,
     "reconcile_steps": 10,
-    "reader_page_search": 9,
-    "reader_page_assignment": 4,
     "ge_units_steps": 1
    },
    "collection": {
     "program_reader": {
-     "records": 292,
+     "records": 288,
      "models": {
-      "claude-opus-5-5": 292
+      "claude-opus-5-5": 288
      },
-     "run": "43154073220",
-     "at": "2026-11-12T04:22:11Z",
-     "cost_usd": 18.94,
+     "run": "44688858512",
+     "at": "2026-11-20T07:09:20Z",
+     "cost_usd": 18.55,
      "platform": "curriqunet"
     },
     "slo_read": null,
@@ -11136,14 +11128,13 @@
    "harvested": true,
    "slug": "santa_rosa_junior",
    "programs": 283,
-   "passing": 206,
-   "gap": 77,
+   "passing": 229,
+   "gap": 54,
    "causes": {
     "extraction_error": 1,
     "found_not_extracted": 1,
     "no_closed_list": 4,
-    "page_not_found": 41,
-    "places_none": 2,
+    "page_not_found": 20,
     "unknown_without_live": 28
    },
    "census_causes": {
@@ -11171,10 +11162,10 @@
    "outcomes_file": "kb/status/commons_data_programs/santa_rosa_junior.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-11-19T07:15:06Z",
+   "read_at": "2026-11-20T08:15:45Z",
    "read_kind": "capture",
-   "cost_usd": 21.2,
-   "passed_at_read": 203,
+   "cost_usd": 22.74,
+   "passed_at_read": 226,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -11191,13 +11182,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 279,
-   "found": 238,
-   "extracted": 238,
+   "found": 259,
+   "extracted": 259,
    "errors": 0,
    "failed_checks": {
-    "coverage": 13,
+    "coverage": 11,
     "invented": 9,
-    "arithmetic": 28,
+    "arithmetic": 26,
     "repeated": 1,
     "outcomes": 1
    },
@@ -11207,28 +11198,27 @@
    "capture_root": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 370.7,
-   "run": "44477690021",
+   "read_seconds": 258.7,
+   "run": "44701011374",
    "levers": {
-    "reader_page_search": 41,
     "reconcile_steps": 28,
+    "reader_page_search": 20,
     "program_course_file_check": 4,
-    "paid_read": 2,
-    "reader_page_assignment": 2
+    "paid_read": 2
    },
    "collection": {
     "program_reader": {
-     "records": 237,
+     "records": 258,
      "models": {
-      "claude-opus-5-5": 237
+      "claude-opus-5-5": 258
      },
-     "run": "44477690021",
-     "at": "2026-11-19T07:15:06Z",
-     "cost_usd": 21.2,
+     "run": "44701011374",
+     "at": "2026-11-20T08:15:45Z",
+     "cost_usd": 22.74,
      "platform": "pdf"
     },
     "slo_read": null,
-    "plo_programs": 226,
+    "plo_programs": 248,
     "ppm_member": {
      "host": "programmap.santarosa.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -11490,12 +11480,12 @@
    "harvested": true,
    "slug": "sierra",
    "programs": 190,
-   "passing": 87,
-   "gap": 103,
+   "passing": 88,
+   "gap": 102,
    "causes": {
     "no_closed_list": 65,
-    "page_not_found": 14,
-    "places_none": 9,
+    "page_not_found": 20,
+    "places_none": 2,
     "unknown_without_live": 15
    },
    "census_causes": {
@@ -11521,10 +11511,10 @@
    "outcomes_file": "kb/status/commons_data_programs/sierra.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-23T17:14:18Z",
+   "read_at": "2026-11-20T06:25:58Z",
    "read_kind": "capture",
-   "cost_usd": 10.21,
-   "passed_at_read": 84,
+   "cost_usd": 9.87,
+   "passed_at_read": 87,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -11541,13 +11531,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 125,
-   "found": 111,
-   "extracted": 111,
+   "found": 105,
+   "extracted": 105,
    "errors": 0,
    "failed_checks": {
-    "coverage": 11,
+    "coverage": 4,
     "invented": 2,
-    "arithmetic": 25,
+    "arithmetic": 16,
     "repeated": 0,
     "outcomes": 0
    },
@@ -11557,28 +11547,28 @@
    "capture_root": "https://catalog.sierracollege.edu/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 293.1,
-   "run": "39993005180",
+   "read_seconds": 285.9,
+   "run": "44687646623",
    "levers": {
     "program_course_file_check": 65,
-    "reader_page_search": 14,
+    "reader_page_search": 20,
     "reconcile_steps": 12,
-    "reader_page_assignment": 9,
-    "ge_units_steps": 3
+    "ge_units_steps": 3,
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
-     "records": 111,
+     "records": 105,
      "models": {
-      "claude-opus-5-5": 111
+      "claude-opus-5-5": 105
      },
-     "run": "39993005180",
-     "at": "2026-10-23T17:14:18Z",
-     "cost_usd": 10.21,
+     "run": "44687646623",
+     "at": "2026-11-20T06:25:58Z",
+     "cost_usd": 9.87,
      "platform": "courseleaf"
     },
     "slo_read": null,
-    "plo_programs": 98,
+    "plo_programs": 96,
     "ppm_member": {
      "host": "programmap.sierracollege.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"

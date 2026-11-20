@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Sociology",
  "award": "A.A- T Degree",
- "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=128",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=160",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7843,
+  "input_tokens": 10578,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7843,
-    "output_tokens": 1490,
+    "input_tokens": 10578,
+    "output_tokens": 3095,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,55 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1490,
+  "output_tokens": 3095,
   "output_tokens_details": {
-   "thinking_tokens": 287
+   "thinking_tokens": 1133
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06117,
- "ms": 11638,
- "seconds": 12.9,
+ "cost_usd": 0.10421,
+ "ms": 23692,
+ "seconds": 27.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 25,
    "listed": 25,
-   "share": 0.0,
-   "missing": [
-    "ANTHRO102",
-    "HISTC1001",
-    "HISTC1002",
-    "HISTORY1",
-    "HISTORY2",
-    "HISTORY41",
-    "HISTORY42",
-    "HISTORY43",
-    "HISTORY44",
-    "HISTORY52",
-    "HISTORY86",
-    "HISTORY87",
-    "POLSCI4",
-    "SOC1",
-    "SOC11",
-    "SOC12",
-    "SOC2",
-    "SOC21",
-    "SOC3",
-    "SOC31",
-    "SOC4",
-    "STAT1",
-    "STAT1S",
-    "STATC1000",
-    "STATC1000E"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -87,29 +61,49 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     56.0,
+     64.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     25.0,
+     28.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -119,144 +113,290 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Degrees and Certificates – LIBERAL ARTS AND SCIENCES",
+   "section_heading": "Sociology - Associate in Arts for Transfer (AA-T) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
-    "min": null,
-    "max": null
+    "min": 13,
+    "max": 17
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 28
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Analyze and interpret social experience using a sociological perspective especially as it relates to race/ethnicity, class, gender, sexual orientation, religion, and nationality.",
+    "Evaluate the merits of major sociological perspectives and theories in application to social phenomenon.",
+    "Locate, analyze, assess, and communicate sociological scholarship in a manner that is “academically sound and viable.”",
+    "Develop cross-cultural competency, empathy, and insight into the human experience that transcends demographic categorization."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ANTHRO 102",
-    "why": "Sociology A.A.-T section not in the text"
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SOC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT 001S",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "HISTC1001",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+    "name": "LIST A: COMPLETE TWO COURSES FROM THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "SOC 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "HISTC1002",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 1",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 2",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 41",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 42",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 43",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 44",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 52",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 86",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "HISTORY 87",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "POL SCI 4",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "SOC 1",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "SOC 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "SOC 12",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "SOC 2",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "SOC 21",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "SOC 3",
-    "why": "not in the text"
-   },
-   {
-    "code": "SOC 31",
-    "why": "not in the text"
-   },
-   {
-    "code": "SOC 4",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "STAT 001S",
-    "why": "not in the text"
-   },
-   {
-    "code": "STAT 1",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
-   },
-   {
-    "code": "STAT C1000E",
-    "why": "Sociology A.A.-T section not in the text; appears only in a Liberal Arts list"
+    "name": "LIST B: COMPLETE ONE COURSE FROM THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHRO 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 041",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 042",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 043",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 052",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 086",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 087",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POL SCI 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List B also allows 'Any List A course not already used'; those SOC courses are recorded only in List A.",
+   "HIST C1002 is printed without units; units left null. HIST C1001 and HIST C1002 are noted as formerly HISTORY 011 and HISTORY 012.",
+   "ge_units records the table line 'Additional Cal-GETC Requirements* 25-28', which excludes 6-9 double-countable major units; the boilerplate text states Cal-GETC as 34 semester units.",
+   "degree_elective_units records 'Additional CSU-Transferable Units 13-17'.",
+   "Catalog codes use zero-padded numbers (SOC 001, STAT 001, HISTORY 001, POL SCI 004) and HIST C1001/C1002 for closed-list SOC 1, STAT 1, HISTORY 1, POL SCI 4, HISTC1001/HISTC1002; treated as the same courses.",
+   "Footnote: students with catalog rights prior to Fall 2025 may follow CSU GE Breadth or IGETC instead of Cal-GETC.",
+   "Program learning outcomes lead-in reads 'students will be able to demonstrate mastery of:'; lead-in omitted."
+  ]
  },
- "extracted_run": "39006381839"
+ "extracted_run": "44687664966",
+ "catalog_year": "2026-2027",
+ "source_sha": "d390fea785832972",
+ "source_codes": [
+  "ANTHRO102",
+  "HISTC1001",
+  "HISTC1002",
+  "HISTORY1",
+  "HISTORY2",
+  "HISTORY41",
+  "HISTORY42",
+  "HISTORY43",
+  "HISTORY44",
+  "HISTORY52",
+  "HISTORY86",
+  "HISTORY87",
+  "POLSCI4",
+  "SOC1",
+  "SOC11",
+  "SOC12",
+  "SOC2",
+  "SOC21",
+  "SOC3",
+  "SOC31",
+  "SOC4",
+  "STAT1",
+  "STAT1S",
+  "STATC1000",
+  "STATC1000E"
+ ],
+ "source_coverage": 1.0
 }
