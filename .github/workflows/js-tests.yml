@@ -341,6 +341,10 @@ jobs:
       # approved it; the receipt keeps the before-values the guarded update checks. Pure-stdlib python.
       - name: Library publisher
         run: python3 tests/library_publish_test.py
+      # The Library's check run (#3560 part 2, S688): one cpl_library_checks row per page with its current url, list
+      # on a pass under a guarded update, and the footer line from the piece's own check. REST and engine faked.
+      - name: Library check run
+        run: python3 tests/library_check_test.py
       # The program-source census (S320) reads 118 college sites from a runner
       # and files where each one's catalog lives. Its pure half is pinned
       # without a browser: a library catalog never wins, an old year never

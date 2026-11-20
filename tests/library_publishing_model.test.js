@@ -227,7 +227,7 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
   const pageRow = (extra) => [Object.assign({ id: "v1", slug: "agency-flyer", title: "Agency Flyer", kind: "visual", status: "approved", seen_by: "team",
     home: "web", url: PAGE, version: "2", made_on: "2026-11-01", versions: [], summary: "For agencies.", updated_at: "2026-11-02T10:00:00Z" }, MODEL, extra || {})];
   const chk = (key, result) => ({ library_id: "v1", version_key: key, standard: "WCAG 2.1 AA and Section 508", checked_at: "2026-11-19T16:05:00Z",
-    tool_or_reviewer: "axe-core automated check", result: result || "pass" });
+    tool_or_reviewer: "axe-core automated check", result: result || "pass", url: PAGE });
   {
     // A page on Version 2 with a ready revision draft whose own check passed: the draft's pass must not list the page.
     const m = loadModule({ rows: pageRow({ regen: { requested_at: "2026-11-19T15:00:00Z", ready_at: "2026-11-19T16:00:00Z", draft_id: D2 } }),
@@ -270,7 +270,60 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     const card = m.root.querySelector("#lib-t-v1").closest("article");
     check("H a waiting piece whose page check failed keeps its waiting line and offers no press", !!card.querySelector("[data-pubwait]") && !card.querySelector('[data-pubtop="v1"]'));
     m.M._state.open.v1 = true; m.M.render();
-    check("H Details reads In the Internal Library, in a positive sentence", /In the Internal Library\. The Public Library lists it/.test(m.root.textContent) && !/not listed in the Public Library/.test(SRC));
+    check("H Details reads In the Internal Library, in a positive sentence, and says why: its check did not pass",
+      /In the Internal Library\. Its accessibility check of [^.]+ did not pass\. The Public Library lists it once a new version passes its check\./.test(m.root.textContent) && !/not listed in the Public Library/.test(SRC));
+  }
+  // ── I. The pre-check matches the url and the page's last change (#3560 part 2; #3577's known limit) ──
+  {
+    // A pass earned at the old url: after a url move the card no longer offers the listing form.
+    const OLD = "https://cpl-initiative.github.io/cpl-project-tracker/library/agency-flyer-old/";
+    const m = loadModule({ rows: pageRow({ url: PAGE }), checks: [Object.assign(chk("version:2"), { url: OLD })] });
+    await m.M.activate(); await tick();
+    m.M._state.open.v1 = true; m.M.render();
+    click(m.w, m.root.querySelector('[data-pub="v1"]'));
+    check("I ⭐ a pass at the old url does not open the listing form after a url move", !m.root.querySelector("#lp-sum") && /Not yet certified/.test(m.root.textContent));
+    submit(m.w, m.root.querySelector('form[data-pubform="v1"]'));
+    await until(() => patches(m).length > 0);
+    check("I ⭐ and the press calls no listing: it keeps the choice for the check run", rpcCalls(m).length === 0 && patches(m).length === 1 && patches(m)[0].body.publish_target === "public");
+  }
+  {
+    const m = loadModule({ rows: pageRow({ url: PAGE }), checks: [Object.assign(chk("version:2"), { url: null })] });
+    await m.M.activate(); await tick();
+    m.M._state.open.v1 = true; m.M.render();
+    click(m.w, m.root.querySelector('[data-pub="v1"]'));
+    check("I a check with no url (every row before #3577) never opens the listing form", !m.root.querySelector("#lp-sum"));
+  }
+  {
+    // A version relabeled to a key that passed: the pass ran before the page last changed.
+    const m = loadModule({ rows: pageRow({ page_changed_at: "2026-11-20T09:00:00Z" }), checks: [chk("version:2")] });
+    await m.M.activate(); await tick();
+    m.M._state.open.v1 = true; m.M.render();
+    click(m.w, m.root.querySelector('[data-pub="v1"]'));
+    check("I ⭐ a pass older than the page's last change (a relabeled version) does not open the listing form", !m.root.querySelector("#lp-sum"));
+  }
+  {
+    // Newest wins per key and url: a later fail at this url, beside an older pass here and a newer pass elsewhere.
+    const OTHER = "https://cpl-initiative.github.io/cpl-project-tracker/library/elsewhere/";
+    const rowsI = [Object.assign(chk("version:2"), { checked_at: "2026-11-20T10:00:00Z" }),
+      Object.assign(chk("version:2", "fail"), { checked_at: "2026-11-20T11:00:00Z", findings: 3, report_url: "https://example.org/report.txt" }),
+      Object.assign(chk("version:2"), { checked_at: "2026-11-20T12:00:00Z", url: OTHER })];
+    const m = loadModule({ rows: pageRow({ publish_target: "public" }), checks: rowsI });
+    await m.M.activate(); await tick();
+    const card = m.root.querySelector("#lib-t-v1").closest("article");
+    const wait = card.querySelector("[data-pubwait]");
+    check("I ⭐ newest wins at this url: a later fail here outranks an older pass here, and a pass at another url speaks for nothing",
+      !!wait && /did not pass \(3 findings\)/.test(wait.textContent), wait && wait.textContent);
+    const a = wait && wait.querySelector("a");
+    check("I the waiting line links the failed check's report in plain words", !!a && a.textContent === "The check report" && a.getAttribute("href") === "https://example.org/report.txt");
+    check("I the tab reads each check's url, findings and created_at", /select=library_id,version_key,url,standard,checked_at,created_at,tool_or_reviewer,result,findings,report_url/.test(SRC));
+  }
+  {
+    // The page's own pass at its own url and after its last change still opens the form.
+    const m = loadModule({ rows: pageRow({ page_changed_at: "2026-11-19T16:00:00Z" }), checks: [chk("version:2")] });
+    await m.M.activate(); await tick();
+    m.M._state.open.v1 = true; m.M.render();
+    click(m.w, m.root.querySelector('[data-pub="v1"]'));
+    check("I a pass at the page's url after its last change opens the listing form", !!m.root.querySelector("#lp-sum"));
   }
   // ── G. The migration and the governance map ──
   {
@@ -304,8 +357,25 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     const lastTrig = (/create or replace function public\.cpl_library_unlist_on_new_page\(\)[\s\S]*?end \$\$;/.exec(BINDS) || [""])[0];
     check("G ⭐ a pass counts only at the url the record names now, in set_public and in the trigger's version branch",
       /and c\.url = l\.url/.test(lastBody) && /and c\.url = new\.url/.test(lastTrig) && lastBody.replace(/\n\s*and c\.url = l\.url/, "") === fnBody);
+    // The newest of all (#3560 part 2, S688): a pass counts only when it ran after the page last changed, and a listed
+    // version change always unlists. The canonical source carries these bodies now.
+    const AFTER = fs.readFileSync("kb/migrations/2026-11-20_library_check_after_page_change.sql", "utf8");
+    const AFTER_RB = "kb/migrations/2026-11-20_library_check_after_page_change_rollback.sql";
+    const newBody = (/create or replace function public\.cpl_library_set_public\([\s\S]*?end \$\$;/.exec(AFTER) || [""])[0];
+    const newTrig = (/create or replace function public\.cpl_library_unlist_on_new_page\(\)[\s\S]*?end \$\$;/.exec(AFTER) || [""])[0];
+    check("G ⭐ a pass counts only when it ran no earlier than the page last changed; otherwise the body is the url binding's",
+      newBody.replace(/\n\s*and c\.checked_at >= coalesce\(l\.page_changed_at, '-infinity'::timestamptz\)/, "") === lastBody &&
+      /and c\.checked_at >= coalesce\(l\.page_changed_at, '-infinity'::timestamptz\)/.test(newBody));
+    check("G ⭐ page_changed_at is stamped by a trigger on any url or version change and held otherwise, and its function is closed",
+      /new\.url is distinct from old\.url or new\.version is distinct from old\.version then\s*new\.page_changed_at := now\(\);\s*else\s*new\.page_changed_at := old\.page_changed_at;/.test(AFTER) &&
+      /revoke execute on function public\.cpl_library_stamp_page_change\(\) from public, anon, authenticated;/.test(AFTER));
+    check("G a listed url or version change always unlists, keeping publish_target public",
+      /\(new\.url is distinct from old\.url or new\.version is distinct from old\.version\) then\s*new\.public_listed := false;/.test(newTrig) && !/v_result/.test(newTrig));
     check("G the canonical source carries the newest bodies, so a re-run keeps the gate",
-      !!lastBody && CANON.indexOf(lastBody) >= 0 && !!lastTrig && CANON.indexOf(lastTrig) >= 0);
+      !!newBody && CANON.indexOf(newBody) >= 0 && !!newTrig && CANON.indexOf(newTrig) >= 0 && CANON.indexOf(lastBody) < 0);
+    check("G the page-change migration names its rollback, which restores the url-binding bodies and drops the column",
+      AFTER.indexOf(AFTER_RB) > 0 && fs.existsSync(AFTER_RB) && fs.readFileSync(AFTER_RB, "utf8").indexOf(lastBody) >= 0 &&
+      fs.readFileSync(AFTER_RB, "utf8").indexOf(lastTrig) >= 0 && /drop column if exists page_changed_at/.test(fs.readFileSync(AFTER_RB, "utf8")));
     check("G the url-binding migration names its rollback, which restores the bodies without the url match",
       BINDS.indexOf(BINDS_RB) > 0 && fs.existsSync(BINDS_RB) && fs.readFileSync(BINDS_RB, "utf8").indexOf(fnBody) >= 0 &&
       !/c\.url = /.test(fs.readFileSync(BINDS_RB, "utf8")));

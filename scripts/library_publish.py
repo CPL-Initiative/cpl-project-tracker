@@ -385,7 +385,10 @@ def write_phase(today):
                 skipped.append(f"{r['slug']}: draft {d['id']} refused, it adds " + ", ".join(bad))
                 continue
         page.parent.mkdir(parents=True, exist_ok=True)
-        page.write_text(d["html"], encoding="utf-8")
+        # The new page carries Not yet certified until its own check passes (#3560 part 2): a footer copied from the
+        # page it replaces never speaks for it. scripts/library_check.py writes the line from the check record.
+        import library_check as lc
+        page.write_text(lc.stamp(d["html"], lc.footer_block(None, lc.DEFAULT_SETTINGS)), encoding="utf-8")
         for name, data in sorted(files.items()):
             out = page.parent / name
             out.parent.mkdir(parents=True, exist_ok=True)
@@ -404,7 +407,7 @@ def write_phase(today):
 def finish_phase(today, commit):
     if not re.match(r"^[0-9a-f]{7,40}$", commit or ""):
         sys.exit("--finish needs --commit <sha>")
-    left = []
+    left, moved = [], []
     for p in sorted(RECEIPTS.glob(f"{today}-*.json")):
         rc = json.loads(p.read_text(encoding="utf-8"))
         api(f"cpl_library_drafts?id=eq.{rc['draft_id']}&published_at=is.null", "PATCH",
@@ -413,7 +416,10 @@ def finish_phase(today, commit):
         got = api(f"cpl_library?id=eq.{rc['record_id']}&updated_at=eq.{guard}", "PATCH", rc["update"])
         if not got:
             left.append(rc["slug"])
-    print(json.dumps({"finished": today, "left_for_next_run": left}))
+        else:
+            moved.append(rc["slug"])
+    # moved: the pages the check run checks next (scripts/library_check.py --plan --finished).
+    print(json.dumps({"finished": today, "left_for_next_run": left, "moved": moved}))
     return 0
 
 

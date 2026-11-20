@@ -8,6 +8,11 @@
        npm run a11y -- --shots DIR     # + screenshots
        npm run a11y -- --dark          # the same sweep in the dark palette
        npm run a11y -- --config PATH   # a different project's config
+       npm run a11y -- --json PATH     # + each target's pass and findings, as JSON
+
+   --json (#3560 part 2, S688): the Library's check run (scripts/library_check.py) reads one
+   result per target from the same engine rather than parsing the printed lines: {targets:
+   {key: {pass, findings, lines}}, axe}. A target's findings are its printed finding lines.
 
    WHY IT IS ONE COMMAND. Sam, 2026-09-04: "I'm thinking about creating a skill
    or agent to run a daily check and remediation on all COBI views... I can't
@@ -614,7 +619,7 @@ function MOTION(known) {
 
   /* Selectors are `target` or `target:route`, so one tab can be re-measured in
      seconds while it is being fixed. Nothing named = everything. */
-  const sel = argv.filter((a, i) => !a.startsWith("--") && argv[i - 1] !== "--shots" && argv[i - 1] !== "--config");
+  const sel = argv.filter((a, i) => !a.startsWith("--") && argv[i - 1] !== "--shots" && argv[i - 1] !== "--config" && argv[i - 1] !== "--json");
   const routeFilter = new Map();
   const keys = [];
   sel.forEach((s) => {
@@ -629,6 +634,11 @@ function MOTION(known) {
   const base = `http://127.0.0.1:${port}`;
   const browser = await chromium.launch({ executablePath: chromiumPath() });
   let bad = 0, routesRun = 0;
+  const perTarget = {};                               // --json: key -> {pass, findings, lines}
+  const fail = (key, line) => {
+    if (!perTarget[key]) perTarget[key] = { pass: true, findings: 0, lines: [] };
+    perTarget[key].pass = false; perTarget[key].findings++; perTarget[key].lines.push(line);
+  };
 
   /* Every request that leaves the origin is aborted — see the header. */
   const openPage = async (width, opts) => {
@@ -645,6 +655,7 @@ function MOTION(known) {
 
   const measureTarget = async (key) => {
     const cfg = PAGES[key];
+    perTarget[key] = { pass: true, findings: 0, lines: [] };
     /* `query` opens the file in a state its own link reaches (S307: the funding
        tab's Public view by ?fundview=public). Kept apart from `file`, which
        names a path on disk and is checked as one. */
@@ -669,7 +680,7 @@ function MOTION(known) {
         console.log(`\n══ ${cfg.title}\n   ${cfg.file}`);
         console.log(`   FAIL  discover found no routes for "${cfg.discover.selector}" — ` +
           `the selector is stale, and a zero-route sweep would have printed a clean bill.`);
-        bad++;
+        bad++; fail(key, `discover found no routes for "${cfg.discover.selector}"`);
         return;
       }
       /* Dedupe on the NAME as well as the hash. COBI's config once named
@@ -829,7 +840,7 @@ function MOTION(known) {
       if (cfg.seed) await cfg.seed(kbp);
       await kbp.waitForTimeout(200);
       (await cfg.keyboard(kbp)).forEach((k) => {
-        if (!k.ok) { console.log(`   keyboard  FAIL  ${k.name} — ${k.detail}`); bad++; }
+        if (!k.ok) { console.log(`   keyboard  FAIL  ${k.name} — ${k.detail}`); bad++; fail(key, `keyboard  ${k.name} — ${k.detail}`); }
         else if (verbose) console.log(`   keyboard  ok    ${k.name} — ${k.detail}`);
       });
       await kbp.close();
@@ -850,7 +861,8 @@ function MOTION(known) {
         (moving.knownUnreadable.length ? ` — ${moving.knownUnreadable.length} sheet(s) unreadable by CORS, declared in the config` : "") +
         (moving.blockedSheets.length ? ` — ${moving.blockedSheets.length} UNREADABLE sheet(s): ${moving.blockedSheets.join(", ")} (this check cannot see them, so it fails rather than passing)` : ""));
     }
-    if (!rmOk) bad++;
+    if (!rmOk) { bad++; fail(key, `motion    under prefers-reduced-motion: ${moving.mounted.length} animating now, ` +
+      `${moving.stillAnimates.length} declared animation(s) still compute, ${moving.blockedSheets.length} unreadable sheet(s)`); }
     await rm.close();
 
     /* One line per route: the sweep has to stay readable at 38 of them. */
@@ -860,6 +872,7 @@ function MOTION(known) {
       const f = found.get(r.name) || [];
       if (!f.length) { if (verbose) console.log(`   ${label}ok`); return; }
       bad++;
+      f.forEach((line) => fail(key, (r.name ? r.name + ": " : "") + line));
       console.log(`   ${label}FAIL`);
       f.forEach((line) => console.log(`   ${" ".repeat(pad)}${line}`));
     });
@@ -875,7 +888,7 @@ function MOTION(known) {
   for (const key of keys) {
     try { await measureTarget(key); }
     catch (e) {
-      bad++;
+      bad++; fail(key, `the target did not finish: ${String((e && e.message) || e).split("\n")[0]}`);
       console.log(`\n══ ${PAGES[key].title}\n   FAIL  the target did not finish: ${String((e && e.message) || e).split("\n")[0]}`);
     }
   }
@@ -886,5 +899,10 @@ function MOTION(known) {
     ? `\n${bad} check(s) FAILED across ${routesRun} route(s).`
     : `\nAll checks pass across ${routesRun} route(s) in ${keys.length} target(s).`);
   console.log(AXE_SOURCE ? `axe-core ${AXE_VERSION}, rules tagged ${AXE_TAGS.join(", ")}.` : "axe-core skipped (--no-axe).");
+  const jsonOut = flag("--json");
+  if (jsonOut) {
+    fs.writeFileSync(jsonOut, JSON.stringify({ targets: perTarget, axe: AXE_SOURCE ? { version: AXE_VERSION, tags: AXE_TAGS } : null,
+      widths: WIDTHS }, null, 1) + "\n");
+  }
   process.exit(bad ? 1 : 0);
 })();
