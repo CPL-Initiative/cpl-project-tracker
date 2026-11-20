@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10557,
-    "output_tokens": 4054,
+    "output_tokens": 3538,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4054,
+  "output_tokens": 3538,
   "output_tokens_details": {
-   "thinking_tokens": 1628
+   "thinking_tokens": 1607
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12331,
- "ms": 31477,
- "seconds": 31.8,
+ "cost_usd": 0.11299,
+ "ms": 27729,
+ "seconds": 28.0,
  "parts": null,
  "error": null,
  "score": {
@@ -437,38 +437,64 @@
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "CMST 5",
+    "why": "text prints COMM 5 Intercultural Communication instead"
+   },
+   {
     "code": "ECON 1",
-    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics instead"
+    "why": "not in text; text prints ECON C2002 Principles of Macroeconomics"
    },
    {
     "code": "ECON 3",
-    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics instead"
-   },
-   {
-    "code": "CMST 5",
-    "why": "not in the text; catalog prints COMM 5 Intercultural Communication instead"
+    "why": "not in text; text prints ECON C2001 Principles of Microeconomics"
    },
    {
     "code": "HIST 17A",
-    "why": "not in the text; catalog prints HIST C1001 United States History to 1877 instead"
+    "why": "not in text; text prints HIST C1001 United States History to 1877"
    },
    {
     "code": "HIST 17B",
-    "why": "not in the text; catalog prints HIST C1002 United States History since 1865 instead"
+    "why": "not in text; text prints HIST C1002 United States History since 1865"
    },
    {
     "code": "STAT 1000E",
-    "why": "not in the text as printed; catalog prints STAT C1000E Introduction to Statistics (6 units)"
+    "why": "text prints STAT C1000E instead"
    }
   ],
-  "notes": [
-   "The PDF text extraction scrambles the Required Units table: it prints 'SOC 1 ... OR LALS 5 OR ECON 5 OR STAT C1000 OR STAT C1000E' and places 'PSYC C1000' and 'A statistics course: 5.0-6.0 / PSYC 5' under 'Choose two courses'. I read SOC 1 and PSYC C1000 as required and the statistics choice as PSYC 5 or LALS 5 or ECON 5 or STAT C1000 or STAT C1000E; this makes Required Units sum to the printed 24.0-25.0 (3+1+2+3+3+5/6+3+4) and with the 6.0-7.0 elective block matches Total 30.0-32.0. Reviewer should verify against the PDF layout.",
-   "The printed 'Required Units 24.0-25.0' covers the required block plus the three nested choice blocks (statistics, economics, biology); it is not recorded on any single block.",
-   "The 60-unit sentence is the generic ADT requirement, not recorded as degree_total. GE pattern is Cal-GETC; no GE units printed.",
-   "Learning outcomes recorded from the AA-T section; the Certificate of Achievement prints nearly identical outcomes separately.",
-   "Students must complete a minimum of 4 of 8 required courses at CCSF."
-  ]
+  "notes": []
  },
- "extracted_run": 43693267535,
- "read_run": "39056434592"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "bf77cc584ab3fe00",
+ "source_codes": [
+  "ADMJ57",
+  "ANTH3",
+  "BIO11",
+  "BIO9",
+  "CDEV53",
+  "CMST5",
+  "ECON1",
+  "ECON3",
+  "ECON5",
+  "ENGLC1001",
+  "HIST17A",
+  "HIST17B",
+  "HLTH30",
+  "LALS5",
+  "PSYC10",
+  "PSYC21",
+  "PSYC5",
+  "PSYCC1000",
+  "SOC1",
+  "SOC11",
+  "SOC120A",
+  "SOC120B",
+  "SOC2",
+  "SOC3",
+  "SOC35",
+  "SOC7",
+  "STAT1000E",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

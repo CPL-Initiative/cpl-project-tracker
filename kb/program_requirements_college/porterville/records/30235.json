@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Biological and Physical Science",
  "award": "A.A. Degree",
- "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=70",
+ "source_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=80",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7853,
+  "input_tokens": 9943,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7853,
-    "output_tokens": 1384,
+    "input_tokens": 9943,
+    "output_tokens": 2611,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1384,
+  "output_tokens": 2611,
   "output_tokens_details": {
-   "thinking_tokens": 231
+   "thinking_tokens": 939
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05909,
- "ms": 12069,
- "seconds": 12.6,
+ "cost_usd": 0.09199,
+ "ms": 21576,
+ "seconds": 34.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 21,
    "listed": 21,
-   "share": 0.0,
-   "missing": [
-    "ASTRC1000",
-    "BIOLC1000",
-    "BIOLP115",
-    "BIOLP119",
-    "BIOLP120",
-    "BIOLP135",
-    "BIOLP136",
-    "BIOLP160",
-    "CHEMP101A",
-    "CHEMP101B",
-    "CHEMP105",
-    "CHEMP106",
-    "ERSCP110",
-    "ERSCP115",
-    "GEOLP110",
-    "NUTRP110",
-    "PHSCP112",
-    "PHYSP102A",
-    "PHYSP102B",
-    "PHYSP104A",
-    "PHYSP104B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -84,15 +62,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    8.0,
+    8.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 8.0-8.0; the catalog states 18.0-18.0"
    ]
   },
   "repeated": {
@@ -100,17 +81,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,18 +105,18 @@
  },
  "record": {
   "program": {
-   "section_heading": "GRADUATION & GENERAL EDUCATION",
+   "section_heading": "Biological and Physical Science Associate in Arts",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Porterville College General Education checklist or Cal-GETC Transfer Curriculum",
    "degree_total": {
     "min": null,
     "max": null
@@ -145,102 +126,223 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Students will apply the scientific method to analyze physical and biological processes; use scientific terminology appropriately; draw appropriate conclusions from laboratory activities; identify the relationships between natural science, human activities, and society; identify levels of organization within natural systems and relate to biological and/or physical processes; describe the structure and properties of matter, transfer of energy, and the relationships between matter and energy within biological and/or physical systems; explain basic physical, chemical, and/or biological processes; select the appropriate qualitative and quantitative methods to analyze physical systems."
+   ],
+   "careers": [
+    "nursing",
+    "physical therapy",
+    "physician assistant"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ASTR C1000",
-    "why": "not in the text (only ASTR C1001 appears, in a GE list)"
+    "name": "Group l - Biological Sciences",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL P115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ERSC P115",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL P119",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL P120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL P135",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL P136",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL P160",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR P110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "BIOL C1000",
-    "why": "appears only in local GE Area 5B list; program section not in the text"
-   },
-   {
-    "code": "BIOL P115",
-    "why": "appears only in local GE Area 5B list; program section not in the text"
-   },
-   {
-    "code": "BIOL P119",
-    "why": "appears only in local GE Area 5B list; program section not in the text"
-   },
-   {
-    "code": "BIOL P120",
-    "why": "appears only in local GE Area 5B list; program section not in the text"
-   },
-   {
-    "code": "BIOL P135",
-    "why": "appears only in local GE Area 5B list; program section not in the text"
-   },
-   {
-    "code": "BIOL P136",
-    "why": "appears only in local GE Area 5B list; program section not in the text"
-   },
-   {
-    "code": "BIOL P160",
-    "why": "appears only in local GE Area 5B list; program section not in the text"
-   },
-   {
-    "code": "CHEM P101A",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "CHEM P101B",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "CHEM P105",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "CHEM P106",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "ERSC P110",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "ERSC P115",
-    "why": "appears only in local GE Area 5B list; program section not in the text"
-   },
-   {
-    "code": "GEOL P110",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "NUTR P110",
-    "why": "appears only in local GE Area 6 list; program section not in the text"
-   },
-   {
-    "code": "PHSC P112",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "PHYS P102A",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "PHYS P102B",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "PHYS P104A",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
-   },
-   {
-    "code": "PHYS P104B",
-    "why": "appears only in local GE Area 5A list; program section not in the text"
+    "name": "Group II - Physical Sciences",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASTR C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM P101A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM P101B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM P105",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM P106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERSC P110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL P110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSC P112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS P102A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS P102B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS P104A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS P104B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 70) is the Graduation & General Education section listing local GE Areas 4-7, not the Biological and Physical Science A.A. program section. No program requirements, totals, outcomes or careers could be read; the source page reference likely points to the wrong page.",
-   "Closed-list courses appear only as options in the GE Area 5A/5B and Area 6 lists; GE courses are not placed in blocks.",
-   "A reviewer should locate the actual Biological and Physical Science A.A. degree section elsewhere in the 2026-2027 catalog (it may be an area-of-emphasis degree that draws on the Area 5 natural science list)."
+   "Major requires at least 18 combined units from Groups I and II ('Total to a minimum of 18 combined units'), with at least one course (4 or more units) from each group; recorded total_units 18 and each group as choose_units minimum 4.",
+   "BIOL P115/ERSC P115 printed as one cross-listed entry; ERSC P115 recorded as alternative.",
+   "Program Learning Outcomes printed as one semicolon-separated sentence; recorded as a single entry as printed (line-break hyphens joined). The description also prints a near-identical list ('will be able to: ...'), not recorded separately.",
+   "No degree total printed for the A.A.; text only notes a student may finish with more than 60 units. GE may be either the Porterville College GE checklist or Cal-GETC.",
+   "Section is marked 'Effective Summer 2025' within the 2026-2027 catalog.",
+   "CHEM P105 printed with title 'Introduction to General, Organic, and Biochemical Chemistry', slightly different from the closed list title."
   ]
  },
- "extracted_run": "39046786897"
+ "extracted_run": "44477695238",
+ "catalog_year": "2026-2027",
+ "source_sha": "71ea220393028e51",
+ "source_codes": [
+  "ASTRC1000",
+  "BIOLC1000",
+  "BIOLP115",
+  "BIOLP119",
+  "BIOLP120",
+  "BIOLP135",
+  "BIOLP136",
+  "BIOLP160",
+  "CHEMP101A",
+  "CHEMP101B",
+  "CHEMP105",
+  "CHEMP106",
+  "ERSCP110",
+  "ERSCP115",
+  "GEOLP110",
+  "NUTRP110",
+  "PHSCP112",
+  "PHYSP102A",
+  "PHYSP102B",
+  "PHYSP104A",
+  "PHYSP104B"
+ ],
+ "source_coverage": 1.0
 }

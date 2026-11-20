@@ -502,7 +502,8 @@ STEP
 # The Exhibits tab's Review queue (Sam, Open Asks Sheet 147 card 1, 2026-10-31): each title
 # the CER procedures held, joined to its aligned course (step 4b3's `aligned`), its exhibits
 # (statewide_data.js) and the colleges holding a course of the same identity. Writes
-# kb/exhibits_review.json and kb/exhibits_review_courses.json, and kb/exhibits_adoption.json
+# kb/exhibits_review.json, kb/exhibits_review_courses.json and kb/exhibits_review_subjects.json (the
+# Same subject lists), and kb/exhibits_adoption.json
 # (the credential panel's Who could adopt it?, Exhibit Adoption's per-credential view, read from
 # this run's statewide_data.js and statewide_prescriptive.js); exhibits.js reads them. The
 # nightly cer-procedures.yml rebuilds them after its run too. --live reads the saved title assignments

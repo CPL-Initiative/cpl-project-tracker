@@ -11,8 +11,8 @@
 //
 // LIVE (Sam, S661: "add the 'College Collections ETA' widget to the College Data Collections tab and add a card to
 // the cdc tab to open the full ETA in sidebar"): the band tops the college list (hook "top"), a card among the figures
-// (hook "tiles") opens the full clock in the side panel (pane "clock", #commons/data/clock), and the clock keeps its own
-// page at #commons/data/eta. The three share one set of picks for the visit.
+// (hook "tiles") opens the full clock in the side panel (pane "clock", #collect/clock), and the clock keeps its own
+// page at #collect/eta. The three share one set of picks for the visit.
 //
 // What it reads, committed files the site already serves (it WRITES NOTHING):
 //   kb/status/program-requirements.json   the headline series: Active programs complete each day. The remaining work,
@@ -254,14 +254,12 @@
 
   /* Everything the clock draws that comes from a file; null where the headline series cannot date a pace. */
   function base(M, pr, sk) {
-    var H = headlineSeries(pr), days = Object.keys(H).sort(), last = days[days.length - 1];
-    if (!last) return null;
-    var asOf = dnum(last), h = H[last], at = function (n) { var x = H[dstr(n)]; return x ? x.complete : null; };
-    /* A missed build day must not blank a pace (COBIx on #3371): each window ends on the closest earlier day that has a
-       count, and its pace divides by the days it really spans. */
-    var back = function (n) { for (var k = n; k >= n - 7; k--) { if (at(k) != null) return k; } return null; };
-    var d7 = back(asOf - 7), d14 = d7 == null ? null : back(d7 - 7);
-    var c7 = d7 == null ? null : at(d7), c14 = d14 == null ? null : at(d14);
+    /* The program-records figure is the Commons front page's, computed once (commons_program_records.js, #3566): the
+       target leaves out the COCI-only programs, and a missed build day never blanks a pace (COBIx on #3371). */
+    var PRG = window.CPL_PROGRAM_RECORDS, R = PRG ? PRG.compute(pr) : null;
+    if (!R) return null;
+    var H = headlineSeries(pr), asOf = R.lastN, at = function (n) { var x = H[dstr(n)]; return x ? x.complete : null; };
+    var d7 = R.fromN, d14 = R.prevFromN;
     var live = (M && M.live) || {}, st = live.statewide || {}, oc = st.outcomes || {}, pc = st.program_courses || {};
     var universe = pc.active_courses || 0;
     var bySkill = skillsByDay(sk), bars = [];
@@ -270,9 +268,9 @@
       bars.push({ day: n, programs: t != null && y != null ? Math.max(0, t - y) : null, skills: s.skills, creds: s.creds });
     }
     return {
-      asOf: asOf, written: (pr && pr.written_at) || "", active: h.active, complete: h.complete, remaining: Math.max(0, h.active - h.complete),
-      pace: { soonest: c7 == null ? null : h.complete - c7, latest: c7 == null || c14 == null ? null : c7 - c14 },
-      span: { soonest: d7 == null ? null : asOf - d7, latest: d14 == null ? null : d7 - d14 },
+      asOf: asOf, written: (pr && pr.written_at) || "", active: R.active, complete: R.complete, remaining: R.left, target: R.target, cociOnly: R.cociOnly,
+      pace: { soonest: R.gain, latest: R.prevGain },
+      span: { soonest: R.span, latest: R.prevSpan },
       /* The days each window averages, so the page can say them (COBIx's S678 list, item 1c). */
       window: { soonest: d7 == null ? null : [d7, asOf], latest: d14 == null ? null : [d14, d7] },
       slo: { have: oc.slo_courses_on_active || 0, universe: universe }, obj: { have: oc.objective_courses_on_active || 0, universe: universe },
@@ -747,7 +745,7 @@
     sec.appendChild(sw);
     var pr = function (m) { return paceWords(B, m); };
     sec.appendChild(el("p", { cls: "eta-callout" }, [el("strong", { text: "Projections, not partner commitments. " }), S.phase === "1"
-      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the daily count of Active programs complete (" + fmt(B.complete) + " of " + fmt(B.active) + " complete): Soonest uses " + paceDays(B, "soonest") + " (" + pr("soonest") + "), Latest " + paceDays(B, "latest") + " (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their rates are fixed estimates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night), not measured, and their dates are estimates. Colleges and partners should not read a lever as a promise."
+      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the daily count of Active programs complete (" + fmt(B.complete) + " of " + fmt(B.active) + " complete), toward every Active program in its college's current catalog (about " + fmt(B.target) + ", leaving out the " + fmt(B.cociOnly) + " found only in the Chancellor's Office curriculum inventory, the same target the CPL Commons page uses): Soonest uses " + paceDays(B, "soonest") + " (" + pr("soonest") + "), Latest " + paceDays(B, "latest") + " (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their rates are fixed estimates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night), not measured, and their dates are estimates. Colleges and partners should not read a lever as a promise."
       : "Phase 2 and Phase 3 are dated only when a partner or college feed has a start date in the registry. None of those feeds is dated today, so this phase's completion is not dated."]));
     var grid = el("div", { cls: "eta-grid" });
     function cell(h, v, d, key) { grid.appendChild(el("div", { cls: "eta-cell", "data-cell": key }, [el("h4", { text: h }), el("p", { cls: "eta-v", text: v }), d ? el("p", { cls: "eta-note", text: d }) : null])); }
@@ -862,7 +860,7 @@
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Latest date" }), el("p", { text: lbl(Q) }), el("p", { cls: "eta-note", "data-eta-days": "latest", text: "Latest: " + paceDays(B, "latest") })]),
       el("div", { cls: "eta-cell", "data-eta-cre": "" }, [el("h4", { text: "Cost per collected record equivalent (CRE)" }), el("p", { text: creWords(creWindow(M, B.asOf)) })]),
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Pace" }), el("p", { text: paceWords(B, "soonest") + " newly complete" }),
-        el("a", { href: "#commons/data/" + VIEW_KEY, text: "Open the ETA clock" })])]);
+        el("a", { href: "#collect/" + VIEW_KEY, text: "Open the ETA clock" })])]);
   }
 
   /* One set of picks for the visit, shared by every place the clock is drawn (the band on the list, the full clock in
@@ -934,7 +932,7 @@
     ensureCss();
     var root = el("div", { cls: "eta eta-inpanel", "data-eta-pane": "" }), B = tbaRoot(root, M);
     if (B) mount(root, function (r, redraw) { r.appendChild(full(B, shared(), M, redraw)); });
-    return { title: TITLE, tab: "#commons/data/" + VIEW_KEY, basis: "The full clock: the phases, the dates, how far we have come, the datasets, the levers and the plan. Every moved date is a projection, not a partner commitment.", kids: [root] };
+    return { title: TITLE, tab: "#collect/" + VIEW_KEY, basis: "The full clock: the phases, the dates, how far we have come, the datasets, the levers and the plan. Every moved date is a projection, not a partner commitment.", kids: [root] };
   }
 
   function ready(fetchFn) {

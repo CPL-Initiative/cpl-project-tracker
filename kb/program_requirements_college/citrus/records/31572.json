@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9532,
-    "output_tokens": 3286,
+    "output_tokens": 3369,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 3286,
+  "output_tokens": 3369,
   "output_tokens_details": {
-   "thinking_tokens": 713
+   "thinking_tokens": 831
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10385,
- "ms": 24118,
- "seconds": 24.7,
+ "cost_usd": 0.10551,
+ "ms": 25170,
+ "seconds": 25.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 33,
+   "placed": 34,
    "listed": 34,
-   "share": 0.971,
-   "missing": [
-    "HIST107H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST107H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "GER201",
-    "HISTC1001H"
+    "GER201"
    ],
    "flagged": [
-    "GER201",
-    "HISTC1001H"
+    "GER201"
    ],
    "pass": true
   },
@@ -111,7 +114,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "History A.A.-Transfer Degree (Requirements tab, Course List)",
+   "section_heading": "History A.A.-Transfer Degree",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -142,7 +145,7 @@
   },
   "blocks": [
    {
-    "name": "Required courses",
+    "name": "Required courses:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -200,7 +203,7 @@
     ]
    },
    {
-    "name": "Select one (1) of the following courses",
+    "name": "Select one (1) of the following courses:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -336,7 +339,7 @@
     ]
    },
    {
-    "name": "Select one (1) of the following courses",
+    "name": "Select one (1) of the following courses:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -487,14 +490,14 @@
    }
   ],
   "notes": [
-   "The page heading is not printed in the extracted text; section_heading is inferred from the outcomes heading and the Requirements tab.",
-   "The second 'Select one' list carries footnote 1: 'A course may be used only once to fulfill degree requirements.' HIST 109, 111, 112, 130, 131, 132, 145, 155 and 222 appear in both choice lists.",
-   "Honors twins printed as separate rows (ANTH 210H, ANTH 216H, HUM 101H, POLS C1000H) are recorded as alternatives of their base courses.",
-   "HIST C1001H and GER 201 are not in the closed list and are marked catalog additions.",
-   "The 60-unit figure is the general ADT requirement, not printed as this award's total; degree_total left null. The curriculum map's 'Total Units 61-62' is an example pathway, not recorded as the degree total.",
-   "The curriculum map lists HIST 104H as an alternative to HIST 104, but the requirements course list does not; not recorded.",
-   "The Cal-GETC pattern is named but no GE unit figure is printed; ge_units null."
+   "The page heading is cut off in the text ('formation'); section_heading taken from the outcomes lead-in 'Students completing the History A.A.-Transfer Degree'.",
+   "Second 'Select one' list carries footnote 1: 'A course may be used only once to fulfill degree requirements.' Many HIST courses appear in both choose-one lists.",
+   "Honors twins printed as separate rows in the choose-one lists (ANTH 210H, ANTH 216H, HUM 101H, POLS C1000H) recorded as alternatives of their base courses.",
+   "The 60-unit statement is the generic ADT requirement, not recorded as degree_total; the curriculum map 'Total Units 61-62' is a sample plan and also not recorded.",
+   "Curriculum map lists HIST 104H (not in closed list) as an alternative to HIST 104, but the Requirements course list does not; not recorded in blocks.",
+   "HIST C1001H and GER 201 are in the requirements but not in the closed list (catalog additions)."
   ]
  },
- "extracted_run": "39726639865"
+ "extracted_run": "44481520157",
+ "catalog_year": "2026-2027"
 }

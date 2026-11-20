@@ -71,6 +71,13 @@
 // something new. Instructions past refresh_note's 600-character cap are kept whole as a
 // document to work from. Every rebuild is checked for accessibility before it comes back.
 //
+// Two publish buttons (Sam, Nov 19, 2026, via COBIx on #3560): "Publish to Internal Library" and "Publish to Public
+// Library", with no approval from Sam. Internal has no gate. Public includes Internal, and its one gate is a passing
+// accessibility check record for the version the record names now (cpl_library_checks, written only by the check
+// run). The separate List publicly step is retired. Each record can be a Template, and templates show first when a
+// new draft starts. kb/migrations/2026-11-19_library_publishing_model.sql holds the tables and columns; without them
+// the tab still publishes to the Internal Library.
+//
 // STATIC module, lazy-loaded on first #library open (both HTMLs, Rule 4). It
 // injects its own CSS (the ensureCerScopeCss pattern). Tests: tests/library.test.js
 (function () {
@@ -91,6 +98,16 @@
   var DRAFTS_URL = SUPABASE_URL + "/rest/v1/cpl_library_drafts";
   var PICS_URL = SUPABASE_URL + "/rest/v1/cpl_library_pictures";
   var SET_PUBLIC_URL = SUPABASE_URL + "/rest/v1/rpc/cpl_library_set_public";
+  // The publishing model (#3560, Sam's decisions of Nov 19 via COBIx): accessibility check records, one per check of one
+  // version of a piece, written only by the check run; and each division's settings (kb/migrations/
+  // 2026-11-19_library_publishing_model.sql). The tab reads both and works without them: Internal needs neither.
+  var CHECKS_URL = SUPABASE_URL + "/rest/v1/cpl_library_checks";
+  var SETTINGS_URL = SUPABASE_URL + "/rest/v1/cpl_library_division_settings";
+  // The CPL Initiative's defaults, the seeded 'cobi' row: the standard is Sam's wording (Nov 19, 2026).
+  var DEFAULT_SETTINGS = { division: "cobi", division_name: "CPL Initiative", standard: "WCAG 2.1 AA and Section 508",
+    reviewer_or_tool: "axe-core automated check", footer_template: "Accessibility: {standard}, checked {date}, report linked.",
+    not_certified: "Accessibility: Not yet certified." };
+  var PUBLIC_CONFIRM = "This lists it in the Public Library, where anyone can find it.";
   var PUBLIC_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
   var TEAM_KEY = "cpl_team_pass";
   var AUTHOR_KEY = "cpl_library_author";
@@ -163,7 +180,10 @@
     // Last modified first, as the Cards are (Sam, 2026-11-05: "sort the items in the Library by modified date descending").
     ls: { sort: [{ col: 5, dir: -1 }] }, engine: null, listLoading: false, listErr: null, boxOpen: false,
     // Publish now, per record, for the visit only: { busy, started, said, err, link }.
-    pubNow: {}
+    pubNow: {},
+    // The publishing model (#3560): checks by record and version key (null until read, false when the table is absent),
+    // the division settings read, the Public confirmation open on one card ({ id, pics }), and the Template filter.
+    checks: null, settings: {}, pubAsk: null, tpl: false
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -422,6 +442,8 @@
       R + " .lib-btn[disabled]{opacity:.6;cursor:default;}",
       R + " .lib-pubsum{color:var(--text-muted);}",
       R + " .lib-pubwarn{color:var(--text-body);font-weight:600;}",
+      R + " .lib-confirm{color:var(--text-strong);font-weight:600;}",
+      R + " .lib-tpls{margin:.5rem 0;}",
       R + " .lib-check{display:flex;gap:8px;align-items:center;}",
       R + " .lib-line{margin:10px 0 0;color:var(--text-muted);font-size:.9rem;}",
       R + " .lib-msg{margin:10px 0 0;font-weight:600;font-size:.92rem;color:var(--hunter);}",
@@ -649,11 +671,38 @@
       return res.json();
     }).then(function (rows) {
       state.rows = Array.isArray(rows) ? rows : [];
+      return loadChecks();
+    }).then(function () {
       state.loading = false; render();
     }).catch(function (e) {
       state.rows = null; state.loading = false;
       state.error = "The Library could not be read (" + (e && e.message ? e.message : "cpl_library") + "). Nothing is shown rather than a partial list.";
       render();
+    });
+  }
+  // The check records and the division settings, read beside the records. Either table absent (the migration not yet
+  // applied) or refused leaves the tab working: Publish to Internal Library needs neither, and Publish to Public Library
+  // says the check record is not available yet. A check counts only when its row is whole.
+  function loadChecks() {
+    var get = function (url) {
+      return window.fetch(url, { headers: headers() }).then(function (res) { return res.ok ? res.json() : null; }, function () { return null; });
+    };
+    return Promise.all([
+      get(CHECKS_URL + "?select=library_id,version_key,standard,checked_at,tool_or_reviewer,result,report_url&order=checked_at.desc"),
+      get(SETTINGS_URL + "?select=division,division_name,standard,reviewer_or_tool,footer_template,not_certified")
+    ]).then(function (got) {
+      var checks = got[0], sets = got[1];
+      if (!Array.isArray(checks)) state.checks = false;
+      else {
+        state.checks = {};
+        checks.forEach(function (c) {
+          if (!c || !c.library_id || !c.version_key || (c.result !== "pass" && c.result !== "fail") || !c.checked_at) return;
+          var k = c.library_id + "|" + c.version_key, was = state.checks[k];
+          if (!was || String(c.checked_at) > String(was.checked_at)) state.checks[k] = c;
+        });
+      }
+      state.settings = {};
+      (Array.isArray(sets) ? sets : []).forEach(function (x) { if (x && x.division && x.standard) state.settings[x.division] = x; });
     });
   }
 
@@ -715,6 +764,7 @@
     if (state.seen !== "all" && (r.seen_by || "unset") !== state.seen) return false;
     if (state.status !== "all" && (r.status || "unset") !== state.status) return false;
     if (state.flag && flagsOf(r).indexOf(state.flag) < 0) return false;
+    if (state.tpl && !r.template) return false;
     if (state.madeFor !== "all" && (r.for_kind || "unset") !== state.madeFor) return false;
     if (state.forName !== "all" && (r.for_name || "") !== state.forName) return false;
     if (state.q.trim()) {
@@ -796,7 +846,8 @@
     if (regenState(r)) rows.push(["Rebuild", regenWords(r)]);
     rows.push(["Rebuild from", r.rebuild_from ? "<code>" + esc(r.rebuild_from) + "</code>" : "Not recorded."]);
     if (r.note) rows.push(["Note", esc(r.note)]);
-    rows.push(["Public library", publicCell(r)]);
+    accessRows(r).forEach(function (x) { rows.push(x); });
+    rows.push(["Public Library", publicCell(r)]);
     rows.push(["Record", esc("Added by " + (r.added_by || "unknown") + (r.updated_by ? "; last edited by " + r.updated_by : "") + ".")]);
     var html = "<dl>" + rows.map(function (x) { return "<dt>" + x[0] + "</dt><dd>" + x[1] + "</dd>"; }).join("");
     var vs = Array.isArray(r.versions) ? r.versions : [];
@@ -822,28 +873,100 @@
     if (r.home === "drive") return "Its link is on the team's SharePoint or Drive, which opens only for people it is shared with.";
     return "";
   }
+  // ── The publishing model (#3560; Sam's decisions of Nov 19, 2026, via COBIx) ────────────────────────────────────
+  // Two buttons, exactly: Publish to Internal Library puts the page at library/<slug>/ for the team, with no gate and no
+  // approval from Sam; Publish to Public Library does the same and lists it, and Public always includes Internal. The
+  // only gate on listing is a passing accessibility check record for the version the record names now (checkKey).
+  // Removing a piece from the Public Library leaves it in the Internal Library. Listing still runs through
+  // cpl_library_set_public() and its guards.
+  // The migration is in once the records carry its columns and the check records read.
+  function publishingReady() {
+    return !!(state.checks && (state.rows || []).some(function (r) { return r && Object.prototype.hasOwnProperty.call(r, "publish_target"); }));
+  }
+  function settingsFor(r) { return state.settings[(r && r.division) || "cobi"] || state.settings.cobi || DEFAULT_SETTINGS; }
+  // The versions a check covers, the rule the migration's header states for the check run. Listing reads the page's key
+  // alone: the page is what the Public Library links, so a pass for a draft never lists a page (second read of #3572).
+  // The draft's key speaks only to a new piece's draft, in its Public confirmation.
+  function pageKey(r) { return r && r.url ? (r.version ? "version:" + r.version : "page") : ""; }
+  function draftKey(r) {
+    var g = r && r.regen, rs = regenState(r);
+    return g && g.draft_id && g.ready_at && (rs === "ready" || rs === "approved") ? "draft:" + g.draft_id : "";
+  }
+  // What Details shows: the page's check when there is a page, else the draft's.
+  function checkKey(r) { return pageKey(r) || draftKey(r); }
+  function latestCheck(r, key) {
+    var k = key === undefined ? checkKey(r) : key;
+    return k && state.checks ? state.checks[r.id + "|" + k] || null : null;
+  }
+  function publicGate(r, key) {
+    if (!publishingReady()) return { ok: false, absent: true, why: "The accessibility check record is not available yet, so the Public Library cannot list it." };
+    if (r.remediation === "in_remediation") return { ok: false, why: "It is in remediation. The Public Library lists it once it is remediated and its accessibility check passes." };
+    var c = latestCheck(r, key === undefined ? pageKey(r) : key);
+    if (!c) return { ok: false, why: "Not yet certified. The Public Library lists it once its accessibility check passes." };
+    if (c.result !== "pass") return { ok: false, check: c, why: "Its accessibility check of " + fmtDate(String(c.checked_at).slice(0, 10)) + " did not pass. The Public Library lists it once a check passes." };
+    return { ok: true, check: c };
+  }
+  // A piece someone published to the Public Library that waits on its check.
+  function waitsToList(r) { return !!(r && r.publish_target === "public" && !r.public_listed); }
+  function waitLine(r) {
+    return waitsToList(r) && r.url && !publicGate(r).ok ? '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' +
+      esc("In the Internal Library. The Public Library lists it once its accessibility check passes.") + "</p>" : "";
+  }
+  // Details: the check record for the version the record names now, under Sam's labels.
+  function accessRows(r) {
+    var st = settingsFor(r), c = latestCheck(r);
+    var status = !publishingReady() ? "Not yet certified. The check record is not available yet."
+      : !c ? "Not yet certified" : c.result === "pass" ? "Passed its check" : "Did not pass its check";
+    return [
+      ["Accessibility standard", esc(c ? c.standard : st.standard)],
+      ["Check date", esc(c ? fmtDate(String(c.checked_at).slice(0, 10)) : "None recorded.")],
+      ["Reviewer or tool", esc(c ? c.tool_or_reviewer : st.reviewer_or_tool)],
+      ["Check record", c && c.report_url && /^https:\/\//.test(c.report_url) ? '<a href="' + esc(c.report_url) + '" target="_blank" rel="noopener">The check report</a>' : "None recorded."],
+      ["Certification status", esc(status)]
+    ];
+  }
   function publicCell(r) {
     if (r.public_listed) {
-      return "Listed" + (r.listed_at ? " since " + esc(fmtDate(String(r.listed_at).slice(0, 10))) : "") +
-        ' on the <a href="' + PUBLIC_PAGE + '" target="_blank" rel="noopener">public library</a>, and Sierra can link it.' +
+      return "In the Public Library" + (r.listed_at ? " since " + esc(fmtDate(String(r.listed_at).slice(0, 10))) : "") +
+        ', where anyone can find it on the <a href="' + PUBLIC_PAGE + '" target="_blank" rel="noopener">Public Library</a> page, and Sierra can link it.' +
         (r.public_summary ? '<br><span class="lib-pubsum">' + esc(r.public_summary) + "</span>" : "") +
-        '<div class="lib-actions-row"><button type="button" class="lib-btn" data-unpub="' + esc(r.id) + '"' + (state.busy ? " disabled" : "") + ">Remove from the public library</button></div>";
+        '<div class="lib-actions-row"><button type="button" class="lib-btn" data-unpub="' + esc(r.id) + '"' + (state.busy ? " disabled" : "") + ">Remove from the Public Library</button></div>" +
+        '<p class="lib-hint">Removing it leaves it in the Internal Library.</p>';
     }
-    if (!r.url) return esc(publicReach(r));
+    if (!r.url) return esc(draftsOnCard(r) ? "Not listed. Publish to Public Library on its card lists it once its page is up and its accessibility check passes." : publicReach(r));
+    var gate = publicGate(r);
+    // A piece waiting on its check offers the listing form once the check passes (second read of #3572).
+    if (waitsToList(r) && !gate.ok) return esc("In the Internal Library. The Public Library lists it once its accessibility check passes.");
     if (state.pub !== r.id) {
-      return "Not listed." + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">List publicly</button></div>';
+      return "In the Internal Library." + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
+    }
+    var head = '<form class="lib-form" data-pubform="' + esc(r.id) + '"><p class="lib-confirm" data-pubconfirm="' + esc(r.id) + '">' + esc(PUBLIC_CONFIRM) + "</p>";
+    var cancel = '<button type="button" class="lib-btn" data-pubcancel="1">Cancel</button>';
+    if (gate.absent) return head + '<p class="lib-pubwarn">' + esc(gate.why) + '</p><div class="lib-actions-row">' + cancel + "</div></form>";
+    if (!gate.ok) {
+      return head + '<p class="lib-pubwarn">' + esc(gate.why) + " It stays in the Internal Library until then.</p>" +
+        '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Publish to Public Library</button>" + cancel + "</div></form>";
     }
     var claude = r.home === "web" && /^https:\/\/claude\.ai\//i.test(r.url);
     var reach = publicReach(r);
-    return '<form class="lib-form" data-pubform="' + esc(r.id) + '"><p>Listing puts the title, occasion, date, the summary below, its topics and the link on the public page, and lets Sierra link it. Nothing else leaves COBI.</p>' +
+    return head + "<p>The Public Library shows the title, occasion, date, the summary below, its topics and the link, and Sierra can link it. Nothing else leaves COBI.</p>" +
       (reach ? '<p class="lib-pubwarn">' + esc(reach) + "</p>" : "") +
       '<div class="lib-grid">' +
       '<div class="lib-field wide"><label for="lp-sum">Public summary</label><textarea id="lp-sum" rows="3" maxlength="600" required>' + esc(r.public_summary || r.summary || "") + "</textarea></div>" +
       '<div class="lib-field wide"><label for="lp-topics">Topics Sierra matches, separated by commas</label><input id="lp-topics" type="text" value="' + esc((r.public_topics || []).join(", ")) + '" placeholder="DSP training, developmental disabilities"></div>' +
       (claude ? '<div class="lib-field wide"><label class="lib-check"><input type="checkbox" id="lp-shared" required> I set its claude.ai link to public in the Share menu</label></div>' : "") +
       "</div>" +
-      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">List publicly</button>" +
-      '<button type="button" class="lib-btn" data-pubcancel="1">Cancel</button></div></form>';
+      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Publish to Public Library</button>" + cancel + "</div></form>";
+  }
+  // The Public confirmation on a ready draft's card, inside its publish form (so the name and the pictures box stay).
+  function draftPublicConfirm(r) {
+    var gate = publicGate(r, draftKey(r));
+    var note = gate.absent ? gate.why + " Publish to Internal Library publishes it now."
+      : (gate.check && gate.check.result !== "pass" ? "Its draft's accessibility check of " + fmtDate(String(gate.check.checked_at).slice(0, 10)) + " did not pass. " : "") +
+        "It publishes to the Internal Library now, and the Public Library lists it once its page's accessibility check passes.";
+    return '<p class="lib-confirm" data-pubconfirm="' + esc(r.id) + '">' + esc(PUBLIC_CONFIRM) + "</p>" + '<p class="why">' + esc(note) + "</p>" +
+      '<button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">" + (gate.absent ? "Publish to Internal Library" : "Publish to Public Library") + "</button>" +
+      word("data-pubaskno", r.id, "Cancel", false, "publishing " + r.title);
   }
 
   // The filer stamps filed_at (ISO, UTC) on each version it files (Sam's call 8).
@@ -909,6 +1032,8 @@
       '<div class="lib-field wide"><label for="le-project">Project</label><input id="le-project" type="text" list="lib-projects" maxlength="200" value="' + esc(r.project || "") + '" placeholder="ELL IET CPL"><span class="lib-line">Pieces that share a project show as one card: a visual and the document it was built from, a deck and its script.</span></div>' +
       '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://studentrcc.sharepoint.com/..."></div>' +
       knowledgeFields("le", r) +
+      (publishingReady() ? '<div class="lib-field wide"><label class="lib-check" for="le-template"><input type="checkbox" id="le-template"' + (r.template ? " checked" : "") +
+        "> Template</label><span class=\"lib-line\">A starting point for pieces with a similar purpose. Templates show first when someone starts a new draft.</span></div>" : "") +
       '<div class="lib-field"><label for="le-by">Your name</label><input id="le-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
       "</div>" +
       '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Save</button>" +
@@ -919,7 +1044,7 @@
       "</div></form>";
   }
 
-  // The card's side column (Version 22): Open, Copy link, List publicly and Details, as words. Revise and
+  // The card's side column (Version 22): Open, Copy link, Publish to Public Library and Details, as words. Revise and
   // its next steps sit under the card's text (stateBlock); Edit lives in Details, beside the record it edits.
   function sideWords(r, withOpen) {
     var open = !!state.open[r.id];
@@ -927,7 +1052,7 @@
       ? (withOpen ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" : "") +
         word("data-copy", r.id, "Copy link")
       : draftsOnCard(r) ? "" : word("data-file", r.id, "File it", r.remediation === "remediated");
-    if (r.url && !r.public_listed) acts += word("data-pubtop", r.id, "List publicly");
+    if (r.url && !r.public_listed && (!waitsToList(r) || publicGate(r).ok) && !isNewPiece(r)) acts += word("data-pubtop", r.id, "Publish to Public Library");
     acts += '<button type="button" class="lib-word" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     return acts;
   }
@@ -943,7 +1068,7 @@
     var acts = sideWords(r, true);
     var size = sizeWord(r);
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) +
-      (r.public_listed ? chip("In the public library") : "") +
+      (r.public_listed ? chip("In the Public Library") : "") + (r.template ? chip("Template") : "") +
       chip("Seen by: " + seenWord(r), !r.seen_by) +
       (r.home === "not_filed" ? "" : chip(homeOf(r).label));
     return '<article class="lib-item' + (r.poster ? " has-thumb" : "") + '" aria-labelledby="lib-t-' + esc(r.id) + '">' + (r.poster ? thumb(r) : "") +
@@ -951,7 +1076,7 @@
       '<h3 class="lib-title" id="lib-t-' + esc(r.id) + '">' + esc(r.title) + (size ? ' <span class="lib-size">' + esc(size) + "</span>" : "") + "</h3>" +
       (r.for_kind ? '<p class="lib-for">Made for <b>' + esc(forKindWord(r)) + "</b>" + (r.for_name ? " \u00b7 For <b>" + esc(r.for_name) + "</b>" : "") + "</p>" : "") +
       (r.summary ? '<p class="lib-summary">' + esc(r.summary) + "</p>" : "") +
-      '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
+      '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" + waitLine(r) +
       (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) {
         return "<li>" + esc(flagText(f, r)) + "</li>";
       }).join("") + "</ul>" : "") +
@@ -1162,7 +1287,7 @@
         if (!o.ok) throw new Error((o.j.error || "The draft was not made.") + (o.j.summary ? " The model said: " + o.j.summary : ""));
         sayOn(id, "The draft is ready: " + (o.j.summary || "open it to read the changes.") +
           (o.j.google_closed && o.j.google_closed.length ? " Not opened (share it as Anyone with the link, then draft again): " + o.j.google_closed.join("; ") + "." : "") +
-          (o.j.new_piece ? " Open it, then Publish it when it reads right." : o.j.replaces_now ? " It replaces the public copy in the next scheduled run." : " Open it, then Replace the public copy when it reads right."));
+          (o.j.new_piece ? " Open it, then publish it to the Internal or the Public Library when it reads right." : o.j.replaces_now ? " It replaces the public copy in the next scheduled run." : " Open it, then Replace the public copy when it reads right."));
         return load().then(function () { focusState(id); });
       }).catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); focusState(id); });
   }
@@ -1435,8 +1560,8 @@
   }
   // A new piece drafts on its card too (Sam, 2026-11-09: "I haven't been able to successfully create a doc from there
   // yet--always need some sort of out side intervention"; 2026-11-10: "all the way to posting in the public library").
-  // library-revise-draft writes Draft 1 from the brief and the documents in the public library's look; Publish it
-  // approves it, and library-publish puts it at library/<slug>/ as Version 1. Then List publicly, as for any piece.
+  // library-revise-draft writes Draft 1 from the brief and the documents in the public library's look; Publish to
+  // Internal Library or Publish to Public Library approves it, and library-publish puts it at library/<slug>/ as Version 1.
   // A new piece Claude drafts and publishes on its card needs no File it or File a new version (Sam, 2026-11-18: "The
   // file it now function does not seem to be necessary"); the In development list keeps File it for a piece a session makes from its copied brief.
   function draftsOnCard(r) { return isNewPiece(r) && canDraftNew(r); }
@@ -1459,7 +1584,7 @@
           next.push(word("data-change", r.id, "Change what you asked", false, "for " + r.title));
           if (g.based_on_draft) next.push(openDraftWord({ regen: { draft_id: g.based_on_draft }, title: r.title }, false));
         }
-        why = "Claude drafts the page in the public library's look from the brief and the documents, in about a minute, and checks its accessibility. Nothing is public until you press Publish it.";
+        why = "Claude drafts the page in the public library's look from the brief and the documents, in about a minute, and checks its accessibility. Nothing is published until you press Publish to Internal Library or Publish to Public Library.";
       } else why = "Say what it must say (Edit record), or add a document to work from, and Claude drafts it here.";
       // The piece's documents, added on the card itself (Sam's request 71931018 was saved before its PDF was read).
       next.push('<label class="lib-word" for="nd-file-' + esc(r.id) + '">Add a document</label><input id="nd-file-' + esc(r.id) + '" class="lib-vh" type="file" data-newdoc="' + esc(r.id) + '">');
@@ -1468,18 +1593,24 @@
       line = esc("Draft " + draftNumber(r) + " is ready to review" + (g.ready_at ? " (" + stamp(g.ready_at) + ")" : "") + ". Nothing is public yet.");
       // Changes after the first draft (Sam, 2026-11-11: "there doesn't appear to be any way to add new instructions"):
       // Ask for changes opens the card's box, and Claude drafts them on top of this draft.
+      // The two publish buttons (#3560). Public opens its confirmation inside the same form, so the name and the
+      // pictures box carry over; the form's one submit then publishes to the library the confirmation names.
+      var ask = !!(state.pubAsk && state.pubAsk.id === r.id);
       next.push(openDraftWord(r, true),
         word("data-revise", r.id, "Ask for changes", false, "to " + r.title),
-        '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) + picsGate(r) +
-          '<button type="submit" class="lib-word"' + (state.busy ? " disabled" : "") + ">Publish it</button></form>");
-      why = "Ask for changes says what to add, cut or reword, and Claude drafts it on top of this draft. Publish it puts the page at its own address on the CPL Initiative's site; List publicly then adds it to the public library.";
+        '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) + picsGate(r, ask && state.pubAsk.pics) +
+          (ask ? draftPublicConfirm(r)
+            : '<button type="submit" class="lib-word"' + (state.busy ? " disabled" : "") + ">Publish to Internal Library</button>" +
+              word("data-pubask", r.id, "Publish to Public Library", false, r.title)) + "</form>");
+      why = "Ask for changes says what to add, cut or reword, and Claude drafts it on top of this draft. Publish to Internal Library puts the page at its own address on the CPL Initiative's site for the team to share. Publish to Public Library does the same, and the Public Library lists it once its accessibility check passes.";
       if (g.based_on_draft) extra = changedHtml(r);
     } else if (rs === "approved") {
-      line = esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
-        ". The next scheduled run puts it on its page (every three hours); then List publicly on its card.");
+      if (!pubActive(r)) line = esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
+        ". The next scheduled run puts it on its page (every three hours), in the Internal Library" +
+        (r.publish_target === "public" ? "; the Public Library lists it once its accessibility check passes." : "."));
       next.push(openDraftWord(r, false), publishNowWord(r));
     }
-    var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
+    var msg = state.msgFor === r.id && state.message && !pubActive(r) ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands"' + (!rs || rs === "waiting" ? ' data-newdrop="' + esc(r.id) + '"' : "") + ">" +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
@@ -1529,6 +1660,9 @@
     return '<button type="button" class="lib-word" data-pubnow="' + esc(r.id) + '"' + (p.busy ? " disabled" : "") + ">" +
       (p.busy ? "Starting the publish run" : "Publish now") + '<span class="lib-vh"> ' + esc(r.title) + "</span></button>";
   }
+  /* One status line per card (#3560, Sam's test of Nov 19): once Publish now is pressed, its line replaces the approval
+     line and the approval message, and moves through Publishing, Deploying and Live, or Failed with its reason. */
+  function pubActive(r) { var p = r && state.pubNow[r.id]; return !!(p && p.said); }
   function publishNowSaid(r) {
     var p = state.pubNow[r.id];
     if (!p || !p.said) return "";
@@ -1537,15 +1671,19 @@
   }
   function publishNowRefusal(status, j) {
     if (status === 429 || (j && j.reason === "too_soon")) {
-      return "A publish run started less than two minutes ago, so no second one was started. If the page is not up in a few minutes, press Publish now again. " + NEXT_RUN;
+      return "Failed: a publish run started less than two minutes ago, so no second one was started. If the page is not up in a few minutes, press Publish now again. " + NEXT_RUN;
     }
     // The publish run shares a queue with the daily build and the apply runs; starting it while one of those waits would
     // cancel that one (COBIx on #3171), so the function starts nothing.
     if (status === 409 || (j && j.reason === "busy_behind")) {
-      return "Another run is waiting in the same queue as the publish run, and starting one now would cancel it, so nothing was started. Press Publish now again in a few minutes. " + NEXT_RUN;
+      return "Failed: another run is waiting in the same queue as the publish run, and starting one now would cancel it, so nothing was started. Press Publish now again in a few minutes. " + NEXT_RUN;
     }
-    if (status === 401) return "The publish run did not start: only a signed-in reviewer can start it. Sign in again from About in the header. " + NEXT_RUN;
-    return "The publish run did not start" + (status ? " (the service answered " + status + ")" : "") + ". " + NEXT_RUN;
+    if (status === 401) return "Failed: only a signed-in reviewer can start the publish run. Sign in again from About in the header. " + NEXT_RUN;
+    /* The function's own reason, named (#3560: a 503 hid that the dispatch token was missing or refused). */
+    var reason = j && j.reason ? String(j.reason) : "";
+    if (reason === "not_configured") return "Failed: the publish service has no GitHub token set (not_configured). Ask whoever keeps the Work Plan project's Edge Function secrets to set LIBRARY_DISPATCH_TOKEN. " + NEXT_RUN;
+    if (reason === "token_refused") return "Failed: GitHub refused the publish service's token (token_refused); it may have expired or lack Actions read and write. Ask whoever keeps the Work Plan project's Edge Function secrets to renew LIBRARY_DISPATCH_TOKEN. " + NEXT_RUN;
+    return "Failed: the publish run did not start" + (status ? " (the service answered " + status + (reason ? ", " + reason : "") + ")" : "") + ". " + NEXT_RUN;
   }
   function redrawPublishNow(id) {
     render();
@@ -1558,7 +1696,7 @@
     if (p && p.busy) return Promise.resolve();
     if (p && p.started) {
       p.err = false;
-      p.said = "The publish run has already started, so pressing again starts nothing. The page is up in about three minutes.";
+      p.said = "Publishing. The publish run has already started, so pressing again starts nothing.";
       redrawPublishNow(id);
       return Promise.resolve();
     }
@@ -1581,15 +1719,15 @@
       if (x.status === 200 && x.j.ok) {
         p.started = Date.now();
         p.said = x.j.already
-          ? "A publish run is already waiting, and it publishes this page too. The page is up in about three minutes."
-          : "The publish run has started. The page is up in about three minutes.";
+          ? "Publishing. A publish run is already waiting, and it publishes this page too."
+          : "Publishing. The publish run has started; the page is saved in a few minutes, then the site deploys it.";
         followPublish(id, 0);
       } else {
         p.err = true; p.said = publishNowRefusal(x.status, x.j);
       }
       redrawPublishNow(id);
     }, function () {
-      p.busy = false; p.err = true; p.said = "The publish run did not start: the network failed. " + NEXT_RUN;
+      p.busy = false; p.err = true; p.said = "Failed: the publish run did not start because the network failed. " + NEXT_RUN;
       redrawPublishNow(id);
     });
   }
@@ -1607,12 +1745,15 @@
         var fresh = Array.isArray(rows) && rows[0], r = byId(id);
         if (fresh && r) Object.assign(r, fresh);
         if (r && !awaitsPublishRun(r) && r.url) {
-          p.said = "The page is up:"; p.link = r.url; p.err = false;
+          /* Saved is not live: the site's deploy run still has to publish it (#3560: "The page is up" showed while the
+             address answered 404). Deploying until the address answers, then Live with its link. */
+          p.said = "Deploying. The page is saved; the site is publishing it."; p.link = ""; p.err = false;
+          followLive(id, r.url, 0);
         } else if (n + 1 < PUB_POLL.max) { followPublish(id, n + 1); return; }
         else {
           // Following stops, and a press may ask again: the function's own two-minute hold and queue check decide.
           p.started = null;
-          p.said = "The publish run has not moved the record yet; it may be waiting behind the daily build. The page goes up when it finishes, and the card shows it at your next visit. If it does not, press Publish now again.";
+          p.said = "Publishing. The publish run has not moved the record yet; it may be waiting behind the daily build. The page goes up when it finishes, and the card shows it at your next visit. If it does not, press Publish now again.";
         }
         if (!state.cardBox && !state.edit && !state.form) render();
       }).catch(function () {
@@ -1621,6 +1762,23 @@
         if (!state.cardBox && !state.edit && !state.form) render();
       });
     }, PUB_POLL.ms);
+  }
+  /* Deploying until the page's own address answers (same site, so the status is readable), then Live with the link. */
+  var LIVE_POLL = { first: 5000, ms: 20000, max: 18 };
+  function followLive(id, url, n) {
+    setTimeout(function () {
+      var p = state.pubNow[id];
+      if (!p || !document.getElementById(ROOT_ID)) return;
+      function redraw() { if (!state.cardBox && !state.edit && !state.form) render(); }
+      window.fetch(url, { method: "HEAD", cache: "no-store" }).then(function (res) {
+        if (res.ok) { p.said = "Live:"; p.link = url; redraw(); return; }
+        if (n + 1 < LIVE_POLL.max) { followLive(id, url, n + 1); return; }
+        p.said = "Deploying. The site's deploy run is taking longer than usual; the page goes live when it finishes:"; p.link = url; redraw();
+      }, function () {
+        if (n + 1 < LIVE_POLL.max) { followLive(id, url, n + 1); return; }
+        p.said = "Deploying. The page's address could not be checked from here; it goes live when the site's deploy run finishes:"; p.link = url; redraw();
+      });
+    }, n ? LIVE_POLL.ms : LIVE_POLL.first);
   }
   function stateBlock(r) {
     if (isNewPiece(r)) return newPieceBlock(r);
@@ -1653,10 +1811,10 @@
         word("data-revise", r.id, "Ask for more changes", false, r.title));
       extra = changedHtml(r);
     } else if (rs === "approved") {
-      line = regenWords(r);
+      if (!pubActive(r)) line = regenWords(r);
       next.push(openDraftWord(r, false), publishNowWord(r), word("data-keep", r.id, "Keep " + (publicVersion(r) ? "Version " + publicVersion(r) : "the public copy") + " instead"));
     }
-    var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
+    var msg = state.msgFor === r.id && state.message && !pubActive(r) ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands">' +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
@@ -1725,7 +1883,7 @@
   // card's box; a card the filters hide is shown first, so the box always lands in view.
   function ensureShown(r) {
     if (isDev(r) || matches(r)) return;
-    state.q = ""; state.kind = "all"; state.seen = "all"; state.status = "all"; state.flag = null; state.madeFor = "all"; state.forName = "all";
+    state.q = ""; state.kind = "all"; state.seen = "all"; state.status = "all"; state.flag = null; state.madeFor = "all"; state.forName = "all"; state.tpl = false;
   }
   function openCardBox(id, mode, prefill) {
     var r = byId(id);
@@ -2173,8 +2331,10 @@
   }
   function pieceLabels() {
     var seen = {};
-    return (state.rows || []).filter(function (r) { return !r.retired_at; }).map(function (r) {
-      var l = pieceLabel(r);
+    // Templates first (#3560), each named as one; the rest keep their order.
+    var live = (state.rows || []).filter(function (r) { return !r.retired_at; });
+    return live.filter(function (r) { return r.template; }).concat(live.filter(function (r) { return !r.template; })).map(function (r) {
+      var l = r.template ? pieceLabel(r).slice(0, -1) + ", Template)" : pieceLabel(r);
       if (seen[l]) l = l.slice(0, -1) + ", " + fmtDate(r.made_on || r.created_at) + ")";
       seen[l] = true;
       return { id: r.id, label: l };
@@ -2464,6 +2624,13 @@
     var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus();
   }
 
+  // Starting points (#3560): a new draft offers the templates first, each opening Start something new from it.
+  function templatesHtml() {
+    var t = (state.rows || []).filter(function (r) { return r.template && !r.retired_at; });
+    if (!t.length) return "";
+    return '<div class="lib-tpls" role="group" aria-labelledby="lib-tpls-h"><p class="lib-line" id="lib-tpls-h">Start from a template</p><div class="lib-next">' +
+      t.map(function (r) { return word("data-fromit", r.id, r.title, false, ": start something new from it"); }).join("") + "</div></div>";
+  }
   function panelHtml() {
     var pk = state.pick, pr = state.piece ? byId(state.piece) : null, pu = pr ? state.pieceUse : null;
     var useRow = function (v, label) {
@@ -2512,7 +2679,7 @@
       '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>";
     return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
       '<div class="lib-drop" id="lib-drop">' +
-      (pr ? pieceHtml(pr) : "") + inputs + chooser + picked + asks +
+      (pr ? pieceHtml(pr) : "") + inputs + chooser + (pr || pk ? "" : templatesHtml()) + picked + asks +
       "</div>" + remHtml() + (state.form ? addForm() : "") + "</section>";
   }
   // ── Remediation (lane NEXT ③): the deck, document, workbook or PDF, read and fixed in this browser ──
@@ -3474,7 +3641,7 @@
       ? '<a id="lib-t-' + esc(r.id) + '" href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title) + "</a>"
       : '<b id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</b>";
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) +
-      (r.public_listed ? chip("In the public library") : "") +
+      (r.public_listed ? chip("In the Public Library") : "") + (r.template ? chip("Template") : "") +
       chip("Seen by: " + seenWord(r), !r.seen_by) +
       (r.home === "not_filed" ? "" : chip(homeOf(r).label));
     var acts = sideWords(r, false);
@@ -3499,7 +3666,7 @@
       '<div class="lib-body"><p class="lib-kicker">' + esc(["Project", latest ? "Updated " + fmtDate(latest) : ""].filter(Boolean).join(" \u00b7 ")) + "</p>" +
       '<div class="lib-projhead"><h3 class="lib-title" id="' + id + '">' + esc(u.name) + "</h3>" +
       '<span class="lib-projcount">' + rows.length + " pieces \u00b7 " + esc(kindsWord(rows).toLowerCase()) + "</span></div>" +
-      (anyPublic ? '<ul class="lib-chips" aria-label="Project"><li class="lib-chip">In the public library</li></ul>' : "") +
+      (anyPublic ? '<ul class="lib-chips" aria-label="Project"><li class="lib-chip">In the Public Library</li></ul>' : "") +
       (who ? '<p class="lib-for">Made for <b>' + esc(forKindWord(who)) + "</b>" + (who.for_name ? " \u00b7 For <b>" + esc(who.for_name) + "</b>" : "") + "</p>" : "") +
       (lead.summary ? '<p class="lib-summary">' + esc(lead.summary) + "</p>" : "") +
       '<ul class="lib-pieces" aria-label="The pieces in ' + esc(u.name) + '">' + rows.map(pieceRow).join("") + "</ul></div></article>";
@@ -3507,7 +3674,7 @@
   // ── The List view (commons_list.js), the card as its side panel ─────────────────────────────
   var LIST_FILTERS = [["", "All"], ["ready", "Draft to review"], ["asked", "Changes asked"], ["replacing", "Replacing"],
     ["dev", "In development"], ["not_filed", "Not filed"], ["public_unset", "No audience set"], ["kb_note", "No KB note"],
-    ["in_remediation", "In remediation"], ["remediated", "Remediated"], ["public", "In the public library"], ["selected", "Selected"]];
+    ["in_remediation", "In remediation"], ["remediated", "Remediated"], ["public", "In the Public Library"], ["template", "Templates"], ["selected", "Selected"]];
   function standsWord(r) {
     var rs = regenState(r);
     if (r.status === "requested") return "Requested";
@@ -3543,6 +3710,7 @@
     if (f === "replacing") return rs === "approved";
     if (f === "dev") return isDev(r);
     if (f === "public") return !!r.public_listed;
+    if (f === "template") return !!r.template;
     return flagsOf(r).indexOf(f) >= 0;
   }
   function panelCard(r) {
@@ -3552,7 +3720,7 @@
     var words = r.url
       ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" + word("data-copy", r.id, "Copy link")
       : draftsOnCard(r) ? "" : word("data-file", r.id, "File it", r.remediation === "remediated");
-    if (r.url && !r.public_listed) words += word("data-pubtop", r.id, "List publicly");
+    if (r.url && !r.public_listed && (!waitsToList(r) || publicGate(r).ok) && !isNewPiece(r)) words += word("data-pubtop", r.id, "Publish to Public Library");
     if (r.status === "requested") words += word("data-brief", r.id, state.briefShown[r.id] ? "Copied. Copy again" : "Copy the brief", true);
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) + (r.public_listed ? chip("In the public library") : "") +
       chip("Seen by: " + seenWord(r), !r.seen_by) + (r.home === "not_filed" ? "" : chip(homeOf(r).label));
@@ -3561,7 +3729,7 @@
       (r.project ? '<p class="lib-line">Project: ' + esc(r.project) + "</p>" : "") +
       (r.for_kind ? '<p class="lib-for">Made for <b>' + esc(forKindWord(r)) + "</b>" + (r.for_name ? " · For <b>" + esc(r.for_name) + "</b>" : "") + "</p>" : "") +
       (r.summary ? '<p class="lib-summary">' + esc(r.summary) + "</p>" : "") +
-      '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
+      '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" + waitLine(r) +
       (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) { return "<li>" + esc(flagText(f, r)) + "</li>"; }).join("") + "</ul>" : "") +
       '<div class="lib-next">' + words + '<span class="lib-copyslot" id="lib-c-' + esc(r.id) + '"></span></div>' +
       (r.status === "requested" && state.briefShown[r.id] ? '<label class="lib-vh" for="lib-b-' + esc(r.id) + '">The brief to paste into a new session</label><textarea class="lib-brief" id="lib-b-' + esc(r.id) + '" readonly>' + esc(briefText(r)) + "</textarea>" : "") +
@@ -3707,6 +3875,9 @@
       opt("colleges", "Colleges", state.seen) + opt("public", "Public", state.seen) + opt("unset", "Not set", state.seen) + "</select></div>" +
       '<div class="lib-field"><label for="lib-status">Status</label><select id="lib-status">' + opt("all", "Any", state.status) + opt("draft", "Draft", state.status) +
       opt("approved", "Approved", state.status) + opt("presented", "Presented", state.status) + opt("unset", "Not set", state.status) + "</select></div>" +
+      // The Template filter (#3560): templates are starting points for pieces with a similar purpose.
+      (publishingReady() ? '<div class="lib-field"><label for="lib-tpl">Templates</label><select id="lib-tpl">' + opt("all", "All pieces", state.tpl ? "only" : "all") +
+        opt("only", "Templates only", state.tpl ? "only" : "all") + "</select></div>" : "") +
       "</div>" + datalists() + panelHtml() +
       (state.message && !state.msgFor ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "");
 
@@ -3730,6 +3901,7 @@
       "The repos keep only the source that rebuilds each piece.</p>" +
       "<p>Create or Remediate a Document saves a new piece as a Requested record when you press Start, or remediates a file in this browser. A PDF's pictures (the screens in a deck saved as PDF) come with its words: Claude places each under the steps it shows, and the card shows every picture to cover, crop or leave out before you publish. To revise a piece already here, press Revise on its card: say what to change, and Claude drafts it on the card in about a minute (a web page with a public copy) or a session rebuilds it (a deck, a document, a file on SharePoint). The card then shows what changed and its accessibility check; Replace the public copy makes it public. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
       "<p>Claude hands each new piece over the day it makes it, and a session on Sam's computer saves it straight into the synced folder. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
+      "<p>A new piece's draft has two buttons. Publish to Internal Library puts the page at its own address for the team to share, with no sign-off needed. Publish to Public Library does the same and lists it in the Public Library, where anyone can find it, once a passing accessibility check record exists for that version. A piece in the Public Library is always in the Internal Library too, and removing it from the Public Library leaves it there. Details shows each piece's check record. Mark a piece as a Template in Edit the record, and it shows first when someone starts a new draft.</p>" +
       "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p>" +
       "<p>A piece whose substance is knowledge (a training-facts page, a guide, an explainer's argument) gets a note in the public CPL Knowledge Base through its curation pipeline, and the record links it; a deck, a film or a data piece does not. Needs attention names a knowledge piece without a note. The Knowledge Base view above is the team's reading portal over that repo.</p></footer>";
 
@@ -3886,6 +4058,8 @@
       for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
       knowledge: knowledgeValue(g("le-knowledge"), g("le-kbnote")), kb_note: g("le-kbnote") || null,
       project: g("le-project") || null };
+    var tpl = document.getElementById("le-template");
+    if (tpl) body.template = !!tpl.checked;
     // A piece started as a brief has no date until it is made; one that moves past Requested
     // without one takes today's, so it sorts with its peers rather than last.
     var r = byId(id) || {};
@@ -3900,14 +4074,18 @@
   // Replace the public copy: the draft on the card becomes the public copy in the next
   // run. The request keeps everything it had and gains who approved it, and when.
   // A draft with pictures is published only once someone says they looked at them (a screen can show a name).
-  function picsGate(r) {
-    return livePics(r).length ? '<label class="lib-check" for="ro-pics-' + esc(r.id) + '"><input type="checkbox" id="ro-pics-' + esc(r.id) + '"> I checked each picture: no name, personal address or student record shows</label>' : "";
+  function picsGate(r, ticked) {
+    return livePics(r).length ? '<label class="lib-check" for="ro-pics-' + esc(r.id) + '"><input type="checkbox" id="ro-pics-' + esc(r.id) + '"' + (ticked ? " checked" : "") + "> I checked each picture: no name, personal address or student record shows</label>" : "";
   }
-  function approveRegen(id) {
+  // Publish to Internal Library or Publish to Public Library on a new piece's ready draft (#3560), and Replace the public
+  // copy on a revision. No approval from Sam: whoever presses it approves the draft for the publish run, and the record
+  // keeps the library it was published to (publish_target). A new piece then starts the publish run at once for a
+  // signed-in reviewer (COBIx on #3560: no second press), through Publish now's own holds.
+  function approveRegen(id, target) {
     var r = byId(id);
     if (!r || regenState(r) !== "ready") return;
     var pk = document.getElementById("ro-pics-" + id);
-    if (pk && !pk.checked) { sayOn(id, "Check the pictures first, then tick the box beside " + (isNewPiece(r) ? "Publish it" : "Replace the public copy") + ".", true); render(); return; }
+    if (pk && !pk.checked) { sayOn(id, "Check the pictures first, then tick the box beside " + (isNewPiece(r) ? (target === "public" ? "Publish to Public Library" : "Publish to Internal Library") : "Replace the public copy") + ".", true); render(); return; }
     var n = document.getElementById("ro-by-" + id), by = (n ? n.value.trim() : "") || storedAuthor();
     if (!by) { sayOn(id, "Add your name, so the record says who approved the draft.", true); render(); return; }
     rememberAuthor(by);
@@ -3916,10 +4094,35 @@
     regen.approved_at = new Date().toISOString(); regen.approved_by = by;
     // The tick is recorded with the approval (COBIx on #3095): library_publish.py publishes pictures only with it.
     if (pk && pk.checked) { regen.pictures_checked_by = by; regen.pictures_checked_at = regen.approved_at; }
-    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: by } }).then(function () {
-      sayOn(id, isNewPiece(r) ? "Approved. It goes up on its own page within three hours; then List publicly on its card." : "Approved. The draft becomes the public copy within three hours.");
-      return load().then(function () { focusState(id); });
+    var fresh = isNewPiece(r), toPublic = fresh && target === "public" && publishingReady();
+    var body = { regen: regen, updated_by: by };
+    if (fresh && publishingReady()) body.publish_target = toPublic ? "public" : "internal";
+    state.pubAsk = null;
+    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
+      sayOn(id, !fresh ? "Approved. The draft becomes the public copy within three hours."
+        : toPublic ? "Published to the Public Library. It goes up on its own page within three hours, in the Internal Library, and the Public Library lists it once its accessibility check passes."
+        : "Published to the Internal Library. It goes up on its own page within three hours.");
+      return load().then(function () {
+        focusState(id);
+        if (fresh && reviewerToken() && awaitsPublishRun(byId(id))) return publishNow(id);
+      });
     }).catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); });
+  }
+  // Publish to Public Library on a piece already on its page (#3560): with a passing check for the version it names
+  // now, it lists through cpl_library_set_public(); without one, the record keeps the choice and the piece stays in
+  // the Internal Library until its check passes. The tables absent, nothing is written.
+  function publishPublicPage(id) {
+    var r = byId(id);
+    if (!r || !r.url || r.public_listed) return;
+    var gate = publicGate(r);
+    if (gate.absent) { say(gate.why, true); render(); return; }
+    if (gate.ok) { setPublic(id, true); return; }
+    var by = storedAuthor() || null;
+    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { publish_target: "public", updated_by: by } }).then(function () {
+      say("Saved. It stays in the Internal Library, and the Public Library lists it once its accessibility check passes.");
+      state.pub = null;
+      return load();
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
 
   function setPublic(id, listed) {
@@ -3936,19 +4139,29 @@
       if (!sum) { say("Add a public summary. It is what the public page and Sierra show.", true); render(); return; }
       if (shared && !shared.checked) { say("Set the claude.ai link to public first, then tick the box.", true); render(); return; }
       body.p_summary = sum; body.p_topics = topics;
+      // The one gate on the Public Library (#3560): a passing check record for the version the record names now.
+      var gate = publicGate(r);
+      if (!gate.ok) { say(gate.why, true); render(); return; }
     }
-    state.busy = true; render();
-    window.fetch(SET_PUBLIC_URL, {
-      method: "POST",
-      headers: token ? { apikey: SUPABASE_ANON, Authorization: "Bearer " + token, "Content-Type": "application/json" }
-                     : headers({ "Content-Type": "application/json" }),
-      body: JSON.stringify(body)
+    // Public includes Internal: the record keeps the choice first, so a listing refused below still leaves it waiting.
+    var first = listed && publishingReady() && r.publish_target !== "public"
+      ? write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { publish_target: "public", updated_by: storedAuthor() || null } })
+      : Promise.resolve();
+    first.then(function () {
+      state.busy = true; render();
+      return window.fetch(SET_PUBLIC_URL, {
+        method: "POST",
+        headers: token ? { apikey: SUPABASE_ANON, Authorization: "Bearer " + token, "Content-Type": "application/json" }
+                       : headers({ "Content-Type": "application/json" }),
+        body: JSON.stringify(body)
+      });
     }).then(function (res) {
       state.busy = false;
       if (!res.ok) return res.text().then(function (t) {
-        throw new Error(/reviewer|team phrase/i.test(t) ? "The database wants the team phrase or a reviewer sign-in for this. Enter the phrase, or sign in from About, and try again." : "The listing was refused (" + res.status + "). " + String(t || "").slice(0, 200));
+        throw new Error(/accessibility check record/i.test(t) ? "The database refused the listing: the Public Library lists a piece only with a passing accessibility check record for the page it names now." : /reviewer|team phrase/i.test(t) ? "The database wants the team phrase or a reviewer sign-in for this. Enter the phrase, or sign in from About, and try again." : "The listing was refused (" + res.status + "). " + String(t || "").slice(0, 200));
       });
-      say(listed ? "Listed. It is on the public library now, and Sierra can link it." : "Removed from the public library. The record stays here.");
+      say(listed ? "Published to the Public Library. Anyone can find it there now, and Sierra can link it."
+        : "Removed from the Public Library. It stays in the Internal Library.");
       state.pub = null;
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
@@ -4039,6 +4252,7 @@
       if (e.target.getAttribute && e.target.getAttribute("data-newdoc") && e.target.files && e.target.files[0]) { addNewPieceFile(e.target.getAttribute("data-newdoc"), e.target.files[0]); return; }
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
       else if (e.target.id === "lib-status") { state.status = e.target.value; render(); }
+      else if (e.target.id === "lib-tpl") { state.tpl = e.target.value === "only"; render(); }
       else if (e.target.id === "lib-for") { state.forName = e.target.value; render(); }
       else if (e.target.id === "lc-file-next") {
         var nf = e.target.files && e.target.files[0];
@@ -4109,10 +4323,11 @@
     });
     root.addEventListener("submit", function (e) {
       e.preventDefault();
+      var v0;
       if (e.target.id === "lib-addform") submitAdd();
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
-      else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
-      else if (e.target.getAttribute("data-regenokform")) approveRegen(e.target.getAttribute("data-regenokform"));
+      else if (e.target.getAttribute("data-pubform")) publishPublicPage(e.target.getAttribute("data-pubform"));
+      else if ((v0 = e.target.getAttribute("data-regenokform"))) approveRegen(v0, state.pubAsk && state.pubAsk.id === v0 ? "public" : "internal");
       else if (e.target.getAttribute("data-draftnowform")) draftNow(e.target.getAttribute("data-draftnowform"));
       else if (e.target.getAttribute("data-cboxform")) submitCardBox(e.target.getAttribute("data-cboxform"));
     });
@@ -4167,6 +4382,16 @@
       else if ((v = b.getAttribute("data-cbdocs"))) { state.cbDocs = true; render(); var cf = document.getElementById("cb-file-" + v); if (cf) cf.focus(); }
       else if ((v = b.getAttribute("data-cbname"))) { state.cbName = true; render(); var cn = document.getElementById("cb-by-" + v); if (cn) cn.focus(); }
       else if ((v = b.getAttribute("data-pubnow"))) publishNow(v);
+      else if ((v = b.getAttribute("data-pubask"))) {
+        // The Public confirmation keeps the pictures box as it was ticked.
+        var pt = document.getElementById("ro-pics-" + v);
+        state.pubAsk = { id: v, pics: !!(pt && pt.checked) }; render();
+        var pc = root.querySelector('[data-regenokform="' + v + '"] button[type="submit"]'); if (pc) pc.focus();
+      }
+      else if ((v = b.getAttribute("data-pubaskno"))) {
+        state.pubAsk = null; render();
+        var pa = root.querySelector('[data-pubask="' + v + '"]'); if (pa) pa.focus();
+      }
       else if ((v = b.getAttribute("data-keep"))) keepPublic(v);
       else if ((v = b.getAttribute("data-fixask"))) {
         var fr = byId(v), fd = fr && fr.regen && state.drafts[fr.regen.draft_id];
@@ -4225,7 +4450,8 @@
       if (v !== state.view && document.getElementById(ROOT_ID)) setView(v, false);
     });
     window.addEventListener("cpl-tab-activated", function (e) {
-      if (e && e.detail && e.detail.tab === "library") { state.view = viewFromHash(); load(); }
+      // A pick lasts the visit (Sam, 2026-10-21): the Template filter and an open Public confirmation start clear.
+      if (e && e.detail && e.detail.tab === "library") { state.view = viewFromHash(); state.tpl = false; state.pubAsk = null; load(); }
     });
   }
 
@@ -4281,7 +4507,7 @@
     render: render,
     load: load,
     _state: state,
-    _publishPoll: PUB_POLL,
+    _publishPoll: PUB_POLL, _livePoll: LIVE_POLL,
     _pictureBoxes: pictureBoxes,
     _draftWithPictures: draftWithPictures,
     _flagsOf: flagsOf,

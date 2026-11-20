@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11597,
-    "output_tokens": 5117,
+    "output_tokens": 5417,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 5117,
+  "output_tokens": 5417,
   "output_tokens_details": {
-   "thinking_tokens": 1512
+   "thinking_tokens": 1743
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14873,
- "ms": 39458,
- "seconds": 39.9,
+ "cost_usd": 0.15473,
+ "ms": 38643,
+ "seconds": 38.8,
  "parts": null,
  "error": null,
  "score": {
@@ -167,8 +167,8 @@
     "minimum": null,
     "option_group": "Lec/Lab combination",
     "stated": {
-     "min": 4,
-     "max": 4
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -188,13 +188,13 @@
     ]
    },
    {
-    "name": "Choose 4 units of a Lec/Lab combination below: ESCI 37, 37L, 38 and 38L",
+    "name": "Choose 4 units of a Lec/Lab combination below: ESCI 37, ESCI 37L, ESCI 38 and ESCI 38L",
     "rule": "all",
     "minimum": null,
     "option_group": "Lec/Lab combination",
     "stated": {
-     "min": 4,
-     "max": 4
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -577,15 +577,59 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints the emphasis total as 'University Studies – 25 Unit Emphasis'; recorded as total_units 25 (4+4+4+4+9 = 25). No degree total or GE pattern is printed in this section.",
-   "Closed list stores 'ESCI16' without a space; catalog prints 'ESCI 16'. Treated as the same course (catalog_addition false).",
-   "'Choose 4 units of a Lec/Lab combination' offers ESCI 16 + 16L OR ESCI 37 + 37L + 38 + 38L; recorded as two option blocks in option_group 'Lec/Lab combination', each with stated 4 (the printed 4-unit requirement).",
-   "Restricted Electives (Life Sciences) list paired courses joined by AND (BIOL 12 + 12L, NHIS 5 + 5L, NHIS 15 + NHIS 65, AGNR 60 + 61) that must be taken together as a lecture/lab or field combination; the schema cannot express the pairing, so each course is listed individually in the choose-4-units block.",
-   "BIOL 1* and ESCI 6# carry footnote markers whose explanations are not in the extracted text.",
-   "Elective Courses list prints no units beside the codes; units left null. ESCI 37/37L and 38/38L are printed as slash pairs in the elective list.",
-   "The text before this section (Select 3 units..., Emphasis in Coastal Science Technician) belongs to other emphases and was not read for this award.",
-   "No careers named; the transfer specializations listed (Oceanography, Coastal Marine Conservation, etc.) are academic program areas, not careers."
+   "total_units taken from the heading 'University Studies – 25 Unit Emphasis'; blocks sum to 25 (8 core + 4 lec/lab + 4 restricted + 9 electives).",
+   "The catalog prints ESCI 16; the closed list stores it as 'ESCI16' (no space, units not stored). Treated as the same course, catalog_addition false.",
+   "The 'Choose 4 units of a Lec/Lab combination' rule is recorded as two option blocks (ESCI 16 + 16L, or ESCI 37 + 37L + 38 + 38L); each totals 4 units.",
+   "In RESTRICTED ELECTIVES the catalog pairs courses with AND (BIOL 12 + BIOL 12L, NHIS 5 + NHIS 5L, NHIS 15 + NHIS 65, AGNR 60 + AGNR 61); these pairs are taken together to reach 4 units. The rule requires options that include a laboratory or field component.",
+   "BIOL 1* and ESCI 6# carry footnote markers whose explanations are not printed in the extracted text.",
+   "ELECTIVE COURSES list prints codes in condensed form without units ('AGNR 1, 60, 61'; 'ESCI ... 37/37L, 38/38L'); units recorded as null. 37/37L and 38/38L may be intended as lecture/lab pairs.",
+   "The degree's general education pattern and the overall degree total are not printed in this section; University Studies general requirements are presumably described elsewhere in the catalog.",
+   "'SPECIALIZATIONS for Marine Sciences Transfer' lists transfer specializations (Oceanography, Coastal Marine Conservation, etc.), not careers; careers left empty.",
+   "The text preceding this section (Coastal Science Technician emphasis, etc.) belongs to other emphases and was not used."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": "44513230805",
+ "catalog_year": "2026-2027",
+ "source_sha": "26bb19c96acf97bf",
+ "source_codes": [
+  "AGNR1",
+  "AGNR60",
+  "AGNR61",
+  "AGPS25",
+  "ARCH4A",
+  "ARCH5A",
+  "BIOL1",
+  "BIOL12",
+  "BIOL12L",
+  "BOT1",
+  "CHEM1A",
+  "CHEM1B",
+  "CHEM2A",
+  "ESCI1",
+  "ESCI10",
+  "ESCI14",
+  "ESCI14L",
+  "ESCI15",
+  "ESCI16",
+  "ESCI16L",
+  "ESCI18",
+  "ESCI2",
+  "ESCI37",
+  "ESCI37L",
+  "ESCI38",
+  "ESCI38L",
+  "ESCI6",
+  "ESCI7",
+  "GEOG10",
+  "GEOG15",
+  "GEOG9",
+  "NHIS15",
+  "NHIS5",
+  "NHIS5L",
+  "NHIS65",
+  "PHYS2A",
+  "PHYS2B",
+  "ZOOL1"
+ ],
+ "source_coverage": 1.0
 }

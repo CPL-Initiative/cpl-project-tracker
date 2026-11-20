@@ -1,0 +1,22 @@
+{
+ "_readme": "S680 (program-records worker for SkyPhoebe), the harvest lane's NEXT (4): Cosumnes River's seven failing records (04602, 04607, 04614, 07305, 11319, 11338, 33542), read for free before any paid extraction (d-rccd-pilot-no-blind-force-s671). This plan: Spanish AA-T 33542 (read from PDF p.593; every listed course placed; the sum 11-19 against 'Total Units: 19', with Option II read as two blocks in one option group with Option I). It prints PDF pp.592-594 of the hand-filed 2026-27 catalog (kb/hand_filed_catalogs/cosumnes_river.json, sha256 pinned; the file every Cosumnes River record was extracted from), so the session can name where each section opens and what the page prints that the record lacks. One load of the hand-filed copy, no model call, nothing written.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "cause": "Where the program's section and its requirement list open, and what the page prints that the filed record lacks (courses, units, an option's total)."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cause"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  592,
+  594
+ ]
+}

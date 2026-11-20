@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Chemical Technology",
  "award": "A.S. Degree",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=94",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10130,
+  "input_tokens": 11306,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10130,
-    "output_tokens": 1818,
+    "input_tokens": 11306,
+    "output_tokens": 2105,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1818,
+  "output_tokens": 2105,
   "output_tokens_details": {
-   "thinking_tokens": 666
+   "thinking_tokens": 601
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07688,
- "ms": 15529,
- "seconds": 15.7,
+ "cost_usd": 0.08732,
+ "ms": 17414,
+ "seconds": 17.5,
  "parts": null,
  "error": null,
  "score": {
@@ -79,9 +79,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 7,
    "courses": 0,
-   "count": 3,
+   "count": 7,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MAJOR - REQUIRED COURSES",
+   "section_heading": "(STATE CODE 46329) Chemical Technology Associate in Science (A.S.) Degree",
    "measure": "units",
    "total_units": {
     "min": 34,
@@ -114,7 +114,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Cal-GETC or LACCD GE",
+   "ge_pattern": "Cal-GETC (34 units) or LACCD GE (21 units)",
    "degree_total": {
     "min": null,
     "max": null
@@ -125,11 +125,16 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
+    "Demonstrate professional workplace competencies including reliability, punctuality, organizational skills, attention to detail, and professional attitudes consistent with quality control laboratory environments.",
+    "Collaborate effectively as contributing members of laboratory teams by communicating clearly, sharing responsibilities, following protocols, and supporting collaborative problem-solving in quality control operations.",
+    "Apply analytical and problem-solving skills by performing quality control testing, designing and conducting experiments, interpreting analytical results, executing chemical calculations, utilizing laboratory information management systems (LIMS), and applying spectrophotometric, gravimetric, and volumetric analytical methods.",
+    "Maintain safe laboratory practices and compliance by identifying chemical hazards, assessing and mitigating risks, properly using Safety Data Sheets, selecting appropriate personal protective equipment, implementing engineering controls, and responding appropriately to laboratory emergencies in accordance with good manufacturing practices (GMP).",
     "Communicate technical information effectively in written and oral formats using appropriate chemical and biotechnology terminology, including preparation of laboratory reports, standard operating procedures, and documentation meeting industry standards.",
     "Conduct technical research by performing literature searches and gathering information related to quality control methods, analytical procedures, validation protocols, and biotechnology applications relevant to pharmaceutical, food, agricultural, and chemical industries.",
-    "Possess foundational skills, knowledge, and laboratory competencies needed for entry-level employment as Industrial Quality Control Technicians and for continued academic advancement through transfer to four-year institutions pursuing bachelor's degrees in chemistry, biotechnology, or related fields."
+    "Possess foundational skills, knowledge, and laboratory competencies needed for entry-level employment as Industrial Quality Control Technicians and for continued academic advancement through transfer to four-year institutions pursuing bachelor’s degrees in chemistry, biotechnology, or related fields."
    ],
    "careers": [
+    "chemical technicians",
     "Industrial Quality Control Technicians"
    ]
   },
@@ -206,15 +211,26 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 95: the A.S. degree's heading, program description and the first program learning outcomes are on the preceding page and not in the text. Only the last three outcomes printed on page 95 are recorded; the full list should be checked against page 94.",
-   "section_heading uses the course table heading because the award's own heading is not in the text; the award table identifies it as 'Chemical Technology AS P046329C'.",
-   "The award table lists two GE options: 'Cal-GETC (34 units)' and 'LACCD GE (21 units)'. ge_units is left null because two different patterns and unit figures are printed.",
-   "No degree total is printed for this award; only the major total of 34 units.",
-   "The Certificate of Achievement (state code 46331, 20 units) printed after the degree section was not used.",
-   "'Industrial Quality Control Technicians' is taken from the degree's program learning outcomes; any careers named in the missing description on the prior page are not captured.",
-   "Courses are marked with * in the catalog for prerequisites/corequisites."
+   "The award's heading line is not in the extracted text; the section begins at '(STATE CODE 46329)' and the description names it 'Chemical Technology Associate in Science (A.S.) Degree'. The section ends before the Certificate of Achievement (STATE CODE 46331), which was not read.",
+   "The 'MAJOR - TOTAL UNITS 34' line is recorded as both total_units and the required block's stated total.",
+   "The award table offers two GE patterns: Cal-GETC (34 units) or LACCD GE (21 units). ge_units is left null because the page gives two alternative figures, not one figure for a single pattern.",
+   "No total for the whole degree including general education is printed in this section.",
+   "Catalog codes BIOTECH 002 and BIOTECH 006 are taken as the closed list's BIOTECH 2 and BIOTECH 6.",
+   "Outcomes are copied with line-break hyphenation rejoined (e.g., 'reli-ability' read as 'reliability')."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "78c4ed29fd44fa7a",
+ "source_codes": [
+  "BIOTECH2",
+  "BIOTECH6",
+  "CHEM101",
+  "CHEM102",
+  "CHEM211",
+  "CHEM212",
+  "PLNTSC103",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

@@ -1512,15 +1512,17 @@
    * record, a switch, never a copy); this panel shows what the public page and
    * Sierra see right now, read through the same anon function they use, with a
    * Remove beside each. Listing and removing go through cpl_library_set_public(),
-   * which refuses anything but a reviewer sign-in. */
+   * which takes the team phrase or a reviewer sign-in (Sam, 2026-10-23), and lists a piece
+   * only with a passing accessibility check record for its page (#3560). Removing it leaves
+   * it in the Internal Library. */
   var PUBLIC_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
   var pubRows = null, pubErr = null;
 
   function pubHtml() {
-    var h = '<section class="adm-live adm-pub"><h3>Public library</h3>'
-      + '<p class="adm-live-note">What the <a href="' + PUBLIC_PAGE + '" target="_blank" rel="noopener">public library</a> '
-      + "lists, and what Sierra can link. List a piece from its record in the Library tab. Remove takes it off the "
-      + "page and out of Sierra's answers at once; the record stays in the Library.</p>";
+    var h = '<section class="adm-live adm-pub"><h3>Public Library</h3>'
+      + '<p class="adm-live-note">What the <a href="' + PUBLIC_PAGE + '" target="_blank" rel="noopener">Public Library</a> '
+      + "lists, and what Sierra can link. Publish a piece to the Public Library from its record in the Library tab. "
+      + "Remove takes it off the page and out of Sierra's answers at once; it stays in the Internal Library.</p>";
     if (pubErr) h += '<p class="adm-live-note">Could not read the public list (' + esc(pubErr) + ").</p>";
     else if (!pubRows) h += '<p class="adm-live-note">Loading\u2026</p>';
     else if (!pubRows.length) h += '<p class="adm-live-note">Nothing is listed yet.</p>';
@@ -1621,7 +1623,7 @@
           body: JSON.stringify({ p_slug: b.getAttribute("data-pubremove"), p_listed: false, p_by: "admin-tab" })
         }).then(function (r) {
           if (!r.ok) throw new Error(String(r.status));
-          loadPub(function () { repaintPub(root); var m = root.querySelector("#adm-pub-msg"); if (m) m.textContent = "Removed from the public library."; });
+          loadPub(function () { repaintPub(root); var m = root.querySelector("#adm-pub-msg"); if (m) m.textContent = "Removed from the Public Library. It stays in the Internal Library."; });
         }).catch(function (e) {
           if (msg) msg.textContent = "Could not remove it (" + e.message + "). Sign in on this tab and try again.";
         });

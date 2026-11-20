@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Psychology",
  "award": "A.A. Degree",
- "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
+ "source_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8712,
+  "input_tokens": 6689,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8712,
-    "output_tokens": 1282,
+    "input_tokens": 6689,
+    "output_tokens": 1269,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1282,
+  "output_tokens": 1269,
   "output_tokens_details": {
-   "thinking_tokens": 359
+   "thinking_tokens": 335
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06049,
- "ms": 12086,
- "seconds": 12.3,
+ "cost_usd": 0.05214,
+ "ms": 10955,
+ "seconds": 21.3,
  "parts": null,
  "error": null,
  "score": {
@@ -115,7 +115,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "AREA 4 Social and Behavioral Sciences. Select one course.",
+   "section_heading": "A.A. Psychology",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -143,59 +143,76 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "PSYC 206",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
-   },
-   {
-    "code": "PSYC 208",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
-   },
-   {
-    "code": "PSYC 210",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
-   },
-   {
-    "code": "PSYC 212",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
-   },
-   {
-    "code": "PSYC 216",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
-   },
-   {
-    "code": "PSYC 218",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
-   },
-   {
-    "code": "PSYC 220",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
-   },
-   {
-    "code": "PSYC 225",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
+    "code": "PSYC C1000",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
    },
    {
     "code": "PSYC 250",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
    },
    {
     "code": "PSYC 255",
-    "why": "appears only as a GE Area 5 Natural Sciences option; Psychology A.A. section not in the text"
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
+   },
+   {
+    "code": "PSYC 210",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
+   },
+   {
+    "code": "PSYC 216",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
+   },
+   {
+    "code": "PSYC 206",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
+   },
+   {
+    "code": "PSYC 208",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
+   },
+   {
+    "code": "PSYC 212",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
+   },
+   {
+    "code": "PSYC 218",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
+   },
+   {
+    "code": "PSYC 220",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
+   },
+   {
+    "code": "PSYC 225",
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
    },
    {
     "code": "PSYC 290",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "appears only as a GE Area 4 option; Psychology A.A. section not in the text"
+    "why": "named only in the A.A.-T section; A.A. requirements not in the text"
    }
   ],
   "notes": [
-   "The supplied text (catalog page 77, PDF page 79) is a general education area course list (Areas 3, 4, 4A, 5, 6), not the Psychology A.A. Degree requirements section. No program heading, required courses, totals, outcomes, or careers for the Psychology A.A. appear in it.",
-   "The PSYC courses appear only as options for satisfying GE areas, so they are not recorded as program blocks. The heading recorded is the GE area under which most PSYC courses are listed; there is no Psychology heading in the text.",
-   "Reviewer should locate the correct catalog page for the Psychology A.A. Degree; the text columns are also interleaved and out of order (column extraction from the PDF)."
+   "Page 203 lists both 'A.A.-T Psychology' and 'A.A. Psychology' in its header, but the text printed covers only the Associate in Arts in Psychology for Transfer (Total Major Units 19, Total Degree Units 60). The A.A. Psychology requirements are not in the provided text; they likely appear on the following page (204). No blocks or totals were recorded to avoid attributing A.A.-T requirements to the A.A. degree.",
+   "For reference, the A.A.-T section requires PSYC C1000, PSYC 250, STAT C1000; 3 units from BIO 200/PSYC 255; 3 units from PSYC 210/PSYC 216 or any course not used above; 3 units from PSYC 206, 208, 212, 218, 220, 225, 290 or any course not used above. A reviewer should check whether the A.A. shares these requirements.",
+   "No program learning outcomes or careers are printed in the provided text."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": "44474793355",
+ "catalog_year": "2026-2027",
+ "source_sha": "defaf3dbe4fd3294",
+ "source_codes": [
+  "PSYC206",
+  "PSYC208",
+  "PSYC210",
+  "PSYC212",
+  "PSYC216",
+  "PSYC218",
+  "PSYC220",
+  "PSYC225",
+  "PSYC250",
+  "PSYC255",
+  "PSYC290",
+  "PSYCC1000"
+ ],
+ "source_coverage": 1.0
 }

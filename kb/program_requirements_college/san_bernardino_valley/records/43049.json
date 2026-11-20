@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8486,
-    "output_tokens": 2146,
+    "output_tokens": 2275,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 2146,
+  "output_tokens": 2275,
   "output_tokens_details": {
-   "thinking_tokens": 503
+   "thinking_tokens": 681
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07686,
- "ms": 16600,
- "seconds": 16.9,
+ "cost_usd": 0.07944,
+ "ms": 18895,
+ "seconds": 19.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 20,
    "listed": 20,
-   "share": 0.9,
-   "missing": [
-    "COMM111",
-    "COMM111H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM111",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMMC1004H",
+     "listed": "COMM111H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "COMMC1004",
-    "COMMC1004H"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "COMMC1004H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -129,7 +133,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Communication Studies 2.0 AA-T Degree",
+   "section_heading": "Communication Studies 2.0 AA-T degree",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -338,15 +342,15 @@
    }
   ],
   "notes": [
-   "List A heading says 'Three courses from the following' but prints 6 units; three 3-unit courses would be 9 units. Recorded as printed (minimum 3 courses, stated 6); the count may be an error for two courses.",
-   "List B heading says 'One course from the following' but prints 6-7 units; one course would be 3 units. Recorded as printed (minimum 1, stated 6-7); likely two courses intended. List B also allows any course not used from List A.",
-   "Major Total Units 18-19 recorded as total_units; Total Units 60 as degree_total; Elective Units 19-20 as degree_elective_units; Cal-GETC 34 as ge_units. The page also prints Total Double-Counted Units 12.",
-   "COMM C1004 and COMM C1004H are not in the closed list (catalog_addition true); closed list has COMM 111/111H Interpersonal Communication, likely the predecessor codes.",
-   "ANTH 102/102H and SOCI C1000/C1000H are printed with spaces; they match closed-list ANTH102/ANTH102H and SOCIC1000/SOCIC1000H.",
-   "Honors alternatives print no units of their own; units left null.",
-   "Program learning outcomes come from the page's outcomes tab for this award."
+   "No distinct section heading is printed in the extracted text; section_heading taken from the sentence 'To earn this Communication Studies 2.0 AA-T degree'.",
+   "List A heading says 'Three courses' but prints 6 units; List B says 'One course' but prints 6-7 units. Major total 18-19 (6 core + 6 + 6-7) suggests two courses in each list. Minimums recorded as the headings print them; reviewer should check.",
+   "List B also allows any course not used from List A.",
+   "COMM C1004 and COMM C1004H are not in the closed list (closed list has COMM 111/111H Interpersonal Communication); recorded as catalog additions.",
+   "ANTH 102/102H and SOCI C1000/C1000H printed with spaces; matched to closed-list ANTH102/ANTH102H and SOCIC1000/SOCIC1000H.",
+   "Page prints Total Double-Counted Units 12 and Elective Units 19-20; electives recorded in degree_elective_units.",
+   "Program learning outcomes are printed in the page's outcomes tab for the program; recorded for this award."
   ]
  },
- "extracted_run": 43355003065,
- "read_run": "38748858322"
+ "extracted_run": "44481529632",
+ "catalog_year": "2026-2027"
 }

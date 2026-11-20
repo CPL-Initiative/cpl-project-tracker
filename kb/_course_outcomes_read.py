@@ -75,7 +75,12 @@ STOP = re.compile(
 # lead-in ("Upon successful completion of the course, students should be able to
 # demonstrate the following activities:"), so the lead-in alone is no SLO heading
 # (S374 trial 38317539422 read the objectives that way on all twelve pages).
-SLO_TITLE = re.compile(r"^[ \t]*(student|course) learning outcomes?\b", re.I | re.M)
+# Chabot's All Fields report (347) numbers it as a field of its Assignments section, "3. Student Learning
+# Outcomes", after its "Measurable Objectives:" section; without the number the old rule fell back to the lead-in and
+# filed Chabot's objectives as its SLOs (full read 44264136885, all 1,013 rows; S681).
+SLO_TITLE = re.compile(r"^[ \t]*(?:\d{1,2}[.)][ \t]+)?(student|course) learning outcomes?\b", re.I | re.M)
+# The number a heading carries in front of it (Chabot's "3. "), never part of the heading as filed.
+HEAD_NUMBER = re.compile(r"^[ \t]*\d{1,2}[.)][ \t]+")
 # A list marker the outline prints before an outcome: 1. 1) a. a) • - – *
 MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25aa\u00b7\-\u2013*])[ \t]+")
 # The lead-in a college prints between the heading and the list. Las Positas prints "Upon the completion of this
@@ -270,12 +275,13 @@ def outcomes_of(text: str) -> dict:
         m = cor.SLO_HEADING.search(text or "")
         before = (text or "")[:m.start()] if m else ""
         last = [ln.strip() for ln in before.split("\n") if ln.strip()][-1:] if m else []
-        if not m or (last and re.match(r"((course|student learning) )?objectives|entrance skills", last[0], re.I)):
+        if not m or (last and re.match(r"((course|student learning|measurable) )?objectives|entrance skills", last[0],
+                                       re.I)):
             return {"shape": "none", "heading": None, "lead": None, "outcomes": [], "maps_to": None,
                     "parsed_from": "text"}
     start = text.rfind("\n", 0, m.start()) + 1
     lines = text[start:].split("\n")
-    heading = lines[0].strip()
+    heading = HEAD_NUMBER.sub("", lines[0].strip(), count=1)
     lead, items = None, []
     lm = LEAD.search(heading)
     if lm:
@@ -301,8 +307,9 @@ def outcomes_of(text: str) -> dict:
 # richer descriptions of course content than any other element of the COR"). The heading as each host prints it:
 # RCCD and Las Positas "Course Objectives:", Santa Ana and the Coast district "Course Objectives", SDCCD's outline
 # report "STUDENT LEARNING OBJECTIVES:" and its All Fields report "Student Learning Objectives" with a field label
-# "Objective Text" before each item.
-OBJ_TITLE = re.compile(r"^[ \t]*(course|student learning|learning|performance)? ?objectives[ \t]*:?[ \t]*$", re.I)
+# "Objective Text" before each item. Chabot's All Fields report (347) prints "Measurable Objectives:" (S681).
+OBJ_TITLE = re.compile(r"^[ \t]*(course|student learning|learning|performance|measurable)? ?objectives[ \t]*:?[ \t]*$",
+                       re.I)
 # A field label a report prints before each item, never an objective itself.
 OBJ_LABEL = re.compile(r"^(objective text|objective)$", re.I)
 # The same label printed inline, before the objective on its own line (Cuesta).

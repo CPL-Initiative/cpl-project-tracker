@@ -224,7 +224,7 @@ jobs:
             # Identity-anchored triage suggestions (step 4b3) — the worklist's 💡 chips.
             git add kb/unclassified_suggestions.json 2>/dev/null || true
             # The Exhibits tab's Review queue (kb/_build_exhibits_review.py).
-            git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
+            git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json kb/exhibits_review_subjects.json 2>/dev/null || true
             # The Exhibits tab's Another look (kb/_sweep_exhibit_titles.py).
             git add kb/exhibits_sweep.json 2>/dev/null || true
             git add kb/exhibits_related.json 2>/dev/null || true

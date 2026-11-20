@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-18T16:47:29Z",
+ "_generated_at": "2026-11-19T16:53:07Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 78,
+ "queue": 44,
  "saved_not_folded": 0,
- "waiting": 78,
- "proposed": 68,
- "needs_you_count": 70,
+ "waiting": 44,
+ "proposed": 39,
+ "needs_you_count": 36,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,8 +21,8 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 0,
-   "held": 6,
+   "settled": 2,
+   "held": 3,
    "sample": []
   },
   {
@@ -82,7 +82,7 @@
     "skill": "Rule 5e"
    },
    "settled": 0,
-   "held": 30,
+   "held": 0,
    "sample": []
   },
   {
@@ -111,7 +111,7 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 3,
+   "settled": 8,
    "held": 10,
    "sample": []
   },
@@ -126,30 +126,9 @@
     "words": "Make it a rule (Open Asks Sheet 147 card 2: 'High school and ROP titles: settle the 96 under one rule, with the AP exams keeping their names?'); 2026-10-30: 'if there's a M-ID title aligned show it and let it determine the proposed classifyer'",
     "skill": "Rule 5c, Rule 5f"
    },
-   "settled": 5,
-   "held": 21,
-   "sample": [
-    [
-     "High School Articulation (Amador Valley)- Introduction to Athletic Training",
-     "Introduction to Athletic Training and Sports Medicine"
-    ],
-    [
-     "High School Articulation (Amador Valley)- Introduction to Health Careers",
-     "Orientation to Health Care"
-    ],
-    [
-     "High School Articulation (Dublin)- Introduction to Athletic Training",
-     "Introduction to Athletic Training and Sports Medicine"
-    ],
-    [
-     "High School Articulation (Dublin)- Introduction to Health Careers",
-     "Orientation to Health Care"
-    ],
-    [
-     "High School Articulation (Emerald)- Introduction to Athletic Training",
-     "Introduction to Athletic Training and Sports Medicine"
-    ]
-   ]
+   "settled": 0,
+   "held": 26,
+   "sample": []
   },
   {
    "id": "issuer-issues-the-card",
@@ -164,7 +143,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 18,
+   "held": 0,
    "sample": []
   },
   {
@@ -179,7 +158,7 @@
     "skill": "Rule 5f"
    },
    "settled": 0,
-   "held": 5,
+   "held": 7,
    "sample": []
   },
   {
@@ -193,7 +172,7 @@
     "words": "level words move to the end of the title",
     "skill": "Rule 5g"
    },
-   "settled": 0,
+   "settled": 1,
    "held": 0,
    "sample": []
   },
@@ -224,7 +203,7 @@
     "skill": "Rule 5h"
    },
    "settled": 0,
-   "held": 3,
+   "held": 4,
    "sample": []
   },
   {
@@ -253,8 +232,8 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 3,
-   "held": 3,
+   "settled": 1,
+   "held": 4,
    "sample": []
   },
   {
@@ -269,7 +248,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 9,
+   "held": 0,
    "sample": []
   },
   {
@@ -282,20 +261,28 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 3,
-   "held": 54,
+   "settled": 8,
+   "held": 17,
    "sample": [
     [
-     "Portfolio Evidence for BUSN 55",
-     "Business Mathematics"
+     "Noncredit Course for MUS 15",
+     "Jazz Ensemble"
     ],
     [
-     "Portfolio Evidence for BUSN 87",
-     "Organizational Management and Leadership"
+     "Portfolio Evidence for PHTO 50",
+     "Introduction to Photography"
     ],
     [
-     "Portfolio Evidence for CIS 59C",
-     "Web Programming - JavaScript"
+     "Portfolio Evidence for PHTO 56",
+     "Introduction to Digital Photography"
+    ],
+    [
+     "Portfolio Evidence for PHTO 57",
+     "Digital Photography Intermediate"
+    ],
+    [
+     "Portfolio Evidence for PHTO 58",
+     "Introduction to Videography"
     ]
    ]
   }
@@ -304,16 +291,16 @@
   "calls": 3,
   "answered": 3,
   "errors": [],
-  "cost_usd": 1.35,
+  "cost_usd": 1.36,
   "spend": {
-   "estimate_usd": 17.32,
+   "estimate_usd": 17.48,
    "limit_usd": 40.0,
    "calls_priced": 3,
-   "asked": 39,
+   "asked": 41,
    "remaining": 0,
    "ceiling_usd": 40.0,
-   "charge_usd": 1.35328,
-   "in_flight_usd": -0.0,
+   "charge_usd": 1.35949,
+   "in_flight_usd": 0.0,
    "stopped": false,
    "sent": 3,
    "posts_held": 0
@@ -321,146 +308,55 @@
  },
  "needs_you": [
   {
-   "raw_title": "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.65)",
-   "proposal": {
-    "title": "Nondestructive Testing Technician Apprenticeship — Journeyperson",
-    "issuer": "American Aerospace Technical Academy (AATA)",
-    "confidence": 0.65,
-    "note": "No house family exists, so the title is new and follows the house apprenticeship shape. AATA is taken as the registered program sponsor and issuer of the journeyperson completion; verify against the DAS sponsor listing."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Computer Networking & Info Tech 113-Portfolio Review",
+   "raw_title": "Completed NC.NURSNG-089 at College of the Canyons",
    "why": "the classifier's title has a course code left in",
    "proposal": {
-    "title": "Computer Networking and Information Technology (CNIT 113)",
+    "title": "Nursing (NC.NURSNG-089)",
     "issuer": "California Community Colleges",
-    "confidence": 0.55,
-    "note": "Portfolio exhibit for CCSF CNIT 113. The course title could not be looked up, so it uses the discipline (code) fallback. A COCI/CCN/C-ID lookup should replace it."
+    "confidence": 0.5,
+    "note": "The title is code-only, so it falls back to <Discipline> (<code>). The cx hint kept the 'Completed ... at College of the Canyons' phrasing and is set aside. Look up the COCI title for NC.NURSNG 089 at College of the Canyons; if this noncredit course is titled for a certification (e.g. CNA), fold it under that certification."
    },
    "colleges": [
-    "City College of San Francisco"
+    "College of the Canyons"
    ]
   },
   {
-   "raw_title": "Goodwill Retail Operations Specialist Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.60)",
+   "raw_title": "Completed NC.NURSNG-093 at College of the Canyons",
+   "why": "the classifier's title has a course code left in",
    "proposal": {
-    "title": "Retail Operations Specialist Apprenticeship — Journeyperson",
-    "issuer": "Goodwill Industries",
-    "confidence": 0.6,
-    "note": "No house family exists, so the title is new. The Goodwill affiliate that sponsors the program (likely Goodwill of Silicon Valley, given Foothill) is unconfirmed; the canonical issuer name needs review."
+    "title": "Nursing (NC.NURSNG-093)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "The title is code-only, so it falls back to <Discipline> (<code>). The cx hint was not stripped and is set aside. A COCI lookup of the College of the Canyons course title is needed."
    },
    "colleges": [
-    "Foothill College"
+    "College of the Canyons"
    ]
   },
   {
-   "raw_title": "High School Articulation ( Emerald)- Criminal Justice/ Criminal Scene Investigation",
-   "why": "a merge would join two issuers (Emerald High School; the reference has California Community Colleges, Local High School)",
+   "raw_title": "Completed NC.NURSNG-094 at College of the Canyons",
+   "why": "the classifier's title has a course code left in",
    "proposal": {
-    "title": "Introduction to Criminal Justice",
-    "issuer": "Emerald High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it."
+    "title": "Nursing (NC.NURSNG-094)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "The title is code-only, so it falls back to <Discipline> (<code>). The cx hint was not stripped and is set aside. A COCI lookup of the College of the Canyons course title is needed."
    },
    "colleges": [
-    "Las Positas College"
+    "College of the Canyons"
    ]
   },
   {
-   "raw_title": "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation",
-   "why": "a merge would join two issuers (Amador Valley High School; the reference has California Community Colleges, Local High School)",
+   "raw_title": "Completed NC.NURSNG-096 at College of the Canyons",
+   "why": "the classifier's title has a course code left in",
    "proposal": {
-    "title": "Introduction to Criminal Justice",
-    "issuer": "Amador Valley High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it."
+    "title": "Nursing (NC.NURSNG-096)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "The title is code-only, so it falls back to <Discipline> (<code>). The cx hint was not stripped and is set aside. A COCI lookup of the College of the Canyons course title is needed."
    },
    "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Amador Valley)- Developmental Psychology of Children 1",
-   "why": "the classifier is unsure (0.65)",
-   "proposal": {
-    "title": "Developmental Psychology of Children 1",
-    "issuer": "Amador Valley High School",
-    "confidence": 0.65,
-    "note": "The school is stripped and becomes the agency. The aligned Las Positas course (possibly Child Growth and Development) is unverified, so the HS course name is kept."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Amador Valley)- Developmental Psychology of Children II",
-   "why": "a merge would join two issuers (Amador Valley High School; the reference has Local High School)",
-   "proposal": {
-    "title": "Principles & Practices of Teaching Young Children",
-    "issuer": "Amador Valley High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Amador Valley)- Emergency Medical Response",
-   "why": "a merge would join two issuers (Amador Valley High School; the reference has Baldy View Regional Occupational Program, California Community Colleges, Fontana High School, National Registry of Emergency Medical Technicians)",
-   "proposal": {
-    "title": "Emergency Medical Responder",
-    "issuer": "Amador Valley High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Dublin)- Criminal Justice/ CSI",
-   "why": "a merge would join two issuers (Dublin High School; the reference has California Commission on Peace Officer Standards and Training (POST), California Community Colleges, Colton-Redlands-Yucaipa ROP)",
-   "proposal": {
-    "title": "Criminal Investigation",
-    "issuer": "Dublin High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (AJ 63 at Las Positas College) names it, C-ID AJ 140; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Dublin)- Medical Occuptations",
-   "why": "a merge would join two issuers (Dublin High School; the reference has California Board of Vocational Nursing and Psychiatric Technicians (BVNPT), California Community Colleges, Hanford West High School, Local High School, Long Beach Unified School District)",
-   "proposal": {
-    "title": "Medical Terminology",
-    "issuer": "Dublin High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulation (Emerald)- Criminal Justice/ CSI",
-   "why": "a merge would join two issuers (Emerald High School; the reference has California Commission on Peace Officer Standards and Training (POST), California Community Colleges, Colton-Redlands-Yucaipa ROP)",
-   "proposal": {
-    "title": "Criminal Investigation",
-    "issuer": "Emerald High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (AJ 63 at Las Positas College) names it, C-ID AJ 140; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
+    "College of the Canyons"
    ]
   },
   {
@@ -490,24 +386,24 @@
    ]
   },
   {
-   "raw_title": "High School Articulation (Emerald)- Emergency Medical Response",
-   "why": "a merge would join two issuers (Emerald High School; the reference has Baldy View Regional Occupational Program, California Community Colleges, Fontana High School, National Registry of Emergency Medical Technicians)",
+   "raw_title": "High School Articulation (Emerald)- Introduction to Health Careers",
+   "why": "a merge would join two issuers (Emerald High School; the reference has Amador Valley High School)",
    "proposal": {
-    "title": "Emergency Medical Responder",
+    "title": "Orientation to Health Care",
     "issuer": "Emerald High School",
     "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it."
+    "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it."
    },
    "colleges": [
     "Las Positas College"
    ]
   },
   {
-   "raw_title": "High School Articulations (Amador Valley)- Medical Occupations",
-   "why": "a merge would join two issuers (Amador Valley High School; the reference has California Board of Vocational Nursing and Psychiatric Technicians (BVNPT), California Community Colleges, Hanford West High School, Local High School, Long Beach Unified School District)",
+   "raw_title": "High School Articulation (Emerald)- Medical Occupations",
+   "why": "a merge would join two issuers (Emerald High School; the reference has Amador Valley High School, California Board of Vocational Nursing and Psychiatric Technicians (BVNPT), California Community Colleges, Dublin High School, Hanford West High School, Local High School, Long Beach Unified School District)",
    "proposal": {
     "title": "Medical Terminology",
-    "issuer": "Amador Valley High School",
+    "issuer": "Emerald High School",
     "confidence": 1.0,
     "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it."
    },
@@ -516,37 +412,24 @@
    ]
   },
   {
-   "raw_title": "High School Articulations (Amador Valley)- Nursing Careers",
-   "why": "the classifier is unsure (0.60)",
+   "raw_title": "High School Articulation (Emerald)- Nursing Careers",
+   "why": "the classifier is unsure (0.65)",
    "proposal": {
     "title": "Nursing Careers",
-    "issuer": "Amador Valley High School",
-    "confidence": 0.6,
-    "note": "The school was stripped and the cx hint was rejected. This shares one title with the Dublin variant, with the issuer as the discriminator. The aligned Las Positas course is unverified."
+    "issuer": "Emerald High School",
+    "confidence": 0.65,
+    "note": "The school name was stripped and Emerald High School is the issuer. The aligned Las Positas course title is unverified."
    },
    "colleges": [
     "Las Positas College"
    ]
   },
   {
-   "raw_title": "High School Articulations (Amador Valley)- Principles of Engineering",
-   "why": "a merge would join two issuers (Amador Valley High School; the reference has California Community Colleges, Long Beach Unified School District)",
-   "proposal": {
-    "title": "Introduction to Engineering",
-    "issuer": "Amador Valley High School",
-    "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "High School Articulations (Dublin)- Criminal Justice/ Crime Scene Investigation",
-   "why": "a merge would join two issuers (Dublin High School; the reference has California Community Colleges, Local High School)",
+   "raw_title": "High School Articulation (Foothill)-  Criminal Justice/ Crime Scene Investigation",
+   "why": "a merge would join two issuers (Foothill High School; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Local High School)",
    "proposal": {
     "title": "Introduction to Criminal Justice",
-    "issuer": "Dublin High School",
+    "issuer": "Foothill High School",
     "confidence": 1.0,
     "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it."
    },
@@ -555,24 +438,37 @@
    ]
   },
   {
-   "raw_title": "High School Articulations (Dublin)- Developmental Psychology of Children I",
-   "why": "the classifier is unsure (0.68)",
+   "raw_title": "High School Articulation (Foothill)- Criminal Justice/ CSI",
+   "why": "a merge would join two issuers (Foothill High School; the reference has California Commission on Peace Officer Standards and Training (POST), California Community Colleges, Colton-Redlands-Yucaipa ROP, Dublin High School, Emerald High School)",
    "proposal": {
-    "title": "Developmental Psychology of Children 1",
-    "issuer": "Dublin High School",
-    "confidence": 0.68,
-    "note": "The school was stripped and the Roman numeral I was changed to 1. The aligned Las Positas ECD course is unverified; it may be Child Growth and Development."
+    "title": "Criminal Investigation",
+    "issuer": "Foothill High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (AJ 63 at Las Positas College) names it, C-ID AJ 140; the school issues it."
    },
    "colleges": [
     "Las Positas College"
    ]
   },
   {
-   "raw_title": "High School Articulations (Dublin)- Developmental Psychology of Children II",
-   "why": "a merge would join two issuers (Dublin High School; the reference has Local High School)",
+   "raw_title": "High School Articulation (Foothill)- Developmental Psychology of Children I",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Developmental Psychology of Children 1",
+    "issuer": "Foothill High School",
+    "confidence": 0.75,
+    "note": "This joins the existing Amador Valley title, with the issuer as discriminator. The Roman numeral becomes Arabic."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Foothill)- Developmental Psychology of Children II",
+   "why": "a merge would join two issuers (Foothill High School; the reference has Local High School)",
    "proposal": {
     "title": "Principles & Practices of Teaching Young Children",
-    "issuer": "Dublin High School",
+    "issuer": "Foothill High School",
     "confidence": 1.0,
     "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it."
    },
@@ -581,11 +477,11 @@
    ]
   },
   {
-   "raw_title": "High School Articulations (Dublin)- Emergency Medical Response",
-   "why": "a merge would join two issuers (Dublin High School; the reference has Baldy View Regional Occupational Program, California Community Colleges, Fontana High School, National Registry of Emergency Medical Technicians)",
+   "raw_title": "High School Articulation (Foothill)- Emergency Medical Response",
+   "why": "a merge would join two issuers (Foothill High School; the reference has Amador Valley High School, Baldy View Regional Occupational Program, California Community Colleges, Dublin High School, Emerald High School, Fontana High School, National Registry of Emergency Medical Technicians)",
    "proposal": {
     "title": "Emergency Medical Responder",
-    "issuer": "Dublin High School",
+    "issuer": "Foothill High School",
     "confidence": 1.0,
     "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it."
    },
@@ -594,24 +490,63 @@
    ]
   },
   {
-   "raw_title": "High School Articulations (Dublin)- Nursing Careers",
-   "why": "the classifier is unsure (0.60)",
+   "raw_title": "High School Articulation (Foothill)- Introduction to Athletic Training",
+   "why": "a merge would join two issuers (Foothill High School; the reference has Amador Valley High School)",
+   "proposal": {
+    "title": "Introduction to Athletic Training and Sports Medicine",
+    "issuer": "Foothill High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Foothill)- Introduction to Health Careers",
+   "why": "a merge would join two issuers (Foothill High School; the reference has Amador Valley High School)",
+   "proposal": {
+    "title": "Orientation to Health Care",
+    "issuer": "Foothill High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Foothill)- Medical Occupations",
+   "why": "a merge would join two issuers (Foothill High School; the reference has Amador Valley High School, California Board of Vocational Nursing and Psychiatric Technicians (BVNPT), California Community Colleges, Dublin High School, Hanford West High School, Local High School, Long Beach Unified School District)",
+   "proposal": {
+    "title": "Medical Terminology",
+    "issuer": "Foothill High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Foothill)- Nursing Careers",
+   "why": "the classifier is unsure (0.75)",
    "proposal": {
     "title": "Nursing Careers",
-    "issuer": "Dublin High School",
-    "confidence": 0.6,
-    "note": "The school was stripped and the cx hint was rejected. This shares one title with the Amador Valley variant. The aligned course is unverified."
+    "issuer": "Foothill High School",
+    "confidence": 0.75,
+    "note": "The cx hint was set aside because it kept the school wrapper and gave the issuer as CCC. Foothill High School (Pleasanton, Las Positas service area) is named, so it is both issuer and trainer. The aligned Las Positas course is unverified, so the HS course name stands."
    },
    "colleges": [
     "Las Positas College"
    ]
   },
   {
-   "raw_title": "High School Articulations (Dublin)- Principles of Engineering",
-   "why": "a merge would join two issuers (Dublin High School; the reference has California Community Colleges, Long Beach Unified School District)",
+   "raw_title": "High School Articulation (Foothill)- Principles of Engineering",
+   "why": "a merge would join two issuers (Foothill High School; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Long Beach Unified School District)",
    "proposal": {
     "title": "Introduction to Engineering",
-    "issuer": "Dublin High School",
+    "issuer": "Foothill High School",
     "confidence": 1.0,
     "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it."
    },
@@ -620,68 +555,146 @@
    ]
   },
   {
-   "raw_title": "High School Articulations (Emerald) -Principles of Engineering",
-   "why": "a merge would join two issuers (Emerald High School; the reference has California Community Colleges, Long Beach Unified School District)",
+   "raw_title": "High School Articulation (Granada)-  Medical Occuptations",
+   "why": "a merge would join two issuers (Granada High School; the reference has Amador Valley High School, California Board of Vocational Nursing and Psychiatric Technicians (BVNPT), California Community Colleges, Dublin High School, Hanford West High School, Local High School, Long Beach Unified School District)",
    "proposal": {
-    "title": "Introduction to Engineering",
-    "issuer": "Emerald High School",
+    "title": "Medical Terminology",
+    "issuer": "Granada High School",
     "confidence": 1.0,
-    "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it."
+    "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it."
    },
    "colleges": [
     "Las Positas College"
    ]
   },
   {
-   "raw_title": "IBEW Local 332 Inside Wireman Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.82)",
+   "raw_title": "High School Articulation (Granada)- Criminal Justice/ Crime Scene Investigation",
+   "why": "a merge would join two issuers (Granada High School; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Local High School)",
    "proposal": {
-    "title": "IBEW Electrician Apprenticeship — Journeyperson",
-    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-    "confidence": 0.82,
-    "note": "Inside Wireman is the IBEW electrician classification, so this joins the house journeyperson family. The Local 332 JATC is taken as the training agency."
+    "title": "Introduction to Criminal Justice",
+    "issuer": "Granada High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it."
    },
    "colleges": [
-    "Foothill College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "IBEW Local 332 Residential Wireman Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.78)",
+   "raw_title": "High School Articulation (Granada)- Developmental Psychology of Children I",
+   "why": "the classifier is unsure (0.80)",
    "proposal": {
-    "title": "IBEW Residential Wireman Apprenticeship — Journeyperson",
-    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-    "confidence": 0.78,
-    "note": "Residential Wireman has a narrower scope than Inside Wireman, so it is kept as a separate title. The Local 332 JATC is taken as the training agency."
+    "title": "Developmental Psychology of Children 1",
+    "issuer": "Granada High School",
+    "confidence": 0.8,
+    "note": "Joins the existing Developmental Psychology of Children 1 family (also Amador Valley HS). The issuer, Granada HS, is the discriminator."
    },
    "colleges": [
-    "Foothill College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "IBEW Local 332 Residential and Inside Wireman Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.60)",
+   "raw_title": "High School Articulation (Granada)- Developmental Psychology of Children II",
+   "why": "a merge would join two issuers (Granada High School; the reference has Local High School)",
    "proposal": {
-    "title": "IBEW Residential and Inside Wireman Apprenticeship — Journeyperson",
-    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-    "confidence": 0.6,
-    "note": "This exhibit bundles two classifications. It is given its own title for now; a person should decide whether to split it or fold it into the IBEW Electrician Journeyperson family."
+    "title": "Principles & Practices of Teaching Young Children",
+    "issuer": "Granada High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it."
    },
    "colleges": [
-    "Foothill College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "IBEW Local 6 Inside Wireman Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.82)",
+   "raw_title": "High School Articulation (Granada)- Emergency Medical Response",
+   "why": "a merge would join two issuers (Granada High School; the reference has Amador Valley High School, Baldy View Regional Occupational Program, California Community Colleges, Dublin High School, Emerald High School, Fontana High School, National Registry of Emergency Medical Technicians)",
    "proposal": {
-    "title": "IBEW Electrician Apprenticeship — Journeyperson",
-    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-    "confidence": 0.82,
-    "note": "Inside Wireman joins the house IBEW Electrician Journeyperson family. The Local 6 JATC is taken as the training agency."
+    "title": "Emergency Medical Responder",
+    "issuer": "Granada High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it."
    },
    "colleges": [
-    "Foothill College"
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Granada)- Introduction to Athletic Training",
+   "why": "a merge would join two issuers (Granada High School; the reference has Amador Valley High School)",
+   "proposal": {
+    "title": "Introduction to Athletic Training and Sports Medicine",
+    "issuer": "Granada High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Granada)- Introduction to Health Careers",
+   "why": "a merge would join two issuers (Granada High School; the reference has Amador Valley High School)",
+   "proposal": {
+    "title": "Orientation to Health Care",
+    "issuer": "Granada High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Granada)- Nursing Careers",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Nursing Careers",
+    "issuer": "Granada High School",
+    "confidence": 0.75,
+    "note": "Same title as the Foothill HS row; issuer is the discriminator (Rule 5f item 4)."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Kimball)- Fundamentals of Criminal Justice",
+   "why": "a merge would join two issuers (Kimball High School; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Local High School)",
+   "proposal": {
+    "title": "Introduction to Criminal Justice",
+    "issuer": "Kimball High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Livermore)- Criminal Justice/ Crime Scene Investigation",
+   "why": "a merge would join two issuers (Livermore High School; the reference has Amador Valley High School, California Community Colleges, Dublin High School, Emerald High School, Local High School)",
+   "proposal": {
+    "title": "Introduction to Criminal Justice",
+    "issuer": "Livermore High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "High School Articulation (Livermore)- Developmental Psychology of Children I",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Developmental Psychology of Children 1",
+    "issuer": "Livermore High School",
+    "confidence": 0.8,
+    "note": "Joins the existing Developmental Psychology of Children 1 family; Livermore HS is issuer and trainer."
+   },
+   "colleges": [
+    "Las Positas College"
    ]
   },
   {
@@ -698,536 +711,68 @@
    ]
   },
   {
-   "raw_title": "Industry Training Evidence for BUSN 55",
-   "why": "the classifier's title has a course code left in",
+   "raw_title": "Industry Training Evidence for CNT 7402",
+   "why": "the classifier is unsure (0.35)",
    "proposal": {
-    "title": "Business (BUSN 55)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.4,
-    "note": "The title is only a course code, so the Las Positas COCI lookup for BUSN 55 is needed. The industry training provider is unnamed."
+    "title": "Computer Networking Technology (CNT 7402)",
+    "issuer": "",
+    "confidence": 0.35,
+    "note": "This is a code-only, industry-training evidence exhibit. The Las Positas COCI lookup for CNT 7402 is needed to name the course and the industry credential/issuer behind it. The discipline 'Computer Networking Technology' is a guess."
    },
    "colleges": [
     "Las Positas College"
    ]
   },
   {
-   "raw_title": "Industry Training Evidence for CIS 59C",
-   "why": "the classifier's title has a course code left in",
+   "raw_title": "Industry Training Evidence for CNT 7501",
+   "why": "the classifier is unsure (0.35)",
    "proposal": {
-    "title": "Computer Information Systems (CIS 59C)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.4,
-    "note": "The title is only a course code, so the Las Positas COCI lookup for CIS 59C is needed; it may be a vendor-cert course. The industry trainer is unnamed."
+    "title": "Computer Networking Technology (CNT 7501)",
+    "issuer": "",
+    "confidence": 0.35,
+    "note": "This is a code-only, industry-training evidence exhibit. The Las Positas COCI lookup for CNT 7501 is needed to name the course and the industry credential/issuer behind it. The discipline is a guess."
    },
    "colleges": [
     "Las Positas College"
    ]
   },
   {
-   "raw_title": "Industry Training Evidence for CNT 51",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Computer Networking Technology (CNT 51)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Industry Training Evidence for CNT 55",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Computer Networking Technology (CNT 55)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Industry Training Evidence for CNT 56",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Computer Networking Technology (CNT 56)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Industry Training Evidence for CNT 69",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Computer Networking Technology (CNT 69)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Industry Training Evidence for CNT 7401",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Computer Networking Technology (CNT 7401)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "The course code is unusual (possibly a Cisco academy course) and no catalog hint was supplied. The title falls back to discipline plus code; it needs a COCI lookup and possibly a vendor issuer."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Industry Training Evidence for CS 41",
-   "why": "the classifier's title has a course code left in",
-   "proposal": {
-    "title": "Computer Science (CS 41)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.5,
-    "note": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named."
-   },
-   "colleges": [
-    "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Northern California Sound and Communication JATC Installer Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.75)",
-   "proposal": {
-    "title": "Sound and Communication Systems Installer Apprenticeship",
-    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-    "confidence": 0.75,
-    "note": "This joins the house IBEW Sound and Communication Installer family. The house title carries no journeyperson level, so a level-specific split may be wanted."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Air-conditioning and refrigeration technology is taken as the UA Refrigeration Service Technician trade. The Pipe Trades Training Center is assumed to be UA Local 393's (San Jose); verify both."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 1",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 1",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Trainer name taken out of the title. The title follows the UA house shape. Not folded into UA Refrigeration Service Technician Level 1, because this program runs five years and the Level family has only four. A curator may join the two. Local 393 (Santa Clara) as the trainer is an inference from Foothill College."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 2",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 2",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Same reading as Year 1: a UA HVACR apprenticeship year, kept apart from the four-level UA Refrigeration Service Technician family. The trainer is inferred."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 3",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 3",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Same reading as Year 1. The trainer is inferred from Foothill College's articulation."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 4",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 4",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Same reading as Year 1. The trainer is inferred from Foothill College's articulation."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 5",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 5",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Year 5 has no counterpart in the existing four-level UA refrigeration family, which supports keeping this program separate. The trainer is inferred."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Plumbing Technology Apprenticeship — Journeyperson",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Trainer name taken out of the title; UA house shape used. This could be a candidate to join UA Plumbers/Pipefitters Apprenticeship — Journeyperson, but this program covers plumbing only, so it is kept separate for review."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 1",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Plumbing Technology Apprenticeship — Year 1",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "A plumbing-only UA apprenticeship year, kept apart from the combined Plumbers/Pipefitters Level family pending curator review. The trainer is inferred."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 2",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Plumbing Technology Apprenticeship — Year 2",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Same reading as Plumbing Year 1. The trainer is inferred from Foothill College's articulation."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 3",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Plumbing Technology Apprenticeship — Year 3",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Same reading as Plumbing Year 1. The trainer is inferred from Foothill College's articulation."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 4",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Plumbing Technology Apprenticeship — Year 4",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Same reading as Plumbing Year 1. The trainer is inferred from Foothill College's articulation."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Residential Plumbing Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Residential Plumbing Apprenticeship — Journeyperson",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Residential Plumbing is a narrower scope than Plumbing Technology, so it is kept as its own credential. The trainer is inferred."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Journeyperson",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "This could join UA Steamfitter Apprenticeship — Journeyperson. It is kept separate because the program names differ and this program counts in years. Flagged for curator review."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 1",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 1",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "A UA steamfitting/pipefitting apprenticeship year; it could join UA Steamfitter Apprenticeship — Level 1. The trainer is inferred."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 2",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 2",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Same reading as Steamfitting Year 1. The trainer is inferred from Foothill College's articulation."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 3",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 3",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Same reading as Steamfitting Year 1. The trainer is inferred from Foothill College's articulation."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 4",
-   "why": "the classifier is unsure (0.65)",
-   "proposal": {
-    "title": "UA Steamfitter and Pipefitter Apprenticeship — Year 4",
-    "issuer": "United Association (UA)",
-    "confidence": 0.65,
-    "note": "The Pipe Trades Training Center is taken to be the UA Local 393 JATC. This is a year-based program, so it was not mapped onto the level-based 'UA Steamfitter Apprenticeship — Level 4' family; a curator may merge it if Year 4 equals Level 4."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Semiconductor Processing Apprenticeship Certificate",
+   "raw_title": "Industry Training Evidence for CNT 8002",
    "why": "the classifier is unsure (0.45)",
    "proposal": {
-    "title": "Semiconductor Processing Apprenticeship",
-    "issuer": "California Division of Apprenticeship Standards (DAS)",
+    "title": "Computer Networking Technology (CNT 8002)",
+    "issuer": "",
     "confidence": 0.45,
-    "note": "The title does not name a sponsor. DAS is a best guess as the body that registers the apprenticeship and issues its certificate; the actual sponsor still needs verification."
+    "note": "Course-coded industry-training exhibit with no hint or catalog title. The fallback is discipline plus local code. The outside industry credential is not named, so the issuer is left open; a COCI lookup is needed."
    },
    "colleges": [
-    "Foothill College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "Sheet Metal Local 104 Air Conditioning Mechanic Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.75)",
+   "raw_title": "Industry Training Evidence for CNT 8003",
+   "why": "the classifier is unsure (0.45)",
    "proposal": {
-    "title": "Sheet Metal Air Conditioning Mechanic Apprenticeship — Journeyperson",
-    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-    "confidence": 0.75,
-    "note": "This was kept apart from 'Sheet Metal Service Technician Apprenticeship — Journeyperson' because the air conditioning mechanic trade may be a distinct scope."
+    "title": "Computer Networking Technology (CNT 8003)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Course-coded industry-training exhibit with no hint or catalog title. The fallback is discipline plus local code. The outside industry credential is not named, so the issuer is left open; a COCI lookup is needed."
    },
    "colleges": [
-    "Foothill College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "Sheet Metal Local 104 Sheet Metal Air Conditioning Specialist Career Certificate",
-   "why": "the classifier is unsure (0.70)",
+   "raw_title": "Industry Training Evidence for CS 3",
+   "why": "the classifier is unsure (0.45)",
    "proposal": {
-    "title": "Sheet Metal Air Conditioning Specialist Career Certificate",
-    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-    "confidence": 0.7,
-    "note": "This is a non-apprenticeship career certificate from Local 104, so it was given a new title rather than joined to a family."
+    "title": "Computer Science (CS 3)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Course-coded industry-training exhibit with no catalog title supplied. The fallback is discipline plus local code. The industry credential is unnamed, so the issuer is left open; a Las Positas COCI lookup is needed."
    },
    "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Sheet Metal Local 104 Sheet Metal Building Trades Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "Sheet Metal Apprenticeship — Journeyperson",
-    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-    "confidence": 0.8,
-    "note": "The building trades sheet metal journeyperson was joined to the existing SMART Sheet Metal Apprenticeship journeyperson family."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Certificate of Achievement",
-   "why": "the classifier is unsure (0.60)",
-   "proposal": {
-    "title": "Test, Adjust and Balance (TAB) Technician Apprenticeship — Journeyperson",
-    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-    "confidence": 0.6,
-    "note": "The Certificate of Achievement is assumed to be the completion award of the TAB apprenticeship, so it was joined with the Journeyperson row. Faculty may split them if it marks a different stage."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "Test, Adjust and Balance (TAB) Technician Apprenticeship — Journeyperson",
-    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-    "confidence": 0.8,
-    "note": "This is a new title for the TAB technician trade; no house family exists for it."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.65)",
-   "proposal": {
-    "title": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
-    "issuer": "United Association (UA)",
-    "confidence": 0.65,
-    "note": "Air conditioning and refrigeration journeyperson was joined to the UA Refrigeration Service Technician journeyperson family as likely the same trade completion."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 1",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 1",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "This is a 5-year program, so the years were not mapped onto the 4-level UA Refrigeration Service Technician family; a curator may merge."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 2",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 2",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "This is a 5-year program, so the years were not mapped onto the 4-level UA Refrigeration Service Technician family; a curator may merge."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 3",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 3",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "This is a 5-year program, so the years were not mapped onto the 4-level UA Refrigeration Service Technician family; a curator may merge."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 4",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 4",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "This is a 5-year program, so the years were not mapped onto the 4-level UA Refrigeration Service Technician family; a curator may merge."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 5",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 5",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "This is a 5-year program with no Level 5 in the UA family, so it gets a new year-based title."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "UA Plumbers/Pipefitters Apprenticeship — Year 1",
-    "issuer": "United Association (UA)",
-    "confidence": 0.7,
-    "note": "Kept as Year 1 rather than merged into the 'UA Plumbers and Pipefitters Apprenticeship — Level 1' family because Local 467's year-to-level equivalence is unverified. A curator may merge them."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 2",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "UA Plumbers and Pipefitters Apprenticeship — Level 2",
-    "issuer": "United Association (UA)",
-    "confidence": 0.8,
-    "note": "Joined the house UA Plumbers/Pipefitters family on the assumption that Year 2 is Level 2. The local number moves to the trainer, because the family is local-agnostic (only Local 342 has its own course-coded family). The trainer name is inferred and should be checked."
-   },
-   "colleges": [
-    "Foothill College"
-   ]
-  },
-  {
-   "raw_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 3",
-   "why": "the classifier is unsure (0.80)",
-   "proposal": {
-    "title": "UA Plumbers and Pipefitters Apprenticeship — Level 3",
-    "issuer": "United Association (UA)",
-    "confidence": 0.8,
-    "note": "Joined the house UA Plumbers/Pipefitters family on the assumption that Year 3 is Level 3. The local number moves to the trainer. The trainer name is inferred and should be checked."
-   },
-   "colleges": [
-    "Foothill College"
+    "Las Positas College"
    ]
   }
  ]

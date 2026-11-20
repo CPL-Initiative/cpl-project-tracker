@@ -1,0 +1,69 @@
+{
+ "note": "test_folder's every-branch fixture run through kb/_program_reread_keep_better.py at 94a02499 (94a02499, #3547) with live_runs absent: each outcome, each record file's sha256, the dispatch without its ref. tests/program_reread_keep_better_test.py test_matches_main holds S685's script to it.",
+ "snapshot": {
+  "dispatch": [
+   {
+    "control_numbers": [
+     "10011",
+     "10012",
+     "10013",
+     "10020",
+     "10021"
+    ],
+    "inputs": {
+     "college": "Fixture College",
+     "force": "222",
+     "step": "reread"
+    },
+    "posts": 5,
+    "workflow": "program-requirements-college.yml"
+   }
+  ],
+  "files": {
+   "held_for_person/10019.json": "122577afb11e9f6257dace1a8710482d129182d50547d6a14c4ad3fa803984ea",
+   "records/10001.json": "b066695184b067a56debf7e4676c2b9a8d46183e57407dee551b40aad7ec690c",
+   "records/10002.json": "f6d249d1d68df0a6cf7138554021c293475dfd61432e303d4d51f53fc6e55b51",
+   "records/10003.json": "9902f6956209644919a128a1dc8a3aef7963f7bfc6d3180abd2c0083834a71be",
+   "records/10004.json": "ef7343e942af2d3f2afea81a1d2ab64d6d4c218a47da8071d99c1784ce4d1f34",
+   "records/10005.json": "38edb730fed118634f0a2bd8edfe84cf0023d55ce064140ca9e3d369e4816965",
+   "records/10006.json": "ee5244e37a7c706564dc81c86da4b6cfe4e22ceab1fa7104df42584ab69e600a",
+   "records/10007.json": "671763e66f73e350a715d910e599c08c7f2f67b638022bd76a251630b003081a",
+   "records/10008.json": "ed4bb0aae1e8a41c3495ed0411c8ce2825cd824ada8d44bea7a4896aeec7135b",
+   "records/10009.json": "269d3a31f464d87e2611e74eebb77244e64bec8976e2bc4b92b7ed3323498c88",
+   "records/10010.json": "16bfa5f1153d4c39550d71b36c21fa40378298b6f4d7eaee622d5363d60a2459",
+   "records/10011.json": "c419ecd949fe1031c28f7606368f1e32bd6307600ebd45a6d1d0fdb340340b73",
+   "records/10012.json": "4ae62c8d5a8a6cc2d5c096ac0cbf559228ce601ad43affbc151a3b167e314251",
+   "records/10013.json": "6e541779d920abb29edc90dcb39a32db8d15dd600b0326f1ace05d7de84bdee0",
+   "records/10014.json": "866db076495d03bc1063da313ad31a81a1e120ec329d32e8b8719c6134cff998",
+   "records/10015.json": "3074866df1164788bbe80c93d335ac0c6a0e4243406c6ec18a4cad82b11b9bd9",
+   "records/10016.json": "9800a28cce95e5495f7c52ad2b9443362854bf77bc88fd77c5aa1380bed8705f",
+   "records/10017.json": "b134c438aadb3e2ed499fb8b20afc3c69c0463dc064f433d6e9dcc6066833b06",
+   "records/10018.json": "7c6943bb8aefd97013b9e719a1bbacf9976e1ad654d8da4663d68be1404d0033",
+   "records/10020.json": "3f74a78475f66ba2f0101fa9b27bbf04b9791a1caa7d9219b42b0c4eb751b7b8",
+   "records/10021.json": "3922a2be9257de76dcc0fbeefe380291c7ef73932308f4395bf2b2c7fe3210d0"
+  },
+  "outcomes": {
+   "10001": "restored",
+   "10002": "restored",
+   "10003": "restored",
+   "10004": "restored",
+   "10005": "restored",
+   "10006": "restored",
+   "10007": "restored",
+   "10008": "restored",
+   "10009": "restored",
+   "10010": "restored",
+   "10011": "kept",
+   "10012": "kept",
+   "10013": "new",
+   "10014": "restored",
+   "10015": "restored",
+   "10016": "restored",
+   "10017": "restored",
+   "10018": "restored",
+   "10019": "held",
+   "10020": "kept",
+   "10021": "kept"
+  }
+ }
+}

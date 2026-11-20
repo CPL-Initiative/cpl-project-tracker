@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-11-18
+updated: 2026-11-19
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -62,6 +62,12 @@ skip, the standing block, and ends with its own `Spend:` line and counts line. *
 `d-daytime-session-appends-handoff-s683` (the S683 conductor, at Sam's word to leave tonight's name for tonight).
 
 ## At the start
+
+**Clone light, always (Sam, 2026-11-19).** *"every session and worker clones cpl-project-tracker with git clone
+--filter=blob:none (or --depth=1 when history isn't needed), never a full clone."* This holds for the session, its
+workers and any helper that clones. A full clone downloads every version of every file (about 2 GB); a blob:none
+clone fetches file contents only as a command reads them. `scripts/repo_size_guard.py` measures a partial clone with
+one batched fetch (#3543), so the size check needs nothing more.
 
 0. **The dashboard run, first, on the night's first firing** (Sam, 2026-10-30, S527: "go on 1"). GitHub
    creates this repo's scheduled runs 5 to 7 hours late (every day since at least 2026-09-20, before the

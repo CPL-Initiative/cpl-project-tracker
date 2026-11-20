@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Licensed Vocational Nursing",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=209",
+ "source_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8192,
+  "input_tokens": 8101,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8192,
-    "output_tokens": 997,
+    "input_tokens": 8101,
+    "output_tokens": 1761,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 997,
+  "output_tokens": 1761,
   "output_tokens_details": {
-   "thinking_tokens": 175
+   "thinking_tokens": 438
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05271,
- "ms": 9643,
- "seconds": 10.1,
+ "cost_usd": 0.06762,
+ "ms": 14548,
+ "seconds": 15.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "NRSHCA81A",
-    "NRSHCA81B",
-    "NRSHCA81C",
-    "NRSHCA81D",
-    "NRSHCA82A",
-    "NRSHCA82B",
-    "NRSHCA82C",
-    "NRSHCA83A",
-    "NRSHCA83B",
-    "NRSHCA83C"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    52.5,
+    52.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    52.5,
+    52.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 10,
    "courses": 0,
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "CREDIT COURSE LISTINGS & DESCRIPTIONS",
+   "section_heading": "LICENSED VOCATIONAL NURSING (CA)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 52.5,
+    "max": 52.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,59 +121,129 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Demonstrate behavior that reflects the proper values and ethics of professional nursing.",
+    "Integrate the knowledge of health promotion, restoration, and rehabilitative nursing measures into nursing practice.",
+    "Application of critical thinking skills and appropriate clinical judgment in the care of clients and communities in diverse populations.",
+    "Demonstrate cultural competency and sensitivity in the care of diverse populations, honoring and respecting individual race, religion, gender, sexual preference, and social or economic status.",
+    "Utilize technological innovations and research-based approaches in planning, delivering, and evaluating nursing care.",
+    "Deliver nursing care following the components of the nursing process, such as assessment, focusing on nursing problems, planning, intervention, and evaluation of nursing care and health care outcomes according to established facility protocol and criteria.",
+    "Demonstrate competency in the care of clients with physical, psychological, emotional, social, and spiritual needs.",
+    "Accountability for own nursing actions with integrity and honesty with the best of intention to provide safe and effective nursing care following the Nursing Practice Act.",
+    "Collaboratively and cooperatively work with other members of the health care team.",
+    "Follow the State rules and regulations for license renewal, continuing education, and professional growth."
+   ],
+   "careers": [
+    "License Vocational Nurse"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "NRS HCA 081A",
-    "why": "not in the text; the excerpt holds no program requirements section"
-   },
-   {
-    "code": "NRS HCA 081B",
-    "why": "not in the text; the excerpt holds no program requirements section"
-   },
-   {
-    "code": "NRS HCA 081C",
-    "why": "not in the text; the excerpt holds no program requirements section"
-   },
-   {
-    "code": "NRS HCA 081D",
-    "why": "only the tail of a course description appears; no program requirements section in the text"
-   },
-   {
-    "code": "NRS HCA 082A",
-    "why": "appears only as a course description; no program requirements section in the text"
-   },
-   {
-    "code": "NRS HCA 082B",
-    "why": "appears only as a course description; no program requirements section in the text"
-   },
-   {
-    "code": "NRS HCA 082C",
-    "why": "appears only as a course description; no program requirements section in the text"
-   },
-   {
-    "code": "NRS HCA 083A",
-    "why": "appears only as a course description; no program requirements section in the text"
-   },
-   {
-    "code": "NRS HCA 083B",
-    "why": "appears only as a course description; no program requirements section in the text"
-   },
-   {
-    "code": "NRS HCA 083C",
-    "why": "appears only as a course description; no program requirements section in the text"
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 52.5,
+     "max": 52.5
+    },
+    "courses": [
+     {
+      "code": "NRS-HCA 081A",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 081B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 081C",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 081D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 082A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 082B",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 082C",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 083A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 083B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NRS-HCA 083C",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 209, printed page 208) is from the Credit Course Listings & Descriptions section, not the Licensed Vocational Nursing Certificate of Achievement requirements section. No requirement list, total units, outcomes, or careers for the award appear, so no blocks were recorded.",
-   "The program requirements page for the LVN Certificate of Achievement should be located elsewhere in the 2026-2027 catalog and reviewed.",
-   "Course descriptions printed: NRS-HCA 082A (3), 082B (8), 082C (6), 083A (6), 083B (6), 083C (6), plus NRS-HCA 056, 399, 399A, which are not on the closed list. Units printed match the closed list for those closed-list courses shown.",
-   "'career opportunities' is mentioned only inside the NRS-HCA 083C course description, so no careers were recorded."
+   "Catalog prints codes as 'NRS-HCA 081A' etc.; matched to closed-list 'NRS HCA 081A' etc. (hyphen formatting only), so not marked as catalog additions.",
+   "Catalog units differ from state file: NRS-HCA 081B printed 3 (state 2.5); NRS-HCA 081C printed 6 (state 5). Printed course units sum to 52.5, matching the printed total.",
+   "Career entry 'License Vocational Nurse' taken from the purpose statement ('prepare students to apply for a License Vocational Nurse'), spelled as printed.",
+   "Section continues across a page break (pages 134-135); the following Paralegal section was ignored."
   ]
  },
- "extracted_run": "39536207109"
+ "extracted_run": "44475503054",
+ "catalog_year": "2026-2027",
+ "source_sha": "0de04bc790a02452",
+ "source_codes": [
+  "NRSHCA81A",
+  "NRSHCA81B",
+  "NRSHCA81C",
+  "NRSHCA81D",
+  "NRSHCA82A",
+  "NRSHCA82B",
+  "NRSHCA82C",
+  "NRSHCA83A",
+  "NRSHCA83B",
+  "NRSHCA83C"
+ ],
+ "source_coverage": 1.0
 }

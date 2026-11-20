@@ -1,0 +1,174 @@
+{
+ "college": "Los Angeles Trade Technical College",
+ "run": "44475507447",
+ "written": "2026-11-19T07:29:18Z",
+ "rule": "own program first (a heading sharing a title word, heading_award_check); then first difference decides: score.pass, passes_live, coverage.pass, none_placed false, higher share, arithmetic equal / unstated passing / unequal / unstated failing / incomplete; a tie keeps the re-read; no filed record keeps the new one unless its heading names another program (held for a person); a checked live row restores (d-reread-keep-the-better-s683)",
+ "checked": [],
+ "dispatch": [
+  {
+   "workflow": "program-requirements-college.yml",
+   "ref": "claude/harvest-wave-s683",
+   "inputs": {
+    "college": "Los Angeles Trade Technical College",
+    "step": "reread",
+    "force": "44475507447"
+   },
+   "posts": 1,
+   "control_numbers": [
+    "02900"
+   ]
+  }
+ ],
+ "carried_runs": {},
+ "counts": {
+  "reread": 2,
+  "kept": 1,
+  "restored": 1,
+  "restored_filed_pass": 0,
+  "restored_not_own_program": 1,
+  "held_for_person": 0,
+  "new": 0,
+  "plain_reread_would_lose_pass": 0,
+  "kept_by_extraction_guard": 0,
+  "run_places_none_after": 1,
+  "folder_places_none_after": 1,
+  "records_after": 168,
+  "dropped_by_filing": 10,
+  "dropped_filed_passes": 0
+ },
+ "runs": {
+  "44475507447": {
+   "base": "origin/main",
+   "base_sha": "fa5a5c10591bb346cada33ff3f1a6befc7544bdd",
+   "decided": "2026-11-19T07:29:18Z",
+   "counts": {
+    "reread": 2,
+    "kept": 1,
+    "restored": 1,
+    "restored_filed_pass": 0,
+    "restored_not_own_program": 1,
+    "held_for_person": 0,
+    "new": 0,
+    "plain_reread_would_lose_pass": 0,
+    "kept_by_extraction_guard": 0,
+    "run_places_none_after": 1,
+    "folder_places_none_after": 1,
+    "records_after": 168,
+    "dropped_by_filing": 10,
+    "dropped_filed_passes": 0
+   },
+   "kept_by_extraction_guard": {},
+   "next_read_pays": [
+    "36231"
+   ],
+   "dropped_by_filing": [
+    {
+     "control_number": "02907",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "02926",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "08469",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "08493",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "21863",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24136",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "24459",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "36965",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "41014",
+     "filed_passes_live": false
+    },
+    {
+     "control_number": "44055",
+     "filed_passes_live": false
+    }
+   ],
+   "programs": [
+    {
+     "control_number": "02900",
+     "title": "Computer Information Systems",
+     "award": "A.S. Degree",
+     "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=116",
+     "filed_source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
+     "filed_run": "39054673977",
+     "reread": {
+      "pass": true,
+      "passes_live": true,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 22,
+      "listed": 22,
+      "arithmetic": "equal"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": true,
+      "none_placed": false,
+      "share": 1.0,
+      "placed": 22,
+      "listed": 22,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "kept",
+     "why": "the re-read holds score.pass and the filed record does not"
+    },
+    {
+     "control_number": "36231",
+     "title": "IGETC",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=55",
+     "filed_source_url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=212",
+     "filed_run": "39054673977",
+     "reread": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 98,
+      "arithmetic": "incomplete"
+     },
+     "filed": {
+      "pass": false,
+      "passes_live": false,
+      "coverage_pass": false,
+      "none_placed": true,
+      "share": 0.0,
+      "placed": 0,
+      "listed": 98,
+      "arithmetic": "incomplete"
+     },
+     "plain_reread_loses_pass": false,
+     "outcome": "restored",
+     "why": "the re-read's heading 'TYPES OF GENERAL EDUCATION' shares no word with the title 'IGETC'",
+     "not_own_program": true,
+     "next_read_held": null
+    }
+   ]
+  }
+ }
+}

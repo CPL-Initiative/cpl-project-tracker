@@ -1,0 +1,265 @@
+{
+ "run": "44474573014",
+ "at": "2026-11-19T07:31:48Z",
+ "loads": 36,
+ "summary": {
+  "colleges": 6,
+  "by_system": {
+   "curricunet": 1,
+   "none_found": 5
+  },
+  "by_access": {
+   "not_found": 5,
+   "refused": 1
+  },
+  "by_outline": {
+   "none_found": 5,
+   "refused": 1
+  },
+  "prints_slos": 0
+ },
+ "rows": [
+  {
+   "college": "Cuyamaca College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_outline": "none_found",
+   "cor_outline_url": null,
+   "cor_prints_slos": false,
+   "cor_slo": null,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.cuyamaca.edu/",
+     "final_url": "https://www.cuyamaca.edu/",
+     "status": 200,
+     "title": "Cuyamaca College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://catalog.gcccd.edu/cuyamaca/",
+     "final_url": "https://catalog.gcccd.edu/cuyamaca/",
+     "status": 200,
+     "title": "Cuyamaca College Catalog | Grossmont-Cuyamaca Community College District Academic Catalog"
+    },
+    {
+     "why": "curriculum page",
+     "url": "https://www.cuyamaca.edu/about-cuyamaca-college/planning/equity-curriculum-and-pedagogy.php",
+     "final_url": "https://www.cuyamaca.edu/about-cuyamaca-college/planning/equity-curriculum-and-pedagogy.php",
+     "status": 200,
+     "title": "Equity, Curriculum and Pedagogy"
+    },
+    {
+     "why": "curriculum page",
+     "url": "https://www.cuyamaca.edu/about-cuyamaca-college/archives/educational-objectives-planning-and-outcomes/institutional-effectiveness-success-and-equity/equity-curriculum-and-pedagogy.php",
+     "final_url": "https://www.cuyamaca.edu/about-cuyamaca-college/archives/educational-objectives-planning-and-outcomes/institutional-effectiveness-success-and-equity/equity-curriculum-and-pedagogy.php",
+     "status": 404,
+     "title": "Page Not Found"
+    }
+   ]
+  },
+  {
+   "college": "Cypress College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_outline": "none_found",
+   "cor_outline_url": null,
+   "cor_prints_slos": false,
+   "cor_slo": null,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.cypresscollege.edu/",
+     "final_url": "https://www.cypresscollege.edu/",
+     "status": 200,
+     "title": "Homepage - Cypress College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://catalog.nocccd.edu/cypress-college/",
+     "final_url": "https://catalog.nocccd.edu/cypress-college/",
+     "status": 200,
+     "title": "Cypress College < Cypress College"
+    }
+   ]
+  },
+  {
+   "college": "Fullerton College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_outline": "none_found",
+   "cor_outline_url": null,
+   "cor_prints_slos": false,
+   "cor_slo": null,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.fullcoll.edu/",
+     "final_url": "https://www.fullcoll.edu/",
+     "status": 200,
+     "title": "Fullerton College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://catalog.nocccd.edu/fullerton-college/",
+     "final_url": "https://catalog.nocccd.edu/fullerton-college/",
+     "status": 200,
+     "title": "Fullerton College < Fullerton College"
+    }
+   ]
+  },
+  {
+   "college": "Grossmont College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_outline": "none_found",
+   "cor_outline_url": null,
+   "cor_prints_slos": false,
+   "cor_slo": null,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.grossmont.edu/",
+     "final_url": "https://www.grossmont.edu/",
+     "status": 200,
+     "title": "Grossmont College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://catalog.gcccd.edu/grossmont/",
+     "final_url": "https://catalog.gcccd.edu/grossmont/",
+     "status": 200,
+     "title": "Grossmont College Catalog | Grossmont-Cuyamaca Community College District Academic Catalog"
+    },
+    {
+     "why": "curriculum page",
+     "url": "https://www.grossmont.edu/academics/programs/business/_custom-broker-license/curriculum.php",
+     "final_url": "https://www.grossmont.edu/academics/programs/business/_custom-broker-license/curriculum.php",
+     "status": 200,
+     "title": "Curriculum"
+    }
+   ]
+  },
+  {
+   "college": "North Orange Continuing Education",
+   "cor_system": "curricunet",
+   "cor_url": "https://www.curricunet.com/SCE/",
+   "cor_access": "refused",
+   "cor_outline": "refused",
+   "cor_outline_url": null,
+   "cor_prints_slos": false,
+   "cor_slo": null,
+   "slo_pages": [],
+   "hosts": [
+    {
+     "system": "curricunet",
+     "url": "https://www.curricunet.com/SCE/",
+     "from": "https://noce.edu/info/faculty-staff/curriculum/",
+     "text": "CurricUNET \u2013 NOCE",
+     "host": "www.curricunet.com",
+     "status": null,
+     "final_url": null,
+     "title": "",
+     "access": "refused",
+     "outline_words": false,
+     "slos": false,
+     "outline": {
+      "verdict": "refused",
+      "start": "https://www.curricunet.com/SCE/",
+      "url": null,
+      "slo": null
+     }
+    }
+   ],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://noce.edu/",
+     "final_url": "https://noce.edu/",
+     "status": 200,
+     "title": "Home Page - North Orange Continuing Education"
+    },
+    {
+     "why": "catalog",
+     "url": "https://catalog.nocccd.edu/noce/",
+     "final_url": "https://catalog.nocccd.edu/noce/",
+     "status": 200,
+     "title": "North Orange Continuing Education < North Orange Continuing Education"
+    },
+    {
+     "why": "curriculum page",
+     "url": "https://noce.edu/info/faculty-staff/curriculum/",
+     "final_url": "https://noce.edu/info/faculty-staff/curriculum/",
+     "status": 200,
+     "title": "Curriculum - North Orange Continuing Education"
+    },
+    {
+     "why": "system: curricunet",
+     "url": "https://www.curricunet.com/SCE/",
+     "final_url": null,
+     "status": null,
+     "title": ""
+    }
+   ]
+  },
+  {
+   "college": "Southwestern College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_outline": "none_found",
+   "cor_outline_url": null,
+   "cor_prints_slos": false,
+   "cor_slo": null,
+   "slo_pages": [
+    {
+     "url": "https://www.swccd.edu/locations/higher-education-center-at-otay-mesa/programs/nursing/associate-degree-nursing-adn/curriculum.aspx",
+     "snippet": "s an RN after graduation?).\n\nThe College and the Nursing Program have developed Student Learning Outcomes (SLOs) for your courses \u2013 what do we want you to achieve with your courses? The curriculum (content in the courses) evolved from that. Our teaching strategies "
+    }
+   ],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.swccd.edu/",
+     "final_url": "https://www.swccd.edu/",
+     "status": 200,
+     "title": "Southwestern College : Chula Vista, California"
+    },
+    {
+     "why": "catalog",
+     "url": "https://catalog.swccd.edu/",
+     "final_url": "https://catalog.swccd.edu/",
+     "status": 200,
+     "title": "General Catalog 2026-2027 | Southwestern College Catalog"
+    },
+    {
+     "why": "curriculum page",
+     "url": "https://www.swccd.edu/administration/academic-services/curriculum-committee/index.aspx",
+     "final_url": "https://www.swccd.edu/administration/academic-services/curriculum-committee/index.aspx",
+     "status": 200,
+     "title": "Curriculum Committee"
+    },
+    {
+     "why": "curriculum page",
+     "url": "https://www.swccd.edu/locations/higher-education-center-at-otay-mesa/programs/nursing/associate-degree-nursing-adn/curriculum.aspx",
+     "final_url": "https://www.swccd.edu/locations/higher-education-center-at-otay-mesa/programs/nursing/associate-degree-nursing-adn/curriculum.aspx",
+     "status": 200,
+     "title": "Curriculum"
+    }
+   ]
+  }
+ ]
+}

@@ -24,8 +24,11 @@ host it met and the evidence. Where it lands in the registry waits on Sam's Open
 Sheet 70 card 1. It uses the program source census's polite Reader (robots first, a
 delay before every load).
 
-Usage (runner): python3 kb/_course_outline_census.py [--limit N] [--only TEXT]
+Usage (runner): python3 kb/_course_outline_census.py [--limit N] [--only TEXT[,TEXT...]]
        python3 kb/_course_outline_census.py --probe [--only TEXT]   (probe_<run>.json)
+--only keeps the colleges whose name holds any of its comma-separated parts, so one run
+rechecks several colleges (S683: the three catalog hosts, catalog.nocccd.edu, .gcccd.edu
+and .swccd.edu, answered plain requests again on 2026-11-18).
 """
 from __future__ import annotations
 
@@ -422,6 +425,12 @@ def outline_of(reader, college: str, system: str, url: str, page: dict) -> dict:
             "slo": ((best or {}).get("slo") or "")[:300] or None}
 
 
+def only_matches(college: str, only: str) -> bool:
+    """True when --only is empty or the college's name holds one of its comma-separated parts."""
+    parts = [p.strip().lower() for p in (only or "").split(",") if p.strip()]
+    return not parts or any(p in (college or "").lower() for p in parts)
+
+
 def load_registry() -> list[dict]:
     url = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
     key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_ANON_KEY")
@@ -453,7 +462,7 @@ def probe_main(a) -> int:
         ctx = browser.new_context(user_agent=ua + " " + census.UA_SUFFIX, accept_downloads=False)
         reader = census.Reader(ctx.new_page(), ctx.request, a.delay)
         for college, system, start, why in PROBE:
-            if a.only and a.only.lower() not in college.lower():
+            if not only_matches(college, a.only):
                 continue
             try:
                 row = probe_one(reader, college, system, start, why)
@@ -488,7 +497,7 @@ def main(argv=None) -> int:
         return probe_main(a)
     regs = load_registry()
     if a.only:
-        regs = [r for r in regs if a.only.lower() in r["college"].lower()]
+        regs = [r for r in regs if only_matches(r["college"], a.only)]
     if a.limit:
         regs = regs[:a.limit]
 

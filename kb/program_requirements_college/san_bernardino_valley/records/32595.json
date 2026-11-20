@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8698,
-    "output_tokens": 2745,
+    "output_tokens": 2654,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2745,
+  "output_tokens": 2654,
   "output_tokens_details": {
-   "thinking_tokens": 974
+   "thinking_tokens": 862
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.08969,
- "ms": 21665,
- "seconds": 21.9,
+ "cost_usd": 0.08787,
+ "ms": 21204,
+ "seconds": 21.4,
  "parts": null,
  "error": null,
  "score": {
@@ -78,6 +79,7 @@
    ],
    "against": "program",
    "why": [],
+   "short_high": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -96,9 +98,7 @@
     ],
     "why": [],
     "overlap": true
-   },
-   "short_high": true,
-   "rescored": "Sam's ruling of 2026-11-17, short high end"
+   }
   },
   "repeated": {
    "codes": [],
@@ -166,7 +166,7 @@
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Required Courses:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -211,7 +211,7 @@
     ]
    },
    {
-    "name": "List A - Two to three courses from the following",
+    "name": "List A - Two to three courses from the following:",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -263,7 +263,7 @@
     ]
    },
    {
-    "name": "List B - Six units from the following",
+    "name": "List B - Six units from the following:",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -363,21 +363,22 @@
   "missing_explained": [
    {
     "code": "ANTHRO 102",
-    "why": "catalog prints it as ANTH 102 (recorded as catalog addition)"
+    "why": "catalog prints it as ANTH 102; recorded under that code in List B"
    },
    {
     "code": "ANTHRO 102H",
-    "why": "catalog prints it as ANTH 102H (recorded as catalog addition)"
+    "why": "catalog prints it as ANTH 102H; recorded as alternative to ANTH 102 in List B"
    }
   ],
   "notes": [
-   "OCEAN 101 & OCEAN 111 are printed as a combined pair with 4 units for both together; they must be taken together as one List B choice. Individual units not printed.",
-   "List A reads 'Two to three courses from the following: 6-7'; recorded as choose_courses minimum 2 with stated 6-7.",
-   "Page prints Major Total Units 19-22, Total Double-Counted Units 13, Cal-GETC 34, Elective Units 17-20, Total Units 60. Elective units 17-20 recorded as degree_elective_units.",
-   "Catalog uses ANTH 102/102H while the closed list has ANTHRO 102/102H; likely the same courses under a different subject prefix.",
-   "Outcomes are from the page's Program Learning Outcomes tab for this AA-T."
+   "Section heading taken from the page's navigation entry 'Geography Associate in Arts for Transfer Degree'; the extracted text does not print the heading over the requirements.",
+   "OCEAN 101 & OCEAN 111 are printed as a single paired option with 4 units combined (lecture plus lab); recorded as two entries with units null. They must be taken together to count in List B.",
+   "The catalog prints 'Elective Units 17-20' toward the 60-unit total outside the major; recorded as degree_elective_units. 'Total Double-Counted Units 13' is also printed.",
+   "Alternative courses print no units beside them; their units are left null.",
+   "The outcomes list comes from the page's Program Learning Outcomes tab for this award.",
+   "List A says 'Two to three courses' (6-7 units); recorded as choose_courses with minimum 2."
   ]
  },
- "extracted_run": 43609973859,
- "read_run": "38748858322"
+ "extracted_run": "44481529632",
+ "catalog_year": "2026-2027"
 }

@@ -23,10 +23,11 @@
     101
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "780a8c1deb0735ca"
   },
   "listed": 4,
-  "text_chars": 5477
+  "text_chars": 5468
  },
  {
   "control_number": "02892",
@@ -41,19 +42,21 @@
    "MGMT33"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121",
-   "title": "Requirements for the Associate in Arts degree in Management/Supervision may be met by",
-   "h1": "Requirements for the Associate in Arts degree in Management/Supervision may be met by",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=120",
+   "title": "Supervision T002892C A.A. 21* 47 - 47",
+   "h1": "Supervision T002892C A.A. 21* 47 - 47",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    120,
     121
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7c9c78c43026e778"
   },
   "listed": 4,
-  "text_chars": 1772
+  "text_chars": 4780
  },
  {
   "control_number": "02893",
@@ -87,10 +90,11 @@
     122
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "991a0612782f2938"
   },
   "listed": 1,
-  "text_chars": 3710
+  "text_chars": 3702
  },
  {
   "control_number": "02895",
@@ -134,10 +138,11 @@
     128
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fbf3a245322bb84f"
   },
   "listed": 22,
-  "text_chars": 8739
+  "text_chars": 8724
  },
  {
   "control_number": "02896",
@@ -168,10 +173,11 @@
     128
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a44f7782c0991087"
   },
   "listed": 7,
-  "text_chars": 12324
+  "text_chars": 12303
  },
  {
   "control_number": "02897",
@@ -209,10 +215,11 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8a789b5926eccf8e"
   },
   "listed": 19,
-  "text_chars": 15320
+  "text_chars": 15297
  },
  {
   "control_number": "02898",
@@ -271,10 +278,11 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "52eba3ec8b52a633"
   },
   "listed": 37,
-  "text_chars": 9872
+  "text_chars": 9870
  },
  {
   "control_number": "02900",
@@ -308,19 +316,21 @@
    "CS216"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
-   "title": "Requirements for the Associate in Science degree in Computer Information Systems may",
-   "h1": "Requirements for the Associate in Science degree in Computer Information Systems may",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=116",
+   "title": "Systems T002900C A.S. 21* 24 21 45",
+   "h1": "Systems T002900C A.S. 21* 24 21 45",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    116,
     117
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1e37169d0517bba5"
   },
   "listed": 22,
-  "text_chars": 2182
+  "text_chars": 4624
  },
  {
   "control_number": "02902",
@@ -375,10 +385,11 @@
     141
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "76b829f95abd13e9"
   },
   "listed": 27,
-  "text_chars": 7199
+  "text_chars": 7190
  },
  {
   "control_number": "02905",
@@ -416,10 +427,11 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5e9cbff035f0b81e"
   },
   "listed": 16,
-  "text_chars": 6282
+  "text_chars": 6276
  },
  {
   "control_number": "02906",
@@ -438,30 +450,12 @@
   "title": "Automotive Collision Repair",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.545,
-  "codes_found": [
-   "AUTOCOR285",
-   "AUTOCOR385",
-   "AUTOCOR911",
-   "AUTOCOR921",
-   "AUTOCOR931",
-   "AUTOCOR941"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=246",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    246
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 5914
+  "text_chars": 0
  },
  {
   "control_number": "02908",
@@ -486,10 +480,11 @@
     84
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f16ae1820f6734bc"
   },
   "listed": 5,
-  "text_chars": 1787
+  "text_chars": 1786
  },
  {
   "control_number": "02909",
@@ -539,10 +534,11 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e2cc1a5de44e76c1"
   },
   "listed": 32,
-  "text_chars": 15727
+  "text_chars": 15705
  },
  {
   "control_number": "02910",
@@ -623,7 +619,8 @@
     138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b102e39b7dc88d46"
   },
   "listed": 57,
   "text_chars": 16000
@@ -672,10 +669,11 @@
     147
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3188831444711030"
   },
   "listed": 22,
-  "text_chars": 12378
+  "text_chars": 12360
  },
  {
   "control_number": "02913",
@@ -706,10 +704,11 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e890abdb0e77d3ee"
   },
   "listed": 10,
-  "text_chars": 3031
+  "text_chars": 3029
  },
  {
   "control_number": "02914",
@@ -749,10 +748,11 @@
     83
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0bdae38f10fa7f3f"
   },
   "listed": 23,
-  "text_chars": 3953
+  "text_chars": 3949
  },
  {
   "control_number": "02916",
@@ -795,10 +795,11 @@
     157
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "45d3388cb3b144c9"
   },
   "listed": 21,
-  "text_chars": 8819
+  "text_chars": 8810
  },
  {
   "control_number": "02917",
@@ -835,10 +836,11 @@
     155
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "54dacd1a636afb01"
   },
   "listed": 15,
-  "text_chars": 5778
+  "text_chars": 5773
  },
  {
   "control_number": "02921",
@@ -868,10 +870,11 @@
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6724718423218ca2"
   },
   "listed": 8,
-  "text_chars": 6616
+  "text_chars": 6608
  },
  {
   "control_number": "02922",
@@ -911,10 +914,11 @@
     199
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1dceba1abbd89283"
   },
   "listed": 19,
-  "text_chars": 15337
+  "text_chars": 15319
  },
  {
   "control_number": "02925",
@@ -964,35 +968,23 @@
     182
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5b90449f535a4245"
   },
   "listed": 26,
-  "text_chars": 14152
+  "text_chars": 14133
  },
  {
   "control_number": "02926",
   "title": "Tailoring",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "TAILRNG185"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=339",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    339
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 5538
+  "text_chars": 0
  },
  {
   "control_number": "02927",
@@ -1016,7 +1008,8 @@
     206
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "10e017d8887d3b29"
   },
   "listed": 4,
   "text_chars": 3599
@@ -1045,10 +1038,11 @@
     168
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "da8b40b75d936a8f"
   },
   "listed": 6,
-  "text_chars": 3712
+  "text_chars": 3709
  },
  {
   "control_number": "02939",
@@ -1070,10 +1064,11 @@
     171
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "72079de62e3aac23"
   },
   "listed": 1,
-  "text_chars": 2614
+  "text_chars": 2610
  },
  {
   "control_number": "02940",
@@ -1108,10 +1103,11 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a77a7c082d547403"
   },
   "listed": 14,
-  "text_chars": 3904
+  "text_chars": 3901
  },
  {
   "control_number": "08467",
@@ -1148,7 +1144,8 @@
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "d6386f4b1e6700e6"
   },
   "listed": 19,
   "text_chars": 4973
@@ -1158,38 +1155,12 @@
   "title": "Small Business Entrepreneurship",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.611,
-  "codes_found": [
-   "BUS1",
-   "BUS32",
-   "BUS33",
-   "BUS38",
-   "BUS40",
-   "BUS5",
-   "BUS6",
-   "LAW18",
-   "SUPV1",
-   "SUPV11",
-   "SUPV3"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=121",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    121,
-    122,
-    123,
-    124
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 18,
-  "text_chars": 14098
+  "text_chars": 0
  },
  {
   "control_number": "08470",
@@ -1243,10 +1214,11 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c644f45f02cd98f6"
   },
   "listed": 18,
-  "text_chars": 14995
+  "text_chars": 14970
  },
  {
   "control_number": "08473",
@@ -1278,10 +1250,11 @@
     82
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f4d1bfe1e3cb9b1b"
   },
   "listed": 13,
-  "text_chars": 4108
+  "text_chars": 4104
  },
  {
   "control_number": "08474",
@@ -1319,10 +1292,11 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e082e73453b93c7f"
   },
   "listed": 22,
-  "text_chars": 13791
+  "text_chars": 13777
  },
  {
   "control_number": "08476",
@@ -1352,10 +1326,11 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "989bc8b7de963df6"
   },
   "listed": 8,
-  "text_chars": 6144
+  "text_chars": 6138
  },
  {
   "control_number": "08478",
@@ -1379,7 +1354,8 @@
     81
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a6bbc526a2c03352"
   },
   "listed": 3,
   "text_chars": 1612
@@ -1435,10 +1411,11 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8b8d0b0da03ceb99"
   },
   "listed": 30,
-  "text_chars": 15607
+  "text_chars": 15585
  },
  {
   "control_number": "08481",
@@ -1518,7 +1495,8 @@
     138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "41f60ecec0072845"
   },
   "listed": 56,
   "text_chars": 16000
@@ -1547,10 +1525,11 @@
     159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9491e806d0bc7698"
   },
   "listed": 5,
-  "text_chars": 1903
+  "text_chars": 1901
  },
  {
   "control_number": "08484",
@@ -1590,10 +1569,11 @@
     146
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fddad71a9526481d"
   },
   "listed": 17,
-  "text_chars": 10226
+  "text_chars": 10211
  },
  {
   "control_number": "08486",
@@ -1639,10 +1619,11 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "45b19f2483de214e"
   },
   "listed": 13,
-  "text_chars": 3863
+  "text_chars": 3858
  },
  {
   "control_number": "08489",
@@ -1678,49 +1659,23 @@
     152
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "27b0682589fc8c7d"
   },
   "listed": 15,
-  "text_chars": 2373
+  "text_chars": 2372
  },
  {
   "control_number": "08493",
   "title": "Visual Communications",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.583,
-  "codes_found": [
-   "VISCOM124",
-   "VISCOM126",
-   "VISCOM127",
-   "VISCOM128",
-   "VISCOM129",
-   "VISCOM130",
-   "VISCOM131",
-   "VISCOM132",
-   "VISCOM133",
-   "VISCOM134",
-   "VISCOM135",
-   "VISCOM185",
-   "VISCOM285",
-   "VISCOM385"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=342",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    342,
-    343
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 24,
-  "text_chars": 10516
+  "text_chars": 0
  },
  {
   "control_number": "08498",
@@ -1770,10 +1725,11 @@
     167
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3b0a1112f6c2a6ce"
   },
   "listed": 6,
-  "text_chars": 3344
+  "text_chars": 3340
  },
  {
   "control_number": "08653",
@@ -1815,10 +1771,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "202fb287cdde7dd6"
   },
   "listed": 23,
-  "text_chars": 8503
+  "text_chars": 8490
  },
  {
   "control_number": "09266",
@@ -1871,10 +1828,11 @@
     112
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e24bc6d6ddd4bd90"
   },
   "listed": 31,
-  "text_chars": 8586
+  "text_chars": 8584
  },
  {
   "control_number": "10403",
@@ -1920,7 +1878,8 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8d399a1f94932d67"
   },
   "listed": 23,
   "text_chars": 16000
@@ -1959,10 +1918,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cea58fe8c1d56d37"
   },
   "listed": 13,
-  "text_chars": 9409
+  "text_chars": 9381
  },
  {
   "control_number": "10405",
@@ -1995,10 +1955,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5a84b49df4c43323"
   },
   "listed": 12,
-  "text_chars": 1962
+  "text_chars": 1952
  },
  {
   "control_number": "10750",
@@ -2030,10 +1991,11 @@
     126
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "01dd3533c0800db0"
   },
   "listed": 9,
-  "text_chars": 15017
+  "text_chars": 14999
  },
  {
   "control_number": "10751",
@@ -2061,10 +2023,11 @@
     76
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c7287308bf18df4a"
   },
   "listed": 6,
-  "text_chars": 6079
+  "text_chars": 6071
  },
  {
   "control_number": "10752",
@@ -2092,10 +2055,11 @@
     76
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "46db21af9dcd0b0f"
   },
   "listed": 6,
-  "text_chars": 6024
+  "text_chars": 6016
  },
  {
   "control_number": "10754",
@@ -2132,10 +2096,11 @@
     155
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2ff8a1d9ddf82ffb"
   },
   "listed": 15,
-  "text_chars": 5730
+  "text_chars": 5725
  },
  {
   "control_number": "10755",
@@ -2172,10 +2137,11 @@
     155
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1c4c1b5ab948b02b"
   },
   "listed": 15,
-  "text_chars": 5856
+  "text_chars": 5851
  },
  {
   "control_number": "12068",
@@ -2369,7 +2335,8 @@
     212
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "91934e682d8baf5f"
   },
   "listed": 159,
   "text_chars": 16000
@@ -2442,10 +2409,11 @@
     97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0d1c3648face6888"
   },
   "listed": 47,
-  "text_chars": 11158
+  "text_chars": 11151
  },
  {
   "control_number": "19108",
@@ -2478,7 +2446,8 @@
     97
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7ecc1a253bd226d5"
   },
   "listed": 12,
   "text_chars": 3671
@@ -2514,7 +2483,8 @@
     97
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "56baaef09b321ada"
   },
   "listed": 12,
   "text_chars": 3716
@@ -2556,7 +2526,8 @@
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c199718ee4240f31"
   },
   "listed": 18,
   "text_chars": 4896
@@ -2661,10 +2632,11 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "aa7f87822e9a52c0"
   },
   "listed": 18,
-  "text_chars": 14913
+  "text_chars": 14888
  },
  {
   "control_number": "21835",
@@ -2735,10 +2707,11 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "bc33b7bfad3b43f1"
   },
   "listed": 37,
-  "text_chars": 9831
+  "text_chars": 9829
  },
  {
   "control_number": "21839",
@@ -2772,19 +2745,21 @@
    "CS216"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=117",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=116",
+   "title": "Systems T021839D C 24 21 45",
+   "h1": "Systems T021839D C 24 21 45",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    116,
     117
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "77c3562777b2d1ff"
   },
   "listed": 22,
-  "text_chars": 2427
+  "text_chars": 4567
  },
  {
   "control_number": "21840",
@@ -2816,10 +2791,11 @@
     82
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cec9dfa47244a3b8"
   },
   "listed": 13,
-  "text_chars": 4058
+  "text_chars": 4054
  },
  {
   "control_number": "21841",
@@ -2874,10 +2850,11 @@
     141
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e58c75fffb74019e"
   },
   "listed": 27,
-  "text_chars": 7033
+  "text_chars": 7024
  },
  {
   "control_number": "21844",
@@ -2915,10 +2892,11 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2d934b6266fa53c4"
   },
   "listed": 16,
-  "text_chars": 6208
+  "text_chars": 6202
  },
  {
   "control_number": "21845",
@@ -2952,10 +2930,11 @@
     76
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6119c62b6007298c"
   },
   "listed": 12,
-  "text_chars": 6146
+  "text_chars": 6138
  },
  {
   "control_number": "21846",
@@ -3014,10 +2993,11 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ab993c684eb096d8"
   },
   "listed": 29,
-  "text_chars": 15679
+  "text_chars": 15657
  },
  {
   "control_number": "21849",
@@ -3070,10 +3050,11 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e7daf846b1d145cf"
   },
   "listed": 30,
-  "text_chars": 15527
+  "text_chars": 15505
  },
  {
   "control_number": "21852",
@@ -3158,7 +3139,8 @@
     138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6a94898648f67e59"
   },
   "listed": 61,
   "text_chars": 16000
@@ -3242,7 +3224,8 @@
     138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0aba98343c234a7d"
   },
   "listed": 57,
   "text_chars": 16000
@@ -3291,10 +3274,11 @@
     147
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b0e4ac66d6295b97"
   },
   "listed": 22,
-  "text_chars": 12331
+  "text_chars": 12313
  },
  {
   "control_number": "21856",
@@ -3333,10 +3317,11 @@
     146
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1be0655614db142a"
   },
   "listed": 17,
-  "text_chars": 6211
+  "text_chars": 6200
  },
  {
   "control_number": "21859",
@@ -3367,10 +3352,11 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "77bc44de4a6a8103"
   },
   "listed": 10,
-  "text_chars": 2985
+  "text_chars": 2983
  },
  {
   "control_number": "21860",
@@ -3425,10 +3411,11 @@
     157
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "45d3388cb3b144c9"
   },
   "listed": 21,
-  "text_chars": 8819
+  "text_chars": 8810
  },
  {
   "control_number": "21862",
@@ -3458,35 +3445,23 @@
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f6895967f12711ef"
   },
   "listed": 8,
-  "text_chars": 6578
+  "text_chars": 6570
  },
  {
   "control_number": "21863",
   "title": "Visual Communications",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "DIGLMD101"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=183",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    183
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 4107
+  "text_chars": 0
  },
  {
   "control_number": "21865",
@@ -3536,7 +3511,8 @@
     182
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d0523f4554504330"
   },
   "listed": 26,
   "text_chars": 16000
@@ -3591,10 +3567,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "52aec657d561f054"
   },
   "listed": 23,
-  "text_chars": 4107
+  "text_chars": 4098
  },
  {
   "control_number": "21868",
@@ -3652,10 +3629,11 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "28299fe878d11491"
   },
   "listed": 13,
-  "text_chars": 3808
+  "text_chars": 3803
  },
  {
   "control_number": "21871",
@@ -3702,10 +3680,11 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fa2763cb68188a20"
   },
   "listed": 14,
-  "text_chars": 3866
+  "text_chars": 3863
  },
  {
   "control_number": "24048",
@@ -3728,7 +3707,8 @@
     233
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3542a5878ec94060"
   },
   "listed": 2,
   "text_chars": 754
@@ -3758,7 +3738,8 @@
     235
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c6e50568a3a62008"
   },
   "listed": 6,
   "text_chars": 1643
@@ -3768,30 +3749,12 @@
   "title": "Bank Teller",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "VOCED191CE",
-   "VOCED193CE",
-   "VOCED252CE",
-   "VOCED311CE",
-   "VOCED312CE"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=352",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    352,
-    353
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 13250
+  "text_chars": 0
  },
  {
   "control_number": "24169",
@@ -3810,27 +3773,12 @@
   "title": "English as a Second Language (ESL): Beginning",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLNC50CE",
-   "ESLNC6CE",
-   "ESLNC7CE"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    350
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 6067
+  "text_chars": 0
  },
  {
   "control_number": "30001",
@@ -3882,10 +3830,11 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "edb8537ddca443c8"
   },
   "listed": 6,
-  "text_chars": 8281
+  "text_chars": 8270
  },
  {
   "control_number": "30904",
@@ -3917,10 +3866,11 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cd7107d6f60be690"
   },
   "listed": 8,
-  "text_chars": 11253
+  "text_chars": 11236
  },
  {
   "control_number": "30905",
@@ -3947,10 +3897,11 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "981fe016b69a53ad"
   },
   "listed": 3,
-  "text_chars": 11310
+  "text_chars": 11293
  },
  {
   "control_number": "30906",
@@ -3982,7 +3933,8 @@
     141
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c142d6176d34907c"
   },
   "listed": 8,
   "text_chars": 16000
@@ -4024,10 +3976,11 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b55668c01340606a"
   },
   "listed": 16,
-  "text_chars": 11380
+  "text_chars": 11363
  },
  {
   "control_number": "31018",
@@ -4047,8 +4000,8 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106",
-   "title": "T031018H AS-T Cal-GETC 25 - 25",
-   "h1": "T031018H AS-T Cal-GETC 25 - 25",
+   "title": "T031018H AS-T Cal- GETC 25 - 25",
+   "h1": "T031018H AS-T Cal- GETC 25 - 25",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4058,7 +4011,8 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "03f8b2f5e78ce64e"
   },
   "listed": 7,
   "text_chars": 16000
@@ -4096,10 +4050,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "10e866d19ec3b433"
   },
   "listed": 12,
-  "text_chars": 9175
+  "text_chars": 9147
  },
  {
   "control_number": "31060",
@@ -4127,10 +4082,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e2934f641b95f67f"
   },
   "listed": 5,
-  "text_chars": 9505
+  "text_chars": 9477
  },
  {
   "control_number": "31061",
@@ -4162,10 +4118,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1362b6cbb8f40711"
   },
   "listed": 9,
-  "text_chars": 9464
+  "text_chars": 9436
  },
  {
   "control_number": "31062",
@@ -4197,10 +4154,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3241e5932eb89cac"
   },
   "listed": 11,
-  "text_chars": 1710
+  "text_chars": 1702
  },
  {
   "control_number": "31063",
@@ -4236,10 +4194,11 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f0822e23f6ee7c33"
   },
   "listed": 14,
-  "text_chars": 3041
+  "text_chars": 3026
  },
  {
   "control_number": "31081",
@@ -4272,10 +4231,11 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3540c269a05a0297"
   },
   "listed": 9,
-  "text_chars": 12004
+  "text_chars": 11984
  },
  {
   "control_number": "31082",
@@ -4308,10 +4268,11 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7885861c8601e69d"
   },
   "listed": 12,
-  "text_chars": 5645
+  "text_chars": 5636
  },
  {
   "control_number": "31089",
@@ -4349,10 +4310,11 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "b15b5e4cfad80169"
   },
   "listed": 23,
-  "text_chars": 5715
+  "text_chars": 5706
  },
  {
   "control_number": "31090",
@@ -4395,7 +4357,8 @@
     141
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "39f071eb5f946522"
   },
   "listed": 21,
   "text_chars": 16000
@@ -4439,10 +4402,11 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a3fab9c07c61acbf"
   },
   "listed": 18,
-  "text_chars": 15236
+  "text_chars": 15213
  },
  {
   "control_number": "31207",
@@ -4477,10 +4441,11 @@
     92
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "641faaaeb7c2a29c"
   },
   "listed": 11,
-  "text_chars": 11636
+  "text_chars": 11630
  },
  {
   "control_number": "31262",
@@ -4518,10 +4483,11 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4a2b3c979a85952d"
   },
   "listed": 15,
-  "text_chars": 15280
+  "text_chars": 15257
  },
  {
   "control_number": "31280",
@@ -4563,10 +4529,11 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3cc32c2f066ebb60"
   },
   "listed": 25,
-  "text_chars": 12087
+  "text_chars": 12067
  },
  {
   "control_number": "31396",
@@ -4591,10 +4558,11 @@
     165
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0584e6b4cc109527"
   },
   "listed": 4,
-  "text_chars": 1737
+  "text_chars": 1735
  },
  {
   "control_number": "32703",
@@ -4630,10 +4598,11 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d9c89e101281d1c4"
   },
   "listed": 14,
-  "text_chars": 7481
+  "text_chars": 7476
  },
  {
   "control_number": "32905",
@@ -4656,18 +4625,19 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206",
-   "title": "English T032905G AA-T Cal-GETC 6 12 18",
-   "h1": "English T032905G AA-T Cal-GETC 6 12 18",
+   "title": "English T032905G AA-T Cal- GETC 6 12 18",
+   "h1": "English T032905G AA-T Cal- GETC 6 12 18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     206
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d40951eb7474e9f3"
   },
   "listed": 10,
-  "text_chars": 3773
+  "text_chars": 3774
  },
  {
   "control_number": "32910",
@@ -4697,7 +4667,8 @@
     102
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9e6b18ee4cd23231"
   },
   "listed": 9,
   "text_chars": 3955
@@ -4755,8 +4726,8 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193",
-   "title": "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24",
-   "h1": "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24",
+   "title": "Kinesiology T032948G AA-T Cal- GETC 21-24 - 21-24",
+   "h1": "Kinesiology T032948G AA-T Cal- GETC 21-24 - 21-24",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4764,10 +4735,11 @@
     194
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2310c7df707c9cd4"
   },
   "listed": 51,
-  "text_chars": 4634
+  "text_chars": 4632
  },
  {
   "control_number": "33225",
@@ -4799,10 +4771,11 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "374237083a9a2aa5"
   },
   "listed": 10,
-  "text_chars": 7066
+  "text_chars": 7057
  },
  {
   "control_number": "33682",
@@ -4834,10 +4807,11 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "374237083a9a2aa5"
   },
   "listed": 10,
-  "text_chars": 7066
+  "text_chars": 7057
  },
  {
   "control_number": "33802",
@@ -4865,10 +4839,11 @@
     203
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c858f9a13c982fc5"
   },
   "listed": 6,
-  "text_chars": 6241
+  "text_chars": 6236
  },
  {
   "control_number": "33813",
@@ -4903,10 +4878,11 @@
     128
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "224d4bdfefa3d9a6"
   },
   "listed": 13,
-  "text_chars": 4965
+  "text_chars": 4957
  },
  {
   "control_number": "33815",
@@ -4991,10 +4967,11 @@
     213
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "90510fc8ee85db1a"
   },
   "listed": 62,
-  "text_chars": 15062
+  "text_chars": 15052
  },
  {
   "control_number": "35202",
@@ -5023,10 +5000,11 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "77e9c938a60727b7"
   },
   "listed": 6,
-  "text_chars": 8239
+  "text_chars": 8235
  },
  {
   "control_number": "35215",
@@ -5059,10 +5037,11 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8bcc921970da7feb"
   },
   "listed": 10,
-  "text_chars": 8280
+  "text_chars": 8276
  },
  {
   "control_number": "35275",
@@ -5098,7 +5077,8 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "78ef13b2f7502282"
   },
   "listed": 16,
   "text_chars": 2605
@@ -5137,7 +5117,8 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "edb69d38e83b3e42"
   },
   "listed": 15,
   "text_chars": 2529
@@ -5171,10 +5152,11 @@
     128
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b2d48346ae2faf42"
   },
   "listed": 8,
-  "text_chars": 8695
+  "text_chars": 8680
  },
  {
   "control_number": "35292",
@@ -5206,10 +5188,11 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "117aa6feee559d6c"
   },
   "listed": 10,
-  "text_chars": 5159
+  "text_chars": 5157
  },
  {
   "control_number": "35296",
@@ -5241,10 +5224,11 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "1d555c92a421b858"
   },
   "listed": 10,
-  "text_chars": 5225
+  "text_chars": 5223
  },
  {
   "control_number": "35618",
@@ -5277,10 +5261,11 @@
     85
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "19ae161ad30db824"
   },
   "listed": 12,
-  "text_chars": 3899
+  "text_chars": 3895
  },
  {
   "control_number": "35649",
@@ -5313,10 +5298,11 @@
     85
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "80f0a2308ea0c0e1"
   },
   "listed": 12,
-  "text_chars": 3948
+  "text_chars": 3944
  },
  {
   "control_number": "36134",
@@ -5336,14 +5322,20 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.622,
+  "coverage": 0.786,
   "codes_found": [
    "ANTHRO101",
+   "ANTHRO102",
+   "ART103",
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
    "ASTRON1",
-   "ASTRON5",
    "BIOLOGY3",
    "BIOLOGY6",
    "BIOLOGY7",
+   "CHDEV1",
    "CHEM101",
    "CHEM102",
    "CHEM211",
@@ -5351,13 +5343,20 @@
    "CHEM221",
    "CHEM51",
    "CHEM70",
-   "ECON1",
-   "ECON2",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH212",
+   "ENGLISH215",
+   "ENGLISH240",
    "ENVSCI1",
+   "FRENCH1",
+   "FRENCH2",
    "GEOG1",
    "GEOG2",
-   "GEOLOGY1",
-   "GEOLOGY6",
    "HISTORY11",
    "HISTORY12",
    "HISTORY41",
@@ -5367,24 +5366,22 @@
    "HISTORY52",
    "HISTORY86",
    "HISTORY87",
+   "HUMAN1",
+   "HUMAN2",
+   "HUMAN60",
    "LABRST1",
+   "LABRST21",
    "LABRST4",
-   "MATH235",
-   "MATH236",
-   "MATH245",
-   "MATH260",
-   "MATH265",
-   "MATH266",
-   "MATH267",
-   "MATH270",
-   "MATH275",
    "MICRO20",
+   "MUSIC101",
+   "MUSIC116",
+   "MUSIC141",
+   "PHILOS1",
    "PHYSICS101",
    "PHYSICS102",
    "PHYSICS103",
    "PHYSICS11",
    "PHYSICS12",
-   "PHYSICS14",
    "PHYSICS6",
    "PHYSICS7",
    "POLSC1000",
@@ -5398,25 +5395,29 @@
    "SOC1",
    "SOC2",
    "SOC28",
-   "STATC1000"
+   "SPANISH1",
+   "SPANISH2",
+   "SPANISH35",
+   "SPANISH36",
+   "STATC1000",
+   "THEATER100"
   ],
   "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=212",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
+   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=55",
+   "title": "or IGETC (UC or CSU version) certified or who have been awarded a Certificate",
+   "h1": "or IGETC (UC or CSU version) certified or who have been awarded a Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    212,
-    213,
-    214,
-    215
+    55,
+    56
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "753d027d387a969e"
   },
   "listed": 98,
-  "text_chars": 11260
+  "text_chars": 6434
  },
  {
   "control_number": "36614",
@@ -5442,7 +5443,8 @@
     230
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3d5cb8ce4505400f"
   },
   "listed": 5,
   "text_chars": 816
@@ -5468,7 +5470,8 @@
     234
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9187281148175828"
   },
   "listed": 2,
   "text_chars": 1611
@@ -5495,10 +5498,11 @@
     233
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "df3b8da62b6d9b6c"
   },
   "listed": 2,
-  "text_chars": 2799
+  "text_chars": 2797
  },
  {
   "control_number": "36686",
@@ -5522,7 +5526,8 @@
     235
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1822569b7f0b1929"
   },
   "listed": 3,
   "text_chars": 928
@@ -5549,7 +5554,8 @@
     233
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "c672970cb4cbbc5b"
   },
   "listed": 3,
   "text_chars": 1643
@@ -5559,25 +5565,12 @@
   "title": "Custodial Technician Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "VOCED60CE"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=351",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    351
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 6114
+  "text_chars": 0
  },
  {
   "control_number": "37088",
@@ -5604,7 +5597,8 @@
     234
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9b38c18f296c2e2d"
   },
   "listed": 6,
   "text_chars": 1063
@@ -5633,10 +5627,11 @@
     201
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "33c59fff5525ee2d"
   },
   "listed": 4,
-  "text_chars": 6649
+  "text_chars": 6641
  },
  {
   "control_number": "38452",
@@ -5662,10 +5657,11 @@
     202
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "70b78e3f0c730d38"
   },
   "listed": 3,
-  "text_chars": 9992
+  "text_chars": 9982
  },
  {
   "control_number": "38461",
@@ -5694,8 +5690,8 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=105",
-   "title": "Development T038461G AA-T Cal-GETC 10 9-10 19-20",
-   "h1": "Development T038461G AA-T Cal-GETC 10 9-10 19-20",
+   "title": "Development T038461G AA-T Cal- GETC 10 9-10 19-20",
+   "h1": "Development T038461G AA-T Cal- GETC 10 9-10 19-20",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5705,7 +5701,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9e2cb8534687de1d"
   },
   "listed": 17,
   "text_chars": 16000
@@ -5741,10 +5738,11 @@
     203
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7637b98d6aad3dde"
   },
   "listed": 12,
-  "text_chars": 2831
+  "text_chars": 2828
  },
  {
   "control_number": "38588",
@@ -5779,10 +5777,11 @@
     92
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5486625186ecdff9"
   },
   "listed": 13,
-  "text_chars": 5109
+  "text_chars": 5107
  },
  {
   "control_number": "38589",
@@ -5819,7 +5818,8 @@
     92
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6df36294ef8fb677"
   },
   "listed": 16,
   "text_chars": 2354
@@ -5866,10 +5866,11 @@
     93
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "65c70f09dd0ed2f3"
   },
   "listed": 20,
-  "text_chars": 11065
+  "text_chars": 11059
  },
  {
   "control_number": "38703",
@@ -5898,10 +5899,11 @@
     95
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f61de3beab62257c"
   },
   "listed": 6,
-  "text_chars": 9501
+  "text_chars": 9495
  },
  {
   "control_number": "38737",
@@ -5925,7 +5927,8 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "658f3c9c1600c8a0"
   },
   "listed": 3,
   "text_chars": 1951
@@ -5952,8 +5955,8 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=217",
-   "title": "Psychology T038883G AST Cal-GETC 20 - 20",
-   "h1": "Psychology T038883G AST Cal-GETC 20 - 20",
+   "title": "Psychology T038883G AST Cal- GETC 20 - 20",
+   "h1": "Psychology T038883G AST Cal- GETC 20 - 20",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5963,10 +5966,11 @@
     220
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f0ef39fdb6d90dda"
   },
   "listed": 11,
-  "text_chars": 12621
+  "text_chars": 12623
  },
  {
   "control_number": "38910",
@@ -5996,10 +6000,11 @@
     105
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "43f9fa8805a3cac4"
   },
   "listed": 12,
-  "text_chars": 6878
+  "text_chars": 6877
  },
  {
   "control_number": "38947",
@@ -6040,10 +6045,11 @@
     161
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1c9f0a1d50590783"
   },
   "listed": 20,
-  "text_chars": 2214
+  "text_chars": 2202
  },
  {
   "control_number": "38966",
@@ -6071,15 +6077,16 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=207",
-   "title": "History T038966G AA-T Cal-GETC 18 - 18",
-   "h1": "History T038966G AA-T Cal-GETC 18 - 18",
+   "title": "History T038966G AA-T Cal- GETC 18 - 18",
+   "h1": "History T038966G AA-T Cal- GETC 18 - 18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     207
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6441331c15540fa7"
   },
   "listed": 18,
   "text_chars": 3669
@@ -6115,10 +6122,11 @@
     174
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3f425c084914afae"
   },
   "listed": 13,
-  "text_chars": 1935
+  "text_chars": 1934
  },
  {
   "control_number": "39216",
@@ -6140,8 +6148,8 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=216",
-   "title": "Political Science T039216G AST Cal-GETC 19 - 19",
-   "h1": "Political Science T039216G AST Cal-GETC 19 - 19",
+   "title": "Political Science T039216G AST Cal- GETC 19 - 19",
+   "h1": "Political Science T039216G AST Cal- GETC 19 - 19",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6151,10 +6159,11 @@
     219
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6ce9a43a638a5dd3"
   },
   "listed": 11,
-  "text_chars": 12692
+  "text_chars": 12694
  },
  {
   "control_number": "39228",
@@ -6199,10 +6208,11 @@
     161
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1c9f0a1d50590783"
   },
   "listed": 27,
-  "text_chars": 2214
+  "text_chars": 2202
  },
  {
   "control_number": "39531",
@@ -6237,10 +6247,11 @@
     202
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "36b94bc981face96"
   },
   "listed": 15,
-  "text_chars": 7160
+  "text_chars": 7156
  },
  {
   "control_number": "39546",
@@ -6270,8 +6281,8 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=218",
-   "title": "T039546G AAT Cal-GETC 18-19 - 18-19",
-   "h1": "T039546G AAT Cal-GETC 18-19 - 18-19",
+   "title": "T039546G AAT Cal- GETC 18-19 - 18-19",
+   "h1": "T039546G AAT Cal- GETC 18-19 - 18-19",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6280,10 +6291,11 @@
     220
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "19f5d3c5f00dbd9c"
   },
   "listed": 17,
-  "text_chars": 9183
+  "text_chars": 9186
  },
  {
   "control_number": "40026",
@@ -6309,8 +6321,8 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=199",
-   "title": "Dietetics T040026H AST Cal-GETC 15 11-13 26-28",
-   "h1": "Dietetics T040026H AST Cal-GETC 15 11-13 26-28",
+   "title": "Dietetics T040026H AST Cal- GETC 15 11-13 26-28",
+   "h1": "Dietetics T040026H AST Cal- GETC 15 11-13 26-28",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6320,10 +6332,11 @@
     202
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fb1634ae00fb5dd3"
   },
   "listed": 13,
-  "text_chars": 13446
+  "text_chars": 13433
  },
  {
   "control_number": "40283",
@@ -6348,7 +6361,8 @@
     103
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3dda1eae66723708"
   },
   "listed": 4,
   "text_chars": 1629
@@ -6381,10 +6395,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9c6094e5caece0eb"
   },
   "listed": 10,
-  "text_chars": 8345
+  "text_chars": 8332
  },
  {
   "control_number": "40330",
@@ -6413,10 +6428,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e0e085b865a43acb"
   },
   "listed": 7,
-  "text_chars": 8412
+  "text_chars": 8399
  },
  {
   "control_number": "40965",
@@ -6439,7 +6455,8 @@
     228
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6d262eabbea4b7f6"
   },
   "listed": 2,
   "text_chars": 2193
@@ -6466,10 +6483,11 @@
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e67871795564bde3"
   },
   "listed": 2,
-  "text_chars": 5764
+  "text_chars": 5762
  },
  {
   "control_number": "40967",
@@ -6493,10 +6511,11 @@
     226
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9330cdaaff3e51a0"
   },
   "listed": 3,
-  "text_chars": 888
+  "text_chars": 887
  },
  {
   "control_number": "41010",
@@ -6520,10 +6539,11 @@
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1df29d18e26035d"
   },
   "listed": 3,
-  "text_chars": 4587
+  "text_chars": 4585
  },
  {
   "control_number": "41011",
@@ -6551,7 +6571,8 @@
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "56f43a7b7a53d7a8"
   },
   "listed": 10,
   "text_chars": 3045
@@ -6578,7 +6599,8 @@
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a757014e8e7f5acb"
   },
   "listed": 3,
   "text_chars": 1167
@@ -6600,30 +6622,12 @@
   "title": "Master Auto Technician (ASE 1-8 Test Prep)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.75,
-  "codes_found": [
-   "VOCED451",
-   "VOCED452",
-   "VOCED453",
-   "VOCED456",
-   "VOCED457",
-   "VOCED458"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    225
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 3344
+  "text_chars": 0
  },
  {
   "control_number": "41150",
@@ -6654,10 +6658,11 @@
     183
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "10c1f914b34ec17e"
   },
   "listed": 10,
-  "text_chars": 8538
+  "text_chars": 8525
  },
  {
   "control_number": "41754",
@@ -6685,10 +6690,11 @@
     157
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "45d3388cb3b144c9"
   },
   "listed": 6,
-  "text_chars": 8819
+  "text_chars": 8810
  },
  {
   "control_number": "41759",
@@ -6716,10 +6722,11 @@
     157
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "45d3388cb3b144c9"
   },
   "listed": 6,
-  "text_chars": 8819
+  "text_chars": 8810
  },
  {
   "control_number": "42144",
@@ -6747,10 +6754,11 @@
     134
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "92a7c8e66085fb7f"
   },
   "listed": 5,
-  "text_chars": 10351
+  "text_chars": 10336
  },
  {
   "control_number": "42296",
@@ -6776,10 +6784,11 @@
     192
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "64277a3fb2b17bbb"
   },
   "listed": 5,
-  "text_chars": 1909
+  "text_chars": 1908
  },
  {
   "control_number": "42785",
@@ -6800,8 +6809,8 @@
   ],
   "source": {
    "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104",
-   "title": "Administration 2.0 T042785H AS-T Cal-GETC 31 - 31",
-   "h1": "Administration 2.0 T042785H AS-T Cal-GETC 31 - 31",
+   "title": "Administration 2.0 T042785H AS-T Cal- GETC 31 - 31",
+   "h1": "Administration 2.0 T042785H AS-T Cal- GETC 31 - 31",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6809,7 +6818,8 @@
     105
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c4b572adc3883302"
   },
   "listed": 10,
   "text_chars": 7220
@@ -6819,28 +6829,12 @@
   "title": "English as a Second Language (ESL): Intermediate",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLNC51CE",
-   "ESLNC8CE",
-   "ESLNC9CE"
-  ],
-  "source": {
-   "url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=350",
-   "title": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "h1": "Los Angeles Trade-Technical College 2026 - 2027 GENERAL CATALOG",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    350,
-    351
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 12183
+  "text_chars": 0
  },
  {
   "control_number": "44170",
@@ -6865,7 +6859,8 @@
     231
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "86019deb1c63d4ff"
   },
   "listed": 4,
   "text_chars": 2196
@@ -6912,10 +6907,11 @@
     186
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2cecea5d12702d34"
   },
   "listed": 9,
-  "text_chars": 10523
+  "text_chars": 10514
  },
  {
   "control_number": "44345",
@@ -6947,10 +6943,11 @@
     186
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9345d194f4b8c124"
   },
   "listed": 9,
-  "text_chars": 10467
+  "text_chars": 10458
  },
  {
   "control_number": "44561",
@@ -7048,10 +7045,11 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "90e4921c153689f7"
   },
   "listed": 99,
-  "text_chars": 4152
+  "text_chars": 4148
  },
  {
   "control_number": "45321",
@@ -7084,10 +7082,11 @@
     187
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "28f7cdc9bcb2d54e"
   },
   "listed": 11,
-  "text_chars": 6636
+  "text_chars": 6628
  },
  {
   "control_number": "45377",
@@ -7115,10 +7114,11 @@
     171
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "df16d5fb13a26416"
   },
   "listed": 5,
-  "text_chars": 5878
+  "text_chars": 5866
  },
  {
   "control_number": "45459",
@@ -7162,7 +7162,8 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "dac60ae7cc2767b4"
   },
   "listed": 11,
   "text_chars": 2837
@@ -7197,7 +7198,8 @@
     173
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "70d626db4bd43b81"
   },
   "listed": 11,
   "text_chars": 2790
@@ -7239,10 +7241,11 @@
     171
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e9a68694b16c474e"
   },
   "listed": 5,
-  "text_chars": 4300
+  "text_chars": 4292
  },
  {
   "control_number": "45674",
@@ -7282,10 +7285,11 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "934ed6f052bef9fe"
   },
   "listed": 7,
-  "text_chars": 1386
+  "text_chars": 1383
  },
  {
   "control_number": "45680",
@@ -7322,10 +7326,11 @@
     226
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d8497afc90a6dbd7"
   },
   "listed": 4,
-  "text_chars": 2419
+  "text_chars": 2417
  },
  {
   "control_number": "46398",
@@ -7349,10 +7354,11 @@
     231
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3b1ddc323bf1f26b"
   },
   "listed": 3,
-  "text_chars": 2437
+  "text_chars": 2435
  },
  {
   "control_number": "46399",
@@ -7375,10 +7381,11 @@
     232
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2a3834bc645bc338"
   },
   "listed": 2,
-  "text_chars": 2151
+  "text_chars": 2149
  },
  {
   "control_number": "46498",
@@ -7406,9 +7413,10 @@
     186
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3479606b4591b9db"
   },
   "listed": 6,
-  "text_chars": 7422
+  "text_chars": 7418
  }
 ]

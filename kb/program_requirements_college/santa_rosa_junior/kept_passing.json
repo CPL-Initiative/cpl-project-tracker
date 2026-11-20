@@ -1,0 +1,569 @@
+{
+ "run": "44477690021",
+ "programs": [
+  {
+   "control_number": "13887",
+   "title": "Spanish",
+   "award": "A.A. Degree",
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=206",
+   "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=205",
+   "cost_usd": 0.0855,
+   "usage": {
+    "input_tokens": 8069,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 8069,
+      "output_tokens": 2661,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2661,
+    "output_tokens_details": {
+     "thinking_tokens": 749
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "covers_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 13,
+     "listed": 18,
+     "share": 0.722,
+     "missing": [
+      "ANTH30",
+      "ENGL25",
+      "HIST21",
+      "LIR10",
+      "SPAN50A"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 13,
+     "codes": [
+      "FREN1",
+      "FREN2",
+      "FREN3",
+      "FREN4",
+      "GERM1",
+      "GERM2",
+      "GERM3",
+      "GERM4",
+      "ITAL1",
+      "ITAL2",
+      "ITAL3",
+      "ITAL4",
+      "SPAN50C"
+     ],
+     "flagged": [
+      "FREN1",
+      "FREN2",
+      "FREN3",
+      "FREN4",
+      "GERM1",
+      "GERM2",
+      "GERM3",
+      "GERM4",
+      "ITAL1",
+      "ITAL2",
+      "ITAL3",
+      "ITAL4",
+      "SPAN50C"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      19.0,
+      19.0
+     ],
+     "stated": [
+      19.0,
+      19.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 2,
+     "courses": 0,
+     "count": 2,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 18,
+     "listed": 18,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "19288",
+   "title": "Physics",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=191",
+   "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=190",
+   "cost_usd": 0.09046,
+   "usage": {
+    "input_tokens": 9281,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 9281,
+      "output_tokens": 2667,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2667,
+    "output_tokens_details": {
+     "thinking_tokens": 1281
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "covers_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 5,
+     "listed": 11,
+     "share": 0.455,
+     "missing": [
+      "CHEM3A",
+      "CHEM3AL",
+      "LIR10",
+      "MATH2",
+      "MATHC2210",
+      "MATHC2220"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "MATH1A",
+      "MATH1B"
+     ],
+     "flagged": [
+      "MATH1A",
+      "MATH1B"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      30.0,
+      30.0
+     ],
+     "stated": [
+      30.0,
+      30.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 11,
+     "share": 0.818,
+     "missing": [
+      "MATHC2210",
+      "MATHC2220"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "MATH1A",
+      "MATH1B"
+     ],
+     "flagged": [
+      "MATH1A",
+      "MATH1B"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      40.0,
+      40.0
+     ],
+     "stated": [
+      40.0,
+      40.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [
+      "Apply physical principles from the basic subﬁelds of physics (classical mechanics, electricity and magnetism, quantum mechanics, statistical mechanics, and thermodynamics), as well as areas from application (e.g. solid state physics, optics, etc.) in advanced courses;"
+     ],
+     "why": [
+      "not in the catalog text as printed: Apply physical principles from the basic subﬁelds of physics (classical mechanic"
+     ],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": false
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   }
+  },
+  {
+   "control_number": "30635",
+   "title": "Theatre Arts",
+   "award": "A.A. Degree",
+   "source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=213",
+   "filed_source_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=212",
+   "cost_usd": 0.10754,
+   "usage": {
+    "input_tokens": 9159,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 9159,
+      "output_tokens": 3545,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3545,
+    "output_tokens_details": {
+     "thinking_tokens": 1448
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "covers_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 4,
+     "listed": 6,
+     "share": 0.667,
+     "missing": [
+      "LIR10",
+      "THAR6"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 14,
+     "codes": [
+      "ENGL11",
+      "THAR10A",
+      "THAR10B",
+      "THAR111",
+      "THAR112",
+      "THAR21A",
+      "THAR22",
+      "THAR24",
+      "THAR25",
+      "THAR253",
+      "THAR254",
+      "THAR255",
+      "THAR26",
+      "THAR28"
+     ],
+     "flagged": [
+      "ENGL11",
+      "THAR10A",
+      "THAR10B",
+      "THAR111",
+      "THAR112",
+      "THAR21A",
+      "THAR22",
+      "THAR24",
+      "THAR25",
+      "THAR253",
+      "THAR254",
+      "THAR255",
+      "THAR26",
+      "THAR28"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 8,
+     "courses": 0,
+     "count": 8,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 6,
+     "listed": 6,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "THAR10A",
+      "THAR21A"
+     ],
+     "flagged": [
+      "THAR10A",
+      "THAR21A"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      19.0,
+      19.0
+     ],
+     "stated": [
+      19.0,
+      19.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 8,
+     "courses": 0,
+     "count": 8,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  }
+ ]
+}

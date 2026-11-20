@@ -1,0 +1,175 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "40353",
+ "shape": "certificate",
+ "title": "Community Service Officer",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/administration-justice/community-service-officer-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7293,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7293,
+    "output_tokens": 1229,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1229,
+  "output_tokens_details": {
+   "thinking_tokens": 458
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05375,
+ "ms": 11066,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "AJ11",
+    "AJ120",
+    "AJ139",
+    "AJ14"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Community Service Officer Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate effective communication necessary of the Community Service Officer (CSO) or professional support personnel.",
+    "Interpret and analyze concepts and theories related to criminal law, law enforcement, Community Service Officers, and legal support staff from multiple perspectives.",
+    "Apply and integrate terminology and practices that relate to criminal law, law enforcement, Community Service Officers, and legal support staff.",
+    "Recognize the values of a multicultural society and the importance of legal, procedural, and social justice within legal and public environments.",
+    "Analyze decisions and ideological concepts that promote civility, ethical literacy, moral accountability, and public perception in a just and pluralistic society."
+   ],
+   "careers": [
+    "public safety and security",
+    "law enforcement",
+    "government",
+    "private industry",
+    "Community Service Officers (CSO)",
+    "security personnel",
+    "police explorers",
+    "ancillary legal and professional support staff"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AJ 11",
+    "why": "not in the text; the Required Courses tab content was not captured"
+   },
+   {
+    "code": "AJ 120",
+    "why": "named only in the residency/eligibility sentence; no course list or units printed"
+   },
+   {
+    "code": "AJ 139",
+    "why": "named only in the residency/eligibility sentence; no course list or units printed"
+   },
+   {
+    "code": "AJ 14",
+    "why": "not in the text; the Required Courses tab content was not captured"
+   }
+  ],
+  "notes": [
+   "The page shows a REQUIRED COURSES tab, but its content is not in the extracted text, so no blocks or total could be recorded. A reviewer should check the live page for the course list and the total units.",
+   "The overview says students must complete AJ 120 and AJ 139 at Evergreen Valley College to be eligible for the certificate. This implies both are required, but no units or block structure are printed, so they were not placed.",
+   "Program Learning Outcomes are taken from the page's outcomes tab for this certificate.",
+   "Careers include the fields named in the description ('public safety and security', 'law enforcement', 'government', 'private industry') as well as the job titles."
+  ]
+ },
+ "extracted_run": "44519542333",
+ "catalog_year": "2026-2027"
+}

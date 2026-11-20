@@ -100,7 +100,17 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": true,
+  "confidence": {
+   "unit_arithmetic": 56,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  },
+  "confidence_notes": {
+   "unit_arithmetic": "Passed by units rule A5, right on 69 of 123 held answers in its self-check."
+  }
  },
  "record": {
   "program": {

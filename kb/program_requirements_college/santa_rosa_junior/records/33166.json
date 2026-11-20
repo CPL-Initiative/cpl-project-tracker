@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7933,
+  "input_tokens": 7769,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7933,
-    "output_tokens": 3120,
+    "input_tokens": 7769,
+    "output_tokens": 2399,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3120,
+  "output_tokens": 2399,
   "output_tokens_details": {
-   "thinking_tokens": 1042
+   "thinking_tokens": 717
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09413,
- "ms": 24892,
- "seconds": 25.2,
+ "cost_usd": 0.07906,
+ "ms": 19251,
+ "seconds": 19.6,
  "parts": null,
  "error": null,
  "score": {
@@ -75,8 +75,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    6.0,
-    6.0
+    3.0,
+    3.0
    ],
    "stated": [
     18.0,
@@ -84,7 +84,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
+    "the blocks sum to 3.0-3.0; the catalog states 18.0-18.0"
    ]
   },
   "repeated": {
@@ -148,67 +148,6 @@
    "careers": []
   },
   "blocks": [
-   {
-    "name": "Select any combination totaling at least 3.00 units from the following",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "ANAT 1",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ANTH 32",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ANTH 43",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 1",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL 1L",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STAT C1000",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHSC 21",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
    {
     "name": "Anthropology for Transfer List C Requirements",
     "rule": "choose_units",
@@ -338,39 +277,59 @@
   "missing_explained": [
    {
     "code": "ANTH 2",
-    "why": "not in the text; likely in List A/B on the preceding page, which is cut off"
+    "why": "not in the text; likely in List A/B on the preceding page, which is not included"
    },
    {
     "code": "ANTH 3",
-    "why": "not in the text; likely in List A/B on the preceding page, which is cut off"
+    "why": "not in the text; likely in List A/B on the preceding page, which is not included"
    },
    {
     "code": "ANTH C1001",
-    "why": "not in the text; likely in List A on the preceding page, which is cut off"
-   },
-   {
-    "code": "PSYC 1B",
-    "why": "not in the text; likely in List B on the preceding page, which is cut off"
-   },
-   {
-    "code": "SOC 5",
-    "why": "not in the text; likely in List B on the preceding page, which is cut off"
+    "why": "not in the text; likely in List A on the preceding page, which is not included"
    },
    {
     "code": "ANTH C1001L",
-    "why": "not printed under this code; catalog prints ANTH 1L Biological Anthropology Lab in List C, likely the same course"
+    "why": "not printed under this code; List C prints 'ANTH 1L Biological Anthropology Lab', recorded as printed and likely the same course"
+   },
+   {
+    "code": "PSYC 1B",
+    "why": "not in the text; likely in List B on the preceding page, which is not included"
+   },
+   {
+    "code": "SOC 5",
+    "why": "not in the text; likely in List B on the preceding page, which is not included"
    }
   ],
   "notes": [
-   "The text begins mid-section on page 113: the program heading (Anthropology AA-T), description, degree requirements text and List A, plus the heading of the first list shown (likely List B), are on the preceding page and not in the text. The first block's name uses its printed selection sentence since its heading is cut off.",
-   "No units are printed beside individual courses; all course units are null.",
-   "GEOL 1 & 1L is printed as one combined entry (The Earth and Geology Lab); recorded as two entries GEOL 1 and GEOL 1L that are taken together.",
-   "STAT C1000 is printed as 'STAT 1000 (STAT C1000)'; recorded under the common course number.",
-   "ANTH 1L (Biological Anthropology Lab) is not in the closed list and is flagged as a catalog addition; it likely corresponds to ANTH C1001L.",
-   "Catalog note: a course used to satisfy one category (List A, B, or C) cannot also satisfy another.",
-   "Total Hours/Units 18 recorded as total_units. The 60-unit/Cal-GETC text visible on the page belongs to the Architecture (AS) section, so degree_total and ge_pattern are left null for this award.",
-   "Program Student Learning Outcomes recorded from the outcomes list printed at the end of the Anthropology section."
+   "The text begins mid-section with List C on page 113; the program heading, description, and List A and List B requirements are on the preceding page and are not included, so only List C is recorded.",
+   "No units are printed beside individual List C courses; units left null.",
+   "ANTH 1L is printed with title 'Biological Anthropology Lab' and is not on the closed list; it likely corresponds to closed-list ANTH C1001L (renumbered).",
+   "STAT C1000 is printed as 'STAT 1000 (STAT C1000)'; recorded as STAT C1000 to match the closed list.",
+   "GEOL 1 & 1L is printed as a paired option (The Earth and Geology Lab); recorded as two entries, but they appear to be taken together as one choice.",
+   "Total Hours/Units 18 recorded as total_units (major total). No degree total or GE pattern is printed in the Anthropology section; the Cal-GETC/60-unit text belongs to the following Architecture (AS) section.",
+   "Notes: a course used in one category (List A, B, or C) cannot also satisfy another category.",
+   "Program Student Learning Outcomes are printed for the Anthropology for Transfer program and recorded for this award."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "44477690021",
+ "catalog_year": "2026-2027",
+ "source_sha": "5e345dc7ae5da1a1",
+ "source_codes": [
+  "ANAT1",
+  "ANTH19",
+  "ANTH21",
+  "ANTH30",
+  "ANTH31",
+  "ANTH32",
+  "ANTH34",
+  "ANTH4",
+  "ANTH42",
+  "ANTH43",
+  "ANTH5",
+  "GEOL1",
+  "GEOL1L",
+  "PHSC21",
+  "STATC1000"
+ ],
+ "source_coverage": 0.714
 }

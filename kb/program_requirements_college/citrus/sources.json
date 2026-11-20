@@ -37,7 +37,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.966,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT101H",
@@ -57,6 +57,7 @@
    "BUS175",
    "BUS185",
    "BUS192",
+   "ECON101H",
    "ECONC2001",
    "ECONC2002",
    "ITIS130",
@@ -482,12 +483,38 @@
   "title": "Criminal Justice",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ105",
+   "AJ109",
+   "AJ112",
+   "AJ121",
+   "AJ130",
+   "AJ131",
+   "AJ135",
+   "AJ136",
+   "AJ137",
+   "AJ150"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-as/",
+   "title": "A.S. in Criminal Justice | Citrus College Academic Catalog",
+   "h1": "A.S. in Criminal Justice",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in criminal justice",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 6286
  },
  {
   "control_number": "02357",
@@ -499,7 +526,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "02362",
@@ -925,40 +956,12 @@
   "title": "Child Develop. Master Teacher: Early Intervention Specialty",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CHLD110",
-   "CHLD112",
-   "CHLD114",
-   "CHLD120",
-   "CHLD150",
-   "CHLD154",
-   "CHLD156",
-   "CHLD156L",
-   "CHLD160",
-   "CHLD164",
-   "CHLD166",
-   "CHLD168",
-   "CHLD169",
-   "CHLD194",
-   "PSY206"
-  ],
-  "source": {
-   "url": "https://catalog.citruscollege.edu/disciplines/child-development/",
-   "title": "Child Development | Citrus College Academic Catalog",
-   "h1": "Child Development",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.143,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 16839
+  "text_chars": 0
  },
  {
   "control_number": "11242",
@@ -1121,7 +1124,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "14643",
@@ -1422,7 +1429,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.989,
+  "coverage": 1.0,
   "codes_found": [
    "ARCH250",
    "ARCH251",
@@ -1467,6 +1474,7 @@
    "HIST103H",
    "HIST104",
    "HIST104H",
+   "HIST107H",
    "HIST109",
    "HIST111",
    "HIST112",
@@ -1761,12 +1769,41 @@
   "title": "Criminal Justice",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ105",
+   "AJ109",
+   "AJ112",
+   "AJ121",
+   "AJ130",
+   "AJ131",
+   "AJ135",
+   "AJ136",
+   "AJ137",
+   "AJ150",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/criminal-justice-certificate-achievement/",
+   "title": "Certificate in Criminal Justice | Citrus College Academic Catalog",
+   "h1": "Certificate in Criminal Justice",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 5096
  },
  {
   "control_number": "20038",
@@ -1935,7 +1972,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30365",
@@ -2369,12 +2410,39 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ105",
+   "AJ109",
+   "AJ112",
+   "AJ121",
+   "AJ131",
+   "AJ135",
+   "AJ136",
+   "AJ137",
+   "PHIL110",
+   "PSYCC1000",
+   "SOC201"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/administration-justice-adt/",
+   "title": "ADT in Administration of Justice | Citrus College Academic Catalog",
+   "h1": "ADT in Administration of Justice",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 6922
  },
  {
   "control_number": "30940",
@@ -2483,86 +2551,24 @@
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.969,
-  "codes_found": [
-   "ENGL202",
-   "ENGL204",
-   "ENGL210",
-   "ENGL213",
-   "ENGL213H",
-   "ENGL216",
-   "ENGL224",
-   "ENGL224H",
-   "ENGL233",
-   "ENGL243",
-   "ENGL251",
-   "ENGL252",
-   "ENGL261",
-   "ENGL262",
-   "ENGL271",
-   "ENGL272",
-   "ENGL280",
-   "ENGL290",
-   "ENGL291",
-   "ENGL291H",
-   "ENGL293",
-   "ENGL293H",
-   "ENGL294",
-   "ENGL294H",
-   "ENGL295",
-   "ENGL298",
-   "ENGLC1001",
-   "ENGLC1001H",
-   "ENGLC1002",
-   "ENGLC1003",
-   "ENGLC1003H"
-  ],
-  "source": {
-   "url": "https://catalog.citruscollege.edu/disciplines/english/",
-   "title": "English | Citrus College Academic Catalog",
-   "h1": "English",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 32,
-  "text_chars": 16418
+  "text_chars": 0
  },
  {
   "control_number": "31431",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MATH191",
-   "MATH210",
-   "PHYS201",
-   "PHYS202",
-   "PHYS203"
-  ],
-  "source": {
-   "url": "https://catalog.citruscollege.edu/disciplines/physics/",
-   "title": "Physics | Citrus College Academic Catalog",
-   "h1": "Physics",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 8079
+  "text_chars": 0
  },
  {
   "control_number": "31539",
@@ -2603,7 +2609,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.971,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH210",
    "ANTH210H",
@@ -2613,6 +2619,7 @@
    "HIST103",
    "HIST103H",
    "HIST104",
+   "HIST107H",
    "HIST109",
    "HIST111",
    "HIST112",
@@ -2767,9 +2774,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - beginning",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2794,9 +2801,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - intermediate",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2822,9 +2829,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - program completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2840,7 +2847,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "33165",
@@ -2934,12 +2945,37 @@
   "title": "Correctional Science",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ109",
+   "AJ112",
+   "AJ131",
+   "AJ135",
+   "AJ136",
+   "AJ137",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-certificate-achievement/",
+   "title": "Certificate in Correctional Science | Citrus College Academic Catalog",
+   "h1": "Certificate in Correctional Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3705
  },
  {
   "control_number": "33350",
@@ -2976,12 +3012,34 @@
   "title": "Correctional Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ109",
+   "AJ112",
+   "AJ131",
+   "AJ135",
+   "AJ136",
+   "AJ137"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/administration-justice/correctional-science-as/",
+   "title": "A.S. in Correctional Science | Citrus College Academic Catalog",
+   "h1": "A.S. in Correctional Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in correctional science",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 5174
  },
  {
   "control_number": "33602",
@@ -3264,18 +3322,22 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
+   "BUS152",
    "ITIS104",
    "ITIS107",
    "ITIS115",
-   "ITIS141"
+   "ITIS119",
+   "ITIS141",
+   "ITIS150",
+   "ITIS168"
   ],
   "source": {
    "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
    "title": "Certificate in Website Development | Citrus College Academic Catalog",
    "h1": "Certificate in Website Development",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0,
@@ -3285,7 +3347,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4666
+  "text_chars": 5289
  },
  {
   "control_number": "35453",
@@ -3293,7 +3355,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.945,
+  "coverage": 0.982,
   "codes_found": [
    "ANTH210",
    "ANTH210H",
@@ -3303,6 +3365,7 @@
    "ANTH224",
    "COMMC1000",
    "COMMC1000H",
+   "ECON101H",
    "ECONC2002",
    "ENGL216",
    "ENGL272",
@@ -3317,6 +3380,7 @@
    "HIST103H",
    "HIST104",
    "HIST104H",
+   "HIST107H",
    "HIST109",
    "HIST130",
    "HIST131",
@@ -4129,7 +4193,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "37814",
@@ -4150,9 +4218,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - pronunciation",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4177,9 +4245,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - intermediate grammar",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4204,9 +4272,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - computer literacy",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4231,9 +4299,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - beginning grammar",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4466,9 +4534,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in workforce readiness",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4493,9 +4561,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in business information worker",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4511,7 +4579,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "40287",
@@ -4523,7 +4595,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "40288",
@@ -4535,7 +4611,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 172 of 175 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "40436",
@@ -4908,9 +4988,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in business entrepreneurship",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4970,9 +5050,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in medical terminology",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4984,7 +5064,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT101H",
@@ -4992,6 +5072,7 @@
    "ACCT102H",
    "BUS152",
    "BUS160",
+   "ECON101H",
    "ECONC2001",
    "ECONC2002",
    "MATH180",
@@ -5056,7 +5137,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.977,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT100",
    "ACCT111",
@@ -5085,6 +5166,7 @@
    "BUS175",
    "BUS185",
    "BUS192",
+   "ECON101H",
    "ECONC2001",
    "ECONC2002",
    "ITIS104",
@@ -5123,7 +5205,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.987,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT100",
    "ACCT110",
@@ -5163,6 +5245,7 @@
    "BUS185",
    "BUS192",
    "CHIN101",
+   "ECON101H",
    "ECONC2001",
    "ECONC2002",
    "ENGLC1000",
@@ -5240,9 +5323,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of completion in small business management",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5267,9 +5350,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of completion in introduction to automotive service",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5295,9 +5378,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - noncredit to credit transition",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5323,9 +5406,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of completion in introduction to american sign language (asl)",
+    "section_fit": 0.8
    }
   },
   "listed": 3,
@@ -5351,9 +5434,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of completion in introduction to careers in health",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5409,9 +5492,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in human resources management",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5437,9 +5520,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in drone technology",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5451,7 +5534,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.963,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT101",
    "ACCT101H",
@@ -5472,6 +5555,7 @@
    "BUS152",
    "BUS160",
    "BUS160H",
+   "ECON101H",
    "ECONC2001",
    "ECONC2002",
    "MATH180",
@@ -5807,7 +5891,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 0.889,
   "codes_found": [
    "CHLD100",
    "COMMC1000",
@@ -5818,6 +5902,7 @@
    "GEOG102",
    "HIST103",
    "HIST103H",
+   "HIST107H",
    "HISTC1001",
    "MATH168",
    "PHYS110",
@@ -5917,7 +6002,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.939,
+  "coverage": 1.0,
   "codes_found": [
    "AJ101",
    "AJ102",
@@ -5931,11 +6016,13 @@
    "COMM104",
    "COMMC1000",
    "COUN160",
+   "ECON101H",
    "ECONC2001",
    "ECONC2002",
    "ENGLC1000",
    "ENGLC1001",
    "GEOG103",
+   "HIST107H",
    "HISTC1001",
    "HISTC1002",
    "HISTC1002H",
@@ -6042,9 +6129,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in basic-still life and portrait drawing for older adults",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -6201,7 +6288,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.979,
+  "coverage": 0.987,
   "codes_found": [
    "AJ101",
    "AJ102",
@@ -6274,6 +6361,7 @@
    "COUN130",
    "COUN212",
    "DANC102",
+   "ECON101H",
    "ECONC2001",
    "ECONC2002",
    "ENGL204",
@@ -6332,6 +6420,7 @@
    "HIST103H",
    "HIST104",
    "HIST104H",
+   "HIST107H",
    "HIST109",
    "HIST111",
    "HIST112",
@@ -6649,9 +6738,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in drone operations",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6705,9 +6794,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in english as a second language - grammar completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6734,9 +6823,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in medical front office clerk",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -6761,9 +6850,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in life skills",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -6789,9 +6878,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in entry level healthcare skills",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6816,9 +6905,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "certificate of competency in health and wellness for healthcare",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -7074,12 +7163,13 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.944,
+  "coverage": 1.0,
   "codes_found": [
    "CS225",
    "CS232",
    "CS242",
    "CS252",
+   "ECON101H",
    "ECONC2001",
    "ECONC2002",
    "MATH190",

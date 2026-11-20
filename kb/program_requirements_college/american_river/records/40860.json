@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Sheet Metal Apprenticeship Level I",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=215",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8037,
+  "input_tokens": 11359,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8037,
-    "output_tokens": 833,
+    "input_tokens": 11359,
+    "output_tokens": 992,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 833,
+  "output_tokens": 992,
   "output_tokens_details": {
-   "thinking_tokens": 442
+   "thinking_tokens": 286
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04881,
- "ms": 8747,
- "seconds": 9.4,
+ "cost_usd": 0.06528,
+ "ms": 12338,
+ "seconds": 12.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 3,
-   "share": 0.0,
-   "missing": [
-    "SHME100",
-    "SHME101",
-    "SHME298"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -65,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    11.0,
+    11.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    11.0,
+    11.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text prints no section for the Sheet Metal Apprenticeship Level I Certificate of Achievement",
+   "section_heading": "Sheet Metal Apprenticeship Level I Certificate",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 11,
+    "max": 11
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -124,26 +121,80 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "analyze and avoid unsafe conditions and unsafe acts, and observe safety laws and regulations.",
+    "describe general Occupational Safety & Health Administration (OSHA) and Environmental Protection Agency (EPA) requirements on construction job sites.",
+    "demonstrate basic drafting skills and use of drafting tools.",
+    "demonstrate proper soldering on sheet metal fabrication.",
+    "identify and define plan view, elevation view and develop a profile in a sheet metal layout project."
+   ],
+   "careers": [
+    "Sheet metal technicians"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "SHME 100",
-    "why": "Level I certificate section not in the text; named only in the A.A. Sheet Metal Apprenticeship and A.A. Sheet Metal Service Technician Apprenticeship sections"
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SHME 100",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SHME 101",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "SHME 101",
-    "why": "Level I certificate section not in the text; named only in the A.A. Sheet Metal Apprenticeship and A.A. Sheet Metal Service Technician Apprenticeship sections"
-   },
-   {
-    "code": "SHME298",
-    "why": "Level I certificate section not in the text; SHME 298 named only in the A.A. sections (minimum of 16 units, 0.5-6 per enrollment)"
+    "name": "A minimum of 4 units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SHME 298",
+      "units": 0.5,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list writes SHME298 without a space; the catalog prints SHME 298. Treated as the same closed-list course (catalog_addition false).",
+   "SHME 298 is a variable-unit course (0.5 - 6); the block requires a minimum of 4 units of it.",
+   "Enrollment requires being a registered sheet metal apprentice.",
+   "The page goes on to Level II-IV and Service Technician certificates; only the Level I section was read."
+  ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "8a579e4e064e5f10",
+ "source_codes": [
+  "SHME100",
+  "SHME101",
+  "SHME298"
+ ],
+ "source_coverage": 1.0
 }

@@ -188,6 +188,14 @@ check("7 on curriQunet the census opens the dashboard at the host's root, where 
                         "https://x.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7?entityType=Course&reportId=4"]
       and got["verdict"] in ("outline_with_slos", "slos") and got["slo"], (cq.loaded, got))
 
+# 8. --only takes several colleges in one run (S683), and one part still works as before.
+check("8 --only keeps every college a comma-separated part names, and no other",
+      cor.only_matches("Fullerton College", "Fullerton,Grossmont, Southwestern")
+      and cor.only_matches("Southwestern College", "Fullerton,Grossmont, Southwestern")
+      and cor.only_matches("North Orange Continuing Education", "north orange")
+      and not cor.only_matches("Chabot College", "Fullerton,Grossmont")
+      and cor.only_matches("Chabot College", "") and cor.only_matches("Chabot College", " , "))
+
 # 5. Nothing writes.
 src = open(os.path.join(ROOT, "kb", "_course_outline_census.py")).read()
 check("5 the pass reads the registry and writes no table (no POST, PATCH or rpc)",

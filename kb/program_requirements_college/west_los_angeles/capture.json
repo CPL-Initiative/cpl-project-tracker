@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 245,
  "with_closed_list": 228,
- "started": "2026-10-21T03:13:49Z",
+ "started": "2026-11-19T07:25:28Z",
  "pdf": {
   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
   "access": "ok",
@@ -14,12 +14,19 @@
   "pages_total": 358,
   "error": null,
   "chars_total": 1540542,
-  "pypdf_accepted": 222,
+  "pypdf_accepted": 223,
   "sample": [
    "p108: 'CREDIT PROGRAMS: DEGREES & CERTIFICATES \\nWest Los Angeles College 2026-2027 Catalog  107 \\nFLM PRD 200 Introduction to Adobe  \\n Photoshop ............................... 3 \\nFLM PRD 202 Visual Effects and  \\n Motion Graphics ..................'",
    "p215: 'CREDIT COURSE LISTINGS & DESCRIPTIONS \\nWest Los Angeles College 2026-2027 Catalog  214 \\nPrerequisite: ANATOMY001, and CHEM 051 or CHEM 060 or \\nCHEM 101 \\nThis course presents the biochemical and biophysical \\nprinciples underlying the physiol'"
   ],
   "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
   "picks": [
    {
     "control_number": "03304",
@@ -127,18 +134,6 @@
     "titled": true,
     "coverage": 0.875,
     "opens": "[page 69] ACADEMIC PROGRAM CODE: W003314C The Associate of Arts degree in Drawing and Painting is designed for students intending to enter the fields of design, illustration, art history, and art education. Students"
-   },
-   {
-    "control_number": "03317",
-    "pages": [
-     125
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 125] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 124 BUS 005 Business Law I ........................................ 3 Area 3: ECON C2001* Principles of Microeconomics ."
    },
    {
     "control_number": "03326",
@@ -437,21 +432,6 @@
     "opens": "[page 126] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 125 • MUSIC 101, 111 • PHILOS 001, 020, 033, 041 • THEATER 100 • SPANISH 001, 002 Total Elective Units ............."
    },
    {
-    "control_number": "19524",
-    "pages": [
-     179,
-     180,
-     181,
-     182
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.846,
-    "opens": "[page 179] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 178 An examination of information systems and their role in business. Focus on information systems, database management sys"
-   },
-   {
     "control_number": "19525",
     "pages": [
      90,
@@ -465,21 +445,6 @@
     "titled": true,
     "coverage": 0.636,
     "opens": "[page 90] ACADEMIC PROGRAM CODE: W019525D The Network and Information Security Management Certificate of Achievement program prepares individuals for employment in the Information Technology field in such positions "
-   },
-   {
-    "control_number": "19526",
-    "pages": [
-     179,
-     180,
-     181,
-     182
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.929,
-    "opens": "[page 179] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 178 An examination of information systems and their role in business. Focus on information systems, database management sys"
    },
    {
     "control_number": "19601",
@@ -535,36 +500,6 @@
     "titled": true,
     "coverage": 0.75,
     "opens": "[page 106] ACADEMIC PROGRAM CODE: W019709D The Certificate of Achievement in Film/TV Production Crafts provides education and training in essential entry-level skills in the arts, crafts, and technicians’ department"
-   },
-   {
-    "control_number": "19847",
-    "pages": [
-     179,
-     180,
-     181,
-     182
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.882,
-    "opens": "[page 179] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 178 An examination of information systems and their role in business. Focus on information systems, database management sys"
-   },
-   {
-    "control_number": "19848",
-    "pages": [
-     179,
-     180,
-     181,
-     182
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.875,
-    "opens": "[page 179] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 178 An examination of information systems and their role in business. Focus on information systems, database management sys"
    },
    {
     "control_number": "20229",
@@ -701,18 +636,6 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 110] ACADEMIC PROGRAM CODE: W023062D The Certificate of Achievement in Fire Technology is designed for students who are looking for instruction with a high degree of specialization to enhance professional dev"
-   },
-   {
-    "control_number": "24160",
-    "pages": [
-     263
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 263] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 262 learning to cope with the challenges of time management, discovering personal learning styles, identifying available resources, "
    },
    {
     "control_number": "24190",
@@ -922,17 +845,15 @@
    {
     "control_number": "32935",
     "pages": [
-     78,
-     79,
-     80,
-     81
+     97,
+     98
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 78] associate in science transfer degree in Early Childhood Education. Credit for child development courses taken outside of the LACCD shall be determined by the Division Chair. Transcripts from institutions "
+    "opens": "[page 97] The Associate in Science in Early Childhood Education for Transfer (AS-T) is a degree that provides a solid lower-division preparation for students who intend to transfer to a California State University (CS"
    },
    {
     "control_number": "32972",
@@ -1459,18 +1380,6 @@
     "opens": "[page 101] ACADEMIC PROGRAM CODE: W037864C The Associate of Science degree in Engineering: Civil Track provides students with the lower division course work required to transfer to most four-year colleges and univer"
    },
    {
-    "control_number": "37983",
-    "pages": [
-     243
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 243] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 242 Elective Courses (choose one from the following) VOC ED 252CE Exploration of Construction and Maintenance Careers ..........."
-   },
-   {
     "control_number": "38289",
     "pages": [
      248
@@ -1555,16 +1464,16 @@
     "opens": "[page 236] ACADEMIC PROGRAM CODE: W038624F (108-216 hours) The ESL Fundamentals III certificate program prepares English language learners to achieve low-advanced / advanced level English competencies in writing in"
    },
    {
-    "control_number": "38647",
+    "control_number": "38677",
     "pages": [
-     180
+     236
     ],
-    "named": false,
+    "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 0.5,
-    "opens": "[page 180] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 179 CIS 148 Introduction to Web Development Using HTML5 CSS (3) CSU This course teaches students to build web pages using "
+    "opens": "[page 236] ACADEMIC PROGRAM CODE: W038677F (72 – 216 hours hours) This ESL Pathways Certificate of Competency develops students’ skills and confidence in preparation to bridge to college credit ESL coursework. Pro"
    },
    {
     "control_number": "38719",
@@ -1774,18 +1683,6 @@
     "opens": "[page 226] ACADEMIC PROGRAM CODE: W039509E (6-18 hours) The 21st Century Employability Skills: Diversity Awareness and Collaboration certificate program prepares students with the necessary skills and training in the"
    },
    {
-    "control_number": "39510",
-    "pages": [
-     255
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 255] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 254 BSICSKL 109CE 21st Century Employability Skills: Analysis/Solution Mindset (9 hours) (P/NP/SP Option) This course is the part of"
-   },
-   {
     "control_number": "39511",
     "pages": [
      227
@@ -1808,19 +1705,6 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 246] ACADEMIC PROGRAM CODE: W039618E (9-18 hours) The Real Estate Supervisory/Trainee Appraiser Licensing certificate prepare students to complete the educational requirements for various Real Estate Appraisa"
-   },
-   {
-    "control_number": "40106",
-    "pages": [
-     113,
-     114
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 113] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 112 Cal-GETC GE Units (less double-counted) ................. 24-25 CSU-transferable Elective Units ......................"
    },
    {
     "control_number": "40202",
@@ -2229,20 +2113,6 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 132] ACADEMIC PROGRAM CODE: W043483D The Fundamentals of Medical Assisting Certificate of Achievement is part of a CTE-stackable certificate program that introduces students to the healthcare field of medical"
-   },
-   {
-    "control_number": "43507",
-    "pages": [
-     93,
-     94,
-     95
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 0.667,
-    "opens": "[page 93] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 92 4. Understand database services and features offered by AWS 5. Understand network technologies offered by AWS 6. Under"
    },
    {
     "control_number": "43570",
@@ -2732,14 +2602,15 @@
    {
     "control_number": "45685",
     "pages": [
-     209
+     134,
+     135
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.9,
-    "opens": "[page 209] CREDIT COURSE LISTINGS & DESCRIPTIONS West Los Angeles College 2026-2027 Catalog 208 understanding of the actions, side effects, and adverse reactions of different drugs. NRS-HCA 082A Psychology in Vocati"
+    "coverage": 1.0,
+    "opens": "[page 134] LICENSED VOCATIONAL NURSING (CA) MAJOR CODE: 1230.20 ACADEMIC PROGRAM CODE: W045685D The purpose of the Licensed Vocational Nursing Program is to prepare students to apply for a License Vocational Nurse "
    },
    {
     "control_number": "45719",
@@ -2817,18 +2688,6 @@
     "titled": true,
     "coverage": 0.938,
     "opens": "[page 116] CREDIT PROGRAMS: DEGREES & CERTIFICATES West Los Angeles College 2026-2027 Catalog 115 HEALTH SCIENCE (AS) MAJOR CODE: 1260.00 ACADEMIC PROGRAM CODE: W033861C The Associate of Science degree in Health"
-   },
-   {
-    "control_number": "46261",
-    "pages": [
-     266
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 266] NONCREDIT PROGRAMS & COURSES West Los Angeles College 2026-2027 Catalog 265 managers play in planning, organizing, leading and motivating teams. VOC ED 940CE Personal Care Aide I (90 hours) NDA This Pers"
    },
    {
     "control_number": "46438",
@@ -2910,6 +2769,12 @@
     "opens": "[page 100] ACADEMIC PROGRAM CODE: W046550G Students completing the Associate in Arts in Elementary Teacher Education: Integrated Programs will have satisfied the lower division major preparation for bachelor’s degre"
    }
   ],
+  "page_checks": {
+   "read": 14,
+   "own_page": 3,
+   "no_own_page": 11,
+   "not_printed": 0
+  },
   "unproven": [
    "35058",
    "35064",
@@ -2922,12 +2787,14 @@
   ]
  },
  "loads": 1,
- "seconds": 93.6,
- "found": 214,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 138.8,
+ "found": 203,
  "by_method": {
   "no_closed_list": 17,
-  "not_found": 14,
-  "pdf_pages": 214
+  "not_found": 25,
+  "pdf_pages": 203
  },
  "shared_pages": {
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62": [
@@ -2945,10 +2812,6 @@
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69": [
    "03314",
    "33024"
-  ],
-  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125": [
-   "03317",
-   "19431"
   ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76": [
    "03326",
@@ -2970,10 +2833,6 @@
    "08603",
    "35761"
   ],
-  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78": [
-   "08607",
-   "32935"
-  ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63": [
    "16828",
    "20260"
@@ -2993,12 +2852,6 @@
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130": [
    "19283",
    "31478"
-  ],
-  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179": [
-   "19524",
-   "19526",
-   "19847",
-   "19848"
   ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90": [
    "19525",
@@ -3042,7 +2895,6 @@
   ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243": [
    "24228",
-   "37983",
    "39038",
    "44587",
    "46447"
@@ -3075,6 +2927,10 @@
    "43483",
    "46522"
   ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=97": [
+   "32935",
+   "43694"
+  ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117": [
    "32976",
    "36268"
@@ -3101,7 +2957,6 @@
   ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113": [
    "33893",
-   "40106",
    "40810",
    "42249"
   ],
@@ -3130,6 +2985,7 @@
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236": [
    "37830",
    "38624",
+   "38677",
    "38719"
   ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151": [
@@ -3195,10 +3051,6 @@
    "42485",
    "42558"
   ],
-  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93": [
-   "43507",
-   "44613"
-  ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94": [
    "43749",
    "43762"
@@ -3215,6 +3067,10 @@
    "44444",
    "45655"
   ],
+  "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134": [
+   "45277",
+   "45685"
+  ],
   "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233": [
    "45283",
    "45312"
@@ -3226,13 +3082,80 @@
  },
  "not_found": [
   {
+   "control_number": "03317",
+   "title": "French",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
    "control_number": "15011",
    "title": "Computer Application Office Technology-Legal Secretary",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
     "coverage": 0.444
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19524",
+   "title": "Business Application & Database Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19526",
+   "title": "Web Support & Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19847",
+   "title": "Computer Web Support & Database Administration",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19848",
+   "title": "Computer Web Support & Database Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24160",
+   "title": "Healthcare Careers Preparation Certificate of Completion",
+   "award": null,
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "35058",
@@ -3244,7 +3167,8 @@
     ],
     "coverage": 0.875,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "35064",
@@ -3256,7 +3180,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "35079",
@@ -3268,7 +3193,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36842",
@@ -3280,31 +3206,51 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37264",
    "title": "Workplace Success I: Creative Leadership",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "37276",
    "title": "Workplace Success II: Creativity and Innovation in the Workplace",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "37833",
    "title": "Workforce Preparation and Career Success",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
-   "control_number": "38677",
-   "title": "ESL Pathways",
+   "control_number": "37983",
+   "title": "Employment Readiness",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38647",
+   "title": "Mobile Application Development Essentials",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "39049",
@@ -3316,7 +3262,30 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39510",
+   "title": "21st Century Employability Skills: Empathy and Adaptability",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40106",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "41466",
@@ -3325,7 +3294,8 @@
    "near_miss": {
     "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
     "coverage": 0.25
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "43074",
@@ -3337,7 +3307,19 @@
     ],
     "coverage": 0.667,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43507",
+   "title": "Data Analytics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "44669",
@@ -3349,7 +3331,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "45276",
@@ -3361,2161 +3344,883 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46261",
+   "title": "Spanish for the Workplace Fundamentals",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=47",
+    "coverage": 0.0
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 25,
-  "0.8-1.0": 41,
-  "1.0": 148
+  "0.5-0.8": 20,
+  "0.8-1.0": 36,
+  "1.0": 147
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 214,
+  "against": "kb/program_requirements_college/west_los_angeles",
+  "kept": 200,
+  "kept_moved": 0,
+  "programs": 3,
   "list": [
-   {
-    "control_number": "03304",
-    "title": "Business",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03305",
-    "title": "Accounting",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03307",
-    "title": "Marketing",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03308",
-    "title": "Real Estate",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=145",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03310",
-    "title": "Computer Science Information Technology",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=91",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03311",
-    "title": "Kinesiology",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=123",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03313",
-    "title": "Aviation Maintenance Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03314",
-    "title": "Art-Drawing & Painting",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03317",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03326",
-    "title": "Chemistry",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03328",
-    "title": "Administration of Justice",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03329",
-    "title": "Anthropology",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03330",
-    "title": "Economics",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03331",
-    "title": "History",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=118",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03333",
-    "title": "Political Science",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03334",
-    "title": "Sociology",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=155",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "03336",
-    "title": "Paralegal",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=135",
-    "coverage": 0.952,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08599",
-    "title": "Management: Small Business",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08603",
-    "title": "Airframe Maintenance Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08604",
-    "title": "Aircraft Power Plant Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08605",
-    "title": "Art- Ceramics",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=68",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "08607",
-    "title": "Child Development",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16585",
-    "title": "Computer Network Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=89",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16828",
-    "title": "Addiction Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17111",
-    "title": "Computer Network & Security Management",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17282",
-    "title": "Hospitality",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17283",
-    "title": "Hospitality Hotel Front Desk & Back Office Operations",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17284",
-    "title": "Hospitality Hotel Sales & Marketing",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19283",
-    "title": "Mathematics",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19431",
-    "title": "Liberal Arts & Sciences Arts & Humanities",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125",
-    "coverage": 0.956,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19433",
-    "title": "Liberal Arts & Sciences  Health Professions",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=126",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19524",
-    "title": "Business Application & Database Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19525",
-    "title": "Network & Information System Security",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
-    "coverage": 0.636,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19526",
-    "title": "Web Support & Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19601",
-    "title": "Pharmacy Technician Basic",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19602",
-    "title": "Pharmacy Technician Advanced",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19603",
-    "title": "Pharmacy Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19709",
-    "title": "Film & TV  Production Crafts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19847",
-    "title": "Computer Web Support & Database Administration",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
-    "coverage": 0.882,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19848",
-    "title": "Computer Web Support & Database Administration",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=179",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20229",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20230",
-    "title": "Management: Small Business",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20234",
-    "title": "Computer Science Information Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=92",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20236",
-    "title": "Computer Network & Security Mgmt.",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20247",
-    "title": "Child Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20256",
-    "title": "Hospitality",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=120",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20258",
-    "title": "Paralegal",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20260",
-    "title": "Addiction Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23061",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "23062",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24160",
-    "title": "Healthcare Careers Preparation Certificate of Completion",
-    "award": null,
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=263",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24190",
-    "title": "Choosing Business Careers Certificate of Completion",
-    "award": null,
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24200",
-    "title": "Business Tools Certificate of Completion",
-    "award": null,
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24227",
-    "title": "Communicating in Business Certificate of Completion",
-    "award": null,
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24228",
-    "title": "Job Readiness Skills",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24296",
-    "title": "In-Home Supportive Services Provider",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24298",
-    "title": "Healthcare Services Certificate of Completion",
-    "award": null,
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "24301",
-    "title": "Pre-Nursing Career Preparation Certificate of Completion",
-    "award": null,
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30369",
-    "title": "The Foundation of English Skills",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30421",
-    "title": "Healthcare Career Discovery Certificate of Completion",
-    "award": null,
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31010",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=144",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31011",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=64",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31478",
-    "title": "Medical Assisting",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31479",
-    "title": "Medical Assisting - Administrative",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31480",
-    "title": "Medical Assisting - Clinical",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31481",
-    "title": "Medical Assisting - Administrative and Clinical",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32887",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "32935",
     "title": "Early Childhood Education",
     "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32972",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32976",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32977",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32982",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32990",
-    "title": "ANTHROPOLOGY",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33024",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33448",
-    "title": "IGETC - General Education",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277",
-    "coverage": 0.77,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33520",
-    "title": "CSU General Education (CSU-GE-Breadth)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277",
-    "coverage": 0.732,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33554",
-    "title": "Foundation for Academic Success II",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33568",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=140",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33759",
-    "title": "Foundation for Academic Success I",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33794",
-    "title": "DENTAL ASSISTANT",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33798",
-    "title": "Dental Assistant",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33861",
-    "title": "Health Science",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33893",
-    "title": "Global Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35053",
-    "title": "Paramedicine",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=137",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35281",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35320",
-    "title": "Custodial Technician Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35761",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36268",
-    "title": "Public Health Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36801",
-    "title": "College Readiness",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36925",
-    "title": "Paramedic",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37003",
-    "title": "LAW, PUBLIC POLICY AND SOCIETY",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=124",
-    "coverage": 0.964,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37026",
-    "title": "CLIMATE CHANGE AND ENVIRONMENTAL STUDIES",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37029",
-    "title": "ELEMENTARY TEACHER EDUCATION",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100",
-    "coverage": 0.737,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37050",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122",
-    "coverage": 0.792,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37251",
-    "title": "Administrative Assistant",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37830",
-    "title": "Facilities Management",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37832",
-    "title": "Conservation Studies",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37834",
-    "title": "College Readiness for the English Language Learner",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37838",
-    "title": "REAL ESTATE APPRAISER I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=149",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37839",
-    "title": "Real Estate Salesperson",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37859",
-    "title": "REAL ESTATE BROKER",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37860",
-    "title": "REAL ESTATE APPRAISER II",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=150",
-    "coverage": 0.926,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37863",
-    "title": "ENGINEERING: MECHANICAL TRACK",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37864",
-    "title": "ENGINEERING: CIVIL TRACK",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37983",
-    "title": "Employment Readiness",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38289",
-    "title": "Statistics Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38290",
-    "title": "STEM Mathematics Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38291",
-    "title": "Liberal Arts Mathematics Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38292",
-    "title": "ESL Fundamentals and Custodial Technicians",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38390",
-    "title": "ESL Fundamentals I",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38406",
-    "title": "Science Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=247",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38624",
-    "title": "ESL Fundamentals III",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38647",
-    "title": "Mobile Application Development Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=180",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38719",
-    "title": "ESL Fundamentals II",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38768",
-    "title": "Administrative Assistant for the English Language Learner",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38782",
-    "title": "Autism Services Aide",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38943",
-    "title": "Climate Change Studies - Social Science",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38944",
-    "title": "Climate Change Studies - Natural Science",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39013",
-    "title": "Guest and Public Spaces Attendant",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39038",
-    "title": "Leadership and Workplace Success in the Public Sector",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39039",
-    "title": "21st Century Employability Skills: Entrepreneurial and Analytical Mindset",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39122",
-    "title": "ENGINEERING: ELECTRICAL TRACK",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39123",
-    "title": "ENGINEERING: COMPUTER, SOFTWARE TRACK",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39126",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39419",
-    "title": "Biotechnology Lab Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=74",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39485",
-    "title": "Social Justice Studies: Chicano Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=152",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39508",
-    "title": "21st Century Employability Skills: Communication and Digital Literacy",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39509",
-    "title": "21st Century Employability Skills: Diversity Awareness and Collaboration",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39510",
-    "title": "21st Century Employability Skills: Empathy and Adaptability",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=255",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39511",
-    "title": "21st Century Employability Skills: Self-Awareness and Resilience",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39618",
-    "title": "Real Estate Supervisory/Trainee Appraiser Licensing",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40106",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40202",
-    "title": "Social Justice Studies: LGBTQ Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=153",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40223",
-    "title": "Emergency Medical Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40810",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41340",
-    "title": "Real Estate Appraiser III",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41358",
-    "title": "Engineering I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41359",
-    "title": "Engineering II: Mechanical and Civil Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41360",
-    "title": "Engineering III: Computer and Software, and Electrical Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41378",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41381",
-    "title": "Fundamentals of Dental Assisting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41448",
-    "title": "Financial Literacy for College & Workforce Success",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41464",
-    "title": "Licensing/Employment Test Prep",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41465",
-    "title": "Dental Career Skill Enhancement",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41546",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41589",
-    "title": "Tutor Training",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42249",
-    "title": "Global Studies",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42377",
-    "title": "Facilities Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42485",
-    "title": "Fundamentals of Athletic Training and Sports Medicine",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42488",
-    "title": "Spanish",
-    "award": "A.A. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=157",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42555",
-    "title": "Advanced Athletic Training and Sports Medicine",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42558",
-    "title": "Athletic Training and Sports Medicine",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42627",
-    "title": "In-Home Supportive Services Provider for the English Language Learner",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42629",
-    "title": "Construction Industry Exploration & Preparation Program",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43067",
-    "title": "Interactive Design I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43073",
-    "title": "Graphic Design I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=114",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43178",
-    "title": "Graphic Design II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=115",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43260",
-    "title": "Corrections",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43351",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43359",
-    "title": "Cyber Security Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43450",
-    "title": "UCTP Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=77",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43457",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43483",
-    "title": "Fundamentals of Medical Assisting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43507",
-    "title": "Data Analytics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43570",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=108",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43628",
-    "title": "UCTP Physics",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=142",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43667",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43694",
-    "title": "Orthodontic Dental Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=97",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43749",
-    "title": "Data Science Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "43762",
-    "title": "Data Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43838",
-    "title": "Essentials of Robotics and Programming",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44361",
-    "title": "Interpersonal Skills for the Workplace",
+    "control_number": "38677",
+    "title": "ESL Pathways",
     "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241",
-    "coverage": 1.0,
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236",
+    "coverage": 0.5,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44362",
-    "title": "Adult Basic Education",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44396",
-    "title": "Health, Nutrition, and  Food Sanitation in Early Childhood Education",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44397",
-    "title": "Teaching Learners with Special Needs",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=83",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44398",
-    "title": "Infant and Toddlers Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44417",
-    "title": "Food Service Manager Skills Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44418",
-    "title": "Food Handler’s Preparation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44419",
-    "title": "Gig Economy Success Kit",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44443",
-    "title": "Administration and Supervision of Early Childhood Education",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44444",
-    "title": "Preschool Associate Teacher",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44452",
-    "title": "Title 22: Preschool Associate Teacher",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44553",
-    "title": "Computer Skills for the Workplace",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44586",
-    "title": "Entrepreneurship Skills",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44587",
-    "title": "Introduction to Computers",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44613",
-    "title": "Essentials of Video Game Programming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44623",
-    "title": "Virtual Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44806",
-    "title": "Technology for Success in the Workplace",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44945",
-    "title": "Cal-GETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=273",
-    "coverage": 0.905,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45275",
-    "title": "Residential License Appraiser Practicum I",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=147",
-    "coverage": 0.545,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45277",
-    "title": "Certified Nursing Assistant",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45278",
-    "title": "Real Estate Appraisal",
-    "award": "A.S. Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45283",
-    "title": "English as a Second Language - Conversation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45310",
-    "title": "English for Speakers of Other Languages (Level 1)",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=234",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45311",
-    "title": "English for Speakers of Other Languages (Level 2)",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45312",
-    "title": "English as a Second Language - Pronunciation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45613",
-    "title": "Digital Media: Production & Streaming",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45655",
-    "title": "School Age Programs",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45672",
-    "title": "Game Art",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45673",
-    "title": "Game Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "45685",
     "title": "Licensed Vocational Nursing",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=209",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45719",
-    "title": "Nursing Assistant Preparation (CNA)",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245",
+    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45793",
-    "title": "First-Time Management Skills",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45825",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45855",
-    "title": "Virtual and Executive Administrative Assistant",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45856",
-    "title": "Roadmap to People Management",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46130",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46261",
-    "title": "Spanish for the Workplace Fundamentals",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=266",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46438",
-    "title": "Introduction to California Building Codes Fundamentals",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46441",
-    "title": "Introduction to Construction, Inspection and Codes",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46446",
-    "title": "Introduction to Green Construction",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46447",
-    "title": "Leadership for Environmental Conservation",
-    "award": "Noncredit program",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46522",
-    "title": "Medical Assisting Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46550",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=209",
+    "was_coverage": 0.9,
+    "was_method": "pdf_pages"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39536207109"
+ "fingerprints": {
+  "03304": {
+   "sha256": "c3179b8b5285bcb2a334e3f671ed45cad6e55040c60f59f94394c1d43abe8b22",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=75"
+  },
+  "03305": {
+   "sha256": "138c69cf47a5d3cfbbdc968969675b8cb26116543a7e26cd9c6ff4a52137c0e8",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62"
+  },
+  "03307": {
+   "sha256": "feea14d33cf39f4985f9c76eff186e825d4c3ff79cd7d83f38192508a17a858b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129"
+  },
+  "03308": {
+   "sha256": "a599f4236f24dd31038d2ce9158a74d35d96f4dba6e9e46c66c94b59d9ee5103",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=145"
+  },
+  "03310": {
+   "sha256": "fe88547798220d97494f330120c0373801690744fbfff179f21197a004c68b4e",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=91"
+  },
+  "03311": {
+   "sha256": "287102f614f762319e43aaa09cace85669a95ac1d63bbe41e81fe292f5956887",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=123"
+  },
+  "03313": {
+   "sha256": "e10df3e7f3d10a0f9b0ce5e6b83689adbb12c812819329845fa925b27476dbef",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71"
+  },
+  "03314": {
+   "sha256": "47cc8832a646dde84ba20cb711a9874480bc3e3e61b6cbd9991ed06b6c6d367d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69"
+  },
+  "03326": {
+   "sha256": "2557e6dcb1dfb6990e5590bd38ab9adbc572f4abb8b7c69b4aa4c98a9e5aefef",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76"
+  },
+  "03328": {
+   "sha256": "f8d19a83f29b383f83fd9d5baaedd3a00df5357e0fa5b098bacd44bcbc7827d5",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65"
+  },
+  "03329": {
+   "sha256": "14dce4115434bcc2f220aca14bb0921907e160be5e6a1508d83f528d72042d3b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=67"
+  },
+  "03330": {
+   "sha256": "ee69b7d8900b3793257c5686b7109a618a589acc5ce1aa2c330e3bb37915cc1d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=99"
+  },
+  "03331": {
+   "sha256": "fedbd7a34700ad4124b4c7c42a21001d9f79b3a21df25aa226f8ba2eefef6a25",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=118"
+  },
+  "03333": {
+   "sha256": "98c3b976f1d55aafbfb49066c39364886cca0a1314cf22430851c62aa17bc4fb",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143"
+  },
+  "03334": {
+   "sha256": "95ae5958188d1454d5d066a8f87f4702d186ab6a17b3713067f4c62d3c3bcad2",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=155"
+  },
+  "03336": {
+   "sha256": "e2c541adc01983f8c5cdce5b60baa61606e870038ef7079e766c0fc8607eab5d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=135"
+  },
+  "08599": {
+   "sha256": "c7cc1daa77676c654a2e9e153ca8d1934d20f1a70ebac3f996e1e3d159aa40de",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128"
+  },
+  "08603": {
+   "sha256": "cd7ae7d28296a5627a96ea06929bce24fe5cc78c77167b6560ac70297ae545ee",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73"
+  },
+  "08604": {
+   "sha256": "a4d1a088d1a2f2437790cad0c47edf90451441bd86fc0959d32390ca82a0b6d7",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=72"
+  },
+  "08605": {
+   "sha256": "5f14277c02dd13b3d988e08c07ce63c83e6c73854537170d30348aba6a785441",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=68"
+  },
+  "08607": {
+   "sha256": "02a86c388257cf99ae17e4005760022b60b758fd85478c9a3bcd555478b0e9b6",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=78"
+  },
+  "16585": {
+   "sha256": "80f86c024c801c63d2732fe2a4c65f5248db863390946adfb3fd75390a243e2b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=89"
+  },
+  "16828": {
+   "sha256": "a99fd1e63ca81260cd8ddd984a16c556e3ed0172330ca7cc1b10bb6abda31316",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63"
+  },
+  "17111": {
+   "sha256": "bc161bd88eb100a6c19a1bed22b999950c63ec1933b3f66485e7722a0939c11e",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88"
+  },
+  "17282": {
+   "sha256": "6a0871c7f15fb8f47c51726e179bbc3a3cb76697091516bebe1f928d2060dcec",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119"
+  },
+  "17283": {
+   "sha256": "bc1e183e344dbbf6e9f7cf2027ecb950295f552d2cc0684169c093a280f854e1",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121"
+  },
+  "17284": {
+   "sha256": "65fe778770b44c54dff1be19e74f99fd7e880e4b342ef93e19cfa5aa2f0e2d39",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=121"
+  },
+  "19283": {
+   "sha256": "ee5046a4b09ea9426f5b5c6f30fb4b3b709de4012b4beb5b8ce67b365e86cd34",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130"
+  },
+  "19431": {
+   "sha256": "7a6bdeb156e034b492822ac81efa23ece1176ac984e0956a8d8f47fd5a49fe91",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=125"
+  },
+  "19433": {
+   "sha256": "f9ef60f3c30e63621ce86f28ac310d2a6bc017b4ff465cc097121039b68d07d1",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=126"
+  },
+  "19525": {
+   "sha256": "62d67ff27e24e121f01a2712bcb8239b3d91735163f98e7990e5ec0cf9141235",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90"
+  },
+  "19601": {
+   "sha256": "35aa54b01abd6c35a5101be80edf058a31e404c8bb06cef2774582d3bde14ed2",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139"
+  },
+  "19602": {
+   "sha256": "114cf77f63660d13abe59c4aee81e739dea21875f88b623c98f726baa40ff25c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=139"
+  },
+  "19603": {
+   "sha256": "23ff19f91d0957701b1a1c817d56532cdb181c4d82a46eb758bdac83e878e9dd",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138"
+  },
+  "19709": {
+   "sha256": "15b56c4d33ae7b8c493c114be2a06ad5f472a8eda9fe55128ee18e7f4772736c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106"
+  },
+  "20229": {
+   "sha256": "7c64430ce0e31009fde7f6dd3cf43ca7d89a14cf4af8e508fc74b04a9b2a6480",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=62"
+  },
+  "20230": {
+   "sha256": "80eb98b3b87d2b1f4bf2c34826ada4239d06a679889044f7bd7e8b086da11c2c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=128"
+  },
+  "20234": {
+   "sha256": "d623bc325fe5470fd2c8c8fbf9793c103901a6ce6b8cd6e5feaeb63178200de9",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=92"
+  },
+  "20236": {
+   "sha256": "bc161bd88eb100a6c19a1bed22b999950c63ec1933b3f66485e7722a0939c11e",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=88"
+  },
+  "20247": {
+   "sha256": "8e3e7c8c01124803ae3647c4372912ab8c75656e3c2d7d88e8c45f21093a1536",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=79"
+  },
+  "20256": {
+   "sha256": "4fa6c6c3894b88698a5235990a25b24b8b87e63c1d7863bc09fc6fd02622ff55",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=120"
+  },
+  "20258": {
+   "sha256": "dd098e2de8c857a7a2eadc53f9d8a5f8eda1576ee2c84cea1794beb47f845b73",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=136"
+  },
+  "20260": {
+   "sha256": "f183c6990254f5186192fc7a60e480f09bae7e6a8d4c6e14e402349d89f84e46",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=63"
+  },
+  "23061": {
+   "sha256": "3ff9d8b09688ea0744c35251a8d52d2c4a91dec32ef90114efaa8a5a42f0044f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109"
+  },
+  "23062": {
+   "sha256": "1b0227d39739191836a4e8b9813a59c21dd38f19ad1da3b75a83b07cc699e4b3",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110"
+  },
+  "24190": {
+   "sha256": "e881ef3be1931411e1a0dd0a1cac3670b46d545aae531604b07da4d2552c8833",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230"
+  },
+  "24200": {
+   "sha256": "974a477afc1949bcf26ffc6f236bf30dbff81f10b2b3859e02d453b4e3d41d1d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229"
+  },
+  "24227": {
+   "sha256": "89376dd7a3e23cf2bd79a1b5601cc8e98436854aed871367c501ae610873df4e",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231"
+  },
+  "24228": {
+   "sha256": "d5494d020a27406238101e0640d48b8c23782da2d41d8cf76f232225546aac21",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243"
+  },
+  "24296": {
+   "sha256": "38d9c2c17f05499016945e19ca8757823137622258c437eb879ec197ec67751a",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240"
+  },
+  "24298": {
+   "sha256": "22d44f1bf6a274645ffd8ac4abdfeb66b4cd8a4ef167bd5237dd1bee84789422",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240"
+  },
+  "24301": {
+   "sha256": "a559eda94b3c8a4a0ac73d9d6d85c02736e39a6c8874985771a74fd2a267539a",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245"
+  },
+  "30369": {
+   "sha256": "161973ad1e5c05a5d5beb9b0d84ca5209f7fcef3a71c51b2ee007fafbd4e0f26",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249"
+  },
+  "30421": {
+   "sha256": "63acb8e0b6295176cbbdec74d48f92bcd15ee55bbc4148d8aa784f959e8310f5",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239"
+  },
+  "31010": {
+   "sha256": "eb7d872da4cdb7ed9f4cdcb2e5471c78cbf4016a0b3244769306b2c66a399fed",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=144"
+  },
+  "31011": {
+   "sha256": "af02f741110ca94f6d273510a0a1fc20ef84cced497e5ab6f91e3af36e7ef5eb",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=64"
+  },
+  "31478": {
+   "sha256": "343f6f66ad72012c8ae6cbc46e993b7685124489522226a5b25a8362cbc643f6",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=130"
+  },
+  "31479": {
+   "sha256": "614084b778af3ece9922ba30aa57bcc50ddf8d25cd0151740689c6db36977b5d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131"
+  },
+  "31480": {
+   "sha256": "faaf465b3a4843b8ad02a5dcc0df881259138d17c1bf08d11ad347482f172eab",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132"
+  },
+  "31481": {
+   "sha256": "614084b778af3ece9922ba30aa57bcc50ddf8d25cd0151740689c6db36977b5d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=131"
+  },
+  "32887": {
+   "sha256": "c2cd48d08db60e4a309cdce504480963b120432e2617a905da786bc8f45324f3",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=105"
+  },
+  "32935": {
+   "sha256": "b7e37a854a73604edecc8f64fc5d7a5b380934c5023a3547a3cd08fe2fcdb1e6",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=97"
+  },
+  "32972": {
+   "sha256": "aa0ec4fdb8f78622fccffe7286298c4da9462d55a6acdba1b6a60f86122a900e",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=143"
+  },
+  "32976": {
+   "sha256": "c4e1588d2b695e546c1a4d7f1f2372f1ed9a292e4ac1fdd891879dc3272aba60",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117"
+  },
+  "32977": {
+   "sha256": "5725ef24844c0c498c920f5d1d94480c5eeee0da70990f6ff87ff9a175d8da8f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=98"
+  },
+  "32982": {
+   "sha256": "f180bf6ae3b7aa9cc8c31a41c811ed5a4b511a928a6c8beafe12de3132954cd3",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154"
+  },
+  "32990": {
+   "sha256": "82b0446c60de804bcccef9653fc082e8d99d984d1e9911026557dfe1862b1de6",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=66"
+  },
+  "33024": {
+   "sha256": "987ed9ad0c85ef587060ab8763746c59cdceeff872b125686c4c2c492093615f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=69"
+  },
+  "33448": {
+   "sha256": "4d08be2d0aea8113051fa3909882783fe89065c72d22852afbb43835b1129c18",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277"
+  },
+  "33520": {
+   "sha256": "4d08be2d0aea8113051fa3909882783fe89065c72d22852afbb43835b1129c18",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=277"
+  },
+  "33554": {
+   "sha256": "f201eb4be121525b21bd249153da9641c62ccef5a1a87920ec0be7a6dea1747d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238"
+  },
+  "33568": {
+   "sha256": "d8a50430375913a1596035b0d8f3e7df731b0c2be73ad8508fe215b078cd1f31",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=140"
+  },
+  "33759": {
+   "sha256": "d623378c5ff9791136a9f860a3e53576a492075f169665cff99fc594c1643bdf",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=238"
+  },
+  "33794": {
+   "sha256": "21668258ec223b9d60d65c365841a3c694addf63091929c00a48a2b17e8fe84c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=95"
+  },
+  "33798": {
+   "sha256": "8bad3b8f90eb5d5317405db27fa5a6d3edaeb9dfa68a2937c740cf93f967adc4",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96"
+  },
+  "33861": {
+   "sha256": "11e14d7017a7b1f0b35ea7fb4fa9827f9e1edd7ee55aa405b1bb1f764f332ae1",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116"
+  },
+  "33893": {
+   "sha256": "7cc14bbc82f961537ea2aa5d6010ed6630341ac0f23fb01a7c9e2fc5fe107d90",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113"
+  },
+  "35053": {
+   "sha256": "aae09fed0cb6f1900a6c1e3eacd804db70226b7080d7a262d59a63cce85f8541",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=137"
+  },
+  "35281": {
+   "sha256": "aa1ff4f45592e5744d7218e485dbf5202963066f40740e5be843ed16753279b9",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=133"
+  },
+  "35320": {
+   "sha256": "b0d6e6d803a1fbfd81ce3d46213490c4e6473baf4053ed59898bf41150720b52",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232"
+  },
+  "35761": {
+   "sha256": "03b584c9b7302a051db358045700a98aea9b3cfd4a068b1e84be0fdef38576a1",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=73"
+  },
+  "36268": {
+   "sha256": "e4bedc97f1f675052c5ee78ed29f6ca5fb920fde81e3a2189bf89c7f2a68943b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=117"
+  },
+  "36801": {
+   "sha256": "35e6281cdfec7dab2ab8ffebcb650bcb38fa9fb3f715d3c945ee98c1d39804b2",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230"
+  },
+  "36925": {
+   "sha256": "a4c18bfc6a9160f7b17ae8c56d117cb003c91e840df68dfc1c1fcab98efcca5c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=138"
+  },
+  "37003": {
+   "sha256": "b96f03132df9215ed1b29a2406749632ee26b3dff782d88f4de12316119ef040",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=124"
+  },
+  "37026": {
+   "sha256": "09075eb082539d061edaaf4866dad869846f8cbd2ac97385fda590cbcd98561a",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85"
+  },
+  "37029": {
+   "sha256": "6b0a177c9652a1f028931af5d5ba4ede43648e9e1aa39b1ac360c6994745a868",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100"
+  },
+  "37050": {
+   "sha256": "2e60d34a1f80c4b896a64817fe258d0008df991424481bc45d80a9d4a6d3706b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122"
+  },
+  "37251": {
+   "sha256": "09b81936aacfe4f6e1e6efaa29a78e6fe920215995b7e8962c8fd511ad9e8d18",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228"
+  },
+  "37830": {
+   "sha256": "752e86c3bb57373614d50cf693b8cb32588ff06b81fb522a511a7ae7696f1a60",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236"
+  },
+  "37832": {
+   "sha256": "e3f489718ed57a48cb734af31b5ba9d43d229e1f87baddf1cd01cad28847d319",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231"
+  },
+  "37834": {
+   "sha256": "85bd54c0c1d9508dbf1712379f6b16d8023ca8ed12ba2007af878a6c96ff4f70",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230"
+  },
+  "37838": {
+   "sha256": "5316a4760c7a600242d0d9ddd9df71798c74461c9cf81f758d1da08fd92ff020",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=149"
+  },
+  "37839": {
+   "sha256": "e6d2083cbf46575f6ddaabd0e57381a5d91d6bf109e5f730b6fa5b9695083395",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151"
+  },
+  "37859": {
+   "sha256": "a831791b77a428abfce2401052bbc823111a0d602e128e47a225eb7c6bfcfe91",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151"
+  },
+  "37860": {
+   "sha256": "3e206637ad44855e49607c7dc424352f8ef159a6bfe345a80b02fc6cc3d86ca7",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=150"
+  },
+  "37863": {
+   "sha256": "1489b1b5f7ddbdda813a20f962a54170be710dfc46c2ca38bbd0e0cb99b237e0",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103"
+  },
+  "37864": {
+   "sha256": "ce930334a1cdca301b6db35b804e54e14129908ef6eeac86081ba58352bcb485",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101"
+  },
+  "38289": {
+   "sha256": "02a686c07e859539d8ddf983241aaa98b7f9223feb262fbcd4c8a69724bdc190",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248"
+  },
+  "38290": {
+   "sha256": "eae1dac614a7498df3340e6d4cfde8cbe794854654c9d3991f68cd6af706a977",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248"
+  },
+  "38291": {
+   "sha256": "d363f3af9b22738ca309d9b1ca6ce642ea85446f298430f9ac155d6137d7dc96",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244"
+  },
+  "38292": {
+   "sha256": "967a4b800321904325f3b1db7ad360e4870f06820b9d3fa8a9d09bc6cbf8bf08",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235"
+  },
+  "38390": {
+   "sha256": "c5fd943f5ef027c24a6355718233793fac09b3dc9c1a4698aaf276e04f93a2f2",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235"
+  },
+  "38406": {
+   "sha256": "b00341984a0f3cabeaff19fc55f38c2641cfca861d406ba5da8722c4caf1e8de",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=247"
+  },
+  "38624": {
+   "sha256": "1764a2bc27bef3ec3e1b28551ba935660c9f1397f03423c958e5c20500825866",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236"
+  },
+  "38677": {
+   "sha256": "37066d88d930a468f3e4f4a3886b90c88ce9d6c5d40d8401f3aa39a2f766f011",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236"
+  },
+  "38719": {
+   "sha256": "4d93be322841e8f0c7005c97bbf1a9bf93d4cce6a1285934558ebbba5a1c4438",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=236"
+  },
+  "38768": {
+   "sha256": "9ad28ac190fc5e15313acd6e738bd039b725c53c3120685317abbf68cee30ddc",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228"
+  },
+  "38782": {
+   "sha256": "eb95a8e13003c859d74bd43f82bac99a7157551e78993ada7c3ceda85c01b650",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=229"
+  },
+  "38943": {
+   "sha256": "0a441009b88c582da7966ca89e47ec1fc455c11ef6c3598585da5c3cf57df6d3",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86"
+  },
+  "38944": {
+   "sha256": "518ec0852a270b1d0b8e9f7074be6ae9dbc5cd9f36af89589ff08bc6f9aaa9ae",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=85"
+  },
+  "39013": {
+   "sha256": "b437d3d9a946814544d69af145ccd19b682256be96166164a2a853ec2729509f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239"
+  },
+  "39038": {
+   "sha256": "1d1ac9a2e15be0e1d59dd765cf03f6b590865eecf81e76a96258c7848911790b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243"
+  },
+  "39039": {
+   "sha256": "bfda4b41c3893d21cc02b73e92279230e6601fe30644d490a7598452f577d534",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227"
+  },
+  "39122": {
+   "sha256": "3b654fd14aedaf9cd41f0a03d843cfa60a76f904dd6d743d2eab37034971afdc",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102"
+  },
+  "39123": {
+   "sha256": "89ddbdb556a1c3f1acd9b32deb63fe6d3f3202dffdc7c2db257d116fc4a02e9e",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=102"
+  },
+  "39126": {
+   "sha256": "519fb4ed6f71f781667c2f6a596b758b36e75408dffb90d9065fc96ecfa4bd86",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90"
+  },
+  "39419": {
+   "sha256": "009c571492b7883213156a516bd786cf5721499b5a5a20a594a2439b65e34e79",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=74"
+  },
+  "39485": {
+   "sha256": "b9bbc0e3e613c3d8e2d61e9dbeed4d7ade858557a11035388885af3e2328b139",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=152"
+  },
+  "39508": {
+   "sha256": "0936fcf399d4b8630edcc8d189c00ae18e099471fb8d53a3f0c2c81a7f4b0731",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226"
+  },
+  "39509": {
+   "sha256": "57fceadd8b7edba4685467ec7e2dd2055b99d29929d45095a6c6256ad6c9cf02",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=226"
+  },
+  "39511": {
+   "sha256": "004d40bcd33cd908489ec11af2096106f70f173f803955279a6fe7dd50676335",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=227"
+  },
+  "39618": {
+   "sha256": "d1a9f7de73890886bad8ee5306be2673e6bd9dd12bcdf9bae4dda2f931ddbd67",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246"
+  },
+  "40202": {
+   "sha256": "ca76a82cc58bc664d6c2571710ef334b4409a49410acf1bcb70e112c10b1e1f6",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=153"
+  },
+  "40223": {
+   "sha256": "2ec2d42900f524c63f7020453bc576b611e886cafb77c8031c630eaa591ca58c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=101"
+  },
+  "40810": {
+   "sha256": "785a08a359797a7c3720056ba23b3522dd5dbf37aa004321c771c365aa4705ab",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113"
+  },
+  "41340": {
+   "sha256": "75f5ea32ce688b1eb491ff6ac4e6865e8fbdffcbd7eb19d7e81d5740a8d2caea",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=151"
+  },
+  "41358": {
+   "sha256": "5fbe45b55f2f69666c1553d3cbc4ff53f44d213faff64196f1584aa4742874bc",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=103"
+  },
+  "41359": {
+   "sha256": "a2ecad37e029420b51cc1a558ce64a8fade54d2c46d8f2163b86979fcf508743",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104"
+  },
+  "41360": {
+   "sha256": "e4b18b5d0339c360f9ac9872c55035e062f0b751e2a41df0f0dca247d9cd5f0f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104"
+  },
+  "41378": {
+   "sha256": "c5acde764243823442a92d446d67dba9be7bcde2070ef3d0ae5059d08a1d7964",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=76"
+  },
+  "41381": {
+   "sha256": "df5fd3325882020dc7d260629321cf9222198df0b4f082721270408f1d23422b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=96"
+  },
+  "41448": {
+   "sha256": "1d9fb41d97ab50728404dc1610418648dfd73e21c444b563c8428639a9248400",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237"
+  },
+  "41464": {
+   "sha256": "6bb45b0a72b9ad6e9bc109f7a4ff2f56eddc5c828730da80704896dcb899ad64",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=244"
+  },
+  "41465": {
+   "sha256": "b6628e5630368bbea27e965e853adedc340953a588dd42df85f60ed785056f09",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232"
+  },
+  "41546": {
+   "sha256": "f0bfbbd096101963813458e36a8c90913db6c6cb3b57c7188a828eb2cfae9332",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=119"
+  },
+  "41589": {
+   "sha256": "e0b49b6ba808d1fefb168133a7c26e2c9cdd590aed2d39af84b144a61243d6c4",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249"
+  },
+  "42249": {
+   "sha256": "0f0cecf6d94a5885abf0b59b2ce299a02000ada1a699ef177092a8b249dda00f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=113"
+  },
+  "42377": {
+   "sha256": "5a158d83683527d5b15d5ebe4e042fea2e8d7a46c5b46167b37a46173857fd72",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=106"
+  },
+  "42485": {
+   "sha256": "76a4e5b50e18eed46a2523354ca8570a0c58da2a8bc72f75fe4298dae1b35e28",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70"
+  },
+  "42488": {
+   "sha256": "4105480c1f291cb04e57d7e782750a9305e62be8b7bda65839fb1c186acefd2f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=157"
+  },
+  "42555": {
+   "sha256": "7ccaf5f5ef34566852be4c461740c884df10385238a353bd330652a9f62f8858",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=71"
+  },
+  "42558": {
+   "sha256": "4b1e9ff5c5595298871706063c021d3677af4f4f71c58a6ed919cc678fd67280",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70"
+  },
+  "42627": {
+   "sha256": "fe124f19dca47622c303b1c6a6afe78c81a4da9a32fd90a49ba958f45303e1eb",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=240"
+  },
+  "42629": {
+   "sha256": "ce9889beff40feddee691f8d0aeb81cec0ac79e14aeaff9f8c8bb76b7faef90b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231"
+  },
+  "43067": {
+   "sha256": "0dab26c2cbdcfe7b92ab5c884a18378b9ee998f1f7482dbaf32c2db007b5037f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=122"
+  },
+  "43073": {
+   "sha256": "f879d94371869fe57b97fb49b6edbf5e04acd1908d43e166c6d6ca78da8b03a0",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=114"
+  },
+  "43178": {
+   "sha256": "44c4fc7349b42b3fde5750ede9a31563ac2f9539d357a437156fa4e47581a244",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=115"
+  },
+  "43260": {
+   "sha256": "77c2ead4da107245b88087393157ed078a36d18e6411cd8ce531f6f80767f047",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=65"
+  },
+  "43351": {
+   "sha256": "3c198748f17adc4ae419003a39f6ad8274569a4dd59289660e9145bec4615367",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=86"
+  },
+  "43359": {
+   "sha256": "194f5a7730a4883b8a744493f18bbe62a4056694bf7b0ef7d0a89dace4e7a08b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=90"
+  },
+  "43450": {
+   "sha256": "2684cdbb6d5709697167bc5fe3522b1f25c401c3b27206ecf99a7b5a4093aa65",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=77"
+  },
+  "43457": {
+   "sha256": "6328bd26d16f03482c65c58ce9dcc2e2adb75283942347ad4f2145a20ff006ce",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=112"
+  },
+  "43483": {
+   "sha256": "8e66dab64af29b2e098320116aea4035fa8ce2fac50b8b6a04de86d5be861701",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132"
+  },
+  "43570": {
+   "sha256": "99aaff13fa9a0b16fbfad00e5f8a1e583cc653033be3cd196e47db515a06497f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=108"
+  },
+  "43628": {
+   "sha256": "f2403b1eef99424684e9313d48645256eb4f379be72af615e4eef091b5233526",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=142"
+  },
+  "43667": {
+   "sha256": "2d8d9caee0e2693672733d09e8ba748d2f293c24fef2c1db2eb1fd3e0eb5eed5",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=154"
+  },
+  "43694": {
+   "sha256": "afe34b12afdcdd4a3921f5c0deded97a1ea3ccb430e3f16e66708229bdc0bcc6",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=97"
+  },
+  "43749": {
+   "sha256": "c98bb74bbd2f8edd44e0aa3fecb928f7a95d57cfbfd5352cd237013d42703f6a",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94"
+  },
+  "43762": {
+   "sha256": "11b3a987aab6a2bb099ebb61ea0bcaaee99bf57022e9c4db71e36c0a98f7eeb3",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=94"
+  },
+  "43838": {
+   "sha256": "f9dba38633ad7280f768788b63e80a55a94e0f015dbc646ee47fc371e68e8f33",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=104"
+  },
+  "44361": {
+   "sha256": "64c611903d23b5d07dc7c01d559bd348f94f5b7378eaaf2b47a013558f543478",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241"
+  },
+  "44362": {
+   "sha256": "1eacf21b8a8c8694765acf3f890368f07a9f13ecb300eecf1ec8e97cdaa26d90",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=228"
+  },
+  "44396": {
+   "sha256": "d19cec6e4b580075419f19724f0772aa30b460bdcfa444197106fa069b0392c1",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80"
+  },
+  "44397": {
+   "sha256": "7aa1fc61e090567412004fe5b2315be8338f1a62df78ed049f3d88606ba9c97c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=83"
+  },
+  "44398": {
+   "sha256": "105657e74e043080c14ad56d34e50b951a949202d4b3adca638b818b9e2c5f92",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=81"
+  },
+  "44417": {
+   "sha256": "bfab292442c7a487096939fb25c7313df8ed733724503d31e0748a319dc4aeb3",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237"
+  },
+  "44418": {
+   "sha256": "e744078969d4f7a9bb9ddc990cef89bef9dae7a16bba60c1fdf0e7c0fa825c6a",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237"
+  },
+  "44419": {
+   "sha256": "f49c76e7ede1464bb5b7d08324c380bbe0603b2035fa6287d1578a5b6a526784",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=239"
+  },
+  "44443": {
+   "sha256": "44ad32016552e8dca0d23458e328facebd372a8505cb1e0c5e238838667fd852",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=80"
+  },
+  "44444": {
+   "sha256": "6903df9fac22c7135b5daec4f6ed734cbaab6bf8a64694bc05b5947127cac40c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82"
+  },
+  "44452": {
+   "sha256": "ec8a965f937966f2dd5c2db72957c462fac6ffedc1d1d80b36d9cc3db4353a8c",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=84"
+  },
+  "44553": {
+   "sha256": "7c1a9ca70333cf3cf9821d1bdcb7790cd83885e31d27cb3b588335f892e7ff27",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=231"
+  },
+  "44586": {
+   "sha256": "9688272489ea164c06d6d0caa0823d1cc2d5cf8e5308232fd75587a89fcf13e1",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235"
+  },
+  "44587": {
+   "sha256": "ae12c048eca5effe91f633db09fa936c75ae49bf7208884a6702a176ad2f4bc3",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243"
+  },
+  "44613": {
+   "sha256": "ff3bc92bac0e627282296485e77efcfbfd9e09ea1405427e8344296ca9280e4d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=93"
+  },
+  "44623": {
+   "sha256": "6d6f5dd3bb7d251b8f273225ca7c341fa52255eeaf67b013592a4ba1eea6dcdb",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=109"
+  },
+  "44806": {
+   "sha256": "59406128943b20c6d94ad6f97a5fba48b2187868520f508f43530308222004f4",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=248"
+  },
+  "44945": {
+   "sha256": "db242d731144930cf07a3b1a0861f12b1020716d804ee72c3f591976b6e9ee2f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=273"
+  },
+  "45275": {
+   "sha256": "49f9a83fd82e35e6b829c3667fa301b7e405bb0f685dbd1be14f997cdb8a67cd",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=147"
+  },
+  "45277": {
+   "sha256": "5235095bd8736e16a5860cb761a9c1be0327973092fad9257a1a0aeac2fa45fe",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134"
+  },
+  "45278": {
+   "sha256": "278cfacec042780c15d7a5e7f20ae296543be188a8e8d563452cd425e0fb0686",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=146"
+  },
+  "45283": {
+   "sha256": "d395e2d8e5da5ea5a55c502bcbabdb942018b40dcb9d1da41d7fa5fe51069031",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233"
+  },
+  "45310": {
+   "sha256": "19f6b658ebc62ce866fc6c1efd4f95fba8451ab3a8f6bb86537a75962d48ac68",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=234"
+  },
+  "45311": {
+   "sha256": "fafed7056be90560e0a2bb3db8117361b825b610d0d31faadb83e64bb221a963",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=235"
+  },
+  "45312": {
+   "sha256": "04e81110dd489d41328a2d83c7e14038927f2841a9099fe017e37a7f6da4b3fd",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=233"
+  },
+  "45613": {
+   "sha256": "1fbf3d3f91547a445fc4b88d9d876b3201669d813734f67db0dc3e57851787ee",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=232"
+  },
+  "45655": {
+   "sha256": "157e85d2f195b2cdeff49ec9a00bb86a30faafe5bd717bda8606473336db1b78",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=82"
+  },
+  "45672": {
+   "sha256": "0ddc6cfc5be5c2135b44a159887b35b65d7da44acd899278c47bf5760e94b1b5",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=110"
+  },
+  "45673": {
+   "sha256": "7238fe757d8087c98d33bccb4dfe70a71c49a6fdaba79f3ebc18ea6752d927d7",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=111"
+  },
+  "45685": {
+   "sha256": "fefffd063230378e6d80bbf1f67e237160fa462d3f1b7df13c2a24cd469778be",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=134"
+  },
+  "45719": {
+   "sha256": "315d48f60566f20db5753ebc019a40ea5e74a02abd92aaf533709a55f3b50e54",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=245"
+  },
+  "45793": {
+   "sha256": "9c0a0d3ab79473194eb20ec771ca5b9e8a1882e168f942cf1bf808a7666cc4eb",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=237"
+  },
+  "45825": {
+   "sha256": "19c5c26ffffc02dc85b47d149c0779ce37b934863d8b0cd476c6dd2b0bfb111e",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=129"
+  },
+  "45855": {
+   "sha256": "46ccb17f331959c2e0e1321fb81f3981738f5bdb88fa43ee2a2cad5923bc6c4a",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=249"
+  },
+  "45856": {
+   "sha256": "d1d46d088a75a5898e80a5ddd4c77f58fe2bee82bb9dfa97af2c73413b928613",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=246"
+  },
+  "46130": {
+   "sha256": "b62c8394ae8092a1622b0700ae1e8fbbe9edde43f789293363a8c63d945e8916",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=116"
+  },
+  "46438": {
+   "sha256": "3f9f69784b8ca9e3a2a363cf6d3df5ccc52eb31c02dc8099cb11177ec6dbe042",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=241"
+  },
+  "46441": {
+   "sha256": "2e3d16900ab7d5852df497e7b77b612e03af2335f6efb6ac3bbf2e27bf03a22f",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242"
+  },
+  "46446": {
+   "sha256": "a1a7318d80a2a00e6bec9f0dae1879d47ca9a854b974f24613a2be1e211f4f1b",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=242"
+  },
+  "46447": {
+   "sha256": "c66c2843641513cbcede060a155774913b56a61d28a27a7a37217f2786c4937d",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=243"
+  },
+  "46522": {
+   "sha256": "dddc0ddc8d46ab93c141c1902ddc803357a078d5bb41ff10a44ac0778e3a8d5e",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=132"
+  },
+  "46550": {
+   "sha256": "f00e79031e12739605c0bb8261d67314b380f5c07f81f842a8e0505dcd104e79",
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=100"
+  }
+ },
+ "run": "44475503054"
 }

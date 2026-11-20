@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12687,
-    "output_tokens": 8562,
+    "output_tokens": 8692,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 8562,
+  "output_tokens": 8692,
   "output_tokens_details": {
-   "thinking_tokens": 2629
+   "thinking_tokens": 2664
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.22199,
- "ms": 64195,
- "seconds": 64.5,
+ "cost_usd": 0.22459,
+ "ms": 65603,
+ "seconds": 65.9,
  "parts": null,
  "error": null,
  "score": {
@@ -129,8 +129,7 @@
    ],
    "against": "program",
    "why": [],
-   "meets": true,
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -262,13 +261,6 @@
       "catalog_addition": false
      },
      {
-      "code": "SOC 1",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "CHEM 32",
       "units": 4,
       "units_max": null,
@@ -280,6 +272,13 @@
        }
       ],
       "catalog_addition": true
+     },
+     {
+      "code": "SOC 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      },
      {
       "code": "PHYC 2A",
@@ -951,11 +950,11 @@
   "missing_explained": [
    {
     "code": "DANC 119D",
-    "why": "not in the text"
+    "why": "not in the text (catalog lists DANC 119C)"
    },
    {
     "code": "DANC 129D",
-    "why": "not in the text"
+    "why": "not in the text (catalog lists DANC 129C)"
    },
    {
     "code": "DANC 141A",
@@ -999,7 +998,7 @@
    },
    {
     "code": "PE 212B",
-    "why": "not in the text"
+    "why": "not in the text (catalog lists PE 212A)"
    },
    {
     "code": "PE 215A",
@@ -1031,60 +1030,159 @@
    },
    {
     "code": "PE A 60",
-    "why": "PE A courses only mentioned generally in a note (contact department); not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 62",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 65",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 66",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 67",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 68",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 69",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 81",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 85",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "PE A 88",
-    "why": "PE A courses only mentioned generally in a note; not listed"
+    "why": "PE A courses mentioned only generally via department contact; no code printed"
    },
    {
     "code": "STAT 1000E",
-    "why": "catalog prints STAT C1000E (recorded as catalog addition); likely the same course"
+    "why": "catalog prints STAT C1000E instead; likely the same course, recorded as printed"
    }
   ],
   "notes": [
-   "BIO 111 or BIO 112 ('One of the following: 4.0-5.0') recorded as one entry with an alternative inside the Required Units block, consistent with the block's printed 11.0-12.0.",
-   "In 'Choose two courses from the following' (6.0-12.0), nested choices count as one pick each: CHEM 32 or CHEM 101A ('One of the following: 4.0-6.0'); PHYC 2A AND PHYC 2AL together ('Both of the following: 4.0') count as a single choice; one statistics course (ECON 5, LALS 5, PSYC 5, STAT C1000, STAT C1000E).",
-   "SOC 1 is printed between 'CHEM 32 OR' and 'CHEM 101A', apparently a layout error; recorded as a standalone option in the choose-two list. Reviewer should verify.",
-   "The statistics sub-list prints '26.0' as its units, which appears garbled (likely 5.0-6.0).",
-   "PHYC 2A printed at 3.0 units; the state file stores 0.",
-   "Movement-based courses: choose three, each from a different area (Aquatics, Combatives, Individual sports, Fitness, Team sports, Dance); areas recorded in a single block in catalog order. Department may allow a PE Athletics (PE A) course for part of this requirement. Unit columns in this table are misaligned in the PDF text; all courses in it read as 1.0 except PE 200C and PE 202 (2.0).",
-   "The 60-unit statement is a general AA-T requirement, not recorded as degree_total; Cal-GETC units not printed.",
-   "The summary mentions 'coaching and professional careers in kinesiology' as course work topics; no careers recorded."
+   "Required Units 11.0-12.0 covers PE 26, BIO 108 and the nested 'One of the following: 4.0-5.0' choice of BIO 111 OR BIO 112, recorded as one entry with an alternative so the printed stated total matches.",
+   "The 'Choose two courses' list (6.0-12.0) is split by a page break; the following groups appear to belong to it: 'One of the following: 4.0-6.0' (CHEM 32 OR CHEM 101A), SOC 1 (printed oddly between CHEM 32 and CHEM 101A, read as a standalone option), 'Both of the following: 4.0' (PHYC 2A AND PHYC 2AL, which together count as one choice), and 'One of the following statistics courses' (recorded as ECON 5 with alternatives). Reviewer should verify this structure.",
+   "Statistics group total printed as '26.0', apparently a garbled value (likely 5.0-6.0).",
+   "PHYC 2A printed with 3.0 units; closed list stores 0.",
+   "Movement-based block: each of the three courses must come from a different area (Aquatics, Combatives, Individual sports, Fitness, Team sports, Dance); students may contact the Kinesiology, Athletics, and Dance Department about using a PE A course for part of this requirement. Unit columns are misaligned in the PDF extraction; all movement courses read as 1.0 except PE 200C and PE 202 (2.0).",
+   "Total: 20.0-28.0 is the major total. The 60-unit sentence is generic ADT language, not recorded as degree_total. GE pattern Cal-GETC; no GE units printed.",
+   "Careers left empty: the summary mentions 'coaching and professional careers in kinesiology and its sub-disciplines' as coursework topics rather than named career outcomes; reviewer may check."
   ]
  },
- "extracted_run": 43693267535,
- "read_run": "39056434592"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "00e8c701104f72e7",
+ "source_codes": [
+  "BIO108",
+  "BIO111",
+  "BIO112",
+  "DANC119A",
+  "DANC119B",
+  "DANC123A",
+  "DANC123B",
+  "DANC124A",
+  "DANC124B",
+  "DANC124C",
+  "DANC129A",
+  "DANC129B",
+  "DANC133A",
+  "DANC133B",
+  "DANC133C",
+  "DANC134A",
+  "DANC134B",
+  "DANC134C",
+  "DANC138A",
+  "DANC138B",
+  "DANC138C",
+  "DANC155A",
+  "DANC155B",
+  "DANC172A",
+  "DANC172B",
+  "DANC173",
+  "DANC34A",
+  "DANC37",
+  "ECON5",
+  "EMT14",
+  "HLTH53",
+  "LALS5",
+  "PE174A",
+  "PE200B",
+  "PE200C",
+  "PE202",
+  "PE204A",
+  "PE204B",
+  "PE205A",
+  "PE205B",
+  "PE206A",
+  "PE206B",
+  "PE210A",
+  "PE210B",
+  "PE214A",
+  "PE214B",
+  "PE216A",
+  "PE216B",
+  "PE217A",
+  "PE217B",
+  "PE219A",
+  "PE219B",
+  "PE231A",
+  "PE231B",
+  "PE233A",
+  "PE233B",
+  "PE235A",
+  "PE235B",
+  "PE236A",
+  "PE236B",
+  "PE238A",
+  "PE238B",
+  "PE240A",
+  "PE240B",
+  "PE242A",
+  "PE242B",
+  "PE243A",
+  "PE252A",
+  "PE252B",
+  "PE254",
+  "PE255A",
+  "PE255B",
+  "PE255C",
+  "PE255D",
+  "PE256A",
+  "PE256B",
+  "PE256C",
+  "PE258A",
+  "PE258B",
+  "PE258C",
+  "PE26",
+  "PE260A",
+  "PE260B",
+  "PE271A",
+  "PE271B",
+  "PE274A",
+  "PE274B",
+  "PE276A",
+  "PE276B",
+  "PHYC2A",
+  "PHYC2AL",
+  "PSYC5",
+  "PSYCC1000",
+  "SOC1",
+  "STAT1000E",
+  "STATC1000"
+ ],
+ "source_coverage": 0.762
 }

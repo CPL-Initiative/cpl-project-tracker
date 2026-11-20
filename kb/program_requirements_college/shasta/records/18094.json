@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13194,
+  "input_tokens": 13197,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13194,
-    "output_tokens": 3570,
+    "input_tokens": 13197,
+    "output_tokens": 3529,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3570,
+  "output_tokens": 3529,
   "output_tokens_details": {
-   "thinking_tokens": 547
+   "thinking_tokens": 524
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12418,
- "ms": 25841,
- "seconds": 26.2,
+ "cost_usd": 0.12337,
+ "ms": 26469,
+ "seconds": 26.8,
  "parts": null,
  "error": null,
  "score": {
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Physical Education University Studies – 18 Unit Emphasis",
+   "section_heading": "Physical Education University Studies – 18 Unit Emphasis: SC Program: AA.1493",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -571,13 +571,78 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Section read: 'Physical Education / University Studies – 18 Unit Emphasis' (SC Program AA.1493) on catalog page 92 (PDF page 100). The preceding Kinesiology AA-T section on the same page was not used.",
-   "The course list prints no units beside the courses, so every course's units is null.",
-   "The rule 'Choose 18 units from at least 3 areas' also requires coursework from at least three subject areas; this area-distribution constraint is not captured by the block structure.",
-   "total_units 18 taken from the heading '18 Unit Emphasis' and 'Choose 18 units'. No degree total or GE pattern is printed in this section.",
-   "Program learning outcomes heading refers to 'University Studies Degree Learning Outcomes, see page 28'; no outcomes printed in this section, so outcomes are empty.",
-   "The description names baccalaureate degree fields (Physical Education – teaching, kinesiology, and pre-physical therapy) rather than careers; careers left empty for reviewer check."
+   "The catalog prints the courses as subject lists (e.g. 'HLTH 1, 2, 3, 4, 6, 7, 20') with no units beside them; units left null rather than taken from the state file.",
+   "The rule also requires courses from at least 3 areas; areas appear to correspond to the subject lines (ANAT, BIOL, CHEM, etc.) but the catalog does not define them explicitly.",
+   "Program Learning Outcomes heading refers to University Studies Degree Learning Outcomes on page 28, which is not in the provided text; outcomes left empty.",
+   "Description names baccalaureate degree areas (Physical Education – teaching, kinesiology, and pre-physical therapy) rather than careers; careers left empty.",
+   "No general education pattern or degree total is printed in this section; the preceding Kinesiology AA-T section (Cal-GETC, Major 22-27) belongs to a different award and was not used."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": "44513230805",
+ "catalog_year": "2026-2027",
+ "source_sha": "6d6adae655c5e56b",
+ "source_codes": [
+  "ANAT1",
+  "BIOL5",
+  "BIOL6",
+  "CHEM1A",
+  "CHEM1B",
+  "CHEM2A",
+  "CHEM2B",
+  "ETHS11",
+  "HLTH1",
+  "HLTH2",
+  "HLTH20",
+  "HLTH3",
+  "HLTH4",
+  "HLTH6",
+  "HLTH7",
+  "KINES1",
+  "KINES2",
+  "MATH2",
+  "NUTR25",
+  "PE11",
+  "PE12A",
+  "PE12B",
+  "PE12C",
+  "PE17A",
+  "PE17B",
+  "PE30A",
+  "PE30B",
+  "PE30C",
+  "PE31",
+  "PE35",
+  "PE37",
+  "PE4",
+  "PE51A",
+  "PE51B",
+  "PE51C",
+  "PE60",
+  "PE69",
+  "PE7",
+  "PE70A",
+  "PE70B",
+  "PE70C",
+  "PE71",
+  "PE72",
+  "PE75",
+  "PE8",
+  "PEAT11",
+  "PEAT13",
+  "PEAT15",
+  "PEAT17",
+  "PEAT19",
+  "PEAT23",
+  "PEAT25",
+  "PEAT29",
+  "PEAT5",
+  "PEAT7",
+  "PEAT9",
+  "PHY1",
+  "PHYS2A",
+  "PHYS2B",
+  "PSYCC1000",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

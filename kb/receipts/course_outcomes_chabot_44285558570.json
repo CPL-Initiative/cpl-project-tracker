@@ -1,0 +1,6101 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "chabot",
+ "load_run": "44285558570",
+ "reads": [
+  "kb/course_outcomes/chabot/read_44264136885_p1of3.json",
+  "kb/course_outcomes/chabot/read_44264136885_p2of3.json",
+  "kb/course_outcomes/chabot/read_44264136885_p3of3.json"
+ ],
+ "kind": "all",
+ "held_back": 0,
+ "posted": 1013,
+ "inserted": 1013,
+ "kept": 0,
+ "skipped": 0,
+ "skipped_rows": [],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 30392,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 40"
+  },
+  {
+   "id": 30393,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 45"
+  },
+  {
+   "id": 30394,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 55"
+  },
+  {
+   "id": 30395,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 63"
+  },
+  {
+   "id": 30396,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 80"
+  },
+  {
+   "id": 30397,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 9907"
+  },
+  {
+   "id": 30398,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 12"
+  },
+  {
+   "id": 30399,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 1L"
+  },
+  {
+   "id": 30400,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 4"
+  },
+  {
+   "id": 30401,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAC 9472"
+  },
+  {
+   "id": 30402,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAC 9475"
+  },
+  {
+   "id": 30403,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAC 9478"
+  },
+  {
+   "id": 30404,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAU 9741"
+  },
+  {
+   "id": 30405,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9701"
+  },
+  {
+   "id": 30406,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9704"
+  },
+  {
+   "id": 30407,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9707"
+  },
+  {
+   "id": 30408,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9710"
+  },
+  {
+   "id": 30409,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APFL 9703"
+  },
+  {
+   "id": 30410,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APFL 9706"
+  },
+  {
+   "id": 30411,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9701B"
+  },
+  {
+   "id": 30412,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9711"
+  },
+  {
+   "id": 30413,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9799B"
+  },
+  {
+   "id": 30414,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9750"
+  },
+  {
+   "id": 30415,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9765"
+  },
+  {
+   "id": 30416,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9771C"
+  },
+  {
+   "id": 30417,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9776"
+  },
+  {
+   "id": 30418,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9781C"
+  },
+  {
+   "id": 30419,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9702"
+  },
+  {
+   "id": 30420,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9705"
+  },
+  {
+   "id": 30421,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9708"
+  },
+  {
+   "id": 30422,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9795"
+  },
+  {
+   "id": 30423,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9703"
+  },
+  {
+   "id": 30424,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9706"
+  },
+  {
+   "id": 30425,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9709"
+  },
+  {
+   "id": 30426,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9712"
+  },
+  {
+   "id": 30427,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9715"
+  },
+  {
+   "id": 30428,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APTE 9714"
+  },
+  {
+   "id": 30429,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APTE 9718"
+  },
+  {
+   "id": 30430,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APTE 9795"
+  },
+  {
+   "id": 30431,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 14"
+  },
+  {
+   "id": 30432,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 2B"
+  },
+  {
+   "id": 30433,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 4A"
+  },
+  {
+   "id": 30434,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 8A"
+  },
+  {
+   "id": 30435,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 12A"
+  },
+  {
+   "id": 30436,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 12D"
+  },
+  {
+   "id": 30437,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 13C"
+  },
+  {
+   "id": 30438,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 16B"
+  },
+  {
+   "id": 30439,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 17A"
+  },
+  {
+   "id": 30440,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 18B"
+  },
+  {
+   "id": 30441,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 23"
+  },
+  {
+   "id": 30442,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 2A"
+  },
+  {
+   "id": 30443,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 3A"
+  },
+  {
+   "id": 30444,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 3D"
+  },
+  {
+   "id": 30445,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 7A"
+  },
+  {
+   "id": 30446,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 7D"
+  },
+  {
+   "id": 30447,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARTH 20"
+  },
+  {
+   "id": 30448,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARTH 7"
+  },
+  {
+   "id": 30449,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 30450,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ASTR 30"
+  },
+  {
+   "id": 30451,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 10"
+  },
+  {
+   "id": 30452,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 201"
+  },
+  {
+   "id": 30453,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 204"
+  },
+  {
+   "id": 30454,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 206B"
+  },
+  {
+   "id": 30455,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 210"
+  },
+  {
+   "id": 30456,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 251"
+  },
+  {
+   "id": 30457,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 254"
+  },
+  {
+   "id": 30458,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 257"
+  },
+  {
+   "id": 30459,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 270"
+  },
+  {
+   "id": 30460,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 293"
+  },
+  {
+   "id": 30461,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 4"
+  },
+  {
+   "id": 30462,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 6A"
+  },
+  {
+   "id": 30463,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 75"
+  },
+  {
+   "id": 30464,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 93"
+  },
+  {
+   "id": 30465,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BAL 1"
+  },
+  {
+   "id": 30466,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 15"
+  },
+  {
+   "id": 30467,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 201"
+  },
+  {
+   "id": 30468,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 21C"
+  },
+  {
+   "id": 30469,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 43"
+  },
+  {
+   "id": 30470,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BSK 1"
+  },
+  {
+   "id": 30471,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 12"
+  },
+  {
+   "id": 30472,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 19"
+  },
+  {
+   "id": 30473,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 20"
+  },
+  {
+   "id": 30474,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 26"
+  },
+  {
+   "id": 30475,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 2B"
+  },
+  {
+   "id": 30476,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 36"
+  },
+  {
+   "id": 30477,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 4"
+  },
+  {
+   "id": 30478,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 5"
+  },
+  {
+   "id": 30479,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50D"
+  },
+  {
+   "id": 30480,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50L"
+  },
+  {
+   "id": 30481,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50P"
+  },
+  {
+   "id": 30482,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 6"
+  },
+  {
+   "id": 30483,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 71"
+  },
+  {
+   "id": 30484,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 92"
+  },
+  {
+   "id": 30485,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 54"
+  },
+  {
+   "id": 30486,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 74"
+  },
+  {
+   "id": 30487,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 77"
+  },
+  {
+   "id": 30488,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 88"
+  },
+  {
+   "id": 30489,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 92C"
+  },
+  {
+   "id": 30490,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CEST 9703"
+  },
+  {
+   "id": 30491,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CEST 9706"
+  },
+  {
+   "id": 30492,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 12A"
+  },
+  {
+   "id": 30493,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 1B"
+  },
+  {
+   "id": 30494,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 30B"
+  },
+  {
+   "id": 30495,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHIN 1B"
+  },
+  {
+   "id": 30496,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHIN 50A"
+  },
+  {
+   "id": 30497,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHIN 50D"
+  },
+  {
+   "id": 30498,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CMGT 12"
+  },
+  {
+   "id": 30499,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CMGT 22"
+  },
+  {
+   "id": 30500,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 12"
+  },
+  {
+   "id": 30501,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 3"
+  },
+  {
+   "id": 30502,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 50"
+  },
+  {
+   "id": 30503,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 70B"
+  },
+  {
+   "id": 30504,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 14"
+  },
+  {
+   "id": 30505,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 20"
+  },
+  {
+   "id": 30506,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 41"
+  },
+  {
+   "id": 30507,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 8"
+  },
+  {
+   "id": 30508,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 50C"
+  },
+  {
+   "id": 30509,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 52B"
+  },
+  {
+   "id": 30510,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 56A"
+  },
+  {
+   "id": 30511,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 58"
+  },
+  {
+   "id": 30512,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 61"
+  },
+  {
+   "id": 30513,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 69B"
+  },
+  {
+   "id": 30514,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 71S"
+  },
+  {
+   "id": 30515,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 74A"
+  },
+  {
+   "id": 30516,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 80A"
+  },
+  {
+   "id": 30517,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 81B"
+  },
+  {
+   "id": 30518,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 83"
+  },
+  {
+   "id": 30519,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 11"
+  },
+  {
+   "id": 30520,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 14"
+  },
+  {
+   "id": 30521,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 17"
+  },
+  {
+   "id": 30522,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 4A"
+  },
+  {
+   "id": 30523,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 7"
+  },
+  {
+   "id": 30524,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIS 1"
+  },
+  {
+   "id": 30525,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 11"
+  },
+  {
+   "id": 30526,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 210"
+  },
+  {
+   "id": 30527,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 31"
+  },
+  {
+   "id": 30528,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 34"
+  },
+  {
+   "id": 30529,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 37"
+  },
+  {
+   "id": 30530,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 41"
+  },
+  {
+   "id": 30531,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 54"
+  },
+  {
+   "id": 30532,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 60"
+  },
+  {
+   "id": 30533,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 65"
+  },
+  {
+   "id": 30534,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 69"
+  },
+  {
+   "id": 30535,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 87"
+  },
+  {
+   "id": 30536,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 95"
+  },
+  {
+   "id": 30537,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 30538,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9703"
+  },
+  {
+   "id": 30539,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9706"
+  },
+  {
+   "id": 30540,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9795"
+  },
+  {
+   "id": 30541,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "EMS 8"
+  },
+  {
+   "id": 30542,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 11C"
+  },
+  {
+   "id": 30543,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 13A"
+  },
+  {
+   "id": 30544,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 201A"
+  },
+  {
+   "id": 30545,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 21"
+  },
+  {
+   "id": 30546,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 22"
+  },
+  {
+   "id": 30547,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 31"
+  },
+  {
+   "id": 30548,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 41"
+  },
+  {
+   "id": 30549,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 30550,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 10"
+  },
+  {
+   "id": 30551,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 16"
+  },
+  {
+   "id": 30552,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 36"
+  },
+  {
+   "id": 30553,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 45"
+  },
+  {
+   "id": 30554,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENSC 10"
+  },
+  {
+   "id": 30555,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENSC 15"
+  },
+  {
+   "id": 30556,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENTR 1"
+  },
+  {
+   "id": 30557,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENTR 5"
+  },
+  {
+   "id": 30558,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 12"
+  },
+  {
+   "id": 30559,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 25"
+  },
+  {
+   "id": 30560,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 43"
+  },
+  {
+   "id": 30561,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 53"
+  },
+  {
+   "id": 30562,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 63"
+  },
+  {
+   "id": 30563,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 210"
+  },
+  {
+   "id": 30564,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 230"
+  },
+  {
+   "id": 30565,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 242A"
+  },
+  {
+   "id": 30566,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 251"
+  },
+  {
+   "id": 30567,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 251"
+  },
+  {
+   "id": 30568,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 257"
+  },
+  {
+   "id": 30569,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 51"
+  },
+  {
+   "id": 30570,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 57"
+  },
+  {
+   "id": 30571,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FFL 1"
+  },
+  {
+   "id": 30572,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FILM 15"
+  },
+  {
+   "id": 30573,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FRNC 1A"
+  },
+  {
+   "id": 30574,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FRNC 2B"
+  },
+  {
+   "id": 30575,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FRNC 50C"
+  },
+  {
+   "id": 30576,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 10"
+  },
+  {
+   "id": 30577,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 3"
+  },
+  {
+   "id": 30578,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 6"
+  },
+  {
+   "id": 30579,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 88B"
+  },
+  {
+   "id": 30580,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FUN 1"
+  },
+  {
+   "id": 30581,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 12"
+  },
+  {
+   "id": 30582,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 2"
+  },
+  {
+   "id": 30583,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 22"
+  },
+  {
+   "id": 30584,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 8"
+  },
+  {
+   "id": 30585,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEOS 11L"
+  },
+  {
+   "id": 30586,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEOS 2L"
+  },
+  {
+   "id": 30587,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 1"
+  },
+  {
+   "id": 30588,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 25"
+  },
+  {
+   "id": 30589,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 33"
+  },
+  {
+   "id": 30590,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 43"
+  },
+  {
+   "id": 30591,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 52"
+  },
+  {
+   "id": 30592,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 63"
+  },
+  {
+   "id": 30593,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 41"
+  },
+  {
+   "id": 30594,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 44"
+  },
+  {
+   "id": 30595,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 47"
+  },
+  {
+   "id": 30596,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HLTH 1"
+  },
+  {
+   "id": 30597,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HLTH 40"
+  },
+  {
+   "id": 30598,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HLTH 60"
+  },
+  {
+   "id": 30599,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HUMN 60"
+  },
+  {
+   "id": 30600,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 48"
+  },
+  {
+   "id": 30601,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 51"
+  },
+  {
+   "id": 30602,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 55"
+  },
+  {
+   "id": 30603,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 60"
+  },
+  {
+   "id": 30604,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 72"
+  },
+  {
+   "id": 30605,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "INDT 64"
+  },
+  {
+   "id": 30606,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JAPN 1A"
+  },
+  {
+   "id": 30607,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JAPN 2B"
+  },
+  {
+   "id": 30608,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JAPN 50C"
+  },
+  {
+   "id": 30609,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 1"
+  },
+  {
+   "id": 30610,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 12BB"
+  },
+  {
+   "id": 30611,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 12TK"
+  },
+  {
+   "id": 30612,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 16"
+  },
+  {
+   "id": 30613,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 23"
+  },
+  {
+   "id": 30614,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 3BB"
+  },
+  {
+   "id": 30615,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 3SF"
+  },
+  {
+   "id": 30616,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 5"
+  },
+  {
+   "id": 30617,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 8"
+  },
+  {
+   "id": 30618,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 20"
+  },
+  {
+   "id": 30619,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 26"
+  },
+  {
+   "id": 30620,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 42"
+  },
+  {
+   "id": 30621,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 50"
+  },
+  {
+   "id": 30622,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 60"
+  },
+  {
+   "id": 30623,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 60"
+  },
+  {
+   "id": 30624,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 70B"
+  },
+  {
+   "id": 30625,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 73"
+  },
+  {
+   "id": 30626,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 76"
+  },
+  {
+   "id": 30627,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MT 19"
+  },
+  {
+   "id": 30628,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 16"
+  },
+  {
+   "id": 30629,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 204"
+  },
+  {
+   "id": 30630,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 215W"
+  },
+  {
+   "id": 30631,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 221W"
+  },
+  {
+   "id": 30632,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 25"
+  },
+  {
+   "id": 30633,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 3"
+  },
+  {
+   "id": 30634,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 4"
+  },
+  {
+   "id": 30635,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 44"
+  },
+  {
+   "id": 30636,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 6"
+  },
+  {
+   "id": 30637,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 50"
+  },
+  {
+   "id": 30638,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 63A"
+  },
+  {
+   "id": 30639,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 71A"
+  },
+  {
+   "id": 30640,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 73A"
+  },
+  {
+   "id": 30641,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 20"
+  },
+  {
+   "id": 30642,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 22B"
+  },
+  {
+   "id": 30643,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 25"
+  },
+  {
+   "id": 30644,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 50"
+  },
+  {
+   "id": 30645,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 21A"
+  },
+  {
+   "id": 30646,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 22B"
+  },
+  {
+   "id": 30647,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 40"
+  },
+  {
+   "id": 30648,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 2A"
+  },
+  {
+   "id": 30649,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 2D"
+  },
+  {
+   "id": 30650,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 42A"
+  },
+  {
+   "id": 30651,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 8"
+  },
+  {
+   "id": 30652,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 12"
+  },
+  {
+   "id": 30653,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 16"
+  },
+  {
+   "id": 30654,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 44"
+  },
+  {
+   "id": 30655,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 51"
+  },
+  {
+   "id": 30656,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 55"
+  },
+  {
+   "id": 30657,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 60C"
+  },
+  {
+   "id": 30658,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 84"
+  },
+  {
+   "id": 30659,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NUTR 11"
+  },
+  {
+   "id": 30660,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "OPTN 9701"
+  },
+  {
+   "id": 30661,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "OPTN 9795"
+  },
+  {
+   "id": 30662,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHIL 60"
+  },
+  {
+   "id": 30663,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 1A"
+  },
+  {
+   "id": 30664,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 2A"
+  },
+  {
+   "id": 30665,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 2D"
+  },
+  {
+   "id": 30666,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 3C"
+  },
+  {
+   "id": 30667,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 5A"
+  },
+  {
+   "id": 30668,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 6B"
+  },
+  {
+   "id": 30669,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 3A"
+  },
+  {
+   "id": 30670,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 4B"
+  },
+  {
+   "id": 30671,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 7A"
+  },
+  {
+   "id": 30672,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 7D"
+  },
+  {
+   "id": 30673,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLGL 31"
+  },
+  {
+   "id": 30674,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLGL 34"
+  },
+  {
+   "id": 30675,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLGL 37"
+  },
+  {
+   "id": 30676,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9703"
+  },
+  {
+   "id": 30677,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9706"
+  },
+  {
+   "id": 30678,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9735"
+  },
+  {
+   "id": 30679,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9750"
+  },
+  {
+   "id": 30680,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "POSC 12"
+  },
+  {
+   "id": 30681,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "POSC 30"
+  },
+  {
+   "id": 30682,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 10"
+  },
+  {
+   "id": 30683,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 13"
+  },
+  {
+   "id": 30684,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 2"
+  },
+  {
+   "id": 30685,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 22"
+  },
+  {
+   "id": 30686,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 26"
+  },
+  {
+   "id": 30687,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 4"
+  },
+  {
+   "id": 30688,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 96"
+  },
+  {
+   "id": 30689,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 25"
+  },
+  {
+   "id": 30690,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 4"
+  },
+  {
+   "id": 30691,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 6"
+  },
+  {
+   "id": 30692,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 30693,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "REST 80"
+  },
+  {
+   "id": 30694,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "REST 83"
+  },
+  {
+   "id": 30695,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SB 12"
+  },
+  {
+   "id": 30696,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9702"
+  },
+  {
+   "id": 30697,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9705"
+  },
+  {
+   "id": 30698,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9708"
+  },
+  {
+   "id": 30699,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SL 65"
+  },
+  {
+   "id": 30700,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOC 1"
+  },
+  {
+   "id": 30701,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 2"
+  },
+  {
+   "id": 30702,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 3"
+  },
+  {
+   "id": 30703,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 6"
+  },
+  {
+   "id": 30704,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SPA 1A"
+  },
+  {
+   "id": 30705,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SPA 2B"
+  },
+  {
+   "id": 30706,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SPA 50C"
+  },
+  {
+   "id": 30707,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SWM 1"
+  },
+  {
+   "id": 30708,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 10"
+  },
+  {
+   "id": 30709,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 17"
+  },
+  {
+   "id": 30710,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 23"
+  },
+  {
+   "id": 30711,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 3"
+  },
+  {
+   "id": 30712,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 30C"
+  },
+  {
+   "id": 30713,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 47A"
+  },
+  {
+   "id": 30714,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 47D"
+  },
+  {
+   "id": 30715,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 48C"
+  },
+  {
+   "id": 30716,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 4B"
+  },
+  {
+   "id": 30717,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 6A"
+  },
+  {
+   "id": 30718,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 75A"
+  },
+  {
+   "id": 30719,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 80A"
+  },
+  {
+   "id": 30720,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 8A"
+  },
+  {
+   "id": 30721,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "TK 17"
+  },
+  {
+   "id": 30722,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "TUTR 1B"
+  },
+  {
+   "id": 30723,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WAP 1"
+  },
+  {
+   "id": 30724,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 63"
+  },
+  {
+   "id": 30725,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 65A"
+  },
+  {
+   "id": 30726,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 67A"
+  },
+  {
+   "id": 30727,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 69B"
+  },
+  {
+   "id": 30728,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WOW 1"
+  },
+  {
+   "id": 30729,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WT 18"
+  },
+  {
+   "id": 30730,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 41"
+  },
+  {
+   "id": 30731,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 50"
+  },
+  {
+   "id": 30732,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 60"
+  },
+  {
+   "id": 30733,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 70"
+  },
+  {
+   "id": 30734,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 85"
+  },
+  {
+   "id": 30735,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 9997"
+  },
+  {
+   "id": 30736,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 13"
+  },
+  {
+   "id": 30737,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 2"
+  },
+  {
+   "id": 30738,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 5"
+  },
+  {
+   "id": 30739,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAC 9473"
+  },
+  {
+   "id": 30740,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAC 9476"
+  },
+  {
+   "id": 30741,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAU 9725"
+  },
+  {
+   "id": 30742,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAU 9748"
+  },
+  {
+   "id": 30743,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9702"
+  },
+  {
+   "id": 30744,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9705"
+  },
+  {
+   "id": 30745,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9708"
+  },
+  {
+   "id": 30746,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APFL 9701"
+  },
+  {
+   "id": 30747,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APFL 9704"
+  },
+  {
+   "id": 30748,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APFL 9795"
+  },
+  {
+   "id": 30749,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9702"
+  },
+  {
+   "id": 30750,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9712"
+  },
+  {
+   "id": 30751,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9799C"
+  },
+  {
+   "id": 30752,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9760A"
+  },
+  {
+   "id": 30753,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9766"
+  },
+  {
+   "id": 30754,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9774"
+  },
+  {
+   "id": 30755,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9778"
+  },
+  {
+   "id": 30756,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9795"
+  },
+  {
+   "id": 30757,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9703"
+  },
+  {
+   "id": 30758,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9706"
+  },
+  {
+   "id": 30759,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9709"
+  },
+  {
+   "id": 30760,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9701"
+  },
+  {
+   "id": 30761,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9704"
+  },
+  {
+   "id": 30762,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9707"
+  },
+  {
+   "id": 30763,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9710"
+  },
+  {
+   "id": 30764,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9713"
+  },
+  {
+   "id": 30765,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9795"
+  },
+  {
+   "id": 30766,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APTE 9715"
+  },
+  {
+   "id": 30767,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APTE 9720"
+  },
+  {
+   "id": 30768,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "AQA 1"
+  },
+  {
+   "id": 30769,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 16"
+  },
+  {
+   "id": 30770,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 3"
+  },
+  {
+   "id": 30771,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 4B"
+  },
+  {
+   "id": 30772,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 8B"
+  },
+  {
+   "id": 30773,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 12B"
+  },
+  {
+   "id": 30774,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 13A"
+  },
+  {
+   "id": 30775,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 13D"
+  },
+  {
+   "id": 30776,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 16C"
+  },
+  {
+   "id": 30777,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 17B"
+  },
+  {
+   "id": 30778,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 20"
+  },
+  {
+   "id": 30779,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 24"
+  },
+  {
+   "id": 30780,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 2B"
+  },
+  {
+   "id": 30781,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 3B"
+  },
+  {
+   "id": 30782,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 45"
+  },
+  {
+   "id": 30783,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 7B"
+  },
+  {
+   "id": 30784,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 9A"
+  },
+  {
+   "id": 30785,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARTH 3"
+  },
+  {
+   "id": 30786,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARTH 8"
+  },
+  {
+   "id": 30787,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ASTR 10"
+  },
+  {
+   "id": 30788,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ASTR 45"
+  },
+  {
+   "id": 30789,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 11"
+  },
+  {
+   "id": 30790,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 202"
+  },
+  {
+   "id": 30791,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 205"
+  },
+  {
+   "id": 30792,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 207"
+  },
+  {
+   "id": 30793,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 211"
+  },
+  {
+   "id": 30794,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 252"
+  },
+  {
+   "id": 30795,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 255"
+  },
+  {
+   "id": 30796,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 258"
+  },
+  {
+   "id": 30797,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 275"
+  },
+  {
+   "id": 30798,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 294"
+  },
+  {
+   "id": 30799,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 5"
+  },
+  {
+   "id": 30800,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 6B"
+  },
+  {
+   "id": 30801,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 8"
+  },
+  {
+   "id": 30802,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 94"
+  },
+  {
+   "id": 30803,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BB 13"
+  },
+  {
+   "id": 30804,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 16"
+  },
+  {
+   "id": 30805,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 21A"
+  },
+  {
+   "id": 30806,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 41"
+  },
+  {
+   "id": 30807,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 44"
+  },
+  {
+   "id": 30808,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 10"
+  },
+  {
+   "id": 30809,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 14"
+  },
+  {
+   "id": 30810,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 1A"
+  },
+  {
+   "id": 30811,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 21"
+  },
+  {
+   "id": 30812,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 28"
+  },
+  {
+   "id": 30813,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 32"
+  },
+  {
+   "id": 30814,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 3A"
+  },
+  {
+   "id": 30815,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 40"
+  },
+  {
+   "id": 30816,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50A"
+  },
+  {
+   "id": 30817,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50J"
+  },
+  {
+   "id": 30818,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50M"
+  },
+  {
+   "id": 30819,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50R"
+  },
+  {
+   "id": 30820,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 7"
+  },
+  {
+   "id": 30821,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 72"
+  },
+  {
+   "id": 30822,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 93"
+  },
+  {
+   "id": 30823,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 58"
+  },
+  {
+   "id": 30824,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 75"
+  },
+  {
+   "id": 30825,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 83"
+  },
+  {
+   "id": 30826,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 92A"
+  },
+  {
+   "id": 30827,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CEST 9701"
+  },
+  {
+   "id": 30828,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CEST 9704"
+  },
+  {
+   "id": 30829,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CEST 9795"
+  },
+  {
+   "id": 30830,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 12B"
+  },
+  {
+   "id": 30831,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 201"
+  },
+  {
+   "id": 30832,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 31"
+  },
+  {
+   "id": 30833,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHIN 2A"
+  },
+  {
+   "id": 30834,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHIN 50B"
+  },
+  {
+   "id": 30835,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CMGT 1"
+  },
+  {
+   "id": 30836,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CMGT 20"
+  },
+  {
+   "id": 30837,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 10"
+  },
+  {
+   "id": 30838,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 2"
+  },
+  {
+   "id": 30839,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 46"
+  },
+  {
+   "id": 30840,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 6"
+  },
+  {
+   "id": 30841,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 30842,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 15"
+  },
+  {
+   "id": 30843,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 21"
+  },
+  {
+   "id": 30844,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 42"
+  },
+  {
+   "id": 30845,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 50A"
+  },
+  {
+   "id": 30846,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 51"
+  },
+  {
+   "id": 30847,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 54"
+  },
+  {
+   "id": 30848,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 56B"
+  },
+  {
+   "id": 30849,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 60"
+  },
+  {
+   "id": 30850,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 61S"
+  },
+  {
+   "id": 30851,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 71A"
+  },
+  {
+   "id": 30852,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 72S"
+  },
+  {
+   "id": 30853,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 74B"
+  },
+  {
+   "id": 30854,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 80B"
+  },
+  {
+   "id": 30855,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 82A"
+  },
+  {
+   "id": 30856,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 1"
+  },
+  {
+   "id": 30857,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 12A"
+  },
+  {
+   "id": 30858,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 15"
+  },
+  {
+   "id": 30859,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 2"
+  },
+  {
+   "id": 30860,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 5"
+  },
+  {
+   "id": 30861,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 8A"
+  },
+  {
+   "id": 30862,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECAP 9756"
+  },
+  {
+   "id": 30863,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 208"
+  },
+  {
+   "id": 30864,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 211"
+  },
+  {
+   "id": 30865,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 32"
+  },
+  {
+   "id": 30866,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 35"
+  },
+  {
+   "id": 30867,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 38"
+  },
+  {
+   "id": 30868,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 50"
+  },
+  {
+   "id": 30869,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 56"
+  },
+  {
+   "id": 30870,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 62"
+  },
+  {
+   "id": 30871,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 67"
+  },
+  {
+   "id": 30872,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 79"
+  },
+  {
+   "id": 30873,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 90"
+  },
+  {
+   "id": 30874,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECN 10"
+  },
+  {
+   "id": 30875,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9701"
+  },
+  {
+   "id": 30876,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9704"
+  },
+  {
+   "id": 30877,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9707"
+  },
+  {
+   "id": 30878,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "EMS 1"
+  },
+  {
+   "id": 30879,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 11A"
+  },
+  {
+   "id": 30880,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 12A"
+  },
+  {
+   "id": 30881,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 13B"
+  },
+  {
+   "id": 30882,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 201B"
+  },
+  {
+   "id": 30883,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 210"
+  },
+  {
+   "id": 30884,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 25"
+  },
+  {
+   "id": 30885,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 32"
+  },
+  {
+   "id": 30886,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 45"
+  },
+  {
+   "id": 30887,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 30888,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 11"
+  },
+  {
+   "id": 30889,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 22"
+  },
+  {
+   "id": 30890,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 40"
+  },
+  {
+   "id": 30891,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 47"
+  },
+  {
+   "id": 30892,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENSC 10L"
+  },
+  {
+   "id": 30893,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENSC 15L"
+  },
+  {
+   "id": 30894,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENTR 20"
+  },
+  {
+   "id": 30895,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 1"
+  },
+  {
+   "id": 30896,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 13"
+  },
+  {
+   "id": 30897,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 4"
+  },
+  {
+   "id": 30898,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 5"
+  },
+  {
+   "id": 30899,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 6"
+  },
+  {
+   "id": 30900,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 7"
+  },
+  {
+   "id": 30901,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 220"
+  },
+  {
+   "id": 30902,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 240A"
+  },
+  {
+   "id": 30903,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 242B"
+  },
+  {
+   "id": 30904,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 270"
+  },
+  {
+   "id": 30905,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 254"
+  },
+  {
+   "id": 30906,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 269"
+  },
+  {
+   "id": 30907,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 54"
+  },
+  {
+   "id": 30908,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 63"
+  },
+  {
+   "id": 30909,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FILM 12"
+  },
+  {
+   "id": 30910,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FILM 16"
+  },
+  {
+   "id": 30911,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FRNC 1B"
+  },
+  {
+   "id": 30912,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FRNC 50A"
+  },
+  {
+   "id": 30913,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FRNC 50D"
+  },
+  {
+   "id": 30914,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 11"
+  },
+  {
+   "id": 30915,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 4"
+  },
+  {
+   "id": 30916,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 7"
+  },
+  {
+   "id": 30917,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 88C"
+  },
+  {
+   "id": 30918,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 1"
+  },
+  {
+   "id": 30919,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 13"
+  },
+  {
+   "id": 30920,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 20"
+  },
+  {
+   "id": 30921,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 3"
+  },
+  {
+   "id": 30922,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEOS 1"
+  },
+  {
+   "id": 30923,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEOS 12"
+  },
+  {
+   "id": 30924,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEOS 5"
+  },
+  {
+   "id": 30925,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 12"
+  },
+  {
+   "id": 30926,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 3"
+  },
+  {
+   "id": 30927,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 4"
+  },
+  {
+   "id": 30928,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 48"
+  },
+  {
+   "id": 30929,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 53"
+  },
+  {
+   "id": 30930,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 30931,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 42"
+  },
+  {
+   "id": 30932,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 45"
+  },
+  {
+   "id": 30933,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 48"
+  },
+  {
+   "id": 30934,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HLTH 18"
+  },
+  {
+   "id": 30935,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HLTH 51A"
+  },
+  {
+   "id": 30936,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HLTH 8"
+  },
+  {
+   "id": 30937,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HUMN 65"
+  },
+  {
+   "id": 30938,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 49"
+  },
+  {
+   "id": 30939,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 52"
+  },
+  {
+   "id": 30940,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 56"
+  },
+  {
+   "id": 30941,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 62"
+  },
+  {
+   "id": 30942,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "INDT 62"
+  },
+  {
+   "id": 30943,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "INDT 65"
+  },
+  {
+   "id": 30944,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JAPN 1B"
+  },
+  {
+   "id": 30945,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JAPN 50A"
+  },
+  {
+   "id": 30946,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JAPN 50D"
+  },
+  {
+   "id": 30947,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 10"
+  },
+  {
+   "id": 30948,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 12BK"
+  },
+  {
+   "id": 30949,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 14"
+  },
+  {
+   "id": 30950,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 17"
+  },
+  {
+   "id": 30951,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 24"
+  },
+  {
+   "id": 30952,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 3BK"
+  },
+  {
+   "id": 30953,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 3SO"
+  },
+  {
+   "id": 30954,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 6"
+  },
+  {
+   "id": 30955,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "LSF 1"
+  },
+  {
+   "id": 30956,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 21"
+  },
+  {
+   "id": 30957,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 40"
+  },
+  {
+   "id": 30958,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 43"
+  },
+  {
+   "id": 30959,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 56"
+  },
+  {
+   "id": 30960,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 61"
+  },
+  {
+   "id": 30961,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 65"
+  },
+  {
+   "id": 30962,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 71A"
+  },
+  {
+   "id": 30963,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 74"
+  },
+  {
+   "id": 30964,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 83"
+  },
+  {
+   "id": 30965,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 1"
+  },
+  {
+   "id": 30966,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 2"
+  },
+  {
+   "id": 30967,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 21"
+  },
+  {
+   "id": 30968,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 22"
+  },
+  {
+   "id": 30969,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 222W"
+  },
+  {
+   "id": 30970,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 253"
+  },
+  {
+   "id": 30971,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 33"
+  },
+  {
+   "id": 30972,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 41"
+  },
+  {
+   "id": 30973,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 47"
+  },
+  {
+   "id": 30974,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 8"
+  },
+  {
+   "id": 30975,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 60A"
+  },
+  {
+   "id": 30976,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 65"
+  },
+  {
+   "id": 30977,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 71B"
+  },
+  {
+   "id": 30978,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 81A"
+  },
+  {
+   "id": 30979,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 21"
+  },
+  {
+   "id": 30980,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 23"
+  },
+  {
+   "id": 30981,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 26"
+  },
+  {
+   "id": 30982,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 20A"
+  },
+  {
+   "id": 30983,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 21B"
+  },
+  {
+   "id": 30984,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 23A"
+  },
+  {
+   "id": 30985,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 1"
+  },
+  {
+   "id": 30986,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 2B"
+  },
+  {
+   "id": 30987,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 3"
+  },
+  {
+   "id": 30988,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 42B"
+  },
+  {
+   "id": 30989,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 11A"
+  },
+  {
+   "id": 30990,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 13"
+  },
+  {
+   "id": 30991,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 18"
+  },
+  {
+   "id": 30992,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 45"
+  },
+  {
+   "id": 30993,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 52"
+  },
+  {
+   "id": 30994,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 60A"
+  },
+  {
+   "id": 30995,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 70"
+  },
+  {
+   "id": 30996,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NUTR 1"
+  },
+  {
+   "id": 30997,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NUTR 4"
+  },
+  {
+   "id": 30998,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "OPTN 9702"
+  },
+  {
+   "id": 30999,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHIL 50"
+  },
+  {
+   "id": 31000,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHIL 65"
+  },
+  {
+   "id": 31001,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 1B"
+  },
+  {
+   "id": 31002,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 2B"
+  },
+  {
+   "id": 31003,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 3A"
+  },
+  {
+   "id": 31004,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 4A"
+  },
+  {
+   "id": 31005,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 5B"
+  },
+  {
+   "id": 31006,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 11"
+  },
+  {
+   "id": 31007,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 3B"
+  },
+  {
+   "id": 31008,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 4C"
+  },
+  {
+   "id": 31009,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 7B"
+  },
+  {
+   "id": 31010,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PIL 1"
+  },
+  {
+   "id": 31011,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLGL 32"
+  },
+  {
+   "id": 31012,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLGL 35"
+  },
+  {
+   "id": 31013,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9701"
+  },
+  {
+   "id": 31014,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9704"
+  },
+  {
+   "id": 31015,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9707"
+  },
+  {
+   "id": 31016,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9740"
+  },
+  {
+   "id": 31017,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9795"
+  },
+  {
+   "id": 31018,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "POSC 20"
+  },
+  {
+   "id": 31019,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "POSC 35"
+  },
+  {
+   "id": 31020,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 11"
+  },
+  {
+   "id": 31021,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 15"
+  },
+  {
+   "id": 31022,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 20"
+  },
+  {
+   "id": 31023,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 23"
+  },
+  {
+   "id": 31024,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 3"
+  },
+  {
+   "id": 31025,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 5"
+  },
+  {
+   "id": 31026,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 12"
+  },
+  {
+   "id": 31027,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 3"
+  },
+  {
+   "id": 31028,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 45"
+  },
+  {
+   "id": 31029,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 7"
+  },
+  {
+   "id": 31030,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "RELS 50"
+  },
+  {
+   "id": 31031,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "REST 81A"
+  },
+  {
+   "id": 31032,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "REST 84"
+  },
+  {
+   "id": 31033,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SERV 85A"
+  },
+  {
+   "id": 31034,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9703"
+  },
+  {
+   "id": 31035,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9706"
+  },
+  {
+   "id": 31036,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9795"
+  },
+  {
+   "id": 31037,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SL 66"
+  },
+  {
+   "id": 31038,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 1"
+  },
+  {
+   "id": 31039,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 20"
+  },
+  {
+   "id": 31040,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 4"
+  },
+  {
+   "id": 31041,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 7"
+  },
+  {
+   "id": 31042,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SPA 1B"
+  },
+  {
+   "id": 31043,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SPA 50A"
+  },
+  {
+   "id": 31044,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SPA 50D"
+  },
+  {
+   "id": 31045,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "TEN 1"
+  },
+  {
+   "id": 31046,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 14"
+  },
+  {
+   "id": 31047,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 21"
+  },
+  {
+   "id": 31048,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 2A"
+  },
+  {
+   "id": 31049,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 30A"
+  },
+  {
+   "id": 31050,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 38A"
+  },
+  {
+   "id": 31051,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 47B"
+  },
+  {
+   "id": 31052,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 48A"
+  },
+  {
+   "id": 31053,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 48D"
+  },
+  {
+   "id": 31054,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 5A"
+  },
+  {
+   "id": 31055,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 6B"
+  },
+  {
+   "id": 31056,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 75B"
+  },
+  {
+   "id": 31057,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 80B"
+  },
+  {
+   "id": 31058,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 8B"
+  },
+  {
+   "id": 31059,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "TKD 1"
+  },
+  {
+   "id": 31060,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "TUTR 2A"
+  },
+  {
+   "id": 31061,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WCC 6"
+  },
+  {
+   "id": 31062,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 64A"
+  },
+  {
+   "id": 31063,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 65B"
+  },
+  {
+   "id": 31064,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 67B"
+  },
+  {
+   "id": 31065,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 70"
+  },
+  {
+   "id": 31066,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WR 5"
+  },
+  {
+   "id": 31067,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "YOG 1"
+  },
+  {
+   "id": 31068,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 42"
+  },
+  {
+   "id": 31069,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 54"
+  },
+  {
+   "id": 31070,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 61"
+  },
+  {
+   "id": 31071,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 74"
+  },
+  {
+   "id": 31072,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ADMJ 89"
+  },
+  {
+   "id": 31073,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 1"
+  },
+  {
+   "id": 31074,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 13L"
+  },
+  {
+   "id": 31075,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ANTH 3"
+  },
+  {
+   "id": 31076,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAC 9471"
+  },
+  {
+   "id": 31077,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAC 9474"
+  },
+  {
+   "id": 31078,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAC 9477"
+  },
+  {
+   "id": 31079,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAU 9727"
+  },
+  {
+   "id": 31080,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APAU 9754"
+  },
+  {
+   "id": 31081,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9703"
+  },
+  {
+   "id": 31082,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9706"
+  },
+  {
+   "id": 31083,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APEL 9709"
+  },
+  {
+   "id": 31084,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APFL 9702"
+  },
+  {
+   "id": 31085,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APFL 9705"
+  },
+  {
+   "id": 31086,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9701A"
+  },
+  {
+   "id": 31087,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9710"
+  },
+  {
+   "id": 31088,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9799A"
+  },
+  {
+   "id": 31089,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APHC 9799D"
+  },
+  {
+   "id": 31090,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9760B"
+  },
+  {
+   "id": 31091,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9771A"
+  },
+  {
+   "id": 31092,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9775"
+  },
+  {
+   "id": 31093,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APPM 9781A"
+  },
+  {
+   "id": 31094,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9701"
+  },
+  {
+   "id": 31095,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9704"
+  },
+  {
+   "id": 31096,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9707"
+  },
+  {
+   "id": 31097,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APRO 9710"
+  },
+  {
+   "id": 31098,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9702"
+  },
+  {
+   "id": 31099,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9705"
+  },
+  {
+   "id": 31100,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9708"
+  },
+  {
+   "id": 31101,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9711"
+  },
+  {
+   "id": 31102,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APSF 9714"
+  },
+  {
+   "id": 31103,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APTE 9707"
+  },
+  {
+   "id": 31104,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APTE 9716"
+  },
+  {
+   "id": 31105,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "APTE 9721"
+  },
+  {
+   "id": 31106,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 12"
+  },
+  {
+   "id": 31107,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 2A"
+  },
+  {
+   "id": 31108,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 33"
+  },
+  {
+   "id": 31109,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARCH 80"
+  },
+  {
+   "id": 31110,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARH 1"
+  },
+  {
+   "id": 31111,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 12C"
+  },
+  {
+   "id": 31112,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 13B"
+  },
+  {
+   "id": 31113,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 16A"
+  },
+  {
+   "id": 31114,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 16D"
+  },
+  {
+   "id": 31115,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 18A"
+  },
+  {
+   "id": 31116,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 22"
+  },
+  {
+   "id": 31117,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 25"
+  },
+  {
+   "id": 31118,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 2C"
+  },
+  {
+   "id": 31119,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 3C"
+  },
+  {
+   "id": 31120,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 61"
+  },
+  {
+   "id": 31121,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ART 7C"
+  },
+  {
+   "id": 31122,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARTH 1"
+  },
+  {
+   "id": 31123,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARTH 6"
+  },
+  {
+   "id": 31124,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 31125,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ASTR 20"
+  },
+  {
+   "id": 31126,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 1"
+  },
+  {
+   "id": 31127,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 2"
+  },
+  {
+   "id": 31128,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 203"
+  },
+  {
+   "id": 31129,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 206A"
+  },
+  {
+   "id": 31130,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 208"
+  },
+  {
+   "id": 31131,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 250"
+  },
+  {
+   "id": 31132,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 253"
+  },
+  {
+   "id": 31133,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 256"
+  },
+  {
+   "id": 31134,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 260"
+  },
+  {
+   "id": 31135,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 292"
+  },
+  {
+   "id": 31136,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 3"
+  },
+  {
+   "id": 31137,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 50"
+  },
+  {
+   "id": 31138,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 7"
+  },
+  {
+   "id": 31139,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ATEC 92"
+  },
+  {
+   "id": 31140,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BAD 1"
+  },
+  {
+   "id": 31141,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 1"
+  },
+  {
+   "id": 31142,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 18"
+  },
+  {
+   "id": 31143,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 21B"
+  },
+  {
+   "id": 31144,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 42"
+  },
+  {
+   "id": 31145,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BIOS 5"
+  },
+  {
+   "id": 31146,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 11"
+  },
+  {
+   "id": 31147,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 16"
+  },
+  {
+   "id": 31148,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 1B"
+  },
+  {
+   "id": 31149,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 22"
+  },
+  {
+   "id": 31150,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 2A"
+  },
+  {
+   "id": 31151,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 34"
+  },
+  {
+   "id": 31152,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 3B"
+  },
+  {
+   "id": 31153,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 43"
+  },
+  {
+   "id": 31154,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50C"
+  },
+  {
+   "id": 31155,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50K"
+  },
+  {
+   "id": 31156,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50N"
+  },
+  {
+   "id": 31157,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 50S"
+  },
+  {
+   "id": 31158,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 70"
+  },
+  {
+   "id": 31159,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "BUS 8"
+  },
+  {
+   "id": 31160,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 50"
+  },
+  {
+   "id": 31161,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 69"
+  },
+  {
+   "id": 31162,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 76"
+  },
+  {
+   "id": 31163,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 85"
+  },
+  {
+   "id": 31164,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CAS 92B"
+  },
+  {
+   "id": 31165,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CEST 9702"
+  },
+  {
+   "id": 31166,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CEST 9705"
+  },
+  {
+   "id": 31167,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 10"
+  },
+  {
+   "id": 31168,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 1A"
+  },
+  {
+   "id": 31169,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHEM 30A"
+  },
+  {
+   "id": 31170,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHIN 1A"
+  },
+  {
+   "id": 31171,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHIN 2B"
+  },
+  {
+   "id": 31172,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CHIN 50C"
+  },
+  {
+   "id": 31173,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CMGT 11"
+  },
+  {
+   "id": 31174,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CMGT 21"
+  },
+  {
+   "id": 31175,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 11"
+  },
+  {
+   "id": 31176,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 20"
+  },
+  {
+   "id": 31177,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 48"
+  },
+  {
+   "id": 31178,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "COMM 70A"
+  },
+  {
+   "id": 31179,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 10"
+  },
+  {
+   "id": 31180,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 19A"
+  },
+  {
+   "id": 31181,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 28"
+  },
+  {
+   "id": 31182,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "CSCI 7"
+  },
+  {
+   "id": 31183,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 50B"
+  },
+  {
+   "id": 31184,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 52A"
+  },
+  {
+   "id": 31185,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 55A"
+  },
+  {
+   "id": 31186,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 57"
+  },
+  {
+   "id": 31187,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 60S"
+  },
+  {
+   "id": 31188,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 69A"
+  },
+  {
+   "id": 31189,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 71B"
+  },
+  {
+   "id": 31190,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 73"
+  },
+  {
+   "id": 31191,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 75"
+  },
+  {
+   "id": 31192,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 81A"
+  },
+  {
+   "id": 31193,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DHYG 82B"
+  },
+  {
+   "id": 31194,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 10A"
+  },
+  {
+   "id": 31195,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 13"
+  },
+  {
+   "id": 31196,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 16"
+  },
+  {
+   "id": 31197,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 20"
+  },
+  {
+   "id": 31198,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 6A"
+  },
+  {
+   "id": 31199,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "DIGM 8B"
+  },
+  {
+   "id": 31200,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECAP 9762"
+  },
+  {
+   "id": 31201,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 209"
+  },
+  {
+   "id": 31202,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 30"
+  },
+  {
+   "id": 31203,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 33"
+  },
+  {
+   "id": 31204,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 36"
+  },
+  {
+   "id": 31205,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 39"
+  },
+  {
+   "id": 31206,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 52"
+  },
+  {
+   "id": 31207,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 59"
+  },
+  {
+   "id": 31208,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 63"
+  },
+  {
+   "id": 31209,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 68"
+  },
+  {
+   "id": 31210,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 83"
+  },
+  {
+   "id": 31211,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECD 91"
+  },
+  {
+   "id": 31212,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 31213,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9702"
+  },
+  {
+   "id": 31214,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9705"
+  },
+  {
+   "id": 31215,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ELEC 9708"
+  },
+  {
+   "id": 31216,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "EMS 3"
+  },
+  {
+   "id": 31217,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 11B"
+  },
+  {
+   "id": 31218,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 12B"
+  },
+  {
+   "id": 31219,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 20"
+  },
+  {
+   "id": 31220,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 202"
+  },
+  {
+   "id": 31221,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 215"
+  },
+  {
+   "id": 31222,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 28"
+  },
+  {
+   "id": 31223,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 35"
+  },
+  {
+   "id": 31224,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL 48"
+  },
+  {
+   "id": 31225,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGL C1003"
+  },
+  {
+   "id": 31226,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 15"
+  },
+  {
+   "id": 31227,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 25"
+  },
+  {
+   "id": 31228,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 43"
+  },
+  {
+   "id": 31229,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENGR 85"
+  },
+  {
+   "id": 31230,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENSC 11"
+  },
+  {
+   "id": 31231,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENST 1"
+  },
+  {
+   "id": 31232,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ENTR 30"
+  },
+  {
+   "id": 31233,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 11"
+  },
+  {
+   "id": 31234,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 14"
+  },
+  {
+   "id": 31235,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 42"
+  },
+  {
+   "id": 31236,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 52"
+  },
+  {
+   "id": 31237,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 62"
+  },
+  {
+   "id": 31238,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ES 8"
+  },
+  {
+   "id": 31239,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 225"
+  },
+  {
+   "id": 31240,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 240B"
+  },
+  {
+   "id": 31241,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESL 250"
+  },
+  {
+   "id": 31242,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 250"
+  },
+  {
+   "id": 31243,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 255"
+  },
+  {
+   "id": 31244,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 50"
+  },
+  {
+   "id": 31245,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 55"
+  },
+  {
+   "id": 31246,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ESYS 69"
+  },
+  {
+   "id": 31247,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FILM 14"
+  },
+  {
+   "id": 31248,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FILM 17"
+  },
+  {
+   "id": 31249,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FRNC 2A"
+  },
+  {
+   "id": 31250,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FRNC 50B"
+  },
+  {
+   "id": 31251,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 1"
+  },
+  {
+   "id": 31252,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 2"
+  },
+  {
+   "id": 31253,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 5"
+  },
+  {
+   "id": 31254,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FT 88A"
+  },
+  {
+   "id": 31255,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "FTS 1"
+  },
+  {
+   "id": 31256,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 10"
+  },
+  {
+   "id": 31257,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 1L"
+  },
+  {
+   "id": 31258,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 21"
+  },
+  {
+   "id": 31259,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEO 5"
+  },
+  {
+   "id": 31260,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEOS 11"
+  },
+  {
+   "id": 31261,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEOS 2"
+  },
+  {
+   "id": 31262,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "GEOS 9"
+  },
+  {
+   "id": 31263,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 2"
+  },
+  {
+   "id": 31264,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 32"
+  },
+  {
+   "id": 31265,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 42"
+  },
+  {
+   "id": 31266,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 49"
+  },
+  {
+   "id": 31267,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIS 62"
+  },
+  {
+   "id": 31268,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 31269,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 43"
+  },
+  {
+   "id": 31270,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 46"
+  },
+  {
+   "id": 31271,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HIT 49"
+  },
+  {
+   "id": 31272,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HLTH 4"
+  },
+  {
+   "id": 31273,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HLTH 51B"
+  },
+  {
+   "id": 31274,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HTA 1"
+  },
+  {
+   "id": 31275,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "HUMN 68"
+  },
+  {
+   "id": 31276,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 50"
+  },
+  {
+   "id": 31277,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 54"
+  },
+  {
+   "id": 31278,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 58"
+  },
+  {
+   "id": 31279,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "ID 70"
+  },
+  {
+   "id": 31280,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "INDT 63"
+  },
+  {
+   "id": 31281,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "INDT 74"
+  },
+  {
+   "id": 31282,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JAPN 2A"
+  },
+  {
+   "id": 31283,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JAPN 50B"
+  },
+  {
+   "id": 31284,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "JUD 1"
+  },
+  {
+   "id": 31285,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 11"
+  },
+  {
+   "id": 31286,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 12FT"
+  },
+  {
+   "id": 31287,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 15"
+  },
+  {
+   "id": 31288,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 2"
+  },
+  {
+   "id": 31289,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 3"
+  },
+  {
+   "id": 31290,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 3FT"
+  },
+  {
+   "id": 31291,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 4"
+  },
+  {
+   "id": 31292,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "KINE 70"
+  },
+  {
+   "id": 31293,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCC 7"
+  },
+  {
+   "id": 31294,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 22"
+  },
+  {
+   "id": 31295,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 41"
+  },
+  {
+   "id": 31296,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 44"
+  },
+  {
+   "id": 31297,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 58"
+  },
+  {
+   "id": 31298,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MCOM 68"
+  },
+  {
+   "id": 31299,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 70A"
+  },
+  {
+   "id": 31300,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 71B"
+  },
+  {
+   "id": 31301,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MEDA 75"
+  },
+  {
+   "id": 31302,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MS 15"
+  },
+  {
+   "id": 31303,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 15"
+  },
+  {
+   "id": 31304,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 201W"
+  },
+  {
+   "id": 31305,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 210"
+  },
+  {
+   "id": 31306,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 220"
+  },
+  {
+   "id": 31307,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 243W"
+  },
+  {
+   "id": 31308,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 255"
+  },
+  {
+   "id": 31309,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 33S"
+  },
+  {
+   "id": 31310,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 43S"
+  },
+  {
+   "id": 31311,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 55"
+  },
+  {
+   "id": 31312,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTH 88"
+  },
+  {
+   "id": 31313,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 60B"
+  },
+  {
+   "id": 31314,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 66"
+  },
+  {
+   "id": 31315,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 71C"
+  },
+  {
+   "id": 31316,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MTT 81C"
+  },
+  {
+   "id": 31317,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 22A"
+  },
+  {
+   "id": 31318,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 24"
+  },
+  {
+   "id": 31319,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MURT 31"
+  },
+  {
+   "id": 31320,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 20B"
+  },
+  {
+   "id": 31321,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 22A"
+  },
+  {
+   "id": 31322,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSA 23B"
+  },
+  {
+   "id": 31323,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 28"
+  },
+  {
+   "id": 31324,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 2C"
+  },
+  {
+   "id": 31325,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 4"
+  },
+  {
+   "id": 31326,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSL 6"
+  },
+  {
+   "id": 31327,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 11B"
+  },
+  {
+   "id": 31328,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 15"
+  },
+  {
+   "id": 31329,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 41"
+  },
+  {
+   "id": 31330,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "MUSP 47"
+  },
+  {
+   "id": 31331,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 53"
+  },
+  {
+   "id": 31332,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 60B"
+  },
+  {
+   "id": 31333,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NURS 70L"
+  },
+  {
+   "id": 31334,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NUTR 10"
+  },
+  {
+   "id": 31335,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "NUTR 6"
+  },
+  {
+   "id": 31336,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "OPTN 9703"
+  },
+  {
+   "id": 31337,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHIL 55"
+  },
+  {
+   "id": 31338,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHIL 70"
+  },
+  {
+   "id": 31339,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 20"
+  },
+  {
+   "id": 31340,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 2C"
+  },
+  {
+   "id": 31341,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 3B"
+  },
+  {
+   "id": 31342,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 4B"
+  },
+  {
+   "id": 31343,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHOT 6A"
+  },
+  {
+   "id": 31344,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 25"
+  },
+  {
+   "id": 31345,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 4A"
+  },
+  {
+   "id": 31346,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 5"
+  },
+  {
+   "id": 31347,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PHYS 7C"
+  },
+  {
+   "id": 31348,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLGL 30"
+  },
+  {
+   "id": 31349,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLGL 33"
+  },
+  {
+   "id": 31350,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLGL 36"
+  },
+  {
+   "id": 31351,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9702"
+  },
+  {
+   "id": 31352,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9705"
+  },
+  {
+   "id": 31353,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9708"
+  },
+  {
+   "id": 31354,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PLPF 9745"
+  },
+  {
+   "id": 31355,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 31356,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "POSC 25"
+  },
+  {
+   "id": 31357,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 1"
+  },
+  {
+   "id": 31358,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 12"
+  },
+  {
+   "id": 31359,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 18"
+  },
+  {
+   "id": 31360,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 21"
+  },
+  {
+   "id": 31361,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 24"
+  },
+  {
+   "id": 31362,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 30"
+  },
+  {
+   "id": 31363,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSCN 95"
+  },
+  {
+   "id": 31364,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 2"
+  },
+  {
+   "id": 31365,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 33"
+  },
+  {
+   "id": 31366,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 5"
+  },
+  {
+   "id": 31367,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "PSY 8"
+  },
+  {
+   "id": 31368,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "RELS 65"
+  },
+  {
+   "id": 31369,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "REST 82A"
+  },
+  {
+   "id": 31370,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "REST 88"
+  },
+  {
+   "id": 31371,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9701"
+  },
+  {
+   "id": 31372,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9704"
+  },
+  {
+   "id": 31373,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SHEE 9707"
+  },
+  {
+   "id": 31374,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SL 64"
+  },
+  {
+   "id": 31375,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SL 67"
+  },
+  {
+   "id": 31376,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 10"
+  },
+  {
+   "id": 31377,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 22"
+  },
+  {
+   "id": 31378,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 5"
+  },
+  {
+   "id": 31379,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SOCI 8"
+  },
+  {
+   "id": 31380,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SPA 2A"
+  },
+  {
+   "id": 31381,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "SPA 50B"
+  },
+  {
+   "id": 31382,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 31383,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 1"
+  },
+  {
+   "id": 31384,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 15A"
+  },
+  {
+   "id": 31385,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 22"
+  },
+  {
+   "id": 31386,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 2B"
+  },
+  {
+   "id": 31387,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 30B"
+  },
+  {
+   "id": 31388,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 46"
+  },
+  {
+   "id": 31389,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 47C"
+  },
+  {
+   "id": 31390,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 48B"
+  },
+  {
+   "id": 31391,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 4A"
+  },
+  {
+   "id": 31392,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 5B"
+  },
+  {
+   "id": 31393,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 7"
+  },
+  {
+   "id": 31394,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 75C"
+  },
+  {
+   "id": 31395,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "THTR 80C"
+  },
+  {
+   "id": 31396,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "TK 16"
+  },
+  {
+   "id": 31397,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "TUTR 1A"
+  },
+  {
+   "id": 31398,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "TUTR 2B"
+  },
+  {
+   "id": 31399,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WEI 1"
+  },
+  {
+   "id": 31400,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 64B"
+  },
+  {
+   "id": 31401,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 66"
+  },
+  {
+   "id": 31402,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WELD 69A"
+  },
+  {
+   "id": 31403,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WLK 1"
+  },
+  {
+   "id": 31404,
+   "kind": "slo",
+   "college": "Chabot College",
+   "course_code": "WS 14"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (30392, 30393, 30394, 30395, 30396, 30397, 30398, 30399, 30400, 30401, 30402, 30403, 30404, 30405, 30406, 30407, 30408, 30409, 30410, 30411, 30412, 30413, 30414, 30415, 30416, 30417, 30418, 30419, 30420, 30421, 30422, 30423, 30424, 30425, 30426, 30427, 30428, 30429, 30430, 30431, 30432, 30433, 30434, 30435, 30436, 30437, 30438, 30439, 30440, 30441, 30442, 30443, 30444, 30445, 30446, 30447, 30448, 30449, 30450, 30451, 30452, 30453, 30454, 30455, 30456, 30457, 30458, 30459, 30460, 30461, 30462, 30463, 30464, 30465, 30466, 30467, 30468, 30469, 30470, 30471, 30472, 30473, 30474, 30475, 30476, 30477, 30478, 30479, 30480, 30481, 30482, 30483, 30484, 30485, 30486, 30487, 30488, 30489, 30490, 30491, 30492, 30493, 30494, 30495, 30496, 30497, 30498, 30499, 30500, 30501, 30502, 30503, 30504, 30505, 30506, 30507, 30508, 30509, 30510, 30511, 30512, 30513, 30514, 30515, 30516, 30517, 30518, 30519, 30520, 30521, 30522, 30523, 30524, 30525, 30526, 30527, 30528, 30529, 30530, 30531, 30532, 30533, 30534, 30535, 30536, 30537, 30538, 30539, 30540, 30541, 30542, 30543, 30544, 30545, 30546, 30547, 30548, 30549, 30550, 30551, 30552, 30553, 30554, 30555, 30556, 30557, 30558, 30559, 30560, 30561, 30562, 30563, 30564, 30565, 30566, 30567, 30568, 30569, 30570, 30571, 30572, 30573, 30574, 30575, 30576, 30577, 30578, 30579, 30580, 30581, 30582, 30583, 30584, 30585, 30586, 30587, 30588, 30589, 30590, 30591, 30592, 30593, 30594, 30595, 30596, 30597, 30598, 30599, 30600, 30601, 30602, 30603, 30604, 30605, 30606, 30607, 30608, 30609, 30610, 30611, 30612, 30613, 30614, 30615, 30616, 30617, 30618, 30619, 30620, 30621, 30622, 30623, 30624, 30625, 30626, 30627, 30628, 30629, 30630, 30631, 30632, 30633, 30634, 30635, 30636, 30637, 30638, 30639, 30640, 30641, 30642, 30643, 30644, 30645, 30646, 30647, 30648, 30649, 30650, 30651, 30652, 30653, 30654, 30655, 30656, 30657, 30658, 30659, 30660, 30661, 30662, 30663, 30664, 30665, 30666, 30667, 30668, 30669, 30670, 30671, 30672, 30673, 30674, 30675, 30676, 30677, 30678, 30679, 30680, 30681, 30682, 30683, 30684, 30685, 30686, 30687, 30688, 30689, 30690, 30691, 30692, 30693, 30694, 30695, 30696, 30697, 30698, 30699, 30700, 30701, 30702, 30703, 30704, 30705, 30706, 30707, 30708, 30709, 30710, 30711, 30712, 30713, 30714, 30715, 30716, 30717, 30718, 30719, 30720, 30721, 30722, 30723, 30724, 30725, 30726, 30727, 30728, 30729, 30730, 30731, 30732, 30733, 30734, 30735, 30736, 30737, 30738, 30739, 30740, 30741, 30742, 30743, 30744, 30745, 30746, 30747, 30748, 30749, 30750, 30751, 30752, 30753, 30754, 30755, 30756, 30757, 30758, 30759, 30760, 30761, 30762, 30763, 30764, 30765, 30766, 30767, 30768, 30769, 30770, 30771, 30772, 30773, 30774, 30775, 30776, 30777, 30778, 30779, 30780, 30781, 30782, 30783, 30784, 30785, 30786, 30787, 30788, 30789, 30790, 30791, 30792, 30793, 30794, 30795, 30796, 30797, 30798, 30799, 30800, 30801, 30802, 30803, 30804, 30805, 30806, 30807, 30808, 30809, 30810, 30811, 30812, 30813, 30814, 30815, 30816, 30817, 30818, 30819, 30820, 30821, 30822, 30823, 30824, 30825, 30826, 30827, 30828, 30829, 30830, 30831, 30832, 30833, 30834, 30835, 30836, 30837, 30838, 30839, 30840, 30841, 30842, 30843, 30844, 30845, 30846, 30847, 30848, 30849, 30850, 30851, 30852, 30853, 30854, 30855, 30856, 30857, 30858, 30859, 30860, 30861, 30862, 30863, 30864, 30865, 30866, 30867, 30868, 30869, 30870, 30871, 30872, 30873, 30874, 30875, 30876, 30877, 30878, 30879, 30880, 30881, 30882, 30883, 30884, 30885, 30886, 30887, 30888, 30889, 30890, 30891, 30892, 30893, 30894, 30895, 30896, 30897, 30898, 30899, 30900, 30901, 30902, 30903, 30904, 30905, 30906, 30907, 30908, 30909, 30910, 30911, 30912, 30913, 30914, 30915, 30916, 30917, 30918, 30919, 30920, 30921, 30922, 30923, 30924, 30925, 30926, 30927, 30928, 30929, 30930, 30931, 30932, 30933, 30934, 30935, 30936, 30937, 30938, 30939, 30940, 30941, 30942, 30943, 30944, 30945, 30946, 30947, 30948, 30949, 30950, 30951, 30952, 30953, 30954, 30955, 30956, 30957, 30958, 30959, 30960, 30961, 30962, 30963, 30964, 30965, 30966, 30967, 30968, 30969, 30970, 30971, 30972, 30973, 30974, 30975, 30976, 30977, 30978, 30979, 30980, 30981, 30982, 30983, 30984, 30985, 30986, 30987, 30988, 30989, 30990, 30991, 30992, 30993, 30994, 30995, 30996, 30997, 30998, 30999, 31000, 31001, 31002, 31003, 31004, 31005, 31006, 31007, 31008, 31009, 31010, 31011, 31012, 31013, 31014, 31015, 31016, 31017, 31018, 31019, 31020, 31021, 31022, 31023, 31024, 31025, 31026, 31027, 31028, 31029, 31030, 31031, 31032, 31033, 31034, 31035, 31036, 31037, 31038, 31039, 31040, 31041, 31042, 31043, 31044, 31045, 31046, 31047, 31048, 31049, 31050, 31051, 31052, 31053, 31054, 31055, 31056, 31057, 31058, 31059, 31060, 31061, 31062, 31063, 31064, 31065, 31066, 31067, 31068, 31069, 31070, 31071, 31072, 31073, 31074, 31075, 31076, 31077, 31078, 31079, 31080, 31081, 31082, 31083, 31084, 31085, 31086, 31087, 31088, 31089, 31090, 31091, 31092, 31093, 31094, 31095, 31096, 31097, 31098, 31099, 31100, 31101, 31102, 31103, 31104, 31105, 31106, 31107, 31108, 31109, 31110, 31111, 31112, 31113, 31114, 31115, 31116, 31117, 31118, 31119, 31120, 31121, 31122, 31123, 31124, 31125, 31126, 31127, 31128, 31129, 31130, 31131, 31132, 31133, 31134, 31135, 31136, 31137, 31138, 31139, 31140, 31141, 31142, 31143, 31144, 31145, 31146, 31147, 31148, 31149, 31150, 31151, 31152, 31153, 31154, 31155, 31156, 31157, 31158, 31159, 31160, 31161, 31162, 31163, 31164, 31165, 31166, 31167, 31168, 31169, 31170, 31171, 31172, 31173, 31174, 31175, 31176, 31177, 31178, 31179, 31180, 31181, 31182, 31183, 31184, 31185, 31186, 31187, 31188, 31189, 31190, 31191, 31192, 31193, 31194, 31195, 31196, 31197, 31198, 31199, 31200, 31201, 31202, 31203, 31204, 31205, 31206, 31207, 31208, 31209, 31210, 31211, 31212, 31213, 31214, 31215, 31216, 31217, 31218, 31219, 31220, 31221, 31222, 31223, 31224, 31225, 31226, 31227, 31228, 31229, 31230, 31231, 31232, 31233, 31234, 31235, 31236, 31237, 31238, 31239, 31240, 31241, 31242, 31243, 31244, 31245, 31246, 31247, 31248, 31249, 31250, 31251, 31252, 31253, 31254, 31255, 31256, 31257, 31258, 31259, 31260, 31261, 31262, 31263, 31264, 31265, 31266, 31267, 31268, 31269, 31270, 31271, 31272, 31273, 31274, 31275, 31276, 31277, 31278, 31279, 31280, 31281, 31282, 31283, 31284, 31285, 31286, 31287, 31288, 31289, 31290, 31291, 31292, 31293, 31294, 31295, 31296, 31297, 31298, 31299, 31300, 31301, 31302, 31303, 31304, 31305, 31306, 31307, 31308, 31309, 31310, 31311, 31312, 31313, 31314, 31315, 31316, 31317, 31318, 31319, 31320, 31321, 31322, 31323, 31324, 31325, 31326, 31327, 31328, 31329, 31330, 31331, 31332, 31333, 31334, 31335, 31336, 31337, 31338, 31339, 31340, 31341, 31342, 31343, 31344, 31345, 31346, 31347, 31348, 31349, 31350, 31351, 31352, 31353, 31354, 31355, 31356, 31357, 31358, 31359, 31360, 31361, 31362, 31363, 31364, 31365, 31366, 31367, 31368, 31369, 31370, 31371, 31372, 31373, 31374, 31375, 31376, 31377, 31378, 31379, 31380, 31381, 31382, 31383, 31384, 31385, 31386, 31387, 31388, 31389, 31390, 31391, 31392, 31393, 31394, 31395, 31396, 31397, 31398, 31399, 31400, 31401, 31402, 31403, 31404);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

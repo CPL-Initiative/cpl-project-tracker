@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Physics 2.0",
  "award": "A.S. T Degree",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=64",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10073,
+  "input_tokens": 8740,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10073,
-    "output_tokens": 992,
+    "input_tokens": 8740,
+    "output_tokens": 1276,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 992,
+  "output_tokens": 1276,
   "output_tokens_details": {
-   "thinking_tokens": 153
+   "thinking_tokens": 349
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06013,
- "ms": 8011,
- "seconds": 8.3,
+ "cost_usd": 0.06048,
+ "ms": 10488,
+ "seconds": 10.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "CS116",
-    "MATH261",
-    "MATH262",
-    "MATH263",
-    "MATH270",
-    "MATH275",
-    "PHYSICS101",
-    "PHYSICS102",
-    "PHYSICS103"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,30 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    39.0,
+    39.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     73.0,
+     73.0
+    ],
+    "stated": [
+     66.0,
+     66.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -103,84 +113,139 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Course Identification Numbering System (C-ID)",
+   "section_heading": "PHYSICS 2.0",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 39,
+    "max": 39
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 66,
+    "max": 66
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Use algebra, calculus, and vector analysis to solve quantitative problems in classical and modern physics.",
+    "Conceptually reason using the laws of classical and modern physics to make qualitative predictions, explain real-world phenomena, and draw and interpret graphs and diagrams."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CS 116",
-    "why": "appears only in the C-ID cross-reference table (COMP 122), not in a Physics A.S.-T requirements section"
-   },
-   {
-    "code": "MATH 261",
-    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
-   },
-   {
-    "code": "MATH 262",
-    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
-   },
-   {
-    "code": "MATH 263",
-    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
-   },
-   {
-    "code": "MATH 270",
-    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
-   },
-   {
-    "code": "MATH 275",
-    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
-   },
-   {
-    "code": "PHYSICS 101",
-    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
-   },
-   {
-    "code": "PHYSICS 102",
-    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
-   },
-   {
-    "code": "PHYSICS 103",
-    "why": "appears only in the C-ID cross-reference table, not in a Physics A.S.-T requirements section"
+    "name": "MAJOR - REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "CS 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 263",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 33) is the general 'Course Identification Numbering System (C-ID)' explanation and C-ID-to-LAPC course table under 'Graduation Requirements for Degrees and Certificates'; it does not contain the Physics A.S.-T (Physics 2.0) program section. No requirements, totals, outcomes or careers could be recorded.",
-   "The C-ID table lists all closed-list courses (e.g., PHYS 205 = PHYSICS 101, MATH 210/211 = MATH 261, COMP 122 = CS 116), but a cross-reference table is not a statement of program requirements. A reviewer should locate the correct page for the Physics A.S.-T in the 2026-2027 catalog."
+   "degree_total of 66 is taken from the program information sentence 'students must complete 66 semester units (or 99 quarter units)'; it is phrased as ADT boilerplate but differs from the 60 printed for the next program (Political Science), so it appears specific to this award. Reviewer should confirm.",
+   "The 'MAJOR - TOTAL UNITS....39' line is recorded as both total_units and the block's stated total.",
+   "The 'A minimum of 18 semester units' major requirement is a generic ADT minimum and is not used as the award total.",
+   "No careers are named in the Physics 2.0 section.",
+   "The text following the Physics 2.0 section (Political Science AA-T) belongs to another program and was ignored."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "04ecf02e6df23d13",
+ "source_codes": [
+  "CS116",
+  "MATH261",
+  "MATH262",
+  "MATH263",
+  "MATH270",
+  "MATH275",
+  "PHYSICS101",
+  "PHYSICS102",
+  "PHYSICS103"
+ ],
+ "source_coverage": 1.0
 }

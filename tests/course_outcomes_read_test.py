@@ -372,6 +372,52 @@ def _():
     assert got["outcomes"] == ["Students will be able to swim."], got
 
 
+CHABOT = os.path.join(ROOT, "kb", "course_outcomes", "trial_44258605342")
+
+
+@check("Chabot's 'Measurable Objectives:' are its objectives and '3. Student Learning Outcomes' its SLOs, never the "
+       "objectives filed as SLOs (S681, trial 44258605342)")
+def _():
+    # A real Chabot page (All Fields report 347). The reader before S681 read 0 objectives here and filed the six
+    # Measurable Objectives as the SLOs, because the numbered SLO heading did not match and the lead-in did.
+    text = open(os.path.join(CHABOT, "ADMJ_40.txt")).read()
+    page = gzip.open(os.path.join(CHABOT, "ADMJ_40.html.gz"), "rt").read()
+    got = reader.parse_page(page, text, "curriqunet")
+    assert got["objectives_heading"] == "Measurable Objectives", got["objectives_heading"]
+    assert got["objectives_lead"] == "Upon completion of this course, the student should be able to:", got
+    assert got["objectives"] == [
+        "critically analyze and describe the juvenile justice system and its context in the criminal justice system;",
+        "apply California laws pertaining to juvenile delinquency and dependency to case studies;",
+        "critically distinguish between delinquency, status offenses, and dependency;",
+        "critically analyze the distinctions between adult and juvenile justice systems;",
+        "critically evaluate constitutional protections extended to juveniles through judicial decisions;",
+        "critically appraise and analyze juvenile court dispositions.",
+    ], got["objectives"]
+    assert got["heading"] == "Student Learning Outcomes", got["heading"]
+    assert got["lead"] == "Upon the completion of this course, the student should be able to:", got["lead"]
+    assert got["outcomes"] == [
+        "analyze and explain the distinctions between adult and juvenile justice systems;",
+        "apply California laws pertaining to juvenile delinquency and dependency to case studies;",
+        "explain constitutional protections extended to juveniles through judicial decisions.",
+    ], got["outcomes"]
+    # Every filed Chabot page: both kinds, neither one standing in for the other.
+    d = json.load(open(os.path.join(CHABOT, "read.json")))
+    assert len(d["rows"]) == 12
+    for row in d["rows"]:
+        stem = re.sub(r"[^A-Za-z0-9]+", "_", row["code"])
+        g = reader.parse_page(gzip.open(os.path.join(CHABOT, stem + ".html.gz"), "rt").read(),
+                              open(os.path.join(CHABOT, stem + ".txt")).read(), "curriqunet")
+        assert g["heading"] == "Student Learning Outcomes" and g["outcomes"], (row["code"], g["heading"])
+        assert g["objectives_heading"] == "Measurable Objectives" and g["objectives"], row["code"]
+        # The two lists may share a line as printed (ADMJ 40 prints one in both), never the whole list.
+        assert g["outcomes"] != g["objectives"], row["code"]
+        assert row["outcomes"] == g["outcomes"] and row["objectives"] == g["objectives"], ("reparse", row["code"])
+    # A numbered heading keeps its words without the number; an objectives heading's lead-in is never an SLO heading.
+    got = reader.outcomes_of("Measurable Objectives:\nUpon completion of this course, the student should be able "
+                             "to:\nswim;\nCourse Content:\nx")
+    assert got["outcomes"] == [] and got["shape"] == "none", got
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):

@@ -62,12 +62,17 @@
         "href": "#exhibits",
         "text": "Open the Exhibits List"
       },
-      "todo_id": "slash-whole-name-titles-s679"
+      "todo_id": "slash-whole-name-titles-s679",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-18",
+        "words": "They stay as printed: the eight titles that join two whole names with a slash keep the slash (his November 18 ruling, recorded on the Commons decision record in S687, #3566)."
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-18T23:47:13Z",
+  "written_at": "2026-11-19T20:21:11Z",
   "project": "exhibit",
   "next_step": {
     "title": "Carry out the two blocker rules",

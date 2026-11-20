@@ -212,6 +212,75 @@ check("weekly: an unlisted file over 5 MB on main fails", any("data/unlisted.bin
 check("weekly: a listed file past 1.5 times its size on main fails", any("past 1.5 times" in x for x in f3), f3)
 check("weekly mode runs the list check", any("past 1.5 times" in x for x in fw), fw)
 
+# 11. A blob:none partial clone (CI's sparse checkout) reads every size through ONE fetch, never one lazy fetch
+#     per blob: PR size runs held a runner about 6 hours that way (COBIx, 2026-11-19). The answer matches a full
+#     clone's. Each fetch into a partial clone writes one .promisor pack, so the packs count the fetches.
+def promisor_packs(repo):
+    d = os.path.join(repo, ".git", "objects", "pack")
+    return len([x for x in os.listdir(d) if x.endswith(".promisor")])
+
+
+src = tempfile.mkdtemp(dir=ROOT)
+run(src, "init", "-q", "-b", "main")
+run(src, "config", "uploadpack.allowFilter", "true")
+run(src, "config", "uploadpack.allowAnySHA1InWant", "true")
+for i in range(40):
+    write(src, "data/base%02d.txt" % i, os.urandom(2000))
+write(src, guard.EXCEPTIONS, "%d data/big.bin\n" % (6 * MB))
+commit(src, "base")
+run(src, "checkout", "-qb", "pr")
+for i in range(10):
+    write(src, "data/pr%02d.txt" % i, os.urandom(2000))
+write(src, "data/big.bin", os.urandom(6 * MB))
+write(src, "data/unlisted.bin", b"\0" * (6 * MB))
+commit(src, "pr")
+cl = os.path.join(ROOT, "partial")
+subprocess.run(["git", "clone", "-q", "--filter=blob:none", "--no-checkout", "file://" + src, cl], check=True,
+               capture_output=True)
+before = promisor_packs(cl)
+saved_head = guard.HEAD
+cwd = os.getcwd()
+try:
+    os.chdir(src)
+    guard.HEAD = "pr"
+    full = guard.check_pr("main")
+    os.chdir(cl)
+    guard.HEAD = "origin/pr"
+    part = guard.check_pr("origin/main")
+finally:
+    guard.HEAD = saved_head
+    os.chdir(cwd)
+check("partial clone: every size the PR check reads arrives in one fetch",
+      before == 1 and promisor_packs(cl) == 2, (before, promisor_packs(cl)))
+check("partial clone: nothing the PR check needs is still missing afterwards",
+      not guard.missing_blobs(["origin/pr"], cl), sorted(guard.missing_blobs(["origin/pr"], cl))[:3])
+check("partial clone: the PR check gives a full clone's answer",
+      full[0] == part[0] and any("data/unlisted.bin" in x for x in part[0])
+      and [x for x in full[2] if "compressed" in x or "on disk" in x]
+      == [x for x in part[2] if "compressed" in x or "on disk" in x], (full, part))
+check("partial clone: the base's exceptions list is read, not taken as new",
+      not any("is new in this change" in x for x in part[2]), part[2])
+check("a full clone fetches nothing", guard.prefetch_missing(trees=["pr"], cwd=src) == 0)
+cl2 = os.path.join(ROOT, "partial-weekly")
+subprocess.run(["git", "clone", "-q", "--filter=blob:none", "--no-checkout", "-b", "pr", "file://" + src, cl2],
+               check=True, capture_output=True)
+try:
+    os.chdir(cl2)
+    fw, nw = guard.check_weekly()
+finally:
+    os.chdir(cwd)
+check("partial clone: the weekly check reads every size through one fetch", promisor_packs(cl2) == 2,
+      promisor_packs(cl2))
+check("partial clone: the weekly check still flags main's unlisted big file",
+      any("data/unlisted.bin" in x and "not on" in x for x in fw), fw)
+
+# 12. The size job cannot hold a runner for hours again, and a newer push cancels the older run on the same ref.
+wf = open(os.path.join(HERE, "..", ".github", "workflows", "repo-size-guard.yml"), encoding="utf-8").read()
+size_job = wf.split("\n  size:\n", 1)[1].split("\n  weekly:\n", 1)[0]
+check("the size job has a 10-minute timeout", "    timeout-minutes: 10\n" in size_job, size_job[:300])
+check("one run per ref, the older cancelled",
+      "  group: ${{ github.workflow }}-${{ github.ref }}\n  cancel-in-progress: true\n" in wf)
+
 # 10. A red weekly run is heard: the workflow is on workflow-failure-watch.yml's list, and the comments agree.
 watch = open(os.path.join(HERE, "..", ".github", "workflows", "workflow-failure-watch.yml"), encoding="utf-8").read()
 own = open(os.path.join(HERE, "..", ".github", "workflows", "repo-size-guard.yml"), encoding="utf-8").read()

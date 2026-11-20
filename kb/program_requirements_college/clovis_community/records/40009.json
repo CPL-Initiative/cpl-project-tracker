@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8717,
-    "output_tokens": 1773,
+    "output_tokens": 1925,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1773,
+  "output_tokens": 1925,
   "output_tokens_details": {
-   "thinking_tokens": 485
+   "thinking_tokens": 545
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07033,
- "ms": 13653,
- "seconds": 14.1,
+ "cost_usd": 0.07337,
+ "ms": 16562,
+ "seconds": 16.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 13,
    "listed": 13,
-   "share": 0.846,
-   "missing": [
-    "MATH5A",
-    "MATH5B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH5B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -162,8 +165,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 51,
+     "max": 51
     },
     "courses": [
      {
@@ -264,20 +267,38 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; the UC-TP section lists MATH C2210 Calculus I: Early Transcendentals (5 units) in its place"
+    "why": "not in the text; catalog lists MATH C2210 Calculus I: Early Transcendentals (5 units) in its place"
    },
    {
     "code": "MATH 5B",
-    "why": "not in the text; the UC-TP section lists MATH C2220 Calculus II: Early Transcendentals (4 units) in its place"
+    "why": "not in the text; catalog lists MATH C2220 Calculus II: Early Transcendentals (4 units) in its place"
    }
   ],
   "notes": [
-   "The text at the top of page 161 (core totaling 37 units, mentions CSU transfer and the 60-unit SB1440 requirements) belongs to the preceding Chemistry A.S.-T (CSU) degree and was not used.",
-   "The UC-TP section prints 'Total Units: 51' for the major, 'Cal-GETC General Education Requirements 21', and 'Total Units: 72' for the degree; recorded as printed. The 21-unit Cal-GETC figure is lower than the usual Cal-GETC total and may reflect double-counting; reviewer may wish to verify.",
-   "Required core course units sum to 51, matching the printed major total.",
-   "The required core table continues across the page break from page 161 to page 162 (PHYS 4C onward on page 162).",
+   "The text at the top of page 161 (ending 'Total Units for the Major: 37') belongs to the preceding chemistry transfer section (apparently the CSU A.S.-T in Chemistry) and was not read for this award.",
+   "The UCTP section's course list continues across the page break from page 161 to 162 (PHYS 4C, MATH C2210, MATH C2220, MATH 6, MATH 17 on page 162).",
+   "Printed totals: 'Total Units: 51' for the major, 'Cal-GETC General Education Requirements 21', and 'Total Units: 72' for the degree; recorded as printed. The 21-unit Cal-GETC figure is lower than a full Cal-GETC pattern and should be checked.",
+   "The 'Total Units: 51' under the course list was recorded both as the major total and as the block's stated total, since the block is the whole major.",
+   "MATH C2210 and MATH C2220 are not on the closed list (which instead names MATH 5A and MATH 5B, likely their former numbers); recorded as catalog additions.",
    "The description mentions 'a wide range of rewarding careers' but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "bfcf8d25b0b4edc2",
+ "source_codes": [
+  "CHEM1A",
+  "CHEM1B",
+  "CHEM28B",
+  "CHEM29A",
+  "CHEM29B",
+  "MATH17",
+  "MATH5A",
+  "MATH5B",
+  "MATH6",
+  "PHYS4A",
+  "PHYS4B",
+  "PHYS4C"
+ ],
+ "source_coverage": 0.923
 }

@@ -2,28 +2,88 @@
  "college": "Shasta College",
  "programs": 150,
  "with_closed_list": 137,
- "found": 124,
- "extracted": 124,
+ "found": 116,
+ "extracted": 116,
  "errors": 0,
- "passed_machine_checks": 50,
+ "passed_machine_checks": 80,
  "failed": {
-  "coverage": 21,
-  "invented": 0,
-  "arithmetic": 72,
+  "coverage": 6,
+  "invented": 1,
+  "arithmetic": 33,
   "repeated": 0,
-  "outcomes": 5
+  "outcomes": 6
  },
- "cost_usd": 11.12,
- "cost_per_program": 0.0897,
+ "cost_usd_run": 2.74,
+ "cost_usd_filed": 10.97,
+ "cost_per_program": 0.0945,
+ "extract_calls": 24,
+ "extract_failed": [],
  "not_found": [
   {
-   "control_number": "06454",
-   "title": "Fire Technology",
+   "control_number": "06441",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
+    "rule": "A",
+    "refused_b": 1
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "13483",
+   "title": "CIS - Network Administration",
    "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
-    "coverage": 0.379
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "18082",
+   "title": "University Studies: Behavioral Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "18083",
+   "title": "University Studies - Biological Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18088",
+   "title": "University Studies - Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18089",
+   "title": "University Studies - Language Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "18092",
@@ -31,89 +91,108 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=89",
-    "coverage": 0.15
-   }
+    "coverage": 0.45
+   },
+   "status": "Active"
   },
   {
-   "control_number": "18093",
-   "title": "University Studies - Natural Sciences",
+   "control_number": "18096",
+   "title": "University Studies - Quantitative Reasoning",
    "award": "A.A. Degree",
    "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=97",
-    "coverage": 0.368
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "18144",
-   "title": "General Studies - Office and Computer Technologies",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=68",
-    "coverage": 0.237
-   }
-  },
-  {
-   "control_number": "18146",
-   "title": "General Studies - Fire - Fire Investigation",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=80",
-    "coverage": 0.417
-   }
-  },
-  {
-   "control_number": "18147",
-   "title": "General Studies - Fire - Fire Service Command, Company Officer",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=160",
-    "coverage": 0.333
-   }
-  },
-  {
-   "control_number": "18152",
-   "title": "General Studies - Health",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=144",
-    "coverage": 0.078
-   }
-  },
-  {
-   "control_number": "18153",
-   "title": "General Studies: Food & Beverage & Lodging Management",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=69",
-    "coverage": 0.463
-   }
-  },
-  {
-   "control_number": "18155",
-   "title": "General Studies - Humanities",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=41",
-    "coverage": 0.462
-   }
-  },
-  {
-   "control_number": "18156",
-   "title": "General Studies - Industrial Technologies",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=93",
-    "coverage": 0.478
-   }
-  },
-  {
-   "control_number": "18655",
-   "title": "University Studies - Earth Sciences",
+   "control_number": "18097",
+   "title": "University Studies - Social Sciences",
    "award": "A.A. Degree",
    "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=78",
-    "coverage": 0.44
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18142",
+   "title": "General Studies - Agriculture Trades",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "18150",
+   "title": "General Studies - Fire - Wildland Fire Behavior",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18157",
+   "title": "General Studies - Language Arts",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18158",
+   "title": "General Studies - Natural Sciences",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18160",
+   "title": "General Studies - Social Sciences",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18624",
+   "title": "General Studies: Climatological & Meteorological Studies",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18657",
+   "title": "University Studies: Meteorology/Climatology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "19643",
@@ -122,17 +201,51 @@
    "near_miss": {
     "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=139",
     "coverage": 0.4
-   }
+   },
+   "status": "Active"
   },
   {
-   "control_number": "39382",
-   "title": "Web Master",
+   "control_number": "30486",
+   "title": "Agriculture Business",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=25",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32486",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=18",
+    "coverage": 0.333
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35921",
+   "title": "Maintenance Mechanic",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=139",
-    "coverage": 0.462
-   }
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39409",
+   "title": "Smog Inspection and Repair Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
   }
  ],
- "run": "39006384701"
+ "run": "44513230805"
 }

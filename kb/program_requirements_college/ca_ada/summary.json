@@ -2,20 +2,54 @@
  "college": "Cañada College",
  "programs": 127,
  "with_closed_list": 75,
- "found": 73,
- "extracted": 73,
+ "found": 70,
+ "extracted": 70,
  "errors": 0,
- "passed_machine_checks": 61,
+ "passed_machine_checks": 63,
  "failed": {
-  "coverage": 3,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 12,
+  "arithmetic": 7,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 5.5,
- "cost_per_program": 0.0753,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 5.36,
+ "cost_per_program": 0.0766,
+ "extract_calls": 0,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "05700",
+   "title": "Business Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=147",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "05711",
+   "title": "Theater Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32833",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=229",
+    "coverage": 0.444
+   },
+   "status": "Active"
+  },
   {
    "control_number": "32861",
    "title": "Elementary Teacher Education",
@@ -23,7 +57,8 @@
    "near_miss": {
     "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=283",
     "coverage": 0.125
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38442",
@@ -32,8 +67,9 @@
    "near_miss": {
     "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=164",
     "coverage": 0.2
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39202270482"
+ "run": "44511395665"
 }

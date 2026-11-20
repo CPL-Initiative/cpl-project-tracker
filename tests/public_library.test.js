@@ -180,11 +180,21 @@ block("(2d)", function () {
 
 // ── (3) The Library tab's switch ─────────────────────────────────────────
 const ROW = { id: "r1", slug: "dsp-credit-starting-points", title: "DSP Credit Starting Points", kind: "document",
-  made_on: "2026-10-20", status: "draft", seen_by: null, home: "web", url: "https://claude.ai/artifact/P4R8", summary: "Internal summary", versions: [] };
+  made_on: "2026-10-20", status: "draft", seen_by: null, home: "web", url: "https://claude.ai/artifact/P4R8", summary: "Internal summary", versions: [],
+  // The publishing model's columns (#3560, kb/migrations/2026-11-19_library_publishing_model.sql).
+  publish_target: null, template: false, division: "cobi" };
+// A passing check record for the page the record names now (no version number: the key is "page").
+const PASS = { library_id: "r1", version_key: "page", standard: "WCAG 2.1 AA and Section 508", checked_at: "2026-11-19T18:00:00Z",
+  tool_or_reviewer: "axe-core automated check", result: "pass", report_url: "https://example.org/report" };
 function loadLib(opts) {
   const dom = new JSDOM('<!doctype html><html><body><div id="library-root"></div></body></html>', { url: "https://example.org/#library/cards", runScripts: "dangerously" });
   const w = dom.window, calls = [];
-  w.fetch = function (url, init) { calls.push({ url: String(url), init: init || {} }); return response(200, String(url).indexOf("/rpc/") > -1 ? [] : [opts.row || ROW]); };
+  w.fetch = function (url, init) {
+    calls.push({ url: String(url), init: init || {} });
+    if (/cpl_library_checks/.test(String(url))) return opts.checks === 404 ? response(404, { code: "PGRST205" }) : response(200, opts.checks || [PASS]);
+    if (/cpl_library_division_settings/.test(String(url))) return opts.checks === 404 ? response(404, { code: "PGRST205" }) : response(200, []);
+    return response(200, String(url).indexOf("/rpc/") > -1 ? [] : [opts.row || ROW]);
+  };
   w.localStorage.setItem("cpl_team_pass", "phrase");
   w.localStorage.setItem("cpl_library_author", "Sam");
   if (opts.token) w.CPL_REVIEWER_SIGNIN = { getSession: function () { return { access_token: opts.token }; } };
@@ -197,8 +207,9 @@ block("(3)", function () {
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     const tog = m.root.querySelector('[data-toggle="r1"]'); if (tog) click(m.w, tog);
     const pub = m.root.querySelector('[data-pub="r1"]');
-    check("(3) an unlisted record offers List publicly", !!pub);
+    check("(3) an unlisted record offers Publish to Public Library (List publicly is retired)", !!pub && pub.textContent === "Publish to Public Library" && !/List publicly/.test(m.root.textContent));
     click(m.w, pub);
+    check("(3) ⭐ the confirmation says exactly where it goes", (m.root.querySelector('[data-pubconfirm="r1"]') || {}).textContent === "This lists it in the Public Library, where anyone can find it.");
     check("(3) a Claude page asks to confirm its link is public", !!m.root.querySelector("#lp-shared"));
     check("(3) the summary starts from the record's", (m.root.querySelector("#lp-sum") || {}).value === "Internal summary");
     m.root.querySelector("#lp-shared").checked = true;
@@ -234,7 +245,9 @@ block("(3c)", function () {
   const m = loadLib({ token: "t", row: Object.assign({}, ROW, { public_listed: true, listed_at: "2026-10-20T22:00:00Z", public_summary: "Public words" }) });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
     const tog = m.root.querySelector('[data-toggle="r1"]'); if (tog) click(m.w, tog);
-    check("(3c) a listed record says so and offers Remove", !!m.root.querySelector('[data-unpub="r1"]') && /Listed since 20 October 2026/.test(m.root.textContent));
+    check("(3c) a listed record says so and offers Remove", !!m.root.querySelector('[data-unpub="r1"]') && /In the Public Library since 20 October 2026/.test(m.root.textContent));
+    check("(3c) ⭐ the card carries the In the Public Library badge", /In the Public Library/.test((m.root.querySelector(".lib-chips") || {}).textContent || ""));
+    check("(3c) removing it says it stays in the Internal Library", /Removing it leaves it in the Internal Library/.test(m.root.textContent));
   });
 });
 
@@ -244,12 +257,102 @@ block("(3d)", function () {
     const acts = m.root.querySelector(".lib-acts");
     // Version 22 (Sam, 2026-11-05: "Version 22 looks better") moved Edit into Details, beside the record it edits.
     check("(3d) Edit the record sits in the card's Details, one press away", !!(acts && acts.querySelector('[data-toggle="r1"]')) && !(acts && acts.querySelector('[data-edittop="r1"]')));
-    check("(3d) so does List publicly", !!(acts && acts.querySelector('[data-pubtop="r1"]')));
+    check("(3d) so does Publish to Public Library", !!(acts && acts.querySelector('[data-pubtop="r1"]')) && acts.querySelector('[data-pubtop="r1"]').textContent === "Publish to Public Library");
     click(m.w, acts.querySelector('[data-pubtop="r1"]'));
-    check("(3d) List publicly opens the listing form under the card", !!m.root.querySelector('[data-pubform="r1"]'));
+    check("(3d) Publish to Public Library opens its confirmation under the card", !!m.root.querySelector('[data-pubform="r1"]'));
     if (!m.root.querySelector('[data-edittop="r1"]')) click(m.w, m.root.querySelector('[data-toggle="r1"]'));
     click(m.w, m.root.querySelector('[data-edittop="r1"]'));
     check("(3d) Edit opens the edit form under the card", !!m.root.querySelector('[data-editform="r1"]'));
+  });
+});
+
+// ── (3e) The one gate on the Public Library: a passing check record (#3560) ──────────────────────────
+function pubCalls(m) {
+  return { rpc: m.calls.filter(function (c) { return /rpc\/cpl_library_set_public$/.test(c.url); }),
+    patch: m.calls.filter(function (c) { return c.init.method === "PATCH"; }) };
+}
+function openConfirm(m) {
+  const tog = m.root.querySelector('[data-toggle="r1"]'); if (tog && !m.root.querySelector('[data-pub="r1"]')) click(m.w, tog);
+  click(m.w, m.root.querySelector('[data-pub="r1"]'));
+}
+block("(3e)", function () {
+  const m = loadLib({ token: "t", checks: [] });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    openConfirm(m);
+    check("(3e) ⭐ with no check record the confirmation says Not yet certified and asks for no summary",
+      /Not yet certified\. The Public Library lists it once its accessibility check passes\./.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+    m.root.querySelector('[data-pubform="r1"]').dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
+    return settle();
+  }).then(function () {
+    const c = pubCalls(m);
+    check("(3e) ⭐ Public never lists without a passing record: no call to the listing function", c.rpc.length === 0);
+    const b = c.patch[0] ? JSON.parse(c.patch[0].init.body) : {};
+    check("(3e) the record keeps the choice (publish_target public) and nothing else", c.patch.length === 1 && b.publish_target === "public" && !("public_listed" in b));
+  });
+});
+block("(3e2)", function () {
+  const FAIL = Object.assign({}, PASS, { result: "fail", checked_at: "2026-11-19T19:00:00Z" });
+  const m = loadLib({ token: "t", checks: [PASS, FAIL] });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    openConfirm(m);
+    check("(3e2) the latest check decides: a later failing check blocks the listing", /did not pass/.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+  });
+});
+block("(3e3)", function () {
+  const OTHER = Object.assign({}, PASS, { version_key: "version:2" });
+  const m = loadLib({ token: "t", checks: [OTHER] });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    openConfirm(m);
+    check("(3e3) a passing check of another version does not count", /Not yet certified/.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+  });
+});
+block("(3e4)", function () {
+  const m = loadLib({ token: "t", row: Object.assign({}, ROW, { remediation: "in_remediation" }) });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    openConfirm(m);
+    check("(3e4) In remediation stays blocked, whatever the check says", /It is in remediation/.test(m.root.textContent) && !m.root.querySelector("#lp-sum"));
+  });
+});
+block("(3e5)", function () {
+  const m = loadLib({ token: "t", checks: [], row: Object.assign({}, ROW, { publish_target: "public" }) });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    // A record whose choice is already kept offers no second press, and the listing function stays unreached.
+    m.M._state.open.r1 = true; m.M.render();
+    check("(3e5) a piece waiting on its check says so and offers no second Publish to Public Library",
+      /The Public Library lists it once its accessibility check passes/.test(m.root.textContent) && !m.root.querySelector('[data-pub="r1"], [data-pubtop="r1"]'));
+    check("(3e5) and the listing function is never called", pubCalls(m).rpc.length === 0);
+  });
+});
+block("(3f)", function () {
+  const bare = Object.assign({}, ROW); delete bare.publish_target; delete bare.template; delete bare.division;
+  const m = loadLib({ token: "t", checks: 404, row: bare });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    check("(3f) ⭐ the tables absent, the Library still reads and paints its records", !!m.root.querySelector('[data-toggle="r1"]'));
+    openConfirm(m);
+    check("(3f) ⭐ the confirmation says the check record is not available yet, and offers no Publish button",
+      /The accessibility check record is not available yet/.test(m.root.textContent) && !m.root.querySelector('[data-pubform="r1"] button[type="submit"]'));
+    check("(3f) Details names the standard from the defaults and says Not yet certified",
+      /WCAG 2\.1 AA and Section 508/.test(m.root.textContent) && /Not yet certified/.test(m.root.textContent));
+    check("(3f) no write at all", pubCalls(m).rpc.length === 0 && pubCalls(m).patch.length === 0);
+  });
+});
+block("(3g)", function () {
+  const m = loadLib({ token: "t" });
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    const tog = m.root.querySelector('[data-toggle="r1"]'); if (tog) click(m.w, tog);
+    const t = m.root.textContent;
+    check("(3g) Details shows the check record under Sam's labels",
+      ["Accessibility standard", "Check date", "Reviewer or tool", "Check record", "Certification status"].every(function (l) { return t.indexOf(l) >= 0; }) &&
+      /19 November 2026/.test(t) && /axe-core automated check/.test(t) && !!m.root.querySelector('a[href="https://example.org/report"]'));
+    click(m.w, m.root.querySelector('[data-pub="r1"]'));
+    m.root.querySelector("#lp-shared").checked = true;
+    m.root.querySelector('[data-pubform="r1"]').dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
+    return settle().then(settle);
+  }).then(function () {
+    const c = pubCalls(m);
+    const b = c.patch[0] ? JSON.parse(c.patch[0].init.body) : {};
+    check("(3g) ⭐ with a passing record, Public records the choice and then lists through cpl_library_set_public()",
+      c.patch.length === 1 && b.publish_target === "public" && c.rpc.length === 1 && m.calls.indexOf(c.patch[0]) < m.calls.indexOf(c.rpc[0]));
   });
 });
 

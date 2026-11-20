@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8233,
+  "input_tokens": 8212,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8233,
-    "output_tokens": 3824,
+    "input_tokens": 8212,
+    "output_tokens": 3895,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,38 @@
     "model": null
    }
   ],
-  "output_tokens": 3824,
+  "output_tokens": 3895,
   "output_tokens_details": {
-   "thinking_tokens": 1026
+   "thinking_tokens": 1240
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.10941,
- "ms": 28907,
- "seconds": 29.6,
+ "cost_usd": 0.11075,
+ "ms": 29954,
+ "seconds": 30.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 30,
+   "placed": 31,
    "listed": 32,
-   "share": 0.938,
+   "share": 0.969,
    "missing": [
-    "ARTHC1100",
-    "ARTHC1200"
+    "PHOTO62"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "ART91",
-    "ART92",
     "ART93"
    ],
    "flagged": [
-    "ART91",
-    "ART92",
     "ART93"
    ],
    "pass": true
@@ -74,36 +70,34 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    64.0,
-    64.0
+    30.0,
+    30.0
    ],
    "stated": [
-    60.0,
-    60.0
+    30.0,
+    30.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
+   "against": "program",
    "why": [],
-   "fill": null,
-   "major": {
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     30.0,
-     30.0
+     64.0,
+     64.0
     ],
     "stated": [
-     30.0,
-     30.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
-   },
-   "overlap": true,
-   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -131,7 +125,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "STUDIO ARTS - ASSOCIATE IN ARTS",
+   "section_heading": "Major Requirements",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -207,16 +201,16 @@
       "catalog_addition": false
      },
      {
-      "code": "ART 092",
+      "code": "ARTH C1200",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Area of Specialization: Drawing",
+    "name": "Drawing",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": "Area of Specialization",
@@ -256,7 +250,7 @@
     ]
    },
    {
-    "name": "Area of Specialization: Painting",
+    "name": "Painting",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": "Area of Specialization",
@@ -296,7 +290,7 @@
     ]
    },
    {
-    "name": "Area of Specialization: Digital Media",
+    "name": "Digital Media",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": "Area of Specialization",
@@ -336,7 +330,7 @@
     ]
    },
    {
-    "name": "Area of Specialization: Sculpture",
+    "name": "Sculpture",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": "Area of Specialization",
@@ -369,7 +363,7 @@
     ]
    },
    {
-    "name": "Area of Specialization: Metalsmithing",
+    "name": "Metalsmithing",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": "Area of Specialization",
@@ -412,11 +406,11 @@
     },
     "courses": [
      {
-      "code": "ART 091",
+      "code": "ARTH C1100",
       "units": null,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ART 093",
@@ -485,13 +479,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "PHOTO 062",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
      }
     ]
    }
@@ -499,26 +486,24 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ARTH C1100",
-    "why": "not in the text; catalog prints ART 091 Survey of Art History: Prehistoric Through Gothic instead"
-   },
-   {
-    "code": "ARTH C1200",
-    "why": "not in the text; catalog prints ART 092 Survey of Art History: Renaissance to the Present instead"
+    "code": "PHOTO062",
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "Catalog codes with leading zeros (ART 012, ART 024, ART 035, CIT 040, PHOTO 022, PHOTO 062, etc.) were matched to the closed-list codes without zeros (ART 12, ART 24, ART 35, CIT 40, PHOTO 22, PHOTO062).",
-   "ART 035 is titled 'Graphic Design I' in the catalog but 'Digital Art' in the closed list; matched by code.",
-   "ART 091, ART 092 and ART 093 are not in the closed list (ARTH C1100/C1200 may be their C-ID replacements); recorded as catalog additions.",
-   "Area of Specialization: student completes 6 units in one area; each area recorded as its own block in option_group 'Area of Specialization' with the printed 6 units. ART 066 appears in both Sculpture and Metalsmithing.",
-   "Units are not printed beside the specialization, art history elective, and art elective courses; recorded as null.",
-   "Required Art Electives also allows one course (not already taken) from any area of specialization above.",
-   "General Education Requirements 34 units printed without naming a pattern; ge_pattern left null. Footnote says general electives may be needed to reach 60 units, so electives_fill_degree set true.",
-   "The description lists fields of study for transfer (Fine Arts, Graphic Design, Industrial Design, etc.); read as academic fields, not careers, so careers left empty."
+   "Catalog prints codes with zero padding (ART 012, CIT 040, PHOTO 022); treated as the closed-list codes ART 12, CIT 40, PHOTO 22 etc., so catalog_addition false.",
+   "ART 093 History of Modern Art is not in the closed list; recorded as catalog addition.",
+   "Area of Specialization: 'Complete 6 units in one of the following areas'; each area recorded as its own choose_units 6 block in option_group 'Area of Specialization'. ART 066 appears in both Sculpture and Metalsmithing areas.",
+   "Units are not printed beside courses in the specialization, art history elective and art elective lists; units left null.",
+   "Required Art Electives: student may instead choose one course (not already taken) from any area of specialization above.",
+   "Total Requirements table: Major Requirements 30, General Education Requirements 34, Total Units 60; GE pattern not named. Footnote says GE courses may double count and general electives may be needed to reach 60 units, so electives_fill_degree set true.",
+   "ARTH C1200 title printed as 'Survey of Art History: Renaissance to Contemporary', differing from closed-list title.",
+   "Description names fields of BA/BFA study (Fine Arts, Graphic Design, Industrial Design, Interior Design, Digital Media, Animation, Illustration, Art Education); read as transfer fields of study rather than careers, so careers left empty — reviewer may check.",
+   "Section heading for the award itself not printed in extracted text; 'Major Requirements' used."
   ]
  },
- "extracted_run": "38748875071",
+ "extracted_run": "44519542333",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "ge_overlap",

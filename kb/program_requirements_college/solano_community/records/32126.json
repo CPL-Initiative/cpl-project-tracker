@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Art History",
  "award": "A.A- T Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=142",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=141",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9728,
+  "input_tokens": 10086,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9728,
-    "output_tokens": 2621,
+    "input_tokens": 10086,
+    "output_tokens": 3272,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2621,
+  "output_tokens": 3272,
   "output_tokens_details": {
-   "thinking_tokens": 921
+   "thinking_tokens": 1420
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09133,
- "ms": 20746,
- "seconds": 21.2,
+ "cost_usd": 0.10578,
+ "ms": 27202,
+ "seconds": 27.4,
  "parts": null,
  "error": null,
  "score": {
@@ -338,14 +338,40 @@
    }
   ],
   "notes": [
-   "'Required Major Total units 18' is printed right after the Art History list, before the Studio Art and Modern/Contemporary lists; read as the total for the whole major (3x3 + 3 x 1 course = 18 units).",
-   "Additional Studio Art allows one course 'from this list or any not used' — presumably any Basic Core course not already used; recorded with the printed list only.",
-   "The generic ADT requirement 'Complete 60 semester units that are eligible for transfer to the CSU' is boilerplate and was not recorded as degree_total; Cal-GETC units are not printed.",
-   "Catalog leading-zero codes (ARTH 021, ART 006, DMA 009, PHOT 029, etc.) matched to closed-list codes without zeros; PHOT 029 is printed as 'Introduction to Photography' versus closed-list title 'Photography - Beginning'.",
-   "Program description refers to the 'Associate in Science in Art History' in places, apparently an error for the A.A.-T.",
-   "ARTH C1100 title is printed with the misspelling 'Midieval'."
+   "Catalog prints codes with leading zeros (ARTH 021, ART 006, DMA 009, PHOT 029, etc.); these were matched to the closed-list codes without leading zeros (ARTH 21, ART 6, DMA 9, PHOT 29) and not marked as catalog additions.",
+   "PHOT 029 is titled 'Introduction to Photography' in the catalog vs. 'Photography - Beginning' in the closed list; treated as the same course.",
+   "'Required Major Total units .... 18' is printed between the Art History block and the Studio Art blocks; read as the major total (3 + 1 + 1 + 1 courses x 3 units = 18).",
+   "The 'Additional Studio Art' block also allows any Basic Core course not already used ('or any not used'); those courses are recorded only in the Basic Core block.",
+   "The page states students must complete 60 CSU-transferable units including Cal-GETC; read as the standard ADT requirement statement rather than a printed degree total, so degree_total is null. No GE unit figure is printed.",
+   "Program description inconsistently refers to the 'Associate in Science in Art History' although the award is an A.A.-T.",
+   "Outcomes were copied with PDF ligature artifacts normalized (e.g., 'percepƟ on' -> 'perception', 'eﬀ ecƟ vely' -> 'effectively', 'speciﬁ c' -> 'specific'); reviewer may wish to verify.",
+   "Catalog misspells ARTH C1100 title as 'Midieval'."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "3f4e24217fa845d1",
+ "source_codes": [
+  "ART14",
+  "ART16",
+  "ART17",
+  "ART19",
+  "ART21",
+  "ART23",
+  "ART26",
+  "ART31",
+  "ART4",
+  "ART6",
+  "ART7",
+  "ART8",
+  "ARTH21",
+  "ARTH25",
+  "ARTH31",
+  "ARTH35",
+  "ARTHC1100",
+  "ARTHC1200",
+  "DMA9",
+  "PHOT29"
+ ],
+ "source_coverage": 0.952
 }

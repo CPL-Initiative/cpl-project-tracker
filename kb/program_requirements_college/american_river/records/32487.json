@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Journalism and Mass Communications",
  "award": "A.A- T Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=707",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12081,
+  "input_tokens": 11192,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12081,
-    "output_tokens": 3170,
+    "input_tokens": 11192,
+    "output_tokens": 3215,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,51 @@
     "model": null
    }
   ],
-  "output_tokens": 3170,
+  "output_tokens": 3215,
   "output_tokens_details": {
-   "thinking_tokens": 925
+   "thinking_tokens": 1046
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11172,
- "ms": 25321,
- "seconds": 25.8,
+ "cost_usd": 0.10907,
+ "ms": 26040,
+ "seconds": 26.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 29,
+   "placed": 32,
    "listed": 32,
-   "share": 0.906,
-   "missing": [
-    "COMM321",
-    "ECON302",
-    "ECON304"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON304",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON302",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "COMMC1004",
-    "ECONC2001",
-    "ECONC2002"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "ECONC2001",
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -115,7 +120,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts in Journalism and Mass Communications for Transfer (AA-T)",
+   "section_heading": "A.A.-T. in Journalism and Mass Communications",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -153,7 +158,7 @@
   },
   "blocks": [
    {
-    "name": "Required Program",
+    "name": "Required Core",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -406,24 +411,61 @@
   "missing_explained": [
    {
     "code": "COMM 321",
-    "why": "not in the text; catalog lists COMM C1004 Interpersonal Communication instead"
+    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication instead"
    },
    {
     "code": "ECON 302",
-    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics instead"
    },
    {
     "code": "ECON 304",
-    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics instead"
    }
   ],
   "notes": [
-   "The excerpt begins mid-section on page 707; the AA-T section heading is not printed in the text, so section_heading is reconstructed from the degree description sentence. The first block's name ('Required Program') is likewise taken from that sentence, not a printed block heading.",
-   "List B also allows 'Any courses from List A, excluding JOUR 411, not already used'; those courses are not repeated in the List B block.",
-   "In List B, CISA 330 and CISA 331 are printed as 'CISA 330 ... and CISA 331', apparently to be taken together as one choice (4 units); recorded as two separate entries.",
-   "The page states the AA-T is obtained by completing 60 transferable semester units including the major and Cal-GETC; this was not recorded as degree_total because it reads as the general AA-T requirement rather than a printed total for this award. Reviewer may check.",
-   "Outcomes are under the AA-T section's 'Student Learning Outcomes' heading; the A.A. in Journalism and Mass Communication section (page 708) with its own requirements, outcomes and careers was excluded."
+   "List B also allows 'Any courses from List A, excluding JOUR 411, not already used' (JOUR 301, 351, 360, 361); these are recorded only in List A to avoid listing them twice.",
+   "CISA 330 and CISA 331 are printed as 'CISA 330 ... and CISA 331' in List B, i.e. taken together as one option (4 units combined); recorded as two entries.",
+   "The page states the AA-T is obtained by completion of 60 transferable semester units including the major and Cal-GETC; read as the general ADT requirement, so degree_total left null. No units printed for Cal-GETC.",
+   "The page also prints an A.A. in Journalism and Mass Communication section (29 units) with its own outcomes and careers; not recorded here.",
+   "Careers taken from 'a variety of careers in print, broadcast, and online news media' in the AA-T Career Information."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "f67e9152f6724995",
+ "source_codes": [
+  "ARTNM332",
+  "ARTPH300",
+  "CISA330",
+  "CISA331",
+  "COMM302",
+  "COMM311",
+  "COMM321",
+  "COMM361",
+  "ECON302",
+  "ECON304",
+  "ECON310",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "JOUR300",
+  "JOUR301",
+  "JOUR310",
+  "JOUR320",
+  "JOUR350",
+  "JOUR351",
+  "JOUR360",
+  "JOUR361",
+  "JOUR410",
+  "JOUR411",
+  "MATH320",
+  "PHIL320",
+  "PHIL324",
+  "POLS302",
+  "POLSC1000",
+  "POLSC1000H",
+  "PSYC330",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0
 }

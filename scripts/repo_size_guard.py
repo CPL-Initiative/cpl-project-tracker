@@ -19,7 +19,11 @@ listed file past GROWTH_FACTOR times its listed size (the cron's direct pushes s
 A red weekly run opens an issue through workflow-failure-watch.yml.
 
 Every size comes from git objects (ls-tree, cat-file, diff-tree), never from the working tree, so a sparse
-checkout gives the same answer as a full one. A megabyte here is 1,048,576 bytes, the unit COBIx measured in.
+checkout gives the same answer as a full one. CI's sparse checkout is a blob:none partial clone, where each size
+read of a blob not yet here fetches that one blob on its own round trip; over the whole tree that held a runner about
+6 hours per pull request (COBIx, 2026-11-19). So the guard first lists the blobs it will read that are missing,
+without fetching (rev-list --missing=print), and fetches them all in ONE fetch (prefetch_missing); a full clone
+has none missing and fetches nothing. A megabyte here is 1,048,576 bytes, the unit COBIx measured in.
 
 "Compressed", in pull request mode, is the zlib (level 6) size of each new blob version the pull request adds,
 added or changed, with no credit for a delta against the old version: the most git stores for those objects,
@@ -108,6 +112,50 @@ def read_blob(rev_path, cwd):
     return p.stdout.decode("utf-8", errors="replace") if p.returncode == 0 else None
 
 
+def promisor_remote(cwd=None):
+    """The remote a partial clone fetches missing objects from, or None in a full clone."""
+    out = git(["config", "--get-regexp", r"^remote\..*\.promisor$"], cwd=cwd, check=False).stdout.decode()
+    for line in out.splitlines():
+        key, _, val = line.partition(" ")
+        if val.strip().lower() in ("true", "1", "yes", "on"):
+            return key[len("remote."):-len(".promisor")]
+    return None
+
+
+def missing_blobs(revs, cwd=None, walk=False):
+    """Object ids the given revisions' trees name that are not here, listed without fetching any of them."""
+    args = ["rev-list", "--objects", "--missing=print"] + ([] if walk else ["--no-walk"]) + list(revs)
+    out = git(args, cwd=cwd).stdout.decode("utf-8", errors="replace")
+    return {line[1:].split()[0] for line in out.splitlines() if line.startswith("?")}
+
+
+def prefetch_missing(trees=(), ranges=(), paths=(), cwd=None):
+    """In a partial clone, fetch every blob the guard is about to read in ONE fetch, so no size read falls back
+    to git's lazy fetch, one blob per round trip. trees: revisions whose whole tree is read (ls-tree -l);
+    ranges: rev-list ranges whose new objects are read (weekly); paths: single 'REV:PATH' blobs. Returns how
+    many objects it fetched (0 in a full clone)."""
+    remote = promisor_remote(cwd)
+    if not remote:
+        return 0
+    want = set()
+    if trees:
+        want |= missing_blobs(trees, cwd)
+    for rng in ranges:
+        want |= missing_blobs([rng], cwd, walk=True)
+    for spec in paths:
+        rev, _, path = spec.partition(":")
+        p = git(["rev-parse", "--verify", "-q", spec], cwd=cwd, check=False)
+        oid = p.stdout.decode().strip()
+        if p.returncode == 0 and oid and oid in missing_blobs([rev], cwd):
+            want.add(oid)
+    if not want:
+        return 0
+    git(["-c", "fetch.negotiationAlgorithm=noop", "fetch", "--no-tags", "--no-write-fetch-head",
+         "--recurse-submodules=no", "--filter=blob:none", "--stdin", remote],
+        cwd=cwd, input_bytes="\n".join(sorted(want)).encode() + b"\n")
+    return len(want)
+
+
 def parse_exceptions(text):
     """{path: bytes} from 'BYTES PATH' lines; '#' starts a comment."""
     entries = {}
@@ -168,6 +216,9 @@ def check_pr(base, cwd=None):
     fails, warns, notes = [], [], []
     old, how = comparison_point(base, cwd)
     notes.append("compared %s with %s %s" % (HEAD, how, old[:12]))
+    fetched = prefetch_missing(trees=[HEAD], paths=[old + ":" + EXCEPTIONS], cwd=cwd)
+    if fetched:
+        notes.append("partial clone: fetched %d missing blobs in one fetch" % fetched)
 
     head_list = parse_exceptions(read_blob(HEAD + ":" + EXCEPTIONS, cwd))
     base_text = read_blob(old + ":" + EXCEPTIONS, cwd)
@@ -231,6 +282,9 @@ def check_weekly(days=7, cwd=None):
         notes.append("history here starts inside the window (%s); measured from the oldest commit present"
                      % ("shallow clone" if shallow else "young repo"))
     rng = [old + "..HEAD"] if old else ["HEAD"]
+    fetched = prefetch_missing(trees=["HEAD"], ranges=rng, cwd=cwd)
+    if fetched:
+        notes.append("partial clone: fetched %d missing blobs in one fetch" % fetched)
     out = git(["rev-list", "--objects", *rng], cwd=cwd).stdout.decode("utf-8", errors="replace").splitlines()
     paths = {}
     for line in out:
@@ -299,6 +353,7 @@ def main(argv=None):
     global HEAD
     HEAD = a.head
     if a.list_over_limit:
+        prefetch_missing(trees=["HEAD"])
         print("\n".join(list_over_limit()))
         return 0
     if a.weekly:

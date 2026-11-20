@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s684_reread_live_compare.sql",
+ "name": "s684_reread_live_compare",
+ "version": "20261119113651",
+ "sha256": "e8924bc1bc8deb898580b86230939e17c6be235f5f3dbef8f5dde5fae261f53a",
+ "run": "44514885539",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-19T11:36:52Z\",\"chk\":{\"Cabrillo College\":[\"06326\"],\"Cerritos College\":[\"02201\",\"02202\",\"02203\",\"02213\",\"02226\",\"20520\",\"24026\",\"31608\",\"36675\",\"41982\",\"42158\",\"45549\"],\"Irvine Valley College\":[\"10265\"],\"Riverside City College\":[\"22804\",\"31456\",\"39033\",\"40061\"],\"Mt. San Antonio College\":[\"03086\",\"08086\",\"31650\",\"33876\",\"42916\",\"43670\"],\"West Los Angeles College\":[\"17111\",\"37050\",\"37839\",\"39618\"],\"San Diego Miramar College\":[\"05100\",\"18207\",\"35030\",\"41496\"]},\"sum\":{\"Ohlone College\":[134,146,134,0,0,0],\"Shasta College\":[103,124,103,0,0,0],\"Ca\u00f1ada College\":[70,73,70,0,0,0],\"Ventura College\":[170,173,170,0,0,0],\"Victor Valley College\":[168,176,168,0,0,0],\"Clovis Community College\":[100,115,100,0,0,0],\"Evergreen Valley College\":[74,86,74,0,0,0],\"Los Angeles City College\":[245,250,244,0,1,0],\"Solano Community College\":[144,162,144,0,0,0],\"Santa Barbara City College\":[247,254,247,0,0,0]},\"diff\":[[\"Los Angeles City College\",\"32832\",\"39006380342\",\"43212072618\"]],\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

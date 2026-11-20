@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10679,
-    "output_tokens": 4832,
+    "output_tokens": 4847,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 4832,
+  "output_tokens": 4847,
   "output_tokens_details": {
-   "thinking_tokens": 542
+   "thinking_tokens": 553
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.13936,
- "ms": 35582,
- "seconds": 35.9,
+ "cost_usd": 0.13966,
+ "ms": 34876,
+ "seconds": 35.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 90,
+   "placed": 91,
    "listed": 91,
-   "share": 0.989,
-   "missing": [
-    "HIST107H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST107H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ENGLC1002H",
-    "HISTC1001H"
+    "ENGLC1002H"
    ],
    "flagged": [
-    "ENGLC1002H",
-    "HISTC1001H"
+    "ENGLC1002H"
    ],
    "pass": true
   },
@@ -110,7 +114,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Requirements",
+   "section_heading": "Liberal Arts - Humanities A.A. Degree",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -797,18 +801,19 @@
   "missing_explained": [
    {
     "code": "HIST 107H",
-    "why": "not in the text; the catalog lists HIST C1001H as the honors alternative to HIST C1001 instead"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The excerpt does not print a program heading; section_heading uses the 'Requirements' tab. The page is the Liberal Arts - Humanities A.A. page per the URL and outcomes heading.",
-   "Catalog text begins mid-sentence; the program description may be truncated at the start.",
-   "Units for honors alternatives are not printed beside them; recorded as null.",
-   "ENGL C1002H and HIST C1001H appear in the catalog but not in the closed list (catalog additions). HIST C1001H may be the renumbered successor of closed-list HIST 107H.",
-   "THEA 200 is printed as 'Script Analysis: The Art of the Theatre' versus the closed list title 'The Art of the Theatre'.",
-   "Total Units 18 = 9 required + 9 selected units. No degree total or GE units printed; GE is District GE Pattern or Cal-GETC.",
-   "The description mentions possible majors (foreign languages, humanities, literature, philosophy), not careers; careers left empty."
+   "The catalog text begins mid-sentence and prints no visible page heading for the program; section_heading is taken from the program title/award and the outcomes heading ('Liberal Arts – Humanities A.A. Degree').",
+   "Students complete either the District General Education Pattern or Cal-GETC; no GE units or degree total are printed. Total Units 18 is the major total.",
+   "ENGL C1002H and HIST C1001H appear as honors alternatives in the catalog but are not in the closed list (catalog additions).",
+   "THEA 200 is printed with the title 'Script Analysis: The Art of the Theatre', differing from the closed-list title 'The Art of the Theatre'.",
+   "Honors alternatives are printed without their own units; units left null.",
+   "The nine-unit elective list is grouped by discipline headings (Art, Architecture, Communications, etc.); recorded as one choose_units block in catalog order.",
+   "The description mentions preparation for possible majors in foreign languages, humanities, literature, and philosophy; these are majors, not careers, so careers is empty."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "44481520157",
+ "catalog_year": "2026-2027"
 }
