@@ -1,7 +1,7 @@
 ---
 title: Methodology — Rank a cleanup queue by downstream impact, not a structural proxy
 created: 2026-06-09
-updated: 2026-06-09
+updated: 2026-11-20
 tags: [methodology, ccr, auditor, cleanup, impact, articulations, kb]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -70,6 +70,17 @@ SUBJ4 re-mint (#327/#328) — the cleanup it pointed at.
 - **Don't drop the structural metric** — keep both; impact says "how much rides on
   it," structure says "how wrong + how widespread." The cleanup target is the
   intersection.
+
+## A second case: collection ranked by the cards that carry credit (2026-11-20)
+
+The Commons order mock first ranked colleges by M-ID cards waiting on outline data. Sam read the list as ranked by
+exhibits with credit recommendations, which is the payoff a student sees, and it was re-ranked that way. Of 15,720
+counted cards, 893 have an exhibit or credit recommendation pointing to them (`kb/coci_articulations.json`, read raw),
+and 407 of those have no outcomes. The re-rank did more than reorder colleges: six of the eight most-linked cards had
+no published list of local courses (COMM M1037 Group Communication, 67 links), so a code fix moved ahead of any
+collection. The same rule as above, one step earlier in the pipeline: rank the collection queue by the credit riding
+on each card, and read the top of the list for a defect that no collection would fix. Record:
+`docs/commons_lessons.md`, *The plain session of 2026-11-20*.
 
 ## See also
 
