@@ -8212,6 +8212,64 @@ def flatten_merge_chains(merge_into):
     return merge_into
 
 
+_STATE_CREDIT = {"C": "Credit", "E": "Noncredit Enhanced", "N": "Noncredit"}
+
+
+def state_list_course_fields(xlsx_path, wanted):
+    """Fields for re-homed courses the identity file does not hold, read from the state list.
+
+    A `CN:<control number>` curation row re-homes one college course, and
+    export_unified_courses() fills that course's subject, units, TOP and credit
+    status from the identity file (the memberships and the singletons). A course
+    a person assigns from the Courses List's Needs an M-ID pile is in neither
+    file, so it contributed nothing: a common course minted from one landed with
+    no subject, no credit status and no TOP (measured 2026-11-20 by
+    kb/_assign_from_panel_dryrun.py: 12 of 12). This reads those courses from the
+    state list itself and returns {control number: a record shaped like a
+    memberships entry}.
+
+    The first state-list row wins for a control number that names more than one
+    course: it is the row `_leaf_cns` shows for a `CN:` key. Credit status follows
+    the Courses List's own rule (kb/_build_coci_lookup.py credit_char), so the row
+    and the List agree about the same course. The TOP is the bare code, the form
+    the catalog and singleton records carry. Reads nothing when `wanted` is empty.
+    """
+    wanted = {" ".join(str(c).split()).upper() for c in (wanted or []) if str(c).strip()}
+    out = {}
+    if not wanted or not os.path.exists(xlsx_path):
+        return out
+    kb_dir = os.path.join(SCRIPT_DIR, "kb")
+    if kb_dir not in sys.path:
+        sys.path.insert(0, kb_dir)
+    from _build_coci_lookup import credit_char
+    from openpyxl import load_workbook
+    wb = load_workbook(xlsx_path, read_only=True)
+    try:
+        rit = wb[wb.sheetnames[0]].iter_rows(values_only=True)
+        next(rit, None)  # header
+        for row in rit:
+            if not row or not row[0]:
+                continue
+            ctrl = " ".join(str(row[1]).split()).upper() if row[1] is not None else ""
+            if ctrl not in wanted or ctrl in out:
+                continue
+            units = row[5] if isinstance(row[5], (int, float)) else None
+            out[ctrl] = {
+                "college": str(row[0]).strip(), "control_number": ctrl,
+                "subject": str(row[2]).strip() if row[2] is not None else "",
+                "course_number": str(row[3]).strip() if row[3] is not None else "",
+                "title": str(row[4]).strip() if row[4] is not None else "",
+                "units": units,
+                "credit_status": _STATE_CREDIT.get(credit_char(row[6], row[5])),
+                "top_code": str(row[8] or "").partition(":")[0].strip() or None,
+            }
+            if len(out) == len(wanted):
+                break
+    finally:
+        wb.close()
+    return out
+
+
 def _legacy_title_key(t):
     """Strict title key for the curated-anchor duplicates lane: lowercase,
     punctuation and whitespace collapsed. Deliberately NOT _sug_sig — that
@@ -8558,6 +8616,20 @@ def export_unified_courses():
     flatten_merge_chains(merge_into)
     for _cid, _t in merge_into.items():
         merge_members.setdefault(_t, []).append(_cid)
+    # A re-homed course (CN:<control number>) that joins an existing catalog M-ID
+    # is one more local course for it, never a merge of identities: the M-ID keeps
+    # its own row exactly as it stands (its course count, confidence, discipline
+    # source and review state) and the course joins its members (_leaf_ids).
+    # Measured 2026-11-20 (kb/_assign_from_panel_dryrun.py): drawn as a merge
+    # target, a 5-course M-ID read "2 members", confidence 1.0 and no discipline
+    # source after one course joined it. An M-ID that also takes a merged
+    # identity, a stand-alone, an official id and a new placeholder keep the
+    # merge-target row.
+    joined_courses = {}
+    for _t in [t for t, ms in merge_members.items()
+               if t in cat and t not in merge_into
+               and all(isinstance(m, str) and m.startswith("CN:") for m in ms)]:
+        joined_courses[_t] = merge_members.pop(_t)
 
     # CR/NC mirror classification (Doctrine v0.3 Q-CREDITNC) — id -> {class,...}.
     # Lets flags_of() mark an intentional CR/NC mirror pair (a CPL Credit-by-Exam
@@ -8616,6 +8688,18 @@ def export_unified_courses():
         _c = str(_sv.get("control_number") or "").strip().upper()
         if _c:
             cn_fields.setdefault(_c, _sv)
+    # A course assigned from the Courses List's Needs an M-ID pile is outside the
+    # identity file, so neither index above holds it. Read it from the state list:
+    # its target row then carries its subject, units, TOP and credit status
+    # (state_list_course_fields). No read when every re-homed course is on file.
+    _outside = sorted(_c for _c in member_extract if _c not in cn_fields)
+    if _outside:
+        _found = state_list_course_fields(
+            os.path.join(kdir, "reference", "coci_course_list.xlsx"), _outside)
+        for _c, _p in _found.items():
+            cn_fields.setdefault(_c, _p)
+        print(f"  member re-home: {len(_found)} of {len(_outside)} course(s) outside the "
+              f"identity file read from the state list")
 
     colleges, col_idx = [], {}
 
@@ -8762,9 +8846,12 @@ def export_unified_courses():
             p = cn_fields.get(str(m[3:]).strip().upper())
             if not p:
                 return {}
+            # A memberships entry carries the TOP as "code: title"; the catalog and
+            # singleton records carry the bare code. Compare like with like, so a
+            # re-homed course does not read as TOP-mixed against its own code.
             return {"subject": p.get("subject"),
                     "typical_units": p.get("typical_units", p.get("units")),
-                    "top_code": p.get("top_code"),
+                    "top_code": str(p.get("top_code") or "").partition(":")[0].strip() or None,
                     "credit_status": p.get("credit_status")}
         return cat.get(m) or sg.get(m) or cc.get(m) or clusters.get(m) or _cid_desc_rec.get(m) or {}
 
@@ -8837,11 +8924,27 @@ def export_unified_courses():
         variants = [t for t in (_member_title(m) for m in all_members) if t]
         ad, pot = rollup(all_members)  # only M-ID members contribute articulations
 
-        c_credit, credit_mixed = _agg_unanimous([mv.get("credit_status") for mv in member_recs])
-        c_top,    top_mixed    = _agg_unanimous([mv.get("top_code")      for mv in member_recs])
-        c_units,  _units_mixed = _agg_unanimous([mv.get("typical_units") for mv in member_recs])
-        c_disc,   _disc_mixed  = _agg_unanimous([mv.get("discipline")    for mv in member_recs])
-        c_conf                 = _synth_cluster_conf(member_recs)
+        # A re-homed course (CN:<control number>) is one local course joining a
+        # common course. When the target is an existing identity, its own record
+        # and the identities folded into it speak for the row's credit status,
+        # units, TOP and confidence; the joined course adds its subject code and
+        # can raise a mixed flag, and never out-votes the common course it joins
+        # (measured 2026-11-20, kb/_assign_from_panel_dryrun.py: one course with a
+        # sibling TOP blanked the TOP of a 14-course M-ID). A placeholder minted
+        # from re-homed courses has only those courses to read, so there each votes.
+        value_recs = ([mv for m, mv in zip(all_members, member_recs)
+                       if not (isinstance(m, str) and m.startswith("CN:"))]
+                      if tgt_v else member_recs)
+
+        def _agg(field):
+            return (_agg_unanimous([mv.get(field) for mv in value_recs])[0],
+                    _agg_unanimous([mv.get(field) for mv in member_recs])[1])
+
+        c_credit, credit_mixed = _agg("credit_status")
+        c_top,    top_mixed    = _agg("top_code")
+        c_units,  _units_mixed = _agg("typical_units")
+        c_disc,   _disc_mixed  = _agg("discipline")
+        c_conf                 = _synth_cluster_conf(value_recs)
 
         # Verified semantics for merge targets (Sam, 2026-06-10): the MERGE never
         # verifies — a merged course renders Generated until explicitly verified.
@@ -9089,6 +9192,8 @@ def export_unified_courses():
                     add_leaf(m)
             else:
                 leaves.append(i)
+                # the courses a person joined to this M-ID follow it wherever it displays
+                leaves.extend(joined_courses.get(i, ()))
 
         for i in [r["id"]] + merge_members.get(r["id"], []):
             add_leaf(i)
@@ -9171,7 +9276,7 @@ def export_unified_courses():
     def _row_ents(r):
         seen, out = set(), []
         for ent in _row_candidates(r):
-            k = (ent["c"], ent["n"], ent["t"])
+            k = (ent["c"], ent["n"], ent["t"], ent.get("cn") or "")
             if k in seen:
                 continue
             e2 = {"c": ent["c"], "n": ent["n"], "t": ent["t"],
@@ -9505,7 +9610,7 @@ def export_unified_courses():
                 r = row_by_id.get(mid)
                 if (r is None or r.get("locked") or r.get("reviewed_by")
                         or mid in merge_into or r.get("consolidated_from")
-                        or merge_members.get(mid)):
+                        or merge_members.get(mid) or joined_courses.get(mid)):
                     continue  # entangled rows just shrink; curation owns them
                 targets = {ROUTE[c] for c in cns if c in ROUTE}
                 tgt = row_by_id.get(next(iter(targets))) if len(targets) == 1 else None
