@@ -1,0 +1,2 @@
+-- Rollback of kb/migrations/2026-11-20_s688_library_part2_memory_rows.sql.
+delete from public.cpl_memory where author='SkyLinnet (S688)' and slug in ('d-library-check-run-on-publish-s688','d-library-run-lists-by-guarded-update-s688','d-library-footer-from-check-s688','d-library-check-after-page-change-s688','d-library-tab-precheck-url-s688','d-library-list-needs-typed-summary-s688','d-library-footer-binds-page-hash-s688','r-library-legacy-listings-stay-sam-2026-11-19');

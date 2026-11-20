@@ -188,3 +188,97 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, replaced b
   the tab shows it; extraction only with at least one named course. `NCL_EXTRACT` stays off until the display build and
   the Commons sidecars both hold those records back. The second reader's verdict is merge (head `7f4e8613`); a minor is
   carried: `errors` still counts no-list records.
+
+## S670 (SkyBunting, 2026-11-17)
+
+**What happened.** Coastline's objectives reread loaded 522 rows (read 43984094171, load 44006629705, #3420). The prior reads at Rio Hondo (#3433) and Santa Ana (#3434) passed on their own 2025-2026 catalogs and replaced their unchecked live rows. Skyline's yield read merged (#3423) after a display rebuild (b640e31b114a), and the one live row it left behind came out with its full image filed (#3436).
+
+**A host's slices are keyed by the colleges they read.** The Coast district files Coastline, Golden West and Orange Coast under one host folder, `cccd`. `read_files` kept one slice per (part, of), so Coastline's new 1 of 2 and 2 of 2 displaced Golden West's in any load that named no slugs. Today's load named its slugs, and the earlier unfiltered loads only inserted, so no row was lost. The key is now (college set, part, of), and a college re-read in a different number of parts keeps only its newest split (COBIx on #3420). The objectives standing test's check 19 caught the first problem the moment a second two-part read landed on the host. The lesson: a key that is unique today because a host holds one college per shape is a coincidence, and a test that pins the multi-college case is what exposes it.
+
+**Before a guarded delete, read the live rows.** The handoff carried five live rows to remove and COBIx found a sixth. One read showed that only 32337 had a row: the others had never loaded, because their records failed and the load holds failing records. The delete matched one row on college, control number, page and extraction run, and it raised on any other count. The receipt holds the row's full image and the rollback reinserts it without the generated `idx_*` columns.
+
+**A merge that resolves `.apply` takes main's copy.** When two branches each named a migration, the second branch's merge resolved `kb/migrations/.apply` to main's, so its push did not run its own delete again. That run would have raised on zero rows and failed.
+
+## Moved from the lane (S670 checkpoint)
+
+**A GE-pattern page has one owner (#3324, S654; `d-ge-page-one-owner-s653`, `d-ge-control-number-needs-title-s654`, `d-control-number-district-format-s654` stand).** **DECIDED by Sam** (`d-both-versions-by-catalog-year-sam-2026-11-15`): *"the 2.0 is for the new calgetc version that took effect this fall. students still have catalog rights to the original version in previous catalog years... both need to be in our collection with catalog years associated to them."* A plain program and its 2.0 each keep a record read from its own catalog year, scored against that year's renumbers (`course_renumbers_by_year`, #3385). Filed from 2025-2026 pages: Riverside City 32692; Gavilan Mathematics 31444 and Physics 33047 (#3411 `2bcb6dea`, archive 424; reread 43962460208 replaced 2, held 0; `d-gavilan-originals-filed-s668`). Riverside City 32745, 30578 and 33829 keep their records (`d-rcc-two-left-no-pdf-route-s667`). **DECIDED** `d-curriqunet-plain-pairs-scope-s668`: of 20 plain programs at 14 curriQunet colleges that read a 2.0 page, the 8 Mathematics and Physics originals are read from their 2025-2026 archives; the 12 Business Administration and Communication Studies originals stay as filed (their 2.0s are older), reopened per college only on an archive shown to print the original. **FACT** `f-curriqunet-historical-catalogs-s668`: `Catalog/_getHistoricalCatalogs` names a host's past catalogs; `Catalog/archive/<Id>` settles on `/iq/<cover>` and asks `_getNavigation?id=<Id>`; 2025-2026 ids Berkeley City 9573, Butte 12, Gavilan 424, Rio Hondo 13, Santa Ana 19. **DECIDED** `d-prior-read-forces-past-no-gain-s668`: a prior read names its programs in `force`, since `held_no_gain` compares two catalog years; the kept-passing guard still runs. Constraints (COBIx on #3367): a prior read sets its own `catalog_year`; a second year of one program needs `catalog_year` in the load's key or a side table. The paragraph as it stood: lessons, *Moved from the lane (S668 checkpoint)*.
+
+## S671 (SkyKinglet, 2026-11-17, the CPL Queue routine)
+
+**What happened.** The RCCD specialist-bot pilot started (Sam's go on #3237, COBIx's start brief 6935299361), on #3438. The first district profile, `kb/district_profiles/riverside.json`, covers Riverside City, Norco and Moreno Valley. A free college page read (44033941042) read the RCCD general education page and the Military Credit text. Area 7, Lifelong Learning and Self-Development, is 2 units and lists HES 1 and "KIN (any course with an A or V)". Basic training gives five units, two of them toward Area 7, on an official JST or CCAF transcript.
+
+**A forced re-extraction does not fix a systematic misreading.** Riverside City's read (44030368835) forced its 15 failing records and fixed none for $5.08: its one apparent fix, Entrepreneurship 31892, dropped the rule that requires one course from each cluster (COBIx), and main's reading was restored. The same page and the same prompt give the same blocks. Norco and Moreno Valley were therefore not forced. Before paying for a forced re-extraction, read the failing pages for free (`college-page-read.yml`) and name the cause.
+
+**Three causes behind Riverside City's arithmetic failures** (diagnosis read 44034775728, plan `kb/college_reads/rcc_unequal_pages.json`):
+1. **The catalog itself does not add up.** Geology AS-T 38790 prints blocks that sum to 22 and "Total: 26.00". The record reads the page faithfully.
+2. **A repeated course row.** Piano Performance 38626 prints MUS-P12 four times, with "*Course must be taken four times". The reading keeps one row and counts 3.5 units against 12.5. The music performance certificates likely share this: Riverside City 38627 and 38628, Moreno Valley 38758, and Norco 30606 and 30607.
+3. **A nested choice the model misreads.** Graphic Design 31766 asks to "Choose six units from one emphasis".
+
+The repeated-row cause is the one lever that crosses colleges. It needs a scorer or reader change, with a second reader, because the scorer is shared code.
+
+**A fresh capture can lose a passing record's page.** The same read lost the pages of Communication Studies AA-T 30578 and Business Administration AS-T 33829 (`page_claimed`, no text) and deleted their passing records from the folder. `kept_passing.json` covers a passing record whose re-extraction fails. It does not cover one whose page is lost. Restore those from `main` before merging, and compare the pass set before and after every read.
+
+**A newly read failing record breaks the display receipt's count.** `roep_display_test` requires every filed record to appear in the display receipt. A record that was never loaded, such as 33230, stays out of the folder until a display build includes it.
+
+**The sandbox reaches neither college hosts nor the artifact store.** `productionresultssa32.blob.core.windows.net` is refused, so a run's page text is out of reach. A page read's job log, fetched through `get_job_logs`, is the session's only window onto a page.
+
+## S672 (SkyWren, 2026-11-17, the CPL Queue routine)
+
+**The repeated-course-row lever is a reconcile step per page shape, not a scorer change.** The record shape already carries `times`, and the scorer counts a course `times` over (Hartnell 43887, S497). What was missing was a step that reads the page's own words for the count. A free page read (44045355408, plan `kb/college_reads/rccd_music_repeat_rows.json`) showed that the six records S671 named fall into four shapes, and that two of them are not repeats:
+1. **A starred code and a footnote.** Riverside City Piano 38626: `MUS-P12*` printed four times, then "*Course must be taken four times".
+2. **The footnote run into the code's cell.** Jazz 38627: "MUS-39Course must be taken twice" printed twice.
+3. **A sentence above the rows.** Music Performance 38628: "Take MUS-39 three times over three semesters."
+4. **A sentence with the sum.** Norco 30606 and 30607: "Take MUS-39 twice for a total of six units". Norco's step reads only "twice for a total of", because its option lines put MUS-41 in two options at two counts ("four times" in Option 1, "two times each" in Option 2). A code-wide `times` would be wrong for one of them.
+
+Riverside City's three steps took its records from 229 to 232 passing on the reconcile run (44046016854), with no record losing its pass. Norco's required list now sums to its printed 25. The record still fails at 30-33 against 36-37, because its three options are one choice of 8 units that the reading kept as three rule-all blocks with no option group. That is a separate fix. Moreno Valley Guitar 38758 is not a repeat: its "Required Courses (16-20 Units)" range comes from "MUS-3* ... *(Test out option available)".
+
+**A reconcile run with no extraction removes `kept_passing.json`.** The file reports the passing records that one read kept. It is not a guard input, so a later run that keeps none leaves no file. Compare the pass set before and after, as S671 said.
+
+## S673 (SkyPhoebe, 2026-11-17, the CPL Queue routine)
+
+**Read the record before naming the fix.** Handoff 673 said Norco's three ensemble options in 30606 and 30607 were three rule-all blocks with no group. The filed records already shared `option_group` "Ensemble option", so the scorer was counting one option. What was missing was each option's count: every course is listed once at 2 units, so the options summed to 2, 4 and 4 against their printed 8. The count sat in each option's own heading ("Option 1: Take MUS-41 four times over four semesters", "Option 2: Take both MUS-41 and MIS-81 two times each"), and a code-wide `repeat` pattern could not take it, because MUS-41 is four times in one option and twice in the other.
+
+**A count printed in a block's heading belongs to that block alone.** A `repeat` step's `name_pattern` reads `n` (and `code`, where it names one) on a rule-all block's name and sets `times` on that block's courses only. Three guards: the heading's words are on the page, every course it touches has units and no count, and the counted sum equals the block's stated figure. Reconcile 44063769303 took Norco from 130 to 132 passing, with no record lost. Only 30606 and 30607 hold blocks the pattern matches.
+
+**A test-out range is not a units range.** Moreno Valley Guitar 38758 prints "Required Courses (16-20 Units)", "Units: 20.00" and "Total: 20.00". The 16 comes from "MUS-3* ... *(Test out option available)". Credit by exam is credit for prior learning and still awards MUS-3's 4 units, so the program's total is 20.
+
+## S674 (SkyRedpoll, 2026-11-17, the CPL Queue routine)
+
+**A step that replaces a filled figure carries every guard the page can give.** Moreno Valley Guitar 38758 read "Required Courses (16-20 Units)" as its total, and every other reconcile step fills only an empty field. The `printed_total` step replaces it, so it runs only where the record holds exactly the heading's range, the page prints "(Test out option available)", the printed "Total : 20.00" is the range's top, and every block is rule-all with fixed stated figures that sum to it. Reconcile 44072968931 took Moreno Valley from 134 to 135 passing, none lost; 20 records took the fresh page text and went to the reread.
+
+**Read the failure before filling the field a reviewer pointed at.** COBIx asked why Riverside City's four Social Justice ADTs carry an uneven `degree_total`. At Riverside City all 37 ADTs without a degree total pass and the 4 with one fail, and the two failing Social Justice records fail on the major: Required Courses prints "Units: 9.00", and the reading kept 3 (41749) and 6 (43896). Filling 60 on the two passing records adds no pass. The degree totals stay as filed; the Required Courses structure is the harvest item.
+
+**A migration's `.apply` pushed on a branch applies at once.** The S674 memory rows applied from the PR branch (run 44073641990) before the PR merged, as `supabase-migrate.yml` is meant to. Push `.apply` only when the rows are ready to be live.
+
+
+## S675 (SkyLinnet, 2026-11-17, the CPL Queue routine)
+
+**A block heading's figure can be the catalog's error.** Riverside City's Social Justice ADTs 41749 and 43896 print "Required Courses · Units: 9.00", and the rows under that heading add to less: 41749 lists "Select one of the following: 3.00" over ETS-1, SOC-10 or 10H, SOC-15 and SOC-25, and 43896 lists ETS-1 (3.00) and "Select one of the following: 3.00" over SOC-15, SOC-25 and PHI-34 (free page read 44081245766, plan `kb/college_reads/rcc_social_justice_required.json`). The readings keep the page exactly as printed, so the records fail arithmetic the way Geology 38790 does (S671, cause 1). A forced re-extraction would spend money on a faithful reading, and no reconcile step may add a course the page does not print. Both records stay as filed.
+
+## Moved from the lane (S676 checkpoint)
+
+NEXT (0) as it stood: (0) The repeated-course-row lever (S672, #3441; `d-rccd-repeat-rows-reconcile-steps-s672`): a reconcile `repeat` step per page shape, never a scorer change, since the scorer already counts `times`. Riverside City's three steps passed 38626, 38627 and 38628 (229 to 232, reconcile 44046016854); Norco's 'twice for a total of' step fixes 30606 and 30607's required list, and their three options pass by a repeat step's `name_pattern` (S673, #3443; `d-norco-option-heading-counts-s673`): the options were already one `option_group`, and each option's heading gives its own courses their count, only where the counted sum is the option's stated 8 (Norco 130 to 132 passing, reconcile 44063769303, none lost). **DECIDED** `d-mvc-38758-total-is-20-s673`: Moreno Valley Guitar 38758's 16-20 is the MUS-3 test-out; credit by exam still awards MUS-3's 4 units, so the record's total is the page's printed 20; the `printed_total` step (S674, #3444; `d-printed-total-test-out-step-s674`) sets it, the one step that replaces a filled figure (Moreno Valley 134 to 135 passing, reconcile 44072968931, none lost). **DECIDED** `d-rcc-social-justice-degree-total-stays-s674`: Riverside City's Social Justice degree totals stay as filed; 41749 and 43896 fail because the catalog does not add up (S675, page read 44081245766, `d-rcc-social-justice-catalog-unequal-s675`): Required Courses prints "Units: 9.00" over rows worth 3 (41749, select one of four) and 6 (43896, ETS-1 plus one of three), and the readings keep the page as printed; no step and no forced read. **DECIDED** `d-butte-31950-keeps-its-reading-s675`: Butte Physics 31950 keeps its printed conditional 8 elective units; both it and Mathematics 31953 pass, so no step. Lessons, S672 and S674. The RCCD pilot (#3438, S671; `d-rccd-pilot-no-blind-force-s671`) stands: never force a re-extraction blind, read the failing pages for free first.
+
+NEXT (3)'s opening as it stood: (3) Slice B: Skyline's yield read is merged (#3423, display build b640e31b114a); **DECIDED** `d-skyline-yield-one-live-row-s670`: of the six records it dropped (46296, 32337, 31587, 39658, 45668, 32479) only 32337 held a live row, removed by a guarded delete with its full before-image (#3436, migration 44009832772). The other 7 yield colleges capture again under the #3408 code before their holders' rows come out;
+
+## S676 (SkyPipit, 2026-11-17, the CPL Queue routine's 13:12Z and 14:12Z firings)
+
+**What happened.** The 13:12Z firing dispatched slice B's seven yield reads (one branch each, `claude/<college>-yield-s676`) at 13:15Z and stopped without a handoff. The 14:12Z firing found its PR (#3452) an hour quiet, took the queue under the same number, and ran `step=reread` and `step=load` on the six finished branches. Rereads replaced 45 unchecked live rows; loads inserted 4. The six merged onto one wave branch for a single Commons rebuild and display build (71b67268c567, #3456). Passing rose by 22 at a run cost of $6.85. Chaffey's read was still running past an hour.
+
+**One wave branch for six colleges.** Each read files under its own college folder, so six read branches merge with no conflict, while the Commons files and `cpl_pathways_roep_data.js` are shared and would conflict across six PRs. Build them once, on the merge.
+
+**Read the live rows before planning a delete.** All 14 dropped records had failed on `main`, and a failing record is never loaded, so none held a live row. The holder-row step (`p-yield-holder-live-row-after-filing-s668`) came to nothing this time, as five of Skyline's six had.
+
+**A dispatching firing should end with its PR body naming the runs.** The 13:12Z firing left its stub handoff and no run list; the next firing rebuilt the state from `git ls-remote` and the run listing. A line naming the runs and the next step, pushed at dispatch, lets the next firing pick up faster.
+
+**A fresh capture can reach a yield's end without the yield.** Three of S668's 13 yields (Feather River 36176, Gavilan 46046, Lemoore 19305) did not recur: the new captures file each holder under `page_claimed` and the lookup finds its taker's own page. The census pin in `tests/harvest_ncl_lookup_census_test.py` caught the change, as its comment intends (*a finding to judge, never a number to update*); the judgment is recorded beside the pin as `RESOLVED_BY_CLAIM_S676`, with a check that each holder stays claimed and each taker found.
+
+## S677 (SkyTanager, 2026-11-17)
+
+**What happened.** Chaffey, slice B's seventh yield college, filed (read 44090894573, $1.02; passing 181 to 182 of 192). Its branch had been cut before #3456, so `main` was merged in first. `step=reread` (44168346810) replaced 13 unchecked rows and `step=load` (44169840117) inserted none and kept 191; Commons data and display build cdd185495ce4, #3462 merged on green `test`. Slice B is complete at seven colleges.
+
+**One writer, agreed before the first write.** A second S677 session sat on an Execute SQL prompt. This session messaged it; it confirmed it had written nothing and stood down. Asking first cost one message and kept the queue to one writer.
+
+**A suspect yield can end in `not_found`.** S668 flagged Chaffey's yield (Cal-GETC 45032 taking Physical Science 18435's page) as suspect. The fresh capture files 18435 under `not_found`, since it had been extracted from the Cal-GETC page, so the yield no longer occurs and 45032 keeps its own reading. The census pin records it as `RESOLVED_BY_NOT_FOUND_S677`, with a check that 18435 stays not found and unfiled. A live read found no row for either control number, so no guarded delete (`d-chaffey-18435-not-found-no-live-row-s677`).
+
+**Rebuild a lost number from committed sources, or close it as named.** The self-test recall "27 to 26 of 28" was Skyline's. The one committed Skyline capture (d600083e) already reads 26 of 28; the 27 was never committed, so the drop cannot be rebuilt. Rebuilt from the census inputs, the self-test names one miss: 38299 Proficiency in American Culture and English (PACE), Certificate of Achievement, not matched against its own page (`f-skyline-self-test-miss-38299-pace-s677`). Recall stays above the floor.

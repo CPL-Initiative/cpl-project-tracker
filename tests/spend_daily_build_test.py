@@ -78,6 +78,15 @@ with tempfile.TemporaryDirectory() as t:
                                    "tags": {"collection": 30.0, "curation": 15.0, "infrastructure": 5.0},
                                    "untagged_usd": 10.0}, tagged["2026-11-18"])
     check("an untagged day keeps its old shape", "tags" not in tagged["2026-11-17"], tagged["2026-11-17"])
+    # A day with an estimated session carries estimate_usd, the estimated sessions' dollars (COBIx on #3545).
+    put(t, "docs/session_683_handoff.md",
+        "Spend: $40 (estimated from token counts); 2026-11-18T05:00Z to 2026-11-18T06:00Z.\n")
+    est = sd.build_sessions(t, later)["sessions"]
+    check("a day with an estimated session shows estimate_usd", est["2026-11-18"].get("estimate_usd") == 40.0
+          and est["2026-11-18"]["usd"] == 100.0, est["2026-11-18"])
+    check("a day with no estimated session carries no estimate_usd", "estimate_usd" not in est["2026-11-17"],
+          est["2026-11-17"])
+    os.remove(os.path.join(t, "docs/session_683_handoff.md"))
     d = os.path.join(t, sd.OUT)
     os.makedirs(os.path.dirname(d), exist_ok=True)
     with open(d, "w") as f:

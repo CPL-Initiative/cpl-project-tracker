@@ -1,136 +1,169 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-19T06:21:50Z",
- "count": 0,
- "suggestions": {},
+ "_generated_at": "2026-11-20T06:23:18Z",
+ "count": 4,
+ "suggestions": {
+  "ISACA Certified Info Security Manager (CISM)": [
+   {
+    "kind": "cos",
+    "id": "4569-B",
+    "title": "Certified Information Security Manager",
+    "org": "Information Systems Audit and Control Association"
+   }
+  ],
+  "ISACA Certified Info Systems Auditor (CISA)": [
+   {
+    "kind": "cos",
+    "id": "0858-C",
+    "title": "Certified Information Systems Auditor",
+    "org": "Information Systems Audit and Control Association"
+   }
+  ],
+  "Microsoft Office Specialist (MOS) Associate": [
+   {
+    "kind": "cos",
+    "id": "12784-D",
+    "title": "Microsoft Office Specialist: Associate (Office 365 and Office 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ],
+  "Microsoft Office Specialist (MOS) Expert": [
+   {
+    "kind": "cos",
+    "id": "12771-D",
+    "title": "Microsoft Office Specialist: Expert (Office 365 and Office 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ]
+ },
  "aligned": {
-  "High School Articulation (Emerald)- Developmental Psychology of Children II": {
+  "Credit by Exam HIST001-Introduction to Western Civilization I": {
+   "kind": "cid",
+   "id": "HIST 170",
+   "title": "Western Civilization I",
+   "code": "HISTORY 001",
+   "college": "Los Angeles Southwest College"
+  },
+  "Credit by Exam HIST002-Introduction to Western Civilization II": {
+   "kind": "cid",
+   "id": "HIST 180",
+   "title": "Western Civilization II",
+   "code": "HISTORY 002",
+   "college": "Los Angeles Southwest College"
+  },
+  "High School Articulation (Livermore)- Developmental Psychology of Children II": {
    "kind": "cid",
    "id": "ECE 120",
    "title": "Principles & Practices of Teaching Young Children",
    "code": "ECE 50",
    "college": "Las Positas College"
   },
-  "High School Articulation (Foothill)- Developmental Psychology of Children II": {
-   "kind": "cid",
-   "id": "ECE 120",
-   "title": "Principles & Practices of Teaching Young Children",
-   "code": "ECE 50",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Granada)- Developmental Psychology of Children II": {
-   "kind": "cid",
-   "id": "ECE 120",
-   "title": "Principles & Practices of Teaching Young Children",
-   "code": "ECE 50",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Foothill)-  Criminal Justice/ Crime Scene Investigation": {
-   "kind": "cid",
-   "id": "AJ 110",
-   "title": "Introduction to Criminal Justice",
-   "code": "AJ 50",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Foothill)- Criminal Justice/ CSI": {
-   "kind": "cid",
-   "id": "AJ 140",
-   "title": "Criminal Investigation",
-   "code": "AJ 63",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Granada)- Criminal Justice/ Crime Scene Investigation": {
-   "kind": "cid",
-   "id": "AJ 110",
-   "title": "Introduction to Criminal Justice",
-   "code": "AJ 50",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Kimball)- Fundamentals of Criminal Justice": {
-   "kind": "cid",
-   "id": "AJ 110",
-   "title": "Introduction to Criminal Justice",
-   "code": "AJ 50",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Livermore)- Criminal Justice/ Crime Scene Investigation": {
-   "kind": "cid",
-   "id": "AJ 110",
-   "title": "Introduction to Criminal Justice",
-   "code": "AJ 50",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Foothill)- Principles of Engineering": {
+  "High School Articulation (Livermore)- Principles of Engineering": {
    "kind": "cid",
    "id": "ENGR 110",
    "title": "Introduction to Engineering",
    "code": "ENGR 1",
    "college": "Las Positas College"
   },
-  "High School Articulation (Emerald)- Introduction to Health Careers": {
-   "kind": "course",
-   "id": "BIOL M10SN",
-   "title": "Orientation to Health Care",
-   "code": "BIO 55",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Foothill)- Introduction to Health Careers": {
-   "kind": "course",
-   "id": "BIOL M10SN",
-   "title": "Orientation to Health Care",
-   "code": "BIO 55",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Granada)- Introduction to Health Careers": {
-   "kind": "course",
-   "id": "BIOL M10SN",
-   "title": "Orientation to Health Care",
-   "code": "BIO 55",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Emerald)- Medical Occupations": {
+  "High School Articulation (Mission Valley ROP)- Principles of Engineering": {
    "kind": "cid",
-   "id": "HIT 103 X",
-   "title": "Medical Terminology",
-   "code": "EMS 62",
+   "id": "ENGR 110",
+   "title": "Introduction to Engineering",
+   "code": "ENGR 1",
    "college": "Las Positas College"
   },
-  "High School Articulation (Foothill)- Emergency Medical Response": {
+  "Credit by Exam CIS100-Practical PC & Career Technologies": {
+   "kind": "course",
+   "id": "ITIS M11BV",
+   "title": "PRACTICAL PC AND CAREER TECHNOLOGIES",
+   "code": "CIS 100",
+   "college": "Los Angeles Southwest College"
+  },
+  "Portfolio Review CIS100-Practical PC & Career Technologies": {
+   "kind": "course",
+   "id": "ITIS M11BV",
+   "title": "PRACTICAL PC AND CAREER TECHNOLOGIES",
+   "code": "CIS 100",
+   "college": "Los Angeles Southwest College"
+  },
+  "High School Articulation (Livermore)- Introduction to Health Careers": {
+   "kind": "course",
+   "id": "BIOL M10SN",
+   "title": "Orientation to Health Care",
+   "code": "BIO 55",
+   "college": "Las Positas College"
+  },
+  "ISACA Certified Info Security Manager (CISM)": {
+   "kind": "mid",
+   "id": "ITIS M1462",
+   "title": "Network Security",
+   "code": "CNIT 120",
+   "college": "City College of San Francisco"
+  },
+  "Cal Fire Basic Firefighter (219 hour) Training": {
+   "kind": "mid",
+   "id": "FIRE M1297",
+   "title": "Wildland Fire Control",
+   "code": "F SC 55",
+   "college": "City College of San Francisco"
+  },
+  "High School Articulation (Tracy)- Fire Service": {
+   "kind": "mid",
+   "id": "KINE M1466",
+   "title": "Fire Service Conditioning & Physical Agility Development",
+   "code": "FST 7",
+   "college": "Las Positas College"
+  },
+  "Credit by Exam CIS104-Microcomputer Application Software": {
+   "kind": "mid",
+   "id": "ITIS M1486",
+   "title": "Spreadsheet: Software",
+   "code": "CIS 104",
+   "college": "Los Angeles Southwest College"
+  },
+  "Portfolio Review CIS104-Microcomputer Application Software": {
+   "kind": "mid",
+   "id": "ITIS M1486",
+   "title": "Spreadsheet: Software",
+   "code": "CIS 104",
+   "college": "Los Angeles Southwest College"
+  },
+  "Credit by Exam CIS210-Introduction to Computer Networking": {
+   "kind": "course",
+   "id": "ITIS M11KF",
+   "title": "INTRODUCTION TO COMPUTER NETWORKING I",
+   "code": "CIS 210",
+   "college": "Los Angeles Southwest College"
+  },
+  "High School Articulation (Livermore)- Emergency Medical Response": {
    "kind": "mid",
    "id": "EMST M1056",
    "title": "Emergency Medical Responder",
    "code": "EMS 30",
    "college": "Las Positas College"
   },
-  "High School Articulation (Foothill)- Medical Occupations": {
+  "High School Articulation (Livermore)- Medical Occupations": {
    "kind": "cid",
    "id": "HIT 103 X",
    "title": "Medical Terminology",
    "code": "EMS 62",
    "college": "Las Positas College"
   },
-  "High School Articulation (Granada)- Emergency Medical Response": {
+  "High School Articulation (Mission Valley ROP)- Emergency Medical Responder": {
    "kind": "mid",
    "id": "EMST M1056",
    "title": "Emergency Medical Responder",
    "code": "EMS 30",
    "college": "Las Positas College"
   },
-  "High School Articulation (Granada)-  Medical Occuptations": {
-   "kind": "cid",
-   "id": "HIT 103 X",
-   "title": "Medical Terminology",
-   "code": "EMS 62",
-   "college": "Las Positas College"
+  "CA Specialized Training Institute First Responder Operations and Decon": {
+   "kind": "mid",
+   "id": "PUBS M1014",
+   "title": "Hazardous Materials First Responder Operations",
+   "code": "F SC 65",
+   "college": "City College of San Francisco"
   },
-  "High School Articulation (Foothill)- Introduction to Athletic Training": {
-   "kind": "course",
-   "id": "KINE M11GR",
-   "title": "Intro to Athletic Training and Sports Medicine",
-   "code": "KIN 17",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Granada)- Introduction to Athletic Training": {
+  "High School Articulation (Livermore)- Introduction to Athletic Training": {
    "kind": "course",
    "id": "KINE M11GR",
    "title": "Intro to Athletic Training and Sports Medicine",

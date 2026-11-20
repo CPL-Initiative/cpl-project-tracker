@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-593 document(s).
+595 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -30,6 +30,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [ADR — The re-mint approval queue: a queue, never a fire button, and where its decision right sits](../kb-notes/adr-remint-approval-queue-decision-rights.md) | adr | published | 2026-09-05 | 2026-09-05 |
 | [COBI org layer — one platform, "site" as a view dimension (not a repo/site per org)](../kb-notes/adr-cobi-org-layer.md) | adr | published | 2026-07-14 | 2026-07-14 |
 | [Level-collapsing consolidation — over-merge beats under-merge for CPL](../kb-notes/adr-level-collapsing-consolidation.md) | adr | published | 2026-06-16 | 2026-06-16 |
+| [One credential list, with exhibits as its children](../kb-notes/adr-one-credential-list-exhibits-are-its-children.md) | adr | published | 2026-11-19 | 2026-11-19 |
 | [Pull from the source rather than accept a push](../kb-notes/adr-pull-from-the-source-rather-than-accept-a-push.md) | adr | published | 2026-08-19 | 2026-08-19 |
 | [Reference-data home — committed JSON by default, Supabase only for live curation](../kb-notes/adr-reference-data-committed-json-vs-supabase.md) | adr | published | 2026-06-18 | 2026-06-18 |
 | [Supersede, don't mutate, at the synthetic identity layer](../kb-notes/adr-supersede-dont-mutate-synthetic-layer.md) | adr | published | 2026-05-27 | 2026-05-27 |
@@ -63,6 +64,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A compact formatter is calibrated to a magnitude, and a second lane rarely shares it](../kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [A concatenated haystack penalises your best-curated record](../kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A conditional key breaks a bulk upsert, and it fails positionally](../kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A confirming read pages by key, never by offset](../kb-notes/methodology-a-confirming-read-pages-by-key-never-by-offset.md) | methodology | published | 2026-11-19 | 2026-11-19 |
 | [A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI](../kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A control reported as broken may be live on a surface that draws nothing](../kb-notes/methodology-a-control-can-be-live-on-a-surface-that-draws-nothing.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A control that does nothing — read the request log first](../kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md) | methodology | published | 2026-09-23 | 2026-09-23 |
@@ -560,7 +562,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Re-keying a shared DB from a committed re-mint alias map](../kb-notes/playbook-rekey-shared-db-from-alias-map.md) | playbook | published | 2026-06-15 | 2026-06-15 |
 | [Resume a long multi-agent workflow across task death, model swaps, and spend caps](../kb-notes/playbook-resume-long-workflow-across-failures.md) | playbook | published | 2026-07-12 |  |
 | [Resuming a frozen session — check main before rebuilding its in-flight work](../kb-notes/playbook-resume-frozen-session-check-main-first.md) | playbook | published | 2026-06-02 | 2026-06-02 |
-| [Runner-as-proxy for an external API the agent sandbox can't reach](../kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-06-28 |
+| [Runner-as-proxy for an external API the agent sandbox can't reach](../kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-11-20 |
 | [Ship a new table before its privilege close, when the database tool holds the close](../kb-notes/playbook-ship-a-table-before-its-privilege-close.md) | playbook | published | 2026-10-04 | 2026-10-04 |
 | [Soft-delete a daily-generated entity via an overlay table + collapsed section](../kb-notes/playbook-soft-delete-generated-entity-via-overlay.md) | playbook | published | 2026-06-29 | 2026-06-29 |
 | [Test a database function locally with PGlite before it goes live](../kb-notes/playbook-test-a-database-function-locally-with-pglite.md) | playbook | published | 2026-10-13 | 2026-10-25 |

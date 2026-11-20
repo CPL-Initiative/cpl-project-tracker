@@ -10,7 +10,7 @@
 //       live) move with the registry, so the views below draw a FIXTURE registry and a status change never fails a
 //       test with no code fault (p-test-reads-live-review-file-s649);
 //   (3) ⭐ people by role only: no name and no email in the registry or the module; an agreement shows status only;
-//   (4) ⭐ the view has its own address (#commons/data/integrations), opens from it, reports it, sits in the views'
+//   (4) ⭐ the view has its own address (#collect/integrations), opens from it, reports it, sits in the views'
 //       menu after Data elements and sharing, lists every integration by status, and each agreement opens the
 //       agreements on Data elements and sharing;
 //   (5) ⭐ each college's rows are exposed (forCollege) and read "none known" until the registry holds a row for it;
@@ -98,12 +98,12 @@ function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new
 
 (async function () {
   const files = { "kb/status/commons_data.json": REAL, "kb/status/cdc_sharing.json": SHARING, "kb/status/cdc_integrations.json": FIX };
-  const V = dom("#commons/data/integrations", files);
+  const V = dom("#collect/integrations", files);
   const D = V.w.CPL_COMMONS_DATA;
   await D.boot(V.root, "integrations");
   await flush(V.w);
-  check("(4) ⭐ #commons/data/integrations opens the view from its arrival, and the view names itself in its report",
-    D.address() === "commons/data/integrations" && txt(V.root.querySelector("#cdd-h")) === "Integrations" && !!V.root.querySelector("#cdc-in-view"));
+  check("(4) ⭐ #collect/integrations opens the view from its arrival, and the view names itself in its report",
+    D.address() === "collect/integrations" && txt(V.root.querySelector("#cdd-h")) === "Integrations" && !!V.root.querySelector("#cdc-in-view"));
   const rows = [...V.root.querySelectorAll("#cdc-in-table tbody tr")];
   check("(4) every integration is a row (" + rows.length + " of " + FIX.integrations.length + ")", rows.length === FIX.integrations.length);
   const order = ["live", "in progress", "proposed", "not started"];
@@ -116,12 +116,12 @@ function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new
   const navs = [...V.root.querySelectorAll("nav.cdd-views a")].map((a) => a.getAttribute("data-goto"));
   check("(4) the views' menu carries Integrations at its address, after Data elements and sharing",
     navs.indexOf("integrations") > navs.indexOf("sharing") && navs.indexOf("sharing") > 0 &&
-    V.root.querySelector('nav.cdd-views a[data-goto="integrations"]').getAttribute("href") === "#commons/data/integrations");
+    V.root.querySelector('nav.cdd-views a[data-goto="integrations"]').getAttribute("href") === "#collect/integrations");
   const ag = V.root.querySelector('#cdc-in-table tr[data-integration="fx_proposed"] button.cdc-in-agree');
   check("(4) an agreement shows its name and status only", ag && txt(ag) === "Fixture data lake agreement" && /Might be needed/.test(txt(ag.parentNode)));
   if (ag) ag.click();
   await flush(V.w);
-  check("(4) ⭐ an agreement opens the agreements on Data elements and sharing", D.address() === "commons/data/sharing" && !!V.root.querySelector("#cdc-sw-agreements-table"));
+  check("(4) ⭐ an agreement opens the agreements on Data elements and sharing", D.address() === "collect/sharing" && !!V.root.querySelector("#cdc-sw-agreements-table"));
 
   // (5) each college's rows.
   const I = V.w.CPL_CDC_INTEGRATIONS;
@@ -148,7 +148,7 @@ function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new
   delete I._state.data.per_college.colleges[slug];
 
   // (6) a missing file.
-  const X = dom("#commons/data/integrations", { "kb/status/commons_data.json": REAL, "kb/status/cdc_sharing.json": SHARING });
+  const X = dom("#collect/integrations", { "kb/status/commons_data.json": REAL, "kb/status/cdc_sharing.json": SHARING });
   X.w.CPL_CDC_INTEGRATIONS._reset();
   await X.w.CPL_COMMONS_DATA.boot(X.root, "integrations");
   await flush(X.w);

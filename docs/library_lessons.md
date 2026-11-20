@@ -1198,3 +1198,18 @@ hours), and on a revision it runs on each edit's new text, so every rewrite show
 COBIx's four probe rounds on the under-10 rule each found a pattern the last fix missed (unit fields, labels, whole-page
 rewrites, lists and ranges, a singular label's `and`); every probe string is a test in
 `tests/library_revise_draft.test.js` G1 to G7. Pattern rules over prose need a reviewer who probes adversarially.
+
+## Moved from the lane (S686 light checkpoint)
+
+✅ **Start a piece is built** (2026-10-06, as mockup version 2 shows it). The brief form
+(kind, now including spreadsheet; working title; occasion; needed by; for; what it must
+say; sources; length or template) saves a record with status `requested` and the brief in
+one `brief` jsonb column (migration `cpl_library_start_a_piece`). **In development** sits
+above the register and holds every Requested record, and every briefed record still at
+Draft, at its step of four (Requested, Draft, Approved, Presented). Approval moves a piece
+into the register. A Requested record never counts as Not filed, because it has nothing to
+file yet. *Copy the brief* gives the whole paste for a new session: the ask, the
+`scripts/library_file.py` command for that record, and what a good result looks like.
+**File it** sits on the In development card: filing a Requested piece moves it to Draft, and a record with no made-on date takes the day it is filed, or the day Edit moves it past Requested (2026-10-27, after the Workplan Update reached Approved through Edit and sorted last, undated). Sam's routine reads Requested records as queue items (step 6 of *At the start* in
+[`scheduled_sessions`](../scheduled_sessions.md)). The versions table shows the time
+each version was filed (`filed_at`, call 8).

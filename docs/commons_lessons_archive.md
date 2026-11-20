@@ -818,3 +818,148 @@ stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
   `#unified-courses/list`) and the Admin tab can show the entry again.
 - The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
   source `docs/visuals/2026-10-18-commons-mockup.html`).
+
+## SkyJujube, 2026-11-04: retiring the Common Course Reference tab (a side session)
+
+- **The inventory read what the module does at load.** `unified_courses.js` ran `consumeAuthHash()` as it loaded, for
+  every tab: the hidden Common Course Reference landed every COBI magic link, and deleting it would have ended
+  signing in. Its pointers (SkyView's three links, Quickstart, Subjects' *Fix on CCR*) were the expected part. The
+  landing moved into `cpl_session.js` first (#2775).
+- **Measured use sized the carry.** `kb_curation` by field, all time and the last 30 days, before porting anything:
+  merges 23,143 / 0, renames 7,787 / 0, discipline 245 / 1, description edits and merge notes never. Three edits carried
+  (#2776); the rest wait on Sam's call or retire with the tab.
+- **The List's panel is the Courses workspace for a common course,** reached from any of its local courses. The card
+  reads `unified_courses_data.js` the first time a panel opens (16,389 common courses in the browser file).
+- **A panel's sign-in fold must not be a direct-child `<details>`:** the engine places the Title drawer before the
+  first one, so the fold pulled the drawer into the common course. The screenshot showed it; jsdom passed.
+- **Every view has an address** (asked in session, 2026-11-04): a sign-in link opens a new browser tab, so only the
+  address carries the view back. 27 tabs now open the view their address names and report it (#2775, #2779).
+
+## Moved from the lane (SkyBeacon, 2026-11-06)
+
+Verbatim from `docs/reference/lanes/commons.md`, when the lane passed its 20 KB budget.
+
+**Fable's advice, carried (2026-10-18):** complete differs in kind, so each row names the test behind its
+count and no column sorts on a share; the machine stamp and the session stamp stay apart, each against a
+declared cadence; a call has one source, which today is the run log, with the sheet's store a build item.
+
+**RULED (Sam, Open Asks Sheet 95 card 1, 14:43Z, his own call, "build"; `cpl_memory`
+`sam-sheet-95-rulings-2026-10-18`):** *"Yes, and include Common Subjects in the mix."* Step 1, the shared
+Progress module (`commons_progress.js`, S419, #2237), is on main; the Commons tab came next on Sam's
+20:10Z word. What remains of the order: a run log per project written at checkpoints, each reference's
+Progress view (Exhibit, Course, CR, Subjects) from the module, each with its definition of complete on a
+card for Sam.
+
+**Step 3's Progress views, Subjects (S425, #2260), Exhibit (S436) and CR (S437), with Sam's keep rulings (Sheets 107 and 108):** the record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*). Each host brought a 60-line spec to the shared module and needed no change to it.
+
+## 2026-11-06 — the first view, from Sam's recording (moved from the lane, S611)
+
+Moved verbatim from `docs/reference/lanes/commons.md` at the S611 checkpoint (the lane was over its 20 KB budget; it states current truth).
+
+**FIXED: the first view, from Sam's recording (SkyBeacon, 2026-11-06, #2857).** Sam: *"I don't think the various items
+and procedures are updating and wired properly."* (1) Details: a completed decision sheet's line widened its cell over
+*Last run* and past the card (3,414px in a 1,920px window) because each Details list is a grid with an auto column; one
+`minmax(0, 1fr)` column cuts it with its ellipsis. (2) Subjects: the card's 30 scan findings were 9 weak mnemonics Sam had
+noted on Nov 5 and 21 anchor entries keyed off a Common SUBJ that changed; a recorded note now settles a weak mnemonic
+(`cs6_mnemonic_noted`, `kb/_csr_trail.py`), and the anchor findings are their own re-key item beside the identity codes,
+on the card and the Subjects page (one skip list). (3) Mark done and the done marks: the card read a lapsed reviewer token
+as signed out, so Sam's Monterey mark (saved on CPL Pathways, 19:29Z) never left the band; it now renews first and re-reads
+on the keeper's announcement ([`reviewer-session-lifetime`](reviewer-session-lifetime.md)). The write stays reviewer-only.
+**COCI Lookup is named Courses and Programs** (Sam, 2026-11-06, #2858); the tab key and every `#coci-lookup/...` address
+stay.
+
+## The CCR tab's inventory (moved from the commons lane, S612, 2026-11-08)
+
+The inventory found `unified_courses.js` landing every COBI magic link (moved into `cpl_session.js`, #2775) and writes curators had stopped using (`kb_curation` on 2026-11-04, all time / last 30 days: merges 23,143 / 0, renames 7,787 / 0, discipline 245 / 1; description edits and merge notes never).
+
+## Moved from the lane, 2026-11-09, SkyCigar
+
+**To do, later (Sam, 2026-10-26 ~15:00Z, S490):** *"The Commons program numbers don't match the PR tabs numbers. Need
+to make sure the numbers on all tabs on the commons match the commons summaries."* His two screenshots, the same morning:
+the Commons' Program Requirements card read **13,194 of 20,282 complete at 114 colleges** (3,731 failing a check, 3,357
+with no record; figures read 6:16 AM PT), while the Program Requirements tab's Progress read **17,529 records read at 114
+colleges** and **3,274 fail a machine check** (7:38 AM PT). The two count different things (complete active programs
+against records read) and from different reads, but neither page says so. Make every tab's figures and the Commons
+summary agree, or name the difference on both. **The Program Requirements pair is done (S560, #2721):** both pages
+headline complete active programs of COCI's active (S558); *Needs attention* now counts active programs whose record
+fails, the card's unit, where it had counted every failing record; and each page names the one difference left, timing
+(the card counts the records committed at the last checkpoint, the tab reads live: 13,553 committed against 13,542
+live on 2026-11-03). **The other four pairs, checked (S561):** Course reads the Commons row itself and CR reads the
+same committed worklist build, so both agree by construction. **Subjects disagreed:** the page counted 17 scan findings
+to confirm or note and the card 16, since the card counted two rules and left out the dead-format anchor; both now
+count one set, the findings needing judgment less the ones another item counts (`ASK_SKIP` in `canonical_subj4.js`,
+`CSR_ASK_SKIP` in the builder; the page also lists a missed alignment, as the card does), and each names its timing
+(the card counts the daily sync, the page reads the picks live). **Exhibits would have counted held titles twice** on
+a night the procedures run held any (live from the review file, and again from the Commons row); the page now drops
+the row's held and conflict copies once the review file is read, and both pages say why the card's list is shorter
+(the page adds the tab's own queues). Guards: `tests/csr_progress.test.js` (79), `tests/exhibits_progress_page.test.js`
+(43), `tests/commons_status_build_test.py` (85). The same screenshot shows both Progress cards reading *Could not be read*
+(`coci_college_programs` answered 500): check that read first, since an empty denominator can move every figure.
+
+## The Docket, steps 1 to 3, and the morning's security asks (SkyCigar, 2026-11-09)
+
+- **A committed status file cannot close a loop a person just finished.** `next_batch` was rebuilt three times a day, so Sam's six decided cards still read open. The fix counts from the saves themselves (the keys a decision writes, read since the sweep was built) and from the visit's own marks; the file supplies only the keys (#2966).
+- **Reuse a write surface before adding one.** Docket rulings are `kb_curation` rows under a prefixed key, like `ccr_procedure_request`; the daily fold keeps only a fixed list of fields, so a new field cannot leak into the reference. The "Process my rulings now" security already existed twice (`workplan-rebuild`, the Worker's `/trigger`); the Edge Function copy took a reviewer-only check and the existing dispatch token (#2968, #2969).
+- **An automated applier's safety lives in what it refuses.** The processor runs only commands the reviewed cases file names, only allowed scripts, only with `--expect`; a failed step stops the rest and marks the case `partial`, never re-run. Tested in a temporary git repo with a stand-in script.
+- **A public file never carries an address.** Cases name an addressee handle; the processor's `done.by` names the ruling key, not the reviewer.
+- **A relayed ruling and a direct one can disagree in time.** COBIx relayed Sam lifting call 9 at 13:10Z; Sam asked at ~14:25Z to put it on a sheet. One plain question settled it (lifted). Ask; do not pick the relay.
+- **Measure grants before revoking them, and roll back to the measurement.** The TRUNCATE rollback restores the exact per-table grants read just before (91 anon, 92 authenticated), not a blanket re-grant.
+- **A UI that logs on return logs refusals.** The CSM workspace logged "Accepted" before the save read back; the funding tab's own email waited correctly. The action now answers with the re-read (#2973).
+
+## Moved from the lane (S624, 2026-11-10; the lane stood at 1.43 times its budget): moved to the archive (S662 checkpoint compaction)
+
+Moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md): *Moved from the lane (S624, 2026-11-10; the lane stood at 1.43 times its budget)*.
+
+## Moved from the lane (S639, 2026-11-11)
+
+**LIVE: a stalled routine becomes a queue item (S624, the path mock's build).** `kb/status/commons.json` `queue.stalled` names a reference whose machine stamp is older than 1.5 of its cadence (`stopped`) and a routine-carried issue that counts as many items as its latest reading at least seven days old (`not_shrinking`). Each build records the day's routine counts in `kb/status/commons_history.json` (one entry a UTC day, 60 kept; both workflows commit it); the file was seeded from main's own commits back to 2026-11-04, the day issues first named a carry. The Commons tab draws *A routine has stalled* as a fifth box in *Waiting on a person* only when the list holds an item. Seven days and the 1.5 are constants in the builder (`STALL_DAYS`, `STALL_SLACK`); a backlog that grows because its source grew also reads as stalled, which is the team's call to look at. Tests: `tests/commons_status_build_test.py`, `tests/commons.test.js` (stalled 1 to 5).
+
+## S641 (SkyOtter, the conductor, 2026-11-12): the ASE slice, read-only first
+
+- **The first slice of the Commons plan's v2 Agreed final shipped read-only** (#3152, Sam's go on Sheet 181 card 10):
+  52 ASE certifications by 120 colleges, 6,240 pairs, 18% with an answer. The parts that need a write (Request CPL
+  Review) or a public surface waited, so the slice could ship on the go it had; a write surface goes through Rule 10 a3
+  first.
+- **It conflicted on `kb/dependency_map.json`** after two other map-touching PRs merged cleanly in sequence. Merge
+  map-touching PRs one at a time and expect a `main` merge on the rest.
+
+## Moved from the lane (S642, 2026-11-12)
+
+Moved verbatim from `docs/reference/lanes/commons.md` to make room for re-clustering Step 1.
+
+**The Courses List keeps the row you are ruling on (S623, issue #2995; Sam, 2026-11-09: *"the list view shifts focus to the top row every time you take action in the sidebar and the listview is not obviously highlighted as to which row you're acting on. the save ruling and other buttons are a bit jumbled together."*).** In the list engine (`commons_list.js`, so every List gets it): a redraw asked for by a panel (`api.redraw`, now `redrawKeep`) puts the table's scroll back and brings the current row into sight; the row whose panel is open carries `aria-current` and a bar (`<prefix>cur`), and its band carries one too (`<prefix>bandcur`). In the Discipline in doubt panel (`coci_lookup.js`): the ruling is one box with *Save the ruling* on its own line, the edits sit under *Or edit the common course*, and *Open … in SkyView* has its own line. Guards `tests/coci_list_doubt.test.js` (9).
+
+**The Courses List's filter words sit in two groups (S622, #2998, issue #2997; Sam, 2026-11-09: *"put them in order of priority for me to act on ... categorize the ones that need action and the others that are just convenient filters"*).** `commons_list.js` takes an optional `filterGroups: [{ label, ids }]`: each group on its own line, its label first, its words in the group's order; a List that sets none draws as before. The Courses List: **To do** (Discipline in doubt, On a stray identity code, No catalog description, A unit anomaly, Discipline no seed has touched), then **Browse** (the ten census words). The rule holds for every List that gains job filters. Open beside it: #2995, keep the current row in view after a ruling.
+
+## Moved from the lane (S644)
+
+Verbatim from the lane's *The CCR, next (ruling 4)* paragraph, the three applies it recorded:
+
+**Applied (S615, 2026-11-09), on Sam's *confirm* (Open Asks Sheet 174 card 1, 02:25Z):** `kb/_ccr_seed_confirm_apply.py --discipline Kinesiology --expect 627 --apply` stamped the 627 cards `discipline_source` `description_and_top` (confidence 0.8, `_seed_confirm_from` names the ruling and both signals); the discipline never changes. The auditor scores the source inferred-high, so they leave `seed_untouched_discipline` at the next daily audit. Receipt `kb/ccr_seed_confirm_out/2026-11-09/kinesiology.json` (before-values; `--undo` restores the file byte for byte). Guard `tests/ccr_seed_confirm_test.py`. The 8 are the *Discipline in doubt* job. **Applied (S621, 2026-11-09), on Sam's *five* (Open Asks Sheet 175 card 1, 15:14Z; also the Docket's first case, now `done`):** the same apply per discipline, `--ruling` naming the reply: Music 250, Fire Technology 169, Mathematics 128, Child Development/Early Childhood Education 107, English 99 (753 cards). Receipts `kb/ccr_seed_confirm_out/2026-11-09/<slug>.json`, each reverses alone with `--undo`. Their 108 curator cards stay in the *Discipline in doubt* job. **Applied (S634, 2026-11-10), on Sam's *all* (Open Asks Sheet 180 card 1, 19:34Z):** the same apply for every remaining discipline, 26 disciplines and 584 cards as the dry run named them, each with its receipt under `kb/ccr_seed_confirm_out/2026-11-10/<slug>.json`; each reverses alone with `--undo`. **DECIDED (S634, 2026-11-10, under decide-and-record):** Kinesiology's 10 cards that came to qualify after S615's 627 took the same stamp on Sheet 174's ruling (receipt `2026-11-10/kinesiology.json`). The recount after the apply finds no confirmed card left in any discipline; the cards where the two signals disagree stay in the *Discipline in doubt* job.
+
+And the confidence count's paragraph, verbatim:
+
+**LIVE: the confidence count (S573, 2026-11-04, Sam: "start on the confidence count next").** `kb/status/commons.json`'s `confidence` says what a person did with each procedure's work afterward: the Exhibit procedures' receipts (`kb/cer_procedures_out/saved/`) against `kb/unified_titles.json`, the nightly Subjects confirm's (`kb/csr_out/confirm/`) against the seed. A result a person looked at is kept, renamed with its family (its old name is gone and its siblings moved together), or moved (a correction). 2026-11-04: of 1,178 titles placed, a person looked at 94, kept 23, renamed 71, moved 0; none of the 13 confirmed picks looked at yet. The tab shows it as *How far to trust the procedures*. **The CR rule rungs joined it (S624, #3027):** the groups a rung 1 to 4 rule folded (`kb/cr_reference_worklist.json`) against the curator's decisions (`kb/receipts/cr_reference_decisions_*.json`, which matched the live table's 30 rows on 2026-11-10), one line a rung. Confirmed with the rule's own wordings is kept; confirmed with wordings a person added from another group is *widened*, its own state (COBIx's finding: the rule set none wrong and missed some); a wording set aside or *not a topic* is moved. 2026-11-10: of 226 groups a person looked at 20 (rung 1: 9 of 113, rung 2: 11 of 26, rungs 3 and 4: none of 87), kept 0 as the rule left them and widened all 20. The 20 are Sam's 2026-09-20 sheet verdicts on fold proposals, matched to today's groups by key; no person has yet been asked to review a rung's output as such, so the count says the rungs under-fold and says nothing yet of whether they over-fold.
+
+## Moved from the lane (S647)
+
+The re-clustering paragraph as it stood in the lane before S647's checkpoint, verbatim:
+
+**IN PROGRESS: M-ID re-clustering by outcomes, Step 1 (S642, issue #2962; #3165; revised #3182 `3189c403`).** Sam, relayed by COBIx (#3111 comment 6825682304): *"yes! make sure this work is in our moonshot plan and properly prioritized in it. ... let's get sky in the game on this"* (`sam-outcomes-first-mid-clustering-in-plan-2026-11-12`); on #2962 (comment 6825683021): *"yes, let's roll!"* (`sam-mid-reclustering-step-1-go-2026-11-12`). Step 1 writes nothing: `kb/_mid_outcomes_compare.py` reads the committed SLO and objective reads (17,349 rows, 13 hosts; no PLOs harvested) against each M-ID's members and classes the 1,857 M-IDs with two or more members holding text, each at Sam's three match levels; an SLO never overrides alone, TOP and units are shown and read by nothing. **Revised in S643 on COBIx's four findings (#2962 comment 6829696579):** one district is one voice for confirmations, splits and merges (districts from the committed identity crosswalk), which re-rates the classes to 678 confirmed (33 strong), 760 split (6 strong), 71 merge candidates (17 strong), 348 not enough text; ITIS 140 falls to a partial split and BIOL M1094/M1095 to a limited merge, both one RCCD outline. Each M-ID carries two exhibit-reach columns from `unified_courses_aligned.js` (#3111 comment 6827702046): credit by exam titled from the M-ID, which is a split's reach, and certifications, shown and not counted. No committed per-M-ID potential-CPL (student) measure exists, so none is shown. The cases for Sam are picked from the strong and partial splits and merges by that reach first: AJ 160, FIRE 130 X with FIRE M1274, REAL M1038 with M1040, MATH M1036 with M1044, MUS 130, BUSI M1228. MATH 130, PH 101, AGAS M1136/M1140 and BSOT M1209 stay as examples of the two candidate rules; BSOT M1209 is likely a rename plus splitting out BSOT 150, and the Honors rule asks Sam: one M-ID, or two with a declared equivalence. A structural check on subject codes alone (`kb/reference/subject_discipline_map.json`, never TOP) flags 921 members in 321 M-IDs. A live read that returns zero rows stops the run. Report `kb/status/mid_outcomes_compare_2026-11-12.md`, rewritten in place. **DECIDED (the S642 conductor with COBIx; `d-reclustering-placement-s642`):** the work sits under the plan's priorities 2, 3 and 7; a second pass with a model is priced before it runs. **DECIDED (the S643 conductor with COBIx; `d-reclustering-district-guard-s643`):** one district is one voice on splits and merges, and the cases for Sam are chosen by credit-by-exam reach. **NEXT:** (1) Sam's rulings on the six above and the Honors question ([Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 6; Sheet 185 card 9's six are superseded); (2) price the model pass: a statewide read is outside the $40 limits, so the price goes to Sam first; (3) a potential-CPL column, from an aggregate the runner can read; (4) the Leadership outlines: Merced (for AGAB M1002) and Canyons inside the SLO $40, and a read-only committed export of the ACE Leadership and Supervision rows of `map_college_cr_unit`.
+
+**The harvest's throughput (S644; Sam: *"we need to increase our throughput"*).** Program Requirements gained a gap census (one cause and one lever for each of the 6,758 active programs without a passing record, #3189) and a wave runner (up to eight colleges in one dispatch, $40 a college with a hard stop on actual cost, #3191); detail in [program-requirements-harvest](program-requirements-harvest.md), *Throughput*. **DECIDED (`d-cobix-offers-specialist-bots-s644`, Sam's go relayed by COBIx):** COBIx scouts sources, spot-checks five records after each wave and ranks work by blast radius, and two read-only bots (a source scout and a wave checker) will work to the contract on #3111 comment 6840743191; not built yet.
+
+
+## Moved from the lane (S647 afternoon)
+
+Moved verbatim by the documents worker at the second S647 checkpoint, to keep the lane under its budget. Each still stands.
+
+**RULED (Sam, Open Asks Sheet 158 cards 2 and 3, 15:01Z 2026-11-02, his own call: "malone", "rename").** The CPL
+Commons first view ports into this tab in **Malone's CPL/AI look**, the first COBI tab to carry it (First Light stays the
+rule for the other tabs; this is the one departure inside COBI, beside the public pages' departure of 2026-10-24). The
+side menu reads **CPL Commons** (`cobi_nav` row `commons`, one guarded UPDATE, receipt
+`kb/receipts/cobi_nav_commons_label_cpl_commons_2026-11-02_s552.sql`, the rollback in its header).
+
+**LIVE: the one queue (S573, 2026-11-04, Sam: "yes, start building the one queue").** Every issue in `kb/status/commons.json` names its `carry` (`routine`, or a person's reason: `no_procedure`, `unsure`, `reaches`, `keep_call`); the file's `queue` groups the person items, and an issue naming none lands under `unsorted`. The tab draws it as *Waiting on a person*, under the decisions band. Guards: `tests/commons_status_build_test.py`, `tests/commons.test.js` (queue 1 to 10).
+
+**RULED: a count opens its job, filtered; the queue in process order; TOP waits on no one (Sam, S574, 2026-11-04).** *"the links on all surfaces should open to the filtered view of the job needed"*; *"put the procedural things to act in a process order within their cards"* (subjects, courses, exhibits, CR, programs); TOP disagreements *"are input unchecked by colleges. CIP from the COCI programs records should be more dependable"*, so they left the queue. Guards `tests/commons_jobs_filtered.test.js`, `tests/coci_list_jobs.test.js` (the Courses jobs and the strays). **The Courses List first, SkyView beside it** (Sam, same day: *"I want to be able to use list or skyview. Skyview is still too buggy to make the main workspace"*), reversing 2026-11-03's SkyView first. Exhibits' 622 open `#exhibits/list/left`. **The look on every Commons view** (S574): `commons_look.js` gives the five references' tabs commons.js's palette and, in light mode, maps First Light's roles onto it (dark keeps First Light's); `tests/commons_look.test.js`, `npm run a11y` passes on all 13 Commons routes.

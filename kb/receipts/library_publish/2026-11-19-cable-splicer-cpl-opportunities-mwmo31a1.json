@@ -1,0 +1,65 @@
+{
+  "_about": "Library publish receipt (scripts/library_publish.py): the record's before-values and the update --finish makes, guarded on updated_at; cpl_library_history also files the prior row. Roll back by writing the before-values and reverting the page's commit.",
+  "at": "2026-11-19",
+  "slug": "cable-splicer-cpl-opportunities-mwmo31a1",
+  "record_id": "b6af6367-0f49-499d-9851-a82cc3e50608",
+  "draft_id": "fb9a7e0d-de80-442d-9e86-b3515c07fc28",
+  "page": "library/cable-splicer-cpl-opportunities-mwmo31a1/index.html",
+  "before": {
+    "file_type": null,
+    "home": "not_filed",
+    "made_on": null,
+    "refresh_note": "Can you please add the college landing page links in each college card and have it filter for those courses on the card the same way request adopt does for other visuals.",
+    "regen": {
+      "earlier": [
+        {
+          "note": null,
+          "draft_id": "78b6c105-58ec-45a3-966c-ffc98c998e8e",
+          "ready_at": "2026-11-18T22:06:57.430Z",
+          "documents": [
+            "Cable Splicer CPL Flyer"
+          ],
+          "draft_url": null,
+          "requested_by": "Ashley Mooney"
+        }
+      ],
+      "publish": "show",
+      "draft_id": "fb9a7e0d-de80-442d-9e86-b3515c07fc28",
+      "ready_at": "2026-11-19T16:11:38.631Z",
+      "draft_url": null,
+      "new_piece": true,
+      "drafted_by": "Sam",
+      "approved_at": "2026-11-19T16:13:03.669Z",
+      "approved_by": "Sam",
+      "drafted_with": "library-revise-draft",
+      "requested_at": "2026-11-18T22:14:34.438Z",
+      "requested_by": "Ashley Mooney",
+      "based_on_draft": "78b6c105-58ec-45a3-966c-ffc98c998e8e"
+    },
+    "status": "requested",
+    "updated_at": "2026-11-19T16:13:03.857777+00:00",
+    "updated_by": null,
+    "url": null,
+    "version": null,
+    "versions": []
+  },
+  "update": {
+    "versions": [
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/cable-splicer-cpl-opportunities-mwmo31a1/",
+        "date": "2026-11-19",
+        "label": "Version 1",
+        "status": "Current: I added a link to each college's MAP landing page in all five college cards, using the addresses on file in COBI, and one sentence under How to read this page that says what the links are for. Making the links open filtered to the card's courses was not possible: COBI gives no filtered address for a landing page, and I did not make one up. I also did not add the line that tells the student which exhibit to choose under Possible Qualifications. MAP lists Cable Splicer exhibits (MOS-36E-001, MOS-36E-002 and the Cable Splicer NCO Basic course), but COBI shows none of these colleges linked to them, so I can't confirm the exact exhibit name a student would see. Someone needs to confirm that name with the colleges or in MAP before that line goes on the page. The page stays well within Sierra's reading budget. Drafted from the card by Sam (draft fb9a7e0d-de80-442d-9e86-b3515c07fc28); published the first public copy on Sam's approval."
+      }
+    ],
+    "refresh_note": null,
+    "regen": null,
+    "updated_by": "library-publish@bot",
+    "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/cable-splicer-cpl-opportunities-mwmo31a1/",
+    "version": "1",
+    "home": "web",
+    "file_type": "html",
+    "status": "draft",
+    "made_on": "2026-11-19"
+  }
+}

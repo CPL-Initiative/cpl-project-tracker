@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Engine Performance/Drivability and Tune-Up",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+ "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=69",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11602,
+  "input_tokens": 11780,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11602,
-    "output_tokens": 1291,
+    "input_tokens": 11780,
+    "output_tokens": 1531,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1291,
+  "output_tokens": 1531,
   "output_tokens_details": {
-   "thinking_tokens": 557
+   "thinking_tokens": 473
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07223,
- "ms": 11429,
- "seconds": 11.8,
+ "cost_usd": 0.07774,
+ "ms": 12423,
+ "seconds": 14.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "AUTO21",
-    "AUTO50B",
-    "AUTO5236",
-    "AUTO5244",
-    "AUTO5261C",
-    "AUTO5261D",
-    "AUTO5281",
-    "AUTO5333",
-    "AUTO5355",
-    "AUTO95"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    34.0,
+    34.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 3,
    "courses": 0,
-   "count": 2,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -106,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "ENGINE PERFORMANCE/ DRIVEABILITY AND TUNE-UP CERTIFICATE OF ACHIEVEMENT",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -132,8 +122,9 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Demonstrate the ability to perform advanced automotive tune-up problems pertaining to fuelignition, emission, computers, wiring systems, 5-gas analyzers and combustion, and mechanical engine diagnostics.",
-    "Demonstrate a knowledge of current automotive electrical systems and advanced fuel systems with emphasis on diagnosis, service and repair."
+    "Demonstrate the ability to perform advanced automotive tune-up problems pertaining to fuel ignition, emission, computers, wiring systems, 5-gas analyzers and combustion, and mechanical engine diagnostics.",
+    "Demonstrate a knowledge of current automotive electrical systems and advanced fuel systems with emphasis on diagnosis, service and repair.",
+    "Demonstrate a knowledge of the basic operating principles of automotive air conditioning, heating and ventilating systems. Including air conditioner and heater operation, engine cooling system, system operation with normal service and adjustment procedures, problem diagnosis, repair procedures."
    ],
    "careers": [
     "smog technician",
@@ -141,51 +132,113 @@
     "general repair"
    ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AUTO 21",
-    "why": "certificate course list cut off in text; named only in the A.S. section"
-   },
-   {
-    "code": "AUTO 50B",
-    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
-   },
-   {
-    "code": "AUTO 52.36",
-    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
-   },
-   {
-    "code": "AUTO 52.44",
-    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
-   },
-   {
-    "code": "AUTO 52.61C",
-    "why": "certificate course list cut off in text; named only in the A.S. section"
-   },
-   {
-    "code": "AUTO 52.61D",
-    "why": "certificate course list cut off in text; named only in the A.S. section"
-   },
-   {
-    "code": "AUTO 52.81",
-    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
-   },
-   {
-    "code": "AUTO 53.33",
-    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
-   },
-   {
-    "code": "AUTO 53.55",
-    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
-   },
-   {
-    "code": "AUTO 95",
-    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 50B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 52.36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 52.44",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 52.61C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 52.61D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 52.81",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 53.33",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 53.55",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 95",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section starts on page 69 and continues on page 70 (description and outcomes span the page break); read as one section.",
+   "The catalog heading spells 'DRIVEABILITY' while the description and program title use 'Drivability'.",
+   "Printed total 34 units matches the sum of the ten required courses.",
+   "Neighboring certificates on the same pages (Automotive Emission Technician, Automotive Service Technician, Automotive Technology, Transportation Engine Repair and Machining) were not read into this record."
+  ]
  },
- "extracted_run": "39006517642"
+ "extracted_run": "44536397187",
+ "catalog_year": "2026-2027",
+ "source_sha": "d01ec78bc4f84257",
+ "source_codes": [
+  "AUTO21",
+  "AUTO50B",
+  "AUTO5236",
+  "AUTO5244",
+  "AUTO5261C",
+  "AUTO5261D",
+  "AUTO5281",
+  "AUTO5333",
+  "AUTO5355",
+  "AUTO95"
+ ],
+ "source_coverage": 1.0
 }

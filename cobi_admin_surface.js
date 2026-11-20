@@ -718,6 +718,8 @@ window.COBI_ADMIN_SURFACE = {
         "sierra/sidebar.js"
       ],
       "reads": [
+        "cpl_library_checks",
+        "cpl_library_division_settings",
         "cpl_library_drafts",
         "map_colleges"
       ],

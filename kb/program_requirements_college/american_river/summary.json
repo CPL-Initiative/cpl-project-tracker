@@ -2,22 +2,126 @@
  "college": "American River College",
  "programs": 371,
  "with_closed_list": 368,
- "found": 368,
- "extracted": 368,
+ "found": 358,
+ "extracted": 358,
  "errors": 0,
- "passed_machine_checks": 291,
+ "passed_machine_checks": 319,
  "failed": {
-  "coverage": 33,
+  "coverage": 5,
   "invented": 0,
-  "arithmetic": 65,
+  "arithmetic": 35,
   "repeated": 0,
-  "outcomes": 14
+  "outcomes": 6
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 29.98,
- "cost_per_program": 0.0815,
- "extract_calls": null,
+ "cost_usd_run": 12.44,
+ "cost_usd_filed": 29.45,
+ "cost_per_program": 0.0823,
+ "extract_calls": 143,
  "extract_failed": [],
- "not_found": [],
- "run": "43693265189"
+ "not_found": [
+  {
+   "control_number": "16714",
+   "title": "Social Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30341",
+   "title": "POST Basic Law Enforcement Academy - Modular Format",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "31031",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=117",
+    "coverage": 0.0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "33335",
+   "title": "Pre-Apprenticeship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39663",
+   "title": "Plumbers/Pipefitters Apprenticeship Level I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=154",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39666",
+   "title": "Plumbers/Pipefitters Apprenticeship Level II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=154",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "39668",
+   "title": "Plumbers/Pipefitters Apprenticeship Level III",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=154",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40545",
+   "title": "Electrical Apprenticeship Level III",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=179",
+    "coverage": 0.429
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42153",
+   "title": "Sheet Metal Service Technician Apprenticeship Level III",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=219",
+    "coverage": 0.143
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42154",
+   "title": "Sheet Metal Service Technician Apprenticeship Level IV",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=154",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  }
+ ],
+ "run": "44535418752"
 }

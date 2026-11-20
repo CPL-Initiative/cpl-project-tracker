@@ -5,11 +5,11 @@
  "title": "General Studies: Arts and Humanities",
  "award": "A.A. Degree",
  "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-arts-and-humanities-mjc-spring-2027",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9277,
+  "input_tokens": 10447,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9277,
-    "output_tokens": 5926,
+    "input_tokens": 10447,
+    "output_tokens": 5820,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 5926,
+  "output_tokens": 5820,
   "output_tokens_details": {
-   "thinking_tokens": 1091
+   "thinking_tokens": 953
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.15563,
- "ms": 42464,
- "seconds": 43.0,
+ "cost_usd": 0.15819,
+ "ms": 41706,
+ "seconds": 42.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 92,
+   "placed": 93,
    "listed": 93,
-   "share": 0.989,
-   "missing": [
-    "ENGL102"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENGL102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 6,
    "codes": [
     "ART152",
     "ART169",
     "CMPGR221",
     "ENGL176",
-    "ENGLC1002",
     "ITAL102",
     "THETR123"
    ],
@@ -71,7 +76,6 @@
     "ART169",
     "CMPGR221",
     "ENGL176",
-    "ENGLC1002",
     "ITAL102",
     "THETR123"
    ],
@@ -88,6 +92,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -109,6 +114,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -120,7 +131,20 @@
     "max": 18
    },
    "open_elective_units": null,
-   "ge_pattern": "MJC Associate Degree Requirements",
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Analyze ways in which the performing and visual arts, literature, languages and the social sciences allow for individuals and social groups to form creative and critical responses to their societies and environment.",
     "Demonstrate awareness of the various ways that the performing and visual arts, literature, languages and the social sciences provide creative and critical venues for expressing how culture, ethics, history, belief, and ethnicity affect individual experience and society as a whole.",
@@ -840,18 +864,20 @@
   "missing_explained": [
    {
     "code": "ENGL 102",
-    "why": "not in the text; the list prints ENGLC1002 - Introduction to Literature, apparently its replacement"
+    "why": "not in the text; the list prints ENGLC1002 - Introduction to Literature instead"
    }
   ],
   "notes": [
-   "The catalog prints codes without a space between subject and number (e.g., ANTHR104); they are recorded as printed and matched to the closed list's spaced codes (ANTHR 104).",
-   "Rule: complete a minimum of 18 units from the list, from a minimum of two disciplines; units may not be double-counted with General Education courses.",
-   "Catalog note: 'MAY TAKE ART 102 OR CMPGR 202, BUT NOT BOTH.' Recorded CMPGR202 as an alternative on ART102, although the catalog lists CMPGR202 separately later in the list.",
-   "Course units appear on the line after each course name; the leading '0' and trailing '0' belong to the instruction and note rows, not to courses.",
+   "The catalog note 'MAY TAKE ART 102 OR CMPGR 202, BUT NOT BOTH' is recorded as one entry ART102 with CMPGR202 as its alternative; in the printed list CMPGR202 appears separately after ART170.",
+   "Of the 18 units, students must select a minimum of two disciplines; units may not be double-counted with General Education courses.",
+   "The degree requires the MJC Associate Degree Requirements (general education), but the page names no specific GE pattern and prints no GE or whole-degree total; ge_pattern left null.",
+   "Codes are recorded as printed, without a space between subject and number (e.g., ANTHR104).",
+   "ENGLC1002 (Introduction to Literature) appears to replace closed-list ENGL 102; ARTHC1100/ARTHC1200 units (3) taken from the catalog since the state file stores none.",
+   "ENGL136 title prints with a garbled character ('1850 toýThe Present').",
    "Catalog additions not in the closed list: ART152, ART169, CMPGR221, ENGLC1002, ENGL176, ITAL102, THETR123.",
-   "ARTHC1100 and ARTHC1200 have no units stored in the closed list; the catalog prints 3 units each.",
-   "ge_pattern recorded as the MJC Associate Degree Requirements named in the award instructions (local degree requirements); no GE courses placed in blocks."
+   "The outcomes are printed under 'Learning Outcomes' for this award."
   ]
  },
- "extracted_run": "38477845911"
+ "extracted_run": "44540818388",
+ "catalog_year": "2026-2027"
 }

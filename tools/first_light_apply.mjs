@@ -12,6 +12,10 @@
 //                                      "__needs_words__" for the queue session to write.
 //   library/photos/stories/<file>      each added story photo, fetched from the address MAP published it at. A
 //                                      photo no longer in the list is deleted (Drop is the takedown path).
+//   tools/first_light_applies/apply_<p>_<h>.json
+//                                      the receipt (#3561): each live mark consumed (id, add, drop, keep or
+//                                      position, the item, and whether it was added, dropped, moved, held or
+//                                      changed nothing), the superseded mark ids, and the thresholds before and after.
 //   library/index.html, library/adopt/index.html, cpl_pathways.js
 //                                      their copies of the hero list, rewritten from the list until they read it
 //                                      themselves, so a drop leaves every view at the next Apply.
@@ -32,6 +36,7 @@ const HERE = path.dirname(new URL(import.meta.url).pathname);
 const require = createRequire(import.meta.url);
 const MARKS = require(path.join(HERE, "..", "first_light_tab.js"));
 const NEEDS = MARKS.NEEDS_WORDS;
+const RECEIPTS = "tools/first_light_applies";
 
 const argv = process.argv.slice(2);
 const opt = (k) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : null; };
@@ -156,7 +161,37 @@ function plan(marks) {
     ...r.dropped.map((k) => "Drop " + label(set, k)),
     ...r.moved.map((k) => "Move " + label(set, k) + " to number " + (r.list.indexOf(k) + 1))
   ];
+  // The receipt (#3561): every live mark this Apply consumed, what it asked and what the Apply did with it, so
+  // tests/first_light_picks_applied.test.js can compare the committed files with the marks. Marks a later mark on
+  // the same item superseded are consumed too; their ids are listed apart.
+  const entries = (set, r, heldKeys, marksOfSet, spent, heldIds) => {
+    const out = [], live = new Set();
+    for (const k of Object.keys(r.info)) {
+      const it = r.info[k];
+      const shown = MARKS.keyOk(set, k) ? k : null;
+      if (it.membership) {
+        live.add(+it.membership.id);
+        const outcome = heldKeys.includes(k) ? "held" : r.added.includes(k) ? "added" : r.dropped.includes(k) ? "dropped" : "no change";
+        out.push({ id: +it.membership.id, mark: it.membership.mark, item_key: shown, name: label(set, k), outcome });
+      }
+      if (it.position) {
+        live.add(+it.position.id);
+        out.push({ id: +it.position.id, mark: "position", position: +it.position.position, item_key: shown, name: label(set, k),
+          outcome: r.moved.includes(k) ? "moved" : "no change" });
+      }
+    }
+    const held = new Set((heldIds || []).map(Number));
+    const superseded = marksOfSet.filter((m) => ((+m.id || 0) > spent || held.has(+m.id)) && !live.has(+m.id)).map((m) => +m.id);
+    return { marks: out.sort((a, b) => a.id - b.id), superseded_mark_ids: [...new Set(superseded)].sort((a, b) => a - b) };
+  };
+  const receipt = {
+    base_through: { paintings: selApplied, photos: +hero.applied_through_mark_id || 0 },
+    applied_through: { paintings: pr.appliedThrough, photos: hr.appliedThrough },
+    paintings: entries("paintings", pr, heldP, MARKS.forSet(marks, "paintings"), selApplied, selHeld),
+    photos: entries("photos", hr, heldH, MARKS.forSet(marks, "photos"), +hero.applied_through_mark_id || 0, heroHeld)
+  };
   return {
+    receipt,
     // Measured on what would be written, so a held key changes nothing.
     changed: JSON.stringify(paintings.map((e) => e.file)) !== JSON.stringify(sel.map((e) => e.file)) ||
       JSON.stringify(photos.map((p) => p.file)) !== JSON.stringify(hero.photos.map((p) => p.file)) || removeFiles.length > 0 || maybeRemove.length > 0,
@@ -263,6 +298,13 @@ async function apply(pl) {
   hero.held_mark_ids = pl.held_ids.photos;
   hero.photos = pl.photos;
   writeJson("library/photos/hero_photos.json", hero);
+  // One receipt per Apply, named by the thresholds it reached (a later Apply on the same open pull request reads the
+  // branch's files, so its receipt lists only the marks filed since). Committed with the files it explains.
+  if (pl.receipt) {
+    fs.mkdirSync(P(RECEIPTS), { recursive: true });
+    writeJson(RECEIPTS + "/apply_" + pl.applied.paintings + "_" + pl.applied.photos + ".json",
+      Object.assign({ applied_at: new Date().toISOString().replace(/\.\d+Z$/, "Z") }, pl.receipt));
+  }
   rewriteSlides("library/index.html", "photos/", pl.photos);
   rewriteSlides("library/adopt/index.html", "../photos/", pl.photos);
   rewritePathways(pl.photos);
@@ -275,14 +317,15 @@ async function apply(pl) {
   }
 }
 
-// Every text file in the checkout that names a file, except the hero list itself.
+// Every text file in the checkout that names a file, except the hero list itself and the Apply receipts (a receipt
+// names every photo a drop took off the list, so counting it would keep each dropped photo on disk for good).
 function referencedBy(name) {
   const out = [], skip = new Set([".git", "node_modules"]);
   (function walk(dir) {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
       if (skip.has(e.name)) continue;
       const f = path.join(dir, e.name);
-      if (e.isDirectory()) { walk(f); continue; }
+      if (e.isDirectory()) { if (f !== P(RECEIPTS)) walk(f); continue; }
       if (!/\.(html|js|mjs|css|json|md)$/.test(e.name) || f === P("library/photos/hero_photos.json")) continue;
       if (fs.statSync(f).size > 20e6) continue;
       if (fs.readFileSync(f, "utf8").indexOf(name) !== -1) out.push(path.relative(ROOT, f));
