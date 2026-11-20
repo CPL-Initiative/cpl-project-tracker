@@ -80,44 +80,17 @@ check(DESERT["procedure"]["catalog"].get("file") is None, "the registry row itse
 started = {}
 check(C.pdf_start(None, reg, {}, started)[0] == FILE and started.get("procedure_step", {}).get("file") == FILE,
       "pdf_start reads the named file and loads no page")
-# The catalog's page in place of the file: the capture follows the one PDF link naming that year, and lists the
-# links the page offers so a read that finds none says where to look next.
-PAGE = "https://collegeofthedesert.edu/students/catalog-schedule/default.php"
-got, why = C.prior_read("%s 2025-2026 30578" % PAGE, DESERT, PROGS)
-check(why is None and got and got["format"] == "pdf", "a page on the PDF's host is a prior start: %r" % why)
-got2, why2 = C.prior_read("https://catalog.collegeofthedesert.edu/archive/2025-2026/ 2025-2026 30578", DESERT, PROGS)
-check(why2 is None and got2 and got2["format"] == "pdf", "the registry's own catalog host's archive is a prior start: %r" % why2)
-preg = C.prior_reg(DESERT, got)
-pstep = C.P.procedure_catalog(preg["procedure"])
-check(pstep and pstep.get("follow_year") == "2025-2026" and "file" not in pstep and pstep["start"] == PAGE
-      and pstep.get("resume") is True, "the page read follows the year's link: %r" % pstep)
-OLD = "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2025-26-catalog.pdf"
-links = [{"text": "2026-27 PDF Catalog", "href": FILE.replace("2025-2026", "2026-2027")},
-         {"text": "2025-26 PDF Catalog", "href": OLD},
-         {"text": "Catalog Archive", "href": "https://collegeofthedesert.edu/students/catalog-schedule/archive.php"}]
-check(C.P.year_pdf_link(links, "2025-2026") == OLD, "the link printing 2025-26 is the 2025-2026 file")
-check(C.P.year_pdf_link(links, "2024-2025") is None, "no link names 2024-2025: no file")
-check(C.P.year_pdf_link(links + [{"text": "2025-2026 Addendum", "href": OLD.replace("catalog", "addendum")}],
-                        "2025-2026") is None, "two files naming the year: the read never guesses")
-
-
-class Reader:
-    loads = 0
-
-
-orig = C.P.load
-C.P.load = lambda reader, url, cache, render: {"status": 200, "access": "ok", "links": links}
-try:
-    acct = {}
-    href, _wait = C.pdf_start(Reader(), preg, {}, acct)
-    check(href == OLD and acct["procedure_step"]["href"] == OLD and len(acct["procedure_step"]["links"]) == 3,
-          "pdf_start follows the year's link and lists the page's catalog links: %r" % acct)
-    acct = {}
-    href, _wait = C.pdf_start(Reader(), C.prior_reg(DESERT, dict(got, catalog_year="2024-2025")), {}, acct)
-    check(href is None and acct["procedure_step"]["href"] is None,
-          "no link names the year: no file is read, never the step's current one")
-finally:
-    C.P.load = orig
+# Only that year's file opens a PDF catalog's prior read: following a page's link was set aside until its matcher has
+# a self-recall test (S689 review, round 1). The registry's own catalog host may serve the file.
+for spec, label in [
+        ("https://collegeofthedesert.edu/students/catalog-schedule/default.php 2025-2026 30578", "the catalog's page"),
+        ("https://catalog.collegeofthedesert.edu/archive/2025-2026/ 2025-2026 30578", "the archive's page")]:
+    got, why = C.prior_read(spec, DESERT, PROGS)
+    check(got is None and ".pdf" in (why or ""), "a PDF catalog refuses %s: %r" % (label, why))
+got, why = C.prior_read("https://catalog.collegeofthedesert.edu/archive/2025-2026/catalog.pdf 2025-2026 30578",
+                        DESERT, PROGS)
+check(why is None and got and got["format"] == "pdf", "a file on the registry's catalog host opens it: %r" % why)
+check(not hasattr(C.P, "year_pdf_link"), "the link-following matcher is not shipped")
 got, _ = C.prior_read("%s 2025-2026 30578,32692,32745,33829" % START, REG, PROGS)
 check(C.prior_reg(REG, got) == dict(REG, catalog_url=START, catalog_year="2025-2026"),
       "a curriQunet prior read changes only the start page and year")

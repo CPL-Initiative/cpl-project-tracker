@@ -507,12 +507,6 @@ def procedure_catalog(procedure) -> dict | None:
     # 43212020852, S647) is read in ranges, each failed range asked for again (read_pdf_ranged).
     if step.get("resume") is True:
         out["resume"] = True
-    # A prior-year read naming the catalog's page (S689): the PDF link that names that year, in either printed form
-    # ("2025-2026", "2025-26"), is followed in place of the step's own link text (year_pdf_link).
-    fy = step.get("follow_year")
-    fm = re.fullmatch(r"(20\d\d)-(20\d\d)", fy) if isinstance(fy, str) else None
-    if fm and int(fm.group(2)) == int(fm.group(1)) + 1:
-        out["follow_year"] = fy
     # The year of the file the step names, when the record names it ("2026-2027"):
     # a row naming the catalog's page names none (East LA, S403; S407).
     year = step.get("catalog_year")
@@ -520,27 +514,6 @@ def procedure_catalog(procedure) -> dict | None:
     if m and int(m.group(2)) == int(m.group(1)) + 1:
         out["catalog_year"] = year
     return out
-
-
-def year_forms(year: str) -> list[str]:
-    """The ways a catalog link prints its year: "2025-2026" as 2025-2026, 2025-26, 2025 - 2026, 2025_2026, 2025/26."""
-    a, b = year.split("-")
-    return [a + sep + end for sep in ("-", "–", " - ", " – ", "_", "/", " ") for end in (b, b[2:])]
-
-
-def year_pdf_link(links: list[dict], year: str) -> str | None:
-    """The first PDF link whose text or address names the catalog year in one of its printed forms; None when no
-    link does, or when links naming the year point at more than one file (the read never guesses between them)."""
-    forms = [f.lower() for f in year_forms(year)]
-    hits = []
-    for ln in links:
-        href = ln.get("href") or ""
-        if not href.startswith("http") or ".pdf" not in href.lower().split("?")[0]:
-            continue
-        said = (" ".join((ln.get("text") or "").split()) + " " + href).lower()
-        if any(f in said for f in forms) and href not in hits:
-            hits.append(href)
-    return hits[0] if len(hits) == 1 else None
 
 
 def follow_link(links: list[dict], follow: str) -> str | None:
