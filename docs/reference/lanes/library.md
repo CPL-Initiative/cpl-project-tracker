@@ -87,8 +87,8 @@ and AA rules; `--json` gives one result per target), a plain-words report lands 
 `created_by` = `library-publish.yml run <id> attempt <n>`, `checked_at` the database's). The receipt
 (`kb/receipts/library_checks/`) is written as soon as the rows are in, and every Library page's line is rewritten from
 the rows written. `--plan` also plans any page whose content on disk differs from its latest check's committed sha (or
-has no proof), and `--check` first takes a listed one off the Public Library (guarded, before-values in the receipt,
-`publish_target` put back to `public`). `--check` lists nothing: `--list` is its own step, after the checks commit is
+has no proof), and `--check` first takes a listed one off the Public Library when it has a passing check its page no
+longer matches (guarded, before-values in the receipt, `publish_target` put back to `public`). `--check` lists nothing: `--list` is its own step, after the checks commit is
 pushed and only when that push succeeded, reading the waiting passes from `check.json`; each listing's before-values
 join a listing receipt before its update, which a last commit carries, and one failed listing never stops the next (the
 step goes red at the end). A page whose version label the table's key check refuses
@@ -102,6 +102,12 @@ three failed pushes, and Pages deploys though a check step failed. Schema
   on the Public Library, and every Library page whose content differs from its latest check's committed sha or has no
   proof; a page whose check failed waits for new content, and the run never checks the same content twice. Only a page at its own Pages address (`library/<slug>/`) is checked; a piece
   elsewhere (claude.ai, SharePoint) reads Not yet certified until it has a Pages copy.
+- DECIDED (S688 conductor, `d-library-legacy-listings-stay-s688`; Sam's ruling on #3560 that existing pieces show Not
+  yet certified until re-checked): the drift unlisting applies only to a listed piece that has a passing check whose
+  proof no longer matches its page. A legacy listing, with no passing check at its current key and url (all 21 listed
+  pieces on Nov 20, when the table held no check rows), is checked once by the plan and keeps its listing and its Not
+  yet certified line whatever the result; a failed first check shows its findings on the card for the team to fix. From
+  its first pass on, the drift rule applies. Reversible: the rule is `drift_unlists` in `scripts/library_check.py`.
 - DECIDED (S688, `d-library-run-lists-by-guarded-update-s688`): the run lists a passing piece whose `publish_target` is
   `public` by writing the columns `cpl_library_set_public()` writes, as the service role (the guard trigger admits it),
   guarded on the record as read and on the url and version checked. `set_public()` refuses the service key at its first

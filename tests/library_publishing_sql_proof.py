@@ -409,10 +409,10 @@ def main():
         ok, _, err = c.psql(open(P2_ROWS).read() + open(P2_ROWS).read())
         got = c.psql("select count(*) || '|' || max(char_length(summary)) || '|' || count(*) filter (where status = 'proposed') "
                      "from public.cpl_memory where slug like 'd-library-%-s688' and slug <> 'd-library-check-binds-url-s688';")[1].split("|")
-        check("the part 2 memory rows load once each, proposed, in 400 characters or fewer, and are re-runnable",
-              ok and got[0] == "7" and int(got[1]) <= 400 and got[2] == "7", err or got)
+        check("the eight part 2 memory rows load once each, proposed, in 400 characters or fewer, and are re-runnable",
+              ok and got[0] == "8" and int(got[1]) <= 400 and got[2] == "8", err or got)
         c.psql(open(P2_RB).read())
-        check("their rollback removes all seven", c.psql("select count(*) from public.cpl_memory where slug like 'd-library-%-s688' "
+        check("their rollback removes all eight", c.psql("select count(*) from public.cpl_memory where slug like 'd-library-%-s688' "
                                                         "and slug <> 'd-library-check-binds-url-s688';")[1] == "0")
 
         n_url = c.psql("select count(*) from public.cpl_library_checks where url is not null;")[1]

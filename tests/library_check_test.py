@@ -118,7 +118,7 @@ def with_proof(root, r, result, at, page_text):
 # ── E. the plan ──────────────────────────────────────────────────────────────────────────────────────────────────
 tmp = Path(tempfile.mkdtemp(prefix="libcheck-"))
 try:
-    for slug in ("flyer", "poster", "guide", "waiting-checked", "relabeled", "elsewhere", "changed", "failed-changed", "steady"):
+    for slug in ("flyer", "poster", "guide", "waiting-checked", "relabeled", "elsewhere", "changed", "failed-changed", "steady", "legacy"):
         (tmp / "library" / slug).mkdir(parents=True)
         (tmp / "library" / slug / "index.html").write_text(PAGE, encoding="utf-8")
     recs = [rec("flyer"), rec("poster", publish_target="public", public_summary="For the public."), rec("guide", publish_target="public"),
@@ -126,7 +126,9 @@ try:
             rec("elsewhere", publish_target="public", url="https://claude.ai/artifact/x"),
             rec("not-here", publish_target="public"),
             rec("changed", publish_target="public", public_listed=True, seen_by="public", public_summary="For the public."),
-            rec("failed-changed", publish_target="public"), rec("steady")]
+            rec("failed-changed", publish_target="public"), rec("steady"),
+            # A legacy listing: listed before the check run, with no check row at all (d-library-legacy-listings-stay-s688).
+            rec("legacy", publish_target="public", public_listed=True, seen_by="public", public_summary="For the public.")]
     OTHER = PAGE.replace("<h1>T</h1>", "<h1>An earlier page</h1>")
     old = [with_proof(tmp, recs[3], "fail", "2026-11-20T17:00:00+00:00", PAGE),
            with_proof(tmp, recs[4], "pass", "2026-11-20T18:00:00+00:00", PAGE),
@@ -134,7 +136,7 @@ try:
            with_proof(tmp, recs[8], "fail", "2026-11-20T17:20:00+00:00", OTHER),
            with_proof(tmp, recs[9], "pass", "2026-11-20T17:30:00+00:00", PAGE)]
     plan = lc.plan(recs, old, ["flyer"], tmp)
-    check(plan == ["changed", "failed-changed", "flyer", "guide", "poster", "relabeled"],
+    check(plan == ["changed", "failed-changed", "flyer", "guide", "legacy", "poster", "relabeled"],
           "E ⭐ the plan: a page moved this run, a page with no check proof, a page whose content differs from its latest check's "
           "proof (listed or failed), and a relabel; never a page the checkout lacks, one at another address, a failed page whose "
           "content has not changed, or a steady page: %s" % plan)
@@ -181,7 +183,8 @@ try:
                               "guide-dark": {"pass": False, "findings": 2, "lines": ["contrast  3.1:1", "axe color-contrast"]},
                               "relabeled": {"pass": True, "findings": 0, "lines": []}, "relabeled-dark": {"pass": True, "findings": 0, "lines": []},
                               "changed": {"pass": True, "findings": 0, "lines": []}, "changed-dark": {"pass": True, "findings": 0, "lines": []},
-                              "failed-changed": {"pass": True, "findings": 0, "lines": []}, "failed-changed-dark": {"pass": True, "findings": 0, "lines": []}},
+                              "failed-changed": {"pass": True, "findings": 0, "lines": []}, "failed-changed-dark": {"pass": True, "findings": 0, "lines": []},
+                              "legacy": {"pass": False, "findings": 4, "lines": ["contrast  2.9:1"]}, "legacy-dark": {"pass": True, "findings": 0, "lines": []}},
                   "axe": {"version": "4.10.2", "tags": ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa"]}, "widths": [320, 1440]}
     seen = {}
 
@@ -207,7 +210,7 @@ try:
         posts = [c for c in calls if c[0] == "POST"]
         rows = posts[0][2] if posts else []
         by = {r["library_id"]: r for r in rows}
-        check(len(posts) == 1 and len(rows) == 6 and set(by) == {"id-flyer", "id-guide", "id-poster", "id-relabeled", "id-changed", "id-failed-changed"},
+        check(len(posts) == 1 and len(rows) == 7 and set(by) == {"id-flyer", "id-guide", "id-poster", "id-relabeled", "id-changed", "id-failed-changed", "id-legacy"},
               "A ⭐ one row per checked page, in one insert")
         check(not any(c[0] == "PATCH" and "public_listed" in (c[2] or {}) and c[2]["public_listed"] is True for c in calls),
               "B ⭐ --check lists nothing: the listing waits for the push of its report")
@@ -216,10 +219,14 @@ try:
               and "updated_at=eq." in unl[0][1] and unl[1][2].get("publish_target") == "public",
               "E ⭐ a listed piece whose content its latest pass never saw comes off before its new check runs, guarded, with "
               "publish_target put back to public so it relists on a pass")
+        check(by.get("id-legacy", {}).get("result") == "fail" and not any(c[0] == "PATCH" and "id=eq.id-legacy" in c[1] for c in calls)
+              and state["legacy"]["public_listed"] is True,
+              "E ⭐ a legacy listing (listed, no check row) is checked once and stays listed whatever its first check finds: no PATCH fires for it")
         rc0 = list((tmp / "kb" / "receipts" / "library_checks").glob("*.json"))
         un = json.loads(rc0[0].read_text(encoding="utf-8")).get("unlisted", []) if rc0 else []
-        check(len(un) == 1 and un[0]["slug"] == "changed" and un[0]["unlisted"] is True and un[0]["before"]["public_listed"] is True,
-              "E the unlisting's before-values are in the receipt")
+        check(len(un) == 1 and un[0]["slug"] == "changed" and un[0]["unlisted"] is True and un[0]["before"]["public_listed"] is True
+              and un[0].get("publish_target_restored") is True,
+              "E the unlisting's before-values, and the restore of publish_target, are in the receipt")
         check(sorted(x["slug"] for x in cj.get("to_list", [])) == ["changed", "failed-changed", "poster", "relabeled"],
               "B check.json names the passing pieces waiting to be listed: %s" % cj.get("to_list"))
         f = by.get("id-flyer", {})
@@ -259,11 +266,15 @@ try:
         check("checked Nov 20, 2026" in page("flyer") and "report linked</a>" in page("flyer"), "C ⭐ a passing page's line is its check's")
         check("Not yet certified" in page("guide") and "report linked" not in page("guide"), "C ⭐ a failing page reads Not yet certified")
         check("Not yet certified" in page("waiting-checked"), "C ⭐ an unchecked page (its only check failed) reads Not yet certified")
+        check("Not yet certified" in page("legacy") and state["legacy"]["public_listed"] is True,
+              "C a legacy listing whose first check failed keeps its listing and reads Not yet certified")
+        check(lc.drift_unlists(dict(state["changed"], public_listed=True), old, "x") and not lc.drift_unlists(state["legacy"], old, page("legacy")),
+              "E drift_unlists: a listed piece with a pass its page no longer matches comes off; a legacy listing does not")
         check(all(page(s).count("cpl-library-check:") == 1 for s in ("flyer", "guide", "poster", "waiting-checked")), "C one line per page")
         rcs = sorted((tmp / "kb" / "receipts" / "library_checks").glob("*.json"))
         rc_check = [json.loads(x.read_text(encoding="utf-8")) for x in rcs if not x.name.endswith("-list.json")]
         rc_list = [json.loads(x.read_text(encoding="utf-8")) for x in rcs if x.name.endswith("-list.json")]
-        check(len(rc_check) == 1 and len(rc_check[0].get("checks", [])) == 6 and len(rc_list) == 1 and len(rc_list[0].get("listed", [])) == 3
+        check(len(rc_check) == 1 and len(rc_check[0].get("checks", [])) == 7 and len(rc_list) == 1 and len(rc_list[0].get("listed", [])) == 3
               and all(e["before"].get("public_listed") is False for e in rc_list[0]["listed"]),
               "A B a check receipt with the rows, and a listing receipt with each listing's before-values")
 
@@ -539,6 +550,50 @@ try:
 finally:
     lp.api, lc.ROOT, lc.RECEIPTS = saved
     shutil.rmtree(tmpr, ignore_errors=True)
+
+# COBIx on #3581 (7029334238): the PATCH that puts publish_target back to public is checked and recorded.
+tmpu = Path(tempfile.mkdtemp(prefix="libcheck-u-"))
+saved = (lp.api, lc.ROOT, lc.RECEIPTS)
+try:
+    lc.ROOT, lc.RECEIPTS = tmpu, tmpu / "rc"
+    (tmpu / "library" / "moved").mkdir(parents=True)
+    (tmpu / "library" / "moved" / "index.html").write_text(PAGE, encoding="utf-8")
+    M = rec("moved", publish_target="public", public_listed=True, seen_by="public", public_summary="For the public.")
+    oldm = [with_proof(tmpu, M, "pass", "2026-11-20T17:00:00+00:00", PAGE.replace("<h1>T</h1>", "<h1>Before</h1>"))]
+    sent = []
+
+    def api_u(path, method="GET", body=None, headers=None):
+        if path.startswith("cpl_library_division_settings"):
+            return list(SET.values())
+        if path.startswith("cpl_library_checks") and method == "GET":
+            return list(oldm)
+        if path.startswith("cpl_library_checks") and method == "POST":
+            return [dict(b, id="u%d" % i, checked_at="2026-11-20T20:00:00+00:00", created_at="x") for i, b in enumerate(body)]
+        if path.startswith("cpl_library?select=*"):
+            return [dict(M)]
+        if method == "PATCH":
+            sent.append((path, body))
+            return [] if "publish_target" in body else [dict(M, public_listed=False)]   # the restore matches no row
+        raise AssertionError(path)
+    lp.api = api_u
+    (tmpu / "pu.json").write_text(json.dumps({"check": ["moved"], "skipped": []}), encoding="utf-8")
+    raised = ""
+    import contextlib
+    import io
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            lc.check_phase(str(tmpu / "pu.json"), engine=lambda s_, o: {"targets": {"moved": {"pass": True}, "moved-dark": {"pass": True}}},
+                           now=datetime(2026, 11, 20, 20, tzinfo=timezone.utc))
+    except RuntimeError as e:
+        raised = str(e)
+    rcu = list((tmpu / "rc").glob("*.json"))
+    ent = (json.loads(rcu[0].read_text(encoding="utf-8")).get("unlisted") or [{}])[0] if rcu else {}
+    check(len(sent) == 2 and ent.get("unlisted") is True and ent.get("publish_target_restored") is False
+          and "putting publish_target back to public matched no row" in raised,
+          "⭐ a restore of publish_target that matches no row is recorded in the receipt and turns the step red (COBIx, 7029334238)")
+finally:
+    lp.api, lc.ROOT, lc.RECEIPTS = saved
+    shutil.rmtree(tmpu, ignore_errors=True)
 
 # 6. Both push loops fail the step after three failed pushes, so no report link points at a commit that never landed.
 WF = Path(__file__).resolve().parent.parent.joinpath(".github", "workflows", "library-publish.yml").read_text(encoding="utf-8")

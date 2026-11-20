@@ -122,6 +122,20 @@ def latest_check(checks, record):
     return max(hit, key=lambda c: (_ts(c["checked_at"]), str(c.get("created_at") or "")))
 
 
+def latest_pass(checks, record):
+    """The newest passing check of the record's page (latest_check's key, url and page_changed_at rule), or None. Pure."""
+    return latest_check([c for c in (checks or []) if c.get("result") == "pass"], record)
+
+
+def drift_unlists(record, checks, page):
+    """True when a listed piece comes off the Public Library before its new check: it has a passing check of its page
+    and that pass no longer speaks for the page on disk (certified_check). A legacy listing, one with no passing check
+    at its current key and url (every listing before the check run, d-library-legacy-listings-stay-s688), stays listed
+    with its Not yet certified line whatever its first check finds; from its first pass on, this rule applies."""
+    return bool(record and record.get("public_listed") and latest_pass(checks, record)
+                and not certified_check(record, checks, page))
+
+
 def fmt_date(iso):
     """Nov 19, 2026: the check's date in California, where the team reads it. Pure."""
     t = _ts(iso)
@@ -477,7 +491,7 @@ def check_phase(plan_path, engine=run_engine, now=None):
         if not r.get("public_listed"):
             continue
         page = (ROOT / "library" / r["slug"] / "index.html").read_text(encoding="utf-8")
-        if certified_check(r, checks, page):
+        if not drift_unlists(r, checks, page):
             continue
         entry = {"record_id": r["id"], "slug": r["slug"], "unlisted": "pending",
                  "before": {k: r.get(k) for k in ("public_listed", "publish_target", "updated_by", "updated_at")},
@@ -486,12 +500,23 @@ def check_phase(plan_path, engine=run_engine, now=None):
         write_receipt(rpath, receipt)
         try:
             ok = lp.api("cpl_library?" + unlist_guard(r), "PATCH", unlist_update())
-            if ok:
-                lp.api("cpl_library?id=eq.%s&public_listed=is.false&publish_target=eq.internal" % urllib.parse.quote(r["id"]),
-                       "PATCH", {"publish_target": "public", "updated_by": BOT})
             entry["unlisted"] = bool(ok)
+            if ok:
+                # The trigger on unlisting set publish_target to internal; put back the wish to list, and say so when
+                # it does not land, or the piece would never relist (COBIx on #3581, 7029334238).
+                entry["publish_target_restored"] = "pending"
+                write_receipt(rpath, receipt)
+                back = lp.api("cpl_library?id=eq.%s&public_listed=is.false&publish_target=eq.internal" % urllib.parse.quote(r["id"]),
+                              "PATCH", {"publish_target": "public", "updated_by": BOT})
+                entry["publish_target_restored"] = bool(back)
+                if not back:
+                    errors.append("%s: it came off the Public Library, but putting publish_target back to public matched no "
+                                  "row, so it will not relist on a pass until a person presses Publish to Public Library" % r["slug"])
         except Exception as e:  # noqa: BLE001 — its check still runs; the step goes red at the end
-            entry["unlisted"] = "unknown: %s" % str(e)[:200]
+            if entry.get("publish_target_restored") == "pending":
+                entry["publish_target_restored"] = "unknown: %s" % str(e)[:200]
+            else:
+                entry["unlisted"] = "unknown: %s" % str(e)[:200]
             errors.append("%s: unlisting answered %s" % (r["slug"], str(e)[:200]))
         finally:
             write_receipt(rpath, receipt)
