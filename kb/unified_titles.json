@@ -67025,5 +67025,109 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-19T16:53:09.074784+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Credit by Exam CIS100-Practical PC & Career Technologies": {
+    "unified_title": "Practical PC & Career Technologies",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Credit by Exam CIS104-Microcomputer Application Software": {
+    "unified_title": "Microcomputer Application Software",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Credit by Exam CIS210-Introduction to Computer Networking": {
+    "unified_title": "Introduction to Computer Networking",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Credit by Exam HIST001-Introduction to Western Civilization I": {
+    "unified_title": "Introduction to Western Civilization 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Credit by Exam HIST002-Introduction to Western Civilization II": {
+    "unified_title": "Introduction to Western Civilization 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Credit by Exam HISTC1002-United States History Since 1865": {
+    "unified_title": "United States History since 1865",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "High School Articulation (Tracy)- Fire Service": {
+    "unified_title": "Fire Service Conditioning & Physical Agility Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-high-school-rop@bot"
+  },
+  "ISACA Certified Info Security Manager (CISM)": {
+    "unified_title": "Certified Information Security Manager (CISM)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "ISACA Certified Info Systems Auditor (CISA)": {
+    "unified_title": "Certified Information Systems Auditor (CISA)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MOS) Associate": {
+    "unified_title": "Microsoft Office Specialist — Associate",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MOS) Expert": {
+    "unified_title": "Microsoft Office Specialist — Expert",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Review CIS100-Practical PC & Career Technologies": {
+    "unified_title": "Practical PC and Career Technologies",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Review CIS104-Microcomputer Application Software": {
+    "unified_title": "Microcomputer Application Software",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-20",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

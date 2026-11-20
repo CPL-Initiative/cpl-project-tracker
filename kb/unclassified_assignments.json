@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-20T06:19:51Z",
-  "count": 3006,
+  "_synced_at": "2026-11-20T21:48:17Z",
+  "count": 3019,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -8578,6 +8578,24 @@
       "reviewed_at": "2026-07-07T20:44:36.965616+00:00",
       "unified_title": "General Chemistry"
     },
+    "Credit by Exam CIS100-Practical PC & Career Technologies": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Practical PC & Career Technologies"
+    },
+    "Credit by Exam CIS104-Microcomputer Application Software": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Microcomputer Application Software"
+    },
+    "Credit by Exam CIS210-Introduction to Computer Networking": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Introduction to Computer Networking"
+    },
     "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -8605,6 +8623,24 @@
       "reviewed_at": "2026-11-01T22:14:42.3+00:00",
       "unified_title": "High-Beginning Reading and Writing",
       "supersedes": "ESL Reading and Writing Beginning"
+    },
+    "Credit by Exam HIST001-Introduction to Western Civilization I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Introduction to Western Civilization 1"
+    },
+    "Credit by Exam HIST002-Introduction to Western Civilization II": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Introduction to Western Civilization 2"
+    },
+    "Credit by Exam HISTC1002-United States History Since 1865": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "United States History since 1865"
     },
     "Credit by Exam KINS 025 First Aid, CPR & AED": {
       "issuing_agency": "California Community Colleges",
@@ -11306,6 +11342,12 @@
       "reviewed_at": "2026-11-19T17:50:54.620748+00:00",
       "unified_title": "Play: Materials and Environments"
     },
+    "High School Articulation (Tracy)- Fire Service": {
+      "issuing_agency": "Tracy High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Fire Service Conditioning & Physical Agility Development"
+    },
     "High School Articulation- Criminal Justice/Crime Scene Investigation": {
       "issuing_agency": "Local High School",
       "reviewed_by": "cer-procedure-high-school-rop@bot",
@@ -12339,6 +12381,18 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "ISA Certified Arborist"
+    },
+    "ISACA Certified Info Security Manager (CISM)": {
+      "issuing_agency": "Information Systems Audit and Control Association (ISACA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Certified Information Security Manager (CISM)"
+    },
+    "ISACA Certified Info Systems Auditor (CISA)": {
+      "issuing_agency": "Information Systems Audit and Control Association (ISACA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Certified Information Systems Auditor (CISA)"
     },
     "ISC2 CISSP Certificate": {
       "issuing_agency": "ISC2",
@@ -14276,11 +14330,23 @@
       "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
       "unified_title": "Microsoft Office Specialist — Access Expert"
     },
+    "Microsoft Office Specialist (MOS) Associate": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Microsoft Office Specialist — Associate"
+    },
     "Microsoft Office Specialist (MOS) Certification.": {
       "issuing_agency": "Microsoft",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T19:04:29.004774+00:00",
       "unified_title": "Microsoft Office Specialist"
+    },
+    "Microsoft Office Specialist (MOS) Expert": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Microsoft Office Specialist — Expert"
     },
     "Microsoft Office Specialist (MOS): Access Expert (Office 2019)": {
       "issuing_agency": "Microsoft",
@@ -16569,6 +16635,18 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Introduction to Multimedia Computer Applications"
+    },
+    "Portfolio Review CIS100-Practical PC & Career Technologies": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Practical PC and Career Technologies"
+    },
+    "Portfolio Review CIS104-Microcomputer Application Software": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00",
+      "unified_title": "Microcomputer Application Software"
     },
     "Portfolio for ARTS 12A": {
       "issuing_agency": "California Community Colleges",

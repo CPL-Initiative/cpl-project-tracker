@@ -1,312 +1,95 @@
 {
   "folded": [
     {
-      "raw": "Completed NC.NURSNG-089 at College of the Canyons",
-      "assigned": "Success in Fundamental Nursing",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:37:42.961387+00:00"
-    },
-    {
-      "raw": "Completed NC.NURSNG-093 at College of the Canyons",
-      "assigned": "Success in Maternal Newborn and Pediatric Nursing",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:38:12.969481+00:00"
-    },
-    {
-      "raw": "Completed NC.NURSNG-094 at College of the Canyons",
-      "assigned": "Success in Psychiatric Nursing",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:41:16.9791+00:00"
-    },
-    {
-      "raw": "Completed NC.NURSNG-096 at College of the Canyons",
-      "assigned": "Success in Advanced Medical/Surgical Nursing",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:41:42.385395+00:00"
-    },
-    {
-      "raw": "High School Articulation (Emerald)- Developmental Psychology of Children I",
-      "assigned": "Play: Materials and Environments",
-      "issuer": "Emerald High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:44:45.405956+00:00"
-    },
-    {
-      "raw": "High School Articulation (Emerald)- Developmental Psychology of Children II",
-      "assigned": "Principles & Practices of Teaching Young Children",
-      "issuer": "Emerald High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:45:45.228183+00:00"
-    },
-    {
-      "raw": "High School Articulation (Emerald)- Introduction to Health Careers",
-      "assigned": "Orientation to Health Care",
-      "issuer": "Emerald High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:03.682402+00:00"
-    },
-    {
-      "raw": "High School Articulation (Emerald)- Medical Occupations",
-      "assigned": "Medical Terminology",
-      "issuer": "Emerald High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:05.955365+00:00"
-    },
-    {
-      "raw": "High School Articulation (Emerald)- Nursing Careers",
-      "assigned": "Nursing Careers",
-      "issuer": "Emerald High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:08.312359+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)-  Criminal Justice/ Crime Scene Investigation",
-      "assigned": "Introduction to Criminal Justice",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:12.729048+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Criminal Justice/ CSI",
-      "assigned": "Criminal Investigation",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:18.545754+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Developmental Psychology of Children I",
-      "assigned": "Play: Materials and Environments",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:54.050598+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Developmental Psychology of Children II",
-      "assigned": "Principles & Practices of Teaching Young Children",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:58.390196+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Emergency Medical Response",
-      "assigned": "Emergency Medical Responder",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:01.201031+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Introduction to Athletic Training",
-      "assigned": "Introduction to Athletic Training",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:26.89777+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Introduction to Health Careers",
-      "assigned": "Orientation to Health Care",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:32.0414+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Medical Occupations",
-      "assigned": "Medical Terminology",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:33.990395+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Nursing Careers",
-      "assigned": "Nursing Careers",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:35.778547+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Principles of Engineering",
-      "assigned": "Introduction to Engineering",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:40.936698+00:00"
-    },
-    {
-      "raw": "High School Articulation (Granada)-  Medical Occuptations",
-      "assigned": "Medical Terminology",
-      "issuer": "Granada High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:43.529673+00:00"
-    },
-    {
-      "raw": "High School Articulation (Granada)- Criminal Justice/ Crime Scene Investigation",
-      "assigned": "Introduction to Criminal Justice",
-      "issuer": "Granada High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:45.740219+00:00"
-    },
-    {
-      "raw": "High School Articulation (Granada)- Developmental Psychology of Children I",
-      "assigned": "Play: Materials and Environments",
-      "issuer": "Granada High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:48:07.107002+00:00"
-    },
-    {
-      "raw": "High School Articulation (Granada)- Developmental Psychology of Children II",
-      "assigned": "Principles & Practices of Teaching Young Children",
-      "issuer": "Granada High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:48:30.140033+00:00"
-    },
-    {
-      "raw": "High School Articulation (Granada)- Emergency Medical Response",
-      "assigned": "Emergency Medical Responder",
-      "issuer": "Granada High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:48:34.073932+00:00"
-    },
-    {
-      "raw": "High School Articulation (Granada)- Introduction to Athletic Training",
-      "assigned": "Introduction to Athletic Training",
-      "issuer": "Granada High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:49:41.45859+00:00"
-    },
-    {
-      "raw": "High School Articulation (Granada)- Introduction to Health Careers",
-      "assigned": "Orientation to Health Care",
-      "issuer": "Granada High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:49:44.42577+00:00"
-    },
-    {
-      "raw": "High School Articulation (Granada)- Nursing Careers",
-      "assigned": "Medical Terminology",
-      "issuer": "Granada High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:49:46.865613+00:00"
-    },
-    {
-      "raw": "High School Articulation (Kimball)- Fundamentals of Criminal Justice",
-      "assigned": "Introduction to Criminal Justice",
-      "issuer": "Kimball High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:50:40.63559+00:00"
-    },
-    {
-      "raw": "High School Articulation (Livermore)- Criminal Justice/ Crime Scene Investigation",
-      "assigned": "Introduction to Criminal Justice",
-      "issuer": "Livermore High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:50:42.796378+00:00"
-    },
-    {
-      "raw": "High School Articulation (Livermore)- Developmental Psychology of Children I",
-      "assigned": "Play: Materials and Environments",
-      "issuer": "Livermore High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:50:54.620748+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AJ 70",
-      "assigned": "Community and the Justice System",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:51:11.953826+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CNT 7402",
-      "assigned": "Red Hat Linux System Administration 2",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:52:02.520993+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CNT 7501",
-      "assigned": "Cybersecurity: Ethical Hacking",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:52:59.399092+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CNT 8002",
-      "assigned": "Switching, Routing, and Wireless Essentials CCNA (Cisco Networking Academy)",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:53:47.167221+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CNT 8003",
-      "assigned": "Cisco CCNA3/3 Enterprise Networking, Security, and Automation v7.0 (ENSA)",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:55:22.444806+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CS 3",
-      "assigned": "Red Hat Linux System Administration 2",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:55:41.332377+00:00"
-    },
-    {
-      "raw": "Noncredit Course for MUS 15",
-      "assigned": "Jazz Ensemble",
+      "raw": "Credit by Exam CIS100-Practical PC & Career Technologies",
+      "assigned": "Practical PC & Career Technologies",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 50",
-      "assigned": "Introduction to Photography",
+      "raw": "Credit by Exam CIS104-Microcomputer Application Software",
+      "assigned": "Microcomputer Application Software",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 56",
-      "assigned": "Introduction to Digital Photography",
+      "raw": "Credit by Exam CIS210-Introduction to Computer Networking",
+      "assigned": "Introduction to Computer Networking",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 57",
-      "assigned": "Digital Photography Intermediate",
+      "raw": "Credit by Exam HIST001-Introduction to Western Civilization I",
+      "assigned": "Introduction to Western Civilization 1",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 58",
-      "assigned": "Introduction to Videography",
+      "raw": "Credit by Exam HIST002-Introduction to Western Civilization II",
+      "assigned": "Introduction to Western Civilization 2",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 64A",
-      "assigned": "Artificial Light Photography",
+      "raw": "Credit by Exam HISTC1002-United States History Since 1865",
+      "assigned": "United States History since 1865",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 66",
-      "assigned": "Digital Imaging",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "raw": "High School Articulation (Tracy)- Fire Service",
+      "assigned": "Fire Service Conditioning & Physical Agility Development",
+      "issuer": "Tracy High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 68",
-      "assigned": "Color Field Photography",
+      "raw": "ISACA Certified Info Security Manager (CISM)",
+      "assigned": "Certified Information Security Manager (CISM)",
+      "issuer": "Information Systems Audit and Control Association (ISACA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "ISACA Certified Info Systems Auditor (CISA)",
+      "assigned": "Certified Information Systems Auditor (CISA)",
+      "issuer": "Information Systems Audit and Control Association (ISACA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS) Associate",
+      "assigned": "Microsoft Office Specialist — Associate",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS) Expert",
+      "assigned": "Microsoft Office Specialist — Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "Portfolio Review CIS100-Practical PC & Career Technologies",
+      "assigned": "Practical PC and Career Technologies",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "Portfolio Review CIS104-Microcomputer Application Software",
+      "assigned": "Microcomputer Application Software",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     }
   ],
   "superseded": [],
@@ -316,292 +99,124 @@
   "held": [],
   "credential_added": [
     {
-      "raw": "Completed NC.NURSNG-089 at College of the Canyons",
-      "assigned": "Success in Fundamental Nursing",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:37:42.961387+00:00"
-    },
-    {
-      "raw": "Completed NC.NURSNG-093 at College of the Canyons",
-      "assigned": "Success in Maternal Newborn and Pediatric Nursing",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:38:12.969481+00:00"
-    },
-    {
-      "raw": "Completed NC.NURSNG-094 at College of the Canyons",
-      "assigned": "Success in Psychiatric Nursing",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:41:16.9791+00:00"
-    },
-    {
-      "raw": "Completed NC.NURSNG-096 at College of the Canyons",
-      "assigned": "Success in Advanced Medical/Surgical Nursing",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:41:42.385395+00:00"
-    },
-    {
-      "raw": "High School Articulation (Emerald)- Developmental Psychology of Children I",
-      "assigned": "Play: Materials and Environments",
-      "issuer": "Emerald High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:44:45.405956+00:00"
-    },
-    {
-      "raw": "High School Articulation (Emerald)- Nursing Careers",
-      "assigned": "Nursing Careers",
-      "issuer": "Emerald High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:08.312359+00:00"
-    },
-    {
-      "raw": "High School Articulation (Foothill)- Introduction to Athletic Training",
-      "assigned": "Introduction to Athletic Training",
-      "issuer": "Foothill High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:26.89777+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CNT 7402",
-      "assigned": "Red Hat Linux System Administration 2",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:52:02.520993+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CNT 7501",
-      "assigned": "Cybersecurity: Ethical Hacking",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:52:59.399092+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CNT 8002",
-      "assigned": "Switching, Routing, and Wireless Essentials CCNA (Cisco Networking Academy)",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:53:47.167221+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for CNT 8003",
-      "assigned": "Cisco CCNA3/3 Enterprise Networking, Security, and Automation v7.0 (ENSA)",
-      "issuer": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:55:22.444806+00:00"
-    },
-    {
-      "raw": "Noncredit Course for MUS 15",
-      "assigned": "Jazz Ensemble",
+      "raw": "Credit by Exam CIS100-Practical PC & Career Technologies",
+      "assigned": "Practical PC & Career Technologies",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 57",
-      "assigned": "Digital Photography Intermediate",
+      "raw": "Credit by Exam CIS104-Microcomputer Application Software",
+      "assigned": "Microcomputer Application Software",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 58",
-      "assigned": "Introduction to Videography",
+      "raw": "Credit by Exam HIST001-Introduction to Western Civilization I",
+      "assigned": "Introduction to Western Civilization 1",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 64A",
-      "assigned": "Artificial Light Photography",
+      "raw": "Credit by Exam HIST002-Introduction to Western Civilization II",
+      "assigned": "Introduction to Western Civilization 2",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 66",
-      "assigned": "Digital Imaging",
+      "raw": "Credit by Exam HISTC1002-United States History Since 1865",
+      "assigned": "United States History since 1865",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     },
     {
-      "raw": "Portfolio Evidence for PHTO 68",
-      "assigned": "Color Field Photography",
+      "raw": "High School Articulation (Tracy)- Fire Service",
+      "assigned": "Fire Service Conditioning & Physical Agility Development",
+      "issuer": "Tracy High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "ISACA Certified Info Security Manager (CISM)",
+      "assigned": "Certified Information Security Manager (CISM)",
+      "issuer": "Information Systems Audit and Control Association (ISACA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "ISACA Certified Info Systems Auditor (CISA)",
+      "assigned": "Certified Information Systems Auditor (CISA)",
+      "issuer": "Information Systems Audit and Control Association (ISACA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS) Associate",
+      "assigned": "Microsoft Office Specialist — Associate",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MOS) Expert",
+      "assigned": "Microsoft Office Specialist — Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
+    },
+    {
+      "raw": "Portfolio Review CIS100-Practical PC & Career Technologies",
+      "assigned": "Practical PC and Career Technologies",
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-11-19T16:53:09.074784+00:00"
+      "reviewed_at": "2026-11-20T16:27:02.447689+00:00"
     }
   ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [
     {
-      "title": "Principles & Practices of Teaching Young Children",
-      "issuer": "Emerald High School",
-      "raw": "High School Articulation (Emerald)- Developmental Psychology of Children II",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:45:45.228183+00:00"
-    },
-    {
-      "title": "Orientation to Health Care",
-      "issuer": "Emerald High School",
-      "raw": "High School Articulation (Emerald)- Introduction to Health Careers",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:03.682402+00:00"
-    },
-    {
-      "title": "Medical Terminology",
-      "issuer": "Emerald High School",
-      "raw": "High School Articulation (Emerald)- Medical Occupations",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:05.955365+00:00"
-    },
-    {
-      "title": "Introduction to Criminal Justice",
+      "title": "Play: Materials and Environments",
       "issuer": "Foothill High School",
-      "raw": "High School Articulation (Foothill)-  Criminal Justice/ Crime Scene Investigation",
+      "raw": "High School Articulation (Foothill)- Developmental Psychology of Children I",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:12.729048+00:00"
+      "reviewed_at": "2026-11-19T17:46:54.050598+00:00"
     },
     {
-      "title": "Criminal Investigation",
+      "title": "Nursing Careers",
       "issuer": "Foothill High School",
-      "raw": "High School Articulation (Foothill)- Criminal Justice/ CSI",
+      "raw": "High School Articulation (Foothill)- Nursing Careers",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:18.545754+00:00"
+      "reviewed_at": "2026-11-19T17:47:35.778547+00:00"
     },
     {
-      "title": "Principles & Practices of Teaching Young Children",
-      "issuer": "Foothill High School",
-      "raw": "High School Articulation (Foothill)- Developmental Psychology of Children II",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:46:58.390196+00:00"
-    },
-    {
-      "title": "Emergency Medical Responder",
-      "issuer": "Foothill High School",
-      "raw": "High School Articulation (Foothill)- Emergency Medical Response",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:01.201031+00:00"
-    },
-    {
-      "title": "Orientation to Health Care",
-      "issuer": "Foothill High School",
-      "raw": "High School Articulation (Foothill)- Introduction to Health Careers",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:32.0414+00:00"
-    },
-    {
-      "title": "Medical Terminology",
-      "issuer": "Foothill High School",
-      "raw": "High School Articulation (Foothill)- Medical Occupations",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:33.990395+00:00"
-    },
-    {
-      "title": "Introduction to Engineering",
-      "issuer": "Foothill High School",
-      "raw": "High School Articulation (Foothill)- Principles of Engineering",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:40.936698+00:00"
-    },
-    {
-      "title": "Medical Terminology",
+      "title": "Play: Materials and Environments",
       "issuer": "Granada High School",
-      "raw": "High School Articulation (Granada)-  Medical Occuptations",
+      "raw": "High School Articulation (Granada)- Developmental Psychology of Children I",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:43.529673+00:00"
+      "reviewed_at": "2026-11-19T17:48:07.107002+00:00"
     },
     {
-      "title": "Introduction to Criminal Justice",
+      "title": "Introduction to Athletic Training",
       "issuer": "Granada High School",
-      "raw": "High School Articulation (Granada)- Criminal Justice/ Crime Scene Investigation",
+      "raw": "High School Articulation (Granada)- Introduction to Athletic Training",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:47:45.740219+00:00"
+      "reviewed_at": "2026-11-19T17:49:41.45859+00:00"
     },
     {
-      "title": "Principles & Practices of Teaching Young Children",
-      "issuer": "Granada High School",
-      "raw": "High School Articulation (Granada)- Developmental Psychology of Children II",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:48:30.140033+00:00"
-    },
-    {
-      "title": "Emergency Medical Responder",
-      "issuer": "Granada High School",
-      "raw": "High School Articulation (Granada)- Emergency Medical Response",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:48:34.073932+00:00"
-    },
-    {
-      "title": "Orientation to Health Care",
-      "issuer": "Granada High School",
-      "raw": "High School Articulation (Granada)- Introduction to Health Careers",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:49:44.42577+00:00"
-    },
-    {
-      "title": "Introduction to Criminal Justice",
-      "issuer": "Kimball High School",
-      "raw": "High School Articulation (Kimball)- Fundamentals of Criminal Justice",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:50:40.63559+00:00"
-    },
-    {
-      "title": "Introduction to Criminal Justice",
+      "title": "Play: Materials and Environments",
       "issuer": "Livermore High School",
-      "raw": "High School Articulation (Livermore)- Criminal Justice/ Crime Scene Investigation",
+      "raw": "High School Articulation (Livermore)- Developmental Psychology of Children I",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T17:50:42.796378+00:00"
-    },
-    {
-      "title": "Introduction to Athletic Training and Sports Medicine",
-      "issuer": "Dublin High School",
-      "raw": "High School Articulation (Dublin)- Introduction to Athletic Training",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-18T16:47:32.11346+00:00"
-    },
-    {
-      "title": "Orientation to Health Care",
-      "issuer": "Dublin High School",
-      "raw": "High School Articulation (Dublin)- Introduction to Health Careers",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-18T16:47:32.11346+00:00"
-    },
-    {
-      "title": "Introduction to Athletic Training and Sports Medicine",
-      "issuer": "Emerald High School",
-      "raw": "High School Articulation (Emerald)- Introduction to Athletic Training",
-      "reviewed_by": "cer-procedure-high-school-rop@bot",
-      "reviewed_at": "2026-11-18T16:47:32.11346+00:00"
-    },
-    {
-      "title": "Developmental Psychology of Children 1",
-      "issuer": "Dublin High School",
-      "raw": "High School Articulations (Dublin)- Developmental Psychology of Children I",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T00:06:27.186584+00:00"
-    },
-    {
-      "title": "Early Childhood Principles and Practices",
-      "issuer": "Dublin High School",
-      "raw": "High School Articulations (Dublin)- Developmental Psychology of Children II",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T00:06:38.865745+00:00"
-    },
-    {
-      "title": "Basic Medical Terminology",
-      "issuer": "Dublin High School",
-      "raw": "High School Articulations (Dublin)- Nursing Careers",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-19T00:06:53.153088+00:00"
+      "reviewed_at": "2026-11-19T17:50:54.620748+00:00"
     }
   ],
   "credential_pruned": [],
   "articulations_repointed": 0,
   "title_anchors_stamped": 0,
-  "audit_pruned": 44,
-  "unified_titles_count": 6186
+  "audit_pruned": 13,
+  "unified_titles_count": 6199
 }
