@@ -573,6 +573,84 @@ try:
 finally:
     shutil.rmtree(td)
 
+# ── #3587 follow-up 1: plain_named leaves keep-the-better's dropped list too (COBIx, 7033947220) ─────────────────────
+# Ohlone's committed capture.json and reread_keep_better.json, copied as they stand: 33319 and 46035 are refused by
+# rule A there and listed as dropped by run 44515665022's filing. A newer preview files each refusal beside the plain
+# picker's own named heading (p.46 and p.96, run 44687785539), and both come out unmarked.
+ohlone = os.path.join(ROOT, "kb", "program_requirements_college", "ohlone")
+td = tempfile.mkdtemp()
+try:
+    for name in ("capture.json", "reread_keep_better.json"):
+        shutil.copy(os.path.join(ohlone, name), os.path.join(td, name))
+    os.makedirs(os.path.join(td, "records"))
+    before = RC.refused_standing(td)
+    check({"33319", "46035"} <= before, "follow-up 1: as committed, Ohlone 33319 and 46035 are marked")
+    with open(os.path.join(td, "capture_preview.json"), "w") as fh:
+        json.dump({"college": "Ohlone College", "run": "44687785539", "not_found": [
+            {"control_number": cn, "near_miss": {"why": "rule A: no page prints the program's title with its award",
+                                                 "rule": "A", "refused_b": 0, "plain_named": True}}
+            for cn in ("33319", "46035")]}, fh)
+    after = RC.refused_standing(td)
+    check(not ({"33319", "46035"} & after) and before - after == {"33319", "46035"},
+          "follow-up 1: with plain_named filed, both leave the dropped list's marks too, and nothing else moves, got %r"
+          % sorted(before - after))
+finally:
+    shutil.rmtree(td)
+
+# ── #3587 follow-up 2: stage_sources holds only pages the rules did not accept (COBIx, 7033948379) ───────────────────
+# Santa Rosa Junior 39418's page p.298 is the rules' own (source.page_check, run 44699694768), so it is staged; a
+# CCSF-shaped page read with no page check (24263 on p.564's descriptions) is still held.
+td = tempfile.mkdtemp()
+try:
+    dest, art = os.path.join(td, "filed"), os.path.join(td, "artifact")
+    for d in (os.path.join(dest, "records"), os.path.join(art, "sources")):
+        os.makedirs(d)
+    ok = {"control_number": "39418", "title": "CS Web and Mobile Full-Stack", "award": COA,
+          "closed_list": [{"code": c} for c in FS], "text": SRJC[297], "coverage": 1.0, "codes_found": FS,
+          "method": "pdf_pages", "source": {"url": "https://catalog.santarosa.edu/c.pdf#page=298",
+                                            "page_check": {"rule": "A", "page": 298, "share": 1.0}}}
+    bad = {"control_number": "24263", "title": "Microsoft Office Specialist", "award": "Noncredit program",
+           "closed_list": [{"code": "COMP 9900"}], "text": CCSF_564, "coverage": 1.0, "codes_found": ["COMP9900"],
+           "method": "pdf_pages", "source": {"url": "https://www.ccsf.edu/c.pdf#page=564"}}
+    for s in (ok, bad):
+        json.dump(s, open(os.path.join(art, "sources", s["control_number"] + ".json"), "w"))
+    acct = {"college": "Fixture College", "catalog_year": "2026-2027", "programs": 2, "with_closed_list": 2,
+            "found": 2, "pages_listed": 1, "pages_answered": 1, "pages_read": None, "platform": "pdf",
+            "by_method": {"pdf_pages": 2},
+            "fingerprints": {s["control_number"]: {"sha256": C.text_sha256(s["text"]), "url": s["source"]["url"]}
+                             for s in (ok, bad)}}
+    json.dump(dict(acct, run="300"), open(os.path.join(dest, "capture_preview.json"), "w"))
+    json.dump({"college": acct["college"], "run": "200", "not_found": [
+        {"control_number": cn, "near_miss": {"why": "rule A", "rule": "A", "refused_b": 0}} for cn in ("39418", "24263")]},
+        open(os.path.join(dest, "capture.json"), "w"))
+    json.dump(acct, open(os.path.join(art, "capture.json"), "w"))
+    sout = os.path.join(td, "out")
+    with _ctx.redirect_stdout(_io.StringIO()):
+        rc = C.stage_sources(acct["college"], art, sout, "300", folder=dest)
+    staged = json.load(open(os.path.join(sout, "capture.json"))) if rc == 0 else {}
+    kept = json.load(open(os.path.join(sout, "sources", "39418.json"))) if rc == 0 else {}
+    check(rc == 0 and staged.get("refused_staged") == ["24263"] and kept.get("text") == SRJC[297]
+          and kept.get("method") == "pdf_pages",
+          "follow-up 2: the rules' own page is staged and the unchecked page held, got rc %r, %r"
+          % (rc, staged.get("refused_staged")))
+finally:
+    shutil.rmtree(td)
+
+# ── #3587 follow-up 3: the fold drops a glyph's space only in the stand-in font's text ───────────────────────────────
+check(RC.fold("Staﬀ Development Certificate") == "Staff Development Certificate",
+      "fold: a real ligature keeps the space after it outside the stand-in font, got %r"
+      % RC.fold("Staﬀ Development Certificate"))
+check(RC.fold("Ōmega Leadership Certificate") == "Ōmega Leadership Certificate",
+      "fold: Ō stays a letter outside the stand-in font")
+check(RC.fold("Oﬃ ce Technolog y CerƟ ﬁ cate") == "Office Technolog y Certificate"
+      and RC.fold("soŌ ware") == "software",
+      "fold: in the stand-in font's text every glyph's space drops, real ligatures too (Solano's 'Oﬃ ce')")
+check(RC.heading_line(["182 Business - Oﬃ ce Technolog y", "AdministraƟ ve Assistant CerƟ ﬁ cate"],
+                      "Administrative Assistant", COA) >= 0,
+      "fold: the stand-in style is read over the lines heading_line gets, so a line with no Ɵ of its own folds too")
+check(all(g in S._LIGATURES for g in RC.STAND_INS + RC.STAND_IN_LETTER),
+      "fold: the stand-in glyphs are keys of the scorer's table, which stays the one table")
+
 for f in failures:
     print("FAIL:", f)
 print("%d/%d checks passed: reader page checks" % (checks[0] - len(failures), checks[0]))
