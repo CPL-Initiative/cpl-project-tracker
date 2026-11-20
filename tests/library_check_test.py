@@ -377,7 +377,7 @@ try:
             at_patch.append(pg("b"))
             if "id-c" in path:
                 raise RuntimeError("HTTP 503")
-            return [dict(body)]
+            return [dict(body, updated_at="2026-11-20T20:59:00+00:00")]
         raise AssertionError(path)
 
     lp.api = api_r
@@ -573,7 +573,7 @@ try:
             return [dict(M)]
         if method == "PATCH":
             sent.append((path, body))
-            return [] if "publish_target" in body else [dict(M, public_listed=False)]   # the restore matches no row
+            return [] if "publish_target" in body else [dict(M, public_listed=False, updated_at="2026-11-20T20:01:00+00:00")]   # the restore matches no row
         raise AssertionError(path)
     lp.api = api_u
     (tmpu / "pu.json").write_text(json.dumps({"check": ["moved"], "skipped": []}), encoding="utf-8")
@@ -594,6 +594,65 @@ try:
 finally:
     lp.api, lc.ROOT, lc.RECEIPTS = saved
     shutil.rmtree(tmpu, ignore_errors=True)
+
+# COBIx on #3581 (7029335845): the restore is guarded on the row the unlisting returned, so a person's change in between
+# stands.
+tmpv = Path(tempfile.mkdtemp(prefix="libcheck-v-"))
+saved = (lp.api, lc.ROOT, lc.RECEIPTS)
+try:
+    lc.ROOT, lc.RECEIPTS = tmpv, tmpv / "rc"
+    (tmpv / "library" / "kept").mkdir(parents=True)
+    (tmpv / "library" / "kept" / "index.html").write_text(PAGE, encoding="utf-8")
+    K = rec("kept", publish_target="public", public_listed=True, seen_by="public", public_summary="For the public.")
+    oldk = [with_proof(tmpv, K, "pass", "2026-11-20T17:00:00+00:00", PAGE.replace("<h1>T</h1>", "<h1>Before</h1>"))]
+    live = dict(K)
+    sentv = []
+
+    def api_v(path, method="GET", body=None, headers=None):
+        if path.startswith("cpl_library_division_settings"):
+            return list(SET.values())
+        if path.startswith("cpl_library_checks") and method == "GET":
+            return list(oldk)
+        if path.startswith("cpl_library_checks") and method == "POST":
+            return [dict(b, id="v%d" % i, checked_at="2026-11-20T20:00:00+00:00", created_at="x") for i, b in enumerate(body)]
+        if path.startswith("cpl_library?select=*"):
+            return [dict(live)]
+        if method == "PATCH":
+            sentv.append((path, body))
+            if body.get("public_listed") is False:
+                live.update(public_listed=False, publish_target="internal", updated_by=lc.BOT, updated_at="2026-11-20T20:01:00+00:00")
+                answer = [dict(live)]
+                # A person presses Remove from the Public Library before the restore: same state, a new updated_at.
+                live.update(updated_by="Ashley", updated_at="2026-11-20T20:01:30+00:00")
+                return answer
+            want_at = urllib.parse.unquote(path.split("updated_at=eq.", 1)[1].split("&", 1)[0]) if "updated_at=eq." in path else None
+            want_by = urllib.parse.unquote(path.split("updated_by=eq.", 1)[1].split("&", 1)[0]) if "updated_by=eq." in path else None
+            if (want_at is not None and want_at != live["updated_at"]) or (want_by is not None and want_by != live["updated_by"]):
+                return []
+            live.update(body)
+            return [dict(live)]
+        raise AssertionError(path)
+    import urllib.parse
+    lp.api = api_v
+    (tmpv / "pv.json").write_text(json.dumps({"check": ["kept"], "skipped": []}), encoding="utf-8")
+    raised = ""
+    import contextlib
+    import io
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            lc.check_phase(str(tmpv / "pv.json"), engine=lambda s_, o: {"targets": {"kept": {"pass": True}, "kept-dark": {"pass": True}}},
+                           now=datetime(2026, 11, 20, 20, tzinfo=timezone.utc))
+    except RuntimeError as e:
+        raised = str(e)
+    restore = [x for x in sentv if "publish_target" in x[1]]
+    check(len(restore) == 1 and "updated_at=eq.2026-11-20T20%3A01%3A00%2B00%3A00" in restore[0][0]
+          and "updated_by=eq.library-check%40bot" in restore[0][0],
+          "⭐ the restore of publish_target is guarded on the updated_at the unlisting returned and on the bot as its writer")
+    check(live["publish_target"] == "internal" and live["updated_by"] == "Ashley" and "kept: it came off the Public Library" in raised,
+          "⭐ a person's change between the two updates stands: the restore matches nothing, the piece stays internal, and the error names it")
+finally:
+    lp.api, lc.ROOT, lc.RECEIPTS = saved
+    shutil.rmtree(tmpv, ignore_errors=True)
 
 # 6. Both push loops fail the step after three failed pushes, so no report link points at a commit that never landed.
 WF = Path(__file__).resolve().parent.parent.joinpath(".github", "workflows", "library-publish.yml").read_text(encoding="utf-8")

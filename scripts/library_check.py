@@ -437,6 +437,15 @@ def unlist_guard(record):
                      "public_listed=is.true"])
 
 
+def restore_guard(record, unlisted_row):
+    """The PostgREST path that puts publish_target back to public after an unlisting: only on the row the unlisting
+    wrote, unchanged since (its updated_at, the bot as updated_by), still unlisted and internal. Pure."""
+    return "cpl_library?" + "&".join([
+        "id=eq." + urllib.parse.quote(record["id"]),
+        "updated_at=eq." + urllib.parse.quote(str(unlisted_row.get("updated_at") or "")),
+        "updated_by=eq." + urllib.parse.quote(BOT), "public_listed=is.false", "publish_target=eq.internal"])
+
+
 def write_receipt(path, receipt):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -506,12 +515,17 @@ def check_phase(plan_path, engine=run_engine, now=None):
                 # it does not land, or the piece would never relist (COBIx on #3581, 7029334238).
                 entry["publish_target_restored"] = "pending"
                 write_receipt(rpath, receipt)
-                back = lp.api("cpl_library?id=eq.%s&public_listed=is.false&publish_target=eq.internal" % urllib.parse.quote(r["id"]),
-                              "PATCH", {"publish_target": "public", "updated_by": BOT})
+                # Guarded on the row the unlisting returned (lp.api asks for return=representation): its updated_at and
+                # the bot as its writer, so a person's Remove from the Public Library in between is never overridden
+                # (COBIx on #3581, 7029335845).
+                row0 = ok[0] if isinstance(ok, list) and ok and isinstance(ok[0], dict) else {}
+                back = lp.api(restore_guard(r, row0), "PATCH", {"publish_target": "public", "updated_by": BOT}) \
+                    if row0.get("updated_at") else []
                 entry["publish_target_restored"] = bool(back)
                 if not back:
                     errors.append("%s: it came off the Public Library, but putting publish_target back to public matched no "
-                                  "row, so it will not relist on a pass until a person presses Publish to Public Library" % r["slug"])
+                                  "row (a person may have changed it in between, and their change stands), so it will not "
+                                  "relist on a pass until a person presses Publish to Public Library" % r["slug"])
         except Exception as e:  # noqa: BLE001 — its check still runs; the step goes red at the end
             if entry.get("publish_target_restored") == "pending":
                 entry["publish_target_restored"] = "unknown: %s" % str(e)[:200]
