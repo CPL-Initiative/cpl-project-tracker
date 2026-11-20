@@ -418,6 +418,7 @@ OTHER_URL = "https://catalog.x.edu/programs-courses/business/accounting-as/"
 SNAPSHOT = os.path.join(ROOT, "tests", "fixtures", "program_reread_keep_better_main_snapshot.json")
 REAL = os.path.join(ROOT, "tests", "fixtures", "program_reread_keep_better_s685.json")
 WORSE = score(False, False, 1, 10, "incomplete")
+NONE_PLACED = score(False, False, 0, 10, "equal", share=0.0, none_placed=True)   # places none of its 10 listed
 
 
 def source_entry(cn, url, title="", h1="2026-2027\nAcademic Catalog", heading_named=None):
@@ -636,6 +637,87 @@ def test_shared_title(tmp):
           "the row falls back to the capture's page title")
 
 
+def test_needs_load(tmp):
+    """COBIx on #3558 (7011565769): with live_runs, a kept or new record with no live row is listed as needs_load on a
+    step=load dispatch and never names a reread alone (the reread function replaces rows and inserts none); a record
+    live at an earlier run names the reread; one live at a later run is out, since the runs are compared as numbers.
+    The live read's time is printed beside receipt_on_branch."""
+    folder, rdir = generic_folder(tmp, {"55001": (WORSE, PASS, OWN, CL_URL), "55002": (None, PASS, OWN, CL_URL),
+                                        "55003": (WORSE, PASS, OWN, CL_URL)})
+    # 55002 has no live row and the others are live at this run: only the load is named.
+    acct = K.keep_better(folder, base="base", checked=set(), out=lambda *_: None,   # written: a later pass carries it
+                         live_runs={"55001": str(NEW), "55003": str(NEW)})
+    d = acct["dispatch"]
+    check(isinstance(d, list) and [x["inputs"]["step"] for x in d] == ["load"] and d[0]["needs_load"] == ["55002"]
+          and "force" not in d[0]["inputs"],
+          "a record with no live row names a load and no reread: %r" % (d,))
+    # 55001 live at an earlier run: the reread is named, and the load beside it.
+    acct = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                         live_runs={"55001": str(OLD), "55003": str(NEW)})
+    d = acct["dispatch"]
+    steps = {x["inputs"]["step"]: x for x in d} if isinstance(d, list) else {}
+    check(set(steps) == {"reread", "load"} and steps["reread"]["not_live_at_run"] == ["55001"]
+          and steps["load"]["needs_load"] == ["55002"],
+          "an earlier live run names the reread and a missing row the load: %r" % (d,))
+    # Every record live at this run or a later one: nothing to post.
+    acct = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                         live_runs={"55001": str(NEW), "55002": str(LATER), "55003": str(NEW)})
+    check(isinstance(acct["dispatch"], str), "records live at this run or later are named: %r" % (acct["dispatch"],))
+    # A receipt on the branch: the dispatch prints the live read's time beside it.
+    receipt(tmp, NEW)
+    acct = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                         live_runs={"55001": str(OLD), "55002": str(NEW), "55003": str(NEW)},
+                         live_read_at="2026-11-20T09:00:00Z")
+    d = [x for x in acct["dispatch"] if x["inputs"]["step"] == "reread"] if isinstance(acct["dispatch"], list) else []
+    check(len(d) == 1 and d[0].get("receipt_on_branch") is True and d[0].get("live_read_at") == "2026-11-20T09:00:00Z"
+          and acct.get("live_read_at") == "2026-11-20T09:00:00Z",
+          "the live read's time rides beside receipt_on_branch: %r" % (d,))
+    # A later extraction carries run NEW: a record of NEW whose live row holds the later run is out, never named for
+    # a reread the function would refuse (the runs compared as numbers, not tested for inequality).
+    K.keep_better(folder, base="base", checked=set(), out=lambda *_: None,   # written: 55001 kept at NEW
+                  live_runs={"55001": str(OLD), "55003": str(NEW)})
+    write(os.path.join(rdir, "55003.json"), rec("55003", PASS, LATER, url=CL_URL))
+    write(os.path.join(os.path.dirname(rdir), "capture.json"), {"run": str(LATER)})
+    acct = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                         live_runs={"55001": str(LATER), "55002": str(NEW), "55003": str(OLD)})
+    named = sorted(x["inputs"].get("force") for x in acct["dispatch"]) if isinstance(acct["dispatch"], list) else []
+    check(named == [str(LATER)], "a carried record live at a later run names its run: %r" % (acct["dispatch"],))
+    # Runs of different digit counts compare as numbers: a live row at run 1000 is later than 222, though "1000"
+    # sorts before "222" as text (S689 review, round 1).
+    acct = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                         live_runs={"55001": "1000", "55002": str(NEW), "55003": str(OLD)})
+    named = sorted(x["inputs"].get("force") for x in acct["dispatch"]) if isinstance(acct["dispatch"], list) else []
+    check(named == [str(LATER)], "a live run of four digits read as earlier than a three-digit run: %r"
+          % (acct["dispatch"],))
+    # A new record with no live row whose re-read places none of its courses: load_rows skips it, so no load names
+    # it, and the account lists it with load_rows' reason (S689 review, round 1: 17 of 416 committed decisions).
+    t2 = os.path.join(tmp, "none_placed")
+    os.makedirs(t2)
+    nfolder, _ = generic_folder(t2, {"56001": (None, PASS, OWN, CL_URL), "56002": (None, NONE_PLACED, OWN, CL_URL)})
+    acct = K.keep_better(nfolder, base="base", checked=set(), dry_run=True, out=lambda *_: None, live_runs={})
+    d = acct["dispatch"] if isinstance(acct["dispatch"], list) else []
+    loads = [x for x in d if x["inputs"]["step"] == "load"]
+    check(len(loads) == 1 and loads[0]["needs_load"] == ["56001"] and loads[0]["posts"] == 1
+          and [x["control_number"] for x in loads[0].get("load_skips") or []] == ["56002"]
+          and "places none" in loads[0]["load_skips"][0]["why"]
+          and [x["control_number"] for x in acct.get("load_skips") or []] == ["56002"],
+          "a load posts only what load_rows posts and lists its skips: %r" % (d,))
+    os.makedirs(os.path.join(t2, "only"))
+    nfolder2, _ = generic_folder(os.path.join(t2, "only"), {"56002": (None, NONE_PLACED, OWN, CL_URL)})
+    acct = K.keep_better(nfolder2, base="base", checked=set(), dry_run=True, out=lambda *_: None, live_runs={})
+    check(isinstance(acct["dispatch"], str) and [x["control_number"] for x in acct.get("load_skips") or []] == ["56002"],
+          "a folder whose only unloaded record places none names no load: %r" % (acct["dispatch"],))
+    path = os.path.join(tmp, "checked.json")
+    write(path, {"by_college": {}, "read_at": "2026-11-20T09:00:00Z"})
+    check(K.read_live_read_at(path) == "2026-11-20T09:00:00Z", "read_at is read from the --checked file")
+    write(path, {"by_college": {}, "read_at": "yesterday"})
+    try:
+        K.read_live_read_at(path)
+        check(False, "a malformed read_at is accepted")
+    except SystemExit:
+        pass
+
+
 def test_no_duplicate_row(tmp):
     """A program held for a person (no filed record) whose re-read is back in records/ at the run is decided again
     and listed once, never beside its earlier held entry."""
@@ -850,7 +932,7 @@ def main():
                test_live_runs_file, test_control_number_shape, test_ascii_runs, test_generic_heading_scorer,
                test_generic_heading, test_order, test_second_pass, test_matches_main, test_real_cases,
                test_address_cases, test_capture_names_another_award, test_second_pass_after_receipt,
-               test_no_duplicate_row, test_award_ending, test_shared_title):
+               test_no_duplicate_row, test_award_ending, test_shared_title, test_needs_load):
         tmp = tempfile.mkdtemp(prefix="keep_better_")
         try:
             fn(tmp)

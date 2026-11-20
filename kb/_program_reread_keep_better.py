@@ -67,7 +67,9 @@ extraction run's records; with no run named it takes the highest run in the fold
 record of the new run is restored. So the account names the dispatch with the run pinned (input `force`, which the
 workflow passes as EXTRACTED_RUN), one per run whose kept or new records no reread receipt has posted, or "no
 dispatch". With live_runs supplied the live read decides in place of the receipts: a run is named whenever one of its
-kept or new records is not live at that run (a second pass, after a receipt), and stays out when all are (S685). A second extraction on the same branch is carried: the account keeps every earlier run's decisions,
+kept or new records is live at an earlier run (a second pass, after a receipt), and stays out when all are live at
+that run or a later one (S685; COBIx on #3558). A kept or new record with no live row is listed as needs_load on one
+step=load dispatch, which inserts it; the reread function replaces rows and inserts none. A second extraction on the same branch is carried: the account keeps every earlier run's decisions,
 and that run's kept records still in the folder keep their own dispatch.
 
 THE HOLD. No hold stops a paid read on the ground that a re-read came back worse: the reconcile file's `hold` keys
@@ -398,6 +400,22 @@ def read_live_runs(path: str | None, college: str | None) -> dict | None:
     return {k: str(v) for k, v in rows.items()}
 
 
+def read_live_read_at(path: str | None) -> str | None:
+    """When the conductor took the live read: the --checked file's optional "read_at" (a UTC time,
+    YYYY-MM-DDTHH:MM:SSZ), so a dry run prints it beside receipt_on_branch and a person can spot a read older than
+    the receipt (COBIx on #3558). None when absent; malformed stops the run."""
+    if not path:
+        return None
+    with open(path) as fh:
+        got = json.load(fh)
+    at = got.get("read_at") if isinstance(got, dict) else None
+    if at is None:
+        return None
+    if not isinstance(at, str) or not re.fullmatch(r"20\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ", at):
+        raise SystemExit("%s: read_at %r is not a UTC time YYYY-MM-DDTHH:MM:SSZ" % (path, at))
+    return at
+
+
 def read_sources(folder: str) -> dict:
     """The capture's sources.json entries by control number ({} when the folder has none or it does not parse:
     a generic heading then has only its address to show the page is the program's own)."""
@@ -448,8 +466,10 @@ def folder_college(folder: str) -> str | None:
 
 
 def keep_better(folder: str, base: str = "origin/main", run: str | None = None, checked: set[str] | None = None,
-                dry_run: bool = False, out=print, live_runs: dict | None = None) -> dict:
-    """live_runs: the folder's college's {control number: live extracted_run} (read_live_runs), or None."""
+                dry_run: bool = False, out=print, live_runs: dict | None = None,
+                live_read_at: str | None = None) -> dict:
+    """live_runs: the folder's college's {control number: live extracted_run} (read_live_runs), or None.
+    live_read_at: when the conductor took that live read (read_live_read_at), printed beside receipt_on_branch."""
     if checked is None:
         raise SystemExit("the checked rows are required (--checked): never run without them")
     folder = os.path.abspath(folder)
@@ -622,7 +642,7 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
     at_run: dict[str, int] = {}
     for rec in after:
         at_run[str(rec.get("extracted_run"))] = at_run.get(str(rec.get("extracted_run")), 0) + 1
-    dispatch, carried = [], {}
+    dispatch, carried, needs_load = [], {}, []
     branch = git(root, "rev-parse", "--abbrev-ref", "HEAD").stdout.decode().strip() or None
     for r_id in sorted(runs, key=int):
         decided = {e["control_number"] for e in runs[r_id].get("programs") or [] if e.get("outcome") in ("kept", "new")}
@@ -635,18 +655,42 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         live_at = sorted(rec["control_number"] for rec in after if str(rec.get("extracted_run")) == r_id
                          and rec.get("control_number") in {e["control_number"] for e in runs[r_id].get("programs")
                                                            or [] if e.get("outcome") == "posted"})
+        # With live_runs, three ways (COBIx on #3558, 7011565769): a record live at an earlier run names the reread
+        # (not_live_at_run); a record with no live row needs step=load, since the reread function replaces rows and
+        # inserts none (needs_load), and alone it names no reread; a record live at this run or a later one is out
+        # (the function keeps a later row, so the runs are compared as numbers, never tested for inequality).
         if live_runs is None:
             not_live, name = None, bool(still) and r_id not in posted
         else:
-            not_live = [cn for cn in still if live_runs.get(str(cn)) != r_id]
+            not_live = [cn for cn in still if live_runs.get(str(cn)) is not None
+                        and int(live_runs[str(cn)]) < int(r_id)]
+            needs_load += [cn for cn in still if live_runs.get(str(cn)) is None and cn not in needs_load]
             name = bool(not_live)
         if name:
             dispatch.append({"workflow": WORKFLOW, "ref": branch,
                              "inputs": {"college": college, "step": "reread", RUN_INPUT: r_id},
                              "posts": len(still), "control_numbers": still,
                              **({"not_live_at_run": not_live} if not_live is not None else {}),
-                             **({"receipt_on_branch": True} if r_id in posted else {}),
+                             **({"receipt_on_branch": True, "live_read_at": live_read_at or "not stated"}
+                                if r_id in posted else {}),
                              **({"already_live": live_at} if live_at else {})})
+    load_skips = []
+    if needs_load:
+        # step=load inserts the branch's committed records unchecked and never touches a row already there, so one
+        # load covers every run's records that have no live row. It posts what the reader's load_rows posts, so a
+        # record load_rows skips (one that places none of its courses, an extraction error) is listed with its
+        # reason and never named, or every later pass would name the same load for nothing (S689 review, round 1).
+        import _program_requirements_college as C
+        posts, skips = C.load_rows(college, folder)
+        posted_cns = {str(r["control_number"]) for r in posts}
+        why = {str(x["control_number"]): x["why"] for x in skips}
+        load_skips = [{"control_number": cn, "why": why.get(str(cn), "not among the rows load_rows posts")}
+                      for cn in sorted(needs_load) if str(cn) not in posted_cns]
+        needs_load = sorted(cn for cn in needs_load if str(cn) in posted_cns)
+    if needs_load:
+        dispatch.append({"workflow": WORKFLOW, "ref": branch, "inputs": {"college": college, "step": "load"},
+                         "posts": len(needs_load), "control_numbers": needs_load, "needs_load": needs_load,
+                         **({"load_skips": load_skips} if load_skips else {})})
     acct = {
         "college": college, "run": run, "written": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "rule": "a checked live row restores, or is held where the base files none; then own program (a heading "
@@ -660,6 +704,9 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
                 "#3544 and #3547)",
         "checked": sorted(checked),
         "live_runs": "not supplied" if live_runs is None else {str(k): str(v) for k, v in sorted(live_runs.items())},
+        **({"live_read_at": live_read_at} if live_read_at else {}),
+        # Records with no live row that a load would not insert, with load_rows' reason: for a person, never a dispatch.
+        **({"load_skips": load_skips} if load_skips else {}),
         "dispatch": dispatch or "no dispatch: no run holds a kept or new record that a reread has not posted",
         "carried_runs": carried,
         "counts": counts,
@@ -689,14 +736,15 @@ def main(argv=None) -> int:
     ap.add_argument("folder", help="kb/program_requirements_college/<slug>, after extract=1 filed it")
     ap.add_argument("--checked", required=True,
                     help="the conductor's live read: {\"by_college\": {college: [control numbers]}, optional "
-                         "\"live_runs\": {college: {control number: extracted_run}}}")
+                         "\"live_runs\": {college: {control number: extracted_run}}, optional \"read_at\": "
+                         "the read's UTC time}")
     ap.add_argument("--base", default="origin/main", help="the ref holding the filed records (default origin/main)")
     ap.add_argument("--run", default=None, help="the extraction run (default: capture.json's run)")
     ap.add_argument("--dry-run", action="store_true", help="print the decisions; write nothing")
     a = ap.parse_args(argv)
     college = folder_college(os.path.abspath(a.folder))
     keep_better(a.folder, a.base, a.run, read_checked(a.checked, college), a.dry_run,
-                live_runs=read_live_runs(a.checked, college))
+                live_runs=read_live_runs(a.checked, college), live_read_at=read_live_read_at(a.checked))
     return 0
 
 
