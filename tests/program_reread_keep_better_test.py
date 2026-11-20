@@ -418,6 +418,7 @@ OTHER_URL = "https://catalog.x.edu/programs-courses/business/accounting-as/"
 SNAPSHOT = os.path.join(ROOT, "tests", "fixtures", "program_reread_keep_better_main_snapshot.json")
 REAL = os.path.join(ROOT, "tests", "fixtures", "program_reread_keep_better_s685.json")
 WORSE = score(False, False, 1, 10, "incomplete")
+NONE_PLACED = score(False, False, 0, 10, "equal", share=0.0, none_placed=True)   # places none of its 10 listed
 
 
 def source_entry(cn, url, title="", h1="2026-2027\nAcademic Catalog", heading_named=None):
@@ -657,6 +658,31 @@ def test_needs_load(tmp):
                          live_runs={"55001": str(LATER), "55002": str(NEW), "55003": str(OLD)})
     named = sorted(x["inputs"].get("force") for x in acct["dispatch"]) if isinstance(acct["dispatch"], list) else []
     check(named == [str(LATER)], "a carried record live at a later run names its run: %r" % (acct["dispatch"],))
+    # Runs of different digit counts compare as numbers: a live row at run 1000 is later than 222, though "1000"
+    # sorts before "222" as text (S689 review, round 1).
+    acct = K.keep_better(folder, base="base", checked=set(), dry_run=True, out=lambda *_: None,
+                         live_runs={"55001": "1000", "55002": str(NEW), "55003": str(OLD)})
+    named = sorted(x["inputs"].get("force") for x in acct["dispatch"]) if isinstance(acct["dispatch"], list) else []
+    check(named == [str(LATER)], "a live run of four digits read as earlier than a three-digit run: %r"
+          % (acct["dispatch"],))
+    # A new record with no live row whose re-read places none of its courses: load_rows skips it, so no load names
+    # it, and the account lists it with load_rows' reason (S689 review, round 1: 17 of 416 committed decisions).
+    t2 = os.path.join(tmp, "none_placed")
+    os.makedirs(t2)
+    nfolder, _ = generic_folder(t2, {"56001": (None, PASS, OWN, CL_URL), "56002": (None, NONE_PLACED, OWN, CL_URL)})
+    acct = K.keep_better(nfolder, base="base", checked=set(), dry_run=True, out=lambda *_: None, live_runs={})
+    d = acct["dispatch"] if isinstance(acct["dispatch"], list) else []
+    loads = [x for x in d if x["inputs"]["step"] == "load"]
+    check(len(loads) == 1 and loads[0]["needs_load"] == ["56001"] and loads[0]["posts"] == 1
+          and [x["control_number"] for x in loads[0].get("load_skips") or []] == ["56002"]
+          and "places none" in loads[0]["load_skips"][0]["why"]
+          and [x["control_number"] for x in acct.get("load_skips") or []] == ["56002"],
+          "a load posts only what load_rows posts and lists its skips: %r" % (d,))
+    os.makedirs(os.path.join(t2, "only"))
+    nfolder2, _ = generic_folder(os.path.join(t2, "only"), {"56002": (None, NONE_PLACED, OWN, CL_URL)})
+    acct = K.keep_better(nfolder2, base="base", checked=set(), dry_run=True, out=lambda *_: None, live_runs={})
+    check(isinstance(acct["dispatch"], str) and [x["control_number"] for x in acct.get("load_skips") or []] == ["56002"],
+          "a folder whose only unloaded record places none names no load: %r" % (acct["dispatch"],))
     path = os.path.join(tmp, "checked.json")
     write(path, {"by_college": {}, "read_at": "2026-11-20T09:00:00Z"})
     check(K.read_live_read_at(path) == "2026-11-20T09:00:00Z", "read_at is read from the --checked file")

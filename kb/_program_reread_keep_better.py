@@ -654,12 +654,23 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
                              **({"receipt_on_branch": True, "live_read_at": live_read_at or "not stated"}
                                 if r_id in posted else {}),
                              **({"already_live": live_at} if live_at else {})})
+    load_skips = []
     if needs_load:
         # step=load inserts the branch's committed records unchecked and never touches a row already there, so one
-        # load covers every run's records that have no live row.
+        # load covers every run's records that have no live row. It posts what the reader's load_rows posts, so a
+        # record load_rows skips (one that places none of its courses, an extraction error) is listed with its
+        # reason and never named, or every later pass would name the same load for nothing (S689 review, round 1).
+        import _program_requirements_college as C
+        posts, skips = C.load_rows(college, folder)
+        posted_cns = {str(r["control_number"]) for r in posts}
+        why = {str(x["control_number"]): x["why"] for x in skips}
+        load_skips = [{"control_number": cn, "why": why.get(str(cn), "not among the rows load_rows posts")}
+                      for cn in sorted(needs_load) if str(cn) not in posted_cns]
+        needs_load = sorted(cn for cn in needs_load if str(cn) in posted_cns)
+    if needs_load:
         dispatch.append({"workflow": WORKFLOW, "ref": branch, "inputs": {"college": college, "step": "load"},
-                         "posts": len(needs_load), "control_numbers": sorted(needs_load),
-                         "needs_load": sorted(needs_load)})
+                         "posts": len(needs_load), "control_numbers": needs_load, "needs_load": needs_load,
+                         **({"load_skips": load_skips} if load_skips else {})})
     acct = {
         "college": college, "run": run, "written": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "rule": "a checked live row restores, or is held where the base files none; then own program (a heading "
@@ -674,6 +685,8 @@ def keep_better(folder: str, base: str = "origin/main", run: str | None = None, 
         "checked": sorted(checked),
         "live_runs": "not supplied" if live_runs is None else {str(k): str(v) for k, v in sorted(live_runs.items())},
         **({"live_read_at": live_read_at} if live_read_at else {}),
+        # Records with no live row that a load would not insert, with load_rows' reason: for a person, never a dispatch.
+        **({"load_skips": load_skips} if load_skips else {}),
         "dispatch": dispatch or "no dispatch: no run holds a kept or new record that a reread has not posted",
         "carried_runs": carried,
         "counts": counts,
