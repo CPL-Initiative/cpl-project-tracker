@@ -38,6 +38,9 @@ status files (step 12) and every apply are the conductor's.
   reader (an unfiled page counts wrong). **#3579 `ef16178c`** rule D keeps an older read's mark where a newer scoped
   read did not reach. **#3577 `45af74fd`** (merged at sign-off, `test` green on ec29c995): a Library check binds the
   url it checked, so a Public press after a url move no longer relists on the old url's pass (COBIx on #3572).
+  **#3581 `ac093582`** Library part 2, after a second reader's two rounds, a third-round design change (the pass line
+  binds to the page's content hash) and four COBIx rounds; migrations applied from `claude/s688-library-part2-apply`
+  (never merges): `library_check_after_page_change`, then the part-2 memory rows (eight).
 
 ## Read in order
 
@@ -49,11 +52,16 @@ CI); the [`commons`](reference/lanes/commons.md) lane's confidence-scorer and Ne
 ## Open work, from the lanes' NEXT lines
 
 0. **library (#3560) comes first** (Sam, Nov 19, 3:49 PM PT, relayed by COBIx on #3560, comment 7025524965: *"move
-   library fix to first in line"*, ready for Ashley). Step 1 of his order, the url gap, is #3577 (merged and
-   applied). Next: **part 2**, the accessibility check when publishing, one check row per page with `url` written on
-   each row, the footer built from that record, a `publish_target = 'public'` piece listed once it passes, and the
-   tab's pre-check in `library.js` matching on url as well as the version key; then **part 4**, Add existing (Ashley's
-   flyers made outside COBI), Publish all, and redraft and republish; **part 3**, the progress bar, after those.
+   library fix to first in line"*, ready for Ashley). Steps 1 and 2 are done: #3577 (the url gap) and **#3581
+   `ac093582`, part 2** (the check on publish, one `cpl_library_checks` row per page with its url, listing on a pass
+   only after the reports are pushed, the footer line bound to a sha256 of the page's own content, and the tab's
+   url-aware pre-check), both merged and applied. **Watch the first real check run** (the 06:41Z schedule of
+   `library-publish.yml`, or a Publish now): its plan checks every Library page that has no proof yet, so it is
+   larger than later runs. A good run adds one check row per page (`created_by` names the run and attempt), commits
+   `library/<slug>/accessibility/*`, and restamps every page's line; a legacy listing that fails keeps its listing
+   and shows its findings on the card. Next: **part 4**, Add existing (Ashley's flyers made outside COBI), Publish
+   all, and redraft and republish; then **part 3**, the progress bar; and COBIx's rule-based pass for the under-10
+   leftovers in `chatbox/supabase/functions/library-revise-draft/cobi_data.mjs` (brief of Nov 19, section 4, item 1).
 1. **program-requirements-harvest:** rule D's prior-year read (`CAPTURE_PRIOR`) for College of the Desert's 8, now
    unblocked by #3579; the reread plan's third ten (Sierra, Barstow, Pasadena City, Rio Hondo, Los Angeles Harbor,
    College of San Mateo, College of the Sequoias, Fresno City, Contra Costa, Madera; $40 per college per run, one
@@ -78,6 +86,10 @@ Nothing waits on Sam. COBIx relayed on #3560 (comment 7025524965) that he cleare
 
 ## Decisions Sam made
 
+- **The 21 legacy listings stay** (Nov 19, 7:32 PM PT, relayed by COBIx on #3581, comment 7029505105): the pieces
+  listed today stay on the Public Library as "Not yet certified" while their findings are fixed, even when their
+  first check fails. Only those; anything new, and any version or url change, lists only on a pass. Row
+  `r-library-legacy-listings-stay-sam-2026-11-19` (verified); `sam_rulings.md`. This reversed the session's option (b).
 - **The Library comes first** (Nov 19, 3:49 PM PT, relayed by COBIx on #3560): parts 2 and 4 of #3560 lead the open
   work. **A new version or url takes a piece off the Public Library until it passes** (3:42 PM PT, relayed there):
   this confirms `d-library-new-page-unlists-s687`, so Sam's Nov 19 item 9 stays set aside.
@@ -103,9 +115,9 @@ that push) and `p-bot-commit-leaves-head-untested-s688` (revert a timestamp-only
 
 ## Let go
 
-The conductor drops, in the sign-off turn: the PR subscription on #3577 (merged) and the COBIx watcher (re-armed every 30
-minutes). Check-ins: none. Artifact watches: none. The vault note is a draft PR on CPLBrain.
+Dropped in the sign-off turn: the COBIx watcher (re-armed every 30 minutes) and every check-in. PR subscriptions: none
+held (#3577, #3580 and #3581 merged). Artifact watches: none. The vault note is a draft PR on CPLBrain (#829).
 
-Spend: $12.69 (Opus 5.5 $12.69); collection $4.69, infrastructure $8.00; 2026-11-19T23:40Z to 2026-11-20T01:22Z.
+Spend: $79.01 (Opus 5.5 $79.01); collection $4.69, infrastructure $74.32; 2026-11-19T23:40Z to 2026-11-20T04:20Z.
 
 Opening line: *Greetings, you are SkyTern (Session 689), see SkyLinnet's handoff — `docs/session_689_handoff.md` — let's keep rolling with our queue.*
