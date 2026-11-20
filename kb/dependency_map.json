@@ -4,9 +4,9 @@
   "supabase_tables": 119,
   "rpcs": 68,
   "edge_functions": 16,
-  "file_datasets": 1104,
+  "file_datasets": 1105,
   "external_services": 197,
-  "consumers": 640,
+  "consumers": 641,
   "workflows": 76,
   "data_js_files": 71,
   "tabs": 41
@@ -6060,6 +6060,13 @@
      "line": 40
     },
     {
+     "id": "script:kb/_assign_from_panel_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
+    },
+    {
      "id": "script:kb/_build_coci_lookup.py",
      "kind": "script",
      "direction": "read",
@@ -6665,7 +6672,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13350
+     "line": 13466
     }
    ],
    "served": true,
@@ -7319,7 +7326,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13684
+     "line": 13800
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -8170,7 +8177,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13291
+     "line": 13407
     }
    ],
    "served": true,
@@ -8766,7 +8773,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13347
+     "line": 13463
     }
    ],
    "served": true,
@@ -8884,7 +8891,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10302
+     "line": 10418
     },
     {
      "id": "script:kb/_identities_rebuild.py",
@@ -9467,7 +9474,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13908
+     "line": 14024
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -9513,7 +9520,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13928
+     "line": 14044
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -11985,7 +11992,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8937
+     "line": 9045
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -12495,6 +12502,13 @@
      ]
     },
     {
+     "id": "script:kb/_assign_from_panel_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    },
+    {
      "id": "script:kb/_closest_mid.py",
      "kind": "script",
      "direction": "read",
@@ -12512,7 +12526,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8461
+     "line": 8519
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -12583,6 +12597,20 @@
      "direction": "read",
      "how": "literal",
      "line": 123
+    },
+    {
+     "id": "script:kb/_assign_from_panel_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
+    },
+    {
+     "id": "script:kb/_assign_from_panel_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 104
     },
     {
      "id": "script:kb/_athl_fitness_merge_curation.py",
@@ -12977,7 +13005,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9054
+     "line": 9162
     }
    ],
    "producers": [
@@ -14584,14 +14612,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9019
+     "line": 9127
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9019
+     "line": 9127
     }
    ],
    "producers": [
@@ -14806,7 +14834,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8679
+     "line": 8763
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -15949,7 +15977,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8565
+     "line": 8637
     },
     {
      "id": "script:kb/_detect_crnc_mirrors.py",
@@ -16174,7 +16202,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10227
+     "line": 10343
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -19091,7 +19119,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9070
+     "line": 9178
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -19539,7 +19567,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8716
+     "line": 8800
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -19676,7 +19704,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8380
+     "line": 8438
     },
     {
      "id": "script:kb/_apply_cid_claim_holds.py",
@@ -19720,7 +19748,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8748
+     "line": 8832
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -19885,7 +19913,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8900
+     "line": 8698
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -20559,7 +20587,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8469
+     "line": 8527
     },
     {
      "id": "script:kb/_apply_kin_pe_convergence.py",
@@ -21831,7 +21859,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9788
+     "line": 9904
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -25585,7 +25613,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13119
+     "line": 13235
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -25750,7 +25778,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13349
+     "line": 13465
     }
    ],
    "served": true,
@@ -25773,14 +25801,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13149
+     "line": 13265
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13149
+     "line": 13265
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -26072,6 +26100,19 @@
    "main_committers": []
   },
   "file:tests/apply_curation_rulings_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/assign_from_panel_build_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29787,7 +29828,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13351
+     "line": 13467
     }
    ],
    "served": true,
@@ -29901,7 +29942,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8422
+     "line": 8480
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -29909,6 +29950,13 @@
      "direction": "read",
      "how": "literal",
      "line": 149
+    },
+    {
+     "id": "script:kb/_assign_from_panel_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 120
     },
     {
      "id": "script:kb/_build_ccr_atlas_extract.py",
@@ -30066,14 +30114,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10354
+     "line": 10470
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10354
+     "line": 10470
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -30125,14 +30173,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9700
+     "line": 9816
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9700
+     "line": 9816
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -30237,14 +30285,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10438
+     "line": 10554
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10438
+     "line": 10554
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -30352,14 +30400,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10426
+     "line": 10542
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10426
+     "line": 10542
+    },
+    {
+     "id": "script:kb/_assign_from_panel_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 129
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -30548,14 +30603,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10390
+     "line": 10506
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10390
+     "line": 10506
+    },
+    {
+     "id": "script:kb/_assign_from_panel_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 120
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -30671,14 +30733,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10229
+     "line": 10345
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10229
+     "line": 10345
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -37281,6 +37343,7 @@
     "tests/context_budget_test.py",
     "tests/side_by_side_test.py",
     "tests/merge_chain_flatten_test.py",
+    "tests/assign_from_panel_build_test.py",
     "tests/unified_units_range_test.py",
     "tests/budget_section_first_light_test.py",
     "tests/vision_2030_first_light_test.py",
