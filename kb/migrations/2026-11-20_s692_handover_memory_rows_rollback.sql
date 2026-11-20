@@ -1,0 +1,6 @@
+-- Rollback of 2026-11-20_s692_handover_memory_rows.sql. Deletes only this file's create log rows and rows (by slug).
+delete from public.cpl_memory_log where action = 'create' and memory_id in (select id from public.cpl_memory where slug in ('d-handover-reviewer-sign-in-only-2026-11-20','d-handover-try-link-on-the-runner-2026-11-20','d-handover-slice-1-is-the-front-door-2026-11-20','d-handover-college-goes-to-cdc-2026-11-20','f-handover-surfaces-dr-35-2026-11-20','p-fake-session-browser-script-denied-2026-11-20'));
+delete from public.cpl_memory where slug in ('d-handover-reviewer-sign-in-only-2026-11-20','d-handover-try-link-on-the-runner-2026-11-20','d-handover-slice-1-is-the-front-door-2026-11-20','d-handover-college-goes-to-cdc-2026-11-20','f-handover-surfaces-dr-35-2026-11-20','p-fake-session-browser-script-denied-2026-11-20');
+select count(*) as rows_left from public.cpl_memory where slug in ('d-handover-reviewer-sign-in-only-2026-11-20','d-handover-try-link-on-the-runner-2026-11-20','d-handover-slice-1-is-the-front-door-2026-11-20','d-handover-college-goes-to-cdc-2026-11-20','f-handover-surfaces-dr-35-2026-11-20','p-fake-session-browser-script-denied-2026-11-20');
+-- Applied: supabase-migrate run 44790191281 on 2026-11-20; its receipt is
+-- kb/receipts/migration_s692_handover_memory_rows_44790191281.json (six rows, each proposed).

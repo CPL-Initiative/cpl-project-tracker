@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_s692_handover_memory_rows.sql",
+ "name": "s692_handover_memory_rows",
+ "version": "20261120181123",
+ "sha256": "5025123f6043736d18b7649e5f03d0ae5578d67272b024dab2a9a7f969cc6a1d",
+ "run": "44790191281",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-handover-college-goes-to-cdc-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":358},{\"slug\":\"d-handover-reviewer-sign-in-only-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":377},{\"slug\":\"d-handover-slice-1-is-the-front-door-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":350},{\"slug\":\"d-handover-try-link-on-the-runner-2026-11-20\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":382},{\"slug\":\"f-handover-surfaces-dr-35-2026-11-20\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":370},{\"slug\":\"p-fake-session-browser-script-denied-2026-11-20\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":385}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

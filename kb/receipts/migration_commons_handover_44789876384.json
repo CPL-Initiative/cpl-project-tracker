@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-20_commons_handover.sql",
+ "name": "commons_handover",
+ "version": "20261120180930",
+ "sha256": "919562d6d9ffecd724b3529a60ae44c5612e33ca261281ae9d9038335ced2432",
+ "run": "44789876384",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"surface\":\"commons_handover\",\"rows\":0,\"bucket_public\":false,\"anon_may_add\":false,\"reviewer_may_add\":true,\"anon_reads_summary\":true,\"api_may_mark\":false}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

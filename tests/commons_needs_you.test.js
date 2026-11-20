@@ -265,7 +265,8 @@ const count = (hay, needle) => hay.split(needle).length - 1;
   const ny = load("#commons/needs-you");
   await ny.M.boot(); await settle();
   check("(B) ⭐ #commons/needs-you draws the front page scrolled to Needs you, its heading focused", ny.w.scrolled.indexOf("cmf-needs") >= 0 && ny.d.activeElement === ny.d.getElementById("cmf-needs-h"));
-  check("(B) the address stays reported", /return FRONT\.focus \? "commons\/needs-you" : "commons"/.test(COMMONS));
+  /* The course panel's address joins the same line (commons_handover.js, 2026-11-20). */
+  check("(B) the address stays reported", /return FRONT\.course \? "commons\/course\/" \+ FRONT\.course : FRONT\.focus \? "commons\/needs-you" : "commons"/.test(COMMONS));
   const bare = load("#commons");
   await bare.M.boot(); await settle();
   check("(B) the bare #commons does not scroll", bare.w.scrolled.indexOf("cmf-needs") < 0);

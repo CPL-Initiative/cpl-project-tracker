@@ -94,6 +94,12 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   check("(E) collect/slos and every pane of the side panel carry their address",
     /slos: "Colleges with collected SLOs"/.test(DATAJS) && /function paneRoute\(p\)/.test(DATAJS) && /if \(own\(PANES, w\)\) \{ out\.pane =/.test(DATAJS));
   check("(E) collect carries its catalog platform in the address", /"\/platform\/" \+ platform/.test(DATAJS) && /p\[i\] === "platform"/.test(DATAJS));
+  // Hand it over in place (2026-11-20, commons_handover.js): a course's panel on the front page opens from
+  // #commons/course/<control number>, and a college's hand-over pane from #collect/.../college/<slug>/handover. The
+  // round trips are in tests/commons_handover.test.js (2, 10, 11).
+  check("(E) ⭐ commons/course/<control number> opens from its arrival and reports its address",
+    /a\[0\] === "course"/.test(COMMONS) && /FRONT\.course \? "commons\/course\/" \+ FRONT\.course/.test(COMMONS));
+  check("(E) a college's hand-over pane carries its address", /handover: 0/.test(DATAJS) && /p\.k === "handover"/.test(DATAJS));
   // #3310: a module beside commons_data.js adds its views to VIEWS, so each opens from #collect/<view> by the
   // same parser; Data elements and sharing is the first (#collect/sharing). The round trip is in
   // tests/commons_data_sharing.test.js (6).

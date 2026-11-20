@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 598,
+   "count": 599,
    "docs": [
     {
      "created": "2026-08-14",
@@ -11228,6 +11228,23 @@
      "title": "For \"which colleges offer X\", start at the course file, not the program file",
      "type": "reference",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "path": "docs/kb-notes/reference-commons-hand-over.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "hand-over",
+      "college-data-collection",
+      "supabase",
+      "privacy"
+     ],
+     "title": "Hand it over in place: the hand-over box, where it writes, and the reader's pickup",
+     "type": "reference",
+     "updated": "2026-11-20"
     },
     {
      "created": "2026-07-07",
@@ -28257,5 +28274,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1534
+ "total": 1535
 }
