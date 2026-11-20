@@ -32,11 +32,13 @@ whose course_id is the M-ID. The file writes `links`, the count for each M-ID a 
 the pile by the links of each row's first recommendation. The file's ids pass through kb/alias_chain.py before they
 are counted (CLAUDE.md Rule 7). It carries its applied re-key markers and is re-keyed at every apply, so the newest map
 is its baseline: no map is pending and no id moves (kb/_build_inactive_cards.py measured what resolving it again does:
-1,291 of 2,144 M-ID links moved onto unrelated cards). The builder refuses a file without the markers.
+1,291 of 2,144 M-ID links moved onto unrelated cards). The builder refuses a file without the markers. A resolved id
+then counts on the row that displays it today, through the daily build's folds (Folds); what reaches no row is filed
+as links_unreached with the reason.
 
 THE DAILY RUN (scripts/daily_build.sh, after the course flags). The file stores a fingerprint of what it read: the
 identity file without its generated_at, the course list and its descriptions, the not-applicable flags, the exhibit
-links, the alias chain and this script. With --if-changed a run whose fingerprint matches the file's leaves the file
+links, the alias chain, the fold files (Folds) and this script. With --if-changed a run whose fingerprint matches the file's leaves the file
 untouched. The sample is seeded, so a run on the same inputs writes the same bytes.
 
 Usage: python3 kb/_closest_mid.py            (writes kb/coci_closest_mid.json and prints the bands)
@@ -195,10 +197,16 @@ def input_paths(root: str) -> list[str]:
     """What the build reads, repo-relative, in a fixed order: the fingerprint covers exactly these."""
     descs = sorted(os.path.relpath(f, root).replace(os.sep, "/") for f in glob.glob(os.path.join(root, "coci_lookup_desc_*.js")))
     return (["unified_courses_members.js", "coci_lookup_data.js"] + descs
-            + ["kb/coci_not_applicable.json", "kb/coci_articulations.json", "kb/alias_chain.py", "kb/_closest_mid.py"])
+            + ["kb/coci_not_applicable.json", "kb/coci_articulations.json", "kb/alias_chain.py", "kb/_closest_mid.py"]
+            + [rel for rel in FOLD_FILES if os.path.exists(os.path.join(root, rel))])
 
 
-GENERATED_AT = re.compile(rb'"generated_at"\s*:\s*"[^"]*"')
+# The files that say where a stored id displays today (the daily build's folds), read only. Optional: a tree without
+# one folds nothing through it.
+FOLD_FILES = ["unified_courses_data.js", "unified_courses_standalone.js", "kb/coci_curation.json"]
+FOLD_VARS = {"unified_courses_data.js": "window.CPL_UNIFIED_COURSES", "unified_courses_standalone.js": "window.CPL_UC_STANDALONE"}
+# A daily restamp alone changes no recommendation: each file's first stamp is left out of the fingerprint.
+GENERATED_AT = re.compile(rb'"(?:generated_at|_synced_at)"\s*:\s*"[^"]*"')
 
 
 def fingerprint(root: str, sample: int, seed: int) -> str:
@@ -208,8 +216,7 @@ def fingerprint(root: str, sample: int, seed: int) -> str:
     for rel in input_paths(root):
         with open(os.path.join(root, rel), "rb") as f:
             b = f.read()
-        if rel == "unified_courses_members.js":
-            b = GENERATED_AT.sub(b'"generated_at":""', b, count=1)
+        b = GENERATED_AT.sub(b'"stamp":""', b, count=1)
         h.update(rel.encode() + b"\0" + hashlib.sha256(b).hexdigest().encode() + b"\n")
     return h.hexdigest()
 
@@ -238,6 +245,66 @@ def exhibit_links(articulations: dict, maps: list) -> tuple[Counter, int]:
         moved += cur != cid
         n[cur] += 1
     return n, moved
+
+
+class Folds:
+    """Where a stored id displays today, as the daily build folds it (the export's exhibit rollup counts a row's
+    exhibits over [its id] + consolidated_from + merge_members, and articulations stay keyed on the original ids):
+      1. the id itself, when the identity file holds it;
+      2. else the row whose consolidated_from or routed_from lists it (unified_courses_data.js, the stand-alone file);
+      3. else the curation overlay's merge_into pointers (kb/coci_curation.json) to the end of the chain, cycle-safe,
+         and then 1 and 2 on where the chain ends.
+    A read: nothing here re-keys kb/coci_articulations.json. The build's Honors hold (honors_of) is not applied."""
+
+    def __init__(self, live, rows=(), curation=None):
+        self.live = set(live)
+        self.folded = {}
+        for r in rows:
+            for k in ("consolidated_from", "routed_from"):
+                for src in (r or {}).get(k) or []:
+                    self.folded.setdefault(src, (r.get("id"), k))
+        self.merge = {k: v.get("merge_into") for k, v in (curation or {}).items() if isinstance(v, dict) and v.get("merge_into")}
+
+    def _direct(self, cid):
+        if cid in self.live:
+            return cid, None
+        f = self.folded.get(cid)
+        if f and f[0] in self.live:
+            return f[0], f[1]
+        return None, None
+
+    def land(self, cid):
+        """(the displayed row, the route) or (None, why it reaches none)."""
+        row, via = self._direct(cid)
+        if row:
+            return row, via or "itself"
+        seen, cur = {cid}, cid
+        while cur in self.merge:
+            cur = self.merge[cur]
+            if cur in seen:
+                return None, "its merge_into chain loops"
+            seen.add(cur)
+        if cur == cid:
+            return None, "not in the identity file, and no fold or merge names it"
+        row, via = self._direct(cur)
+        if row:
+            return row, "merge_into" + ("" if via is None else " then " + via)
+        return None, "its merge_into chain ends at %s, which no row displays" % cur
+
+
+def fold_links(counts, folds):
+    """Links per displayed row, summed over every stored id that lands on it, and the ids that land on none as
+    [[id, records, why]], most records first."""
+    out, lost, routes = Counter(), [], Counter()
+    for cid, n in counts.items():
+        row, how = folds.land(cid)
+        if row:
+            out[row] += n
+            routes[how.split(" then ")[0] if how.startswith("merge_into") else how] += n
+        else:
+            lost.append([cid, n, how])
+    lost.sort(key=lambda x: (-x[1], x[0]))
+    return out, lost, routes
 
 
 def band_of(score: float) -> int:
@@ -272,7 +339,14 @@ def main(argv=None) -> int:
     M = load_js(os.path.join(root, "unified_courses_members.js"), "window.CPL_UC_MEMBERS")
     with open(os.path.join(root, "kb", "coci_articulations.json"), encoding="utf-8") as f:
         arts = json.load(f)
-    links_all, links_moved = exhibit_links(arts, link_maps(arts))
+    links_ids, links_moved = exhibit_links(arts, link_maps(arts))
+    fold_rows = []
+    for rel, var in FOLD_VARS.items():
+        if os.path.exists(os.path.join(root, rel)):
+            fold_rows += (load_js(os.path.join(root, rel), var) or {}).get("rows") or []
+    cur_path = os.path.join(root, "kb", "coci_curation.json")
+    curation = (json.load(open(cur_path, encoding="utf-8")).get("curations") or {}) if os.path.exists(cur_path) else {}
+    links_all, links_lost, links_routes = fold_links(links_ids, Folds(M["members"], fold_rows, curation))
     descs = {}
     for f in sorted(glob.glob(os.path.join(root, "coci_lookup_desc_*.js"))):
         s = open(f, encoding="utf-8").read()
@@ -349,11 +423,15 @@ def main(argv=None) -> int:
         "row_shape": "control number: [confidence, band, [[M-ID, score, courses with the same title, the common course's local courses, catalog overlap or null], up to three]]; links: M-ID: exhibit links",
         "rows": rows,
         "links_what": "Exhibit links per recommended M-ID: the records in kb/coci_articulations.json whose course_id, "
-                      "resolved through kb/alias_chain.py, is the M-ID. Only M-IDs some row recommends, and only those "
-                      "with a link; an M-ID absent here has none. The Courses List sorts the pile by the links of each "
-                      "row's first recommendation at a strong or possible match.",
+                      "resolved through kb/alias_chain.py, displays as that row today: the id itself, else the row whose "
+                      "consolidated_from or routed_from lists it, else where its merge_into chain ends (Folds). Only "
+                      "M-IDs some row recommends, and only those with a link; an M-ID absent here has none. The Courses "
+                      "List sorts the pile by the links of each row's first recommendation at a strong or possible match.",
         "links_moved_by_alias_chain": links_moved,
-        "links_on_ids_not_in_identity_file": sum(n for m, n in links_all.items() if m not in members),
+        "links_by_route": dict(sorted(links_routes.items())),
+        "links_unreached": {"records": sum(x[1] for x in links_lost), "ids": len(links_lost),
+                            "why": dict(sorted(Counter(x[2] if not x[2].startswith("its merge_into chain ends") else "its merge_into chain ends at an id no row displays" for x in links_lost).items())),
+                            "first": links_lost[:10]},
         "links": links,
         "fingerprint": fp,
     }
@@ -361,8 +439,8 @@ def main(argv=None) -> int:
         json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
         f.write("\n")
     print("pile %d, recommended %d; sample %d (no candidate %d)" % (len(pile), len(rows), len(sample), none))
-    print("  exhibit links: %d recommended M-IDs carry one; the alias chain moved %d records; %d records name an id "
-          "today's identity file does not hold" % (len(links), links_moved, sum(n for m, n in links_all.items() if m not in members)))
+    print("  exhibit links: %d recommended M-IDs carry one; the alias chain moved %d records; by route %s; %d records "
+          "(%d ids) reach no displayed row" % (len(links), links_moved, dict(links_routes), sum(x[1] for x in links_lost), len(links_lost)))
     for b in bands:
         print("  score %.2f to %.2f: n %5d  right %5d  in top 3 %5d  only course %4d  confidence %s"
               % (b["from"], b["to"], b["n"], b["right"], b["right_in_3"], b["only_course"], b["confidence"]))

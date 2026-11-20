@@ -7,6 +7,9 @@ WHAT THIS GUARDS (each a way the pile's order or the daily file could go wrong w
       recommends, and none for an M-ID with no link;
   (2) a stored id from an older era resolves through kb/alias_chain.py (imported) before it is counted, and the count
       says how many records the chain moved;
+  (2b) a stored id counts on the row that displays it today, through each of the daily build's folds: a
+      consolidated_from fold, a routed_from fold, a two-hop merge_into chain; a loop or a chain to an id no row
+      displays reaches none, and what reaches none is filed with its reason, never dropped;
   (3) a links file without its applied re-key markers is refused, never counted (resolving a current-era file again
       moves links onto unrelated cards; counting an old-era one directly under-reports);
   (4) --if-changed leaves the file untouched when no input changed, including a restamped identity file, and rebuilds
@@ -55,7 +58,15 @@ LOOKUP = {"_built_at": "2026-07-09", "colleges": COLLEGES, "rows": [
     [0, "P3", "COMM", "130", "Argumentation", 3, "C", "", "", "", ""]]}
 ARTS = dict(MARKERS, articulations=[{"course_id": "COMM M1037", "exhibit_id": "E%d" % i} for i in range(3)]
             + [{"course_id": "COMM M1040", "exhibit_id": "E9"}, {"course_id": "ART M1001", "exhibit_id": "E10"},
-               {"course_id": "", "exhibit_id": "E11"}])
+               {"course_id": "", "exhibit_id": "E11"},
+               # folded today: COMM M1036 into COMM M1037 (consolidated_from), SPCH M1002 into COMM M1040 (routed_from),
+               # SPCH M1003 -> SPCH M1004 -> COMM M1037 (two merge_into hops)
+               {"course_id": "COMM M1036", "exhibit_id": "E20"}, {"course_id": "SPCH M1002", "exhibit_id": "E21"},
+               {"course_id": "SPCH M1003", "exhibit_id": "E22"}])
+DATA = {"generated_at": "2026-11-20 06:20", "rows": [{"id": "COMM M1037", "consolidated_from": ["COMM M1036"]},
+                                                     {"id": "COMM M1040", "routed_from": ["SPCH M1002"]}]}
+CURATION = {"_synced_at": "2026-11-20T06:00:00Z", "curations": {"SPCH M1003": {"merge_into": "SPCH M1004"},
+                                                                "SPCH M1004": {"merge_into": "COMM M1037"}}}
 
 
 def write_js(path, var, obj):
@@ -69,7 +80,9 @@ def tree():
     write_js(os.path.join(d, "unified_courses_members.js"), "window.CPL_UC_MEMBERS", MEMBERS)
     write_js(os.path.join(d, "coci_lookup_data.js"), "window.CPL_COCI_LOOKUP", LOOKUP)
     write_js(os.path.join(d, "coci_lookup_desc_A.js"), 'window.CPL_COCI_DESC["A"]', {"P1": "Small group communication."})
-    for rel, obj in (("kb/coci_not_applicable.json", {"courses": {}}), ("kb/coci_articulations.json", ARTS)):
+    write_js(os.path.join(d, "unified_courses_data.js"), "window.CPL_UNIFIED_COURSES", DATA)
+    for rel, obj in (("kb/coci_not_applicable.json", {"courses": {}}), ("kb/coci_articulations.json", ARTS),
+                     ("kb/coci_curation.json", CURATION)):
         with open(os.path.join(d, rel), "w", encoding="utf-8") as f:
             json.dump(obj, f)
     for rel in ("kb/alias_chain.py", "kb/_closest_mid.py"):  # the fingerprint covers the chain and the script
@@ -95,13 +108,29 @@ try:
     check("(1) the pile's Group Communication is recommended COMM M1037, and Argumentation COMM M1040",
           rec.get("P1") == "COMM M1037" and rec.get("P3") == "COMM M1040", rec)
     named = {x[0] for r in F["rows"].values() for x in r[2]}
-    check("(1) links count one per record on the M-ID it names: COMM M1037 3, COMM M1040 1",
-          F["links"].get("COMM M1037") == 3 and F["links"].get("COMM M1040") == 1, F["links"])
+    check("(1) links count one per record on the row that displays it: COMM M1037 3 + 1 folded + 1 merged, COMM M1040 1 + 1 routed",
+          F["links"].get("COMM M1037") == 5 and F["links"].get("COMM M1040") == 2, F["links"])
+    check("(2b) ⭐ each fold route is counted: consolidated_from 1, routed_from 1, merge_into 1",
+          F["links_by_route"] == {"itself": 4, "consolidated_from": 1, "routed_from": 1, "merge_into": 1}, F["links_by_route"])
     check("(1) only M-IDs a row recommends, each with a link: a linked M-ID no row names (ART M1001) is left out, and so is WELD M1109 with none",
           set(F["links"]) <= named and "ART M1001" not in F["links"] and "WELD M1109" not in F["links"], F["links"])
-    check("(1) the file documents the map in row_shape and _what, and counts the records on ids the identity file lacks",
-          "links: M-ID: exhibit links" in F["row_shape"] and "exhibit links" in F["_what"] and F["links_on_ids_not_in_identity_file"] == 1,
-          F["row_shape"])
+    check("(1) the file documents the map in row_shape and _what, and files the record that reaches no row with its reason",
+          "links: M-ID: exhibit links" in F["row_shape"] and "exhibit links" in F["_what"]
+          and F["links_unreached"]["records"] == 1 and F["links_unreached"]["first"][0][:2] == ["ART M1001", 1]
+          and "no fold or merge names it" in F["links_unreached"]["first"][0][2], F["links_unreached"])
+    fo = CM.Folds({"A M1", "B M1"}, [{"id": "A M1", "consolidated_from": ["X1"]}, {"id": "B M1", "routed_from": ["X2"]}],
+                  {"X3": {"merge_into": "X4"}, "X4": {"merge_into": "X1"}, "L1": {"merge_into": "L2"}, "L2": {"merge_into": "L1"},
+                   "D1": {"merge_into": "GONE"}})
+    lands = {k: fo.land(k) for k in ("A M1", "X1", "X2", "X3", "L1", "D1", "Z9")}
+    check("(2b) ⭐ the routes land where the build displays them: itself, consolidated_from, routed_from, two merge_into hops then a fold",
+          lands["A M1"] == ("A M1", "itself") and lands["X1"] == ("A M1", "consolidated_from") and lands["X2"] == ("B M1", "routed_from")
+          and lands["X3"] == ("A M1", "merge_into then consolidated_from"), lands)
+    check("(2b) a merge loop, a chain to an id no row displays and an unknown id reach none, each with its reason",
+          lands["L1"] == (None, "its merge_into chain loops") and lands["D1"][0] is None and "ends at GONE" in lands["D1"][1]
+          and lands["Z9"][0] is None, lands)
+    got, lost, _ = CM.fold_links({"X1": 2, "A M1": 1, "Z9": 4, "D1": 1}, fo)
+    check("(2b) fold_links sums every stored id on its row and files the rest, most records first",
+          got == {"A M1": 3} and [x[:2] for x in lost] == [["Z9", 4], ["D1", 1]], (dict(got), lost))
     # (2) the alias chain
     maps = [{"OLD M9": "COMM M1037"}, {"COMM M1037": "COMM M1037"}]
     n, moved = CM.exhibit_links({"articulations": [{"course_id": "OLD M9"}, {"course_id": "COMM M1037"}, {"course_id": "X 1"}]}, maps)
@@ -125,15 +154,24 @@ try:
           rc2 == 0 and "inputs unchanged" in log2 and open(out, "rb").read() == before and os.stat(out).st_mtime_ns == st, log2[-300:])
     m2 = dict(MEMBERS, generated_at="2026-11-21 06:20")
     write_js(os.path.join(d, "unified_courses_members.js"), "window.CPL_UC_MEMBERS", m2)
+    write_js(os.path.join(d, "unified_courses_data.js"), "window.CPL_UNIFIED_COURSES", dict(DATA, generated_at="2026-11-21 06:20"))
+    with open(os.path.join(d, "kb", "coci_curation.json"), "w", encoding="utf-8") as f:
+        json.dump(dict(CURATION, _synced_at="2026-11-21T06:00:00Z"), f)
     rc3, log3 = build(d, "--if-changed")
-    check("(4) a restamped identity file alone changes nothing", rc3 == 0 and "inputs unchanged" in log3 and open(out, "rb").read() == before, log3[-300:])
+    check("(4) a restamped identity file, fold file and curation sync alone change nothing", rc3 == 0 and "inputs unchanged" in log3 and open(out, "rb").read() == before, log3[-300:])
     arts2 = dict(ARTS, articulations=ARTS["articulations"] + [{"course_id": "COMM M1040", "exhibit_id": "E12"}])
     with open(os.path.join(d, "kb", "coci_articulations.json"), "w", encoding="utf-8") as f:
         json.dump(arts2, f)
     rc4, log4 = build(d, "--if-changed")
     F4 = json.load(open(out, encoding="utf-8"))
     check("(4) a new exhibit link is an input change: the file rebuilds with the new count and a new fingerprint",
-          rc4 == 0 and "inputs unchanged" not in log4 and F4["links"].get("COMM M1040") == 2 and F4["fingerprint"] != F["fingerprint"], log4[-300:])
+          rc4 == 0 and "inputs unchanged" not in log4 and F4["links"].get("COMM M1040") == 3 and F4["fingerprint"] != F["fingerprint"], log4[-300:])
+    with open(os.path.join(d, "kb", "coci_curation.json"), "w", encoding="utf-8") as f:
+        json.dump({"curations": {}}, f)
+    rc6, log6 = build(d, "--if-changed")
+    F6 = json.load(open(out, encoding="utf-8"))
+    check("(4) a fold file is an input: dropping the merge chain rebuilds, and the merged record leaves COMM M1037",
+          rc6 == 0 and "inputs unchanged" not in log6 and F6["links"].get("COMM M1037") == 4 and F6["links_unreached"]["records"] == 2, log6[-300:])
     # (5) the same bytes
     b1 = open(out, "rb").read()
     rc5, _ = build(d, seed="4242")
