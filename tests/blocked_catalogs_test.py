@@ -11,6 +11,7 @@ with no course answered, so they hold whatever a person has answered since.
 
 Run from repo root: python3 tests/blocked_catalogs_test.py
 """
+import atexit
 import json
 import os
 import shutil
@@ -39,10 +40,15 @@ check("⭐ the 12 still-taught courses are filed with the hunt, each under one o
       and len({c["control_number"] for c in s["courses"]}) == 12)
 
 
+_ROOTS = []
+atexit.register(lambda: [shutil.rmtree(p, ignore_errors=True) for p in _ROOTS])
+
+
 def root_with(mutate=None, filed=()):
     """A throwaway root holding the hunt file with no course answered (the rule under test must not move when a
     person answers a real course), changed by `mutate`, and an outlines file for each slug in `filed`."""
     t = tempfile.mkdtemp()
+    _ROOTS.append(t)
     os.makedirs(os.path.join(t, "kb", "reference"))
     cfg = json.load(open(os.path.join(ROOT, B.CONFIG)))
     for c in cfg["courses"]:
@@ -68,6 +74,20 @@ with open(os.path.join(ROOT, "kb", "reference", "cb_course_basic_fall2025.csv"),
     FALL = {(r.get("CB_CONTROL_NUMBER") or "").strip() for r in csv.DictReader(f)}
 check("still taught means reported in the Fall 2025 term file: all 12 control numbers are in it",
       all(c["control_number"] in FALL for c in s["courses"]), [c["course"] for c in s["courses"] if c["control_number"] not in FALL])
+# The page tests read tests/fixtures/commons_hunt_open.json in place of the live block. It must be what the builder
+# gives for the hunt file with no course answered (catalog links aside: a throwaway root holds no capture), or the
+# page tests would pass on a shape the builder no longer writes (the second read of pull request 3613).
+FIX = json.load(open(os.path.join(ROOT, "tests", "fixtures", "commons_hunt_open.json")))
+
+
+def _shape(block):
+    b = {k: v for k, v in block.items() if k not in ("_what",)}
+    b["colleges"] = [{k: v for k, v in c.items() if k != "catalog_url"} for c in b["colleges"]]
+    return b
+
+
+check("⭐ the page tests' fixture is the builder's own output for the hunt file with no course answered",
+      _shape(FIX) == _shape(s0), [k for k in set(_shape(FIX)) | set(_shape(s0)) if _shape(FIX).get(k) != _shape(s0).get(k)])
 check("the Commons item counts the hunted colleges and their courses, in plain words",
       B.queue_issue(OPEN)["n"] == 4 and "12 still-taught courses" in B.queue_issue(OPEN)["words"])
 check("each college carries its committed catalog link", all(r["catalog_url"] for r in s["colleges"]), [r["slug"] for r in s["colleges"] if not r["catalog_url"]])

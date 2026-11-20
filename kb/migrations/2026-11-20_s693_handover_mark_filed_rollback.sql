@@ -3,6 +3,11 @@
 -- entry waiting with no answer; a link read by run 44806543827 with its counts). status_at takes the time of this
 -- rollback: the function stamps it, and the receipt keeps the earlier time. A row that is no longer `filed` under
 -- session-693 is left alone.
+--
+-- THE RECEIPT IS THE UNDO OF RECORD (the second read of pull request 3613): the forward run returns, for every row
+-- it answered, the values that row held, and the receipt keeps them. The values written below are the ones this
+-- session read live on 2026-11-20 before the write; after the apply they are checked against the receipt, and where
+-- the two differ the receipt wins and this file is rebuilt from it.
 select jsonb_agg(public.commons_handover_mark(h.id, v.status, null, v.run, v.found)) as restored
   from public.commons_handover h
   join (values
