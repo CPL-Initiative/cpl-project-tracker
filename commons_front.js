@@ -45,7 +45,6 @@
   var ASKED = {
     get cociOnly() { return PRG().COCI_ONLY; },   /* COCI-only Active programs: one constant, in commons_program_records.js */
     sloSnap: { at: "November 17, 2026, 1:59 PM PT", slo: 13293, obj: 9680 },   /* the snapshot the recent rates start from */
-    outlinesBlocked: { cards: 140, current: 13 },   /* the Courses' count of course outlines blocked */
     missingMembership: 4036,    /* cards missing from the published membership list (the membership fix) */
     noSubjectWas: { day: "November 12", n: 366 },   /* the no-common-subject queue a week ago */
     evergreen: "Evergreen Valley College",           /* the one saved catalog read still from 2025–2026 */
@@ -167,6 +166,7 @@
         gap: pr.failing, unread: pr.unread, confirmed: pr.confirmed, confirmedComplete: pr.confirmed_complete,
         wider: sw.passing, widerOf: sw.programs, approved: progs.approved, teachout: progs.teachout },
       days: days,
+      hunt: (D && D.blocked_hunt) || null,   /* the still-taught courses whose outline needs a person: kb/_blocked_catalogs.py, one source for this page and #collect */
       colleges: { collected: sw.harvested, total: sw.colleges, blocked: Math.max(0, (sw.colleges || 0) - (sw.harvested || 0)),
         ce: sw.continuing_education, districts: sw.districts, outlineLinks: reg.course_outline_link, registry: reg.row || sw.colleges },
       courses: { active: pc.active_courses, slo: outcomes.slo_courses_on_active, obj: outcomes.objective_courses_on_active,
@@ -318,9 +318,39 @@
     ]);
   }
 
+  /* The still-taught courses whose outline needs a person, by college (Sam's work order, 2026-11-20). Each catalog
+     address is a link that opens in a new tab, and the one line a person needs is his: send the PDF to COBIx. */
+  function huntOpen(M) {
+    var h = M.hunt;
+    if (!h || !Array.isArray(h.colleges) || !Array.isArray(h.courses)) return null;
+    var open = h.colleges.filter(function (c) { return c.hunted && !c.filed; });
+    return { colleges: open, courses: open.reduce(function (n, c) { return n + (c.still_taught || []).length; }, 0) };
+  }
+  function huntWords(M) {
+    var o = huntOpen(M);
+    if (!o) return "The list of still-taught courses whose outline needs a person is TBA.";
+    if (!o.colleges.length) return "No still-taught course waits on an outline from a person.";
+    return fmt(o.courses) + (o.courses === 1 ? " course still taught at " : " courses still taught at ") + fmt(o.colleges.length)
+      + (o.colleges.length === 1 ? " college needs its course outline from a person." : " colleges need their course outline from a person.");
+  }
+  function outlineFixes(M) {
+    var o = huntOpen(M), out = [p([huntWords(M)])];
+    if (o && o.colleges.length) {
+      out.push(el("ul", { cls: "cmf-need-list cmf-hunt" }, o.colleges.map(function (c) {
+        return el("li", { "data-hunt-college": c.slug }, [
+          p([el("span", { cls: "cmf-need-t", text: c.college }), ": " + (c.still_taught || []).map(function (x) { return x.course; }).join(", ") + "."]),
+          c.catalog_url ? p([el("a", { cls: "cmf-out", href: c.catalog_url, target: "_blank", rel: "noopener", text: c.catalog_url })]) : null
+        ].filter(Boolean));
+      })));
+      out.push(p([el("strong", { text: "Send the PDF to COBIx in your Grok Bot chat." })]));
+    }
+    out.push(p([a("#collect/outlines-blocked", "Open the courses by college")], "cmf-need-links"));
+    return out;
+  }
+
   /* Needs you (#3566). Decisions waiting reads the decisions list commons.js hands in (decisions(): the same list the
      decision record at #commons/details/decisions shows), so a decided call is never shown here as open and the college
-     wording rule leads while it waits. Rows waiting on a person counts the held exhibit titles live (heldLive below);
+     wording rule leads while it waits. Exhibit Titles to Name counts the held exhibit titles live (heldLive below);
      titles a person has saved read as saved and waiting for the nightly fold, work for no one. */
   function needs(M, opts) {
     opts = opts || {};
@@ -338,11 +368,13 @@
     var note = typeof opts.marksNote === "function" ? opts.marksNote() : null;
     if (note) dec.appendChild(note);
     dec.appendChild(p([a("#commons/details/decisions", "Decision record")], "cmf-need-links"));
-    var rows = el("div", { cls: "cmf-need", id: "cmf-need-rows" }, [el("h4", { text: "Rows waiting on a person" }),
-      p(["Course outlines blocked: " + ASKED.outlinesBlocked.cards + " cards, " + ASKED.outlinesBlocked.current + " current. Send any outline or catalog PDF to COBIx, who prepares it and hands Sky one ask."]),
-      p([a("#collect/outlines-blocked", "Open the list of those colleges")], "cmf-need-links")]);
+    /* Sam, 2026-11-20 (his work order): a group here is named for its work, where it read "Rows waiting on a person".
+       The outline fixes read the hunt file (one count for this page and #collect); the held exhibit titles are a
+       curator's and sit under their own name. */
+    var rows = el("div", { cls: "cmf-need", id: "cmf-need-rows" }, [el("h4", { text: "Course Outline and Catalog Fixes Needed" })].concat(outlineFixes(M)));
+    var titles = el("div", { cls: "cmf-need", id: "cmf-need-titles" }, [el("h4", { text: "Exhibit Titles to Name" })]);
     var heldBox = el("div", { cls: "cmf-held", id: "cmf-held", "aria-live": "polite" });
-    rows.appendChild(heldBox);
+    titles.appendChild(heldBox);
     drawHeld(heldBox, M, opts.held || null);
     return el("section", { cls: "cmf-needs", id: "cmf-needs", "aria-labelledby": "cmf-needs-h" }, [
       el("h3", { id: "cmf-needs-h", cls: "cmf-needs-h", tabindex: "-1", text: "Needs you" }),
@@ -350,7 +382,8 @@
         dec,
         el("div", { cls: "cmf-need" }, [el("h4", { text: "Fixes owed to you" }),
           p(["Five common-course cards you already ruled on (shared course IDs " + ASKED.doubt.slice(0, -1).join(", ") + ", and " + ASKED.doubt[ASKED.doubt.length - 1] + ") still sit on the list of cards whose catalog description reads as another discipline, because your rulings have not been carried into that list yet. Sky owes that fix. Nothing for you to decide."])]),
-        rows
+        rows,
+        titles
       ])
     ]);
   }
@@ -464,7 +497,7 @@
         after: [meter(sloPct, fmt(Co.slo) + " of " + fmt(Co.active) + " have SLOs, " + Math.round(sloPct) + " percent")],
         body: [p(["Course outlines, plus student learning outcomes (SLOs) and course objectives, collected from each college."]),
           p([fmt(Co.slo) + " of " + fmt(Co.active) + " have SLOs (" + Math.round(sloPct) + "%), and " + fmt(Co.obj) + " have course objectives (" + Math.round(objPct) + "%). Target: SLOs and objectives for every course we can already read automatically. The count of those readable courses is not computed yet (Sky would add it). Dates: pending readable-course count. The rest need people or a district request. A bot test found about 43% of colleges readable (range 35–65%); the Los Angeles district’s 9 colleges need a district request."]),
-          p(["Course outlines blocked: " + ASKED.outlinesBlocked.cards + " cards, " + ASKED.outlinesBlocked.current + " current. A public outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. " + fmt(Co.sloColleges) + " colleges have any SLOs in the live statewide count; " + fmt(Co.objColleges) + " have objectives. Those " + fmt(Co.sloColleges) + " are not the same as the " + fmt(M.building.outcomeColleges) + " colleges on the Building line’s deeper outcomes read."])],
+          p([huntWords(M) + " A public outline link is on file for " + fmt(Cl.outlineLinks) + " of " + fmt(Cl.registry) + " colleges. " + fmt(Co.sloColleges) + " colleges have any SLOs in the live statewide count; " + fmt(Co.objColleges) + " have objectives. Those " + fmt(Co.sloColleges) + " are not the same as the " + fmt(M.building.outcomeColleges) + " colleges on the Building line’s deeper outcomes read."])],
         method: [p([fmt(Co.active) + " is the number of courses that appear in Active programs statewide. " + fmt(Co.slo) + " of those already have student learning outcomes on file, and " + fmt(Co.obj) + " have course objectives (a course can have both). Those are live statewide counts. A separate Building-line read has " + fmt(M.building.outcomes) + " outcomes from " + fmt(M.building.outcomeCourses) + " courses at " + fmt(M.building.outcomeColleges) + " colleges; it is not the same " + fmt(Co.sloColleges) + "-college live SLO cut. The recent rates are measured from those nights, not one fixed nightly estimate: from the " + ASKED.sloSnap.at + " snapshot to this page’s counts, about one and a half days, SLOs grew by " + fmt(Co.sloGrow) + " (" + fmt(ASKED.sloSnap.slo) + " to " + fmt(Co.slo) + ") and objectives by " + fmt(Co.objGrow) + " (" + fmt(ASKED.sloSnap.obj) + " to " + fmt(Co.obj) + "). "
           + (Co.objDoneN != null && Co.sloDoneN != null ? "If every one of the " + fmt(Co.active) + " were already readable, objectives at about " + fmt(Math.round(Co.objGrow / 100) * 100) + " a night would finish around " + longDate(Co.objDoneN) + " (" + fmt(Co.objLeft) + " left), and SLOs at about " + fmt(Math.round(Co.sloGrow / 100) * 100) + " a night around " + longDate(Co.sloDoneN) + " (" + fmt(Co.sloLeft) + " left). " : "")
           + "Those dates are not shown, because a finish date should be set only for courses that can already be read automatically, and that readable-course count is not computed yet."])],

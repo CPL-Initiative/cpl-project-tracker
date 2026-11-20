@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T11:45:13Z",
+ "written_at": "2026-11-20T16:08:07Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -19433,9 +19433,9 @@
   }
  },
  "blocked_hunt": {
-  "title": "Find catalogs or course outlines for the colleges whose sites block automated reading",
+  "title": "Course Outline and Catalog Fixes Needed",
   "hunt": "Hunt only the courses still taught (in the Fall 2025 state course list); Sam, 2026-11-17: \"Why do we need the retired courses\".",
-  "source": "COBIx's ask on #3464 (comment 6962137371), from the courses bot's step3_fetch_plan.csv route E and step1_targets.json; the course-by-course list was not posted, so the courses are TBA here until it is filed",
+  "source": "COBIx's ask on #3464 (comment 6962137371), from the courses bot's step3_fetch_plan.csv route E and step1_targets.json. The 12 still-taught courses: COBIx on #3584 (comment 7039460536, 2026-11-20), route E, taught in Fall 2025. Local titles are the state course list's (kb/reference/coci_course_list.xlsx), and the one control number cut off in his read (Ohlone BRDC 127A) is from the same list. All 12 control numbers are in kb/reference/cb_course_basic_fall2025.csv.",
   "colleges": [
    {
     "slug": "north_orange_continuing_education",
@@ -19444,7 +19444,20 @@
     "catalog_url": "https://catalog.nocccd.edu/noce/",
     "local_courses": 207,
     "filed": false,
-    "filed_file": null
+    "filed_file": null,
+    "still_taught": [
+     {
+      "course": "HLTH 167",
+      "control_number": "CCC000400628",
+      "title": "Staying Mentally Sharp for OA"
+     },
+     {
+      "course": "PARN 170",
+      "control_number": "CCC000394743",
+      "title": "Parenting Adult/Children W/Dis"
+     }
+    ],
+    "hunted": true
    },
    {
     "slug": "grossmont",
@@ -19453,7 +19466,15 @@
     "catalog_url": "https://catalog.gcccd.edu/grossmont/",
     "local_courses": 42,
     "filed": false,
-    "filed_file": null
+    "filed_file": null,
+    "still_taught": [
+     {
+      "course": "OT 110",
+      "control_number": "CCC000049230",
+      "title": "Orthopedic Anatomy and Physiology"
+     }
+    ],
+    "hunted": true
    },
    {
     "slug": "southwestern",
@@ -19462,7 +19483,35 @@
     "catalog_url": "https://catalog.swccd.edu/",
     "local_courses": 34,
     "filed": false,
-    "filed_file": null
+    "filed_file": null,
+    "still_taught": [
+     {
+      "course": "CI 65",
+      "control_number": "CCC000169779",
+      "title": "BUILDING CODES II"
+     },
+     {
+      "course": "CIS 10A",
+      "control_number": "CCC000186047",
+      "title": "MICROCOMPUTER REPAIR AND SERVICE"
+     },
+     {
+      "course": "ELEC 10A",
+      "control_number": "CCC000311867",
+      "title": "MICROCOMPUTER REPAIR AND SERVICE"
+     },
+     {
+      "course": "DANC 123",
+      "control_number": "CCC000210897",
+      "title": "DANCE CHOREOGRAPHY III"
+     },
+     {
+      "course": "ST 10A",
+      "control_number": "CCC000307625",
+      "title": "CENTRAL SERVICE TECHNOLOGY"
+     }
+    ],
+    "hunted": true
    },
    {
     "slug": "ohlone",
@@ -19471,7 +19520,30 @@
     "catalog_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
     "local_courses": 32,
     "filed": false,
-    "filed_file": null
+    "filed_file": null,
+    "still_taught": [
+     {
+      "course": "BRDC 127A",
+      "control_number": "CCC000337481",
+      "title": "Radio Broadcast Lab"
+     },
+     {
+      "course": "BRDC 127B",
+      "control_number": "CCC000141070",
+      "title": "Radio Broadcast Lab"
+     },
+     {
+      "course": "BRDC 127C",
+      "control_number": "CCC000191156",
+      "title": "Radio Broadcast Lab"
+     },
+     {
+      "course": "BRDC 127D",
+      "control_number": "CCC000020999",
+      "title": "Radio Broadcast Lab"
+     }
+    ],
+    "hunted": true
    },
    {
     "slug": "el_camino",
@@ -19480,7 +19552,9 @@
     "catalog_url": "http://catalog.elcamino.edu/",
     "local_courses": 20,
     "filed": false,
-    "filed_file": null
+    "filed_file": null,
+    "still_taught": [],
+    "hunted": false
    },
    {
     "slug": "fullerton",
@@ -19489,15 +19563,105 @@
     "catalog_url": "https://catalog.nocccd.edu/fullerton-college/",
     "local_courses": 10,
     "filed": false,
-    "filed_file": null
+    "filed_file": null,
+    "still_taught": [],
+    "hunted": false
    }
   ],
-  "open": 6,
+  "open": 4,
   "done": 0,
+  "hunted": 4,
+  "set_aside": 2,
   "local_courses": 345,
-  "local_courses_open": 345,
+  "local_courses_open": 315,
   "still_taught_total": 12,
-  "courses": null,
+  "still_taught_open": 12,
+  "courses": [
+   {
+    "slug": "north_orange_continuing_education",
+    "course": "HLTH 167",
+    "control_number": "CCC000400628",
+    "title": "Staying Mentally Sharp for OA",
+    "mid_card_at_filing": "HLTH M9065"
+   },
+   {
+    "slug": "north_orange_continuing_education",
+    "course": "PARN 170",
+    "control_number": "CCC000394743",
+    "title": "Parenting Adult/Children W/Dis",
+    "mid_card_at_filing": "PARN M9036"
+   },
+   {
+    "slug": "southwestern",
+    "course": "CI 65",
+    "control_number": "CCC000169779",
+    "title": "BUILDING CODES II",
+    "mid_card_at_filing": "ARCH M1081"
+   },
+   {
+    "slug": "southwestern",
+    "course": "CIS 10A",
+    "control_number": "CCC000186047",
+    "title": "MICROCOMPUTER REPAIR AND SERVICE",
+    "mid_card_at_filing": "ITIS M1457"
+   },
+   {
+    "slug": "southwestern",
+    "course": "ELEC 10A",
+    "control_number": "CCC000311867",
+    "title": "MICROCOMPUTER REPAIR AND SERVICE",
+    "mid_card_at_filing": "ITIS M1457"
+   },
+   {
+    "slug": "southwestern",
+    "course": "DANC 123",
+    "control_number": "CCC000210897",
+    "title": "DANCE CHOREOGRAPHY III",
+    "mid_card_at_filing": "DANC M1128"
+   },
+   {
+    "slug": "southwestern",
+    "course": "ST 10A",
+    "control_number": "CCC000307625",
+    "title": "CENTRAL SERVICE TECHNOLOGY",
+    "mid_card_at_filing": "HLTH M1195"
+   },
+   {
+    "slug": "ohlone",
+    "course": "BRDC 127A",
+    "control_number": "CCC000337481",
+    "title": "Radio Broadcast Lab",
+    "mid_card_at_filing": "BRDC M1058"
+   },
+   {
+    "slug": "ohlone",
+    "course": "BRDC 127B",
+    "control_number": "CCC000141070",
+    "title": "Radio Broadcast Lab",
+    "mid_card_at_filing": "BRDC M1058"
+   },
+   {
+    "slug": "ohlone",
+    "course": "BRDC 127C",
+    "control_number": "CCC000191156",
+    "title": "Radio Broadcast Lab",
+    "mid_card_at_filing": "BRDC M1058"
+   },
+   {
+    "slug": "ohlone",
+    "course": "BRDC 127D",
+    "control_number": "CCC000020999",
+    "title": "Radio Broadcast Lab",
+    "mid_card_at_filing": "BRDC M1058"
+   },
+   {
+    "slug": "grossmont",
+    "course": "OT 110",
+    "control_number": "CCC000049230",
+    "title": "Orthopedic Anatomy and Physiology",
+    "mid_card_at_filing": "BIOL M1264"
+   }
+  ],
   "file_in": "kb/hand_filed_catalogs/outlines",
   "open_link": "#commons/data"
  }
