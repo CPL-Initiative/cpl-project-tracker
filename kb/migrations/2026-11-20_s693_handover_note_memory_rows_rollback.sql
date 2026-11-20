@@ -2,3 +2,5 @@
 delete from public.cpl_memory_log where action = 'create' and memory_id in (select id from public.cpl_memory where slug in ('r-handover-note-sam-2026-11-20','r-handover-list-sam-2026-11-20','d-note-catalog-box-is-its-own-field-2026-11-20','p-try-link-503-no-reason-2026-11-20','m-first-real-hand-overs-2026-11-20'));
 delete from public.cpl_memory where slug in ('r-handover-note-sam-2026-11-20','r-handover-list-sam-2026-11-20','d-note-catalog-box-is-its-own-field-2026-11-20','p-try-link-503-no-reason-2026-11-20','m-first-real-hand-overs-2026-11-20');
 select count(*) as rows_left from public.cpl_memory where slug in ('r-handover-note-sam-2026-11-20','r-handover-list-sam-2026-11-20','d-note-catalog-box-is-its-own-field-2026-11-20','p-try-link-503-no-reason-2026-11-20','m-first-real-hand-overs-2026-11-20');
+-- Applied: supabase-migrate run 44809393820 on 2026-11-20; its receipt is
+-- kb/receipts/migration_s693_handover_note_memory_rows_44809393820.json (five rows: two verified, three proposed).

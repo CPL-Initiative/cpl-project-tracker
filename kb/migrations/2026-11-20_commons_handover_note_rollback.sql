@@ -122,3 +122,8 @@ $rb$;
 select exists (select 1 from information_schema.columns
                 where table_schema = 'public' and table_name = 'commons_handover' and column_name = 'note') as note_column_kept,
        (select count(*) from public.commons_handover where kind = 'note') as notes_kept;
+
+-- Applied: supabase-migrate run 44809080341 added the note column, the five-kind checks and the note's branch of
+-- commons_handover_add() on 2026-11-20 (ledger version 20261120201258). Its receipt is
+-- kb/receipts/migration_commons_handover_note_44809080341.json: 19 rows in place and untouched, no note yet, anon
+-- shut out, a reviewer let in.
