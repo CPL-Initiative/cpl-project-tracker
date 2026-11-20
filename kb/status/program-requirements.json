@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-20T01:23:36Z",
+  "written_at": "2026-11-20T10:53:29Z",
   "session": 689,
   "moniker": "SkyTern",
   "run": "the CPL Queue routine",
@@ -796,7 +796,7 @@
     {
       "day": "2026-11-20",
       "active": 20282,
-      "complete": 15044,
+      "complete": 15120,
       "colleges": 118
     }
   ],
@@ -807,7 +807,7 @@
   },
   "harvest": {
     "day": "2026-11-20",
-    "gaps": 3443,
+    "gaps": 3449,
     "parts": {
       "links": {
         "catalog": [
@@ -828,21 +828,21 @@
         20282
       ],
       "coci": [
-        16903,
+        16979,
         20282
       ],
       "outcomes": {
         "slo": [
-          17246,
+          18309,
           88736
         ],
         "plo": [
-          16903,
+          16979,
           20282
         ]
       },
       "careers": [
-        15904,
+        15980,
         20282
       ]
     }
