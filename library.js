@@ -897,6 +897,8 @@
   // The versions a check covers, the rule the migration's header states for the check run. Listing reads the page's key
   // alone: the page is what the Public Library links, so a pass for a draft never lists a page (second read of #3572).
   // The draft's key speaks only to a new piece's draft, in its Public confirmation.
+  // The version keys cpl_library_checks accepts (its version_key check in kb/migrations/2026-11-19_library_publishing_model.sql).
+  var KEY_OK = /^(draft:[0-9a-f-]{36}|version:[A-Za-z0-9 ._-]{1,40}|page)$/;
   function pageKey(r) { return r && r.url ? (r.version ? "version:" + r.version : "page") : ""; }
   function draftKey(r) {
     var g = r && r.regen, rs = regenState(r);
@@ -920,6 +922,11 @@
   function publicGate(r, key) {
     if (!publishingReady()) return { ok: false, absent: true, why: "The accessibility check record is not available yet, so the Public Library cannot list it." };
     if (r.remediation === "in_remediation") return { ok: false, why: "It is in remediation. The Public Library lists it once it is remediated and its accessibility check passes." };
+    // A version label the check table's key check refuses: the check run skips the page and says why (#3581 second read).
+    if ((key === undefined || key === pageKey(r)) && pageKey(r) && !KEY_OK.test(pageKey(r))) {
+      return { ok: false, label: true, why: "Its version label, " + String(r.version).trim() + ", cannot carry an accessibility check record. " +
+        "Use up to 40 letters, digits, spaces, dots, dashes or underscores in Edit the record, and the next run checks it." };
+    }
     var c = latestCheck(r, key === undefined ? pageKey(r) : key);
     if (!c) return { ok: false, why: "Not yet certified. The Public Library lists it once its accessibility check passes." };
     if (c.result !== "pass") return { ok: false, check: c, why: "Its accessibility check of " + fmtDate(String(c.checked_at).slice(0, 10)) + " did not pass" +
@@ -932,14 +939,19 @@
   // A waiting piece says why it waits: a check that did not pass names its date and findings (a fail leaves it in the
   // Internal Library, #3560 part 2), and its report when the check run linked one.
   function waitWords(r, gate) {
-    return gate.check && gate.check.result !== "pass" ? "In the Internal Library. " + gate.why
+    return (gate.check && gate.check.result !== "pass") || gate.label ? "In the Internal Library. " + gate.why
       : "In the Internal Library. The Public Library lists it once its accessibility check passes.";
   }
   function reportLink(c) {
     return c && c.report_url && /^https:\/\//.test(c.report_url) ? ' <a href="' + esc(c.report_url) + '" target="_blank" rel="noopener">The check report</a>' : "";
   }
+  // The check run lists a passing piece only when it holds a public summary a person typed (#3581 second read): it
+  // never copies the internal summary or the title, so a waiting piece without one says so.
+  var NEEDS_SUMMARY = "Its accessibility check passed. The Public Library lists it once it has a public summary: press Publish to Public Library and add one.";
+  function needsSummary(r, gate) { return waitsToList(r) && gate.ok && !String(r.public_summary || "").trim(); }
   function waitLine(r) {
     var gate = waitsToList(r) && r.url ? publicGate(r) : { ok: true };
+    if (r.url && needsSummary(r, gate)) return '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' + esc(NEEDS_SUMMARY) + "</p>";
     return !gate.ok ? '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' + esc(waitWords(r, gate)) +
       (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "") + "</p>" : "";
   }
@@ -969,7 +981,7 @@
     // A piece waiting on its check offers the listing form once the check passes (second read of #3572).
     if (waitsToList(r) && !gate.ok) return esc(waitWords(r, gate)) + (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "");
     if (state.pub !== r.id) {
-      return "In the Internal Library." + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
+      return (needsSummary(r, gate) ? esc(NEEDS_SUMMARY) : "In the Internal Library.") + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
     }
     var head = '<form class="lib-form" data-pubform="' + esc(r.id) + '"><p class="lib-confirm" data-pubconfirm="' + esc(r.id) + '">' + esc(PUBLIC_CONFIRM) + "</p>";
     var cancel = '<button type="button" class="lib-btn" data-pubcancel="1">Cancel</button>';

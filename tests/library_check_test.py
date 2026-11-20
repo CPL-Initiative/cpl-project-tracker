@@ -109,8 +109,8 @@ try:
     for slug in ("flyer", "poster", "guide", "waiting-checked", "relabeled", "elsewhere"):
         (tmp / "library" / slug).mkdir(parents=True)
         (tmp / "library" / slug / "index.html").write_text(PAGE, encoding="utf-8")
-    recs = [rec("flyer"), rec("poster", publish_target="public"), rec("guide", publish_target="public"),
-            rec("waiting-checked", publish_target="public"), rec("relabeled", publish_target="public", page_changed_at="2026-11-20T19:00:00+00:00"),
+    recs = [rec("flyer"), rec("poster", publish_target="public", public_summary="For the public."), rec("guide", publish_target="public"),
+            rec("waiting-checked", publish_target="public"), rec("relabeled", publish_target="public", public_summary="For the public.", page_changed_at="2026-11-20T19:00:00+00:00"),
             rec("elsewhere", publish_target="public", url="https://claude.ai/artifact/x"),
             rec("not-here", publish_target="public")]
     old = [chk(recs[3], "fail"), chk(recs[4], "pass", at="2026-11-20T18:00:00+00:00")]
@@ -161,7 +161,7 @@ try:
     saved = (lp.api, lc.ROOT, lc.RECEIPTS, os.environ.get("GITHUB_RUN_ID"))
     lp.api = fake_api
     lc.ROOT, lc.RECEIPTS = tmp, tmp / "kb" / "receipts" / "library_checks"
-    os.environ["GITHUB_RUN_ID"] = "4242"
+    os.environ["GITHUB_RUN_ID"], os.environ["GITHUB_RUN_ATTEMPT"] = "4242", "1"
     try:
         (tmp / "plan.json").write_text(json.dumps({"check": plan}), encoding="utf-8")
         lc.check_phase(str(tmp / "plan.json"), engine=fake_engine, now=datetime(2026, 11, 20, 20, 0, 0, tzinfo=timezone.utc))
@@ -175,7 +175,7 @@ try:
               "A ⭐ each row names the record's current url and version key (the gate matches c.url = l.url)")
         check(f.get("standard") == "WCAG 2.1 AA and Section 508" and f.get("tool_or_reviewer") == "axe-core automated check",
               "A the standard and the tool are the division's settings")
-        check(f.get("created_by") == "library-publish.yml run 4242" and "checked_at" not in f,
+        check(f.get("created_by") == "library-publish.yml run 4242 attempt 1" and "checked_at" not in f,
               "A created_by names the run; checked_at is left to the database")
         check(str(f.get("report_url", "")).startswith("https://cpl-initiative.github.io/cpl-project-tracker/library/flyer/accessibility/")
               and (tmp / f["report_url"].split("cpl-project-tracker/", 1)[1]).exists(),
@@ -194,7 +194,7 @@ try:
         check(pp and "url=eq." + "https%3A%2F%2Fcpl-initiative.github.io%2Fcpl-project-tracker%2Flibrary%2Fposter%2F" in pp[1]
               and "updated_at=eq." in pp[1] and "public_listed=is.false" in pp[1] and "publish_target=eq.public" in pp[1]
               and "version=eq.2" in pp[1], "B ⭐ the listing is guarded on the record as read, at the url and version checked")
-        check(pp and pp[2]["public_listed"] is True and pp[2]["seen_by"] == "public" and pp[2]["public_summary"] == "A summary."
+        check(pp and pp[2]["public_listed"] is True and pp[2]["seen_by"] == "public" and pp[2]["public_summary"] == "For the public."
               and pp[2]["listed_by"] == lc.BOT, "B the listing writes the columns set_public writes, with a summary")
         check(not any("id-guide" in c[1] for c in patches) and not any("id-flyer" in c[1] for c in patches),
               "B a fail lists nothing, and an Internal piece is never listed")
@@ -243,7 +243,7 @@ finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
 # B, pure: should_list
-w = rec("w", publish_target="public")
+w = rec("w", publish_target="public", public_summary="For the public.")
 check(lc.should_list(w, chk(w)) and not lc.should_list(w, chk(w, "fail")) and not lc.should_list(w, chk(w, url=P + "z/"))
       and not lc.should_list(dict(w, public_listed=True), chk(w)) and not lc.should_list(dict(w, publish_target="internal"), chk(w))
       and not lc.should_list(w, chk(w, key="version:1")), "B should_list: public, unlisted, passed at its own url and key")
@@ -270,6 +270,155 @@ try:
 finally:
     lp.api, lp.RECEIPTS = saved_api, saved_rc
     shutil.rmtree(tmpf, ignore_errors=True)
+
+# ── R. The second read of #3581 (the S688 conductor, items 1 to 6) ───────────────────────────────────────────────
+tmpr = Path(tempfile.mkdtemp(prefix="libcheck-r-"))
+saved = (lp.api, lc.ROOT, lc.RECEIPTS)
+try:
+    lc.ROOT, lc.RECEIPTS = tmpr, tmpr / "kb" / "receipts" / "library_checks"
+    for slug in ("a", "b", "c", "listed", "odd", "nosum"):
+        (tmpr / "library" / slug).mkdir(parents=True)
+        (tmpr / "library" / slug / "index.html").write_text(PAGE, encoding="utf-8")
+    pg = lambda s: (tmpr / "library" / s / "index.html").read_text(encoding="utf-8")  # noqa: E731
+    RS = {s: rec(s, publish_target="public", public_summary="For the public.") for s in ("a", "b", "c")}
+    RS["odd"] = rec("odd", publish_target="public", public_summary="For the public.", version="3 (revised)")
+    RS["nosum"] = rec("nosum", publish_target="public")
+    posted, patched, prior, at_patch = [], [], [], []
+
+    def api_r(path, method="GET", body=None, headers=None):
+        if path.startswith("cpl_library_division_settings"):
+            return list(SET.values())
+        if path.startswith("cpl_library_checks") and method == "GET":
+            return list(prior)
+        if path.startswith("cpl_library_checks") and method == "POST":
+            # The database refuses the whole batch when one row breaks its key check.
+            if any(not lc.KEY_OK.match(b["version_key"]) for b in body):
+                raise RuntimeError("HTTP 400 cpl_library_checks_version_key_check")
+            out = [dict(b, id="n%d" % i, checked_at="2026-11-20T20:00:00+00:00", created_at="2026-11-20T20:00:00+00:00")
+                   for i, b in enumerate(body)]
+            posted.extend(out)
+            return out
+        if path.startswith("cpl_library?select=*&retired_at"):
+            return [dict(r) for r in RS.values()]
+        if path.startswith("cpl_library?select=*&id=eq."):
+            i = path.split("id=eq.", 1)[1]
+            return [dict(r) for r in RS.values() if r["id"] == i]
+        if method == "PATCH":
+            patched.append(path)
+            at_patch.append(pg("b"))
+            if "id-c" in path:
+                raise RuntimeError("HTTP 503")
+            return [dict(body)]
+        raise AssertionError(path)
+
+    lp.api = api_r
+    eng = {"targets": {"a": {"pass": True}, "a-dark": {"pass": True}, "b": {"pass": False, "findings": 3, "lines": ["x"]},
+                       "b-dark": {"pass": True}, "c": {"pass": True}, "c-dark": {"pass": True},
+                       "nosum": {"pass": True}, "nosum-dark": {"pass": True}}}
+    # 5. A version label outside the table's key check: the plan skips it with its reason, and never sends it.
+    pl = lc.plan(list(RS.values()), [], ["a", "b", "c", "odd", "nosum"], tmpr)
+    sk = lc.skipped(list(RS.values()), ["a", "b", "c", "odd", "nosum"], tmpr)
+    check("odd" not in pl and sk == [{"slug": "odd", "why": lc.row_problem(RS["odd"])}] and "3 (revised)" in sk[0]["why"],
+          "R5 ⭐ a version label no check record can carry is skipped in the plan, with its reason in plain words")
+    (tmpr / "p.json").write_text(json.dumps({"check": ["a", "b", "c", "odd", "nosum"], "unverified": [], "skipped": []}), encoding="utf-8")
+    raised = ""
+    import contextlib
+    import io
+    buf = io.StringIO()
+    try:
+        with contextlib.redirect_stdout(buf):
+            lc.check_phase(str(tmpr / "p.json"), engine=lambda s, o: eng, now=datetime(2026, 11, 20, 20, tzinfo=timezone.utc))
+    except RuntimeError as e:
+        raised = str(e)
+    lines_out = buf.getvalue().strip().splitlines()
+    outj = json.loads(lines_out[-1]) if lines_out else {"skipped": [], "waiting": []}
+    check(len(posted) == 4 and not any(p["library_id"] == "id-odd" for p in posted)
+          and any(x["slug"] == "odd" and "cannot carry a check record" in x["why"] for x in outj["skipped"]),
+          "R5 ⭐ one bad row never blocks the batch: the rest go in, and check.json names the skipped page and why")
+    # 1. A listing that fails mid-run leaves a receipt naming every row and every listing tried, with before-values.
+    rc = list(lc.RECEIPTS.glob("*.json"))
+    body = json.loads(rc[0].read_text(encoding="utf-8")) if rc else {}
+    lst = {x["slug"]: x for x in body.get("listed", [])}
+    check("HTTP 503" in raised and len(rc) == 1 and len(body.get("checks", [])) == 4,
+          "R1 ⭐ the receipt is on disk with every check row though the second listing raised")
+    check(lst.get("a", {}).get("listed") is True and str(lst.get("c", {}).get("listed", "")).startswith("unknown")
+          and lst["c"]["before"].get("seen_by") == "team" and "public_summary" in lst["c"]["before"],
+          "R1 ⭐ each listing's before-values (seen_by, public_summary) were written before its update, the failed one too")
+    check(at_patch and all("Not yet certified" in x and "report linked" not in x for x in at_patch)
+          and "Not yet certified" in pg("b") and "report linked" in pg("a"),
+          "R1 ⭐ the lines are rewritten from the rows written before any listing: the page that failed reads Not yet certified")
+    reports = sorted(p.name for p in tmpr.rglob("*.txt"))
+    check(len(reports) == 4, "R1 the reports on disk are the four the receipt's rows link: %s" % reports)
+    # 4. A passing piece with no public summary a person typed is not listed, and says why.
+    check(not any("id-nosum" in p for p in patched) and {"slug": "nosum", "why": "it needs a public summary"} in outj["waiting"],
+          "R4 ⭐ a piece with no public summary is never listed with its internal summary or title; it waits, and says why")
+    # 1. A failure right after the insert (the first fresh read of a record) still leaves the receipt of the rows.
+    for f in list(tmpr.rglob("*.txt")) + list(lc.RECEIPTS.glob("*.json")):
+        f.unlink()
+    posted.clear()
+    api_ok = api_r
+
+    def api_read_fails(path, method="GET", body=None, headers=None):
+        if path.startswith("cpl_library?select=*&id=eq."):
+            raise RuntimeError("HTTP 502 on the fresh read")
+        return api_ok(path, method, body, headers)
+    lp.api = api_read_fails
+    (tmpr / "p1.json").write_text(json.dumps({"check": ["a"], "unverified": [], "skipped": []}), encoding="utf-8")
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            lc.check_phase(str(tmpr / "p1.json"), engine=lambda s, o: eng, now=datetime(2026, 11, 20, 20, 30, tzinfo=timezone.utc))
+    except RuntimeError:
+        pass
+    rc1 = list(lc.RECEIPTS.glob("*.json"))
+    check(len(rc1) == 1 and len(json.loads(rc1[0].read_text(encoding="utf-8")).get("checks", [])) == 1,
+          "R1 ⭐ the receipt is written as soon as the rows are in, before any read or listing can fail")
+    lp.api = api_r
+    # 2. A listed piece --finish left for the next run: its new page reads Not yet certified, not the old pass.
+    for f in tmpr.rglob("*.txt"):
+        f.unlink()
+    RS.clear()
+    L = rec("listed", public_listed=True, seen_by="public", public_summary="For the public.")
+    RS["listed"] = L
+    prior[:] = [chk(L, at="2026-11-19T18:00:00+00:00")]
+    (tmpr / "library" / "listed" / "index.html").write_text(lc.stamp(PAGE.replace("<h1>T</h1>", "<h1>NEW v3</h1>"),
+                                                                      lc.footer_block(None, SET["cobi"])), encoding="utf-8")
+    plan_out = tmpr / "p2.json"
+    (tmpr / "fin.json").write_text(json.dumps({"moved": [], "left_for_next_run": ["listed"]}), encoding="utf-8")
+    (tmpr / "pub.json").write_text(json.dumps({"published": ["listed"]}), encoding="utf-8")
+    with contextlib.redirect_stdout(io.StringIO()):
+        lc.plan_phase(str(tmpr / "fin.json"), str(plan_out), str(tmpr / "pub.json"))
+    p2 = json.loads(plan_out.read_text(encoding="utf-8"))
+    check(p2["unverified"] == ["listed"] and p2["check"] == [], "R2 the plan names a page this run wrote and did not check")
+    with contextlib.redirect_stdout(io.StringIO()):
+        lc.check_phase(str(plan_out), engine=lambda s, o: eng, now=datetime(2026, 11, 20, 21, tzinfo=timezone.utc))
+    check("Not yet certified" in pg("listed") and "report linked" not in pg("listed"),
+          "R2 ⭐ a page --finish left for the next run never carries the old version's pass line")
+    check(lc.unverified(["a", "b"], ["a"], ["c"], ["a"]) == ["b", "c"], "R2 unverified: written or left, and not checked")
+    # 3. should_list reads page_changed_at as latest_check and the tab do.
+    z = rec("z", publish_target="public", public_summary="For the public.", page_changed_at="2026-11-20T20:05:00+00:00")
+    zr = {"library_id": "id-z", "url": z["url"], "version_key": "version:2", "result": "pass", "checked_at": "2026-11-20T20:00:00+00:00"}
+    check(not lc.should_list(z, zr) and lc.should_list(z, dict(zr, checked_at="2026-11-20T20:06:00+00:00")),
+          "R3 ⭐ should_list refuses a pass older than the page's last change, and takes one after it")
+    # 6. A rerun is a new attempt.
+    saved_env = {k: os.environ.get(k) for k in ("GITHUB_RUN_ID", "GITHUB_RUN_ATTEMPT")}
+    os.environ["GITHUB_RUN_ID"], os.environ["GITHUB_RUN_ATTEMPT"] = "77", "2"
+    lab = lc.run_label()
+    for k, v in saved_env.items():
+        os.environ.pop(k, None) if v is None else os.environ.__setitem__(k, v)
+    check(lab[0] == "library-publish.yml run 77 attempt 2" and lab[1].endswith("/runs/77/attempts/2"),
+          "R6 created_by names the run attempt, so a rerun's rows are its own")
+finally:
+    lp.api, lc.ROOT, lc.RECEIPTS = saved
+    shutil.rmtree(tmpr, ignore_errors=True)
+
+# 6. Both push loops fail the step after three failed pushes, so no report link points at a commit that never landed.
+WF = Path(__file__).resolve().parent.parent.joinpath(".github", "workflows", "library-publish.yml").read_text(encoding="utf-8")
+loops = WF.count("for i in 1 2 3; do")
+check(loops == 2 and WF.count('if git push origin HEAD:main; then pushed=1; break; fi') == 2
+      and WF.count('[ "$pushed" = 1 ] || { echo "::error::') == 2,
+      "R6 ⭐ both push loops fail the step when the third push fails")
+check("steps.check.outcome == 'success'" in WF or "commits only what the receipt proves" in WF,
+      "R1 the checks commit names its rule: whatever is on disk is what the receipt proves")
 
 # scripts/library_page.py cannot read a check record: a rebuild keeps the line the page carried, a new page reads Not
 # yet certified until the check run writes its line.

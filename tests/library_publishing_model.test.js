@@ -251,7 +251,7 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
   }
   {
     // A piece waiting to be listed whose page check has since passed offers the listing form (should-fix 3).
-    const m = loadModule({ rows: pageRow({ publish_target: "public" }), checks: [chk("version:2")] });
+    const m = loadModule({ rows: pageRow({ publish_target: "public", public_summary: "For agencies." }), checks: [chk("version:2")] });
     await m.M.activate(); await tick();
     const card = m.root.querySelector("#lib-t-v1").closest("article");
     check("H ⭐ a waiting piece with a passing page check offers Publish to Public Library again, and no waiting line",
@@ -324,6 +324,29 @@ const buttonWords = (el) => Array.prototype.map.call(el.querySelectorAll("button
     m.M._state.open.v1 = true; m.M.render();
     click(m.w, m.root.querySelector('[data-pub="v1"]'));
     check("I a pass at the page's url after its last change opens the listing form", !!m.root.querySelector("#lp-sum"));
+  }
+  // ── J. The second read of #3581: the card says why the check run leaves a piece waiting ──
+  {
+    // A passing piece with no public summary a person typed: the run never lists it with the internal summary.
+    const m = loadModule({ rows: pageRow({ publish_target: "public", public_summary: null }), checks: [chk("version:2")] });
+    await m.M.activate(); await tick();
+    const card = m.root.querySelector("#lib-t-v1").closest("article");
+    const w = card.querySelector("[data-pubwait]");
+    check("J ⭐ a waiting piece whose check passed but has no public summary says it needs one, in plain words",
+      !!w && w.textContent === "Its accessibility check passed. The Public Library lists it once it has a public summary: press Publish to Public Library and add one."
+      && !!card.querySelector('[data-pubtop="v1"]'), w && w.textContent);
+  }
+  {
+    // A version label outside the check table's key check: the run skips the page, and the card says why.
+    const m = loadModule({ rows: pageRow({ publish_target: "public", version: "3 (revised)" }), checks: [chk("version:3 (revised)")] });
+    await m.M.activate(); await tick();
+    const card = m.root.querySelector("#lib-t-v1").closest("article");
+    const w = card.querySelector("[data-pubwait]");
+    check("J ⭐ a version label no check record can carry says so on the card, with what to change",
+      !!w && /Its version label, 3 \(revised\), cannot carry an accessibility check record\. Use up to 40 letters, digits, spaces, dots, dashes or underscores in Edit the record/.test(w.textContent),
+      w && w.textContent);
+    check("J the tab's key pattern is the table's", /var KEY_OK = \/\^\(draft:\[0-9a-f-\]\{36\}\|version:\[A-Za-z0-9 \._-\]\{1,40\}\|page\)\$\//.test(SRC) &&
+      fs.readFileSync("kb/migrations/2026-11-19_library_publishing_model.sql", "utf8").indexOf("'^(draft:[0-9a-f-]{36}|version:[A-Za-z0-9 ._-]{1,40}|page)$'") >= 0);
   }
   // ── G. The migration and the governance map ──
   {

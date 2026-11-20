@@ -72,11 +72,13 @@ jobs:
             exit 0
           fi
           git commit -m "Library: publish approved drafts from the card ($(python3 -c "import json;print(', '.join(json.load(open('publish.json'))['published']))"))"
+          pushed=0
           for i in 1 2 3; do
-            if git push origin HEAD:main; then break; fi
+            if git push origin HEAD:main; then pushed=1; break; fi
             git fetch origin main && git rebase origin/main || { git rebase --abort; exit 1; }
             sleep $((i * 5))
           done
+          [ "$pushed" = 1 ] || { echo "::error::Three pushes to main failed; the pages are not on main, so nothing moves."; exit 1; }
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       - name: Move the records
@@ -94,7 +96,7 @@ jobs:
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
-          n=$(python3 scripts/library_check.py --plan --finished finish.json --out check_plan.json)
+          n=$(python3 scripts/library_check.py --plan --finished finish.json --published publish.json --out check_plan.json)
           echo "pages=$n" >> "$GITHUB_OUTPUT"
 
       - name: Set up Node
@@ -118,6 +120,9 @@ jobs:
         run: python3 scripts/library_check.py --check --plan-file check_plan.json | tee check.json
         shell: bash -o pipefail {0}
 
+      # It commits only what the receipt proves: --check writes the receipt as soon as the rows are in, rewrites every
+      # line from the rows written before any listing, and on an engine or insert failure puts every page back and
+      # removes its reports. So it runs though the check step failed on a listing, and the receipt rides with the lines.
       - name: Commit and push the checks
         id: checkpush
         if: ${{ !cancelled() && steps.plan.outcome == 'success' }}
@@ -132,11 +137,13 @@ jobs:
             exit 0
           fi
           git commit -m "Library: accessibility checks and footer lines ($(python3 scripts/library_check.py --summary check.json))"
+          pushed=0
           for i in 1 2 3; do
-            if git push origin HEAD:main; then break; fi
+            if git push origin HEAD:main; then pushed=1; break; fi
             git fetch origin main && git rebase origin/main || { git rebase --abort; exit 1; }
             sleep $((i * 5))
           done
+          [ "$pushed" = 1 ] || { echo "::error::Three pushes to main failed; the check reports are not on main, so their links do not answer yet."; exit 1; }
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
       # A push made with GITHUB_TOKEN starts no other workflow, so Pages would serve the old page until the next
