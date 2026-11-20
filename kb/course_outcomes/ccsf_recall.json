@@ -1,0 +1,66 @@
+{
+ "_about": "The self-recall count for City College of San Francisco report 28 (kb/_course_outcomes_read.py rows_recall): each row of trial 44739067555 read by eye. Report 28 names curriculum staff, so the trial filed no page (d-ccsf-outline-trial-no-staff-names-s689); the count reads each row's parsed outcomes, its lead and its section headings. Every page prints STUDENT LEARNING OUTCOMES under the lead \"Upon completion of this course, a student will be able to:\", then CONTENTS; each filed item reads as one outcome, none is the lead, a heading or course content. ENGL 1B prints the heading and the lead with no outcome before CONTENTS. No page prints an objectives heading. Every page's text sits under the 80,000-character cap and its HTML (641,846 to 659,499 characters) was parsed whole, so the trial parsed what a full read sees. The limit of this count: an outcome the parser dropped inside a block cannot be seen without the page.",
+ "trial": "44739067555",
+ "pages": {
+  "ACCT 1": {
+   "slo": 4,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "ASAM 1": {
+   "slo": 6,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "BTEC 108A": {
+   "slo": 4,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "CM 10": {
+   "slo": 3,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "DENT 110A": {
+   "slo": 3,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "ENGL 1B": {
+   "slo": 0,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "ET 104": {
+   "slo": 6,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "HIST 1": {
+   "slo": 6,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "JOUR 19": {
+   "slo": 5,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "MED 49": {
+   "slo": 5,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "PE 13": {
+   "slo": 4,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  },
+  "PSYC 10": {
+   "slo": 5,
+   "objective": 0,
+   "by": "S690 ccsf worker, by eye on the trial row (outcomes, lead, section headings), 2026-11-20"
+  }
+ }
+}
