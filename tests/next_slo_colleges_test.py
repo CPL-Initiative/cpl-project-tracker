@@ -138,6 +138,20 @@ with tempfile.TemporaryDirectory() as root:
           by["Done Read"]["state"] == "load" and by["Done Read"]["trigger"] == ("kb/course_outcomes/.load", ["host=eld"]),
           by["Done Read"])
 
+    # S689 (the second reader on #3586): a full read queue.json's never_load names is never the load, with no verdict
+    # row holding the college, even when it filed complete; a newer read beside it still is.
+    write(root, "course_outcomes/queue.json", {"colleges": {
+        "quiet": {"state": "none", "on": "2026-11-01", "by": "S0", "source": "trial 1", "why": "prints none"}},
+        "never_load": {"22": "filed the table header as SLOs and no page to reparse"}})
+    void = {r["college"]: r for r in M.queue(root)[0]}["Done Read"]
+    check("GUARD: a read never_load names is never the load; the college goes back to its trial",
+          void["state"] != "load" and "22" not in (M.filed(root)[0].get("done_read") or {}), void)
+    write(root, "course_outcomes/eld/read_24_p1of1.json", {"run": "24", "slugs": "done_read", "part": 1, "of": 1,
+                                                          "complete": True, "rows": []})
+    fresh = {r["college"]: r for r in M.queue(root)[0]}["Done Read"]
+    check("a fresh full read beside a never_load read is the load", fresh["state"] == "load" and "24" in fresh["why"],
+          fresh)
+
     # The reindex resolves once the index reads the census's report.
     write(root, "course_outline_index/index_6.json", {
         "url": "https://cqs.curriqunet.com/", "coverage": {"cq_swap": {"courses": 20, "with_outline": 20}},
@@ -199,6 +213,10 @@ for slug, v in ledger.items():
           os.path.isdir(os.path.join(ROOT, "kb", "program_requirements_college", slug)))
     check("queue.json %s has a known state and its reason" % slug,
           v.get("state") in M.VERDICTS and all(v.get(k) for k in ("on", "by", "why", "source")), v)
+void = M.never_load()
+check("GUARD: Feather River's read 44535960153 never loads, its reason named, and the queue never names it (S689)",
+      "44535960153" in void and all(void.values())
+      and "44535960153" not in (M.filed()[0].get("feather_river") or {}), sorted(void))
 rows, census_file = M.queue()
 check("the repo's queue reads a census", bool(census_file))
 check("every college course_outcomes holds is done, never queued",

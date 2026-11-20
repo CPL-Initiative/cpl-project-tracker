@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-20T09:22:44Z",
+ "written_at": "2026-11-20T09:51:55Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -4586,8 +4586,8 @@
    "passed_at_read": 37,
    "slo_queue": {
     "state": "parser",
-    "why": "the read filed 2,072 SLOs over 337 pages, and 336 of them are the \"Learning Outcomes\" table header; objectives came from one page only (167, under \"Course Objectives\"), so the standing test's checks 4 and 9 fail. No load until the reader drops that header and the objectives rule settles for report 485, then a reparse of the filed pages",
-    "on": "2026-11-19"
+    "why": "read 44535960153 filed 2,072 SLOs over 337 pages, 336 of them the \"Learning Outcomes\" table header, and ENVR 041's Lecture Topic Outline as 167 objectives. A full read files no pages, so it cannot be reparsed: it never loads (never_load). A new full read on the fixed reader is needed, then the standing test, then its load",
+    "on": "2026-11-20"
    },
    "scout": null,
    "spot_check": null,
