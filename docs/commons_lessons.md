@@ -510,3 +510,29 @@ refused by the permission check. The sanctioned route is a seed in `a11y.config.
 
 **Not yet shown.** No test here can show Supabase Storage taking a reviewer's upload on an INSERT policy alone; the
 local proof stands in for Storage. Sam's first real drop is the check, and it is first in the lane's NEXT.
+
+## S693 (SkyKittiwake, Sam's plain session, 2026-11-20): the hand-over's note, Needs an M-ID, the Closest M-ID
+
+**What shipped.** #3610 (`e0b90801`): every hand-over box takes a note, a signed-in reviewer sees each thing handed
+over by name, and Try the link names why the reader did not start. Open at this checkpoint: #3612 (the Courses List's
+No M-ID and No identity chips are one, Needs an M-ID, 2,508 courses; titles open the panel), #3613 (Sam's 8 pasted
+descriptions and the 4 Ohlone notes filed; the 12 hunt courses answered, with a guarded 11-row answer-as-filed write)
+and the Closest M-ID PR (`kb/_closest_mid.py`, `kb/coci_closest_mid.json`, a column and a panel section).
+
+**Sam worked the list himself, and his use found what the build missed.** A note had no place to go (BRDC 127A to
+127D, not in Ohlone's catalog); seven term report drops looked like one, because the box showed counts alone; the
+No M-ID list held courses a C-ID or CCN already identifies. Each became a fix the same hour. His seven sentences are
+rows in [`sam_rulings`](reference/sam_rulings.md).
+
+**Measure the recommender before you show its number.** The Closest M-ID's confidence is read off a held-out test:
+6,000 courses that hold an M-ID, each taken out of its own common course and ranked. A score of 0.75 or more was
+right for 2,266 of 2,438 (93%); below 0.65, under four in ten. On the pile, 82 of 2,508 score that high. So the pile
+is mostly new M-IDs to mint, and a join is the smaller part (`f-closest-mid-measured-2026-11-20`).
+
+**A test must not read a live worklist.** Three page tests read the live hunt block and would have failed the day
+Sam finished the list. They read a fixture now, and a Python check ties the fixture to the builder.
+
+**Tooling.** Try the link answered 503 three times with no reason logged; the session dispatched the pickup itself
+(run 44806543827), and the function now logs its reason. The privacy plugin refuses a Bash call that names the daily
+dashboard generator; read it with the Read tool. A worktree-isolated agent starts in the repo of the session's working
+directory, so a tracker worker is launched from the tracker.

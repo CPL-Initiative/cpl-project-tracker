@@ -17386,8 +17386,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 652,
+   "count": 653,
    "docs": [
+    {
+     "created": "2026-11-20",
+     "governs": [],
+     "n": 694,
+     "path": "docs/session_694_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 694 handoff (from SkyKittiwake, the plain session of 2026-11-20 that put the M-IDs first)",
+     "type": null,
+     "updated": "2026-11-20"
+    },
     {
      "created": "2026-11-20",
      "governs": [],
@@ -28288,5 +28302,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1536
+ "total": 1537
 }

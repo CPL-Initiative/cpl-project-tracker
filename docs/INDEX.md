@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 107 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 77 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 652 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1536** | |
+| Session handoffs | 653 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1537** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-20 (S693 SkyKittiwake, Sam's plain session on the Commons, full checkpoint): #3610 (the hand-over takes a note and lists each drop; note migration and five memory rows applied through the runner), #3612 (Needs an M-ID, one gap pile of 2,508); #3613 (Sam's first hand-overs filed, 12 hunt courses answered) and #3614 (the Closest M-ID column, measured 93% right at 0.75 or more) open; seven of Sam's rulings in `sam_rulings`; 11 memory rows drafted; handoff 694.
 - 2026-11-20 (S692 SkyGannet, Sam's plain session on the Commons, full checkpoint): #3608 (hand it over in place, slice 1: `commons_handover.js`, the private bucket and the `commons_handover` table applied through the runner, the reader's pickup and the `handover-try-link` function, governance DR-35); the new note [`reference-commons-hand-over`](kb-notes/reference-commons-hand-over.md); a section on CI jobs added to `methodology-a-blocked-path-hides-the-defects-behind-it`; the checkpoint command's standing block carries Sam's work order; `handover-try-link`, `cpl-chat` and `library-revise-draft` deployed from main; handoff 693.
 - 2026-11-20 (S690 SkyMerlin, the CPL Queue routine's 11:12Z firing, conductor from 12:13Z, full checkpoint): #3600 (the Library check line out of Sierra's reading text and out of new pieces; `main` green), #3601 (City College of San Francisco's outline reader files parsed outcomes only); City College of San Francisco's outlines loaded (1,416 rows); 17,341 printed catalog courses at 16 colleges under Sam's go of Nov 20 (#3604); 35 program records added and 129 replaced; the harvest and library lanes kept under 20,000 bytes (`library_lessons_archive_3.md`); the KB note `methodology-a-bot-wall-answers-each-network-on-its-own` and a recall-gate section in `methodology-a-test-must-not-take-its-rule-as-the-truth`. Handoff 691.
 - 2026-11-20 (the plain session SkyShrike, Sam's session on the Commons, full checkpoint): #3605 (the 12 still-taught courses filed, the outline hunt keeps a college only while it has one, Needs you names its groups); the Commons order mock locked by Sam; his rulings on no longer offered and hand it over in place; the first-pass M-ID census; KB note `methodology-check-the-saved-reads-before-calling-a-source-blocked`. Handoff 692.

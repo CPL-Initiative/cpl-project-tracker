@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-652 document(s).
+653 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 694 | [Session 694 handoff (from SkyKittiwake, the plain session of 2026-11-20 that put the M-IDs first)](../session_694_handoff.md) | 2026-11-20 |
 | 693 | [Session 693 handoff (from SkyGannet, the plain session of 2026-11-20 that built the hand-over)](../session_693_handoff.md) | 2026-11-20 |
 | 692 | [Session 692 handoff (from SkyShrike, the plain session of 2026-11-20)](../session_692_handoff.md) | 2026-11-20 |
 | 691 | [Session 691 handoff (from SkyMerlin, S690)](../session_691_handoff.md) | 2026-11-20 |
