@@ -320,7 +320,7 @@ try:
     sk = lc.skipped(list(RS.values()), ["a", "b", "c", "odd", "nosum"], tmpr)
     check("odd" not in pl and sk == [{"slug": "odd", "why": lc.row_problem(RS["odd"])}] and "3 (revised)" in sk[0]["why"],
           "R5 ⭐ a version label no check record can carry is skipped in the plan, with its reason in plain words")
-    (tmpr / "p.json").write_text(json.dumps({"check": ["a", "b", "c", "odd", "nosum"], "unverified": [], "skipped": []}), encoding="utf-8")
+    (tmpr / "p.json").write_text(json.dumps({"check": ["a", "b", "c", "odd", "nosum"], "skipped": []}), encoding="utf-8")
     raised = ""
     import contextlib
     import io
@@ -363,7 +363,7 @@ try:
             raise RuntimeError("HTTP 502 on the fresh read")
         return api_ok(path, method, body, headers)
     lp.api = api_read_fails
-    (tmpr / "p1.json").write_text(json.dumps({"check": ["a"], "unverified": [], "skipped": []}), encoding="utf-8")
+    (tmpr / "p1.json").write_text(json.dumps({"check": ["a"], "skipped": []}), encoding="utf-8")
     try:
         with contextlib.redirect_stdout(io.StringIO()):
             lc.check_phase(str(tmpr / "p1.json"), engine=lambda s, o: eng, now=datetime(2026, 11, 20, 20, 30, tzinfo=timezone.utc))
@@ -373,27 +373,84 @@ try:
     check(len(rc1) == 1 and len(json.loads(rc1[0].read_text(encoding="utf-8")).get("checks", [])) == 1,
           "R1 ⭐ the receipt is written as soon as the rows are in, before any read or listing can fail")
     lp.api = api_r
-    # 2. A listed piece --finish left for the next run: its new page reads Not yet certified, not the old pass.
-    for f in tmpr.rglob("*.txt"):
+    # 2. The line binds to the page's content (the third round on #3581): a pass prints only while the latest check's
+    # committed proof has the page's sha now. The reader's two-run case first: a listed v2 whose new v3 page was pushed
+    # and left by --finish, then a second run three hours later that writes nothing.
+    for f in list(tmpr.rglob("*.txt")) + list(tmpr.rglob("accessibility/*.json")):
         f.unlink()
     RS.clear()
     L = rec("listed", public_listed=True, seen_by="public", public_summary="For the public.")
     RS["listed"] = L
-    prior[:] = [chk(L, at="2026-11-19T18:00:00+00:00")]
-    (tmpr / "library" / "listed" / "index.html").write_text(lc.stamp(PAGE.replace("<h1>T</h1>", "<h1>NEW v3</h1>"),
-                                                                      lc.footer_block(None, SET["cobi"])), encoding="utf-8")
-    plan_out = tmpr / "p2.json"
+    OLD_PAGE = lc.stamp(PAGE.replace("<h1>T</h1>", "<h1>Version 2</h1>"), lc.footer_block(None, SET["cobi"]))
+    rel = "library/listed/accessibility/20261119-180000Z.txt"
+    c1 = chk(L, at="2026-11-19T18:00:00+00:00", report_url=lc.SITE + rel)
+    prior[:] = [c1]
+    (tmpr / rel).parent.mkdir(parents=True, exist_ok=True)
+    (tmpr / rel).write_text("report\n", encoding="utf-8")
+    (tmpr / rel[:-4]).with_suffix(".json").write_text(json.dumps({"check_id": c1["id"], "version_key": c1["version_key"], "url": c1["url"],
+                                                                  "result": "pass", "sha256": lc.content_hash(OLD_PAGE)}), encoding="utf-8")
+    page_file = tmpr / "library" / "listed" / "index.html"
+    page_file.write_text(OLD_PAGE, encoding="utf-8")
+    with contextlib.redirect_stdout(io.StringIO()):
+        lc.check_phase(str(tmpr / "none.json"), engine=lambda s, o: eng, now=datetime(2026, 11, 20, 19, tzinfo=timezone.utc))
+    check("report linked" in pg("listed"), "R2 ⭐ a same-content restamp keeps the pass: the page its check saw prints the check's line")
+    page_file.write_text(lc.stamp(PAGE.replace("<h1>T</h1>", "<h1>NEW v3</h1>"), lc.footer_block(None, SET["cobi"])), encoding="utf-8")
     (tmpr / "fin.json").write_text(json.dumps({"moved": [], "left_for_next_run": ["listed"]}), encoding="utf-8")
-    (tmpr / "pub.json").write_text(json.dumps({"published": ["listed"]}), encoding="utf-8")
+    for n, when, fin in ((1, 20, "fin.json"), (2, 23, "none.json")):
+        plan_out = tmpr / ("p2-%d.json" % n)
+        with contextlib.redirect_stdout(io.StringIO()):
+            lc.plan_phase(str(tmpr / fin), str(plan_out))
+            lc.check_phase(str(plan_out), engine=lambda s, o: eng, now=datetime(2026, 11, 20, when, tzinfo=timezone.utc))
+        check("Not yet certified" in pg("listed") and "report linked" not in pg("listed"),
+              "R2 ⭐ run %d: the new page nobody checked reads Not yet certified, though the record still holds v2's pass%s"
+              % (n, " (a later run that writes nothing included)" if n == 2 else ""))
+    # One byte changed after its check, and back again.
+    page_file.write_text(OLD_PAGE.replace("Version 2", "Version 2."), encoding="utf-8")
     with contextlib.redirect_stdout(io.StringIO()):
-        lc.plan_phase(str(tmpr / "fin.json"), str(plan_out), str(tmpr / "pub.json"))
-    p2 = json.loads(plan_out.read_text(encoding="utf-8"))
-    check(p2["unverified"] == ["listed"] and p2["check"] == [], "R2 the plan names a page this run wrote and did not check")
+        lc.check_phase(str(tmpr / "none.json"), engine=lambda s, o: eng, now=datetime(2026, 11, 21, 2, tzinfo=timezone.utc))
+    check("Not yet certified" in pg("listed"), "R2 ⭐ a page edited by one byte after its check reads Not yet certified")
+    page_file.write_text(OLD_PAGE, encoding="utf-8")
     with contextlib.redirect_stdout(io.StringIO()):
-        lc.check_phase(str(plan_out), engine=lambda s, o: eng, now=datetime(2026, 11, 20, 21, tzinfo=timezone.utc))
-    check("Not yet certified" in pg("listed") and "report linked" not in pg("listed"),
-          "R2 ⭐ a page --finish left for the next run never carries the old version's pass line")
-    check(lc.unverified(["a", "b"], ["a"], ["c"], ["a"]) == ["b", "c"], "R2 unverified: written or left, and not checked")
+        lc.check_phase(str(tmpr / "none.json"), engine=lambda s, o: eng, now=datetime(2026, 11, 21, 5, tzinfo=timezone.utc))
+    check("report linked" in pg("listed"), "R2 and the same content back prints the pass again")
+    bad = dict(json.loads((tmpr / rel[:-4]).with_suffix(".json").read_text(encoding="utf-8")), check_id="someone-else")
+    (tmpr / rel[:-4]).with_suffix(".json").write_text(json.dumps(bad), encoding="utf-8")
+    with contextlib.redirect_stdout(io.StringIO()):
+        lc.check_phase(str(tmpr / "none.json"), engine=lambda s, o: eng, now=datetime(2026, 11, 21, 8, tzinfo=timezone.utc))
+    check("Not yet certified" in pg("listed"), "R2 a proof that names another check never prints this one's pass")
+    check(lc.content_hash(lc.stamp(OLD_PAGE, lc.footer_block(c1, SET["cobi"]))) == lc.content_hash(OLD_PAGE),
+          "R2 the content hash leaves the accessibility line out, so the line itself never changes it")
+    # 1. An insert that errs after some rows landed: the rows are read back by created_by and get their receipt.
+    RS.clear()
+    RS["a"] = rec("a", publish_target="internal")
+    page_file_a = tmpr / "library" / "a" / "index.html"
+    page_file_a.write_text(PAGE, encoding="utf-8")
+    landed_rows = []
+
+    def api_timeout(path, method="GET", body=None, headers=None):
+        if path.startswith("cpl_library_checks") and method == "POST":
+            landed_rows[:] = [dict(b, id="late-%d" % i, checked_at="2026-11-21T10:00:00+00:00", created_at="2026-11-21T10:00:00+00:00")
+                              for i, b in enumerate(body)]
+            raise RuntimeError("HTTP 504 after the commit")
+        if path.startswith("cpl_library_checks?select=") and "created_by=eq." in path:
+            return list(landed_rows)
+        return api_r(path, method, body, headers)
+    lp.api = api_timeout
+    for f in lc.RECEIPTS.glob("*.json"):
+        f.unlink()
+    (tmpr / "p3.json").write_text(json.dumps({"check": ["a"], "skipped": []}), encoding="utf-8")
+    raised = ""
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            lc.check_phase(str(tmpr / "p3.json"), engine=lambda s, o: eng, now=datetime(2026, 11, 21, 10, tzinfo=timezone.utc))
+    except RuntimeError as e:
+        raised = str(e)
+    rc3 = list(lc.RECEIPTS.glob("*.json"))
+    got3 = json.loads(rc3[0].read_text(encoding="utf-8")).get("checks", []) if rc3 else []
+    check("504" in raised and len(got3) == 1 and got3[0]["id"] == "late-0" and "report linked" in pg("a")
+          and (tmpr / "library/a/accessibility/20261121-100000Z.json").exists(),
+          "R1 ⭐ rows that landed though the insert erred are read back by created_by: receipt, proof and line, and the step goes red")
+    lp.api = api_r
     # 3. should_list reads page_changed_at as latest_check and the tab do.
     z = rec("z", publish_target="public", public_summary="For the public.", page_changed_at="2026-11-20T20:05:00+00:00")
     zr = {"library_id": "id-z", "url": z["url"], "version_key": "version:2", "result": "pass", "checked_at": "2026-11-20T20:00:00+00:00"}
@@ -420,8 +477,8 @@ check(loops == 2 and WF.count('if git push origin HEAD:main; then pushed=1; brea
 check("steps.check.outcome == 'success'" in WF or "commits only what the receipt proves" in WF,
       "R1 the checks commit names its rule: whatever is on disk is what the receipt proves")
 
-# scripts/library_page.py cannot read a check record: a rebuild keeps the line the page carried, a new page reads Not
-# yet certified until the check run writes its line.
+# scripts/library_page.py cannot read a check record: every page it writes reads Not yet certified until the run's
+# restamp proves the content (certified_check).
 import library_page as lpg  # noqa: E402
 tmpp = Path(tempfile.mkdtemp(prefix="libpage-"))
 try:
@@ -441,8 +498,8 @@ try:
     with contextlib.redirect_stdout(io.StringIO()):
         lpg.main(["library_page.py", "a-piece", str(src)])
     again = out.read_text(encoding="utf-8")
-    check("report linked" in again and again.count("cpl-library-check:") == 1,
-          "a rebuild keeps the line the check run wrote, once (the run rewrites it from the record)")
+    check("report linked" not in again and "Not yet certified" in again and again.count("cpl-library-check:") == 1,
+          "⭐ a hand rebuild through library_page.py never keeps an old pass line: it reads Not yet certified until the run proves it")
 finally:
     lpg.ROOT = saved_root
     shutil.rmtree(tmpp, ignore_errors=True)

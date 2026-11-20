@@ -96,7 +96,7 @@ jobs:
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
-          n=$(python3 scripts/library_check.py --plan --finished finish.json --published publish.json --out check_plan.json)
+          n=$(python3 scripts/library_check.py --plan --finished finish.json --out check_plan.json)
           echo "pages=$n" >> "$GITHUB_OUTPUT"
 
       - name: Set up Node

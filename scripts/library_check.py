@@ -9,12 +9,10 @@ check record, and no approval from Sam.
 
 library-publish.yml runs this after --finish has moved the records it published:
 
-  --plan  --finished F --published W --out P
-                                 which pages to check, written to P: every page --finish moved (F) and every piece
+  --plan  --finished F --out P   which pages to check, written to P: every page --finish moved (F) and every piece
                                  published to the Public Library that waits with no check of its page since the page
-                                 last changed. P also names the pages this run wrote but will not check (W's published
-                                 pages --finish left for the next run, F's left_for_next_run), and the pages whose
-                                 version label no check record can carry. Prints the count for the workflow.
+                                 last changed; P also names the pages whose version label no check record can carry.
+                                 Prints the count for the workflow.
   --check --plan-file P          for each page in P: writes the footer the page will carry if it passes, runs the
                                  one engine (scripts/a11y.js with scripts/library_check.config.js, Light and Dark),
                                  writes a plain-words report beside the page (library/<slug>/accessibility/), and
@@ -27,6 +25,12 @@ library-publish.yml runs this after --finish has moved the records it published:
                                  person typed, adding each listing's before-values to the receipt before its update
                                  (guarded on the record as read, Rule 10). So whatever is on disk when a step fails is
                                  what the receipt proves.
+
+The line binds to the page's content (the S688 conductor, third round on #3581): each check records the sha256 of the
+page it checked, the accessibility line taken out (content_hash), in a small JSON beside its report with the check
+row's id, key and url. A pass line is printed only when the record's latest check (its current key and url, no earlier
+than page_changed_at) has that committed record and its sha equals the page on disk now. Any other page, a page
+rebuilt or left by --finish included, reads Not yet certified.
 
 The run writes no other table, and only the service role inserts a check (the table's RLS), so the Library tab never
 certifies a piece. Test: tests/library_check_test.py; the footer in a browser: tests/library_check_footer.test.js.
@@ -169,6 +173,41 @@ def stamp(page, block):
                 pre += "\n"
             return pre + block + page[i:]
     return page + ("" if page.endswith("\n") or not page else "\n") + block
+
+
+def content_hash(page):
+    """sha256 of the page with its accessibility line taken out: what a check vouches for. The one function both
+    writers use (this script and scripts/library_page.py). Pure."""
+    import hashlib
+    return hashlib.sha256(BLOCK.sub("", page or "").encode("utf-8")).hexdigest()
+
+
+def proof_rel(report_url):
+    """The committed JSON beside a check's report, from the report's Pages address; "" when it is not one of ours."""
+    rel = (report_url or "")[len(SITE):] if (report_url or "").startswith(SITE) else ""
+    return rel[:-4] + ".json" if re.match(r"^library/[a-z0-9-]+/accessibility/[0-9]{8}-[0-9]{6}Z\.txt$", rel) else ""
+
+
+def proof_of(check, root=None):
+    try:
+        f = Path(root or ROOT) / proof_rel((check or {}).get("report_url"))
+        return json.loads(f.read_text(encoding="utf-8")) if proof_rel((check or {}).get("report_url")) and f.is_file() else None
+    except (OSError, ValueError):
+        return None
+
+
+def certified_check(record, checks, page, root=None):
+    """The check a page's line may print as a pass, or None: the record's latest check (latest_check: its current key
+    and url, no earlier than page_changed_at) passed, its committed proof names that check, key and url, and the proof's
+    sha equals the page as it is now."""
+    c = latest_check(checks, record)
+    if not c or c.get("result") != "pass":
+        return None
+    pr = proof_of(c, root)
+    if not pr or pr.get("check_id") != c.get("id") or pr.get("version_key") != c.get("version_key") \
+            or pr.get("url") != c.get("url") or pr.get("sha256") != content_hash(page):
+        return None
+    return c
 
 
 def footer_of(page):
@@ -341,22 +380,25 @@ def _read_json(path):
         return {}
 
 
-def unverified(published, moved, left, checking):
-    """The pages this run wrote that it will not check: written by --write (published) or left by --finish, and not in
-    the plan. Their line reads Not yet certified until a check of that page passes: the record still names the page
-    before it, whose check speaks for other content. Pure."""
-    return sorted((set(published or []) | set(left or [])) - set(checking or []))
-
-
-def plan_phase(finished, out, published=None):
-    fin, pub = _read_json(finished), _read_json(published)
-    moved, left = fin.get("moved") or [], fin.get("left_for_next_run") or []
+def plan_phase(finished, out):
+    moved = _read_json(finished).get("moved") or []
     _, records, checks = read_state()
     slugs = plan(records, checks, moved)
-    Path(out).write_text(json.dumps({"check": slugs, "unverified": unverified(pub.get("published"), moved, left, slugs),
-                                     "skipped": skipped(records, moved)}) + "\n", encoding="utf-8")
+    Path(out).write_text(json.dumps({"check": slugs, "skipped": skipped(records, moved)}) + "\n", encoding="utf-8")
     print(len(slugs))
     return 0
+
+
+def landed(created_by, rows):
+    """The rows of this run that reached the table though the insert answered with an error (a timeout after the
+    commit), read back by created_by and matched to the rows sent. [] when none, or when the read fails too."""
+    try:
+        got = lp.api("cpl_library_checks?select=id,library_id,version_key,url,result,findings,standard,tool_or_reviewer,"
+                     "report_url,checked_at,created_at&created_by=eq." + urllib.parse.quote(created_by)) or []
+    except Exception:  # noqa: BLE001
+        return []
+    sent = {(r["library_id"], r["report_url"]) for r in rows}
+    return [g for g in got if (g.get("library_id"), g.get("report_url")) in sent]
 
 
 def write_receipt(path, receipt):
@@ -364,17 +406,16 @@ def write_receipt(path, receipt):
     path.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def restamp(records, checks, settings, unverified_slugs):
-    """Every Library page's line from its own latest check (latest_check: this piece, its current key and url, no
-    earlier than its page last changed). A page this run wrote but did not check reads Not yet certified. -> slugs."""
-    out, hold = [], set(unverified_slugs or [])
+def restamp(records, checks, settings):
+    """Every Library page's line: a pass only from certified_check (the latest check's committed proof matches the
+    page's content now), Not yet certified otherwise. -> the slugs whose line changed."""
+    out = []
     for r in records:
         if r.get("retired_at") or not on_pages(r):
             continue
         p = ROOT / "library" / r["slug"] / "index.html"
         page = p.read_text(encoding="utf-8")
-        c = None if r["slug"] in hold else latest_check(checks, r)
-        new = stamp(page, footer_block(c, settings_for(r, settings)))
+        new = stamp(page, footer_block(certified_check(r, checks, page), settings_for(r, settings)))
         if new != page:
             p.write_text(new, encoding="utf-8")
             out.append(r["slug"])
@@ -384,7 +425,7 @@ def restamp(records, checks, settings, unverified_slugs):
 def check_phase(plan_path, engine=run_engine, now=None):
     now = now or datetime.now(timezone.utc)
     pl = _read_json(plan_path)
-    slugs, hold = pl.get("check") or [], pl.get("unverified") or []
+    slugs = pl.get("check") or []
     settings, records, checks = read_state()
     by_slug = {r.get("slug"): r for r in records}
     todo, skip = [], list(pl.get("skipped") or [])
@@ -405,7 +446,7 @@ def check_phase(plan_path, engine=run_engine, now=None):
                          "delete a check).",
                "at": now.isoformat(), "created_by": created_by, "checks": [], "listed": []}
     rpath = RECEIPTS / ("%s-%s.json" % (now.strftime("%Y-%m-%d-%H%M%S"), re.sub(r"[^a-z0-9]+", "-", created_by.lower()).strip("-")))
-    rows, report_of, before, got = [], {}, {}, []
+    rows, report_of, before, got, sha_of, insert_error = [], {}, {}, [], {}, None
     if todo:
         try:
             # The page carries the line it will show if it passes, so the page checked is the page served.
@@ -417,7 +458,9 @@ def check_phase(plan_path, engine=run_engine, now=None):
                 st = settings_for(r, settings)
                 prospective = {"result": "pass", "standard": st.get("standard"), "tool_or_reviewer": st.get("reviewer_or_tool"),
                                "checked_at": now.isoformat(), "report_url": SITE + rel}
-                p.write_text(stamp(before[r["slug"]], footer_block(prospective, st)), encoding="utf-8")
+                checked = stamp(before[r["slug"]], footer_block(prospective, st))
+                p.write_text(checked, encoding="utf-8")
+                sha_of[r["slug"]] = content_hash(checked)
             with tempfile.TemporaryDirectory() as tmp:
                 out = engine([r["slug"] for r in todo], os.path.join(tmp, "engine.json"))
             for r in todo:
@@ -425,9 +468,16 @@ def check_phase(plan_path, engine=run_engine, now=None):
                 rel = report_of[r["slug"]]
                 f = ROOT / rel
                 f.parent.mkdir(parents=True, exist_ok=True)
-                f.write_text(report_text(r, page_key(r), r["url"], st, res, out or {}, run_url, now), encoding="utf-8")
+                f.write_text(report_text(r, page_key(r), r["url"], st, res, out or {}, run_url, now)
+                             + "Page content sha256 (the accessibility line taken out): %s\n" % sha_of[r["slug"]], encoding="utf-8")
                 rows.append(check_row(r, st, res, SITE + rel, created_by))
-            got = lp.api("cpl_library_checks", "POST", rows) or []
+            try:
+                got = lp.api("cpl_library_checks", "POST", rows) or []
+            except Exception as e:  # noqa: BLE001 — some rows may have landed: read them back before deciding
+                insert_error = e
+                got = landed(created_by, rows)
+                if not got:
+                    raise
         except BaseException:
             # No check record, no claim: every page goes back as it was and no report stays behind.
             for slug, text in before.items():
@@ -441,13 +491,25 @@ def check_phase(plan_path, engine=run_engine, now=None):
                                                      "checked_at", "report_url")} for g in got]
         write_receipt(rpath, receipt)
         checks = list(got) + list(checks)
-        # A report the database never took a row for goes; the rest stay with their rows.
-        took = {g.get("library_id") for g in got}
+        # A report the database never took a row for goes, and its page goes back as it was; each row that landed gets
+        # its committed proof: the check's id, key, url and the content hash of the page it checked.
+        took = {g.get("library_id"): g for g in got}
         for r in todo:
-            if r["id"] not in took and (ROOT / report_of[r["slug"]]).exists():
-                (ROOT / report_of[r["slug"]]).unlink()
+            g = took.get(r["id"])
+            if not g:
+                if (ROOT / report_of[r["slug"]]).exists():
+                    (ROOT / report_of[r["slug"]]).unlink()
+                (ROOT / "library" / r["slug"] / "index.html").write_text(before[r["slug"]], encoding="utf-8")
+                continue
+            proof = {"check_id": g.get("id"), "library_id": g.get("library_id"), "version_key": g.get("version_key"),
+                     "url": g.get("url"), "result": g.get("result"), "sha256": sha_of[r["slug"]],
+                     "report": SITE + report_of[r["slug"]],
+                     "_about": "The page this check saw: sha256 of library/%s/index.html with the accessibility line taken "
+                               "out (scripts/library_check.py content_hash). The line prints this check's pass only while "
+                               "the page still has this hash." % r["slug"]}
+            (ROOT / report_of[r["slug"]][:-4]).with_suffix(".json").write_text(json.dumps(proof, indent=2) + "\n", encoding="utf-8")
     # Every line from the rows actually written, before any listing: a failed page reads Not yet certified at once.
-    stamped = restamp(records, checks, settings, hold)
+    stamped = restamp(records, checks, settings)
     listed, waiting, errors = [], [], []
     try:
         for row in receipt["checks"]:
@@ -483,8 +545,10 @@ def check_phase(plan_path, engine=run_engine, now=None):
     finally:
         print(json.dumps({"checked": [{"slug": g.get("library_id") and next((r["slug"] for r in todo if r["id"] == g["library_id"]), ""),
                                        "result": g.get("result"), "findings": g.get("findings")} for g in got],
-                          "listed": listed, "waiting": waiting, "skipped": skip, "unverified": sorted(hold),
+                          "listed": listed, "waiting": waiting, "skipped": skip,
                           "stamped": stamped, "errors": errors}))
+    if insert_error is not None:
+        errors.append("the insert answered %s; the rows that landed were read back by created_by" % str(insert_error)[:200])
     if errors:
         # The rows, lines, reports and receipt on disk are consistent; the step goes red so a person sees the listing.
         raise RuntimeError("listing failed for " + "; ".join(errors))
@@ -496,7 +560,6 @@ def main(argv=None):
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--finished")
-    ap.add_argument("--published", help="--write's output: the pages this run wrote")
     ap.add_argument("--out", default="check_plan.json")
     ap.add_argument("--plan-file", default="check_plan.json")
     ap.add_argument("--summary", help="print the commit message's list from --check's output")
@@ -511,7 +574,7 @@ def main(argv=None):
         print(words or "footer lines only")
         return 0
     if a.plan:
-        return plan_phase(a.finished, a.out, a.published)
+        return plan_phase(a.finished, a.out)
     if a.check:
         return check_phase(a.plan_file)
     ap.error("--plan or --check")

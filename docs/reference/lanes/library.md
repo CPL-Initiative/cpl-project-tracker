@@ -60,12 +60,14 @@ the tab publishes to the Internal Library and Public says the check record is no
 - DECIDED (S687, `d-library-3560-in-four-prs-s687`): #3560 lands in four PRs, one after another, since its asks share
   `library.js`: 1 the two publish buttons, Template and the check gate (#3572); 2 the check run and the footer; 3 the
   progress bar; 4 Publish all, Add existing, redraft and republish. Memory rows: run 44624406317.
-- Known limit (S688 part 2): a check names a version key, a url and a time, not the page's bytes, so content that
-  changes at the same url and version keeps the last check's listing and line: a session's `scripts/library_page.py`
-  rebuild, a hand commit, or a page `--finish` left for the next run once that run is over (the run that wrote it
-  stamps Not yet certified; a later run's line follows the record again). A content hash on the check row, matched
-  against the served page, closes it later. A session that rebuilds a listed page bumps its version so the record
-  moves and the run checks it.
+- Known limit (S688 part 2): the page's line binds to its content (`d-library-footer-binds-page-hash-s688`), but the
+  database does not: a check row names a version key, a url and a time, not the page's bytes. So the tab's pre-check
+  and `cpl_library_set_public()` cannot see content that changes at the same url and version (a session's
+  `scripts/library_page.py` rebuild, a hand commit, a page `--finish` left for the next run), and a team press of Public
+  can list such a page on the earlier page's pass while its line reads Not yet certified. The check run's own listing
+  is safe: it lists only in the run that checked the page. A content hash on the check row, matched against the served
+  page, closes it later. A session that rebuilds a listed page bumps its version so the record moves and the run
+  checks it.
 - DECIDED (S688 conductor, COBIx on #3572, 7023899407; `d-library-check-binds-url-s688`): a check binds to the url it
   checked (`cpl_library_checks.url`). `cpl_library_set_public()` counts a pass only at the record's current url and
   key, so the old url's pass never relists a moved piece. Old rows keep a null url, which
@@ -111,11 +113,14 @@ three failed pushes, and Pages deploys though a check step failed. Schema
   stamps the pass line before it checks, so the page checked is the page served; a fail puts Not yet certified back.
   `{report}` links "report"; the CPL Initiative's template has none, so its words "report linked" carry the link.
   `library_publish.py --write` stamps Not yet certified (a copied line never speaks for a new page), and
-  `scripts/library_page.py` keeps the line a rebuilt page carried. Colors are the public header's tokens.
-- DECIDED (S688 conductor, second read of #3581; `d-library-footer-pass-only-on-own-check-s688`): the line prints a pass
-  only for a page whose check row this run or an earlier one wrote at its current key, url and `page_changed_at`. A
-  page this run wrote but did not check (`--write`'s pages that `--finish` left for the next run) reads Not yet
-  certified, though its record still holds the earlier version's pass.
+  `scripts/library_page.py` writes Not yet certified on every page it builds. Colors are the public header's tokens.
+- DECIDED (S688 conductor, third round on #3581; `d-library-footer-binds-page-hash-s688`, replacing the per-run hold
+  list): each check records `content_hash`, the sha256 of the page it checked with the accessibility line taken out, in
+  a committed JSON beside its report (`library/<slug>/accessibility/<time>.json`, with the check row's id, key and url).
+  The restamp prints a pass only when the record's latest check (current key and url, no earlier than
+  `page_changed_at`) has that proof and its sha equals the page on disk now; every other page, a rebuilt page or one
+  `--finish` left included, reads Not yet certified, in any later run too. An insert that errs reads back the rows that
+  landed by `created_by`, so they get their receipt, proof and line.
 - DECIDED (S688, `d-library-check-after-page-change-s688`): every version of a Pages piece shares one url, so the url
   binding alone left a relabel open (v5 set back to "4", which passed). `cpl_library.page_changed_at`, stamped by a
   trigger on any url or version change and held against a hand-set value, closes it: `set_public()` counts a pass only
