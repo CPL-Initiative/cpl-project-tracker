@@ -1,0 +1,784 @@
+{
+ "college": "Mission College",
+ "catalog_url": "https://mission.elumenapp.com/catalog/24-25/cataloghome",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 124,
+ "with_closed_list": 113,
+ "started": "2026-11-20T14:56:16Z",
+ "elumen": {
+  "catalog": "24-25",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [],
+  "hub_programs": 0,
+  "walk_pages": 70,
+  "walk_menus": 5,
+  "walk_programs": 120,
+  "walk_stopped_at_cap": false,
+  "program_pages_listed": 120,
+  "listing_failed": 0,
+  "program_pages": 120
+ },
+ "pages_read": 120,
+ "pages_listed": 120,
+ "pages_answered": 120,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 100,
+   "hits": 72,
+   "recall": 0.72,
+   "false": 2,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 6,
+   "false_matches": [
+    {
+     "control_number": "22045",
+     "title": "Graphic Design",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-ca-2026fa"
+    },
+    {
+     "control_number": "41324",
+     "title": "Culinary Arts",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa"
+    },
+    {
+     "control_number": "22045",
+     "title": "Graphic Design",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-ca-2026fa",
+     "h1": "Graphic Design CA"
+    },
+    {
+     "control_number": "41324",
+     "title": "Culinary Arts",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa",
+     "h1": "Culinary Arts CA"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "22045",
+     "title": "Graphic Design",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-ca-2026fa",
+     "h1": "Graphic Design CA"
+    },
+    {
+     "control_number": "41324",
+     "title": "Culinary Arts",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa",
+     "h1": "Culinary Arts CA"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 11,
+  "by_result": {
+   "not_searched": 10,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "18068",
+    "title": "Liberal Arts: English Communication",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18069",
+    "title": "Liberal Arts: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18070",
+    "title": "Liberal Arts: Science, Mathematics and Quantitative Reasoning",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30271",
+    "title": "Transfer Studies - CSU GE-B",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30272",
+    "title": "Transfer Studies IGETC for UC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "32262",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38614",
+    "title": "English for Child Care",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40961",
+    "title": "English for Child Development",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "42645",
+    "title": "Transfer Studies IGETC for CSU",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "43968",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 72 of 100 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45538",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 191,
+ "seconds": 790.3,
+ "found": 106,
+ "by_method": {
+  "no_closed_list": 11,
+  "not_found": 3,
+  "page_claimed": 4,
+  "sitemap_page": 106
+ },
+ "shared_pages": {
+  "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa": [
+   "30680",
+   "44504"
+  ],
+  "https://mission.elumenapp.com/catalog/24-25/program/mathematics-2-0-as-t-2026fa": [
+   "31032",
+   "46350"
+  ],
+  "https://mission.elumenapp.com/catalog/24-25/program/business-administration-2-0-as-t-2026fa": [
+   "32426",
+   "41391"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06305",
+   "title": "Graphic Design",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-as-2026fa",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 28,
+    "listed": 28,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3626,
+     "content": 3626,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "18067",
+   "title": "Liberal Arts: Arts & Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/liberal-arts-arts-and-humanities-aa-2025fa",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2064,
+     "content": 2064,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "41325",
+   "title": "Culinary Arts",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-as-2026fa",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 23,
+    "listed": 23,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3657,
+     "content": 3657,
+     "tabs": 0
+    },
+    "tab_panels": [],
+    "page_checks": true
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "06325",
+   "title": "Food Service and Restaurant Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-as-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-as-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-ca-2026fa"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "12248",
+   "title": "Creative Arts",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://mission.elumenapp.com/catalog/24-25/program/art-history-aa-t-2026fa"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "40351",
+   "title": "Data Analyst Associate",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://mission.elumenapp.com/catalog/24-25/program/business-computing-ca-2023fa"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "43110",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://mission.elumenapp.com/catalog/24-25/program/public-health-as-t-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/nutrition-and-dietetics-as-t-2026fa",
+    "https://mission.elumenapp.com/catalog/24-25/program/kinesiology-aa-t-2025fa"
+   ],
+   "status": "Active - Teachout Only"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 21,
+  "1.0": 80
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/mission",
+  "kept": 106,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "06286": {
+   "sha256": "3a9cd0745b01b4d8ccd7e78da581b8f672cae6f7a89949bdca09128f1c3d70f0",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/biological-sciences-as-2023sp"
+  },
+  "06287": {
+   "sha256": "d1c985306615d218535dc53dde83d2f48193c56f3f5bdb4bc04bfa72fdbf3155",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/business-as-2025fa"
+  },
+  "06288": {
+   "sha256": "00ecc863381405feb71526c6b7d35d82a5d5ed8cde0d7408971ccd4f8c97a7cf",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/accounting-as-2023fa"
+  },
+  "06296": {
+   "sha256": "45b8ec6469e19e36d24f07a2d1742a9374069cd7f9abe9dbc2c3def9e96ff11d",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-information-systems-as-2021fa"
+  },
+  "06298": {
+   "sha256": "91496001b707249f8cfa7ac6ddfbd4f65caf50b0be516ea8c7d98a6fb1546490",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/engineering-as-2026fa"
+  },
+  "06304": {
+   "sha256": "3dda5fd97cd55b77fa752c052c94a9ad16ea730a777adc01970b1408fded7f0b",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/art-aa-2026fa"
+  },
+  "06308": {
+   "sha256": "30d1342a3d6c06c831671efa5cb3c092b4f3a2dc24aaf059b4c44a7d291f7f5e",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/vocational-nursing-as-2021fa"
+  },
+  "06314": {
+   "sha256": "3f3a97ca4816aa57b46392e7454c2d7a29b78fe1699e7d200d4dbaced6a818cf",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-as-2025fa"
+  },
+  "06320": {
+   "sha256": "d357041ba05b8cd77ca4b462eba3aea9cd97943c157cf94abf1be0be2fc1422d",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-technology-as-2025fa"
+  },
+  "09807": {
+   "sha256": "7610c55b3f31546f377443a6f58182467352adf9de4d74c85691b0557265ecc5",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/web-design-ca-2026fa"
+  },
+  "12605": {
+   "sha256": "3d9b057fc31227ded4a05f1e1fe9951aec9d38d8359ac6d4396ef03da69c68a5",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fundamental-food-service-skills-ca-2024fa"
+  },
+  "12606": {
+   "sha256": "c2df45ecbee753512779067a9ca34434a2fe8f2f05c0c3d4dd9de1f5d7172545",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/digital-illustration-ca-2023fa"
+  },
+  "13575": {
+   "sha256": "c222e1e49478425306c43c106b57c0c0743078231fad28cafadc254c992afe4f",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/early-childhood-education-as-2024fa"
+  },
+  "13576": {
+   "sha256": "d9b9c13566949ed2d45a607b2d4474cf41803a169b0ec463a6b959a6ea740986",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/associate-teacher-ca-2024fa"
+  },
+  "13586": {
+   "sha256": "c9a30e97ed04e5b83e9c0267fa6052859234e0623d58d99a38607c91de60ee90",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/early-intervention-assistant-ca-2021fa"
+  },
+  "14591": {
+   "sha256": "915fa97af4e69c73c916d814960f6a77acc35f827de1a4798a12482a729eb42c",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/cisco-ccna-cybersecurity-and-cloud-computing-ca-2024fa"
+  },
+  "15510": {
+   "sha256": "240566be90cc3e82876cf049826271a1545ee60fd1df18d54ebf040c99d91b0f",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/web-development-ca-2026fa"
+  },
+  "16355": {
+   "sha256": "5438c7da8f26c4ed15ca6cc78d26870f5cbd748a320a73e57051472875c5f8f4",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/master-teacher-ca-2024fa"
+  },
+  "16375": {
+   "sha256": "01ca6e2a22a82f3f636b0b10f005d447613d7e193c9bd81e36dc8f04d358c911",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/hospitality-management-as-2026fa"
+  },
+  "16724": {
+   "sha256": "dbb24d278217ecca5659ac78b27bbcd3292fc134940f54fd0fdf845a592de854",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-network-technology-as-2026fa"
+  },
+  "18139": {
+   "sha256": "80cfb17b6d9169e68859213bdda095151788a62e3765302f49f9ab32ddfe5ac9",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/nursing-lvn-to-rn-as-2025fa"
+  },
+  "18140": {
+   "sha256": "6e09712717cd9a40da6dbf2e3fdd384d896dcf86781d0682c604125d433ef53c",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/vocational-nursing-ca-2021fa"
+  },
+  "22032": {
+   "sha256": "5bf0a43be4a971726a8bb5b6245a3ed82db3a62f72d33822fb1416d6346d2b66",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/accounting-ca-2023fa"
+  },
+  "22036": {
+   "sha256": "e6e402fa40a8f8c52066db929ea7cd9feea8ad26355ca86a32e7885705b4a445",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-information-systems-ca-2021fa"
+  },
+  "22045": {
+   "sha256": "e70560e02368ef67a52b1ef7bc8781ab2e48fb4afb2282f71630006f48dcbe24",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-as-2026fa"
+  },
+  "22966": {
+   "sha256": "a0416b1328f8d436e4869780cd7f712bc38ea4d648e3e4931352ea144c268e94",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/project-management-ca-2024fa"
+  },
+  "22968": {
+   "sha256": "012021c8fc63c6f38b91dded3373441031618abe941391df36814a637ad6fc52",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/business-computing-ca-2023fa"
+  },
+  "22977": {
+   "sha256": "84ef58e29bd6da8b83eab3105921c7a359cdaa2224fbffb7575fccec1cb1ed1e",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/entrepreneurship-and-small-business-ca-2024fa"
+  },
+  "22984": {
+   "sha256": "a8290ac06061a9e6f65b27aeec58e78514a255f5acee1067f17b84712b2730c3",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/three-dimensional-arts-ca-2024fa"
+  },
+  "30680": {
+   "sha256": "e5841ddd42d2a63c1d483373712ac7f6dcb173cfde948dfb07f93314546eeea3",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa"
+  },
+  "30681": {
+   "sha256": "4f1b8f68265d2a700f3817de546d048e720e438821f4e460fb7d756875150407",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/sociology-aa-t-2026fa"
+  },
+  "30683": {
+   "sha256": "5945120a22cc89c77c44156023512f8659e16ae6dad4af323bb778222fc45ee1",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/psychology-aa-t-2025fa"
+  },
+  "31032": {
+   "sha256": "6b77ded11098064a242a8a5d1454f2e32be749e26bea86fe025feb1603361f16",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-2-0-as-t-2026fa"
+  },
+  "31253": {
+   "sha256": "e05a5023e5dacb46d99b09fe987c1c78c63c0100bdb2078fd7f5970637942a5d",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/studio-arts-aa-t-2026fa"
+  },
+  "31397": {
+   "sha256": "d203a39e51bc10992a97998da790fff13fcbcb96e8666e5832f6b7976fbc522d",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/kinesiology-aa-t-2025fa"
+  },
+  "31404": {
+   "sha256": "f0b8849f8fc5c7cf0129fc6d22fc658e6aa4cf55917ca67c3d92637f29c45f8a",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/political-science-aa-t-2026fa"
+  },
+  "31419": {
+   "sha256": "465ee9d4f2428492c430b62c9cf45961c873bed13429268186e061de73d35995",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/english-aa-t-2026fa"
+  },
+  "31423": {
+   "sha256": "ac50e8b0d530df390e727abba2a5c14e4d6a9377496c2fa8833468b16b3158a2",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/early-childhood-education-as-t-2025fa"
+  },
+  "31473": {
+   "sha256": "3cc0aa517c61ca189315bfef6a13ddb245ecda2fc4bce30397b188b73b79b237",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/history-aa-t-2026fa"
+  },
+  "32206": {
+   "sha256": "3b115dd7ae9008b7e2025843361cfef54e4c7f792b066e2300dfe872974445b1",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/administration-of-justice-as-t-2025fa"
+  },
+  "32335": {
+   "sha256": "b9dd9ba526f091800907f9b620f71832504f63b91fef10a78f97c6761f4dd193",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/art-history-aa-t-2026fa"
+  },
+  "32419": {
+   "sha256": "e12b21224eb4ca9f2da32b7d0ea900f428a5388f7af434a0559b2549f16a3e53",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/spanish-aa-t-2025fa"
+  },
+  "32426": {
+   "sha256": "d12d934f817544aa46676b5834919327cce88d22b4fc1f0952625a9336026d4f",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/business-administration-2-0-as-t-2026fa"
+  },
+  "35604": {
+   "sha256": "ace7cc73d6bafe2287c14f18cba9de681fcbda6dd8b789305eda4277bc8b8494",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/biology-as-t-2025fa"
+  },
+  "35848": {
+   "sha256": "7ebc1057d1818fc8431e2aba61de689b72eb8a72ff0801e7d71ffaeb990d8f72",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/economics-aa-t-2026fa"
+  },
+  "36280": {
+   "sha256": "d95026346d399c4ff2c223c88ffbeff1fa235effff4686feaee6dfd4e5c31bdf",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/beginning-esl-noncredit-2022fa"
+  },
+  "36336": {
+   "sha256": "56a6e6b6bdf2782db92f58e23c358ec288ca7d3098bb5a4e92d0cc7646c31661",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/human-biology-as-2023sp"
+  },
+  "36620": {
+   "sha256": "474e006a30508746c20ab45562c24b259b9f8a36012f77b9f9dfd3a094349466",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-track-worker-apprenticeship-ca-2023fa"
+  },
+  "36621": {
+   "sha256": "46639a3008b6a8bbabb4f4f88ba9adac239807e0848892e3dedbe9d43ccfa4f6",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-service-mechanic-apprenticeship-ca-2023fa"
+  },
+  "36622": {
+   "sha256": "839de1346cd13b69e6cf1670f11a232e786711ccd2068192469802f528c6c3ef",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-leadership-ca-2026fa"
+  },
+  "36623": {
+   "sha256": "d1b4c4434b181a4f03d350a10d2ed38ba09a519f4ade863c774f8998d276008b",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-overhead-line-worker-ca-2023fa"
+  },
+  "36624": {
+   "sha256": "efded25c5c529e1dec82350a9097c9b2b18ede2d16a2a4ebdac8dd1dfed37726",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-coach-operator-ca-2026fa"
+  },
+  "38615": {
+   "sha256": "9cf7627d4738f9684a9d3dc0ba9b569708064a0777e2df4a40625a9db6b3d14b",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/high-beginning-esl-cc-2023sp"
+  },
+  "38616": {
+   "sha256": "dbf8198457f7adca9f6923ed3ca1b98d7ec92f4f1c865865923391f54463e46c",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/low-beginning-esl-cc-2026fa"
+  },
+  "38630": {
+   "sha256": "f22271581219b529c689d2e7736878cdfafd00499b70f6cc72e5595e6e1ed99c",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/social-justice-studies-aa-t-2025fa"
+  },
+  "39676": {
+   "sha256": "03a2d5cb41e9d455377493617f69f07c59258a0b7613ed12b38da737fa27738b",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/community-health-worker-cc-2020fa"
+  },
+  "39835": {
+   "sha256": "913dd52892c2b603a9580b4afa6e2c952793596ad5f7b79342678e4e43c84cbb",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/nutrition-and-dietetics-as-t-2026fa"
+  },
+  "39846": {
+   "sha256": "f6d0dd18f94dc1b00f3a23145098dbed27b069813be23a1d5c5861da1a3f9160",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/engineering-ca-2026fa"
+  },
+  "39950": {
+   "sha256": "0abc0faac6a58a076a91e040c1c901c252f4d1f48c271806c5ee1c1f7a87d542",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/english-for-careers-in-food-service-cc-2027fa"
+  },
+  "40350": {
+   "sha256": "7b47c52570d0bda33627f1a9af6e14707f50935d3959d5f92b41458cf2a98f66",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/it-helpdesk-technician-ca-2021sp"
+  },
+  "40746": {
+   "sha256": "aea740aac851c485fc7d7bfd0fb26f9f7bd6e06a5964533afad565a770b93009",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mechatronic-technology-as-2026fa"
+  },
+  "40796": {
+   "sha256": "7233b2a138216a20ff49c214144cc8f108433a285894c49516272d324cfae483",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mechatronic-technology-ca-2026fa"
+  },
+  "40926": {
+   "sha256": "738f67e413380224e64157b61f2f6907cc66e7a19f4ff590c298fccd02023973",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-fighter-emt-academy-ca-2021fa"
+  },
+  "41092": {
+   "sha256": "e061add28f308fdfe5767496259f778a3b652b72fd89eacdea12e44c3a3bc9ff",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-as-2026fa"
+  },
+  "41093": {
+   "sha256": "284505927daa8a4c71940078c54ff1d411d6d3122bf8b8266374cfdcbfbe5d6f",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/baking-and-pastry-ca-2026fa"
+  },
+  "41321": {
+   "sha256": "ac2b14313f9e58fb912409e9b14e49196620fdf2bbec4e2eecbf520c8d5a7119",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/user-experience-and-interface-design-ca-2026fa"
+  },
+  "41323": {
+   "sha256": "5d73189ac9e56c5a77a17cd73e0b140b59cbe96abc834445aa8336e321b4c040",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fire-prevention-internship-certification-ca-2022wi"
+  },
+  "41324": {
+   "sha256": "c2a2ae5dea0e116d5a712b8e4004d687e55b25c878d3799a2a31db30c75300ac",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-as-2026fa"
+  },
+  "41332": {
+   "sha256": "d558a35419ab3f455602ed26c826c13515aafa527bb42b085a712be4222c859c",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/fitness-and-health-ca-2023sp"
+  },
+  "41339": {
+   "sha256": "fb22ca8434035dfa39cc9af1222262c85b50d26259d6b3b9cb4ca5729eda5671",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/management-and-leadership-ca-2024fa"
+  },
+  "41391": {
+   "sha256": "d12d934f817544aa46676b5834919327cce88d22b4fc1f0952625a9336026d4f",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/business-administration-2-0-as-t-2026fa"
+  },
+  "41494": {
+   "sha256": "6cd346fe5cafe84b9cf9a80c80cc19a3d7f9a0ee14a9e3f5ffb9f26cfd0eead9",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/anthropology-aa-t-2026fa"
+  },
+  "42188": {
+   "sha256": "8e7716336ca15fffcaa0cf55886c1d9092ef211ca5bab3b57d19d2217be87850",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/preparation-for-academic-success-in-esl-cc-2022fa"
+  },
+  "42313": {
+   "sha256": "a2b75323f23602e6d119b410e9f802d4dcd513bc33e0c5b9500ed4887be67463",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/low-intermediate-esl-cc-2024fa"
+  },
+  "43142": {
+   "sha256": "18819c25c39d0e2ac5e1ba081085d9e24d56144f039bfdbbec91773cfc51c839",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-ca-2025fa"
+  },
+  "43228": {
+   "sha256": "535e683116a61a2826b80fc36dd2274052a817a20c51efba8f94a2003d1cb316",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/digital-media-marketing-ca-2026fa"
+  },
+  "43230": {
+   "sha256": "a0c6f122896a393b325b600d596424b3a5909795f525989183d1c49d423893fb",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/virtual-production-fundamentals-ca-2023fa"
+  },
+  "43240": {
+   "sha256": "9efb1bbbbf4b0bd44abd4af03878104965062a065b66cafc58106c176b2dbb4c",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-light-rail-operator-ca-2026fa"
+  },
+  "43293": {
+   "sha256": "13ae24b6af3b31693c6e95be9e9f266b9e2414db5aafde3cac72f20a4fa53f06",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-graphics-cc-2026fa"
+  },
+  "43503": {
+   "sha256": "f1954e3b2a8bc8138ac4a0f23eecedc4b0084e4e1fa3f9699f0f74c2a550d7c3",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/video-and-motion-graphics-cc-2023fa"
+  },
+  "43504": {
+   "sha256": "e6b105334991e01bf5e50905d5a37d7183684a85255a0739108d9278ef87cced",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/advanced-esl-cc-2024fa"
+  },
+  "43505": {
+   "sha256": "1a2cc96834b48427c0bad0720484534dbdc6b8c4b74ede31d12949fcc1fa3243",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/intermediate-esl-cc-2023fa"
+  },
+  "43506": {
+   "sha256": "9c89147eb273d6053dd87fddea6a7a772654d46c80ebc6a3b17fef8126d36126",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/high-intermediate-esl-cc-2023fa"
+  },
+  "43509": {
+   "sha256": "76a12093f8380248548b3a675d024f97f68fa1f8b0bea4db82a494c98871d246",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/esl-grammar-and-editing-cc-2023fa"
+  },
+  "43822": {
+   "sha256": "e9eee581ceb0e754a73fa91de0a8d715898d8dda60bb7731667f705a11c83eea",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/behavioral-health-worker-ca-2025fa"
+  },
+  "44040": {
+   "sha256": "c2f62a93dab12f83fb7c16415897436ee47b19931d9f2ba21757b3e0efba89bd",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/tutoring-skills-cc-2024fa"
+  },
+  "44048": {
+   "sha256": "d3a245ad042d8fc999b0381815300bae91beb221e1e818f78bf3c1d6ad504440",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/pharmacy-technician-cc-2024fa"
+  },
+  "44059": {
+   "sha256": "4ee1c52047149a90561a9d06b196f4b80d2651ec2da785ba0157f6a5ddd3a97c",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/foundations-of-behavioral-health-work-cc-2024fa"
+  },
+  "44321": {
+   "sha256": "d60f9238478ce35613a61b6fdf9aae47f723c146739af5993c1ac8af3f315630",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/social-justice-african-american-studies-aa-t-2025fa"
+  },
+  "44366": {
+   "sha256": "0ea3428b778322ba9485f3fdf4f6c9383548f5616681e105f06166fb6b387186",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/artificial-intelligence-ca-2026fa"
+  },
+  "44371": {
+   "sha256": "c64dac759ee42f48b34faf559a735473290ff9e72ed18b2832fce88f243d73cd",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/advanced-virtual-production-ca-2024fa"
+  },
+  "44504": {
+   "sha256": "e5841ddd42d2a63c1d483373712ac7f6dcb173cfde948dfb07f93314546eeea3",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa"
+  },
+  "44817": {
+   "sha256": "627cd7c859ad7aacfb3777519138bc1bbc72d131b5d5a3598a1ba6b14e494c6a",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-transit-coach-bus-operator-pre-apprenticeship-cc-2025fa"
+  },
+  "44969": {
+   "sha256": "661a7faa4b527abdabc771005f28083f1cd2f343ba23dc55af69b2b36395f106",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/data-science-ca-2025fa"
+  },
+  "45229": {
+   "sha256": "cf50fb40a0b650062a858f503737ebfe567188183dc480e0c3c6ba55e26fba11",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/computer-science-as-t-2025fa"
+  },
+  "45329": {
+   "sha256": "9f8405ef36e4d27d077bfd1ee3305c33520a9245b09cb2c257ec043acce67f57",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/hospitality-management-as-t-2026fa"
+  },
+  "45478": {
+   "sha256": "440843d817ebb0e6dc70e6273af908c980b20cd0d302866b331d38c464d30a99",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/public-health-as-t-2026fa"
+  },
+  "45507": {
+   "sha256": "a29c6c6d9d85109d503a92274f2893bc0edacc5e4571b778a1a95f1b9310fa49",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/child-and-adolescent-development-aa-t-2025fa"
+  },
+  "45884": {
+   "sha256": "8daff66d5c636706ca5da3e2da1b0d584c26abde84e020b927ffbab2aa39398a",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-foundations-cc-2026fa"
+  },
+  "46008": {
+   "sha256": "b45f2504cdd1c6c9d0c29b83f3f11a71455ab08013bac766c8ae5a11c0f28549",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/music-production-ca-2026fa"
+  },
+  "46350": {
+   "sha256": "6b77ded11098064a242a8a5d1454f2e32be749e26bea86fe025feb1603361f16",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/mathematics-2-0-as-t-2026fa"
+  },
+  "46351": {
+   "sha256": "743c27e9af7a55a81e0d4c6040b3bfc4602dc9a64bc2dfea189c455f4f38490a",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/emergency-services-administration-bs-2026fa"
+  },
+  "46362": {
+   "sha256": "15b51464fde5ed6f215971015dd827a17daad52deb2f94674ad2822f2ef74e72",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/photography-foundations-cc-2026fa"
+  },
+  "46365": {
+   "sha256": "756cc421724fab51da37668a8977781380107adcedde5c7fdedc830ed69091b7",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/web-design-foundations-cc-2026fa"
+  },
+  "46416": {
+   "sha256": "1e9f41a92a70b2d46fa31f8e781bd40b7ba4673af60fa7bcd2ba0ce0ff965e5d",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/emergency-medical-technician-cc-2026fa"
+  },
+  "46439": {
+   "sha256": "00a8e3c4d935483f30665867f02ecce94d6d9c9e869a7e81f7a59c46d9065045",
+   "url": "https://mission.elumenapp.com/catalog/24-25/program/web-development-foundations-cc-2026fa"
+  }
+ },
+ "run": "44758125011"
+}
