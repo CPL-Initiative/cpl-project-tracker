@@ -1,0 +1,3 @@
+-- Rollback of 2026-11-20_s688_cpl_memory_rows.sql. Deletes only this file's create log rows and rows (by slug).
+delete from public.cpl_memory_log where action = 'create' and memory_id in (select id from public.cpl_memory where slug in ('p-skip-tag-in-commit-message-s688','p-bot-commit-leaves-head-untested-s688','d-oldest-finished-among-finished-s688','d-revert-stamp-commit-for-test-s688','m-s688-five-merged','m-s687-rows-applied-s688'));
+delete from public.cpl_memory where slug in ('p-skip-tag-in-commit-message-s688','p-bot-commit-leaves-head-untested-s688','d-oldest-finished-among-finished-s688','d-revert-stamp-commit-for-test-s688','m-s688-five-merged','m-s687-rows-applied-s688');
