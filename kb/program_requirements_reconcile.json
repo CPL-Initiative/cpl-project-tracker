@@ -875,6 +875,16 @@
      "before": "Required\\s+C\\s*ourses|Coursework\\s+required|\\bSelect\\s",
      "read": "college-page-read 40690480267 (kb/college_reads/glendale_program_totals.json)",
      "why": "S524 SkyCranberry, 2026-10-30. Glendale's program pages print no 'Total Units' line; the description paragraph states the total in prose before the course list: 'Students must complete all required core courses for a total of 19 - 21 units' (Biotechnology Research Lab Assistant, pdf page 92), 'must complete all the required courses for a minimum of 9 units' (Social Media Marketing I, page 113), 'The student must complete all CORE courses totaling 17-18 units' (Tax Preparer, page 113; college-page-read 40690480267). 41 filed records name no total (live read 2026-10-30). The step reads only the words ahead of the program's first list ('Required Courses', 'Coursework required', 'Select'), because a program printing no total runs on into the next program's paragraph on the same page (Restaurant Management, then Social Media Marketing I's 'minimum of 9 units'). S525 SkyTayberry: the words run from the record's own heading (section_heading) to its first list; read from the top of the page, all 8 of S524's fills took the first program's total (page read 41025920825) and were rolled back."
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "only_with": "degree_total",
+     "pattern": "Minimum\\s+Required\\s+Units\\s+for\\s+Degree\\s*\\(\\s*with\\s+GE\\s*\\)\\s*:?\\s*60(?:\\.0+)?\\b",
+     "read": "free reconcile 44763682085 on claude/s690-piles-glendale (6297bdd5), after page read 44751552964",
+     "source_words": "Minimum Required Units for Degree (with GE) 60",
+     "why": "S690 (worker piles), census lever 5. Glendale's program pages print 'Minimum Required Units for Degree (with GE) 60' beside the major's own 'Minimum/Maximum Required Units/Hours for Major' (02547, Architectural Drafting & Design A.S.: major 33, degree 60). The 60 counts the major, general education and electives: a floor the electives make up, as at Redwoods, Cerritos and Orange Coast. The free reconcile touched 57 records: the 15 that passed on main still pass, 30 of the lever's 64 now pass (28 with the major's own arithmetic equal on main, 02602 and 02603 with a short high end under Sam's ruling of 2026-11-17), 12 still fail, none goes from pass to fail."
     }
    ]
   },

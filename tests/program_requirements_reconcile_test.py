@@ -3,6 +3,7 @@
 the catalog's own words. A local degree's captured page can span the sibling transfer
 section (Cañada, S421: six local records took the 34 on the first run), so a transfer-only
 step must leave a local degree alone even when its text carries the line. Stdlib only."""
+import copy
 import json
 import os
 import sys
@@ -1892,6 +1893,26 @@ for _c in ("Los Angeles City College", "Los Angeles Pierce College"):
 check("the combined reading is quoted at Berkeley City alone",
       sorted(c for c, v in R.load_steps().items() if isinstance(v, dict)
              and (R.calgetc_step(v) or {}).get("combined_line")) == ["Berkeley City College"])
+
+# S690, census lever 5: Glendale's "Minimum Required Units for Degree (with GE) 60" is a degree floor. The real record
+# 02547 (Architectural Drafting & Design A.S., major 33 of a 60) as main files it, with the page's own two lines.
+_gl = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "glendale_community", "records",
+                                  "02547.json")))["record"]
+_gl_page = ("AD&D-AS - Architectural Drafting & Design - Associate of Science\nMinimum/Maximum Required Units/Hours for "
+            "Major 33\nMinimum Required Units for Degree (with GE) 60\nRequired Courses\nARCH 101 3\n")
+_gl_new, _gl_notes = R.reconcile(copy.deepcopy(_gl), _gl_page, "Glendale Community College", "A.S. Degree")
+check("Glendale: 'Minimum Required Units for Degree (with GE) 60' sets the degree floor on 02547",
+      _gl_new["program"].get("degree_total_minimum") is True
+      and any(n["field"] == "degree_total_minimum" for n in _gl_notes))
+check("Glendale: a degree field printing another figure than 60 sets no floor",
+      not R.reconcile(copy.deepcopy(_gl), _gl_page.replace("(with GE) 60", "(with GE) 66"), "Glendale Community College",
+                      "A.S. Degree")[0]["program"].get("degree_total_minimum"))
+check("Glendale: the floor waits for a record that holds the degree total (only_with)",
+      not R.reconcile(copy.deepcopy(dict(_gl, program=dict(_gl["program"], degree_total={"min": None, "max": None}))),
+                      _gl_page, "Glendale Community College", "A.S. Degree")[0]["program"].get("degree_total_minimum"))
+check("Glendale: the floor step is Glendale's alone among the colleges that print this field's words",
+      [c for c, v in R.load_steps().items() if isinstance(v, dict) and any(
+          "with\\s+GE" in (st.get("pattern") or "") for st in v.get("steps") or [])] == ["Glendale Community College"])
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
