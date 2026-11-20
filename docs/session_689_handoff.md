@@ -93,6 +93,6 @@ that push) and `p-bot-commit-leaves-head-untested-s688` (revert a timestamp-only
 The conductor drops, in the sign-off turn: the PR subscription on #3577 and the COBIx watcher (re-armed every 30
 minutes). Check-ins: none. Artifact watches: none. The vault note is a draft PR on CPLBrain.
 
-Spend: not available; 2026-11-19T23:40Z to 2026-11-20T01:19Z.
+Spend: $12.69 (Opus 5.5 $12.69); collection $4.69, infrastructure $8.00; 2026-11-19T23:40Z to 2026-11-20T01:22Z.
 
 Opening line: *Greetings, you are SkyTern (Session 689), see SkyLinnet's handoff — `docs/session_689_handoff.md` — let's keep rolling with our queue.*
