@@ -184,7 +184,7 @@ const ROW = { id: "r1", slug: "dsp-credit-starting-points", title: "DSP Credit S
   // The publishing model's columns (#3560, kb/migrations/2026-11-19_library_publishing_model.sql).
   publish_target: null, template: false, division: "cobi" };
 // A passing check record for the page the record names now (no version number: the key is "page").
-const PASS = { library_id: "r1", version_key: "page", standard: "WCAG 2.1 AA and Section 508", checked_at: "2026-11-19T18:00:00Z",
+const PASS = { library_id: "r1", version_key: "page", url: "https://claude.ai/artifact/P4R8", standard: "WCAG 2.1 AA and Section 508", checked_at: "2026-11-19T18:00:00Z",
   tool_or_reviewer: "axe-core automated check", result: "pass", report_url: "https://example.org/report" };
 function loadLib(opts) {
   const dom = new JSDOM('<!doctype html><html><body><div id="library-root"></div></body></html>', { url: "https://example.org/#library/cards", runScripts: "dangerously" });

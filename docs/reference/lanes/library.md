@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-19
+updated: 2026-11-20
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -46,8 +46,8 @@ the tab publishes to the Internal Library and Public says the check record is no
   Public confirmation. A draft's check never carries to the page, which is checked again once it is up.
 - DECIDED (S687): the rollback refuses while `cpl_library_checks` holds rows, since nothing else keeps them.
 - DECIDED (S687 conductor, on COBIx's #3572 comments 7022946691, 7023361983 and 7023581179;
-  `d-library-new-page-unlists-s687`): a listed piece leaves the Public Library when its `url` changes, always; and
-  when its `version` changes, unless the latest check for the new version key passes. It keeps `publish_target = 'public'` so part 2's run checks the new page and lists it again. Every writer, the service
+  `d-library-new-page-unlists-s687`): a listed piece leaves the Public Library when its `url` or its `version`
+  changes, always (S688 part 2 dropped the version exception, `d-library-check-after-page-change-s688`). It keeps `publish_target = 'public'` so part 2's run checks the new page and lists it again. Every writer, the service
   role included, since unlisting is the safe direction. Until part 2 relists, this overrides Sam's "a Public Library
   piece stays listed while redrafted, showing the last published version" (Nov 19, item 9; his to reverse): a draft
   stays a draft and unlists nothing, and only a published new version or a new url does. Trigger
@@ -60,21 +60,88 @@ the tab publishes to the Internal Library and Public says the check record is no
 - DECIDED (S687, `d-library-3560-in-four-prs-s687`): #3560 lands in four PRs, one after another, since its asks share
   `library.js`: 1 the two publish buttons, Template and the check gate (#3572); 2 the check run and the footer; 3 the
   progress bar; 4 Publish all, Add existing, redraft and republish. Memory rows: run 44624406317.
-- Known limit, part 2's to close: a check names a version key and a url, not the page's contents, so a page whose
-  contents change at the same url and version keeps its listing. The tab's gate in `library.js` reads the key alone;
-  the function refuses what it offers at a moved url.
+- Known limit (S688 part 2): what is left is the tab's and `cpl_library_set_public()`'s view between runs. A check
+  row names a version key, a url and a time, not the page's bytes, so from a content change at the same url and version
+  (a session's `scripts/library_page.py` rebuild, a hand commit, a page `--finish` left for the next run) until the next
+  run, a team press of Public can list the page on the earlier page's pass while its line reads Not yet certified. The
+  next run closes it: `--plan` sees the drift, `--check` takes a listed piece off before its new check, and only a pass
+  of the new content relists it. A content hash on the check row, matched against the served page, would close the gap
+  between runs.
 - DECIDED (S688 conductor, COBIx on #3572, 7023899407; `d-library-check-binds-url-s688`): a check binds to the url it
-  checked (`cpl_library_checks.url`). `cpl_library_set_public()` and the trigger's version branch count a pass only at
-  the record's current url and key, so the old url's pass never relists a moved piece. Old rows keep a null url, which
+  checked (`cpl_library_checks.url`). `cpl_library_set_public()` counts a pass only at the record's current url and
+  key, so the old url's pass never relists a moved piece. Old rows keep a null url, which
   matches nothing. Part 2's check run must write `url` on every check row.
   `kb/migrations/2026-11-19_library_check_binds_url.sql`, not yet applied.
 - DECIDED (S687): a new piece pressed to Public is never listed at the press (it has no page yet); part 2's check run
   lists it once its page passes. Only the service role writes a check, so the tab never certifies a piece.
 - DECIDED (S687): Replace the public copy on a revision is unchanged until part 4 (redraft and republish).
 
-**NEXT (#3560):** part 2, the check run in `library-publish.yml` (writes `cpl_library_checks` with the `url` it
-checked on every row, lists the pieces whose `publish_target` is public once they pass) and the footer from each piece's check record; part 3, the progress bar;
-part 4, Publish all, Add existing, redraft and republish.
+**BUILT, not yet run (#3560 part 2, S688; Sam's order of Nov 19 via COBIx, comment 7025524965): the check run, list
+on a pass, the footer line, and the tab's url-aware pre-check.** After `--finish` moves the records,
+`library-publish.yml` plans (`scripts/library_check.py --plan`), installs Node and Chromium only when a page needs
+checking, then `--check`: each page writes the line it will show on a pass, `scripts/a11y.js` checks it through
+`scripts/library_check.config.js` (Light at nine widths, Dark at two; geometry, paint and axe-core's WCAG 2.0 to 2.2 A
+and AA rules; `--json` gives one result per target), a plain-words report lands at
+`library/<slug>/accessibility/<time>.txt`, and one `cpl_library_checks` row per page goes in with the service key
+(record's current url and key, the division's standard and tool, pass or fail, findings, the report's Pages address,
+`created_by` = `library-publish.yml run <id> attempt <n>`, `checked_at` the database's). The receipt
+(`kb/receipts/library_checks/`) is written as soon as the rows are in, and every Library page's line is rewritten from
+the rows written. `--plan` also plans any page whose content on disk differs from its latest check's committed sha (or
+has no proof), and `--check` first takes a listed one off the Public Library when it has a passing check its page no
+longer matches (guarded, before-values in the receipt, `publish_target` put back to `public`). `--check` lists nothing: `--list` is its own step, after the checks commit is
+pushed and only when that push succeeded, reading the waiting passes from `check.json`; each listing's before-values
+join a listing receipt before its update, which a last commit carries, and one failed listing never stops the next (the
+step goes red at the end). A page whose version label the table's key check refuses
+is skipped with its reason in `check.json` and on the card, and the rest of the batch goes in. A second commit carries
+lines, reports and the receipt: whatever is on disk is what the receipt proves. Both push loops fail their step after
+three failed pushes, and Pages deploys though a check step failed. Schema
+`kb/migrations/2026-11-20_library_check_after_page_change.sql` (apply after `..._check_binds_url.sql`). Tests
+`tests/library_check_test.py`, `tests/library_check_footer.test.js`, `tests/library_publishing_model.test.js` (I),
+`tests/library_publishing_sql_proof.py`.
+- DECIDED (S688, `d-library-check-run-on-publish-s688`): the run checks every page it published and every piece waiting
+  on the Public Library, and every Library page whose content differs from its latest check's committed sha or has no
+  proof; a page whose check failed waits for new content, and the run never checks the same content twice. Only a page at its own Pages address (`library/<slug>/`) is checked; a piece
+  elsewhere (claude.ai, SharePoint) reads Not yet certified until it has a Pages copy.
+- RULED (Sam, Nov 19, 2026, 7:32 PM PT, relayed by COBIx on #3581,
+  [7029505105](https://github.com/CPL-Initiative/cpl-project-tracker/pull/3581#issuecomment-7029505105);
+  `r-library-legacy-listings-stay-sam-2026-11-19`, keeping `d-library-legacy-listings-stay-s688` as written): *"The 21
+  pieces listed today stay on the Public Library as "Not yet certified" while their findings are fixed. They are not
+  taken off when the first check fails."* A legacy listing, listed with no passing check at its current key and url,
+  stays listed whatever its checks find; a failed check shows its findings on the card for the team to fix. The
+  exception covers only those legacy listings: anything new, and any version or url change, still lists only on a pass.
+  From a piece's first pass on, the drift rule applies. The rule is `drift_unlists` in `scripts/library_check.py`.
+- DECIDED (S688, `d-library-run-lists-by-guarded-update-s688`): the run lists a passing piece whose `publish_target` is
+  `public` by writing the columns `cpl_library_set_public()` writes, as the service role (the guard trigger admits it),
+  guarded on the record as read and on the url and version checked. `set_public()` refuses the service key at its first
+  gate (no phrase, no reviewer email), and widening it would add a writer path. The pass must be no older than the
+  record's `page_changed_at`, as in `latest_check` and the tab.
+- DECIDED (S688 conductor, second read of #3581; `d-library-list-needs-typed-summary-s688`): the run lists only a piece
+  that already holds a `public_summary` a person typed; it never copies the internal summary or the title. Otherwise
+  the piece waits, and the card says *"Its accessibility check passed. The Public Library lists it once it has a public
+  summary: press Publish to Public Library and add one."*
+- DECIDED (S688, `d-library-footer-from-check-s688`): one marked line before the Ask Sierra script, from the latest
+  check at the page's key and url since its last change; none or a fail reads the division's Not yet certified. The run
+  stamps the pass line before it checks, so the page checked is the page served; a fail puts Not yet certified back.
+  `{report}` links "report"; the CPL Initiative's template has none, so its words "report linked" carry the link.
+  `library_publish.py --write` stamps Not yet certified (a copied line never speaks for a new page), and
+  `scripts/library_page.py` writes Not yet certified on every page it builds. Colors are the public header's tokens.
+- DECIDED (S688 conductor, third round on #3581; `d-library-footer-binds-page-hash-s688`, replacing the per-run hold
+  list): each check records `content_hash`, the sha256 of the page it checked with the accessibility line taken out, in
+  a committed JSON beside its report (`library/<slug>/accessibility/<time>.json`, with the check row's id, key and url).
+  The restamp prints a pass only when the record's latest check (current key and url, no earlier than
+  `page_changed_at`) has that proof and its sha equals the page on disk now; every other page, a rebuilt page or one
+  `--finish` left included, reads Not yet certified, in any later run too. An insert that errs reads back the rows that
+  landed by `created_by`, so they get their receipt, proof and line.
+- DECIDED (S688, `d-library-check-after-page-change-s688`): every version of a Pages piece shares one url, so the url
+  binding alone left a relabel open (v5 set back to "4", which passed). `cpl_library.page_changed_at`, stamped by a
+  trigger on any url or version change and held against a hand-set value, closes it: `set_public()` counts a pass only
+  at or after it, and a listed version change always unlists.
+- DECIDED (S688, `d-library-tab-precheck-url-s688`): `library.js` `latestCheck` reads the newest check per piece,
+  version key and url, no older than `page_changed_at`; a draft key reads the draft's newest. A waiting piece whose check
+  failed says so, with the findings count and The check report.
+
+**NEXT (#3560):** apply `2026-11-19_library_check_binds_url.sql`, then `2026-11-20_library_check_after_page_change.sql`
+and the part 2 memory rows; part 3, the progress bar; part 4, Publish all, Add existing, redraft and republish.
 
 ✅ **The tab is built** (`library.js`, under *Sierra & Team Tools*; the side
 session beside S336, 2026-10-05). It reads `cpl_library` live behind the team

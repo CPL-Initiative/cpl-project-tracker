@@ -688,17 +688,27 @@
       return window.fetch(url, { headers: headers() }).then(function (res) { return res.ok ? res.json() : null; }, function () { return null; });
     };
     return Promise.all([
-      get(CHECKS_URL + "?select=library_id,version_key,standard,checked_at,tool_or_reviewer,result,report_url&order=checked_at.desc"),
+      get(CHECKS_URL + "?select=library_id,version_key,url,standard,checked_at,created_at,tool_or_reviewer,result,findings,report_url&order=checked_at.desc"),
       get(SETTINGS_URL + "?select=division,division_name,standard,reviewer_or_tool,footer_template,not_certified")
     ]).then(function (got) {
       var checks = got[0], sets = got[1];
       if (!Array.isArray(checks)) state.checks = false;
       else {
+        // Newest wins per piece, version key and url (#3560 part 2): a check names the url it ran against
+        // (cpl_library_checks.url, #3577), and the gate in cpl_library_set_public() matches c.url = l.url. A draft's
+        // key is looked up by key alone, since a draft has no address of its own.
         state.checks = {};
+        state.draftChecks = {};
+        var newer = function (a, b) {
+          var ta = Date.parse(a.checked_at), tb = Date.parse(b.checked_at);
+          return ta !== tb ? ta > tb : String(a.created_at || "") > String(b.created_at || "");
+        };
         checks.forEach(function (c) {
-          if (!c || !c.library_id || !c.version_key || (c.result !== "pass" && c.result !== "fail") || !c.checked_at) return;
-          var k = c.library_id + "|" + c.version_key, was = state.checks[k];
-          if (!was || String(c.checked_at) > String(was.checked_at)) state.checks[k] = c;
+          if (!c || !c.library_id || !c.version_key || (c.result !== "pass" && c.result !== "fail") || !c.checked_at || isNaN(Date.parse(c.checked_at))) return;
+          var k = c.library_id + "|" + c.version_key + "|" + (c.url || ""), was = state.checks[k];
+          if (!was || newer(c, was)) state.checks[k] = c;
+          var d = c.library_id + "|" + c.version_key, wasD = state.draftChecks[d];
+          if (/^draft:/.test(c.version_key) && (!wasD || newer(c, wasD))) state.draftChecks[d] = c;
         });
       }
       state.settings = {};
@@ -887,6 +897,8 @@
   // The versions a check covers, the rule the migration's header states for the check run. Listing reads the page's key
   // alone: the page is what the Public Library links, so a pass for a draft never lists a page (second read of #3572).
   // The draft's key speaks only to a new piece's draft, in its Public confirmation.
+  // The version keys cpl_library_checks accepts (its version_key check in kb/migrations/2026-11-19_library_publishing_model.sql).
+  var KEY_OK = /^(draft:[0-9a-f-]{36}|version:[A-Za-z0-9 ._-]{1,40}|page)$/;
   function pageKey(r) { return r && r.url ? (r.version ? "version:" + r.version : "page") : ""; }
   function draftKey(r) {
     var g = r && r.regen, rs = regenState(r);
@@ -894,23 +906,54 @@
   }
   // What Details shows: the page's check when there is a page, else the draft's.
   function checkKey(r) { return pageKey(r) || draftKey(r); }
+  // A page's check counts only at the url the record names now, and only when it ran no earlier than the page last
+  // changed (cpl_library.page_changed_at, when the column is there): after a url move the old url's pass offers
+  // nothing, and a version relabeled to a key that passed earlier finds no check (#3560 part 2; the same rule as
+  // cpl_library_set_public()). A draft's key reads the draft's newest check.
   function latestCheck(r, key) {
     var k = key === undefined ? checkKey(r) : key;
-    return k && state.checks ? state.checks[r.id + "|" + k] || null : null;
+    if (!k || !state.checks) return null;
+    if (/^draft:/.test(k)) return (state.draftChecks || {})[r.id + "|" + k] || null;
+    if (!r.url) return null;
+    var c = state.checks[r.id + "|" + k + "|" + r.url] || null;
+    if (c && r.page_changed_at && !isNaN(Date.parse(r.page_changed_at)) && Date.parse(c.checked_at) < Date.parse(r.page_changed_at)) return null;
+    return c;
   }
   function publicGate(r, key) {
     if (!publishingReady()) return { ok: false, absent: true, why: "The accessibility check record is not available yet, so the Public Library cannot list it." };
     if (r.remediation === "in_remediation") return { ok: false, why: "It is in remediation. The Public Library lists it once it is remediated and its accessibility check passes." };
+    // A version label the check table's key check refuses: the check run skips the page and says why (#3581 second read).
+    if ((key === undefined || key === pageKey(r)) && pageKey(r) && !KEY_OK.test(pageKey(r))) {
+      return { ok: false, label: true, why: "Its version label, " + String(r.version).trim() + ", cannot carry an accessibility check record. " +
+        "Use up to 40 letters, digits, spaces, dots, dashes or underscores in Edit the record, and the next run checks it." };
+    }
     var c = latestCheck(r, key === undefined ? pageKey(r) : key);
     if (!c) return { ok: false, why: "Not yet certified. The Public Library lists it once its accessibility check passes." };
-    if (c.result !== "pass") return { ok: false, check: c, why: "Its accessibility check of " + fmtDate(String(c.checked_at).slice(0, 10)) + " did not pass. The Public Library lists it once a check passes." };
+    if (c.result !== "pass") return { ok: false, check: c, why: "Its accessibility check of " + fmtDate(String(c.checked_at).slice(0, 10)) + " did not pass" +
+      (typeof c.findings === "number" && c.findings > 0 ? " (" + c.findings + (c.findings === 1 ? " finding" : " findings") + ")" : "") +
+      ". The Public Library lists it once a new version passes its check." };
     return { ok: true, check: c };
   }
   // A piece someone published to the Public Library that waits on its check.
   function waitsToList(r) { return !!(r && r.publish_target === "public" && !r.public_listed); }
+  // A waiting piece says why it waits: a check that did not pass names its date and findings (a fail leaves it in the
+  // Internal Library, #3560 part 2), and its report when the check run linked one.
+  function waitWords(r, gate) {
+    return (gate.check && gate.check.result !== "pass") || gate.label ? "In the Internal Library. " + gate.why
+      : "In the Internal Library. The Public Library lists it once its accessibility check passes.";
+  }
+  function reportLink(c) {
+    return c && c.report_url && /^https:\/\//.test(c.report_url) ? ' <a href="' + esc(c.report_url) + '" target="_blank" rel="noopener">The check report</a>' : "";
+  }
+  // The check run lists a passing piece only when it holds a public summary a person typed (#3581 second read): it
+  // never copies the internal summary or the title, so a waiting piece without one says so.
+  var NEEDS_SUMMARY = "Its accessibility check passed. The Public Library lists it once it has a public summary: press Publish to Public Library and add one.";
+  function needsSummary(r, gate) { return waitsToList(r) && gate.ok && !String(r.public_summary || "").trim(); }
   function waitLine(r) {
-    return waitsToList(r) && r.url && !publicGate(r).ok ? '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' +
-      esc("In the Internal Library. The Public Library lists it once its accessibility check passes.") + "</p>" : "";
+    var gate = waitsToList(r) && r.url ? publicGate(r) : { ok: true };
+    if (r.url && needsSummary(r, gate)) return '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' + esc(NEEDS_SUMMARY) + "</p>";
+    return !gate.ok ? '<p class="lib-line" data-pubwait="' + esc(r.id) + '">' + esc(waitWords(r, gate)) +
+      (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "") + "</p>" : "";
   }
   // Details: the check record for the version the record names now, under Sam's labels.
   function accessRows(r) {
@@ -936,9 +979,9 @@
     if (!r.url) return esc(draftsOnCard(r) ? "Not listed. Publish to Public Library on its card lists it once its page is up and its accessibility check passes." : publicReach(r));
     var gate = publicGate(r);
     // A piece waiting on its check offers the listing form once the check passes (second read of #3572).
-    if (waitsToList(r) && !gate.ok) return esc("In the Internal Library. The Public Library lists it once its accessibility check passes.");
+    if (waitsToList(r) && !gate.ok) return esc(waitWords(r, gate)) + (gate.check && gate.check.result !== "pass" ? reportLink(gate.check) : "");
     if (state.pub !== r.id) {
-      return "In the Internal Library." + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
+      return (needsSummary(r, gate) ? esc(NEEDS_SUMMARY) : "In the Internal Library.") + '<div class="lib-actions-row"><button type="button" class="lib-btn" data-pub="' + esc(r.id) + '">Publish to Public Library</button></div>';
     }
     var head = '<form class="lib-form" data-pubform="' + esc(r.id) + '"><p class="lib-confirm" data-pubconfirm="' + esc(r.id) + '">' + esc(PUBLIC_CONFIRM) + "</p>";
     var cancel = '<button type="button" class="lib-btn" data-pubcancel="1">Cancel</button>';

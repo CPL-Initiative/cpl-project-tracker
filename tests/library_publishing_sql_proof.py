@@ -26,6 +26,11 @@ against stubs of Supabase's auth.role(), auth.jwt(), team_pass_ok() and is_allow
     url it checked, so a pass with a null url, or one at another url, is refused, a url move while unlisted cannot
     relist on the old url's pass, and a listed version change unlists unless the new key passed at the current url;
     its rollback refuses while a check carries a url, then restores the third migration's bodies and drops the column;
+  * kb/migrations/2026-11-20_library_check_after_page_change.sql (#3560 part 2): a pass counts only when it ran no
+    earlier than cpl_library.page_changed_at, which a trigger stamps on any url or version change and holds against a
+    hand-set value, so a version relabeled to a key that passed is refused; a listed version change always unlists;
+    a check written after the change lists; its rollback restores the url-binding bodies and drops the column; the
+    part 2 memory rows load once and roll back;
   * the rollback refuses while a check exists (naming the count), and once they are gone restores the ungated
     function and drops the tables and columns.
 
@@ -59,6 +64,10 @@ MEMORY = os.path.join(ROOT, "kb/migrations/2026-11-19_s687_library_memory_rows.s
 # current url, so a url move while unlisted cannot relist on the old url's pass.
 BINDS = os.path.join(ROOT, "kb/migrations/2026-11-19_library_check_binds_url.sql")
 BINDS_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_library_check_binds_url_rollback.sql")
+# The fifth (#3560 part 2, S688): a check counts only when it ran after the record's page last changed, so a version
+# relabeled to a key that passed at the same url cannot list on that earlier page's pass.
+AFTER = os.path.join(ROOT, "kb/migrations/2026-11-20_library_check_after_page_change.sql")
+AFTER_RB = os.path.join(ROOT, "kb/migrations/2026-11-20_library_check_after_page_change_rollback.sql")
 MEMORY_S688 = os.path.join(ROOT, "kb/migrations/2026-11-19_s688_library_memory_rows.sql")
 MEMORY_S688_RB = os.path.join(ROOT, "kb/migrations/2026-11-19_s688_library_memory_rows_rollback.sql")
 
@@ -82,7 +91,10 @@ create table public.cpl_library (
   kind text, occasion text, made_on date, versions jsonb not null default '[]'::jsonb,
   for_kind text, for_category text, for_name text);
 create table public.cpl_memory (
-  slug text primary key, kind text, title text, summary text, tags text[], status text, source text,
+  -- kind and summary carry the live table's checks (S688: a 'ruling' kind passed this stub and would fail live).
+  slug text primary key, kind text check (kind in ('fact','pitfall','opportunity','risk','wishlist','question',
+  'decision','milestone','procedure')), title text, summary text check (char_length(summary) <= 400), tags text[],
+  status text, source text,
   verified_by text, verified_at timestamptz, author text, event_date date);
 """
 
@@ -344,6 +356,71 @@ def main():
                             "where p.proname = 'cpl_library_unlist_on_new_page' and a.privilege_type = 'EXECUTE';")
         check("the trigger function stays closed to PUBLIC, anon and authenticated",
               not ({"PUBLIC", "anon", "authenticated"} & set(filter(None, out.split(",")))), out)
+
+        # ── A check counts only after the page last changed (2026-11-20_library_check_after_page_change.sql) ──
+        ok, _, err = c.psql(open(AFTER).read())
+        check("the page-change migration loads", ok, err)
+        ok, _, err = c.psql(open(AFTER).read())
+        check("the page-change migration is re-runnable", ok, err)
+        card = piece("card", "4")
+        CU = "https://example.org/card/"
+        stamp_of = lambda: c.psql("select coalesce(page_changed_at::text, '-') from public.cpl_library where slug = 'card';")[1]  # noqa: E731
+        check("a record whose page never changed has no page_changed_at", stamp_of() == "-")
+        add_at(card, "version:4", "pass", "2026-11-19T17:00:00Z", CU)
+        ok, out, err = listing(c, "card")
+        check("with no page change recorded, a pass at its key and url lists it, as before", ok and out == "t", err)
+        add_at(card, "version:5", "pass", "2026-11-19T17:05:00Z", CU)
+        c.psql("update public.cpl_library set version = '5' where slug = 'card';", "set test.role = 'service_role';")
+        check("⭐ a listed version change always unlists now, though a pass for the new key at the url exists, and keeps "
+              "publish_target public, the service role writing", row("card") == "false|public", row("card"))
+        check("the version change stamps page_changed_at", stamp_of() != "-")
+        c.psql("update public.cpl_library set version = '4' where slug = 'card';")
+        ok, _, err = listing(c, "card")
+        check("⭐ a version relabeled to a key that passed is refused: that pass ran before the page last changed",
+              not ok and "passing accessibility check record" in err and row("card").startswith("false"), err)
+        stamped = stamp_of()
+        c.psql("update public.cpl_library set page_changed_at = '1970-01-01', title = 'Card, retitled' where slug = 'card';")
+        check("⭐ no writer sets page_changed_at by hand: an update that leaves the page alone holds it",
+              stamp_of() == stamped, stamp_of())
+        ok, _, err = listing(c, "card")
+        check("so the relabel stays refused after that try", not ok, err)
+        ok, _, err = c.psql("insert into public.cpl_library_checks (library_id, version_key, standard, tool_or_reviewer, result, created_by, url) "
+                            "values ('%s', 'version:4', 'WCAG 2.1 AA and Section 508', 'axe-core automated check', 'pass', 'library-proof@bot', '%s');"
+                            % (card, CU))
+        ok, out, err = listing(c, "card")
+        check("a check written after the change (checked_at the database's now(), as the check run writes it) lists it",
+              ok and out == "t", err)
+        c.psql("update public.cpl_library set url = 'https://example.org/card-moved/' where slug = 'card';")
+        check("a url change still unlists", row("card") == "false|public", row("card"))
+        ok, out, _ = c.psql("select coalesce(string_agg(case when a.grantee = 0 then 'PUBLIC' else r.rolname end, ','), '') "
+                            "from pg_proc p, aclexplode(p.proacl) a left join pg_roles r on r.oid = a.grantee "
+                            "where p.proname = 'cpl_library_stamp_page_change' and a.privilege_type = 'EXECUTE';")
+        check("the stamp trigger's function is closed to PUBLIC, anon and authenticated",
+              not ({"PUBLIC", "anon", "authenticated"} & set(filter(None, out.split(",")))), out)
+        ok, _, err = c.psql(open(AFTER_RB).read())
+        check("the page-change rollback runs", ok, err)
+        defs = c.psql("select pg_get_functiondef('public.cpl_library_set_public(text, boolean, text, text[], text)'::regprocedure) "
+                      "|| pg_get_functiondef('public.cpl_library_unlist_on_new_page()'::regprocedure);")[1]
+        check("it drops the column and the stamp trigger, and restores the url-binding bodies",
+              c.psql("select count(*) from information_schema.columns where table_name = 'cpl_library' and column_name = 'page_changed_at';")[1] == "0"
+              and c.psql("select count(*) from pg_trigger where tgname = 'cpl_library_page_changed_trg';")[1] == "0"
+              and "page_changed_at" not in defs and "c.url = l.url" in defs and "c.url = new.url" in defs, defs[:200])
+        ok, _, err = c.psql(open(AFTER).read() + open(AFTER_RB).read())
+        check("the page-change migration applies and rolls back again", ok, err)
+        P2_ROWS = os.path.join(ROOT, "kb/migrations/2026-11-20_s688_library_part2_memory_rows.sql")
+        P2_RB = os.path.join(ROOT, "kb/migrations/2026-11-20_s688_library_part2_memory_rows_rollback.sql")
+        ok, _, err = c.psql(open(P2_ROWS).read() + open(P2_ROWS).read())
+        got = c.psql("select count(*) || '|' || max(char_length(summary)) || '|' || count(*) filter (where status = 'proposed') "
+                     "from public.cpl_memory where slug like 'd-library-%-s688' and slug <> 'd-library-check-binds-url-s688';")[1].split("|")
+        check("the seven part 2 decision rows load once each, proposed, in 400 characters or fewer, and are re-runnable",
+              ok and got[0] == "7" and int(got[1]) <= 400 and got[2] == "7", err or got)
+        sam = c.psql("select count(*) || '|' || max(status) || '|' || max(verified_by) || '|' || count(verified_at) || '|' || "
+                     "max(char_length(summary)) from public.cpl_memory where slug = 'r-library-legacy-listings-stay-sam-2026-11-19';")[1].split("|")
+        check("Sam's ruling row loads once, verified, verified by Sam as relayed by COBIx, with a time, in under 380 characters",
+              sam[0] == "1" and sam[1] == "verified" and sam[2] == "Sam (relayed by COBIx on #3581)" and sam[3] == "1" and int(sam[4]) < 380, sam)
+        c.psql(open(P2_RB).read())
+        check("their rollback removes all eight", c.psql("select count(*) from public.cpl_memory where (slug like 'd-library-%-s688' "
+                                                        "and slug <> 'd-library-check-binds-url-s688') or slug = 'r-library-legacy-listings-stay-sam-2026-11-19';")[1] == "0")
 
         n_url = c.psql("select count(*) from public.cpl_library_checks where url is not null;")[1]
         ok, _, err = c.psql(open(BINDS_RB).read())
