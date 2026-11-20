@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Psychology",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=265",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=264",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9483,
+  "input_tokens": 10614,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9483,
-    "output_tokens": 1381,
+    "input_tokens": 10614,
+    "output_tokens": 2391,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1381,
+  "output_tokens": 2391,
   "output_tokens_details": {
-   "thinking_tokens": 176
+   "thinking_tokens": 933
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06555,
- "ms": 11462,
- "seconds": 11.7,
+ "cost_usd": 0.09028,
+ "ms": 20116,
+ "seconds": 20.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 4,
    "listed": 20,
-   "share": 0.0,
+   "share": 0.2,
    "missing": [
-    "PSYCC1000",
-    "PSYCC1000H",
     "PSYCH102",
     "PSYCH103",
     "PSYCH104",
@@ -67,44 +65,77 @@
     "PSYCH230",
     "PSYCH235",
     "PSYCH240",
-    "STATC1000",
-    "STATC1000E",
     "STATC1000H"
    ],
-   "unexplained": [],
-   "none_placed": true,
+   "unexplained": [
+    "PSYCH102",
+    "PSYCH103",
+    "PSYCH104",
+    "PSYCH105",
+    "PSYCH109",
+    "PSYCH110",
+    "PSYCH126",
+    "PSYCH167",
+    "PSYCH172",
+    "PSYCH172H",
+    "PSYCH180",
+    "PSYCH225",
+    "PSYCH230",
+    "PSYCH235",
+    "PSYCH240"
+   ],
+   "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 0,
-   "codes": [],
+   "count": 15,
+   "codes": [
+    "PSYC102",
+    "PSYC103",
+    "PSYC104",
+    "PSYC105",
+    "PSYC109",
+    "PSYC110",
+    "PSYC126",
+    "PSYC167",
+    "PSYC172",
+    "PSYC172H",
+    "PSYC180",
+    "PSYC225",
+    "PSYC230",
+    "PSYC235",
+    "PSYC240"
+   ],
    "flagged": [],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.0,
+    26.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
-   "codes": [],
-   "pass": true
+   "codes": [
+    "STATC1000 in 'Program Requirements'"
+   ],
+   "pass": false
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -123,11 +154,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "PSYCHOLOGY (CREDIT PROGRAMS / COURSE DESCRIPTIONS)",
+   "section_heading": "Associate in Arts Degree: Psychology",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -144,98 +175,220 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students will be able to assess the influence of a variety of factors that contribute to behavior and mental processes, evaluate psychological concepts, and compare and contrast theoretical perspectives, empirical findings, and historical trends in the field of Psychology."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT-C1000E",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT-C1000",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus three units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC-172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-172H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus three units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC-105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "PSYC C1000",
-    "why": "not in the text; no A.A. requirements printed"
-   },
-   {
-    "code": "PSYC C1000H",
-    "why": "not in the text; no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 102",
-    "why": "only a course description (PSYC 102); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 103",
-    "why": "only a course description (PSYC 103); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 104",
-    "why": "only a course description (PSYC 104); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 105",
-    "why": "only a course description (PSYC 105); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 109",
-    "why": "only a course description (PSYC 109); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 110",
-    "why": "only a course description; no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 126",
-    "why": "only a course description (PSYC 126); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 167",
-    "why": "only a course description (PSYC 167); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 172",
-    "why": "only a course description (PSYC 172); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 172H",
-    "why": "only a course description (PSYC 172H); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 180",
-    "why": "only a course description (PSYC 180); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 225",
-    "why": "only a course description (PSYC 225); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 230",
-    "why": "only a course description (PSYC 230); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 235",
-    "why": "only a course description (PSYC 235); no A.A. requirements printed"
-   },
-   {
-    "code": "PSYCH 240",
-    "why": "only a course description (PSYC 240); no A.A. requirements printed"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "named only in a prerequisite/credit-limit note; no A.A. requirements printed"
-   },
-   {
-    "code": "STAT C1000E",
-    "why": "named only in a prerequisite/credit-limit note; no A.A. requirements printed"
-   },
-   {
     "code": "STAT C1000H",
-    "why": "named only in a prerequisite/credit-limit note; no A.A. requirements printed"
+    "why": "catalog prints the honors row as 'STAT-C1000 Introductory Statistics – Honors' (likely a typo for STAT-C1000H); recorded as printed"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 265-266) contains only Psychology course descriptions, not the Psychology A.A. degree requirements; the program requirements section appears to be elsewhere in the catalog and should be retrieved.",
-   "No program learning outcomes, totals, GE pattern, or careers for the A.A. are printed in the text. PSYCH 110's description mentions 'careers in the field', but careers are not taken from course descriptions.",
-   "Course descriptions print codes as 'PSYC' (e.g., PSYC 102) with 'Formerly PSYCH-102', while the closed list uses 'PSYCH'; the PSYC C1000 description appears to precede this excerpt (text begins at PSYC 102)."
+   "The catalog prints the subject as PSYC (e.g., PSYC-102), while the closed list uses PSYCH (e.g., PSYCH 102); the course descriptions say 'Formerly PSYCH-102' etc., so these were treated as the closed-list courses, not catalog additions.",
+   "The fourth alternative to PSYC-104 is printed as 'STAT-C1000 Introductory Statistics – Honors 4.0', duplicating the STAT-C1000 code; it is probably STAT-C1000H. A reviewer should check it.",
+   "The single 'Degree Student Learning Outcome' printed under this degree was recorded.",
+   "The text following the requirements is course descriptions, not part of the award requirements.",
+   "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "36cf7ca1a2b5b4c1",
+ "source_codes": [
+  "PSYCC1000",
+  "PSYCC1000H",
+  "PSYCH102",
+  "PSYCH103",
+  "PSYCH104",
+  "PSYCH105",
+  "PSYCH109",
+  "PSYCH110",
+  "PSYCH126",
+  "PSYCH167",
+  "PSYCH172",
+  "PSYCH180",
+  "PSYCH225",
+  "PSYCH230",
+  "PSYCH235",
+  "PSYCH240",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.95
 }

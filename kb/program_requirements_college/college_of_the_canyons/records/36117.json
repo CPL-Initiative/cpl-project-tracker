@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Social Justice Studies",
  "award": "A.A- T Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=293",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=293",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12463,
+  "input_tokens": 12462,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12463,
-    "output_tokens": 2731,
+    "input_tokens": 12462,
+    "output_tokens": 3081,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2731,
+  "output_tokens": 3081,
   "output_tokens_details": {
-   "thinking_tokens": 1071
+   "thinking_tokens": 1383
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10447,
- "ms": 21219,
- "seconds": 22.5,
+ "cost_usd": 0.11147,
+ "ms": 25256,
+ "seconds": 25.5,
  "parts": null,
  "error": null,
  "score": {
@@ -172,7 +172,7 @@
     ]
    },
    {
-    "name": "Plus three units from the following:",
+    "name": "Plus three units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -204,7 +204,7 @@
     ]
    },
    {
-    "name": "Plus seven to eight units from the following:",
+    "name": "Plus seven to eight units from the following",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -251,7 +251,7 @@
     ]
    },
    {
-    "name": "Plus three units from the following that have not already been taken above:",
+    "name": "Plus three units from the following that have not already been taken above",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -335,14 +335,33 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog subject prefixes differ from the closed list: PSYC-104/PSYC-235 matched to PSYCH 104/PSYCH 235, COMM-260 to COMS 260, POLS-290 to POLISC 290; treated as the same courses (same numbers and titles), so catalog_addition is false.",
-   "The 'seven to eight units' block is read as SOCI-102 required AND one statistics course (PSYC-104, SOCI-137, STAT-C1000, STAT-C1000E or STAT-C1000H), recorded as rule 'all' with the statistics options as alternatives.",
-   "SOCI-200 and SOCI-200H are printed on separate lines without 'OR'; recorded as an honors twin (alternative).",
-   "SOCI-130 and SOCI-200/200H appear in both the first three-unit list and the last list; the last list excludes courses already taken above.",
-   "Catalog prints POLS-290 as 'Ethics and Gender Politics' while the closed list title is 'Ethnic and Gender Politics'; SOCI-130 printed as 'LGBT+ Studies' and SOCI-107 as 'Chicana/o Studies' in requirements.",
-   "The 60-unit / CalGETC statement is the generic AA-T description, not a printed degree total for this award; degree_total left null.",
-   "The text preceding this section on page 293 belongs to another Sociology award (likely the AA-T in Sociology) and was not used."
+   "The catalog prints subject abbreviations that differ from the closed list: PSYC-104 = PSYCH 104, PSYC-235 = PSYCH 235, COMM-260 = COMS 260, POLS-290 = POLISC 290. Same numbers and titles, so they are treated as closed-list courses (catalog_addition false). A reviewer should confirm this.",
+   "POLS-290 is printed as 'Ethics and Gender Politics'; the closed list title is 'Ethnic and Gender Politics'. SOCI-107 is printed as 'Introduction to Chicana/o Studies' in the requirements and as 'Culture' in the course description. SOCI-130 is printed as 'Introduction to LGBT+ Studies' in this section.",
+   "SOCI-200H is printed on its own line without 'OR' in both choice lists. It is recorded as the honors alternative of SOCI-200.",
+   "The 'seven to eight units' block requires SOCI-102 AND one statistics course (PSYC-104 or SOCI-137 or STAT-C1000/C1000E/C1000H). It is recorded as an all-required block with stated 7-8.",
+   "SOCI-130 and SOCI-200/200H appear in two choice blocks. The last block says courses must not already have been taken above.",
+   "CalGETC and 60 units appear only in the generic ADT boilerplate. No degree total or GE units are printed for this award, so degree_total and ge_units are null.",
+   "The degree student learning outcome is printed as a single 'Degree Student Learning Outcome' for this AA-T."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "becde9b60b6a59f2",
+ "source_codes": [
+  "ENGL262",
+  "ENGL270",
+  "SOCI102",
+  "SOCI104",
+  "SOCI105",
+  "SOCI106",
+  "SOCI107",
+  "SOCI130",
+  "SOCI137",
+  "SOCI200",
+  "SOCI200H",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.778
 }

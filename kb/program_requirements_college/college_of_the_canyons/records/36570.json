@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Environmental Studies",
  "award": "A.A. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=149",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=149",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11689,
+  "input_tokens": 11450,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11689,
-    "output_tokens": 3236,
+    "input_tokens": 11450,
+    "output_tokens": 3038,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,50 @@
     "model": null
    }
   ],
-  "output_tokens": 3236,
+  "output_tokens": 3038,
   "output_tokens_details": {
-   "thinking_tokens": 1117
+   "thinking_tokens": 888
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11148,
- "ms": 23677,
- "seconds": 24.0,
+ "cost_usd": 0.10656,
+ "ms": 24229,
+ "seconds": 24.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 25,
    "listed": 28,
-   "share": 0.821,
+   "share": 0.893,
    "missing": [
-    "ECON201",
-    "ECON202",
     "GEOGRPH100",
     "POLISC230",
     "POLISC270"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON202",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON201",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 6,
    "codes": [
     "ECON291",
-    "ECONC2001",
-    "ECONC2002",
     "GEOGRPH101",
     "OCEAN119",
     "POLS230",
@@ -74,8 +82,6 @@
    ],
    "flagged": [
     "ECON291",
-    "ECONC2001",
-    "ECONC2002",
     "GEOGRPH101",
     "OCEAN119",
     "POLS230",
@@ -96,8 +102,7 @@
     32.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -417,11 +422,11 @@
   "missing_explained": [
    {
     "code": "ECON 201",
-    "why": "not in the text; catalog prints ECON-C2001/C2002 instead"
+    "why": "not in the text; catalog prints ECON-C2002 instead"
    },
    {
     "code": "ECON 202",
-    "why": "not in the text; catalog prints ECON-C2001/C2002 instead"
+    "why": "not in the text; catalog prints ECON-C2001 instead"
    },
    {
     "code": "GEOGRPH 100",
@@ -429,20 +434,52 @@
    },
    {
     "code": "POLISC 230",
-    "why": "not in the text as printed; catalog prints POLS-230 Political Theory, recorded as addition"
+    "why": "not in the text; catalog prints POLS-230 Political Theory"
    },
    {
     "code": "POLISC 270",
-    "why": "not in the text as printed; catalog prints POLS-270 International Relations, recorded as addition"
+    "why": "not in the text; catalog prints POLS-270 International Relations"
    }
   ],
   "notes": [
-   "The heading 'Plus two courses from the following for six to eight units:' and ANTHRO-103 are printed twice in a row (apparent layout duplication); recorded once.",
-   "Catalog prints ECON-C2002 and ECON-C2002H both titled 'Principles of Microeconomics' in the required list, and ECON-C2001/C2001H also titled 'Principles of Microeconomics' in the elective list; the closed list names ECON C2002H as Macroeconomics Honors and ECON C2001H as Microeconomics Honors. Titles in the catalog may be misprinted.",
-   "POLS-230 and POLS-270 likely correspond to closed-list POLISC 230 and POLISC 270 (same titles) but are printed with a different subject code, so they are marked as catalog additions.",
-   "The degree's single outcome is printed under 'Degree Student Learning Outcome'.",
-   "No degree total or general education pattern is printed in this section; 'Units Required: 29-32' recorded as the major total."
+   "The heading 'Plus two courses from the following for six to eight units:' and ANTHRO-103 are printed twice in the A.A. section (apparent layout duplication); recorded once.",
+   "Catalog prints both ECON-C2002 and ECON-C2001 with the title 'Principles of Microeconomics'; the closed list names ECON C2002H as Principles of Macroeconomics - Honors and ECON C2001H as Principles of Microeconomics - Honors. Reviewer should check the ECON titles/codes.",
+   "POLS-230 and POLS-270 are marked catalog additions because the closed list uses the subject POLISC (POLISC 230, POLISC 270) for the same titles.",
+   "ECON-C2002, ECON-C2001, ECON-291, GEOGRPH-101, OCEAN-119 and WE-186ENVR are not in the closed list and are marked as catalog additions.",
+   "The 'Plus four units from the following' block offers ENVRMT-103 or GEOGRPH-101, recorded as one entry with an alternative.",
+   "The degree student learning outcome is printed for the A.A. section specifically. No degree total or general education pattern is printed in the section."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "47ef1c4c34312c82",
+ "source_codes": [
+  "ANTHRO103",
+  "ANTHRO103H",
+  "BIOSCI106",
+  "BIOSCI115",
+  "BIOSCI116",
+  "BIOSCI119",
+  "BIOSCI130",
+  "BIOSCI132",
+  "ECON201",
+  "ECON202",
+  "ECONC2001H",
+  "ECONC2002H",
+  "ENVRMT101",
+  "ENVRMT103",
+  "ENVRMT104",
+  "GEOGRPH100",
+  "GEOGRPH102",
+  "PHILOS120",
+  "PHILOS250",
+  "POLSC1000",
+  "POLSC1000H",
+  "SOCI101",
+  "SOCI101H",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.929
 }

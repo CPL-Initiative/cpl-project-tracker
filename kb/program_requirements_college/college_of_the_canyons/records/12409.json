@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Accounting",
  "award": "A.S. Degree",
- "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=92",
+ "source_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf#page=92",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10759,
+  "input_tokens": 10766,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10759,
-    "output_tokens": 1797,
+    "input_tokens": 10766,
+    "output_tokens": 1627,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,53 @@
     "model": null
    }
   ],
-  "output_tokens": 1797,
+  "output_tokens": 1627,
   "output_tokens_details": {
-   "thinking_tokens": 603
+   "thinking_tokens": 537
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07898,
- "ms": 14659,
- "seconds": 14.9,
+ "cost_usd": 0.0756,
+ "ms": 13882,
+ "seconds": 14.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 11,
    "listed": 11,
-   "share": 0.818,
-   "missing": [
-    "ECON201",
-    "ECON202"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON202",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON201",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "BUS203",
     "BUS204",
-    "CAWT145",
-    "ECONC2001",
-    "ECONC2002"
+    "CAWT145"
    ],
    "flagged": [
     "BUS203",
     "BUS204",
-    "CAWT145",
-    "ECONC2001",
-    "ECONC2002"
+    "CAWT145"
    ],
    "pass": true
   },
@@ -265,20 +270,36 @@
   "missing_explained": [
    {
     "code": "ECON 201",
-    "why": "not in the text; the section prints ECON-C2001 (Principles of Macroeconomics) instead, likely the renumbered course"
+    "why": "not in the text; section prints ECON-C2001 instead"
    },
    {
     "code": "ECON 202",
-    "why": "not in the text; the section prints ECON-C2002 (Principles of Microeconomics) instead, likely the renumbered course"
+    "why": "not in the text; section prints ECON-C2002 instead"
    }
   ],
   "notes": [
-   "The section is shared by the A.S. Degree and the Certificate of Achievement in Accounting; the single student learning outcome is printed for both and is recorded here.",
-   "The section continues across a page break (pages 92-93); the ECON and statistics rows appear on page 93.",
-   "Closed-list titles for ECON C2001H (Microeconomics - Honors) and ECON C2002H (Macroeconomics - Honors) are swapped relative to the catalog, which names ECON-C2001H Macroeconomics and ECON-C2002H Microeconomics; codes were matched as printed.",
-   "ECON-C2001 and ECON-C2002 are not in the closed list (which has ECON 201 and ECON 202) and are marked catalog additions.",
-   "No degree total or general education pattern is printed for this award on the page; the 23-24 unit total covers the major/certificate requirements only."
+   "The section covers both the A.S. Degree and the Certificate of Achievement in Accounting; the single outcome is shared by both awards and is recorded here.",
+   "The requirement list continues across the page break from page 92 to page 93.",
+   "Closed list titles ECON C2001H as Microeconomics - Honors and ECON C2002H as Macroeconomics - Honors, while the catalog prints ECON-C2001H as Macroeconomics and ECON-C2002H as Microeconomics; codes recorded as printed.",
+   "STAT-C1000 is printed at 4.0 units in this section (5.0 in the AS-T section on the same page).",
+   "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39006378829"
+ "extracted_run": "44769429877",
+ "catalog_year": "2026-2027",
+ "source_sha": "35170729dc8e3e2f",
+ "source_codes": [
+  "BUS201",
+  "BUS202",
+  "BUS211",
+  "ECON201",
+  "ECON202",
+  "ECON291",
+  "ECONC2001H",
+  "ECONC2002H",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 1.0
 }
