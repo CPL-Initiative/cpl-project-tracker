@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-19_library_check_binds_url.sql
-name=library_check_binds_url
+file=kb/migrations/2026-11-19_s688_library_memory_rows.sql
+name=s688_library_memory_rows
